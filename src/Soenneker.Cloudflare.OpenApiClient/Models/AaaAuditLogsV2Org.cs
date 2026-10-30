@@ -11,22 +11,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AaaAuditLogsV2Org : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("resource") is { } nullNodeResource && nullNodeResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resource = null;
+        }
+
         /// <summary>Provides information about the action performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogAction? Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogAction? _explicitNullValueAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogAction Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogAction Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogAction _explicitNullValueAction = default!;
 #endif
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor? Actor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor Actor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -41,26 +57,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Contains organization related information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgOrganization? Organization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgOrganization? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgOrganization? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgOrganization Organization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgOrganization Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgOrganization _explicitNullValueOrganization = default!;
 #endif
         /// <summary>Provides raw information about the request and response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogRaw? Raw { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogRaw? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogRaw? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogRaw Raw { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogRaw Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogRaw _explicitNullValueRaw = default!;
 #endif
         /// <summary>Provides details about the affected resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource? Resource { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource? Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource? _explicitNullValueResource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource Resource { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource _explicitNullValueResource = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2Org"/> and sets the default values.
@@ -77,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2Org CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2Org();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2Org(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgOrganization>("organization", Organization);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogRaw>("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource>("resource", Resource);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

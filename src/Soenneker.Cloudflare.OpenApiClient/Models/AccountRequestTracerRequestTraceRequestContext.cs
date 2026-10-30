@@ -12,23 +12,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountRequestTracerRequestTraceRequestContext : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bot_score") is { } nullNodeBotScore && nullNodeBotScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotScore = null;
+            if (parseNode.GetChildNode("geoloc") is { } nullNodeGeoloc && nullNodeGeoloc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geoloc = null;
+            if (parseNode.GetChildNode("skip_challenge") is { } nullNodeSkipChallenge && nullNodeSkipChallenge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipChallenge = null;
+            if (parseNode.GetChildNode("threat_score") is { } nullNodeThreatScore && nullNodeThreatScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreatScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bot score used for evaluating tracing request processing</summary>
-        public int? BotScore { get; set; }
+        public int? BotScore { get => _explicitNullValueBotScore; set { _explicitNullValueBotScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_score"); else _explicitNullProperties?.Remove("bot_score"); } }
+        private int? _explicitNullValueBotScore = default!;
         /// <summary>Geodata for tracing request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContextGeoloc? Geoloc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContextGeoloc? Geoloc { get => _explicitNullValueGeoloc; set { _explicitNullValueGeoloc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoloc"); else _explicitNullProperties?.Remove("geoloc"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContextGeoloc? _explicitNullValueGeoloc = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContextGeoloc Geoloc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContextGeoloc Geoloc { get => _explicitNullValueGeoloc; set { _explicitNullValueGeoloc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoloc"); else _explicitNullProperties?.Remove("geoloc"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContextGeoloc _explicitNullValueGeoloc = default!;
 #endif
         /// <summary>Whether to skip any challenges for tracing request (e.g.: captcha)</summary>
-        public bool? SkipChallenge { get; set; }
+        public bool? SkipChallenge { get => _explicitNullValueSkipChallenge; set { _explicitNullValueSkipChallenge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_challenge"); else _explicitNullProperties?.Remove("skip_challenge"); } }
+        private bool? _explicitNullValueSkipChallenge = default!;
         /// <summary>Threat score used for evaluating tracing request processing</summary>
-        public int? ThreatScore { get; set; }
+        public int? ThreatScore { get => _explicitNullValueThreatScore; set { _explicitNullValueThreatScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threat_score"); else _explicitNullProperties?.Remove("threat_score"); } }
+        private int? _explicitNullValueThreatScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContext"/> and sets the default values.
         /// </summary>
@@ -44,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContext();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContext(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestContextGeoloc>("geoloc", Geoloc);
             writer.WriteBoolValue("skip_challenge", SkipChallenge);
             writer.WriteIntValue("threat_score", ThreatScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.GoogleTagGateway
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\settings\google-tag-gateway
+    /// Builds and executes requests for operations under \zones\{zoneId}\settings\google-tag-gateway
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GoogleTagGatewayRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.GoogleTagGatewa
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GoogleTagGatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/settings/google-tag-gateway", pathParameters)
+        public GoogleTagGatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/settings/google-tag-gateway", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.GoogleTagGatewa
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GoogleTagGatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/settings/google-tag-gateway", rawUrl)
+        public GoogleTagGatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/settings/google-tag-gateway", rawUrl)
         {
         }
     }

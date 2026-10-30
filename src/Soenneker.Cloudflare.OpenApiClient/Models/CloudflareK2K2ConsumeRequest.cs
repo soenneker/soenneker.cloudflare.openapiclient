@@ -11,16 +11,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CloudflareK2K2ConsumeRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_records") is { } nullNodeMaxRecords && nullNodeMaxRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRecords = null;
+            if (parseNode.GetChildNode("worker_id") is { } nullNodeWorkerId && nullNodeWorkerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerId = null;
+        }
+
         /// <summary>Sets the maximum number of records to return.</summary>
-        public int? MaxRecords { get; set; }
+        public int? MaxRecords { get => _explicitNullValueMaxRecords; set { _explicitNullValueMaxRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_records"); else _explicitNullProperties?.Remove("max_records"); } }
+        private int? _explicitNullValueMaxRecords = default!;
         /// <summary>Identifies the consumer process. Each worker holds at most one batch at a time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkerId { get; set; }
+        public string? WorkerId { get => _explicitNullValueWorkerId; set { _explicitNullValueWorkerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_id"); else _explicitNullProperties?.Remove("worker_id"); } }
+        private string? _explicitNullValueWorkerId = default!;
 #nullable restore
 #else
-        public string WorkerId { get; set; }
+        public string WorkerId { get => _explicitNullValueWorkerId; set { _explicitNullValueWorkerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_id"); else _explicitNullProperties?.Remove("worker_id"); } }
+        private string _explicitNullValueWorkerId = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2ConsumeRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2ConsumeRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2ConsumeRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("max_records", MaxRecords);
-            writer.WriteStringValue("worker_id", WorkerId);
+            writer.WriteStringValue("worker_id", WorkerId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -59,6 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.EnabledDoma
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

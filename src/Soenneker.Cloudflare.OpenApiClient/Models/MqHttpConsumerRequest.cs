@@ -11,27 +11,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MqHttpConsumerRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dead_letter_queue") is { } nullNodeDeadLetterQueue && nullNodeDeadLetterQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeadLetterQueue = null;
+            if (parseNode.GetChildNode("settings") is { } nullNodeSettings && nullNodeSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settings = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dead_letter_queue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeadLetterQueue { get; set; }
+        public string? DeadLetterQueue { get => _explicitNullValueDeadLetterQueue; set { _explicitNullValueDeadLetterQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dead_letter_queue"); else _explicitNullProperties?.Remove("dead_letter_queue"); } }
+        private string? _explicitNullValueDeadLetterQueue = default!;
 #nullable restore
 #else
-        public string DeadLetterQueue { get; set; }
+        public string DeadLetterQueue { get => _explicitNullValueDeadLetterQueue; set { _explicitNullValueDeadLetterQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dead_letter_queue"); else _explicitNullProperties?.Remove("dead_letter_queue"); } }
+        private string _explicitNullValueDeadLetterQueue = default!;
 #endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings? Settings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings? _explicitNullValueSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings Settings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings _explicitNullValueSettings = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequest"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("dead_letter_queue", DeadLetterQueue);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings>("settings", Settings);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

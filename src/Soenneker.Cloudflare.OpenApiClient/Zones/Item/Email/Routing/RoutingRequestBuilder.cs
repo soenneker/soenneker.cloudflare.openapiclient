@@ -18,12 +18,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\email\routing
+    /// Builds and executes requests for operations under \zones\{zoneId}\email\routing
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoutingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The disable property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable.DisableRequestBuilder Disable
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
@@ -34,6 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The enable property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnableRequestBuilder Enable
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
@@ -44,11 +46,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The suppression property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Suppression.SuppressionRequestBuilder Suppression
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Suppression.SuppressionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unlock property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Unlock.UnlockRequestBuilder Unlock
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Unlock.UnlockRequestBuilder(PathParameters, RequestAdapter);
@@ -58,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoutingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/email/routing", pathParameters)
+        public RoutingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/email/routing", pathParameters)
         {
         }
         /// <summary>
@@ -66,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoutingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/email/routing", rawUrl)
+        public RoutingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/email/routing", rawUrl)
         {
         }
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the settings for your Email Routing zone.
@@ -105,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Apply the provided settings to your Email Routing zone. Omitted settings retain their current values, as with PATCH.
@@ -125,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get information about the settings for your Email Routing zone.

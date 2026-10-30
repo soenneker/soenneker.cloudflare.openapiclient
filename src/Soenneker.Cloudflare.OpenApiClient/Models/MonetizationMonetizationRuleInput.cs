@@ -7,47 +7,17 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputFixedPrice"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputOriginControlled"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class MonetizationMonetizationRuleInput : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
-    #pragma warning restore CS1591
-    {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>0x-prefixed 20-byte hexadecimal Ethereum address. Mixed-case addresses must carry a valid EIP-55 checksum; all-lowercase or all-uppercase addresses are also accepted. The address must pass wallet screening whenever its rule is deployed or patched.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Address { get; set; }
-#nullable restore
-#else
-        public string Address { get; set; }
-#endif
-        /// <summary>The description property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>Wirefilter expression identifying the requests that require payment. Forwarded verbatim to the Rulesets API, which validates its syntax.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Expression { get; set; }
-#nullable restore
-#else
-        public string Expression { get; set; }
-#endif
-        /// <summary>Optional on input. Include the ID of an existing payment rule to update it in place, preserving its stable identity across the full-ruleset replacement; omit it to create a new rule. An ID that does not match an existing payment rule in the zone is rejected. Rules omitted from the request are deleted.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+    public partial class MonetizationMonetizationRuleInput : IComposedTypeWrapper, IParsable
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputFixedPrice"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,30 +34,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputOriginControlled MonetizationMonetizationRuleInputOriginControlled { get; set; }
 #endif
-        /// <summary>Price in the smallest indivisible unit of the configured payment token, encoded as a decimal string. Must be a canonical decimal integer in [1000, 100000000]: no leading zeros, and a bare JSON number is rejected. The price is required for the fixed-price schemes (&quot;exact&quot; and &quot;upto&quot;) and must be at least 1000, the smallest amount the payment facilitator can settle ($0.001 for a 6-decimal token such as USDC), and at most 100000000 ($100 for a 6-decimal token). When the scheme is &quot;origin_controlled&quot; the origin server sets pricing dynamically and the rule carries no price: the field must be omitted — any provided value, including &quot;0&quot;, is rejected because it would not be enforced. Responses always encode this as a string and omit it for &quot;origin_controlled&quot; rules; the pattern matches exactly the set of values the server accepts.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Price { get; set; }
-#nullable restore
-#else
-        public string Price { get; set; }
-#endif
-        /// <summary>The scheme property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Scheme { get; set; }
-#nullable restore
-#else
-        public string Scheme { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInput"/> and sets the default values.
-        /// </summary>
-        public MonetizationMonetizationRuleInput()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            Enabled = true;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,45 +42,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("scheme")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInput();
-            if("exact".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("MonetizationMonetizationRuleInputFixedPrice".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MonetizationMonetizationRuleInputFixedPrice = new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputFixedPrice();
+                
             }
-            else if("origin_controlled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("MonetizationMonetizationRuleInputOriginControlled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MonetizationMonetizationRuleInputOriginControlled = new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputOriginControlled();
+                
             }
-            else if(parseNode.GetStringValue() is string addressValue)
-            {
-                result.Address = addressValue;
-            }
-            else if(parseNode.GetStringValue() is string descriptionValue)
-            {
-                result.Description = descriptionValue;
-            }
-            else if(parseNode.GetBoolValue() is bool enabledValue)
-            {
-                result.Enabled = enabledValue;
-            }
-            else if(parseNode.GetStringValue() is string expressionValue)
-            {
-                result.Expression = expressionValue;
-            }
-            else if(parseNode.GetStringValue() is string idValue)
-            {
-                result.Id = idValue;
-            }
-            else if(parseNode.GetStringValue() is string priceValue)
-            {
-                result.Price = priceValue;
-            }
-            else if(parseNode.GetStringValue() is string schemeValue)
-            {
-                result.Scheme = schemeValue;
-            }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("expression") != null && parseNode.GetChildNode("address") != null && parseNode.GetChildNode("scheme") != null && (parseNode.GetChildNode("scheme")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("exact".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "upto".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("price") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("expression") != null && parseNode.GetChildNode("address") != null && parseNode.GetChildNode("scheme") != null && (parseNode.GetChildNode("scheme")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("origin_controlled".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.MonetizationMonetizationRuleInputFixedPrice == null && result.MonetizationMonetizationRuleInputOriginControlled == null && matchesUnionBranch0 && !matchesUnionBranch1) result.MonetizationMonetizationRuleInputFixedPrice = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputFixedPrice(), parseNode);
+            if (result.MonetizationMonetizationRuleInputFixedPrice == null && result.MonetizationMonetizationRuleInputOriginControlled == null && matchesUnionBranch1 && !matchesUnionBranch0) result.MonetizationMonetizationRuleInputOriginControlled = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputOriginControlled(), parseNode);
+            if (result.MonetizationMonetizationRuleInputFixedPrice == null && result.MonetizationMonetizationRuleInputOriginControlled == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,44 +83,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (MonetizationMonetizationRuleInputFixedPrice == null && MonetizationMonetizationRuleInputOriginControlled == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (MonetizationMonetizationRuleInputFixedPrice != null && MonetizationMonetizationRuleInputOriginControlled == null) { if (MonetizationMonetizationRuleInputFixedPrice is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MonetizationMonetizationRuleInputFixedPrice); return; }
+            if (MonetizationMonetizationRuleInputOriginControlled != null && MonetizationMonetizationRuleInputFixedPrice == null) { if (MonetizationMonetizationRuleInputOriginControlled is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MonetizationMonetizationRuleInputOriginControlled); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(MonetizationMonetizationRuleInputFixedPrice != null)
             {
+                if (MonetizationMonetizationRuleInputFixedPrice is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputFixedPrice>(null, MonetizationMonetizationRuleInputFixedPrice);
             }
             else if(MonetizationMonetizationRuleInputOriginControlled != null)
             {
+                if (MonetizationMonetizationRuleInputOriginControlled is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputOriginControlled>(null, MonetizationMonetizationRuleInputOriginControlled);
             }
-            else if(Address != null)
-            {
-                writer.WriteStringValue(null, Address);
-            }
-            else if(Description != null)
-            {
-                writer.WriteStringValue(null, Description);
-            }
-            else if(Enabled != null)
-            {
-                writer.WriteBoolValue(null, Enabled);
-            }
-            else if(Expression != null)
-            {
-                writer.WriteStringValue(null, Expression);
-            }
-            else if(Id != null)
-            {
-                writer.WriteStringValue(null, Id);
-            }
-            else if(Price != null)
-            {
-                writer.WriteStringValue(null, Price);
-            }
-            else if(Scheme != null)
-            {
-                writer.WriteStringValue(null, Scheme);
-            }
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

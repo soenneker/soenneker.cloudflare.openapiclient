@@ -26,51 +26,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cache_hit property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Cache_hit.Cache_hitRequestBuilder Cache_hit
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Cache_hit.Cache_hitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dnssec property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec.DnssecRequestBuilder Dnssec
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dnssec_aware property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_aware.Dnssec_awareRequestBuilder Dnssec_aware
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_aware.Dnssec_awareRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dnssec_e2e property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.Dnssec_e2eRequestBuilder Dnssec_e2e
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.Dnssec_e2eRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The matching_answer property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Matching_answer.Matching_answerRequestBuilder Matching_answer
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Matching_answer.Matching_answerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The protocol property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Protocol.ProtocolRequestBuilder Protocol
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The query_type property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Query_type.Query_typeRequestBuilder Query_type
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Query_type.Query_typeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The response_code property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_code.Response_codeRequestBuilder Response_code
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_code.Response_codeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The response_ttl property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder Response_ttl
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder(PathParameters, RequestAdapter);

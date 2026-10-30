@@ -11,14 +11,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ZonesZone : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("cname_suffix") is { } nullNodeCnameSuffix && nullNodeCnameSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CnameSuffix = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("paused") is { } nullNodePaused && nullNodePaused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paused = null;
+            if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
+            if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("tenant") is { } nullNodeTenant && nullNodeTenant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tenant = null;
+            if (parseNode.GetChildNode("tenant_unit") is { } nullNodeTenantUnit && nullNodeTenantUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantUnit = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("vanity_name_servers") is { } nullNodeVanityNameServers && nullNodeVanityNameServers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VanityNameServers = null;
+        }
+
         /// <summary>The account the zone belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneAccount? Account { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneAccount? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneAccount? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneAccount Account { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneAccount Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneAccount _explicitNullValueAccount = default!;
 #endif
         /// <summary>The last time proof of ownership was detected and the zone was madeactive.</summary>
         public DateTimeOffset? ActivatedOn { get; private set; }
@@ -27,10 +49,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Allows the customer to use a custom apex.*Tenants Only Configuration*.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CnameSuffix { get; set; }
+        public string? CnameSuffix { get => _explicitNullValueCnameSuffix; set { _explicitNullValueCnameSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_suffix"); else _explicitNullProperties?.Remove("cname_suffix"); } }
+        private string? _explicitNullValueCnameSuffix = default!;
 #nullable restore
 #else
-        public string CnameSuffix { get; set; }
+        public string CnameSuffix { get => _explicitNullValueCnameSuffix; set { _explicitNullValueCnameSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_suffix"); else _explicitNullProperties?.Remove("cname_suffix"); } }
+        private string _explicitNullValueCnameSuffix = default!;
 #endif
         /// <summary>When the zone was created.</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
@@ -39,28 +63,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Metadata about the zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>When the zone was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment (&quot;label&quot;) not exceeding 63 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The name servers Cloudflare assigns to a zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,58 +127,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The owner of the zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneOwner? Owner { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneOwner Owner { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>Indicates whether the zone is only using Cloudflare DNS services. Atrue value means the zone will not receive security or performancebenefits.</summary>
-        public bool? Paused { get; set; }
+        public bool? Paused { get => _explicitNullValuePaused; set { _explicitNullValuePaused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paused"); else _explicitNullProperties?.Remove("paused"); } }
+        private bool? _explicitNullValuePaused = default!;
         /// <summary>Legacy permissions based on legacy user membership information.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Permissions { get; set; }
+        public List<string>? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<string>? _explicitNullValuePermissions = default!;
 #nullable restore
 #else
-        public List<string> Permissions { get; set; }
+        public List<string> Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<string> _explicitNullValuePermissions = default!;
 #endif
         /// <summary>A Zones subscription information.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan? Plan { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan? _explicitNullValuePlan = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan Plan { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan _explicitNullValuePlan = default!;
 #endif
         /// <summary>The zone status on Cloudflare.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneStatus? Status { get; private set; }
         /// <summary>The root organizational unit that this zone belongs to (such as a tenant or organization).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant? Tenant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant? Tenant { get => _explicitNullValueTenant; set { _explicitNullValueTenant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant"); else _explicitNullProperties?.Remove("tenant"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant? _explicitNullValueTenant = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant Tenant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant Tenant { get => _explicitNullValueTenant; set { _explicitNullValueTenant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant"); else _explicitNullProperties?.Remove("tenant"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant _explicitNullValueTenant = default!;
 #endif
         /// <summary>The immediate parent organizational unit that this zone belongs to (such as under a tenant or sub-organization).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit? TenantUnit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit? TenantUnit { get => _explicitNullValueTenantUnit; set { _explicitNullValueTenantUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_unit"); else _explicitNullProperties?.Remove("tenant_unit"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit? _explicitNullValueTenantUnit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit TenantUnit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit TenantUnit { get => _explicitNullValueTenantUnit; set { _explicitNullValueTenantUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_unit"); else _explicitNullProperties?.Remove("tenant_unit"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit _explicitNullValueTenantUnit = default!;
 #endif
         /// <summary>A full zone implies that DNS is hosted with Cloudflare. A partial zone istypically a partner-hosted zone or a CNAME setup.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesType? _explicitNullValueType = default!;
         /// <summary>An array of domains used for custom name servers. This is only available for Business and Enterprise plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? VanityNameServers { get; set; }
+        public List<string>? VanityNameServers { get => _explicitNullValueVanityNameServers; set { _explicitNullValueVanityNameServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vanity_name_servers"); else _explicitNullProperties?.Remove("vanity_name_servers"); } }
+        private List<string>? _explicitNullValueVanityNameServers = default!;
 #nullable restore
 #else
-        public List<string> VanityNameServers { get; set; }
+        public List<string> VanityNameServers { get => _explicitNullValueVanityNameServers; set { _explicitNullValueVanityNameServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vanity_name_servers"); else _explicitNullProperties?.Remove("vanity_name_servers"); } }
+        private List<string> _explicitNullValueVanityNameServers = default!;
 #endif
         /// <summary>Verification key for partial zone setup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,7 +218,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -229,6 +273,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit>("tenant_unit", TenantUnit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesType>("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("vanity_name_servers", VanityNameServers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

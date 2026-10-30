@@ -11,37 +11,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RegistrarApiTransferInCreateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_code") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
+            if (parseNode.GetChildNode("auto_renew") is { } nullNodeAutoRenew && nullNodeAutoRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRenew = null;
+            if (parseNode.GetChildNode("contact_extensions") is { } nullNodeContactExtensions && nullNodeContactExtensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactExtensions = null;
+            if (parseNode.GetChildNode("contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
+            if (parseNode.GetChildNode("privacy_mode") is { } nullNodePrivacyMode && nullNodePrivacyMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivacyMode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The EPP/authorization code from your current registrar, base64-encodedper RFC 4648 §4. Obtain this from your current registrar&apos;s control panel.Required for all extensions, except for UK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? AuthCode { get; set; }
+        public byte[]? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
+        private byte[]? _explicitNullValueAuthCode = default!;
 #nullable restore
 #else
-        public byte[] AuthCode { get; set; }
+        public byte[] AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
+        private byte[] _explicitNullValueAuthCode = default!;
 #endif
         /// <summary>Enable or disable automatic renewal after transfer. Defaults to `false` if omitted.</summary>
-        public bool? AutoRenew { get; set; }
+        public bool? AutoRenew { get => _explicitNullValueAutoRenew; set { _explicitNullValueAutoRenew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_renew"); else _explicitNullProperties?.Remove("auto_renew"); } }
+        private bool? _explicitNullValueAutoRenew = default!;
         /// <summary>Registry-specific contact extension values for the registrant.`GET /accounts/{account_id}/registrar/extensions/{extension}` documents therequired keys and allowed values for each extension in the`transfer_schema.properties.contact_extensions` object.Examples include `.us` nexus fields, `.uk` registrant type fields,and `.ca` legal type fields. Include this object only when the extension&apos;stransfer schema defines `contact_extensions`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContactExtensionsProperty? ContactExtensions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContactExtensionsProperty? ContactExtensions { get => _explicitNullValueContactExtensions; set { _explicitNullValueContactExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_extensions"); else _explicitNullProperties?.Remove("contact_extensions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContactExtensionsProperty? _explicitNullValueContactExtensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContactExtensionsProperty ContactExtensions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContactExtensionsProperty ContactExtensions { get => _explicitNullValueContactExtensions; set { _explicitNullValueContactExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_extensions"); else _explicitNullProperties?.Remove("contact_extensions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContactExtensionsProperty _explicitNullValueContactExtensions = default!;
 #endif
         /// <summary>The contacts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContacts? Contacts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContacts? Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contacts"); else _explicitNullProperties?.Remove("contacts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContacts? _explicitNullValueContacts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContacts Contacts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContacts Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contacts"); else _explicitNullProperties?.Remove("contacts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContacts _explicitNullValueContacts = default!;
 #endif
         /// <summary>WHOIS privacy mode to apply after transfer completes. Defaults tothe extension&apos;s default privacy mode (typically `redaction`).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestPrivacyMode? PrivacyMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestPrivacyMode? PrivacyMode { get => _explicitNullValuePrivacyMode; set { _explicitNullValuePrivacyMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy_mode"); else _explicitNullProperties?.Remove("privacy_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestPrivacyMode? _explicitNullValuePrivacyMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequest"/> and sets the default values.
         /// </summary>
@@ -58,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContactExtensionsProperty>("contact_extensions", ContactExtensions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestContacts>("contacts", Contacts);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequestPrivacyMode>("privacy_mode", PrivacyMode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

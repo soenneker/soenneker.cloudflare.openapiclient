@@ -12,47 +12,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostureApiContentAsset : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("asset_id") is { } nullNodeAssetId && nullNodeAssetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetId = null;
+            if (parseNode.GetChildNode("asset_name") is { } nullNodeAssetName && nullNodeAssetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetName = null;
+            if (parseNode.GetChildNode("dlp_contexts") is { } nullNodeDlpContexts && nullNodeDlpContexts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DlpContexts = null;
+            if (parseNode.GetChildNode("dlp_profile_count") is { } nullNodeDlpProfileCount && nullNodeDlpProfileCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DlpProfileCount = null;
+            if (parseNode.GetChildNode("dlp_profile_ids") is { } nullNodeDlpProfileIds && nullNodeDlpProfileIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DlpProfileIds = null;
+            if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
+            if (parseNode.GetChildNode("latest_affliction_date") is { } nullNodeLatestAfflictionDate && nullNodeLatestAfflictionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestAfflictionDate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique identifier for the asset.</summary>
-        public Guid? AssetId { get; set; }
+        public Guid? AssetId { get => _explicitNullValueAssetId; set { _explicitNullValueAssetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_id"); else _explicitNullProperties?.Remove("asset_id"); } }
+        private Guid? _explicitNullValueAssetId = default!;
         /// <summary>Name of the asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetName { get; set; }
+        public string? AssetName { get => _explicitNullValueAssetName; set { _explicitNullValueAssetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_name"); else _explicitNullProperties?.Remove("asset_name"); } }
+        private string? _explicitNullValueAssetName = default!;
 #nullable restore
 #else
-        public string AssetName { get; set; }
+        public string AssetName { get => _explicitNullValueAssetName; set { _explicitNullValueAssetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_name"); else _explicitNullProperties?.Remove("asset_name"); } }
+        private string _explicitNullValueAssetName = default!;
 #endif
         /// <summary>DLP context information for this asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContext>? DlpContexts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContext>? DlpContexts { get => _explicitNullValueDlpContexts; set { _explicitNullValueDlpContexts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dlp_contexts"); else _explicitNullProperties?.Remove("dlp_contexts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContext>? _explicitNullValueDlpContexts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContext> DlpContexts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContext> DlpContexts { get => _explicitNullValueDlpContexts; set { _explicitNullValueDlpContexts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dlp_contexts"); else _explicitNullProperties?.Remove("dlp_contexts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContext> _explicitNullValueDlpContexts = default!;
 #endif
         /// <summary>Number of DLP profiles that flagged this asset.</summary>
-        public int? DlpProfileCount { get; set; }
+        public int? DlpProfileCount { get => _explicitNullValueDlpProfileCount; set { _explicitNullValueDlpProfileCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dlp_profile_count"); else _explicitNullProperties?.Remove("dlp_profile_count"); } }
+        private int? _explicitNullValueDlpProfileCount = default!;
         /// <summary>IDs of DLP profiles that flagged this asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? DlpProfileIds { get; set; }
+        public List<Guid?>? DlpProfileIds { get => _explicitNullValueDlpProfileIds; set { _explicitNullValueDlpProfileIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dlp_profile_ids"); else _explicitNullProperties?.Remove("dlp_profile_ids"); } }
+        private List<Guid?>? _explicitNullValueDlpProfileIds = default!;
 #nullable restore
 #else
-        public List<Guid?> DlpProfileIds { get; set; }
+        public List<Guid?> DlpProfileIds { get => _explicitNullValueDlpProfileIds; set { _explicitNullValueDlpProfileIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dlp_profile_ids"); else _explicitNullProperties?.Remove("dlp_profile_ids"); } }
+        private List<Guid?> _explicitNullValueDlpProfileIds = default!;
 #endif
         /// <summary>Summary information about an integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary? Integration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary? _explicitNullValueIntegration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary Integration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary _explicitNullValueIntegration = default!;
 #endif
         /// <summary>Most recent date this asset was flagged.</summary>
-        public DateTimeOffset? LatestAfflictionDate { get; set; }
+        public DateTimeOffset? LatestAfflictionDate { get => _explicitNullValueLatestAfflictionDate; set { _explicitNullValueLatestAfflictionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_affliction_date"); else _explicitNullProperties?.Remove("latest_affliction_date"); } }
+        private DateTimeOffset? _explicitNullValueLatestAfflictionDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiContentAsset"/> and sets the default values.
         /// </summary>
@@ -68,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiContentAsset CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiContentAsset();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiContentAsset(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<Guid?>("dlp_profile_ids", DlpProfileIds);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary>("integration", Integration);
             writer.WriteDateTimeOffsetValue("latest_affliction_date", LatestAfflictionDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

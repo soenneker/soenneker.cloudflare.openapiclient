@@ -7,39 +7,98 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class MonetizationMonetizationRule : global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInput, IParsable
-    #pragma warning restore CS1591
-    {
+    public partial class MonetizationMonetizationRule : IComposedTypeWrapper, IParsable
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf1? MonetizationMonetizationRuleOneOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf1 MonetizationMonetizationRuleOneOf1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf2? MonetizationMonetizationRuleOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf2 MonetizationMonetizationRuleOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRule();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRule();
+            if("MonetizationMonetizationRuleOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("MonetizationMonetizationRuleOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("enabled") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("enabled") != null))();
+            if (result.MonetizationMonetizationRuleOneOf1 == null && result.MonetizationMonetizationRuleOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.MonetizationMonetizationRuleOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf1(), parseNode);
+            if (result.MonetizationMonetizationRuleOneOf1 == null && result.MonetizationMonetizationRuleOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.MonetizationMonetizationRuleOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf2(), parseNode);
+            if (result.MonetizationMonetizationRuleOneOf1 == null && result.MonetizationMonetizationRuleOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            if(MonetizationMonetizationRuleOneOf1 != null)
             {
-            };
+                return MonetizationMonetizationRuleOneOf1.GetFieldDeserializers();
+            }
+            else if(MonetizationMonetizationRuleOneOf2 != null)
+            {
+                return MonetizationMonetizationRuleOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (MonetizationMonetizationRuleOneOf1 == null && MonetizationMonetizationRuleOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (MonetizationMonetizationRuleOneOf1 != null && MonetizationMonetizationRuleOneOf2 == null) { if (MonetizationMonetizationRuleOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MonetizationMonetizationRuleOneOf1); return; }
+            if (MonetizationMonetizationRuleOneOf2 != null && MonetizationMonetizationRuleOneOf1 == null) { if (MonetizationMonetizationRuleOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MonetizationMonetizationRuleOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            if(MonetizationMonetizationRuleOneOf1 != null)
+            {
+                if (MonetizationMonetizationRuleOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf1>(null, MonetizationMonetizationRuleOneOf1);
+            }
+            else if(MonetizationMonetizationRuleOneOf2 != null)
+            {
+                if (MonetizationMonetizationRuleOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleOneOf2>(null, MonetizationMonetizationRuleOneOf2);
+            }
         }
     }
 }

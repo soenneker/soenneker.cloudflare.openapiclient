@@ -11,54 +11,87 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BrapiGetDevtoolsSessionDetails200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("closeReason") is { } nullNodeCloseReason && nullNodeCloseReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloseReason = null;
+            if (parseNode.GetChildNode("closeReasonText") is { } nullNodeCloseReasonText && nullNodeCloseReasonText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloseReasonText = null;
+            if (parseNode.GetChildNode("connectionEndTime") is { } nullNodeConnectionEndTime && nullNodeConnectionEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionEndTime = null;
+            if (parseNode.GetChildNode("connectionId") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
+            if (parseNode.GetChildNode("connectionStartTime") is { } nullNodeConnectionStartTime && nullNodeConnectionStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionStartTime = null;
+            if (parseNode.GetChildNode("devtoolsFrontendUrl") is { } nullNodeDevtoolsFrontendUrl && nullNodeDevtoolsFrontendUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DevtoolsFrontendUrl = null;
+            if (parseNode.GetChildNode("endTime") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("lastUpdated") is { } nullNodeLastUpdated && nullNodeLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdated = null;
+            if (parseNode.GetChildNode("sessionId") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
+            if (parseNode.GetChildNode("startTime") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+            if (parseNode.GetChildNode("webSocketDebuggerUrl") is { } nullNodeWebSocketDebuggerUrl && nullNodeWebSocketDebuggerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebSocketDebuggerUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Reason code for session closure.</summary>
-        public double? CloseReason { get; set; }
+        public double? CloseReason { get => _explicitNullValueCloseReason; set { _explicitNullValueCloseReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closeReason"); else _explicitNullProperties?.Remove("closeReason"); } }
+        private double? _explicitNullValueCloseReason = default!;
         /// <summary>Human-readable close reason.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloseReasonText { get; set; }
+        public string? CloseReasonText { get => _explicitNullValueCloseReasonText; set { _explicitNullValueCloseReasonText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closeReasonText"); else _explicitNullProperties?.Remove("closeReasonText"); } }
+        private string? _explicitNullValueCloseReasonText = default!;
 #nullable restore
 #else
-        public string CloseReasonText { get; set; }
+        public string CloseReasonText { get => _explicitNullValueCloseReasonText; set { _explicitNullValueCloseReasonText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closeReasonText"); else _explicitNullProperties?.Remove("closeReasonText"); } }
+        private string _explicitNullValueCloseReasonText = default!;
 #endif
         /// <summary>Connection end time.</summary>
-        public double? ConnectionEndTime { get; set; }
+        public double? ConnectionEndTime { get => _explicitNullValueConnectionEndTime; set { _explicitNullValueConnectionEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionEndTime"); else _explicitNullProperties?.Remove("connectionEndTime"); } }
+        private double? _explicitNullValueConnectionEndTime = default!;
         /// <summary>Connection ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get; set; }
+        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionId"); else _explicitNullProperties?.Remove("connectionId"); } }
+        private string? _explicitNullValueConnectionId = default!;
 #nullable restore
 #else
-        public string ConnectionId { get; set; }
+        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionId"); else _explicitNullProperties?.Remove("connectionId"); } }
+        private string _explicitNullValueConnectionId = default!;
 #endif
         /// <summary>Connection start time.</summary>
-        public double? ConnectionStartTime { get; set; }
+        public double? ConnectionStartTime { get => _explicitNullValueConnectionStartTime; set { _explicitNullValueConnectionStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionStartTime"); else _explicitNullProperties?.Remove("connectionStartTime"); } }
+        private double? _explicitNullValueConnectionStartTime = default!;
         /// <summary>DevTools frontend URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DevtoolsFrontendUrl { get; set; }
+        public string? DevtoolsFrontendUrl { get => _explicitNullValueDevtoolsFrontendUrl; set { _explicitNullValueDevtoolsFrontendUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devtoolsFrontendUrl"); else _explicitNullProperties?.Remove("devtoolsFrontendUrl"); } }
+        private string? _explicitNullValueDevtoolsFrontendUrl = default!;
 #nullable restore
 #else
-        public string DevtoolsFrontendUrl { get; set; }
+        public string DevtoolsFrontendUrl { get => _explicitNullValueDevtoolsFrontendUrl; set { _explicitNullValueDevtoolsFrontendUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devtoolsFrontendUrl"); else _explicitNullProperties?.Remove("devtoolsFrontendUrl"); } }
+        private string _explicitNullValueDevtoolsFrontendUrl = default!;
 #endif
         /// <summary>Session end time.</summary>
-        public double? EndTime { get; set; }
+        public double? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endTime"); else _explicitNullProperties?.Remove("endTime"); } }
+        private double? _explicitNullValueEndTime = default!;
         /// <summary>Last updated timestamp.</summary>
-        public double? LastUpdated { get; set; }
+        public double? LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdated"); else _explicitNullProperties?.Remove("lastUpdated"); } }
+        private double? _explicitNullValueLastUpdated = default!;
         /// <summary>Session ID.</summary>
-        public Guid? SessionId { get; set; }
+        public Guid? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
+        private Guid? _explicitNullValueSessionId = default!;
         /// <summary>Session start time.</summary>
-        public double? StartTime { get; set; }
+        public double? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startTime"); else _explicitNullProperties?.Remove("startTime"); } }
+        private double? _explicitNullValueStartTime = default!;
         /// <summary>WebSocket URL for debugging this target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebSocketDebuggerUrl { get; set; }
+        public string? WebSocketDebuggerUrl { get => _explicitNullValueWebSocketDebuggerUrl; set { _explicitNullValueWebSocketDebuggerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webSocketDebuggerUrl"); else _explicitNullProperties?.Remove("webSocketDebuggerUrl"); } }
+        private string? _explicitNullValueWebSocketDebuggerUrl = default!;
 #nullable restore
 #else
-        public string WebSocketDebuggerUrl { get; set; }
+        public string WebSocketDebuggerUrl { get => _explicitNullValueWebSocketDebuggerUrl; set { _explicitNullValueWebSocketDebuggerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webSocketDebuggerUrl"); else _explicitNullProperties?.Remove("webSocketDebuggerUrl"); } }
+        private string _explicitNullValueWebSocketDebuggerUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsSessionDetails200Response"/> and sets the default values.
@@ -75,7 +108,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsSessionDetails200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsSessionDetails200Response();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsSessionDetails200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("sessionId", SessionId);
             writer.WriteDoubleValue("startTime", StartTime);
             writer.WriteStringValue("webSocketDebuggerUrl", WebSocketDebuggerUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

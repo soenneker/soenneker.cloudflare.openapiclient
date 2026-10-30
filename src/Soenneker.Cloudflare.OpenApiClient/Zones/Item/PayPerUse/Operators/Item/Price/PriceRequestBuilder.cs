@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerUse.Operators.Item.Price
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\pay-per-use\operators\{operatorId}\price
+    /// Builds and executes requests for operations under \zones\{zoneId}\pay-per-use\operators\{operatorId}\price
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PriceRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerUse.Operators.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PriceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/pay-per-use/operators/{operatorId}/price", pathParameters)
+        public PriceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/pay-per-use/operators/{operatorId}/price", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerUse.Operators.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PriceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/pay-per-use/operators/{operatorId}/price", rawUrl)
+        public PriceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/pay-per-use/operators/{operatorId}/price", rawUrl)
         {
         }
         /// <summary>
@@ -57,6 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerUse.Operators.Item
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiNoResultResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiNoResultResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,6 +90,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerUse.Operators.Item
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuPriceResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuPriceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

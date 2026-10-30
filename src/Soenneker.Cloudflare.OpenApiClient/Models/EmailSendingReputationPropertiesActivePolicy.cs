@@ -12,33 +12,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSendingReputationPropertiesActivePolicy : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("complaint") is { } nullNodeComplaint && nullNodeComplaint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Complaint = null;
+            if (parseNode.GetChildNode("customer_bounce") is { } nullNodeCustomerBounce && nullNodeCustomerBounce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerBounce = null;
+            if (parseNode.GetChildNode("spam_rejection") is { } nullNodeSpamRejection && nullNodeSpamRejection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpamRejection = null;
+            if (parseNode.GetChildNode("suspension_after_hours") is { } nullNodeSuspensionAfterHours && nullNodeSuspensionAfterHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuspensionAfterHours = null;
+        }
+
         /// <summary>Complaint-rate thresholds used to evaluate reputation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint? Complaint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint? Complaint { get => _explicitNullValueComplaint; set { _explicitNullValueComplaint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complaint"); else _explicitNullProperties?.Remove("complaint"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint? _explicitNullValueComplaint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint Complaint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint Complaint { get => _explicitNullValueComplaint; set { _explicitNullValueComplaint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complaint"); else _explicitNullProperties?.Remove("complaint"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint _explicitNullValueComplaint = default!;
 #endif
         /// <summary>Bounce-rate thresholds used to evaluate reputation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyCustomerBounce? CustomerBounce { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyCustomerBounce? CustomerBounce { get => _explicitNullValueCustomerBounce; set { _explicitNullValueCustomerBounce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_bounce"); else _explicitNullProperties?.Remove("customer_bounce"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyCustomerBounce? _explicitNullValueCustomerBounce = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyCustomerBounce CustomerBounce { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyCustomerBounce CustomerBounce { get => _explicitNullValueCustomerBounce; set { _explicitNullValueCustomerBounce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_bounce"); else _explicitNullProperties?.Remove("customer_bounce"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyCustomerBounce _explicitNullValueCustomerBounce = default!;
 #endif
         /// <summary>Spam-rejection-rate thresholds used to evaluate reputation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicySpamRejection? SpamRejection { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicySpamRejection? SpamRejection { get => _explicitNullValueSpamRejection; set { _explicitNullValueSpamRejection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spam_rejection"); else _explicitNullProperties?.Remove("spam_rejection"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicySpamRejection? _explicitNullValueSpamRejection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicySpamRejection SpamRejection { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicySpamRejection SpamRejection { get => _explicitNullValueSpamRejection; set { _explicitNullValueSpamRejection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spam_rejection"); else _explicitNullProperties?.Remove("spam_rejection"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicySpamRejection _explicitNullValueSpamRejection = default!;
 #endif
-        /// <summary>The grace period before suspension. The value must be a whole number of days.</summary>
-        public long? SuspensionAfterHours { get; set; }
+        /// <summary>The grace period before suspension. The value must be a whole number of days. It applies only while grace_started_at is set; when grace_started_at is null, the account is not counting down to an automatic suspension.</summary>
+        public long? SuspensionAfterHours { get => _explicitNullValueSuspensionAfterHours; set { _explicitNullValueSuspensionAfterHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspension_after_hours"); else _explicitNullProperties?.Remove("suspension_after_hours"); } }
+        private long? _explicitNullValueSuspensionAfterHours = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +91,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint>("complaint", Complaint);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyCustomerBounce>("customer_bounce", CustomerBounce);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicySpamRejection>("spam_rejection", SpamRejection);
-            writer.WriteLongValue("suspension_after_hours", SuspensionAfterHours);
+            writer.WriteLongValue("suspension_after_hours", SuspensionAfterHours);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

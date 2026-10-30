@@ -12,23 +12,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZonesZoneMeta : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cdn_only") is { } nullNodeCdnOnly && nullNodeCdnOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CdnOnly = null;
+            if (parseNode.GetChildNode("custom_certificate_quota") is { } nullNodeCustomCertificateQuota && nullNodeCustomCertificateQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomCertificateQuota = null;
+            if (parseNode.GetChildNode("dns_only") is { } nullNodeDnsOnly && nullNodeDnsOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsOnly = null;
+            if (parseNode.GetChildNode("foundation_dns") is { } nullNodeFoundationDns && nullNodeFoundationDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FoundationDns = null;
+            if (parseNode.GetChildNode("page_rule_quota") is { } nullNodePageRuleQuota && nullNodePageRuleQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageRuleQuota = null;
+            if (parseNode.GetChildNode("phishing_detected") is { } nullNodePhishingDetected && nullNodePhishingDetected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhishingDetected = null;
+            if (parseNode.GetChildNode("step") is { } nullNodeStep && nullNodeStep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Step = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The zone is only configured for CDN.</summary>
-        public bool? CdnOnly { get; set; }
+        public bool? CdnOnly { get => _explicitNullValueCdnOnly; set { _explicitNullValueCdnOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cdn_only"); else _explicitNullProperties?.Remove("cdn_only"); } }
+        private bool? _explicitNullValueCdnOnly = default!;
         /// <summary>Number of Custom Certificates the zone can have.</summary>
-        public int? CustomCertificateQuota { get; set; }
+        public int? CustomCertificateQuota { get => _explicitNullValueCustomCertificateQuota; set { _explicitNullValueCustomCertificateQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_certificate_quota"); else _explicitNullProperties?.Remove("custom_certificate_quota"); } }
+        private int? _explicitNullValueCustomCertificateQuota = default!;
         /// <summary>The zone is only configured for DNS.</summary>
-        public bool? DnsOnly { get; set; }
+        public bool? DnsOnly { get => _explicitNullValueDnsOnly; set { _explicitNullValueDnsOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_only"); else _explicitNullProperties?.Remove("dns_only"); } }
+        private bool? _explicitNullValueDnsOnly = default!;
         /// <summary>The zone is setup with Foundation DNS.</summary>
-        public bool? FoundationDns { get; set; }
+        public bool? FoundationDns { get => _explicitNullValueFoundationDns; set { _explicitNullValueFoundationDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foundation_dns"); else _explicitNullProperties?.Remove("foundation_dns"); } }
+        private bool? _explicitNullValueFoundationDns = default!;
         /// <summary>Number of Page Rules a zone can have.</summary>
-        public int? PageRuleQuota { get; set; }
+        public int? PageRuleQuota { get => _explicitNullValuePageRuleQuota; set { _explicitNullValuePageRuleQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_rule_quota"); else _explicitNullProperties?.Remove("page_rule_quota"); } }
+        private int? _explicitNullValuePageRuleQuota = default!;
         /// <summary>The zone has been flagged for phishing.</summary>
-        public bool? PhishingDetected { get; set; }
+        public bool? PhishingDetected { get => _explicitNullValuePhishingDetected; set { _explicitNullValuePhishingDetected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phishing_detected"); else _explicitNullProperties?.Remove("phishing_detected"); } }
+        private bool? _explicitNullValuePhishingDetected = default!;
         /// <summary>The step property</summary>
-        public int? Step { get; set; }
+        public int? Step { get => _explicitNullValueStep; set { _explicitNullValueStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step"); else _explicitNullProperties?.Remove("step"); } }
+        private int? _explicitNullValueStep = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta"/> and sets the default values.
         /// </summary>
@@ -44,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("page_rule_quota", PageRuleQuota);
             writer.WriteBoolValue("phishing_detected", PhishingDetected);
             writer.WriteIntValue("step", Step);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

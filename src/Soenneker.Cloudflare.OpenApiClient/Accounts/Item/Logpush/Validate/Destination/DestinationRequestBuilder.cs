@@ -61,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Validate.Dest
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteAccountsAccountIdLogpushValidateDestination4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushValidateResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushValidateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

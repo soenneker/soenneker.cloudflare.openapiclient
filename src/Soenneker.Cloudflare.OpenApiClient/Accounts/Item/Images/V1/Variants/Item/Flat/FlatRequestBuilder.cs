@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.It
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantFlatResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantFlatResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantFlatResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantFlatResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetch details for a single variant with properties at the top level of the result.

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps.Item.Settings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\access\apps\{appId}\settings
+    /// Builds and executes requests for operations under \zones\{zoneId}\access\apps\{appId}\settings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps.Item.Setting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/access/apps/{appId}/settings", pathParameters)
+        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/access/apps/{appId}/settings", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps.Item.Setting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/access/apps/{appId}/settings", rawUrl)
+        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/access/apps/{appId}/settings", rawUrl)
         {
         }
         /// <summary>
@@ -55,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps.Item.Setting
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessApplicationsPatchUpdateAccessApplicationSettings202Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessApplicationsPatchUpdateAccessApplicationSettings202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -80,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps.Item.Setting
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessApplicationsPutUpdateAccessApplicationSettings202Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessApplicationsPutUpdateAccessApplicationSettings202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

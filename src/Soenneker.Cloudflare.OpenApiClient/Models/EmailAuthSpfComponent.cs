@@ -12,30 +12,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailAuthSpfComponent : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("lookup_count") is { } nullNodeLookupCount && nullNodeLookupCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupCount = null;
+            if (parseNode.GetChildNode("nested") is { } nullNodeNested && nullNodeNested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nested = null;
+            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of DNS lookups this component requires (per RFC 7208).- MX, A, EXISTS, INCLUDE, REDIRECT, PTR: 1- IP4, IP6, ALL: 0</summary>
-        public int? LookupCount { get; set; }
+        public int? LookupCount { get => _explicitNullValueLookupCount; set { _explicitNullValueLookupCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_count"); else _explicitNullProperties?.Remove("lookup_count"); } }
+        private int? _explicitNullValueLookupCount = default!;
         /// <summary>Nested SPF tree for INCLUDE or REDIRECT mechanisms.Only present for INCLUDE/REDIRECT components.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested? Nested { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested? Nested { get => _explicitNullValueNested; set { _explicitNullValueNested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nested"); else _explicitNullProperties?.Remove("nested"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested? _explicitNullValueNested = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested Nested { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested Nested { get => _explicitNullValueNested; set { _explicitNullValueNested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nested"); else _explicitNullProperties?.Remove("nested"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested _explicitNullValueNested = default!;
 #endif
         /// <summary>SPF mechanism result qualifier</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult? _explicitNullValueResult = default!;
         /// <summary>Component type (UPPERCASE)</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType? _explicitNullValueType = default!;
         /// <summary>Component value with qualifier prefix.For IP4/IP6, stores just the IP address (no &quot;ip4:&quot; or &quot;ip6:&quot; prefix).Examples: &quot;203.0.113.1&quot;, &quot;203.0.113.0/24&quot;, &quot;2001:db8::1/64&quot;, &quot;-all&quot;, &quot;~mx:example.com&quot;, &quot;include:_spf.example.com&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent"/> and sets the default values.
@@ -52,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult>("result", Result);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType>("type", Type);
             writer.WriteStringValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

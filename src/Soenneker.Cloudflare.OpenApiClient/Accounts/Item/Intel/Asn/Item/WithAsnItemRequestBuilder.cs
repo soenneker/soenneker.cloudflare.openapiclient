@@ -59,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AsnIntelligenceGetAsnOverview4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelAsnComponentsSchemasResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IntelAsnComponentsSchemasResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

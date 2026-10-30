@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainCheck;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainSearch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainTransferCheck;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.Domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.Extensions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.Registrations;
 using System.Collections.Generic;
@@ -24,11 +23,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainCheck.DomainCheckRequestBuilder DomainCheck
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainCheck.DomainCheckRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The domains property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.Domains.DomainsRequestBuilder Domains
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The domainSearch property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainSearch.DomainSearchRequestBuilder DomainSearch

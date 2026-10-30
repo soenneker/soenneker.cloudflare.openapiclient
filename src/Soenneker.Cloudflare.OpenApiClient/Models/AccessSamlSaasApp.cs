@@ -11,89 +11,131 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessSamlSaasApp : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("consumer_service_url") is { } nullNodeConsumerServiceUrl && nullNodeConsumerServiceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerServiceUrl = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("custom_attributes") is { } nullNodeCustomAttributes && nullNodeCustomAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomAttributes = null;
+            if (parseNode.GetChildNode("default_relay_state") is { } nullNodeDefaultRelayState && nullNodeDefaultRelayState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRelayState = null;
+            if (parseNode.GetChildNode("idp_entity_id") is { } nullNodeIdpEntityId && nullNodeIdpEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpEntityId = null;
+            if (parseNode.GetChildNode("name_id_format") is { } nullNodeNameIdFormat && nullNodeNameIdFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameIdFormat = null;
+            if (parseNode.GetChildNode("name_id_transform_jsonata") is { } nullNodeNameIdTransformJsonata && nullNodeNameIdTransformJsonata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameIdTransformJsonata = null;
+            if (parseNode.GetChildNode("public_key") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("saml_attribute_transform_jsonata") is { } nullNodeSamlAttributeTransformJsonata && nullNodeSamlAttributeTransformJsonata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamlAttributeTransformJsonata = null;
+            if (parseNode.GetChildNode("sp_entity_id") is { } nullNodeSpEntityId && nullNodeSpEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpEntityId = null;
+            if (parseNode.GetChildNode("sso_endpoint") is { } nullNodeSsoEndpoint && nullNodeSsoEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoEndpoint = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is &quot;saml&quot;</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppAuthType? AuthType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppAuthType? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppAuthType? _explicitNullValueAuthType = default!;
         /// <summary>The service provider&apos;s endpoint that is responsible for receiving and parsing a SAML assertion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerServiceUrl { get; set; }
+        public string? ConsumerServiceUrl { get => _explicitNullValueConsumerServiceUrl; set { _explicitNullValueConsumerServiceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_service_url"); else _explicitNullProperties?.Remove("consumer_service_url"); } }
+        private string? _explicitNullValueConsumerServiceUrl = default!;
 #nullable restore
 #else
-        public string ConsumerServiceUrl { get; set; }
+        public string ConsumerServiceUrl { get => _explicitNullValueConsumerServiceUrl; set { _explicitNullValueConsumerServiceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_service_url"); else _explicitNullProperties?.Remove("consumer_service_url"); } }
+        private string _explicitNullValueConsumerServiceUrl = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The custom_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem>? CustomAttributes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem>? CustomAttributes { get => _explicitNullValueCustomAttributes; set { _explicitNullValueCustomAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_attributes"); else _explicitNullProperties?.Remove("custom_attributes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem>? _explicitNullValueCustomAttributes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem> CustomAttributes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem> CustomAttributes { get => _explicitNullValueCustomAttributes; set { _explicitNullValueCustomAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_attributes"); else _explicitNullProperties?.Remove("custom_attributes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem> _explicitNullValueCustomAttributes = default!;
 #endif
         /// <summary>The URL that the user will be redirected to after a successful login for IDP initiated logins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultRelayState { get; set; }
+        public string? DefaultRelayState { get => _explicitNullValueDefaultRelayState; set { _explicitNullValueDefaultRelayState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_relay_state"); else _explicitNullProperties?.Remove("default_relay_state"); } }
+        private string? _explicitNullValueDefaultRelayState = default!;
 #nullable restore
 #else
-        public string DefaultRelayState { get; set; }
+        public string DefaultRelayState { get => _explicitNullValueDefaultRelayState; set { _explicitNullValueDefaultRelayState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_relay_state"); else _explicitNullProperties?.Remove("default_relay_state"); } }
+        private string _explicitNullValueDefaultRelayState = default!;
 #endif
         /// <summary>The unique identifier for your SaaS application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdpEntityId { get; set; }
+        public string? IdpEntityId { get => _explicitNullValueIdpEntityId; set { _explicitNullValueIdpEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_entity_id"); else _explicitNullProperties?.Remove("idp_entity_id"); } }
+        private string? _explicitNullValueIdpEntityId = default!;
 #nullable restore
 #else
-        public string IdpEntityId { get; set; }
+        public string IdpEntityId { get => _explicitNullValueIdpEntityId; set { _explicitNullValueIdpEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_entity_id"); else _explicitNullProperties?.Remove("idp_entity_id"); } }
+        private string _explicitNullValueIdpEntityId = default!;
 #endif
         /// <summary>The format of the name identifier sent to the SaaS application.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppNameIdFormat? NameIdFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppNameIdFormat? NameIdFormat { get => _explicitNullValueNameIdFormat; set { _explicitNullValueNameIdFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_id_format"); else _explicitNullProperties?.Remove("name_id_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppNameIdFormat? _explicitNullValueNameIdFormat = default!;
         /// <summary>A [JSONata](https://jsonata.org/) expression that transforms an application&apos;s user identities into a NameID value for its SAML assertion. This expression should evaluate to a singular string. The output of this expression can override the `name_id_format` setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NameIdTransformJsonata { get; set; }
+        public string? NameIdTransformJsonata { get => _explicitNullValueNameIdTransformJsonata; set { _explicitNullValueNameIdTransformJsonata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_id_transform_jsonata"); else _explicitNullProperties?.Remove("name_id_transform_jsonata"); } }
+        private string? _explicitNullValueNameIdTransformJsonata = default!;
 #nullable restore
 #else
-        public string NameIdTransformJsonata { get; set; }
+        public string NameIdTransformJsonata { get => _explicitNullValueNameIdTransformJsonata; set { _explicitNullValueNameIdTransformJsonata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_id_transform_jsonata"); else _explicitNullProperties?.Remove("name_id_transform_jsonata"); } }
+        private string _explicitNullValueNameIdTransformJsonata = default!;
 #endif
         /// <summary>The Access public certificate that will be used to verify your identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKey { get; set; }
+        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        private string? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public string PublicKey { get; set; }
+        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        private string _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>A [JSONata] (https://jsonata.org/) expression that transforms an application&apos;s user identities into attribute assertions in the SAML response. The expression can transform id, email, name, and groups values. It can also transform fields listed in the saml_attributes or oidc_fields of the identity provider used to authenticate. The output of this expression must be a JSON object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SamlAttributeTransformJsonata { get; set; }
+        public string? SamlAttributeTransformJsonata { get => _explicitNullValueSamlAttributeTransformJsonata; set { _explicitNullValueSamlAttributeTransformJsonata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_attribute_transform_jsonata"); else _explicitNullProperties?.Remove("saml_attribute_transform_jsonata"); } }
+        private string? _explicitNullValueSamlAttributeTransformJsonata = default!;
 #nullable restore
 #else
-        public string SamlAttributeTransformJsonata { get; set; }
+        public string SamlAttributeTransformJsonata { get => _explicitNullValueSamlAttributeTransformJsonata; set { _explicitNullValueSamlAttributeTransformJsonata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_attribute_transform_jsonata"); else _explicitNullProperties?.Remove("saml_attribute_transform_jsonata"); } }
+        private string _explicitNullValueSamlAttributeTransformJsonata = default!;
 #endif
         /// <summary>A globally unique name for an identity or service provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SpEntityId { get; set; }
+        public string? SpEntityId { get => _explicitNullValueSpEntityId; set { _explicitNullValueSpEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sp_entity_id"); else _explicitNullProperties?.Remove("sp_entity_id"); } }
+        private string? _explicitNullValueSpEntityId = default!;
 #nullable restore
 #else
-        public string SpEntityId { get; set; }
+        public string SpEntityId { get => _explicitNullValueSpEntityId; set { _explicitNullValueSpEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sp_entity_id"); else _explicitNullProperties?.Remove("sp_entity_id"); } }
+        private string _explicitNullValueSpEntityId = default!;
 #endif
         /// <summary>The endpoint where your SaaS application will send login requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SsoEndpoint { get; set; }
+        public string? SsoEndpoint { get => _explicitNullValueSsoEndpoint; set { _explicitNullValueSsoEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso_endpoint"); else _explicitNullProperties?.Remove("sso_endpoint"); } }
+        private string? _explicitNullValueSsoEndpoint = default!;
 #nullable restore
 #else
-        public string SsoEndpoint { get; set; }
+        public string SsoEndpoint { get => _explicitNullValueSsoEndpoint; set { _explicitNullValueSsoEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso_endpoint"); else _explicitNullProperties?.Remove("sso_endpoint"); } }
+        private string _explicitNullValueSsoEndpoint = default!;
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp"/> and sets the default values.
         /// </summary>
@@ -109,7 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,6 +196,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("sp_entity_id", SpEntityId);
             writer.WriteStringValue("sso_endpoint", SsoEndpoint);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

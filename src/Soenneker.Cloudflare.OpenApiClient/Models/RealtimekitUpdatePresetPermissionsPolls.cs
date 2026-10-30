@@ -12,15 +12,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitUpdatePresetPermissionsPolls : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("can_create") is { } nullNodeCanCreate && nullNodeCanCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanCreate = null;
+            if (parseNode.GetChildNode("can_view") is { } nullNodeCanView && nullNodeCanView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanView = null;
+            if (parseNode.GetChildNode("can_vote") is { } nullNodeCanVote && nullNodeCanVote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanVote = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Can create polls</summary>
-        public bool? CanCreate { get; set; }
+        public bool? CanCreate { get => _explicitNullValueCanCreate; set { _explicitNullValueCanCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_create"); else _explicitNullProperties?.Remove("can_create"); } }
+        private bool? _explicitNullValueCanCreate = default!;
         /// <summary>Can view polls</summary>
-        public bool? CanView { get; set; }
+        public bool? CanView { get => _explicitNullValueCanView; set { _explicitNullValueCanView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_view"); else _explicitNullProperties?.Remove("can_view"); } }
+        private bool? _explicitNullValueCanView = default!;
         /// <summary>Can vote on polls</summary>
-        public bool? CanVote { get; set; }
+        public bool? CanVote { get => _explicitNullValueCanVote; set { _explicitNullValueCanVote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_vote"); else _explicitNullProperties?.Remove("can_vote"); } }
+        private bool? _explicitNullValueCanVote = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("can_create", CanCreate);
             writer.WriteBoolValue("can_view", CanView);
             writer.WriteBoolValue("can_vote", CanVote);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

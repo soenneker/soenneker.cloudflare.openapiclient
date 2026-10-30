@@ -11,7 +11,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicCf1SiteRampSingleResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("gre") is { } nullNodeGre && nullNodeGre.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gre = null;
+            if (parseNode.GetChildNode("gre_interconnect") is { } nullNodeGreInterconnect && nullNodeGreInterconnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GreInterconnect = null;
+            if (parseNode.GetChildNode("ipsec") is { } nullNodeIpsec && nullNodeIpsec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipsec = null;
+            if (parseNode.GetChildNode("mconn") is { } nullNodeMconn && nullNodeMconn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mconn = null;
+            if (parseNode.GetChildNode("mpls_interconnect") is { } nullNodeMplsInterconnect && nullNodeMplsInterconnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MplsInterconnect = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_on property</summary>
@@ -19,26 +33,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A human-provided description of the ramp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The gre property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? Gre { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? Gre { get => _explicitNullValueGre; set { _explicitNullValueGre = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre"); else _explicitNullProperties?.Remove("gre"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? _explicitNullValueGre = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp Gre { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp Gre { get => _explicitNullValueGre; set { _explicitNullValueGre = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre"); else _explicitNullProperties?.Remove("gre"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp _explicitNullValueGre = default!;
 #endif
         /// <summary>The gre_interconnect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? GreInterconnect { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? GreInterconnect { get => _explicitNullValueGreInterconnect; set { _explicitNullValueGreInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre_interconnect"); else _explicitNullProperties?.Remove("gre_interconnect"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? _explicitNullValueGreInterconnect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp GreInterconnect { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp GreInterconnect { get => _explicitNullValueGreInterconnect; set { _explicitNullValueGreInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre_interconnect"); else _explicitNullProperties?.Remove("gre_interconnect"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp _explicitNullValueGreInterconnect = default!;
 #endif
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,36 +71,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ipsec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? Ipsec { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? Ipsec { get => _explicitNullValueIpsec; set { _explicitNullValueIpsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipsec"); else _explicitNullProperties?.Remove("ipsec"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? _explicitNullValueIpsec = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp Ipsec { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp Ipsec { get => _explicitNullValueIpsec; set { _explicitNullValueIpsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipsec"); else _explicitNullProperties?.Remove("ipsec"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp _explicitNullValueIpsec = default!;
 #endif
         /// <summary>The mconn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? Mconn { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? Mconn { get => _explicitNullValueMconn; set { _explicitNullValueMconn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mconn"); else _explicitNullProperties?.Remove("mconn"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? _explicitNullValueMconn = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp Mconn { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp Mconn { get => _explicitNullValueMconn; set { _explicitNullValueMconn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mconn"); else _explicitNullProperties?.Remove("mconn"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp _explicitNullValueMconn = default!;
 #endif
         /// <summary>The modified_on property</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The mpls_interconnect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? MplsInterconnect { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? MplsInterconnect { get => _explicitNullValueMplsInterconnect; set { _explicitNullValueMplsInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpls_interconnect"); else _explicitNullProperties?.Remove("mpls_interconnect"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp? _explicitNullValueMplsInterconnect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp MplsInterconnect { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp MplsInterconnect { get => _explicitNullValueMplsInterconnect; set { _explicitNullValueMplsInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpls_interconnect"); else _explicitNullProperties?.Remove("mpls_interconnect"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp _explicitNullValueMplsInterconnect = default!;
 #endif
         /// <summary>A human-provided name describing the ramp that should be unique within the CF1 Site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The type of network connection (ramp) linking a CF1 Site to Cloudflare&apos;s network.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteRampTypeComposed? Type { get; private set; }
@@ -99,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteRampSingleResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteRampSingleResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteRampSingleResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,6 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp>("mconn", Mconn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteManagedRamp>("mpls_interconnect", MplsInterconnect);
             writer.WriteStringValue("name", Name);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

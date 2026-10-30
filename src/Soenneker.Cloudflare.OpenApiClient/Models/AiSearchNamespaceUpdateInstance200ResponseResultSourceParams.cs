@@ -11,48 +11,70 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiSearchNamespaceUpdateInstance200ResponseResultSourceParams : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("exclude_items") is { } nullNodeExcludeItems && nullNodeExcludeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeItems = null;
+            if (parseNode.GetChildNode("include_items") is { } nullNodeIncludeItems && nullNodeIncludeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeItems = null;
+            if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
+            if (parseNode.GetChildNode("r2_jurisdiction") is { } nullNodeR2Jurisdiction && nullNodeR2Jurisdiction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2Jurisdiction = null;
+            if (parseNode.GetChildNode("web_crawler") is { } nullNodeWebCrawler && nullNodeWebCrawler.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebCrawler = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of path patterns to exclude. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /admin/** matches /admin/users and /admin/settings/advanced). Most accounts have a limit of 10 rules; contact support to raise it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeItems { get; set; }
+        public List<string>? ExcludeItems { get => _explicitNullValueExcludeItems; set { _explicitNullValueExcludeItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_items"); else _explicitNullProperties?.Remove("exclude_items"); } }
+        private List<string>? _explicitNullValueExcludeItems = default!;
 #nullable restore
 #else
-        public List<string> ExcludeItems { get; set; }
+        public List<string> ExcludeItems { get => _explicitNullValueExcludeItems; set { _explicitNullValueExcludeItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_items"); else _explicitNullProperties?.Remove("exclude_items"); } }
+        private List<string> _explicitNullValueExcludeItems = default!;
 #endif
         /// <summary>List of path patterns to include. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /blog/** matches /blog/post and /blog/2024/post). Most accounts have a limit of 10 rules; contact support to raise it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeItems { get; set; }
+        public List<string>? IncludeItems { get => _explicitNullValueIncludeItems; set { _explicitNullValueIncludeItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_items"); else _explicitNullProperties?.Remove("include_items"); } }
+        private List<string>? _explicitNullValueIncludeItems = default!;
 #nullable restore
 #else
-        public List<string> IncludeItems { get; set; }
+        public List<string> IncludeItems { get => _explicitNullValueIncludeItems; set { _explicitNullValueIncludeItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_items"); else _explicitNullProperties?.Remove("include_items"); } }
+        private List<string> _explicitNullValueIncludeItems = default!;
 #endif
         /// <summary>The prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prefix { get; set; }
+        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        private string? _explicitNullValuePrefix = default!;
 #nullable restore
 #else
-        public string Prefix { get; set; }
+        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        private string _explicitNullValuePrefix = default!;
 #endif
         /// <summary>The r2_jurisdiction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? R2Jurisdiction { get; set; }
+        public string? R2Jurisdiction { get => _explicitNullValueR2Jurisdiction; set { _explicitNullValueR2Jurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_jurisdiction"); else _explicitNullProperties?.Remove("r2_jurisdiction"); } }
+        private string? _explicitNullValueR2Jurisdiction = default!;
 #nullable restore
 #else
-        public string R2Jurisdiction { get; set; }
+        public string R2Jurisdiction { get => _explicitNullValueR2Jurisdiction; set { _explicitNullValueR2Jurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_jurisdiction"); else _explicitNullProperties?.Remove("r2_jurisdiction"); } }
+        private string _explicitNullValueR2Jurisdiction = default!;
 #endif
         /// <summary>The web_crawler property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawler? WebCrawler { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawler? WebCrawler { get => _explicitNullValueWebCrawler; set { _explicitNullValueWebCrawler = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_crawler"); else _explicitNullProperties?.Remove("web_crawler"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawler? _explicitNullValueWebCrawler = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawler WebCrawler { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawler WebCrawler { get => _explicitNullValueWebCrawler; set { _explicitNullValueWebCrawler = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_crawler"); else _explicitNullProperties?.Remove("web_crawler"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawler _explicitNullValueWebCrawler = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParams"/> and sets the default values.
@@ -70,7 +92,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParams CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParams();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParams(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("prefix", Prefix);
             writer.WriteStringValue("r2_jurisdiction", R2Jurisdiction);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawler>("web_crawler", WebCrawler);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,128 +11,180 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostTakedownLetterCreateRequestFields : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("discoveryDate") is { } nullNodeDiscoveryDate && nullNodeDiscoveryDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscoveryDate = null;
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("generationDate") is { } nullNodeGenerationDate && nullNodeGenerationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationDate = null;
+            if (parseNode.GetChildNode("jurisdiction") is { } nullNodeJurisdiction && nullNodeJurisdiction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jurisdiction = null;
+            if (parseNode.GetChildNode("registrantEmail") is { } nullNodeRegistrantEmail && nullNodeRegistrantEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrantEmail = null;
+            if (parseNode.GetChildNode("registrar") is { } nullNodeRegistrar && nullNodeRegistrar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registrar = null;
+            if (parseNode.GetChildNode("registrarEmail") is { } nullNodeRegistrarEmail && nullNodeRegistrarEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrarEmail = null;
+            if (parseNode.GetChildNode("resolutionByDate") is { } nullNodeResolutionByDate && nullNodeResolutionByDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolutionByDate = null;
+            if (parseNode.GetChildNode("senderCompany") is { } nullNodeSenderCompany && nullNodeSenderCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SenderCompany = null;
+            if (parseNode.GetChildNode("senderEmail") is { } nullNodeSenderEmail && nullNodeSenderEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SenderEmail = null;
+            if (parseNode.GetChildNode("senderName") is { } nullNodeSenderName && nullNodeSenderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SenderName = null;
+            if (parseNode.GetChildNode("senderTitle") is { } nullNodeSenderTitle && nullNodeSenderTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SenderTitle = null;
+            if (parseNode.GetChildNode("trademarkName") is { } nullNodeTrademarkName && nullNodeTrademarkName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrademarkName = null;
+            if (parseNode.GetChildNode("trademarkNumber") is { } nullNodeTrademarkNumber && nullNodeTrademarkNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrademarkNumber = null;
+            if (parseNode.GetChildNode("trademarkOwner") is { } nullNodeTrademarkOwner && nullNodeTrademarkOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrademarkOwner = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The discoveryDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DiscoveryDate { get; set; }
+        public string? DiscoveryDate { get => _explicitNullValueDiscoveryDate; set { _explicitNullValueDiscoveryDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoveryDate"); else _explicitNullProperties?.Remove("discoveryDate"); } }
+        private string? _explicitNullValueDiscoveryDate = default!;
 #nullable restore
 #else
-        public string DiscoveryDate { get; set; }
+        public string DiscoveryDate { get => _explicitNullValueDiscoveryDate; set { _explicitNullValueDiscoveryDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoveryDate"); else _explicitNullProperties?.Remove("discoveryDate"); } }
+        private string _explicitNullValueDiscoveryDate = default!;
 #endif
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>The generationDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GenerationDate { get; set; }
+        public string? GenerationDate { get => _explicitNullValueGenerationDate; set { _explicitNullValueGenerationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationDate"); else _explicitNullProperties?.Remove("generationDate"); } }
+        private string? _explicitNullValueGenerationDate = default!;
 #nullable restore
 #else
-        public string GenerationDate { get; set; }
+        public string GenerationDate { get => _explicitNullValueGenerationDate; set { _explicitNullValueGenerationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationDate"); else _explicitNullProperties?.Remove("generationDate"); } }
+        private string _explicitNullValueGenerationDate = default!;
 #endif
         /// <summary>The jurisdiction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Jurisdiction { get; set; }
+        public string? Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
+        private string? _explicitNullValueJurisdiction = default!;
 #nullable restore
 #else
-        public string Jurisdiction { get; set; }
+        public string Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
+        private string _explicitNullValueJurisdiction = default!;
 #endif
         /// <summary>The registrantEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrantEmail { get; set; }
+        public string? RegistrantEmail { get => _explicitNullValueRegistrantEmail; set { _explicitNullValueRegistrantEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrantEmail"); else _explicitNullProperties?.Remove("registrantEmail"); } }
+        private string? _explicitNullValueRegistrantEmail = default!;
 #nullable restore
 #else
-        public string RegistrantEmail { get; set; }
+        public string RegistrantEmail { get => _explicitNullValueRegistrantEmail; set { _explicitNullValueRegistrantEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrantEmail"); else _explicitNullProperties?.Remove("registrantEmail"); } }
+        private string _explicitNullValueRegistrantEmail = default!;
 #endif
         /// <summary>The registrar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Registrar { get; set; }
+        public string? Registrar { get => _explicitNullValueRegistrar; set { _explicitNullValueRegistrar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrar"); else _explicitNullProperties?.Remove("registrar"); } }
+        private string? _explicitNullValueRegistrar = default!;
 #nullable restore
 #else
-        public string Registrar { get; set; }
+        public string Registrar { get => _explicitNullValueRegistrar; set { _explicitNullValueRegistrar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrar"); else _explicitNullProperties?.Remove("registrar"); } }
+        private string _explicitNullValueRegistrar = default!;
 #endif
         /// <summary>The registrarEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrarEmail { get; set; }
+        public string? RegistrarEmail { get => _explicitNullValueRegistrarEmail; set { _explicitNullValueRegistrarEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrarEmail"); else _explicitNullProperties?.Remove("registrarEmail"); } }
+        private string? _explicitNullValueRegistrarEmail = default!;
 #nullable restore
 #else
-        public string RegistrarEmail { get; set; }
+        public string RegistrarEmail { get => _explicitNullValueRegistrarEmail; set { _explicitNullValueRegistrarEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrarEmail"); else _explicitNullProperties?.Remove("registrarEmail"); } }
+        private string _explicitNullValueRegistrarEmail = default!;
 #endif
         /// <summary>The resolutionByDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResolutionByDate { get; set; }
+        public string? ResolutionByDate { get => _explicitNullValueResolutionByDate; set { _explicitNullValueResolutionByDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolutionByDate"); else _explicitNullProperties?.Remove("resolutionByDate"); } }
+        private string? _explicitNullValueResolutionByDate = default!;
 #nullable restore
 #else
-        public string ResolutionByDate { get; set; }
+        public string ResolutionByDate { get => _explicitNullValueResolutionByDate; set { _explicitNullValueResolutionByDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolutionByDate"); else _explicitNullProperties?.Remove("resolutionByDate"); } }
+        private string _explicitNullValueResolutionByDate = default!;
 #endif
         /// <summary>The senderCompany property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderCompany { get; set; }
+        public string? SenderCompany { get => _explicitNullValueSenderCompany; set { _explicitNullValueSenderCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("senderCompany"); else _explicitNullProperties?.Remove("senderCompany"); } }
+        private string? _explicitNullValueSenderCompany = default!;
 #nullable restore
 #else
-        public string SenderCompany { get; set; }
+        public string SenderCompany { get => _explicitNullValueSenderCompany; set { _explicitNullValueSenderCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("senderCompany"); else _explicitNullProperties?.Remove("senderCompany"); } }
+        private string _explicitNullValueSenderCompany = default!;
 #endif
         /// <summary>The senderEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderEmail { get; set; }
+        public string? SenderEmail { get => _explicitNullValueSenderEmail; set { _explicitNullValueSenderEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("senderEmail"); else _explicitNullProperties?.Remove("senderEmail"); } }
+        private string? _explicitNullValueSenderEmail = default!;
 #nullable restore
 #else
-        public string SenderEmail { get; set; }
+        public string SenderEmail { get => _explicitNullValueSenderEmail; set { _explicitNullValueSenderEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("senderEmail"); else _explicitNullProperties?.Remove("senderEmail"); } }
+        private string _explicitNullValueSenderEmail = default!;
 #endif
         /// <summary>The senderName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderName { get; set; }
+        public string? SenderName { get => _explicitNullValueSenderName; set { _explicitNullValueSenderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("senderName"); else _explicitNullProperties?.Remove("senderName"); } }
+        private string? _explicitNullValueSenderName = default!;
 #nullable restore
 #else
-        public string SenderName { get; set; }
+        public string SenderName { get => _explicitNullValueSenderName; set { _explicitNullValueSenderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("senderName"); else _explicitNullProperties?.Remove("senderName"); } }
+        private string _explicitNullValueSenderName = default!;
 #endif
         /// <summary>The senderTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderTitle { get; set; }
+        public string? SenderTitle { get => _explicitNullValueSenderTitle; set { _explicitNullValueSenderTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("senderTitle"); else _explicitNullProperties?.Remove("senderTitle"); } }
+        private string? _explicitNullValueSenderTitle = default!;
 #nullable restore
 #else
-        public string SenderTitle { get; set; }
+        public string SenderTitle { get => _explicitNullValueSenderTitle; set { _explicitNullValueSenderTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("senderTitle"); else _explicitNullProperties?.Remove("senderTitle"); } }
+        private string _explicitNullValueSenderTitle = default!;
 #endif
         /// <summary>The trademarkName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrademarkName { get; set; }
+        public string? TrademarkName { get => _explicitNullValueTrademarkName; set { _explicitNullValueTrademarkName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademarkName"); else _explicitNullProperties?.Remove("trademarkName"); } }
+        private string? _explicitNullValueTrademarkName = default!;
 #nullable restore
 #else
-        public string TrademarkName { get; set; }
+        public string TrademarkName { get => _explicitNullValueTrademarkName; set { _explicitNullValueTrademarkName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademarkName"); else _explicitNullProperties?.Remove("trademarkName"); } }
+        private string _explicitNullValueTrademarkName = default!;
 #endif
         /// <summary>The trademarkNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrademarkNumber { get; set; }
+        public string? TrademarkNumber { get => _explicitNullValueTrademarkNumber; set { _explicitNullValueTrademarkNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademarkNumber"); else _explicitNullProperties?.Remove("trademarkNumber"); } }
+        private string? _explicitNullValueTrademarkNumber = default!;
 #nullable restore
 #else
-        public string TrademarkNumber { get; set; }
+        public string TrademarkNumber { get => _explicitNullValueTrademarkNumber; set { _explicitNullValueTrademarkNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademarkNumber"); else _explicitNullProperties?.Remove("trademarkNumber"); } }
+        private string _explicitNullValueTrademarkNumber = default!;
 #endif
         /// <summary>The trademarkOwner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrademarkOwner { get; set; }
+        public string? TrademarkOwner { get => _explicitNullValueTrademarkOwner; set { _explicitNullValueTrademarkOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademarkOwner"); else _explicitNullProperties?.Remove("trademarkOwner"); } }
+        private string? _explicitNullValueTrademarkOwner = default!;
 #nullable restore
 #else
-        public string TrademarkOwner { get; set; }
+        public string TrademarkOwner { get => _explicitNullValueTrademarkOwner; set { _explicitNullValueTrademarkOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademarkOwner"); else _explicitNullProperties?.Remove("trademarkOwner"); } }
+        private string _explicitNullValueTrademarkOwner = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostTakedownLetterCreateRequestFields"/> and sets the default values.
@@ -149,7 +201,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostTakedownLetterCreateRequestFields CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostTakedownLetterCreateRequestFields();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostTakedownLetterCreateRequestFields(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -198,6 +250,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("trademarkName", TrademarkName);
             writer.WriteStringValue("trademarkNumber", TrademarkNumber);
             writer.WriteStringValue("trademarkOwner", TrademarkOwner);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

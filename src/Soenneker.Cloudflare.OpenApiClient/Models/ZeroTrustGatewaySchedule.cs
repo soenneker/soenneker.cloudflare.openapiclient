@@ -12,72 +12,103 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGatewaySchedule : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fri") is { } nullNodeFri && nullNodeFri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fri = null;
+            if (parseNode.GetChildNode("mon") is { } nullNodeMon && nullNodeMon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mon = null;
+            if (parseNode.GetChildNode("sat") is { } nullNodeSat && nullNodeSat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sat = null;
+            if (parseNode.GetChildNode("sun") is { } nullNodeSun && nullNodeSun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sun = null;
+            if (parseNode.GetChildNode("thu") is { } nullNodeThu && nullNodeThu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Thu = null;
+            if (parseNode.GetChildNode("time_zone") is { } nullNodeTimeZone && nullNodeTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZone = null;
+            if (parseNode.GetChildNode("tue") is { } nullNodeTue && nullNodeTue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tue = null;
+            if (parseNode.GetChildNode("wed") is { } nullNodeWed && nullNodeWed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wed = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the time intervals when the rule is active on Fridays, in the increasing order from 00:00-24:00.  If this parameter omitted, the rule is deactivated on Fridays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fri { get; set; }
+        public string? Fri { get => _explicitNullValueFri; set { _explicitNullValueFri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fri"); else _explicitNullProperties?.Remove("fri"); } }
+        private string? _explicitNullValueFri = default!;
 #nullable restore
 #else
-        public string Fri { get; set; }
+        public string Fri { get => _explicitNullValueFri; set { _explicitNullValueFri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fri"); else _explicitNullProperties?.Remove("fri"); } }
+        private string _explicitNullValueFri = default!;
 #endif
         /// <summary>Specify the time intervals when the rule is active on Mondays, in the increasing order from 00:00-24:00(capped at maximum of 6 time splits). If this parameter omitted, the rule is deactivated on Mondays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mon { get; set; }
+        public string? Mon { get => _explicitNullValueMon; set { _explicitNullValueMon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mon"); else _explicitNullProperties?.Remove("mon"); } }
+        private string? _explicitNullValueMon = default!;
 #nullable restore
 #else
-        public string Mon { get; set; }
+        public string Mon { get => _explicitNullValueMon; set { _explicitNullValueMon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mon"); else _explicitNullProperties?.Remove("mon"); } }
+        private string _explicitNullValueMon = default!;
 #endif
         /// <summary>Specify the time intervals when the rule is active on Saturdays, in the increasing order from 00:00-24:00.  If this parameter omitted, the rule is deactivated on Saturdays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sat { get; set; }
+        public string? Sat { get => _explicitNullValueSat; set { _explicitNullValueSat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sat"); else _explicitNullProperties?.Remove("sat"); } }
+        private string? _explicitNullValueSat = default!;
 #nullable restore
 #else
-        public string Sat { get; set; }
+        public string Sat { get => _explicitNullValueSat; set { _explicitNullValueSat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sat"); else _explicitNullProperties?.Remove("sat"); } }
+        private string _explicitNullValueSat = default!;
 #endif
         /// <summary>Specify the time intervals when the rule is active on Sundays, in the increasing order from 00:00-24:00. If this parameter omitted, the rule is deactivated on Sundays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sun { get; set; }
+        public string? Sun { get => _explicitNullValueSun; set { _explicitNullValueSun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sun"); else _explicitNullProperties?.Remove("sun"); } }
+        private string? _explicitNullValueSun = default!;
 #nullable restore
 #else
-        public string Sun { get; set; }
+        public string Sun { get => _explicitNullValueSun; set { _explicitNullValueSun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sun"); else _explicitNullProperties?.Remove("sun"); } }
+        private string _explicitNullValueSun = default!;
 #endif
         /// <summary>Specify the time intervals when the rule is active on Thursdays, in the increasing order from 00:00-24:00. If this parameter omitted, the rule is deactivated on Thursdays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Thu { get; set; }
+        public string? Thu { get => _explicitNullValueThu; set { _explicitNullValueThu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thu"); else _explicitNullProperties?.Remove("thu"); } }
+        private string? _explicitNullValueThu = default!;
 #nullable restore
 #else
-        public string Thu { get; set; }
+        public string Thu { get => _explicitNullValueThu; set { _explicitNullValueThu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thu"); else _explicitNullProperties?.Remove("thu"); } }
+        private string _explicitNullValueThu = default!;
 #endif
         /// <summary>Specify the time zone for rule evaluation. When a [valid time zone city name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) is provided, Gateway always uses the current time for that time zone. When this parameter is omitted, Gateway uses the time zone determined from the user&apos;s IP address. Colo time zone is used when the user&apos;s IP address does not resolve to a location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone { get; set; }
+        public string? TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone"); else _explicitNullProperties?.Remove("time_zone"); } }
+        private string? _explicitNullValueTimeZone = default!;
 #nullable restore
 #else
-        public string TimeZone { get; set; }
+        public string TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone"); else _explicitNullProperties?.Remove("time_zone"); } }
+        private string _explicitNullValueTimeZone = default!;
 #endif
         /// <summary>Specify the time intervals when the rule is active on Tuesdays, in the increasing order from 00:00-24:00. If this parameter omitted, the rule is deactivated on Tuesdays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tue { get; set; }
+        public string? Tue { get => _explicitNullValueTue; set { _explicitNullValueTue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tue"); else _explicitNullProperties?.Remove("tue"); } }
+        private string? _explicitNullValueTue = default!;
 #nullable restore
 #else
-        public string Tue { get; set; }
+        public string Tue { get => _explicitNullValueTue; set { _explicitNullValueTue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tue"); else _explicitNullProperties?.Remove("tue"); } }
+        private string _explicitNullValueTue = default!;
 #endif
         /// <summary>Specify the time intervals when the rule is active on Wednesdays, in the increasing order from 00:00-24:00. If this parameter omitted, the rule is deactivated on Wednesdays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Wed { get; set; }
+        public string? Wed { get => _explicitNullValueWed; set { _explicitNullValueWed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wed"); else _explicitNullProperties?.Remove("wed"); } }
+        private string? _explicitNullValueWed = default!;
 #nullable restore
 #else
-        public string Wed { get; set; }
+        public string Wed { get => _explicitNullValueWed; set { _explicitNullValueWed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wed"); else _explicitNullProperties?.Remove("wed"); } }
+        private string _explicitNullValueWed = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySchedule"/> and sets the default values.
@@ -94,7 +125,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySchedule();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySchedule(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,6 +162,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("time_zone", TimeZone);
             writer.WriteStringValue("tue", Tue);
             writer.WriteStringValue("wed", Wed);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

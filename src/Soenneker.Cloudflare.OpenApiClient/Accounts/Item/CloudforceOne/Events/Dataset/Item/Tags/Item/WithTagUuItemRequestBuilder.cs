@@ -16,6 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
     public partial class WithTagUuItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The indicators property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Tags.Item.Indicators.IndicatorsRequestBuilder Indicators
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Tags.Item.Indicators.IndicatorsRequestBuilder(PathParameters, RequestAdapter);

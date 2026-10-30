@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.ClientVersion
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListClientTargetEnvironments200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListClientTargetEnvironments200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

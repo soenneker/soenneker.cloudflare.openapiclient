@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetHttpTimeseriesGroupByPostQuantum200ResponseResultSerie0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("NOT_SUPPORTED") is { } nullNodeNOTSUPPORTED && nullNodeNOTSUPPORTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTSUPPORTED = null;
+            if (parseNode.GetChildNode("SUPPORTED") is { } nullNodeSUPPORTED && nullNodeSUPPORTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SUPPORTED = null;
+            if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The NOT_SUPPORTED property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NOTSUPPORTED { get; set; }
+        public List<string>? NOTSUPPORTED { get => _explicitNullValueNOTSUPPORTED; set { _explicitNullValueNOTSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SUPPORTED"); else _explicitNullProperties?.Remove("NOT_SUPPORTED"); } }
+        private List<string>? _explicitNullValueNOTSUPPORTED = default!;
 #nullable restore
 #else
-        public List<string> NOTSUPPORTED { get; set; }
+        public List<string> NOTSUPPORTED { get => _explicitNullValueNOTSUPPORTED; set { _explicitNullValueNOTSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SUPPORTED"); else _explicitNullProperties?.Remove("NOT_SUPPORTED"); } }
+        private List<string> _explicitNullValueNOTSUPPORTED = default!;
 #endif
         /// <summary>The SUPPORTED property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SUPPORTED { get; set; }
+        public List<string>? SUPPORTED { get => _explicitNullValueSUPPORTED; set { _explicitNullValueSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SUPPORTED"); else _explicitNullProperties?.Remove("SUPPORTED"); } }
+        private List<string>? _explicitNullValueSUPPORTED = default!;
 #nullable restore
 #else
-        public List<string> SUPPORTED { get; set; }
+        public List<string> SUPPORTED { get => _explicitNullValueSUPPORTED; set { _explicitNullValueSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SUPPORTED"); else _explicitNullProperties?.Remove("SUPPORTED"); } }
+        private List<string> _explicitNullValueSUPPORTED = default!;
 #endif
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DateTimeOffset?>? Timestamps { get; set; }
+        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        private List<DateTimeOffset?>? _explicitNullValueTimestamps = default!;
 #nullable restore
 #else
-        public List<DateTimeOffset?> Timestamps { get; set; }
+        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        private List<DateTimeOffset?> _explicitNullValueTimestamps = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTimeseriesGroupByPostQuantum200ResponseResultSerie0"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTimeseriesGroupByPostQuantum200ResponseResultSerie0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTimeseriesGroupByPostQuantum200ResponseResultSerie0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTimeseriesGroupByPostQuantum200ResponseResultSerie0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("NOT_SUPPORTED", NOTSUPPORTED);
             writer.WriteCollectionOfPrimitiveValues<string>("SUPPORTED", SUPPORTED);
             writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

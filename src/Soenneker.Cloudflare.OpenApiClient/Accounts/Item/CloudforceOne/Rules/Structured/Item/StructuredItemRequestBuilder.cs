@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
         /// <summary>
         /// Delete an existing structured email rule.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneDeleteEmailRuleSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse">When receiving a 400 status code</exception>
@@ -51,11 +51,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalConflictResponse">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneSuccessResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneDeleteEmailRuleSuccessResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneSuccessResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneDeleteEmailRuleSuccessResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -65,8 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalConflictResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneSuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneDeleteEmailRuleSuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneDeleteEmailRuleSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a structured email rule by ID.
@@ -90,13 +92,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates an existing structured email rule.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneUpdateEmailRuleSuccessResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,11 +110,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalConflictResponse">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneUpdateEmailRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneUpdateEmailRuleSuccessResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneUpdateEmailRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneUpdateEmailRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneUpdateEmailRuleSuccessResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneUpdateEmailRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,8 +125,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalConflictResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneUpdateEmailRuleSuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneUpdateEmailRuleSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an existing structured email rule.

@@ -59,6 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Terms
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlGetTermsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlGetTermsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

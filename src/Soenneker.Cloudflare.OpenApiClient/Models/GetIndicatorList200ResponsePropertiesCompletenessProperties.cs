@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetIndicatorList200ResponsePropertiesCompletenessProperties : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("complete") is { } nullNodeComplete && nullNodeComplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Complete = null;
+            if (parseNode.GetChildNode("failedDatasets") is { } nullNodeFailedDatasets && nullNodeFailedDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedDatasets = null;
+            if (parseNode.GetChildNode("failedShards") is { } nullNodeFailedShards && nullNodeFailedShards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedShards = null;
+            if (parseNode.GetChildNode("warnings") is { } nullNodeWarnings && nullNodeWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warnings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The complete property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesComplete? Complete { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesComplete? Complete { get => _explicitNullValueComplete; set { _explicitNullValueComplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complete"); else _explicitNullProperties?.Remove("complete"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesComplete? _explicitNullValueComplete = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesComplete Complete { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesComplete Complete { get => _explicitNullValueComplete; set { _explicitNullValueComplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complete"); else _explicitNullProperties?.Remove("complete"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesComplete _explicitNullValueComplete = default!;
 #endif
         /// <summary>The failedDatasets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedDatasets? FailedDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedDatasets? FailedDatasets { get => _explicitNullValueFailedDatasets; set { _explicitNullValueFailedDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedDatasets"); else _explicitNullProperties?.Remove("failedDatasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedDatasets? _explicitNullValueFailedDatasets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedDatasets FailedDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedDatasets FailedDatasets { get => _explicitNullValueFailedDatasets; set { _explicitNullValueFailedDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedDatasets"); else _explicitNullProperties?.Remove("failedDatasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedDatasets _explicitNullValueFailedDatasets = default!;
 #endif
         /// <summary>The failedShards property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShards? FailedShards { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShards? FailedShards { get => _explicitNullValueFailedShards; set { _explicitNullValueFailedShards = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedShards"); else _explicitNullProperties?.Remove("failedShards"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShards? _explicitNullValueFailedShards = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShards FailedShards { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShards FailedShards { get => _explicitNullValueFailedShards; set { _explicitNullValueFailedShards = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedShards"); else _explicitNullProperties?.Remove("failedShards"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShards _explicitNullValueFailedShards = default!;
 #endif
         /// <summary>The warnings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesWarnings? Warnings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesWarnings? Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesWarnings? _explicitNullValueWarnings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesWarnings Warnings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesWarnings Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesWarnings _explicitNullValueWarnings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessProperties"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessProperties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessProperties();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessProperties(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedDatasets>("failedDatasets", FailedDatasets);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShards>("failedShards", FailedShards);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesWarnings>("warnings", Warnings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

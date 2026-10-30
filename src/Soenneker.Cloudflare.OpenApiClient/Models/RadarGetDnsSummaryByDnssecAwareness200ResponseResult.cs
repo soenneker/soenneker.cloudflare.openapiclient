@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetDnsSummaryByDnssecAwareness200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("summary_0") is { } nullNodeSummary0 && nullNodeSummary0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary0 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Metadata for the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultMeta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultMeta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The summary_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultSummary0? Summary0 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultSummary0? Summary0 { get => _explicitNullValueSummary0; set { _explicitNullValueSummary0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_0"); else _explicitNullProperties?.Remove("summary_0"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultSummary0? _explicitNullValueSummary0 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultSummary0 Summary0 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultSummary0 Summary0 { get => _explicitNullValueSummary0; set { _explicitNullValueSummary0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_0"); else _explicitNullProperties?.Remove("summary_0"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultSummary0 _explicitNullValueSummary0 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResult"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultMeta>("meta", Meta);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssecAwareness200ResponseResultSummary0>("summary_0", Summary0);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

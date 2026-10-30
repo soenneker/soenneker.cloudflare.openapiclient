@@ -54,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summ
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetLeakedCredentialChecksSummaryByBotClass400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetLeakedCredentialChecksSummaryByBotClass200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetLeakedCredentialChecksSummaryByBotClass200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

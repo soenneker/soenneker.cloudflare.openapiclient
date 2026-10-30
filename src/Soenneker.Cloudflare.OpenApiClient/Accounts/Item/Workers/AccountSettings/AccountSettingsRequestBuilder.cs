@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.AccountSettin
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerAccountSettingsFetchWorkerAccountSettings200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerAccountSettingsFetchWorkerAccountSettings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.AccountSettin
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerAccountSettingsCreateWorkerAccountSettings200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerAccountSettingsCreateWorkerAccountSettings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

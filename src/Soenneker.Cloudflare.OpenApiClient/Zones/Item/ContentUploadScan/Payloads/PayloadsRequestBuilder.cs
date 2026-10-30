@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloads
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\content-upload-scan\payloads
+    /// Builds and executes requests for operations under \zones\{zoneId}\content-upload-scan\payloads
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayloadsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloa
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayloadsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/content-upload-scan/payloads", pathParameters)
+        public PayloadsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/content-upload-scan/payloads", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloa
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayloadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/content-upload-scan/payloads", rawUrl)
+        public PayloadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/content-upload-scan/payloads", rawUrl)
         {
         }
         /// <summary>
@@ -66,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloa
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WafContentScanningListCustomScanExpressions4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomScanCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomScanCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -91,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloa
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WafContentScanningAddCustomScanExpressions4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomScanCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomScanCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

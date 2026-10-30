@@ -33,67 +33,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
     public partial class DevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The clientVersions property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.ClientVersions.ClientVersionsRequestBuilder ClientVersions
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.ClientVersions.ClientVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deploymentGroups property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DeploymentGroups.DeploymentGroupsRequestBuilder DeploymentGroups
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DeploymentGroups.DeploymentGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ipProfiles property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.IpProfiles.IpProfilesRequestBuilder IpProfiles
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.IpProfiles.IpProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The networks property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.NetworksRequestBuilder Networks
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.NetworksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The override_codes property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Override_codes.Override_codesRequestBuilder Override_codes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Override_codes.Override_codesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The physicalDevices property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder PhysicalDevices
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policies property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policies.PoliciesRequestBuilder Policies
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policy property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.PolicyRequestBuilder Policy
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.PolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The posture property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture.PostureRequestBuilder Posture
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture.PostureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The registrations property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder Registrations
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resilience property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Resilience.ResilienceRequestBuilder Resilience
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Resilience.ResilienceRequestBuilder(PathParameters, RequestAdapter);
@@ -105,7 +94,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke.RevokeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Settings.SettingsRequestBuilder Settings
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -166,6 +154,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDevicesResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDevicesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

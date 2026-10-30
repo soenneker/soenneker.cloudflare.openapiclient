@@ -12,58 +12,85 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OneIntegrationV2CreateRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("application") is { } nullNodeApplication && nullNodeApplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Application = null;
+            if (parseNode.GetChildNode("auth_method") is { } nullNodeAuthMethod && nullNodeAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthMethod = null;
+            if (parseNode.GetChildNode("credentials") is { } nullNodeCredentials && nullNodeCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credentials = null;
+            if (parseNode.GetChildNode("dlp_profiles") is { } nullNodeDlpProfiles && nullNodeDlpProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DlpProfiles = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
+            if (parseNode.GetChildNode("use_cases") is { } nullNodeUseCases && nullNodeUseCases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCases = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Vendor/application slug (e.g., GOOGLE_WORKSPACE).* `ANTHROPIC` - ANTHROPIC* `AWS` - AWS* `BITBUCKET` - BITBUCKET* `BOX` - BOX* `CONFLUENCE` - CONFLUENCE* `DROPBOX` - DROPBOX* `GITHUB` - GITHUB* `GOOGLE_CLOUD_PLATFORM` - GOOGLE_CLOUD_PLATFORM* `GOOGLE_WORKSPACE` - GOOGLE_WORKSPACE* `JIRA` - JIRA* `MICROSOFT_INTERNAL` - MICROSOFT_INTERNAL* `OPENAI` - OPENAI* `SALESFORCE` - SALESFORCE* `SERVICENOW` - SERVICENOW* `SLACK` - SLACK* `ZOOM` - ZOOM</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestApplication? Application { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestApplication? Application { get => _explicitNullValueApplication; set { _explicitNullValueApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application"); else _explicitNullProperties?.Remove("application"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestApplication? _explicitNullValueApplication = default!;
         /// <summary>Authentication method slug (uses default if omitted).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthMethod { get; set; }
+        public string? AuthMethod { get => _explicitNullValueAuthMethod; set { _explicitNullValueAuthMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_method"); else _explicitNullProperties?.Remove("auth_method"); } }
+        private string? _explicitNullValueAuthMethod = default!;
 #nullable restore
 #else
-        public string AuthMethod { get; set; }
+        public string AuthMethod { get => _explicitNullValueAuthMethod; set { _explicitNullValueAuthMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_method"); else _explicitNullProperties?.Remove("auth_method"); } }
+        private string _explicitNullValueAuthMethod = default!;
 #endif
         /// <summary>Credentials for the integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestCredentialsProperty? Credentials { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestCredentialsProperty? Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestCredentialsProperty? _explicitNullValueCredentials = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestCredentialsProperty Credentials { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestCredentialsProperty Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestCredentialsProperty _explicitNullValueCredentials = default!;
 #endif
         /// <summary>List of DLP profile IDs to associate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? DlpProfiles { get; set; }
+        public List<Guid?>? DlpProfiles { get => _explicitNullValueDlpProfiles; set { _explicitNullValueDlpProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dlp_profiles"); else _explicitNullProperties?.Remove("dlp_profiles"); } }
+        private List<Guid?>? _explicitNullValueDlpProfiles = default!;
 #nullable restore
 #else
-        public List<Guid?> DlpProfiles { get; set; }
+        public List<Guid?> DlpProfiles { get => _explicitNullValueDlpProfiles; set { _explicitNullValueDlpProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dlp_profiles"); else _explicitNullProperties?.Remove("dlp_profiles"); } }
+        private List<Guid?> _explicitNullValueDlpProfiles = default!;
 #endif
         /// <summary>Name of the integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>List of permission scopes (uses policy defaults if empty).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Permissions { get; set; }
+        public List<string>? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<string>? _explicitNullValuePermissions = default!;
 #nullable restore
 #else
-        public List<string> Permissions { get; set; }
+        public List<string> Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<string> _explicitNullValuePermissions = default!;
 #endif
         /// <summary>List of use case or feature slugs to enroll. At least one use case (casb, ces) is required; auto_remediation may be added alongside casb (e.g., [&apos;casb&apos;, &apos;ces&apos;, &apos;auto_remediation&apos;]).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestUseCasesItem?>? UseCases { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestUseCasesItem?>? UseCases { get => _explicitNullValueUseCases; set { _explicitNullValueUseCases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_cases"); else _explicitNullProperties?.Remove("use_cases"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestUseCasesItem?>? _explicitNullValueUseCases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestUseCasesItem?> UseCases { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestUseCasesItem?> UseCases { get => _explicitNullValueUseCases; set { _explicitNullValueUseCases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_cases"); else _explicitNullProperties?.Remove("use_cases"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestUseCasesItem?> _explicitNullValueUseCases = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequest"/> and sets the default values.
@@ -80,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestUseCasesItem>("use_cases", UseCases);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

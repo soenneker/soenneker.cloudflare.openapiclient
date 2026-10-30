@@ -11,101 +11,175 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UrlscannerGetScan200ResponseResultScanPerformanceItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("connectEnd") is { } nullNodeConnectEnd && nullNodeConnectEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectEnd = null;
+            if (parseNode.GetChildNode("connectStart") is { } nullNodeConnectStart && nullNodeConnectStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectStart = null;
+            if (parseNode.GetChildNode("decodedBodySize") is { } nullNodeDecodedBodySize && nullNodeDecodedBodySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecodedBodySize = null;
+            if (parseNode.GetChildNode("domainLookupEnd") is { } nullNodeDomainLookupEnd && nullNodeDomainLookupEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainLookupEnd = null;
+            if (parseNode.GetChildNode("domainLookupStart") is { } nullNodeDomainLookupStart && nullNodeDomainLookupStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainLookupStart = null;
+            if (parseNode.GetChildNode("domComplete") is { } nullNodeDomComplete && nullNodeDomComplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomComplete = null;
+            if (parseNode.GetChildNode("domContentLoadedEventEnd") is { } nullNodeDomContentLoadedEventEnd && nullNodeDomContentLoadedEventEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomContentLoadedEventEnd = null;
+            if (parseNode.GetChildNode("domContentLoadedEventStart") is { } nullNodeDomContentLoadedEventStart && nullNodeDomContentLoadedEventStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomContentLoadedEventStart = null;
+            if (parseNode.GetChildNode("domInteractive") is { } nullNodeDomInteractive && nullNodeDomInteractive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomInteractive = null;
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("encodedBodySize") is { } nullNodeEncodedBodySize && nullNodeEncodedBodySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodedBodySize = null;
+            if (parseNode.GetChildNode("entryType") is { } nullNodeEntryType && nullNodeEntryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryType = null;
+            if (parseNode.GetChildNode("fetchStart") is { } nullNodeFetchStart && nullNodeFetchStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FetchStart = null;
+            if (parseNode.GetChildNode("initiatorType") is { } nullNodeInitiatorType && nullNodeInitiatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitiatorType = null;
+            if (parseNode.GetChildNode("loadEventEnd") is { } nullNodeLoadEventEnd && nullNodeLoadEventEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadEventEnd = null;
+            if (parseNode.GetChildNode("loadEventStart") is { } nullNodeLoadEventStart && nullNodeLoadEventStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadEventStart = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("nextHopProtocol") is { } nullNodeNextHopProtocol && nullNodeNextHopProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextHopProtocol = null;
+            if (parseNode.GetChildNode("redirectCount") is { } nullNodeRedirectCount && nullNodeRedirectCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectCount = null;
+            if (parseNode.GetChildNode("redirectEnd") is { } nullNodeRedirectEnd && nullNodeRedirectEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectEnd = null;
+            if (parseNode.GetChildNode("redirectStart") is { } nullNodeRedirectStart && nullNodeRedirectStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectStart = null;
+            if (parseNode.GetChildNode("requestStart") is { } nullNodeRequestStart && nullNodeRequestStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestStart = null;
+            if (parseNode.GetChildNode("responseEnd") is { } nullNodeResponseEnd && nullNodeResponseEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseEnd = null;
+            if (parseNode.GetChildNode("responseStart") is { } nullNodeResponseStart && nullNodeResponseStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseStart = null;
+            if (parseNode.GetChildNode("secureConnectionStart") is { } nullNodeSecureConnectionStart && nullNodeSecureConnectionStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecureConnectionStart = null;
+            if (parseNode.GetChildNode("startTime") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+            if (parseNode.GetChildNode("transferSize") is { } nullNodeTransferSize && nullNodeTransferSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferSize = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("unloadEventEnd") is { } nullNodeUnloadEventEnd && nullNodeUnloadEventEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnloadEventEnd = null;
+            if (parseNode.GetChildNode("unloadEventStart") is { } nullNodeUnloadEventStart && nullNodeUnloadEventStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnloadEventStart = null;
+            if (parseNode.GetChildNode("workerStart") is { } nullNodeWorkerStart && nullNodeWorkerStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerStart = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The connectEnd property</summary>
-        public double? ConnectEnd { get; set; }
+        public double? ConnectEnd { get => _explicitNullValueConnectEnd; set { _explicitNullValueConnectEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectEnd"); else _explicitNullProperties?.Remove("connectEnd"); } }
+        private double? _explicitNullValueConnectEnd = default!;
         /// <summary>The connectStart property</summary>
-        public double? ConnectStart { get; set; }
+        public double? ConnectStart { get => _explicitNullValueConnectStart; set { _explicitNullValueConnectStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectStart"); else _explicitNullProperties?.Remove("connectStart"); } }
+        private double? _explicitNullValueConnectStart = default!;
         /// <summary>The decodedBodySize property</summary>
-        public double? DecodedBodySize { get; set; }
+        public double? DecodedBodySize { get => _explicitNullValueDecodedBodySize; set { _explicitNullValueDecodedBodySize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decodedBodySize"); else _explicitNullProperties?.Remove("decodedBodySize"); } }
+        private double? _explicitNullValueDecodedBodySize = default!;
         /// <summary>The domainLookupEnd property</summary>
-        public double? DomainLookupEnd { get; set; }
+        public double? DomainLookupEnd { get => _explicitNullValueDomainLookupEnd; set { _explicitNullValueDomainLookupEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainLookupEnd"); else _explicitNullProperties?.Remove("domainLookupEnd"); } }
+        private double? _explicitNullValueDomainLookupEnd = default!;
         /// <summary>The domainLookupStart property</summary>
-        public double? DomainLookupStart { get; set; }
+        public double? DomainLookupStart { get => _explicitNullValueDomainLookupStart; set { _explicitNullValueDomainLookupStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainLookupStart"); else _explicitNullProperties?.Remove("domainLookupStart"); } }
+        private double? _explicitNullValueDomainLookupStart = default!;
         /// <summary>The domComplete property</summary>
-        public double? DomComplete { get; set; }
+        public double? DomComplete { get => _explicitNullValueDomComplete; set { _explicitNullValueDomComplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domComplete"); else _explicitNullProperties?.Remove("domComplete"); } }
+        private double? _explicitNullValueDomComplete = default!;
         /// <summary>The domContentLoadedEventEnd property</summary>
-        public double? DomContentLoadedEventEnd { get; set; }
+        public double? DomContentLoadedEventEnd { get => _explicitNullValueDomContentLoadedEventEnd; set { _explicitNullValueDomContentLoadedEventEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domContentLoadedEventEnd"); else _explicitNullProperties?.Remove("domContentLoadedEventEnd"); } }
+        private double? _explicitNullValueDomContentLoadedEventEnd = default!;
         /// <summary>The domContentLoadedEventStart property</summary>
-        public double? DomContentLoadedEventStart { get; set; }
+        public double? DomContentLoadedEventStart { get => _explicitNullValueDomContentLoadedEventStart; set { _explicitNullValueDomContentLoadedEventStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domContentLoadedEventStart"); else _explicitNullProperties?.Remove("domContentLoadedEventStart"); } }
+        private double? _explicitNullValueDomContentLoadedEventStart = default!;
         /// <summary>The domInteractive property</summary>
-        public double? DomInteractive { get; set; }
+        public double? DomInteractive { get => _explicitNullValueDomInteractive; set { _explicitNullValueDomInteractive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domInteractive"); else _explicitNullProperties?.Remove("domInteractive"); } }
+        private double? _explicitNullValueDomInteractive = default!;
         /// <summary>The duration property</summary>
-        public double? Duration { get; set; }
+        public double? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private double? _explicitNullValueDuration = default!;
         /// <summary>The encodedBodySize property</summary>
-        public double? EncodedBodySize { get; set; }
+        public double? EncodedBodySize { get => _explicitNullValueEncodedBodySize; set { _explicitNullValueEncodedBodySize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encodedBodySize"); else _explicitNullProperties?.Remove("encodedBodySize"); } }
+        private double? _explicitNullValueEncodedBodySize = default!;
         /// <summary>The entryType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntryType { get; set; }
+        public string? EntryType { get => _explicitNullValueEntryType; set { _explicitNullValueEntryType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryType"); else _explicitNullProperties?.Remove("entryType"); } }
+        private string? _explicitNullValueEntryType = default!;
 #nullable restore
 #else
-        public string EntryType { get; set; }
+        public string EntryType { get => _explicitNullValueEntryType; set { _explicitNullValueEntryType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryType"); else _explicitNullProperties?.Remove("entryType"); } }
+        private string _explicitNullValueEntryType = default!;
 #endif
         /// <summary>The fetchStart property</summary>
-        public double? FetchStart { get; set; }
+        public double? FetchStart { get => _explicitNullValueFetchStart; set { _explicitNullValueFetchStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetchStart"); else _explicitNullProperties?.Remove("fetchStart"); } }
+        private double? _explicitNullValueFetchStart = default!;
         /// <summary>The initiatorType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitiatorType { get; set; }
+        public string? InitiatorType { get => _explicitNullValueInitiatorType; set { _explicitNullValueInitiatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiatorType"); else _explicitNullProperties?.Remove("initiatorType"); } }
+        private string? _explicitNullValueInitiatorType = default!;
 #nullable restore
 #else
-        public string InitiatorType { get; set; }
+        public string InitiatorType { get => _explicitNullValueInitiatorType; set { _explicitNullValueInitiatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiatorType"); else _explicitNullProperties?.Remove("initiatorType"); } }
+        private string _explicitNullValueInitiatorType = default!;
 #endif
         /// <summary>The loadEventEnd property</summary>
-        public double? LoadEventEnd { get; set; }
+        public double? LoadEventEnd { get => _explicitNullValueLoadEventEnd; set { _explicitNullValueLoadEventEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loadEventEnd"); else _explicitNullProperties?.Remove("loadEventEnd"); } }
+        private double? _explicitNullValueLoadEventEnd = default!;
         /// <summary>The loadEventStart property</summary>
-        public double? LoadEventStart { get; set; }
+        public double? LoadEventStart { get => _explicitNullValueLoadEventStart; set { _explicitNullValueLoadEventStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loadEventStart"); else _explicitNullProperties?.Remove("loadEventStart"); } }
+        private double? _explicitNullValueLoadEventStart = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The nextHopProtocol property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextHopProtocol { get; set; }
+        public string? NextHopProtocol { get => _explicitNullValueNextHopProtocol; set { _explicitNullValueNextHopProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextHopProtocol"); else _explicitNullProperties?.Remove("nextHopProtocol"); } }
+        private string? _explicitNullValueNextHopProtocol = default!;
 #nullable restore
 #else
-        public string NextHopProtocol { get; set; }
+        public string NextHopProtocol { get => _explicitNullValueNextHopProtocol; set { _explicitNullValueNextHopProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextHopProtocol"); else _explicitNullProperties?.Remove("nextHopProtocol"); } }
+        private string _explicitNullValueNextHopProtocol = default!;
 #endif
         /// <summary>The redirectCount property</summary>
-        public double? RedirectCount { get; set; }
+        public double? RedirectCount { get => _explicitNullValueRedirectCount; set { _explicitNullValueRedirectCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectCount"); else _explicitNullProperties?.Remove("redirectCount"); } }
+        private double? _explicitNullValueRedirectCount = default!;
         /// <summary>The redirectEnd property</summary>
-        public double? RedirectEnd { get; set; }
+        public double? RedirectEnd { get => _explicitNullValueRedirectEnd; set { _explicitNullValueRedirectEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectEnd"); else _explicitNullProperties?.Remove("redirectEnd"); } }
+        private double? _explicitNullValueRedirectEnd = default!;
         /// <summary>The redirectStart property</summary>
-        public double? RedirectStart { get; set; }
+        public double? RedirectStart { get => _explicitNullValueRedirectStart; set { _explicitNullValueRedirectStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectStart"); else _explicitNullProperties?.Remove("redirectStart"); } }
+        private double? _explicitNullValueRedirectStart = default!;
         /// <summary>The requestStart property</summary>
-        public double? RequestStart { get; set; }
+        public double? RequestStart { get => _explicitNullValueRequestStart; set { _explicitNullValueRequestStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestStart"); else _explicitNullProperties?.Remove("requestStart"); } }
+        private double? _explicitNullValueRequestStart = default!;
         /// <summary>The responseEnd property</summary>
-        public double? ResponseEnd { get; set; }
+        public double? ResponseEnd { get => _explicitNullValueResponseEnd; set { _explicitNullValueResponseEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseEnd"); else _explicitNullProperties?.Remove("responseEnd"); } }
+        private double? _explicitNullValueResponseEnd = default!;
         /// <summary>The responseStart property</summary>
-        public double? ResponseStart { get; set; }
+        public double? ResponseStart { get => _explicitNullValueResponseStart; set { _explicitNullValueResponseStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseStart"); else _explicitNullProperties?.Remove("responseStart"); } }
+        private double? _explicitNullValueResponseStart = default!;
         /// <summary>The secureConnectionStart property</summary>
-        public double? SecureConnectionStart { get; set; }
+        public double? SecureConnectionStart { get => _explicitNullValueSecureConnectionStart; set { _explicitNullValueSecureConnectionStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secureConnectionStart"); else _explicitNullProperties?.Remove("secureConnectionStart"); } }
+        private double? _explicitNullValueSecureConnectionStart = default!;
         /// <summary>The startTime property</summary>
-        public double? StartTime { get; set; }
+        public double? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startTime"); else _explicitNullProperties?.Remove("startTime"); } }
+        private double? _explicitNullValueStartTime = default!;
         /// <summary>The transferSize property</summary>
-        public double? TransferSize { get; set; }
+        public double? TransferSize { get => _explicitNullValueTransferSize; set { _explicitNullValueTransferSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferSize"); else _explicitNullProperties?.Remove("transferSize"); } }
+        private double? _explicitNullValueTransferSize = default!;
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>The unloadEventEnd property</summary>
-        public double? UnloadEventEnd { get; set; }
+        public double? UnloadEventEnd { get => _explicitNullValueUnloadEventEnd; set { _explicitNullValueUnloadEventEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unloadEventEnd"); else _explicitNullProperties?.Remove("unloadEventEnd"); } }
+        private double? _explicitNullValueUnloadEventEnd = default!;
         /// <summary>The unloadEventStart property</summary>
-        public double? UnloadEventStart { get; set; }
+        public double? UnloadEventStart { get => _explicitNullValueUnloadEventStart; set { _explicitNullValueUnloadEventStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unloadEventStart"); else _explicitNullProperties?.Remove("unloadEventStart"); } }
+        private double? _explicitNullValueUnloadEventStart = default!;
         /// <summary>The workerStart property</summary>
-        public double? WorkerStart { get; set; }
+        public double? WorkerStart { get => _explicitNullValueWorkerStart; set { _explicitNullValueWorkerStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workerStart"); else _explicitNullProperties?.Remove("workerStart"); } }
+        private double? _explicitNullValueWorkerStart = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanPerformanceItem"/> and sets the default values.
         /// </summary>
@@ -121,7 +195,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanPerformanceItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanPerformanceItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanPerformanceItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -202,6 +276,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("unloadEventEnd", UnloadEventEnd);
             writer.WriteDoubleValue("unloadEventStart", UnloadEventStart);
             writer.WriteDoubleValue("workerStart", WorkerStart);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

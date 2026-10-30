@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class IntelSchemasIp : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("belongs_to_ref") is { } nullNodeBelongsToRef && nullNodeBelongsToRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BelongsToRef = null;
+            if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
+            if (parseNode.GetChildNode("risk_types") is { } nullNodeRiskTypes && nullNodeRiskTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskTypes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies a reference to the autonomous systems (AS) that the IP address belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpBelongsToRef? BelongsToRef { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpBelongsToRef? BelongsToRef { get => _explicitNullValueBelongsToRef; set { _explicitNullValueBelongsToRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("belongs_to_ref"); else _explicitNullProperties?.Remove("belongs_to_ref"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpBelongsToRef? _explicitNullValueBelongsToRef = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpBelongsToRef BelongsToRef { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpBelongsToRef BelongsToRef { get => _explicitNullValueBelongsToRef; set { _explicitNullValueBelongsToRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("belongs_to_ref"); else _explicitNullProperties?.Remove("belongs_to_ref"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpBelongsToRef _explicitNullValueBelongsToRef = default!;
 #endif
         /// <summary>The ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelIp? Ip { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelIp? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelIp? _explicitNullValueIp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelIp Ip { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelIp Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelIp _explicitNullValueIp = default!;
 #endif
         /// <summary>The risk_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpRiskTypesItem>? RiskTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpRiskTypesItem>? RiskTypes { get => _explicitNullValueRiskTypes; set { _explicitNullValueRiskTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_types"); else _explicitNullProperties?.Remove("risk_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpRiskTypesItem>? _explicitNullValueRiskTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpRiskTypesItem> RiskTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpRiskTypesItem> RiskTypes { get => _explicitNullValueRiskTypes; set { _explicitNullValueRiskTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_types"); else _explicitNullProperties?.Remove("risk_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpRiskTypesItem> _explicitNullValueRiskTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIp"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpBelongsToRef>("belongs_to_ref", BelongsToRef);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelIp>("ip", Ip);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasIpRiskTypesItem>("risk_types", RiskTypes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

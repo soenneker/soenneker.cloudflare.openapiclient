@@ -11,70 +11,109 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSecurityBulkActionMessageDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action_params") is { } nullNodeActionParams && nullNodeActionParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionParams = null;
+            if (parseNode.GetChildNode("action_type") is { } nullNodeActionType && nullNodeActionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionType = null;
+            if (parseNode.GetChildNode("alert_id") is { } nullNodeAlertId && nullNodeAlertId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertId = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("email_message_id") is { } nullNodeEmailMessageId && nullNodeEmailMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailMessageId = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("message_id") is { } nullNodeMessageId && nullNodeMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageId = null;
+            if (parseNode.GetChildNode("postfix_id") is { } nullNodePostfixId && nullNodePostfixId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostfixId = null;
+            if (parseNode.GetChildNode("processed_at") is { } nullNodeProcessedAt && nullNodeProcessedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessedAt = null;
+            if (parseNode.GetChildNode("retry_after") is { } nullNodeRetryAfter && nullNodeRetryAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryAfter = null;
+            if (parseNode.GetChildNode("retry_count") is { } nullNodeRetryCount && nullNodeRetryCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryCount = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("status_message") is { } nullNodeStatusMessage && nullNodeStatusMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusMessage = null;
+        }
+
         /// <summary>The action_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkMessageActionParams? ActionParams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkMessageActionParams? ActionParams { get => _explicitNullValueActionParams; set { _explicitNullValueActionParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_params"); else _explicitNullProperties?.Remove("action_params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkMessageActionParams? _explicitNullValueActionParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkMessageActionParams ActionParams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkMessageActionParams ActionParams { get => _explicitNullValueActionParams; set { _explicitNullValueActionParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_params"); else _explicitNullProperties?.Remove("action_params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkMessageActionParams _explicitNullValueActionParams = default!;
 #endif
         /// <summary>The action_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageDetailActionType? ActionType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageDetailActionType? ActionType { get => _explicitNullValueActionType; set { _explicitNullValueActionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_type"); else _explicitNullProperties?.Remove("action_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageDetailActionType? _explicitNullValueActionType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alert_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertId { get; set; }
+        public string? AlertId { get => _explicitNullValueAlertId; set { _explicitNullValueAlertId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_id"); else _explicitNullProperties?.Remove("alert_id"); } }
+        private string? _explicitNullValueAlertId = default!;
 #nullable restore
 #else
-        public string AlertId { get; set; }
+        public string AlertId { get => _explicitNullValueAlertId; set { _explicitNullValueAlertId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_id"); else _explicitNullProperties?.Remove("alert_id"); } }
+        private string _explicitNullValueAlertId = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The email_message_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailMessageId { get; set; }
+        public string? EmailMessageId { get => _explicitNullValueEmailMessageId; set { _explicitNullValueEmailMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_message_id"); else _explicitNullProperties?.Remove("email_message_id"); } }
+        private string? _explicitNullValueEmailMessageId = default!;
 #nullable restore
 #else
-        public string EmailMessageId { get; set; }
+        public string EmailMessageId { get => _explicitNullValueEmailMessageId; set { _explicitNullValueEmailMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_message_id"); else _explicitNullProperties?.Remove("email_message_id"); } }
+        private string _explicitNullValueEmailMessageId = default!;
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails? Message { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails Message { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails _explicitNullValueMessage = default!;
 #endif
         /// <summary>The message_id property</summary>
-        public Guid? MessageId { get; set; }
+        public Guid? MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_id"); else _explicitNullProperties?.Remove("message_id"); } }
+        private Guid? _explicitNullValueMessageId = default!;
         /// <summary>The postfix_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostfixId { get; set; }
+        public string? PostfixId { get => _explicitNullValuePostfixId; set { _explicitNullValuePostfixId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postfix_id"); else _explicitNullProperties?.Remove("postfix_id"); } }
+        private string? _explicitNullValuePostfixId = default!;
 #nullable restore
 #else
-        public string PostfixId { get; set; }
+        public string PostfixId { get => _explicitNullValuePostfixId; set { _explicitNullValuePostfixId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postfix_id"); else _explicitNullProperties?.Remove("postfix_id"); } }
+        private string _explicitNullValuePostfixId = default!;
 #endif
         /// <summary>The processed_at property</summary>
-        public DateTimeOffset? ProcessedAt { get; set; }
+        public DateTimeOffset? ProcessedAt { get => _explicitNullValueProcessedAt; set { _explicitNullValueProcessedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processed_at"); else _explicitNullProperties?.Remove("processed_at"); } }
+        private DateTimeOffset? _explicitNullValueProcessedAt = default!;
         /// <summary>When to retry the action if it failed.</summary>
-        public DateTimeOffset? RetryAfter { get; set; }
+        public DateTimeOffset? RetryAfter { get => _explicitNullValueRetryAfter; set { _explicitNullValueRetryAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_after"); else _explicitNullProperties?.Remove("retry_after"); } }
+        private DateTimeOffset? _explicitNullValueRetryAfter = default!;
         /// <summary>The retry_count property</summary>
-        public int? RetryCount { get; set; }
+        public int? RetryCount { get => _explicitNullValueRetryCount; set { _explicitNullValueRetryCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_count"); else _explicitNullProperties?.Remove("retry_count"); } }
+        private int? _explicitNullValueRetryCount = default!;
         /// <summary>Status of a message within a bulk action job.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageStatus? _explicitNullValueStatus = default!;
         /// <summary>The status_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusMessage { get; set; }
+        public string? StatusMessage { get => _explicitNullValueStatusMessage; set { _explicitNullValueStatusMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_message"); else _explicitNullProperties?.Remove("status_message"); } }
+        private string? _explicitNullValueStatusMessage = default!;
 #nullable restore
 #else
-        public string StatusMessage { get; set; }
+        public string StatusMessage { get => _explicitNullValueStatusMessage; set { _explicitNullValueStatusMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_message"); else _explicitNullProperties?.Remove("status_message"); } }
+        private string _explicitNullValueStatusMessage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageDetail"/> and sets the default values.
@@ -91,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,6 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("retry_count", RetryCount);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionMessageStatus>("status", Status);
             writer.WriteStringValue("status_message", StatusMessage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

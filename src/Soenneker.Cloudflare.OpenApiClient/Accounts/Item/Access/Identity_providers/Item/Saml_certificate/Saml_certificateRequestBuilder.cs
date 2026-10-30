@@ -57,6 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_provi
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

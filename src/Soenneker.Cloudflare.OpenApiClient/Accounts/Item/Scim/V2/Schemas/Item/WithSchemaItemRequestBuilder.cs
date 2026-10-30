@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.Schemas.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimErrorResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchema>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

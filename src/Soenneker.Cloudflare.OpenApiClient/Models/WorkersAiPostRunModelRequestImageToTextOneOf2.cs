@@ -11,43 +11,74 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersAiPostRunModelRequestImageToTextOneOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("frequency_penalty") is { } nullNodeFrequencyPenalty && nullNodeFrequencyPenalty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyPenalty = null;
+            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("max_tokens") is { } nullNodeMaxTokens && nullNodeMaxTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTokens = null;
+            if (parseNode.GetChildNode("presence_penalty") is { } nullNodePresencePenalty && nullNodePresencePenalty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresencePenalty = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("repetition_penalty") is { } nullNodeRepetitionPenalty && nullNodeRepetitionPenalty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepetitionPenalty = null;
+            if (parseNode.GetChildNode("seed") is { } nullNodeSeed && nullNodeSeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seed = null;
+            if (parseNode.GetChildNode("temperature") is { } nullNodeTemperature && nullNodeTemperature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Temperature = null;
+            if (parseNode.GetChildNode("top_k") is { } nullNodeTopK && nullNodeTopK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopK = null;
+            if (parseNode.GetChildNode("top_p") is { } nullNodeTopP && nullNodeTopP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopP = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Decreases the likelihood of the model repeating the same lines verbatim.</summary>
-        public double? FrequencyPenalty { get; set; }
+        public double? FrequencyPenalty { get => _explicitNullValueFrequencyPenalty; set { _explicitNullValueFrequencyPenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency_penalty"); else _explicitNullProperties?.Remove("frequency_penalty"); } }
+        private double? _explicitNullValueFrequencyPenalty = default!;
         /// <summary>The image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2Image? Image { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2Image? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2Image? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2Image Image { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2Image Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2Image _explicitNullValueImage = default!;
 #endif
         /// <summary>The maximum number of tokens to generate in the response.</summary>
-        public int? MaxTokens { get; set; }
+        public int? MaxTokens { get => _explicitNullValueMaxTokens; set { _explicitNullValueMaxTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_tokens"); else _explicitNullProperties?.Remove("max_tokens"); } }
+        private int? _explicitNullValueMaxTokens = default!;
         /// <summary>Increases the likelihood of the model introducing new topics.</summary>
-        public double? PresencePenalty { get; set; }
+        public double? PresencePenalty { get => _explicitNullValuePresencePenalty; set { _explicitNullValuePresencePenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presence_penalty"); else _explicitNullProperties?.Remove("presence_penalty"); } }
+        private double? _explicitNullValuePresencePenalty = default!;
         /// <summary>The input text prompt for the model to generate a response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>If true, a chat template is not applied and you must adhere to the specific model&apos;s expected formatting.</summary>
-        public bool? Raw { get; set; }
+        public bool? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private bool? _explicitNullValueRaw = default!;
         /// <summary>Penalty for repeated tokens; higher values discourage repetition.</summary>
-        public double? RepetitionPenalty { get; set; }
+        public double? RepetitionPenalty { get => _explicitNullValueRepetitionPenalty; set { _explicitNullValueRepetitionPenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repetition_penalty"); else _explicitNullProperties?.Remove("repetition_penalty"); } }
+        private double? _explicitNullValueRepetitionPenalty = default!;
         /// <summary>Random seed for reproducibility of the generation.</summary>
-        public double? Seed { get; set; }
+        public double? Seed { get => _explicitNullValueSeed; set { _explicitNullValueSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seed"); else _explicitNullProperties?.Remove("seed"); } }
+        private double? _explicitNullValueSeed = default!;
         /// <summary>Controls the randomness of the output; higher values produce more random results.</summary>
-        public double? Temperature { get; set; }
+        public double? Temperature { get => _explicitNullValueTemperature; set { _explicitNullValueTemperature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temperature"); else _explicitNullProperties?.Remove("temperature"); } }
+        private double? _explicitNullValueTemperature = default!;
         /// <summary>Limits the AI to choose from the top &apos;k&apos; most probable words. Lower values make responses more focused; higher values introduce more variety and potential surprises.</summary>
-        public double? TopK { get; set; }
+        public double? TopK { get => _explicitNullValueTopK; set { _explicitNullValueTopK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_k"); else _explicitNullProperties?.Remove("top_k"); } }
+        private double? _explicitNullValueTopK = default!;
         /// <summary>Controls the creativity of the AI&apos;s responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.</summary>
-        public double? TopP { get; set; }
+        public double? TopP { get => _explicitNullValueTopP; set { _explicitNullValueTopP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_p"); else _explicitNullProperties?.Remove("top_p"); } }
+        private double? _explicitNullValueTopP = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2"/> and sets the default values.
         /// </summary>
@@ -65,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteDoubleValue("top_k", TopK);
             writer.WriteDoubleValue("top_p", TopP);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

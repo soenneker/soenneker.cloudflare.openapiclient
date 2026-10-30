@@ -12,48 +12,73 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersAssets2Config : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("base_path") is { } nullNodeBasePath && nullNodeBasePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasePath = null;
+            if (parseNode.GetChildNode("_headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("html_handling") is { } nullNodeHtmlHandling && nullNodeHtmlHandling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HtmlHandling = null;
+            if (parseNode.GetChildNode("not_found_handling") is { } nullNodeNotFoundHandling && nullNodeNotFoundHandling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotFoundHandling = null;
+            if (parseNode.GetChildNode("_redirects") is { } nullNodeRedirects && nullNodeRedirects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redirects = null;
+            if (parseNode.GetChildNode("run_worker_first") is { } nullNodeRunWorkerFirst && nullNodeRunWorkerFirst.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunWorkerFirst = null;
+            if (parseNode.GetChildNode("serve_directly") is { } nullNodeServeDirectly && nullNodeServeDirectly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServeDirectly = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The public URL path prefix under which assets are served. A null request value resets it to `/`; responses represent the root as `/`. All versions in a gradual deployment must use the same canonical value. To change it, first deploy the version containing the change at 100%.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BasePath { get; set; }
+        public string? BasePath { get => _explicitNullValueBasePath; set { _explicitNullValueBasePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_path"); else _explicitNullProperties?.Remove("base_path"); } }
+        private string? _explicitNullValueBasePath = default!;
 #nullable restore
 #else
-        public string BasePath { get; set; }
+        public string BasePath { get => _explicitNullValueBasePath; set { _explicitNullValueBasePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_path"); else _explicitNullProperties?.Remove("base_path"); } }
+        private string _explicitNullValueBasePath = default!;
 #endif
         /// <summary>The contents of a _headers file (used to attach custom headers on asset responses).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Headers { get; set; }
+        public string? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_headers"); else _explicitNullProperties?.Remove("_headers"); } }
+        private string? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public string Headers { get; set; }
+        public string Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_headers"); else _explicitNullProperties?.Remove("_headers"); } }
+        private string _explicitNullValueHeaders = default!;
 #endif
         /// <summary>Determines the redirects and rewrites of requests for HTML content.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigHtmlHandling? HtmlHandling { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigHtmlHandling? HtmlHandling { get => _explicitNullValueHtmlHandling; set { _explicitNullValueHtmlHandling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html_handling"); else _explicitNullProperties?.Remove("html_handling"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigHtmlHandling? _explicitNullValueHtmlHandling = default!;
         /// <summary>Determines the response when a request does not match a static asset, and there is no Worker script.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigNotFoundHandling? NotFoundHandling { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigNotFoundHandling? NotFoundHandling { get => _explicitNullValueNotFoundHandling; set { _explicitNullValueNotFoundHandling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_found_handling"); else _explicitNullProperties?.Remove("not_found_handling"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigNotFoundHandling? _explicitNullValueNotFoundHandling = default!;
         /// <summary>The contents of a _redirects file (used to apply redirects or proxy paths ahead of asset serving).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Redirects { get; set; }
+        public string? Redirects { get => _explicitNullValueRedirects; set { _explicitNullValueRedirects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_redirects"); else _explicitNullProperties?.Remove("_redirects"); } }
+        private string? _explicitNullValueRedirects = default!;
 #nullable restore
 #else
-        public string Redirects { get; set; }
+        public string Redirects { get => _explicitNullValueRedirects; set { _explicitNullValueRedirects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_redirects"); else _explicitNullProperties?.Remove("_redirects"); } }
+        private string _explicitNullValueRedirects = default!;
 #endif
         /// <summary>The run_worker_first property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigRunWorkerFirst? RunWorkerFirst { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigRunWorkerFirst? RunWorkerFirst { get => _explicitNullValueRunWorkerFirst; set { _explicitNullValueRunWorkerFirst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_worker_first"); else _explicitNullProperties?.Remove("run_worker_first"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigRunWorkerFirst? _explicitNullValueRunWorkerFirst = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigRunWorkerFirst RunWorkerFirst { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigRunWorkerFirst RunWorkerFirst { get => _explicitNullValueRunWorkerFirst; set { _explicitNullValueRunWorkerFirst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_worker_first"); else _explicitNullProperties?.Remove("run_worker_first"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigRunWorkerFirst _explicitNullValueRunWorkerFirst = default!;
 #endif
         /// <summary>When true and the incoming request matches an asset, that will be served instead of invoking the Worker script. When false, requests will always invoke the Worker script.</summary>
         [Obsolete("")]
-        public bool? ServeDirectly { get; set; }
+        public bool? ServeDirectly { get => _explicitNullValueServeDirectly; set { _explicitNullValueServeDirectly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serve_directly"); else _explicitNullProperties?.Remove("serve_directly"); } }
+        private bool? _explicitNullValueServeDirectly = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2Config"/> and sets the default values.
         /// </summary>
@@ -70,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2Config CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2Config();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2Config(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("_redirects", Redirects);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets2ConfigRunWorkerFirst>("run_worker_first", RunWorkerFirst);
             writer.WriteBoolValue("serve_directly", ServeDirectly);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

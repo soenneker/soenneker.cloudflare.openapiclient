@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetEmailRoutingSummaryByDkim200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("FAIL") is { } nullNodeFAIL && nullNodeFAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FAIL = null;
+            if (parseNode.GetChildNode("NONE") is { } nullNodeNONE && nullNodeNONE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NONE = null;
+            if (parseNode.GetChildNode("PASS") is { } nullNodePASS && nullNodePASS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PASS = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FAIL { get; set; }
+        public string? FAIL { get => _explicitNullValueFAIL; set { _explicitNullValueFAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FAIL"); else _explicitNullProperties?.Remove("FAIL"); } }
+        private string? _explicitNullValueFAIL = default!;
 #nullable restore
 #else
-        public string FAIL { get; set; }
+        public string FAIL { get => _explicitNullValueFAIL; set { _explicitNullValueFAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FAIL"); else _explicitNullProperties?.Remove("FAIL"); } }
+        private string _explicitNullValueFAIL = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NONE { get; set; }
+        public string? NONE { get => _explicitNullValueNONE; set { _explicitNullValueNONE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NONE"); else _explicitNullProperties?.Remove("NONE"); } }
+        private string? _explicitNullValueNONE = default!;
 #nullable restore
 #else
-        public string NONE { get; set; }
+        public string NONE { get => _explicitNullValueNONE; set { _explicitNullValueNONE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NONE"); else _explicitNullProperties?.Remove("NONE"); } }
+        private string _explicitNullValueNONE = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PASS { get; set; }
+        public string? PASS { get => _explicitNullValuePASS; set { _explicitNullValuePASS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PASS"); else _explicitNullProperties?.Remove("PASS"); } }
+        private string? _explicitNullValuePASS = default!;
 #nullable restore
 #else
-        public string PASS { get; set; }
+        public string PASS { get => _explicitNullValuePASS; set { _explicitNullValuePASS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PASS"); else _explicitNullProperties?.Remove("PASS"); } }
+        private string _explicitNullValuePASS = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailRoutingSummaryByDkim200ResponseResultSummary0"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailRoutingSummaryByDkim200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailRoutingSummaryByDkim200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailRoutingSummaryByDkim200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("FAIL", FAIL);
             writer.WriteStringValue("NONE", NONE);
             writer.WriteStringValue("PASS", PASS);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

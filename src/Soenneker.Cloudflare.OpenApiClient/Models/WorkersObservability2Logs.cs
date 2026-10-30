@@ -12,25 +12,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersObservability2Logs : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destinations") is { } nullNodeDestinations && nullNodeDestinations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destinations = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("head_sampling_rate") is { } nullNodeHeadSamplingRate && nullNodeHeadSamplingRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadSamplingRate = null;
+            if (parseNode.GetChildNode("invocation_logs") is { } nullNodeInvocationLogs && nullNodeInvocationLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationLogs = null;
+            if (parseNode.GetChildNode("persist") is { } nullNodePersist && nullNodePersist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Persist = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of destinations where logs will be exported to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Destinations { get; set; }
+        public List<string>? Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
+        private List<string>? _explicitNullValueDestinations = default!;
 #nullable restore
 #else
-        public List<string> Destinations { get; set; }
+        public List<string> Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
+        private List<string> _explicitNullValueDestinations = default!;
 #endif
         /// <summary>Whether logs are enabled for the Worker.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.</summary>
-        public double? HeadSamplingRate { get; set; }
+        public double? HeadSamplingRate { get => _explicitNullValueHeadSamplingRate; set { _explicitNullValueHeadSamplingRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_sampling_rate"); else _explicitNullProperties?.Remove("head_sampling_rate"); } }
+        private double? _explicitNullValueHeadSamplingRate = default!;
         /// <summary>Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.</summary>
-        public bool? InvocationLogs { get; set; }
+        public bool? InvocationLogs { get => _explicitNullValueInvocationLogs; set { _explicitNullValueInvocationLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocation_logs"); else _explicitNullProperties?.Remove("invocation_logs"); } }
+        private bool? _explicitNullValueInvocationLogs = default!;
         /// <summary>Whether log persistence is enabled for the Worker.</summary>
-        public bool? Persist { get; set; }
+        public bool? Persist { get => _explicitNullValuePersist; set { _explicitNullValuePersist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persist"); else _explicitNullProperties?.Remove("persist"); } }
+        private bool? _explicitNullValuePersist = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2Logs"/> and sets the default values.
         /// </summary>
@@ -47,7 +65,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2Logs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2Logs();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2Logs(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("head_sampling_rate", HeadSamplingRate);
             writer.WriteBoolValue("invocation_logs", InvocationLogs);
             writer.WriteBoolValue("persist", Persist);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

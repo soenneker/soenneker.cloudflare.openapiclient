@@ -11,22 +11,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetDomainMatchList200ResponseMatchesItemMatchDetailsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dismissed") is { } nullNodeDismissed && nullNodeDismissed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismissed = null;
+            if (parseNode.GetChildNode("match_id") is { } nullNodeMatchId && nullNodeMatchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchId = null;
+            if (parseNode.GetChildNode("query_id") is { } nullNodeQueryId && nullNodeQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryId = null;
+            if (parseNode.GetChildNode("query_tag") is { } nullNodeQueryTag && nullNodeQueryTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryTag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Individual dismissed state for this specific match.</summary>
-        public bool? Dismissed { get; set; }
+        public bool? Dismissed { get => _explicitNullValueDismissed; set { _explicitNullValueDismissed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed"); else _explicitNullProperties?.Remove("dismissed"); } }
+        private bool? _explicitNullValueDismissed = default!;
         /// <summary>The match_id property</summary>
-        public int? MatchId { get; set; }
+        public int? MatchId { get => _explicitNullValueMatchId; set { _explicitNullValueMatchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_id"); else _explicitNullProperties?.Remove("match_id"); } }
+        private int? _explicitNullValueMatchId = default!;
         /// <summary>The query_id property</summary>
-        public int? QueryId { get; set; }
+        public int? QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
+        private int? _explicitNullValueQueryId = default!;
         /// <summary>Tag associated with the query, if one exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryTag { get; set; }
+        public string? QueryTag { get => _explicitNullValueQueryTag; set { _explicitNullValueQueryTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_tag"); else _explicitNullProperties?.Remove("query_tag"); } }
+        private string? _explicitNullValueQueryTag = default!;
 #nullable restore
 #else
-        public string QueryTag { get; set; }
+        public string QueryTag { get => _explicitNullValueQueryTag; set { _explicitNullValueQueryTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_tag"); else _explicitNullProperties?.Remove("query_tag"); } }
+        private string _explicitNullValueQueryTag = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem"/> and sets the default values.
@@ -43,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("match_id", MatchId);
             writer.WriteIntValue("query_id", QueryId);
             writer.WriteStringValue("query_tag", QueryTag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -57,6 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Bulk
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2400Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2429Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseSchemaItem>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseSchemaItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();

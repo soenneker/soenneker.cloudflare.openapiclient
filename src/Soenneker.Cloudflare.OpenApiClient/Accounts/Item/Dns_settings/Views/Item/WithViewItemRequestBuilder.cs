@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Views.It
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsViewsForAnAccountDeleteInternalDnsView4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsViewsForAnAccountDeleteInternalDnsView200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsViewsForAnAccountDeleteInternalDnsView200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Views.It
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsViewsForAnAccountGetInternalDnsView4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsViewResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsViewResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,6 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Views.It
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsViewsForAnAccountUpdateInternalDnsView4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsViewResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsViewResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

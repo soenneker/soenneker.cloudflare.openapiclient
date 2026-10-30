@@ -56,6 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.GetLegacyEventRawReadDs404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.GetLegacyEventRawReadDs500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetLegacyEventRawReadDs200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetLegacyEventRawReadDs200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

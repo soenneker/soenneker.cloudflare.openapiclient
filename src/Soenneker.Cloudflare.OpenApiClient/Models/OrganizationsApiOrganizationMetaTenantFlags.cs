@@ -11,72 +11,103 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationsApiOrganizationMetaTenantFlags : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_creation") is { } nullNodeAccountCreation && nullNodeAccountCreation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCreation = null;
+            if (parseNode.GetChildNode("account_creation_applies_tenant_defaults") is { } nullNodeAccountCreationAppliesTenantDefaults && nullNodeAccountCreationAppliesTenantDefaults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCreationAppliesTenantDefaults = null;
+            if (parseNode.GetChildNode("account_deletion") is { } nullNodeAccountDeletion && nullNodeAccountDeletion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountDeletion = null;
+            if (parseNode.GetChildNode("account_migration") is { } nullNodeAccountMigration && nullNodeAccountMigration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountMigration = null;
+            if (parseNode.GetChildNode("account_mobility") is { } nullNodeAccountMobility && nullNodeAccountMobility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountMobility = null;
+            if (parseNode.GetChildNode("enterprise_capability") is { } nullNodeEnterpriseCapability && nullNodeEnterpriseCapability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnterpriseCapability = null;
+            if (parseNode.GetChildNode("member_management") is { } nullNodeMemberManagement && nullNodeMemberManagement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberManagement = null;
+            if (parseNode.GetChildNode("sub_org_creation") is { } nullNodeSubOrgCreation && nullNodeSubOrgCreation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubOrgCreation = null;
+        }
+
         /// <summary>The account_creation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCreation { get; set; }
+        public string? AccountCreation { get => _explicitNullValueAccountCreation; set { _explicitNullValueAccountCreation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_creation"); else _explicitNullProperties?.Remove("account_creation"); } }
+        private string? _explicitNullValueAccountCreation = default!;
 #nullable restore
 #else
-        public string AccountCreation { get; set; }
+        public string AccountCreation { get => _explicitNullValueAccountCreation; set { _explicitNullValueAccountCreation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_creation"); else _explicitNullProperties?.Remove("account_creation"); } }
+        private string _explicitNullValueAccountCreation = default!;
 #endif
         /// <summary>The account_creation_applies_tenant_defaults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCreationAppliesTenantDefaults { get; set; }
+        public string? AccountCreationAppliesTenantDefaults { get => _explicitNullValueAccountCreationAppliesTenantDefaults; set { _explicitNullValueAccountCreationAppliesTenantDefaults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_creation_applies_tenant_defaults"); else _explicitNullProperties?.Remove("account_creation_applies_tenant_defaults"); } }
+        private string? _explicitNullValueAccountCreationAppliesTenantDefaults = default!;
 #nullable restore
 #else
-        public string AccountCreationAppliesTenantDefaults { get; set; }
+        public string AccountCreationAppliesTenantDefaults { get => _explicitNullValueAccountCreationAppliesTenantDefaults; set { _explicitNullValueAccountCreationAppliesTenantDefaults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_creation_applies_tenant_defaults"); else _explicitNullProperties?.Remove("account_creation_applies_tenant_defaults"); } }
+        private string _explicitNullValueAccountCreationAppliesTenantDefaults = default!;
 #endif
         /// <summary>The account_deletion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountDeletion { get; set; }
+        public string? AccountDeletion { get => _explicitNullValueAccountDeletion; set { _explicitNullValueAccountDeletion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_deletion"); else _explicitNullProperties?.Remove("account_deletion"); } }
+        private string? _explicitNullValueAccountDeletion = default!;
 #nullable restore
 #else
-        public string AccountDeletion { get; set; }
+        public string AccountDeletion { get => _explicitNullValueAccountDeletion; set { _explicitNullValueAccountDeletion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_deletion"); else _explicitNullProperties?.Remove("account_deletion"); } }
+        private string _explicitNullValueAccountDeletion = default!;
 #endif
         /// <summary>The account_migration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountMigration { get; set; }
+        public string? AccountMigration { get => _explicitNullValueAccountMigration; set { _explicitNullValueAccountMigration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_migration"); else _explicitNullProperties?.Remove("account_migration"); } }
+        private string? _explicitNullValueAccountMigration = default!;
 #nullable restore
 #else
-        public string AccountMigration { get; set; }
+        public string AccountMigration { get => _explicitNullValueAccountMigration; set { _explicitNullValueAccountMigration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_migration"); else _explicitNullProperties?.Remove("account_migration"); } }
+        private string _explicitNullValueAccountMigration = default!;
 #endif
         /// <summary>The account_mobility property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountMobility { get; set; }
+        public string? AccountMobility { get => _explicitNullValueAccountMobility; set { _explicitNullValueAccountMobility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_mobility"); else _explicitNullProperties?.Remove("account_mobility"); } }
+        private string? _explicitNullValueAccountMobility = default!;
 #nullable restore
 #else
-        public string AccountMobility { get; set; }
+        public string AccountMobility { get => _explicitNullValueAccountMobility; set { _explicitNullValueAccountMobility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_mobility"); else _explicitNullProperties?.Remove("account_mobility"); } }
+        private string _explicitNullValueAccountMobility = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enterprise_capability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnterpriseCapability { get; set; }
+        public string? EnterpriseCapability { get => _explicitNullValueEnterpriseCapability; set { _explicitNullValueEnterpriseCapability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enterprise_capability"); else _explicitNullProperties?.Remove("enterprise_capability"); } }
+        private string? _explicitNullValueEnterpriseCapability = default!;
 #nullable restore
 #else
-        public string EnterpriseCapability { get; set; }
+        public string EnterpriseCapability { get => _explicitNullValueEnterpriseCapability; set { _explicitNullValueEnterpriseCapability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enterprise_capability"); else _explicitNullProperties?.Remove("enterprise_capability"); } }
+        private string _explicitNullValueEnterpriseCapability = default!;
 #endif
         /// <summary>The member_management property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberManagement { get; set; }
+        public string? MemberManagement { get => _explicitNullValueMemberManagement; set { _explicitNullValueMemberManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_management"); else _explicitNullProperties?.Remove("member_management"); } }
+        private string? _explicitNullValueMemberManagement = default!;
 #nullable restore
 #else
-        public string MemberManagement { get; set; }
+        public string MemberManagement { get => _explicitNullValueMemberManagement; set { _explicitNullValueMemberManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_management"); else _explicitNullProperties?.Remove("member_management"); } }
+        private string _explicitNullValueMemberManagement = default!;
 #endif
         /// <summary>The sub_org_creation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubOrgCreation { get; set; }
+        public string? SubOrgCreation { get => _explicitNullValueSubOrgCreation; set { _explicitNullValueSubOrgCreation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_org_creation"); else _explicitNullProperties?.Remove("sub_org_creation"); } }
+        private string? _explicitNullValueSubOrgCreation = default!;
 #nullable restore
 #else
-        public string SubOrgCreation { get; set; }
+        public string SubOrgCreation { get => _explicitNullValueSubOrgCreation; set { _explicitNullValueSubOrgCreation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_org_creation"); else _explicitNullProperties?.Remove("sub_org_creation"); } }
+        private string _explicitNullValueSubOrgCreation = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags"/> and sets the default values.
@@ -93,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,6 +159,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("enterprise_capability", EnterpriseCapability);
             writer.WriteStringValue("member_management", MemberManagement);
             writer.WriteStringValue("sub_org_creation", SubOrgCreation);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

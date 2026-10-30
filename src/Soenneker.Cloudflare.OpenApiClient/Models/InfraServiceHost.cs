@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InfraServiceHost : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraDualStackHost"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost();
             if("InfraDualStackHost".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InfraDualStackHost = new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraDualStackHost();
+                
             }
             else if("InfraHostnameHost".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InfraHostnameHost = new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraHostnameHost();
+                
             }
             else if("InfraIPv4Host".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InfraIPv4Host = new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPv4Host();
+                
             }
             else if("InfraIPv6Host".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InfraIPv6Host = new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPv6Host();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("ipv4") != null && parseNode.GetChildNode("network") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("ipv6") != null && parseNode.GetChildNode("network") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("ipv4") != null && parseNode.GetChildNode("ipv6") != null && parseNode.GetChildNode("network") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("hostname") != null && parseNode.GetChildNode("resolver_network") != null))();
+            if (result.InfraDualStackHost == null && result.InfraHostnameHost == null && result.InfraIPv4Host == null && result.InfraIPv6Host == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.InfraIPv4Host = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPv4Host(), parseNode);
+            if (result.InfraDualStackHost == null && result.InfraHostnameHost == null && result.InfraIPv4Host == null && result.InfraIPv6Host == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.InfraIPv6Host = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPv6Host(), parseNode);
+            if (result.InfraDualStackHost == null && result.InfraHostnameHost == null && result.InfraIPv4Host == null && result.InfraIPv6Host == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.InfraDualStackHost = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraDualStackHost(), parseNode);
+            if (result.InfraDualStackHost == null && result.InfraHostnameHost == null && result.InfraIPv4Host == null && result.InfraIPv6Host == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.InfraHostnameHost = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraHostnameHost(), parseNode);
+            if (result.InfraDualStackHost == null && result.InfraHostnameHost == null && result.InfraIPv4Host == null && result.InfraIPv6Host == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (InfraDualStackHost == null && InfraHostnameHost == null && InfraIPv4Host == null && InfraIPv6Host == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (InfraDualStackHost != null && InfraHostnameHost == null && InfraIPv4Host == null && InfraIPv6Host == null) { if (InfraDualStackHost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InfraDualStackHost); return; }
+            if (InfraHostnameHost != null && InfraDualStackHost == null && InfraIPv4Host == null && InfraIPv6Host == null) { if (InfraHostnameHost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InfraHostnameHost); return; }
+            if (InfraIPv4Host != null && InfraDualStackHost == null && InfraHostnameHost == null && InfraIPv6Host == null) { if (InfraIPv4Host is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InfraIPv4Host); return; }
+            if (InfraIPv6Host != null && InfraDualStackHost == null && InfraHostnameHost == null && InfraIPv4Host == null) { if (InfraIPv6Host is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InfraIPv6Host); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(InfraDualStackHost != null)
             {
+                if (InfraDualStackHost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraDualStackHost>(null, InfraDualStackHost);
             }
             else if(InfraHostnameHost != null)
             {
+                if (InfraHostnameHost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraHostnameHost>(null, InfraHostnameHost);
             }
             else if(InfraIPv4Host != null)
             {
+                if (InfraIPv4Host is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPv4Host>(null, InfraIPv4Host);
             }
             else if(InfraIPv6Host != null)
             {
+                if (InfraIPv6Host is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPv6Host>(null, InfraIPv6Host);
             }
         }

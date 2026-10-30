@@ -11,26 +11,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Zones0HoldPost200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hold") is { } nullNodeHold && nullNodeHold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hold = null;
+            if (parseNode.GetChildNode("hold_after") is { } nullNodeHoldAfter && nullNodeHoldAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoldAfter = null;
+            if (parseNode.GetChildNode("include_subdomains") is { } nullNodeIncludeSubdomains && nullNodeIncludeSubdomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSubdomains = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The hold property</summary>
-        public bool? Hold { get; set; }
+        public bool? Hold { get => _explicitNullValueHold; set { _explicitNullValueHold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold"); else _explicitNullProperties?.Remove("hold"); } }
+        private bool? _explicitNullValueHold = default!;
         /// <summary>The hold_after property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HoldAfter { get; set; }
+        public string? HoldAfter { get => _explicitNullValueHoldAfter; set { _explicitNullValueHoldAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_after"); else _explicitNullProperties?.Remove("hold_after"); } }
+        private string? _explicitNullValueHoldAfter = default!;
 #nullable restore
 #else
-        public string HoldAfter { get; set; }
+        public string HoldAfter { get => _explicitNullValueHoldAfter; set { _explicitNullValueHoldAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_after"); else _explicitNullProperties?.Remove("hold_after"); } }
+        private string _explicitNullValueHoldAfter = default!;
 #endif
         /// <summary>The include_subdomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncludeSubdomains { get; set; }
+        public string? IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_subdomains"); else _explicitNullProperties?.Remove("include_subdomains"); } }
+        private string? _explicitNullValueIncludeSubdomains = default!;
 #nullable restore
 #else
-        public string IncludeSubdomains { get; set; }
+        public string IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_subdomains"); else _explicitNullProperties?.Remove("include_subdomains"); } }
+        private string _explicitNullValueIncludeSubdomains = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200ResponseResult"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("hold", Hold);
             writer.WriteStringValue("hold_after", HoldAfter);
             writer.WriteStringValue("include_subdomains", IncludeSubdomains);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,64 +12,92 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZoneAnalyticsApiTotals : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bandwidth") is { } nullNodeBandwidth && nullNodeBandwidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bandwidth = null;
+            if (parseNode.GetChildNode("pageviews") is { } nullNodePageviews && nullNodePageviews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pageviews = null;
+            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("since") is { } nullNodeSince && nullNodeSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Since = null;
+            if (parseNode.GetChildNode("threats") is { } nullNodeThreats && nullNodeThreats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threats = null;
+            if (parseNode.GetChildNode("uniques") is { } nullNodeUniques && nullNodeUniques.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uniques = null;
+            if (parseNode.GetChildNode("until") is { } nullNodeUntil && nullNodeUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Until = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Breakdown of totals for bandwidth in the form of bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth? Bandwidth { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth? Bandwidth { get => _explicitNullValueBandwidth; set { _explicitNullValueBandwidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidth"); else _explicitNullProperties?.Remove("bandwidth"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth? _explicitNullValueBandwidth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth Bandwidth { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth Bandwidth { get => _explicitNullValueBandwidth; set { _explicitNullValueBandwidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidth"); else _explicitNullProperties?.Remove("bandwidth"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth _explicitNullValueBandwidth = default!;
 #endif
         /// <summary>Breakdown of totals for pageviews.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviews? Pageviews { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviews? Pageviews { get => _explicitNullValuePageviews; set { _explicitNullValuePageviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageviews"); else _explicitNullProperties?.Remove("pageviews"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviews? _explicitNullValuePageviews = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviews Pageviews { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviews Pageviews { get => _explicitNullValuePageviews; set { _explicitNullValuePageviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageviews"); else _explicitNullProperties?.Remove("pageviews"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviews _explicitNullValuePageviews = default!;
 #endif
         /// <summary>Breakdown of totals for requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiRequests? Requests { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiRequests? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiRequests? _explicitNullValueRequests = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiRequests Requests { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiRequests Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiRequests _explicitNullValueRequests = default!;
 #endif
         /// <summary>The (inclusive) beginning of the requested time frame. This value can be a negative integer representing the number of minutes in the past relative to time the request is made, or can be an absolute timestamp that conforms to RFC 3339. At this point in time, it cannot exceed a time in the past greater than one year.Ranges that the Cloudflare web application provides will provide the following period length for each point:- Last 60 minutes (from -59 to -1): 1 minute resolution- Last 7 hours (from -419 to -60): 15 minutes resolution- Last 15 hours (from -899 to -420): 30 minutes resolution- Last 72 hours (from -4320 to -900): 1 hour resolution- Older than 3 days (-525600 to -4320): 1 day resolution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince? Since { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince? Since { get => _explicitNullValueSince; set { _explicitNullValueSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("since"); else _explicitNullProperties?.Remove("since"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince? _explicitNullValueSince = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince Since { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince Since { get => _explicitNullValueSince; set { _explicitNullValueSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("since"); else _explicitNullProperties?.Remove("since"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince _explicitNullValueSince = default!;
 #endif
         /// <summary>Breakdown of totals for threats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiThreats? Threats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiThreats? Threats { get => _explicitNullValueThreats; set { _explicitNullValueThreats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threats"); else _explicitNullProperties?.Remove("threats"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiThreats? _explicitNullValueThreats = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiThreats Threats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiThreats Threats { get => _explicitNullValueThreats; set { _explicitNullValueThreats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threats"); else _explicitNullProperties?.Remove("threats"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiThreats _explicitNullValueThreats = default!;
 #endif
         /// <summary>The uniques property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUniques? Uniques { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUniques? Uniques { get => _explicitNullValueUniques; set { _explicitNullValueUniques = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniques"); else _explicitNullProperties?.Remove("uniques"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUniques? _explicitNullValueUniques = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUniques Uniques { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUniques Uniques { get => _explicitNullValueUniques; set { _explicitNullValueUniques = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniques"); else _explicitNullProperties?.Remove("uniques"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUniques _explicitNullValueUniques = default!;
 #endif
         /// <summary>The (exclusive) end of the requested time frame. This value can be a negative integer representing the number of minutes in the past relative to time the request is made, or can be an absolute timestamp that conforms to RFC 3339. If omitted, the time of the request is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil? Until { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil? Until { get => _explicitNullValueUntil; set { _explicitNullValueUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("until"); else _explicitNullProperties?.Remove("until"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil? _explicitNullValueUntil = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil Until { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil Until { get => _explicitNullValueUntil; set { _explicitNullValueUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("until"); else _explicitNullProperties?.Remove("until"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil _explicitNullValueUntil = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiTotals"/> and sets the default values.
@@ -86,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiTotals CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiTotals();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiTotals(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiThreats>("threats", Threats);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUniques>("uniques", Uniques);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil>("until", Until);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

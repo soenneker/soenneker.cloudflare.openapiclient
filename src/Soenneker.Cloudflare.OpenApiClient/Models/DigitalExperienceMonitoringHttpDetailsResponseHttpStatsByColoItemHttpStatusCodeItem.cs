@@ -11,24 +11,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItemHttpStatusCodeItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("status200") is { } nullNodeStatus200 && nullNodeStatus200.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status200 = null;
+            if (parseNode.GetChildNode("status300") is { } nullNodeStatus300 && nullNodeStatus300.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status300 = null;
+            if (parseNode.GetChildNode("status400") is { } nullNodeStatus400 && nullNodeStatus400.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status400 = null;
+            if (parseNode.GetChildNode("status500") is { } nullNodeStatus500 && nullNodeStatus500.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status500 = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status200 property</summary>
-        public int? Status200 { get; set; }
+        public int? Status200 { get => _explicitNullValueStatus200; set { _explicitNullValueStatus200 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status200"); else _explicitNullProperties?.Remove("status200"); } }
+        private int? _explicitNullValueStatus200 = default!;
         /// <summary>The status300 property</summary>
-        public int? Status300 { get; set; }
+        public int? Status300 { get => _explicitNullValueStatus300; set { _explicitNullValueStatus300 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status300"); else _explicitNullProperties?.Remove("status300"); } }
+        private int? _explicitNullValueStatus300 = default!;
         /// <summary>The status400 property</summary>
-        public int? Status400 { get; set; }
+        public int? Status400 { get => _explicitNullValueStatus400; set { _explicitNullValueStatus400 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status400"); else _explicitNullProperties?.Remove("status400"); } }
+        private int? _explicitNullValueStatus400 = default!;
         /// <summary>The status500 property</summary>
-        public int? Status500 { get; set; }
+        public int? Status500 { get => _explicitNullValueStatus500; set { _explicitNullValueStatus500 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status500"); else _explicitNullProperties?.Remove("status500"); } }
+        private int? _explicitNullValueStatus500 = default!;
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get; set; }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItemHttpStatusCodeItem"/> and sets the default values.
@@ -45,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItemHttpStatusCodeItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItemHttpStatusCodeItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItemHttpStatusCodeItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("status400", Status400);
             writer.WriteIntValue("status500", Status500);
             writer.WriteStringValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

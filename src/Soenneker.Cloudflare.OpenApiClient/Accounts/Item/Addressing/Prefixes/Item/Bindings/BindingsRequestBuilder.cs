@@ -66,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.I
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementServiceBindingsListServiceBindings200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementServiceBindingsListServiceBindings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -91,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.I
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementServiceBindingsCreateServiceBinding201Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementServiceBindingsCreateServiceBinding201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

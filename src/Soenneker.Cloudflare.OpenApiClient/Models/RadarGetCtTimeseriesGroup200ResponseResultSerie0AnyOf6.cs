@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("NEGATIVE") is { } nullNodeNEGATIVE && nullNodeNEGATIVE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NEGATIVE = null;
+            if (parseNode.GetChildNode("POSITIVE") is { } nullNodePOSITIVE && nullNodePOSITIVE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POSITIVE = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The NEGATIVE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NEGATIVE { get; set; }
+        public List<string>? NEGATIVE { get => _explicitNullValueNEGATIVE; set { _explicitNullValueNEGATIVE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NEGATIVE"); else _explicitNullProperties?.Remove("NEGATIVE"); } }
+        private List<string>? _explicitNullValueNEGATIVE = default!;
 #nullable restore
 #else
-        public List<string> NEGATIVE { get; set; }
+        public List<string> NEGATIVE { get => _explicitNullValueNEGATIVE; set { _explicitNullValueNEGATIVE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NEGATIVE"); else _explicitNullProperties?.Remove("NEGATIVE"); } }
+        private List<string> _explicitNullValueNEGATIVE = default!;
 #endif
         /// <summary>The POSITIVE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? POSITIVE { get; set; }
+        public List<string>? POSITIVE { get => _explicitNullValuePOSITIVE; set { _explicitNullValuePOSITIVE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POSITIVE"); else _explicitNullProperties?.Remove("POSITIVE"); } }
+        private List<string>? _explicitNullValuePOSITIVE = default!;
 #nullable restore
 #else
-        public List<string> POSITIVE { get; set; }
+        public List<string> POSITIVE { get => _explicitNullValuePOSITIVE; set { _explicitNullValuePOSITIVE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POSITIVE"); else _explicitNullProperties?.Remove("POSITIVE"); } }
+        private List<string> _explicitNullValuePOSITIVE = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("NEGATIVE", NEGATIVE);
             writer.WriteCollectionOfPrimitiveValues<string>("POSITIVE", POSITIVE);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,37 +11,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CloudflarePipelinesWorkersPipelinesPipelineDestination : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("batch") is { } nullNodeBatch && nullNodeBatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Batch = null;
+            if (parseNode.GetChildNode("compression") is { } nullNodeCompression && nullNodeCompression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compression = null;
+            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The batch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch? Batch { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch? Batch { get => _explicitNullValueBatch; set { _explicitNullValueBatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch"); else _explicitNullProperties?.Remove("batch"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch? _explicitNullValueBatch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch Batch { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch Batch { get => _explicitNullValueBatch; set { _explicitNullValueBatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch"); else _explicitNullProperties?.Remove("batch"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch _explicitNullValueBatch = default!;
 #endif
         /// <summary>The compression property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression? Compression { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression? Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression? _explicitNullValueCompression = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression Compression { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression _explicitNullValueCompression = default!;
 #endif
         /// <summary>Specifies the format of source data.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.JsonFormat? Format { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.JsonFormat? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.JsonFormat? _explicitNullValueFormat = default!;
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationPath? Path { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationPath? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationPath? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationPath Path { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationPath Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationPath _explicitNullValuePath = default!;
 #endif
         /// <summary>Type of source</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2Type? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestination"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestination CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestination();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestination(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.JsonFormat>("format", Format);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesPipelineDestinationPath>("path", Path);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Type>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

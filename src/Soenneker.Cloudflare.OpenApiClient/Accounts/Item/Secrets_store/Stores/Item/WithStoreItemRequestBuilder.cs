@@ -61,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             {
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteById409Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteById4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -84,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreGetStoreById4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreStoreResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreStoreResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

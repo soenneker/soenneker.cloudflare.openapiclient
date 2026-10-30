@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\waiting_rooms
+    /// Builds and executes requests for operations under \zones\{zoneId}\waiting_rooms
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Waiting_roomsRequestBuilder : BaseRequestBuilder
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Waiting_roomsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/waiting_rooms{?page*,per_page*}", pathParameters)
+        public Waiting_roomsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/waiting_rooms{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Waiting_roomsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/waiting_rooms{?page*,per_page*}", rawUrl)
+        public Waiting_roomsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/waiting_rooms{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -78,6 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomListWaitingRooms4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -103,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomCreateWaitingRoom4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

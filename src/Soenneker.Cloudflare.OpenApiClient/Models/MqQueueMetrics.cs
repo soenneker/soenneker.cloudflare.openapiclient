@@ -12,15 +12,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MqQueueMetrics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("backlog_bytes") is { } nullNodeBacklogBytes && nullNodeBacklogBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BacklogBytes = null;
+            if (parseNode.GetChildNode("backlog_count") is { } nullNodeBacklogCount && nullNodeBacklogCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BacklogCount = null;
+            if (parseNode.GetChildNode("oldest_message_timestamp_ms") is { } nullNodeOldestMessageTimestampMs && nullNodeOldestMessageTimestampMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldestMessageTimestampMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The size in bytes of unacknowledged messages in the queue.</summary>
-        public double? BacklogBytes { get; set; }
+        public double? BacklogBytes { get => _explicitNullValueBacklogBytes; set { _explicitNullValueBacklogBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backlog_bytes"); else _explicitNullProperties?.Remove("backlog_bytes"); } }
+        private double? _explicitNullValueBacklogBytes = default!;
         /// <summary>The number of unacknowledged messages in the queue.</summary>
-        public double? BacklogCount { get; set; }
+        public double? BacklogCount { get => _explicitNullValueBacklogCount; set { _explicitNullValueBacklogCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backlog_count"); else _explicitNullProperties?.Remove("backlog_count"); } }
+        private double? _explicitNullValueBacklogCount = default!;
         /// <summary>Unix timestamp in milliseconds of the oldest unacknowledged message in the queue. Returns 0 if unknown.</summary>
-        public double? OldestMessageTimestampMs { get; set; }
+        public double? OldestMessageTimestampMs { get => _explicitNullValueOldestMessageTimestampMs; set { _explicitNullValueOldestMessageTimestampMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldest_message_timestamp_ms"); else _explicitNullProperties?.Remove("oldest_message_timestamp_ms"); } }
+        private double? _explicitNullValueOldestMessageTimestampMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMetrics"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("backlog_bytes", BacklogBytes);
             writer.WriteDoubleValue("backlog_count", BacklogCount);
             writer.WriteDoubleValue("oldest_message_timestamp_ms", OldestMessageTimestampMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

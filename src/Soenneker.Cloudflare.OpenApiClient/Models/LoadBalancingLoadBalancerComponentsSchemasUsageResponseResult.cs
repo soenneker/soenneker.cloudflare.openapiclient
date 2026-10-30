@@ -11,21 +11,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LoadBalancingLoadBalancerComponentsSchemasUsageResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("load_balancers") is { } nullNodeLoadBalancers && nullNodeLoadBalancers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadBalancers = null;
+            if (parseNode.GetChildNode("max_origins_per_pool") is { } nullNodeMaxOriginsPerPool && nullNodeMaxOriginsPerPool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxOriginsPerPool = null;
+            if (parseNode.GetChildNode("minimum_monitor_interval") is { } nullNodeMinimumMonitorInterval && nullNodeMinimumMonitorInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumMonitorInterval = null;
+            if (parseNode.GetChildNode("monitors") is { } nullNodeMonitors && nullNodeMonitors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Monitors = null;
+            if (parseNode.GetChildNode("origins") is { } nullNodeOrigins && nullNodeOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origins = null;
+            if (parseNode.GetChildNode("pools") is { } nullNodePools && nullNodePools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pools = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of configured load balancers.</summary>
-        public long? LoadBalancers { get; set; }
+        public long? LoadBalancers { get => _explicitNullValueLoadBalancers; set { _explicitNullValueLoadBalancers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("load_balancers"); else _explicitNullProperties?.Remove("load_balancers"); } }
+        private long? _explicitNullValueLoadBalancers = default!;
         /// <summary>The largest number of origins in any single pool.</summary>
-        public long? MaxOriginsPerPool { get; set; }
+        public long? MaxOriginsPerPool { get => _explicitNullValueMaxOriginsPerPool; set { _explicitNullValueMaxOriginsPerPool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_origins_per_pool"); else _explicitNullProperties?.Remove("max_origins_per_pool"); } }
+        private long? _explicitNullValueMaxOriginsPerPool = default!;
         /// <summary>The smallest monitor interval (in seconds) configured across all monitors.</summary>
-        public long? MinimumMonitorInterval { get; set; }
+        public long? MinimumMonitorInterval { get => _explicitNullValueMinimumMonitorInterval; set { _explicitNullValueMinimumMonitorInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_monitor_interval"); else _explicitNullProperties?.Remove("minimum_monitor_interval"); } }
+        private long? _explicitNullValueMinimumMonitorInterval = default!;
         /// <summary>The number of configured monitors.</summary>
-        public long? Monitors { get; set; }
+        public long? Monitors { get => _explicitNullValueMonitors; set { _explicitNullValueMonitors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitors"); else _explicitNullProperties?.Remove("monitors"); } }
+        private long? _explicitNullValueMonitors = default!;
         /// <summary>The number of configured origins across all pools.</summary>
-        public long? Origins { get; set; }
+        public long? Origins { get => _explicitNullValueOrigins; set { _explicitNullValueOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origins"); else _explicitNullProperties?.Remove("origins"); } }
+        private long? _explicitNullValueOrigins = default!;
         /// <summary>The number of configured pools.</summary>
-        public long? Pools { get; set; }
+        public long? Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
+        private long? _explicitNullValuePools = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerComponentsSchemasUsageResponseResult"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerComponentsSchemasUsageResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerComponentsSchemasUsageResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerComponentsSchemasUsageResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteLongValue("monitors", Monitors);
             writer.WriteLongValue("origins", Origins);
             writer.WriteLongValue("pools", Pools);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

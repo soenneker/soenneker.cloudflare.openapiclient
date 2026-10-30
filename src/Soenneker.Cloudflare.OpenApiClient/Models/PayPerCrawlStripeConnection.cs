@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PayPerCrawlStripeConnection : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("connect_status") is { } nullNodeConnectStatus && nullNodeConnectStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectStatus = null;
+            if (parseNode.GetChildNode("stripe_account_id") is { } nullNodeStripeAccountId && nullNodeStripeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StripeAccountId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The connect_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectStatus { get; set; }
+        public string? ConnectStatus { get => _explicitNullValueConnectStatus; set { _explicitNullValueConnectStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect_status"); else _explicitNullProperties?.Remove("connect_status"); } }
+        private string? _explicitNullValueConnectStatus = default!;
 #nullable restore
 #else
-        public string ConnectStatus { get; set; }
+        public string ConnectStatus { get => _explicitNullValueConnectStatus; set { _explicitNullValueConnectStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect_status"); else _explicitNullProperties?.Remove("connect_status"); } }
+        private string _explicitNullValueConnectStatus = default!;
 #endif
         /// <summary>The stripe_account_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StripeAccountId { get; set; }
+        public string? StripeAccountId { get => _explicitNullValueStripeAccountId; set { _explicitNullValueStripeAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripe_account_id"); else _explicitNullProperties?.Remove("stripe_account_id"); } }
+        private string? _explicitNullValueStripeAccountId = default!;
 #nullable restore
 #else
-        public string StripeAccountId { get; set; }
+        public string StripeAccountId { get => _explicitNullValueStripeAccountId; set { _explicitNullValueStripeAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripe_account_id"); else _explicitNullProperties?.Remove("stripe_account_id"); } }
+        private string _explicitNullValueStripeAccountId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlStripeConnection"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlStripeConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlStripeConnection();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlStripeConnection(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connect_status", ConnectStatus);
             writer.WriteStringValue("stripe_account_id", StripeAccountId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

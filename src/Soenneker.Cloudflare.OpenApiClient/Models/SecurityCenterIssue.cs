@@ -11,75 +11,118 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SecurityCenterIssue : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dismissed") is { } nullNodeDismissed && nullNodeDismissed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismissed = null;
+            if (parseNode.GetChildNode("has_extended_context") is { } nullNodeHasExtendedContext && nullNodeHasExtendedContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasExtendedContext = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("issue_class") is { } nullNodeIssueClass && nullNodeIssueClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueClass = null;
+            if (parseNode.GetChildNode("issue_type") is { } nullNodeIssueType && nullNodeIssueType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueType = null;
+            if (parseNode.GetChildNode("payload") is { } nullNodePayload && nullNodePayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payload = null;
+            if (parseNode.GetChildNode("resolve_link") is { } nullNodeResolveLink && nullNodeResolveLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolveLink = null;
+            if (parseNode.GetChildNode("resolve_text") is { } nullNodeResolveText && nullNodeResolveText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolveText = null;
+            if (parseNode.GetChildNode("severity") is { } nullNodeSeverity && nullNodeSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severity = null;
+            if (parseNode.GetChildNode("since") is { } nullNodeSince && nullNodeSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Since = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("user_classification") is { } nullNodeUserClassification && nullNodeUserClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserClassification = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dismissed property</summary>
-        public bool? Dismissed { get; set; }
+        public bool? Dismissed { get => _explicitNullValueDismissed; set { _explicitNullValueDismissed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed"); else _explicitNullProperties?.Remove("dismissed"); } }
+        private bool? _explicitNullValueDismissed = default!;
         /// <summary>Indicates whether the insight has a large payload that requires fetching via the context endpoint.</summary>
-        public bool? HasExtendedContext { get; set; }
+        public bool? HasExtendedContext { get => _explicitNullValueHasExtendedContext; set { _explicitNullValueHasExtendedContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_extended_context"); else _explicitNullProperties?.Remove("has_extended_context"); } }
+        private bool? _explicitNullValueHasExtendedContext = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The issue_class property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssueClass { get; set; }
+        public string? IssueClass { get => _explicitNullValueIssueClass; set { _explicitNullValueIssueClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_class"); else _explicitNullProperties?.Remove("issue_class"); } }
+        private string? _explicitNullValueIssueClass = default!;
 #nullable restore
 #else
-        public string IssueClass { get; set; }
+        public string IssueClass { get => _explicitNullValueIssueClass; set { _explicitNullValueIssueClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_class"); else _explicitNullProperties?.Remove("issue_class"); } }
+        private string _explicitNullValueIssueClass = default!;
 #endif
         /// <summary>The issue_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType? IssueType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType? IssueType { get => _explicitNullValueIssueType; set { _explicitNullValueIssueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_type"); else _explicitNullProperties?.Remove("issue_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType? _explicitNullValueIssueType = default!;
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload? Payload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload? _explicitNullValuePayload = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload Payload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload _explicitNullValuePayload = default!;
 #endif
         /// <summary>The resolve_link property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResolveLink { get; set; }
+        public string? ResolveLink { get => _explicitNullValueResolveLink; set { _explicitNullValueResolveLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolve_link"); else _explicitNullProperties?.Remove("resolve_link"); } }
+        private string? _explicitNullValueResolveLink = default!;
 #nullable restore
 #else
-        public string ResolveLink { get; set; }
+        public string ResolveLink { get => _explicitNullValueResolveLink; set { _explicitNullValueResolveLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolve_link"); else _explicitNullProperties?.Remove("resolve_link"); } }
+        private string _explicitNullValueResolveLink = default!;
 #endif
         /// <summary>The resolve_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResolveText { get; set; }
+        public string? ResolveText { get => _explicitNullValueResolveText; set { _explicitNullValueResolveText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolve_text"); else _explicitNullProperties?.Remove("resolve_text"); } }
+        private string? _explicitNullValueResolveText = default!;
 #nullable restore
 #else
-        public string ResolveText { get; set; }
+        public string ResolveText { get => _explicitNullValueResolveText; set { _explicitNullValueResolveText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolve_text"); else _explicitNullProperties?.Remove("resolve_text"); } }
+        private string _explicitNullValueResolveText = default!;
 #endif
         /// <summary>The severity property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueSeverity? Severity { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueSeverity? Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueSeverity? _explicitNullValueSeverity = default!;
         /// <summary>The since property</summary>
-        public DateTimeOffset? Since { get; set; }
+        public DateTimeOffset? Since { get => _explicitNullValueSince; set { _explicitNullValueSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("since"); else _explicitNullProperties?.Remove("since"); } }
+        private DateTimeOffset? _explicitNullValueSince = default!;
         /// <summary>Who generated the insight. `cloudflare` for Cloudflare-generated insights, otherwise the partner.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSource? Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSource? _explicitNullValueSource = default!;
         /// <summary>The current status of the insight.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueStatus? _explicitNullValueStatus = default!;
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get; set; }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get; set; }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>The timestamp property</summary>
-        public DateTimeOffset? Timestamp { get; set; }
+        public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private DateTimeOffset? _explicitNullValueTimestamp = default!;
         /// <summary>User-defined classification for the insight. Can be &apos;false_positive&apos;, &apos;accept_risk&apos;, &apos;other&apos;, or null.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification? UserClassification { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification? UserClassification { get => _explicitNullValueUserClassification; set { _explicitNullValueUserClassification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_classification"); else _explicitNullProperties?.Remove("user_classification"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification? _explicitNullValueUserClassification = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue"/> and sets the default values.
         /// </summary>
@@ -95,7 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -144,6 +187,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("subject", Subject);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>("user_classification", UserClassification);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

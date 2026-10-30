@@ -11,23 +11,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MconnTelemetryEventMetadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("a") is { } nullNodeA && nullNodeA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) A = null;
+            if (parseNode.GetChildNode("k") is { } nullNodeK && nullNodeK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) K = null;
+            if (parseNode.GetChildNode("n") is { } nullNodeN && nullNodeN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) N = null;
+            if (parseNode.GetChildNode("t") is { } nullNodeT && nullNodeT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) T = null;
+        }
+
         /// <summary>Time the Event was collected (seconds since the Unix epoch)</summary>
-        public double? A { get; set; }
+        public double? A { get => _explicitNullValueA; set { _explicitNullValueA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a"); else _explicitNullProperties?.Remove("a"); } }
+        private double? _explicitNullValueA = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Kind</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? K { get; set; }
+        public string? K { get => _explicitNullValueK; set { _explicitNullValueK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k"); else _explicitNullProperties?.Remove("k"); } }
+        private string? _explicitNullValueK = default!;
 #nullable restore
 #else
-        public string K { get; set; }
+        public string K { get => _explicitNullValueK; set { _explicitNullValueK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k"); else _explicitNullProperties?.Remove("k"); } }
+        private string _explicitNullValueK = default!;
 #endif
         /// <summary>Sequence number, used to order events with the same timestamp</summary>
-        public double? N { get; set; }
+        public double? N { get => _explicitNullValueN; set { _explicitNullValueN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("n"); else _explicitNullProperties?.Remove("n"); } }
+        private double? _explicitNullValueN = default!;
         /// <summary>Time the Event was recorded (seconds since the Unix epoch)</summary>
-        public double? T { get; set; }
+        public double? T { get => _explicitNullValueT; set { _explicitNullValueT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("t"); else _explicitNullProperties?.Remove("t"); } }
+        private double? _explicitNullValueT = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEventMetadata"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEventMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEventMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEventMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("k", K);
             writer.WriteDoubleValue("n", N);
             writer.WriteDoubleValue("t", T);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

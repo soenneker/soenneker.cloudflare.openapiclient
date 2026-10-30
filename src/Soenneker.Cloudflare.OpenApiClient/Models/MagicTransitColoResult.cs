@@ -11,37 +11,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicTransitColoResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("colo") is { } nullNodeColo && nullNodeColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colo = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("hops") is { } nullNodeHops && nullNodeHops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hops = null;
+            if (parseNode.GetChildNode("target_summary") is { } nullNodeTargetSummary && nullNodeTargetSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetSummary = null;
+            if (parseNode.GetChildNode("traceroute_time_ms") is { } nullNodeTracerouteTimeMs && nullNodeTracerouteTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TracerouteTimeMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The colo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColo? Colo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColo? Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColo? _explicitNullValueColo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColo Colo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColo Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColo _explicitNullValueColo = default!;
 #endif
         /// <summary>Errors resulting from collecting traceroute from colo to target.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitError? Error { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitError? _explicitNullValueError = default!;
         /// <summary>The hops property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult>? Hops { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult>? Hops { get => _explicitNullValueHops; set { _explicitNullValueHops = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hops"); else _explicitNullProperties?.Remove("hops"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult>? _explicitNullValueHops = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult> Hops { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult> Hops { get => _explicitNullValueHops; set { _explicitNullValueHops = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hops"); else _explicitNullProperties?.Remove("hops"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult> _explicitNullValueHops = default!;
 #endif
         /// <summary>Aggregated statistics from all hops about the target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResultTargetSummary? TargetSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResultTargetSummary? TargetSummary { get => _explicitNullValueTargetSummary; set { _explicitNullValueTargetSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_summary"); else _explicitNullProperties?.Remove("target_summary"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResultTargetSummary? _explicitNullValueTargetSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResultTargetSummary TargetSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResultTargetSummary TargetSummary { get => _explicitNullValueTargetSummary; set { _explicitNullValueTargetSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_summary"); else _explicitNullProperties?.Remove("target_summary"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResultTargetSummary _explicitNullValueTargetSummary = default!;
 #endif
         /// <summary>Total time of traceroute in ms.</summary>
-        public int? TracerouteTimeMs { get; set; }
+        public int? TracerouteTimeMs { get => _explicitNullValueTracerouteTimeMs; set { _explicitNullValueTracerouteTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceroute_time_ms"); else _explicitNullProperties?.Remove("traceroute_time_ms"); } }
+        private int? _explicitNullValueTracerouteTimeMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResult"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult>("hops", Hops);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitColoResultTargetSummary>("target_summary", TargetSummary);
             writer.WriteIntValue("traceroute_time_ms", TracerouteTimeMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

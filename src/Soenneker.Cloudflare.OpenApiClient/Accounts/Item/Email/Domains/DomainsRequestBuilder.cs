@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains
         {
         }
         /// <summary>
-        /// Returns account-scoped domain status. DNS records are omitted unless requested; exact hostname filtering may return several candidates; retain the EmailDomain ID for each enrollment. Available only to the configured OpenAI pilot account behind a default-off gate. Authentication failures may use the gateway error envelope.
+        /// Returns account-scoped domain status. DNS records are omitted unless requested; exact hostname filtering may return several candidates; retain the EmailDomain ID for each enrollment. Available only to the configured OpenAI pilot account behind a default-off gate; while the gate is off, the pilot account gets 503 with error 2090 and Retry-After, and existing domains are unaffected. Unsupported methods return 405 with error 2091. Authentication failures may use the gateway error envelope.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,11 +74,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainErrorResponse.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a candidate and four DNS instructions. Rejects hostnames whose assigned Return-Path exceeds 201 ASCII characters. Creation follows read-only checks of the saved provider bundle and published exclusion. Hostnames inside an active full Cloudflare DNS zone return the generic hostname conflict error 2083. No per-domain provider DNS writes occur. Customer DNS observations remain pending and mail remains inactive. Unverified candidates may share a hostname. Supply an account-unique client_reference to retry the same enrollment safely; reuse with a different hostname returns error 2083. Final public-DNS, namespace protection and runtime readiness are separate gates. Available only to the configured OpenAI pilot account behind a default-off gate. Authentication failures may use the gateway error envelope.
+        /// Creates a candidate and four DNS instructions. Rejects hostnames with more than 16 labels or whose assigned Return-Path exceeds 201 ASCII characters; error 2077 names the hostname rule that failed. Creation follows read-only checks of the saved provider bundle and published exclusion. Hostnames inside an active full Cloudflare DNS zone, including zones under a PSL private suffix such as workers.dev, or held by another enrollment, return the generic hostname conflict error 2083. While an earlier enrollment of this account with the same hostname or client_reference is being deleted, create returns error 2084 with Retry-After set to the expected completion time. No per-domain provider DNS writes occur. Customer DNS observations remain pending and mail remains inactive. Unverified candidates may share a hostname. Supply an account-unique client_reference to retry the same enrollment safely; reuse with a different hostname returns error 2089. A full domain quota returns error 2081 and frees only when domains are deleted or candidates expire, so it is not retryable; the create rate limit returns 429 with error 2088 and Retry-After. Requests rejected before the Cloudflare zone check do not count toward the rate limit. Final public-DNS, namespace protection and runtime readiness are separate gates. Available only to the configured OpenAI pilot account behind a default-off gate; while the gate is off, the pilot account gets 503 with error 2090 and Retry-After, and existing domains are unaffected. Unsupported methods return 405 with error 2091. Authentication failures may use the gateway error envelope.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -111,11 +113,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainErrorResponse.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns account-scoped domain status. DNS records are omitted unless requested; exact hostname filtering may return several candidates; retain the EmailDomain ID for each enrollment. Available only to the configured OpenAI pilot account behind a default-off gate. Authentication failures may use the gateway error envelope.
+        /// Returns account-scoped domain status. DNS records are omitted unless requested; exact hostname filtering may return several candidates; retain the EmailDomain ID for each enrollment. Available only to the configured OpenAI pilot account behind a default-off gate; while the gate is off, the pilot account gets 503 with error 2090 and Retry-After, and existing domains are unaffected. Unsupported methods return 405 with error 2091. Authentication failures may use the gateway error envelope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains
             return requestInfo;
         }
         /// <summary>
-        /// Creates a candidate and four DNS instructions. Rejects hostnames whose assigned Return-Path exceeds 201 ASCII characters. Creation follows read-only checks of the saved provider bundle and published exclusion. Hostnames inside an active full Cloudflare DNS zone return the generic hostname conflict error 2083. No per-domain provider DNS writes occur. Customer DNS observations remain pending and mail remains inactive. Unverified candidates may share a hostname. Supply an account-unique client_reference to retry the same enrollment safely; reuse with a different hostname returns error 2083. Final public-DNS, namespace protection and runtime readiness are separate gates. Available only to the configured OpenAI pilot account behind a default-off gate. Authentication failures may use the gateway error envelope.
+        /// Creates a candidate and four DNS instructions. Rejects hostnames with more than 16 labels or whose assigned Return-Path exceeds 201 ASCII characters; error 2077 names the hostname rule that failed. Creation follows read-only checks of the saved provider bundle and published exclusion. Hostnames inside an active full Cloudflare DNS zone, including zones under a PSL private suffix such as workers.dev, or held by another enrollment, return the generic hostname conflict error 2083. While an earlier enrollment of this account with the same hostname or client_reference is being deleted, create returns error 2084 with Retry-After set to the expected completion time. No per-domain provider DNS writes occur. Customer DNS observations remain pending and mail remains inactive. Unverified candidates may share a hostname. Supply an account-unique client_reference to retry the same enrollment safely; reuse with a different hostname returns error 2089. A full domain quota returns error 2081 and frees only when domains are deleted or candidates expire, so it is not retryable; the create rate limit returns 429 with error 2088 and Retry-After. Requests rejected before the Cloudflare zone check do not count toward the rate limit. Final public-DNS, namespace protection and runtime readiness are separate gates. Available only to the configured OpenAI pilot account behind a default-off gate; while the gate is off, the pilot account gets 503 with error 2090 and Retry-After, and existing domains are unaffected. Unsupported methods return 405 with error 2091. Authentication failures may use the gateway error envelope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -165,7 +169,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains.DomainsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns account-scoped domain status. DNS records are omitted unless requested; exact hostname filtering may return several candidates; retain the EmailDomain ID for each enrollment. Available only to the configured OpenAI pilot account behind a default-off gate. Authentication failures may use the gateway error envelope.
+        /// Returns account-scoped domain status. DNS records are omitted unless requested; exact hostname filtering may return several candidates; retain the EmailDomain ID for each enrollment. Available only to the configured OpenAI pilot account behind a default-off gate; while the gate is off, the pilot account gets 503 with error 2090 and Retry-After, and existing domains are unaffected. Unsupported methods return 405 with error 2091. Authentication failures may use the gateway error envelope.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DomainsRequestBuilderGetQueryParameters 

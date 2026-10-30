@@ -11,43 +11,69 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessCorsHeaders : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_all_headers") is { } nullNodeAllowAllHeaders && nullNodeAllowAllHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAllHeaders = null;
+            if (parseNode.GetChildNode("allow_all_methods") is { } nullNodeAllowAllMethods && nullNodeAllowAllMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAllMethods = null;
+            if (parseNode.GetChildNode("allow_all_origins") is { } nullNodeAllowAllOrigins && nullNodeAllowAllOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAllOrigins = null;
+            if (parseNode.GetChildNode("allow_credentials") is { } nullNodeAllowCredentials && nullNodeAllowCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowCredentials = null;
+            if (parseNode.GetChildNode("allowed_headers") is { } nullNodeAllowedHeaders && nullNodeAllowedHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedHeaders = null;
+            if (parseNode.GetChildNode("allowed_methods") is { } nullNodeAllowedMethods && nullNodeAllowedMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedMethods = null;
+            if (parseNode.GetChildNode("allowed_origins") is { } nullNodeAllowedOrigins && nullNodeAllowedOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedOrigins = null;
+            if (parseNode.GetChildNode("max_age") is { } nullNodeMaxAge && nullNodeMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAge = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allows all HTTP request headers.</summary>
-        public bool? AllowAllHeaders { get; set; }
+        public bool? AllowAllHeaders { get => _explicitNullValueAllowAllHeaders; set { _explicitNullValueAllowAllHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_all_headers"); else _explicitNullProperties?.Remove("allow_all_headers"); } }
+        private bool? _explicitNullValueAllowAllHeaders = default!;
         /// <summary>Allows all HTTP request methods.</summary>
-        public bool? AllowAllMethods { get; set; }
+        public bool? AllowAllMethods { get => _explicitNullValueAllowAllMethods; set { _explicitNullValueAllowAllMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_all_methods"); else _explicitNullProperties?.Remove("allow_all_methods"); } }
+        private bool? _explicitNullValueAllowAllMethods = default!;
         /// <summary>Allows all origins.</summary>
-        public bool? AllowAllOrigins { get; set; }
+        public bool? AllowAllOrigins { get => _explicitNullValueAllowAllOrigins; set { _explicitNullValueAllowAllOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_all_origins"); else _explicitNullProperties?.Remove("allow_all_origins"); } }
+        private bool? _explicitNullValueAllowAllOrigins = default!;
         /// <summary>When set to `true`, includes credentials (cookies, authorization headers, or TLS client certificates) with requests.</summary>
-        public bool? AllowCredentials { get; set; }
+        public bool? AllowCredentials { get => _explicitNullValueAllowCredentials; set { _explicitNullValueAllowCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_credentials"); else _explicitNullProperties?.Remove("allow_credentials"); } }
+        private bool? _explicitNullValueAllowCredentials = default!;
         /// <summary>Allowed HTTP request headers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedHeaders { get; set; }
+        public List<string>? AllowedHeaders { get => _explicitNullValueAllowedHeaders; set { _explicitNullValueAllowedHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_headers"); else _explicitNullProperties?.Remove("allowed_headers"); } }
+        private List<string>? _explicitNullValueAllowedHeaders = default!;
 #nullable restore
 #else
-        public List<string> AllowedHeaders { get; set; }
+        public List<string> AllowedHeaders { get => _explicitNullValueAllowedHeaders; set { _explicitNullValueAllowedHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_headers"); else _explicitNullProperties?.Remove("allowed_headers"); } }
+        private List<string> _explicitNullValueAllowedHeaders = default!;
 #endif
         /// <summary>Allowed HTTP request methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeadersAllowedMethodsItem?>? AllowedMethods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeadersAllowedMethodsItem?>? AllowedMethods { get => _explicitNullValueAllowedMethods; set { _explicitNullValueAllowedMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_methods"); else _explicitNullProperties?.Remove("allowed_methods"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeadersAllowedMethodsItem?>? _explicitNullValueAllowedMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeadersAllowedMethodsItem?> AllowedMethods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeadersAllowedMethodsItem?> AllowedMethods { get => _explicitNullValueAllowedMethods; set { _explicitNullValueAllowedMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_methods"); else _explicitNullProperties?.Remove("allowed_methods"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeadersAllowedMethodsItem?> _explicitNullValueAllowedMethods = default!;
 #endif
         /// <summary>Allowed origins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedOrigins { get; set; }
+        public List<string>? AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_origins"); else _explicitNullProperties?.Remove("allowed_origins"); } }
+        private List<string>? _explicitNullValueAllowedOrigins = default!;
 #nullable restore
 #else
-        public List<string> AllowedOrigins { get; set; }
+        public List<string> AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_origins"); else _explicitNullProperties?.Remove("allowed_origins"); } }
+        private List<string> _explicitNullValueAllowedOrigins = default!;
 #endif
         /// <summary>The maximum number of seconds the results of a preflight request can be cached.</summary>
-        public double? MaxAge { get; set; }
+        public double? MaxAge { get => _explicitNullValueMaxAge; set { _explicitNullValueMaxAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_age"); else _explicitNullProperties?.Remove("max_age"); } }
+        private double? _explicitNullValueMaxAge = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders"/> and sets the default values.
         /// </summary>
@@ -63,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeadersAllowedMethodsItem>("allowed_methods", AllowedMethods);
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_origins", AllowedOrigins);
             writer.WriteDoubleValue("max_age", MaxAge);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

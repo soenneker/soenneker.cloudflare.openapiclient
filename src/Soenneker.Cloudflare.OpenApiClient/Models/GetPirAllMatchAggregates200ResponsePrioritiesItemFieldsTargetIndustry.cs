@@ -11,21 +11,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("buckets") is { } nullNodeBuckets && nullNodeBuckets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Buckets = null;
+            if (parseNode.GetChildNode("distinct_values") is { } nullNodeDistinctValues && nullNodeDistinctValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctValues = null;
+            if (parseNode.GetChildNode("without_value") is { } nullNodeWithoutValue && nullNodeWithoutValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WithoutValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Top values, most matches first; ties in ascending value order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustryBucketsItem>? Buckets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustryBucketsItem>? Buckets { get => _explicitNullValueBuckets; set { _explicitNullValueBuckets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buckets"); else _explicitNullProperties?.Remove("buckets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustryBucketsItem>? _explicitNullValueBuckets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustryBucketsItem> Buckets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustryBucketsItem> Buckets { get => _explicitNullValueBuckets; set { _explicitNullValueBuckets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buckets"); else _explicitNullProperties?.Remove("buckets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustryBucketsItem> _explicitNullValueBuckets = default!;
 #endif
         /// <summary>Distinct values among counted matches.</summary>
-        public int? DistinctValues { get; set; }
+        public int? DistinctValues { get => _explicitNullValueDistinctValues; set { _explicitNullValueDistinctValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_values"); else _explicitNullProperties?.Remove("distinct_values"); } }
+        private int? _explicitNullValueDistinctValues = default!;
         /// <summary>Counted matches with no value for this field.</summary>
-        public int? WithoutValue { get; set; }
+        public int? WithoutValue { get => _explicitNullValueWithoutValue; set { _explicitNullValueWithoutValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("without_value"); else _explicitNullProperties?.Remove("without_value"); } }
+        private int? _explicitNullValueWithoutValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustryBucketsItem>("buckets", Buckets);
             writer.WriteIntValue("distinct_values", DistinctValues);
             writer.WriteIntValue("without_value", WithoutValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

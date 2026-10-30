@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class NscCniCreate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("bgp") is { } nullNodeBgp && nullNodeBgp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bgp = null;
+            if (parseNode.GetChildNode("interconnect") is { } nullNodeInterconnect && nullNodeInterconnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interconnect = null;
+            if (parseNode.GetChildNode("magic") is { } nullNodeMagic && nullNodeMagic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Magic = null;
+        }
+
         /// <summary>Customer account tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Account { get; set; }
+        public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public string Account { get; set; }
+        public string Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string _explicitNullValueAccount = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bgp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? Bgp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? _explicitNullValueBgp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl Bgp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl _explicitNullValueBgp = default!;
 #endif
         /// <summary>The interconnect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Interconnect { get; set; }
+        public string? Interconnect { get => _explicitNullValueInterconnect; set { _explicitNullValueInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interconnect"); else _explicitNullProperties?.Remove("interconnect"); } }
+        private string? _explicitNullValueInterconnect = default!;
 #nullable restore
 #else
-        public string Interconnect { get; set; }
+        public string Interconnect { get => _explicitNullValueInterconnect; set { _explicitNullValueInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interconnect"); else _explicitNullProperties?.Remove("interconnect"); } }
+        private string _explicitNullValueInterconnect = default!;
 #endif
         /// <summary>The magic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings? Magic { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings? Magic { get => _explicitNullValueMagic; set { _explicitNullValueMagic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("magic"); else _explicitNullProperties?.Remove("magic"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings? _explicitNullValueMagic = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings Magic { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings Magic { get => _explicitNullValueMagic; set { _explicitNullValueMagic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("magic"); else _explicitNullProperties?.Remove("magic"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings _explicitNullValueMagic = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreate"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl>("bgp", Bgp);
             writer.WriteStringValue("interconnect", Interconnect);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings>("magic", Magic);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

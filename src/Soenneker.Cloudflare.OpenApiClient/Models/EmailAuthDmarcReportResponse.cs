@@ -12,65 +12,101 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailAuthDmarcReportResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("approved_sources") is { } nullNodeApprovedSources && nullNodeApprovedSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovedSources = null;
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("modified_at") is { } nullNodeModifiedAt && nullNodeModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedAt = null;
+            if (parseNode.GetChildNode("records") is { } nullNodeRecords && nullNodeRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Records = null;
+            if (parseNode.GetChildNode("rua_prefix") is { } nullNodeRuaPrefix && nullNodeRuaPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuaPrefix = null;
+            if (parseNode.GetChildNode("skip_wizard") is { } nullNodeSkipWizard && nullNodeSkipWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipWizard = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("tag") is { } nullNodeTag && nullNodeTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tag = null;
+            if (parseNode.GetChildNode("zone_id") is { } nullNodeZoneId && nullNodeZoneId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of approved sending sources (omitted when empty)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthApprovedSourceResponse>? ApprovedSources { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthApprovedSourceResponse>? ApprovedSources { get => _explicitNullValueApprovedSources; set { _explicitNullValueApprovedSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved_sources"); else _explicitNullProperties?.Remove("approved_sources"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthApprovedSourceResponse>? _explicitNullValueApprovedSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthApprovedSourceResponse> ApprovedSources { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthApprovedSourceResponse> ApprovedSources { get => _explicitNullValueApprovedSources; set { _explicitNullValueApprovedSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved_sources"); else _explicitNullProperties?.Remove("approved_sources"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthApprovedSourceResponse> _explicitNullValueApprovedSources = default!;
 #endif
         /// <summary>Deprecated, use created_at</summary>
         [Obsolete("")]
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private DateTimeOffset? _explicitNullValueCreated = default!;
         /// <summary>Creation timestamp</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Whether DMARC reports are enabled</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Deprecated, use modified_at</summary>
         [Obsolete("")]
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        private DateTimeOffset? _explicitNullValueModified = default!;
         /// <summary>Last modification timestamp</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get => _explicitNullValueModifiedAt; set { _explicitNullValueModifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_at"); else _explicitNullProperties?.Remove("modified_at"); } }
+        private DateTimeOffset? _explicitNullValueModifiedAt = default!;
         /// <summary>Live DNS records for the zone, grouped by type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthZoneDnsRecords? Records { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthZoneDnsRecords? Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthZoneDnsRecords? _explicitNullValueRecords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthZoneDnsRecords Records { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthZoneDnsRecords Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthZoneDnsRecords _explicitNullValueRecords = default!;
 #endif
         /// <summary>Prefix for DMARC RUA addresses (32-char hex string)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuaPrefix { get; set; }
+        public string? RuaPrefix { get => _explicitNullValueRuaPrefix; set { _explicitNullValueRuaPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rua_prefix"); else _explicitNullProperties?.Remove("rua_prefix"); } }
+        private string? _explicitNullValueRuaPrefix = default!;
 #nullable restore
 #else
-        public string RuaPrefix { get; set; }
+        public string RuaPrefix { get => _explicitNullValueRuaPrefix; set { _explicitNullValueRuaPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rua_prefix"); else _explicitNullProperties?.Remove("rua_prefix"); } }
+        private string _explicitNullValueRuaPrefix = default!;
 #endif
         /// <summary>Whether to skip the setup wizard</summary>
-        public bool? SkipWizard { get; set; }
+        public bool? SkipWizard { get => _explicitNullValueSkipWizard; set { _explicitNullValueSkipWizard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_wizard"); else _explicitNullProperties?.Remove("skip_wizard"); } }
+        private bool? _explicitNullValueSkipWizard = default!;
         /// <summary>DMARC configuration status. The API omits this field when DMARC is correctly configured. If the zone lacks a DMARC TXT record of its own, the API resolves _dmarc.{zone} recursively and evaluates whatever that lookup returns. A CNAME at _dmarc.{zone} that points to a valid DMARC record is therefore healthy; the cname-on-dmarc-record value means the CNAME resolves to no DMARC record at all.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDmarcStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDmarcStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDmarcStatus? _explicitNullValueStatus = default!;
         /// <summary>Use `zone_id` instead</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tag { get; set; }
+        public string? Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag"); else _explicitNullProperties?.Remove("tag"); } }
+        private string? _explicitNullValueTag = default!;
 #nullable restore
 #else
-        public string Tag { get; set; }
+        public string Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag"); else _explicitNullProperties?.Remove("tag"); } }
+        private string _explicitNullValueTag = default!;
 #endif
         /// <summary>Zone identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZoneId { get; set; }
+        public string? ZoneId { get => _explicitNullValueZoneId; set { _explicitNullValueZoneId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_id"); else _explicitNullProperties?.Remove("zone_id"); } }
+        private string? _explicitNullValueZoneId = default!;
 #nullable restore
 #else
-        public string ZoneId { get; set; }
+        public string ZoneId { get => _explicitNullValueZoneId; set { _explicitNullValueZoneId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_id"); else _explicitNullProperties?.Remove("zone_id"); } }
+        private string _explicitNullValueZoneId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDmarcReportResponse"/> and sets the default values.
@@ -87,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDmarcReportResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDmarcReportResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDmarcReportResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,6 +166,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDmarcStatus>("status", Status);
             writer.WriteStringValue("tag", Tag);
             writer.WriteStringValue("zone_id", ZoneId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

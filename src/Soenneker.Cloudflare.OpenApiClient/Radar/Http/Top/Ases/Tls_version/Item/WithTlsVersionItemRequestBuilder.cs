@@ -53,6 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Ite
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopAsesByTlsVersion404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopAsesByTlsVersion200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopAsesByTlsVersion200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

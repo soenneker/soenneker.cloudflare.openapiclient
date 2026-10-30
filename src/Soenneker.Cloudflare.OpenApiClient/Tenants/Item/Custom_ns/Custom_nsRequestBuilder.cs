@@ -66,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversListTenantCustomNameservers4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -91,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversAddTenantCustomNameserver4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

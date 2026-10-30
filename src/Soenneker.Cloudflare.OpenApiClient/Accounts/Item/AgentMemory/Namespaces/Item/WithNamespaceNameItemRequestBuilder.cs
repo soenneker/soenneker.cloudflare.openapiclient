@@ -59,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespace
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryNamespaceDelete4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryNamespaceDelete200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryNamespaceDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -82,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespace
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryNamespaceGet4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryNamespaceGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryNamespaceGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

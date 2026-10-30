@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetAttacksLayer3TopAttacks200ResponseResultTop0Item : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("originCountryAlpha2") is { } nullNodeOriginCountryAlpha2 && nullNodeOriginCountryAlpha2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginCountryAlpha2 = null;
+            if (parseNode.GetChildNode("originCountryName") is { } nullNodeOriginCountryName && nullNodeOriginCountryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginCountryName = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The originCountryAlpha2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginCountryAlpha2 { get; set; }
+        public string? OriginCountryAlpha2 { get => _explicitNullValueOriginCountryAlpha2; set { _explicitNullValueOriginCountryAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originCountryAlpha2"); else _explicitNullProperties?.Remove("originCountryAlpha2"); } }
+        private string? _explicitNullValueOriginCountryAlpha2 = default!;
 #nullable restore
 #else
-        public string OriginCountryAlpha2 { get; set; }
+        public string OriginCountryAlpha2 { get => _explicitNullValueOriginCountryAlpha2; set { _explicitNullValueOriginCountryAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originCountryAlpha2"); else _explicitNullProperties?.Remove("originCountryAlpha2"); } }
+        private string _explicitNullValueOriginCountryAlpha2 = default!;
 #endif
         /// <summary>The originCountryName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginCountryName { get; set; }
+        public string? OriginCountryName { get => _explicitNullValueOriginCountryName; set { _explicitNullValueOriginCountryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originCountryName"); else _explicitNullProperties?.Remove("originCountryName"); } }
+        private string? _explicitNullValueOriginCountryName = default!;
 #nullable restore
 #else
-        public string OriginCountryName { get; set; }
+        public string OriginCountryName { get => _explicitNullValueOriginCountryName; set { _explicitNullValueOriginCountryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originCountryName"); else _explicitNullProperties?.Remove("originCountryName"); } }
+        private string _explicitNullValueOriginCountryName = default!;
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer3TopAttacks200ResponseResultTop0Item"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer3TopAttacks200ResponseResultTop0Item CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer3TopAttacks200ResponseResultTop0Item();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer3TopAttacks200ResponseResultTop0Item(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("originCountryAlpha2", OriginCountryAlpha2);
             writer.WriteStringValue("originCountryName", OriginCountryName);
             writer.WriteStringValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

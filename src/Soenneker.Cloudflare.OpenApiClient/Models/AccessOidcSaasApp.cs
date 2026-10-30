@@ -11,113 +11,164 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessOidcSaasApp : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_token_lifetime") is { } nullNodeAccessTokenLifetime && nullNodeAccessTokenLifetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessTokenLifetime = null;
+            if (parseNode.GetChildNode("allow_pkce_without_client_secret") is { } nullNodeAllowPkceWithoutClientSecret && nullNodeAllowPkceWithoutClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowPkceWithoutClientSecret = null;
+            if (parseNode.GetChildNode("app_launcher_url") is { } nullNodeAppLauncherUrl && nullNodeAppLauncherUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppLauncherUrl = null;
+            if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_secret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("custom_claims") is { } nullNodeCustomClaims && nullNodeCustomClaims.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomClaims = null;
+            if (parseNode.GetChildNode("grant_types") is { } nullNodeGrantTypes && nullNodeGrantTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantTypes = null;
+            if (parseNode.GetChildNode("group_filter_regex") is { } nullNodeGroupFilterRegex && nullNodeGroupFilterRegex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupFilterRegex = null;
+            if (parseNode.GetChildNode("hybrid_and_implicit_options") is { } nullNodeHybridAndImplicitOptions && nullNodeHybridAndImplicitOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HybridAndImplicitOptions = null;
+            if (parseNode.GetChildNode("public_key") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("redirect_uris") is { } nullNodeRedirectUris && nullNodeRedirectUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUris = null;
+            if (parseNode.GetChildNode("refresh_token_options") is { } nullNodeRefreshTokenOptions && nullNodeRefreshTokenOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshTokenOptions = null;
+            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>The lifetime of the OIDC Access Token after creation. Valid units are m,h. Must be greater than or equal to 1m and less than or equal to 24h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessTokenLifetime { get; set; }
+        public string? AccessTokenLifetime { get => _explicitNullValueAccessTokenLifetime; set { _explicitNullValueAccessTokenLifetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_token_lifetime"); else _explicitNullProperties?.Remove("access_token_lifetime"); } }
+        private string? _explicitNullValueAccessTokenLifetime = default!;
 #nullable restore
 #else
-        public string AccessTokenLifetime { get; set; }
+        public string AccessTokenLifetime { get => _explicitNullValueAccessTokenLifetime; set { _explicitNullValueAccessTokenLifetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_token_lifetime"); else _explicitNullProperties?.Remove("access_token_lifetime"); } }
+        private string _explicitNullValueAccessTokenLifetime = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If client secret should be required on the token endpoint when authorization_code_with_pkce grant is used.</summary>
-        public bool? AllowPkceWithoutClientSecret { get; set; }
+        public bool? AllowPkceWithoutClientSecret { get => _explicitNullValueAllowPkceWithoutClientSecret; set { _explicitNullValueAllowPkceWithoutClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_pkce_without_client_secret"); else _explicitNullProperties?.Remove("allow_pkce_without_client_secret"); } }
+        private bool? _explicitNullValueAllowPkceWithoutClientSecret = default!;
         /// <summary>The URL where this applications tile redirects users</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppLauncherUrl { get; set; }
+        public string? AppLauncherUrl { get => _explicitNullValueAppLauncherUrl; set { _explicitNullValueAppLauncherUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_launcher_url"); else _explicitNullProperties?.Remove("app_launcher_url"); } }
+        private string? _explicitNullValueAppLauncherUrl = default!;
 #nullable restore
 #else
-        public string AppLauncherUrl { get; set; }
+        public string AppLauncherUrl { get => _explicitNullValueAppLauncherUrl; set { _explicitNullValueAppLauncherUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_launcher_url"); else _explicitNullProperties?.Remove("app_launcher_url"); } }
+        private string _explicitNullValueAppLauncherUrl = default!;
 #endif
         /// <summary>Identifier of the authentication protocol used for the saas app. Required for OIDC.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppAuthType? AuthType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppAuthType? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppAuthType? _explicitNullValueAuthType = default!;
         /// <summary>The application client id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>The application client secret, only returned on POST request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret { get; set; }
+        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        private string? _explicitNullValueClientSecret = default!;
 #nullable restore
 #else
-        public string ClientSecret { get; set; }
+        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        private string _explicitNullValueClientSecret = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The custom_claims property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem>? CustomClaims { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem>? CustomClaims { get => _explicitNullValueCustomClaims; set { _explicitNullValueCustomClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_claims"); else _explicitNullProperties?.Remove("custom_claims"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem>? _explicitNullValueCustomClaims = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem> CustomClaims { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem> CustomClaims { get => _explicitNullValueCustomClaims; set { _explicitNullValueCustomClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_claims"); else _explicitNullProperties?.Remove("custom_claims"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem> _explicitNullValueCustomClaims = default!;
 #endif
         /// <summary>The OIDC flows supported by this application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem?>? GrantTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem?>? GrantTypes { get => _explicitNullValueGrantTypes; set { _explicitNullValueGrantTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_types"); else _explicitNullProperties?.Remove("grant_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem?>? _explicitNullValueGrantTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem?> GrantTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem?> GrantTypes { get => _explicitNullValueGrantTypes; set { _explicitNullValueGrantTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_types"); else _explicitNullProperties?.Remove("grant_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem?> _explicitNullValueGrantTypes = default!;
 #endif
         /// <summary>A regex to filter Cloudflare groups returned in ID token and userinfo endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupFilterRegex { get; set; }
+        public string? GroupFilterRegex { get => _explicitNullValueGroupFilterRegex; set { _explicitNullValueGroupFilterRegex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_filter_regex"); else _explicitNullProperties?.Remove("group_filter_regex"); } }
+        private string? _explicitNullValueGroupFilterRegex = default!;
 #nullable restore
 #else
-        public string GroupFilterRegex { get; set; }
+        public string GroupFilterRegex { get => _explicitNullValueGroupFilterRegex; set { _explicitNullValueGroupFilterRegex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_filter_regex"); else _explicitNullProperties?.Remove("group_filter_regex"); } }
+        private string _explicitNullValueGroupFilterRegex = default!;
 #endif
         /// <summary>The hybrid_and_implicit_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppHybridAndImplicitOptions? HybridAndImplicitOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppHybridAndImplicitOptions? HybridAndImplicitOptions { get => _explicitNullValueHybridAndImplicitOptions; set { _explicitNullValueHybridAndImplicitOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hybrid_and_implicit_options"); else _explicitNullProperties?.Remove("hybrid_and_implicit_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppHybridAndImplicitOptions? _explicitNullValueHybridAndImplicitOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppHybridAndImplicitOptions HybridAndImplicitOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppHybridAndImplicitOptions HybridAndImplicitOptions { get => _explicitNullValueHybridAndImplicitOptions; set { _explicitNullValueHybridAndImplicitOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hybrid_and_implicit_options"); else _explicitNullProperties?.Remove("hybrid_and_implicit_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppHybridAndImplicitOptions _explicitNullValueHybridAndImplicitOptions = default!;
 #endif
         /// <summary>The Access public certificate that will be used to verify your identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKey { get; set; }
+        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        private string? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public string PublicKey { get; set; }
+        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        private string _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>The permitted URL&apos;s for Cloudflare to return Authorization codes and Access/ID tokens</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RedirectUris { get; set; }
+        public List<string>? RedirectUris { get => _explicitNullValueRedirectUris; set { _explicitNullValueRedirectUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uris"); else _explicitNullProperties?.Remove("redirect_uris"); } }
+        private List<string>? _explicitNullValueRedirectUris = default!;
 #nullable restore
 #else
-        public List<string> RedirectUris { get; set; }
+        public List<string> RedirectUris { get => _explicitNullValueRedirectUris; set { _explicitNullValueRedirectUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uris"); else _explicitNullProperties?.Remove("redirect_uris"); } }
+        private List<string> _explicitNullValueRedirectUris = default!;
 #endif
         /// <summary>The refresh_token_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions? RefreshTokenOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions? RefreshTokenOptions { get => _explicitNullValueRefreshTokenOptions; set { _explicitNullValueRefreshTokenOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh_token_options"); else _explicitNullProperties?.Remove("refresh_token_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions? _explicitNullValueRefreshTokenOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions RefreshTokenOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions RefreshTokenOptions { get => _explicitNullValueRefreshTokenOptions; set { _explicitNullValueRefreshTokenOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh_token_options"); else _explicitNullProperties?.Remove("refresh_token_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions _explicitNullValueRefreshTokenOptions = default!;
 #endif
         /// <summary>Define the user information shared with access, &quot;offline_access&quot; scope will be automatically enabled if refresh tokens are enabled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem?>? Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem?>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem?>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem?> Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem?> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem?> _explicitNullValueScopes = default!;
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp"/> and sets the default values.
         /// </summary>
@@ -133,7 +184,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -184,6 +235,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions>("refresh_token_options", RefreshTokenOptions);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem>("scopes", Scopes);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

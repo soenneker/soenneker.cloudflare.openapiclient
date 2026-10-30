@@ -11,39 +11,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RealtimekitPeerReportMetadataPcMetadataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("effective_network_type") is { } nullNodeEffectiveNetworkType && nullNodeEffectiveNetworkType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveNetworkType = null;
+            if (parseNode.GetChildNode("reflexive_connectivity") is { } nullNodeReflexiveConnectivity && nullNodeReflexiveConnectivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReflexiveConnectivity = null;
+            if (parseNode.GetChildNode("relay_connectivity") is { } nullNodeRelayConnectivity && nullNodeRelayConnectivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelayConnectivity = null;
+            if (parseNode.GetChildNode("sdp") is { } nullNodeSdp && nullNodeSdp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sdp = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("turn_connectivity") is { } nullNodeTurnConnectivity && nullNodeTurnConnectivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnConnectivity = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The effective_network_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EffectiveNetworkType { get; set; }
+        public string? EffectiveNetworkType { get => _explicitNullValueEffectiveNetworkType; set { _explicitNullValueEffectiveNetworkType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_network_type"); else _explicitNullProperties?.Remove("effective_network_type"); } }
+        private string? _explicitNullValueEffectiveNetworkType = default!;
 #nullable restore
 #else
-        public string EffectiveNetworkType { get; set; }
+        public string EffectiveNetworkType { get => _explicitNullValueEffectiveNetworkType; set { _explicitNullValueEffectiveNetworkType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_network_type"); else _explicitNullProperties?.Remove("effective_network_type"); } }
+        private string _explicitNullValueEffectiveNetworkType = default!;
 #endif
         /// <summary>The reflexive_connectivity property</summary>
-        public bool? ReflexiveConnectivity { get; set; }
+        public bool? ReflexiveConnectivity { get => _explicitNullValueReflexiveConnectivity; set { _explicitNullValueReflexiveConnectivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reflexive_connectivity"); else _explicitNullProperties?.Remove("reflexive_connectivity"); } }
+        private bool? _explicitNullValueReflexiveConnectivity = default!;
         /// <summary>The relay_connectivity property</summary>
-        public bool? RelayConnectivity { get; set; }
+        public bool? RelayConnectivity { get => _explicitNullValueRelayConnectivity; set { _explicitNullValueRelayConnectivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relay_connectivity"); else _explicitNullProperties?.Remove("relay_connectivity"); } }
+        private bool? _explicitNullValueRelayConnectivity = default!;
         /// <summary>The sdp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Sdp { get; set; }
+        public List<string>? Sdp { get => _explicitNullValueSdp; set { _explicitNullValueSdp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdp"); else _explicitNullProperties?.Remove("sdp"); } }
+        private List<string>? _explicitNullValueSdp = default!;
 #nullable restore
 #else
-        public List<string> Sdp { get; set; }
+        public List<string> Sdp { get => _explicitNullValueSdp; set { _explicitNullValueSdp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdp"); else _explicitNullProperties?.Remove("sdp"); } }
+        private List<string> _explicitNullValueSdp = default!;
 #endif
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get; set; }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>The turn_connectivity property</summary>
-        public bool? TurnConnectivity { get; set; }
+        public bool? TurnConnectivity { get => _explicitNullValueTurnConnectivity; set { _explicitNullValueTurnConnectivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_connectivity"); else _explicitNullProperties?.Remove("turn_connectivity"); } }
+        private bool? _explicitNullValueTurnConnectivity = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem"/> and sets the default values.
         /// </summary>
@@ -59,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("sdp", Sdp);
             writer.WriteStringValue("timestamp", Timestamp);
             writer.WriteBoolValue("turn_connectivity", TurnConnectivity);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

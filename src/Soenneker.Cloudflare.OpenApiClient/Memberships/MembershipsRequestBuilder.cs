@@ -66,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Memberships
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UserSAccountMembershipsListMemberships200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UserSAccountMembershipsListMemberships200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

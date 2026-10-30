@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Regional_tiered_cache
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\cache\regional_tiered_cache
+    /// Builds and executes requests for operations under \zones\{zoneId}\cache\regional_tiered_cache
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Regional_tiered_cacheRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Regional_tiered_ca
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Regional_tiered_cacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/cache/regional_tiered_cache", pathParameters)
+        public Regional_tiered_cacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/cache/regional_tiered_cache", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Regional_tiered_ca
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Regional_tiered_cacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/cache/regional_tiered_cache", rawUrl)
+        public Regional_tiered_cacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/cache/regional_tiered_cache", rawUrl)
         {
         }
         /// <summary>
@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Regional_tiered_ca
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetRegionalTieredCacheSetting200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetRegionalTieredCacheSetting200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Regional_tiered_ca
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeRegionalTieredCacheSetting200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeRegionalTieredCacheSetting200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

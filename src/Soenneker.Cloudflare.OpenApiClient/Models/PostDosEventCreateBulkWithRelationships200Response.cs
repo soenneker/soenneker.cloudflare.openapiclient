@@ -12,24 +12,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostDosEventCreateBulkWithRelationships200Response : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("createdEventsCount") is { } nullNodeCreatedEventsCount && nullNodeCreatedEventsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedEventsCount = null;
+            if (parseNode.GetChildNode("createdIndicatorsCount") is { } nullNodeCreatedIndicatorsCount && nullNodeCreatedIndicatorsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedIndicatorsCount = null;
+            if (parseNode.GetChildNode("createdRelationshipsCount") is { } nullNodeCreatedRelationshipsCount && nullNodeCreatedRelationshipsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedRelationshipsCount = null;
+            if (parseNode.GetChildNode("errorCount") is { } nullNodeErrorCount && nullNodeErrorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCount = null;
+            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of events created</summary>
-        public double? CreatedEventsCount { get; set; }
+        public double? CreatedEventsCount { get => _explicitNullValueCreatedEventsCount; set { _explicitNullValueCreatedEventsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdEventsCount"); else _explicitNullProperties?.Remove("createdEventsCount"); } }
+        private double? _explicitNullValueCreatedEventsCount = default!;
         /// <summary>Number of indicators created</summary>
-        public double? CreatedIndicatorsCount { get; set; }
+        public double? CreatedIndicatorsCount { get => _explicitNullValueCreatedIndicatorsCount; set { _explicitNullValueCreatedIndicatorsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdIndicatorsCount"); else _explicitNullProperties?.Remove("createdIndicatorsCount"); } }
+        private double? _explicitNullValueCreatedIndicatorsCount = default!;
         /// <summary>Number of relationships created</summary>
-        public double? CreatedRelationshipsCount { get; set; }
+        public double? CreatedRelationshipsCount { get => _explicitNullValueCreatedRelationshipsCount; set { _explicitNullValueCreatedRelationshipsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdRelationshipsCount"); else _explicitNullProperties?.Remove("createdRelationshipsCount"); } }
+        private double? _explicitNullValueCreatedRelationshipsCount = default!;
         /// <summary>Number of errors encountered</summary>
-        public double? ErrorCount { get; set; }
+        public double? ErrorCount { get => _explicitNullValueErrorCount; set { _explicitNullValueErrorCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCount"); else _explicitNullProperties?.Remove("errorCount"); } }
+        private double? _explicitNullValueErrorCount = default!;
         /// <summary>Array of error details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200ResponseErrorsItem>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200ResponseErrorsItem>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200ResponseErrorsItem>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200ResponseErrorsItem> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200ResponseErrorsItem> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200ResponseErrorsItem> _explicitNullValueErrors = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200Response"/> and sets the default values.
@@ -46,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("createdRelationshipsCount", CreatedRelationshipsCount);
             writer.WriteDoubleValue("errorCount", ErrorCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDosEventCreateBulkWithRelationships200ResponseErrorsItem>("errors", Errors);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

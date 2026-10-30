@@ -12,42 +12,68 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesetsRuleRatelimit : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("characteristics") is { } nullNodeCharacteristics && nullNodeCharacteristics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Characteristics = null;
+            if (parseNode.GetChildNode("counting_expression") is { } nullNodeCountingExpression && nullNodeCountingExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountingExpression = null;
+            if (parseNode.GetChildNode("mitigation_timeout") is { } nullNodeMitigationTimeout && nullNodeMitigationTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitigationTimeout = null;
+            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("requests_per_period") is { } nullNodeRequestsPerPeriod && nullNodeRequestsPerPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsPerPeriod = null;
+            if (parseNode.GetChildNode("requests_to_origin") is { } nullNodeRequestsToOrigin && nullNodeRequestsToOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsToOrigin = null;
+            if (parseNode.GetChildNode("score_per_period") is { } nullNodeScorePerPeriod && nullNodeScorePerPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScorePerPeriod = null;
+            if (parseNode.GetChildNode("score_response_header_name") is { } nullNodeScoreResponseHeaderName && nullNodeScoreResponseHeaderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreResponseHeaderName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Characteristics of the request on which the rate limit counter will be incremented.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Characteristics { get; set; }
+        public List<string>? Characteristics { get => _explicitNullValueCharacteristics; set { _explicitNullValueCharacteristics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characteristics"); else _explicitNullProperties?.Remove("characteristics"); } }
+        private List<string>? _explicitNullValueCharacteristics = default!;
 #nullable restore
 #else
-        public List<string> Characteristics { get; set; }
+        public List<string> Characteristics { get => _explicitNullValueCharacteristics; set { _explicitNullValueCharacteristics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characteristics"); else _explicitNullProperties?.Remove("characteristics"); } }
+        private List<string> _explicitNullValueCharacteristics = default!;
 #endif
         /// <summary>An expression that defines when the rate limit counter should be incremented. It defaults to the same as the rule&apos;s expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountingExpression { get; set; }
+        public string? CountingExpression { get => _explicitNullValueCountingExpression; set { _explicitNullValueCountingExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counting_expression"); else _explicitNullProperties?.Remove("counting_expression"); } }
+        private string? _explicitNullValueCountingExpression = default!;
 #nullable restore
 #else
-        public string CountingExpression { get; set; }
+        public string CountingExpression { get => _explicitNullValueCountingExpression; set { _explicitNullValueCountingExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counting_expression"); else _explicitNullProperties?.Remove("counting_expression"); } }
+        private string _explicitNullValueCountingExpression = default!;
 #endif
         /// <summary>Period of time in seconds after which the action will be disabled following its first execution.</summary>
-        public int? MitigationTimeout { get; set; }
+        public int? MitigationTimeout { get => _explicitNullValueMitigationTimeout; set { _explicitNullValueMitigationTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigation_timeout"); else _explicitNullProperties?.Remove("mitigation_timeout"); } }
+        private int? _explicitNullValueMitigationTimeout = default!;
         /// <summary>Period in seconds over which the counter is being incremented.</summary>
-        public int? Period { get; set; }
+        public int? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private int? _explicitNullValuePeriod = default!;
         /// <summary>The threshold of requests per period after which the action will be executed for the first time.</summary>
-        public int? RequestsPerPeriod { get; set; }
+        public int? RequestsPerPeriod { get => _explicitNullValueRequestsPerPeriod; set { _explicitNullValueRequestsPerPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_per_period"); else _explicitNullProperties?.Remove("requests_per_period"); } }
+        private int? _explicitNullValueRequestsPerPeriod = default!;
         /// <summary>Whether counting is only performed when an origin is reached.</summary>
-        public bool? RequestsToOrigin { get; set; }
+        public bool? RequestsToOrigin { get => _explicitNullValueRequestsToOrigin; set { _explicitNullValueRequestsToOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_to_origin"); else _explicitNullProperties?.Remove("requests_to_origin"); } }
+        private bool? _explicitNullValueRequestsToOrigin = default!;
         /// <summary>The score threshold per period for which the action will be executed the first time.</summary>
-        public int? ScorePerPeriod { get; set; }
+        public int? ScorePerPeriod { get => _explicitNullValueScorePerPeriod; set { _explicitNullValueScorePerPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_per_period"); else _explicitNullProperties?.Remove("score_per_period"); } }
+        private int? _explicitNullValueScorePerPeriod = default!;
         /// <summary>A response header name provided by the origin, which contains the score to increment rate limit counter with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScoreResponseHeaderName { get; set; }
+        public string? ScoreResponseHeaderName { get => _explicitNullValueScoreResponseHeaderName; set { _explicitNullValueScoreResponseHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_response_header_name"); else _explicitNullProperties?.Remove("score_response_header_name"); } }
+        private string? _explicitNullValueScoreResponseHeaderName = default!;
 #nullable restore
 #else
-        public string ScoreResponseHeaderName { get; set; }
+        public string ScoreResponseHeaderName { get => _explicitNullValueScoreResponseHeaderName; set { _explicitNullValueScoreResponseHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_response_header_name"); else _explicitNullProperties?.Remove("score_response_header_name"); } }
+        private string _explicitNullValueScoreResponseHeaderName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRatelimit"/> and sets the default values.
@@ -65,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRatelimit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRatelimit();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRatelimit(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("requests_to_origin", RequestsToOrigin);
             writer.WriteIntValue("score_per_period", ScorePerPeriod);
             writer.WriteStringValue("score_response_header_name", ScoreResponseHeaderName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

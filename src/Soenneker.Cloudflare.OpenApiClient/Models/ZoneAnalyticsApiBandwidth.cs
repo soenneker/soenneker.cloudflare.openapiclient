@@ -12,47 +12,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZoneAnalyticsApiBandwidth : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("all") is { } nullNodeAll && nullNodeAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) All = null;
+            if (parseNode.GetChildNode("cached") is { } nullNodeCached && nullNodeCached.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cached = null;
+            if (parseNode.GetChildNode("content_type") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("ssl") is { } nullNodeSsl && nullNodeSsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssl = null;
+            if (parseNode.GetChildNode("ssl_protocols") is { } nullNodeSslProtocols && nullNodeSslProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SslProtocols = null;
+            if (parseNode.GetChildNode("uncached") is { } nullNodeUncached && nullNodeUncached.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uncached = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total number of bytes served within the time frame.</summary>
-        public int? All { get; set; }
+        public int? All { get => _explicitNullValueAll; set { _explicitNullValueAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all"); else _explicitNullProperties?.Remove("all"); } }
+        private int? _explicitNullValueAll = default!;
         /// <summary>The number of bytes that were cached (and served) by Cloudflare.</summary>
-        public int? Cached { get; set; }
+        public int? Cached { get => _explicitNullValueCached; set { _explicitNullValueCached = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cached"); else _explicitNullProperties?.Remove("cached"); } }
+        private int? _explicitNullValueCached = default!;
         /// <summary>A variable list of key/value pairs where the key represents the type of content served, and the value is the number in bytes served.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthContentTypeProperty? ContentType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthContentTypeProperty? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthContentTypeProperty? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthContentTypeProperty ContentType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthContentTypeProperty ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthContentTypeProperty _explicitNullValueContentType = default!;
 #endif
         /// <summary>A variable list of key/value pairs where the key is a two-digit country code and the value is the number of bytes served to that country.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthCountryProperty? Country { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthCountryProperty? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthCountryProperty? _explicitNullValueCountry = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthCountryProperty Country { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthCountryProperty Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthCountryProperty _explicitNullValueCountry = default!;
 #endif
         /// <summary>A break down of bytes served over HTTPS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSsl? Ssl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSsl? Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSsl? _explicitNullValueSsl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSsl Ssl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSsl Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSsl _explicitNullValueSsl = default!;
 #endif
         /// <summary>A breakdown of requests by their SSL protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSslProtocols? SslProtocols { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSslProtocols? SslProtocols { get => _explicitNullValueSslProtocols; set { _explicitNullValueSslProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl_protocols"); else _explicitNullProperties?.Remove("ssl_protocols"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSslProtocols? _explicitNullValueSslProtocols = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSslProtocols SslProtocols { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSslProtocols SslProtocols { get => _explicitNullValueSslProtocols; set { _explicitNullValueSslProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl_protocols"); else _explicitNullProperties?.Remove("ssl_protocols"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSslProtocols _explicitNullValueSslProtocols = default!;
 #endif
         /// <summary>The number of bytes that were fetched and served from the origin server.</summary>
-        public int? Uncached { get; set; }
+        public int? Uncached { get => _explicitNullValueUncached; set { _explicitNullValueUncached = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uncached"); else _explicitNullProperties?.Remove("uncached"); } }
+        private int? _explicitNullValueUncached = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth"/> and sets the default values.
         /// </summary>
@@ -68,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidth(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSsl>("ssl", Ssl);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSslProtocols>("ssl_protocols", SslProtocols);
             writer.WriteIntValue("uncached", Uncached);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -72,6 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasTunnelsCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasTunnelsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -97,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasCreateIpsecTunnelResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasCreateIpsecTunnelResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -122,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasModifiedTunnelsCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasModifiedTunnelsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

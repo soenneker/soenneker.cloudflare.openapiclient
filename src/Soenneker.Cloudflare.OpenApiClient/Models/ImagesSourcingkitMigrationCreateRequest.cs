@@ -11,37 +11,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ImagesSourcingkitMigrationCreateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conflictBehaviour") is { } nullNodeConflictBehaviour && nullNodeConflictBehaviour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConflictBehaviour = null;
+            if (parseNode.GetChildNode("excludedContentTypes") is { } nullNodeExcludedContentTypes && nullNodeExcludedContentTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedContentTypes = null;
+            if (parseNode.GetChildNode("pathPrefix") is { } nullNodePathPrefix && nullNodePathPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPrefix = null;
+            if (parseNode.GetChildNode("rootDirectory") is { } nullNodeRootDirectory && nullNodeRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDirectory = null;
+            if (parseNode.GetChildNode("sourceId") is { } nullNodeSourceId && nullNodeSourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How to handle objects that already exist at the destination.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitConflictBehaviour? ConflictBehaviour { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitConflictBehaviour? ConflictBehaviour { get => _explicitNullValueConflictBehaviour; set { _explicitNullValueConflictBehaviour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conflictBehaviour"); else _explicitNullProperties?.Remove("conflictBehaviour"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitConflictBehaviour? _explicitNullValueConflictBehaviour = default!;
         /// <summary>Content types to skip during migration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?>? ExcludedContentTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?>? ExcludedContentTypes { get => _explicitNullValueExcludedContentTypes; set { _explicitNullValueExcludedContentTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedContentTypes"); else _explicitNullProperties?.Remove("excludedContentTypes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?>? _explicitNullValueExcludedContentTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?> ExcludedContentTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?> ExcludedContentTypes { get => _explicitNullValueExcludedContentTypes; set { _explicitNullValueExcludedContentTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedContentTypes"); else _explicitNullProperties?.Remove("excludedContentTypes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?> _explicitNullValueExcludedContentTypes = default!;
 #endif
         /// <summary>Prefix to prepend to image custom IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PathPrefix { get; set; }
+        public string? PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathPrefix"); else _explicitNullProperties?.Remove("pathPrefix"); } }
+        private string? _explicitNullValuePathPrefix = default!;
 #nullable restore
 #else
-        public string PathPrefix { get; set; }
+        public string PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathPrefix"); else _explicitNullProperties?.Remove("pathPrefix"); } }
+        private string _explicitNullValuePathPrefix = default!;
 #endif
         /// <summary>Only import objects under this prefix in the source bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDirectory { get; set; }
+        public string? RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        private string? _explicitNullValueRootDirectory = default!;
 #nullable restore
 #else
-        public string RootDirectory { get; set; }
+        public string RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        private string _explicitNullValueRootDirectory = default!;
 #endif
         /// <summary>The identifier of the source to migrate from.</summary>
-        public Guid? SourceId { get; set; }
+        public Guid? SourceId { get => _explicitNullValueSourceId; set { _explicitNullValueSourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceId"); else _explicitNullProperties?.Remove("sourceId"); } }
+        private Guid? _explicitNullValueSourceId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationCreateRequest"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("pathPrefix", PathPrefix);
             writer.WriteStringValue("rootDirectory", RootDirectory);
             writer.WriteGuidValue("sourceId", SourceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

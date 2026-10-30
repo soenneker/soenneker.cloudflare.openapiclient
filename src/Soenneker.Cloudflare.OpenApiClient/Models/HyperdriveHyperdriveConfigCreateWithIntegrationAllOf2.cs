@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
+            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Selects a PlanetScale database and provisions credentials managed by Cloudflare when creating a Hyperdrive configuration. The Cloudflare account must already be linked to PlanetScale in the Hyperdrive dashboard. The selection is returned as read-only metadata and cannot be changed with replace or update operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration? Integration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration? _explicitNullValueIntegration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration Integration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration _explicitNullValueIntegration = default!;
 #endif
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2OriginProperty? Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2OriginProperty? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2OriginProperty? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2OriginProperty Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2OriginProperty Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2OriginProperty _explicitNullValueOrigin = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration>("integration", Integration);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigCreateWithIntegrationAllOf2OriginProperty>("origin", Origin);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

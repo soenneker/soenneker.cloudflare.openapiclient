@@ -11,19 +11,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("annotations") is { } nullNodeAnnotations && nullNodeAnnotations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Annotations = null;
+            if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfoAnnotationsItem>? Annotations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfoAnnotationsItem>? Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfoAnnotationsItem>? _explicitNullValueAnnotations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfoAnnotationsItem> Annotations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfoAnnotationsItem> Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfoAnnotationsItem> _explicitNullValueAnnotations = default!;
 #endif
         /// <summary>Provides an indication of how much confidence Cloudflare has in the data.</summary>
-        public int? Level { get; set; }
+        public int? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
+        private int? _explicitNullValueLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfo"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByHttpMethod200ResponseResultMetaConfidenceInfoAnnotationsItem>("annotations", Annotations);
             writer.WriteIntValue("level", Level);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

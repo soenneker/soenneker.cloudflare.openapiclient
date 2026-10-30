@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants
     public partial class TenantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.tenants.item collection</summary>
-        /// <param name="position">The ID of the tenant to retrieve.</param>
+        /// <param name="position">The ID of the tenant whose accounts to list.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenantItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenantItemRequestBuilder this[string position]
         {

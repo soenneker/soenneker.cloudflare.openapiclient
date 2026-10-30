@@ -11,48 +11,70 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSendingEmailSendResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("delivered") is { } nullNodeDelivered && nullNodeDelivered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delivered = null;
+            if (parseNode.GetChildNode("message_id") is { } nullNodeMessageId && nullNodeMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageId = null;
+            if (parseNode.GetChildNode("permanent_bounces") is { } nullNodePermanentBounces && nullNodePermanentBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermanentBounces = null;
+            if (parseNode.GetChildNode("queued") is { } nullNodeQueued && nullNodeQueued.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queued = null;
+            if (parseNode.GetChildNode("suppressed_recipients") is { } nullNodeSuppressedRecipients && nullNodeSuppressedRecipients.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuppressedRecipients = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Email addresses to which the message was delivered immediately.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Delivered { get; set; }
+        public List<string>? Delivered { get => _explicitNullValueDelivered; set { _explicitNullValueDelivered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered"); else _explicitNullProperties?.Remove("delivered"); } }
+        private List<string>? _explicitNullValueDelivered = default!;
 #nullable restore
 #else
-        public List<string> Delivered { get; set; }
+        public List<string> Delivered { get => _explicitNullValueDelivered; set { _explicitNullValueDelivered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered"); else _explicitNullProperties?.Remove("delivered"); } }
+        private List<string> _explicitNullValueDelivered = default!;
 #endif
         /// <summary>Message ID of the sent email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageId { get; set; }
+        public string? MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_id"); else _explicitNullProperties?.Remove("message_id"); } }
+        private string? _explicitNullValueMessageId = default!;
 #nullable restore
 #else
-        public string MessageId { get; set; }
+        public string MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_id"); else _explicitNullProperties?.Remove("message_id"); } }
+        private string _explicitNullValueMessageId = default!;
 #endif
         /// <summary>Email addresses that permanently bounced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PermanentBounces { get; set; }
+        public List<string>? PermanentBounces { get => _explicitNullValuePermanentBounces; set { _explicitNullValuePermanentBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanent_bounces"); else _explicitNullProperties?.Remove("permanent_bounces"); } }
+        private List<string>? _explicitNullValuePermanentBounces = default!;
 #nullable restore
 #else
-        public List<string> PermanentBounces { get; set; }
+        public List<string> PermanentBounces { get => _explicitNullValuePermanentBounces; set { _explicitNullValuePermanentBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanent_bounces"); else _explicitNullProperties?.Remove("permanent_bounces"); } }
+        private List<string> _explicitNullValuePermanentBounces = default!;
 #endif
         /// <summary>Email addresses for which delivery was queued for later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Queued { get; set; }
+        public List<string>? Queued { get => _explicitNullValueQueued; set { _explicitNullValueQueued = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queued"); else _explicitNullProperties?.Remove("queued"); } }
+        private List<string>? _explicitNullValueQueued = default!;
 #nullable restore
 #else
-        public List<string> Queued { get; set; }
+        public List<string> Queued { get => _explicitNullValueQueued; set { _explicitNullValueQueued = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queued"); else _explicitNullProperties?.Remove("queued"); } }
+        private List<string> _explicitNullValueQueued = default!;
 #endif
         /// <summary>Email addresses dropped because they are on the suppression list. Returned when suppressed-recipient dropping is enabled for the sending subdomain; otherwise the request fails instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SuppressedRecipients { get; set; }
+        public List<string>? SuppressedRecipients { get => _explicitNullValueSuppressedRecipients; set { _explicitNullValueSuppressedRecipients = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppressed_recipients"); else _explicitNullProperties?.Remove("suppressed_recipients"); } }
+        private List<string>? _explicitNullValueSuppressedRecipients = default!;
 #nullable restore
 #else
-        public List<string> SuppressedRecipients { get; set; }
+        public List<string> SuppressedRecipients { get => _explicitNullValueSuppressedRecipients; set { _explicitNullValueSuppressedRecipients = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppressed_recipients"); else _explicitNullProperties?.Remove("suppressed_recipients"); } }
+        private List<string> _explicitNullValueSuppressedRecipients = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailSendResponse"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailSendResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailSendResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailSendResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("permanent_bounces", PermanentBounces);
             writer.WriteCollectionOfPrimitiveValues<string>("queued", Queued);
             writer.WriteCollectionOfPrimitiveValues<string>("suppressed_recipients", SuppressedRecipients);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

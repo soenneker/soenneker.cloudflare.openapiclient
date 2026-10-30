@@ -11,76 +11,111 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AbuseReportsAbuseReport : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cdate") is { } nullNodeCdate && nullNodeCdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cdate = null;
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("justification") is { } nullNodeJustification && nullNodeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Justification = null;
+            if (parseNode.GetChildNode("mitigation_summary") is { } nullNodeMitigationSummary && nullNodeMitigationSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitigationSummary = null;
+            if (parseNode.GetChildNode("original_work") is { } nullNodeOriginalWork && nullNodeOriginalWork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalWork = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("submitter") is { } nullNodeSubmitter && nullNodeSubmitter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Submitter = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date of report. Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cdate { get; set; }
+        public string? Cdate { get => _explicitNullValueCdate; set { _explicitNullValueCdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cdate"); else _explicitNullProperties?.Remove("cdate"); } }
+        private string? _explicitNullValueCdate = default!;
 #nullable restore
 #else
-        public string Cdate { get; set; }
+        public string Cdate { get => _explicitNullValueCdate; set { _explicitNullValueCdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cdate"); else _explicitNullProperties?.Remove("cdate"); } }
+        private string _explicitNullValueCdate = default!;
 #endif
         /// <summary>Domain that relates to the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>Public facing ID of abuse report, aka abuse_rand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Justification for the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification { get; set; }
+        public string? Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        private string? _explicitNullValueJustification = default!;
 #nullable restore
 #else
-        public string Justification { get; set; }
+        public string Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        private string _explicitNullValueJustification = default!;
 #endif
         /// <summary>A summary of the mitigations related to this report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary? MitigationSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary? MitigationSummary { get => _explicitNullValueMitigationSummary; set { _explicitNullValueMitigationSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigation_summary"); else _explicitNullProperties?.Remove("mitigation_summary"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary? _explicitNullValueMitigationSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary MitigationSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary MitigationSummary { get => _explicitNullValueMitigationSummary; set { _explicitNullValueMitigationSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigation_summary"); else _explicitNullProperties?.Remove("mitigation_summary"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary _explicitNullValueMitigationSummary = default!;
 #endif
         /// <summary>Original work / Targeted brand in the alleged abuse.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalWork { get; set; }
+        public string? OriginalWork { get => _explicitNullValueOriginalWork; set { _explicitNullValueOriginalWork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_work"); else _explicitNullProperties?.Remove("original_work"); } }
+        private string? _explicitNullValueOriginalWork = default!;
 #nullable restore
 #else
-        public string OriginalWork { get; set; }
+        public string OriginalWork { get => _explicitNullValueOriginalWork; set { _explicitNullValueOriginalWork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_work"); else _explicitNullProperties?.Remove("original_work"); } }
+        private string _explicitNullValueOriginalWork = default!;
 #endif
         /// <summary>An enum value that represents the status of an abuse record</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsReportStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsReportStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsReportStatus? _explicitNullValueStatus = default!;
         /// <summary>Information about the submitter of the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitterDetails? Submitter { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitterDetails? Submitter { get => _explicitNullValueSubmitter; set { _explicitNullValueSubmitter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitter"); else _explicitNullProperties?.Remove("submitter"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitterDetails? _explicitNullValueSubmitter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitterDetails Submitter { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitterDetails Submitter { get => _explicitNullValueSubmitter; set { _explicitNullValueSubmitter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitter"); else _explicitNullProperties?.Remove("submitter"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitterDetails _explicitNullValueSubmitter = default!;
 #endif
         /// <summary>The abuse report type</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsReportType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsReportType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsReportType? _explicitNullValueType = default!;
         /// <summary>The urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Urls { get; set; }
+        public List<string>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string>? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public List<string> Urls { get; set; }
+        public List<string> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string> _explicitNullValueUrls = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAbuseReport"/> and sets the default values.
@@ -97,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAbuseReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAbuseReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAbuseReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,6 +171,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitterDetails>("submitter", Submitter);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsReportType>("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

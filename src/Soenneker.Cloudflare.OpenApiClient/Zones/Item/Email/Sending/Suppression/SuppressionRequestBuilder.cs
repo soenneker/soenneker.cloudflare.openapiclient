@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Suppression
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\email\sending\suppression
+    /// Builds and executes requests for operations under \zones\{zoneId}\email\sending\suppression
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuppressionRequestBuilder : BaseRequestBuilder
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Suppressio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuppressionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/email/sending/suppression{?direction*,order*,page*,per_page*}", pathParameters)
+        public SuppressionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/email/sending/suppression{?direction*,order*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Suppressio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuppressionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/email/sending/suppression{?direction*,order*,page*,per_page*}", rawUrl)
+        public SuppressionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/email/sending/suppression{?direction*,order*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -68,6 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Suppressio
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionZoneSending400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionZoneSending200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionZoneSending200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -94,6 +96,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Suppressio
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionZoneSending400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionZoneSending200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionZoneSending200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

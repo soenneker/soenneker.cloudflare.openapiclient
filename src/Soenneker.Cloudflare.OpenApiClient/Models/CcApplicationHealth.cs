@@ -11,27 +11,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CcApplicationHealth : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("instances") is { } nullNodeInstances && nullNodeInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instances = null;
+            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthError>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthError>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthError>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthError> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthError> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthError> _explicitNullValueErrors = default!;
 #endif
         /// <summary>Shows a count of application instance states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthInstances? Instances { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthInstances? Instances { get => _explicitNullValueInstances; set { _explicitNullValueInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instances"); else _explicitNullProperties?.Remove("instances"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthInstances? _explicitNullValueInstances = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthInstances Instances { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthInstances Instances { get => _explicitNullValueInstances; set { _explicitNullValueInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instances"); else _explicitNullProperties?.Remove("instances"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthInstances _explicitNullValueInstances = default!;
 #endif
         /// <summary>High-level health assessment. Only populated for &quot;new_instances&quot; strategy.Based on a sample of target-version instances rather than a full count.- &quot;pending&quot;: Zero target-version instances exist yet.- &quot;healthy&quot;: Every sampled target-version instance reports running or active.- &quot;degraded&quot;: Some sampled instances remain starting or scheduling.- &quot;unhealthy&quot;: One or more sampled instances have failed.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthSummary? Summary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthSummary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthSummary? _explicitNullValueSummary = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthError>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthInstances>("instances", Instances);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthSummary>("summary", Summary);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

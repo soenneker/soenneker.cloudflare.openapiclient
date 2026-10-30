@@ -11,56 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSecurityActionEntryPropertiesComposed : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("folder") is { } nullNodeFolder && nullNodeFolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Folder = null;
+            if (parseNode.GetChildNode("requested_by") is { } nullNodeRequestedBy && nullNodeRequestedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedBy = null;
+            if (parseNode.GetChildNode("requested_disposition") is { } nullNodeRequestedDisposition && nullNodeRequestedDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedDisposition = null;
+            if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
+            if (parseNode.GetChildNode("submission_id") is { } nullNodeSubmissionId && nullNodeSubmissionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmissionId = null;
+            if (parseNode.GetChildNode("submission_type") is { } nullNodeSubmissionType && nullNodeSubmissionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmissionType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The folder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Folder { get; set; }
+        public string? Folder { get => _explicitNullValueFolder; set { _explicitNullValueFolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder"); else _explicitNullProperties?.Remove("folder"); } }
+        private string? _explicitNullValueFolder = default!;
 #nullable restore
 #else
-        public string Folder { get; set; }
+        public string Folder { get => _explicitNullValueFolder; set { _explicitNullValueFolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder"); else _explicitNullProperties?.Remove("folder"); } }
+        private string _explicitNullValueFolder = default!;
 #endif
         /// <summary>The requested_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedBy { get; set; }
+        public string? RequestedBy { get => _explicitNullValueRequestedBy; set { _explicitNullValueRequestedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_by"); else _explicitNullProperties?.Remove("requested_by"); } }
+        private string? _explicitNullValueRequestedBy = default!;
 #nullable restore
 #else
-        public string RequestedBy { get; set; }
+        public string RequestedBy { get => _explicitNullValueRequestedBy; set { _explicitNullValueRequestedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_by"); else _explicitNullProperties?.Remove("requested_by"); } }
+        private string _explicitNullValueRequestedBy = default!;
 #endif
         /// <summary>The requested_disposition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedDisposition { get; set; }
+        public string? RequestedDisposition { get => _explicitNullValueRequestedDisposition; set { _explicitNullValueRequestedDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_disposition"); else _explicitNullProperties?.Remove("requested_disposition"); } }
+        private string? _explicitNullValueRequestedDisposition = default!;
 #nullable restore
 #else
-        public string RequestedDisposition { get; set; }
+        public string RequestedDisposition { get => _explicitNullValueRequestedDisposition; set { _explicitNullValueRequestedDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_disposition"); else _explicitNullProperties?.Remove("requested_disposition"); } }
+        private string _explicitNullValueRequestedDisposition = default!;
 #endif
         /// <summary>The service property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Service { get; set; }
+        public string? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        private string? _explicitNullValueService = default!;
 #nullable restore
 #else
-        public string Service { get; set; }
+        public string Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        private string _explicitNullValueService = default!;
 #endif
         /// <summary>The submission_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmissionId { get; set; }
+        public string? SubmissionId { get => _explicitNullValueSubmissionId; set { _explicitNullValueSubmissionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_id"); else _explicitNullProperties?.Remove("submission_id"); } }
+        private string? _explicitNullValueSubmissionId = default!;
 #nullable restore
 #else
-        public string SubmissionId { get; set; }
+        public string SubmissionId { get => _explicitNullValueSubmissionId; set { _explicitNullValueSubmissionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_id"); else _explicitNullProperties?.Remove("submission_id"); } }
+        private string _explicitNullValueSubmissionId = default!;
 #endif
         /// <summary>The submission_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmissionType { get; set; }
+        public string? SubmissionType { get => _explicitNullValueSubmissionType; set { _explicitNullValueSubmissionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_type"); else _explicitNullProperties?.Remove("submission_type"); } }
+        private string? _explicitNullValueSubmissionType = default!;
 #nullable restore
 #else
-        public string SubmissionType { get; set; }
+        public string SubmissionType { get => _explicitNullValueSubmissionType; set { _explicitNullValueSubmissionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_type"); else _explicitNullProperties?.Remove("submission_type"); } }
+        private string _explicitNullValueSubmissionType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryPropertiesComposed"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryPropertiesComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryPropertiesComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryPropertiesComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("submission_id", SubmissionId);
             writer.WriteStringValue("submission_type", SubmissionType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

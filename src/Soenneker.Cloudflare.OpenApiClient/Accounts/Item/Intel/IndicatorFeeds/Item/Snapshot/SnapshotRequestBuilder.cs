@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         /// <summary>
         /// Revises the raw data entries in a custom threat indicator feed.Accepts both plain and gzipped STIX2/CRDF bodies. Gzip isdetected by RFC 1952 magic bytes (`0x1f 0x8b`) and/or a `.gz`filename suffix (case-insensitive) — either signal alone issufficient to trigger the gzip path; if the body is not validgzip, the upload fails fast. Customers are encouraged to gziplarger uploads — the api-gateway 500 MB body cap applies tothe on-the-wire (compressed) size, so gzip lets a singleupload carry several GiB of decompressed STIX.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeedResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedDataSuccessResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -44,11 +44,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedData4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeedResponse?> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedDataSuccessResponse?> PutAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeedResponse> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedDataSuccessResponse> PutAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -57,8 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
             {
                 { "413", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedData413Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedData4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeedResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedDataSuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedDataSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Revises the raw data entries in a custom threat indicator feed.Accepts both plain and gzipped STIX2/CRDF bodies. Gzip isdetected by RFC 1952 magic bytes (`0x1f 0x8b`) and/or a `.gz`filename suffix (case-insensitive) — either signal alone issufficient to trigger the gzip path; if the body is not validgzip, the upload fails fast. Customers are encouraged to gziplarger uploads — the api-gateway 500 MB body cap applies tothe on-the-wire (compressed) size, so gzip lets a singleupload carry several GiB of decompressed STIX.
@@ -68,11 +69,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

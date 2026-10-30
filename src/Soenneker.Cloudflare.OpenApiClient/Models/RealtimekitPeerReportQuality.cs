@@ -12,136 +12,191 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitPeerReportQuality : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio_consumer") is { } nullNodeAudioConsumer && nullNodeAudioConsumer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioConsumer = null;
+            if (parseNode.GetChildNode("audio_consumer_cumulative") is { } nullNodeAudioConsumerCumulative && nullNodeAudioConsumerCumulative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioConsumerCumulative = null;
+            if (parseNode.GetChildNode("audio_producer") is { } nullNodeAudioProducer && nullNodeAudioProducer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioProducer = null;
+            if (parseNode.GetChildNode("audio_producer_cumulative") is { } nullNodeAudioProducerCumulative && nullNodeAudioProducerCumulative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioProducerCumulative = null;
+            if (parseNode.GetChildNode("screenshare_audio_consumer") is { } nullNodeScreenshareAudioConsumer && nullNodeScreenshareAudioConsumer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshareAudioConsumer = null;
+            if (parseNode.GetChildNode("screenshare_audio_consumer_cumulative") is { } nullNodeScreenshareAudioConsumerCumulative && nullNodeScreenshareAudioConsumerCumulative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshareAudioConsumerCumulative = null;
+            if (parseNode.GetChildNode("screenshare_audio_producer") is { } nullNodeScreenshareAudioProducer && nullNodeScreenshareAudioProducer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshareAudioProducer = null;
+            if (parseNode.GetChildNode("screenshare_audio_producer_cumulative") is { } nullNodeScreenshareAudioProducerCumulative && nullNodeScreenshareAudioProducerCumulative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshareAudioProducerCumulative = null;
+            if (parseNode.GetChildNode("screenshare_video_consumer") is { } nullNodeScreenshareVideoConsumer && nullNodeScreenshareVideoConsumer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshareVideoConsumer = null;
+            if (parseNode.GetChildNode("screenshare_video_consumer_cumulative") is { } nullNodeScreenshareVideoConsumerCumulative && nullNodeScreenshareVideoConsumerCumulative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshareVideoConsumerCumulative = null;
+            if (parseNode.GetChildNode("screenshare_video_producer") is { } nullNodeScreenshareVideoProducer && nullNodeScreenshareVideoProducer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshareVideoProducer = null;
+            if (parseNode.GetChildNode("screenshare_video_producer_cumulative") is { } nullNodeScreenshareVideoProducerCumulative && nullNodeScreenshareVideoProducerCumulative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshareVideoProducerCumulative = null;
+            if (parseNode.GetChildNode("video_consumer") is { } nullNodeVideoConsumer && nullNodeVideoConsumer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoConsumer = null;
+            if (parseNode.GetChildNode("video_consumer_cumulative") is { } nullNodeVideoConsumerCumulative && nullNodeVideoConsumerCumulative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoConsumerCumulative = null;
+            if (parseNode.GetChildNode("video_producer") is { } nullNodeVideoProducer && nullNodeVideoProducer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoProducer = null;
+            if (parseNode.GetChildNode("video_producer_cumulative") is { } nullNodeVideoProducerCumulative && nullNodeVideoProducerCumulative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoProducerCumulative = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The audio_consumer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats>? AudioConsumer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats>? AudioConsumer { get => _explicitNullValueAudioConsumer; set { _explicitNullValueAudioConsumer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_consumer"); else _explicitNullProperties?.Remove("audio_consumer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats>? _explicitNullValueAudioConsumer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats> AudioConsumer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats> AudioConsumer { get => _explicitNullValueAudioConsumer; set { _explicitNullValueAudioConsumer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_consumer"); else _explicitNullProperties?.Remove("audio_consumer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats> _explicitNullValueAudioConsumer = default!;
 #endif
         /// <summary>Aggregated inbound (consumer) audio statistics for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative? AudioConsumerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative? AudioConsumerCumulative { get => _explicitNullValueAudioConsumerCumulative; set { _explicitNullValueAudioConsumerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_consumer_cumulative"); else _explicitNullProperties?.Remove("audio_consumer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative? _explicitNullValueAudioConsumerCumulative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative AudioConsumerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative AudioConsumerCumulative { get => _explicitNullValueAudioConsumerCumulative; set { _explicitNullValueAudioConsumerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_consumer_cumulative"); else _explicitNullProperties?.Remove("audio_consumer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative _explicitNullValueAudioConsumerCumulative = default!;
 #endif
         /// <summary>The audio_producer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats>? AudioProducer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats>? AudioProducer { get => _explicitNullValueAudioProducer; set { _explicitNullValueAudioProducer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_producer"); else _explicitNullProperties?.Remove("audio_producer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats>? _explicitNullValueAudioProducer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats> AudioProducer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats> AudioProducer { get => _explicitNullValueAudioProducer; set { _explicitNullValueAudioProducer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_producer"); else _explicitNullProperties?.Remove("audio_producer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats> _explicitNullValueAudioProducer = default!;
 #endif
         /// <summary>Aggregated outbound (producer) audio statistics for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative? AudioProducerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative? AudioProducerCumulative { get => _explicitNullValueAudioProducerCumulative; set { _explicitNullValueAudioProducerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_producer_cumulative"); else _explicitNullProperties?.Remove("audio_producer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative? _explicitNullValueAudioProducerCumulative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative AudioProducerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative AudioProducerCumulative { get => _explicitNullValueAudioProducerCumulative; set { _explicitNullValueAudioProducerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_producer_cumulative"); else _explicitNullProperties?.Remove("audio_producer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative _explicitNullValueAudioProducerCumulative = default!;
 #endif
         /// <summary>The screenshare_audio_consumer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats>? ScreenshareAudioConsumer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats>? ScreenshareAudioConsumer { get => _explicitNullValueScreenshareAudioConsumer; set { _explicitNullValueScreenshareAudioConsumer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_audio_consumer"); else _explicitNullProperties?.Remove("screenshare_audio_consumer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats>? _explicitNullValueScreenshareAudioConsumer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats> ScreenshareAudioConsumer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats> ScreenshareAudioConsumer { get => _explicitNullValueScreenshareAudioConsumer; set { _explicitNullValueScreenshareAudioConsumer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_audio_consumer"); else _explicitNullProperties?.Remove("screenshare_audio_consumer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStats> _explicitNullValueScreenshareAudioConsumer = default!;
 #endif
         /// <summary>Aggregated inbound (consumer) audio statistics for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative? ScreenshareAudioConsumerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative? ScreenshareAudioConsumerCumulative { get => _explicitNullValueScreenshareAudioConsumerCumulative; set { _explicitNullValueScreenshareAudioConsumerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_audio_consumer_cumulative"); else _explicitNullProperties?.Remove("screenshare_audio_consumer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative? _explicitNullValueScreenshareAudioConsumerCumulative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative ScreenshareAudioConsumerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative ScreenshareAudioConsumerCumulative { get => _explicitNullValueScreenshareAudioConsumerCumulative; set { _explicitNullValueScreenshareAudioConsumerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_audio_consumer_cumulative"); else _explicitNullProperties?.Remove("screenshare_audio_consumer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConsumerStatsCumulative _explicitNullValueScreenshareAudioConsumerCumulative = default!;
 #endif
         /// <summary>The screenshare_audio_producer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats>? ScreenshareAudioProducer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats>? ScreenshareAudioProducer { get => _explicitNullValueScreenshareAudioProducer; set { _explicitNullValueScreenshareAudioProducer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_audio_producer"); else _explicitNullProperties?.Remove("screenshare_audio_producer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats>? _explicitNullValueScreenshareAudioProducer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats> ScreenshareAudioProducer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats> ScreenshareAudioProducer { get => _explicitNullValueScreenshareAudioProducer; set { _explicitNullValueScreenshareAudioProducer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_audio_producer"); else _explicitNullProperties?.Remove("screenshare_audio_producer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats> _explicitNullValueScreenshareAudioProducer = default!;
 #endif
         /// <summary>Aggregated outbound (producer) audio statistics for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative? ScreenshareAudioProducerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative? ScreenshareAudioProducerCumulative { get => _explicitNullValueScreenshareAudioProducerCumulative; set { _explicitNullValueScreenshareAudioProducerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_audio_producer_cumulative"); else _explicitNullProperties?.Remove("screenshare_audio_producer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative? _explicitNullValueScreenshareAudioProducerCumulative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative ScreenshareAudioProducerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative ScreenshareAudioProducerCumulative { get => _explicitNullValueScreenshareAudioProducerCumulative; set { _explicitNullValueScreenshareAudioProducerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_audio_producer_cumulative"); else _explicitNullProperties?.Remove("screenshare_audio_producer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStatsCumulative _explicitNullValueScreenshareAudioProducerCumulative = default!;
 #endif
         /// <summary>The screenshare_video_consumer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats>? ScreenshareVideoConsumer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats>? ScreenshareVideoConsumer { get => _explicitNullValueScreenshareVideoConsumer; set { _explicitNullValueScreenshareVideoConsumer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_video_consumer"); else _explicitNullProperties?.Remove("screenshare_video_consumer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats>? _explicitNullValueScreenshareVideoConsumer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats> ScreenshareVideoConsumer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats> ScreenshareVideoConsumer { get => _explicitNullValueScreenshareVideoConsumer; set { _explicitNullValueScreenshareVideoConsumer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_video_consumer"); else _explicitNullProperties?.Remove("screenshare_video_consumer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats> _explicitNullValueScreenshareVideoConsumer = default!;
 #endif
         /// <summary>Aggregated inbound (consumer) video statistics for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative? ScreenshareVideoConsumerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative? ScreenshareVideoConsumerCumulative { get => _explicitNullValueScreenshareVideoConsumerCumulative; set { _explicitNullValueScreenshareVideoConsumerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_video_consumer_cumulative"); else _explicitNullProperties?.Remove("screenshare_video_consumer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative? _explicitNullValueScreenshareVideoConsumerCumulative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative ScreenshareVideoConsumerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative ScreenshareVideoConsumerCumulative { get => _explicitNullValueScreenshareVideoConsumerCumulative; set { _explicitNullValueScreenshareVideoConsumerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_video_consumer_cumulative"); else _explicitNullProperties?.Remove("screenshare_video_consumer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative _explicitNullValueScreenshareVideoConsumerCumulative = default!;
 #endif
         /// <summary>The screenshare_video_producer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats>? ScreenshareVideoProducer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats>? ScreenshareVideoProducer { get => _explicitNullValueScreenshareVideoProducer; set { _explicitNullValueScreenshareVideoProducer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_video_producer"); else _explicitNullProperties?.Remove("screenshare_video_producer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats>? _explicitNullValueScreenshareVideoProducer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats> ScreenshareVideoProducer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats> ScreenshareVideoProducer { get => _explicitNullValueScreenshareVideoProducer; set { _explicitNullValueScreenshareVideoProducer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_video_producer"); else _explicitNullProperties?.Remove("screenshare_video_producer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats> _explicitNullValueScreenshareVideoProducer = default!;
 #endif
         /// <summary>Aggregated outbound (producer) video statistics for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative? ScreenshareVideoProducerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative? ScreenshareVideoProducerCumulative { get => _explicitNullValueScreenshareVideoProducerCumulative; set { _explicitNullValueScreenshareVideoProducerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_video_producer_cumulative"); else _explicitNullProperties?.Remove("screenshare_video_producer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative? _explicitNullValueScreenshareVideoProducerCumulative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative ScreenshareVideoProducerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative ScreenshareVideoProducerCumulative { get => _explicitNullValueScreenshareVideoProducerCumulative; set { _explicitNullValueScreenshareVideoProducerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_video_producer_cumulative"); else _explicitNullProperties?.Remove("screenshare_video_producer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative _explicitNullValueScreenshareVideoProducerCumulative = default!;
 #endif
         /// <summary>The video_consumer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats>? VideoConsumer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats>? VideoConsumer { get => _explicitNullValueVideoConsumer; set { _explicitNullValueVideoConsumer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_consumer"); else _explicitNullProperties?.Remove("video_consumer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats>? _explicitNullValueVideoConsumer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats> VideoConsumer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats> VideoConsumer { get => _explicitNullValueVideoConsumer; set { _explicitNullValueVideoConsumer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_consumer"); else _explicitNullProperties?.Remove("video_consumer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStats> _explicitNullValueVideoConsumer = default!;
 #endif
         /// <summary>Aggregated inbound (consumer) video statistics for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative? VideoConsumerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative? VideoConsumerCumulative { get => _explicitNullValueVideoConsumerCumulative; set { _explicitNullValueVideoConsumerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_consumer_cumulative"); else _explicitNullProperties?.Remove("video_consumer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative? _explicitNullValueVideoConsumerCumulative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative VideoConsumerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative VideoConsumerCumulative { get => _explicitNullValueVideoConsumerCumulative; set { _explicitNullValueVideoConsumerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_consumer_cumulative"); else _explicitNullProperties?.Remove("video_consumer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative _explicitNullValueVideoConsumerCumulative = default!;
 #endif
         /// <summary>The video_producer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats>? VideoProducer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats>? VideoProducer { get => _explicitNullValueVideoProducer; set { _explicitNullValueVideoProducer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_producer"); else _explicitNullProperties?.Remove("video_producer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats>? _explicitNullValueVideoProducer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats> VideoProducer { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats> VideoProducer { get => _explicitNullValueVideoProducer; set { _explicitNullValueVideoProducer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_producer"); else _explicitNullProperties?.Remove("video_producer"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats> _explicitNullValueVideoProducer = default!;
 #endif
         /// <summary>Aggregated outbound (producer) video statistics for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative? VideoProducerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative? VideoProducerCumulative { get => _explicitNullValueVideoProducerCumulative; set { _explicitNullValueVideoProducerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_producer_cumulative"); else _explicitNullProperties?.Remove("video_producer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative? _explicitNullValueVideoProducerCumulative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative VideoProducerCumulative { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative VideoProducerCumulative { get => _explicitNullValueVideoProducerCumulative; set { _explicitNullValueVideoProducerCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_producer_cumulative"); else _explicitNullProperties?.Remove("video_producer_cumulative"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative _explicitNullValueVideoProducerCumulative = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportQuality"/> and sets the default values.
@@ -158,7 +213,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportQuality CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportQuality();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportQuality(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -209,6 +264,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulative>("video_consumer_cumulative", VideoConsumerCumulative);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStats>("video_producer", VideoProducer);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulative>("video_producer_cumulative", VideoProducerCumulative);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

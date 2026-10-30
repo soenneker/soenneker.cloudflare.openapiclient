@@ -11,17 +11,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DigitalExperienceMonitoringPercentiles : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("p50") is { } nullNodeP50 && nullNodeP50.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P50 = null;
+            if (parseNode.GetChildNode("p90") is { } nullNodeP90 && nullNodeP90.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P90 = null;
+            if (parseNode.GetChildNode("p95") is { } nullNodeP95 && nullNodeP95.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P95 = null;
+            if (parseNode.GetChildNode("p99") is { } nullNodeP99 && nullNodeP99.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P99 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>p50 observed in the time period.</summary>
-        public double? P50 { get; set; }
+        public double? P50 { get => _explicitNullValueP50; set { _explicitNullValueP50 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p50"); else _explicitNullProperties?.Remove("p50"); } }
+        private double? _explicitNullValueP50 = default!;
         /// <summary>p90 observed in the time period.</summary>
-        public double? P90 { get; set; }
+        public double? P90 { get => _explicitNullValueP90; set { _explicitNullValueP90 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p90"); else _explicitNullProperties?.Remove("p90"); } }
+        private double? _explicitNullValueP90 = default!;
         /// <summary>p95 observed in the time period.</summary>
-        public double? P95 { get; set; }
+        public double? P95 { get => _explicitNullValueP95; set { _explicitNullValueP95 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p95"); else _explicitNullProperties?.Remove("p95"); } }
+        private double? _explicitNullValueP95 = default!;
         /// <summary>p99 observed in the time period.</summary>
-        public double? P99 { get; set; }
+        public double? P99 { get => _explicitNullValueP99; set { _explicitNullValueP99 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p99"); else _explicitNullProperties?.Remove("p99"); } }
+        private double? _explicitNullValueP99 = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("p90", P90);
             writer.WriteDoubleValue("p95", P95);
             writer.WriteDoubleValue("p99", P99);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

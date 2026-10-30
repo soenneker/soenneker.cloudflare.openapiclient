@@ -11,37 +11,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicAppConfigUpdateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_app_id") is { } nullNodeAccountAppId && nullNodeAccountAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountAppId = null;
+            if (parseNode.GetChildNode("breakout") is { } nullNodeBreakout && nullNodeBreakout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Breakout = null;
+            if (parseNode.GetChildNode("managed_app_id") is { } nullNodeManagedAppId && nullNodeManagedAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedAppId = null;
+            if (parseNode.GetChildNode("preferred_wans") is { } nullNodePreferredWans && nullNodePreferredWans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredWans = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+        }
+
         /// <summary>Magic account app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountAppId { get; set; }
+        public string? AccountAppId { get => _explicitNullValueAccountAppId; set { _explicitNullValueAccountAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_app_id"); else _explicitNullProperties?.Remove("account_app_id"); } }
+        private string? _explicitNullValueAccountAppId = default!;
 #nullable restore
 #else
-        public string AccountAppId { get; set; }
+        public string AccountAppId { get => _explicitNullValueAccountAppId; set { _explicitNullValueAccountAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_app_id"); else _explicitNullProperties?.Remove("account_app_id"); } }
+        private string _explicitNullValueAccountAppId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to breakout traffic to the app&apos;s endpoints directly. Null preserves default behavior.</summary>
-        public bool? Breakout { get; set; }
+        public bool? Breakout { get => _explicitNullValueBreakout; set { _explicitNullValueBreakout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakout"); else _explicitNullProperties?.Remove("breakout"); } }
+        private bool? _explicitNullValueBreakout = default!;
         /// <summary>Managed app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedAppId { get; set; }
+        public string? ManagedAppId { get => _explicitNullValueManagedAppId; set { _explicitNullValueManagedAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_app_id"); else _explicitNullProperties?.Remove("managed_app_id"); } }
+        private string? _explicitNullValueManagedAppId = default!;
 #nullable restore
 #else
-        public string ManagedAppId { get; set; }
+        public string ManagedAppId { get => _explicitNullValueManagedAppId; set { _explicitNullValueManagedAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_app_id"); else _explicitNullProperties?.Remove("managed_app_id"); } }
+        private string _explicitNullValueManagedAppId = default!;
 #endif
         /// <summary>WAN interfaces to prefer over default WANs, highest-priority first. Can only be specified for breakout rules (breakout must be true).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PreferredWans { get; set; }
+        public List<string>? PreferredWans { get => _explicitNullValuePreferredWans; set { _explicitNullValuePreferredWans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_wans"); else _explicitNullProperties?.Remove("preferred_wans"); } }
+        private List<string>? _explicitNullValuePreferredWans = default!;
 #nullable restore
 #else
-        public List<string> PreferredWans { get; set; }
+        public List<string> PreferredWans { get => _explicitNullValuePreferredWans; set { _explicitNullValuePreferredWans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_wans"); else _explicitNullProperties?.Remove("preferred_wans"); } }
+        private List<string> _explicitNullValuePreferredWans = default!;
 #endif
         /// <summary>Priority of traffic. 0 is default, anything greater is prioritized. (Currently only 0 and 1 are supported)</summary>
-        public int? Priority { get; set; }
+        public int? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private int? _explicitNullValuePriority = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppConfigUpdateRequest"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppConfigUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppConfigUpdateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppConfigUpdateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("managed_app_id", ManagedAppId);
             writer.WriteCollectionOfPrimitiveValues<string>("preferred_wans", PreferredWans);
             writer.WriteIntValue("priority", Priority);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

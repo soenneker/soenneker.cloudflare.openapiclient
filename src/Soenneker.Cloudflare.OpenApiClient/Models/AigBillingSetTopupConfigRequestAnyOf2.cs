@@ -11,37 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigBillingSetTopupConfigRequestAnyOf2 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("consent_version") is { } nullNodeConsentVersion && nullNodeConsentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentVersion = null;
+            if (parseNode.GetChildNode("payment_method_id") is { } nullNodePaymentMethodId && nullNodePaymentMethodId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodId = null;
+            if (parseNode.GetChildNode("setup_idempotency_key") is { } nullNodeSetupIdempotencyKey && nullNodeSetupIdempotencyKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetupIdempotencyKey = null;
+            if (parseNode.GetChildNode("setup_intent_id") is { } nullNodeSetupIntentId && nullNodeSetupIntentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetupIntentId = null;
+            if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
+        }
+
         /// <summary>Auto top-up amount in cents (min 1000).</summary>
-        public int? Amount { get; set; }
+        public int? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private int? _explicitNullValueAmount = default!;
         /// <summary>Version of the off-session auto-top-up consent accepted by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsentVersion { get; set; }
+        public string? ConsentVersion { get => _explicitNullValueConsentVersion; set { _explicitNullValueConsentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_version"); else _explicitNullProperties?.Remove("consent_version"); } }
+        private string? _explicitNullValueConsentVersion = default!;
 #nullable restore
 #else
-        public string ConsentVersion { get; set; }
+        public string ConsentVersion { get => _explicitNullValueConsentVersion; set { _explicitNullValueConsentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_version"); else _explicitNullProperties?.Remove("consent_version"); } }
+        private string _explicitNullValueConsentVersion = default!;
 #endif
         /// <summary>Card to authenticate for future automatic top-ups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMethodId { get; set; }
+        public string? PaymentMethodId { get => _explicitNullValuePaymentMethodId; set { _explicitNullValuePaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method_id"); else _explicitNullProperties?.Remove("payment_method_id"); } }
+        private string? _explicitNullValuePaymentMethodId = default!;
 #nullable restore
 #else
-        public string PaymentMethodId { get; set; }
+        public string PaymentMethodId { get => _explicitNullValuePaymentMethodId; set { _explicitNullValuePaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method_id"); else _explicitNullProperties?.Remove("payment_method_id"); } }
+        private string _explicitNullValuePaymentMethodId = default!;
 #endif
         /// <summary>Client-generated UUID that makes payment-method setup safe to retry.</summary>
-        public Guid? SetupIdempotencyKey { get; set; }
+        public Guid? SetupIdempotencyKey { get => _explicitNullValueSetupIdempotencyKey; set { _explicitNullValueSetupIdempotencyKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setup_idempotency_key"); else _explicitNullProperties?.Remove("setup_idempotency_key"); } }
+        private Guid? _explicitNullValueSetupIdempotencyKey = default!;
         /// <summary>Successfully confirmed payment-method setup identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SetupIntentId { get; set; }
+        public string? SetupIntentId { get => _explicitNullValueSetupIntentId; set { _explicitNullValueSetupIntentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setup_intent_id"); else _explicitNullProperties?.Remove("setup_intent_id"); } }
+        private string? _explicitNullValueSetupIntentId = default!;
 #nullable restore
 #else
-        public string SetupIntentId { get; set; }
+        public string SetupIntentId { get => _explicitNullValueSetupIntentId; set { _explicitNullValueSetupIntentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setup_intent_id"); else _explicitNullProperties?.Remove("setup_intent_id"); } }
+        private string _explicitNullValueSetupIntentId = default!;
 #endif
         /// <summary>Balance threshold in cents that triggers auto top-up (min 500).</summary>
-        public int? Threshold { get; set; }
+        public int? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
+        private int? _explicitNullValueThreshold = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,7 +102,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("payment_method_id", PaymentMethodId);
             writer.WriteGuidValue("setup_idempotency_key", SetupIdempotencyKey);
             writer.WriteStringValue("setup_intent_id", SetupIntentId);
-            writer.WriteIntValue("threshold", Threshold);
+            writer.WriteIntValue("threshold", Threshold);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

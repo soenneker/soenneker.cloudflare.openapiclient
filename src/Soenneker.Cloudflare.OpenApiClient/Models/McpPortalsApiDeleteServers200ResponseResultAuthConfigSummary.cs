@@ -12,30 +12,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpPortalsApiDeleteServers200ResponseResultAuthConfigSummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_mode") is { } nullNodeAuthMode && nullNodeAuthMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthMode = null;
+            if (parseNode.GetChildNode("client_secret_version") is { } nullNodeClientSecretVersion && nullNodeClientSecretVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecretVersion = null;
+            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("has_client_secret") is { } nullNodeHasClientSecret && nullNodeHasClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasClientSecret = null;
+            if (parseNode.GetChildNode("registration_info") is { } nullNodeRegistrationInfo && nullNodeRegistrationInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationInfo = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auth_mode property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryAuthMode? AuthMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryAuthMode? AuthMode { get => _explicitNullValueAuthMode; set { _explicitNullValueAuthMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_mode"); else _explicitNullProperties?.Remove("auth_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryAuthMode? _explicitNullValueAuthMode = default!;
         /// <summary>The client_secret_version property</summary>
-        public double? ClientSecretVersion { get; set; }
+        public double? ClientSecretVersion { get => _explicitNullValueClientSecretVersion; set { _explicitNullValueClientSecretVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret_version"); else _explicitNullProperties?.Remove("client_secret_version"); } }
+        private double? _explicitNullValueClientSecretVersion = default!;
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryConfig? Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryConfig Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>The has_client_secret property</summary>
-        public bool? HasClientSecret { get; set; }
+        public bool? HasClientSecret { get => _explicitNullValueHasClientSecret; set { _explicitNullValueHasClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_client_secret"); else _explicitNullProperties?.Remove("has_client_secret"); } }
+        private bool? _explicitNullValueHasClientSecret = default!;
         /// <summary>The registration_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryRegistrationInfo? RegistrationInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryRegistrationInfo? RegistrationInfo { get => _explicitNullValueRegistrationInfo; set { _explicitNullValueRegistrationInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_info"); else _explicitNullProperties?.Remove("registration_info"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryRegistrationInfo? _explicitNullValueRegistrationInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryRegistrationInfo RegistrationInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryRegistrationInfo RegistrationInfo { get => _explicitNullValueRegistrationInfo; set { _explicitNullValueRegistrationInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_info"); else _explicitNullProperties?.Remove("registration_info"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryRegistrationInfo _explicitNullValueRegistrationInfo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummary"/> and sets the default values.
@@ -52,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryConfig>("config", Config);
             writer.WriteBoolValue("has_client_secret", HasClientSecret);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryRegistrationInfo>("registration_info", RegistrationInfo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

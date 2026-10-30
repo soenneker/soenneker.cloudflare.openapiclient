@@ -11,9 +11,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FirewallAnomalyPackage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action_mode") is { } nullNodeActionMode && nullNodeActionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionMode = null;
+            if (parseNode.GetChildNode("sensitivity") is { } nullNodeSensitivity && nullNodeSensitivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sensitivity = null;
+        }
+
         /// <summary>The default action performed by the rules in the WAF package.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallActionMode? ActionMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallActionMode? ActionMode { get => _explicitNullValueActionMode; set { _explicitNullValueActionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_mode"); else _explicitNullProperties?.Remove("action_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallActionMode? _explicitNullValueActionMode = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A summary of the purpose/function of the WAF package.</summary>
@@ -43,7 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; private set; }
 #endif
         /// <summary>The sensitivity of the WAF package.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSensitivity? Sensitivity { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSensitivity? Sensitivity { get => _explicitNullValueSensitivity; set { _explicitNullValueSensitivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitivity"); else _explicitNullProperties?.Remove("sensitivity"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSensitivity? _explicitNullValueSensitivity = default!;
         /// <summary>When set to `active`, indicates that the WAF package will be applied to the zone.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallStatus? Status { get; private set; }
         /// <summary>Defines an identifier.</summary>
@@ -69,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallAnomalyPackage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallAnomalyPackage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallAnomalyPackage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallActionMode>("action_mode", ActionMode);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSensitivity>("sensitivity", Sensitivity);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

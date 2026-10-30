@@ -11,56 +11,85 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorCreateOrModifyWorkflowRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("class_name") is { } nullNodeClassName && nullNodeClassName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClassName = null;
+            if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
+            if (parseNode.GetChildNode("default_retention") is { } nullNodeDefaultRetention && nullNodeDefaultRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRetention = null;
+            if (parseNode.GetChildNode("jurisdiction") is { } nullNodeJurisdiction && nullNodeJurisdiction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jurisdiction = null;
+            if (parseNode.GetChildNode("limits") is { } nullNodeLimits && nullNodeLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limits = null;
+            if (parseNode.GetChildNode("schedules") is { } nullNodeSchedules && nullNodeSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedules = null;
+            if (parseNode.GetChildNode("script_name") is { } nullNodeScriptName && nullNodeScriptName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The class_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassName { get; set; }
+        public string? ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
+        private string? _explicitNullValueClassName = default!;
 #nullable restore
 #else
-        public string ClassName { get; set; }
+        public string ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
+        private string _explicitNullValueClassName = default!;
 #endif
         /// <summary>The concurrency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency? Concurrency { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency? _explicitNullValueConcurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency Concurrency { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency _explicitNullValueConcurrency = default!;
 #endif
         /// <summary>Default retention applied to instances of this version when they do not set their own retention.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention? DefaultRetention { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention? DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention? _explicitNullValueDefaultRetention = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention DefaultRetention { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention _explicitNullValueDefaultRetention = default!;
 #endif
+        /// <summary>Jurisdiction where instances of this workflow run and store data. Can only be set when the workflow is created and cannot be changed afterwards; omit it to keep the existing jurisdiction.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestJurisdiction? Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestJurisdiction? _explicitNullValueJurisdiction = default!;
         /// <summary>The limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits? Limits { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits? Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits? _explicitNullValueLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits Limits { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits _explicitNullValueLimits = default!;
 #endif
         /// <summary>The schedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem>? Schedules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem>? Schedules { get => _explicitNullValueSchedules; set { _explicitNullValueSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedules"); else _explicitNullProperties?.Remove("schedules"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem>? _explicitNullValueSchedules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem> Schedules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem> Schedules { get => _explicitNullValueSchedules; set { _explicitNullValueSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedules"); else _explicitNullProperties?.Remove("schedules"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem> _explicitNullValueSchedules = default!;
 #endif
         /// <summary>The script_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptName { get; set; }
+        public string? ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script_name"); else _explicitNullProperties?.Remove("script_name"); } }
+        private string? _explicitNullValueScriptName = default!;
 #nullable restore
 #else
-        public string ScriptName { get; set; }
+        public string ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script_name"); else _explicitNullProperties?.Remove("script_name"); } }
+        private string _explicitNullValueScriptName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequest"/> and sets the default values.
@@ -77,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
                 { "concurrency", n => { Concurrency = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency.CreateFromDiscriminatorValue); } },
                 { "default_retention", n => { DefaultRetention = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention.CreateFromDiscriminatorValue); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestJurisdiction>(); } },
                 { "limits", n => { Limits = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits.CreateFromDiscriminatorValue); } },
                 { "schedules", n => { Schedules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },
@@ -105,9 +135,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("class_name", ClassName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency>("concurrency", Concurrency);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention>("default_retention", DefaultRetention);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestJurisdiction>("jurisdiction", Jurisdiction);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits>("limits", Limits);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem>("schedules", Schedules);
             writer.WriteStringValue("script_name", ScriptName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

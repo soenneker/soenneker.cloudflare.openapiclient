@@ -55,6 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.Operator.Co
             {
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorConfigurationResultResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorConfigurationResultResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -86,6 +88,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.Operator.Co
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorConfigurationResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorConfigurationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -115,6 +119,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.Operator.Co
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorConfigurationResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorConfigurationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

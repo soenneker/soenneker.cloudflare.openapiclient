@@ -11,40 +11,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostPirFilterGenerate200ResponseResult : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("branches") is { } nullNodeBranches && nullNodeBranches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branches = null;
+            if (parseNode.GetChildNode("coverage") is { } nullNodeCoverage && nullNodeCoverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Coverage = null;
+            if (parseNode.GetChildNode("intent") is { } nullNodeIntent && nullNodeIntent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Intent = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("unresolved_terms") is { } nullNodeUnresolvedTerms && nullNodeUnresolvedTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnresolvedTerms = null;
+        }
+
         /// <summary>Event List `searchBranches`: filters within a branch are ANDed, branches are ORed. Empty when coverage is `none`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Branches { get; set; }
+        public UntypedNode? Branches { get => _explicitNullValueBranches; set { _explicitNullValueBranches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branches"); else _explicitNullProperties?.Remove("branches"); } }
+        private UntypedNode? _explicitNullValueBranches = default!;
 #nullable restore
 #else
-        public UntypedNode Branches { get; set; }
+        public UntypedNode Branches { get => _explicitNullValueBranches; set { _explicitNullValueBranches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branches"); else _explicitNullProperties?.Remove("branches"); } }
+        private UntypedNode _explicitNullValueBranches = default!;
 #endif
         /// <summary>`full`: every term resolved. `partial`: some terms are unresolved. `none`: no filter could be generated.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultCoverage? Coverage { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultCoverage? Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultCoverage? _explicitNullValueCoverage = default!;
         /// <summary>Structured intent extracted from the requirement, before catalog resolution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent? Intent { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent? Intent { get => _explicitNullValueIntent; set { _explicitNullValueIntent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intent"); else _explicitNullProperties?.Remove("intent"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent? _explicitNullValueIntent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent Intent { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent Intent { get => _explicitNullValueIntent; set { _explicitNullValueIntent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intent"); else _explicitNullProperties?.Remove("intent"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent _explicitNullValueIntent = default!;
 #endif
         /// <summary>Workers AI model used for intent extraction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get; set; }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
         /// <summary>Requirement terms that could not be expressed as event filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItem>? UnresolvedTerms { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItem>? UnresolvedTerms { get => _explicitNullValueUnresolvedTerms; set { _explicitNullValueUnresolvedTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unresolved_terms"); else _explicitNullProperties?.Remove("unresolved_terms"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItem>? _explicitNullValueUnresolvedTerms = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItem> UnresolvedTerms { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItem> UnresolvedTerms { get => _explicitNullValueUnresolvedTerms; set { _explicitNullValueUnresolvedTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unresolved_terms"); else _explicitNullProperties?.Remove("unresolved_terms"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItem> _explicitNullValueUnresolvedTerms = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +103,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultCoverage>("coverage", Coverage);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent>("intent", Intent);
             writer.WriteStringValue("model", Model);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItem>("unresolved_terms", UnresolvedTerms);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItem>("unresolved_terms", UnresolvedTerms);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

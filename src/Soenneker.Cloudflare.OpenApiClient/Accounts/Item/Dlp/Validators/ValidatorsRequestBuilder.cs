@@ -78,6 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Validators
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorsListValidators200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorsListValidators200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

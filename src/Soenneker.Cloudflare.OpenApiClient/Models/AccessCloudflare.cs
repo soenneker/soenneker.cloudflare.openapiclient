@@ -11,32 +11,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessCloudflare : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("saml_certificate_set_id") is { } nullNodeSamlCertificateSetId && nullNodeSamlCertificateSetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamlCertificateSetId = null;
+            if (parseNode.GetChildNode("scim_config") is { } nullNodeScimConfig && nullNodeScimConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScimConfig = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuration parameters for the identity provider. To view the required parameters for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareConfig? Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareConfig Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The name of the identity provider, shown to users on the login page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Indicates that the identity provider is immutable and cannot be updated or deleted via the API.</summary>
         public bool? ReadOnly { get; private set; }
@@ -49,17 +68,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderSamlCertificateSet SamlCertificateSet { get; private set; }
 #endif
         /// <summary>The UID of the SAML encryption certificate set assigned to this Identity Provider.Only present for SAML identity providers with encryption configured.Create a certificate set via POST to `/identity_providers/{id}/saml_certificate`.</summary>
-        public Guid? SamlCertificateSetId { get; set; }
+        public Guid? SamlCertificateSetId { get => _explicitNullValueSamlCertificateSetId; set { _explicitNullValueSamlCertificateSetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_certificate_set_id"); else _explicitNullProperties?.Remove("saml_certificate_set_id"); } }
+        private Guid? _explicitNullValueSamlCertificateSetId = default!;
         /// <summary>The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig? ScimConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig? ScimConfig { get => _explicitNullValueScimConfig; set { _explicitNullValueScimConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scim_config"); else _explicitNullProperties?.Remove("scim_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig? _explicitNullValueScimConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig ScimConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig ScimConfig { get => _explicitNullValueScimConfig; set { _explicitNullValueScimConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scim_config"); else _explicitNullProperties?.Remove("scim_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig _explicitNullValueScimConfig = default!;
 #endif
         /// <summary>The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflare"/> and sets the default values.
         /// </summary>
@@ -75,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflare CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflare();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflare(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("saml_certificate_set_id", SamlCertificateSetId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig>("scim_config", ScimConfig);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

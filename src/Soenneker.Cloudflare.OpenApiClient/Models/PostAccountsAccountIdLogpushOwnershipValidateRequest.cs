@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostAccountsAccountIdLogpushOwnershipValidateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destination_conf") is { } nullNodeDestinationConf && nullNodeDestinationConf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationConf = null;
+            if (parseNode.GetChildNode("ownership_challenge") is { } nullNodeOwnershipChallenge && nullNodeOwnershipChallenge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnershipChallenge = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationConf { get; set; }
+        public string? DestinationConf { get => _explicitNullValueDestinationConf; set { _explicitNullValueDestinationConf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_conf"); else _explicitNullProperties?.Remove("destination_conf"); } }
+        private string? _explicitNullValueDestinationConf = default!;
 #nullable restore
 #else
-        public string DestinationConf { get; set; }
+        public string DestinationConf { get => _explicitNullValueDestinationConf; set { _explicitNullValueDestinationConf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_conf"); else _explicitNullProperties?.Remove("destination_conf"); } }
+        private string _explicitNullValueDestinationConf = default!;
 #endif
         /// <summary>Ownership challenge token to prove destination ownership.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnershipChallenge { get; set; }
+        public string? OwnershipChallenge { get => _explicitNullValueOwnershipChallenge; set { _explicitNullValueOwnershipChallenge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_challenge"); else _explicitNullProperties?.Remove("ownership_challenge"); } }
+        private string? _explicitNullValueOwnershipChallenge = default!;
 #nullable restore
 #else
-        public string OwnershipChallenge { get; set; }
+        public string OwnershipChallenge { get => _explicitNullValueOwnershipChallenge; set { _explicitNullValueOwnershipChallenge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_challenge"); else _explicitNullProperties?.Remove("ownership_challenge"); } }
+        private string _explicitNullValueOwnershipChallenge = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdLogpushOwnershipValidateRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdLogpushOwnershipValidateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdLogpushOwnershipValidateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdLogpushOwnershipValidateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destination_conf", DestinationConf);
             writer.WriteStringValue("ownership_challenge", OwnershipChallenge);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

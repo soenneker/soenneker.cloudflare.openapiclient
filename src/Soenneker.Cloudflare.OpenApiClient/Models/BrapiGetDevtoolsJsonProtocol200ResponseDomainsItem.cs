@@ -11,50 +11,74 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BrapiGetDevtoolsJsonProtocol200ResponseDomainsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("commands") is { } nullNodeCommands && nullNodeCommands.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Commands = null;
+            if (parseNode.GetChildNode("dependencies") is { } nullNodeDependencies && nullNodeDependencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dependencies = null;
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("experimental") is { } nullNodeExperimental && nullNodeExperimental.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Experimental = null;
+            if (parseNode.GetChildNode("types") is { } nullNodeTypes && nullNodeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Types = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Available commands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemCommandsItem>? Commands { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemCommandsItem>? Commands { get => _explicitNullValueCommands; set { _explicitNullValueCommands = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commands"); else _explicitNullProperties?.Remove("commands"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemCommandsItem>? _explicitNullValueCommands = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemCommandsItem> Commands { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemCommandsItem> Commands { get => _explicitNullValueCommands; set { _explicitNullValueCommands = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commands"); else _explicitNullProperties?.Remove("commands"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemCommandsItem> _explicitNullValueCommands = default!;
 #endif
         /// <summary>Domain dependencies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Dependencies { get; set; }
+        public List<string>? Dependencies { get => _explicitNullValueDependencies; set { _explicitNullValueDependencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependencies"); else _explicitNullProperties?.Remove("dependencies"); } }
+        private List<string>? _explicitNullValueDependencies = default!;
 #nullable restore
 #else
-        public List<string> Dependencies { get; set; }
+        public List<string> Dependencies { get => _explicitNullValueDependencies; set { _explicitNullValueDependencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependencies"); else _explicitNullProperties?.Remove("dependencies"); } }
+        private List<string> _explicitNullValueDependencies = default!;
 #endif
         /// <summary>Domain name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>Available events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemEventsItem>? Events { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemEventsItem>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemEventsItem>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemEventsItem> Events { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemEventsItem> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemEventsItem> _explicitNullValueEvents = default!;
 #endif
         /// <summary>Whether this domain is experimental.</summary>
-        public bool? Experimental { get; set; }
+        public bool? Experimental { get => _explicitNullValueExperimental; set { _explicitNullValueExperimental = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimental"); else _explicitNullProperties?.Remove("experimental"); } }
+        private bool? _explicitNullValueExperimental = default!;
         /// <summary>Type definitions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemTypesItem>? Types { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemTypesItem>? Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemTypesItem>? _explicitNullValueTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemTypesItem> Types { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemTypesItem> Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemTypesItem> _explicitNullValueTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItem"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemEventsItem>("events", Events);
             writer.WriteBoolValue("experimental", Experimental);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonProtocol200ResponseDomainsItemTypesItem>("types", Types);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

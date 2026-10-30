@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudforceOneEmailRuleCondition : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleArrayCondition"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,25 +58,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleCondition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleCondition();
-            if("array".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CloudforceOneEmailRuleArrayCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CloudforceOneEmailRuleArrayCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleArrayCondition();
+                
             }
-            else if("group".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CloudforceOneEmailRuleConditionGroup".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CloudforceOneEmailRuleConditionGroup = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleConditionGroup();
+                
             }
-            else if("header".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CloudforceOneEmailRuleHeaderCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CloudforceOneEmailRuleHeaderCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleHeaderCondition();
+                
             }
-            else if("scalar".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CloudforceOneEmailRuleScalarCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CloudforceOneEmailRuleScalarCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleScalarCondition();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("scalar".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("field") != null && parseNode.GetChildNode("operator") != null && (parseNode.GetChildNode("operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("==".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "!=".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "\u003E".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "\u003E=".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "\u003C".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "\u003C=".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "contains".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "matches".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("array".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("field") != null && parseNode.GetChildNode("conditions") != null && (parseNode.GetChildNode("quantifier") == null || (parseNode.GetChildNode("quantifier")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("any".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "all".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("header".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("header_name") != null && parseNode.GetChildNode("match_type") != null && (parseNode.GetChildNode("match_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("any".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "all".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "first".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "last".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "count".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("operator") != null && (parseNode.GetChildNode("operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("==".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "!=".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "\u003E".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "\u003E=".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "\u003C".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "\u003C=".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "contains".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "matches".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("group".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("operator") != null && (parseNode.GetChildNode("operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("and".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "or".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("conditions") != null))();
+            if (result.CloudforceOneEmailRuleArrayCondition == null && result.CloudforceOneEmailRuleConditionGroup == null && result.CloudforceOneEmailRuleHeaderCondition == null && result.CloudforceOneEmailRuleScalarCondition == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.CloudforceOneEmailRuleScalarCondition = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleScalarCondition(), parseNode);
+            if (result.CloudforceOneEmailRuleArrayCondition == null && result.CloudforceOneEmailRuleConditionGroup == null && result.CloudforceOneEmailRuleHeaderCondition == null && result.CloudforceOneEmailRuleScalarCondition == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.CloudforceOneEmailRuleArrayCondition = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleArrayCondition(), parseNode);
+            if (result.CloudforceOneEmailRuleArrayCondition == null && result.CloudforceOneEmailRuleConditionGroup == null && result.CloudforceOneEmailRuleHeaderCondition == null && result.CloudforceOneEmailRuleScalarCondition == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.CloudforceOneEmailRuleHeaderCondition = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleHeaderCondition(), parseNode);
+            if (result.CloudforceOneEmailRuleArrayCondition == null && result.CloudforceOneEmailRuleConditionGroup == null && result.CloudforceOneEmailRuleHeaderCondition == null && result.CloudforceOneEmailRuleScalarCondition == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.CloudforceOneEmailRuleConditionGroup = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleConditionGroup(), parseNode);
+            if (result.CloudforceOneEmailRuleArrayCondition == null && result.CloudforceOneEmailRuleConditionGroup == null && result.CloudforceOneEmailRuleHeaderCondition == null && result.CloudforceOneEmailRuleScalarCondition == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CloudforceOneEmailRuleArrayCondition == null && CloudforceOneEmailRuleConditionGroup == null && CloudforceOneEmailRuleHeaderCondition == null && CloudforceOneEmailRuleScalarCondition == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CloudforceOneEmailRuleArrayCondition != null && CloudforceOneEmailRuleConditionGroup == null && CloudforceOneEmailRuleHeaderCondition == null && CloudforceOneEmailRuleScalarCondition == null) { if (CloudforceOneEmailRuleArrayCondition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CloudforceOneEmailRuleArrayCondition); return; }
+            if (CloudforceOneEmailRuleConditionGroup != null && CloudforceOneEmailRuleArrayCondition == null && CloudforceOneEmailRuleHeaderCondition == null && CloudforceOneEmailRuleScalarCondition == null) { if (CloudforceOneEmailRuleConditionGroup is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CloudforceOneEmailRuleConditionGroup); return; }
+            if (CloudforceOneEmailRuleHeaderCondition != null && CloudforceOneEmailRuleArrayCondition == null && CloudforceOneEmailRuleConditionGroup == null && CloudforceOneEmailRuleScalarCondition == null) { if (CloudforceOneEmailRuleHeaderCondition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CloudforceOneEmailRuleHeaderCondition); return; }
+            if (CloudforceOneEmailRuleScalarCondition != null && CloudforceOneEmailRuleArrayCondition == null && CloudforceOneEmailRuleConditionGroup == null && CloudforceOneEmailRuleHeaderCondition == null) { if (CloudforceOneEmailRuleScalarCondition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CloudforceOneEmailRuleScalarCondition); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CloudforceOneEmailRuleArrayCondition != null)
             {
+                if (CloudforceOneEmailRuleArrayCondition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleArrayCondition>(null, CloudforceOneEmailRuleArrayCondition);
             }
             else if(CloudforceOneEmailRuleConditionGroup != null)
             {
+                if (CloudforceOneEmailRuleConditionGroup is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleConditionGroup>(null, CloudforceOneEmailRuleConditionGroup);
             }
             else if(CloudforceOneEmailRuleHeaderCondition != null)
             {
+                if (CloudforceOneEmailRuleHeaderCondition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleHeaderCondition>(null, CloudforceOneEmailRuleHeaderCondition);
             }
             else if(CloudforceOneEmailRuleScalarCondition != null)
             {
+                if (CloudforceOneEmailRuleScalarCondition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleScalarCondition>(null, CloudforceOneEmailRuleScalarCondition);
             }
         }

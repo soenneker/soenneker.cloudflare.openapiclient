@@ -61,6 +61,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearch404Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearch429Response.CreateFromDiscriminatorValue },
                 { "502", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearch502Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearch200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearch200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

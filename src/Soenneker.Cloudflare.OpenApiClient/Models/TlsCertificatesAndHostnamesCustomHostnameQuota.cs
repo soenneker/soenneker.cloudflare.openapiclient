@@ -11,17 +11,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TlsCertificatesAndHostnamesCustomHostnameQuota : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allocated") is { } nullNodeAllocated && nullNodeAllocated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocated = null;
+            if (parseNode.GetChildNode("exceeded") is { } nullNodeExceeded && nullNodeExceeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exceeded = null;
+            if (parseNode.GetChildNode("hard_cap") is { } nullNodeHardCap && nullNodeHardCap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HardCap = null;
+            if (parseNode.GetChildNode("used") is { } nullNodeUsed && nullNodeUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Used = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allocated custom hostname quota.</summary>
-        public long? Allocated { get; set; }
+        public long? Allocated { get => _explicitNullValueAllocated; set { _explicitNullValueAllocated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocated"); else _explicitNullProperties?.Remove("allocated"); } }
+        private long? _explicitNullValueAllocated = default!;
         /// <summary>Whether the current usage has exceeded the allocated quota.</summary>
-        public bool? Exceeded { get; set; }
+        public bool? Exceeded { get => _explicitNullValueExceeded; set { _explicitNullValueExceeded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exceeded"); else _explicitNullProperties?.Remove("exceeded"); } }
+        private bool? _explicitNullValueExceeded = default!;
         /// <summary>The maximum number of custom hostnames allowed before create requests are rejected.</summary>
-        public long? HardCap { get; set; }
+        public long? HardCap { get => _explicitNullValueHardCap; set { _explicitNullValueHardCap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_cap"); else _explicitNullProperties?.Remove("hard_cap"); } }
+        private long? _explicitNullValueHardCap = default!;
         /// <summary>The number of custom hostnames currently in use.</summary>
-        public long? Used { get; set; }
+        public long? Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
+        private long? _explicitNullValueUsed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameQuota"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameQuota CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameQuota();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameQuota(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("exceeded", Exceeded);
             writer.WriteLongValue("hard_cap", HardCap);
             writer.WriteLongValue("used", Used);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,32 +12,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
+            if (parseNode.GetChildNode("http") is { } nullNodeHttp && nullNodeHttp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Http = null;
+            if (parseNode.GetChildNode("l4") is { } nullNodeL4 && nullNodeL4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) L4 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configure logging settings for DNS firewall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns? Dns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns? Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns? _explicitNullValueDns = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns Dns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns _explicitNullValueDns = default!;
 #endif
         /// <summary>Configure logging settings for HTTP/HTTPS firewall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp? Http { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp? Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp? _explicitNullValueHttp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp Http { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp _explicitNullValueHttp = default!;
 #endif
         /// <summary>Configure logging settings for Network firewall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4? L4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4? L4 { get => _explicitNullValueL4; set { _explicitNullValueL4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("l4"); else _explicitNullProperties?.Remove("l4"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4? _explicitNullValueL4 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4 L4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4 L4 { get => _explicitNullValueL4; set { _explicitNullValueL4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("l4"); else _explicitNullProperties?.Remove("l4"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4 _explicitNullValueL4 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns>("dns", Dns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp>("http", Http);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4>("l4", L4);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Impo
         /// <summary>
         /// Generate a temporary URL for uploading an SQL file to, then instruct the D1 to import itand poll it for status updates. Imports block the D1 for their duration.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabase200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseSuccessResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabase200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseSuccessResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabase200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseSuccessResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -55,8 +55,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Impo
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.D1ApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabase200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabase200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseSuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Generate a temporary URL for uploading an SQL file to, then instruct the D1 to import itand poll it for status updates. Imports block the D1 for their duration.

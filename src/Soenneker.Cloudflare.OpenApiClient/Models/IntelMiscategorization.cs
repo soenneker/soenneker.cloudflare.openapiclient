@@ -11,58 +11,85 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class IntelMiscategorization : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("content_adds") is { } nullNodeContentAdds && nullNodeContentAdds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentAdds = null;
+            if (parseNode.GetChildNode("content_removes") is { } nullNodeContentRemoves && nullNodeContentRemoves.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentRemoves = null;
+            if (parseNode.GetChildNode("indicator_type") is { } nullNodeIndicatorType && nullNodeIndicatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorType = null;
+            if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
+            if (parseNode.GetChildNode("security_adds") is { } nullNodeSecurityAdds && nullNodeSecurityAdds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityAdds = null;
+            if (parseNode.GetChildNode("security_removes") is { } nullNodeSecurityRemoves && nullNodeSecurityRemoves.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityRemoves = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Content category IDs to add.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ContentAdds { get; set; }
+        public List<int?>? ContentAdds { get => _explicitNullValueContentAdds; set { _explicitNullValueContentAdds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_adds"); else _explicitNullProperties?.Remove("content_adds"); } }
+        private List<int?>? _explicitNullValueContentAdds = default!;
 #nullable restore
 #else
-        public List<int?> ContentAdds { get; set; }
+        public List<int?> ContentAdds { get => _explicitNullValueContentAdds; set { _explicitNullValueContentAdds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_adds"); else _explicitNullProperties?.Remove("content_adds"); } }
+        private List<int?> _explicitNullValueContentAdds = default!;
 #endif
         /// <summary>Content category IDs to remove.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ContentRemoves { get; set; }
+        public List<int?>? ContentRemoves { get => _explicitNullValueContentRemoves; set { _explicitNullValueContentRemoves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_removes"); else _explicitNullProperties?.Remove("content_removes"); } }
+        private List<int?>? _explicitNullValueContentRemoves = default!;
 #nullable restore
 #else
-        public List<int?> ContentRemoves { get; set; }
+        public List<int?> ContentRemoves { get => _explicitNullValueContentRemoves; set { _explicitNullValueContentRemoves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_removes"); else _explicitNullProperties?.Remove("content_removes"); } }
+        private List<int?> _explicitNullValueContentRemoves = default!;
 #endif
         /// <summary>The indicator_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType? IndicatorType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType? IndicatorType { get => _explicitNullValueIndicatorType; set { _explicitNullValueIndicatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator_type"); else _explicitNullProperties?.Remove("indicator_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType? _explicitNullValueIndicatorType = default!;
         /// <summary>Provide only if indicator_type is `ipv4` or `ipv6`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get; set; }
+        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        private string? _explicitNullValueIp = default!;
 #nullable restore
 #else
-        public string Ip { get; set; }
+        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        private string _explicitNullValueIp = default!;
 #endif
         /// <summary>Security category IDs to add.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? SecurityAdds { get; set; }
+        public List<int?>? SecurityAdds { get => _explicitNullValueSecurityAdds; set { _explicitNullValueSecurityAdds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_adds"); else _explicitNullProperties?.Remove("security_adds"); } }
+        private List<int?>? _explicitNullValueSecurityAdds = default!;
 #nullable restore
 #else
-        public List<int?> SecurityAdds { get; set; }
+        public List<int?> SecurityAdds { get => _explicitNullValueSecurityAdds; set { _explicitNullValueSecurityAdds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_adds"); else _explicitNullProperties?.Remove("security_adds"); } }
+        private List<int?> _explicitNullValueSecurityAdds = default!;
 #endif
         /// <summary>Security category IDs to remove.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? SecurityRemoves { get; set; }
+        public List<int?>? SecurityRemoves { get => _explicitNullValueSecurityRemoves; set { _explicitNullValueSecurityRemoves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_removes"); else _explicitNullProperties?.Remove("security_removes"); } }
+        private List<int?>? _explicitNullValueSecurityRemoves = default!;
 #nullable restore
 #else
-        public List<int?> SecurityRemoves { get; set; }
+        public List<int?> SecurityRemoves { get => _explicitNullValueSecurityRemoves; set { _explicitNullValueSecurityRemoves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_removes"); else _explicitNullProperties?.Remove("security_removes"); } }
+        private List<int?> _explicitNullValueSecurityRemoves = default!;
 #endif
         /// <summary>Provide only if indicator_type is `domain` or `url`. Example if indicator_type is `domain`: `example.com`. Example if indicator_type is `url`: `https://example.com/news/`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorization"/> and sets the default values.
@@ -79,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorization();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorization(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<int?>("security_adds", SecurityAdds);
             writer.WriteCollectionOfPrimitiveValues<int?>("security_removes", SecurityRemoves);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -59,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretDeleteById4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -82,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreGetById4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStorePatchById4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

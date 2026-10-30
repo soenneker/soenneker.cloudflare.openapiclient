@@ -12,60 +12,89 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BuildsCreateWorkerBuildSettingsInput : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("build_caching_enabled") is { } nullNodeBuildCachingEnabled && nullNodeBuildCachingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCachingEnabled = null;
+            if (parseNode.GetChildNode("build_command") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
+            if (parseNode.GetChildNode("build_token_uuid") is { } nullNodeBuildTokenUuid && nullNodeBuildTokenUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenUuid = null;
+            if (parseNode.GetChildNode("deploy_command") is { } nullNodeDeployCommand && nullNodeDeployCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployCommand = null;
+            if (parseNode.GetChildNode("environment_variables") is { } nullNodeEnvironmentVariables && nullNodeEnvironmentVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentVariables = null;
+            if (parseNode.GetChildNode("path_excludes") is { } nullNodePathExcludes && nullNodePathExcludes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathExcludes = null;
+            if (parseNode.GetChildNode("path_includes") is { } nullNodePathIncludes && nullNodePathIncludes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathIncludes = null;
+            if (parseNode.GetChildNode("root_directory") is { } nullNodeRootDirectory && nullNodeRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDirectory = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether builds reuse cached dependencies and build artifacts.</summary>
-        public bool? BuildCachingEnabled { get; set; }
+        public bool? BuildCachingEnabled { get => _explicitNullValueBuildCachingEnabled; set { _explicitNullValueBuildCachingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_caching_enabled"); else _explicitNullProperties?.Remove("build_caching_enabled"); } }
+        private bool? _explicitNullValueBuildCachingEnabled = default!;
         /// <summary>Command to build the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildCommand { get; set; }
+        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_command"); else _explicitNullProperties?.Remove("build_command"); } }
+        private string? _explicitNullValueBuildCommand = default!;
 #nullable restore
 #else
-        public string BuildCommand { get; set; }
+        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_command"); else _explicitNullProperties?.Remove("build_command"); } }
+        private string _explicitNullValueBuildCommand = default!;
 #endif
         /// <summary>UUID of the build token used when deploying the Worker.</summary>
-        public Guid? BuildTokenUuid { get; set; }
+        public Guid? BuildTokenUuid { get => _explicitNullValueBuildTokenUuid; set { _explicitNullValueBuildTokenUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_uuid"); else _explicitNullProperties?.Remove("build_token_uuid"); } }
+        private Guid? _explicitNullValueBuildTokenUuid = default!;
         /// <summary>Command to deploy the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployCommand { get; set; }
+        public string? DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
+        private string? _explicitNullValueDeployCommand = default!;
 #nullable restore
 #else
-        public string DeployCommand { get; set; }
+        public string DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
+        private string _explicitNullValueDeployCommand = default!;
 #endif
         /// <summary>Map of environment-variable names to build-time values. Names must begin with a letter or underscore and contain only letters, numbers, and underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInputEnvironmentVariables? EnvironmentVariables { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInputEnvironmentVariables? EnvironmentVariables { get => _explicitNullValueEnvironmentVariables; set { _explicitNullValueEnvironmentVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_variables"); else _explicitNullProperties?.Remove("environment_variables"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInputEnvironmentVariables? _explicitNullValueEnvironmentVariables = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInputEnvironmentVariables EnvironmentVariables { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInputEnvironmentVariables EnvironmentVariables { get => _explicitNullValueEnvironmentVariables; set { _explicitNullValueEnvironmentVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_variables"); else _explicitNullProperties?.Remove("environment_variables"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInputEnvironmentVariables _explicitNullValueEnvironmentVariables = default!;
 #endif
         /// <summary>Path patterns that must not start builds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PathExcludes { get; set; }
+        public List<string>? PathExcludes { get => _explicitNullValuePathExcludes; set { _explicitNullValuePathExcludes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_excludes"); else _explicitNullProperties?.Remove("path_excludes"); } }
+        private List<string>? _explicitNullValuePathExcludes = default!;
 #nullable restore
 #else
-        public List<string> PathExcludes { get; set; }
+        public List<string> PathExcludes { get => _explicitNullValuePathExcludes; set { _explicitNullValuePathExcludes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_excludes"); else _explicitNullProperties?.Remove("path_excludes"); } }
+        private List<string> _explicitNullValuePathExcludes = default!;
 #endif
         /// <summary>Path patterns that can start builds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PathIncludes { get; set; }
+        public List<string>? PathIncludes { get => _explicitNullValuePathIncludes; set { _explicitNullValuePathIncludes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_includes"); else _explicitNullProperties?.Remove("path_includes"); } }
+        private List<string>? _explicitNullValuePathIncludes = default!;
 #nullable restore
 #else
-        public List<string> PathIncludes { get; set; }
+        public List<string> PathIncludes { get => _explicitNullValuePathIncludes; set { _explicitNullValuePathIncludes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_includes"); else _explicitNullProperties?.Remove("path_includes"); } }
+        private List<string> _explicitNullValuePathIncludes = default!;
 #endif
         /// <summary>Repository directory in which build and deploy commands run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDirectory { get; set; }
+        public string? RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_directory"); else _explicitNullProperties?.Remove("root_directory"); } }
+        private string? _explicitNullValueRootDirectory = default!;
 #nullable restore
 #else
-        public string RootDirectory { get; set; }
+        public string RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_directory"); else _explicitNullProperties?.Remove("root_directory"); } }
+        private string _explicitNullValueRootDirectory = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput"/> and sets the default values.
@@ -73,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public BuildsCreateWorkerBuildSettingsInput()
         {
             AdditionalData = new Dictionary<string, object>();
-            BuildCachingEnabled = false;
+            BuildCachingEnabled = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -83,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("path_excludes", PathExcludes);
             writer.WriteCollectionOfPrimitiveValues<string>("path_includes", PathIncludes);
             writer.WriteStringValue("root_directory", RootDirectory);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,37 +12,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcContainersModifyApplicationRequestBody : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("configuration") is { } nullNodeConfiguration && nullNodeConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configuration = null;
+            if (parseNode.GetChildNode("constraints") is { } nullNodeConstraints && nullNodeConstraints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Constraints = null;
+            if (parseNode.GetChildNode("max_instances") is { } nullNodeMaxInstances && nullNodeMaxInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxInstances = null;
+            if (parseNode.GetChildNode("observability") is { } nullNodeObservability && nullNodeObservability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Observability = null;
+            if (parseNode.GetChildNode("rollout_active_grace_period") is { } nullNodeRolloutActiveGracePeriod && nullNodeRolloutActiveGracePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RolloutActiveGracePeriod = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Application configuration fields you can change without creating a rollout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration? Configuration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration? _explicitNullValueConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration Configuration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration _explicitNullValueConfiguration = default!;
 #endif
         /// <summary>The constraints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationConstraints? Constraints { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationConstraints? Constraints { get => _explicitNullValueConstraints; set { _explicitNullValueConstraints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraints"); else _explicitNullProperties?.Remove("constraints"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationConstraints? _explicitNullValueConstraints = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationConstraints Constraints { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationConstraints Constraints { get => _explicitNullValueConstraints; set { _explicitNullValueConstraints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraints"); else _explicitNullProperties?.Remove("constraints"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationConstraints _explicitNullValueConstraints = default!;
 #endif
         /// <summary>Maximum number of instances that an autoscaling application can run.</summary>
-        public int? MaxInstances { get; set; }
+        public int? MaxInstances { get => _explicitNullValueMaxInstances; set { _explicitNullValueMaxInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_instances"); else _explicitNullProperties?.Remove("max_instances"); } }
+        private int? _explicitNullValueMaxInstances = default!;
         /// <summary>Top-level application observability settings. Scheduler-backed applicationshot-reload these settings across existing instances. An existing DurableObject-managed application accepts only `logs.enabled` and publishes these settingsto runtime metadata without creating deployments or rollouts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBodyObservability? Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBodyObservability? Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBodyObservability? _explicitNullValueObservability = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBodyObservability Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBodyObservability Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBodyObservability _explicitNullValueObservability = default!;
 #endif
         /// <summary>Grace period for active instances to stay alive before becoming eligible for shutdown signal due to a rollout, in seconds.Defaults to 0.</summary>
-        public int? RolloutActiveGracePeriod { get; set; }
+        public int? RolloutActiveGracePeriod { get => _explicitNullValueRolloutActiveGracePeriod; set { _explicitNullValueRolloutActiveGracePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollout_active_grace_period"); else _explicitNullProperties?.Remove("rollout_active_grace_period"); } }
+        private int? _explicitNullValueRolloutActiveGracePeriod = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBody"/> and sets the default values.
         /// </summary>
@@ -59,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("max_instances", MaxInstances);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationRequestBodyObservability>("observability", Observability);
             writer.WriteIntValue("rollout_active_grace_period", RolloutActiveGracePeriod);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

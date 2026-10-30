@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Address
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressesResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressesResponseCollection.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressesResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressesResponseCollection.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a destination address to forward your emails to. Destination addresses need to be verified before they can be used.
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Address
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressResponseSingle.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressResponseSingle.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists destination addresses configured for Email Routing in an account.

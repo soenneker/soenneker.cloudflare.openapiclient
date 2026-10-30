@@ -11,52 +11,78 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetAsnsRel200ResponseResultRelsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("asn1") is { } nullNodeAsn1 && nullNodeAsn1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn1 = null;
+            if (parseNode.GetChildNode("asn1_country") is { } nullNodeAsn1Country && nullNodeAsn1Country.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn1Country = null;
+            if (parseNode.GetChildNode("asn1_name") is { } nullNodeAsn1Name && nullNodeAsn1Name.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn1Name = null;
+            if (parseNode.GetChildNode("asn2") is { } nullNodeAsn2 && nullNodeAsn2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn2 = null;
+            if (parseNode.GetChildNode("asn2_country") is { } nullNodeAsn2Country && nullNodeAsn2Country.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn2Country = null;
+            if (parseNode.GetChildNode("asn2_name") is { } nullNodeAsn2Name && nullNodeAsn2Name.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn2Name = null;
+            if (parseNode.GetChildNode("rel") is { } nullNodeRel && nullNodeRel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asn1 property</summary>
-        public int? Asn1 { get; set; }
+        public int? Asn1 { get => _explicitNullValueAsn1; set { _explicitNullValueAsn1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn1"); else _explicitNullProperties?.Remove("asn1"); } }
+        private int? _explicitNullValueAsn1 = default!;
         /// <summary>The asn1_country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Asn1Country { get; set; }
+        public string? Asn1Country { get => _explicitNullValueAsn1Country; set { _explicitNullValueAsn1Country = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn1_country"); else _explicitNullProperties?.Remove("asn1_country"); } }
+        private string? _explicitNullValueAsn1Country = default!;
 #nullable restore
 #else
-        public string Asn1Country { get; set; }
+        public string Asn1Country { get => _explicitNullValueAsn1Country; set { _explicitNullValueAsn1Country = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn1_country"); else _explicitNullProperties?.Remove("asn1_country"); } }
+        private string _explicitNullValueAsn1Country = default!;
 #endif
         /// <summary>The asn1_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Asn1Name { get; set; }
+        public string? Asn1Name { get => _explicitNullValueAsn1Name; set { _explicitNullValueAsn1Name = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn1_name"); else _explicitNullProperties?.Remove("asn1_name"); } }
+        private string? _explicitNullValueAsn1Name = default!;
 #nullable restore
 #else
-        public string Asn1Name { get; set; }
+        public string Asn1Name { get => _explicitNullValueAsn1Name; set { _explicitNullValueAsn1Name = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn1_name"); else _explicitNullProperties?.Remove("asn1_name"); } }
+        private string _explicitNullValueAsn1Name = default!;
 #endif
         /// <summary>The asn2 property</summary>
-        public int? Asn2 { get; set; }
+        public int? Asn2 { get => _explicitNullValueAsn2; set { _explicitNullValueAsn2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn2"); else _explicitNullProperties?.Remove("asn2"); } }
+        private int? _explicitNullValueAsn2 = default!;
         /// <summary>The asn2_country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Asn2Country { get; set; }
+        public string? Asn2Country { get => _explicitNullValueAsn2Country; set { _explicitNullValueAsn2Country = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn2_country"); else _explicitNullProperties?.Remove("asn2_country"); } }
+        private string? _explicitNullValueAsn2Country = default!;
 #nullable restore
 #else
-        public string Asn2Country { get; set; }
+        public string Asn2Country { get => _explicitNullValueAsn2Country; set { _explicitNullValueAsn2Country = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn2_country"); else _explicitNullProperties?.Remove("asn2_country"); } }
+        private string _explicitNullValueAsn2Country = default!;
 #endif
         /// <summary>The asn2_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Asn2Name { get; set; }
+        public string? Asn2Name { get => _explicitNullValueAsn2Name; set { _explicitNullValueAsn2Name = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn2_name"); else _explicitNullProperties?.Remove("asn2_name"); } }
+        private string? _explicitNullValueAsn2Name = default!;
 #nullable restore
 #else
-        public string Asn2Name { get; set; }
+        public string Asn2Name { get => _explicitNullValueAsn2Name; set { _explicitNullValueAsn2Name = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn2_name"); else _explicitNullProperties?.Remove("asn2_name"); } }
+        private string _explicitNullValueAsn2Name = default!;
 #endif
         /// <summary>The rel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Rel { get; set; }
+        public string? Rel { get => _explicitNullValueRel; set { _explicitNullValueRel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rel"); else _explicitNullProperties?.Remove("rel"); } }
+        private string? _explicitNullValueRel = default!;
 #nullable restore
 #else
-        public string Rel { get; set; }
+        public string Rel { get => _explicitNullValueRel; set { _explicitNullValueRel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rel"); else _explicitNullProperties?.Remove("rel"); } }
+        private string _explicitNullValueRel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsRel200ResponseResultRelsItem"/> and sets the default values.
@@ -73,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsRel200ResponseResultRelsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsRel200ResponseResultRelsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsRel200ResponseResultRelsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("asn2_country", Asn2Country);
             writer.WriteStringValue("asn2_name", Asn2Name);
             writer.WriteStringValue("rel", Rel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

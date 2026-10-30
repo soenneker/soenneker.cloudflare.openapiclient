@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\page_shield
+    /// Builds and executes requests for operations under \zones\{zoneId}\page_shield
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Page_shieldRequestBuilder : BaseRequestBuilder
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Page_shieldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/page_shield", pathParameters)
+        public Page_shieldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/page_shield", pathParameters)
         {
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Page_shieldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/page_shield", rawUrl)
+        public Page_shieldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/page_shield", rawUrl)
         {
         }
         /// <summary>
@@ -77,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldGetSettings200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldGetSettings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,6 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldUpdateSettings200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldUpdateSettings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

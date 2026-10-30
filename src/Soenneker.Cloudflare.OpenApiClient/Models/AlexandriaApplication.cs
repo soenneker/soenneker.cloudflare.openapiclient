@@ -11,128 +11,185 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AlexandriaApplication : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("application_confidence_score") is { } nullNodeApplicationConfidenceScore && nullNodeApplicationConfidenceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationConfidenceScore = null;
+            if (parseNode.GetChildNode("application_score_composition") is { } nullNodeApplicationScoreComposition && nullNodeApplicationScoreComposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationScoreComposition = null;
+            if (parseNode.GetChildNode("application_source") is { } nullNodeApplicationSource && nullNodeApplicationSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationSource = null;
+            if (parseNode.GetChildNode("application_type") is { } nullNodeApplicationType && nullNodeApplicationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationType = null;
+            if (parseNode.GetChildNode("application_type_description") is { } nullNodeApplicationTypeDescription && nullNodeApplicationTypeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationTypeDescription = null;
+            if (parseNode.GetChildNode("category_id") is { } nullNodeCategoryId && nullNodeCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryId = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("gen_ai_score") is { } nullNodeGenAiScore && nullNodeGenAiScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenAiScore = null;
+            if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
+            if (parseNode.GetChildNode("human_id") is { } nullNodeHumanId && nullNodeHumanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HumanId = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("ip_subnets") is { } nullNodeIpSubnets && nullNodeIpSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpSubnets = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("port_protocols") is { } nullNodePortProtocols && nullNodePortProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortProtocols = null;
+            if (parseNode.GetChildNode("support_domains") is { } nullNodeSupportDomains && nullNodeSupportDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportDomains = null;
+            if (parseNode.GetChildNode("supported") is { } nullNodeSupported && nullNodeSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Supported = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Confidence score for the application. Returns -1 when no score is available.</summary>
-        public float? ApplicationConfidenceScore { get; set; }
+        public float? ApplicationConfidenceScore { get => _explicitNullValueApplicationConfidenceScore; set { _explicitNullValueApplicationConfidenceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_confidence_score"); else _explicitNullProperties?.Remove("application_confidence_score"); } }
+        private float? _explicitNullValueApplicationConfidenceScore = default!;
         /// <summary>Returns the score composition breakdown for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition? ApplicationScoreComposition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition? ApplicationScoreComposition { get => _explicitNullValueApplicationScoreComposition; set { _explicitNullValueApplicationScoreComposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_score_composition"); else _explicitNullProperties?.Remove("application_score_composition"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition? _explicitNullValueApplicationScoreComposition = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition ApplicationScoreComposition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition ApplicationScoreComposition { get => _explicitNullValueApplicationScoreComposition; set { _explicitNullValueApplicationScoreComposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_score_composition"); else _explicitNullProperties?.Remove("application_score_composition"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition _explicitNullValueApplicationScoreComposition = default!;
 #endif
         /// <summary>Returns the application source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationSource { get; set; }
+        public string? ApplicationSource { get => _explicitNullValueApplicationSource; set { _explicitNullValueApplicationSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_source"); else _explicitNullProperties?.Remove("application_source"); } }
+        private string? _explicitNullValueApplicationSource = default!;
 #nullable restore
 #else
-        public string ApplicationSource { get; set; }
+        public string ApplicationSource { get => _explicitNullValueApplicationSource; set { _explicitNullValueApplicationSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_source"); else _explicitNullProperties?.Remove("application_source"); } }
+        private string _explicitNullValueApplicationSource = default!;
 #endif
         /// <summary>Returns the application type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationType { get; set; }
+        public string? ApplicationType { get => _explicitNullValueApplicationType; set { _explicitNullValueApplicationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_type"); else _explicitNullProperties?.Remove("application_type"); } }
+        private string? _explicitNullValueApplicationType = default!;
 #nullable restore
 #else
-        public string ApplicationType { get; set; }
+        public string ApplicationType { get => _explicitNullValueApplicationType; set { _explicitNullValueApplicationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_type"); else _explicitNullProperties?.Remove("application_type"); } }
+        private string _explicitNullValueApplicationType = default!;
 #endif
         /// <summary>Returns the application type description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationTypeDescription { get; set; }
+        public string? ApplicationTypeDescription { get => _explicitNullValueApplicationTypeDescription; set { _explicitNullValueApplicationTypeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_type_description"); else _explicitNullProperties?.Remove("application_type_description"); } }
+        private string? _explicitNullValueApplicationTypeDescription = default!;
 #nullable restore
 #else
-        public string ApplicationTypeDescription { get; set; }
+        public string ApplicationTypeDescription { get => _explicitNullValueApplicationTypeDescription; set { _explicitNullValueApplicationTypeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_type_description"); else _explicitNullProperties?.Remove("application_type_description"); } }
+        private string _explicitNullValueApplicationTypeDescription = default!;
 #endif
         /// <summary>Numeric identifier for an application category.</summary>
-        public long? CategoryId { get; set; }
+        public long? CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
+        private long? _explicitNullValueCategoryId = default!;
         /// <summary>Returns the application creation time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>GenAI score for the application. Returns -1 when no score is available.</summary>
-        public float? GenAiScore { get; set; }
+        public float? GenAiScore { get => _explicitNullValueGenAiScore; set { _explicitNullValueGenAiScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gen_ai_score"); else _explicitNullProperties?.Remove("gen_ai_score"); } }
+        private float? _explicitNullValueGenAiScore = default!;
         /// <summary>Hostnames matched by the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Hostnames { get; set; }
+        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        private List<string>? _explicitNullValueHostnames = default!;
 #nullable restore
 #else
-        public List<string> Hostnames { get; set; }
+        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        private List<string> _explicitNullValueHostnames = default!;
 #endif
         /// <summary>Human-readable identifier for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HumanId { get; set; }
+        public string? HumanId { get => _explicitNullValueHumanId; set { _explicitNullValueHumanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("human_id"); else _explicitNullProperties?.Remove("human_id"); } }
+        private string? _explicitNullValueHumanId = default!;
 #nullable restore
 #else
-        public string HumanId { get; set; }
+        public string HumanId { get => _explicitNullValueHumanId; set { _explicitNullValueHumanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("human_id"); else _explicitNullProperties?.Remove("human_id"); } }
+        private string _explicitNullValueHumanId = default!;
 #endif
         /// <summary>Numeric identifier for the application.</summary>
-        public long? Id { get; set; }
+        public long? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private long? _explicitNullValueId = default!;
         /// <summary>IP subnets for this application. Custom application create and update requests accept IPv4 prefix lengths /8 through /32 and IPv6 prefix lengths /32 through /128.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IpSubnets { get; set; }
+        public List<string>? IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
+        private List<string>? _explicitNullValueIpSubnets = default!;
 #nullable restore
 #else
-        public List<string> IpSubnets { get; set; }
+        public List<string> IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
+        private List<string> _explicitNullValueIpSubnets = default!;
 #endif
         /// <summary>Application name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Ports matched by the application, in `protocol/port` or inclusive `protocol/start-end` format (for example, `tcp/443` or `udp/10000-20000`). TCP and UDP ports must be between 0 and 65535.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PortProtocols { get; set; }
+        public List<string>? PortProtocols { get => _explicitNullValuePortProtocols; set { _explicitNullValuePortProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_protocols"); else _explicitNullProperties?.Remove("port_protocols"); } }
+        private List<string>? _explicitNullValuePortProtocols = default!;
 #nullable restore
 #else
-        public List<string> PortProtocols { get; set; }
+        public List<string> PortProtocols { get => _explicitNullValuePortProtocols; set { _explicitNullValuePortProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_protocols"); else _explicitNullProperties?.Remove("port_protocols"); } }
+        private List<string> _explicitNullValuePortProtocols = default!;
 #endif
         /// <summary>Support domains matched by the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportDomains { get; set; }
+        public List<string>? SupportDomains { get => _explicitNullValueSupportDomains; set { _explicitNullValueSupportDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_domains"); else _explicitNullProperties?.Remove("support_domains"); } }
+        private List<string>? _explicitNullValueSupportDomains = default!;
 #nullable restore
 #else
-        public List<string> SupportDomains { get; set; }
+        public List<string> SupportDomains { get => _explicitNullValueSupportDomains; set { _explicitNullValueSupportDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_domains"); else _explicitNullProperties?.Remove("support_domains"); } }
+        private List<string> _explicitNullValueSupportDomains = default!;
 #endif
         /// <summary>Cloudflare products that support this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?>? Supported { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?>? Supported { get => _explicitNullValueSupported; set { _explicitNullValueSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported"); else _explicitNullProperties?.Remove("supported"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?>? _explicitNullValueSupported = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?> Supported { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?> Supported { get => _explicitNullValueSupported; set { _explicitNullValueSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported"); else _explicitNullProperties?.Remove("supported"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?> _explicitNullValueSupported = default!;
 #endif
         /// <summary>Returns the application update time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>Returns the application version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get; set; }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get; set; }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplication"/> and sets the default values.
@@ -149,7 +206,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplication();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplication(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -204,6 +261,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem>("supported", Supported);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

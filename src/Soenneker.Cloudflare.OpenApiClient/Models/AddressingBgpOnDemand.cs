@@ -11,17 +11,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AddressingBgpOnDemand : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("advertised") is { } nullNodeAdvertised && nullNodeAdvertised.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advertised = null;
+            if (parseNode.GetChildNode("advertised_modified_at") is { } nullNodeAdvertisedModifiedAt && nullNodeAdvertisedModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvertisedModifiedAt = null;
+            if (parseNode.GetChildNode("on_demand_enabled") is { } nullNodeOnDemandEnabled && nullNodeOnDemandEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnDemandEnabled = null;
+            if (parseNode.GetChildNode("on_demand_locked") is { } nullNodeOnDemandLocked && nullNodeOnDemandLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnDemandLocked = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Prefix advertisement status to the Internet. This field is only not &apos;null&apos; if on demand is enabled.</summary>
-        public bool? Advertised { get; set; }
+        public bool? Advertised { get => _explicitNullValueAdvertised; set { _explicitNullValueAdvertised = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertised"); else _explicitNullProperties?.Remove("advertised"); } }
+        private bool? _explicitNullValueAdvertised = default!;
         /// <summary>Last time the advertisement status was changed. This field is only not &apos;null&apos; if on demand is enabled.</summary>
-        public DateTimeOffset? AdvertisedModifiedAt { get; set; }
+        public DateTimeOffset? AdvertisedModifiedAt { get => _explicitNullValueAdvertisedModifiedAt; set { _explicitNullValueAdvertisedModifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertised_modified_at"); else _explicitNullProperties?.Remove("advertised_modified_at"); } }
+        private DateTimeOffset? _explicitNullValueAdvertisedModifiedAt = default!;
         /// <summary>Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.</summary>
-        public bool? OnDemandEnabled { get; set; }
+        public bool? OnDemandEnabled { get => _explicitNullValueOnDemandEnabled; set { _explicitNullValueOnDemandEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_demand_enabled"); else _explicitNullProperties?.Remove("on_demand_enabled"); } }
+        private bool? _explicitNullValueOnDemandEnabled = default!;
         /// <summary>Whether the advertisement status of the prefix is locked, meaning it cannot be changed.</summary>
-        public bool? OnDemandLocked { get; set; }
+        public bool? OnDemandLocked { get => _explicitNullValueOnDemandLocked; set { _explicitNullValueOnDemandLocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_demand_locked"); else _explicitNullProperties?.Remove("on_demand_locked"); } }
+        private bool? _explicitNullValueOnDemandLocked = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingBgpOnDemand"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingBgpOnDemand CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingBgpOnDemand();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingBgpOnDemand(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("advertised_modified_at", AdvertisedModifiedAt);
             writer.WriteBoolValue("on_demand_enabled", OnDemandEnabled);
             writer.WriteBoolValue("on_demand_locked", OnDemandLocked);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

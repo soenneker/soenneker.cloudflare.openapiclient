@@ -11,37 +11,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessSamlCertificateSet2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("current_certificate") is { } nullNodeCurrentCertificate && nullNodeCurrentCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCertificate = null;
+            if (parseNode.GetChildNode("previous_certificate") is { } nullNodePreviousCertificate && nullNodePreviousCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousCertificate = null;
+            if (parseNode.GetChildNode("uid") is { } nullNodeUid && nullNodeUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uid = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the certificate set was created</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The current active certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2CurrentCertificate? CurrentCertificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2CurrentCertificate? CurrentCertificate { get => _explicitNullValueCurrentCertificate; set { _explicitNullValueCurrentCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_certificate"); else _explicitNullProperties?.Remove("current_certificate"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2CurrentCertificate? _explicitNullValueCurrentCertificate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2CurrentCertificate CurrentCertificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2CurrentCertificate CurrentCertificate { get => _explicitNullValueCurrentCertificate; set { _explicitNullValueCurrentCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_certificate"); else _explicitNullProperties?.Remove("current_certificate"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2CurrentCertificate _explicitNullValueCurrentCertificate = default!;
 #endif
         /// <summary>The previous certificate (maintained during rotation period). May be null when no rotation has occurred. Mirrors the structure of `saml_certificate`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2PreviousCertificateProperty? PreviousCertificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2PreviousCertificateProperty? PreviousCertificate { get => _explicitNullValuePreviousCertificate; set { _explicitNullValuePreviousCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_certificate"); else _explicitNullProperties?.Remove("previous_certificate"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2PreviousCertificateProperty? _explicitNullValuePreviousCertificate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2PreviousCertificateProperty PreviousCertificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2PreviousCertificateProperty PreviousCertificate { get => _explicitNullValuePreviousCertificate; set { _explicitNullValuePreviousCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_certificate"); else _explicitNullProperties?.Remove("previous_certificate"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2PreviousCertificateProperty _explicitNullValuePreviousCertificate = default!;
 #endif
         /// <summary>Unique identifier for the certificate set</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uid { get; set; }
+        public string? Uid { get => _explicitNullValueUid; set { _explicitNullValueUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uid"); else _explicitNullProperties?.Remove("uid"); } }
+        private string? _explicitNullValueUid = default!;
 #nullable restore
 #else
-        public string Uid { get; set; }
+        public string Uid { get => _explicitNullValueUid; set { _explicitNullValueUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uid"); else _explicitNullProperties?.Remove("uid"); } }
+        private string _explicitNullValueUid = default!;
 #endif
         /// <summary>When the certificate set was last updated</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet2PreviousCertificateProperty>("previous_certificate", PreviousCertificate);
             writer.WriteStringValue("uid", Uid);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

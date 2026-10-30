@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.Item.Refe
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolsReferencesResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolsReferencesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

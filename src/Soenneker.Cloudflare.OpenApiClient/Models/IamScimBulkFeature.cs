@@ -12,15 +12,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IamScimBulkFeature : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maxOperations") is { } nullNodeMaxOperations && nullNodeMaxOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxOperations = null;
+            if (parseNode.GetChildNode("maxPayloadSize") is { } nullNodeMaxPayloadSize && nullNodeMaxPayloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPayloadSize = null;
+            if (parseNode.GetChildNode("supported") is { } nullNodeSupported && nullNodeSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Supported = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of operations in a bulk request.</summary>
-        public int? MaxOperations { get; set; }
+        public int? MaxOperations { get => _explicitNullValueMaxOperations; set { _explicitNullValueMaxOperations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxOperations"); else _explicitNullProperties?.Remove("maxOperations"); } }
+        private int? _explicitNullValueMaxOperations = default!;
         /// <summary>The maximum payload size in bytes for a bulk request.</summary>
-        public int? MaxPayloadSize { get; set; }
+        public int? MaxPayloadSize { get => _explicitNullValueMaxPayloadSize; set { _explicitNullValueMaxPayloadSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxPayloadSize"); else _explicitNullProperties?.Remove("maxPayloadSize"); } }
+        private int? _explicitNullValueMaxPayloadSize = default!;
         /// <summary>Whether bulk operations are supported.</summary>
-        public bool? Supported { get; set; }
+        public bool? Supported { get => _explicitNullValueSupported; set { _explicitNullValueSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported"); else _explicitNullProperties?.Remove("supported"); } }
+        private bool? _explicitNullValueSupported = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimBulkFeature"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimBulkFeature CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimBulkFeature();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimBulkFeature(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("maxOperations", MaxOperations);
             writer.WriteIntValue("maxPayloadSize", MaxPayloadSize);
             writer.WriteBoolValue("supported", Supported);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

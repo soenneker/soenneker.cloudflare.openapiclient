@@ -11,45 +11,68 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class R2TempAccessCredsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bucket") is { } nullNodeBucket && nullNodeBucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bucket = null;
+            if (parseNode.GetChildNode("objects") is { } nullNodeObjects && nullNodeObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Objects = null;
+            if (parseNode.GetChildNode("parentAccessKeyId") is { } nullNodeParentAccessKeyId && nullNodeParentAccessKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentAccessKeyId = null;
+            if (parseNode.GetChildNode("permission") is { } nullNodePermission && nullNodePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permission = null;
+            if (parseNode.GetChildNode("prefixes") is { } nullNodePrefixes && nullNodePrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefixes = null;
+            if (parseNode.GetChildNode("ttlSeconds") is { } nullNodeTtlSeconds && nullNodeTtlSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtlSeconds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the R2 bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Bucket { get; set; }
+        public string? Bucket { get => _explicitNullValueBucket; set { _explicitNullValueBucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucket"); else _explicitNullProperties?.Remove("bucket"); } }
+        private string? _explicitNullValueBucket = default!;
 #nullable restore
 #else
-        public string Bucket { get; set; }
+        public string Bucket { get => _explicitNullValueBucket; set { _explicitNullValueBucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucket"); else _explicitNullProperties?.Remove("bucket"); } }
+        private string _explicitNullValueBucket = default!;
 #endif
         /// <summary>Optional object paths to scope the credentials to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Objects { get; set; }
+        public List<string>? Objects { get => _explicitNullValueObjects; set { _explicitNullValueObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objects"); else _explicitNullProperties?.Remove("objects"); } }
+        private List<string>? _explicitNullValueObjects = default!;
 #nullable restore
 #else
-        public List<string> Objects { get; set; }
+        public List<string> Objects { get => _explicitNullValueObjects; set { _explicitNullValueObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objects"); else _explicitNullProperties?.Remove("objects"); } }
+        private List<string> _explicitNullValueObjects = default!;
 #endif
         /// <summary>Access key ID of the parent R2 API token. The temporary credentials cannot exceed this token&apos;s permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentAccessKeyId { get; set; }
+        public string? ParentAccessKeyId { get => _explicitNullValueParentAccessKeyId; set { _explicitNullValueParentAccessKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentAccessKeyId"); else _explicitNullProperties?.Remove("parentAccessKeyId"); } }
+        private string? _explicitNullValueParentAccessKeyId = default!;
 #nullable restore
 #else
-        public string ParentAccessKeyId { get; set; }
+        public string ParentAccessKeyId { get => _explicitNullValueParentAccessKeyId; set { _explicitNullValueParentAccessKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentAccessKeyId"); else _explicitNullProperties?.Remove("parentAccessKeyId"); } }
+        private string _explicitNullValueParentAccessKeyId = default!;
 #endif
         /// <summary>Permissions allowed on the credentials.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestPermission? Permission { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestPermission? Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestPermission? _explicitNullValuePermission = default!;
         /// <summary>Optional prefix paths to scope the credentials to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Prefixes { get; set; }
+        public List<string>? Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
+        private List<string>? _explicitNullValuePrefixes = default!;
 #nullable restore
 #else
-        public List<string> Prefixes { get; set; }
+        public List<string> Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
+        private List<string> _explicitNullValuePrefixes = default!;
 #endif
         /// <summary>Lifetime of the temporary credentials in seconds, up to 604800 seconds (7 days).</summary>
-        public double? TtlSeconds { get; set; }
+        public double? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttlSeconds"); else _explicitNullProperties?.Remove("ttlSeconds"); } }
+        private double? _explicitNullValueTtlSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequest"/> and sets the default values.
         /// </summary>
@@ -66,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestPermission>("permission", Permission);
             writer.WriteCollectionOfPrimitiveValues<string>("prefixes", Prefixes);
             writer.WriteDoubleValue("ttlSeconds", TtlSeconds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,21 +11,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DlpLimits : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_custom_regex_entries") is { } nullNodeMaxCustomRegexEntries && nullNodeMaxCustomRegexEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCustomRegexEntries = null;
+            if (parseNode.GetChildNode("max_dataset_cells") is { } nullNodeMaxDatasetCells && nullNodeMaxDatasetCells.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDatasetCells = null;
+            if (parseNode.GetChildNode("max_document_fingerprints") is { } nullNodeMaxDocumentFingerprints && nullNodeMaxDocumentFingerprints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDocumentFingerprints = null;
+            if (parseNode.GetChildNode("used_custom_regex_entries") is { } nullNodeUsedCustomRegexEntries && nullNodeUsedCustomRegexEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedCustomRegexEntries = null;
+            if (parseNode.GetChildNode("used_dataset_cells") is { } nullNodeUsedDatasetCells && nullNodeUsedDatasetCells.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedDatasetCells = null;
+            if (parseNode.GetChildNode("used_document_fingerprints") is { } nullNodeUsedDocumentFingerprints && nullNodeUsedDocumentFingerprints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedDocumentFingerprints = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum number of custom regex entries allowed for the account.</summary>
-        public long? MaxCustomRegexEntries { get; set; }
+        public long? MaxCustomRegexEntries { get => _explicitNullValueMaxCustomRegexEntries; set { _explicitNullValueMaxCustomRegexEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_custom_regex_entries"); else _explicitNullProperties?.Remove("max_custom_regex_entries"); } }
+        private long? _explicitNullValueMaxCustomRegexEntries = default!;
         /// <summary>Maximum number of dataset cells allowed for the account, across all EDM and CWL datasets.</summary>
-        public long? MaxDatasetCells { get; set; }
+        public long? MaxDatasetCells { get => _explicitNullValueMaxDatasetCells; set { _explicitNullValueMaxDatasetCells = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_dataset_cells"); else _explicitNullProperties?.Remove("max_dataset_cells"); } }
+        private long? _explicitNullValueMaxDatasetCells = default!;
         /// <summary>Maximum number of document fingerprints allowed for the account.</summary>
-        public long? MaxDocumentFingerprints { get; set; }
+        public long? MaxDocumentFingerprints { get => _explicitNullValueMaxDocumentFingerprints; set { _explicitNullValueMaxDocumentFingerprints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_document_fingerprints"); else _explicitNullProperties?.Remove("max_document_fingerprints"); } }
+        private long? _explicitNullValueMaxDocumentFingerprints = default!;
         /// <summary>Number of custom regex entries currently configured for the account.</summary>
-        public long? UsedCustomRegexEntries { get; set; }
+        public long? UsedCustomRegexEntries { get => _explicitNullValueUsedCustomRegexEntries; set { _explicitNullValueUsedCustomRegexEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_custom_regex_entries"); else _explicitNullProperties?.Remove("used_custom_regex_entries"); } }
+        private long? _explicitNullValueUsedCustomRegexEntries = default!;
         /// <summary>Number of dataset cells currently configured for the account, across all EDM and CWL datasets. Document fingerprints do not count towards this limit.</summary>
-        public long? UsedDatasetCells { get; set; }
+        public long? UsedDatasetCells { get => _explicitNullValueUsedDatasetCells; set { _explicitNullValueUsedDatasetCells = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_dataset_cells"); else _explicitNullProperties?.Remove("used_dataset_cells"); } }
+        private long? _explicitNullValueUsedDatasetCells = default!;
         /// <summary>Number of document fingerprints currently configured for the account.</summary>
-        public long? UsedDocumentFingerprints { get; set; }
+        public long? UsedDocumentFingerprints { get => _explicitNullValueUsedDocumentFingerprints; set { _explicitNullValueUsedDocumentFingerprints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_document_fingerprints"); else _explicitNullProperties?.Remove("used_document_fingerprints"); } }
+        private long? _explicitNullValueUsedDocumentFingerprints = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpLimits"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpLimits CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpLimits();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpLimits(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteLongValue("used_custom_regex_entries", UsedCustomRegexEntries);
             writer.WriteLongValue("used_dataset_cells", UsedDatasetCells);
             writer.WriteLongValue("used_document_fingerprints", UsedDocumentFingerprints);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

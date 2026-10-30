@@ -12,19 +12,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FirewallRewriteAction : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("block") is { } nullNodeBlock && nullNodeBlock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Block = null;
+            if (parseNode.GetChildNode("challenge") is { } nullNodeChallenge && nullNodeChallenge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Challenge = null;
+            if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("disable") is { } nullNodeDisable && nullNodeDisable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disable = null;
+            if (parseNode.GetChildNode("simulate") is { } nullNodeSimulate && nullNodeSimulate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Simulate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The WAF rule action to apply.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Block { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Block { get => _explicitNullValueBlock; set { _explicitNullValueBlock = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block"); else _explicitNullProperties?.Remove("block"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? _explicitNullValueBlock = default!;
         /// <summary>The WAF rule action to apply.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Challenge { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Challenge { get => _explicitNullValueChallenge; set { _explicitNullValueChallenge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challenge"); else _explicitNullProperties?.Remove("challenge"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? _explicitNullValueChallenge = default!;
         /// <summary>The WAF rule action to apply.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Default { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? _explicitNullValueDefault = default!;
         /// <summary>The WAF rule action to apply.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Disable { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Disable { get => _explicitNullValueDisable; set { _explicitNullValueDisable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable"); else _explicitNullProperties?.Remove("disable"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? _explicitNullValueDisable = default!;
         /// <summary>The WAF rule action to apply.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Simulate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? Simulate { get => _explicitNullValueSimulate; set { _explicitNullValueSimulate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simulate"); else _explicitNullProperties?.Remove("simulate"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction? _explicitNullValueSimulate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRewriteAction"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRewriteAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRewriteAction();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRewriteAction(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction>("default", Default);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction>("disable", Disable);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction>("simulate", Simulate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

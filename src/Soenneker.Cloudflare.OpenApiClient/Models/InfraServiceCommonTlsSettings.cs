@@ -11,16 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class InfraServiceCommonTlsSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("certificate_authority") is { } nullNodeCertificateAuthority && nullNodeCertificateAuthority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthority = null;
+            if (parseNode.GetChildNode("cert_verification_mode") is { } nullNodeCertVerificationMode && nullNodeCertVerificationMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertVerificationMode = null;
+            if (parseNode.GetChildNode("client_certificate") is { } nullNodeClientCertificate && nullNodeClientCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientCertificate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>TLS certificate verification mode for the connection to the origin.- `&quot;verify_full&quot;` — verify certificate chain and hostname (default)- `&quot;verify_ca&quot;` — verify certificate chain only, skip hostname check- `&quot;disabled&quot;` — do not verify the server certificate at all</summary>
+        /// <summary>UUID of the custom CA certificate or chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertVerificationMode { get; set; }
+        public string? CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority"); else _explicitNullProperties?.Remove("certificate_authority"); } }
+        private string? _explicitNullValueCertificateAuthority = default!;
 #nullable restore
 #else
-        public string CertVerificationMode { get; set; }
+        public string CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority"); else _explicitNullProperties?.Remove("certificate_authority"); } }
+        private string _explicitNullValueCertificateAuthority = default!;
+#endif
+        /// <summary>TLS certificate verification mode for the connection to the origin.- `&quot;verify_full&quot;` — verify certificate chain and hostname (default)- `&quot;verify_ca&quot;` — verify certificate chain only, skip hostname check- `&quot;disabled&quot;` — do not verify the server certificate at all`disabled` cannot be combined with `certificate_authority`: a custom CA isonly used to verify the server certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CertVerificationMode { get => _explicitNullValueCertVerificationMode; set { _explicitNullValueCertVerificationMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_verification_mode"); else _explicitNullProperties?.Remove("cert_verification_mode"); } }
+        private string? _explicitNullValueCertVerificationMode = default!;
+#nullable restore
+#else
+        public string CertVerificationMode { get => _explicitNullValueCertVerificationMode; set { _explicitNullValueCertVerificationMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_verification_mode"); else _explicitNullProperties?.Remove("cert_verification_mode"); } }
+        private string _explicitNullValueCertVerificationMode = default!;
+#endif
+        /// <summary>UUID of the mTLS client certificate and private key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientCertificate { get => _explicitNullValueClientCertificate; set { _explicitNullValueClientCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_certificate"); else _explicitNullProperties?.Remove("client_certificate"); } }
+        private string? _explicitNullValueClientCertificate = default!;
+#nullable restore
+#else
+        public string ClientCertificate { get => _explicitNullValueClientCertificate; set { _explicitNullValueClientCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_certificate"); else _explicitNullProperties?.Remove("client_certificate"); } }
+        private string _explicitNullValueClientCertificate = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings"/> and sets the default values.
@@ -37,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,6 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cert_verification_mode", n => { CertVerificationMode = n.GetStringValue(); } },
+                { "certificate_authority", n => { CertificateAuthority = n.GetStringValue(); } },
+                { "client_certificate", n => { ClientCertificate = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +91,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("certificate_authority", CertificateAuthority);
             writer.WriteStringValue("cert_verification_mode", CertVerificationMode);
+            writer.WriteStringValue("client_certificate", ClientCertificate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

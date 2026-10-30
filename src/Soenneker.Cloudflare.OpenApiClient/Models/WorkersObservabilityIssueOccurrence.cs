@@ -11,66 +11,96 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersObservabilityIssueOccurrence : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("invocation") is { } nullNodeInvocation && nullNodeInvocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invocation = null;
+            if (parseNode.GetChildNode("request") is { } nullNodeRequest && nullNodeRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Request = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("trail") is { } nullNodeTrail && nullNodeTrail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trail = null;
+            if (parseNode.GetChildNode("worker") is { } nullNodeWorker && nullNodeWorker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Worker = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceContext? Context { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceContext? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceContext? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceContext Context { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceContext Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceContext _explicitNullValueContext = default!;
 #endif
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceError? Error { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceError Error { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceError _explicitNullValueError = default!;
 #endif
         /// <summary>Unique occurrence ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The invocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceInvocation? Invocation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceInvocation? Invocation { get => _explicitNullValueInvocation; set { _explicitNullValueInvocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocation"); else _explicitNullProperties?.Remove("invocation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceInvocation? _explicitNullValueInvocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceInvocation Invocation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceInvocation Invocation { get => _explicitNullValueInvocation; set { _explicitNullValueInvocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocation"); else _explicitNullProperties?.Remove("invocation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceInvocation _explicitNullValueInvocation = default!;
 #endif
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceRequest? Request { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceRequest? Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceRequest? _explicitNullValueRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceRequest Request { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceRequest Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceRequest _explicitNullValueRequest = default!;
 #endif
         /// <summary>Occurrence timestamp as Unix epoch milliseconds.</summary>
-        public double? Timestamp { get; set; }
+        public double? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private double? _explicitNullValueTimestamp = default!;
         /// <summary>The trail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItem>? Trail { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItem>? Trail { get => _explicitNullValueTrail; set { _explicitNullValueTrail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trail"); else _explicitNullProperties?.Remove("trail"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItem>? _explicitNullValueTrail = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItem> Trail { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItem> Trail { get => _explicitNullValueTrail; set { _explicitNullValueTrail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trail"); else _explicitNullProperties?.Remove("trail"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItem> _explicitNullValueTrail = default!;
 #endif
         /// <summary>The worker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker? Worker { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker? Worker { get => _explicitNullValueWorker; set { _explicitNullValueWorker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker"); else _explicitNullProperties?.Remove("worker"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker? _explicitNullValueWorker = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker Worker { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker Worker { get => _explicitNullValueWorker; set { _explicitNullValueWorker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker"); else _explicitNullProperties?.Remove("worker"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker _explicitNullValueWorker = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrence"/> and sets the default values.
@@ -87,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrence();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrence(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("timestamp", Timestamp);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItem>("trail", Trail);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker>("worker", Worker);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

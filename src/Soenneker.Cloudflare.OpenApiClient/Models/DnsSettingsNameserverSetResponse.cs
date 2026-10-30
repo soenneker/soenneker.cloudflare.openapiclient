@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DnsSettingsNameserverSetResponse : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetResponse();
             if("DnsSettingsNameserverSetAdvancedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DnsSettingsNameserverSetAdvancedResponse = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponse();
+                
             }
             else if("DnsSettingsNameserverSetStandardResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DnsSettingsNameserverSetStandardResponse = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetStandardResponse();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("ip_set") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("advanced") != null && parseNode.GetChildNode("nameservers") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("ip_set") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("advanced") != null && parseNode.GetChildNode("nameservers") != null))();
+            if (result.DnsSettingsNameserverSetAdvancedResponse == null && result.DnsSettingsNameserverSetStandardResponse == null && matchesUnionBranch0 && !matchesUnionBranch1) result.DnsSettingsNameserverSetStandardResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetStandardResponse(), parseNode);
+            if (result.DnsSettingsNameserverSetAdvancedResponse == null && result.DnsSettingsNameserverSetStandardResponse == null && matchesUnionBranch1 && !matchesUnionBranch0) result.DnsSettingsNameserverSetAdvancedResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponse(), parseNode);
+            if (result.DnsSettingsNameserverSetAdvancedResponse == null && result.DnsSettingsNameserverSetStandardResponse == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (DnsSettingsNameserverSetAdvancedResponse == null && DnsSettingsNameserverSetStandardResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (DnsSettingsNameserverSetAdvancedResponse != null && DnsSettingsNameserverSetStandardResponse == null) { if (DnsSettingsNameserverSetAdvancedResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsSettingsNameserverSetAdvancedResponse); return; }
+            if (DnsSettingsNameserverSetStandardResponse != null && DnsSettingsNameserverSetAdvancedResponse == null) { if (DnsSettingsNameserverSetStandardResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsSettingsNameserverSetStandardResponse); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(DnsSettingsNameserverSetAdvancedResponse != null)
             {
+                if (DnsSettingsNameserverSetAdvancedResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponse>(null, DnsSettingsNameserverSetAdvancedResponse);
             }
             else if(DnsSettingsNameserverSetStandardResponse != null)
             {
+                if (DnsSettingsNameserverSetStandardResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetStandardResponse>(null, DnsSettingsNameserverSetStandardResponse);
             }
         }

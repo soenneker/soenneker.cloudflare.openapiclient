@@ -12,34 +12,52 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessOrgMfaConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_authenticators") is { } nullNodeAllowedAuthenticators && nullNodeAllowedAuthenticators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedAuthenticators = null;
+            if (parseNode.GetChildNode("amr_matching_session_duration") is { } nullNodeAmrMatchingSessionDuration && nullNodeAmrMatchingSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmrMatchingSessionDuration = null;
+            if (parseNode.GetChildNode("required_aaguids") is { } nullNodeRequiredAaguids && nullNodeRequiredAaguids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredAaguids = null;
+            if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the MFA methods that users can authenticate with. The `piv_key` and `ssh_fido2_key` values are supported only for infrastructure applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem?>? AllowedAuthenticators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem?>? AllowedAuthenticators { get => _explicitNullValueAllowedAuthenticators; set { _explicitNullValueAllowedAuthenticators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_authenticators"); else _explicitNullProperties?.Remove("allowed_authenticators"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem?>? _explicitNullValueAllowedAuthenticators = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem?> AllowedAuthenticators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem?> AllowedAuthenticators { get => _explicitNullValueAllowedAuthenticators; set { _explicitNullValueAllowedAuthenticators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_authenticators"); else _explicitNullProperties?.Remove("allowed_authenticators"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem?> _explicitNullValueAllowedAuthenticators = default!;
 #endif
         /// <summary>Allows a user to skip MFA via Authentication Method Reference (AMR) matching when the AMR claim provided by the IdP the user used to authenticate contains &quot;mfa&quot;. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AmrMatchingSessionDuration { get; set; }
+        public string? AmrMatchingSessionDuration { get => _explicitNullValueAmrMatchingSessionDuration; set { _explicitNullValueAmrMatchingSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amr_matching_session_duration"); else _explicitNullProperties?.Remove("amr_matching_session_duration"); } }
+        private string? _explicitNullValueAmrMatchingSessionDuration = default!;
 #nullable restore
 #else
-        public string AmrMatchingSessionDuration { get; set; }
+        public string AmrMatchingSessionDuration { get => _explicitNullValueAmrMatchingSessionDuration; set { _explicitNullValueAmrMatchingSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amr_matching_session_duration"); else _explicitNullProperties?.Remove("amr_matching_session_duration"); } }
+        private string _explicitNullValueAmrMatchingSessionDuration = default!;
 #endif
         /// <summary>Specifies a Cloudflare List of required FIDO2 authenticator device AAGUIDs.</summary>
-        public Guid? RequiredAaguids { get; set; }
+        public Guid? RequiredAaguids { get => _explicitNullValueRequiredAaguids; set { _explicitNullValueRequiredAaguids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_aaguids"); else _explicitNullProperties?.Remove("required_aaguids"); } }
+        private Guid? _explicitNullValueRequiredAaguids = default!;
         /// <summary>Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionDuration { get; set; }
+        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string? _explicitNullValueSessionDuration = default!;
 #nullable restore
 #else
-        public string SessionDuration { get; set; }
+        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string _explicitNullValueSessionDuration = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig"/> and sets the default values.
@@ -56,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("amr_matching_session_duration", AmrMatchingSessionDuration);
             writer.WriteGuidValue("required_aaguids", RequiredAaguids);
             writer.WriteStringValue("session_duration", SessionDuration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,30 +12,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class R2CorsRuleAllowed : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("methods") is { } nullNodeMethods && nullNodeMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Methods = null;
+            if (parseNode.GetChildNode("origins") is { } nullNodeOrigins && nullNodeOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origins = null;
+        }
+
         /// <summary>Specifies the value for the Access-Control-Allow-Headers header R2 sets when requesting objects in this bucket from a browser. Cross-origin requests that include custom headers (e.g. x-user-id) should specify these headers as AllowedHeaders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Headers { get; set; }
+        public List<string>? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<string>? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public List<string> Headers { get; set; }
+        public List<string> Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<string> _explicitNullValueHeaders = default!;
 #endif
         /// <summary>Specifies the value for the Access-Control-Allow-Methods header R2 sets when requesting objects in a bucket from a browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem?>? Methods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem?>? Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem?>? _explicitNullValueMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem?> Methods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem?> Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem?> _explicitNullValueMethods = default!;
 #endif
         /// <summary>Specifies the value for the Access-Control-Allow-Origin header R2 sets when requesting objects in a bucket from a browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Origins { get; set; }
+        public List<string>? Origins { get => _explicitNullValueOrigins; set { _explicitNullValueOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origins"); else _explicitNullProperties?.Remove("origins"); } }
+        private List<string>? _explicitNullValueOrigins = default!;
 #nullable restore
 #else
-        public List<string> Origins { get; set; }
+        public List<string> Origins { get => _explicitNullValueOrigins; set { _explicitNullValueOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origins"); else _explicitNullProperties?.Remove("origins"); } }
+        private List<string> _explicitNullValueOrigins = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("headers", Headers);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem>("methods", Methods);
-            writer.WriteCollectionOfPrimitiveValues<string>("origins", Origins);
+            writer.WriteCollectionOfPrimitiveValues<string>("origins", Origins);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

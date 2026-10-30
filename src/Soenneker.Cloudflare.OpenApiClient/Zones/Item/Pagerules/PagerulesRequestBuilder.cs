@@ -14,12 +14,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\pagerules
+    /// Builds and executes requests for operations under \zones\{zoneId}\pagerules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagerulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The settings property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings.SettingsRequestBuilder Settings
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -41,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PagerulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/pagerules{?direction*,match*,order*,status*}", pathParameters)
+        public PagerulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/pagerules{?direction*,match*,order*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PagerulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/pagerules{?direction*,match*,order*,status*}", rawUrl)
+        public PagerulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/pagerules{?direction*,match*,order*,status*}", rawUrl)
         {
         }
         /// <summary>
@@ -72,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure2.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -97,6 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure2.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

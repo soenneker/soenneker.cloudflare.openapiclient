@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\ssl\certificate_packs
+    /// Builds and executes requests for operations under \zones\{zoneId}\ssl\certificate_packs
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Certificate_packsRequestBuilder : BaseRequestBuilder
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Certificate_packsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/ssl/certificate_packs{?deploy*,page*,per_page*,status*}", pathParameters)
+        public Certificate_packsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/ssl/certificate_packs{?deploy*,page*,per_page*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Certificate_packsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/ssl/certificate_packs{?deploy*,page*,per_page*,status*}", rawUrl)
+        public Certificate_packsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/ssl/certificate_packs{?deploy*,page*,per_page*,status*}", rawUrl)
         {
         }
         /// <summary>
@@ -78,6 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CertificatePacksListCertificatePacks4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

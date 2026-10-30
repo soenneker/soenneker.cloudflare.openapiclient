@@ -11,45 +11,88 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetBgpRoutesStats200ResponseResultStats : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("distinct_origins") is { } nullNodeDistinctOrigins && nullNodeDistinctOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctOrigins = null;
+            if (parseNode.GetChildNode("distinct_origins_ipv4") is { } nullNodeDistinctOriginsIpv4 && nullNodeDistinctOriginsIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctOriginsIpv4 = null;
+            if (parseNode.GetChildNode("distinct_origins_ipv6") is { } nullNodeDistinctOriginsIpv6 && nullNodeDistinctOriginsIpv6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctOriginsIpv6 = null;
+            if (parseNode.GetChildNode("distinct_prefixes") is { } nullNodeDistinctPrefixes && nullNodeDistinctPrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctPrefixes = null;
+            if (parseNode.GetChildNode("distinct_prefixes_ipv4") is { } nullNodeDistinctPrefixesIpv4 && nullNodeDistinctPrefixesIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctPrefixesIpv4 = null;
+            if (parseNode.GetChildNode("distinct_prefixes_ipv6") is { } nullNodeDistinctPrefixesIpv6 && nullNodeDistinctPrefixesIpv6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctPrefixesIpv6 = null;
+            if (parseNode.GetChildNode("routes_invalid") is { } nullNodeRoutesInvalid && nullNodeRoutesInvalid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesInvalid = null;
+            if (parseNode.GetChildNode("routes_invalid_ipv4") is { } nullNodeRoutesInvalidIpv4 && nullNodeRoutesInvalidIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesInvalidIpv4 = null;
+            if (parseNode.GetChildNode("routes_invalid_ipv6") is { } nullNodeRoutesInvalidIpv6 && nullNodeRoutesInvalidIpv6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesInvalidIpv6 = null;
+            if (parseNode.GetChildNode("routes_total") is { } nullNodeRoutesTotal && nullNodeRoutesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesTotal = null;
+            if (parseNode.GetChildNode("routes_total_ipv4") is { } nullNodeRoutesTotalIpv4 && nullNodeRoutesTotalIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesTotalIpv4 = null;
+            if (parseNode.GetChildNode("routes_total_ipv6") is { } nullNodeRoutesTotalIpv6 && nullNodeRoutesTotalIpv6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesTotalIpv6 = null;
+            if (parseNode.GetChildNode("routes_unknown") is { } nullNodeRoutesUnknown && nullNodeRoutesUnknown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesUnknown = null;
+            if (parseNode.GetChildNode("routes_unknown_ipv4") is { } nullNodeRoutesUnknownIpv4 && nullNodeRoutesUnknownIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesUnknownIpv4 = null;
+            if (parseNode.GetChildNode("routes_unknown_ipv6") is { } nullNodeRoutesUnknownIpv6 && nullNodeRoutesUnknownIpv6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesUnknownIpv6 = null;
+            if (parseNode.GetChildNode("routes_valid") is { } nullNodeRoutesValid && nullNodeRoutesValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesValid = null;
+            if (parseNode.GetChildNode("routes_valid_ipv4") is { } nullNodeRoutesValidIpv4 && nullNodeRoutesValidIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesValidIpv4 = null;
+            if (parseNode.GetChildNode("routes_valid_ipv6") is { } nullNodeRoutesValidIpv6 && nullNodeRoutesValidIpv6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutesValidIpv6 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The distinct_origins property</summary>
-        public int? DistinctOrigins { get; set; }
+        public int? DistinctOrigins { get => _explicitNullValueDistinctOrigins; set { _explicitNullValueDistinctOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_origins"); else _explicitNullProperties?.Remove("distinct_origins"); } }
+        private int? _explicitNullValueDistinctOrigins = default!;
         /// <summary>The distinct_origins_ipv4 property</summary>
-        public int? DistinctOriginsIpv4 { get; set; }
+        public int? DistinctOriginsIpv4 { get => _explicitNullValueDistinctOriginsIpv4; set { _explicitNullValueDistinctOriginsIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_origins_ipv4"); else _explicitNullProperties?.Remove("distinct_origins_ipv4"); } }
+        private int? _explicitNullValueDistinctOriginsIpv4 = default!;
         /// <summary>The distinct_origins_ipv6 property</summary>
-        public int? DistinctOriginsIpv6 { get; set; }
+        public int? DistinctOriginsIpv6 { get => _explicitNullValueDistinctOriginsIpv6; set { _explicitNullValueDistinctOriginsIpv6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_origins_ipv6"); else _explicitNullProperties?.Remove("distinct_origins_ipv6"); } }
+        private int? _explicitNullValueDistinctOriginsIpv6 = default!;
         /// <summary>The distinct_prefixes property</summary>
-        public int? DistinctPrefixes { get; set; }
+        public int? DistinctPrefixes { get => _explicitNullValueDistinctPrefixes; set { _explicitNullValueDistinctPrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_prefixes"); else _explicitNullProperties?.Remove("distinct_prefixes"); } }
+        private int? _explicitNullValueDistinctPrefixes = default!;
         /// <summary>The distinct_prefixes_ipv4 property</summary>
-        public int? DistinctPrefixesIpv4 { get; set; }
+        public int? DistinctPrefixesIpv4 { get => _explicitNullValueDistinctPrefixesIpv4; set { _explicitNullValueDistinctPrefixesIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_prefixes_ipv4"); else _explicitNullProperties?.Remove("distinct_prefixes_ipv4"); } }
+        private int? _explicitNullValueDistinctPrefixesIpv4 = default!;
         /// <summary>The distinct_prefixes_ipv6 property</summary>
-        public int? DistinctPrefixesIpv6 { get; set; }
+        public int? DistinctPrefixesIpv6 { get => _explicitNullValueDistinctPrefixesIpv6; set { _explicitNullValueDistinctPrefixesIpv6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_prefixes_ipv6"); else _explicitNullProperties?.Remove("distinct_prefixes_ipv6"); } }
+        private int? _explicitNullValueDistinctPrefixesIpv6 = default!;
         /// <summary>The routes_invalid property</summary>
-        public int? RoutesInvalid { get; set; }
+        public int? RoutesInvalid { get => _explicitNullValueRoutesInvalid; set { _explicitNullValueRoutesInvalid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_invalid"); else _explicitNullProperties?.Remove("routes_invalid"); } }
+        private int? _explicitNullValueRoutesInvalid = default!;
         /// <summary>The routes_invalid_ipv4 property</summary>
-        public int? RoutesInvalidIpv4 { get; set; }
+        public int? RoutesInvalidIpv4 { get => _explicitNullValueRoutesInvalidIpv4; set { _explicitNullValueRoutesInvalidIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_invalid_ipv4"); else _explicitNullProperties?.Remove("routes_invalid_ipv4"); } }
+        private int? _explicitNullValueRoutesInvalidIpv4 = default!;
         /// <summary>The routes_invalid_ipv6 property</summary>
-        public int? RoutesInvalidIpv6 { get; set; }
+        public int? RoutesInvalidIpv6 { get => _explicitNullValueRoutesInvalidIpv6; set { _explicitNullValueRoutesInvalidIpv6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_invalid_ipv6"); else _explicitNullProperties?.Remove("routes_invalid_ipv6"); } }
+        private int? _explicitNullValueRoutesInvalidIpv6 = default!;
         /// <summary>The routes_total property</summary>
-        public int? RoutesTotal { get; set; }
+        public int? RoutesTotal { get => _explicitNullValueRoutesTotal; set { _explicitNullValueRoutesTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_total"); else _explicitNullProperties?.Remove("routes_total"); } }
+        private int? _explicitNullValueRoutesTotal = default!;
         /// <summary>The routes_total_ipv4 property</summary>
-        public int? RoutesTotalIpv4 { get; set; }
+        public int? RoutesTotalIpv4 { get => _explicitNullValueRoutesTotalIpv4; set { _explicitNullValueRoutesTotalIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_total_ipv4"); else _explicitNullProperties?.Remove("routes_total_ipv4"); } }
+        private int? _explicitNullValueRoutesTotalIpv4 = default!;
         /// <summary>The routes_total_ipv6 property</summary>
-        public int? RoutesTotalIpv6 { get; set; }
+        public int? RoutesTotalIpv6 { get => _explicitNullValueRoutesTotalIpv6; set { _explicitNullValueRoutesTotalIpv6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_total_ipv6"); else _explicitNullProperties?.Remove("routes_total_ipv6"); } }
+        private int? _explicitNullValueRoutesTotalIpv6 = default!;
         /// <summary>The routes_unknown property</summary>
-        public int? RoutesUnknown { get; set; }
+        public int? RoutesUnknown { get => _explicitNullValueRoutesUnknown; set { _explicitNullValueRoutesUnknown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_unknown"); else _explicitNullProperties?.Remove("routes_unknown"); } }
+        private int? _explicitNullValueRoutesUnknown = default!;
         /// <summary>The routes_unknown_ipv4 property</summary>
-        public int? RoutesUnknownIpv4 { get; set; }
+        public int? RoutesUnknownIpv4 { get => _explicitNullValueRoutesUnknownIpv4; set { _explicitNullValueRoutesUnknownIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_unknown_ipv4"); else _explicitNullProperties?.Remove("routes_unknown_ipv4"); } }
+        private int? _explicitNullValueRoutesUnknownIpv4 = default!;
         /// <summary>The routes_unknown_ipv6 property</summary>
-        public int? RoutesUnknownIpv6 { get; set; }
+        public int? RoutesUnknownIpv6 { get => _explicitNullValueRoutesUnknownIpv6; set { _explicitNullValueRoutesUnknownIpv6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_unknown_ipv6"); else _explicitNullProperties?.Remove("routes_unknown_ipv6"); } }
+        private int? _explicitNullValueRoutesUnknownIpv6 = default!;
         /// <summary>The routes_valid property</summary>
-        public int? RoutesValid { get; set; }
+        public int? RoutesValid { get => _explicitNullValueRoutesValid; set { _explicitNullValueRoutesValid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_valid"); else _explicitNullProperties?.Remove("routes_valid"); } }
+        private int? _explicitNullValueRoutesValid = default!;
         /// <summary>The routes_valid_ipv4 property</summary>
-        public int? RoutesValidIpv4 { get; set; }
+        public int? RoutesValidIpv4 { get => _explicitNullValueRoutesValidIpv4; set { _explicitNullValueRoutesValidIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_valid_ipv4"); else _explicitNullProperties?.Remove("routes_valid_ipv4"); } }
+        private int? _explicitNullValueRoutesValidIpv4 = default!;
         /// <summary>The routes_valid_ipv6 property</summary>
-        public int? RoutesValidIpv6 { get; set; }
+        public int? RoutesValidIpv6 { get => _explicitNullValueRoutesValidIpv6; set { _explicitNullValueRoutesValidIpv6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes_valid_ipv6"); else _explicitNullProperties?.Remove("routes_valid_ipv6"); } }
+        private int? _explicitNullValueRoutesValidIpv6 = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesStats200ResponseResultStats"/> and sets the default values.
         /// </summary>
@@ -65,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesStats200ResponseResultStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesStats200ResponseResultStats();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesStats200ResponseResultStats(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,6 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("routes_valid", RoutesValid);
             writer.WriteIntValue("routes_valid_ipv4", RoutesValidIpv4);
             writer.WriteIntValue("routes_valid_ipv6", RoutesValidIpv6);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,31 +11,55 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostPirInterestEvaluationCreateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("as_of") is { } nullNodeAsOf && nullNodeAsOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsOf = null;
+            if (parseNode.GetChildNode("candidate_limit") is { } nullNodeCandidateLimit && nullNodeCandidateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CandidateLimit = null;
+            if (parseNode.GetChildNode("dataset_ids") is { } nullNodeDatasetIds && nullNodeDatasetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetIds = null;
+            if (parseNode.GetChildNode("emerging_min_current_count") is { } nullNodeEmergingMinCurrentCount && nullNodeEmergingMinCurrentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmergingMinCurrentCount = null;
+            if (parseNode.GetChildNode("established_min_absolute_delta") is { } nullNodeEstablishedMinAbsoluteDelta && nullNodeEstablishedMinAbsoluteDelta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstablishedMinAbsoluteDelta = null;
+            if (parseNode.GetChildNode("established_min_prior_count") is { } nullNodeEstablishedMinPriorCount && nullNodeEstablishedMinPriorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstablishedMinPriorCount = null;
+            if (parseNode.GetChildNode("established_min_relative_delta") is { } nullNodeEstablishedMinRelativeDelta && nullNodeEstablishedMinRelativeDelta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstablishedMinRelativeDelta = null;
+            if (parseNode.GetChildNode("window_days") is { } nullNodeWindowDays && nullNodeWindowDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindowDays = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The as_of property</summary>
-        public DateTimeOffset? AsOf { get; set; }
+        public DateTimeOffset? AsOf { get => _explicitNullValueAsOf; set { _explicitNullValueAsOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_of"); else _explicitNullProperties?.Remove("as_of"); } }
+        private DateTimeOffset? _explicitNullValueAsOf = default!;
         /// <summary>The candidate_limit property</summary>
-        public int? CandidateLimit { get; set; }
+        public int? CandidateLimit { get => _explicitNullValueCandidateLimit; set { _explicitNullValueCandidateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("candidate_limit"); else _explicitNullProperties?.Remove("candidate_limit"); } }
+        private int? _explicitNullValueCandidateLimit = default!;
         /// <summary>The dataset_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DatasetIds { get; set; }
+        public List<string>? DatasetIds { get => _explicitNullValueDatasetIds; set { _explicitNullValueDatasetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_ids"); else _explicitNullProperties?.Remove("dataset_ids"); } }
+        private List<string>? _explicitNullValueDatasetIds = default!;
 #nullable restore
 #else
-        public List<string> DatasetIds { get; set; }
+        public List<string> DatasetIds { get => _explicitNullValueDatasetIds; set { _explicitNullValueDatasetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_ids"); else _explicitNullProperties?.Remove("dataset_ids"); } }
+        private List<string> _explicitNullValueDatasetIds = default!;
 #endif
         /// <summary>The emerging_min_current_count property</summary>
-        public int? EmergingMinCurrentCount { get; set; }
+        public int? EmergingMinCurrentCount { get => _explicitNullValueEmergingMinCurrentCount; set { _explicitNullValueEmergingMinCurrentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emerging_min_current_count"); else _explicitNullProperties?.Remove("emerging_min_current_count"); } }
+        private int? _explicitNullValueEmergingMinCurrentCount = default!;
         /// <summary>The established_min_absolute_delta property</summary>
-        public int? EstablishedMinAbsoluteDelta { get; set; }
+        public int? EstablishedMinAbsoluteDelta { get => _explicitNullValueEstablishedMinAbsoluteDelta; set { _explicitNullValueEstablishedMinAbsoluteDelta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("established_min_absolute_delta"); else _explicitNullProperties?.Remove("established_min_absolute_delta"); } }
+        private int? _explicitNullValueEstablishedMinAbsoluteDelta = default!;
         /// <summary>The established_min_prior_count property</summary>
-        public int? EstablishedMinPriorCount { get; set; }
+        public int? EstablishedMinPriorCount { get => _explicitNullValueEstablishedMinPriorCount; set { _explicitNullValueEstablishedMinPriorCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("established_min_prior_count"); else _explicitNullProperties?.Remove("established_min_prior_count"); } }
+        private int? _explicitNullValueEstablishedMinPriorCount = default!;
         /// <summary>The established_min_relative_delta property</summary>
-        public double? EstablishedMinRelativeDelta { get; set; }
+        public double? EstablishedMinRelativeDelta { get => _explicitNullValueEstablishedMinRelativeDelta; set { _explicitNullValueEstablishedMinRelativeDelta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("established_min_relative_delta"); else _explicitNullProperties?.Remove("established_min_relative_delta"); } }
+        private double? _explicitNullValueEstablishedMinRelativeDelta = default!;
         /// <summary>The window_days property</summary>
-        public int? WindowDays { get; set; }
+        public int? WindowDays { get => _explicitNullValueWindowDays; set { _explicitNullValueWindowDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window_days"); else _explicitNullProperties?.Remove("window_days"); } }
+        private int? _explicitNullValueWindowDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirInterestEvaluationCreateRequest"/> and sets the default values.
         /// </summary>
@@ -52,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirInterestEvaluationCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirInterestEvaluationCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirInterestEvaluationCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("established_min_prior_count", EstablishedMinPriorCount);
             writer.WriteDoubleValue("established_min_relative_delta", EstablishedMinRelativeDelta);
             writer.WriteIntValue("window_days", WindowDays);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

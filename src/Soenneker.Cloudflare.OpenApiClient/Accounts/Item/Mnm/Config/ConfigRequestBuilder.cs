@@ -59,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Config
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringConfigurationDeleteAccountConfiguration4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -82,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Config
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringConfigurationListAccountConfiguration4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Config
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFields4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -132,6 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Config
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringConfigurationCreateAccountConfiguration4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -157,6 +161,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Config
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfiguration4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

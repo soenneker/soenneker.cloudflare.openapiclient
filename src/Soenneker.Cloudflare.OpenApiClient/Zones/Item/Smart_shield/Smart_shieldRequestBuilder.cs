@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\smart_shield
+    /// Builds and executes requests for operations under \zones\{zoneId}\smart_shield
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Smart_shieldRequestBuilder : BaseRequestBuilder
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Smart_shieldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/smart_shield", pathParameters)
+        public Smart_shieldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/smart_shield", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Smart_shieldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/smart_shield", rawUrl)
+        public Smart_shieldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/smart_shield", rawUrl)
         {
         }
         /// <summary>
@@ -69,6 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "502", global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartShieldGetSettings200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SmartShieldGetSettings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,6 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "502", global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartShieldPatchSettings200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SmartShieldPatchSettings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

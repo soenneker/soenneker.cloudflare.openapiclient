@@ -11,65 +11,103 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetBgpRouteLeakEvents200ResponseResultEventsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("countries") is { } nullNodeCountries && nullNodeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Countries = null;
+            if (parseNode.GetChildNode("detected_ts") is { } nullNodeDetectedTs && nullNodeDetectedTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DetectedTs = null;
+            if (parseNode.GetChildNode("finished") is { } nullNodeFinished && nullNodeFinished.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Finished = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("leak_asn") is { } nullNodeLeakAsn && nullNodeLeakAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeakAsn = null;
+            if (parseNode.GetChildNode("leak_count") is { } nullNodeLeakCount && nullNodeLeakCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeakCount = null;
+            if (parseNode.GetChildNode("leak_seg") is { } nullNodeLeakSeg && nullNodeLeakSeg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeakSeg = null;
+            if (parseNode.GetChildNode("leak_type") is { } nullNodeLeakType && nullNodeLeakType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeakType = null;
+            if (parseNode.GetChildNode("max_ts") is { } nullNodeMaxTs && nullNodeMaxTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTs = null;
+            if (parseNode.GetChildNode("min_ts") is { } nullNodeMinTs && nullNodeMinTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTs = null;
+            if (parseNode.GetChildNode("origin_count") is { } nullNodeOriginCount && nullNodeOriginCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginCount = null;
+            if (parseNode.GetChildNode("peer_count") is { } nullNodePeerCount && nullNodePeerCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeerCount = null;
+            if (parseNode.GetChildNode("prefix_count") is { } nullNodePrefixCount && nullNodePrefixCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Countries { get; set; }
+        public List<string>? Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        private List<string>? _explicitNullValueCountries = default!;
 #nullable restore
 #else
-        public List<string> Countries { get; set; }
+        public List<string> Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        private List<string> _explicitNullValueCountries = default!;
 #endif
         /// <summary>The detected_ts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetectedTs { get; set; }
+        public string? DetectedTs { get => _explicitNullValueDetectedTs; set { _explicitNullValueDetectedTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detected_ts"); else _explicitNullProperties?.Remove("detected_ts"); } }
+        private string? _explicitNullValueDetectedTs = default!;
 #nullable restore
 #else
-        public string DetectedTs { get; set; }
+        public string DetectedTs { get => _explicitNullValueDetectedTs; set { _explicitNullValueDetectedTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detected_ts"); else _explicitNullProperties?.Remove("detected_ts"); } }
+        private string _explicitNullValueDetectedTs = default!;
 #endif
         /// <summary>The finished property</summary>
-        public bool? Finished { get; set; }
+        public bool? Finished { get => _explicitNullValueFinished; set { _explicitNullValueFinished = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finished"); else _explicitNullProperties?.Remove("finished"); } }
+        private bool? _explicitNullValueFinished = default!;
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private int? _explicitNullValueId = default!;
         /// <summary>The leak_asn property</summary>
-        public int? LeakAsn { get; set; }
+        public int? LeakAsn { get => _explicitNullValueLeakAsn; set { _explicitNullValueLeakAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leak_asn"); else _explicitNullProperties?.Remove("leak_asn"); } }
+        private int? _explicitNullValueLeakAsn = default!;
         /// <summary>The leak_count property</summary>
-        public int? LeakCount { get; set; }
+        public int? LeakCount { get => _explicitNullValueLeakCount; set { _explicitNullValueLeakCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leak_count"); else _explicitNullProperties?.Remove("leak_count"); } }
+        private int? _explicitNullValueLeakCount = default!;
         /// <summary>The leak_seg property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? LeakSeg { get; set; }
+        public List<int?>? LeakSeg { get => _explicitNullValueLeakSeg; set { _explicitNullValueLeakSeg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leak_seg"); else _explicitNullProperties?.Remove("leak_seg"); } }
+        private List<int?>? _explicitNullValueLeakSeg = default!;
 #nullable restore
 #else
-        public List<int?> LeakSeg { get; set; }
+        public List<int?> LeakSeg { get => _explicitNullValueLeakSeg; set { _explicitNullValueLeakSeg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leak_seg"); else _explicitNullProperties?.Remove("leak_seg"); } }
+        private List<int?> _explicitNullValueLeakSeg = default!;
 #endif
         /// <summary>The leak_type property</summary>
-        public int? LeakType { get; set; }
+        public int? LeakType { get => _explicitNullValueLeakType; set { _explicitNullValueLeakType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leak_type"); else _explicitNullProperties?.Remove("leak_type"); } }
+        private int? _explicitNullValueLeakType = default!;
         /// <summary>The max_ts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxTs { get; set; }
+        public string? MaxTs { get => _explicitNullValueMaxTs; set { _explicitNullValueMaxTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ts"); else _explicitNullProperties?.Remove("max_ts"); } }
+        private string? _explicitNullValueMaxTs = default!;
 #nullable restore
 #else
-        public string MaxTs { get; set; }
+        public string MaxTs { get => _explicitNullValueMaxTs; set { _explicitNullValueMaxTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ts"); else _explicitNullProperties?.Remove("max_ts"); } }
+        private string _explicitNullValueMaxTs = default!;
 #endif
         /// <summary>The min_ts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinTs { get; set; }
+        public string? MinTs { get => _explicitNullValueMinTs; set { _explicitNullValueMinTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_ts"); else _explicitNullProperties?.Remove("min_ts"); } }
+        private string? _explicitNullValueMinTs = default!;
 #nullable restore
 #else
-        public string MinTs { get; set; }
+        public string MinTs { get => _explicitNullValueMinTs; set { _explicitNullValueMinTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_ts"); else _explicitNullProperties?.Remove("min_ts"); } }
+        private string _explicitNullValueMinTs = default!;
 #endif
         /// <summary>The origin_count property</summary>
-        public int? OriginCount { get; set; }
+        public int? OriginCount { get => _explicitNullValueOriginCount; set { _explicitNullValueOriginCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_count"); else _explicitNullProperties?.Remove("origin_count"); } }
+        private int? _explicitNullValueOriginCount = default!;
         /// <summary>The peer_count property</summary>
-        public int? PeerCount { get; set; }
+        public int? PeerCount { get => _explicitNullValuePeerCount; set { _explicitNullValuePeerCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_count"); else _explicitNullProperties?.Remove("peer_count"); } }
+        private int? _explicitNullValuePeerCount = default!;
         /// <summary>The prefix_count property</summary>
-        public int? PrefixCount { get; set; }
+        public int? PrefixCount { get => _explicitNullValuePrefixCount; set { _explicitNullValuePrefixCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_count"); else _explicitNullProperties?.Remove("prefix_count"); } }
+        private int? _explicitNullValuePrefixCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRouteLeakEvents200ResponseResultEventsItem"/> and sets the default values.
         /// </summary>
@@ -85,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRouteLeakEvents200ResponseResultEventsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRouteLeakEvents200ResponseResultEventsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRouteLeakEvents200ResponseResultEventsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,6 +168,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("origin_count", OriginCount);
             writer.WriteIntValue("peer_count", PeerCount);
             writer.WriteIntValue("prefix_count", PrefixCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

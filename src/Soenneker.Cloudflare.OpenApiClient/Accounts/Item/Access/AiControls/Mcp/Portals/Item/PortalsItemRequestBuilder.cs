@@ -59,6 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeletePortals404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeletePortals200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeletePortals200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -82,6 +84,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiFetchGateways404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiFetchGateways200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiFetchGateways200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -109,6 +113,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiUpdatePortals400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiUpdatePortals404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiUpdatePortals200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiUpdatePortals200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

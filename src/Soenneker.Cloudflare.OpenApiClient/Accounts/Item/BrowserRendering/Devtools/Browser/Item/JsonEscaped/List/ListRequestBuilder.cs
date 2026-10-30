@@ -68,6 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList400Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList200ResponseSchemaItem>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList200ResponseSchemaItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();

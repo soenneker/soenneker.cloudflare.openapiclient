@@ -12,40 +12,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ObservatoryAvailabilitiesRegionsPerPlan : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("business") is { } nullNodeBusiness && nullNodeBusiness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Business = null;
+            if (parseNode.GetChildNode("enterprise") is { } nullNodeEnterprise && nullNodeEnterprise.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enterprise = null;
+            if (parseNode.GetChildNode("free") is { } nullNodeFree && nullNodeFree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Free = null;
+            if (parseNode.GetChildNode("pro") is { } nullNodePro && nullNodePro.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pro = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The business property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Business { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Business { get => _explicitNullValueBusiness; set { _explicitNullValueBusiness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business"); else _explicitNullProperties?.Remove("business"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? _explicitNullValueBusiness = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Business { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Business { get => _explicitNullValueBusiness; set { _explicitNullValueBusiness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business"); else _explicitNullProperties?.Remove("business"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> _explicitNullValueBusiness = default!;
 #endif
         /// <summary>The enterprise property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Enterprise { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Enterprise { get => _explicitNullValueEnterprise; set { _explicitNullValueEnterprise = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enterprise"); else _explicitNullProperties?.Remove("enterprise"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? _explicitNullValueEnterprise = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Enterprise { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Enterprise { get => _explicitNullValueEnterprise; set { _explicitNullValueEnterprise = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enterprise"); else _explicitNullProperties?.Remove("enterprise"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> _explicitNullValueEnterprise = default!;
 #endif
         /// <summary>The free property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Free { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Free { get => _explicitNullValueFree; set { _explicitNullValueFree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free"); else _explicitNullProperties?.Remove("free"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? _explicitNullValueFree = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Free { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Free { get => _explicitNullValueFree; set { _explicitNullValueFree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free"); else _explicitNullProperties?.Remove("free"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> _explicitNullValueFree = default!;
 #endif
         /// <summary>The pro property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Pro { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Pro { get => _explicitNullValuePro; set { _explicitNullValuePro = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pro"); else _explicitNullProperties?.Remove("pro"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? _explicitNullValuePro = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Pro { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Pro { get => _explicitNullValuePro; set { _explicitNullValuePro = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pro"); else _explicitNullProperties?.Remove("pro"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> _explicitNullValuePro = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>("enterprise", Enterprise);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>("free", Free);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>("pro", Pro);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

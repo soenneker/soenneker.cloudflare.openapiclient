@@ -70,6 +70,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applicatio
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListApplications200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListApplications200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,6 +103,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applicatio
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CreateApplication201Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CreateApplication201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

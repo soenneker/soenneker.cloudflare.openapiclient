@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VectorizeCreateIndexRequestConfig : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1? VectorizeCreateIndexRequestConfigMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf1? VectorizeCreateIndexRequestConfigOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1 VectorizeCreateIndexRequestConfigMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf1 VectorizeCreateIndexRequestConfigOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2? VectorizeCreateIndexRequestConfigMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf2? VectorizeCreateIndexRequestConfigOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2 VectorizeCreateIndexRequestConfigMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf2 VectorizeCreateIndexRequestConfigOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +44,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfig();
-            return result;
+            if("VectorizeCreateIndexRequestConfigOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("VectorizeCreateIndexRequestConfigOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("dimensions") != null && parseNode.GetChildNode("metric") != null && (parseNode.GetChildNode("metric")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("cosine".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "euclidean".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "dot-product".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("preset") != null && (parseNode.GetChildNode("preset")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("@cf/baai/bge-small-en-v1.5".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "@cf/baai/bge-base-en-v1.5".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "@cf/baai/bge-large-en-v1.5".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "openai/text-embedding-ada-002".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "cohere/embed-multilingual-v2.0".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.VectorizeCreateIndexRequestConfigOneOf1 == null && result.VectorizeCreateIndexRequestConfigOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.VectorizeCreateIndexRequestConfigOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf1(), parseNode);
+            if (result.VectorizeCreateIndexRequestConfigOneOf1 == null && result.VectorizeCreateIndexRequestConfigOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.VectorizeCreateIndexRequestConfigOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf2(), parseNode);
+            if (result.VectorizeCreateIndexRequestConfigOneOf1 == null && result.VectorizeCreateIndexRequestConfigOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,13 +67,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(VectorizeCreateIndexRequestConfigMember1 != null)
+            if(VectorizeCreateIndexRequestConfigOneOf1 != null)
             {
-                return VectorizeCreateIndexRequestConfigMember1.GetFieldDeserializers();
+                return VectorizeCreateIndexRequestConfigOneOf1.GetFieldDeserializers();
             }
-            else if(VectorizeCreateIndexRequestConfigMember2 != null)
+            else if(VectorizeCreateIndexRequestConfigOneOf2 != null)
             {
-                return VectorizeCreateIndexRequestConfigMember2.GetFieldDeserializers();
+                return VectorizeCreateIndexRequestConfigOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -63,14 +83,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (VectorizeCreateIndexRequestConfigOneOf1 == null && VectorizeCreateIndexRequestConfigOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (VectorizeCreateIndexRequestConfigOneOf1 != null && VectorizeCreateIndexRequestConfigOneOf2 == null) { if (VectorizeCreateIndexRequestConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, VectorizeCreateIndexRequestConfigOneOf1); return; }
+            if (VectorizeCreateIndexRequestConfigOneOf2 != null && VectorizeCreateIndexRequestConfigOneOf1 == null) { if (VectorizeCreateIndexRequestConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, VectorizeCreateIndexRequestConfigOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(VectorizeCreateIndexRequestConfigMember1 != null)
+            if(VectorizeCreateIndexRequestConfigOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1>(null, VectorizeCreateIndexRequestConfigMember1);
+                if (VectorizeCreateIndexRequestConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf1>(null, VectorizeCreateIndexRequestConfigOneOf1);
             }
-            else if(VectorizeCreateIndexRequestConfigMember2 != null)
+            else if(VectorizeCreateIndexRequestConfigOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2>(null, VectorizeCreateIndexRequestConfigMember2);
+                if (VectorizeCreateIndexRequestConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigOneOf2>(null, VectorizeCreateIndexRequestConfigOneOf2);
             }
         }
     }

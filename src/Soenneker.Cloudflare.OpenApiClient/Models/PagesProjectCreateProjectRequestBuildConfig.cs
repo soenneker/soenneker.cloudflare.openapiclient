@@ -12,50 +12,74 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesProjectCreateProjectRequestBuildConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("build_caching") is { } nullNodeBuildCaching && nullNodeBuildCaching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCaching = null;
+            if (parseNode.GetChildNode("build_command") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
+            if (parseNode.GetChildNode("destination_dir") is { } nullNodeDestinationDir && nullNodeDestinationDir.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationDir = null;
+            if (parseNode.GetChildNode("root_dir") is { } nullNodeRootDir && nullNodeRootDir.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDir = null;
+            if (parseNode.GetChildNode("web_analytics_tag") is { } nullNodeWebAnalyticsTag && nullNodeWebAnalyticsTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAnalyticsTag = null;
+            if (parseNode.GetChildNode("web_analytics_token") is { } nullNodeWebAnalyticsToken && nullNodeWebAnalyticsToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAnalyticsToken = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable build caching for the project.</summary>
-        public bool? BuildCaching { get; set; }
+        public bool? BuildCaching { get => _explicitNullValueBuildCaching; set { _explicitNullValueBuildCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_caching"); else _explicitNullProperties?.Remove("build_caching"); } }
+        private bool? _explicitNullValueBuildCaching = default!;
         /// <summary>Command used to build project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildCommand { get; set; }
+        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_command"); else _explicitNullProperties?.Remove("build_command"); } }
+        private string? _explicitNullValueBuildCommand = default!;
 #nullable restore
 #else
-        public string BuildCommand { get; set; }
+        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_command"); else _explicitNullProperties?.Remove("build_command"); } }
+        private string _explicitNullValueBuildCommand = default!;
 #endif
         /// <summary>Output directory of the build.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationDir { get; set; }
+        public string? DestinationDir { get => _explicitNullValueDestinationDir; set { _explicitNullValueDestinationDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_dir"); else _explicitNullProperties?.Remove("destination_dir"); } }
+        private string? _explicitNullValueDestinationDir = default!;
 #nullable restore
 #else
-        public string DestinationDir { get; set; }
+        public string DestinationDir { get => _explicitNullValueDestinationDir; set { _explicitNullValueDestinationDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_dir"); else _explicitNullProperties?.Remove("destination_dir"); } }
+        private string _explicitNullValueDestinationDir = default!;
 #endif
         /// <summary>Directory to run the command.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDir { get; set; }
+        public string? RootDir { get => _explicitNullValueRootDir; set { _explicitNullValueRootDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_dir"); else _explicitNullProperties?.Remove("root_dir"); } }
+        private string? _explicitNullValueRootDir = default!;
 #nullable restore
 #else
-        public string RootDir { get; set; }
+        public string RootDir { get => _explicitNullValueRootDir; set { _explicitNullValueRootDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_dir"); else _explicitNullProperties?.Remove("root_dir"); } }
+        private string _explicitNullValueRootDir = default!;
 #endif
         /// <summary>The classifying tag for analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebAnalyticsTag { get; set; }
+        public string? WebAnalyticsTag { get => _explicitNullValueWebAnalyticsTag; set { _explicitNullValueWebAnalyticsTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_analytics_tag"); else _explicitNullProperties?.Remove("web_analytics_tag"); } }
+        private string? _explicitNullValueWebAnalyticsTag = default!;
 #nullable restore
 #else
-        public string WebAnalyticsTag { get; set; }
+        public string WebAnalyticsTag { get => _explicitNullValueWebAnalyticsTag; set { _explicitNullValueWebAnalyticsTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_analytics_tag"); else _explicitNullProperties?.Remove("web_analytics_tag"); } }
+        private string _explicitNullValueWebAnalyticsTag = default!;
 #endif
         /// <summary>The auth token for analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebAnalyticsToken { get; set; }
+        public string? WebAnalyticsToken { get => _explicitNullValueWebAnalyticsToken; set { _explicitNullValueWebAnalyticsToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_analytics_token"); else _explicitNullProperties?.Remove("web_analytics_token"); } }
+        private string? _explicitNullValueWebAnalyticsToken = default!;
 #nullable restore
 #else
-        public string WebAnalyticsToken { get; set; }
+        public string WebAnalyticsToken { get => _explicitNullValueWebAnalyticsToken; set { _explicitNullValueWebAnalyticsToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_analytics_token"); else _explicitNullProperties?.Remove("web_analytics_token"); } }
+        private string _explicitNullValueWebAnalyticsToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectCreateProjectRequestBuildConfig"/> and sets the default values.
@@ -72,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectCreateProjectRequestBuildConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectCreateProjectRequestBuildConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectCreateProjectRequestBuildConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("root_dir", RootDir);
             writer.WriteStringValue("web_analytics_tag", WebAnalyticsTag);
             writer.WriteStringValue("web_analytics_token", WebAnalyticsToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

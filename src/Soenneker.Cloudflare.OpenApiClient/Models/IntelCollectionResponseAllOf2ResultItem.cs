@@ -11,76 +11,111 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class IntelCollectionResponseAllOf2ResultItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("additional_information") is { } nullNodeAdditionalInformation && nullNodeAdditionalInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalInformation = null;
+            if (parseNode.GetChildNode("application") is { } nullNodeApplication && nullNodeApplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Application = null;
+            if (parseNode.GetChildNode("content_categories") is { } nullNodeContentCategories && nullNodeContentCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentCategories = null;
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("inherited_content_categories") is { } nullNodeInheritedContentCategories && nullNodeInheritedContentCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InheritedContentCategories = null;
+            if (parseNode.GetChildNode("inherited_from") is { } nullNodeInheritedFrom && nullNodeInheritedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InheritedFrom = null;
+            if (parseNode.GetChildNode("inherited_risk_types") is { } nullNodeInheritedRiskTypes && nullNodeInheritedRiskTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InheritedRiskTypes = null;
+            if (parseNode.GetChildNode("popularity_rank") is { } nullNodePopularityRank && nullNodePopularityRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PopularityRank = null;
+            if (parseNode.GetChildNode("risk_score") is { } nullNodeRiskScore && nullNodeRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskScore = null;
+            if (parseNode.GetChildNode("risk_types") is { } nullNodeRiskTypes && nullNodeRiskTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskTypes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Additional information related to the host name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelAdditionalInformation? AdditionalInformation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelAdditionalInformation? AdditionalInformation { get => _explicitNullValueAdditionalInformation; set { _explicitNullValueAdditionalInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_information"); else _explicitNullProperties?.Remove("additional_information"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelAdditionalInformation? _explicitNullValueAdditionalInformation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelAdditionalInformation AdditionalInformation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelAdditionalInformation AdditionalInformation { get => _explicitNullValueAdditionalInformation; set { _explicitNullValueAdditionalInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_information"); else _explicitNullProperties?.Remove("additional_information"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelAdditionalInformation _explicitNullValueAdditionalInformation = default!;
 #endif
         /// <summary>Application that the hostname belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelApplication? Application { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelApplication? Application { get => _explicitNullValueApplication; set { _explicitNullValueApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application"); else _explicitNullProperties?.Remove("application"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelApplication? _explicitNullValueApplication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelApplication Application { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelApplication Application { get => _explicitNullValueApplication; set { _explicitNullValueApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application"); else _explicitNullProperties?.Remove("application"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelApplication _explicitNullValueApplication = default!;
 #endif
         /// <summary>The content_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelContentCategoriesItem>? ContentCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelContentCategoriesItem>? ContentCategories { get => _explicitNullValueContentCategories; set { _explicitNullValueContentCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_categories"); else _explicitNullProperties?.Remove("content_categories"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelContentCategoriesItem>? _explicitNullValueContentCategories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelContentCategoriesItem> ContentCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelContentCategoriesItem> ContentCategories { get => _explicitNullValueContentCategories; set { _explicitNullValueContentCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_categories"); else _explicitNullProperties?.Remove("content_categories"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelContentCategoriesItem> _explicitNullValueContentCategories = default!;
 #endif
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>The inherited_content_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>? InheritedContentCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>? InheritedContentCategories { get => _explicitNullValueInheritedContentCategories; set { _explicitNullValueInheritedContentCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inherited_content_categories"); else _explicitNullProperties?.Remove("inherited_content_categories"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>? _explicitNullValueInheritedContentCategories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId> InheritedContentCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId> InheritedContentCategories { get => _explicitNullValueInheritedContentCategories; set { _explicitNullValueInheritedContentCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inherited_content_categories"); else _explicitNullProperties?.Remove("inherited_content_categories"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId> _explicitNullValueInheritedContentCategories = default!;
 #endif
         /// <summary>Domain from which `inherited_content_categories` and `inherited_risk_types` are inherited, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InheritedFrom { get; set; }
+        public string? InheritedFrom { get => _explicitNullValueInheritedFrom; set { _explicitNullValueInheritedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inherited_from"); else _explicitNullProperties?.Remove("inherited_from"); } }
+        private string? _explicitNullValueInheritedFrom = default!;
 #nullable restore
 #else
-        public string InheritedFrom { get; set; }
+        public string InheritedFrom { get => _explicitNullValueInheritedFrom; set { _explicitNullValueInheritedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inherited_from"); else _explicitNullProperties?.Remove("inherited_from"); } }
+        private string _explicitNullValueInheritedFrom = default!;
 #endif
         /// <summary>The inherited_risk_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>? InheritedRiskTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>? InheritedRiskTypes { get => _explicitNullValueInheritedRiskTypes; set { _explicitNullValueInheritedRiskTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inherited_risk_types"); else _explicitNullProperties?.Remove("inherited_risk_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>? _explicitNullValueInheritedRiskTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId> InheritedRiskTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId> InheritedRiskTypes { get => _explicitNullValueInheritedRiskTypes; set { _explicitNullValueInheritedRiskTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inherited_risk_types"); else _explicitNullProperties?.Remove("inherited_risk_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId> _explicitNullValueInheritedRiskTypes = default!;
 #endif
         /// <summary>Global Cloudflare 100k ranking for the last 30 days, if available for the hostname. The top ranked domain is 1, the lowest ranked domain is 100,000.</summary>
-        public int? PopularityRank { get; set; }
+        public int? PopularityRank { get => _explicitNullValuePopularityRank; set { _explicitNullValuePopularityRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("popularity_rank"); else _explicitNullProperties?.Remove("popularity_rank"); } }
+        private int? _explicitNullValuePopularityRank = default!;
         /// <summary>Hostname risk score, which is a value between 0 (lowest risk) to 1 (highest risk).</summary>
-        public double? RiskScore { get; set; }
+        public double? RiskScore { get => _explicitNullValueRiskScore; set { _explicitNullValueRiskScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_score"); else _explicitNullProperties?.Remove("risk_score"); } }
+        private double? _explicitNullValueRiskScore = default!;
         /// <summary>The risk_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>? RiskTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>? RiskTypes { get => _explicitNullValueRiskTypes; set { _explicitNullValueRiskTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_types"); else _explicitNullProperties?.Remove("risk_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>? _explicitNullValueRiskTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId> RiskTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId> RiskTypes { get => _explicitNullValueRiskTypes; set { _explicitNullValueRiskTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_types"); else _explicitNullProperties?.Remove("risk_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId> _explicitNullValueRiskTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCollectionResponseAllOf2ResultItem"/> and sets the default values.
@@ -97,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCollectionResponseAllOf2ResultItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCollectionResponseAllOf2ResultItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCollectionResponseAllOf2ResultItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,6 +171,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("popularity_rank", PopularityRank);
             writer.WriteDoubleValue("risk_score", RiskScore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCategoryWithSuperCategoryId>("risk_types", RiskTypes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

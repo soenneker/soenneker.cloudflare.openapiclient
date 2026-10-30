@@ -11,33 +11,58 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TeamsDevicesTaniumInputRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("connection_id") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
+            if (parseNode.GetChildNode("eid_last_seen") is { } nullNodeEidLastSeen && nullNodeEidLastSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EidLastSeen = null;
+            if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
+            if (parseNode.GetChildNode("risk_level") is { } nullNodeRiskLevel && nullNodeRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskLevel = null;
+            if (parseNode.GetChildNode("scoreOperator") is { } nullNodeScoreOperator && nullNodeScoreOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreOperator = null;
+            if (parseNode.GetChildNode("total_score") is { } nullNodeTotalScore && nullNodeTotalScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Posture Integration ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get; set; }
+        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        private string? _explicitNullValueConnectionId = default!;
 #nullable restore
 #else
-        public string ConnectionId { get; set; }
+        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        private string _explicitNullValueConnectionId = default!;
 #endif
         /// <summary>For more details on eid last seen, refer to the Tanium documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EidLastSeen { get; set; }
+        public string? EidLastSeen { get => _explicitNullValueEidLastSeen; set { _explicitNullValueEidLastSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eid_last_seen"); else _explicitNullProperties?.Remove("eid_last_seen"); } }
+        private string? _explicitNullValueEidLastSeen = default!;
 #nullable restore
 #else
-        public string EidLastSeen { get; set; }
+        public string EidLastSeen { get => _explicitNullValueEidLastSeen; set { _explicitNullValueEidLastSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eid_last_seen"); else _explicitNullProperties?.Remove("eid_last_seen"); } }
+        private string _explicitNullValueEidLastSeen = default!;
 #endif
         /// <summary>Operator to evaluate risk_level or eid_last_seen.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestOperator? Operator { get; set; }
+#nullable enable
+        public string? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        private string? _explicitNullValueOperator = default!;
+#nullable restore
         /// <summary>For more details on risk level, refer to the Tanium documentation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestRiskLevel? RiskLevel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestRiskLevel? RiskLevel { get => _explicitNullValueRiskLevel; set { _explicitNullValueRiskLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_level"); else _explicitNullProperties?.Remove("risk_level"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestRiskLevel? _explicitNullValueRiskLevel = default!;
         /// <summary>Score Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestScoreOperator? ScoreOperator { get; set; }
+#nullable enable
+        public string? ScoreOperator { get => _explicitNullValueScoreOperator; set { _explicitNullValueScoreOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoreOperator"); else _explicitNullProperties?.Remove("scoreOperator"); } }
+        private string? _explicitNullValueScoreOperator = default!;
+#nullable restore
         /// <summary>For more details on total score, refer to the Tanium documentation.</summary>
-        public double? TotalScore { get; set; }
+        public double? TotalScore { get => _explicitNullValueTotalScore; set { _explicitNullValueTotalScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_score"); else _explicitNullProperties?.Remove("total_score"); } }
+        private double? _explicitNullValueTotalScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest"/> and sets the default values.
         /// </summary>
@@ -53,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,9 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "connection_id", n => { ConnectionId = n.GetStringValue(); } },
                 { "eid_last_seen", n => { EidLastSeen = n.GetStringValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestOperator>(); } },
+                { "operator", n => { Operator = n.GetStringValue(); } },
                 { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestRiskLevel>(); } },
-                { "scoreOperator", n => { ScoreOperator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestScoreOperator>(); } },
+                { "scoreOperator", n => { ScoreOperator = n.GetStringValue(); } },
                 { "total_score", n => { TotalScore = n.GetDoubleValue(); } },
             };
         }
@@ -80,10 +105,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connection_id", ConnectionId);
             writer.WriteStringValue("eid_last_seen", EidLastSeen);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestOperator>("operator", Operator);
+            writer.WriteStringValue("operator", Operator);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestRiskLevel>("risk_level", RiskLevel);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestScoreOperator>("scoreOperator", ScoreOperator);
+            writer.WriteStringValue("scoreOperator", ScoreOperator);
             writer.WriteDoubleValue("total_score", TotalScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

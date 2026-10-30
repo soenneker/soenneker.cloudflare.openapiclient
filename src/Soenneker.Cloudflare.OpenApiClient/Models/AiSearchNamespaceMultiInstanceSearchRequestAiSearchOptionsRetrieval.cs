@@ -11,39 +11,66 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrieval : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("boost_by") is { } nullNodeBoostBy && nullNodeBoostBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoostBy = null;
+            if (parseNode.GetChildNode("context_expansion") is { } nullNodeContextExpansion && nullNodeContextExpansion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextExpansion = null;
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("fusion_method") is { } nullNodeFusionMethod && nullNodeFusionMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FusionMethod = null;
+            if (parseNode.GetChildNode("keyword_match_mode") is { } nullNodeKeywordMatchMode && nullNodeKeywordMatchMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordMatchMode = null;
+            if (parseNode.GetChildNode("match_threshold") is { } nullNodeMatchThreshold && nullNodeMatchThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchThreshold = null;
+            if (parseNode.GetChildNode("max_num_results") is { } nullNodeMaxNumResults && nullNodeMaxNumResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxNumResults = null;
+            if (parseNode.GetChildNode("retrieval_type") is { } nullNodeRetrievalType && nullNodeRetrievalType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetrievalType = null;
+            if (parseNode.GetChildNode("return_on_failure") is { } nullNodeReturnOnFailure && nullNodeReturnOnFailure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnOnFailure = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Metadata fields to boost search results by. Overrides the instance-level boost_by config. Direction defaults to &apos;asc&apos; for numeric/datetime fields, &apos;exists&apos; for text/boolean fields. Fields must match &apos;timestamp&apos; or a defined custom_metadata field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalBoostByItem>? BoostBy { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalBoostByItem>? BoostBy { get => _explicitNullValueBoostBy; set { _explicitNullValueBoostBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boost_by"); else _explicitNullProperties?.Remove("boost_by"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalBoostByItem>? _explicitNullValueBoostBy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalBoostByItem> BoostBy { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalBoostByItem> BoostBy { get => _explicitNullValueBoostBy; set { _explicitNullValueBoostBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boost_by"); else _explicitNullProperties?.Remove("boost_by"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalBoostByItem> _explicitNullValueBoostBy = default!;
 #endif
         /// <summary>The context_expansion property</summary>
-        public int? ContextExpansion { get; set; }
+        public int? ContextExpansion { get => _explicitNullValueContextExpansion; set { _explicitNullValueContextExpansion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_expansion"); else _explicitNullProperties?.Remove("context_expansion"); } }
+        private int? _explicitNullValueContextExpansion = default!;
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalFilters? Filters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalFilters? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalFilters? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalFilters Filters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalFilters Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalFilters _explicitNullValueFilters = default!;
 #endif
         /// <summary>The fusion_method property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod? FusionMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod? FusionMethod { get => _explicitNullValueFusionMethod; set { _explicitNullValueFusionMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fusion_method"); else _explicitNullProperties?.Remove("fusion_method"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod? _explicitNullValueFusionMethod = default!;
         /// <summary>Controls which documents become candidates for BM25 scoring. &apos;and&apos; restricts candidates to documents containing all query terms; &apos;or&apos; includes any document containing at least one term and ranks results according to BM25 relevance. When omitted, falls back to the instance-level retrieval_options.keyword_match_mode, then to &apos;and&apos;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode? KeywordMatchMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode? KeywordMatchMode { get => _explicitNullValueKeywordMatchMode; set { _explicitNullValueKeywordMatchMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword_match_mode"); else _explicitNullProperties?.Remove("keyword_match_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode? _explicitNullValueKeywordMatchMode = default!;
         /// <summary>Minimum score a chunk must reach to be returned. When omitted, each instance&apos;s chunks are filtered by that instance&apos;s score_threshold, capped at 0.4.</summary>
-        public double? MatchThreshold { get; set; }
+        public double? MatchThreshold { get => _explicitNullValueMatchThreshold; set { _explicitNullValueMatchThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_threshold"); else _explicitNullProperties?.Remove("match_threshold"); } }
+        private double? _explicitNullValueMatchThreshold = default!;
         /// <summary>Maximum number of merged results to return. When omitted, defaults to the sum of the searched instances&apos; max_num_results (each falling back to 10), up to 50.</summary>
-        public int? MaxNumResults { get; set; }
+        public int? MaxNumResults { get => _explicitNullValueMaxNumResults; set { _explicitNullValueMaxNumResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_num_results"); else _explicitNullProperties?.Remove("max_num_results"); } }
+        private int? _explicitNullValueMaxNumResults = default!;
         /// <summary>The retrieval_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType? RetrievalType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType? RetrievalType { get => _explicitNullValueRetrievalType; set { _explicitNullValueRetrievalType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_type"); else _explicitNullProperties?.Remove("retrieval_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType? _explicitNullValueRetrievalType = default!;
         /// <summary>The return_on_failure property</summary>
-        public bool? ReturnOnFailure { get; set; }
+        public bool? ReturnOnFailure { get => _explicitNullValueReturnOnFailure; set { _explicitNullValueReturnOnFailure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_on_failure"); else _explicitNullProperties?.Remove("return_on_failure"); } }
+        private bool? _explicitNullValueReturnOnFailure = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrieval"/> and sets the default values.
         /// </summary>
@@ -61,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrieval CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrieval();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrieval(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("max_num_results", MaxNumResults);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType>("retrieval_type", RetrievalType);
             writer.WriteBoolValue("return_on_failure", ReturnOnFailure);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

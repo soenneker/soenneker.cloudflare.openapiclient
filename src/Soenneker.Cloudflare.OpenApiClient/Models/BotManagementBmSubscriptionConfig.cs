@@ -11,37 +11,84 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BotManagementBmSubscriptionConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ai_agents") is { } nullNodeAiAgents && nullNodeAiAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiAgents = null;
+            if (parseNode.GetChildNode("ai_bots_migration_opt_out") is { } nullNodeAiBotsMigrationOptOut && nullNodeAiBotsMigrationOptOut.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiBotsMigrationOptOut = null;
+            if (parseNode.GetChildNode("ai_bots_protection") is { } nullNodeAiBotsProtection && nullNodeAiBotsProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiBotsProtection = null;
+            if (parseNode.GetChildNode("ai_search") is { } nullNodeAiSearch && nullNodeAiSearch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiSearch = null;
+            if (parseNode.GetChildNode("ai_training") is { } nullNodeAiTraining && nullNodeAiTraining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiTraining = null;
+            if (parseNode.GetChildNode("ai_user") is { } nullNodeAiUser && nullNodeAiUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiUser = null;
+            if (parseNode.GetChildNode("auto_update_model") is { } nullNodeAutoUpdateModel && nullNodeAutoUpdateModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoUpdateModel = null;
+            if (parseNode.GetChildNode("bm_cookie_enabled") is { } nullNodeBmCookieEnabled && nullNodeBmCookieEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BmCookieEnabled = null;
+            if (parseNode.GetChildNode("bot_preference_sync_enabled") is { } nullNodeBotPreferenceSyncEnabled && nullNodeBotPreferenceSyncEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotPreferenceSyncEnabled = null;
+            if (parseNode.GetChildNode("cf_robots_variant") is { } nullNodeCfRobotsVariant && nullNodeCfRobotsVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CfRobotsVariant = null;
+            if (parseNode.GetChildNode("content_bots_protection") is { } nullNodeContentBotsProtection && nullNodeContentBotsProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentBotsProtection = null;
+            if (parseNode.GetChildNode("crawler_protection") is { } nullNodeCrawlerProtection && nullNodeCrawlerProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrawlerProtection = null;
+            if (parseNode.GetChildNode("enable_js") is { } nullNodeEnableJs && nullNodeEnableJs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableJs = null;
+            if (parseNode.GetChildNode("is_robots_txt_managed") is { } nullNodeIsRobotsTxtManaged && nullNodeIsRobotsTxtManaged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRobotsTxtManaged = null;
+            if (parseNode.GetChildNode("jsd_api_results_enabled") is { } nullNodeJsdApiResultsEnabled && nullNodeJsdApiResultsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsdApiResultsEnabled = null;
+            if (parseNode.GetChildNode("suppress_session_score") is { } nullNodeSuppressSessionScore && nullNodeSuppressSessionScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuppressSessionScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Configure blocking behavior for supported personal AI agents.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiAgents? AiAgents { get => _explicitNullValueAiAgents; set { _explicitNullValueAiAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_agents"); else _explicitNullProperties?.Remove("ai_agents"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiAgents? _explicitNullValueAiAgents = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiAgents AiAgents { get => _explicitNullValueAiAgents; set { _explicitNullValueAiAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_agents"); else _explicitNullProperties?.Remove("ai_agents"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiAgents _explicitNullValueAiAgents = default!;
+#endif
         /// <summary>Temporary migration flag tracking zones opted out of AI bots managed-rule updates.</summary>
-        public bool? AiBotsMigrationOptOut { get; set; }
+        public bool? AiBotsMigrationOptOut { get => _explicitNullValueAiBotsMigrationOptOut; set { _explicitNullValueAiBotsMigrationOptOut = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_bots_migration_opt_out"); else _explicitNullProperties?.Remove("ai_bots_migration_opt_out"); } }
+        private bool? _explicitNullValueAiBotsMigrationOptOut = default!;
         /// <summary>Enable rule to block AI Scrapers and Crawlers.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiBotsProtection? AiBotsProtection { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiBotsProtection? AiBotsProtection { get => _explicitNullValueAiBotsProtection; set { _explicitNullValueAiBotsProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_bots_protection"); else _explicitNullProperties?.Remove("ai_bots_protection"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiBotsProtection? _explicitNullValueAiBotsProtection = default!;
         /// <summary>Configure robots.txt policy for AI search bots.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiSearch? AiSearch { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiSearch? AiSearch { get => _explicitNullValueAiSearch; set { _explicitNullValueAiSearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_search"); else _explicitNullProperties?.Remove("ai_search"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiSearch? _explicitNullValueAiSearch = default!;
         /// <summary>Configure robots.txt policy for AI model training bots.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiTraining? AiTraining { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiTraining? AiTraining { get => _explicitNullValueAiTraining; set { _explicitNullValueAiTraining = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_training"); else _explicitNullProperties?.Remove("ai_training"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiTraining? _explicitNullValueAiTraining = default!;
         /// <summary>Configure robots.txt policy for AI assistant and agent bots.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiUser? AiUser { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiUser? AiUser { get => _explicitNullValueAiUser; set { _explicitNullValueAiUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_user"); else _explicitNullProperties?.Remove("ai_user"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiUser? _explicitNullValueAiUser = default!;
         /// <summary>Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes)</summary>
-        public bool? AutoUpdateModel { get; set; }
+        public bool? AutoUpdateModel { get => _explicitNullValueAutoUpdateModel; set { _explicitNullValueAutoUpdateModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_update_model"); else _explicitNullProperties?.Remove("auto_update_model"); } }
+        private bool? _explicitNullValueAutoUpdateModel = default!;
         /// <summary>Indicates that the bot management cookie can be placed on end user devices accessing the site. Defaults to true</summary>
-        public bool? BmCookieEnabled { get; set; }
+        public bool? BmCookieEnabled { get => _explicitNullValueBmCookieEnabled; set { _explicitNullValueBmCookieEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bm_cookie_enabled"); else _explicitNullProperties?.Remove("bm_cookie_enabled"); } }
+        private bool? _explicitNullValueBmCookieEnabled = default!;
         /// <summary>Enable Bot Preference Sync for this zone. When enabled, Cloudflare can serve robots.txt content derived from the zone&apos;s AI Search, AI User, and AI Training preferences.</summary>
-        public bool? BotPreferenceSyncEnabled { get; set; }
+        public bool? BotPreferenceSyncEnabled { get => _explicitNullValueBotPreferenceSyncEnabled; set { _explicitNullValueBotPreferenceSyncEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_preference_sync_enabled"); else _explicitNullProperties?.Remove("bot_preference_sync_enabled"); } }
+        private bool? _explicitNullValueBotPreferenceSyncEnabled = default!;
         /// <summary>Specifies the Robots Access Control License variant to use.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCfRobotsVariant? CfRobotsVariant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCfRobotsVariant? CfRobotsVariant { get => _explicitNullValueCfRobotsVariant; set { _explicitNullValueCfRobotsVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_robots_variant"); else _explicitNullProperties?.Remove("cf_robots_variant"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCfRobotsVariant? _explicitNullValueCfRobotsVariant = default!;
         /// <summary>Enable rule to block content bots. When enabled, blocks automated traffic with low bot scores, excluding safe verified bot categories. Exceptions should be managed via skip rules.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementContentBotsProtection? ContentBotsProtection { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementContentBotsProtection? ContentBotsProtection { get => _explicitNullValueContentBotsProtection; set { _explicitNullValueContentBotsProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_bots_protection"); else _explicitNullProperties?.Remove("content_bots_protection"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementContentBotsProtection? _explicitNullValueContentBotsProtection = default!;
         /// <summary>Enable rule to punish AI Scrapers and Crawlers via a link maze.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCrawlerProtection? CrawlerProtection { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCrawlerProtection? CrawlerProtection { get => _explicitNullValueCrawlerProtection; set { _explicitNullValueCrawlerProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawler_protection"); else _explicitNullProperties?.Remove("crawler_protection"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCrawlerProtection? _explicitNullValueCrawlerProtection = default!;
         /// <summary>Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).</summary>
-        public bool? EnableJs { get; set; }
+        public bool? EnableJs { get => _explicitNullValueEnableJs; set { _explicitNullValueEnableJs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_js"); else _explicitNullProperties?.Remove("enable_js"); } }
+        private bool? _explicitNullValueEnableJs = default!;
         /// <summary>Enable cloudflare managed robots.txt. If an existing robots.txt is detected, then managed robots.txt will be prepended to the existing robots.txt.</summary>
-        public bool? IsRobotsTxtManaged { get; set; }
+        public bool? IsRobotsTxtManaged { get => _explicitNullValueIsRobotsTxtManaged; set { _explicitNullValueIsRobotsTxtManaged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_robots_txt_managed"); else _explicitNullProperties?.Remove("is_robots_txt_managed"); } }
+        private bool? _explicitNullValueIsRobotsTxtManaged = default!;
         /// <summary>Whether to use JavaScript Detection results submitted through the API for this zone.</summary>
-        public bool? JsdApiResultsEnabled { get; set; }
+        public bool? JsdApiResultsEnabled { get => _explicitNullValueJsdApiResultsEnabled; set { _explicitNullValueJsdApiResultsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsd_api_results_enabled"); else _explicitNullProperties?.Remove("jsd_api_results_enabled"); } }
+        private bool? _explicitNullValueJsdApiResultsEnabled = default!;
         /// <summary>A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +98,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfigAllOf2StaleZoneConfiguration StaleZoneConfiguration { get; private set; }
 #endif
         /// <summary>Whether to disable tracking the highest bot score for a session in the Bot Management cookie.</summary>
-        public bool? SuppressSessionScore { get; set; }
+        public bool? SuppressSessionScore { get => _explicitNullValueSuppressSessionScore; set { _explicitNullValueSuppressSessionScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppress_session_score"); else _explicitNullProperties?.Remove("suppress_session_score"); } }
+        private bool? _explicitNullValueSuppressSessionScore = default!;
         /// <summary>A read-only field that indicates whether the zone currently is running the latest ML model.</summary>
         public bool? UsingLatestModel { get; private set; }
         /// <summary>
@@ -72,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ai_agents", n => { AiAgents = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiAgents>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiAgents.CreateFromDiscriminatorValue); } },
                 { "ai_bots_migration_opt_out", n => { AiBotsMigrationOptOut = n.GetBoolValue(); } },
                 { "ai_bots_protection", n => { AiBotsProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiBotsProtection>(); } },
                 { "ai_search", n => { AiSearch = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiSearch>(); } },
@@ -108,6 +157,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiAgents>("ai_agents", AiAgents);
             writer.WriteBoolValue("ai_bots_migration_opt_out", AiBotsMigrationOptOut);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiBotsProtection>("ai_bots_protection", AiBotsProtection);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiSearch>("ai_search", AiSearch);
@@ -123,6 +173,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_robots_txt_managed", IsRobotsTxtManaged);
             writer.WriteBoolValue("jsd_api_results_enabled", JsdApiResultsEnabled);
             writer.WriteBoolValue("suppress_session_score", SuppressSessionScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

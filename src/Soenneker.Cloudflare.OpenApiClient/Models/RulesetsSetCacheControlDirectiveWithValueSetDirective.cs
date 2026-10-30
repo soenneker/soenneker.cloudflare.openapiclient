@@ -12,15 +12,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesetsSetCacheControlDirectiveWithValueSetDirective : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cloudflare_only") is { } nullNodeCloudflareOnly && nullNodeCloudflareOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareOnly = null;
+            if (parseNode.GetChildNode("operation") is { } nullNodeOperation && nullNodeOperation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operation = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the directive should only be applied to the Cloudflare CDN cache.</summary>
-        public bool? CloudflareOnly { get; set; }
+        public bool? CloudflareOnly { get => _explicitNullValueCloudflareOnly; set { _explicitNullValueCloudflareOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_only"); else _explicitNullProperties?.Remove("cloudflare_only"); } }
+        private bool? _explicitNullValueCloudflareOnly = default!;
         /// <summary>The operation to perform on the cache-control directive.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValueSetDirectiveOperation? Operation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValueSetDirectiveOperation? Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValueSetDirectiveOperation? _explicitNullValueOperation = default!;
         /// <summary>The duration value in seconds for the directive.</summary>
-        public int? Value { get; set; }
+        public int? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private int? _explicitNullValueValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValueSetDirective"/> and sets the default values.
         /// </summary>
@@ -37,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValueSetDirective CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValueSetDirective();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValueSetDirective(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("cloudflare_only", CloudflareOnly);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValueSetDirectiveOperation>("operation", Operation);
             writer.WriteIntValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

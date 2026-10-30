@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TeamsDevicesTlsConfigRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("sha256") is { } nullNodeSha256 && nullNodeSha256.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sha256 = null;
+            if (parseNode.GetChildNode("tls_sockaddr") is { } nullNodeTlsSockaddr && nullNodeTlsSockaddr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsSockaddr = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The SHA-256 hash of the TLS certificate presented by the host found at tls_sockaddr. If absent, regular certificate verification (trusted roots, valid timestamp, etc) will be used to validate the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha256 { get; set; }
+        public string? Sha256 { get => _explicitNullValueSha256; set { _explicitNullValueSha256 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha256"); else _explicitNullProperties?.Remove("sha256"); } }
+        private string? _explicitNullValueSha256 = default!;
 #nullable restore
 #else
-        public string Sha256 { get; set; }
+        public string Sha256 { get => _explicitNullValueSha256; set { _explicitNullValueSha256 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha256"); else _explicitNullProperties?.Remove("sha256"); } }
+        private string _explicitNullValueSha256 = default!;
 #endif
         /// <summary>A network address of the form &quot;host:port&quot; that the WARP client will use to detect the presence of a TLS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TlsSockaddr { get; set; }
+        public string? TlsSockaddr { get => _explicitNullValueTlsSockaddr; set { _explicitNullValueTlsSockaddr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_sockaddr"); else _explicitNullProperties?.Remove("tls_sockaddr"); } }
+        private string? _explicitNullValueTlsSockaddr = default!;
 #nullable restore
 #else
-        public string TlsSockaddr { get; set; }
+        public string TlsSockaddr { get => _explicitNullValueTlsSockaddr; set { _explicitNullValueTlsSockaddr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_sockaddr"); else _explicitNullProperties?.Remove("tls_sockaddr"); } }
+        private string _explicitNullValueTlsSockaddr = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTlsConfigRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTlsConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTlsConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTlsConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("sha256", Sha256);
             writer.WriteStringValue("tls_sockaddr", TlsSockaddr);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

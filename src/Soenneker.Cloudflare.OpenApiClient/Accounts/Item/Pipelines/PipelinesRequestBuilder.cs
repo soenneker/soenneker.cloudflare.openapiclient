@@ -20,7 +20,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
     public partial class PipelinesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The v1 property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.V1RequestBuilder V1
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.V1RequestBuilder(PathParameters, RequestAdapter);
@@ -75,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesDeprecated4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesDeprecated200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesDeprecated200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccountIdPipelinesDeprecated4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccountIdPipelinesDeprecated200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccountIdPipelinesDeprecated200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

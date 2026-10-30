@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FirewallFilterRuleResponseAllOf2Filter : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallDeletedFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallFilterRuleResponseAllOf2Filter();
             if("FirewallDeletedFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FirewallDeletedFilter = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallDeletedFilter();
+                
             }
             else if("FirewallFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FirewallFilter = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallFilter();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("deleted") != null))();
+            if (result.FirewallDeletedFilter == null && result.FirewallFilter == null && matchesUnionBranch0) result.FirewallDeletedFilter = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallDeletedFilter(), parseNode);
+            if (result.FirewallDeletedFilter == null && result.FirewallFilter == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +81,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (FirewallDeletedFilter == null && FirewallFilter == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (FirewallDeletedFilter != null && FirewallFilter == null) { if (FirewallDeletedFilter is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FirewallDeletedFilter); return; }
+            if (FirewallFilter != null && FirewallDeletedFilter == null) { if (FirewallFilter is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FirewallFilter); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(FirewallDeletedFilter != null)
             {
+                if (FirewallDeletedFilter is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallDeletedFilter>(null, FirewallDeletedFilter);
             }
             else if(FirewallFilter != null)
             {
+                if (FirewallFilter is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallFilter>(null, FirewallFilter);
             }
         }

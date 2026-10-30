@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSecurityBatchContentPoliciesRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
+            if (parseNode.GetChildNode("patches") is { } nullNodePatches && nullNodePatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Patches = null;
+            if (parseNode.GetChildNode("posts") is { } nullNodePosts && nullNodePosts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Posts = null;
+            if (parseNode.GetChildNode("puts") is { } nullNodePuts && nullNodePuts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Puts = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>IDs of the content policies to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestDeletesItem>? Deletes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestDeletesItem>? Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestDeletesItem>? _explicitNullValueDeletes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestDeletesItem> Deletes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestDeletesItem> Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestDeletesItem> _explicitNullValueDeletes = default!;
 #endif
         /// <summary>Partial updates to apply — each entry carries the policy&apos;s ID and only the fields to change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPatchesItem>? Patches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPatchesItem>? Patches { get => _explicitNullValuePatches; set { _explicitNullValuePatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patches"); else _explicitNullProperties?.Remove("patches"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPatchesItem>? _explicitNullValuePatches = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPatchesItem> Patches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPatchesItem> Patches { get => _explicitNullValuePatches; set { _explicitNullValuePatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patches"); else _explicitNullProperties?.Remove("patches"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPatchesItem> _explicitNullValuePatches = default!;
 #endif
         /// <summary>Content policies to create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateContentPolicyBody>? Posts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateContentPolicyBody>? Posts { get => _explicitNullValuePosts; set { _explicitNullValuePosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posts"); else _explicitNullProperties?.Remove("posts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateContentPolicyBody>? _explicitNullValuePosts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateContentPolicyBody> Posts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateContentPolicyBody> Posts { get => _explicitNullValuePosts; set { _explicitNullValuePosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posts"); else _explicitNullProperties?.Remove("posts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateContentPolicyBody> _explicitNullValuePosts = default!;
 #endif
         /// <summary>Full replacements to apply — each entry carries the policy&apos;s ID and every field of its new value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPutsItem>? Puts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPutsItem>? Puts { get => _explicitNullValuePuts; set { _explicitNullValuePuts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("puts"); else _explicitNullProperties?.Remove("puts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPutsItem>? _explicitNullValuePuts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPutsItem> Puts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPutsItem> Puts { get => _explicitNullValuePuts; set { _explicitNullValuePuts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("puts"); else _explicitNullProperties?.Remove("puts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPutsItem> _explicitNullValuePuts = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequest"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPatchesItem>("patches", Patches);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateContentPolicyBody>("posts", Posts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchContentPoliciesRequestPutsItem>("puts", Puts);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

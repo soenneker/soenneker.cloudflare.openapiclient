@@ -54,6 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Billing.Profile
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBillingResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBillingResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

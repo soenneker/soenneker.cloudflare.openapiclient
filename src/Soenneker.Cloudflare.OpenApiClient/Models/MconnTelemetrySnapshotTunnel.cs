@@ -12,62 +12,98 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MconnTelemetrySnapshotTunnel : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("health_state") is { } nullNodeHealthState && nullNodeHealthState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthState = null;
+            if (parseNode.GetChildNode("health_value") is { } nullNodeHealthValue && nullNodeHealthValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthValue = null;
+            if (parseNode.GetChildNode("interface_name") is { } nullNodeInterfaceName && nullNodeInterfaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceName = null;
+            if (parseNode.GetChildNode("jitter_ms") is { } nullNodeJitterMs && nullNodeJitterMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterMs = null;
+            if (parseNode.GetChildNode("latency_ms") is { } nullNodeLatencyMs && nullNodeLatencyMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatencyMs = null;
+            if (parseNode.GetChildNode("natd_result") is { } nullNodeNatdResult && nullNodeNatdResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NatdResult = null;
+            if (parseNode.GetChildNode("natd_state") is { } nullNodeNatdState && nullNodeNatdState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NatdState = null;
+            if (parseNode.GetChildNode("natd_target") is { } nullNodeNatdTarget && nullNodeNatdTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NatdTarget = null;
+            if (parseNode.GetChildNode("probed_mtu") is { } nullNodeProbedMtu && nullNodeProbedMtu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProbedMtu = null;
+            if (parseNode.GetChildNode("recent_healthy_pings") is { } nullNodeRecentHealthyPings && nullNodeRecentHealthyPings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentHealthyPings = null;
+            if (parseNode.GetChildNode("recent_unhealthy_pings") is { } nullNodeRecentUnhealthyPings && nullNodeRecentUnhealthyPings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentUnhealthyPings = null;
+            if (parseNode.GetChildNode("tunnel_id") is { } nullNodeTunnelId && nullNodeTunnelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of tunnel health state (unknown, healthy, degraded, down)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HealthState { get; set; }
+        public string? HealthState { get => _explicitNullValueHealthState; set { _explicitNullValueHealthState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_state"); else _explicitNullProperties?.Remove("health_state"); } }
+        private string? _explicitNullValueHealthState = default!;
 #nullable restore
 #else
-        public string HealthState { get; set; }
+        public string HealthState { get => _explicitNullValueHealthState; set { _explicitNullValueHealthState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_state"); else _explicitNullProperties?.Remove("health_state"); } }
+        private string _explicitNullValueHealthState = default!;
 #endif
         /// <summary>Numeric value associated with tunnel state (0 = unknown, 1 = healthy, 2 = degraded, 3 = down)</summary>
-        public double? HealthValue { get; set; }
+        public double? HealthValue { get => _explicitNullValueHealthValue; set { _explicitNullValueHealthValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_value"); else _explicitNullProperties?.Remove("health_value"); } }
+        private double? _explicitNullValueHealthValue = default!;
         /// <summary>The tunnel interface name (i.e. xfrm1, xfrm3.99, etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InterfaceName { get; set; }
+        public string? InterfaceName { get => _explicitNullValueInterfaceName; set { _explicitNullValueInterfaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_name"); else _explicitNullProperties?.Remove("interface_name"); } }
+        private string? _explicitNullValueInterfaceName = default!;
 #nullable restore
 #else
-        public string InterfaceName { get; set; }
+        public string InterfaceName { get => _explicitNullValueInterfaceName; set { _explicitNullValueInterfaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_name"); else _explicitNullProperties?.Remove("interface_name"); } }
+        private string _explicitNullValueInterfaceName = default!;
 #endif
         /// <summary>Tunnel round-trip latency variation in milliseconds</summary>
-        public double? JitterMs { get; set; }
+        public double? JitterMs { get => _explicitNullValueJitterMs; set { _explicitNullValueJitterMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_ms"); else _explicitNullProperties?.Remove("jitter_ms"); } }
+        private double? _explicitNullValueJitterMs = default!;
         /// <summary>50th percentile tunnel round-trip latency in milliseconds</summary>
-        public double? LatencyMs { get; set; }
+        public double? LatencyMs { get => _explicitNullValueLatencyMs; set { _explicitNullValueLatencyMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latency_ms"); else _explicitNullProperties?.Remove("latency_ms"); } }
+        private double? _explicitNullValueLatencyMs = default!;
         /// <summary>Public socket address returned by the NAT detector</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NatdResult { get; set; }
+        public string? NatdResult { get => _explicitNullValueNatdResult; set { _explicitNullValueNatdResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_result"); else _explicitNullProperties?.Remove("natd_result"); } }
+        private string? _explicitNullValueNatdResult = default!;
 #nullable restore
 #else
-        public string NatdResult { get; set; }
+        public string NatdResult { get => _explicitNullValueNatdResult; set { _explicitNullValueNatdResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_result"); else _explicitNullProperties?.Remove("natd_result"); } }
+        private string _explicitNullValueNatdResult = default!;
 #endif
         /// <summary>Numeric NAT detector state (0 = detected, 1 = missing result, 2 = stale result)</summary>
-        public double? NatdState { get; set; }
+        public double? NatdState { get => _explicitNullValueNatdState; set { _explicitNullValueNatdState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_state"); else _explicitNullProperties?.Remove("natd_state"); } }
+        private double? _explicitNullValueNatdState = default!;
         /// <summary>Target socket address probed by the NAT detector, using the detector source port</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NatdTarget { get; set; }
+        public string? NatdTarget { get => _explicitNullValueNatdTarget; set { _explicitNullValueNatdTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_target"); else _explicitNullProperties?.Remove("natd_target"); } }
+        private string? _explicitNullValueNatdTarget = default!;
 #nullable restore
 #else
-        public string NatdTarget { get; set; }
+        public string NatdTarget { get => _explicitNullValueNatdTarget; set { _explicitNullValueNatdTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_target"); else _explicitNullProperties?.Remove("natd_target"); } }
+        private string _explicitNullValueNatdTarget = default!;
 #endif
         /// <summary>MTU as measured between the two ends of the tunnel</summary>
-        public double? ProbedMtu { get; set; }
+        public double? ProbedMtu { get => _explicitNullValueProbedMtu; set { _explicitNullValueProbedMtu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("probed_mtu"); else _explicitNullProperties?.Remove("probed_mtu"); } }
+        private double? _explicitNullValueProbedMtu = default!;
         /// <summary>Number of recent healthy pings for this tunnel</summary>
-        public double? RecentHealthyPings { get; set; }
+        public double? RecentHealthyPings { get => _explicitNullValueRecentHealthyPings; set { _explicitNullValueRecentHealthyPings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_healthy_pings"); else _explicitNullProperties?.Remove("recent_healthy_pings"); } }
+        private double? _explicitNullValueRecentHealthyPings = default!;
         /// <summary>Number of recent unhealthy pings for this tunnel</summary>
-        public double? RecentUnhealthyPings { get; set; }
+        public double? RecentUnhealthyPings { get => _explicitNullValueRecentUnhealthyPings; set { _explicitNullValueRecentUnhealthyPings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_unhealthy_pings"); else _explicitNullProperties?.Remove("recent_unhealthy_pings"); } }
+        private double? _explicitNullValueRecentUnhealthyPings = default!;
         /// <summary>Tunnel identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TunnelId { get; set; }
+        public string? TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
+        private string? _explicitNullValueTunnelId = default!;
 #nullable restore
 #else
-        public string TunnelId { get; set; }
+        public string TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
+        private string _explicitNullValueTunnelId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel"/> and sets the default values.
@@ -84,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,6 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("recent_healthy_pings", RecentHealthyPings);
             writer.WriteDoubleValue("recent_unhealthy_pings", RecentUnhealthyPings);
             writer.WriteStringValue("tunnel_id", TunnelId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

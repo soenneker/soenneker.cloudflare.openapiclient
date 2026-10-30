@@ -11,37 +11,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("content_selector") is { } nullNodeContentSelector && nullNodeContentSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentSelector = null;
+            if (parseNode.GetChildNode("include_headers") is { } nullNodeIncludeHeaders && nullNodeIncludeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeHeaders = null;
+            if (parseNode.GetChildNode("include_images") is { } nullNodeIncludeImages && nullNodeIncludeImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeImages = null;
+            if (parseNode.GetChildNode("specific_sitemaps") is { } nullNodeSpecificSitemaps && nullNodeSpecificSitemaps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpecificSitemaps = null;
+            if (parseNode.GetChildNode("use_browser_rendering") is { } nullNodeUseBrowserRendering && nullNodeUseBrowserRendering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseBrowserRendering = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of path-to-selector mappings for extracting specific content from crawled pages. Each entry pairs a URL glob pattern with a CSS selector. The first matching path wins. The crawler stores and indexes only the matched HTML fragment. Omit the field to disable content selection; the API rejects empty arrays.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsContentSelectorItem>? ContentSelector { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsContentSelectorItem>? ContentSelector { get => _explicitNullValueContentSelector; set { _explicitNullValueContentSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_selector"); else _explicitNullProperties?.Remove("content_selector"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsContentSelectorItem>? _explicitNullValueContentSelector = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsContentSelectorItem> ContentSelector { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsContentSelectorItem> ContentSelector { get => _explicitNullValueContentSelector; set { _explicitNullValueContentSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_selector"); else _explicitNullProperties?.Remove("content_selector"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsContentSelectorItem> _explicitNullValueContentSelector = default!;
 #endif
         /// <summary>Up to 5 custom HTTP headers sent with each crawl request. Names must use RFC-7230 token characters, excluding spaces, colons, and control characters. Values must use HTAB and printable ASCII only, excluding CR and LF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsIncludeHeaders? IncludeHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsIncludeHeaders? IncludeHeaders { get => _explicitNullValueIncludeHeaders; set { _explicitNullValueIncludeHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_headers"); else _explicitNullProperties?.Remove("include_headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsIncludeHeaders? _explicitNullValueIncludeHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsIncludeHeaders IncludeHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsIncludeHeaders IncludeHeaders { get => _explicitNullValueIncludeHeaders; set { _explicitNullValueIncludeHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_headers"); else _explicitNullProperties?.Remove("include_headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsIncludeHeaders _explicitNullValueIncludeHeaders = default!;
 #endif
         /// <summary>The include_images property</summary>
-        public bool? IncludeImages { get; set; }
+        public bool? IncludeImages { get => _explicitNullValueIncludeImages; set { _explicitNullValueIncludeImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_images"); else _explicitNullProperties?.Remove("include_images"); } }
+        private bool? _explicitNullValueIncludeImages = default!;
         /// <summary>List of specific sitemap URLs to use for crawling. Only valid when parse_type is &apos;sitemap&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SpecificSitemaps { get; set; }
+        public List<string>? SpecificSitemaps { get => _explicitNullValueSpecificSitemaps; set { _explicitNullValueSpecificSitemaps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("specific_sitemaps"); else _explicitNullProperties?.Remove("specific_sitemaps"); } }
+        private List<string>? _explicitNullValueSpecificSitemaps = default!;
 #nullable restore
 #else
-        public List<string> SpecificSitemaps { get; set; }
+        public List<string> SpecificSitemaps { get => _explicitNullValueSpecificSitemaps; set { _explicitNullValueSpecificSitemaps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("specific_sitemaps"); else _explicitNullProperties?.Remove("specific_sitemaps"); } }
+        private List<string> _explicitNullValueSpecificSitemaps = default!;
 #endif
         /// <summary>The use_browser_rendering property</summary>
-        public bool? UseBrowserRendering { get; set; }
+        public bool? UseBrowserRendering { get => _explicitNullValueUseBrowserRendering; set { _explicitNullValueUseBrowserRendering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_browser_rendering"); else _explicitNullProperties?.Remove("use_browser_rendering"); } }
+        private bool? _explicitNullValueUseBrowserRendering = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptions"/> and sets the default values.
         /// </summary>
@@ -59,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("include_images", IncludeImages);
             writer.WriteCollectionOfPrimitiveValues<string>("specific_sitemaps", SpecificSitemaps);
             writer.WriteBoolValue("use_browser_rendering", UseBrowserRendering);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

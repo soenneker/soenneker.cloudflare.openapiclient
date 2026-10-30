@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Csam_scanner_third_party
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\settings\csam_scanner_third_party
+    /// Builds and executes requests for operations under \zones\{zoneId}\settings\csam_scanner_third_party
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Csam_scanner_third_partyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Csam_scanner_th
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Csam_scanner_third_partyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/settings/csam_scanner_third_party", pathParameters)
+        public Csam_scanner_third_partyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/settings/csam_scanner_third_party", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Csam_scanner_th
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Csam_scanner_third_partyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/settings/csam_scanner_third_party", rawUrl)
+        public Csam_scanner_third_partyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/settings/csam_scanner_third_party", rawUrl)
         {
         }
         /// <summary>
@@ -61,11 +61,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Csam_scanner_th
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the CSAM Scanner configuration for a zone. Allows enabling ordisabling CSAM scanning, updating the notification email, andconfiguring scanning sources.When a new email is provided, email verification is triggeredautomatically. The `enabled` field is a toggle; the server mayadjust it based on whether the notification email is verified.Returns 403 if the zone or account is locked by Trust &amp; Safety.
+        /// Update the CSAM Scanner configuration for a zone. Allows enabling ordisabling CSAM scanning, updating the notification email, andconfiguring scanning sources.This is a partial update: fields omitted from `value` keep theircurrent setting, and `sources` is merged per source (`null` clearsall sources). Send an empty `email` to clear the notificationaddress.When a new email is provided, email verification is triggeredautomatically. The `enabled` field is a toggle; the server mayadjust it based on whether the notification email is verified.Returns 403 if the zone or account is locked by Trust &amp; Safety.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerSingleResponse"/></returns>
         /// <param name="body">Request body for updating CSAM Scanner configuration.</param>
@@ -94,6 +96,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Csam_scanner_th
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -117,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Csam_scanner_th
             return requestInfo;
         }
         /// <summary>
-        /// Update the CSAM Scanner configuration for a zone. Allows enabling ordisabling CSAM scanning, updating the notification email, andconfiguring scanning sources.When a new email is provided, email verification is triggeredautomatically. The `enabled` field is a toggle; the server mayadjust it based on whether the notification email is verified.Returns 403 if the zone or account is locked by Trust &amp; Safety.
+        /// Update the CSAM Scanner configuration for a zone. Allows enabling ordisabling CSAM scanning, updating the notification email, andconfiguring scanning sources.This is a partial update: fields omitted from `value` keep theircurrent setting, and `sources` is merged per source (`null` clearsall sources). Send an empty `email` to clear the notificationaddress.When a new email is provided, email verification is triggeredautomatically. The `enabled` field is a toggle; the server mayadjust it based on whether the notification email is verified.Returns 403 if the zone or account is locked by Trust &amp; Safety.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body for updating CSAM Scanner configuration.</param>

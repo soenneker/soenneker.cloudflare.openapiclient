@@ -11,7 +11,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OriginCaGetCertificate4XxResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("csr") is { } nullNodeCsr && nullNodeCsr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Csr = null;
+            if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
+            if (parseNode.GetChildNode("requested_validity") is { } nullNodeRequestedValidity && nullNodeRequestedValidity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedValidity = null;
+            if (parseNode.GetChildNode("request_type") is { } nullNodeRequestType && nullNodeRequestType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Origin CA certificate. Will be newline-encoded.</summary>
@@ -25,10 +36,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Certificate Signing Request (CSR). Must be newline-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Csr { get; set; }
+        public string? Csr { get => _explicitNullValueCsr; set { _explicitNullValueCsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("csr"); else _explicitNullProperties?.Remove("csr"); } }
+        private string? _explicitNullValueCsr = default!;
 #nullable restore
 #else
-        public string Csr { get; set; }
+        public string Csr { get => _explicitNullValueCsr; set { _explicitNullValueCsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("csr"); else _explicitNullProperties?.Remove("csr"); } }
+        private string _explicitNullValueCsr = default!;
 #endif
         /// <summary>When the certificate will expire.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +54,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of hostnames or wildcard names bound to the certificate.Hostnames must be fully qualified domain names (FQDNs) belonging to zones on your account (e.g., `example.com` or `sub.example.com`). Wildcards are supported only as a `*.` prefix for a single level (e.g., `*.example.com`). Double wildcards (`*.*.example.com`) and interior wildcards (`foo.*.example.com`) are not allowed. The wildcard suffix must be a multi-label domain (`*.example.com` is valid, but `*.com` is not). Unicode/IDN hostnames are accepted and automatically converted to punycode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Hostnames { get; set; }
+        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        private List<string>? _explicitNullValueHostnames = default!;
 #nullable restore
 #else
-        public List<string> Hostnames { get; set; }
+        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        private List<string> _explicitNullValueHostnames = default!;
 #endif
         /// <summary>The x509 serial number of the Origin CA certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,9 +70,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>The number of days for which the certificate should be valid.</summary>
-        public double? RequestedValidity { get; set; }
+        public double? RequestedValidity { get => _explicitNullValueRequestedValidity; set { _explicitNullValueRequestedValidity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_validity"); else _explicitNullProperties?.Remove("requested_validity"); } }
+        private double? _explicitNullValueRequestedValidity = default!;
         /// <summary>Signature type desired on certificate (&quot;origin-rsa&quot; (rsa), &quot;origin-ecc&quot; (ecdsa), or &quot;keyless-certificate&quot; (for Keyless SSL servers).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType? RequestType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType? RequestType { get => _explicitNullValueRequestType; set { _explicitNullValueRequestType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_type"); else _explicitNullProperties?.Remove("request_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType? _explicitNullValueRequestType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCaGetCertificate4XxResponseResult"/> and sets the default values.
         /// </summary>
@@ -74,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCaGetCertificate4XxResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCaGetCertificate4XxResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCaGetCertificate4XxResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
             writer.WriteDoubleValue("requested_validity", RequestedValidity);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType>("request_type", RequestType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

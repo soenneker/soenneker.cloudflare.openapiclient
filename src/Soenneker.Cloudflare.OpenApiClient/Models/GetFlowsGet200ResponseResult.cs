@@ -11,27 +11,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetFlowsGet200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("etag") is { } nullNodeEtag && nullNodeEtag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Etag = null;
+            if (parseNode.GetChildNode("flows") is { } nullNodeFlows && nullNodeFlows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flows = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The etag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Etag { get; set; }
+        public string? Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
+        private string? _explicitNullValueEtag = default!;
 #nullable restore
 #else
-        public string Etag { get; set; }
+        public string Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
+        private string _explicitNullValueEtag = default!;
 #endif
         /// <summary>The flows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem>? Flows { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem>? Flows { get => _explicitNullValueFlows; set { _explicitNullValueFlows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flows"); else _explicitNullProperties?.Remove("flows"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem>? _explicitNullValueFlows = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem> Flows { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem> Flows { get => _explicitNullValueFlows; set { _explicitNullValueFlows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flows"); else _explicitNullProperties?.Remove("flows"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem> _explicitNullValueFlows = default!;
 #endif
         /// <summary>The version property</summary>
-        public double? Version { get; set; }
+        public double? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private double? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("etag", Etag);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem>("flows", Flows);
             writer.WriteDoubleValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

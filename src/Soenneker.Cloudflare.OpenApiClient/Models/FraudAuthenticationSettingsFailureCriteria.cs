@@ -12,16 +12,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FraudAuthenticationSettingsFailureCriteria : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("status_codes") is { } nullNodeStatusCodes && nullNodeStatusCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusCodes = null;
+        }
+
         /// <summary>The type of criterion. Currently only `status_code` is supported.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StatusCodeKind? Kind { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StatusCodeKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StatusCodeKind? _explicitNullValueKind = default!;
         /// <summary>HTTP status codes to match against the origin response.- Maximum of 10 codes per criterion.- Each code must be a valid HTTP status code (100-599).- Codes are deduplicated and sorted on save.- Omit to leave unchanged on update.- Provide an empty array `[]` to clear codes on update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? StatusCodes { get; set; }
+        public List<int?>? StatusCodes { get => _explicitNullValueStatusCodes; set { _explicitNullValueStatusCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_codes"); else _explicitNullProperties?.Remove("status_codes"); } }
+        private List<int?>? _explicitNullValueStatusCodes = default!;
 #nullable restore
 #else
-        public List<int?> StatusCodes { get; set; }
+        public List<int?> StatusCodes { get => _explicitNullValueStatusCodes; set { _explicitNullValueStatusCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_codes"); else _explicitNullProperties?.Remove("status_codes"); } }
+        private List<int?> _explicitNullValueStatusCodes = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsFailureCriteria CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsFailureCriteria();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsFailureCriteria(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +65,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StatusCodeKind>("kind", Kind);
-            writer.WriteCollectionOfPrimitiveValues<int?>("status_codes", StatusCodes);
+            writer.WriteCollectionOfPrimitiveValues<int?>("status_codes", StatusCodes);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

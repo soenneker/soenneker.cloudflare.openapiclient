@@ -12,32 +12,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BillableUsageApiV2UsageQuery : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("FilterBy") is { } nullNodeFilterBy && nullNodeFilterBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterBy = null;
+            if (parseNode.GetChildNode("GroupBy") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
+            if (parseNode.GetChildNode("Metric") is { } nullNodeMetric && nullNodeMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metric = null;
+            if (parseNode.GetChildNode("TimePeriod") is { } nullNodeTimePeriod && nullNodeTimePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimePeriod = null;
+        }
+
         /// <summary>Usage filters. Filters of different kinds are combined with AND, so a record must match every filter present to be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy? FilterBy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy? FilterBy { get => _explicitNullValueFilterBy; set { _explicitNullValueFilterBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FilterBy"); else _explicitNullProperties?.Remove("FilterBy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy? _explicitNullValueFilterBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy FilterBy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy FilterBy { get => _explicitNullValueFilterBy; set { _explicitNullValueFilterBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FilterBy"); else _explicitNullProperties?.Remove("FilterBy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy _explicitNullValueFilterBy = default!;
 #endif
         /// <summary>Grouping definitions used to split result rows. At most two unique keys may be supplied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy>? GroupBy { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy>? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GroupBy"); else _explicitNullProperties?.Remove("GroupBy"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy>? _explicitNullValueGroupBy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy> GroupBy { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy> GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GroupBy"); else _explicitNullProperties?.Remove("GroupBy"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy> _explicitNullValueGroupBy = default!;
 #endif
         /// <summary>Type of cost/usage records to retrieve. `usage` returns unrated usage quantities. `cost` returns rated usage with cost and pricing fields; it is available only on `POST` account usage and only when the underlying usage data source is ClickHouse (other sources return an empty result set). Requests that combine `cost` with `GroupBy` or `FilterBy.Tags` return HTTP 400. Unrelated to `FilterBy.BillableMetricIds`. Defaults to `usage` when omitted.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryMetric? Metric { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryMetric? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Metric"); else _explicitNullProperties?.Remove("Metric"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryMetric? _explicitNullValueMetric = default!;
         /// <summary>Charge period to query, i.e. when consumption happened, not when it was billed. `From` is inclusive and `To` is exclusive. `From` and `To` must be supplied together; supplying one without the other is an error. When both are omitted the range defaults to the start of the current month through today.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod? TimePeriod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod? TimePeriod { get => _explicitNullValueTimePeriod; set { _explicitNullValueTimePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TimePeriod"); else _explicitNullProperties?.Remove("TimePeriod"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod? _explicitNullValueTimePeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod TimePeriod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod TimePeriod { get => _explicitNullValueTimePeriod; set { _explicitNullValueTimePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TimePeriod"); else _explicitNullProperties?.Remove("TimePeriod"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod _explicitNullValueTimePeriod = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQuery();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQuery(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +91,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy>("FilterBy", FilterBy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy>("GroupBy", GroupBy);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryMetric>("Metric", Metric);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod>("TimePeriod", TimePeriod);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod>("TimePeriod", TimePeriod);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

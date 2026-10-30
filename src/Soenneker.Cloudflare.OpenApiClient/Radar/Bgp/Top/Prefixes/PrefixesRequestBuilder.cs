@@ -53,6 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Prefixes
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTopPrefixes400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTopPrefixes200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTopPrefixes200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

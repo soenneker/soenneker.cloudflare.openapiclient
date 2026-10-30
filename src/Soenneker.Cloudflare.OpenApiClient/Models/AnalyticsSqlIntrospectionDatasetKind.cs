@@ -12,38 +12,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsSqlIntrospectionDatasetKind : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("availability") is { } nullNodeAvailability && nullNodeAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Availability = null;
+            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("logs") is { } nullNodeLogs && nullNodeLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logs = null;
+            if (parseNode.GetChildNode("states") is { } nullNodeStates && nullNodeStates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) States = null;
+        }
+
         /// <summary>Scopes the dataset is enabled for, as reported by the service that owns it. Absent when availability is not applicable to the dataset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlDatasetAvailability>? Availability { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlDatasetAvailability>? Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlDatasetAvailability>? _explicitNullValueAvailability = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlDatasetAvailability> Availability { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlDatasetAvailability> Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlDatasetAvailability> _explicitNullValueAvailability = default!;
 #endif
         /// <summary>Row-per-event analytics dataset. Aggregations describe the cumulative effect of those events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents? Events { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents Events { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents _explicitNullValueEvents = default!;
 #endif
         /// <summary>Row-per-log dataset intended for record retrieval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindLogs? Logs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindLogs? Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindLogs? _explicitNullValueLogs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindLogs Logs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindLogs Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindLogs _explicitNullValueLogs = default!;
 #endif
         /// <summary>Snapshot/state dataset. Only `valid_aggregations` are valid aggregations for this dataset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindStates? States { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindStates? States { get => _explicitNullValueStates; set { _explicitNullValueStates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("states"); else _explicitNullProperties?.Remove("states"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindStates? _explicitNullValueStates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindStates States { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindStates States { get => _explicitNullValueStates; set { _explicitNullValueStates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("states"); else _explicitNullProperties?.Remove("states"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindStates _explicitNullValueStates = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKind CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKind();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKind(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +98,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlDatasetAvailability>("availability", Availability);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents>("events", Events);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindLogs>("logs", Logs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindStates>("states", States);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindStates>("states", States);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

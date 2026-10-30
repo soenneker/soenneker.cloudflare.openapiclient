@@ -12,35 +12,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VulnScannerCreateScanRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("credential_sets") is { } nullNodeCredentialSets && nullNodeCredentialSets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialSets = null;
+            if (parseNode.GetChildNode("open_api") is { } nullNodeOpenApi && nullNodeOpenApi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenApi = null;
+            if (parseNode.GetChildNode("scan_type") is { } nullNodeScanType && nullNodeScanType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScanType = null;
+            if (parseNode.GetChildNode("target_environment_id") is { } nullNodeTargetEnvironmentId && nullNodeTargetEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetEnvironmentId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Credential set references for a BOLA scan. The scanner uses the`owner` credentials for legitimate requests and the `attacker`credentials to attempt unauthorized access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets? CredentialSets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets? CredentialSets { get => _explicitNullValueCredentialSets; set { _explicitNullValueCredentialSets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_sets"); else _explicitNullProperties?.Remove("credential_sets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets? _explicitNullValueCredentialSets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets CredentialSets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets CredentialSets { get => _explicitNullValueCredentialSets; set { _explicitNullValueCredentialSets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_sets"); else _explicitNullProperties?.Remove("credential_sets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets _explicitNullValueCredentialSets = default!;
 #endif
         /// <summary>OpenAPI schema definition for the API under test. The scanneruses this to discover endpoints and construct requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OpenApi { get; set; }
+        public string? OpenApi { get => _explicitNullValueOpenApi; set { _explicitNullValueOpenApi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_api"); else _explicitNullProperties?.Remove("open_api"); } }
+        private string? _explicitNullValueOpenApi = default!;
 #nullable restore
 #else
-        public string OpenApi { get; set; }
+        public string OpenApi { get => _explicitNullValueOpenApi; set { _explicitNullValueOpenApi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_api"); else _explicitNullProperties?.Remove("open_api"); } }
+        private string _explicitNullValueOpenApi = default!;
 #endif
         /// <summary>The scan_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ScanType { get; set; }
-#nullable restore
-#else
-        public string ScanType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType? ScanType { get => _explicitNullValueScanType; set { _explicitNullValueScanType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_type"); else _explicitNullProperties?.Remove("scan_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType? _explicitNullValueScanType = default!;
         /// <summary>The target environment to scan.</summary>
-        public Guid? TargetEnvironmentId { get; set; }
+        public Guid? TargetEnvironmentId { get => _explicitNullValueTargetEnvironmentId; set { _explicitNullValueTargetEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_environment_id"); else _explicitNullProperties?.Remove("target_environment_id"); } }
+        private Guid? _explicitNullValueTargetEnvironmentId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerCreateScanRequest"/> and sets the default values.
         /// </summary>
@@ -56,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerCreateScanRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerCreateScanRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerCreateScanRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "credential_sets", n => { CredentialSets = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets.CreateFromDiscriminatorValue); } },
                 { "open_api", n => { OpenApi = n.GetStringValue(); } },
-                { "scan_type", n => { ScanType = n.GetStringValue(); } },
+                { "scan_type", n => { ScanType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType>(); } },
                 { "target_environment_id", n => { TargetEnvironmentId = n.GetGuidValue(); } },
             };
         }
@@ -81,8 +92,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets>("credential_sets", CredentialSets);
             writer.WriteStringValue("open_api", OpenApi);
-            writer.WriteStringValue("scan_type", ScanType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType>("scan_type", ScanType);
             writer.WriteGuidValue("target_environment_id", TargetEnvironmentId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

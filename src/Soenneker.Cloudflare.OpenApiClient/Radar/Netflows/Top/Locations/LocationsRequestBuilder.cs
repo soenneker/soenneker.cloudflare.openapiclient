@@ -53,6 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Top.Locations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetNetflowsTopLocations404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetNetflowsTopLocations200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetNetflowsTopLocations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

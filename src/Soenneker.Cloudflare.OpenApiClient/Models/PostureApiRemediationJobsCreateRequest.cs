@@ -12,19 +12,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostureApiRemediationJobsCreateRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("finding_instance_ids") is { } nullNodeFindingInstanceIds && nullNodeFindingInstanceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindingInstanceIds = null;
+            if (parseNode.GetChildNode("remediation_type_id") is { } nullNodeRemediationTypeId && nullNodeRemediationTypeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemediationTypeId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UUIDs identifying Finding Instances.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? FindingInstanceIds { get; set; }
+        public List<Guid?>? FindingInstanceIds { get => _explicitNullValueFindingInstanceIds; set { _explicitNullValueFindingInstanceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding_instance_ids"); else _explicitNullProperties?.Remove("finding_instance_ids"); } }
+        private List<Guid?>? _explicitNullValueFindingInstanceIds = default!;
 #nullable restore
 #else
-        public List<Guid?> FindingInstanceIds { get; set; }
+        public List<Guid?> FindingInstanceIds { get => _explicitNullValueFindingInstanceIds; set { _explicitNullValueFindingInstanceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding_instance_ids"); else _explicitNullProperties?.Remove("finding_instance_ids"); } }
+        private List<Guid?> _explicitNullValueFindingInstanceIds = default!;
 #endif
         /// <summary>A UUID identifying this Remediation Type.</summary>
-        public Guid? RemediationTypeId { get; set; }
+        public Guid? RemediationTypeId { get => _explicitNullValueRemediationTypeId; set { _explicitNullValueRemediationTypeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediation_type_id"); else _explicitNullProperties?.Remove("remediation_type_id"); } }
+        private Guid? _explicitNullValueRemediationTypeId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobsCreateRequest"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobsCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobsCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobsCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("finding_instance_ids", FindingInstanceIds);
             writer.WriteGuidValue("remediation_type_id", RemediationTypeId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

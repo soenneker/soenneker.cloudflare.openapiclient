@@ -12,27 +12,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoadBalancingSessionAffinityAttributes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("drain_duration") is { } nullNodeDrainDuration && nullNodeDrainDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DrainDuration = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("require_all_headers") is { } nullNodeRequireAllHeaders && nullNodeRequireAllHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireAllHeaders = null;
+            if (parseNode.GetChildNode("samesite") is { } nullNodeSamesite && nullNodeSamesite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Samesite = null;
+            if (parseNode.GetChildNode("secure") is { } nullNodeSecure && nullNodeSecure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secure = null;
+            if (parseNode.GetChildNode("zero_downtime_failover") is { } nullNodeZeroDowntimeFailover && nullNodeZeroDowntimeFailover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeroDowntimeFailover = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configures the drain duration in seconds. This field is only used when session affinity is enabled on the load balancer.</summary>
-        public double? DrainDuration { get; set; }
+        public double? DrainDuration { get => _explicitNullValueDrainDuration; set { _explicitNullValueDrainDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drain_duration"); else _explicitNullProperties?.Remove("drain_duration"); } }
+        private double? _explicitNullValueDrainDuration = default!;
         /// <summary>Configures the names of HTTP headers to base session affinity on when header `session_affinity` is enabled. At least one HTTP header name must be provided. To specify the exact cookies to be used, include an item in the following format: `&quot;cookie:&lt;cookie-name-1&gt;,&lt;cookie-name-2&gt;&quot;` (example) where everything after the colon is a comma-separated list of cookie names. Providing only `&quot;cookie&quot;` will result in all cookies being used. The default max number of HTTP header names that can be provided depends on your plan: 5 for Enterprise, 1 for all other plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Headers { get; set; }
+        public List<string>? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<string>? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public List<string> Headers { get; set; }
+        public List<string> Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<string> _explicitNullValueHeaders = default!;
 #endif
         /// <summary>When header `session_affinity` is enabled, this option can be used to specify how HTTP headers on load balancing requests will be used. The supported values are: - `&quot;true&quot;`: Load balancing requests must contain *all* of the HTTP headers specified by the `headers` session affinity attribute, otherwise sessions aren&apos;t created. - `&quot;false&quot;`: Load balancing requests must contain *at least one* of the HTTP headers specified by the `headers` session affinity attribute, otherwise sessions aren&apos;t created.</summary>
-        public bool? RequireAllHeaders { get; set; }
+        public bool? RequireAllHeaders { get => _explicitNullValueRequireAllHeaders; set { _explicitNullValueRequireAllHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_all_headers"); else _explicitNullProperties?.Remove("require_all_headers"); } }
+        private bool? _explicitNullValueRequireAllHeaders = default!;
         /// <summary>Configures the SameSite attribute on session affinity cookie. Value &quot;Auto&quot; will be translated to &quot;Lax&quot; or &quot;None&quot; depending if Always Use HTTPS is enabled. Note: when using value &quot;None&quot;, the secure attribute can not be set to &quot;Never&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesSamesite? Samesite { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesSamesite? Samesite { get => _explicitNullValueSamesite; set { _explicitNullValueSamesite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samesite"); else _explicitNullProperties?.Remove("samesite"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesSamesite? _explicitNullValueSamesite = default!;
         /// <summary>Configures the Secure attribute on session affinity cookie. Value &quot;Always&quot; indicates the Secure attribute will be set in the Set-Cookie header, &quot;Never&quot; indicates the Secure attribute will not be set, and &quot;Auto&quot; will set the Secure attribute depending if Always Use HTTPS is enabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesSecure? Secure { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesSecure? Secure { get => _explicitNullValueSecure; set { _explicitNullValueSecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secure"); else _explicitNullProperties?.Remove("secure"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesSecure? _explicitNullValueSecure = default!;
         /// <summary>Configures the zero-downtime failover between origins within a pool when session affinity is enabled. This feature is currently incompatible with Argo, Tiered Cache, and Bandwidth Alliance. The supported values are: - `&quot;none&quot;`: No failover takes place for sessions pinned to the origin (default). - `&quot;temporary&quot;`: Traffic will be sent to another other healthy origin until the originally pinned origin is available; note that this can potentially result in heavy origin flapping. - `&quot;sticky&quot;`: The session affinity cookie is updated and subsequent requests are sent to the new origin. Note: Zero-downtime failover with sticky sessions is currently not supported for session affinity by header.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesZeroDowntimeFailover? ZeroDowntimeFailover { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesZeroDowntimeFailover? ZeroDowntimeFailover { get => _explicitNullValueZeroDowntimeFailover; set { _explicitNullValueZeroDowntimeFailover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zero_downtime_failover"); else _explicitNullProperties?.Remove("zero_downtime_failover"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesZeroDowntimeFailover? _explicitNullValueZeroDowntimeFailover = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes"/> and sets the default values.
         /// </summary>
@@ -49,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesSamesite>("samesite", Samesite);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesSecure>("secure", Secure);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributesZeroDowntimeFailover>("zero_downtime_failover", ZeroDowntimeFailover);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

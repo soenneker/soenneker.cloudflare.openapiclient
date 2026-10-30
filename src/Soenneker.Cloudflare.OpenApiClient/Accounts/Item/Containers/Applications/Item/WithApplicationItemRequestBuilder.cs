@@ -22,6 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applicatio
     public partial class WithApplicationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The instances property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applications.Item.Instances.InstancesRequestBuilder Instances
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applications.Item.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);
@@ -81,6 +82,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applicatio
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteApplication200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteApplication200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -108,6 +111,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applicatio
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetApplication200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetApplication200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -141,6 +146,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applicatio
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ModifyApplication200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ModifyApplication200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

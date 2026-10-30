@@ -11,18 +11,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ApiShieldOldOperationSchemaValidationSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("mitigation_action") is { } nullNodeMitigationAction && nullNodeMitigationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitigationAction = null;
+            if (parseNode.GetChildNode("operation_id") is { } nullNodeOperationId && nullNodeOperationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When set, this applies a mitigation action to this operation  - `log` log request when request does not conform to schema for this operation  - `block` deny access to the site when request does not conform to schema for this operation  - `none` will skip mitigation for this operation  - `null` indicates that no operation level mitigation is in place, see Zone Level Schema Validation Settings for mitigation action that will be applied</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationMitigationAction? MitigationAction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationMitigationAction? MitigationAction { get => _explicitNullValueMitigationAction; set { _explicitNullValueMitigationAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigation_action"); else _explicitNullProperties?.Remove("mitigation_action"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationMitigationAction? _explicitNullValueMitigationAction = default!;
         /// <summary>The operation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2? OperationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2? OperationId { get => _explicitNullValueOperationId; set { _explicitNullValueOperationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_id"); else _explicitNullProperties?.Remove("operation_id"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2? _explicitNullValueOperationId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2 OperationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2 OperationId { get => _explicitNullValueOperationId; set { _explicitNullValueOperationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_id"); else _explicitNullProperties?.Remove("operation_id"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2 _explicitNullValueOperationId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationSchemaValidationSettings"/> and sets the default values.
@@ -39,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationSchemaValidationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationSchemaValidationSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationSchemaValidationSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationMitigationAction>("mitigation_action", MitigationAction);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>("operation_id", OperationId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

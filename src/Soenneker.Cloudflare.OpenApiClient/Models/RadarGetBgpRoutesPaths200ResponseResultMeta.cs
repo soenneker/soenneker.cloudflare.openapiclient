@@ -11,23 +11,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetBgpRoutesPaths200ResponseResultMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dataTime") is { } nullNodeDataTime && nullNodeDataTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataTime = null;
+            if (parseNode.GetChildNode("effectiveCollector") is { } nullNodeEffectiveCollector && nullNodeEffectiveCollector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveCollector = null;
+            if (parseNode.GetChildNode("queryTime") is { } nullNodeQueryTime && nullNodeQueryTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryTime = null;
+            if (parseNode.GetChildNode("stale") is { } nullNodeStale && nullNodeStale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stale = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp of the underlying RIB data.</summary>
-        public DateTimeOffset? DataTime { get; set; }
+        public DateTimeOffset? DataTime { get => _explicitNullValueDataTime; set { _explicitNullValueDataTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataTime"); else _explicitNullProperties?.Remove("dataTime"); } }
+        private DateTimeOffset? _explicitNullValueDataTime = default!;
         /// <summary>The effectiveCollector property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EffectiveCollector { get; set; }
+        public string? EffectiveCollector { get => _explicitNullValueEffectiveCollector; set { _explicitNullValueEffectiveCollector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effectiveCollector"); else _explicitNullProperties?.Remove("effectiveCollector"); } }
+        private string? _explicitNullValueEffectiveCollector = default!;
 #nullable restore
 #else
-        public string EffectiveCollector { get; set; }
+        public string EffectiveCollector { get => _explicitNullValueEffectiveCollector; set { _explicitNullValueEffectiveCollector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effectiveCollector"); else _explicitNullProperties?.Remove("effectiveCollector"); } }
+        private string _explicitNullValueEffectiveCollector = default!;
 #endif
         /// <summary>Timestamp when the query was executed.</summary>
-        public DateTimeOffset? QueryTime { get; set; }
+        public DateTimeOffset? QueryTime { get => _explicitNullValueQueryTime; set { _explicitNullValueQueryTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryTime"); else _explicitNullProperties?.Remove("queryTime"); } }
+        private DateTimeOffset? _explicitNullValueQueryTime = default!;
         /// <summary>The stale property</summary>
-        public bool? Stale { get; set; }
+        public bool? Stale { get => _explicitNullValueStale; set { _explicitNullValueStale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale"); else _explicitNullProperties?.Remove("stale"); } }
+        private bool? _explicitNullValueStale = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesPaths200ResponseResultMeta"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesPaths200ResponseResultMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesPaths200ResponseResultMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesPaths200ResponseResultMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("effectiveCollector", EffectiveCollector);
             writer.WriteDateTimeOffsetValue("queryTime", QueryTime);
             writer.WriteBoolValue("stale", Stale);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

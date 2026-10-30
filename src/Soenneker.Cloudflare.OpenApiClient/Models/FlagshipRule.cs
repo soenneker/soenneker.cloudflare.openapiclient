@@ -11,32 +11,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FlagshipRule : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("rollout") is { } nullNodeRollout && nullNodeRollout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rollout = null;
+            if (parseNode.GetChildNode("serve_variation") is { } nullNodeServeVariation && nullNodeServeVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServeVariation = null;
+        }
+
         /// <summary>Conditions the context must satisfy for this rule to match. An empty array matches all contexts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCondition>? Conditions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCondition>? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCondition>? _explicitNullValueConditions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCondition> Conditions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCondition> Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCondition> _explicitNullValueConditions = default!;
 #endif
         /// <summary>Evaluation order: the API evaluates rules with lower numbers first. Must be unique across the flag&apos;s rules.</summary>
-        public int? Priority { get; set; }
+        public int? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private int? _explicitNullValuePriority = default!;
         /// <summary>The rollout property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRuleRollout? Rollout { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRuleRollout? Rollout { get => _explicitNullValueRollout; set { _explicitNullValueRollout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollout"); else _explicitNullProperties?.Remove("rollout"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRuleRollout? _explicitNullValueRollout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRuleRollout Rollout { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRuleRollout Rollout { get => _explicitNullValueRollout; set { _explicitNullValueRollout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollout"); else _explicitNullProperties?.Remove("rollout"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRuleRollout _explicitNullValueRollout = default!;
 #endif
         /// <summary>Variation the API serves when this rule matches. Must be a key in `variations`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServeVariation { get; set; }
+        public string? ServeVariation { get => _explicitNullValueServeVariation; set { _explicitNullValueServeVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serve_variation"); else _explicitNullProperties?.Remove("serve_variation"); } }
+        private string? _explicitNullValueServeVariation = default!;
 #nullable restore
 #else
-        public string ServeVariation { get; set; }
+        public string ServeVariation { get => _explicitNullValueServeVariation; set { _explicitNullValueServeVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serve_variation"); else _explicitNullProperties?.Remove("serve_variation"); } }
+        private string _explicitNullValueServeVariation = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRule();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRule(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,7 +90,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCondition>("conditions", Conditions);
             writer.WriteIntValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRuleRollout>("rollout", Rollout);
-            writer.WriteStringValue("serve_variation", ServeVariation);
+            writer.WriteStringValue("serve_variation", ServeVariation);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

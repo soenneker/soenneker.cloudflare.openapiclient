@@ -19,6 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
     public partial class BulkRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The relationships property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create.Bulk.Relationships.RelationshipsRequestBuilder Relationships
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create.Bulk.Relationships.RelationshipsRequestBuilder(PathParameters, RequestAdapter);
@@ -61,6 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

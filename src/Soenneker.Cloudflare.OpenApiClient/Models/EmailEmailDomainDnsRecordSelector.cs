@@ -3,10 +3,18 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>DKIM selector; present only for DKIM assignments.</summary>
+    /// <summary>DKIM selector, the first label of name; present only for DKIM assignments. New enrollments use cf1 and cf2. Enrollments created before cf1 and cf2 keep s1 and s2.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EmailEmailDomainDnsRecordSelector
     {
+        [EnumMember(Value = "cf1")]
+        #pragma warning disable CS1591
+        Cf1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cf2")]
+        #pragma warning disable CS1591
+        Cf2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "s1")]
         #pragma warning disable CS1591
         S1,

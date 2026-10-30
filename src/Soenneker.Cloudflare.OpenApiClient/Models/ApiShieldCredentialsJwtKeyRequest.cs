@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiShieldCredentialsJwtKeyRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs256"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyRequest();
             if("ApiShieldCredentialsJwtKeyEcEs256".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ApiShieldCredentialsJwtKeyEcEs256 = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs256();
+                
             }
             else if("ApiShieldCredentialsJwtKeyEcEs384".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ApiShieldCredentialsJwtKeyEcEs384 = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs384();
+                
             }
             else if("ApiShieldCredentialsJwtKeyOctRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ApiShieldCredentialsJwtKeyOctRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctRequest();
+                
             }
             else if("ApiShieldCredentialsJwtKeyRsa".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ApiShieldCredentialsJwtKeyRsa = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyRsa();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kid") != null && parseNode.GetChildNode("kty") != null && (parseNode.GetChildNode("kty")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("RSA".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("alg") != null && (parseNode.GetChildNode("alg")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("RS256".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "RS384".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "RS512".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "PS256".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "PS384".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "PS512".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("n") != null && parseNode.GetChildNode("e") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kid") != null && parseNode.GetChildNode("kty") != null && (parseNode.GetChildNode("kty")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("EC".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("x") != null && parseNode.GetChildNode("y") != null && parseNode.GetChildNode("alg") != null && (parseNode.GetChildNode("alg")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("ES256".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("crv") != null && (parseNode.GetChildNode("crv")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag8 && ("P-256".Equals(tag8.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kid") != null && parseNode.GetChildNode("kty") != null && (parseNode.GetChildNode("kty")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("EC".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("x") != null && parseNode.GetChildNode("y") != null && parseNode.GetChildNode("alg") != null && (parseNode.GetChildNode("alg")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("ES384".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("crv") != null && (parseNode.GetChildNode("crv")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag8 && ("P-384".Equals(tag8.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kid") != null && parseNode.GetChildNode("kty") != null && (parseNode.GetChildNode("kty")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("oct".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("alg") != null && (parseNode.GetChildNode("alg")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("HS256".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "HS384".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "HS512".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("k") != null))();
+            if (result.ApiShieldCredentialsJwtKeyEcEs256 == null && result.ApiShieldCredentialsJwtKeyEcEs384 == null && result.ApiShieldCredentialsJwtKeyOctRequest == null && result.ApiShieldCredentialsJwtKeyRsa == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ApiShieldCredentialsJwtKeyRsa = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyRsa(), parseNode);
+            if (result.ApiShieldCredentialsJwtKeyEcEs256 == null && result.ApiShieldCredentialsJwtKeyEcEs384 == null && result.ApiShieldCredentialsJwtKeyOctRequest == null && result.ApiShieldCredentialsJwtKeyRsa == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ApiShieldCredentialsJwtKeyEcEs256 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs256(), parseNode);
+            if (result.ApiShieldCredentialsJwtKeyEcEs256 == null && result.ApiShieldCredentialsJwtKeyEcEs384 == null && result.ApiShieldCredentialsJwtKeyOctRequest == null && result.ApiShieldCredentialsJwtKeyRsa == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.ApiShieldCredentialsJwtKeyEcEs384 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs384(), parseNode);
+            if (result.ApiShieldCredentialsJwtKeyEcEs256 == null && result.ApiShieldCredentialsJwtKeyEcEs384 == null && result.ApiShieldCredentialsJwtKeyOctRequest == null && result.ApiShieldCredentialsJwtKeyRsa == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ApiShieldCredentialsJwtKeyOctRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctRequest(), parseNode);
+            if (result.ApiShieldCredentialsJwtKeyEcEs256 == null && result.ApiShieldCredentialsJwtKeyEcEs384 == null && result.ApiShieldCredentialsJwtKeyOctRequest == null && result.ApiShieldCredentialsJwtKeyRsa == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ApiShieldCredentialsJwtKeyEcEs256 == null && ApiShieldCredentialsJwtKeyEcEs384 == null && ApiShieldCredentialsJwtKeyOctRequest == null && ApiShieldCredentialsJwtKeyRsa == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ApiShieldCredentialsJwtKeyEcEs256 != null && ApiShieldCredentialsJwtKeyEcEs384 == null && ApiShieldCredentialsJwtKeyOctRequest == null && ApiShieldCredentialsJwtKeyRsa == null) { if (ApiShieldCredentialsJwtKeyEcEs256 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ApiShieldCredentialsJwtKeyEcEs256); return; }
+            if (ApiShieldCredentialsJwtKeyEcEs384 != null && ApiShieldCredentialsJwtKeyEcEs256 == null && ApiShieldCredentialsJwtKeyOctRequest == null && ApiShieldCredentialsJwtKeyRsa == null) { if (ApiShieldCredentialsJwtKeyEcEs384 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ApiShieldCredentialsJwtKeyEcEs384); return; }
+            if (ApiShieldCredentialsJwtKeyOctRequest != null && ApiShieldCredentialsJwtKeyEcEs256 == null && ApiShieldCredentialsJwtKeyEcEs384 == null && ApiShieldCredentialsJwtKeyRsa == null) { if (ApiShieldCredentialsJwtKeyOctRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ApiShieldCredentialsJwtKeyOctRequest); return; }
+            if (ApiShieldCredentialsJwtKeyRsa != null && ApiShieldCredentialsJwtKeyEcEs256 == null && ApiShieldCredentialsJwtKeyEcEs384 == null && ApiShieldCredentialsJwtKeyOctRequest == null) { if (ApiShieldCredentialsJwtKeyRsa is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ApiShieldCredentialsJwtKeyRsa); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ApiShieldCredentialsJwtKeyEcEs256 != null)
             {
+                if (ApiShieldCredentialsJwtKeyEcEs256 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs256>(null, ApiShieldCredentialsJwtKeyEcEs256);
             }
             else if(ApiShieldCredentialsJwtKeyEcEs384 != null)
             {
+                if (ApiShieldCredentialsJwtKeyEcEs384 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs384>(null, ApiShieldCredentialsJwtKeyEcEs384);
             }
             else if(ApiShieldCredentialsJwtKeyOctRequest != null)
             {
+                if (ApiShieldCredentialsJwtKeyOctRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctRequest>(null, ApiShieldCredentialsJwtKeyOctRequest);
             }
             else if(ApiShieldCredentialsJwtKeyRsa != null)
             {
+                if (ApiShieldCredentialsJwtKeyRsa is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyRsa>(null, ApiShieldCredentialsJwtKeyRsa);
             }
         }

@@ -12,17 +12,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoadBalancingLoadShedding : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("default_percent") is { } nullNodeDefaultPercent && nullNodeDefaultPercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultPercent = null;
+            if (parseNode.GetChildNode("default_policy") is { } nullNodeDefaultPolicy && nullNodeDefaultPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultPolicy = null;
+            if (parseNode.GetChildNode("session_percent") is { } nullNodeSessionPercent && nullNodeSessionPercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionPercent = null;
+            if (parseNode.GetChildNode("session_policy") is { } nullNodeSessionPolicy && nullNodeSessionPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionPolicy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The percent of traffic to shed from the pool, according to the default policy. Applies to new sessions and traffic without session affinity.</summary>
-        public double? DefaultPercent { get; set; }
+        public double? DefaultPercent { get => _explicitNullValueDefaultPercent; set { _explicitNullValueDefaultPercent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_percent"); else _explicitNullProperties?.Remove("default_percent"); } }
+        private double? _explicitNullValueDefaultPercent = default!;
         /// <summary>The default policy to use when load shedding. A random policy randomly sheds a given percent of requests. A hash policy computes a hash over the CF-Connecting-IP address and sheds all requests originating from a percent of IPs.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadSheddingDefaultPolicy? DefaultPolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadSheddingDefaultPolicy? DefaultPolicy { get => _explicitNullValueDefaultPolicy; set { _explicitNullValueDefaultPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_policy"); else _explicitNullProperties?.Remove("default_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadSheddingDefaultPolicy? _explicitNullValueDefaultPolicy = default!;
         /// <summary>The percent of existing sessions to shed from the pool, according to the session policy.</summary>
-        public double? SessionPercent { get; set; }
+        public double? SessionPercent { get => _explicitNullValueSessionPercent; set { _explicitNullValueSessionPercent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_percent"); else _explicitNullProperties?.Remove("session_percent"); } }
+        private double? _explicitNullValueSessionPercent = default!;
         /// <summary>Only the hash policy is supported for existing sessions (to avoid exponential decay).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HashSessionPolicy? SessionPolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HashSessionPolicy? SessionPolicy { get => _explicitNullValueSessionPolicy; set { _explicitNullValueSessionPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_policy"); else _explicitNullProperties?.Remove("session_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HashSessionPolicy? _explicitNullValueSessionPolicy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding"/> and sets the default values.
         /// </summary>
@@ -40,7 +55,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadSheddingDefaultPolicy>("default_policy", DefaultPolicy);
             writer.WriteDoubleValue("session_percent", SessionPercent);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HashSessionPolicy>("session_policy", SessionPolicy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

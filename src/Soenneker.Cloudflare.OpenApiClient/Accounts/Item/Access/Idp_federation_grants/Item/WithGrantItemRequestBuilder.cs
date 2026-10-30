@@ -55,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Idp_federation
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdpFederationGrantIdResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdpFederationGrantIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -80,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Idp_federation
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdpFederationGrantResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdpFederationGrantResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

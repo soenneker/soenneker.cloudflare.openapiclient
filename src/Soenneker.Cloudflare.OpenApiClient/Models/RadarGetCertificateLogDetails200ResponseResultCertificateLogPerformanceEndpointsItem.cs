@@ -11,15 +11,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
+            if (parseNode.GetChildNode("responseTime") is { } nullNodeResponseTime && nullNodeResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTime = null;
+            if (parseNode.GetChildNode("uptime") is { } nullNodeUptime && nullNodeUptime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uptime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The certificate log endpoint names used in performance metrics.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItemEndpoint? Endpoint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItemEndpoint? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItemEndpoint? _explicitNullValueEndpoint = default!;
         /// <summary>The responseTime property</summary>
-        public double? ResponseTime { get; set; }
+        public double? ResponseTime { get => _explicitNullValueResponseTime; set { _explicitNullValueResponseTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseTime"); else _explicitNullProperties?.Remove("responseTime"); } }
+        private double? _explicitNullValueResponseTime = default!;
         /// <summary>The uptime property</summary>
-        public double? Uptime { get; set; }
+        public double? Uptime { get => _explicitNullValueUptime; set { _explicitNullValueUptime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uptime"); else _explicitNullProperties?.Remove("uptime"); } }
+        private double? _explicitNullValueUptime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItem"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItemEndpoint>("endpoint", Endpoint);
             writer.WriteDoubleValue("responseTime", ResponseTime);
             writer.WriteDoubleValue("uptime", Uptime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

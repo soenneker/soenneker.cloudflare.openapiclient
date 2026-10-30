@@ -55,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Pau
             {
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperApiV4Failure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperApiV4Failure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SlurperPauseJob200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SlurperPauseJob200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

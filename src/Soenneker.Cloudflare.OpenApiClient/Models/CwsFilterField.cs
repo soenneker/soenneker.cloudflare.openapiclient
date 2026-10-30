@@ -11,68 +11,102 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CwsFilterField : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deprecated") is { } nullNodeDeprecated && nullNodeDeprecated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deprecated = null;
+            if (parseNode.GetChildNode("false_label") is { } nullNodeFalseLabel && nullNodeFalseLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FalseLabel = null;
+            if (parseNode.GetChildNode("field_type") is { } nullNodeFieldType && nullNodeFieldType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldType = null;
+            if (parseNode.GetChildNode("map") is { } nullNodeMap && nullNodeMap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Map = null;
+            if (parseNode.GetChildNode("operators") is { } nullNodeOperators && nullNodeOperators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operators = null;
+            if (parseNode.GetChildNode("splat") is { } nullNodeSplat && nullNodeSplat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Splat = null;
+            if (parseNode.GetChildNode("true_label") is { } nullNodeTrueLabel && nullNodeTrueLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrueLabel = null;
+            if (parseNode.GetChildNode("ui_string") is { } nullNodeUiString && nullNodeUiString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UiString = null;
+            if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
+            if (parseNode.GetChildNode("wf_string") is { } nullNodeWfString && nullNodeWfString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WfString = null;
+        }
+
         /// <summary>True when the field is retained for compatibility but should be hidden in new UI</summary>
-        public bool? Deprecated { get; set; }
+        public bool? Deprecated { get => _explicitNullValueDeprecated; set { _explicitNullValueDeprecated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecated"); else _explicitNullProperties?.Remove("deprecated"); } }
+        private bool? _explicitNullValueDeprecated = default!;
         /// <summary>Label for the false state of a bool field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FalseLabel { get; set; }
+        public string? FalseLabel { get => _explicitNullValueFalseLabel; set { _explicitNullValueFalseLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("false_label"); else _explicitNullProperties?.Remove("false_label"); } }
+        private string? _explicitNullValueFalseLabel = default!;
 #nullable restore
 #else
-        public string FalseLabel { get; set; }
+        public string FalseLabel { get => _explicitNullValueFalseLabel; set { _explicitNullValueFalseLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("false_label"); else _explicitNullProperties?.Remove("false_label"); } }
+        private string _explicitNullValueFalseLabel = default!;
 #endif
         /// <summary>Semantic value type of the field (e.g. text, ip_address, host, uri_path, http_method, protocol, int, bool)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FieldType { get; set; }
+        public string? FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_type"); else _explicitNullProperties?.Remove("field_type"); } }
+        private string? _explicitNullValueFieldType = default!;
 #nullable restore
 #else
-        public string FieldType { get; set; }
+        public string FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_type"); else _explicitNullProperties?.Remove("field_type"); } }
+        private string _explicitNullValueFieldType = default!;
 #endif
         /// <summary>True for a string-keyed (map) field, indexed with wf_string[&quot;key&quot;]</summary>
-        public bool? Map { get; set; }
+        public bool? Map { get => _explicitNullValueMap; set { _explicitNullValueMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map"); else _explicitNullProperties?.Remove("map"); } }
+        private bool? _explicitNullValueMap = default!;
         /// <summary>Advisory operator labels for filter builders; some labels are not expression tokens</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Operators { get; set; }
+        public List<string>? Operators { get => _explicitNullValueOperators; set { _explicitNullValueOperators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operators"); else _explicitNullProperties?.Remove("operators"); } }
+        private List<string>? _explicitNullValueOperators = default!;
 #nullable restore
 #else
-        public List<string> Operators { get; set; }
+        public List<string> Operators { get => _explicitNullValueOperators; set { _explicitNullValueOperators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operators"); else _explicitNullProperties?.Remove("operators"); } }
+        private List<string> _explicitNullValueOperators = default!;
 #endif
         /// <summary>True for a multi-valued (array) field, membership-tested with any(wf_string[*] == ...)</summary>
-        public bool? Splat { get; set; }
+        public bool? Splat { get => _explicitNullValueSplat; set { _explicitNullValueSplat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("splat"); else _explicitNullProperties?.Remove("splat"); } }
+        private bool? _explicitNullValueSplat = default!;
         /// <summary>Label for the true state of a bool field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrueLabel { get; set; }
+        public string? TrueLabel { get => _explicitNullValueTrueLabel; set { _explicitNullValueTrueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("true_label"); else _explicitNullProperties?.Remove("true_label"); } }
+        private string? _explicitNullValueTrueLabel = default!;
 #nullable restore
 #else
-        public string TrueLabel { get; set; }
+        public string TrueLabel { get => _explicitNullValueTrueLabel; set { _explicitNullValueTrueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("true_label"); else _explicitNullProperties?.Remove("true_label"); } }
+        private string _explicitNullValueTrueLabel = default!;
 #endif
         /// <summary>Short human-readable name suitable for a form label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UiString { get; set; }
+        public string? UiString { get => _explicitNullValueUiString; set { _explicitNullValueUiString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_string"); else _explicitNullProperties?.Remove("ui_string"); } }
+        private string? _explicitNullValueUiString = default!;
 #nullable restore
 #else
-        public string UiString { get; set; }
+        public string UiString { get => _explicitNullValueUiString; set { _explicitNullValueUiString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_string"); else _explicitNullProperties?.Remove("ui_string"); } }
+        private string _explicitNullValueUiString = default!;
 #endif
         /// <summary>Advisory value suggestions for an enum field (a hint for populating a builder UI, not a server-enforced set)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Values { get; set; }
+        public List<string>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<string>? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public List<string> Values { get; set; }
+        public List<string> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<string> _explicitNullValueValues = default!;
 #endif
         /// <summary>Identifier used in filter expressions, e.g. &quot;http.request.host&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WfString { get; set; }
+        public string? WfString { get => _explicitNullValueWfString; set { _explicitNullValueWfString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wf_string"); else _explicitNullProperties?.Remove("wf_string"); } }
+        private string? _explicitNullValueWfString = default!;
 #nullable restore
 #else
-        public string WfString { get; set; }
+        public string WfString { get => _explicitNullValueWfString; set { _explicitNullValueWfString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wf_string"); else _explicitNullProperties?.Remove("wf_string"); } }
+        private string _explicitNullValueWfString = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -82,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,7 +154,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("true_label", TrueLabel);
             writer.WriteStringValue("ui_string", UiString);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
-            writer.WriteStringValue("wf_string", WfString);
+            writer.WriteStringValue("wf_string", WfString);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

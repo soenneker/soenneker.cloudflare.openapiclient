@@ -11,37 +11,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersBindingKindVpcNetwork : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("identity") is { } nullNodeIdentity && nullNodeIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identity = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("network_id") is { } nullNodeNetworkId && nullNodeNetworkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkId = null;
+            if (parseNode.GetChildNode("tunnel_id") is { } nullNodeTunnelId && nullNodeTunnelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelId = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Enables Gateway identity for the binding. Requires network_id to be &quot;cf1:network&quot; and cannot be combined with tunnel_id.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RuntimeEmailAlphaIdentity? Identity { get; set; }
+        /// <summary>Enables Gateway identity for the binding. Requires network_id to be &quot;cf1:network&quot; and cannot be combined with tunnel_id or an explicit &quot;cf1:vnet:&lt;UUID&gt;&quot; network_id.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RuntimeEmailAlphaIdentity? Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RuntimeEmailAlphaIdentity? _explicitNullValueIdentity = default!;
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
-        /// <summary>Identifier of the network to bind to. Only &quot;cf1:network&quot; is currently supported. Mutually exclusive with tunnel_id.</summary>
+        /// <summary>Identifier of the network to bind to. Use &quot;cf1:network&quot; to select the account&apos;s default virtual network at runtime, or &quot;cf1:vnet:&lt;UUID&gt;&quot; to select an explicit virtual network in the Worker&apos;s account. Mutually exclusive with tunnel_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkId { get; set; }
+        public string? NetworkId { get => _explicitNullValueNetworkId; set { _explicitNullValueNetworkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_id"); else _explicitNullProperties?.Remove("network_id"); } }
+        private string? _explicitNullValueNetworkId = default!;
 #nullable restore
 #else
-        public string NetworkId { get; set; }
+        public string NetworkId { get => _explicitNullValueNetworkId; set { _explicitNullValueNetworkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_id"); else _explicitNullProperties?.Remove("network_id"); } }
+        private string _explicitNullValueNetworkId = default!;
 #endif
         /// <summary>UUID of the Cloudflare Tunnel to bind to. Mutually exclusive with network_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TunnelId { get; set; }
+        public string? TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
+        private string? _explicitNullValueTunnelId = default!;
 #nullable restore
 #else
-        public string TunnelId { get; set; }
+        public string TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
+        private string _explicitNullValueTunnelId = default!;
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VpcNetworkType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VpcNetworkType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.VpcNetworkType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindVpcNetwork"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindVpcNetwork CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindVpcNetwork();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindVpcNetwork(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("network_id", NetworkId);
             writer.WriteStringValue("tunnel_id", TunnelId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VpcNetworkType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,59 +11,96 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigConfigCreateAccountProviderCost200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_provider_id") is { } nullNodeAccountProviderId && nullNodeAccountProviderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountProviderId = null;
+            if (parseNode.GetChildNode("changed_by") is { } nullNodeChangedBy && nullNodeChangedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedBy = null;
+            if (parseNode.GetChildNode("cost_in") is { } nullNodeCostIn && nullNodeCostIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostIn = null;
+            if (parseNode.GetChildNode("cost_out") is { } nullNodeCostOut && nullNodeCostOut.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostOut = null;
+            if (parseNode.GetChildNode("cost_type") is { } nullNodeCostType && nullNodeCostType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostType = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("enable") is { } nullNodeEnable && nullNodeEnable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enable = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("model_rule") is { } nullNodeModelRule && nullNodeModelRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelRule = null;
+            if (parseNode.GetChildNode("modified_at") is { } nullNodeModifiedAt && nullNodeModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedAt = null;
+            if (parseNode.GetChildNode("token_pricing") is { } nullNodeTokenPricing && nullNodeTokenPricing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenPricing = null;
+            if (parseNode.GetChildNode("weight") is { } nullNodeWeight && nullNodeWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Weight = null;
+        }
+
         /// <summary>The account_provider_id property</summary>
-        public Guid? AccountProviderId { get; set; }
+        public Guid? AccountProviderId { get => _explicitNullValueAccountProviderId; set { _explicitNullValueAccountProviderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_provider_id"); else _explicitNullProperties?.Remove("account_provider_id"); } }
+        private Guid? _explicitNullValueAccountProviderId = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The changed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChangedBy { get; set; }
+        public string? ChangedBy { get => _explicitNullValueChangedBy; set { _explicitNullValueChangedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_by"); else _explicitNullProperties?.Remove("changed_by"); } }
+        private string? _explicitNullValueChangedBy = default!;
 #nullable restore
 #else
-        public string ChangedBy { get; set; }
+        public string ChangedBy { get => _explicitNullValueChangedBy; set { _explicitNullValueChangedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_by"); else _explicitNullProperties?.Remove("changed_by"); } }
+        private string _explicitNullValueChangedBy = default!;
 #endif
         /// <summary>The cost_in property</summary>
-        public double? CostIn { get; set; }
+        public double? CostIn { get => _explicitNullValueCostIn; set { _explicitNullValueCostIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_in"); else _explicitNullProperties?.Remove("cost_in"); } }
+        private double? _explicitNullValueCostIn = default!;
         /// <summary>The cost_out property</summary>
-        public double? CostOut { get; set; }
+        public double? CostOut { get => _explicitNullValueCostOut; set { _explicitNullValueCostOut = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_out"); else _explicitNullProperties?.Remove("cost_out"); } }
+        private double? _explicitNullValueCostOut = default!;
         /// <summary>The cost_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostType { get; set; }
+        public string? CostType { get => _explicitNullValueCostType; set { _explicitNullValueCostType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_type"); else _explicitNullProperties?.Remove("cost_type"); } }
+        private string? _explicitNullValueCostType = default!;
 #nullable restore
 #else
-        public string CostType { get; set; }
+        public string CostType { get => _explicitNullValueCostType; set { _explicitNullValueCostType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_type"); else _explicitNullProperties?.Remove("cost_type"); } }
+        private string _explicitNullValueCostType = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The enable property</summary>
-        public bool? Enable { get; set; }
+        public bool? Enable { get => _explicitNullValueEnable; set { _explicitNullValueEnable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable"); else _explicitNullProperties?.Remove("enable"); } }
+        private bool? _explicitNullValueEnable = default!;
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get; set; }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
         /// <summary>The model_rule property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateAccountProviderCost200ResponseResultModelRule? ModelRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateAccountProviderCost200ResponseResultModelRule? ModelRule { get => _explicitNullValueModelRule; set { _explicitNullValueModelRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_rule"); else _explicitNullProperties?.Remove("model_rule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateAccountProviderCost200ResponseResultModelRule? _explicitNullValueModelRule = default!;
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get => _explicitNullValueModifiedAt; set { _explicitNullValueModifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_at"); else _explicitNullProperties?.Remove("modified_at"); } }
+        private DateTimeOffset? _explicitNullValueModifiedAt = default!;
         /// <summary>The token_pricing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenPricing { get; set; }
+        public string? TokenPricing { get => _explicitNullValueTokenPricing; set { _explicitNullValueTokenPricing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_pricing"); else _explicitNullProperties?.Remove("token_pricing"); } }
+        private string? _explicitNullValueTokenPricing = default!;
 #nullable restore
 #else
-        public string TokenPricing { get; set; }
+        public string TokenPricing { get => _explicitNullValueTokenPricing; set { _explicitNullValueTokenPricing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_pricing"); else _explicitNullProperties?.Remove("token_pricing"); } }
+        private string _explicitNullValueTokenPricing = default!;
 #endif
         /// <summary>The weight property</summary>
-        public int? Weight { get; set; }
+        public int? Weight { get => _explicitNullValueWeight; set { _explicitNullValueWeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weight"); else _explicitNullProperties?.Remove("weight"); } }
+        private int? _explicitNullValueWeight = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateAccountProviderCost200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -81,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateAccountProviderCost200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateAccountProviderCost200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateAccountProviderCost200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,6 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("token_pricing", TokenPricing);
             writer.WriteIntValue("weight", Weight);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

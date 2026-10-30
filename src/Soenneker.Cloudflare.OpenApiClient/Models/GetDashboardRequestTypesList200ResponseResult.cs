@@ -11,27 +11,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetDashboardRequestTypesList200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("project_type") is { } nullNodeProjectType && nullNodeProjectType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectType = null;
+            if (parseNode.GetChildNode("request_types") is { } nullNodeRequestTypes && nullNodeRequestTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestTypes = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The project_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectType { get; set; }
+        public string? ProjectType { get => _explicitNullValueProjectType; set { _explicitNullValueProjectType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_type"); else _explicitNullProperties?.Remove("project_type"); } }
+        private string? _explicitNullValueProjectType = default!;
 #nullable restore
 #else
-        public string ProjectType { get; set; }
+        public string ProjectType { get => _explicitNullValueProjectType; set { _explicitNullValueProjectType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_type"); else _explicitNullProperties?.Remove("project_type"); } }
+        private string _explicitNullValueProjectType = default!;
 #endif
         /// <summary>The request_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem>? RequestTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem>? RequestTypes { get => _explicitNullValueRequestTypes; set { _explicitNullValueRequestTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_types"); else _explicitNullProperties?.Remove("request_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem>? _explicitNullValueRequestTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem> RequestTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem> RequestTypes { get => _explicitNullValueRequestTypes; set { _explicitNullValueRequestTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_types"); else _explicitNullProperties?.Remove("request_types"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem> _explicitNullValueRequestTypes = default!;
 #endif
         /// <summary>The total property</summary>
-        public double? Total { get; set; }
+        public double? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private double? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("project_type", ProjectType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem>("request_types", RequestTypes);
             writer.WriteDoubleValue("total", Total);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

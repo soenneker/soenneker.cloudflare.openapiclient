@@ -11,23 +11,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class StreamStorageUseResponseAllOf2Result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("creator") is { } nullNodeCreator && nullNodeCreator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creator = null;
+            if (parseNode.GetChildNode("totalStorageMinutes") is { } nullNodeTotalStorageMinutes && nullNodeTotalStorageMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalStorageMinutes = null;
+            if (parseNode.GetChildNode("totalStorageMinutesLimit") is { } nullNodeTotalStorageMinutesLimit && nullNodeTotalStorageMinutesLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalStorageMinutesLimit = null;
+            if (parseNode.GetChildNode("videoCount") is { } nullNodeVideoCount && nullNodeVideoCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A user-defined identifier for the media creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Creator { get; set; }
+        public string? Creator { get => _explicitNullValueCreator; set { _explicitNullValueCreator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator"); else _explicitNullProperties?.Remove("creator"); } }
+        private string? _explicitNullValueCreator = default!;
 #nullable restore
 #else
-        public string Creator { get; set; }
+        public string Creator { get => _explicitNullValueCreator; set { _explicitNullValueCreator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator"); else _explicitNullProperties?.Remove("creator"); } }
+        private string _explicitNullValueCreator = default!;
 #endif
         /// <summary>The total minutes of video content stored in the account. May contain decimal values.</summary>
-        public float? TotalStorageMinutes { get; set; }
+        public float? TotalStorageMinutes { get => _explicitNullValueTotalStorageMinutes; set { _explicitNullValueTotalStorageMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalStorageMinutes"); else _explicitNullProperties?.Remove("totalStorageMinutes"); } }
+        private float? _explicitNullValueTotalStorageMinutes = default!;
         /// <summary>The storage capacity alloted for the account.</summary>
-        public int? TotalStorageMinutesLimit { get; set; }
+        public int? TotalStorageMinutesLimit { get => _explicitNullValueTotalStorageMinutesLimit; set { _explicitNullValueTotalStorageMinutesLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalStorageMinutesLimit"); else _explicitNullProperties?.Remove("totalStorageMinutesLimit"); } }
+        private int? _explicitNullValueTotalStorageMinutesLimit = default!;
         /// <summary>The total count of videos associated with the account.</summary>
-        public int? VideoCount { get; set; }
+        public int? VideoCount { get => _explicitNullValueVideoCount; set { _explicitNullValueVideoCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoCount"); else _explicitNullProperties?.Remove("videoCount"); } }
+        private int? _explicitNullValueVideoCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamStorageUseResponseAllOf2Result"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.StreamStorageUseResponseAllOf2Result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamStorageUseResponseAllOf2Result();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamStorageUseResponseAllOf2Result(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteFloatValue("totalStorageMinutes", TotalStorageMinutes);
             writer.WriteIntValue("totalStorageMinutesLimit", TotalStorageMinutesLimit);
             writer.WriteIntValue("videoCount", VideoCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

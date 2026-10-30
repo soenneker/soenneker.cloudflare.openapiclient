@@ -11,16 +11,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class HyperdriveHyperdriveConfigResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("caching") is { } nullNodeCaching && nullNodeCaching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Caching = null;
+            if (parseNode.GetChildNode("mtls") is { } nullNodeMtls && nullNodeMtls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mtls = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("origin_connection_limit") is { } nullNodeOriginConnectionLimit && nullNodeOriginConnectionLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginConnectionLimit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The caching property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveCachingResponse? Caching { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveCachingResponse? Caching { get => _explicitNullValueCaching; set { _explicitNullValueCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caching"); else _explicitNullProperties?.Remove("caching"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveCachingResponse? _explicitNullValueCaching = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveCachingResponse Caching { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveCachingResponse Caching { get => _explicitNullValueCaching; set { _explicitNullValueCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caching"); else _explicitNullProperties?.Remove("caching"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveCachingResponse _explicitNullValueCaching = default!;
 #endif
         /// <summary>Defines the creation time of the Hyperdrive configuration.</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
@@ -45,29 +59,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>mTLS configuration for the origin connection. Cannot be used with VPC Service origins; TLS must be managed on the VPC Service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls? Mtls { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls? Mtls { get => _explicitNullValueMtls; set { _explicitNullValueMtls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls"); else _explicitNullProperties?.Remove("mtls"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls? _explicitNullValueMtls = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls Mtls { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls Mtls { get => _explicitNullValueMtls; set { _explicitNullValueMtls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls"); else _explicitNullProperties?.Remove("mtls"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls _explicitNullValueMtls = default!;
 #endif
         /// <summary>The name of the Hyperdrive configuration. Used to identify the configuration in the Cloudflare dashboard and API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Combines database connection fields with exactly one supported network location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull? Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull _explicitNullValueOrigin = default!;
 #endif
         /// <summary>The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts.If not specified, defaults to 20 for free tier and 60 for paid tier.Certain Cloudflare-managed origins may be permitted a higher limit.Contact Cloudflare if you need a higher limit.</summary>
-        public int? OriginConnectionLimit { get; set; }
+        public int? OriginConnectionLimit { get => _explicitNullValueOriginConnectionLimit; set { _explicitNullValueOriginConnectionLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_connection_limit"); else _explicitNullProperties?.Remove("origin_connection_limit"); } }
+        private int? _explicitNullValueOriginConnectionLimit = default!;
         /// <summary>Defines the last time the Hyperdrive connection pool was explicitly restarted via the restart endpoint. Omitted if the pool has never been explicitly restarted.</summary>
         public DateTimeOffset? RestartedOn { get; private set; }
         /// <summary>
@@ -85,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull>("origin", Origin);
             writer.WriteIntValue("origin_connection_limit", OriginConnectionLimit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,29 +11,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PayPerCrawlPpuUsageStatsBuyer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("operator_id") is { } nullNodeOperatorId && nullNodeOperatorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorId = null;
+            if (parseNode.GetChildNode("operator_name") is { } nullNodeOperatorName && nullNodeOperatorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorName = null;
+            if (parseNode.GetChildNode("total_price_usd_microcents") is { } nullNodeTotalPriceUsdMicrocents && nullNodeTotalPriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPriceUsdMicrocents = null;
+            if (parseNode.GetChildNode("usage_count") is { } nullNodeUsageCount && nullNodeUsageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Stable identifier for the buyer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatorId { get; set; }
+        public string? OperatorId { get => _explicitNullValueOperatorId; set { _explicitNullValueOperatorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator_id"); else _explicitNullProperties?.Remove("operator_id"); } }
+        private string? _explicitNullValueOperatorId = default!;
 #nullable restore
 #else
-        public string OperatorId { get; set; }
+        public string OperatorId { get => _explicitNullValueOperatorId; set { _explicitNullValueOperatorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator_id"); else _explicitNullProperties?.Remove("operator_id"); } }
+        private string _explicitNullValueOperatorId = default!;
 #endif
         /// <summary>The operator_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatorName { get; set; }
+        public string? OperatorName { get => _explicitNullValueOperatorName; set { _explicitNullValueOperatorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator_name"); else _explicitNullProperties?.Remove("operator_name"); } }
+        private string? _explicitNullValueOperatorName = default!;
 #nullable restore
 #else
-        public string OperatorName { get; set; }
+        public string OperatorName { get => _explicitNullValueOperatorName; set { _explicitNullValueOperatorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator_name"); else _explicitNullProperties?.Remove("operator_name"); } }
+        private string _explicitNullValueOperatorName = default!;
 #endif
         /// <summary>Full gross value attributed to this buyer over the resolved range before the publisher revenue share.</summary>
-        public long? TotalPriceUsdMicrocents { get; set; }
+        public long? TotalPriceUsdMicrocents { get => _explicitNullValueTotalPriceUsdMicrocents; set { _explicitNullValueTotalPriceUsdMicrocents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_price_usd_microcents"); else _explicitNullProperties?.Remove("total_price_usd_microcents"); } }
+        private long? _explicitNullValueTotalPriceUsdMicrocents = default!;
         /// <summary>Number of reported usage events attributed to this buyer over the resolved range.</summary>
-        public long? UsageCount { get; set; }
+        public long? UsageCount { get => _explicitNullValueUsageCount; set { _explicitNullValueUsageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_count"); else _explicitNullProperties?.Remove("usage_count"); } }
+        private long? _explicitNullValueUsageCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("operator_name", OperatorName);
             writer.WriteLongValue("total_price_usd_microcents", TotalPriceUsdMicrocents);
             writer.WriteLongValue("usage_count", UsageCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

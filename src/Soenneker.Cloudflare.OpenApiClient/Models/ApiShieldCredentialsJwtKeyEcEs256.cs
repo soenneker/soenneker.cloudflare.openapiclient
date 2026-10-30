@@ -12,38 +12,60 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiShieldCredentialsJwtKeyEcEs256 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alg") is { } nullNodeAlg && nullNodeAlg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alg = null;
+            if (parseNode.GetChildNode("crv") is { } nullNodeCrv && nullNodeCrv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crv = null;
+            if (parseNode.GetChildNode("kid") is { } nullNodeKid && nullNodeKid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kid = null;
+            if (parseNode.GetChildNode("kty") is { } nullNodeKty && nullNodeKty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kty = null;
+            if (parseNode.GetChildNode("x") is { } nullNodeX && nullNodeX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X = null;
+            if (parseNode.GetChildNode("y") is { } nullNodeY && nullNodeY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Y = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Algorithm</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Es256Alg? Alg { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Es256Alg? Alg { get => _explicitNullValueAlg; set { _explicitNullValueAlg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alg"); else _explicitNullProperties?.Remove("alg"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.Es256Alg? _explicitNullValueAlg = default!;
         /// <summary>Curve</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.P256Crv? Crv { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.P256Crv? Crv { get => _explicitNullValueCrv; set { _explicitNullValueCrv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crv"); else _explicitNullProperties?.Remove("crv"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.P256Crv? _explicitNullValueCrv = default!;
         /// <summary>Key ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kid { get; set; }
+        public string? Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        private string? _explicitNullValueKid = default!;
 #nullable restore
 #else
-        public string Kid { get; set; }
+        public string Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        private string _explicitNullValueKid = default!;
 #endif
         /// <summary>Key Type</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EcKty? Kty { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EcKty? Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EcKty? _explicitNullValueKty = default!;
         /// <summary>X EC coordinate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? X { get; set; }
+        public string? X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
+        private string? _explicitNullValueX = default!;
 #nullable restore
 #else
-        public string X { get; set; }
+        public string X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
+        private string _explicitNullValueX = default!;
 #endif
         /// <summary>Y EC coordinate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Y { get; set; }
+        public string? Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
+        private string? _explicitNullValueY = default!;
 #nullable restore
 #else
-        public string Y { get; set; }
+        public string Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
+        private string _explicitNullValueY = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs256"/> and sets the default values.
@@ -60,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs256 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs256();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyEcEs256(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EcKty>("kty", Kty);
             writer.WriteStringValue("x", X);
             writer.WriteStringValue("y", Y);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

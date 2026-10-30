@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcContainersCreateApplicationRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRequest();
             if("durable_object".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CcContainersCreateDurableObjectApplicationRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequest();
+                
             }
             else if("default".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CcContainersCreateScheduledApplicationRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequest();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("scheduling_policy") != null && (parseNode.GetChildNode("scheduling_policy")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("default".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("instances") != null && parseNode.GetChildNode("max_instances") != null && parseNode.GetChildNode("configuration") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("scheduling_policy") != null && (parseNode.GetChildNode("scheduling_policy")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("durable_object".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("durable_objects") != null))();
+            if (result.CcContainersCreateDurableObjectApplicationRequest == null && result.CcContainersCreateScheduledApplicationRequest == null && matchesUnionBranch0 && !matchesUnionBranch1) result.CcContainersCreateScheduledApplicationRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequest(), parseNode);
+            if (result.CcContainersCreateDurableObjectApplicationRequest == null && result.CcContainersCreateScheduledApplicationRequest == null && matchesUnionBranch1 && !matchesUnionBranch0) result.CcContainersCreateDurableObjectApplicationRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequest(), parseNode);
+            if (result.CcContainersCreateDurableObjectApplicationRequest == null && result.CcContainersCreateScheduledApplicationRequest == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CcContainersCreateDurableObjectApplicationRequest == null && CcContainersCreateScheduledApplicationRequest == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CcContainersCreateDurableObjectApplicationRequest != null && CcContainersCreateScheduledApplicationRequest == null) { if (CcContainersCreateDurableObjectApplicationRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CcContainersCreateDurableObjectApplicationRequest); return; }
+            if (CcContainersCreateScheduledApplicationRequest != null && CcContainersCreateDurableObjectApplicationRequest == null) { if (CcContainersCreateScheduledApplicationRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CcContainersCreateScheduledApplicationRequest); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CcContainersCreateDurableObjectApplicationRequest != null)
             {
+                if (CcContainersCreateDurableObjectApplicationRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequest>(null, CcContainersCreateDurableObjectApplicationRequest);
             }
             else if(CcContainersCreateScheduledApplicationRequest != null)
             {
+                if (CcContainersCreateScheduledApplicationRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequest>(null, CcContainersCreateScheduledApplicationRequest);
             }
         }

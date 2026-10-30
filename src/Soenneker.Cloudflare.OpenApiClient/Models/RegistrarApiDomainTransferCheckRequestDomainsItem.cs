@@ -11,22 +11,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RegistrarApiDomainTransferCheckRequestDomainsItem : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_code") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
+            if (parseNode.GetChildNode("domain_name") is { } nullNodeDomainName && nullNodeDomainName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainName = null;
+        }
+
         /// <summary>Base64-encoded auth/EPP code from the current registrar.Required for most TLDs. `.uk` namespaces do not use authcodes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? AuthCode { get; set; }
+        public byte[]? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
+        private byte[]? _explicitNullValueAuthCode = default!;
 #nullable restore
 #else
-        public byte[] AuthCode { get; set; }
+        public byte[] AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
+        private byte[] _explicitNullValueAuthCode = default!;
 #endif
         /// <summary>Fully qualified domain name (FQDN) to check for transfer eligibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainName { get; set; }
+        public string? DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_name"); else _explicitNullProperties?.Remove("domain_name"); } }
+        private string? _explicitNullValueDomainName = default!;
 #nullable restore
 #else
-        public string DomainName { get; set; }
+        public string DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_name"); else _explicitNullProperties?.Remove("domain_name"); } }
+        private string _explicitNullValueDomainName = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainTransferCheckRequestDomainsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainTransferCheckRequestDomainsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainTransferCheckRequestDomainsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteByteArrayValue("auth_code", AuthCode);
-            writer.WriteStringValue("domain_name", DomainName);
+            writer.WriteStringValue("domain_name", DomainName);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

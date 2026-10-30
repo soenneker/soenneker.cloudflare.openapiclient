@@ -70,6 +70,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListJobs400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListJobs404Response.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListJobs503Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListJobs200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListJobs200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,6 +103,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateJob404Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateJob429Response.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateJob503Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateJob200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateJob200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

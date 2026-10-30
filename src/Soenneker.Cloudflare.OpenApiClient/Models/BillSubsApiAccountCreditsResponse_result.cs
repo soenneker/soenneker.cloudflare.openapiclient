@@ -11,35 +11,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BillSubsApiAccountCreditsResponse_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("confirmed_balance_cents") is { } nullNodeConfirmedBalanceCents && nullNodeConfirmedBalanceCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfirmedBalanceCents = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("days_remaining") is { } nullNodeDaysRemaining && nullNodeDaysRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRemaining = null;
+            if (parseNode.GetChildNode("eligible") is { } nullNodeEligible && nullNodeEligible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eligible = null;
+            if (parseNode.GetChildNode("has_record") is { } nullNodeHasRecord && nullNodeHasRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasRecord = null;
+            if (parseNode.GetChildNode("original_amount_cents") is { } nullNodeOriginalAmountCents && nullNodeOriginalAmountCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalAmountCents = null;
+            if (parseNode.GetChildNode("percent_consumed") is { } nullNodePercentConsumed && nullNodePercentConsumed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentConsumed = null;
+            if (parseNode.GetChildNode("projected_depletion_date") is { } nullNodeProjectedDepletionDate && nullNodeProjectedDepletionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectedDepletionDate = null;
+            if (parseNode.GetChildNode("valid_from") is { } nullNodeValidFrom && nullNodeValidFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidFrom = null;
+            if (parseNode.GetChildNode("valid_to") is { } nullNodeValidTo && nullNodeValidTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidTo = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The confirmed credit balance in cents.</summary>
-        public long? ConfirmedBalanceCents { get; set; }
+        public long? ConfirmedBalanceCents { get => _explicitNullValueConfirmedBalanceCents; set { _explicitNullValueConfirmedBalanceCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirmed_balance_cents"); else _explicitNullProperties?.Remove("confirmed_balance_cents"); } }
+        private long? _explicitNullValueConfirmedBalanceCents = default!;
         /// <summary>Currency of the credit balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Days remaining until the credits expire.</summary>
-        public long? DaysRemaining { get; set; }
+        public long? DaysRemaining { get => _explicitNullValueDaysRemaining; set { _explicitNullValueDaysRemaining = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_remaining"); else _explicitNullProperties?.Remove("days_remaining"); } }
+        private long? _explicitNullValueDaysRemaining = default!;
         /// <summary>Whether the account is eligible to receive credits.</summary>
-        public bool? Eligible { get; set; }
+        public bool? Eligible { get => _explicitNullValueEligible; set { _explicitNullValueEligible = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eligible"); else _explicitNullProperties?.Remove("eligible"); } }
+        private bool? _explicitNullValueEligible = default!;
         /// <summary>Whether a credit record exists for the account.</summary>
-        public bool? HasRecord { get; set; }
+        public bool? HasRecord { get => _explicitNullValueHasRecord; set { _explicitNullValueHasRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_record"); else _explicitNullProperties?.Remove("has_record"); } }
+        private bool? _explicitNullValueHasRecord = default!;
         /// <summary>The original credit amount in cents.</summary>
-        public long? OriginalAmountCents { get; set; }
+        public long? OriginalAmountCents { get => _explicitNullValueOriginalAmountCents; set { _explicitNullValueOriginalAmountCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_amount_cents"); else _explicitNullProperties?.Remove("original_amount_cents"); } }
+        private long? _explicitNullValueOriginalAmountCents = default!;
         /// <summary>Percentage of the original credit amount consumed.</summary>
-        public double? PercentConsumed { get; set; }
+        public double? PercentConsumed { get => _explicitNullValuePercentConsumed; set { _explicitNullValuePercentConsumed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percent_consumed"); else _explicitNullProperties?.Remove("percent_consumed"); } }
+        private double? _explicitNullValuePercentConsumed = default!;
         /// <summary>Projected date when the credits will be depleted.</summary>
-        public DateTimeOffset? ProjectedDepletionDate { get; set; }
+        public DateTimeOffset? ProjectedDepletionDate { get => _explicitNullValueProjectedDepletionDate; set { _explicitNullValueProjectedDepletionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projected_depletion_date"); else _explicitNullProperties?.Remove("projected_depletion_date"); } }
+        private DateTimeOffset? _explicitNullValueProjectedDepletionDate = default!;
         /// <summary>When the credits become valid.</summary>
-        public DateTimeOffset? ValidFrom { get; set; }
+        public DateTimeOffset? ValidFrom { get => _explicitNullValueValidFrom; set { _explicitNullValueValidFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_from"); else _explicitNullProperties?.Remove("valid_from"); } }
+        private DateTimeOffset? _explicitNullValueValidFrom = default!;
         /// <summary>When the credits expire.</summary>
-        public DateTimeOffset? ValidTo { get; set; }
+        public DateTimeOffset? ValidTo { get => _explicitNullValueValidTo; set { _explicitNullValueValidTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_to"); else _explicitNullProperties?.Remove("valid_to"); } }
+        private DateTimeOffset? _explicitNullValueValidTo = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountCreditsResponse_result"/> and sets the default values.
         /// </summary>
@@ -55,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountCreditsResponse_result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountCreditsResponse_result();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountCreditsResponse_result(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("projected_depletion_date", ProjectedDepletionDate);
             writer.WriteDateTimeOffsetValue("valid_from", ValidFrom);
             writer.WriteDateTimeOffsetValue("valid_to", ValidTo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

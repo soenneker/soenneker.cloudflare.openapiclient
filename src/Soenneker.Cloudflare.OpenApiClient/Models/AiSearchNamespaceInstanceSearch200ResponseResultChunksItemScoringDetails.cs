@@ -11,21 +11,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiSearchNamespaceInstanceSearch200ResponseResultChunksItemScoringDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fusion_method") is { } nullNodeFusionMethod && nullNodeFusionMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FusionMethod = null;
+            if (parseNode.GetChildNode("keyword_rank") is { } nullNodeKeywordRank && nullNodeKeywordRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordRank = null;
+            if (parseNode.GetChildNode("keyword_score") is { } nullNodeKeywordScore && nullNodeKeywordScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordScore = null;
+            if (parseNode.GetChildNode("reranking_score") is { } nullNodeRerankingScore && nullNodeRerankingScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RerankingScore = null;
+            if (parseNode.GetChildNode("vector_rank") is { } nullNodeVectorRank && nullNodeVectorRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VectorRank = null;
+            if (parseNode.GetChildNode("vector_score") is { } nullNodeVectorScore && nullNodeVectorScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VectorScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fusion_method property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearch200ResponseResultChunksItemScoringDetailsFusionMethod? FusionMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearch200ResponseResultChunksItemScoringDetailsFusionMethod? FusionMethod { get => _explicitNullValueFusionMethod; set { _explicitNullValueFusionMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fusion_method"); else _explicitNullProperties?.Remove("fusion_method"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearch200ResponseResultChunksItemScoringDetailsFusionMethod? _explicitNullValueFusionMethod = default!;
         /// <summary>The keyword_rank property</summary>
-        public double? KeywordRank { get; set; }
+        public double? KeywordRank { get => _explicitNullValueKeywordRank; set { _explicitNullValueKeywordRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword_rank"); else _explicitNullProperties?.Remove("keyword_rank"); } }
+        private double? _explicitNullValueKeywordRank = default!;
         /// <summary>The keyword_score property</summary>
-        public double? KeywordScore { get; set; }
+        public double? KeywordScore { get => _explicitNullValueKeywordScore; set { _explicitNullValueKeywordScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword_score"); else _explicitNullProperties?.Remove("keyword_score"); } }
+        private double? _explicitNullValueKeywordScore = default!;
         /// <summary>The reranking_score property</summary>
-        public double? RerankingScore { get; set; }
+        public double? RerankingScore { get => _explicitNullValueRerankingScore; set { _explicitNullValueRerankingScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reranking_score"); else _explicitNullProperties?.Remove("reranking_score"); } }
+        private double? _explicitNullValueRerankingScore = default!;
         /// <summary>The vector_rank property</summary>
-        public double? VectorRank { get; set; }
+        public double? VectorRank { get => _explicitNullValueVectorRank; set { _explicitNullValueVectorRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vector_rank"); else _explicitNullProperties?.Remove("vector_rank"); } }
+        private double? _explicitNullValueVectorRank = default!;
         /// <summary>The vector_score property</summary>
-        public double? VectorScore { get; set; }
+        public double? VectorScore { get => _explicitNullValueVectorScore; set { _explicitNullValueVectorScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vector_score"); else _explicitNullProperties?.Remove("vector_score"); } }
+        private double? _explicitNullValueVectorScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearch200ResponseResultChunksItemScoringDetails"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearch200ResponseResultChunksItemScoringDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearch200ResponseResultChunksItemScoringDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearch200ResponseResultChunksItemScoringDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("reranking_score", RerankingScore);
             writer.WriteDoubleValue("vector_rank", VectorRank);
             writer.WriteDoubleValue("vector_score", VectorScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

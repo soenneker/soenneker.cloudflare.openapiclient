@@ -11,32 +11,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationsApiOrganizationMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hierarchy_tags") is { } nullNodeHierarchyTags && nullNodeHierarchyTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HierarchyTags = null;
+            if (parseNode.GetChildNode("managed_by") is { } nullNodeManagedBy && nullNodeManagedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedBy = null;
+            if (parseNode.GetChildNode("tenant_flags") is { } nullNodeTenantFlags && nullNodeTenantFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantFlags = null;
+            if (parseNode.GetChildNode("tenant_type") is { } nullNodeTenantType && nullNodeTenantType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The are_child_accounts_accessible_by_org_members property</summary>
+        public bool? AreChildAccountsAccessibleByOrgMembers { get; private set; }
         /// <summary>Ordered chain of organization tags from the root organization down to(and including) this organization itself. Root organizations return asingle-element array containing their own tag; sub-organizations return`[rootTag, ...intermediateTags, parentTag, selfTag]`. Useful forconstructing authorization scopes that need to cover every ancestorin the hierarchy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HierarchyTags { get; set; }
+        public List<string>? HierarchyTags { get => _explicitNullValueHierarchyTags; set { _explicitNullValueHierarchyTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchy_tags"); else _explicitNullProperties?.Remove("hierarchy_tags"); } }
+        private List<string>? _explicitNullValueHierarchyTags = default!;
 #nullable restore
 #else
-        public List<string> HierarchyTags { get; set; }
+        public List<string> HierarchyTags { get => _explicitNullValueHierarchyTags; set { _explicitNullValueHierarchyTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchy_tags"); else _explicitNullProperties?.Remove("hierarchy_tags"); } }
+        private List<string> _explicitNullValueHierarchyTags = default!;
 #endif
         /// <summary>The managed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedBy { get; set; }
+        public string? ManagedBy { get => _explicitNullValueManagedBy; set { _explicitNullValueManagedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_by"); else _explicitNullProperties?.Remove("managed_by"); } }
+        private string? _explicitNullValueManagedBy = default!;
 #nullable restore
 #else
-        public string ManagedBy { get; set; }
+        public string ManagedBy { get => _explicitNullValueManagedBy; set { _explicitNullValueManagedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_by"); else _explicitNullProperties?.Remove("managed_by"); } }
+        private string _explicitNullValueManagedBy = default!;
 #endif
         /// <summary>The tenant_flags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags? TenantFlags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags? TenantFlags { get => _explicitNullValueTenantFlags; set { _explicitNullValueTenantFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_flags"); else _explicitNullProperties?.Remove("tenant_flags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags? _explicitNullValueTenantFlags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags TenantFlags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags TenantFlags { get => _explicitNullValueTenantFlags; set { _explicitNullValueTenantFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_flags"); else _explicitNullProperties?.Remove("tenant_flags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags _explicitNullValueTenantFlags = default!;
+#endif
+        /// <summary>The tenant_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
+        private string? _explicitNullValueTenantType = default!;
+#nullable restore
+#else
+        public string TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
+        private string _explicitNullValueTenantType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta"/> and sets the default values.
@@ -53,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +92,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "are_child_accounts_accessible_by_org_members", n => { AreChildAccountsAccessibleByOrgMembers = n.GetBoolValue(); } },
                 { "hierarchy_tags", n => { HierarchyTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "managed_by", n => { ManagedBy = n.GetStringValue(); } },
                 { "tenant_flags", n => { TenantFlags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags.CreateFromDiscriminatorValue); } },
+                { "tenant_type", n => { TenantType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,6 +109,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("hierarchy_tags", HierarchyTags);
             writer.WriteStringValue("managed_by", ManagedBy);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags>("tenant_flags", TenantFlags);
+            writer.WriteStringValue("tenant_type", TenantType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

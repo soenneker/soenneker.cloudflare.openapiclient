@@ -12,24 +12,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesProjectUpdateProjectRequestDeploymentConfigs : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("preview") is { } nullNodePreview && nullNodePreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preview = null;
+            if (parseNode.GetChildNode("production") is { } nullNodeProduction && nullNodeProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Production = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configs for preview deploys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview? Preview { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview? Preview { get => _explicitNullValuePreview; set { _explicitNullValuePreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview"); else _explicitNullProperties?.Remove("preview"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview? _explicitNullValuePreview = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview Preview { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview Preview { get => _explicitNullValuePreview; set { _explicitNullValuePreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview"); else _explicitNullProperties?.Remove("preview"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview _explicitNullValuePreview = default!;
 #endif
         /// <summary>Configs for production deploys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsProduction? Production { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsProduction? Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsProduction? _explicitNullValueProduction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsProduction Production { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsProduction Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsProduction _explicitNullValueProduction = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview>("preview", Preview);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsProduction>("production", Production);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

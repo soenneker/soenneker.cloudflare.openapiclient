@@ -12,31 +12,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSecurityMessageDetailsProperties : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowlisted_pattern") is { } nullNodeAllowlistedPattern && nullNodeAllowlistedPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowlistedPattern = null;
+            if (parseNode.GetChildNode("allowlisted_pattern_type") is { } nullNodeAllowlistedPatternType && nullNodeAllowlistedPatternType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowlistedPatternType = null;
+            if (parseNode.GetChildNode("blocklisted_message") is { } nullNodeBlocklistedMessage && nullNodeBlocklistedMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlocklistedMessage = null;
+            if (parseNode.GetChildNode("blocklisted_pattern") is { } nullNodeBlocklistedPattern && nullNodeBlocklistedPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlocklistedPattern = null;
+            if (parseNode.GetChildNode("whitelisted_pattern_type") is { } nullNodeWhitelistedPatternType && nullNodeWhitelistedPatternType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhitelistedPatternType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Pattern that allowlisted this message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AllowlistedPattern { get; set; }
+        public string? AllowlistedPattern { get => _explicitNullValueAllowlistedPattern; set { _explicitNullValueAllowlistedPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowlisted_pattern"); else _explicitNullProperties?.Remove("allowlisted_pattern"); } }
+        private string? _explicitNullValueAllowlistedPattern = default!;
 #nullable restore
 #else
-        public string AllowlistedPattern { get; set; }
+        public string AllowlistedPattern { get => _explicitNullValueAllowlistedPattern; set { _explicitNullValueAllowlistedPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowlisted_pattern"); else _explicitNullProperties?.Remove("allowlisted_pattern"); } }
+        private string _explicitNullValueAllowlistedPattern = default!;
 #endif
         /// <summary>Type of allowlist pattern.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPropertiesAllowlistedPatternType? AllowlistedPatternType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPropertiesAllowlistedPatternType? AllowlistedPatternType { get => _explicitNullValueAllowlistedPatternType; set { _explicitNullValueAllowlistedPatternType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowlisted_pattern_type"); else _explicitNullProperties?.Remove("allowlisted_pattern_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPropertiesAllowlistedPatternType? _explicitNullValueAllowlistedPatternType = default!;
         /// <summary>Whether message was blocklisted.</summary>
-        public bool? BlocklistedMessage { get; set; }
+        public bool? BlocklistedMessage { get => _explicitNullValueBlocklistedMessage; set { _explicitNullValueBlocklistedMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocklisted_message"); else _explicitNullProperties?.Remove("blocklisted_message"); } }
+        private bool? _explicitNullValueBlocklistedMessage = default!;
         /// <summary>Pattern that blocklisted this message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlocklistedPattern { get; set; }
+        public string? BlocklistedPattern { get => _explicitNullValueBlocklistedPattern; set { _explicitNullValueBlocklistedPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocklisted_pattern"); else _explicitNullProperties?.Remove("blocklisted_pattern"); } }
+        private string? _explicitNullValueBlocklistedPattern = default!;
 #nullable restore
 #else
-        public string BlocklistedPattern { get; set; }
+        public string BlocklistedPattern { get => _explicitNullValueBlocklistedPattern; set { _explicitNullValueBlocklistedPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocklisted_pattern"); else _explicitNullProperties?.Remove("blocklisted_pattern"); } }
+        private string _explicitNullValueBlocklistedPattern = default!;
 #endif
         /// <summary>Legacy field for allowlist pattern type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPropertiesWhitelistedPatternType? WhitelistedPatternType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPropertiesWhitelistedPatternType? WhitelistedPatternType { get => _explicitNullValueWhitelistedPatternType; set { _explicitNullValueWhitelistedPatternType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whitelisted_pattern_type"); else _explicitNullProperties?.Remove("whitelisted_pattern_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPropertiesWhitelistedPatternType? _explicitNullValueWhitelistedPatternType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsProperties"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsProperties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsProperties();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsProperties(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("blocklisted_message", BlocklistedMessage);
             writer.WriteStringValue("blocklisted_pattern", BlocklistedPattern);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPropertiesWhitelistedPatternType>("whitelisted_pattern_type", WhitelistedPatternType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

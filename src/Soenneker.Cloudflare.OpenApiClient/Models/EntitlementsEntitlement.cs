@@ -12,56 +12,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntitlementsEntitlement : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allocation") is { } nullNodeAllocation && nullNodeAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocation = null;
+            if (parseNode.GetChildNode("created_date") is { } nullNodeCreatedDate && nullNodeCreatedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedDate = null;
+            if (parseNode.GetChildNode("deleted_date") is { } nullNodeDeletedDate && nullNodeDeletedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedDate = null;
+            if (parseNode.GetChildNode("edited_date") is { } nullNodeEditedDate && nullNodeEditedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditedDate = null;
+            if (parseNode.GetChildNode("feature") is { } nullNodeFeature && nullNodeFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feature = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the allocation value for an entitlement. The shape of `value` depends on `type`: `bool` uses a boolean, `max_count` uses an integer, `enum_number` uses an array of numbers, `range` uses an object with `min` and `max` integer fields, and `string` uses a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation? Allocation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation? Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation? _explicitNullValueAllocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation Allocation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation _explicitNullValueAllocation = default!;
 #endif
         /// <summary>ISO 8601 timestamp (microsecond precision, no timezone offset) when the entitlement was created. Format: `YYYY-MM-DDTHH:MM:SS.ffffff`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedDate { get; set; }
+        public string? CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_date"); else _explicitNullProperties?.Remove("created_date"); } }
+        private string? _explicitNullValueCreatedDate = default!;
 #nullable restore
 #else
-        public string CreatedDate { get; set; }
+        public string CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_date"); else _explicitNullProperties?.Remove("created_date"); } }
+        private string _explicitNullValueCreatedDate = default!;
 #endif
         /// <summary>ISO 8601 timestamp when the entitlement was deleted, or empty string if not deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedDate { get; set; }
+        public string? DeletedDate { get => _explicitNullValueDeletedDate; set { _explicitNullValueDeletedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_date"); else _explicitNullProperties?.Remove("deleted_date"); } }
+        private string? _explicitNullValueDeletedDate = default!;
 #nullable restore
 #else
-        public string DeletedDate { get; set; }
+        public string DeletedDate { get => _explicitNullValueDeletedDate; set { _explicitNullValueDeletedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_date"); else _explicitNullProperties?.Remove("deleted_date"); } }
+        private string _explicitNullValueDeletedDate = default!;
 #endif
         /// <summary>ISO 8601 timestamp (microsecond precision, no timezone offset) when the entitlement was last edited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EditedDate { get; set; }
+        public string? EditedDate { get => _explicitNullValueEditedDate; set { _explicitNullValueEditedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edited_date"); else _explicitNullProperties?.Remove("edited_date"); } }
+        private string? _explicitNullValueEditedDate = default!;
 #nullable restore
 #else
-        public string EditedDate { get; set; }
+        public string EditedDate { get => _explicitNullValueEditedDate; set { _explicitNullValueEditedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edited_date"); else _explicitNullProperties?.Remove("edited_date"); } }
+        private string _explicitNullValueEditedDate = default!;
 #endif
         /// <summary>Describes a product feature associated with an entitlement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature? Feature { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature? Feature { get => _explicitNullValueFeature; set { _explicitNullValueFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature"); else _explicitNullProperties?.Remove("feature"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature? _explicitNullValueFeature = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature Feature { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature Feature { get => _explicitNullValueFeature; set { _explicitNullValueFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature"); else _explicitNullProperties?.Remove("feature"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature _explicitNullValueFeature = default!;
 #endif
         /// <summary>Entitlement identifier — equal to the feature key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsEntitlement"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsEntitlement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsEntitlement();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsEntitlement(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("edited_date", EditedDate);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature>("feature", Feature);
             writer.WriteStringValue("id", Id);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

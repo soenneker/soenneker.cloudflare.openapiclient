@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Lockdowns;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Payload_logging;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Ua_rules;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf;
@@ -14,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\firewall
+    /// Builds and executes requests for operations under \zones\{zoneId}\firewall
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FirewallRequestBuilder : BaseRequestBuilder
@@ -29,7 +30,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Lockdowns.LockdownsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The payload_logging property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Payload_logging.Payload_loggingRequestBuilder Payload_logging
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Payload_logging.Payload_loggingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The rules property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules.RulesRequestBuilder Rules
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
@@ -49,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FirewallRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/firewall", pathParameters)
+        public FirewallRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/firewall", pathParameters)
         {
         }
         /// <summary>
@@ -57,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FirewallRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/firewall", rawUrl)
+        public FirewallRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/firewall", rawUrl)
         {
         }
     }

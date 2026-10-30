@@ -71,6 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersErrorAuthResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersErrorWorkerNotFoundResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersErrorInternalServerResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersApiResponseCommon>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersApiResponseCommon.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,6 +100,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorker400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersErrorWorkerNotFoundResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersErrorInternalServerResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorker200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorker200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -133,6 +137,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersErrorWorkerNotFoundResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.EditWorker409Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersErrorInternalServerResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EditWorker200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EditWorker200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -168,6 +174,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersErrorWorkerNotFoundResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateWorker409Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersErrorInternalServerResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateWorker200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateWorker200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

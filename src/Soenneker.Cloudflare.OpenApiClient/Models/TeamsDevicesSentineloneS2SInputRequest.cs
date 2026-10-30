@@ -11,29 +11,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TeamsDevicesSentineloneS2SInputRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_threats") is { } nullNodeActiveThreats && nullNodeActiveThreats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveThreats = null;
+            if (parseNode.GetChildNode("connection_id") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
+            if (parseNode.GetChildNode("infected") is { } nullNodeInfected && nullNodeInfected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Infected = null;
+            if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("network_status") is { } nullNodeNetworkStatus && nullNodeNetworkStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkStatus = null;
+            if (parseNode.GetChildNode("operational_state") is { } nullNodeOperationalState && nullNodeOperationalState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationalState = null;
+            if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
+        }
+
         /// <summary>The Number of active threats.</summary>
-        public double? ActiveThreats { get; set; }
+        public double? ActiveThreats { get => _explicitNullValueActiveThreats; set { _explicitNullValueActiveThreats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_threats"); else _explicitNullProperties?.Remove("active_threats"); } }
+        private double? _explicitNullValueActiveThreats = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Posture Integration ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get; set; }
+        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        private string? _explicitNullValueConnectionId = default!;
 #nullable restore
 #else
-        public string ConnectionId { get; set; }
+        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        private string _explicitNullValueConnectionId = default!;
 #endif
         /// <summary>Whether device is infected.</summary>
-        public bool? Infected { get; set; }
+        public bool? Infected { get => _explicitNullValueInfected; set { _explicitNullValueInfected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infected"); else _explicitNullProperties?.Remove("infected"); } }
+        private bool? _explicitNullValueInfected = default!;
         /// <summary>Whether device is active.</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
+        private bool? _explicitNullValueIsActive = default!;
         /// <summary>Network status of device.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus? NetworkStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus? NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus? _explicitNullValueNetworkStatus = default!;
         /// <summary>Agent operational state.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState? OperationalState { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState? OperationalState { get => _explicitNullValueOperationalState; set { _explicitNullValueOperationalState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operational_state"); else _explicitNullProperties?.Remove("operational_state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState? _explicitNullValueOperationalState = default!;
         /// <summary>Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperator? Operator { get; set; }
+#nullable enable
+        public string? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        private string? _explicitNullValueOperator = default!;
+#nullable restore
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest"/> and sets the default values.
         /// </summary>
@@ -49,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "network_status", n => { NetworkStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus>(); } },
                 { "operational_state", n => { OperationalState = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState>(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperator>(); } },
+                { "operator", n => { Operator = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +105,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus>("network_status", NetworkStatus);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState>("operational_state", OperationalState);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperator>("operator", Operator);
+            writer.WriteStringValue("operator", Operator);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

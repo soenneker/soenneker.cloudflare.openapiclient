@@ -11,19 +11,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CloudflarePipelinesSinkJsonFormat : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("compression") is { } nullNodeCompression && nullNodeCompression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compression = null;
+            if (parseNode.GetChildNode("decimal_encoding") is { } nullNodeDecimalEncoding && nullNodeDecimalEncoding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecimalEncoding = null;
+            if (parseNode.GetChildNode("timestamp_format") is { } nullNodeTimestampFormat && nullNodeTimestampFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampFormat = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("unstructured") is { } nullNodeUnstructured && nullNodeUnstructured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unstructured = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the compression applied to JSON sink output.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesJsonCompression? Compression { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesJsonCompression? Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesJsonCompression? _explicitNullValueCompression = default!;
         /// <summary>The decimal_encoding property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding? DecimalEncoding { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding? DecimalEncoding { get => _explicitNullValueDecimalEncoding; set { _explicitNullValueDecimalEncoding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decimal_encoding"); else _explicitNullProperties?.Remove("decimal_encoding"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding? _explicitNullValueDecimalEncoding = default!;
         /// <summary>The timestamp_format property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat? TimestampFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat? TimestampFormat { get => _explicitNullValueTimestampFormat; set { _explicitNullValueTimestampFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_format"); else _explicitNullProperties?.Remove("timestamp_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat? _explicitNullValueTimestampFormat = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType? _explicitNullValueType = default!;
         /// <summary>The unstructured property</summary>
-        public bool? Unstructured { get; set; }
+        public bool? Unstructured { get => _explicitNullValueUnstructured; set { _explicitNullValueUnstructured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unstructured"); else _explicitNullProperties?.Remove("unstructured"); } }
+        private bool? _explicitNullValueUnstructured = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkJsonFormat"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkJsonFormat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkJsonFormat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkJsonFormat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat>("timestamp_format", TimestampFormat);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType>("type", Type);
             writer.WriteBoolValue("unstructured", Unstructured);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

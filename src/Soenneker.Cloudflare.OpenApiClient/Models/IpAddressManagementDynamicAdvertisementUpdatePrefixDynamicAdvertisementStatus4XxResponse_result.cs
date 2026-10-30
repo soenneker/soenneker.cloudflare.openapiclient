@@ -11,13 +11,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatus4XxResponse_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("advertised") is { } nullNodeAdvertised && nullNodeAdvertised.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advertised = null;
+            if (parseNode.GetChildNode("advertised_modified_at") is { } nullNodeAdvertisedModifiedAt && nullNodeAdvertisedModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvertisedModifiedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Advertisement status of the prefix. If `true`, the BGP route for the prefix is advertised to the Internet. If `false`, the BGP route is withdrawn.</summary>
-        public bool? Advertised { get; set; }
+        public bool? Advertised { get => _explicitNullValueAdvertised; set { _explicitNullValueAdvertised = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertised"); else _explicitNullProperties?.Remove("advertised"); } }
+        private bool? _explicitNullValueAdvertised = default!;
         /// <summary>Last time the advertisement status was changed. This field is only not &apos;null&apos; if on demand is enabled.</summary>
-        public DateTimeOffset? AdvertisedModifiedAt { get; set; }
+        public DateTimeOffset? AdvertisedModifiedAt { get => _explicitNullValueAdvertisedModifiedAt; set { _explicitNullValueAdvertisedModifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertised_modified_at"); else _explicitNullProperties?.Remove("advertised_modified_at"); } }
+        private DateTimeOffset? _explicitNullValueAdvertisedModifiedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatus4XxResponse_result"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatus4XxResponse_result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatus4XxResponse_result();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatus4XxResponse_result(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("advertised", Advertised);
             writer.WriteDateTimeOffsetValue("advertised_modified_at", AdvertisedModifiedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

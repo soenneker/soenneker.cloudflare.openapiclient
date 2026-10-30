@@ -12,37 +12,60 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostureApiDlpContext : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
+            if (parseNode.GetChildNode("entry_ids") is { } nullNodeEntryIds && nullNodeEntryIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryIds = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("match_context_max_extent") is { } nullNodeMatchContextMaxExtent && nullNodeMatchContextMaxExtent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchContextMaxExtent = null;
+            if (parseNode.GetChildNode("match_context_min_extent") is { } nullNodeMatchContextMinExtent && nullNodeMatchContextMinExtent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchContextMinExtent = null;
+            if (parseNode.GetChildNode("match_context_payload") is { } nullNodeMatchContextPayload && nullNodeMatchContextPayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchContextPayload = null;
+            if (parseNode.GetChildNode("profile_id") is { } nullNodeProfileId && nullNodeProfileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the DLP context was created.</summary>
         public DateTimeOffset? Created { get; private set; }
         /// <summary>When the DLP context was deleted.</summary>
-        public DateTimeOffset? Deleted { get; set; }
+        public DateTimeOffset? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        private DateTimeOffset? _explicitNullValueDeleted = default!;
         /// <summary>DLP Entry IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? EntryIds { get; set; }
+        public List<Guid?>? EntryIds { get => _explicitNullValueEntryIds; set { _explicitNullValueEntryIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_ids"); else _explicitNullProperties?.Remove("entry_ids"); } }
+        private List<Guid?>? _explicitNullValueEntryIds = default!;
 #nullable restore
 #else
-        public List<Guid?> EntryIds { get; set; }
+        public List<Guid?> EntryIds { get => _explicitNullValueEntryIds; set { _explicitNullValueEntryIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_ids"); else _explicitNullProperties?.Remove("entry_ids"); } }
+        private List<Guid?> _explicitNullValueEntryIds = default!;
 #endif
         /// <summary>Unique identifier for the DLP context.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>DLP Right Boundary of match context.</summary>
-        public int? MatchContextMaxExtent { get; set; }
+        public int? MatchContextMaxExtent { get => _explicitNullValueMatchContextMaxExtent; set { _explicitNullValueMatchContextMaxExtent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_max_extent"); else _explicitNullProperties?.Remove("match_context_max_extent"); } }
+        private int? _explicitNullValueMatchContextMaxExtent = default!;
         /// <summary>DLP Left Boundary of match context.</summary>
-        public int? MatchContextMinExtent { get; set; }
+        public int? MatchContextMinExtent { get => _explicitNullValueMatchContextMinExtent; set { _explicitNullValueMatchContextMinExtent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_min_extent"); else _explicitNullProperties?.Remove("match_context_min_extent"); } }
+        private int? _explicitNullValueMatchContextMinExtent = default!;
         /// <summary>DLP Match context payload that matched the profile in question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty? MatchContextPayload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty? MatchContextPayload { get => _explicitNullValueMatchContextPayload; set { _explicitNullValueMatchContextPayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_payload"); else _explicitNullProperties?.Remove("match_context_payload"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty? _explicitNullValueMatchContextPayload = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty MatchContextPayload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty MatchContextPayload { get => _explicitNullValueMatchContextPayload; set { _explicitNullValueMatchContextPayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_payload"); else _explicitNullProperties?.Remove("match_context_payload"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty _explicitNullValueMatchContextPayload = default!;
 #endif
         /// <summary>DLP Profile ID.</summary>
-        public Guid? ProfileId { get; set; }
+        public Guid? ProfileId { get => _explicitNullValueProfileId; set { _explicitNullValueProfileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_id"); else _explicitNullProperties?.Remove("profile_id"); } }
+        private Guid? _explicitNullValueProfileId = default!;
         /// <summary>When the DLP context was last updated.</summary>
         public DateTimeOffset? Updated { get; private set; }
         /// <summary>
@@ -60,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContext();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContext(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("match_context_min_extent", MatchContextMinExtent);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty>("match_context_payload", MatchContextPayload);
             writer.WriteGuidValue("profile_id", ProfileId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

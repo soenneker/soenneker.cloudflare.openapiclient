@@ -55,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.P
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

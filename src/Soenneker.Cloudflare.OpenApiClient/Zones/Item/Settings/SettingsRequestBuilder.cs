@@ -33,127 +33,107 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\settings
+    /// Builds and executes requests for operations under \zones\{zoneId}\settings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The aegis property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis.AegisRequestBuilder Aegis
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis.AegisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The auto_origin_tls_kex property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Auto_origin_tls_kex.Auto_origin_tls_kexRequestBuilder Auto_origin_tls_kex
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Auto_origin_tls_kex.Auto_origin_tls_kexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The automatic_platform_optimization property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Automatic_platform_optimization.Automatic_platform_optimizationRequestBuilder Automatic_platform_optimization
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Automatic_platform_optimization.Automatic_platform_optimizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The binary_ast property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Binary_ast.Binary_astRequestBuilder Binary_ast
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Binary_ast.Binary_astRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The csam_scanner_third_party property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Csam_scanner_third_party.Csam_scanner_third_partyRequestBuilder Csam_scanner_third_party
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Csam_scanner_third_party.Csam_scanner_third_partyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fonts property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder Fonts
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The googleTagGateway property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.GoogleTagGateway.GoogleTagGatewayRequestBuilder GoogleTagGateway
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.GoogleTagGateway.GoogleTagGatewayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The h2_prioritization property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.H2_prioritization.H2_prioritizationRequestBuilder H2_prioritization
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.H2_prioritization.H2_prioritizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The image_resizing property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Image_resizing.Image_resizingRequestBuilder Image_resizing
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Image_resizing.Image_resizingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The nel property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Nel.NelRequestBuilder Nel
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Nel.NelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_h2_max_streams property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder Origin_h2_max_streams
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_max_http_version property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder Origin_max_http_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_tls_compliance_modes property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_tls_compliance_modes.Origin_tls_compliance_modesRequestBuilder Origin_tls_compliance_modes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_tls_compliance_modes.Origin_tls_compliance_modesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rum property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum.RumRequestBuilder Rum
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum.RumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The speed_brain property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Speed_brain.Speed_brainRequestBuilder Speed_brain
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Speed_brain.Speed_brainRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ssl_automatic_mode property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Ssl_automatic_mode.Ssl_automatic_modeRequestBuilder Ssl_automatic_mode
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Ssl_automatic_mode.Ssl_automatic_modeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transformations_allowed_origins property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Transformations_allowed_origins.Transformations_allowed_originsRequestBuilder Transformations_allowed_origins
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Transformations_allowed_origins.Transformations_allowed_originsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transformations_c2pa property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Transformations_c2pa.Transformations_c2paRequestBuilder Transformations_c2pa
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Transformations_c2pa.Transformations_c2paRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transformations_config property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Transformations_config.Transformations_configRequestBuilder Transformations_config
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Transformations_config.Transformations_configRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zaraz property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.ZarazRequestBuilder Zaraz
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.ZarazRequestBuilder(PathParameters, RequestAdapter);
@@ -175,7 +155,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/settings", pathParameters)
+        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/settings", pathParameters)
         {
         }
         /// <summary>
@@ -183,7 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/settings", rawUrl)
+        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/settings", rawUrl)
         {
         }
         /// <summary>
@@ -207,6 +187,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure3.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -233,6 +214,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure3.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

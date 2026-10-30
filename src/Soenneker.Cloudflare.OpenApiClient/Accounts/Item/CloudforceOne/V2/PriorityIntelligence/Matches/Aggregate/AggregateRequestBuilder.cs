@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns each active PIR&apos;s match counts, with the same fields and filters as a single PIR&apos;s aggregate, and the number of distinct values of each field across all of them, each value counted once. Counts are not summed across PIRs: an event can match several PIRs. Drafts are left out; PIRs the matcher paused are included. A PIR whose matches cannot be counted is returned with `error` and left out of `combined`. Requires the Threat Events entitlement.

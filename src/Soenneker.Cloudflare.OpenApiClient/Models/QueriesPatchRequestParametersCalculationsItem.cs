@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueriesPatchRequestParametersCalculationsItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.QueriesPatchRequestParametersCalculationsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,17 +42,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.QueriesPatchRequestParametersCalculationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("operator")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.QueriesPatchRequestParametersCalculationsItem();
             if("QueriesPatchRequestParametersCalculationsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.QueriesPatchRequestParametersCalculationsItemOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.QueriesPatchRequestParametersCalculationsItemOneOf1();
+                
             }
             else if("QueriesPatchRequestParametersCalculationsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.QueriesPatchRequestParametersCalculationsItemOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.QueriesPatchRequestParametersCalculationsItemOneOf2();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("operator") != null && (parseNode.GetChildNode("operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("count".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "COUNT".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("keyType") == null || (parseNode.GetChildNode("keyType")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("string".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "number".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "boolean".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("key") != null && parseNode.GetChildNode("operator") != null && (parseNode.GetChildNode("operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("uniq".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "max".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "min".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "sum".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "avg".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "median".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p001".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p01".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p05".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p10".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p25".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p75".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p90".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p95".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p99".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "p999".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "stddev".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "variance".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "COUNT_DISTINCT".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "MAX".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "MIN".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "SUM".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "AVG".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "MEDIAN".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P001".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P01".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P05".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P10".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P25".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P75".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P90".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P95".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P99".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "P999".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "STDDEV".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "VARIANCE".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("keyType") == null || (parseNode.GetChildNode("keyType")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("string".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "number".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "boolean".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.QueriesPatchRequestParametersCalculationsItemOneOf1 == null && result.QueriesPatchRequestParametersCalculationsItemOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.QueriesPatchRequestParametersCalculationsItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.QueriesPatchRequestParametersCalculationsItemOneOf1(), parseNode);
+            if (result.QueriesPatchRequestParametersCalculationsItemOneOf1 == null && result.QueriesPatchRequestParametersCalculationsItemOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.QueriesPatchRequestParametersCalculationsItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.QueriesPatchRequestParametersCalculationsItemOneOf2(), parseNode);
+            if (result.QueriesPatchRequestParametersCalculationsItemOneOf1 == null && result.QueriesPatchRequestParametersCalculationsItemOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (QueriesPatchRequestParametersCalculationsItemOneOf1 == null && QueriesPatchRequestParametersCalculationsItemOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (QueriesPatchRequestParametersCalculationsItemOneOf1 != null && QueriesPatchRequestParametersCalculationsItemOneOf2 == null) { if (QueriesPatchRequestParametersCalculationsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, QueriesPatchRequestParametersCalculationsItemOneOf1); return; }
+            if (QueriesPatchRequestParametersCalculationsItemOneOf2 != null && QueriesPatchRequestParametersCalculationsItemOneOf1 == null) { if (QueriesPatchRequestParametersCalculationsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, QueriesPatchRequestParametersCalculationsItemOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(QueriesPatchRequestParametersCalculationsItemOneOf1 != null)
             {
+                if (QueriesPatchRequestParametersCalculationsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.QueriesPatchRequestParametersCalculationsItemOneOf1>(null, QueriesPatchRequestParametersCalculationsItemOneOf1);
             }
             else if(QueriesPatchRequestParametersCalculationsItemOneOf2 != null)
             {
+                if (QueriesPatchRequestParametersCalculationsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.QueriesPatchRequestParametersCalculationsItemOneOf2>(null, QueriesPatchRequestParametersCalculationsItemOneOf2);
             }
         }

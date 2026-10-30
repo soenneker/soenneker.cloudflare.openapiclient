@@ -11,28 +11,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSecurityDomainVerificationInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("last_checked_at") is { } nullNodeLastCheckedAt && nullNodeLastCheckedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastCheckedAt = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("txt_record_name") is { } nullNodeTxtRecordName && nullNodeTxtRecordName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TxtRecordName = null;
+            if (parseNode.GetChildNode("txt_record_value") is { } nullNodeTxtRecordValue && nullNodeTxtRecordValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TxtRecordValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the last DNS TXT check was attempted, if any.</summary>
-        public DateTimeOffset? LastCheckedAt { get; set; }
+        public DateTimeOffset? LastCheckedAt { get => _explicitNullValueLastCheckedAt; set { _explicitNullValueLastCheckedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_checked_at"); else _explicitNullProperties?.Remove("last_checked_at"); } }
+        private DateTimeOffset? _explicitNullValueLastCheckedAt = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus? _explicitNullValueStatus = default!;
         /// <summary>Full DNS TXT record name (e.g. `_cf-email-sec-challenge.example.com`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TxtRecordName { get; set; }
+        public string? TxtRecordName { get => _explicitNullValueTxtRecordName; set { _explicitNullValueTxtRecordName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txt_record_name"); else _explicitNullProperties?.Remove("txt_record_name"); } }
+        private string? _explicitNullValueTxtRecordName = default!;
 #nullable restore
 #else
-        public string TxtRecordName { get; set; }
+        public string TxtRecordName { get => _explicitNullValueTxtRecordName; set { _explicitNullValueTxtRecordName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txt_record_name"); else _explicitNullProperties?.Remove("txt_record_name"); } }
+        private string _explicitNullValueTxtRecordName = default!;
 #endif
         /// <summary>Token value to publish in the TXT record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TxtRecordValue { get; set; }
+        public string? TxtRecordValue { get => _explicitNullValueTxtRecordValue; set { _explicitNullValueTxtRecordValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txt_record_value"); else _explicitNullProperties?.Remove("txt_record_value"); } }
+        private string? _explicitNullValueTxtRecordValue = default!;
 #nullable restore
 #else
-        public string TxtRecordValue { get; set; }
+        public string TxtRecordValue { get => _explicitNullValueTxtRecordValue; set { _explicitNullValueTxtRecordValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txt_record_value"); else _explicitNullProperties?.Remove("txt_record_value"); } }
+        private string _explicitNullValueTxtRecordValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainVerificationInfo"/> and sets the default values.
@@ -49,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainVerificationInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainVerificationInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainVerificationInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus>("status", Status);
             writer.WriteStringValue("txt_record_name", TxtRecordName);
             writer.WriteStringValue("txt_record_value", TxtRecordValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

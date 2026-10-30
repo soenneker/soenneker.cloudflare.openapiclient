@@ -11,21 +11,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostureApiFindingType : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("applies_to_all_integrations") is { } nullNodeAppliesToAllIntegrations && nullNodeAppliesToAllIntegrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppliesToAllIntegrations = null;
+            if (parseNode.GetChildNode("asset_class") is { } nullNodeAssetClass && nullNodeAssetClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetClass = null;
+            if (parseNode.GetChildNode("asset_vendor") is { } nullNodeAssetVendor && nullNodeAssetVendor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetVendor = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("expression") is { } nullNodeExpression && nullNodeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expression = null;
+            if (parseNode.GetChildNode("integration_ids") is { } nullNodeIntegrationIds && nullNodeIntegrationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationIds = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("remediation") is { } nullNodeRemediation && nullNodeRemediation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remediation = null;
+            if (parseNode.GetChildNode("severity") is { } nullNodeSeverity && nullNodeSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severity = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this finding type applies to every current and future integration of the vendor.</summary>
-        public bool? AppliesToAllIntegrations { get; set; }
+        public bool? AppliesToAllIntegrations { get => _explicitNullValueAppliesToAllIntegrations; set { _explicitNullValueAppliesToAllIntegrations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applies_to_all_integrations"); else _explicitNullProperties?.Remove("applies_to_all_integrations"); } }
+        private bool? _explicitNullValueAppliesToAllIntegrations = default!;
         /// <summary>Asset class the finding type&apos;s policy evaluates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetClass { get; set; }
+        public string? AssetClass { get => _explicitNullValueAssetClass; set { _explicitNullValueAssetClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_class"); else _explicitNullProperties?.Remove("asset_class"); } }
+        private string? _explicitNullValueAssetClass = default!;
 #nullable restore
 #else
-        public string AssetClass { get; set; }
+        public string AssetClass { get => _explicitNullValueAssetClass; set { _explicitNullValueAssetClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_class"); else _explicitNullProperties?.Remove("asset_class"); } }
+        private string _explicitNullValueAssetClass = default!;
 #endif
         /// <summary>Vendors whose assets a finding type can evaluate.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiBaseFindingTypeAssetVendor? AssetVendor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiBaseFindingTypeAssetVendor? AssetVendor { get => _explicitNullValueAssetVendor; set { _explicitNullValueAssetVendor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_vendor"); else _explicitNullProperties?.Remove("asset_vendor"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiBaseFindingTypeAssetVendor? _explicitNullValueAssetVendor = default!;
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,38 +59,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Detailed description of the finding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Rego expression backing this finding type. For custom finding types, generated package and import declarations are omitted. System expressions are returned unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression { get; set; }
+        public string? Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        private string? _explicitNullValueExpression = default!;
 #nullable restore
 #else
-        public string Expression { get; set; }
+        public string Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        private string _explicitNullValueExpression = default!;
 #endif
         /// <summary>The unique identifier of the finding.</summary>
         public Guid? Id { get; private set; }
         /// <summary>Integrations this finding type applies to when applies_to_all_integrations is false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? IntegrationIds { get; set; }
+        public List<Guid?>? IntegrationIds { get => _explicitNullValueIntegrationIds; set { _explicitNullValueIntegrationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_ids"); else _explicitNullProperties?.Remove("integration_ids"); } }
+        private List<Guid?>? _explicitNullValueIntegrationIds = default!;
 #nullable restore
 #else
-        public List<Guid?> IntegrationIds { get; set; }
+        public List<Guid?> IntegrationIds { get => _explicitNullValueIntegrationIds; set { _explicitNullValueIntegrationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_ids"); else _explicitNullProperties?.Remove("integration_ids"); } }
+        private List<Guid?> _explicitNullValueIntegrationIds = default!;
 #endif
         /// <summary>Number of currently active finding instances across the account&apos;s integrations. Zero when none have been detected.</summary>
         public long? MatchCount { get; private set; }
         /// <summary>The name of the finding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether the finding type is system-managed or customer-created.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiBaseFindingTypeOrigin? Origin { get; private set; }
@@ -79,13 +107,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Remediation guide information for a finding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingRemediation? Remediation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingRemediation? Remediation { get => _explicitNullValueRemediation; set { _explicitNullValueRemediation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediation"); else _explicitNullProperties?.Remove("remediation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingRemediation? _explicitNullValueRemediation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingRemediation Remediation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingRemediation Remediation { get => _explicitNullValueRemediation; set { _explicitNullValueRemediation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediation"); else _explicitNullProperties?.Remove("remediation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingRemediation _explicitNullValueRemediation = default!;
 #endif
         /// <summary>The severity level of a finding.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiBaseFindingTypeSeverity? Severity { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiBaseFindingTypeSeverity? Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiBaseFindingTypeSeverity? _explicitNullValueSeverity = default!;
         /// <summary>Timestamp when the finding type was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>The SaaS/Cloud vendor of the platform with which the finding is associated.</summary>
@@ -113,7 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingType();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingType(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -159,6 +190,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingRemediation>("remediation", Remediation);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiBaseFindingTypeSeverity>("severity", Severity);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

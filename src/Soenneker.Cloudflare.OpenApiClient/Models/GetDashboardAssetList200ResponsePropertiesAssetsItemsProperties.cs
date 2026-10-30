@@ -11,120 +11,169 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetDashboardAssetList200ResponsePropertiesAssetsItemsProperties : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contentType") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("downloadable") is { } nullNodeDownloadable && nullNodeDownloadable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Downloadable = null;
+            if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("fileName") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
+            if (parseNode.GetChildNode("fileSize") is { } nullNodeFileSize && nullNodeFileSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileSize = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_cloudflare_team") is { } nullNodeIsCloudflareTeam && nullNodeIsCloudflareTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCloudflareTeam = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("tlp") is { } nullNodeTlp && nullNodeTlp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tlp = null;
+            if (parseNode.GetChildNode("uploadedAt") is { } nullNodeUploadedAt && nullNodeUploadedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedAt = null;
+            if (parseNode.GetChildNode("uploadedBy") is { } nullNodeUploadedBy && nullNodeUploadedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedBy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesContentType? ContentType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesContentType? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesContentType? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesContentType ContentType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesContentType ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesContentType _explicitNullValueContentType = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDescription? Description { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDescription? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDescription? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDescription Description { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDescription Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDescription _explicitNullValueDescription = default!;
 #endif
         /// <summary>The downloadable property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDownloadable? Downloadable { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDownloadable? Downloadable { get => _explicitNullValueDownloadable; set { _explicitNullValueDownloadable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadable"); else _explicitNullProperties?.Remove("downloadable"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDownloadable? _explicitNullValueDownloadable = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDownloadable Downloadable { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDownloadable Downloadable { get => _explicitNullValueDownloadable; set { _explicitNullValueDownloadable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadable"); else _explicitNullProperties?.Remove("downloadable"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesDownloadable _explicitNullValueDownloadable = default!;
 #endif
         /// <summary>The expiresAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesExpiresAt? ExpiresAt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesExpiresAt? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesExpiresAt? _explicitNullValueExpiresAt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesExpiresAt ExpiresAt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesExpiresAt ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesExpiresAt _explicitNullValueExpiresAt = default!;
 #endif
         /// <summary>The fileName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileName? FileName { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileName? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileName? _explicitNullValueFileName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileName FileName { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileName FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileName _explicitNullValueFileName = default!;
 #endif
         /// <summary>The fileSize property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileSize? FileSize { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileSize? FileSize { get => _explicitNullValueFileSize; set { _explicitNullValueFileSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileSize"); else _explicitNullProperties?.Remove("fileSize"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileSize? _explicitNullValueFileSize = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileSize FileSize { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileSize FileSize { get => _explicitNullValueFileSize; set { _explicitNullValueFileSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileSize"); else _explicitNullProperties?.Remove("fileSize"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesFileSize _explicitNullValueFileSize = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesId? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesId Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesId _explicitNullValueId = default!;
 #endif
         /// <summary>The is_cloudflare_team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesIsCloudflareTeam? IsCloudflareTeam { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesIsCloudflareTeam? IsCloudflareTeam { get => _explicitNullValueIsCloudflareTeam; set { _explicitNullValueIsCloudflareTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_cloudflare_team"); else _explicitNullProperties?.Remove("is_cloudflare_team"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesIsCloudflareTeam? _explicitNullValueIsCloudflareTeam = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesIsCloudflareTeam IsCloudflareTeam { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesIsCloudflareTeam IsCloudflareTeam { get => _explicitNullValueIsCloudflareTeam; set { _explicitNullValueIsCloudflareTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_cloudflare_team"); else _explicitNullProperties?.Remove("is_cloudflare_team"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesIsCloudflareTeam _explicitNullValueIsCloudflareTeam = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesMetadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesMetadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesOrigin? Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesOrigin? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesOrigin Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesOrigin Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesOrigin _explicitNullValueOrigin = default!;
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesState? State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesState? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesState State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesState State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesState _explicitNullValueState = default!;
 #endif
         /// <summary>The tlp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesTlp? Tlp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesTlp? Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesTlp? _explicitNullValueTlp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesTlp Tlp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesTlp Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesTlp _explicitNullValueTlp = default!;
 #endif
         /// <summary>The uploadedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedAt? UploadedAt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedAt? UploadedAt { get => _explicitNullValueUploadedAt; set { _explicitNullValueUploadedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadedAt"); else _explicitNullProperties?.Remove("uploadedAt"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedAt? _explicitNullValueUploadedAt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedAt UploadedAt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedAt UploadedAt { get => _explicitNullValueUploadedAt; set { _explicitNullValueUploadedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadedAt"); else _explicitNullProperties?.Remove("uploadedAt"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedAt _explicitNullValueUploadedAt = default!;
 #endif
         /// <summary>The uploadedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedBy? UploadedBy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedBy? UploadedBy { get => _explicitNullValueUploadedBy; set { _explicitNullValueUploadedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadedBy"); else _explicitNullProperties?.Remove("uploadedBy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedBy? _explicitNullValueUploadedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedBy UploadedBy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedBy UploadedBy { get => _explicitNullValueUploadedBy; set { _explicitNullValueUploadedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadedBy"); else _explicitNullProperties?.Remove("uploadedBy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedBy _explicitNullValueUploadedBy = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsProperties"/> and sets the default values.
@@ -141,7 +190,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsProperties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsProperties();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsProperties(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -188,6 +237,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesTlp>("tlp", Tlp);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedAt>("uploadedAt", UploadedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardAssetList200ResponsePropertiesAssetsItemsPropertiesUploadedBy>("uploadedBy", UploadedBy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

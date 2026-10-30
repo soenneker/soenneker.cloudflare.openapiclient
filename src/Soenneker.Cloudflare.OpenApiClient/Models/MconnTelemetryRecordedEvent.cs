@@ -12,28 +12,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MconnTelemetryRecordedEvent : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("e") is { } nullNodeE && nullNodeE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) E = null;
+            if (parseNode.GetChildNode("n") is { } nullNodeN && nullNodeN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) N = null;
+            if (parseNode.GetChildNode("t") is { } nullNodeT && nullNodeT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) T = null;
+            if (parseNode.GetChildNode("v") is { } nullNodeV && nullNodeV.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) V = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Event kind plus event-specific payload fields.Event kinds:- `Init`: Initialized process- `Leave`: Stopped process- `StartAttestation`: Started attestation- `FinishAttestationSuccess`: Finished attestation- `FinishAttestationFailure`: Failed attestation- `StartRotateCryptKey`: Started crypt key rotation- `FinishRotateCryptKeySuccess`: Finished crypt key rotation- `FinishRotateCryptKeyFailure`: Failed crypt key rotation- `StartRotatePki`: Started PKI rotation- `FinishRotatePkiSuccess`: Finished PKI rotation- `FinishRotatePkiFailure`: Failed PKI rotation- `StartUpgrade`: Started upgrade- `FinishUpgradeSuccess`: Finished upgrade- `FinishUpgradeFailure`: Failed upgrade- `BlessSlotSuccess`: Blessed boot entry slot- `BlessSlotPending`: Boot entry slot is not yet blessed- `BlessSlotFailure`: Failed to bless boot entry slot- `Reconcile`: Reconciled- `ConfigureCloudflaredTunnel`: Configured Cloudflared tunnel- `RekeyInstallBoth`: Installed initial inbound and outbound keys- `RekeyStart`: Installed new inbound key, kept old outbound- `RekeyRestart`: Restarted in-progress rekey with newer key material- `RekeyAdvance`: Confirmed traffic on new inbound key, swapped outbound to new- `RekeyComplete`: Deleted old keys- `RekeyReset`: Deleted all keys after receiving an unexpected key- `HaTransition`: Completed HA state transition- `HaError`: Received unexpected HA error- `HaInit`: Initialized HA subsystem- `HaLeave`: Stopped HA subsystem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent? E { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent? E { get => _explicitNullValueE; set { _explicitNullValueE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("e"); else _explicitNullProperties?.Remove("e"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent? _explicitNullValueE = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent E { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent E { get => _explicitNullValueE; set { _explicitNullValueE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("e"); else _explicitNullProperties?.Remove("e"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent _explicitNullValueE = default!;
 #endif
         /// <summary>Sequence number, used to order events with the same timestamp</summary>
-        public double? N { get; set; }
+        public double? N { get => _explicitNullValueN; set { _explicitNullValueN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("n"); else _explicitNullProperties?.Remove("n"); } }
+        private double? _explicitNullValueN = default!;
         /// <summary>Time the Event was recorded (seconds since the Unix epoch)</summary>
-        public double? T { get; set; }
+        public double? T { get => _explicitNullValueT; set { _explicitNullValueT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("t"); else _explicitNullProperties?.Remove("t"); } }
+        private double? _explicitNullValueT = default!;
         /// <summary>Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? V { get; set; }
+        public string? V { get => _explicitNullValueV; set { _explicitNullValueV = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v"); else _explicitNullProperties?.Remove("v"); } }
+        private string? _explicitNullValueV = default!;
 #nullable restore
 #else
-        public string V { get; set; }
+        public string V { get => _explicitNullValueV; set { _explicitNullValueV = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v"); else _explicitNullProperties?.Remove("v"); } }
+        private string _explicitNullValueV = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryRecordedEvent"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryRecordedEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryRecordedEvent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryRecordedEvent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("n", N);
             writer.WriteDoubleValue("t", T);
             writer.WriteStringValue("v", V);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

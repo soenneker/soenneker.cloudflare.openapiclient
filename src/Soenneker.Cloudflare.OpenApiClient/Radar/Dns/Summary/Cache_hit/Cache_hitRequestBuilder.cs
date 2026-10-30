@@ -54,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Cache_hit
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByCacheHitStatus400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByCacheHitStatus200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByCacheHitStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

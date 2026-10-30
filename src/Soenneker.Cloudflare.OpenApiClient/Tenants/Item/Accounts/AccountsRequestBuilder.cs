@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenantId}/accounts", pathParameters)
+        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenantId}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,include_total,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page,page_size,page_token,per_page,status}", pathParameters)
         {
         }
         /// <summary>
@@ -30,44 +30,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenantId}/accounts", rawUrl)
+        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenantId}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,include_total,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page,page_size,page_token,per_page,status}", rawUrl)
         {
         }
         /// <summary>
-        /// Lists the Cloudflare accounts associated with this tenant.
+        /// Lists the Cloudflare accounts associated with this tenant using the legacy Account responseshape. Use `GET /organizations/{organization_id}/accounts` for the modern Account response.Use `page_token` and `page_size` for cursor pagination, or provide `page` and `per_page`together for legacy offset pagination. Cursor pagination takes precedence when requested.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the Cloudflare accounts associated with this tenant.
+        /// Lists the Cloudflare accounts associated with this tenant using the legacy Account responseshape. Use `GET /organizations/{organization_id}/accounts` for the modern Account response.Use `page_token` and `page_size` for cursor pagination, or provide `page` and `per_page`together for legacy offset pagination. Cursor pagination takes precedence when requested.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,6 +83,128 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts
         public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts.AccountsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts.AccountsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Lists the Cloudflare accounts associated with this tenant using the legacy Account responseshape. Use `GET /organizations/{organization_id}/accounts` for the modern Account response.Use `page_token` and `page_size` for cursor pagination, or provide `page` and `per_page`together for legacy offset pagination. Cursor pagination takes precedence when requested.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class AccountsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>(case-sensitive) Filter the list of accounts to where the account_pubname is equal toa particular string.</summary>
+            [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("account_pubname")]
+            public string? AccountPubname { get; set; }
+#nullable restore
+#else
+            [QueryParameter("account_pubname")]
+            public string AccountPubname { get; set; }
+#endif
+            /// <summary>(case-insensitive) Filter the list of accounts to where the account_pubname containsa particular string.</summary>
+            [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("account_pubname%2Econtains")]
+            public string? AccountPubnameContains { get; set; }
+#nullable restore
+#else
+            [QueryParameter("account_pubname%2Econtains")]
+            public string AccountPubnameContains { get; set; }
+#endif
+            /// <summary>(case-insensitive) Filter the list of accounts to where the account_pubname ends witha particular string.</summary>
+            [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("account_pubname%2EendsWith")]
+            public string? AccountPubnameEndsWith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("account_pubname%2EendsWith")]
+            public string AccountPubnameEndsWith { get; set; }
+#endif
+            /// <summary>(case-insensitive) Filter the list of accounts to where the account_pubname starts witha particular string.</summary>
+            [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("account_pubname%2EstartsWith")]
+            public string? AccountPubnameStartsWith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("account_pubname%2EstartsWith")]
+            public string AccountPubnameStartsWith { get; set; }
+#endif
+            /// <summary>Sort direction for the order_by field. Valid values: `asc`, `desc`.Defaults to `asc` when order_by is specified.</summary>
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccountsDirectionParameter? Direction { get; set; }
+            /// <summary>Whether to calculate and return the exact `result_info.total_size` for cursorpagination. Defaults to true. When false, `total_size` is omitted. Legacy`page`/`per_page` requests always calculate `total_count`.</summary>
+            [QueryParameter("include_total")]
+            public bool? IncludeTotal { get; set; }
+            /// <summary>(case-sensitive) Filter the list of accounts to where the name is equal to aparticular string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string Name { get; set; }
+#endif
+            /// <summary>(case-insensitive) Filter the list of accounts to where the name contains a particularstring.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name%2Econtains")]
+            public string? NameContains { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name%2Econtains")]
+            public string NameContains { get; set; }
+#endif
+            /// <summary>(case-insensitive) Filter the list of accounts to where the name ends with a particularstring.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name%2EendsWith")]
+            public string? NameEndsWith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name%2EendsWith")]
+            public string NameEndsWith { get; set; }
+#endif
+            /// <summary>(case-insensitive) Filter the list of accounts to where the name starts with aparticular string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name%2EstartsWith")]
+            public string? NameStartsWith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name%2EstartsWith")]
+            public string NameStartsWith { get; set; }
+#endif
+            /// <summary>Field to order results by. Currently supported values: `account_name`.</summary>
+            [QueryParameter("order_by")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountNameOrderBy? OrderBy { get; set; }
+            /// <summary>Legacy offset page number. Must be provided with `per_page`. Values below 1 are treated as1. Cursor pagination takes precedence when requested.</summary>
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            /// <summary>The amount of items to return. Defaults to 10.</summary>
+            [QueryParameter("page_size")]
+            public int? PageSize { get; set; }
+            /// <summary>An opaque token returned from the last list response that whenprovided will retrieve the next page.Parameters used to filter the retrieved list must remain in subsequentrequests with a page token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("page_token")]
+            public string? PageToken { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page_token")]
+            public string PageToken { get; set; }
+#endif
+            /// <summary>Legacy offset page size. Must be provided with `page`. Values are clamped to the range1-100. Cursor pagination takes precedence when requested.</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
+            /// <summary>Filter accounts by lifecycle status. Defaults to `active`.</summary>
+            [QueryParameter("status")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccountsStatusParameter? Status { get; set; }
         }
     }
 }

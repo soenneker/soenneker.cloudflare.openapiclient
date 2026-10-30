@@ -11,43 +11,69 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicBgpStatusWithState : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bgp_state") is { } nullNodeBgpState && nullNodeBgpState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BgpState = null;
+            if (parseNode.GetChildNode("cf_speaker_ip") is { } nullNodeCfSpeakerIp && nullNodeCfSpeakerIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CfSpeakerIp = null;
+            if (parseNode.GetChildNode("cf_speaker_port") is { } nullNodeCfSpeakerPort && nullNodeCfSpeakerPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CfSpeakerPort = null;
+            if (parseNode.GetChildNode("customer_speaker_ip") is { } nullNodeCustomerSpeakerIp && nullNodeCustomerSpeakerIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerSpeakerIp = null;
+            if (parseNode.GetChildNode("customer_speaker_port") is { } nullNodeCustomerSpeakerPort && nullNodeCustomerSpeakerPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerSpeakerPort = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("tcp_established") is { } nullNodeTcpEstablished && nullNodeTcpEstablished.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcpEstablished = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bgp_state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BgpState { get; set; }
+        public string? BgpState { get => _explicitNullValueBgpState; set { _explicitNullValueBgpState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp_state"); else _explicitNullProperties?.Remove("bgp_state"); } }
+        private string? _explicitNullValueBgpState = default!;
 #nullable restore
 #else
-        public string BgpState { get; set; }
+        public string BgpState { get => _explicitNullValueBgpState; set { _explicitNullValueBgpState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp_state"); else _explicitNullProperties?.Remove("bgp_state"); } }
+        private string _explicitNullValueBgpState = default!;
 #endif
         /// <summary>The cf_speaker_ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CfSpeakerIp { get; set; }
+        public string? CfSpeakerIp { get => _explicitNullValueCfSpeakerIp; set { _explicitNullValueCfSpeakerIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_speaker_ip"); else _explicitNullProperties?.Remove("cf_speaker_ip"); } }
+        private string? _explicitNullValueCfSpeakerIp = default!;
 #nullable restore
 #else
-        public string CfSpeakerIp { get; set; }
+        public string CfSpeakerIp { get => _explicitNullValueCfSpeakerIp; set { _explicitNullValueCfSpeakerIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_speaker_ip"); else _explicitNullProperties?.Remove("cf_speaker_ip"); } }
+        private string _explicitNullValueCfSpeakerIp = default!;
 #endif
         /// <summary>The cf_speaker_port property</summary>
-        public int? CfSpeakerPort { get; set; }
+        public int? CfSpeakerPort { get => _explicitNullValueCfSpeakerPort; set { _explicitNullValueCfSpeakerPort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_speaker_port"); else _explicitNullProperties?.Remove("cf_speaker_port"); } }
+        private int? _explicitNullValueCfSpeakerPort = default!;
         /// <summary>The customer_speaker_ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerSpeakerIp { get; set; }
+        public string? CustomerSpeakerIp { get => _explicitNullValueCustomerSpeakerIp; set { _explicitNullValueCustomerSpeakerIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_speaker_ip"); else _explicitNullProperties?.Remove("customer_speaker_ip"); } }
+        private string? _explicitNullValueCustomerSpeakerIp = default!;
 #nullable restore
 #else
-        public string CustomerSpeakerIp { get; set; }
+        public string CustomerSpeakerIp { get => _explicitNullValueCustomerSpeakerIp; set { _explicitNullValueCustomerSpeakerIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_speaker_ip"); else _explicitNullProperties?.Remove("customer_speaker_ip"); } }
+        private string _explicitNullValueCustomerSpeakerIp = default!;
 #endif
         /// <summary>The customer_speaker_port property</summary>
-        public int? CustomerSpeakerPort { get; set; }
+        public int? CustomerSpeakerPort { get => _explicitNullValueCustomerSpeakerPort; set { _explicitNullValueCustomerSpeakerPort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_speaker_port"); else _explicitNullProperties?.Remove("customer_speaker_port"); } }
+        private int? _explicitNullValueCustomerSpeakerPort = default!;
         /// <summary>The state property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithStateState? State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithStateState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithStateState? _explicitNullValueState = default!;
         /// <summary>The tcp_established property</summary>
-        public bool? TcpEstablished { get; set; }
+        public bool? TcpEstablished { get => _explicitNullValueTcpEstablished; set { _explicitNullValueTcpEstablished = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcp_established"); else _explicitNullProperties?.Remove("tcp_established"); } }
+        private bool? _explicitNullValueTcpEstablished = default!;
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState"/> and sets the default values.
         /// </summary>
@@ -63,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithStateState>("state", State);
             writer.WriteBoolValue("tcp_established", TcpEstablished);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,140 +11,219 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DevicesCreateDeviceSettingsPolicyRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_to_leave") is { } nullNodeAllowedToLeave && nullNodeAllowedToLeave.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedToLeave = null;
+            if (parseNode.GetChildNode("allow_mode_switch") is { } nullNodeAllowModeSwitch && nullNodeAllowModeSwitch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowModeSwitch = null;
+            if (parseNode.GetChildNode("allow_updates") is { } nullNodeAllowUpdates && nullNodeAllowUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowUpdates = null;
+            if (parseNode.GetChildNode("auto_connect") is { } nullNodeAutoConnect && nullNodeAutoConnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoConnect = null;
+            if (parseNode.GetChildNode("browser_extension_config") is { } nullNodeBrowserExtensionConfig && nullNodeBrowserExtensionConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserExtensionConfig = null;
+            if (parseNode.GetChildNode("captive_portal") is { } nullNodeCaptivePortal && nullNodeCaptivePortal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaptivePortal = null;
+            if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("disable_auto_fallback") is { } nullNodeDisableAutoFallback && nullNodeDisableAutoFallback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableAutoFallback = null;
+            if (parseNode.GetChildNode("dns_search_suffixes") is { } nullNodeDnsSearchSuffixes && nullNodeDnsSearchSuffixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsSearchSuffixes = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("enable_device_credential_authentication") is { } nullNodeEnableDeviceCredentialAuthentication && nullNodeEnableDeviceCredentialAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableDeviceCredentialAuthentication = null;
+            if (parseNode.GetChildNode("exclude") is { } nullNodeExclude && nullNodeExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclude = null;
+            if (parseNode.GetChildNode("exclude_office_ips") is { } nullNodeExcludeOfficeIps && nullNodeExcludeOfficeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeOfficeIps = null;
+            if (parseNode.GetChildNode("global_acceleration") is { } nullNodeGlobalAcceleration && nullNodeGlobalAcceleration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalAcceleration = null;
+            if (parseNode.GetChildNode("include") is { } nullNodeInclude && nullNodeInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Include = null;
+            if (parseNode.GetChildNode("lan_allow_minutes") is { } nullNodeLanAllowMinutes && nullNodeLanAllowMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanAllowMinutes = null;
+            if (parseNode.GetChildNode("lan_allow_subnet_size") is { } nullNodeLanAllowSubnetSize && nullNodeLanAllowSubnetSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanAllowSubnetSize = null;
+            if (parseNode.GetChildNode("match") is { } nullNodeMatch && nullNodeMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Match = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("precedence") is { } nullNodePrecedence && nullNodePrecedence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Precedence = null;
+            if (parseNode.GetChildNode("profile_type") is { } nullNodeProfileType && nullNodeProfileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileType = null;
+            if (parseNode.GetChildNode("register_interface_ip_with_dns") is { } nullNodeRegisterInterfaceIpWithDns && nullNodeRegisterInterfaceIpWithDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegisterInterfaceIpWithDns = null;
+            if (parseNode.GetChildNode("sccm_vpn_boundary_support") is { } nullNodeSccmVpnBoundarySupport && nullNodeSccmVpnBoundarySupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SccmVpnBoundarySupport = null;
+            if (parseNode.GetChildNode("service_mode_v2") is { } nullNodeServiceModeV2 && nullNodeServiceModeV2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceModeV2 = null;
+            if (parseNode.GetChildNode("support_url") is { } nullNodeSupportUrl && nullNodeSupportUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportUrl = null;
+            if (parseNode.GetChildNode("switch_locked") is { } nullNodeSwitchLocked && nullNodeSwitchLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SwitchLocked = null;
+            if (parseNode.GetChildNode("tunnel_protocol") is { } nullNodeTunnelProtocol && nullNodeTunnelProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelProtocol = null;
+            if (parseNode.GetChildNode("uninstall_protection") is { } nullNodeUninstallProtection && nullNodeUninstallProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UninstallProtection = null;
+            if (parseNode.GetChildNode("virtual_networks") is { } nullNodeVirtualNetworks && nullNodeVirtualNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualNetworks = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow devices to leave the organization.</summary>
-        public bool? AllowedToLeave { get; set; }
+        public bool? AllowedToLeave { get => _explicitNullValueAllowedToLeave; set { _explicitNullValueAllowedToLeave = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_to_leave"); else _explicitNullProperties?.Remove("allowed_to_leave"); } }
+        private bool? _explicitNullValueAllowedToLeave = default!;
         /// <summary>Whether to allow the user to switch WARP between modes.</summary>
-        public bool? AllowModeSwitch { get; set; }
+        public bool? AllowModeSwitch { get => _explicitNullValueAllowModeSwitch; set { _explicitNullValueAllowModeSwitch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_mode_switch"); else _explicitNullProperties?.Remove("allow_mode_switch"); } }
+        private bool? _explicitNullValueAllowModeSwitch = default!;
         /// <summary>Whether to receive update notifications when a new version of the client is available.</summary>
-        public bool? AllowUpdates { get; set; }
+        public bool? AllowUpdates { get => _explicitNullValueAllowUpdates; set { _explicitNullValueAllowUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_updates"); else _explicitNullProperties?.Remove("allow_updates"); } }
+        private bool? _explicitNullValueAllowUpdates = default!;
         /// <summary>The amount of time in seconds to reconnect after having been disabled.</summary>
-        public double? AutoConnect { get; set; }
+        public double? AutoConnect { get => _explicitNullValueAutoConnect; set { _explicitNullValueAutoConnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_connect"); else _explicitNullProperties?.Remove("auto_connect"); } }
+        private double? _explicitNullValueAutoConnect = default!;
         /// <summary>Browser extension proxy settings. Required when profile_type is browser_extension and invalid for WARP profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfig? BrowserExtensionConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfig? BrowserExtensionConfig { get => _explicitNullValueBrowserExtensionConfig; set { _explicitNullValueBrowserExtensionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_extension_config"); else _explicitNullProperties?.Remove("browser_extension_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfig? _explicitNullValueBrowserExtensionConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfig BrowserExtensionConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfig BrowserExtensionConfig { get => _explicitNullValueBrowserExtensionConfig; set { _explicitNullValueBrowserExtensionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_extension_config"); else _explicitNullProperties?.Remove("browser_extension_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfig _explicitNullValueBrowserExtensionConfig = default!;
 #endif
         /// <summary>Turn on the captive portal after the specified amount of time.</summary>
-        public double? CaptivePortal { get; set; }
+        public double? CaptivePortal { get => _explicitNullValueCaptivePortal; set { _explicitNullValueCaptivePortal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captive_portal"); else _explicitNullProperties?.Remove("captive_portal"); } }
+        private double? _explicitNullValueCaptivePortal = default!;
         /// <summary>Whether the policy is the account default. WARP group profiles cannot set this field.</summary>
-        public bool? Default { get; set; }
+        public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        private bool? _explicitNullValueDefault = default!;
         /// <summary>A description of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.</summary>
-        public bool? DisableAutoFallback { get; set; }
+        public bool? DisableAutoFallback { get => _explicitNullValueDisableAutoFallback; set { _explicitNullValueDisableAutoFallback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_auto_fallback"); else _explicitNullProperties?.Remove("disable_auto_fallback"); } }
+        private bool? _explicitNullValueDisableAutoFallback = default!;
         /// <summary>List of DNS search suffixes to apply to clients. Suffixes are evaluated in order. Use an empty array to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDnsSearchSuffix>? DnsSearchSuffixes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDnsSearchSuffix>? DnsSearchSuffixes { get => _explicitNullValueDnsSearchSuffixes; set { _explicitNullValueDnsSearchSuffixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_search_suffixes"); else _explicitNullProperties?.Remove("dns_search_suffixes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDnsSearchSuffix>? _explicitNullValueDnsSearchSuffixes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDnsSearchSuffix> DnsSearchSuffixes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDnsSearchSuffix> DnsSearchSuffixes { get => _explicitNullValueDnsSearchSuffixes; set { _explicitNullValueDnsSearchSuffixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_search_suffixes"); else _explicitNullProperties?.Remove("dns_search_suffixes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDnsSearchSuffix> _explicitNullValueDnsSearchSuffixes = default!;
 #endif
         /// <summary>Whether the policy will be applied to matching devices.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Determines whether the WARP client can silently reauthenticate the user with device credentials (Microsoft Entra) instead of prompting for browser-based reauthentication.</summary>
-        public bool? EnableDeviceCredentialAuthentication { get; set; }
+        public bool? EnableDeviceCredentialAuthentication { get => _explicitNullValueEnableDeviceCredentialAuthentication; set { _explicitNullValueEnableDeviceCredentialAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_device_credential_authentication"); else _explicitNullProperties?.Remove("enable_device_credential_authentication"); } }
+        private bool? _explicitNullValueEnableDeviceCredentialAuthentication = default!;
         /// <summary>List of routes excluded in the WARP client&apos;s tunnel. Both &apos;exclude&apos; and &apos;include&apos; cannot be set in the same request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel>? Exclude { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel>? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel>? _explicitNullValueExclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel> Exclude { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel> _explicitNullValueExclude = default!;
 #endif
         /// <summary>Whether to add Microsoft IPs to Split Tunnel exclusions.</summary>
-        public bool? ExcludeOfficeIps { get; set; }
+        public bool? ExcludeOfficeIps { get => _explicitNullValueExcludeOfficeIps; set { _explicitNullValueExcludeOfficeIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_office_ips"); else _explicitNullProperties?.Remove("exclude_office_ips"); } }
+        private bool? _explicitNullValueExcludeOfficeIps = default!;
         /// <summary>Global Acceleration settings for China. When configured, WARP clients connect to the Global Accelerator addresses instead of the default ones. Please contact your account representative to enable this feature on your account. See https://developers.cloudflare.com/china-network/concepts/global-acceleration/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration? GlobalAcceleration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration? GlobalAcceleration { get => _explicitNullValueGlobalAcceleration; set { _explicitNullValueGlobalAcceleration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("global_acceleration"); else _explicitNullProperties?.Remove("global_acceleration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration? _explicitNullValueGlobalAcceleration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration GlobalAcceleration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration GlobalAcceleration { get => _explicitNullValueGlobalAcceleration; set { _explicitNullValueGlobalAcceleration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("global_acceleration"); else _explicitNullProperties?.Remove("global_acceleration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration _explicitNullValueGlobalAcceleration = default!;
 #endif
         /// <summary>List of routes included in the WARP client&apos;s tunnel. Both &apos;exclude&apos; and &apos;include&apos; cannot be set in the same request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude>? Include { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude>? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude>? _explicitNullValueInclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude> Include { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude> _explicitNullValueInclude = default!;
 #endif
         /// <summary>The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset.</summary>
-        public double? LanAllowMinutes { get; set; }
+        public double? LanAllowMinutes { get => _explicitNullValueLanAllowMinutes; set { _explicitNullValueLanAllowMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_allow_minutes"); else _explicitNullProperties?.Remove("lan_allow_minutes"); } }
+        private double? _explicitNullValueLanAllowMinutes = default!;
         /// <summary>The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.</summary>
-        public double? LanAllowSubnetSize { get; set; }
+        public double? LanAllowSubnetSize { get => _explicitNullValueLanAllowSubnetSize; set { _explicitNullValueLanAllowSubnetSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_allow_subnet_size"); else _explicitNullProperties?.Remove("lan_allow_subnet_size"); } }
+        private double? _explicitNullValueLanAllowSubnetSize = default!;
         /// <summary>The wirefilter expression to match devices. Available values: &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.service_token_uuid&quot;, &quot;identity.saml_attributes&quot;, &quot;network&quot;, &quot;os.name&quot;, &quot;os.version&quot;, &quot;device.tags&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Match { get; set; }
+        public string? Match { get => _explicitNullValueMatch; set { _explicitNullValueMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match"); else _explicitNullProperties?.Remove("match"); } }
+        private string? _explicitNullValueMatch = default!;
 #nullable restore
 #else
-        public string Match { get; set; }
+        public string Match { get => _explicitNullValueMatch; set { _explicitNullValueMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match"); else _explicitNullProperties?.Remove("match"); } }
+        private string _explicitNullValueMatch = default!;
 #endif
         /// <summary>The name of the device settings profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.</summary>
-        public double? Precedence { get; set; }
+        public double? Precedence { get => _explicitNullValuePrecedence; set { _explicitNullValuePrecedence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precedence"); else _explicitNullProperties?.Remove("precedence"); } }
+        private double? _explicitNullValuePrecedence = default!;
         /// <summary>The client type to which the device settings profile applies. This field is set when the profile is created and cannot be changed.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesProfileType? ProfileType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesProfileType? ProfileType { get => _explicitNullValueProfileType; set { _explicitNullValueProfileType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_type"); else _explicitNullProperties?.Remove("profile_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesProfileType? _explicitNullValueProfileType = default!;
         /// <summary>Determines if the operating system will register WARP&apos;s local interface IP with your on-premises DNS server.</summary>
-        public bool? RegisterInterfaceIpWithDns { get; set; }
+        public bool? RegisterInterfaceIpWithDns { get => _explicitNullValueRegisterInterfaceIpWithDns; set { _explicitNullValueRegisterInterfaceIpWithDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("register_interface_ip_with_dns"); else _explicitNullProperties?.Remove("register_interface_ip_with_dns"); } }
+        private bool? _explicitNullValueRegisterInterfaceIpWithDns = default!;
         /// <summary>Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).</summary>
-        public bool? SccmVpnBoundarySupport { get; set; }
+        public bool? SccmVpnBoundarySupport { get => _explicitNullValueSccmVpnBoundarySupport; set { _explicitNullValueSccmVpnBoundarySupport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sccm_vpn_boundary_support"); else _explicitNullProperties?.Remove("sccm_vpn_boundary_support"); } }
+        private bool? _explicitNullValueSccmVpnBoundarySupport = default!;
         /// <summary>The service_mode_v2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesServiceModeV2? ServiceModeV2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesServiceModeV2? ServiceModeV2 { get => _explicitNullValueServiceModeV2; set { _explicitNullValueServiceModeV2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_mode_v2"); else _explicitNullProperties?.Remove("service_mode_v2"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesServiceModeV2? _explicitNullValueServiceModeV2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesServiceModeV2 ServiceModeV2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesServiceModeV2 ServiceModeV2 { get => _explicitNullValueServiceModeV2; set { _explicitNullValueServiceModeV2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_mode_v2"); else _explicitNullProperties?.Remove("service_mode_v2"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesServiceModeV2 _explicitNullValueServiceModeV2 = default!;
 #endif
         /// <summary>The URL to launch when the Send Feedback button is clicked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupportUrl { get; set; }
+        public string? SupportUrl { get => _explicitNullValueSupportUrl; set { _explicitNullValueSupportUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_url"); else _explicitNullProperties?.Remove("support_url"); } }
+        private string? _explicitNullValueSupportUrl = default!;
 #nullable restore
 #else
-        public string SupportUrl { get; set; }
+        public string SupportUrl { get => _explicitNullValueSupportUrl; set { _explicitNullValueSupportUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_url"); else _explicitNullProperties?.Remove("support_url"); } }
+        private string _explicitNullValueSupportUrl = default!;
 #endif
         /// <summary>Whether to allow the user to turn off the WARP switch and disconnect the client.</summary>
-        public bool? SwitchLocked { get; set; }
+        public bool? SwitchLocked { get => _explicitNullValueSwitchLocked; set { _explicitNullValueSwitchLocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("switch_locked"); else _explicitNullProperties?.Remove("switch_locked"); } }
+        private bool? _explicitNullValueSwitchLocked = default!;
         /// <summary>Determines which tunnel protocol to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TunnelProtocol { get; set; }
+        public string? TunnelProtocol { get => _explicitNullValueTunnelProtocol; set { _explicitNullValueTunnelProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_protocol"); else _explicitNullProperties?.Remove("tunnel_protocol"); } }
+        private string? _explicitNullValueTunnelProtocol = default!;
 #nullable restore
 #else
-        public string TunnelProtocol { get; set; }
+        public string TunnelProtocol { get => _explicitNullValueTunnelProtocol; set { _explicitNullValueTunnelProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_protocol"); else _explicitNullProperties?.Remove("tunnel_protocol"); } }
+        private string _explicitNullValueTunnelProtocol = default!;
 #endif
         /// <summary>Determines whether uninstalling the WARP client requires an override code. (Windows only).</summary>
-        public bool? UninstallProtection { get; set; }
+        public bool? UninstallProtection { get => _explicitNullValueUninstallProtection; set { _explicitNullValueUninstallProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uninstall_protection"); else _explicitNullProperties?.Remove("uninstall_protection"); } }
+        private bool? _explicitNullValueUninstallProtection = default!;
         /// <summary>Virtual network access settings for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVirtualNetworks? VirtualNetworks { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVirtualNetworks? VirtualNetworks { get => _explicitNullValueVirtualNetworks; set { _explicitNullValueVirtualNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_networks"); else _explicitNullProperties?.Remove("virtual_networks"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVirtualNetworks? _explicitNullValueVirtualNetworks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVirtualNetworks VirtualNetworks { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVirtualNetworks VirtualNetworks { get => _explicitNullValueVirtualNetworks; set { _explicitNullValueVirtualNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_networks"); else _explicitNullProperties?.Remove("virtual_networks"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVirtualNetworks _explicitNullValueVirtualNetworks = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DevicesCreateDeviceSettingsPolicyRequest"/> and sets the default values.
@@ -175,7 +254,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DevicesCreateDeviceSettingsPolicyRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DevicesCreateDeviceSettingsPolicyRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DevicesCreateDeviceSettingsPolicyRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -254,6 +333,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("tunnel_protocol", TunnelProtocol);
             writer.WriteBoolValue("uninstall_protection", UninstallProtection);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVirtualNetworks>("virtual_networks", VirtualNetworks);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

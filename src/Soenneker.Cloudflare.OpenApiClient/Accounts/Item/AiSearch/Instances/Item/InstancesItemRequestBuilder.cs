@@ -22,7 +22,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
     public partial class InstancesItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The chat property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat.ChatRequestBuilder Chat
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
@@ -84,6 +83,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -108,6 +109,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -140,6 +143,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstance404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstance409Response.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstance503Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstance200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstance200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

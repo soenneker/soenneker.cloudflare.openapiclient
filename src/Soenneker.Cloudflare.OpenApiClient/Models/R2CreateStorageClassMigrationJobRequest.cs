@@ -12,13 +12,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class R2CreateStorageClassMigrationJobRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destinationStorageClass") is { } nullNodeDestinationStorageClass && nullNodeDestinationStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationStorageClass = null;
+            if (parseNode.GetChildNode("jobType") is { } nullNodeJobType && nullNodeJobType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobType = null;
+            if (parseNode.GetChildNode("sourceStorageClass") is { } nullNodeSourceStorageClass && nullNodeSourceStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceStorageClass = null;
+        }
+
         /// <summary>The destinationStorageClass property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequestDestinationStorageClass? DestinationStorageClass { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequestDestinationStorageClass? DestinationStorageClass { get => _explicitNullValueDestinationStorageClass; set { _explicitNullValueDestinationStorageClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationStorageClass"); else _explicitNullProperties?.Remove("destinationStorageClass"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequestDestinationStorageClass? _explicitNullValueDestinationStorageClass = default!;
         /// <summary>The jobType property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StorageClassMigrationJobType? JobType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StorageClassMigrationJobType? JobType { get => _explicitNullValueJobType; set { _explicitNullValueJobType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobType"); else _explicitNullProperties?.Remove("jobType"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StorageClassMigrationJobType? _explicitNullValueJobType = default!;
         /// <summary>The sourceStorageClass property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequestSourceStorageClass? SourceStorageClass { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequestSourceStorageClass? SourceStorageClass { get => _explicitNullValueSourceStorageClass; set { _explicitNullValueSourceStorageClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceStorageClass"); else _explicitNullProperties?.Remove("sourceStorageClass"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequestSourceStorageClass? _explicitNullValueSourceStorageClass = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -27,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequestDestinationStorageClass>("destinationStorageClass", DestinationStorageClass);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StorageClassMigrationJobType>("jobType", JobType);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequestSourceStorageClass>("sourceStorageClass", SourceStorageClass);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequestSourceStorageClass>("sourceStorageClass", SourceStorageClass);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,26 +11,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RealtimekitStartTrackRecordingBodyRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("layers") is { } nullNodeLayers && nullNodeLayers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layers = null;
+            if (parseNode.GetChildNode("meeting_id") is { } nullNodeMeetingId && nullNodeMeetingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeetingId = null;
+            if (parseNode.GetChildNode("user_ids") is { } nullNodeUserIds && nullNodeUserIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional audio layer configuration. If omitted, RealtimeKit records all participant audio using the default file name prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequestLayersProperty? Layers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequestLayersProperty? Layers { get => _explicitNullValueLayers; set { _explicitNullValueLayers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layers"); else _explicitNullProperties?.Remove("layers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequestLayersProperty? _explicitNullValueLayers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequestLayersProperty Layers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequestLayersProperty Layers { get => _explicitNullValueLayers; set { _explicitNullValueLayers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layers"); else _explicitNullProperties?.Remove("layers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequestLayersProperty _explicitNullValueLayers = default!;
 #endif
         /// <summary>ID of the meeting to record.</summary>
-        public Guid? MeetingId { get; set; }
+        public Guid? MeetingId { get => _explicitNullValueMeetingId; set { _explicitNullValueMeetingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_id"); else _explicitNullProperties?.Remove("meeting_id"); } }
+        private Guid? _explicitNullValueMeetingId = default!;
         /// <summary>Optional list of participant user IDs to record. Selective track recording (`user_ids`) is in early beta contact support to use this feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UserIds { get; set; }
+        public List<string>? UserIds { get => _explicitNullValueUserIds; set { _explicitNullValueUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_ids"); else _explicitNullProperties?.Remove("user_ids"); } }
+        private List<string>? _explicitNullValueUserIds = default!;
 #nullable restore
 #else
-        public List<string> UserIds { get; set; }
+        public List<string> UserIds { get => _explicitNullValueUserIds; set { _explicitNullValueUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_ids"); else _explicitNullProperties?.Remove("user_ids"); } }
+        private List<string> _explicitNullValueUserIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequest"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartTrackRecordingBodyRequestLayersProperty>("layers", Layers);
             writer.WriteGuidValue("meeting_id", MeetingId);
             writer.WriteCollectionOfPrimitiveValues<string>("user_ids", UserIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

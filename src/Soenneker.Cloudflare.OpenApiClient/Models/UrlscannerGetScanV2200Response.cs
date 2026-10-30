@@ -11,72 +11,103 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UrlscannerGetScanV2200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("lists") is { } nullNodeLists && nullNodeLists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lists = null;
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
+            if (parseNode.GetChildNode("scanner") is { } nullNodeScanner && nullNodeScanner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scanner = null;
+            if (parseNode.GetChildNode("stats") is { } nullNodeStats && nullNodeStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stats = null;
+            if (parseNode.GetChildNode("task") is { } nullNodeTask && nullNodeTask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Task = null;
+            if (parseNode.GetChildNode("verdicts") is { } nullNodeVerdicts && nullNodeVerdicts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Verdicts = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseData? Data { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseData Data { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseData _explicitNullValueData = default!;
 #endif
         /// <summary>The lists property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseLists? Lists { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseLists? Lists { get => _explicitNullValueLists; set { _explicitNullValueLists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lists"); else _explicitNullProperties?.Remove("lists"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseLists? _explicitNullValueLists = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseLists Lists { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseLists Lists { get => _explicitNullValueLists; set { _explicitNullValueLists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lists"); else _explicitNullProperties?.Remove("lists"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseLists _explicitNullValueLists = default!;
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMeta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMeta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponsePage? Page { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponsePage? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponsePage? _explicitNullValuePage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponsePage Page { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponsePage Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponsePage _explicitNullValuePage = default!;
 #endif
         /// <summary>The scanner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseScanner? Scanner { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseScanner? Scanner { get => _explicitNullValueScanner; set { _explicitNullValueScanner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scanner"); else _explicitNullProperties?.Remove("scanner"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseScanner? _explicitNullValueScanner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseScanner Scanner { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseScanner Scanner { get => _explicitNullValueScanner; set { _explicitNullValueScanner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scanner"); else _explicitNullProperties?.Remove("scanner"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseScanner _explicitNullValueScanner = default!;
 #endif
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseStats? Stats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseStats? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseStats? _explicitNullValueStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseStats Stats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseStats Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseStats _explicitNullValueStats = default!;
 #endif
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseTask? Task { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseTask? Task { get => _explicitNullValueTask; set { _explicitNullValueTask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("task"); else _explicitNullProperties?.Remove("task"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseTask? _explicitNullValueTask = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseTask Task { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseTask Task { get => _explicitNullValueTask; set { _explicitNullValueTask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("task"); else _explicitNullProperties?.Remove("task"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseTask _explicitNullValueTask = default!;
 #endif
         /// <summary>The verdicts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseVerdicts? Verdicts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseVerdicts? Verdicts { get => _explicitNullValueVerdicts; set { _explicitNullValueVerdicts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verdicts"); else _explicitNullProperties?.Remove("verdicts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseVerdicts? _explicitNullValueVerdicts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseVerdicts Verdicts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseVerdicts Verdicts { get => _explicitNullValueVerdicts; set { _explicitNullValueVerdicts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verdicts"); else _explicitNullProperties?.Remove("verdicts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseVerdicts _explicitNullValueVerdicts = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200Response"/> and sets the default values.
@@ -93,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,6 +159,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseStats>("stats", Stats);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseTask>("task", Task);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseVerdicts>("verdicts", Verdicts);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

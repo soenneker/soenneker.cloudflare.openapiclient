@@ -11,69 +11,111 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SharedQueryPostRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chart") is { } nullNodeChart && nullNodeChart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chart = null;
+            if (parseNode.GetChildNode("chartType") is { } nullNodeChartType && nullNodeChartType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChartType = null;
+            if (parseNode.GetChildNode("compare") is { } nullNodeCompare && nullNodeCompare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compare = null;
+            if (parseNode.GetChildNode("distributionScale") is { } nullNodeDistributionScale && nullNodeDistributionScale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistributionScale = null;
+            if (parseNode.GetChildNode("dry") is { } nullNodeDry && nullNodeDry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dry = null;
+            if (parseNode.GetChildNode("granularity") is { } nullNodeGranularity && nullNodeGranularity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Granularity = null;
+            if (parseNode.GetChildNode("ignoreSeries") is { } nullNodeIgnoreSeries && nullNodeIgnoreSeries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreSeries = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("offset") is { } nullNodeOffset && nullNodeOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offset = null;
+            if (parseNode.GetChildNode("offsetBy") is { } nullNodeOffsetBy && nullNodeOffsetBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffsetBy = null;
+            if (parseNode.GetChildNode("offsetDirection") is { } nullNodeOffsetDirection && nullNodeOffsetDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffsetDirection = null;
+            if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("queryId") is { } nullNodeQueryId && nullNodeQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryId = null;
+            if (parseNode.GetChildNode("timeframe") is { } nullNodeTimeframe && nullNodeTimeframe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeframe = null;
+            if (parseNode.GetChildNode("view") is { } nullNodeView && nullNodeView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) View = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When true, includes time-series data in the response.</summary>
-        public bool? Chart { get; set; }
+        public bool? Chart { get => _explicitNullValueChart; set { _explicitNullValueChart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chart"); else _explicitNullProperties?.Remove("chart"); } }
+        private bool? _explicitNullValueChart = default!;
         /// <summary>Controls the SQL shape and response payload for the &apos;calculations&apos; view. Omitted or &apos;timeseries_and_aggregate&apos;: current behaviour — both the time-series and aggregate queries. &apos;timeseries&apos;: time-series only. &apos;aggregate&apos;: aggregate only. &apos;distribution&apos;: a bucketed 2D histogram (time × value buckets) returned in &apos;distribution&apos; instead of &apos;calculations&apos;. &apos;distribution&apos; is not compatible with &apos;compare&apos; — combining them returns a 400.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestChartType? ChartType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestChartType? ChartType { get => _explicitNullValueChartType; set { _explicitNullValueChartType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chartType"); else _explicitNullProperties?.Remove("chartType"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestChartType? _explicitNullValueChartType = default!;
         /// <summary>When true, includes a comparison dataset from the previous time period of equal length.</summary>
-        public bool? Compare { get; set; }
+        public bool? Compare { get => _explicitNullValueCompare; set { _explicitNullValueCompare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compare"); else _explicitNullProperties?.Remove("compare"); } }
+        private bool? _explicitNullValueCompare = default!;
         /// <summary>Value-axis bucketing for chartType &apos;distribution&apos;. Omitted or &apos;log&apos;: geometric buckets, best for heavy-tailed latency. &apos;linear&apos;: fixed-width buckets, clearer for narrow or additive ranges. Ignored for other chartTypes. The response echoes the scheme used in distribution.bucketMode.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestDistributionScale? DistributionScale { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestDistributionScale? DistributionScale { get => _explicitNullValueDistributionScale; set { _explicitNullValueDistributionScale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distributionScale"); else _explicitNullProperties?.Remove("distributionScale"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestDistributionScale? _explicitNullValueDistributionScale = default!;
         /// <summary>When true, executes the query without persisting the results. Useful for validation or previewing.</summary>
-        public bool? Dry { get; set; }
+        public bool? Dry { get => _explicitNullValueDry; set { _explicitNullValueDry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dry"); else _explicitNullProperties?.Remove("dry"); } }
+        private bool? _explicitNullValueDry = default!;
         /// <summary>Number of time-series buckets. Only used when view is &apos;calculations&apos;. Omit to let the system auto-detect an appropriate granularity.</summary>
-        public double? Granularity { get; set; }
+        public double? Granularity { get => _explicitNullValueGranularity; set { _explicitNullValueGranularity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("granularity"); else _explicitNullProperties?.Remove("granularity"); } }
+        private double? _explicitNullValueGranularity = default!;
         /// <summary>When true, omits time-series data from the response and returns only aggregated values. Reduces response size when series are not needed.</summary>
-        public bool? IgnoreSeries { get; set; }
+        public bool? IgnoreSeries { get => _explicitNullValueIgnoreSeries; set { _explicitNullValueIgnoreSeries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreSeries"); else _explicitNullProperties?.Remove("ignoreSeries"); } }
+        private bool? _explicitNullValueIgnoreSeries = default!;
         /// <summary>Maximum number of events to return when view is &apos;events&apos;. Also controls the number of group-by rows when view is &apos;calculations&apos;.</summary>
-        public double? Limit { get; set; }
+        public double? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private double? _explicitNullValueLimit = default!;
         /// <summary>Cursor for pagination in event, trace, invocation, and agent views. Pass the $metadata.id of the last event, the trace cursor, or AgentRun.id to fetch the next page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Offset { get; set; }
+        public string? Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        private string? _explicitNullValueOffset = default!;
 #nullable restore
 #else
-        public string Offset { get; set; }
+        public string Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        private string _explicitNullValueOffset = default!;
 #endif
         /// <summary>Numeric offset for paginating grouped/pattern results (top-N lists). Use together with limit. Not used by cursor-based pagination.</summary>
-        public double? OffsetBy { get; set; }
+        public double? OffsetBy { get => _explicitNullValueOffsetBy; set { _explicitNullValueOffsetBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offsetBy"); else _explicitNullProperties?.Remove("offsetBy"); } }
+        private double? _explicitNullValueOffsetBy = default!;
         /// <summary>Pagination direction: &apos;next&apos; for forward, &apos;prev&apos; for backward.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OffsetDirection { get; set; }
+        public string? OffsetDirection { get => _explicitNullValueOffsetDirection; set { _explicitNullValueOffsetDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offsetDirection"); else _explicitNullProperties?.Remove("offsetDirection"); } }
+        private string? _explicitNullValueOffsetDirection = default!;
 #nullable restore
 #else
-        public string OffsetDirection { get; set; }
+        public string OffsetDirection { get => _explicitNullValueOffsetDirection; set { _explicitNullValueOffsetDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offsetDirection"); else _explicitNullProperties?.Remove("offsetDirection"); } }
+        private string _explicitNullValueOffsetDirection = default!;
 #endif
         /// <summary>Query parameters defining what data to retrieve — filters, calculations, group-bys, and ordering. In practice this should always be provided for ad-hoc queries. Only omit when executing a previously saved query by queryId. Use the keys and values endpoints to discover available fields before building filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParameters? Parameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParameters? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParameters? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParameters Parameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParameters Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParameters _explicitNullValueParameters = default!;
 #endif
         /// <summary>Identifier for the query. When parameters are omitted, this ID is used to load a previously saved query&apos;s parameters. When providing parameters inline, pass any identifier (e.g. an ad-hoc ID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryId { get; set; }
+        public string? QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryId"); else _explicitNullProperties?.Remove("queryId"); } }
+        private string? _explicitNullValueQueryId = default!;
 #nullable restore
 #else
-        public string QueryId { get; set; }
+        public string QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryId"); else _explicitNullProperties?.Remove("queryId"); } }
+        private string _explicitNullValueQueryId = default!;
 #endif
         /// <summary>Timeframe for the query using Unix timestamps in milliseconds. &apos;from&apos; must be earlier than &apos;to&apos;. Narrower timeframes produce faster responses and more specific results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestTimeframe? Timeframe { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestTimeframe? Timeframe { get => _explicitNullValueTimeframe; set { _explicitNullValueTimeframe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeframe"); else _explicitNullProperties?.Remove("timeframe"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestTimeframe? _explicitNullValueTimeframe = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestTimeframe Timeframe { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestTimeframe Timeframe { get => _explicitNullValueTimeframe; set { _explicitNullValueTimeframe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeframe"); else _explicitNullProperties?.Remove("timeframe"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestTimeframe _explicitNullValueTimeframe = default!;
 #endif
         /// <summary>Controls the shape of the response. &apos;events&apos;: individual log lines matching the query. &apos;calculations&apos;: aggregated metrics (count, avg, p99, etc.) with optional group-by breakdowns and time-series. &apos;invocations&apos;: events grouped by request ID. &apos;traces&apos;: distributed trace summaries. &apos;agents&apos;: agent-specific trace summaries.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestView? View { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestView? View { get => _explicitNullValueView; set { _explicitNullValueView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view"); else _explicitNullProperties?.Remove("view"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestView? _explicitNullValueView = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequest"/> and sets the default values.
         /// </summary>
@@ -92,7 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -141,6 +183,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("queryId", QueryId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestTimeframe>("timeframe", Timeframe);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestView>("view", View);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

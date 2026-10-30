@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MqEventSource : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceImages"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,41 +102,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSource();
             if("images".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqEventSourceImages = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceImages();
+                
             }
             else if("kv".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqEventSourceKv = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceKv();
+                
             }
             else if("r2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqEventSourceR2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceR2();
+                
             }
             else if("superSlurper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqEventSourceSuperSlurper = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceSuperSlurper();
+                
             }
             else if("vectorize".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqEventSourceVectorize = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceVectorize();
+                
             }
             else if("workersAi.model".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqEventSourceWorkersAiModel = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersAiModel();
+                
             }
             else if("workersBuilds.worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqEventSourceWorkersBuildsWorker = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersBuildsWorker();
+                
             }
             else if("workers.script".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqEventSourceWorkersScript = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersScript();
+                
             }
             else if("workflows.workflow".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqEventSourceWorkflowsWorkflow = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkflowsWorkflow();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.MqEventSourceImages == null && result.MqEventSourceKv == null && result.MqEventSourceR2 == null && result.MqEventSourceSuperSlurper == null && result.MqEventSourceVectorize == null && result.MqEventSourceWorkersAiModel == null && result.MqEventSourceWorkersBuildsWorker == null && result.MqEventSourceWorkersScript == null && result.MqEventSourceWorkflowsWorkflow == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,41 +191,62 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (MqEventSourceImages == null && MqEventSourceKv == null && MqEventSourceR2 == null && MqEventSourceSuperSlurper == null && MqEventSourceVectorize == null && MqEventSourceWorkersAiModel == null && MqEventSourceWorkersBuildsWorker == null && MqEventSourceWorkersScript == null && MqEventSourceWorkflowsWorkflow == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (MqEventSourceImages != null && MqEventSourceKv == null && MqEventSourceR2 == null && MqEventSourceSuperSlurper == null && MqEventSourceVectorize == null && MqEventSourceWorkersAiModel == null && MqEventSourceWorkersBuildsWorker == null && MqEventSourceWorkersScript == null && MqEventSourceWorkflowsWorkflow == null) { if (MqEventSourceImages is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MqEventSourceImages); return; }
+            if (MqEventSourceKv != null && MqEventSourceImages == null && MqEventSourceR2 == null && MqEventSourceSuperSlurper == null && MqEventSourceVectorize == null && MqEventSourceWorkersAiModel == null && MqEventSourceWorkersBuildsWorker == null && MqEventSourceWorkersScript == null && MqEventSourceWorkflowsWorkflow == null) { if (MqEventSourceKv is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MqEventSourceKv); return; }
+            if (MqEventSourceR2 != null && MqEventSourceImages == null && MqEventSourceKv == null && MqEventSourceSuperSlurper == null && MqEventSourceVectorize == null && MqEventSourceWorkersAiModel == null && MqEventSourceWorkersBuildsWorker == null && MqEventSourceWorkersScript == null && MqEventSourceWorkflowsWorkflow == null) { if (MqEventSourceR2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MqEventSourceR2); return; }
+            if (MqEventSourceSuperSlurper != null && MqEventSourceImages == null && MqEventSourceKv == null && MqEventSourceR2 == null && MqEventSourceVectorize == null && MqEventSourceWorkersAiModel == null && MqEventSourceWorkersBuildsWorker == null && MqEventSourceWorkersScript == null && MqEventSourceWorkflowsWorkflow == null) { if (MqEventSourceSuperSlurper is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MqEventSourceSuperSlurper); return; }
+            if (MqEventSourceVectorize != null && MqEventSourceImages == null && MqEventSourceKv == null && MqEventSourceR2 == null && MqEventSourceSuperSlurper == null && MqEventSourceWorkersAiModel == null && MqEventSourceWorkersBuildsWorker == null && MqEventSourceWorkersScript == null && MqEventSourceWorkflowsWorkflow == null) { if (MqEventSourceVectorize is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MqEventSourceVectorize); return; }
+            if (MqEventSourceWorkersAiModel != null && MqEventSourceImages == null && MqEventSourceKv == null && MqEventSourceR2 == null && MqEventSourceSuperSlurper == null && MqEventSourceVectorize == null && MqEventSourceWorkersBuildsWorker == null && MqEventSourceWorkersScript == null && MqEventSourceWorkflowsWorkflow == null) { if (MqEventSourceWorkersAiModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MqEventSourceWorkersAiModel); return; }
+            if (MqEventSourceWorkersBuildsWorker != null && MqEventSourceImages == null && MqEventSourceKv == null && MqEventSourceR2 == null && MqEventSourceSuperSlurper == null && MqEventSourceVectorize == null && MqEventSourceWorkersAiModel == null && MqEventSourceWorkersScript == null && MqEventSourceWorkflowsWorkflow == null) { if (MqEventSourceWorkersBuildsWorker is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MqEventSourceWorkersBuildsWorker); return; }
+            if (MqEventSourceWorkersScript != null && MqEventSourceImages == null && MqEventSourceKv == null && MqEventSourceR2 == null && MqEventSourceSuperSlurper == null && MqEventSourceVectorize == null && MqEventSourceWorkersAiModel == null && MqEventSourceWorkersBuildsWorker == null && MqEventSourceWorkflowsWorkflow == null) { if (MqEventSourceWorkersScript is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MqEventSourceWorkersScript); return; }
+            if (MqEventSourceWorkflowsWorkflow != null && MqEventSourceImages == null && MqEventSourceKv == null && MqEventSourceR2 == null && MqEventSourceSuperSlurper == null && MqEventSourceVectorize == null && MqEventSourceWorkersAiModel == null && MqEventSourceWorkersBuildsWorker == null && MqEventSourceWorkersScript == null) { if (MqEventSourceWorkflowsWorkflow is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MqEventSourceWorkflowsWorkflow); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(MqEventSourceImages != null)
             {
+                if (MqEventSourceImages is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceImages>(null, MqEventSourceImages);
             }
             else if(MqEventSourceKv != null)
             {
+                if (MqEventSourceKv is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceKv>(null, MqEventSourceKv);
             }
             else if(MqEventSourceR2 != null)
             {
+                if (MqEventSourceR2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceR2>(null, MqEventSourceR2);
             }
             else if(MqEventSourceSuperSlurper != null)
             {
+                if (MqEventSourceSuperSlurper is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceSuperSlurper>(null, MqEventSourceSuperSlurper);
             }
             else if(MqEventSourceVectorize != null)
             {
+                if (MqEventSourceVectorize is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceVectorize>(null, MqEventSourceVectorize);
             }
             else if(MqEventSourceWorkersAiModel != null)
             {
+                if (MqEventSourceWorkersAiModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersAiModel>(null, MqEventSourceWorkersAiModel);
             }
             else if(MqEventSourceWorkersBuildsWorker != null)
             {
+                if (MqEventSourceWorkersBuildsWorker is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersBuildsWorker>(null, MqEventSourceWorkersBuildsWorker);
             }
             else if(MqEventSourceWorkersScript != null)
             {
+                if (MqEventSourceWorkersScript is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersScript>(null, MqEventSourceWorkersScript);
             }
             else if(MqEventSourceWorkflowsWorkflow != null)
             {
+                if (MqEventSourceWorkflowsWorkflow is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkflowsWorkflow>(null, MqEventSourceWorkflowsWorkflow);
             }
         }

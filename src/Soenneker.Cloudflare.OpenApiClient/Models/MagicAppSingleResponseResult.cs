@@ -12,56 +12,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MagicAppSingleResponseResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_app_id") is { } nullNodeAccountAppId && nullNodeAccountAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountAppId = null;
+            if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
+            if (parseNode.GetChildNode("ip_subnets") is { } nullNodeIpSubnets && nullNodeIpSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpSubnets = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("source_subnets") is { } nullNodeSourceSubnets && nullNodeSourceSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceSubnets = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Magic account app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountAppId { get; set; }
+        public string? AccountAppId { get => _explicitNullValueAccountAppId; set { _explicitNullValueAccountAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_app_id"); else _explicitNullProperties?.Remove("account_app_id"); } }
+        private string? _explicitNullValueAccountAppId = default!;
 #nullable restore
 #else
-        public string AccountAppId { get; set; }
+        public string AccountAppId { get => _explicitNullValueAccountAppId; set { _explicitNullValueAccountAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_app_id"); else _explicitNullProperties?.Remove("account_app_id"); } }
+        private string _explicitNullValueAccountAppId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>FQDNs to associate with traffic decisions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Hostnames { get; set; }
+        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        private List<string>? _explicitNullValueHostnames = default!;
 #nullable restore
 #else
-        public List<string> Hostnames { get; set; }
+        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        private List<string> _explicitNullValueHostnames = default!;
 #endif
         /// <summary>IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IpSubnets { get; set; }
+        public List<string>? IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
+        private List<string>? _explicitNullValueIpSubnets = default!;
 #nullable restore
 #else
-        public List<string> IpSubnets { get; set; }
+        public List<string> IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
+        private List<string> _explicitNullValueIpSubnets = default!;
 #endif
         /// <summary>Display name for the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SourceSubnets { get; set; }
+        public List<string>? SourceSubnets { get => _explicitNullValueSourceSubnets; set { _explicitNullValueSourceSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_subnets"); else _explicitNullProperties?.Remove("source_subnets"); } }
+        private List<string>? _explicitNullValueSourceSubnets = default!;
 #nullable restore
 #else
-        public List<string> SourceSubnets { get; set; }
+        public List<string> SourceSubnets { get => _explicitNullValueSourceSubnets; set { _explicitNullValueSourceSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_subnets"); else _explicitNullProperties?.Remove("source_subnets"); } }
+        private List<string> _explicitNullValueSourceSubnets = default!;
 #endif
         /// <summary>Category of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppSingleResponseResult"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppSingleResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppSingleResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppSingleResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("source_subnets", SourceSubnets);
             writer.WriteStringValue("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

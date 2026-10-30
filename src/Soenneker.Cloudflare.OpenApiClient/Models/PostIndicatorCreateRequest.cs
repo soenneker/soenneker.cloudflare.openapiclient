@@ -11,50 +11,74 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostIndicatorCreateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoCreateType") is { } nullNodeAutoCreateType && nullNodeAutoCreateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoCreateType = null;
+            if (parseNode.GetChildNode("indicatorType") is { } nullNodeIndicatorType && nullNodeIndicatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorType = null;
+            if (parseNode.GetChildNode("relatedEvents") is { } nullNodeRelatedEvents && nullNodeRelatedEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedEvents = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("tlp") is { } nullNodeTlp && nullNodeTlp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tlp = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, automatically create the indicator type if it doesn&apos;t exist. If false (default), throw an error when the indicator type doesn&apos;t exist.</summary>
-        public bool? AutoCreateType { get; set; }
+        public bool? AutoCreateType { get => _explicitNullValueAutoCreateType; set { _explicitNullValueAutoCreateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoCreateType"); else _explicitNullProperties?.Remove("autoCreateType"); } }
+        private bool? _explicitNullValueAutoCreateType = default!;
         /// <summary>The indicatorType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndicatorType { get; set; }
+        public string? IndicatorType { get => _explicitNullValueIndicatorType; set { _explicitNullValueIndicatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorType"); else _explicitNullProperties?.Remove("indicatorType"); } }
+        private string? _explicitNullValueIndicatorType = default!;
 #nullable restore
 #else
-        public string IndicatorType { get; set; }
+        public string IndicatorType { get => _explicitNullValueIndicatorType; set { _explicitNullValueIndicatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorType"); else _explicitNullProperties?.Remove("indicatorType"); } }
+        private string _explicitNullValueIndicatorType = default!;
 #endif
         /// <summary>The relatedEvents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem>? RelatedEvents { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem>? RelatedEvents { get => _explicitNullValueRelatedEvents; set { _explicitNullValueRelatedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relatedEvents"); else _explicitNullProperties?.Remove("relatedEvents"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem>? _explicitNullValueRelatedEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem> RelatedEvents { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem> RelatedEvents { get => _explicitNullValueRelatedEvents; set { _explicitNullValueRelatedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relatedEvents"); else _explicitNullProperties?.Remove("relatedEvents"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem> _explicitNullValueRelatedEvents = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueTags = default!;
 #endif
         /// <summary>Traffic Light Protocol designation. Case-insensitive on input, stored and returned as UPPERCASE. Allowed values: clear, green, amber, amber-strict, red, purple.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tlp { get; set; }
+        public string? Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        private string? _explicitNullValueTlp = default!;
 #nullable restore
 #else
-        public string Tlp { get; set; }
+        public string Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        private string _explicitNullValueTlp = default!;
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequest"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "autoCreateType", n => { AutoCreateType = n.GetBoolValue(); } },
                 { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "relatedEvents", n => { RelatedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tlp", n => { Tlp = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -99,9 +123,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("autoCreateType", AutoCreateType);
             writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem>("relatedEvents", RelatedEvents);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("tags", Tags);
             writer.WriteStringValue("tlp", Tlp);
             writer.WriteStringValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

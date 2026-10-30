@@ -51,6 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Authenticator_device_aaguids.Authenticator_device_aaguidsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bookmarks property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder Bookmarks
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder(PathParameters, RequestAdapter);

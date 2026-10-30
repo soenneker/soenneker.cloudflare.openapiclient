@@ -55,6 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Message
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailApiError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailApiError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

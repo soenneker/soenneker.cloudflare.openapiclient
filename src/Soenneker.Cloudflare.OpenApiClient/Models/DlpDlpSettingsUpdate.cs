@@ -12,20 +12,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DlpDlpSettingsUpdate : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ai_context_analysis") is { } nullNodeAiContextAnalysis && nullNodeAiContextAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiContextAnalysis = null;
+            if (parseNode.GetChildNode("ocr") is { } nullNodeOcr && nullNodeOcr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ocr = null;
+            if (parseNode.GetChildNode("payload_logging") is { } nullNodePayloadLogging && nullNodePayloadLogging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayloadLogging = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether AI context analysis is enabled at the account level.</summary>
-        public bool? AiContextAnalysis { get; set; }
+        public bool? AiContextAnalysis { get => _explicitNullValueAiContextAnalysis; set { _explicitNullValueAiContextAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_context_analysis"); else _explicitNullProperties?.Remove("ai_context_analysis"); } }
+        private bool? _explicitNullValueAiContextAnalysis = default!;
         /// <summary>Whether OCR is enabled at the account level.</summary>
-        public bool? Ocr { get; set; }
+        public bool? Ocr { get => _explicitNullValueOcr; set { _explicitNullValueOcr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ocr"); else _explicitNullProperties?.Remove("ocr"); } }
+        private bool? _explicitNullValueOcr = default!;
         /// <summary>The payload_logging property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging? PayloadLogging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging? PayloadLogging { get => _explicitNullValuePayloadLogging; set { _explicitNullValuePayloadLogging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_logging"); else _explicitNullProperties?.Remove("payload_logging"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging? _explicitNullValuePayloadLogging = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging PayloadLogging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging PayloadLogging { get => _explicitNullValuePayloadLogging; set { _explicitNullValuePayloadLogging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_logging"); else _explicitNullProperties?.Remove("payload_logging"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging _explicitNullValuePayloadLogging = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate"/> and sets the default values.
@@ -44,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("ai_context_analysis", AiContextAnalysis);
             writer.WriteBoolValue("ocr", Ocr);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging>("payload_logging", PayloadLogging);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

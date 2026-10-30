@@ -12,35 +12,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StreamMediaStatus : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("errorReasonCode") is { } nullNodeErrorReasonCode && nullNodeErrorReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorReasonCode = null;
+            if (parseNode.GetChildNode("errorReasonText") is { } nullNodeErrorReasonText && nullNodeErrorReasonText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorReasonText = null;
+            if (parseNode.GetChildNode("pctComplete") is { } nullNodePctComplete && nullNodePctComplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PctComplete = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies why the video failed to encode. This field is empty if the video is not in an `error` state. Preferred for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorReasonCode { get; set; }
+        public string? ErrorReasonCode { get => _explicitNullValueErrorReasonCode; set { _explicitNullValueErrorReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorReasonCode"); else _explicitNullProperties?.Remove("errorReasonCode"); } }
+        private string? _explicitNullValueErrorReasonCode = default!;
 #nullable restore
 #else
-        public string ErrorReasonCode { get; set; }
+        public string ErrorReasonCode { get => _explicitNullValueErrorReasonCode; set { _explicitNullValueErrorReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorReasonCode"); else _explicitNullProperties?.Remove("errorReasonCode"); } }
+        private string _explicitNullValueErrorReasonCode = default!;
 #endif
         /// <summary>Specifies why the video failed to encode using a human readable error message in English. This field is empty if the video is not in an `error` state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorReasonText { get; set; }
+        public string? ErrorReasonText { get => _explicitNullValueErrorReasonText; set { _explicitNullValueErrorReasonText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorReasonText"); else _explicitNullProperties?.Remove("errorReasonText"); } }
+        private string? _explicitNullValueErrorReasonText = default!;
 #nullable restore
 #else
-        public string ErrorReasonText { get; set; }
+        public string ErrorReasonText { get => _explicitNullValueErrorReasonText; set { _explicitNullValueErrorReasonText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorReasonText"); else _explicitNullProperties?.Remove("errorReasonText"); } }
+        private string _explicitNullValueErrorReasonText = default!;
 #endif
         /// <summary>Indicates the progress as a percentage between 0 and 100.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PctComplete { get; set; }
+        public string? PctComplete { get => _explicitNullValuePctComplete; set { _explicitNullValuePctComplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pctComplete"); else _explicitNullProperties?.Remove("pctComplete"); } }
+        private string? _explicitNullValuePctComplete = default!;
 #nullable restore
 #else
-        public string PctComplete { get; set; }
+        public string PctComplete { get => _explicitNullValuePctComplete; set { _explicitNullValuePctComplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pctComplete"); else _explicitNullProperties?.Remove("pctComplete"); } }
+        private string _explicitNullValuePctComplete = default!;
 #endif
         /// <summary>Specifies the processing status for all quality levels for a video.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaState? State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaState? _explicitNullValueState = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus"/> and sets the default values.
         /// </summary>
@@ -56,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("errorReasonText", ErrorReasonText);
             writer.WriteStringValue("pctComplete", PctComplete);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaState>("state", State);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

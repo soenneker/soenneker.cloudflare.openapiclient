@@ -11,175 +11,260 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BrapiPostCrawlRequestAnyOf1 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actionTimeout") is { } nullNodeActionTimeout && nullNodeActionTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionTimeout = null;
+            if (parseNode.GetChildNode("addScriptTag") is { } nullNodeAddScriptTag && nullNodeAddScriptTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddScriptTag = null;
+            if (parseNode.GetChildNode("addStyleTag") is { } nullNodeAddStyleTag && nullNodeAddStyleTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddStyleTag = null;
+            if (parseNode.GetChildNode("allowRequestPattern") is { } nullNodeAllowRequestPattern && nullNodeAllowRequestPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowRequestPattern = null;
+            if (parseNode.GetChildNode("allowResourceTypes") is { } nullNodeAllowResourceTypes && nullNodeAllowResourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowResourceTypes = null;
+            if (parseNode.GetChildNode("authenticate") is { } nullNodeAuthenticate && nullNodeAuthenticate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authenticate = null;
+            if (parseNode.GetChildNode("bestAttempt") is { } nullNodeBestAttempt && nullNodeBestAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BestAttempt = null;
+            if (parseNode.GetChildNode("browser") is { } nullNodeBrowser && nullNodeBrowser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Browser = null;
+            if (parseNode.GetChildNode("contentUse") is { } nullNodeContentUse && nullNodeContentUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentUse = null;
+            if (parseNode.GetChildNode("cookies") is { } nullNodeCookies && nullNodeCookies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cookies = null;
+            if (parseNode.GetChildNode("crawlPurposes") is { } nullNodeCrawlPurposes && nullNodeCrawlPurposes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrawlPurposes = null;
+            if (parseNode.GetChildNode("depth") is { } nullNodeDepth && nullNodeDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Depth = null;
+            if (parseNode.GetChildNode("emulateMediaType") is { } nullNodeEmulateMediaType && nullNodeEmulateMediaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmulateMediaType = null;
+            if (parseNode.GetChildNode("formats") is { } nullNodeFormats && nullNodeFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formats = null;
+            if (parseNode.GetChildNode("gotoOptions") is { } nullNodeGotoOptions && nullNodeGotoOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GotoOptions = null;
+            if (parseNode.GetChildNode("jsonOptions") is { } nullNodeJsonOptions && nullNodeJsonOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonOptions = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("maxAge") is { } nullNodeMaxAge && nullNodeMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAge = null;
+            if (parseNode.GetChildNode("modifiedSince") is { } nullNodeModifiedSince && nullNodeModifiedSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedSince = null;
+            if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
+            if (parseNode.GetChildNode("rejectRequestPattern") is { } nullNodeRejectRequestPattern && nullNodeRejectRequestPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectRequestPattern = null;
+            if (parseNode.GetChildNode("rejectResourceTypes") is { } nullNodeRejectResourceTypes && nullNodeRejectResourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectResourceTypes = null;
+            if (parseNode.GetChildNode("render") is { } nullNodeRender && nullNodeRender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Render = null;
+            if (parseNode.GetChildNode("setExtraHTTPHeaders") is { } nullNodeSetExtraHTTPHeaders && nullNodeSetExtraHTTPHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetExtraHTTPHeaders = null;
+            if (parseNode.GetChildNode("setJavaScriptEnabled") is { } nullNodeSetJavaScriptEnabled && nullNodeSetJavaScriptEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetJavaScriptEnabled = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("viewport") is { } nullNodeViewport && nullNodeViewport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Viewport = null;
+            if (parseNode.GetChildNode("waitForSelector") is { } nullNodeWaitForSelector && nullNodeWaitForSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitForSelector = null;
+            if (parseNode.GetChildNode("waitForTimeout") is { } nullNodeWaitForTimeout && nullNodeWaitForTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitForTimeout = null;
+        }
+
         /// <summary>The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error.</summary>
-        public double? ActionTimeout { get; set; }
+        public double? ActionTimeout { get => _explicitNullValueActionTimeout; set { _explicitNullValueActionTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionTimeout"); else _explicitNullProperties?.Remove("actionTimeout"); } }
+        private double? _explicitNullValueActionTimeout = default!;
         /// <summary>Adds a script element into the page with the desired URL or content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddScriptTagItem>? AddScriptTag { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddScriptTagItem>? AddScriptTag { get => _explicitNullValueAddScriptTag; set { _explicitNullValueAddScriptTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addScriptTag"); else _explicitNullProperties?.Remove("addScriptTag"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddScriptTagItem>? _explicitNullValueAddScriptTag = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddScriptTagItem> AddScriptTag { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddScriptTagItem> AddScriptTag { get => _explicitNullValueAddScriptTag; set { _explicitNullValueAddScriptTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addScriptTag"); else _explicitNullProperties?.Remove("addScriptTag"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddScriptTagItem> _explicitNullValueAddScriptTag = default!;
 #endif
         /// <summary>Adds a `&lt;link rel=&quot;stylesheet&quot;&gt;` tag into the page with the desired URL or a `&lt;style type=&quot;text/css&quot;&gt;` tag with the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddStyleTagItem>? AddStyleTag { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddStyleTagItem>? AddStyleTag { get => _explicitNullValueAddStyleTag; set { _explicitNullValueAddStyleTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addStyleTag"); else _explicitNullProperties?.Remove("addStyleTag"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddStyleTagItem>? _explicitNullValueAddStyleTag = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddStyleTagItem> AddStyleTag { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddStyleTagItem> AddStyleTag { get => _explicitNullValueAddStyleTag; set { _explicitNullValueAddStyleTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addStyleTag"); else _explicitNullProperties?.Remove("addStyleTag"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AddStyleTagItem> _explicitNullValueAddStyleTag = default!;
 #endif
         /// <summary>Only allow requests that match the provided regex patterns, eg. &apos;/^.*\.(css)&apos;. Reject rules are applied first.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowRequestPattern { get; set; }
+        public List<string>? AllowRequestPattern { get => _explicitNullValueAllowRequestPattern; set { _explicitNullValueAllowRequestPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowRequestPattern"); else _explicitNullProperties?.Remove("allowRequestPattern"); } }
+        private List<string>? _explicitNullValueAllowRequestPattern = default!;
 #nullable restore
 #else
-        public List<string> AllowRequestPattern { get; set; }
+        public List<string> AllowRequestPattern { get => _explicitNullValueAllowRequestPattern; set { _explicitNullValueAllowRequestPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowRequestPattern"); else _explicitNullProperties?.Remove("allowRequestPattern"); } }
+        private List<string> _explicitNullValueAllowRequestPattern = default!;
 #endif
         /// <summary>Only allow requests that match the provided resource types, eg. &apos;image&apos; or &apos;script&apos;. Reject rules are applied first.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AllowResourceTypesItem?>? AllowResourceTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AllowResourceTypesItem?>? AllowResourceTypes { get => _explicitNullValueAllowResourceTypes; set { _explicitNullValueAllowResourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowResourceTypes"); else _explicitNullProperties?.Remove("allowResourceTypes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AllowResourceTypesItem?>? _explicitNullValueAllowResourceTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AllowResourceTypesItem?> AllowResourceTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AllowResourceTypesItem?> AllowResourceTypes { get => _explicitNullValueAllowResourceTypes; set { _explicitNullValueAllowResourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowResourceTypes"); else _explicitNullProperties?.Remove("allowResourceTypes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1AllowResourceTypesItem?> _explicitNullValueAllowResourceTypes = default!;
 #endif
         /// <summary>Provide credentials for HTTP authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Authenticate? Authenticate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Authenticate? Authenticate { get => _explicitNullValueAuthenticate; set { _explicitNullValueAuthenticate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticate"); else _explicitNullProperties?.Remove("authenticate"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Authenticate? _explicitNullValueAuthenticate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Authenticate Authenticate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Authenticate Authenticate { get => _explicitNullValueAuthenticate; set { _explicitNullValueAuthenticate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticate"); else _explicitNullProperties?.Remove("authenticate"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Authenticate _explicitNullValueAuthenticate = default!;
 #endif
         /// <summary>Attempt to proceed when &apos;awaited&apos; events fail or timeout.</summary>
-        public bool? BestAttempt { get; set; }
+        public bool? BestAttempt { get => _explicitNullValueBestAttempt; set { _explicitNullValueBestAttempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bestAttempt"); else _explicitNullProperties?.Remove("bestAttempt"); } }
+        private bool? _explicitNullValueBestAttempt = default!;
         /// <summary>Rendering backend for this crawl. Set to `kitesurf` to render pages with Kitesurf (beta). Only valid when `render` is `true`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.KitesurfBrowser? Browser { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.KitesurfBrowser? Browser { get => _explicitNullValueBrowser; set { _explicitNullValueBrowser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser"); else _explicitNullProperties?.Remove("browser"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.KitesurfBrowser? _explicitNullValueBrowser = default!;
         /// <summary>Intended content use level to respect the `use` Content-Signal directive in robots.txt. Levels (least to most permissive): &apos;reference&apos;, &apos;full&apos;. A URL is disallowed when the publisher&apos;s declared `use` level is lower than this intent. Learn more: https://contentsignals.org/. Default: &apos;full&apos;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1ContentUse? ContentUse { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1ContentUse? ContentUse { get => _explicitNullValueContentUse; set { _explicitNullValueContentUse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentUse"); else _explicitNullProperties?.Remove("contentUse"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1ContentUse? _explicitNullValueContentUse = default!;
         /// <summary>Check [options](https://pptr.dev/api/puppeteer.page.setcookie).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CookiesItem>? Cookies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CookiesItem>? Cookies { get => _explicitNullValueCookies; set { _explicitNullValueCookies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookies"); else _explicitNullProperties?.Remove("cookies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CookiesItem>? _explicitNullValueCookies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CookiesItem> Cookies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CookiesItem> Cookies { get => _explicitNullValueCookies; set { _explicitNullValueCookies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookies"); else _explicitNullProperties?.Remove("cookies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CookiesItem> _explicitNullValueCookies = default!;
 #endif
         /// <summary>List of crawl purposes to respect Content-Signal directives in robots.txt. Allowed values: &apos;search&apos;, &apos;ai-input&apos;, &apos;ai-train&apos;. Learn more: https://contentsignals.org/. Default: [&apos;search&apos;, &apos;ai-input&apos;, &apos;ai-train&apos;].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CrawlPurposesItem?>? CrawlPurposes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CrawlPurposesItem?>? CrawlPurposes { get => _explicitNullValueCrawlPurposes; set { _explicitNullValueCrawlPurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlPurposes"); else _explicitNullProperties?.Remove("crawlPurposes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CrawlPurposesItem?>? _explicitNullValueCrawlPurposes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CrawlPurposesItem?> CrawlPurposes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CrawlPurposesItem?> CrawlPurposes { get => _explicitNullValueCrawlPurposes; set { _explicitNullValueCrawlPurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlPurposes"); else _explicitNullProperties?.Remove("crawlPurposes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1CrawlPurposesItem?> _explicitNullValueCrawlPurposes = default!;
 #endif
         /// <summary>Maximum number of levels deep the crawler will traverse from the starting URL.</summary>
-        public double? Depth { get; set; }
+        public double? Depth { get => _explicitNullValueDepth; set { _explicitNullValueDepth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depth"); else _explicitNullProperties?.Remove("depth"); } }
+        private double? _explicitNullValueDepth = default!;
         /// <summary>The emulateMediaType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmulateMediaType { get; set; }
+        public string? EmulateMediaType { get => _explicitNullValueEmulateMediaType; set { _explicitNullValueEmulateMediaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emulateMediaType"); else _explicitNullProperties?.Remove("emulateMediaType"); } }
+        private string? _explicitNullValueEmulateMediaType = default!;
 #nullable restore
 #else
-        public string EmulateMediaType { get; set; }
+        public string EmulateMediaType { get => _explicitNullValueEmulateMediaType; set { _explicitNullValueEmulateMediaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emulateMediaType"); else _explicitNullProperties?.Remove("emulateMediaType"); } }
+        private string _explicitNullValueEmulateMediaType = default!;
 #endif
         /// <summary>Formats to return. Default is `html`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1FormatsItem?>? Formats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1FormatsItem?>? Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1FormatsItem?>? _explicitNullValueFormats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1FormatsItem?> Formats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1FormatsItem?> Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1FormatsItem?> _explicitNullValueFormats = default!;
 #endif
         /// <summary>Check [options](https://pptr.dev/api/puppeteer.gotooptions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptions? GotoOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptions? GotoOptions { get => _explicitNullValueGotoOptions; set { _explicitNullValueGotoOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gotoOptions"); else _explicitNullProperties?.Remove("gotoOptions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptions? _explicitNullValueGotoOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptions GotoOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptions GotoOptions { get => _explicitNullValueGotoOptions; set { _explicitNullValueGotoOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gotoOptions"); else _explicitNullProperties?.Remove("gotoOptions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptions _explicitNullValueGotoOptions = default!;
 #endif
         /// <summary>Options for JSON extraction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1JsonOptions? JsonOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1JsonOptions? JsonOptions { get => _explicitNullValueJsonOptions; set { _explicitNullValueJsonOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonOptions"); else _explicitNullProperties?.Remove("jsonOptions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1JsonOptions? _explicitNullValueJsonOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1JsonOptions JsonOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1JsonOptions JsonOptions { get => _explicitNullValueJsonOptions; set { _explicitNullValueJsonOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonOptions"); else _explicitNullProperties?.Remove("jsonOptions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1JsonOptions _explicitNullValueJsonOptions = default!;
 #endif
         /// <summary>Maximum number of URLs to crawl.</summary>
-        public double? Limit { get; set; }
+        public double? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private double? _explicitNullValueLimit = default!;
         /// <summary>Maximum age of a resource that can be returned from cache in seconds. Default is 1 day.</summary>
-        public double? MaxAge { get; set; }
+        public double? MaxAge { get => _explicitNullValueMaxAge; set { _explicitNullValueMaxAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAge"); else _explicitNullProperties?.Remove("maxAge"); } }
+        private double? _explicitNullValueMaxAge = default!;
         /// <summary>Unix timestamp (seconds since epoch) indicating to only crawl pages that were modified since this time. For sitemap URLs with a lastmod field, this is compared directly. For other URLs, the crawler will use If-Modified-Since header when fetching. URLs without modification information (no lastmod in sitemap and no Last-Modified header support) will be crawled. Note: This works in conjunction with maxAge - both filters must pass for a cached resource to be used. Must be within the last year and not in the future.</summary>
-        public int? ModifiedSince { get; set; }
+        public int? ModifiedSince { get => _explicitNullValueModifiedSince; set { _explicitNullValueModifiedSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modifiedSince"); else _explicitNullProperties?.Remove("modifiedSince"); } }
+        private int? _explicitNullValueModifiedSince = default!;
         /// <summary>Additional options for the crawler.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Options? Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Options? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Options? _explicitNullValueOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Options Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Options Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Options _explicitNullValueOptions = default!;
 #endif
         /// <summary>Block undesired requests that match the provided regex patterns, eg. &apos;/^.*\.(css)&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RejectRequestPattern { get; set; }
+        public List<string>? RejectRequestPattern { get => _explicitNullValueRejectRequestPattern; set { _explicitNullValueRejectRequestPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejectRequestPattern"); else _explicitNullProperties?.Remove("rejectRequestPattern"); } }
+        private List<string>? _explicitNullValueRejectRequestPattern = default!;
 #nullable restore
 #else
-        public List<string> RejectRequestPattern { get; set; }
+        public List<string> RejectRequestPattern { get => _explicitNullValueRejectRequestPattern; set { _explicitNullValueRejectRequestPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejectRequestPattern"); else _explicitNullProperties?.Remove("rejectRequestPattern"); } }
+        private List<string> _explicitNullValueRejectRequestPattern = default!;
 #endif
         /// <summary>Block undesired requests that match the provided resource types, eg. &apos;image&apos; or &apos;script&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1RejectResourceTypesItem?>? RejectResourceTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1RejectResourceTypesItem?>? RejectResourceTypes { get => _explicitNullValueRejectResourceTypes; set { _explicitNullValueRejectResourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejectResourceTypes"); else _explicitNullProperties?.Remove("rejectResourceTypes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1RejectResourceTypesItem?>? _explicitNullValueRejectResourceTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1RejectResourceTypesItem?> RejectResourceTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1RejectResourceTypesItem?> RejectResourceTypes { get => _explicitNullValueRejectResourceTypes; set { _explicitNullValueRejectResourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejectResourceTypes"); else _explicitNullProperties?.Remove("rejectResourceTypes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1RejectResourceTypesItem?> _explicitNullValueRejectResourceTypes = default!;
 #endif
         /// <summary>Whether to render the page or fetch static content. True by default.</summary>
-        public bool? Render { get; set; }
+        public bool? Render { get => _explicitNullValueRender; set { _explicitNullValueRender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render"); else _explicitNullProperties?.Remove("render"); } }
+        private bool? _explicitNullValueRender = default!;
         /// <summary>The setExtraHTTPHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1SetExtraHttpHeaders? SetExtraHTTPHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1SetExtraHttpHeaders? SetExtraHTTPHeaders { get => _explicitNullValueSetExtraHTTPHeaders; set { _explicitNullValueSetExtraHTTPHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setExtraHTTPHeaders"); else _explicitNullProperties?.Remove("setExtraHTTPHeaders"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1SetExtraHttpHeaders? _explicitNullValueSetExtraHTTPHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1SetExtraHttpHeaders SetExtraHTTPHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1SetExtraHttpHeaders SetExtraHTTPHeaders { get => _explicitNullValueSetExtraHTTPHeaders; set { _explicitNullValueSetExtraHTTPHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setExtraHTTPHeaders"); else _explicitNullProperties?.Remove("setExtraHTTPHeaders"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1SetExtraHttpHeaders _explicitNullValueSetExtraHTTPHeaders = default!;
 #endif
         /// <summary>The setJavaScriptEnabled property</summary>
-        public bool? SetJavaScriptEnabled { get; set; }
+        public bool? SetJavaScriptEnabled { get => _explicitNullValueSetJavaScriptEnabled; set { _explicitNullValueSetJavaScriptEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setJavaScriptEnabled"); else _explicitNullProperties?.Remove("setJavaScriptEnabled"); } }
+        private bool? _explicitNullValueSetJavaScriptEnabled = default!;
         /// <summary>Source of links to crawl. &apos;sitemaps&apos; - only crawl URLs from sitemaps, &apos;links&apos; - only crawl URLs scraped from pages, &apos;all&apos; - crawl both sitemap and scraped links (default).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Source? Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Source? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Source? _explicitNullValueSource = default!;
         /// <summary>URL to navigate to, eg. `https://example.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>Check [options](https://pptr.dev/api/puppeteer.page.setviewport).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport? Viewport { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport? Viewport { get => _explicitNullValueViewport; set { _explicitNullValueViewport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewport"); else _explicitNullProperties?.Remove("viewport"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport? _explicitNullValueViewport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport Viewport { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport Viewport { get => _explicitNullValueViewport; set { _explicitNullValueViewport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewport"); else _explicitNullProperties?.Remove("viewport"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport _explicitNullValueViewport = default!;
 #endif
         /// <summary>Wait for the selector to appear in page. Check [options](https://pptr.dev/api/puppeteer.page.waitforselector).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1WaitForSelector? WaitForSelector { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1WaitForSelector? WaitForSelector { get => _explicitNullValueWaitForSelector; set { _explicitNullValueWaitForSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitForSelector"); else _explicitNullProperties?.Remove("waitForSelector"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1WaitForSelector? _explicitNullValueWaitForSelector = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1WaitForSelector WaitForSelector { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1WaitForSelector WaitForSelector { get => _explicitNullValueWaitForSelector; set { _explicitNullValueWaitForSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitForSelector"); else _explicitNullProperties?.Remove("waitForSelector"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1WaitForSelector _explicitNullValueWaitForSelector = default!;
 #endif
         /// <summary>Waits for a specified timeout before continuing.</summary>
-        public double? WaitForTimeout { get; set; }
+        public double? WaitForTimeout { get => _explicitNullValueWaitForTimeout; set { _explicitNullValueWaitForTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitForTimeout"); else _explicitNullProperties?.Remove("waitForTimeout"); } }
+        private double? _explicitNullValueWaitForTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1"/> and sets the default values.
         /// </summary>
@@ -198,7 +283,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -276,7 +361,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("url", Url);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport>("viewport", Viewport);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1WaitForSelector>("waitForSelector", WaitForSelector);
-            writer.WriteDoubleValue("waitForTimeout", WaitForTimeout);
+            writer.WriteDoubleValue("waitForTimeout", WaitForTimeout);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

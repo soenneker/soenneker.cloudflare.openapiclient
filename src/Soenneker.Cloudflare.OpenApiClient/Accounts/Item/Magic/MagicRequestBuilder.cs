@@ -8,7 +8,6 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Apps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Bgp;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cf1_sites;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cf_interconnects;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels;
@@ -56,11 +55,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cf1_sites.Cf1_sitesRequestBuilder Cf1_sites
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cf1_sites.Cf1_sitesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The cloud property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CloudRequestBuilder Cloud
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CloudRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The connectors property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder Connectors

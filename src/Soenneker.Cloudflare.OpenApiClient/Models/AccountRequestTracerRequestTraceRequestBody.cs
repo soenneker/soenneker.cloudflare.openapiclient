@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccountRequestTracerRequestTraceRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("base64") is { } nullNodeBase64 && nullNodeBase64.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Base64 = null;
+            if (parseNode.GetChildNode("json") is { } nullNodeJson && nullNodeJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Json = null;
+            if (parseNode.GetChildNode("plain_text") is { } nullNodePlainText && nullNodePlainText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlainText = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Base64 encoded request body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Base64 { get; set; }
+        public string? Base64 { get => _explicitNullValueBase64; set { _explicitNullValueBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64"); else _explicitNullProperties?.Remove("base64"); } }
+        private string? _explicitNullValueBase64 = default!;
 #nullable restore
 #else
-        public string Base64 { get; set; }
+        public string Base64 { get => _explicitNullValueBase64; set { _explicitNullValueBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64"); else _explicitNullProperties?.Remove("base64"); } }
+        private string _explicitNullValueBase64 = default!;
 #endif
         /// <summary>Arbitrary json as request body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBodyJson? Json { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBodyJson? Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBodyJson? _explicitNullValueJson = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBodyJson Json { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBodyJson Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBodyJson _explicitNullValueJson = default!;
 #endif
         /// <summary>Request body as plain text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlainText { get; set; }
+        public string? PlainText { get => _explicitNullValuePlainText; set { _explicitNullValuePlainText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plain_text"); else _explicitNullProperties?.Remove("plain_text"); } }
+        private string? _explicitNullValuePlainText = default!;
 #nullable restore
 #else
-        public string PlainText { get; set; }
+        public string PlainText { get => _explicitNullValuePlainText; set { _explicitNullValuePlainText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plain_text"); else _explicitNullProperties?.Remove("plain_text"); } }
+        private string _explicitNullValuePlainText = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBody"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("base64", Base64);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountRequestTracerRequestTraceRequestBodyJson>("json", Json);
             writer.WriteStringValue("plain_text", PlainText);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

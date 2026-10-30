@@ -12,26 +12,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiAuditRobotsRules : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("sitemaps") is { } nullNodeSitemaps && nullNodeSitemaps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sitemaps = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("userAgents") is { } nullNodeUserAgents && nullNodeUserAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgents = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of sitemap URLs found in robots.txt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Sitemaps { get; set; }
+        public List<string>? Sitemaps { get => _explicitNullValueSitemaps; set { _explicitNullValueSitemaps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sitemaps"); else _explicitNullProperties?.Remove("sitemaps"); } }
+        private List<string>? _explicitNullValueSitemaps = default!;
 #nullable restore
 #else
-        public List<string> Sitemaps { get; set; }
+        public List<string> Sitemaps { get => _explicitNullValueSitemaps; set { _explicitNullValueSitemaps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sitemaps"); else _explicitNullProperties?.Remove("sitemaps"); } }
+        private List<string> _explicitNullValueSitemaps = default!;
 #endif
         /// <summary>HTTP status code from fetching the robots.txt file.</summary>
-        public int? Status { get; set; }
+        public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private int? _explicitNullValueStatus = default!;
         /// <summary>Map of user-agent string to its parsed rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty? UserAgents { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty? UserAgents { get => _explicitNullValueUserAgents; set { _explicitNullValueUserAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgents"); else _explicitNullProperties?.Remove("userAgents"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty? _explicitNullValueUserAgents = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty UserAgents { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty UserAgents { get => _explicitNullValueUserAgents; set { _explicitNullValueUserAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgents"); else _explicitNullProperties?.Remove("userAgents"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty _explicitNullValueUserAgents = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRules"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRules CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRules();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRules(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("sitemaps", Sitemaps);
             writer.WriteIntValue("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty>("userAgents", UserAgents);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

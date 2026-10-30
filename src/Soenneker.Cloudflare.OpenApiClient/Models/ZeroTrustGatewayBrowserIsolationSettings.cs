@@ -12,13 +12,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGatewayBrowserIsolationSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("non_identity_enabled") is { } nullNodeNonIdentityEnabled && nullNodeNonIdentityEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonIdentityEnabled = null;
+            if (parseNode.GetChildNode("url_browser_isolation_enabled") is { } nullNodeUrlBrowserIsolationEnabled && nullNodeUrlBrowserIsolationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlBrowserIsolationEnabled = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to enable non-identity onramp support for Browser Isolation.</summary>
-        public bool? NonIdentityEnabled { get; set; }
+        public bool? NonIdentityEnabled { get => _explicitNullValueNonIdentityEnabled; set { _explicitNullValueNonIdentityEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("non_identity_enabled"); else _explicitNullProperties?.Remove("non_identity_enabled"); } }
+        private bool? _explicitNullValueNonIdentityEnabled = default!;
         /// <summary>Specify whether to enable Clientless Browser Isolation.</summary>
-        public bool? UrlBrowserIsolationEnabled { get; set; }
+        public bool? UrlBrowserIsolationEnabled { get => _explicitNullValueUrlBrowserIsolationEnabled; set { _explicitNullValueUrlBrowserIsolationEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_browser_isolation_enabled"); else _explicitNullProperties?.Remove("url_browser_isolation_enabled"); } }
+        private bool? _explicitNullValueUrlBrowserIsolationEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("non_identity_enabled", NonIdentityEnabled);
             writer.WriteBoolValue("url_browser_isolation_enabled", UrlBrowserIsolationEnabled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

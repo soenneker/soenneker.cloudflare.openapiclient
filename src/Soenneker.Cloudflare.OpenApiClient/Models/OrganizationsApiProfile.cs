@@ -11,48 +11,70 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationsApiProfile : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("business_address") is { } nullNodeBusinessAddress && nullNodeBusinessAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessAddress = null;
+            if (parseNode.GetChildNode("business_email") is { } nullNodeBusinessEmail && nullNodeBusinessEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessEmail = null;
+            if (parseNode.GetChildNode("business_name") is { } nullNodeBusinessName && nullNodeBusinessName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessName = null;
+            if (parseNode.GetChildNode("business_phone") is { } nullNodeBusinessPhone && nullNodeBusinessPhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessPhone = null;
+            if (parseNode.GetChildNode("external_metadata") is { } nullNodeExternalMetadata && nullNodeExternalMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalMetadata = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The business_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessAddress { get; set; }
+        public string? BusinessAddress { get => _explicitNullValueBusinessAddress; set { _explicitNullValueBusinessAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_address"); else _explicitNullProperties?.Remove("business_address"); } }
+        private string? _explicitNullValueBusinessAddress = default!;
 #nullable restore
 #else
-        public string BusinessAddress { get; set; }
+        public string BusinessAddress { get => _explicitNullValueBusinessAddress; set { _explicitNullValueBusinessAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_address"); else _explicitNullProperties?.Remove("business_address"); } }
+        private string _explicitNullValueBusinessAddress = default!;
 #endif
         /// <summary>The business_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessEmail { get; set; }
+        public string? BusinessEmail { get => _explicitNullValueBusinessEmail; set { _explicitNullValueBusinessEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_email"); else _explicitNullProperties?.Remove("business_email"); } }
+        private string? _explicitNullValueBusinessEmail = default!;
 #nullable restore
 #else
-        public string BusinessEmail { get; set; }
+        public string BusinessEmail { get => _explicitNullValueBusinessEmail; set { _explicitNullValueBusinessEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_email"); else _explicitNullProperties?.Remove("business_email"); } }
+        private string _explicitNullValueBusinessEmail = default!;
 #endif
         /// <summary>The business_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessName { get; set; }
+        public string? BusinessName { get => _explicitNullValueBusinessName; set { _explicitNullValueBusinessName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_name"); else _explicitNullProperties?.Remove("business_name"); } }
+        private string? _explicitNullValueBusinessName = default!;
 #nullable restore
 #else
-        public string BusinessName { get; set; }
+        public string BusinessName { get => _explicitNullValueBusinessName; set { _explicitNullValueBusinessName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_name"); else _explicitNullProperties?.Remove("business_name"); } }
+        private string _explicitNullValueBusinessName = default!;
 #endif
         /// <summary>The business_phone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessPhone { get; set; }
+        public string? BusinessPhone { get => _explicitNullValueBusinessPhone; set { _explicitNullValueBusinessPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_phone"); else _explicitNullProperties?.Remove("business_phone"); } }
+        private string? _explicitNullValueBusinessPhone = default!;
 #nullable restore
 #else
-        public string BusinessPhone { get; set; }
+        public string BusinessPhone { get => _explicitNullValueBusinessPhone; set { _explicitNullValueBusinessPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_phone"); else _explicitNullProperties?.Remove("business_phone"); } }
+        private string _explicitNullValueBusinessPhone = default!;
 #endif
         /// <summary>The external_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalMetadata { get; set; }
+        public string? ExternalMetadata { get => _explicitNullValueExternalMetadata; set { _explicitNullValueExternalMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_metadata"); else _explicitNullProperties?.Remove("external_metadata"); } }
+        private string? _explicitNullValueExternalMetadata = default!;
 #nullable restore
 #else
-        public string ExternalMetadata { get; set; }
+        public string ExternalMetadata { get => _explicitNullValueExternalMetadata; set { _explicitNullValueExternalMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_metadata"); else _explicitNullProperties?.Remove("external_metadata"); } }
+        private string _explicitNullValueExternalMetadata = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiProfile"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiProfile();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiProfile(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("business_name", BusinessName);
             writer.WriteStringValue("business_phone", BusinessPhone);
             writer.WriteStringValue("external_metadata", ExternalMetadata);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

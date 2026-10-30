@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostEventMoveToNewDsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destDatasetId") is { } nullNodeDestDatasetId && nullNodeDestDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestDatasetId = null;
+            if (parseNode.GetChildNode("eventIds") is { } nullNodeEventIds && nullNodeEventIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The destDatasetId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestDatasetId { get; set; }
+        public string? DestDatasetId { get => _explicitNullValueDestDatasetId; set { _explicitNullValueDestDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destDatasetId"); else _explicitNullProperties?.Remove("destDatasetId"); } }
+        private string? _explicitNullValueDestDatasetId = default!;
 #nullable restore
 #else
-        public string DestDatasetId { get; set; }
+        public string DestDatasetId { get => _explicitNullValueDestDatasetId; set { _explicitNullValueDestDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destDatasetId"); else _explicitNullProperties?.Remove("destDatasetId"); } }
+        private string _explicitNullValueDestDatasetId = default!;
 #endif
         /// <summary>The eventIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EventIds { get; set; }
+        public List<string>? EventIds { get => _explicitNullValueEventIds; set { _explicitNullValueEventIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIds"); else _explicitNullProperties?.Remove("eventIds"); } }
+        private List<string>? _explicitNullValueEventIds = default!;
 #nullable restore
 #else
-        public List<string> EventIds { get; set; }
+        public List<string> EventIds { get => _explicitNullValueEventIds; set { _explicitNullValueEventIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIds"); else _explicitNullProperties?.Remove("eventIds"); } }
+        private List<string> _explicitNullValueEventIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDsRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destDatasetId", DestDatasetId);
             writer.WriteCollectionOfPrimitiveValues<string>("eventIds", EventIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

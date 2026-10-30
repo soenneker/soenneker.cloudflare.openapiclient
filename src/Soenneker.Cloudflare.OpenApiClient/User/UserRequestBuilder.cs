@@ -83,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizations property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder Organizations
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
@@ -143,6 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -168,6 +170,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

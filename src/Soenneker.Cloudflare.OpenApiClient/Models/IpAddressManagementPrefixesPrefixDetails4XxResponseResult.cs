@@ -11,108 +11,161 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class IpAddressManagementPrefixesPrefixDetails4XxResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("advertised") is { } nullNodeAdvertised && nullNodeAdvertised.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advertised = null;
+            if (parseNode.GetChildNode("advertised_modified_at") is { } nullNodeAdvertisedModifiedAt && nullNodeAdvertisedModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvertisedModifiedAt = null;
+            if (parseNode.GetChildNode("approved") is { } nullNodeApproved && nullNodeApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approved = null;
+            if (parseNode.GetChildNode("asn") is { } nullNodeAsn && nullNodeAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn = null;
+            if (parseNode.GetChildNode("cidr") is { } nullNodeCidr && nullNodeCidr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidr = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("delegate_loa_creation") is { } nullNodeDelegateLoaCreation && nullNodeDelegateLoaCreation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DelegateLoaCreation = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("irr_validation_state") is { } nullNodeIrrValidationState && nullNodeIrrValidationState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IrrValidationState = null;
+            if (parseNode.GetChildNode("loa_document_id") is { } nullNodeLoaDocumentId && nullNodeLoaDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoaDocumentId = null;
+            if (parseNode.GetChildNode("modified_at") is { } nullNodeModifiedAt && nullNodeModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedAt = null;
+            if (parseNode.GetChildNode("on_demand_enabled") is { } nullNodeOnDemandEnabled && nullNodeOnDemandEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnDemandEnabled = null;
+            if (parseNode.GetChildNode("on_demand_locked") is { } nullNodeOnDemandLocked && nullNodeOnDemandLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnDemandLocked = null;
+            if (parseNode.GetChildNode("ownership_validation_state") is { } nullNodeOwnershipValidationState && nullNodeOwnershipValidationState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnershipValidationState = null;
+            if (parseNode.GetChildNode("ownership_validation_token") is { } nullNodeOwnershipValidationToken && nullNodeOwnershipValidationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnershipValidationToken = null;
+            if (parseNode.GetChildNode("rpki_validation_state") is { } nullNodeRpkiValidationState && nullNodeRpkiValidationState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RpkiValidationState = null;
+        }
+
         /// <summary>Identifier of a Cloudflare account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Prefix advertisement status to the Internet. This field is only not &apos;null&apos; if on demand is enabled.</summary>
         [Obsolete("")]
-        public bool? Advertised { get; set; }
+        public bool? Advertised { get => _explicitNullValueAdvertised; set { _explicitNullValueAdvertised = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertised"); else _explicitNullProperties?.Remove("advertised"); } }
+        private bool? _explicitNullValueAdvertised = default!;
         /// <summary>Last time the advertisement status was changed. This field is only not &apos;null&apos; if on demand is enabled.</summary>
         [Obsolete("")]
-        public DateTimeOffset? AdvertisedModifiedAt { get; set; }
+        public DateTimeOffset? AdvertisedModifiedAt { get => _explicitNullValueAdvertisedModifiedAt; set { _explicitNullValueAdvertisedModifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertised_modified_at"); else _explicitNullProperties?.Remove("advertised_modified_at"); } }
+        private DateTimeOffset? _explicitNullValueAdvertisedModifiedAt = default!;
         /// <summary>Approval state of the prefix (P = pending, V = active).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Approved { get; set; }
+        public string? Approved { get => _explicitNullValueApproved; set { _explicitNullValueApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved"); else _explicitNullProperties?.Remove("approved"); } }
+        private string? _explicitNullValueApproved = default!;
 #nullable restore
 #else
-        public string Approved { get; set; }
+        public string Approved { get => _explicitNullValueApproved; set { _explicitNullValueApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved"); else _explicitNullProperties?.Remove("approved"); } }
+        private string _explicitNullValueApproved = default!;
 #endif
         /// <summary>Autonomous System Number (ASN) the prefix will be advertised under.</summary>
-        public int? Asn { get; set; }
+        public int? Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
+        private int? _explicitNullValueAsn = default!;
         /// <summary>IP Prefix in Classless Inter-Domain Routing format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cidr { get; set; }
+        public string? Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
+        private string? _explicitNullValueCidr = default!;
 #nullable restore
 #else
-        public string Cidr { get; set; }
+        public string Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
+        private string _explicitNullValueCidr = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Whether Cloudflare is allowed to generate the LOA document on behalf of the prefix owner.</summary>
-        public bool? DelegateLoaCreation { get; set; }
+        public bool? DelegateLoaCreation { get => _explicitNullValueDelegateLoaCreation; set { _explicitNullValueDelegateLoaCreation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delegate_loa_creation"); else _explicitNullProperties?.Remove("delegate_loa_creation"); } }
+        private bool? _explicitNullValueDelegateLoaCreation = default!;
         /// <summary>Description of the prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Identifier of an IP Prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>State of one kind of validation for an IP prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IrrValidationState { get; set; }
+        public string? IrrValidationState { get => _explicitNullValueIrrValidationState; set { _explicitNullValueIrrValidationState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irr_validation_state"); else _explicitNullProperties?.Remove("irr_validation_state"); } }
+        private string? _explicitNullValueIrrValidationState = default!;
 #nullable restore
 #else
-        public string IrrValidationState { get; set; }
+        public string IrrValidationState { get => _explicitNullValueIrrValidationState; set { _explicitNullValueIrrValidationState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irr_validation_state"); else _explicitNullProperties?.Remove("irr_validation_state"); } }
+        private string _explicitNullValueIrrValidationState = default!;
 #endif
         /// <summary>Identifier for the uploaded LOA document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoaDocumentId { get; set; }
+        public string? LoaDocumentId { get => _explicitNullValueLoaDocumentId; set { _explicitNullValueLoaDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loa_document_id"); else _explicitNullProperties?.Remove("loa_document_id"); } }
+        private string? _explicitNullValueLoaDocumentId = default!;
 #nullable restore
 #else
-        public string LoaDocumentId { get; set; }
+        public string LoaDocumentId { get => _explicitNullValueLoaDocumentId; set { _explicitNullValueLoaDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loa_document_id"); else _explicitNullProperties?.Remove("loa_document_id"); } }
+        private string _explicitNullValueLoaDocumentId = default!;
 #endif
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get => _explicitNullValueModifiedAt; set { _explicitNullValueModifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_at"); else _explicitNullProperties?.Remove("modified_at"); } }
+        private DateTimeOffset? _explicitNullValueModifiedAt = default!;
         /// <summary>Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.</summary>
         [Obsolete("")]
-        public bool? OnDemandEnabled { get; set; }
+        public bool? OnDemandEnabled { get => _explicitNullValueOnDemandEnabled; set { _explicitNullValueOnDemandEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_demand_enabled"); else _explicitNullProperties?.Remove("on_demand_enabled"); } }
+        private bool? _explicitNullValueOnDemandEnabled = default!;
         /// <summary>Whether advertisement status of the prefix is locked, meaning it cannot be changed.</summary>
         [Obsolete("")]
-        public bool? OnDemandLocked { get; set; }
+        public bool? OnDemandLocked { get => _explicitNullValueOnDemandLocked; set { _explicitNullValueOnDemandLocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_demand_locked"); else _explicitNullProperties?.Remove("on_demand_locked"); } }
+        private bool? _explicitNullValueOnDemandLocked = default!;
         /// <summary>State of one kind of validation for an IP prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnershipValidationState { get; set; }
+        public string? OwnershipValidationState { get => _explicitNullValueOwnershipValidationState; set { _explicitNullValueOwnershipValidationState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_validation_state"); else _explicitNullProperties?.Remove("ownership_validation_state"); } }
+        private string? _explicitNullValueOwnershipValidationState = default!;
 #nullable restore
 #else
-        public string OwnershipValidationState { get; set; }
+        public string OwnershipValidationState { get => _explicitNullValueOwnershipValidationState; set { _explicitNullValueOwnershipValidationState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_validation_state"); else _explicitNullProperties?.Remove("ownership_validation_state"); } }
+        private string _explicitNullValueOwnershipValidationState = default!;
 #endif
         /// <summary>Token provided to demonstrate ownership of the prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnershipValidationToken { get; set; }
+        public string? OwnershipValidationToken { get => _explicitNullValueOwnershipValidationToken; set { _explicitNullValueOwnershipValidationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_validation_token"); else _explicitNullProperties?.Remove("ownership_validation_token"); } }
+        private string? _explicitNullValueOwnershipValidationToken = default!;
 #nullable restore
 #else
-        public string OwnershipValidationToken { get; set; }
+        public string OwnershipValidationToken { get => _explicitNullValueOwnershipValidationToken; set { _explicitNullValueOwnershipValidationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_validation_token"); else _explicitNullProperties?.Remove("ownership_validation_token"); } }
+        private string _explicitNullValueOwnershipValidationToken = default!;
 #endif
         /// <summary>State of one kind of validation for an IP prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RpkiValidationState { get; set; }
+        public string? RpkiValidationState { get => _explicitNullValueRpkiValidationState; set { _explicitNullValueRpkiValidationState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rpki_validation_state"); else _explicitNullProperties?.Remove("rpki_validation_state"); } }
+        private string? _explicitNullValueRpkiValidationState = default!;
 #nullable restore
 #else
-        public string RpkiValidationState { get; set; }
+        public string RpkiValidationState { get => _explicitNullValueRpkiValidationState; set { _explicitNullValueRpkiValidationState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rpki_validation_state"); else _explicitNullProperties?.Remove("rpki_validation_state"); } }
+        private string _explicitNullValueRpkiValidationState = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementPrefixesPrefixDetails4XxResponseResult"/> and sets the default values.
@@ -130,7 +183,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementPrefixesPrefixDetails4XxResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementPrefixesPrefixDetails4XxResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.IpAddressManagementPrefixesPrefixDetails4XxResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -185,6 +238,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("ownership_validation_state", OwnershipValidationState);
             writer.WriteStringValue("ownership_validation_token", OwnershipValidationToken);
             writer.WriteStringValue("rpki_validation_state", RpkiValidationState);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

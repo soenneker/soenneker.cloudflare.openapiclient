@@ -12,35 +12,58 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostEventCreateBulk202Response : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("createBulkEventsRequestId") is { } nullNodeCreateBulkEventsRequestId && nullNodeCreateBulkEventsRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreateBulkEventsRequestId = null;
+            if (parseNode.GetChildNode("createdEvents") is { } nullNodeCreatedEvents && nullNodeCreatedEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedEvents = null;
+            if (parseNode.GetChildNode("createdEventsCount") is { } nullNodeCreatedEventsCount && nullNodeCreatedEventsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedEventsCount = null;
+            if (parseNode.GetChildNode("createdTagsCount") is { } nullNodeCreatedTagsCount && nullNodeCreatedTagsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTagsCount = null;
+            if (parseNode.GetChildNode("errorCount") is { } nullNodeErrorCount && nullNodeErrorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCount = null;
+            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("queuedIndicatorsCount") is { } nullNodeQueuedIndicatorsCount && nullNodeQueuedIndicatorsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueuedIndicatorsCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Correlation ID for async indicator processing</summary>
-        public Guid? CreateBulkEventsRequestId { get; set; }
+        public Guid? CreateBulkEventsRequestId { get => _explicitNullValueCreateBulkEventsRequestId; set { _explicitNullValueCreateBulkEventsRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createBulkEventsRequestId"); else _explicitNullProperties?.Remove("createBulkEventsRequestId"); } }
+        private Guid? _explicitNullValueCreateBulkEventsRequestId = default!;
         /// <summary>Array of created events with UUIDs and shard locations. Only present when includeCreatedEvents=true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseCreatedEventsItem>? CreatedEvents { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseCreatedEventsItem>? CreatedEvents { get => _explicitNullValueCreatedEvents; set { _explicitNullValueCreatedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdEvents"); else _explicitNullProperties?.Remove("createdEvents"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseCreatedEventsItem>? _explicitNullValueCreatedEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseCreatedEventsItem> CreatedEvents { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseCreatedEventsItem> CreatedEvents { get => _explicitNullValueCreatedEvents; set { _explicitNullValueCreatedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdEvents"); else _explicitNullProperties?.Remove("createdEvents"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseCreatedEventsItem> _explicitNullValueCreatedEvents = default!;
 #endif
         /// <summary>Number of events created</summary>
-        public double? CreatedEventsCount { get; set; }
+        public double? CreatedEventsCount { get => _explicitNullValueCreatedEventsCount; set { _explicitNullValueCreatedEventsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdEventsCount"); else _explicitNullProperties?.Remove("createdEventsCount"); } }
+        private double? _explicitNullValueCreatedEventsCount = default!;
         /// <summary>Number of new tags created in SoT</summary>
-        public double? CreatedTagsCount { get; set; }
+        public double? CreatedTagsCount { get => _explicitNullValueCreatedTagsCount; set { _explicitNullValueCreatedTagsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdTagsCount"); else _explicitNullProperties?.Remove("createdTagsCount"); } }
+        private double? _explicitNullValueCreatedTagsCount = default!;
         /// <summary>Number of errors encountered</summary>
-        public double? ErrorCount { get; set; }
+        public double? ErrorCount { get => _explicitNullValueErrorCount; set { _explicitNullValueErrorCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCount"); else _explicitNullProperties?.Remove("errorCount"); } }
+        private double? _explicitNullValueErrorCount = default!;
         /// <summary>Array of error details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseErrorsItem>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseErrorsItem>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseErrorsItem>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseErrorsItem> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseErrorsItem> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseErrorsItem> _explicitNullValueErrors = default!;
 #endif
         /// <summary>Number of indicators queued for async processing</summary>
-        public double? QueuedIndicatorsCount { get; set; }
+        public double? QueuedIndicatorsCount { get => _explicitNullValueQueuedIndicatorsCount; set { _explicitNullValueQueuedIndicatorsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queuedIndicatorsCount"); else _explicitNullProperties?.Remove("queuedIndicatorsCount"); } }
+        private double? _explicitNullValueQueuedIndicatorsCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202Response"/> and sets the default values.
         /// </summary>
@@ -56,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("errorCount", ErrorCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseErrorsItem>("errors", Errors);
             writer.WriteDoubleValue("queuedIndicatorsCount", QueuedIndicatorsCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

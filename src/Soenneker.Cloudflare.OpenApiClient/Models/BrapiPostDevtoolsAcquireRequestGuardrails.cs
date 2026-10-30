@@ -11,22 +11,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BrapiPostDevtoolsAcquireRequestGuardrails : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowedDomains") is { } nullNodeAllowedDomains && nullNodeAllowedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDomains = null;
+            if (parseNode.GetChildNode("allowedDomainSets") is { } nullNodeAllowedDomainSets && nullNodeAllowedDomainSets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDomainSets = null;
+        }
+
         /// <summary>Hostname patterns, max 50. Supports exact hosts (example.com) or a single * wildcard anywhere. Prefer *.example.com (subdomain wildcard) over *example.com (prefix wildcard) to avoid matching overbroad lookalikes like evilexample.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedDomains { get; set; }
+        public List<string>? AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
+        private List<string>? _explicitNullValueAllowedDomains = default!;
 #nullable restore
 #else
-        public List<string> AllowedDomains { get; set; }
+        public List<string> AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
+        private List<string> _explicitNullValueAllowedDomains = default!;
 #endif
         /// <summary>Max 4 entries: curated preset names (common-cdns) and/or https URLs of newline-separated hostname lists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedDomainSets { get; set; }
+        public List<string>? AllowedDomainSets { get => _explicitNullValueAllowedDomainSets; set { _explicitNullValueAllowedDomainSets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomainSets"); else _explicitNullProperties?.Remove("allowedDomainSets"); } }
+        private List<string>? _explicitNullValueAllowedDomainSets = default!;
 #nullable restore
 #else
-        public List<string> AllowedDomainSets { get; set; }
+        public List<string> AllowedDomainSets { get => _explicitNullValueAllowedDomainSets; set { _explicitNullValueAllowedDomainSets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomainSets"); else _explicitNullProperties?.Remove("allowedDomainSets"); } }
+        private List<string> _explicitNullValueAllowedDomainSets = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquireRequestGuardrails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquireRequestGuardrails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquireRequestGuardrails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedDomains", AllowedDomains);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedDomainSets", AllowedDomainSets);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowedDomainSets", AllowedDomainSets);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

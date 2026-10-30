@@ -11,17 +11,19 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\firewall\waf
+    /// Builds and executes requests for operations under \zones\{zoneId}\firewall\waf
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WafRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The overrides property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Overrides.OverridesRequestBuilder Overrides
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Overrides.OverridesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The packages property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.PackagesRequestBuilder Packages
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.PackagesRequestBuilder(PathParameters, RequestAdapter);
@@ -31,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WafRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/firewall/waf", pathParameters)
+        public WafRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/firewall/waf", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WafRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/firewall/waf", rawUrl)
+        public WafRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/firewall/waf", rawUrl)
         {
         }
     }

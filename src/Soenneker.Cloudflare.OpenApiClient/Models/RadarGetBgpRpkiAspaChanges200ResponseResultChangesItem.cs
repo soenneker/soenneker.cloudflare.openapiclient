@@ -11,29 +11,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetBgpRpkiAspaChanges200ResponseResultChangesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customersAdded") is { } nullNodeCustomersAdded && nullNodeCustomersAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomersAdded = null;
+            if (parseNode.GetChildNode("customersRemoved") is { } nullNodeCustomersRemoved && nullNodeCustomersRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomersRemoved = null;
+            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("entries") is { } nullNodeEntries && nullNodeEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entries = null;
+            if (parseNode.GetChildNode("providersAdded") is { } nullNodeProvidersAdded && nullNodeProvidersAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvidersAdded = null;
+            if (parseNode.GetChildNode("providersRemoved") is { } nullNodeProvidersRemoved && nullNodeProvidersRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvidersRemoved = null;
+            if (parseNode.GetChildNode("totalCount") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of new ASPA objects created.</summary>
-        public int? CustomersAdded { get; set; }
+        public int? CustomersAdded { get => _explicitNullValueCustomersAdded; set { _explicitNullValueCustomersAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customersAdded"); else _explicitNullProperties?.Remove("customersAdded"); } }
+        private int? _explicitNullValueCustomersAdded = default!;
         /// <summary>Number of ASPA objects deleted.</summary>
-        public int? CustomersRemoved { get; set; }
+        public int? CustomersRemoved { get => _explicitNullValueCustomersRemoved; set { _explicitNullValueCustomersRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customersRemoved"); else _explicitNullProperties?.Remove("customersRemoved"); } }
+        private int? _explicitNullValueCustomersRemoved = default!;
         /// <summary>Date of the changes in ISO 8601 format.</summary>
-        public DateTimeOffset? Date { get; set; }
+        public DateTimeOffset? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        private DateTimeOffset? _explicitNullValueDate = default!;
         /// <summary>The entries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItemEntriesItem>? Entries { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItemEntriesItem>? Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItemEntriesItem>? _explicitNullValueEntries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItemEntriesItem> Entries { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItemEntriesItem> Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItemEntriesItem> _explicitNullValueEntries = default!;
 #endif
         /// <summary>Number of providers added to existing objects.</summary>
-        public int? ProvidersAdded { get; set; }
+        public int? ProvidersAdded { get => _explicitNullValueProvidersAdded; set { _explicitNullValueProvidersAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providersAdded"); else _explicitNullProperties?.Remove("providersAdded"); } }
+        private int? _explicitNullValueProvidersAdded = default!;
         /// <summary>Number of providers removed from existing objects.</summary>
-        public int? ProvidersRemoved { get; set; }
+        public int? ProvidersRemoved { get => _explicitNullValueProvidersRemoved; set { _explicitNullValueProvidersRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providersRemoved"); else _explicitNullProperties?.Remove("providersRemoved"); } }
+        private int? _explicitNullValueProvidersRemoved = default!;
         /// <summary>Running total of active ASPA objects after this day.</summary>
-        public int? TotalCount { get; set; }
+        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalCount"); else _explicitNullProperties?.Remove("totalCount"); } }
+        private int? _explicitNullValueTotalCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItem"/> and sets the default values.
         /// </summary>
@@ -49,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200ResponseResultChangesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("providersAdded", ProvidersAdded);
             writer.WriteIntValue("providersRemoved", ProvidersRemoved);
             writer.WriteIntValue("totalCount", TotalCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

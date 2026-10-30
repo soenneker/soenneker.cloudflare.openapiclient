@@ -11,16 +11,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetRankingInternetServicesCategories200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("categories_0") is { } nullNodeCategories0 && nullNodeCategories0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories0 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The categories_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item>? Categories0 { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item>? Categories0 { get => _explicitNullValueCategories0; set { _explicitNullValueCategories0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories_0"); else _explicitNullProperties?.Remove("categories_0"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item>? _explicitNullValueCategories0 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item> Categories0 { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item> Categories0 { get => _explicitNullValueCategories0; set { _explicitNullValueCategories0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories_0"); else _explicitNullProperties?.Remove("categories_0"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item> _explicitNullValueCategories0 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResult"/> and sets the default values.
@@ -37,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item>("categories_0", Categories0);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

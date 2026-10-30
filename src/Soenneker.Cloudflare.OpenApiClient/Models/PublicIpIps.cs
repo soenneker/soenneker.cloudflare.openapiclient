@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PublicIpIps : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("etag") is { } nullNodeEtag && nullNodeEtag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Etag = null;
+            if (parseNode.GetChildNode("ipv4_cidrs") is { } nullNodeIpv4Cidrs && nullNodeIpv4Cidrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4Cidrs = null;
+            if (parseNode.GetChildNode("ipv6_cidrs") is { } nullNodeIpv6Cidrs && nullNodeIpv6Cidrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv6Cidrs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A digest of the IP data. Useful for determining if the data has changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Etag { get; set; }
+        public string? Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
+        private string? _explicitNullValueEtag = default!;
 #nullable restore
 #else
-        public string Etag { get; set; }
+        public string Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
+        private string _explicitNullValueEtag = default!;
 #endif
         /// <summary>List of Cloudflare IPv4 CIDR addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ipv4Cidrs { get; set; }
+        public List<string>? Ipv4Cidrs { get => _explicitNullValueIpv4Cidrs; set { _explicitNullValueIpv4Cidrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4_cidrs"); else _explicitNullProperties?.Remove("ipv4_cidrs"); } }
+        private List<string>? _explicitNullValueIpv4Cidrs = default!;
 #nullable restore
 #else
-        public List<string> Ipv4Cidrs { get; set; }
+        public List<string> Ipv4Cidrs { get => _explicitNullValueIpv4Cidrs; set { _explicitNullValueIpv4Cidrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4_cidrs"); else _explicitNullProperties?.Remove("ipv4_cidrs"); } }
+        private List<string> _explicitNullValueIpv4Cidrs = default!;
 #endif
         /// <summary>List of Cloudflare IPv6 CIDR addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ipv6Cidrs { get; set; }
+        public List<string>? Ipv6Cidrs { get => _explicitNullValueIpv6Cidrs; set { _explicitNullValueIpv6Cidrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6_cidrs"); else _explicitNullProperties?.Remove("ipv6_cidrs"); } }
+        private List<string>? _explicitNullValueIpv6Cidrs = default!;
 #nullable restore
 #else
-        public List<string> Ipv6Cidrs { get; set; }
+        public List<string> Ipv6Cidrs { get => _explicitNullValueIpv6Cidrs; set { _explicitNullValueIpv6Cidrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6_cidrs"); else _explicitNullProperties?.Remove("ipv6_cidrs"); } }
+        private List<string> _explicitNullValueIpv6Cidrs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIpIps"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIpIps CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIpIps();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIpIps(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("etag", Etag);
             writer.WriteCollectionOfPrimitiveValues<string>("ipv4_cidrs", Ipv4Cidrs);
             writer.WriteCollectionOfPrimitiveValues<string>("ipv6_cidrs", Ipv6Cidrs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

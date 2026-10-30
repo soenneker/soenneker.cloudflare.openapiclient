@@ -12,13 +12,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailReputationPolicyComplaint : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("at_risk_at") is { } nullNodeAtRiskAt && nullNodeAtRiskAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AtRiskAt = null;
+            if (parseNode.GetChildNode("minimum_denominator") is { } nullNodeMinimumDenominator && nullNodeMinimumDenominator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumDenominator = null;
+            if (parseNode.GetChildNode("warning_at") is { } nullNodeWarningAt && nullNodeWarningAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningAt = null;
+        }
+
         /// <summary>The rate at or above which the metric enters the at-risk band. A fraction between 0 and 1.</summary>
-        public double? AtRiskAt { get; set; }
+        public double? AtRiskAt { get => _explicitNullValueAtRiskAt; set { _explicitNullValueAtRiskAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("at_risk_at"); else _explicitNullProperties?.Remove("at_risk_at"); } }
+        private double? _explicitNullValueAtRiskAt = default!;
         /// <summary>The smallest eligible event count for this metric. Below this, the metric is skipped and cannot affect the account&apos;s status.</summary>
-        public long? MinimumDenominator { get; set; }
+        public long? MinimumDenominator { get => _explicitNullValueMinimumDenominator; set { _explicitNullValueMinimumDenominator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_denominator"); else _explicitNullProperties?.Remove("minimum_denominator"); } }
+        private long? _explicitNullValueMinimumDenominator = default!;
         /// <summary>The rate at or above which the metric enters the warning band. A fraction between 0 and 1.</summary>
-        public double? WarningAt { get; set; }
+        public double? WarningAt { get => _explicitNullValueWarningAt; set { _explicitNullValueWarningAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_at"); else _explicitNullProperties?.Remove("warning_at"); } }
+        private double? _explicitNullValueWarningAt = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -27,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("at_risk_at", AtRiskAt);
             writer.WriteLongValue("minimum_denominator", MinimumDenominator);
-            writer.WriteDoubleValue("warning_at", WarningAt);
+            writer.WriteDoubleValue("warning_at", WarningAt);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

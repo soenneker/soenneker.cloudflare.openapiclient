@@ -11,65 +11,108 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSecurityBulkJobDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action_params") is { } nullNodeActionParams && nullNodeActionParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionParams = null;
+            if (parseNode.GetChildNode("action_type") is { } nullNodeActionType && nullNodeActionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionType = null;
+            if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
+            if (parseNode.GetChildNode("completed_at") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("job_id") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
+            if (parseNode.GetChildNode("messages_cancelled") is { } nullNodeMessagesCancelled && nullNodeMessagesCancelled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesCancelled = null;
+            if (parseNode.GetChildNode("messages_failed") is { } nullNodeMessagesFailed && nullNodeMessagesFailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesFailed = null;
+            if (parseNode.GetChildNode("messages_pending") is { } nullNodeMessagesPending && nullNodeMessagesPending.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesPending = null;
+            if (parseNode.GetChildNode("messages_skipped") is { } nullNodeMessagesSkipped && nullNodeMessagesSkipped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesSkipped = null;
+            if (parseNode.GetChildNode("messages_successful") is { } nullNodeMessagesSuccessful && nullNodeMessagesSuccessful.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesSuccessful = null;
+            if (parseNode.GetChildNode("search_params") is { } nullNodeSearchParams && nullNodeSearchParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchParams = null;
+            if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("status_message") is { } nullNodeStatusMessage && nullNodeStatusMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusMessage = null;
+            if (parseNode.GetChildNode("total_messages_discovered") is { } nullNodeTotalMessagesDiscovered && nullNodeTotalMessagesDiscovered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalMessagesDiscovered = null;
+        }
+
         /// <summary>The action_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobActionParams? ActionParams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobActionParams? ActionParams { get => _explicitNullValueActionParams; set { _explicitNullValueActionParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_params"); else _explicitNullProperties?.Remove("action_params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobActionParams? _explicitNullValueActionParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobActionParams ActionParams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobActionParams ActionParams { get => _explicitNullValueActionParams; set { _explicitNullValueActionParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_params"); else _explicitNullProperties?.Remove("action_params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobActionParams _explicitNullValueActionParams = default!;
 #endif
         /// <summary>The action_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobDetailActionType? ActionType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobDetailActionType? ActionType { get => _explicitNullValueActionType; set { _explicitNullValueActionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_type"); else _explicitNullProperties?.Remove("action_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobDetailActionType? _explicitNullValueActionType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string? _explicitNullValueComment = default!;
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string _explicitNullValueComment = default!;
 #endif
         /// <summary>The completed_at property</summary>
-        public DateTimeOffset? CompletedAt { get; set; }
+        public DateTimeOffset? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private DateTimeOffset? _explicitNullValueCompletedAt = default!;
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The job_id property</summary>
-        public Guid? JobId { get; set; }
+        public Guid? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        private Guid? _explicitNullValueJobId = default!;
         /// <summary>Messages that were cancelled: rows cancelled via the API before being claimed, and rows whose in-flight attempt ended when the job reached a terminal state. Together the counters satisfy total_messages_discovered = messages_pending + messages_successful + messages_failed + messages_skipped + messages_cancelled.</summary>
-        public int? MessagesCancelled { get; set; }
+        public int? MessagesCancelled { get => _explicitNullValueMessagesCancelled; set { _explicitNullValueMessagesCancelled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages_cancelled"); else _explicitNullProperties?.Remove("messages_cancelled"); } }
+        private int? _explicitNullValueMessagesCancelled = default!;
         /// <summary>The messages_failed property</summary>
-        public int? MessagesFailed { get; set; }
+        public int? MessagesFailed { get => _explicitNullValueMessagesFailed; set { _explicitNullValueMessagesFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages_failed"); else _explicitNullProperties?.Remove("messages_failed"); } }
+        private int? _explicitNullValueMessagesFailed = default!;
         /// <summary>The messages_pending property</summary>
-        public int? MessagesPending { get; set; }
+        public int? MessagesPending { get => _explicitNullValueMessagesPending; set { _explicitNullValueMessagesPending = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages_pending"); else _explicitNullProperties?.Remove("messages_pending"); } }
+        private int? _explicitNullValueMessagesPending = default!;
         /// <summary>Messages that discovery skipped (for example, phish submissions, which the job cannot action).</summary>
-        public int? MessagesSkipped { get; set; }
+        public int? MessagesSkipped { get => _explicitNullValueMessagesSkipped; set { _explicitNullValueMessagesSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages_skipped"); else _explicitNullProperties?.Remove("messages_skipped"); } }
+        private int? _explicitNullValueMessagesSkipped = default!;
         /// <summary>The messages_successful property</summary>
-        public int? MessagesSuccessful { get; set; }
+        public int? MessagesSuccessful { get => _explicitNullValueMessagesSuccessful; set { _explicitNullValueMessagesSuccessful = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages_successful"); else _explicitNullProperties?.Remove("messages_successful"); } }
+        private int? _explicitNullValueMessagesSuccessful = default!;
         /// <summary>The search_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams? SearchParams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams? SearchParams { get => _explicitNullValueSearchParams; set { _explicitNullValueSearchParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_params"); else _explicitNullProperties?.Remove("search_params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams? _explicitNullValueSearchParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams SearchParams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams SearchParams { get => _explicitNullValueSearchParams; set { _explicitNullValueSearchParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_params"); else _explicitNullProperties?.Remove("search_params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams _explicitNullValueSearchParams = default!;
 #endif
         /// <summary>The started_at property</summary>
-        public DateTimeOffset? StartedAt { get; set; }
+        public DateTimeOffset? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private DateTimeOffset? _explicitNullValueStartedAt = default!;
         /// <summary>Status of a bulk action job.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobStatus? _explicitNullValueStatus = default!;
         /// <summary>The status_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusMessage { get; set; }
+        public string? StatusMessage { get => _explicitNullValueStatusMessage; set { _explicitNullValueStatusMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_message"); else _explicitNullProperties?.Remove("status_message"); } }
+        private string? _explicitNullValueStatusMessage = default!;
 #nullable restore
 #else
-        public string StatusMessage { get; set; }
+        public string StatusMessage { get => _explicitNullValueStatusMessage; set { _explicitNullValueStatusMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_message"); else _explicitNullProperties?.Remove("status_message"); } }
+        private string _explicitNullValueStatusMessage = default!;
 #endif
         /// <summary>The total_messages_discovered property</summary>
-        public int? TotalMessagesDiscovered { get; set; }
+        public int? TotalMessagesDiscovered { get => _explicitNullValueTotalMessagesDiscovered; set { _explicitNullValueTotalMessagesDiscovered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_messages_discovered"); else _explicitNullProperties?.Remove("total_messages_discovered"); } }
+        private int? _explicitNullValueTotalMessagesDiscovered = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobDetail"/> and sets the default values.
         /// </summary>
@@ -85,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,6 +179,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobStatus>("status", Status);
             writer.WriteStringValue("status_message", StatusMessage);
             writer.WriteIntValue("total_messages_discovered", TotalMessagesDiscovered);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

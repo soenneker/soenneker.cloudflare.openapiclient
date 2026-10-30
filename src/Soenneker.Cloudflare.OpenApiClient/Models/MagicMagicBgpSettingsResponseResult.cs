@@ -11,20 +11,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicMagicBgpSettingsResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cloudflare_asn") is { } nullNodeCloudflareAsn && nullNodeCloudflareAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareAsn = null;
+            if (parseNode.GetChildNode("modified_on") is { } nullNodeModifiedOn && nullNodeModifiedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedOn = null;
+            if (parseNode.GetChildNode("redistribute") is { } nullNodeRedistribute && nullNodeRedistribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redistribute = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Route advertisements from Cloudflare to ramps in this account will use this ASN.</summary>
-        public int? CloudflareAsn { get; set; }
+        public int? CloudflareAsn { get => _explicitNullValueCloudflareAsn; set { _explicitNullValueCloudflareAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_asn"); else _explicitNullProperties?.Remove("cloudflare_asn"); } }
+        private int? _explicitNullValueCloudflareAsn = default!;
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get => _explicitNullValueModifiedOn; set { _explicitNullValueModifiedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_on"); else _explicitNullProperties?.Remove("modified_on"); } }
+        private DateTimeOffset? _explicitNullValueModifiedOn = default!;
         /// <summary>Per-source toggles controlling which route sources are redistributed into BGP. Each property enables redistribution for one route source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources? Redistribute { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources? Redistribute { get => _explicitNullValueRedistribute; set { _explicitNullValueRedistribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redistribute"); else _explicitNullProperties?.Remove("redistribute"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources? _explicitNullValueRedistribute = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources Redistribute { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources Redistribute { get => _explicitNullValueRedistribute; set { _explicitNullValueRedistribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redistribute"); else _explicitNullProperties?.Remove("redistribute"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources _explicitNullValueRedistribute = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicMagicBgpSettingsResponseResult"/> and sets the default values.
@@ -41,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicMagicBgpSettingsResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicMagicBgpSettingsResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicMagicBgpSettingsResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("cloudflare_asn", CloudflareAsn);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources>("redistribute", Redistribute);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

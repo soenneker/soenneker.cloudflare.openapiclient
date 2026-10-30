@@ -12,42 +12,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BuildsCreateWorkerRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("git_repository") is { } nullNodeGitRepository && nullNodeGitRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitRepository = null;
+            if (parseNode.GetChildNode("previews_base_config") is { } nullNodePreviewsBaseConfig && nullNodePreviewsBaseConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewsBaseConfig = null;
+            if (parseNode.GetChildNode("previews_enabled") is { } nullNodePreviewsEnabled && nullNodePreviewsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewsEnabled = null;
+            if (parseNode.GetChildNode("production_settings") is { } nullNodeProductionSettings && nullNodeProductionSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductionSettings = null;
+            if (parseNode.GetChildNode("script_tag") is { } nullNodeScriptTag && nullNodeScriptTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptTag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The git_repository property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryInput? GitRepository { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryInput? GitRepository { get => _explicitNullValueGitRepository; set { _explicitNullValueGitRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("git_repository"); else _explicitNullProperties?.Remove("git_repository"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryInput? _explicitNullValueGitRepository = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryInput GitRepository { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryInput GitRepository { get => _explicitNullValueGitRepository; set { _explicitNullValueGitRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("git_repository"); else _explicitNullProperties?.Remove("git_repository"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryInput _explicitNullValueGitRepository = default!;
 #endif
         /// <summary>Build and deploy settings when creating a Worker build configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput? PreviewsBaseConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput? PreviewsBaseConfig { get => _explicitNullValuePreviewsBaseConfig; set { _explicitNullValuePreviewsBaseConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews_base_config"); else _explicitNullProperties?.Remove("previews_base_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput? _explicitNullValuePreviewsBaseConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput PreviewsBaseConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput PreviewsBaseConfig { get => _explicitNullValuePreviewsBaseConfig; set { _explicitNullValuePreviewsBaseConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews_base_config"); else _explicitNullProperties?.Remove("previews_base_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput _explicitNullValuePreviewsBaseConfig = default!;
 #endif
         /// <summary>Whether Previews are enabled for this Worker</summary>
-        public bool? PreviewsEnabled { get; set; }
+        public bool? PreviewsEnabled { get => _explicitNullValuePreviewsEnabled; set { _explicitNullValuePreviewsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews_enabled"); else _explicitNullProperties?.Remove("previews_enabled"); } }
+        private bool? _explicitNullValuePreviewsEnabled = default!;
         /// <summary>Build and deploy settings when creating a Worker build configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput? ProductionSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput? ProductionSettings { get => _explicitNullValueProductionSettings; set { _explicitNullValueProductionSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production_settings"); else _explicitNullProperties?.Remove("production_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput? _explicitNullValueProductionSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput ProductionSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput ProductionSettings { get => _explicitNullValueProductionSettings; set { _explicitNullValueProductionSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production_settings"); else _explicitNullProperties?.Remove("production_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput _explicitNullValueProductionSettings = default!;
 #endif
         /// <summary>System-generated tag of the Worker. This is not the Worker name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptTag { get; set; }
+        public string? ScriptTag { get => _explicitNullValueScriptTag; set { _explicitNullValueScriptTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script_tag"); else _explicitNullProperties?.Remove("script_tag"); } }
+        private string? _explicitNullValueScriptTag = default!;
 #nullable restore
 #else
-        public string ScriptTag { get; set; }
+        public string ScriptTag { get => _explicitNullValueScriptTag; set { _explicitNullValueScriptTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script_tag"); else _explicitNullProperties?.Remove("script_tag"); } }
+        private string _explicitNullValueScriptTag = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerRequest"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("previews_enabled", PreviewsEnabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerBuildSettingsInput>("production_settings", ProductionSettings);
             writer.WriteStringValue("script_tag", ScriptTag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

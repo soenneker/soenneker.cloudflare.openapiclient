@@ -12,40 +12,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflow : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("class_name") is { } nullNodeClassName && nullNodeClassName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClassName = null;
+            if (parseNode.GetChildNode("functions") is { } nullNodeFunctions && nullNodeFunctions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Functions = null;
+            if (parseNode.GetChildNode("nodes") is { } nullNodeNodes && nullNodeNodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nodes = null;
+            if (parseNode.GetChildNode("payload") is { } nullNodePayload && nullNodePayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payload = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The class_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassName { get; set; }
+        public string? ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
+        private string? _explicitNullValueClassName = default!;
 #nullable restore
 #else
-        public string ClassName { get; set; }
+        public string ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
+        private string _explicitNullValueClassName = default!;
 #endif
         /// <summary>The functions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowFunctions? Functions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowFunctions? Functions { get => _explicitNullValueFunctions; set { _explicitNullValueFunctions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions"); else _explicitNullProperties?.Remove("functions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowFunctions? _explicitNullValueFunctions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowFunctions Functions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowFunctions Functions { get => _explicitNullValueFunctions; set { _explicitNullValueFunctions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions"); else _explicitNullProperties?.Remove("functions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowFunctions _explicitNullValueFunctions = default!;
 #endif
         /// <summary>The nodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem>? Nodes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem>? Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem>? _explicitNullValueNodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem> Nodes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem> Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem> _explicitNullValueNodes = default!;
 #endif
         /// <summary>Shape descriptor for JSON payloads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload? Payload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload? _explicitNullValuePayload = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload Payload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload _explicitNullValuePayload = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflow"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflow();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflow(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowFunctions>("functions", Functions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem>("nodes", Nodes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload>("payload", Payload);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

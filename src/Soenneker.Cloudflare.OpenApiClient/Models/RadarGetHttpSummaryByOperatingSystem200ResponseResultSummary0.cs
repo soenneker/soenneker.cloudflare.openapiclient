@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetHttpSummaryByOperatingSystem200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ANDROID") is { } nullNodeANDROID && nullNodeANDROID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ANDROID = null;
+            if (parseNode.GetChildNode("IOS") is { } nullNodeIOS && nullNodeIOS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IOS = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ANDROID { get; set; }
+        public string? ANDROID { get => _explicitNullValueANDROID; set { _explicitNullValueANDROID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ANDROID"); else _explicitNullProperties?.Remove("ANDROID"); } }
+        private string? _explicitNullValueANDROID = default!;
 #nullable restore
 #else
-        public string ANDROID { get; set; }
+        public string ANDROID { get => _explicitNullValueANDROID; set { _explicitNullValueANDROID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ANDROID"); else _explicitNullProperties?.Remove("ANDROID"); } }
+        private string _explicitNullValueANDROID = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IOS { get; set; }
+        public string? IOS { get => _explicitNullValueIOS; set { _explicitNullValueIOS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IOS"); else _explicitNullProperties?.Remove("IOS"); } }
+        private string? _explicitNullValueIOS = default!;
 #nullable restore
 #else
-        public string IOS { get; set; }
+        public string IOS { get => _explicitNullValueIOS; set { _explicitNullValueIOS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IOS"); else _explicitNullProperties?.Remove("IOS"); } }
+        private string _explicitNullValueIOS = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryByOperatingSystem200ResponseResultSummary0"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryByOperatingSystem200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryByOperatingSystem200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryByOperatingSystem200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ANDROID", ANDROID);
             writer.WriteStringValue("IOS", IOS);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -55,6 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

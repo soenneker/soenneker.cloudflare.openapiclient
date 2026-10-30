@@ -11,46 +11,74 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DnsSettingsForAZoneListDnsSettings4XxResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("flatten_all_cnames") is { } nullNodeFlattenAllCnames && nullNodeFlattenAllCnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlattenAllCnames = null;
+            if (parseNode.GetChildNode("foundation_dns") is { } nullNodeFoundationDns && nullNodeFoundationDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FoundationDns = null;
+            if (parseNode.GetChildNode("internal_dns") is { } nullNodeInternalDns && nullNodeInternalDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalDns = null;
+            if (parseNode.GetChildNode("multi_provider") is { } nullNodeMultiProvider && nullNodeMultiProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiProvider = null;
+            if (parseNode.GetChildNode("nameservers") is { } nullNodeNameservers && nullNodeNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nameservers = null;
+            if (parseNode.GetChildNode("ns_ttl") is { } nullNodeNsTtl && nullNodeNsTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsTtl = null;
+            if (parseNode.GetChildNode("secondary_overrides") is { } nullNodeSecondaryOverrides && nullNodeSecondaryOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryOverrides = null;
+            if (parseNode.GetChildNode("soa") is { } nullNodeSoa && nullNodeSoa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Soa = null;
+            if (parseNode.GetChildNode("zone_mode") is { } nullNodeZoneMode && nullNodeZoneMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneMode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.</summary>
-        public bool? FlattenAllCnames { get; set; }
+        public bool? FlattenAllCnames { get => _explicitNullValueFlattenAllCnames; set { _explicitNullValueFlattenAllCnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flatten_all_cnames"); else _explicitNullProperties?.Remove("flatten_all_cnames"); } }
+        private bool? _explicitNullValueFlattenAllCnames = default!;
         /// <summary>Deprecated. Use nameservers.type to configure Advanced Nameservers.</summary>
         [Obsolete("")]
-        public bool? FoundationDns { get; set; }
+        public bool? FoundationDns { get => _explicitNullValueFoundationDns; set { _explicitNullValueFoundationDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foundation_dns"); else _explicitNullProperties?.Remove("foundation_dns"); } }
+        private bool? _explicitNullValueFoundationDns = default!;
         /// <summary>The internal_dns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns? InternalDns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns? InternalDns { get => _explicitNullValueInternalDns; set { _explicitNullValueInternalDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_dns"); else _explicitNullProperties?.Remove("internal_dns"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns? _explicitNullValueInternalDns = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns InternalDns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns InternalDns { get => _explicitNullValueInternalDns; set { _explicitNullValueInternalDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_dns"); else _explicitNullProperties?.Remove("internal_dns"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns _explicitNullValueInternalDns = default!;
 #endif
         /// <summary>Whether to enable multi-provider DNS, which causes Cloudflare to activate the zone even when non-Cloudflare NS records exist, and to respect NS records at the zone apex during outbound zone transfers.</summary>
-        public bool? MultiProvider { get; set; }
+        public bool? MultiProvider { get => _explicitNullValueMultiProvider; set { _explicitNullValueMultiProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multi_provider"); else _explicitNullProperties?.Remove("multi_provider"); } }
+        private bool? _explicitNullValueMultiProvider = default!;
         /// <summary>Controls the nameservers through which the zone is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers? Nameservers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers? Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers? _explicitNullValueNameservers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers Nameservers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers _explicitNullValueNameservers = default!;
 #endif
         /// <summary>The time to live (TTL) of the zone&apos;s nameserver (NS) records.</summary>
-        public double? NsTtl { get; set; }
+        public double? NsTtl { get => _explicitNullValueNsTtl; set { _explicitNullValueNsTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_ttl"); else _explicitNullProperties?.Remove("ns_ttl"); } }
+        private double? _explicitNullValueNsTtl = default!;
         /// <summary>Allows a Secondary DNS zone to use (proxied) override records and CNAME flattening at the zone apex.</summary>
-        public bool? SecondaryOverrides { get; set; }
+        public bool? SecondaryOverrides { get => _explicitNullValueSecondaryOverrides; set { _explicitNullValueSecondaryOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_overrides"); else _explicitNullProperties?.Remove("secondary_overrides"); } }
+        private bool? _explicitNullValueSecondaryOverrides = default!;
         /// <summary>The soa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa? Soa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa? Soa { get => _explicitNullValueSoa; set { _explicitNullValueSoa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soa"); else _explicitNullProperties?.Remove("soa"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa? _explicitNullValueSoa = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa Soa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa Soa { get => _explicitNullValueSoa; set { _explicitNullValueSoa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soa"); else _explicitNullProperties?.Remove("soa"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa _explicitNullValueSoa = default!;
 #endif
         /// <summary>Whether the zone mode is a regular or CDN/DNS only zone.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneMode? ZoneMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneMode? ZoneMode { get => _explicitNullValueZoneMode; set { _explicitNullValueZoneMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_mode"); else _explicitNullProperties?.Remove("zone_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneMode? _explicitNullValueZoneMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAZoneListDnsSettings4XxResponseResult"/> and sets the default values.
         /// </summary>
@@ -66,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAZoneListDnsSettings4XxResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAZoneListDnsSettings4XxResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAZoneListDnsSettings4XxResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("secondary_overrides", SecondaryOverrides);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa>("soa", Soa);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneMode>("zone_mode", ZoneMode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

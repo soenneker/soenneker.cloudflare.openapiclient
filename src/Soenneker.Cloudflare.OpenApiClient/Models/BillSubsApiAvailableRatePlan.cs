@@ -11,11 +11,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BillSubsApiAvailableRatePlan : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("can_subscribe") is { } nullNodeCanSubscribe && nullNodeCanSubscribe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanSubscribe = null;
+            if (parseNode.GetChildNode("externally_managed") is { } nullNodeExternallyManaged && nullNodeExternallyManaged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternallyManaged = null;
+            if (parseNode.GetChildNode("is_subscribed") is { } nullNodeIsSubscribed && nullNodeIsSubscribed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSubscribed = null;
+            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether you can subscribe to this plan.</summary>
-        public bool? CanSubscribe { get; set; }
+        public bool? CanSubscribe { get => _explicitNullValueCanSubscribe; set { _explicitNullValueCanSubscribe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_subscribe"); else _explicitNullProperties?.Remove("can_subscribe"); } }
+        private bool? _explicitNullValueCanSubscribe = default!;
         /// <summary>The monetary unit in which pricing information is displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +37,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Currency { get; private set; }
 #endif
         /// <summary>Indicates whether this plan is managed externally.</summary>
-        public bool? ExternallyManaged { get; set; }
+        public bool? ExternallyManaged { get => _explicitNullValueExternallyManaged; set { _explicitNullValueExternallyManaged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externally_managed"); else _explicitNullProperties?.Remove("externally_managed"); } }
+        private bool? _explicitNullValueExternallyManaged = default!;
         /// <summary>The frequency at which you will be billed for this plan.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSchemasFrequency? Frequency { get; private set; }
         /// <summary>Identifier</summary>
@@ -37,7 +50,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>Indicates whether you are currently subscribed to this plan.</summary>
-        public bool? IsSubscribed { get; set; }
+        public bool? IsSubscribed { get => _explicitNullValueIsSubscribed; set { _explicitNullValueIsSubscribed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_subscribed"); else _explicitNullProperties?.Remove("is_subscribed"); } }
+        private bool? _explicitNullValueIsSubscribed = default!;
         /// <summary>The legacy identifier for this rate plan, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +69,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; private set; }
 #endif
         /// <summary>The amount you will be billed for this plan.</summary>
-        public double? Price { get; set; }
+        public double? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private double? _explicitNullValuePrice = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAvailableRatePlan"/> and sets the default values.
         /// </summary>
@@ -74,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAvailableRatePlan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAvailableRatePlan();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAvailableRatePlan(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("externally_managed", ExternallyManaged);
             writer.WriteBoolValue("is_subscribed", IsSubscribed);
             writer.WriteDoubleValue("price", Price);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

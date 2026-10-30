@@ -11,54 +11,79 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CwsCreatePolicySetInputBody : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("exclude_workload_ids") is { } nullNodeExcludeWorkloadIds && nullNodeExcludeWorkloadIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeWorkloadIds = null;
+            if (parseNode.GetChildNode("include_workload_ids") is { } nullNodeIncludeWorkloadIds && nullNodeIncludeWorkloadIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeWorkloadIds = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("policies") is { } nullNodePolicies && nullNodePolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policies = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+        }
+
         /// <summary>Optional free-form description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Workload IDs that exclude matching requests. Exclusions take precedence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ExcludeWorkloadIds { get; set; }
+        public List<Guid?>? ExcludeWorkloadIds { get => _explicitNullValueExcludeWorkloadIds; set { _explicitNullValueExcludeWorkloadIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_workload_ids"); else _explicitNullProperties?.Remove("exclude_workload_ids"); } }
+        private List<Guid?>? _explicitNullValueExcludeWorkloadIds = default!;
 #nullable restore
 #else
-        public List<Guid?> ExcludeWorkloadIds { get; set; }
+        public List<Guid?> ExcludeWorkloadIds { get => _explicitNullValueExcludeWorkloadIds; set { _explicitNullValueExcludeWorkloadIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_workload_ids"); else _explicitNullProperties?.Remove("exclude_workload_ids"); } }
+        private List<Guid?> _explicitNullValueExcludeWorkloadIds = default!;
 #endif
         /// <summary>Workload IDs that include matching requests. Empty or omitted includes all requests before exclusions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? IncludeWorkloadIds { get; set; }
+        public List<Guid?>? IncludeWorkloadIds { get => _explicitNullValueIncludeWorkloadIds; set { _explicitNullValueIncludeWorkloadIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_workload_ids"); else _explicitNullProperties?.Remove("include_workload_ids"); } }
+        private List<Guid?>? _explicitNullValueIncludeWorkloadIds = default!;
 #nullable restore
 #else
-        public List<Guid?> IncludeWorkloadIds { get; set; }
+        public List<Guid?> IncludeWorkloadIds { get => _explicitNullValueIncludeWorkloadIds; set { _explicitNullValueIncludeWorkloadIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_workload_ids"); else _explicitNullProperties?.Remove("include_workload_ids"); } }
+        private List<Guid?> _explicitNullValueIncludeWorkloadIds = default!;
 #endif
         /// <summary>Name of the policy set</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Policies to include with per-membership enforcement mode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsPolicySetPolicyInput>? Policies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsPolicySetPolicyInput>? Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsPolicySetPolicyInput>? _explicitNullValuePolicies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsPolicySetPolicyInput> Policies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsPolicySetPolicyInput> Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsPolicySetPolicyInput> _explicitNullValuePolicies = default!;
 #endif
         /// <summary>Tags to attach. Keys are limited to 256 UTF-8 bytes and values to 1024 UTF-8 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBodyTagsProperty? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBodyTagsProperty? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBodyTagsProperty? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBodyTagsProperty Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBodyTagsProperty Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBodyTagsProperty _explicitNullValueTags = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,7 +123,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<Guid?>("include_workload_ids", IncludeWorkloadIds);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsPolicySetPolicyInput>("policies", Policies);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBodyTagsProperty>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreatePolicySetInputBodyTagsProperty>("tags", Tags);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

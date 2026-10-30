@@ -11,53 +11,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("paging") is { } nullNodePaging && nullNodePaging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paging = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Timestamp the object was created at. The time is returned in ISO format.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The err_message property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseDataErrMessage? ErrMessage { get; set; }
-        /// <summary>The livestream session ID.</summary>
+        /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
-#endif
-        /// <summary>The time duration for which the input was given or the meeting was streamed.</summary>
-        public double? IngestSeconds { get; set; }
-        /// <summary>Name of the livestream.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InvokedTime { get; set; }
-#nullable restore
-#else
-        public string InvokedTime { get; set; }
-#endif
-        /// <summary>The ID of the livestream.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LivestreamId { get; set; }
-#nullable restore
-#else
-        public string LivestreamId { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession> _explicitNullValueData = default!;
 #endif
         /// <summary>The paging property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseDataPaging? Paging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo? Paging { get => _explicitNullValuePaging; set { _explicitNullValuePaging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paging"); else _explicitNullProperties?.Remove("paging"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo? _explicitNullValuePaging = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseDataPaging Paging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo Paging { get => _explicitNullValuePaging; set { _explicitNullValuePaging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paging"); else _explicitNullProperties?.Remove("paging"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo _explicitNullValuePaging = default!;
 #endif
-        /// <summary>Specifies if the livestream was disabled.</summary>
-        public DateTimeOffset? StoppedTime { get; set; }
-        /// <summary>Timestamp the object was updated at. The time is returned in ISO format.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The total view time for which the viewers watched the stream.</summary>
-        public double? ViewerSeconds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseData"/> and sets the default values.
         /// </summary>
@@ -73,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,16 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "err_message", n => { ErrMessage = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseDataErrMessage>(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "ingest_seconds", n => { IngestSeconds = n.GetDoubleValue(); } },
-                { "invoked_time", n => { InvokedTime = n.GetStringValue(); } },
-                { "livestream_id", n => { LivestreamId = n.GetStringValue(); } },
-                { "paging", n => { Paging = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseDataPaging>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseDataPaging.CreateFromDiscriminatorValue); } },
-                { "stopped_time", n => { StoppedTime = n.GetDateTimeOffsetValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "viewer_seconds", n => { ViewerSeconds = n.GetDoubleValue(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "paging", n => { Paging = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -102,16 +79,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseDataErrMessage>("err_message", ErrMessage);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDoubleValue("ingest_seconds", IngestSeconds);
-            writer.WriteStringValue("invoked_time", InvokedTime);
-            writer.WriteStringValue("livestream_id", LivestreamId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV2LivestreamsessionSessionMeetingIdActiveLivestream200ResponseDataPaging>("paging", Paging);
-            writer.WriteDateTimeOffsetValue("stopped_time", StoppedTime);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteDoubleValue("viewer_seconds", ViewerSeconds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo>("paging", Paging);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

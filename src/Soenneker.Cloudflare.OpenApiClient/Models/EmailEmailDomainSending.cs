@@ -12,19 +12,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailEmailDomainSending : IParsable
-    {
-        /// <summary>Machine-readable explanation. V1 reasons: customer_dns_invalid, customer_dns_indeterminate, and verification_invalid reflect customer ownership records; rollout_unacknowledged, sending_not_ready, routing_not_ready, worker_unavailable, platform_dependency_unavailable, publication_invalid, publication_unavailable, and validation_overdue reflect service readiness or internal evidence; deleting means teardown is in progress. Clients must tolerate unknown future values and treat the capability as unavailable.</summary>
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("uncertainty_expires_at") is { } nullNodeUncertaintyExpiresAt && nullNodeUncertaintyExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UncertaintyExpiresAt = null;
+        }
+
+        /// <summary>Machine-readable explanation. V1 reasons: policy_suspended denotes an unavailable capability; customer_dns_invalid, customer_dns_indeterminate, and verification_invalid reflect customer ownership records; rollout_unacknowledged, sending_not_ready, routing_not_ready, worker_unavailable, platform_dependency_unavailable, platform_health_unavailable, platform_health_stale, platform_dns_invalid, platform_dns_indeterminate, publication_invalid, publication_unavailable, and validation_overdue reflect service readiness or internal evidence; deleting means teardown is in progress. Clients must tolerate unknown future values and treat the capability as unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string _explicitNullValueReason = default!;
 #endif
         /// <summary>Current capability state. Treat suspended and unknown future values as unavailable.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainCapabilityStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainCapabilityStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainCapabilityStatus? _explicitNullValueStatus = default!;
         /// <summary>End of the immutable last-known-good lease; present only while degraded.</summary>
-        public DateTimeOffset? UncertaintyExpiresAt { get; set; }
+        public DateTimeOffset? UncertaintyExpiresAt { get => _explicitNullValueUncertaintyExpiresAt; set { _explicitNullValueUncertaintyExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uncertainty_expires_at"); else _explicitNullProperties?.Remove("uncertainty_expires_at"); } }
+        private DateTimeOffset? _explicitNullValueUncertaintyExpiresAt = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainSending CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainSending();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainSending(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,7 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("reason", Reason);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainCapabilityStatus>("status", Status);
-            writer.WriteDateTimeOffsetValue("uncertainty_expires_at", UncertaintyExpiresAt);
+            writer.WriteDateTimeOffsetValue("uncertainty_expires_at", UncertaintyExpiresAt);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

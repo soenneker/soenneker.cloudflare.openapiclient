@@ -12,20 +12,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RssArticleList200ResponseResultArticlesItemRelevance : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("band") is { } nullNodeBand && nullNodeBand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Band = null;
+            if (parseNode.GetChildNode("pir_id") is { } nullNodePirId && nullNodePirId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PirId = null;
+            if (parseNode.GetChildNode("pirs") is { } nullNodePirs && nullNodePirs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pirs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Beta. How relevant the article is to a Priority Intelligence Requirement: high, medium, or low. Cloudflare may change the scores behind each band as relevance scoring is calibrated.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevanceBand? Band { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevanceBand? Band { get => _explicitNullValueBand; set { _explicitNullValueBand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("band"); else _explicitNullProperties?.Remove("band"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevanceBand? _explicitNullValueBand = default!;
         /// <summary>Beta. The pir_id requested from the article list, or otherwise the account&apos;s most relevant active PIR for this article.</summary>
-        public Guid? PirId { get; set; }
+        public Guid? PirId { get => _explicitNullValuePirId; set { _explicitNullValuePirId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pir_id"); else _explicitNullProperties?.Remove("pir_id"); } }
+        private Guid? _explicitNullValuePirId = default!;
         /// <summary>Beta. Every active PIR the article was scored against, most relevant first. Draft and deleted PIRs are excluded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem>? Pirs { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem>? Pirs { get => _explicitNullValuePirs; set { _explicitNullValuePirs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pirs"); else _explicitNullProperties?.Remove("pirs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem>? _explicitNullValuePirs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem> Pirs { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem> Pirs { get => _explicitNullValuePirs; set { _explicitNullValuePirs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pirs"); else _explicitNullProperties?.Remove("pirs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem> _explicitNullValuePirs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevance"/> and sets the default values.
@@ -42,7 +56,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevance();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevance(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevanceBand>("band", Band);
             writer.WriteGuidValue("pir_id", PirId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem>("pirs", Pirs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -24,11 +24,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.AsesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The browser property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser.BrowserRequestBuilder Browser
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser.BrowserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The browser_family property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser_family.Browser_familyRequestBuilder Browser_family
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser_family.Browser_familyRequestBuilder(PathParameters, RequestAdapter);

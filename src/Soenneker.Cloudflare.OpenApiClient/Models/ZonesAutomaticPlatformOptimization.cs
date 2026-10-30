@@ -11,27 +11,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ZonesAutomaticPlatformOptimization : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cache_by_device_type") is { } nullNodeCacheByDeviceType && nullNodeCacheByDeviceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheByDeviceType = null;
+            if (parseNode.GetChildNode("cf") is { } nullNodeCf && nullNodeCf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cf = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
+            if (parseNode.GetChildNode("wordpress") is { } nullNodeWordpress && nullNodeWordpress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wordpress = null;
+            if (parseNode.GetChildNode("wp_plugin") is { } nullNodeWpPlugin && nullNodeWpPlugin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WpPlugin = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether or not [cache by device type](https://developers.cloudflare.com/automatic-platform-optimization/reference/cache-device-type/) is enabled.</summary>
-        public bool? CacheByDeviceType { get; set; }
+        public bool? CacheByDeviceType { get => _explicitNullValueCacheByDeviceType; set { _explicitNullValueCacheByDeviceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_by_device_type"); else _explicitNullProperties?.Remove("cache_by_device_type"); } }
+        private bool? _explicitNullValueCacheByDeviceType = default!;
         /// <summary>Indicates whether or not Cloudflare proxy is enabled.</summary>
-        public bool? Cf { get; set; }
+        public bool? Cf { get => _explicitNullValueCf; set { _explicitNullValueCf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf"); else _explicitNullProperties?.Remove("cf"); } }
+        private bool? _explicitNullValueCf = default!;
         /// <summary>Indicates whether or not Automatic Platform Optimization is enabled.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>An array of hostnames where Automatic Platform Optimization for WordPress is activated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Hostnames { get; set; }
+        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        private List<string>? _explicitNullValueHostnames = default!;
 #nullable restore
 #else
-        public List<string> Hostnames { get; set; }
+        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        private List<string> _explicitNullValueHostnames = default!;
 #endif
         /// <summary>Indicates whether or not site is powered by WordPress.</summary>
-        public bool? Wordpress { get; set; }
+        public bool? Wordpress { get => _explicitNullValueWordpress; set { _explicitNullValueWordpress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wordpress"); else _explicitNullProperties?.Remove("wordpress"); } }
+        private bool? _explicitNullValueWordpress = default!;
         /// <summary>Indicates whether or not [Cloudflare for WordPress plugin](https://wordpress.org/plugins/cloudflare/) is installed.</summary>
-        public bool? WpPlugin { get; set; }
+        public bool? WpPlugin { get => _explicitNullValueWpPlugin; set { _explicitNullValueWpPlugin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wp_plugin"); else _explicitNullProperties?.Remove("wp_plugin"); } }
+        private bool? _explicitNullValueWpPlugin = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAutomaticPlatformOptimization"/> and sets the default values.
         /// </summary>
@@ -51,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAutomaticPlatformOptimization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAutomaticPlatformOptimization();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAutomaticPlatformOptimization(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
             writer.WriteBoolValue("wordpress", Wordpress);
             writer.WriteBoolValue("wp_plugin", WpPlugin);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

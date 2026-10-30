@@ -37,6 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Ena
         /// Enable an R2 bucket as an Apache Iceberg catalog. This operation createsthe necessary catalog infrastructure and activates the bucket for storingIceberg metadata and data files.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BasinEnableCatalog200Response"/></returns>
+        /// <param name="body">Contains the optional request to enable a catalog. Send an empty bodyto keep the defaults. If you include `credential`, the service checksthat the token can access the bucket, then stores it as the catalog&apos;smaintenance credential, like the store credentials operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure">When receiving a 400 status code</exception>
@@ -47,14 +48,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Ena
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BasinEnableCatalog200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BasinEnableCatalog200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogActivationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BasinEnableCatalog200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BasinEnableCatalog200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogActivationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure.CreateFromDiscriminatorValue },
@@ -63,6 +65,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Ena
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BasinEnableCatalog200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BasinEnableCatalog200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -70,19 +74,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Ena
         /// Enable an R2 bucket as an Apache Iceberg catalog. This operation createsthe necessary catalog infrastructure and activates the bucket for storingIceberg metadata and data files.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Contains the optional request to enable a catalog. Send an empty bodyto keep the defaults. If you include `credential`, the service checksthat the token can access the bucket, then stores it as the catalog&apos;smaintenance credential, like the store credentials operation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogActivationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogActivationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

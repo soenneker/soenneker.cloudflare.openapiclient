@@ -59,6 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Concurrency
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.WorDeleteConcurrencyKey403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorDeleteConcurrencyKey404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.WorDeleteConcurrencyKey409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDeleteConcurrencyKey200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorDeleteConcurrencyKey200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -86,6 +88,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Concurrency
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetConcurrencyKey400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetConcurrencyKey403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetConcurrencyKey404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetConcurrencyKey200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetConcurrencyKey200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -115,6 +119,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Concurrency
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateConcurrencyKey400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateConcurrencyKey403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateConcurrencyKey404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateConcurrencyKey200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateConcurrencyKey200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

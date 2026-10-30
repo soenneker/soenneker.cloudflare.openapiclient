@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Nameserv
         {
         }
         /// <summary>
-        /// Lists an account&apos;s Custom Nameserver Sets.
+        /// Lists an account&apos;s Custom Nameserver Sets. For details, refer to [Nameserver sets](https://developers.cloudflare.com/dns/nameservers/custom-nameservers/nameserver-sets/).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,11 +66,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Nameserv
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates an immutable Custom Nameserver Set. To change a set, create a new one, move any zone assignments, and delete the old set.
+        /// Creates a named Custom Nameserver Set. Only the customer-defined name can be changed later. To change nameservers or addresses, create a new set, move any zone assignments, and delete the old set. For details, refer to [Nameserver sets](https://developers.cloudflare.com/dns/nameservers/custom-nameservers/nameserver-sets/).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetResponseSingle"/></returns>
         /// <param name="body">The request body</param>
@@ -91,11 +92,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Nameserv
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists an account&apos;s Custom Nameserver Sets.
+        /// Lists an account&apos;s Custom Nameserver Sets. For details, refer to [Nameserver sets](https://developers.cloudflare.com/dns/nameservers/custom-nameservers/nameserver-sets/).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Nameserv
             return requestInfo;
         }
         /// <summary>
-        /// Creates an immutable Custom Nameserver Set. To change a set, create a new one, move any zone assignments, and delete the old set.
+        /// Creates a named Custom Nameserver Set. Only the customer-defined name can be changed later. To change nameservers or addresses, create a new set, move any zone assignments, and delete the old set. For details, refer to [Nameserver sets](https://developers.cloudflare.com/dns/nameservers/custom-nameservers/nameserver-sets/).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Nameserv
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Nameserver_sets.Nameserver_setsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists an account&apos;s Custom Nameserver Sets.
+        /// Lists an account&apos;s Custom Nameserver Sets. For details, refer to [Nameserver sets](https://developers.cloudflare.com/dns/nameservers/custom-nameservers/nameserver-sets/).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Nameserver_setsRequestBuilderGetQueryParameters 

@@ -11,19 +11,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AbuseReportsAppealEligibility : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("appealable") is { } nullNodeAppealable && nullNodeAppealable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Appealable = null;
+            if (parseNode.GetChildNode("appeal_count") is { } nullNodeAppealCount && nullNodeAppealCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppealCount = null;
+            if (parseNode.GetChildNode("has_appealable_mitigations") is { } nullNodeHasAppealableMitigations && nullNodeHasAppealableMitigations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasAppealableMitigations = null;
+            if (parseNode.GetChildNode("has_open_appeal") is { } nullNodeHasOpenAppeal && nullNodeHasOpenAppeal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasOpenAppeal = null;
+            if (parseNode.GetChildNode("has_pending_notice") is { } nullNodeHasPendingNotice && nullNodeHasPendingNotice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPendingNotice = null;
+            if (parseNode.GetChildNode("max_appeals") is { } nullNodeMaxAppeals && nullNodeMaxAppeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAppeals = null;
+            if (parseNode.GetChildNode("notice_deadline") is { } nullNodeNoticeDeadline && nullNodeNoticeDeadline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoticeDeadline = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the report can currently be appealed under the policy applied to it.</summary>
-        public bool? Appealable { get; set; }
+        public bool? Appealable { get => _explicitNullValueAppealable; set { _explicitNullValueAppealable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appealable"); else _explicitNullProperties?.Remove("appealable"); } }
+        private bool? _explicitNullValueAppealable = default!;
         /// <summary>Number of appeals submitted against the report so far.</summary>
-        public int? AppealCount { get; set; }
+        public int? AppealCount { get => _explicitNullValueAppealCount; set { _explicitNullValueAppealCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appeal_count"); else _explicitNullProperties?.Remove("appeal_count"); } }
+        private int? _explicitNullValueAppealCount = default!;
         /// <summary>Whether the report has at least one mitigation an appeal could reverse.</summary>
-        public bool? HasAppealableMitigations { get; set; }
+        public bool? HasAppealableMitigations { get => _explicitNullValueHasAppealableMitigations; set { _explicitNullValueHasAppealableMitigations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_appealable_mitigations"); else _explicitNullProperties?.Remove("has_appealable_mitigations"); } }
+        private bool? _explicitNullValueHasAppealableMitigations = default!;
         /// <summary>Whether the report already has an open (undecided) appeal.</summary>
-        public bool? HasOpenAppeal { get; set; }
+        public bool? HasOpenAppeal { get => _explicitNullValueHasOpenAppeal; set { _explicitNullValueHasOpenAppeal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_open_appeal"); else _explicitNullProperties?.Remove("has_open_appeal"); } }
+        private bool? _explicitNullValueHasOpenAppeal = default!;
+        /// <summary>Whether the report is in its Notice and Takedown notice period. No mitigation is applied yet, but one will be applied at `notice_deadline` unless the report is resolved first.</summary>
+        public bool? HasPendingNotice { get => _explicitNullValueHasPendingNotice; set { _explicitNullValueHasPendingNotice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_pending_notice"); else _explicitNullProperties?.Remove("has_pending_notice"); } }
+        private bool? _explicitNullValueHasPendingNotice = default!;
         /// <summary>Maximum number of appeals allowed per report.</summary>
-        public int? MaxAppeals { get; set; }
+        public int? MaxAppeals { get => _explicitNullValueMaxAppeals; set { _explicitNullValueMaxAppeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_appeals"); else _explicitNullProperties?.Remove("max_appeals"); } }
+        private int? _explicitNullValueMaxAppeals = default!;
+        /// <summary>When the notice period ends and the mitigation is applied. Present only when `has_pending_notice` is true. Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)</summary>
+        public DateTimeOffset? NoticeDeadline { get => _explicitNullValueNoticeDeadline; set { _explicitNullValueNoticeDeadline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notice_deadline"); else _explicitNullProperties?.Remove("notice_deadline"); } }
+        private DateTimeOffset? _explicitNullValueNoticeDeadline = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealEligibility"/> and sets the default values.
         /// </summary>
@@ -39,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealEligibility CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealEligibility();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealEligibility(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +78,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "appealable", n => { Appealable = n.GetBoolValue(); } },
                 { "has_appealable_mitigations", n => { HasAppealableMitigations = n.GetBoolValue(); } },
                 { "has_open_appeal", n => { HasOpenAppeal = n.GetBoolValue(); } },
+                { "has_pending_notice", n => { HasPendingNotice = n.GetBoolValue(); } },
                 { "max_appeals", n => { MaxAppeals = n.GetIntValue(); } },
+                { "notice_deadline", n => { NoticeDeadline = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +94,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("appeal_count", AppealCount);
             writer.WriteBoolValue("has_appealable_mitigations", HasAppealableMitigations);
             writer.WriteBoolValue("has_open_appeal", HasOpenAppeal);
+            writer.WriteBoolValue("has_pending_notice", HasPendingNotice);
             writer.WriteIntValue("max_appeals", MaxAppeals);
+            writer.WriteDateTimeOffsetValue("notice_deadline", NoticeDeadline);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

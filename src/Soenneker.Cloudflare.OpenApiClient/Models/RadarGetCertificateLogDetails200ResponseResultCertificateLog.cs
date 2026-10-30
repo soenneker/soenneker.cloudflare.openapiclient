@@ -11,86 +11,131 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetCertificateLogDetails200ResponseResultCertificateLog : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api") is { } nullNodeApi && nullNodeApi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Api = null;
+            if (parseNode.GetChildNode("avgThroughput") is { } nullNodeAvgThroughput && nullNodeAvgThroughput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgThroughput = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("endExclusive") is { } nullNodeEndExclusive && nullNodeEndExclusive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndExclusive = null;
+            if (parseNode.GetChildNode("lastUpdate") is { } nullNodeLastUpdate && nullNodeLastUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdate = null;
+            if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
+            if (parseNode.GetChildNode("performance") is { } nullNodePerformance && nullNodePerformance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Performance = null;
+            if (parseNode.GetChildNode("related") is { } nullNodeRelated && nullNodeRelated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Related = null;
+            if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+            if (parseNode.GetChildNode("startInclusive") is { } nullNodeStartInclusive && nullNodeStartInclusive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartInclusive = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("stateTimestamp") is { } nullNodeStateTimestamp && nullNodeStateTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateTimestamp = null;
+            if (parseNode.GetChildNode("submittableCertCount") is { } nullNodeSubmittableCertCount && nullNodeSubmittableCertCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmittableCertCount = null;
+            if (parseNode.GetChildNode("submittedCertCount") is { } nullNodeSubmittedCertCount && nullNodeSubmittedCertCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmittedCertCount = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The API standard that the certificate log follows.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogApi? Api { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogApi? Api { get => _explicitNullValueApi; set { _explicitNullValueApi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api"); else _explicitNullProperties?.Remove("api"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogApi? _explicitNullValueApi = default!;
         /// <summary>The average throughput of the CT log, measured in certificates per hour (certs/hour).</summary>
-        public double? AvgThroughput { get; set; }
+        public double? AvgThroughput { get => _explicitNullValueAvgThroughput; set { _explicitNullValueAvgThroughput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avgThroughput"); else _explicitNullProperties?.Remove("avgThroughput"); } }
+        private double? _explicitNullValueAvgThroughput = default!;
         /// <summary>A brief description of the certificate log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The end date and time for when the log will stop accepting certificates.</summary>
-        public DateTimeOffset? EndExclusive { get; set; }
+        public DateTimeOffset? EndExclusive { get => _explicitNullValueEndExclusive; set { _explicitNullValueEndExclusive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endExclusive"); else _explicitNullProperties?.Remove("endExclusive"); } }
+        private DateTimeOffset? _explicitNullValueEndExclusive = default!;
         /// <summary>Timestamp of the most recent update to the CT log.</summary>
-        public DateTimeOffset? LastUpdate { get; set; }
+        public DateTimeOffset? LastUpdate { get => _explicitNullValueLastUpdate; set { _explicitNullValueLastUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdate"); else _explicitNullProperties?.Remove("lastUpdate"); } }
+        private DateTimeOffset? _explicitNullValueLastUpdate = default!;
         /// <summary>The organization responsible for operating the certificate log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Operator { get; set; }
+        public string? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        private string? _explicitNullValueOperator = default!;
 #nullable restore
 #else
-        public string Operator { get; set; }
+        public string Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        private string _explicitNullValueOperator = default!;
 #endif
         /// <summary>Log performance metrics, including averages and per-endpoint details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformance? Performance { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformance? Performance { get => _explicitNullValuePerformance; set { _explicitNullValuePerformance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance"); else _explicitNullProperties?.Remove("performance"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformance? _explicitNullValuePerformance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformance Performance { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformance Performance { get => _explicitNullValuePerformance; set { _explicitNullValuePerformance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance"); else _explicitNullProperties?.Remove("performance"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformance _explicitNullValuePerformance = default!;
 #endif
         /// <summary>Logs from the same operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogRelatedItem>? Related { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogRelatedItem>? Related { get => _explicitNullValueRelated; set { _explicitNullValueRelated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related"); else _explicitNullProperties?.Remove("related"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogRelatedItem>? _explicitNullValueRelated = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogRelatedItem> Related { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogRelatedItem> Related { get => _explicitNullValueRelated; set { _explicitNullValueRelated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related"); else _explicitNullProperties?.Remove("related"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogRelatedItem> _explicitNullValueRelated = default!;
 #endif
         /// <summary>A URL-friendly, kebab-case identifier for the certificate log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>The start date and time for when the log starts accepting certificates.</summary>
-        public DateTimeOffset? StartInclusive { get; set; }
+        public DateTimeOffset? StartInclusive { get => _explicitNullValueStartInclusive; set { _explicitNullValueStartInclusive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startInclusive"); else _explicitNullProperties?.Remove("startInclusive"); } }
+        private DateTimeOffset? _explicitNullValueStartInclusive = default!;
         /// <summary>The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogState? State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogState? _explicitNullValueState = default!;
         /// <summary>Timestamp of when the log state was last updated.</summary>
-        public DateTimeOffset? StateTimestamp { get; set; }
+        public DateTimeOffset? StateTimestamp { get => _explicitNullValueStateTimestamp; set { _explicitNullValueStateTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stateTimestamp"); else _explicitNullProperties?.Remove("stateTimestamp"); } }
+        private DateTimeOffset? _explicitNullValueStateTimestamp = default!;
         /// <summary>Number of certificates that are eligible for inclusion to this log but have not been included yet. Based on certificates signed by trusted root CAs within the log&apos;s accepted date range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmittableCertCount { get; set; }
+        public string? SubmittableCertCount { get => _explicitNullValueSubmittableCertCount; set { _explicitNullValueSubmittableCertCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submittableCertCount"); else _explicitNullProperties?.Remove("submittableCertCount"); } }
+        private string? _explicitNullValueSubmittableCertCount = default!;
 #nullable restore
 #else
-        public string SubmittableCertCount { get; set; }
+        public string SubmittableCertCount { get => _explicitNullValueSubmittableCertCount; set { _explicitNullValueSubmittableCertCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submittableCertCount"); else _explicitNullProperties?.Remove("submittableCertCount"); } }
+        private string _explicitNullValueSubmittableCertCount = default!;
 #endif
         /// <summary>Number of certificates already included in this CT log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmittedCertCount { get; set; }
+        public string? SubmittedCertCount { get => _explicitNullValueSubmittedCertCount; set { _explicitNullValueSubmittedCertCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submittedCertCount"); else _explicitNullProperties?.Remove("submittedCertCount"); } }
+        private string? _explicitNullValueSubmittedCertCount = default!;
 #nullable restore
 #else
-        public string SubmittedCertCount { get; set; }
+        public string SubmittedCertCount { get => _explicitNullValueSubmittedCertCount; set { _explicitNullValueSubmittedCertCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submittedCertCount"); else _explicitNullProperties?.Remove("submittedCertCount"); } }
+        private string _explicitNullValueSubmittedCertCount = default!;
 #endif
         /// <summary>The URL for the certificate log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog"/> and sets the default values.
@@ -107,7 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,6 +201,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("submittableCertCount", SubmittableCertCount);
             writer.WriteStringValue("submittedCertCount", SubmittedCertCount);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

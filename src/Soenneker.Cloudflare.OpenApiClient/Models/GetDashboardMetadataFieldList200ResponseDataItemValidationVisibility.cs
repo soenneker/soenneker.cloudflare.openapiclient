@@ -12,24 +12,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("exclude_countries") is { } nullNodeExcludeCountries && nullNodeExcludeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeCountries = null;
+            if (parseNode.GetChildNode("include_request_types") is { } nullNodeIncludeRequestTypes && nullNodeIncludeRequestTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeRequestTypes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Hide this field for these alpha-2 country codes. If absent or empty, applies to all countries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeCountries { get; set; }
+        public List<string>? ExcludeCountries { get => _explicitNullValueExcludeCountries; set { _explicitNullValueExcludeCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_countries"); else _explicitNullProperties?.Remove("exclude_countries"); } }
+        private List<string>? _explicitNullValueExcludeCountries = default!;
 #nullable restore
 #else
-        public List<string> ExcludeCountries { get; set; }
+        public List<string> ExcludeCountries { get => _explicitNullValueExcludeCountries; set { _explicitNullValueExcludeCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_countries"); else _explicitNullProperties?.Remove("exclude_countries"); } }
+        private List<string> _explicitNullValueExcludeCountries = default!;
 #endif
         /// <summary>Show this field only for these request types. If absent or empty, applies to all request types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeRequestTypes { get; set; }
+        public List<string>? IncludeRequestTypes { get => _explicitNullValueIncludeRequestTypes; set { _explicitNullValueIncludeRequestTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_request_types"); else _explicitNullProperties?.Remove("include_request_types"); } }
+        private List<string>? _explicitNullValueIncludeRequestTypes = default!;
 #nullable restore
 #else
-        public List<string> IncludeRequestTypes { get; set; }
+        public List<string> IncludeRequestTypes { get => _explicitNullValueIncludeRequestTypes; set { _explicitNullValueIncludeRequestTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_request_types"); else _explicitNullProperties?.Remove("include_request_types"); } }
+        private List<string> _explicitNullValueIncludeRequestTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("exclude_countries", ExcludeCountries);
             writer.WriteCollectionOfPrimitiveValues<string>("include_request_types", IncludeRequestTypes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

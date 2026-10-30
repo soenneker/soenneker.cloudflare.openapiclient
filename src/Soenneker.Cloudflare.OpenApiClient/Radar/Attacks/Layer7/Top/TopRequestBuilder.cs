@@ -30,6 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks.AttacksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The industry property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Industry.IndustryRequestBuilder Industry
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
@@ -40,6 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The vertical property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.VerticalRequestBuilder Vertical
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);

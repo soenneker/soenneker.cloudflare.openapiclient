@@ -11,22 +11,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CwsFilterSchema : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("policy_fields") is { } nullNodePolicyFields && nullNodePolicyFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyFields = null;
+            if (parseNode.GetChildNode("workload_fields") is { } nullNodeWorkloadFields && nullNodeWorkloadFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkloadFields = null;
+        }
+
         /// <summary>Fields available in policy filter expressions, in display order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField>? PolicyFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField>? PolicyFields { get => _explicitNullValuePolicyFields; set { _explicitNullValuePolicyFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_fields"); else _explicitNullProperties?.Remove("policy_fields"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField>? _explicitNullValuePolicyFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField> PolicyFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField> PolicyFields { get => _explicitNullValuePolicyFields; set { _explicitNullValuePolicyFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_fields"); else _explicitNullProperties?.Remove("policy_fields"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField> _explicitNullValuePolicyFields = default!;
 #endif
         /// <summary>Fields available in workload filter expressions, in display order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField>? WorkloadFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField>? WorkloadFields { get => _explicitNullValueWorkloadFields; set { _explicitNullValueWorkloadFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workload_fields"); else _explicitNullProperties?.Remove("workload_fields"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField>? _explicitNullValueWorkloadFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField> WorkloadFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField> WorkloadFields { get => _explicitNullValueWorkloadFields; set { _explicitNullValueWorkloadFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workload_fields"); else _explicitNullProperties?.Remove("workload_fields"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField> _explicitNullValueWorkloadFields = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterSchema();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterSchema(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField>("policy_fields", PolicyFields);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField>("workload_fields", WorkloadFields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsFilterField>("workload_fields", WorkloadFields);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

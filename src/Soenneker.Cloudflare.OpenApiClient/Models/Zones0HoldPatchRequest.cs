@@ -11,19 +11,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Zones0HoldPatchRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hold_after") is { } nullNodeHoldAfter && nullNodeHoldAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoldAfter = null;
+            if (parseNode.GetChildNode("include_subdomains") is { } nullNodeIncludeSubdomains && nullNodeIncludeSubdomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSubdomains = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If `hold_after` is provided and future-dated, the hold will be temporarily disabled,then automatically re-enabled by the system at the time specifiedin this RFC3339-formatted timestamp. A past-dated `hold_after` value will haveno effect on an existing, enabled hold. Providing an empty string will set its valueto the current time. Providing `null` will disable the hold indefinitely.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HoldAfter { get; set; }
+        public string? HoldAfter { get => _explicitNullValueHoldAfter; set { _explicitNullValueHoldAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_after"); else _explicitNullProperties?.Remove("hold_after"); } }
+        private string? _explicitNullValueHoldAfter = default!;
 #nullable restore
 #else
-        public string HoldAfter { get; set; }
+        public string HoldAfter { get => _explicitNullValueHoldAfter; set { _explicitNullValueHoldAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_after"); else _explicitNullProperties?.Remove("hold_after"); } }
+        private string _explicitNullValueHoldAfter = default!;
 #endif
         /// <summary>If `true`, the zone hold will extend to block any subdomain of the given zone, as wellas SSL4SaaS Custom Hostnames. For example, a zone hold on a zone with the hostname&apos;example.com&apos; and include_subdomains=true will block &apos;example.com&apos;,&apos;staging.example.com&apos;, &apos;api.staging.example.com&apos;, etc.</summary>
-        public bool? IncludeSubdomains { get; set; }
+        public bool? IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_subdomains"); else _explicitNullProperties?.Remove("include_subdomains"); } }
+        private bool? _explicitNullValueIncludeSubdomains = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatchRequest"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatchRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatchRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatchRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("hold_after", HoldAfter);
             writer.WriteBoolValue("include_subdomains", IncludeSubdomains);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

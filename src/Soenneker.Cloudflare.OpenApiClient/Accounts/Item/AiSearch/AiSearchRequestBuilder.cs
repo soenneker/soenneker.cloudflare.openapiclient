@@ -18,6 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch
     public partial class AiSearchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The instances property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.InstancesRequestBuilder Instances
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);

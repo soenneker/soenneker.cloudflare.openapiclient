@@ -12,137 +12,212 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitCandidatePairStats : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available_incoming_bitrate") is { } nullNodeAvailableIncomingBitrate && nullNodeAvailableIncomingBitrate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableIncomingBitrate = null;
+            if (parseNode.GetChildNode("available_outgoing_bitrate") is { } nullNodeAvailableOutgoingBitrate && nullNodeAvailableOutgoingBitrate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableOutgoingBitrate = null;
+            if (parseNode.GetChildNode("bytes_discarded_on_send") is { } nullNodeBytesDiscardedOnSend && nullNodeBytesDiscardedOnSend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesDiscardedOnSend = null;
+            if (parseNode.GetChildNode("bytes_received") is { } nullNodeBytesReceived && nullNodeBytesReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesReceived = null;
+            if (parseNode.GetChildNode("bytes_sent") is { } nullNodeBytesSent && nullNodeBytesSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesSent = null;
+            if (parseNode.GetChildNode("current_round_trip_time") is { } nullNodeCurrentRoundTripTime && nullNodeCurrentRoundTripTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentRoundTripTime = null;
+            if (parseNode.GetChildNode("last_packet_received_timestamp") is { } nullNodeLastPacketReceivedTimestamp && nullNodeLastPacketReceivedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPacketReceivedTimestamp = null;
+            if (parseNode.GetChildNode("last_packet_sent_timestamp") is { } nullNodeLastPacketSentTimestamp && nullNodeLastPacketSentTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPacketSentTimestamp = null;
+            if (parseNode.GetChildNode("local_candidate_address") is { } nullNodeLocalCandidateAddress && nullNodeLocalCandidateAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalCandidateAddress = null;
+            if (parseNode.GetChildNode("local_candidate_id") is { } nullNodeLocalCandidateId && nullNodeLocalCandidateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalCandidateId = null;
+            if (parseNode.GetChildNode("local_candidate_network_type") is { } nullNodeLocalCandidateNetworkType && nullNodeLocalCandidateNetworkType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalCandidateNetworkType = null;
+            if (parseNode.GetChildNode("local_candidate_port") is { } nullNodeLocalCandidatePort && nullNodeLocalCandidatePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalCandidatePort = null;
+            if (parseNode.GetChildNode("local_candidate_protocol") is { } nullNodeLocalCandidateProtocol && nullNodeLocalCandidateProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalCandidateProtocol = null;
+            if (parseNode.GetChildNode("local_candidate_related_address") is { } nullNodeLocalCandidateRelatedAddress && nullNodeLocalCandidateRelatedAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalCandidateRelatedAddress = null;
+            if (parseNode.GetChildNode("local_candidate_related_port") is { } nullNodeLocalCandidateRelatedPort && nullNodeLocalCandidateRelatedPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalCandidateRelatedPort = null;
+            if (parseNode.GetChildNode("local_candidate_type") is { } nullNodeLocalCandidateType && nullNodeLocalCandidateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalCandidateType = null;
+            if (parseNode.GetChildNode("local_candidate_url") is { } nullNodeLocalCandidateUrl && nullNodeLocalCandidateUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalCandidateUrl = null;
+            if (parseNode.GetChildNode("nominated") is { } nullNodeNominated && nullNodeNominated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nominated = null;
+            if (parseNode.GetChildNode("packets_discarded_on_send") is { } nullNodePacketsDiscardedOnSend && nullNodePacketsDiscardedOnSend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsDiscardedOnSend = null;
+            if (parseNode.GetChildNode("packets_received") is { } nullNodePacketsReceived && nullNodePacketsReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsReceived = null;
+            if (parseNode.GetChildNode("packets_sent") is { } nullNodePacketsSent && nullNodePacketsSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsSent = null;
+            if (parseNode.GetChildNode("remote_candidate_address") is { } nullNodeRemoteCandidateAddress && nullNodeRemoteCandidateAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCandidateAddress = null;
+            if (parseNode.GetChildNode("remote_candidate_id") is { } nullNodeRemoteCandidateId && nullNodeRemoteCandidateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCandidateId = null;
+            if (parseNode.GetChildNode("remote_candidate_port") is { } nullNodeRemoteCandidatePort && nullNodeRemoteCandidatePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCandidatePort = null;
+            if (parseNode.GetChildNode("remote_candidate_protocol") is { } nullNodeRemoteCandidateProtocol && nullNodeRemoteCandidateProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCandidateProtocol = null;
+            if (parseNode.GetChildNode("remote_candidate_type") is { } nullNodeRemoteCandidateType && nullNodeRemoteCandidateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCandidateType = null;
+            if (parseNode.GetChildNode("remote_candidate_url") is { } nullNodeRemoteCandidateUrl && nullNodeRemoteCandidateUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCandidateUrl = null;
+            if (parseNode.GetChildNode("total_round_trip_time") is { } nullNodeTotalRoundTripTime && nullNodeTotalRoundTripTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRoundTripTime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The available_incoming_bitrate property</summary>
-        public double? AvailableIncomingBitrate { get; set; }
+        public double? AvailableIncomingBitrate { get => _explicitNullValueAvailableIncomingBitrate; set { _explicitNullValueAvailableIncomingBitrate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_incoming_bitrate"); else _explicitNullProperties?.Remove("available_incoming_bitrate"); } }
+        private double? _explicitNullValueAvailableIncomingBitrate = default!;
         /// <summary>The available_outgoing_bitrate property</summary>
-        public double? AvailableOutgoingBitrate { get; set; }
+        public double? AvailableOutgoingBitrate { get => _explicitNullValueAvailableOutgoingBitrate; set { _explicitNullValueAvailableOutgoingBitrate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_outgoing_bitrate"); else _explicitNullProperties?.Remove("available_outgoing_bitrate"); } }
+        private double? _explicitNullValueAvailableOutgoingBitrate = default!;
         /// <summary>The bytes_discarded_on_send property</summary>
-        public double? BytesDiscardedOnSend { get; set; }
+        public double? BytesDiscardedOnSend { get => _explicitNullValueBytesDiscardedOnSend; set { _explicitNullValueBytesDiscardedOnSend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytes_discarded_on_send"); else _explicitNullProperties?.Remove("bytes_discarded_on_send"); } }
+        private double? _explicitNullValueBytesDiscardedOnSend = default!;
         /// <summary>The bytes_received property</summary>
-        public double? BytesReceived { get; set; }
+        public double? BytesReceived { get => _explicitNullValueBytesReceived; set { _explicitNullValueBytesReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytes_received"); else _explicitNullProperties?.Remove("bytes_received"); } }
+        private double? _explicitNullValueBytesReceived = default!;
         /// <summary>The bytes_sent property</summary>
-        public double? BytesSent { get; set; }
+        public double? BytesSent { get => _explicitNullValueBytesSent; set { _explicitNullValueBytesSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytes_sent"); else _explicitNullProperties?.Remove("bytes_sent"); } }
+        private double? _explicitNullValueBytesSent = default!;
         /// <summary>The current_round_trip_time property</summary>
-        public double? CurrentRoundTripTime { get; set; }
+        public double? CurrentRoundTripTime { get => _explicitNullValueCurrentRoundTripTime; set { _explicitNullValueCurrentRoundTripTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_round_trip_time"); else _explicitNullProperties?.Remove("current_round_trip_time"); } }
+        private double? _explicitNullValueCurrentRoundTripTime = default!;
         /// <summary>Epoch milliseconds when the last packet was received.</summary>
-        public double? LastPacketReceivedTimestamp { get; set; }
+        public double? LastPacketReceivedTimestamp { get => _explicitNullValueLastPacketReceivedTimestamp; set { _explicitNullValueLastPacketReceivedTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_packet_received_timestamp"); else _explicitNullProperties?.Remove("last_packet_received_timestamp"); } }
+        private double? _explicitNullValueLastPacketReceivedTimestamp = default!;
         /// <summary>Epoch milliseconds when the last packet was sent.</summary>
-        public double? LastPacketSentTimestamp { get; set; }
+        public double? LastPacketSentTimestamp { get => _explicitNullValueLastPacketSentTimestamp; set { _explicitNullValueLastPacketSentTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_packet_sent_timestamp"); else _explicitNullProperties?.Remove("last_packet_sent_timestamp"); } }
+        private double? _explicitNullValueLastPacketSentTimestamp = default!;
         /// <summary>The local_candidate_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalCandidateAddress { get; set; }
+        public string? LocalCandidateAddress { get => _explicitNullValueLocalCandidateAddress; set { _explicitNullValueLocalCandidateAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_address"); else _explicitNullProperties?.Remove("local_candidate_address"); } }
+        private string? _explicitNullValueLocalCandidateAddress = default!;
 #nullable restore
 #else
-        public string LocalCandidateAddress { get; set; }
+        public string LocalCandidateAddress { get => _explicitNullValueLocalCandidateAddress; set { _explicitNullValueLocalCandidateAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_address"); else _explicitNullProperties?.Remove("local_candidate_address"); } }
+        private string _explicitNullValueLocalCandidateAddress = default!;
 #endif
         /// <summary>The local_candidate_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalCandidateId { get; set; }
+        public string? LocalCandidateId { get => _explicitNullValueLocalCandidateId; set { _explicitNullValueLocalCandidateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_id"); else _explicitNullProperties?.Remove("local_candidate_id"); } }
+        private string? _explicitNullValueLocalCandidateId = default!;
 #nullable restore
 #else
-        public string LocalCandidateId { get; set; }
+        public string LocalCandidateId { get => _explicitNullValueLocalCandidateId; set { _explicitNullValueLocalCandidateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_id"); else _explicitNullProperties?.Remove("local_candidate_id"); } }
+        private string _explicitNullValueLocalCandidateId = default!;
 #endif
         /// <summary>The local_candidate_network_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalCandidateNetworkType { get; set; }
+        public string? LocalCandidateNetworkType { get => _explicitNullValueLocalCandidateNetworkType; set { _explicitNullValueLocalCandidateNetworkType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_network_type"); else _explicitNullProperties?.Remove("local_candidate_network_type"); } }
+        private string? _explicitNullValueLocalCandidateNetworkType = default!;
 #nullable restore
 #else
-        public string LocalCandidateNetworkType { get; set; }
+        public string LocalCandidateNetworkType { get => _explicitNullValueLocalCandidateNetworkType; set { _explicitNullValueLocalCandidateNetworkType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_network_type"); else _explicitNullProperties?.Remove("local_candidate_network_type"); } }
+        private string _explicitNullValueLocalCandidateNetworkType = default!;
 #endif
         /// <summary>The local_candidate_port property</summary>
-        public double? LocalCandidatePort { get; set; }
+        public double? LocalCandidatePort { get => _explicitNullValueLocalCandidatePort; set { _explicitNullValueLocalCandidatePort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_port"); else _explicitNullProperties?.Remove("local_candidate_port"); } }
+        private double? _explicitNullValueLocalCandidatePort = default!;
         /// <summary>The local_candidate_protocol property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalCandidateProtocol { get; set; }
+        public string? LocalCandidateProtocol { get => _explicitNullValueLocalCandidateProtocol; set { _explicitNullValueLocalCandidateProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_protocol"); else _explicitNullProperties?.Remove("local_candidate_protocol"); } }
+        private string? _explicitNullValueLocalCandidateProtocol = default!;
 #nullable restore
 #else
-        public string LocalCandidateProtocol { get; set; }
+        public string LocalCandidateProtocol { get => _explicitNullValueLocalCandidateProtocol; set { _explicitNullValueLocalCandidateProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_protocol"); else _explicitNullProperties?.Remove("local_candidate_protocol"); } }
+        private string _explicitNullValueLocalCandidateProtocol = default!;
 #endif
         /// <summary>The local_candidate_related_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalCandidateRelatedAddress { get; set; }
+        public string? LocalCandidateRelatedAddress { get => _explicitNullValueLocalCandidateRelatedAddress; set { _explicitNullValueLocalCandidateRelatedAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_related_address"); else _explicitNullProperties?.Remove("local_candidate_related_address"); } }
+        private string? _explicitNullValueLocalCandidateRelatedAddress = default!;
 #nullable restore
 #else
-        public string LocalCandidateRelatedAddress { get; set; }
+        public string LocalCandidateRelatedAddress { get => _explicitNullValueLocalCandidateRelatedAddress; set { _explicitNullValueLocalCandidateRelatedAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_related_address"); else _explicitNullProperties?.Remove("local_candidate_related_address"); } }
+        private string _explicitNullValueLocalCandidateRelatedAddress = default!;
 #endif
         /// <summary>The local_candidate_related_port property</summary>
-        public double? LocalCandidateRelatedPort { get; set; }
+        public double? LocalCandidateRelatedPort { get => _explicitNullValueLocalCandidateRelatedPort; set { _explicitNullValueLocalCandidateRelatedPort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_related_port"); else _explicitNullProperties?.Remove("local_candidate_related_port"); } }
+        private double? _explicitNullValueLocalCandidateRelatedPort = default!;
         /// <summary>The local_candidate_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalCandidateType { get; set; }
+        public string? LocalCandidateType { get => _explicitNullValueLocalCandidateType; set { _explicitNullValueLocalCandidateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_type"); else _explicitNullProperties?.Remove("local_candidate_type"); } }
+        private string? _explicitNullValueLocalCandidateType = default!;
 #nullable restore
 #else
-        public string LocalCandidateType { get; set; }
+        public string LocalCandidateType { get => _explicitNullValueLocalCandidateType; set { _explicitNullValueLocalCandidateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_type"); else _explicitNullProperties?.Remove("local_candidate_type"); } }
+        private string _explicitNullValueLocalCandidateType = default!;
 #endif
         /// <summary>The local_candidate_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalCandidateUrl { get; set; }
+        public string? LocalCandidateUrl { get => _explicitNullValueLocalCandidateUrl; set { _explicitNullValueLocalCandidateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_url"); else _explicitNullProperties?.Remove("local_candidate_url"); } }
+        private string? _explicitNullValueLocalCandidateUrl = default!;
 #nullable restore
 #else
-        public string LocalCandidateUrl { get; set; }
+        public string LocalCandidateUrl { get => _explicitNullValueLocalCandidateUrl; set { _explicitNullValueLocalCandidateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_candidate_url"); else _explicitNullProperties?.Remove("local_candidate_url"); } }
+        private string _explicitNullValueLocalCandidateUrl = default!;
 #endif
         /// <summary>The nominated property</summary>
-        public bool? Nominated { get; set; }
+        public bool? Nominated { get => _explicitNullValueNominated; set { _explicitNullValueNominated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nominated"); else _explicitNullProperties?.Remove("nominated"); } }
+        private bool? _explicitNullValueNominated = default!;
         /// <summary>The packets_discarded_on_send property</summary>
-        public double? PacketsDiscardedOnSend { get; set; }
+        public double? PacketsDiscardedOnSend { get => _explicitNullValuePacketsDiscardedOnSend; set { _explicitNullValuePacketsDiscardedOnSend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_discarded_on_send"); else _explicitNullProperties?.Remove("packets_discarded_on_send"); } }
+        private double? _explicitNullValuePacketsDiscardedOnSend = default!;
         /// <summary>The packets_received property</summary>
-        public double? PacketsReceived { get; set; }
+        public double? PacketsReceived { get => _explicitNullValuePacketsReceived; set { _explicitNullValuePacketsReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_received"); else _explicitNullProperties?.Remove("packets_received"); } }
+        private double? _explicitNullValuePacketsReceived = default!;
         /// <summary>The packets_sent property</summary>
-        public double? PacketsSent { get; set; }
+        public double? PacketsSent { get => _explicitNullValuePacketsSent; set { _explicitNullValuePacketsSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_sent"); else _explicitNullProperties?.Remove("packets_sent"); } }
+        private double? _explicitNullValuePacketsSent = default!;
         /// <summary>The remote_candidate_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteCandidateAddress { get; set; }
+        public string? RemoteCandidateAddress { get => _explicitNullValueRemoteCandidateAddress; set { _explicitNullValueRemoteCandidateAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_address"); else _explicitNullProperties?.Remove("remote_candidate_address"); } }
+        private string? _explicitNullValueRemoteCandidateAddress = default!;
 #nullable restore
 #else
-        public string RemoteCandidateAddress { get; set; }
+        public string RemoteCandidateAddress { get => _explicitNullValueRemoteCandidateAddress; set { _explicitNullValueRemoteCandidateAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_address"); else _explicitNullProperties?.Remove("remote_candidate_address"); } }
+        private string _explicitNullValueRemoteCandidateAddress = default!;
 #endif
         /// <summary>The remote_candidate_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteCandidateId { get; set; }
+        public string? RemoteCandidateId { get => _explicitNullValueRemoteCandidateId; set { _explicitNullValueRemoteCandidateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_id"); else _explicitNullProperties?.Remove("remote_candidate_id"); } }
+        private string? _explicitNullValueRemoteCandidateId = default!;
 #nullable restore
 #else
-        public string RemoteCandidateId { get; set; }
+        public string RemoteCandidateId { get => _explicitNullValueRemoteCandidateId; set { _explicitNullValueRemoteCandidateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_id"); else _explicitNullProperties?.Remove("remote_candidate_id"); } }
+        private string _explicitNullValueRemoteCandidateId = default!;
 #endif
         /// <summary>The remote_candidate_port property</summary>
-        public double? RemoteCandidatePort { get; set; }
+        public double? RemoteCandidatePort { get => _explicitNullValueRemoteCandidatePort; set { _explicitNullValueRemoteCandidatePort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_port"); else _explicitNullProperties?.Remove("remote_candidate_port"); } }
+        private double? _explicitNullValueRemoteCandidatePort = default!;
         /// <summary>The remote_candidate_protocol property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteCandidateProtocol { get; set; }
+        public string? RemoteCandidateProtocol { get => _explicitNullValueRemoteCandidateProtocol; set { _explicitNullValueRemoteCandidateProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_protocol"); else _explicitNullProperties?.Remove("remote_candidate_protocol"); } }
+        private string? _explicitNullValueRemoteCandidateProtocol = default!;
 #nullable restore
 #else
-        public string RemoteCandidateProtocol { get; set; }
+        public string RemoteCandidateProtocol { get => _explicitNullValueRemoteCandidateProtocol; set { _explicitNullValueRemoteCandidateProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_protocol"); else _explicitNullProperties?.Remove("remote_candidate_protocol"); } }
+        private string _explicitNullValueRemoteCandidateProtocol = default!;
 #endif
         /// <summary>The remote_candidate_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteCandidateType { get; set; }
+        public string? RemoteCandidateType { get => _explicitNullValueRemoteCandidateType; set { _explicitNullValueRemoteCandidateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_type"); else _explicitNullProperties?.Remove("remote_candidate_type"); } }
+        private string? _explicitNullValueRemoteCandidateType = default!;
 #nullable restore
 #else
-        public string RemoteCandidateType { get; set; }
+        public string RemoteCandidateType { get => _explicitNullValueRemoteCandidateType; set { _explicitNullValueRemoteCandidateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_type"); else _explicitNullProperties?.Remove("remote_candidate_type"); } }
+        private string _explicitNullValueRemoteCandidateType = default!;
 #endif
         /// <summary>The remote_candidate_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteCandidateUrl { get; set; }
+        public string? RemoteCandidateUrl { get => _explicitNullValueRemoteCandidateUrl; set { _explicitNullValueRemoteCandidateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_url"); else _explicitNullProperties?.Remove("remote_candidate_url"); } }
+        private string? _explicitNullValueRemoteCandidateUrl = default!;
 #nullable restore
 #else
-        public string RemoteCandidateUrl { get; set; }
+        public string RemoteCandidateUrl { get => _explicitNullValueRemoteCandidateUrl; set { _explicitNullValueRemoteCandidateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_candidate_url"); else _explicitNullProperties?.Remove("remote_candidate_url"); } }
+        private string _explicitNullValueRemoteCandidateUrl = default!;
 #endif
         /// <summary>The total_round_trip_time property</summary>
-        public double? TotalRoundTripTime { get; set; }
+        public double? TotalRoundTripTime { get => _explicitNullValueTotalRoundTripTime; set { _explicitNullValueTotalRoundTripTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_round_trip_time"); else _explicitNullProperties?.Remove("total_round_trip_time"); } }
+        private double? _explicitNullValueTotalRoundTripTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats"/> and sets the default values.
         /// </summary>
@@ -158,7 +233,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -233,6 +308,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("remote_candidate_type", RemoteCandidateType);
             writer.WriteStringValue("remote_candidate_url", RemoteCandidateUrl);
             writer.WriteDoubleValue("total_round_trip_time", TotalRoundTripTime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

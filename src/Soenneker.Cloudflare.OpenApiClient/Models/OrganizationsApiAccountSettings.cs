@@ -11,35 +11,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationsApiAccountSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("abuse_contact_email") is { } nullNodeAbuseContactEmail && nullNodeAbuseContactEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbuseContactEmail = null;
+            if (parseNode.GetChildNode("access_approval_expiry") is { } nullNodeAccessApprovalExpiry && nullNodeAccessApprovalExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessApprovalExpiry = null;
+            if (parseNode.GetChildNode("api_access_enabled") is { } nullNodeApiAccessEnabled && nullNodeApiAccessEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiAccessEnabled = null;
+            if (parseNode.GetChildNode("default_nameservers") is { } nullNodeDefaultNameservers && nullNodeDefaultNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultNameservers = null;
+            if (parseNode.GetChildNode("enforce_twofactor") is { } nullNodeEnforceTwofactor && nullNodeEnforceTwofactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnforceTwofactor = null;
+            if (parseNode.GetChildNode("use_account_custom_ns_by_default") is { } nullNodeUseAccountCustomNsByDefault && nullNodeUseAccountCustomNsByDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseAccountCustomNsByDefault = null;
+        }
+
         /// <summary>The abuse_contact_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AbuseContactEmail { get; set; }
+        public string? AbuseContactEmail { get => _explicitNullValueAbuseContactEmail; set { _explicitNullValueAbuseContactEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abuse_contact_email"); else _explicitNullProperties?.Remove("abuse_contact_email"); } }
+        private string? _explicitNullValueAbuseContactEmail = default!;
 #nullable restore
 #else
-        public string AbuseContactEmail { get; set; }
+        public string AbuseContactEmail { get => _explicitNullValueAbuseContactEmail; set { _explicitNullValueAbuseContactEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abuse_contact_email"); else _explicitNullProperties?.Remove("abuse_contact_email"); } }
+        private string _explicitNullValueAbuseContactEmail = default!;
 #endif
         /// <summary>The access_approval_expiry property</summary>
-        public DateTimeOffset? AccessApprovalExpiry { get; set; }
+        public DateTimeOffset? AccessApprovalExpiry { get => _explicitNullValueAccessApprovalExpiry; set { _explicitNullValueAccessApprovalExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_approval_expiry"); else _explicitNullProperties?.Remove("access_approval_expiry"); } }
+        private DateTimeOffset? _explicitNullValueAccessApprovalExpiry = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The api_access_enabled property</summary>
-        public bool? ApiAccessEnabled { get; set; }
+        public bool? ApiAccessEnabled { get => _explicitNullValueApiAccessEnabled; set { _explicitNullValueApiAccessEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_access_enabled"); else _explicitNullProperties?.Remove("api_access_enabled"); } }
+        private bool? _explicitNullValueApiAccessEnabled = default!;
         /// <summary>Use [DNS Settings](https://developers.cloudflare.com/api/operations/dns-settings-for-an-account-list-dns-settings) instead. Deprecated.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultNameservers { get; set; }
+        public string? DefaultNameservers { get => _explicitNullValueDefaultNameservers; set { _explicitNullValueDefaultNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_nameservers"); else _explicitNullProperties?.Remove("default_nameservers"); } }
+        private string? _explicitNullValueDefaultNameservers = default!;
 #nullable restore
 #else
-        public string DefaultNameservers { get; set; }
+        public string DefaultNameservers { get => _explicitNullValueDefaultNameservers; set { _explicitNullValueDefaultNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_nameservers"); else _explicitNullProperties?.Remove("default_nameservers"); } }
+        private string _explicitNullValueDefaultNameservers = default!;
 #endif
         /// <summary>The enforce_twofactor property</summary>
-        public bool? EnforceTwofactor { get; set; }
+        public bool? EnforceTwofactor { get => _explicitNullValueEnforceTwofactor; set { _explicitNullValueEnforceTwofactor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforce_twofactor"); else _explicitNullProperties?.Remove("enforce_twofactor"); } }
+        private bool? _explicitNullValueEnforceTwofactor = default!;
         /// <summary>Use [DNS Settings](https://developers.cloudflare.com/api/operations/dns-settings-for-an-account-list-dns-settings) instead. Deprecated.</summary>
         [Obsolete("")]
-        public bool? UseAccountCustomNsByDefault { get; set; }
+        public bool? UseAccountCustomNsByDefault { get => _explicitNullValueUseAccountCustomNsByDefault; set { _explicitNullValueUseAccountCustomNsByDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_account_custom_ns_by_default"); else _explicitNullProperties?.Remove("use_account_custom_ns_by_default"); } }
+        private bool? _explicitNullValueUseAccountCustomNsByDefault = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountSettings"/> and sets the default values.
         /// </summary>
@@ -55,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("default_nameservers", DefaultNameservers);
             writer.WriteBoolValue("enforce_twofactor", EnforceTwofactor);
             writer.WriteBoolValue("use_account_custom_ns_by_default", UseAccountCustomNsByDefault);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

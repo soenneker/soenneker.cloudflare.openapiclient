@@ -11,18 +11,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicMultipleRouteModifiedResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("modified_routes") is { } nullNodeModifiedRoutes && nullNodeModifiedRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedRoutes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The modified property</summary>
-        public bool? Modified { get; set; }
+        public bool? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        private bool? _explicitNullValueModified = default!;
         /// <summary>The modified_routes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoute>? ModifiedRoutes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoute>? ModifiedRoutes { get => _explicitNullValueModifiedRoutes; set { _explicitNullValueModifiedRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_routes"); else _explicitNullProperties?.Remove("modified_routes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoute>? _explicitNullValueModifiedRoutes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoute> ModifiedRoutes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoute> ModifiedRoutes { get => _explicitNullValueModifiedRoutes; set { _explicitNullValueModifiedRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_routes"); else _explicitNullProperties?.Remove("modified_routes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoute> _explicitNullValueModifiedRoutes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicMultipleRouteModifiedResponseResult"/> and sets the default values.
@@ -39,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicMultipleRouteModifiedResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicMultipleRouteModifiedResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicMultipleRouteModifiedResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("modified", Modified);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoute>("modified_routes", ModifiedRoutes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

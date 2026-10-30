@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetHttpTimeseriesGroupByDeviceType200ResponseResultSerie0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("desktop") is { } nullNodeDesktop && nullNodeDesktop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Desktop = null;
+            if (parseNode.GetChildNode("mobile") is { } nullNodeMobile && nullNodeMobile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mobile = null;
+            if (parseNode.GetChildNode("other") is { } nullNodeOther && nullNodeOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Other = null;
+            if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The desktop property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Desktop { get; set; }
+        public List<string>? Desktop { get => _explicitNullValueDesktop; set { _explicitNullValueDesktop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktop"); else _explicitNullProperties?.Remove("desktop"); } }
+        private List<string>? _explicitNullValueDesktop = default!;
 #nullable restore
 #else
-        public List<string> Desktop { get; set; }
+        public List<string> Desktop { get => _explicitNullValueDesktop; set { _explicitNullValueDesktop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktop"); else _explicitNullProperties?.Remove("desktop"); } }
+        private List<string> _explicitNullValueDesktop = default!;
 #endif
         /// <summary>The mobile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Mobile { get; set; }
+        public List<string>? Mobile { get => _explicitNullValueMobile; set { _explicitNullValueMobile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile"); else _explicitNullProperties?.Remove("mobile"); } }
+        private List<string>? _explicitNullValueMobile = default!;
 #nullable restore
 #else
-        public List<string> Mobile { get; set; }
+        public List<string> Mobile { get => _explicitNullValueMobile; set { _explicitNullValueMobile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile"); else _explicitNullProperties?.Remove("mobile"); } }
+        private List<string> _explicitNullValueMobile = default!;
 #endif
         /// <summary>The other property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Other { get; set; }
+        public List<string>? Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
+        private List<string>? _explicitNullValueOther = default!;
 #nullable restore
 #else
-        public List<string> Other { get; set; }
+        public List<string> Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
+        private List<string> _explicitNullValueOther = default!;
 #endif
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DateTimeOffset?>? Timestamps { get; set; }
+        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        private List<DateTimeOffset?>? _explicitNullValueTimestamps = default!;
 #nullable restore
 #else
-        public List<DateTimeOffset?> Timestamps { get; set; }
+        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        private List<DateTimeOffset?> _explicitNullValueTimestamps = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTimeseriesGroupByDeviceType200ResponseResultSerie0"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTimeseriesGroupByDeviceType200ResponseResultSerie0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTimeseriesGroupByDeviceType200ResponseResultSerie0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTimeseriesGroupByDeviceType200ResponseResultSerie0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("mobile", Mobile);
             writer.WriteCollectionOfPrimitiveValues<string>("other", Other);
             writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

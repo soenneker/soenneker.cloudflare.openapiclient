@@ -11,68 +11,100 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetDomainMatchList200ResponseMatchesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dismissed") is { } nullNodeDismissed && nullNodeDismissed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismissed = null;
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("first_seen") is { } nullNodeFirstSeen && nullNodeFirstSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstSeen = null;
+            if (parseNode.GetChildNode("match_details") is { } nullNodeMatchDetails && nullNodeMatchDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchDetails = null;
+            if (parseNode.GetChildNode("public_scans") is { } nullNodePublicScans && nullNodePublicScans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicScans = null;
+            if (parseNode.GetChildNode("registrar") is { } nullNodeRegistrar && nullNodeRegistrar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registrar = null;
+            if (parseNode.GetChildNode("scan_status") is { } nullNodeScanStatus && nullNodeScanStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScanStatus = null;
+            if (parseNode.GetChildNode("scan_submission_id") is { } nullNodeScanSubmissionId && nullNodeScanSubmissionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScanSubmissionId = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the match is dismissed. Only present for single-query requests. For multi-query requests, use the dismissed field in each match_details entry.</summary>
-        public bool? Dismissed { get; set; }
+        public bool? Dismissed { get => _explicitNullValueDismissed; set { _explicitNullValueDismissed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed"); else _explicitNullProperties?.Remove("dismissed"); } }
+        private bool? _explicitNullValueDismissed = default!;
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>The first_seen property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstSeen { get; set; }
+        public string? FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_seen"); else _explicitNullProperties?.Remove("first_seen"); } }
+        private string? _explicitNullValueFirstSeen = default!;
 #nullable restore
 #else
-        public string FirstSeen { get; set; }
+        public string FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_seen"); else _explicitNullProperties?.Remove("first_seen"); } }
+        private string _explicitNullValueFirstSeen = default!;
 #endif
         /// <summary>Per-match detail objects with query metadata and individual dismissed state. Only present when multiple query_ids are requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem>? MatchDetails { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem>? MatchDetails { get => _explicitNullValueMatchDetails; set { _explicitNullValueMatchDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_details"); else _explicitNullProperties?.Remove("match_details"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem>? _explicitNullValueMatchDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem> MatchDetails { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem> MatchDetails { get => _explicitNullValueMatchDetails; set { _explicitNullValueMatchDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_details"); else _explicitNullProperties?.Remove("match_details"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem> _explicitNullValueMatchDetails = default!;
 #endif
         /// <summary>The public_scans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans? PublicScans { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans? PublicScans { get => _explicitNullValuePublicScans; set { _explicitNullValuePublicScans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_scans"); else _explicitNullProperties?.Remove("public_scans"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans? _explicitNullValuePublicScans = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans PublicScans { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans PublicScans { get => _explicitNullValuePublicScans; set { _explicitNullValuePublicScans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_scans"); else _explicitNullProperties?.Remove("public_scans"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans _explicitNullValuePublicScans = default!;
 #endif
         /// <summary>The registrar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Registrar { get; set; }
+        public string? Registrar { get => _explicitNullValueRegistrar; set { _explicitNullValueRegistrar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrar"); else _explicitNullProperties?.Remove("registrar"); } }
+        private string? _explicitNullValueRegistrar = default!;
 #nullable restore
 #else
-        public string Registrar { get; set; }
+        public string Registrar { get => _explicitNullValueRegistrar; set { _explicitNullValueRegistrar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrar"); else _explicitNullProperties?.Remove("registrar"); } }
+        private string _explicitNullValueRegistrar = default!;
 #endif
         /// <summary>The scan_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScanStatus { get; set; }
+        public string? ScanStatus { get => _explicitNullValueScanStatus; set { _explicitNullValueScanStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_status"); else _explicitNullProperties?.Remove("scan_status"); } }
+        private string? _explicitNullValueScanStatus = default!;
 #nullable restore
 #else
-        public string ScanStatus { get; set; }
+        public string ScanStatus { get => _explicitNullValueScanStatus; set { _explicitNullValueScanStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_status"); else _explicitNullProperties?.Remove("scan_status"); } }
+        private string _explicitNullValueScanStatus = default!;
 #endif
         /// <summary>The scan_submission_id property</summary>
-        public int? ScanSubmissionId { get; set; }
+        public int? ScanSubmissionId { get => _explicitNullValueScanSubmissionId; set { _explicitNullValueScanSubmissionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_submission_id"); else _explicitNullProperties?.Remove("scan_submission_id"); } }
+        private int? _explicitNullValueScanSubmissionId = default!;
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get; set; }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string _explicitNullValueSource = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItem"/> and sets the default values.
@@ -89,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,6 +158,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("scan_status", ScanStatus);
             writer.WriteIntValue("scan_submission_id", ScanSubmissionId);
             writer.WriteStringValue("source", Source);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Dns
     public partial class Dns_analyticsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The report property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Dns_analytics.Report.ReportRequestBuilder Report
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Dns_analytics.Report.ReportRequestBuilder(PathParameters, RequestAdapter);

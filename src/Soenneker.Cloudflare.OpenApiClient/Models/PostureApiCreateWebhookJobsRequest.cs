@@ -12,24 +12,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostureApiCreateWebhookJobsRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("finding_instance_ids") is { } nullNodeFindingInstanceIds && nullNodeFindingInstanceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindingInstanceIds = null;
+            if (parseNode.GetChildNode("webhook_ids") is { } nullNodeWebhookIds && nullNodeWebhookIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Array of finding instance IDs to send to the webhooks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? FindingInstanceIds { get; set; }
+        public List<Guid?>? FindingInstanceIds { get => _explicitNullValueFindingInstanceIds; set { _explicitNullValueFindingInstanceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding_instance_ids"); else _explicitNullProperties?.Remove("finding_instance_ids"); } }
+        private List<Guid?>? _explicitNullValueFindingInstanceIds = default!;
 #nullable restore
 #else
-        public List<Guid?> FindingInstanceIds { get; set; }
+        public List<Guid?> FindingInstanceIds { get => _explicitNullValueFindingInstanceIds; set { _explicitNullValueFindingInstanceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding_instance_ids"); else _explicitNullProperties?.Remove("finding_instance_ids"); } }
+        private List<Guid?> _explicitNullValueFindingInstanceIds = default!;
 #endif
         /// <summary>Array of webhook IDs to trigger jobs for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? WebhookIds { get; set; }
+        public List<Guid?>? WebhookIds { get => _explicitNullValueWebhookIds; set { _explicitNullValueWebhookIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_ids"); else _explicitNullProperties?.Remove("webhook_ids"); } }
+        private List<Guid?>? _explicitNullValueWebhookIds = default!;
 #nullable restore
 #else
-        public List<Guid?> WebhookIds { get; set; }
+        public List<Guid?> WebhookIds { get => _explicitNullValueWebhookIds; set { _explicitNullValueWebhookIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_ids"); else _explicitNullProperties?.Remove("webhook_ids"); } }
+        private List<Guid?> _explicitNullValueWebhookIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCreateWebhookJobsRequest"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCreateWebhookJobsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCreateWebhookJobsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCreateWebhookJobsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("finding_instance_ids", FindingInstanceIds);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("webhook_ids", WebhookIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

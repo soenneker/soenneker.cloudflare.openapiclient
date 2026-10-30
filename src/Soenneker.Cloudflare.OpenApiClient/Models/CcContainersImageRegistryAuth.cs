@@ -12,24 +12,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcContainersImageRegistryAuth : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("private_credential") is { } nullNodePrivateCredential && nullNodePrivateCredential.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateCredential = null;
+            if (parseNode.GetChildNode("public_credential") is { } nullNodePublicCredential && nullNodePublicCredential.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicCredential = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A reference to the private registry credential in Secrets Store. The referencedsecret must have the `containers` scope. Raw secret values are not accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuthPrivateCredential? PrivateCredential { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuthPrivateCredential? PrivateCredential { get => _explicitNullValuePrivateCredential; set { _explicitNullValuePrivateCredential = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_credential"); else _explicitNullProperties?.Remove("private_credential"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuthPrivateCredential? _explicitNullValuePrivateCredential = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuthPrivateCredential PrivateCredential { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuthPrivateCredential PrivateCredential { get => _explicitNullValuePrivateCredential; set { _explicitNullValuePrivateCredential = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_credential"); else _explicitNullProperties?.Remove("private_credential"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuthPrivateCredential _explicitNullValuePrivateCredential = default!;
 #endif
         /// <summary>The non-secret part of the registry credential: an AWS access key ID for ECR,a username for Docker Hub, or a service account email for Google Artifact Registry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicCredential { get; set; }
+        public string? PublicCredential { get => _explicitNullValuePublicCredential; set { _explicitNullValuePublicCredential = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_credential"); else _explicitNullProperties?.Remove("public_credential"); } }
+        private string? _explicitNullValuePublicCredential = default!;
 #nullable restore
 #else
-        public string PublicCredential { get; set; }
+        public string PublicCredential { get => _explicitNullValuePublicCredential; set { _explicitNullValuePublicCredential = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_credential"); else _explicitNullProperties?.Remove("public_credential"); } }
+        private string _explicitNullValuePublicCredential = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuth"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuth();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuth(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuthPrivateCredential>("private_credential", PrivateCredential);
             writer.WriteStringValue("public_credential", PublicCredential);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

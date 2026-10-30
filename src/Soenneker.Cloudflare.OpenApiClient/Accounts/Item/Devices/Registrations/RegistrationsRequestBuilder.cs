@@ -21,11 +21,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
     public partial class RegistrationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The revoke property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Revoke.RevokeRequestBuilder Revoke
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Revoke.RevokeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unrevoke property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Unrevoke.UnrevokeRequestBuilder Unrevoke
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Unrevoke.UnrevokeRequestBuilder(PathParameters, RequestAdapter);
@@ -78,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

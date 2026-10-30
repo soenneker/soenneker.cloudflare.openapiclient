@@ -11,56 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersObservabilityIssueOccurrenceWorker : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dispatchNamespace") is { } nullNodeDispatchNamespace && nullNodeDispatchNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DispatchNamespace = null;
+            if (parseNode.GetChildNode("entrypoint") is { } nullNodeEntrypoint && nullNodeEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoint = null;
+            if (parseNode.GetChildNode("executionModel") is { } nullNodeExecutionModel && nullNodeExecutionModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionModel = null;
+            if (parseNode.GetChildNode("scriptName") is { } nullNodeScriptName && nullNodeScriptName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptName = null;
+            if (parseNode.GetChildNode("scriptTags") is { } nullNodeScriptTags && nullNodeScriptTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptTags = null;
+            if (parseNode.GetChildNode("scriptVersion") is { } nullNodeScriptVersion && nullNodeScriptVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptVersion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dispatchNamespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DispatchNamespace { get; set; }
+        public string? DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatchNamespace"); else _explicitNullProperties?.Remove("dispatchNamespace"); } }
+        private string? _explicitNullValueDispatchNamespace = default!;
 #nullable restore
 #else
-        public string DispatchNamespace { get; set; }
+        public string DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatchNamespace"); else _explicitNullProperties?.Remove("dispatchNamespace"); } }
+        private string _explicitNullValueDispatchNamespace = default!;
 #endif
         /// <summary>The entrypoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Entrypoint { get; set; }
+        public string? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private string? _explicitNullValueEntrypoint = default!;
 #nullable restore
 #else
-        public string Entrypoint { get; set; }
+        public string Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private string _explicitNullValueEntrypoint = default!;
 #endif
         /// <summary>The executionModel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExecutionModel { get; set; }
+        public string? ExecutionModel { get => _explicitNullValueExecutionModel; set { _explicitNullValueExecutionModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionModel"); else _explicitNullProperties?.Remove("executionModel"); } }
+        private string? _explicitNullValueExecutionModel = default!;
 #nullable restore
 #else
-        public string ExecutionModel { get; set; }
+        public string ExecutionModel { get => _explicitNullValueExecutionModel; set { _explicitNullValueExecutionModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionModel"); else _explicitNullProperties?.Remove("executionModel"); } }
+        private string _explicitNullValueExecutionModel = default!;
 #endif
         /// <summary>The scriptName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptName { get; set; }
+        public string? ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptName"); else _explicitNullProperties?.Remove("scriptName"); } }
+        private string? _explicitNullValueScriptName = default!;
 #nullable restore
 #else
-        public string ScriptName { get; set; }
+        public string ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptName"); else _explicitNullProperties?.Remove("scriptName"); } }
+        private string _explicitNullValueScriptName = default!;
 #endif
         /// <summary>The scriptTags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScriptTags { get; set; }
+        public List<string>? ScriptTags { get => _explicitNullValueScriptTags; set { _explicitNullValueScriptTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptTags"); else _explicitNullProperties?.Remove("scriptTags"); } }
+        private List<string>? _explicitNullValueScriptTags = default!;
 #nullable restore
 #else
-        public List<string> ScriptTags { get; set; }
+        public List<string> ScriptTags { get => _explicitNullValueScriptTags; set { _explicitNullValueScriptTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptTags"); else _explicitNullProperties?.Remove("scriptTags"); } }
+        private List<string> _explicitNullValueScriptTags = default!;
 #endif
         /// <summary>The scriptVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion? ScriptVersion { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion? ScriptVersion { get => _explicitNullValueScriptVersion; set { _explicitNullValueScriptVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptVersion"); else _explicitNullProperties?.Remove("scriptVersion"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion? _explicitNullValueScriptVersion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion ScriptVersion { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion ScriptVersion { get => _explicitNullValueScriptVersion; set { _explicitNullValueScriptVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptVersion"); else _explicitNullProperties?.Remove("scriptVersion"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion _explicitNullValueScriptVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorker(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("scriptName", ScriptName);
             writer.WriteCollectionOfPrimitiveValues<string>("scriptTags", ScriptTags);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion>("scriptVersion", ScriptVersion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

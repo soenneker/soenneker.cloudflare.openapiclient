@@ -63,6 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Ev
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResult>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,6 +100,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Ev
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResult>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

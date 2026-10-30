@@ -42,40 +42,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql
         /// <summary>
         /// Executes a SQL query scoped to the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account, so an accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any zone restrictions must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Executes a SQL query scoped to the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account, so an accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any zone restrictions must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Executes a SQL query scoped to the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account, so an accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any zone restrictions must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.

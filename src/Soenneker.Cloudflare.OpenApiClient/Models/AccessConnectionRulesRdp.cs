@@ -12,24 +12,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessConnectionRulesRdp : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_clipboard_local_to_remote_formats") is { } nullNodeAllowedClipboardLocalToRemoteFormats && nullNodeAllowedClipboardLocalToRemoteFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedClipboardLocalToRemoteFormats = null;
+            if (parseNode.GetChildNode("allowed_clipboard_remote_to_local_formats") is { } nullNodeAllowedClipboardRemoteToLocalFormats && nullNodeAllowedClipboardRemoteToLocalFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedClipboardRemoteToLocalFormats = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Clipboard formats allowed when copying from local machine to remote RDP session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?>? AllowedClipboardLocalToRemoteFormats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?>? AllowedClipboardLocalToRemoteFormats { get => _explicitNullValueAllowedClipboardLocalToRemoteFormats; set { _explicitNullValueAllowedClipboardLocalToRemoteFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_clipboard_local_to_remote_formats"); else _explicitNullProperties?.Remove("allowed_clipboard_local_to_remote_formats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?>? _explicitNullValueAllowedClipboardLocalToRemoteFormats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?> AllowedClipboardLocalToRemoteFormats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?> AllowedClipboardLocalToRemoteFormats { get => _explicitNullValueAllowedClipboardLocalToRemoteFormats; set { _explicitNullValueAllowedClipboardLocalToRemoteFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_clipboard_local_to_remote_formats"); else _explicitNullProperties?.Remove("allowed_clipboard_local_to_remote_formats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?> _explicitNullValueAllowedClipboardLocalToRemoteFormats = default!;
 #endif
         /// <summary>Clipboard formats allowed when copying from remote RDP session to local machine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?>? AllowedClipboardRemoteToLocalFormats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?>? AllowedClipboardRemoteToLocalFormats { get => _explicitNullValueAllowedClipboardRemoteToLocalFormats; set { _explicitNullValueAllowedClipboardRemoteToLocalFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_clipboard_remote_to_local_formats"); else _explicitNullProperties?.Remove("allowed_clipboard_remote_to_local_formats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?>? _explicitNullValueAllowedClipboardRemoteToLocalFormats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?> AllowedClipboardRemoteToLocalFormats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?> AllowedClipboardRemoteToLocalFormats { get => _explicitNullValueAllowedClipboardRemoteToLocalFormats; set { _explicitNullValueAllowedClipboardRemoteToLocalFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_clipboard_remote_to_local_formats"); else _explicitNullProperties?.Remove("allowed_clipboard_remote_to_local_formats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat?> _explicitNullValueAllowedClipboardRemoteToLocalFormats = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat>("allowed_clipboard_local_to_remote_formats", AllowedClipboardLocalToRemoteFormats);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRdpClipboardFormat>("allowed_clipboard_remote_to_local_formats", AllowedClipboardRemoteToLocalFormats);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

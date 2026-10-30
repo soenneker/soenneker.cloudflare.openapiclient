@@ -12,27 +12,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MoqIssuer : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cloudflare_tokens") is { } nullNodeCloudflareTokens && nullNodeCloudflareTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareTokens = null;
+            if (parseNode.GetChildNode("issuer") is { } nullNodeIssuer && nullNodeIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issuer = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Always present ([] when empty).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken>? CloudflareTokens { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken>? CloudflareTokens { get => _explicitNullValueCloudflareTokens; set { _explicitNullValueCloudflareTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_tokens"); else _explicitNullProperties?.Remove("cloudflare_tokens"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken>? _explicitNullValueCloudflareTokens = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken> CloudflareTokens { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken> CloudflareTokens { get => _explicitNullValueCloudflareTokens; set { _explicitNullValueCloudflareTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_tokens"); else _explicitNullProperties?.Remove("cloudflare_tokens"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken> _explicitNullValueCloudflareTokens = default!;
 #endif
         /// <summary>The issuer property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareIssuer? Issuer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareIssuer? Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareIssuer? _explicitNullValueIssuer = default!;
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareJwtType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareJwtType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer"/> and sets the default values.
         /// </summary>
@@ -48,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "cloudflare_tokens", n => { CloudflareTokens = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken>(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "issuer", n => { Issuer = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareIssuer>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareJwtType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken>("cloudflare_tokens", CloudflareTokens);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareIssuer>("issuer", Issuer);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareJwtType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

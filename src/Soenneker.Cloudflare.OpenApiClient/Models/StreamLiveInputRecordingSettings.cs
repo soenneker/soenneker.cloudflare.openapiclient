@@ -12,25 +12,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StreamLiveInputRecordingSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowedOrigins") is { } nullNodeAllowedOrigins && nullNodeAllowedOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedOrigins = null;
+            if (parseNode.GetChildNode("hideLiveViewerCount") is { } nullNodeHideLiveViewerCount && nullNodeHideLiveViewerCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideLiveViewerCount = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("requireSignedURLs") is { } nullNodeRequireSignedURLs && nullNodeRequireSignedURLs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireSignedURLs = null;
+            if (parseNode.GetChildNode("timeoutSeconds") is { } nullNodeTimeoutSeconds && nullNodeTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeoutSeconds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the origins allowed to display videos created with this input. Enter allowed origin domains in an array and use `*` for wildcard subdomains. An empty array allows videos to be viewed on any origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedOrigins { get; set; }
+        public List<string>? AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
+        private List<string>? _explicitNullValueAllowedOrigins = default!;
 #nullable restore
 #else
-        public List<string> AllowedOrigins { get; set; }
+        public List<string> AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
+        private List<string> _explicitNullValueAllowedOrigins = default!;
 #endif
         /// <summary>Disables reporting the number of live viewers when this property is set to `true`.</summary>
-        public bool? HideLiveViewerCount { get; set; }
+        public bool? HideLiveViewerCount { get => _explicitNullValueHideLiveViewerCount; set { _explicitNullValueHideLiveViewerCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideLiveViewerCount"); else _explicitNullProperties?.Remove("hideLiveViewerCount"); } }
+        private bool? _explicitNullValueHideLiveViewerCount = default!;
         /// <summary>Specifies the recording behavior for the live input. Set this value to `off` to prevent a recording. Set the value to `automatic` to begin a recording and transition to on-demand after Stream Live stops receiving input.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingMode? Mode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingMode? _explicitNullValueMode = default!;
         /// <summary>Indicates if a video using the live input has the `requireSignedURLs` property set. Also enforces access controls on any video recording of the livestream with the live input.</summary>
-        public bool? RequireSignedURLs { get; set; }
+        public bool? RequireSignedURLs { get => _explicitNullValueRequireSignedURLs; set { _explicitNullValueRequireSignedURLs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireSignedURLs"); else _explicitNullProperties?.Remove("requireSignedURLs"); } }
+        private bool? _explicitNullValueRequireSignedURLs = default!;
         /// <summary>Determines the amount of time a live input configured in `automatic` mode should wait before a recording transitions from live to on-demand. `0` is recommended for most use cases and indicates the platform default should be used.</summary>
-        public int? TimeoutSeconds { get; set; }
+        public int? TimeoutSeconds { get => _explicitNullValueTimeoutSeconds; set { _explicitNullValueTimeoutSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeoutSeconds"); else _explicitNullProperties?.Remove("timeoutSeconds"); } }
+        private int? _explicitNullValueTimeoutSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings"/> and sets the default values.
         /// </summary>
@@ -49,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingMode>("mode", Mode);
             writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
             writer.WriteIntValue("timeoutSeconds", TimeoutSeconds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists active custom skills currently assigned to the article&apos;s feed and whether each has a stored output. Output content and skill configuration are retrieved separately. Free Threat Signals accounts cannot read Custom Skills.

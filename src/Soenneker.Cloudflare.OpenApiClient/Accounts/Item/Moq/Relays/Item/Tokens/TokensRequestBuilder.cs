@@ -70,6 +70,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.Token
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysTokensList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysTokensList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,6 +103,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.Token
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysTokensCreate201Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysTokensCreate201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,31 +11,58 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ClientSideSecurityCookie : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("domain_attribute") is { } nullNodeDomainAttribute && nullNodeDomainAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainAttribute = null;
+            if (parseNode.GetChildNode("expires_attribute") is { } nullNodeExpiresAttribute && nullNodeExpiresAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAttribute = null;
+            if (parseNode.GetChildNode("first_seen_at") is { } nullNodeFirstSeenAt && nullNodeFirstSeenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstSeenAt = null;
+            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("http_only_attribute") is { } nullNodeHttpOnlyAttribute && nullNodeHttpOnlyAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpOnlyAttribute = null;
+            if (parseNode.GetChildNode("last_seen_at") is { } nullNodeLastSeenAt && nullNodeLastSeenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeenAt = null;
+            if (parseNode.GetChildNode("max_age_attribute") is { } nullNodeMaxAgeAttribute && nullNodeMaxAgeAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAgeAttribute = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("page_urls") is { } nullNodePageUrls && nullNodePageUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageUrls = null;
+            if (parseNode.GetChildNode("path_attribute") is { } nullNodePathAttribute && nullNodePathAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathAttribute = null;
+            if (parseNode.GetChildNode("same_site_attribute") is { } nullNodeSameSiteAttribute && nullNodeSameSiteAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameSiteAttribute = null;
+            if (parseNode.GetChildNode("secure_attribute") is { } nullNodeSecureAttribute && nullNodeSecureAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecureAttribute = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The domain_attribute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainAttribute { get; set; }
+        public string? DomainAttribute { get => _explicitNullValueDomainAttribute; set { _explicitNullValueDomainAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_attribute"); else _explicitNullProperties?.Remove("domain_attribute"); } }
+        private string? _explicitNullValueDomainAttribute = default!;
 #nullable restore
 #else
-        public string DomainAttribute { get; set; }
+        public string DomainAttribute { get => _explicitNullValueDomainAttribute; set { _explicitNullValueDomainAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_attribute"); else _explicitNullProperties?.Remove("domain_attribute"); } }
+        private string _explicitNullValueDomainAttribute = default!;
 #endif
         /// <summary>The expires_attribute property</summary>
-        public DateTimeOffset? ExpiresAttribute { get; set; }
+        public DateTimeOffset? ExpiresAttribute { get => _explicitNullValueExpiresAttribute; set { _explicitNullValueExpiresAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_attribute"); else _explicitNullProperties?.Remove("expires_attribute"); } }
+        private DateTimeOffset? _explicitNullValueExpiresAttribute = default!;
         /// <summary>The first_seen_at property</summary>
-        public DateTimeOffset? FirstSeenAt { get; set; }
+        public DateTimeOffset? FirstSeenAt { get => _explicitNullValueFirstSeenAt; set { _explicitNullValueFirstSeenAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_seen_at"); else _explicitNullProperties?.Remove("first_seen_at"); } }
+        private DateTimeOffset? _explicitNullValueFirstSeenAt = default!;
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get; set; }
+        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        private string? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public string Host { get; set; }
+        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        private string _explicitNullValueHost = default!;
 #endif
         /// <summary>The http_only_attribute property</summary>
-        public bool? HttpOnlyAttribute { get; set; }
+        public bool? HttpOnlyAttribute { get => _explicitNullValueHttpOnlyAttribute; set { _explicitNullValueHttpOnlyAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_only_attribute"); else _explicitNullProperties?.Remove("http_only_attribute"); } }
+        private bool? _explicitNullValueHttpOnlyAttribute = default!;
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,39 +72,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>The last_seen_at property</summary>
-        public DateTimeOffset? LastSeenAt { get; set; }
+        public DateTimeOffset? LastSeenAt { get => _explicitNullValueLastSeenAt; set { _explicitNullValueLastSeenAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_seen_at"); else _explicitNullProperties?.Remove("last_seen_at"); } }
+        private DateTimeOffset? _explicitNullValueLastSeenAt = default!;
         /// <summary>The max_age_attribute property</summary>
-        public int? MaxAgeAttribute { get; set; }
+        public int? MaxAgeAttribute { get => _explicitNullValueMaxAgeAttribute; set { _explicitNullValueMaxAgeAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_age_attribute"); else _explicitNullProperties?.Remove("max_age_attribute"); } }
+        private int? _explicitNullValueMaxAgeAttribute = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The page_urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PageUrls { get; set; }
+        public List<string>? PageUrls { get => _explicitNullValuePageUrls; set { _explicitNullValuePageUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_urls"); else _explicitNullProperties?.Remove("page_urls"); } }
+        private List<string>? _explicitNullValuePageUrls = default!;
 #nullable restore
 #else
-        public List<string> PageUrls { get; set; }
+        public List<string> PageUrls { get => _explicitNullValuePageUrls; set { _explicitNullValuePageUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_urls"); else _explicitNullProperties?.Remove("page_urls"); } }
+        private List<string> _explicitNullValuePageUrls = default!;
 #endif
         /// <summary>The path_attribute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PathAttribute { get; set; }
+        public string? PathAttribute { get => _explicitNullValuePathAttribute; set { _explicitNullValuePathAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_attribute"); else _explicitNullProperties?.Remove("path_attribute"); } }
+        private string? _explicitNullValuePathAttribute = default!;
 #nullable restore
 #else
-        public string PathAttribute { get; set; }
+        public string PathAttribute { get => _explicitNullValuePathAttribute; set { _explicitNullValuePathAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_attribute"); else _explicitNullProperties?.Remove("path_attribute"); } }
+        private string _explicitNullValuePathAttribute = default!;
 #endif
         /// <summary>The same_site_attribute property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieSameSiteAttribute? SameSiteAttribute { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieSameSiteAttribute? SameSiteAttribute { get => _explicitNullValueSameSiteAttribute; set { _explicitNullValueSameSiteAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("same_site_attribute"); else _explicitNullProperties?.Remove("same_site_attribute"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieSameSiteAttribute? _explicitNullValueSameSiteAttribute = default!;
         /// <summary>The secure_attribute property</summary>
-        public bool? SecureAttribute { get; set; }
+        public bool? SecureAttribute { get => _explicitNullValueSecureAttribute; set { _explicitNullValueSecureAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secure_attribute"); else _explicitNullProperties?.Remove("secure_attribute"); } }
+        private bool? _explicitNullValueSecureAttribute = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookie"/> and sets the default values.
         /// </summary>
@@ -93,7 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookie CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookie();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookie(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,6 +177,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieSameSiteAttribute>("same_site_attribute", SameSiteAttribute);
             writer.WriteBoolValue("secure_attribute", SecureAttribute);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

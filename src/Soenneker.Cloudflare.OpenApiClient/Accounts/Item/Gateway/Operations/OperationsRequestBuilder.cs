@@ -66,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Operations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayOperationsListZeroTrustGatewayOperations4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection4>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection4.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

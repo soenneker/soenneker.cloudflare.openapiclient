@@ -11,11 +11,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SecurityCenterPartnerSettingsGetResponseAllOf2Result : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("resolution_status") is { } nullNodeResolutionStatus && nullNodeResolutionStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolutionStatus = null;
+        }
+
         /// <summary>Whether the partner integration is enabled for the account.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Whether the account has been matched with the partner. `resolved` means a match was found, `not_found` means the partner has no record of the account, `no_zones` means the account has no zones to match with the partner, and `pending` means resolution has not completed yet. Omitted when the integration is disabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponseAllOf2ResultResolutionStatus? ResolutionStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponseAllOf2ResultResolutionStatus? ResolutionStatus { get => _explicitNullValueResolutionStatus; set { _explicitNullValueResolutionStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolution_status"); else _explicitNullProperties?.Remove("resolution_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponseAllOf2ResultResolutionStatus? _explicitNullValueResolutionStatus = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -24,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponseAllOf2Result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponseAllOf2Result();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponseAllOf2Result(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponseAllOf2ResultResolutionStatus>("resolution_status", ResolutionStatus);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponseAllOf2ResultResolutionStatus>("resolution_status", ResolutionStatus);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

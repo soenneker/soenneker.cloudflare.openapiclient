@@ -11,71 +11,105 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicGreTunnelUpdateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("automatic_return_routing") is { } nullNodeAutomaticReturnRouting && nullNodeAutomaticReturnRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticReturnRouting = null;
+            if (parseNode.GetChildNode("cloudflare_gre_endpoint") is { } nullNodeCloudflareGreEndpoint && nullNodeCloudflareGreEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareGreEndpoint = null;
+            if (parseNode.GetChildNode("customer_gre_endpoint") is { } nullNodeCustomerGreEndpoint && nullNodeCustomerGreEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerGreEndpoint = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("health_check") is { } nullNodeHealthCheck && nullNodeHealthCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheck = null;
+            if (parseNode.GetChildNode("interface_address") is { } nullNodeInterfaceAddress && nullNodeInterfaceAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress = null;
+            if (parseNode.GetChildNode("interface_address6") is { } nullNodeInterfaceAddress6 && nullNodeInterfaceAddress6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress6 = null;
+            if (parseNode.GetChildNode("mtu") is { } nullNodeMtu && nullNodeMtu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mtu = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("ttl") is { } nullNodeTtl && nullNodeTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True if automatic stateful return routing should be enabled for a tunnel, false otherwise. Requires the `coupler_integration` account flag to be enabled; requests setting this to `true` without that flag will be rejected.</summary>
-        public bool? AutomaticReturnRouting { get; set; }
+        public bool? AutomaticReturnRouting { get => _explicitNullValueAutomaticReturnRouting; set { _explicitNullValueAutomaticReturnRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_return_routing"); else _explicitNullProperties?.Remove("automatic_return_routing"); } }
+        private bool? _explicitNullValueAutomaticReturnRouting = default!;
         /// <summary>The IP address assigned to the Cloudflare side of the GRE tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudflareGreEndpoint { get; set; }
+        public string? CloudflareGreEndpoint { get => _explicitNullValueCloudflareGreEndpoint; set { _explicitNullValueCloudflareGreEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_gre_endpoint"); else _explicitNullProperties?.Remove("cloudflare_gre_endpoint"); } }
+        private string? _explicitNullValueCloudflareGreEndpoint = default!;
 #nullable restore
 #else
-        public string CloudflareGreEndpoint { get; set; }
+        public string CloudflareGreEndpoint { get => _explicitNullValueCloudflareGreEndpoint; set { _explicitNullValueCloudflareGreEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_gre_endpoint"); else _explicitNullProperties?.Remove("cloudflare_gre_endpoint"); } }
+        private string _explicitNullValueCloudflareGreEndpoint = default!;
 #endif
         /// <summary>The IP address assigned to the customer side of the GRE tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerGreEndpoint { get; set; }
+        public string? CustomerGreEndpoint { get => _explicitNullValueCustomerGreEndpoint; set { _explicitNullValueCustomerGreEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_gre_endpoint"); else _explicitNullProperties?.Remove("customer_gre_endpoint"); } }
+        private string? _explicitNullValueCustomerGreEndpoint = default!;
 #nullable restore
 #else
-        public string CustomerGreEndpoint { get; set; }
+        public string CustomerGreEndpoint { get => _explicitNullValueCustomerGreEndpoint; set { _explicitNullValueCustomerGreEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_gre_endpoint"); else _explicitNullProperties?.Remove("customer_gre_endpoint"); } }
+        private string _explicitNullValueCustomerGreEndpoint = default!;
 #endif
         /// <summary>An optional description of the GRE tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The health_check property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck? HealthCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck? HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck? _explicitNullValueHealthCheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck HealthCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck _explicitNullValueHealthCheck = default!;
 #endif
         /// <summary>A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InterfaceAddress { get; set; }
+        public string? InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
+        private string? _explicitNullValueInterfaceAddress = default!;
 #nullable restore
 #else
-        public string InterfaceAddress { get; set; }
+        public string InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
+        private string _explicitNullValueInterfaceAddress = default!;
 #endif
         /// <summary>A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InterfaceAddress6 { get; set; }
+        public string? InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
+        private string? _explicitNullValueInterfaceAddress6 = default!;
 #nullable restore
 #else
-        public string InterfaceAddress6 { get; set; }
+        public string InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
+        private string _explicitNullValueInterfaceAddress6 = default!;
 #endif
         /// <summary>Maximum Transmission Unit (MTU) in bytes for the GRE tunnel. The minimum value is 576.</summary>
-        public int? Mtu { get; set; }
+        public int? Mtu { get => _explicitNullValueMtu; set { _explicitNullValueMtu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtu"); else _explicitNullProperties?.Remove("mtu"); } }
+        private int? _explicitNullValueMtu = default!;
         /// <summary>The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Time To Live (TTL) in number of hops of the GRE tunnel.</summary>
-        public int? Ttl { get; set; }
+        public int? Ttl { get => _explicitNullValueTtl; set { _explicitNullValueTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl"); else _explicitNullProperties?.Remove("ttl"); } }
+        private int? _explicitNullValueTtl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelUpdateRequest"/> and sets the default values.
         /// </summary>
@@ -94,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelUpdateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelUpdateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -133,6 +167,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("mtu", Mtu);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("ttl", Ttl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

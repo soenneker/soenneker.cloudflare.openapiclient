@@ -16,6 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
     public partial class WithNamespaceValueItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The tables property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder Tables
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder(PathParameters, RequestAdapter);

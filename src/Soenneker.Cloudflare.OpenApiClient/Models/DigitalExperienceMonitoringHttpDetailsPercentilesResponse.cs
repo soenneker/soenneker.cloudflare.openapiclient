@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DigitalExperienceMonitoringHttpDetailsPercentilesResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dnsResponseTimeMs") is { } nullNodeDnsResponseTimeMs && nullNodeDnsResponseTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsResponseTimeMs = null;
+            if (parseNode.GetChildNode("resourceFetchTimeMs") is { } nullNodeResourceFetchTimeMs && nullNodeResourceFetchTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceFetchTimeMs = null;
+            if (parseNode.GetChildNode("serverResponseTimeMs") is { } nullNodeServerResponseTimeMs && nullNodeServerResponseTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerResponseTimeMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dnsResponseTimeMs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles? DnsResponseTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles? DnsResponseTimeMs { get => _explicitNullValueDnsResponseTimeMs; set { _explicitNullValueDnsResponseTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dnsResponseTimeMs"); else _explicitNullProperties?.Remove("dnsResponseTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles? _explicitNullValueDnsResponseTimeMs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles DnsResponseTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles DnsResponseTimeMs { get => _explicitNullValueDnsResponseTimeMs; set { _explicitNullValueDnsResponseTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dnsResponseTimeMs"); else _explicitNullProperties?.Remove("dnsResponseTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles _explicitNullValueDnsResponseTimeMs = default!;
 #endif
         /// <summary>The resourceFetchTimeMs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles? ResourceFetchTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles? ResourceFetchTimeMs { get => _explicitNullValueResourceFetchTimeMs; set { _explicitNullValueResourceFetchTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceFetchTimeMs"); else _explicitNullProperties?.Remove("resourceFetchTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles? _explicitNullValueResourceFetchTimeMs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles ResourceFetchTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles ResourceFetchTimeMs { get => _explicitNullValueResourceFetchTimeMs; set { _explicitNullValueResourceFetchTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceFetchTimeMs"); else _explicitNullProperties?.Remove("resourceFetchTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles _explicitNullValueResourceFetchTimeMs = default!;
 #endif
         /// <summary>The serverResponseTimeMs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles? ServerResponseTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles? ServerResponseTimeMs { get => _explicitNullValueServerResponseTimeMs; set { _explicitNullValueServerResponseTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverResponseTimeMs"); else _explicitNullProperties?.Remove("serverResponseTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles? _explicitNullValueServerResponseTimeMs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles ServerResponseTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles ServerResponseTimeMs { get => _explicitNullValueServerResponseTimeMs; set { _explicitNullValueServerResponseTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverResponseTimeMs"); else _explicitNullProperties?.Remove("serverResponseTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles _explicitNullValueServerResponseTimeMs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsPercentilesResponse"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsPercentilesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsPercentilesResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsPercentilesResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles>("dnsResponseTimeMs", DnsResponseTimeMs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles>("resourceFetchTimeMs", ResourceFetchTimeMs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles>("serverResponseTimeMs", ServerResponseTimeMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

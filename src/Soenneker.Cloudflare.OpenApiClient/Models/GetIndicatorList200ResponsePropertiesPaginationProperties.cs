@@ -11,64 +11,92 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetIndicatorList200ResponsePropertiesPaginationProperties : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("cursor") is { } nullNodeCursor && nullNodeCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cursor = null;
+            if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
+            if (parseNode.GetChildNode("per_page") is { } nullNodePerPage && nullNodePerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerPage = null;
+            if (parseNode.GetChildNode("total_count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+            if (parseNode.GetChildNode("total_count_is_exact") is { } nullNodeTotalCountIsExact && nullNodeTotalCountIsExact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCountIsExact = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCount? Count { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCount? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCount? _explicitNullValueCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCount Count { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCount Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCount _explicitNullValueCount = default!;
 #endif
         /// <summary>The cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCursor? Cursor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCursor? Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCursor? _explicitNullValueCursor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCursor Cursor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCursor Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesCursor _explicitNullValueCursor = default!;
 #endif
         /// <summary>The has_more property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesHasMore? HasMore { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesHasMore? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesHasMore? _explicitNullValueHasMore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesHasMore HasMore { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesHasMore HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesHasMore _explicitNullValueHasMore = default!;
 #endif
         /// <summary>The page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPage? Page { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPage? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPage? _explicitNullValuePage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPage Page { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPage Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPage _explicitNullValuePage = default!;
 #endif
         /// <summary>The per_page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPerPage? PerPage { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPerPage? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPerPage? _explicitNullValuePerPage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPerPage PerPage { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPerPage PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPerPage _explicitNullValuePerPage = default!;
 #endif
         /// <summary>The total_count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCount? TotalCount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCount? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCount? _explicitNullValueTotalCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCount TotalCount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCount TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCount _explicitNullValueTotalCount = default!;
 #endif
         /// <summary>The total_count_is_exact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCountIsExact? TotalCountIsExact { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCountIsExact? TotalCountIsExact { get => _explicitNullValueTotalCountIsExact; set { _explicitNullValueTotalCountIsExact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count_is_exact"); else _explicitNullProperties?.Remove("total_count_is_exact"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCountIsExact? _explicitNullValueTotalCountIsExact = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCountIsExact TotalCountIsExact { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCountIsExact TotalCountIsExact { get => _explicitNullValueTotalCountIsExact; set { _explicitNullValueTotalCountIsExact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count_is_exact"); else _explicitNullProperties?.Remove("total_count_is_exact"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCountIsExact _explicitNullValueTotalCountIsExact = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationProperties"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationProperties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationProperties();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationProperties(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesPerPage>("per_page", PerPage);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCount>("total_count", TotalCount);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesPaginationPropertiesTotalCountIsExact>("total_count_is_exact", TotalCountIsExact);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

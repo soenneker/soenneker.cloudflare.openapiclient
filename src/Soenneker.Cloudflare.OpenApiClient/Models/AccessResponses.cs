@@ -11,90 +11,129 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessResponses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cf_resource_id") is { } nullNodeCfResourceId && nullNodeCfResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CfResourceId = null;
+            if (parseNode.GetChildNode("error_description") is { } nullNodeErrorDescription && nullNodeErrorDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorDescription = null;
+            if (parseNode.GetChildNode("idp_id") is { } nullNodeIdpId && nullNodeIdpId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpId = null;
+            if (parseNode.GetChildNode("idp_resource_id") is { } nullNodeIdpResourceId && nullNodeIdpResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpResourceId = null;
+            if (parseNode.GetChildNode("logged_at") is { } nullNodeLoggedAt && nullNodeLoggedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoggedAt = null;
+            if (parseNode.GetChildNode("request_body") is { } nullNodeRequestBody && nullNodeRequestBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestBody = null;
+            if (parseNode.GetChildNode("request_method") is { } nullNodeRequestMethod && nullNodeRequestMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestMethod = null;
+            if (parseNode.GetChildNode("resource_group_name") is { } nullNodeResourceGroupName && nullNodeResourceGroupName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceGroupName = null;
+            if (parseNode.GetChildNode("resource_type") is { } nullNodeResourceType && nullNodeResourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceType = null;
+            if (parseNode.GetChildNode("resource_user_email") is { } nullNodeResourceUserEmail && nullNodeResourceUserEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceUserEmail = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique Cloudflare-generated Id of the SCIM resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CfResourceId { get; set; }
+        public string? CfResourceId { get => _explicitNullValueCfResourceId; set { _explicitNullValueCfResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_resource_id"); else _explicitNullProperties?.Remove("cf_resource_id"); } }
+        private string? _explicitNullValueCfResourceId = default!;
 #nullable restore
 #else
-        public string CfResourceId { get; set; }
+        public string CfResourceId { get => _explicitNullValueCfResourceId; set { _explicitNullValueCfResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_resource_id"); else _explicitNullProperties?.Remove("cf_resource_id"); } }
+        private string _explicitNullValueCfResourceId = default!;
 #endif
         /// <summary>The error message which is generated when the status of the SCIM request is &apos;FAILURE&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorDescription { get; set; }
+        public string? ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_description"); else _explicitNullProperties?.Remove("error_description"); } }
+        private string? _explicitNullValueErrorDescription = default!;
 #nullable restore
 #else
-        public string ErrorDescription { get; set; }
+        public string ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_description"); else _explicitNullProperties?.Remove("error_description"); } }
+        private string _explicitNullValueErrorDescription = default!;
 #endif
         /// <summary>The unique Id of the IdP that has SCIM enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdpId { get; set; }
+        public string? IdpId { get => _explicitNullValueIdpId; set { _explicitNullValueIdpId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_id"); else _explicitNullProperties?.Remove("idp_id"); } }
+        private string? _explicitNullValueIdpId = default!;
 #nullable restore
 #else
-        public string IdpId { get; set; }
+        public string IdpId { get => _explicitNullValueIdpId; set { _explicitNullValueIdpId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_id"); else _explicitNullProperties?.Remove("idp_id"); } }
+        private string _explicitNullValueIdpId = default!;
 #endif
         /// <summary>The IdP-generated Id of the SCIM resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdpResourceId { get; set; }
+        public string? IdpResourceId { get => _explicitNullValueIdpResourceId; set { _explicitNullValueIdpResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_resource_id"); else _explicitNullProperties?.Remove("idp_resource_id"); } }
+        private string? _explicitNullValueIdpResourceId = default!;
 #nullable restore
 #else
-        public string IdpResourceId { get; set; }
+        public string IdpResourceId { get => _explicitNullValueIdpResourceId; set { _explicitNullValueIdpResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_resource_id"); else _explicitNullProperties?.Remove("idp_resource_id"); } }
+        private string _explicitNullValueIdpResourceId = default!;
 #endif
         /// <summary>The logged_at property</summary>
-        public DateTimeOffset? LoggedAt { get; set; }
+        public DateTimeOffset? LoggedAt { get => _explicitNullValueLoggedAt; set { _explicitNullValueLoggedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logged_at"); else _explicitNullProperties?.Remove("logged_at"); } }
+        private DateTimeOffset? _explicitNullValueLoggedAt = default!;
         /// <summary>The JSON-encoded string body of the SCIM request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestBody { get; set; }
+        public string? RequestBody { get => _explicitNullValueRequestBody; set { _explicitNullValueRequestBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_body"); else _explicitNullProperties?.Remove("request_body"); } }
+        private string? _explicitNullValueRequestBody = default!;
 #nullable restore
 #else
-        public string RequestBody { get; set; }
+        public string RequestBody { get => _explicitNullValueRequestBody; set { _explicitNullValueRequestBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_body"); else _explicitNullProperties?.Remove("request_body"); } }
+        private string _explicitNullValueRequestBody = default!;
 #endif
         /// <summary>The request method of the SCIM request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestMethod { get; set; }
+        public string? RequestMethod { get => _explicitNullValueRequestMethod; set { _explicitNullValueRequestMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_method"); else _explicitNullProperties?.Remove("request_method"); } }
+        private string? _explicitNullValueRequestMethod = default!;
 #nullable restore
 #else
-        public string RequestMethod { get; set; }
+        public string RequestMethod { get => _explicitNullValueRequestMethod; set { _explicitNullValueRequestMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_method"); else _explicitNullProperties?.Remove("request_method"); } }
+        private string _explicitNullValueRequestMethod = default!;
 #endif
         /// <summary>The display name of the SCIM Group resource if it exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceGroupName { get; set; }
+        public string? ResourceGroupName { get => _explicitNullValueResourceGroupName; set { _explicitNullValueResourceGroupName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_group_name"); else _explicitNullProperties?.Remove("resource_group_name"); } }
+        private string? _explicitNullValueResourceGroupName = default!;
 #nullable restore
 #else
-        public string ResourceGroupName { get; set; }
+        public string ResourceGroupName { get => _explicitNullValueResourceGroupName; set { _explicitNullValueResourceGroupName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_group_name"); else _explicitNullProperties?.Remove("resource_group_name"); } }
+        private string _explicitNullValueResourceGroupName = default!;
 #endif
         /// <summary>The resource type of the SCIM request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceType { get; set; }
+        public string? ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_type"); else _explicitNullProperties?.Remove("resource_type"); } }
+        private string? _explicitNullValueResourceType = default!;
 #nullable restore
 #else
-        public string ResourceType { get; set; }
+        public string ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_type"); else _explicitNullProperties?.Remove("resource_type"); } }
+        private string _explicitNullValueResourceType = default!;
 #endif
         /// <summary>The email address of the SCIM User resource if it exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceUserEmail { get; set; }
+        public string? ResourceUserEmail { get => _explicitNullValueResourceUserEmail; set { _explicitNullValueResourceUserEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_user_email"); else _explicitNullProperties?.Remove("resource_user_email"); } }
+        private string? _explicitNullValueResourceUserEmail = default!;
 #nullable restore
 #else
-        public string ResourceUserEmail { get; set; }
+        public string ResourceUserEmail { get => _explicitNullValueResourceUserEmail; set { _explicitNullValueResourceUserEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_user_email"); else _explicitNullProperties?.Remove("resource_user_email"); } }
+        private string _explicitNullValueResourceUserEmail = default!;
 #endif
         /// <summary>The status of the SCIM request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessResponses"/> and sets the default values.
@@ -111,7 +150,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessResponses CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessResponses();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessResponses(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,6 +191,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("resource_type", ResourceType);
             writer.WriteStringValue("resource_user_email", ResourceUserEmail);
             writer.WriteStringValue("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

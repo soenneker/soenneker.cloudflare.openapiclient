@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BuildsCreateWorkerGitRepositoryInput : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryFunfettiInput"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,17 +42,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("provider_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryInput();
-            if("github".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("BuildsCreateWorkerGitRepositoryFunfettiInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BuildsCreateWorkerGitRepositoryFunfettiInput = new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryFunfettiInput();
+                
             }
-            else if("gitlab_internal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BuildsCreateWorkerGitRepositoryGrantInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BuildsCreateWorkerGitRepositoryGrantInput = new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryGrantInput();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("repo_id") != null && parseNode.GetChildNode("repo_name") != null && parseNode.GetChildNode("provider_type") != null && (parseNode.GetChildNode("provider_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("github".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "gitlab".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("provider_account_id") != null && parseNode.GetChildNode("provider_account_name") != null && parseNode.GetChildNode("branch") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("repo_id") != null && parseNode.GetChildNode("repo_name") != null && parseNode.GetChildNode("provider_type") != null && (parseNode.GetChildNode("provider_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("gitlab_internal".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "origin".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("provider_account_id") != null && parseNode.GetChildNode("provider_account_name") != null && parseNode.GetChildNode("branch") != null && parseNode.GetChildNode("grant_id") != null))();
+            if (result.BuildsCreateWorkerGitRepositoryFunfettiInput == null && result.BuildsCreateWorkerGitRepositoryGrantInput == null && matchesUnionBranch0 && !matchesUnionBranch1) result.BuildsCreateWorkerGitRepositoryFunfettiInput = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryFunfettiInput(), parseNode);
+            if (result.BuildsCreateWorkerGitRepositoryFunfettiInput == null && result.BuildsCreateWorkerGitRepositoryGrantInput == null && matchesUnionBranch1 && !matchesUnionBranch0) result.BuildsCreateWorkerGitRepositoryGrantInput = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryGrantInput(), parseNode);
+            if (result.BuildsCreateWorkerGitRepositoryFunfettiInput == null && result.BuildsCreateWorkerGitRepositoryGrantInput == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (BuildsCreateWorkerGitRepositoryFunfettiInput == null && BuildsCreateWorkerGitRepositoryGrantInput == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (BuildsCreateWorkerGitRepositoryFunfettiInput != null && BuildsCreateWorkerGitRepositoryGrantInput == null) { if (BuildsCreateWorkerGitRepositoryFunfettiInput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BuildsCreateWorkerGitRepositoryFunfettiInput); return; }
+            if (BuildsCreateWorkerGitRepositoryGrantInput != null && BuildsCreateWorkerGitRepositoryFunfettiInput == null) { if (BuildsCreateWorkerGitRepositoryGrantInput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BuildsCreateWorkerGitRepositoryGrantInput); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(BuildsCreateWorkerGitRepositoryFunfettiInput != null)
             {
+                if (BuildsCreateWorkerGitRepositoryFunfettiInput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryFunfettiInput>(null, BuildsCreateWorkerGitRepositoryFunfettiInput);
             }
             else if(BuildsCreateWorkerGitRepositoryGrantInput != null)
             {
+                if (BuildsCreateWorkerGitRepositoryGrantInput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryGrantInput>(null, BuildsCreateWorkerGitRepositoryGrantInput);
             }
         }

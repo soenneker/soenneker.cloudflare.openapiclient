@@ -11,19 +11,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BrapiPostDevtoolsLiveView200ResponseOptions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("guardrails") is { } nullNodeGuardrails && nullNodeGuardrails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guardrails = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Connection guardrails applied to this link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsGuardrails? Guardrails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsGuardrails? Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsGuardrails? _explicitNullValueGuardrails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsGuardrails Guardrails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsGuardrails Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsGuardrails _explicitNullValueGuardrails = default!;
 #endif
         /// <summary>UI mode for the live view</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsMode? Mode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsMode? _explicitNullValueMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsGuardrails>("guardrails", Guardrails);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptionsMode>("mode", Mode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

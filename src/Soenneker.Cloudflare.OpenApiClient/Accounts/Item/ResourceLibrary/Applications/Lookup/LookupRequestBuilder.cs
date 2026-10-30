@@ -61,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "502", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

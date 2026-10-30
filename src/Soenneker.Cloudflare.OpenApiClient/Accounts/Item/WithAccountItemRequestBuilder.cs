@@ -78,6 +78,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Move;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Oauth_clients;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Observability;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.One;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages;
@@ -332,6 +333,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.DataSecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The devices property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder Devices
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
@@ -516,6 +518,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Oauth_clients.Oauth_clientsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The observability property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Observability.ObservabilityRequestBuilder Observability
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Observability.ObservabilityRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The one property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.One.OneRequestBuilder One
         {
@@ -557,6 +564,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.PcapsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pipelines property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder Pipelines
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder(PathParameters, RequestAdapter);
@@ -577,6 +585,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.R2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The r2Catalog property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.R2CatalogRequestBuilder R2Catalog
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.R2CatalogRequestBuilder(PathParameters, RequestAdapter);
@@ -617,6 +626,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.ResourceLibraryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The roles property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.RolesRequestBuilder Roles
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.RolesRequestBuilder(PathParameters, RequestAdapter);
@@ -797,6 +807,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseSingleId>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseSingleId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -820,11 +831,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResponseSingleAccount>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamResponseSingleAccount.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing account.
+        /// Update an existing account. Account names are limited to 65 UTF-8 bytes.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamResponseSingleAccount"/></returns>
         /// <param name="body">The request body</param>
@@ -845,6 +857,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResponseSingleAccount>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamResponseSingleAccount.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -887,7 +900,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing account.
+        /// Update an existing account. Account names are limited to 65 UTF-8 bytes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

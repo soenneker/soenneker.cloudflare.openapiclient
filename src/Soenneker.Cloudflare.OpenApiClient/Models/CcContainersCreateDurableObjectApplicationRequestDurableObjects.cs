@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcContainersCreateDurableObjectApplicationRequestDurableObjects : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1? CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1? CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2? CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2? CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +44,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects();
-            return result;
+            if("CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("namespace_id") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("script_name") != null && parseNode.GetChildNode("class_name") != null))();
+            if (result.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 == null && result.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1(), parseNode);
+            if (result.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 == null && result.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2(), parseNode);
+            if (result.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 == null && result.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,13 +67,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 != null)
+            if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 != null)
             {
-                return CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1.GetFieldDeserializers();
+                return CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1.GetFieldDeserializers();
             }
-            else if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 != null)
+            else if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 != null)
             {
-                return CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2.GetFieldDeserializers();
+                return CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -63,14 +83,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 == null && CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 != null && CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 == null) { if (CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1); return; }
+            if (CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 != null && CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 == null) { if (CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 != null)
+            if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1>(null, CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1);
+                if (CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1>(null, CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf1);
             }
-            else if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 != null)
+            else if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2>(null, CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2);
+                if (CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2>(null, CcContainersCreateDurableObjectApplicationRequestDurableObjectsOneOf2);
             }
         }
     }

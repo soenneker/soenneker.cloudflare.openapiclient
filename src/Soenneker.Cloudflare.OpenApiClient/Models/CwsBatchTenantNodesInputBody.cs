@@ -11,30 +11,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CwsBatchTenantNodesInputBody : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("creates") is { } nullNodeCreates && nullNodeCreates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creates = null;
+            if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
+            if (parseNode.GetChildNode("updates") is { } nullNodeUpdates && nullNodeUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updates = null;
+        }
+
         /// <summary>Nodes to create; parents may be created elsewhere in this request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBody>? Creates { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBody>? Creates { get => _explicitNullValueCreates; set { _explicitNullValueCreates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creates"); else _explicitNullProperties?.Remove("creates"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBody>? _explicitNullValueCreates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBody> Creates { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBody> Creates { get => _explicitNullValueCreates; set { _explicitNullValueCreates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creates"); else _explicitNullProperties?.Remove("creates"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBody> _explicitNullValueCreates = default!;
 #endif
         /// <summary>Nodes to delete; every descendant that will not be reparented must also be deleted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchDelete>? Deletes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchDelete>? Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchDelete>? _explicitNullValueDeletes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchDelete> Deletes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchDelete> Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchDelete> _explicitNullValueDeletes = default!;
 #endif
         /// <summary>Nodes whose mutable fields should be fully replaced</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchUpdate>? Updates { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchUpdate>? Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchUpdate>? _explicitNullValueUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchUpdate> Updates { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchUpdate> Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchUpdate> _explicitNullValueUpdates = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CwsBatchTenantNodesInputBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CwsBatchTenantNodesInputBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CwsBatchTenantNodesInputBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +84,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBody>("creates", Creates);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchDelete>("deletes", Deletes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchUpdate>("updates", Updates);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsTenantNodeBatchUpdate>("updates", Updates);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

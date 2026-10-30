@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetHttpSummaryByHttpVersion200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("HTTP/1.x") is { } nullNodeHTTP1X && nullNodeHTTP1X.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP1X = null;
+            if (parseNode.GetChildNode("HTTP/2") is { } nullNodeHTTP2 && nullNodeHTTP2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP2 = null;
+            if (parseNode.GetChildNode("HTTP/3") is { } nullNodeHTTP3 && nullNodeHTTP3.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP3 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HTTP1X { get; set; }
+        public string? HTTP1X { get => _explicitNullValueHTTP1X; set { _explicitNullValueHTTP1X = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/1.x"); else _explicitNullProperties?.Remove("HTTP/1.x"); } }
+        private string? _explicitNullValueHTTP1X = default!;
 #nullable restore
 #else
-        public string HTTP1X { get; set; }
+        public string HTTP1X { get => _explicitNullValueHTTP1X; set { _explicitNullValueHTTP1X = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/1.x"); else _explicitNullProperties?.Remove("HTTP/1.x"); } }
+        private string _explicitNullValueHTTP1X = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HTTP2 { get; set; }
+        public string? HTTP2 { get => _explicitNullValueHTTP2; set { _explicitNullValueHTTP2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/2"); else _explicitNullProperties?.Remove("HTTP/2"); } }
+        private string? _explicitNullValueHTTP2 = default!;
 #nullable restore
 #else
-        public string HTTP2 { get; set; }
+        public string HTTP2 { get => _explicitNullValueHTTP2; set { _explicitNullValueHTTP2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/2"); else _explicitNullProperties?.Remove("HTTP/2"); } }
+        private string _explicitNullValueHTTP2 = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HTTP3 { get; set; }
+        public string? HTTP3 { get => _explicitNullValueHTTP3; set { _explicitNullValueHTTP3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/3"); else _explicitNullProperties?.Remove("HTTP/3"); } }
+        private string? _explicitNullValueHTTP3 = default!;
 #nullable restore
 #else
-        public string HTTP3 { get; set; }
+        public string HTTP3 { get => _explicitNullValueHTTP3; set { _explicitNullValueHTTP3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/3"); else _explicitNullProperties?.Remove("HTTP/3"); } }
+        private string _explicitNullValueHTTP3 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryByHttpVersion200ResponseResultSummary0"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryByHttpVersion200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryByHttpVersion200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryByHttpVersion200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("HTTP/1.x", HTTP1X);
             writer.WriteStringValue("HTTP/2", HTTP2);
             writer.WriteStringValue("HTTP/3", HTTP3);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

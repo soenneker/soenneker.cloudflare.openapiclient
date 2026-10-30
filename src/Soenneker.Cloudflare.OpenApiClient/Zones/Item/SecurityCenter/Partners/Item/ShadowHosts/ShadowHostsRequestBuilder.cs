@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Partners.Item.ShadowHosts
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\security-center\partners\{partner}\shadow-hosts
+    /// Builds and executes requests for operations under \zones\{zoneId}\security-center\partners\{partner}\shadow-hosts
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShadowHostsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Partners.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShadowHostsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/security-center/partners/{partner}/shadow-hosts{?page*,per_page*}", pathParameters)
+        public ShadowHostsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/security-center/partners/{partner}/shadow-hosts{?cursor*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Partners.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShadowHostsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/security-center/partners/{partner}/shadow-hosts{?page*,per_page*}", rawUrl)
+        public ShadowHostsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/security-center/partners/{partner}/shadow-hosts{?cursor*,per_page*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists partner-discovered hosts beneath the zone that are not in the account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterShadowHostsResponse"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterShadowHostsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Partners.Item.ShadowHosts.ShadowHostsRequestBuilder.ShadowHostsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Partners.Item.ShadowHosts.ShadowHostsRequestBuilder.ShadowHostsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterShadowHostsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Partners.Item.ShadowHosts.ShadowHostsRequestBuilder.ShadowHostsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Partners.Item.ShadowHosts.ShadowHostsRequestBuilder.ShadowHostsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterShadowHostsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterShadowHostsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists partner-discovered hosts beneath the zone that are not in the account.
@@ -90,9 +91,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Partners.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ShadowHostsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Page number for premium partner asset results.</summary>
-            [QueryParameter("page")]
-            public int? Page { get; set; }
+            /// <summary>Opaque cursor from the previous response&apos;s `result_info.cursor`. Omit for the first page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
             /// <summary>Number of premium partner asset results per page. Values other than 1 must be a multiple of 5.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }

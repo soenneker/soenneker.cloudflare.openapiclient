@@ -55,6 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonVersion400Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonVersion500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonVersion200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonVersion200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

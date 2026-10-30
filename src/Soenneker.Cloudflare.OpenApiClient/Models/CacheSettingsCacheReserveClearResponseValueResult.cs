@@ -11,19 +11,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CacheSettingsCacheReserveClearResponseValueResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end_ts") is { } nullNodeEndTs && nullNodeEndTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTs = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("start_ts") is { } nullNodeStartTs && nullNodeStartTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTs = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time that the latest Cache Reserve Clear operation completed.</summary>
-        public DateTimeOffset? EndTs { get; set; }
+        public DateTimeOffset? EndTs { get => _explicitNullValueEndTs; set { _explicitNullValueEndTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_ts"); else _explicitNullProperties?.Remove("end_ts"); } }
+        private DateTimeOffset? _explicitNullValueEndTs = default!;
         /// <summary>ID of the zone setting.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheReserveClearId? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheReserveClearId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CacheReserveClearId? _explicitNullValueId = default!;
         /// <summary>Last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The time that the latest Cache Reserve Clear operation started.</summary>
-        public DateTimeOffset? StartTs { get; set; }
+        public DateTimeOffset? StartTs { get => _explicitNullValueStartTs; set { _explicitNullValueStartTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_ts"); else _explicitNullProperties?.Remove("start_ts"); } }
+        private DateTimeOffset? _explicitNullValueStartTs = default!;
         /// <summary>The current state of the Cache Reserve Clear operation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearState? State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearState? _explicitNullValueState = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearResponseValueResult"/> and sets the default values.
         /// </summary>
@@ -39,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearResponseValueResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearResponseValueResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearResponseValueResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheReserveClearId>("id", Id);
             writer.WriteDateTimeOffsetValue("start_ts", StartTs);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearState>("state", State);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

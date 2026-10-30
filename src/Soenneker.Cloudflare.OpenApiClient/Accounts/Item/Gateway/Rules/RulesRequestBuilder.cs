@@ -72,6 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesListZeroTrustGatewayRules4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection6>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection6.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -97,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesPatchMultipleZeroTrustGatewayRules4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection6>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection6.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -122,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponse4>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponse4.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

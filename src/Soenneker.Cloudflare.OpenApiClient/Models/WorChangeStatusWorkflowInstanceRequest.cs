@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorChangeStatusWorkflowInstanceRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequest();
             if("pause".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorChangeStatusWorkflowInstanceRequestOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1();
+                
             }
             else if("resume".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorChangeStatusWorkflowInstanceRequestOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2();
+                
             }
             else if("terminate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorChangeStatusWorkflowInstanceRequestOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3();
+                
             }
             else if("restart".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorChangeStatusWorkflowInstanceRequestOneOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("pause".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("resume".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("terminate".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("restart".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.WorChangeStatusWorkflowInstanceRequestOneOf1 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf2 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf3 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.WorChangeStatusWorkflowInstanceRequestOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1(), parseNode);
+            if (result.WorChangeStatusWorkflowInstanceRequestOneOf1 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf2 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf3 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.WorChangeStatusWorkflowInstanceRequestOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2(), parseNode);
+            if (result.WorChangeStatusWorkflowInstanceRequestOneOf1 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf2 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf3 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.WorChangeStatusWorkflowInstanceRequestOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3(), parseNode);
+            if (result.WorChangeStatusWorkflowInstanceRequestOneOf1 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf2 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf3 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.WorChangeStatusWorkflowInstanceRequestOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4(), parseNode);
+            if (result.WorChangeStatusWorkflowInstanceRequestOneOf1 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf2 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf3 == null && result.WorChangeStatusWorkflowInstanceRequestOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (WorChangeStatusWorkflowInstanceRequestOneOf1 == null && WorChangeStatusWorkflowInstanceRequestOneOf2 == null && WorChangeStatusWorkflowInstanceRequestOneOf3 == null && WorChangeStatusWorkflowInstanceRequestOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (WorChangeStatusWorkflowInstanceRequestOneOf1 != null && WorChangeStatusWorkflowInstanceRequestOneOf2 == null && WorChangeStatusWorkflowInstanceRequestOneOf3 == null && WorChangeStatusWorkflowInstanceRequestOneOf4 == null) { if (WorChangeStatusWorkflowInstanceRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorChangeStatusWorkflowInstanceRequestOneOf1); return; }
+            if (WorChangeStatusWorkflowInstanceRequestOneOf2 != null && WorChangeStatusWorkflowInstanceRequestOneOf1 == null && WorChangeStatusWorkflowInstanceRequestOneOf3 == null && WorChangeStatusWorkflowInstanceRequestOneOf4 == null) { if (WorChangeStatusWorkflowInstanceRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorChangeStatusWorkflowInstanceRequestOneOf2); return; }
+            if (WorChangeStatusWorkflowInstanceRequestOneOf3 != null && WorChangeStatusWorkflowInstanceRequestOneOf1 == null && WorChangeStatusWorkflowInstanceRequestOneOf2 == null && WorChangeStatusWorkflowInstanceRequestOneOf4 == null) { if (WorChangeStatusWorkflowInstanceRequestOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorChangeStatusWorkflowInstanceRequestOneOf3); return; }
+            if (WorChangeStatusWorkflowInstanceRequestOneOf4 != null && WorChangeStatusWorkflowInstanceRequestOneOf1 == null && WorChangeStatusWorkflowInstanceRequestOneOf2 == null && WorChangeStatusWorkflowInstanceRequestOneOf3 == null) { if (WorChangeStatusWorkflowInstanceRequestOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorChangeStatusWorkflowInstanceRequestOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(WorChangeStatusWorkflowInstanceRequestOneOf1 != null)
             {
+                if (WorChangeStatusWorkflowInstanceRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1>(null, WorChangeStatusWorkflowInstanceRequestOneOf1);
             }
             else if(WorChangeStatusWorkflowInstanceRequestOneOf2 != null)
             {
+                if (WorChangeStatusWorkflowInstanceRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2>(null, WorChangeStatusWorkflowInstanceRequestOneOf2);
             }
             else if(WorChangeStatusWorkflowInstanceRequestOneOf3 != null)
             {
+                if (WorChangeStatusWorkflowInstanceRequestOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3>(null, WorChangeStatusWorkflowInstanceRequestOneOf3);
             }
             else if(WorChangeStatusWorkflowInstanceRequestOneOf4 != null)
             {
+                if (WorChangeStatusWorkflowInstanceRequestOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4>(null, WorChangeStatusWorkflowInstanceRequestOneOf4);
             }
         }

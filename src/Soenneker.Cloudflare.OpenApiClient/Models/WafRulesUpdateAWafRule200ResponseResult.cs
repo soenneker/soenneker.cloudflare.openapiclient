@@ -8,34 +8,39 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WafRulesUpdateAWafRule200ResponseResult : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember1? WafRulesUpdateAWafRule200ResponseResultMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf1? WafRulesUpdateAWafRule200ResponseResultOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember1 WafRulesUpdateAWafRule200ResponseResultMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf1 WafRulesUpdateAWafRule200ResponseResultOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember2? WafRulesUpdateAWafRule200ResponseResultMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf2? WafRulesUpdateAWafRule200ResponseResultOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember2 WafRulesUpdateAWafRule200ResponseResultMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf2 WafRulesUpdateAWafRule200ResponseResultOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember3? WafRulesUpdateAWafRule200ResponseResultMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf3? WafRulesUpdateAWafRule200ResponseResultOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember3 WafRulesUpdateAWafRule200ResponseResultMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf3 WafRulesUpdateAWafRule200ResponseResultOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +52,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResult();
-            return result;
+            if("WafRulesUpdateAWafRule200ResponseResultOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("WafRulesUpdateAWafRule200ResponseResultOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("WafRulesUpdateAWafRule200ResponseResultOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("priority") != null && parseNode.GetChildNode("allowed_modes") != null && parseNode.GetChildNode("mode") != null && (parseNode.GetChildNode("mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("on".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "off".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("group") != null && parseNode.GetChildNode("package_id") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("priority") != null && parseNode.GetChildNode("allowed_modes") != null && parseNode.GetChildNode("default_mode") != null && (parseNode.GetChildNode("default_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("disable".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "simulate".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "block".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "challenge".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("mode") != null && (parseNode.GetChildNode("mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag7 && ("default".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal) || "disable".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal) || "simulate".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal) || "block".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal) || "challenge".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("group") != null && parseNode.GetChildNode("package_id") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("priority") != null && parseNode.GetChildNode("allowed_modes") != null && parseNode.GetChildNode("default_mode") != null && parseNode.GetChildNode("mode") != null && (parseNode.GetChildNode("mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("on".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "off".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("group") != null && parseNode.GetChildNode("package_id") != null))();
+            if (result.WafRulesUpdateAWafRule200ResponseResultOneOf1 == null && result.WafRulesUpdateAWafRule200ResponseResultOneOf2 == null && result.WafRulesUpdateAWafRule200ResponseResultOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.WafRulesUpdateAWafRule200ResponseResultOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf1(), parseNode);
+            if (result.WafRulesUpdateAWafRule200ResponseResultOneOf1 == null && result.WafRulesUpdateAWafRule200ResponseResultOneOf2 == null && result.WafRulesUpdateAWafRule200ResponseResultOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.WafRulesUpdateAWafRule200ResponseResultOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf2(), parseNode);
+            if (result.WafRulesUpdateAWafRule200ResponseResultOneOf1 == null && result.WafRulesUpdateAWafRule200ResponseResultOneOf2 == null && result.WafRulesUpdateAWafRule200ResponseResultOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.WafRulesUpdateAWafRule200ResponseResultOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf3(), parseNode);
+            if (result.WafRulesUpdateAWafRule200ResponseResultOneOf1 == null && result.WafRulesUpdateAWafRule200ResponseResultOneOf2 == null && result.WafRulesUpdateAWafRule200ResponseResultOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,17 +81,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WafRulesUpdateAWafRule200ResponseResultMember1 != null)
+            if(WafRulesUpdateAWafRule200ResponseResultOneOf1 != null)
             {
-                return WafRulesUpdateAWafRule200ResponseResultMember1.GetFieldDeserializers();
+                return WafRulesUpdateAWafRule200ResponseResultOneOf1.GetFieldDeserializers();
             }
-            else if(WafRulesUpdateAWafRule200ResponseResultMember2 != null)
+            else if(WafRulesUpdateAWafRule200ResponseResultOneOf2 != null)
             {
-                return WafRulesUpdateAWafRule200ResponseResultMember2.GetFieldDeserializers();
+                return WafRulesUpdateAWafRule200ResponseResultOneOf2.GetFieldDeserializers();
             }
-            else if(WafRulesUpdateAWafRule200ResponseResultMember3 != null)
+            else if(WafRulesUpdateAWafRule200ResponseResultOneOf3 != null)
             {
-                return WafRulesUpdateAWafRule200ResponseResultMember3.GetFieldDeserializers();
+                return WafRulesUpdateAWafRule200ResponseResultOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -75,18 +101,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (WafRulesUpdateAWafRule200ResponseResultOneOf1 == null && WafRulesUpdateAWafRule200ResponseResultOneOf2 == null && WafRulesUpdateAWafRule200ResponseResultOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (WafRulesUpdateAWafRule200ResponseResultOneOf1 != null && WafRulesUpdateAWafRule200ResponseResultOneOf2 == null && WafRulesUpdateAWafRule200ResponseResultOneOf3 == null) { if (WafRulesUpdateAWafRule200ResponseResultOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WafRulesUpdateAWafRule200ResponseResultOneOf1); return; }
+            if (WafRulesUpdateAWafRule200ResponseResultOneOf2 != null && WafRulesUpdateAWafRule200ResponseResultOneOf1 == null && WafRulesUpdateAWafRule200ResponseResultOneOf3 == null) { if (WafRulesUpdateAWafRule200ResponseResultOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WafRulesUpdateAWafRule200ResponseResultOneOf2); return; }
+            if (WafRulesUpdateAWafRule200ResponseResultOneOf3 != null && WafRulesUpdateAWafRule200ResponseResultOneOf1 == null && WafRulesUpdateAWafRule200ResponseResultOneOf2 == null) { if (WafRulesUpdateAWafRule200ResponseResultOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WafRulesUpdateAWafRule200ResponseResultOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(WafRulesUpdateAWafRule200ResponseResultMember1 != null)
+            if(WafRulesUpdateAWafRule200ResponseResultOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember1>(null, WafRulesUpdateAWafRule200ResponseResultMember1);
+                if (WafRulesUpdateAWafRule200ResponseResultOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf1>(null, WafRulesUpdateAWafRule200ResponseResultOneOf1);
             }
-            else if(WafRulesUpdateAWafRule200ResponseResultMember2 != null)
+            else if(WafRulesUpdateAWafRule200ResponseResultOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember2>(null, WafRulesUpdateAWafRule200ResponseResultMember2);
+                if (WafRulesUpdateAWafRule200ResponseResultOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf2>(null, WafRulesUpdateAWafRule200ResponseResultOneOf2);
             }
-            else if(WafRulesUpdateAWafRule200ResponseResultMember3 != null)
+            else if(WafRulesUpdateAWafRule200ResponseResultOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultMember3>(null, WafRulesUpdateAWafRule200ResponseResultMember3);
+                if (WafRulesUpdateAWafRule200ResponseResultOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafRulesUpdateAWafRule200ResponseResultOneOf3>(null, WafRulesUpdateAWafRule200ResponseResultOneOf3);
             }
         }
     }

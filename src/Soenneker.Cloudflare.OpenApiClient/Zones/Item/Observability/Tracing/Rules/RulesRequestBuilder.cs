@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Observability.Tracing.Rules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\observability\tracing\rules
+    /// Builds and executes requests for operations under \zones\{zoneId}\observability\tracing\rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Observability.Tracing.Ru
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/observability/tracing/rules", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/observability/tracing/rules", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Observability.Tracing.Ru
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/observability/tracing/rules", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/observability/tracing/rules", rawUrl)
         {
         }
         /// <summary>
@@ -59,6 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Observability.Tracing.Ru
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesDelete401Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesDelete403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesDelete500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesDelete200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,6 +90,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Observability.Tracing.Ru
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesGet401Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesGet403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesGet500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -119,6 +123,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Observability.Tracing.Ru
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesUpdate401Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesUpdate403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesUpdate500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesUpdate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingRulesUpdate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

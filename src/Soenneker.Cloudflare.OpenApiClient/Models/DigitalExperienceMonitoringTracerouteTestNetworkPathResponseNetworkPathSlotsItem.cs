@@ -11,32 +11,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("clientToAppRttMs") is { } nullNodeClientToAppRttMs && nullNodeClientToAppRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToAppRttMs = null;
+            if (parseNode.GetChildNode("clientToCfEgressRttMs") is { } nullNodeClientToCfEgressRttMs && nullNodeClientToCfEgressRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToCfEgressRttMs = null;
+            if (parseNode.GetChildNode("clientToCfIngressRttMs") is { } nullNodeClientToCfIngressRttMs && nullNodeClientToCfIngressRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToCfIngressRttMs = null;
+            if (parseNode.GetChildNode("clientToIspRttMs") is { } nullNodeClientToIspRttMs && nullNodeClientToIspRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToIspRttMs = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Round trip time in ms of the client to app mile</summary>
-        public int? ClientToAppRttMs { get; set; }
+        public int? ClientToAppRttMs { get => _explicitNullValueClientToAppRttMs; set { _explicitNullValueClientToAppRttMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToAppRttMs"); else _explicitNullProperties?.Remove("clientToAppRttMs"); } }
+        private int? _explicitNullValueClientToAppRttMs = default!;
         /// <summary>Round trip time in ms of the client to Cloudflare egress mile</summary>
-        public int? ClientToCfEgressRttMs { get; set; }
+        public int? ClientToCfEgressRttMs { get => _explicitNullValueClientToCfEgressRttMs; set { _explicitNullValueClientToCfEgressRttMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToCfEgressRttMs"); else _explicitNullProperties?.Remove("clientToCfEgressRttMs"); } }
+        private int? _explicitNullValueClientToCfEgressRttMs = default!;
         /// <summary>Round trip time in ms of the client to Cloudflare ingress mile</summary>
-        public int? ClientToCfIngressRttMs { get; set; }
+        public int? ClientToCfIngressRttMs { get => _explicitNullValueClientToCfIngressRttMs; set { _explicitNullValueClientToCfIngressRttMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToCfIngressRttMs"); else _explicitNullProperties?.Remove("clientToCfIngressRttMs"); } }
+        private int? _explicitNullValueClientToCfIngressRttMs = default!;
         /// <summary>Round trip time in ms of the client to ISP mile</summary>
-        public int? ClientToIspRttMs { get; set; }
+        public int? ClientToIspRttMs { get => _explicitNullValueClientToIspRttMs; set { _explicitNullValueClientToIspRttMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToIspRttMs"); else _explicitNullProperties?.Remove("clientToIspRttMs"); } }
+        private int? _explicitNullValueClientToIspRttMs = default!;
         /// <summary>API Resource UUID tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get; set; }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsItem"/> and sets the default values.
@@ -53,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("clientToIspRttMs", ClientToIspRttMs);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

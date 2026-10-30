@@ -11,31 +11,55 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigBillingGetTopupEligibilityResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_payment_method_state") is { } nullNodeAccountPaymentMethodState && nullNodeAccountPaymentMethodState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountPaymentMethodState = null;
+            if (parseNode.GetChildNode("aig_customer_state") is { } nullNodeAigCustomerState && nullNodeAigCustomerState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AigCustomerState = null;
+            if (parseNode.GetChildNode("aig_default_payment_method_state") is { } nullNodeAigDefaultPaymentMethodState && nullNodeAigDefaultPaymentMethodState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AigDefaultPaymentMethodState = null;
+            if (parseNode.GetChildNode("display_payment_method") is { } nullNodeDisplayPaymentMethod && nullNodeDisplayPaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayPaymentMethod = null;
+            if (parseNode.GetChildNode("eligible") is { } nullNodeEligible && nullNodeEligible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eligible = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("recommended_action") is { } nullNodeRecommendedAction && nullNodeRecommendedAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecommendedAction = null;
+            if (parseNode.GetChildNode("recoverable") is { } nullNodeRecoverable && nullNodeRecoverable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recoverable = null;
+        }
+
         /// <summary>Account-level payment-method state derived from the provided list.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAccountPaymentMethodState? AccountPaymentMethodState { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAccountPaymentMethodState? AccountPaymentMethodState { get => _explicitNullValueAccountPaymentMethodState; set { _explicitNullValueAccountPaymentMethodState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_payment_method_state"); else _explicitNullProperties?.Remove("account_payment_method_state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAccountPaymentMethodState? _explicitNullValueAccountPaymentMethodState = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>AI Gateway billing profile resolution outcome.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAigCustomerState? AigCustomerState { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAigCustomerState? AigCustomerState { get => _explicitNullValueAigCustomerState; set { _explicitNullValueAigCustomerState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aig_customer_state"); else _explicitNullProperties?.Remove("aig_customer_state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAigCustomerState? _explicitNullValueAigCustomerState = default!;
         /// <summary>Whether AI Gateway billing has a default payment method.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAigDefaultPaymentMethodState? AigDefaultPaymentMethodState { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAigDefaultPaymentMethodState? AigDefaultPaymentMethodState { get => _explicitNullValueAigDefaultPaymentMethodState; set { _explicitNullValueAigDefaultPaymentMethodState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aig_default_payment_method_state"); else _explicitNullProperties?.Remove("aig_default_payment_method_state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAigDefaultPaymentMethodState? _explicitNullValueAigDefaultPaymentMethodState = default!;
         /// <summary>Card to reference in the UI, e.g. &quot;use card ending 1234&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultDisplayPaymentMethod? DisplayPaymentMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultDisplayPaymentMethod? DisplayPaymentMethod { get => _explicitNullValueDisplayPaymentMethod; set { _explicitNullValueDisplayPaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_payment_method"); else _explicitNullProperties?.Remove("display_payment_method"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultDisplayPaymentMethod? _explicitNullValueDisplayPaymentMethod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultDisplayPaymentMethod DisplayPaymentMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultDisplayPaymentMethod DisplayPaymentMethod { get => _explicitNullValueDisplayPaymentMethod; set { _explicitNullValueDisplayPaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_payment_method"); else _explicitNullProperties?.Remove("display_payment_method"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultDisplayPaymentMethod _explicitNullValueDisplayPaymentMethod = default!;
 #endif
         /// <summary>True only when reason === ELIGIBLE.</summary>
-        public bool? Eligible { get; set; }
+        public bool? Eligible { get => _explicitNullValueEligible; set { _explicitNullValueEligible = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eligible"); else _explicitNullProperties?.Remove("eligible"); } }
+        private bool? _explicitNullValueEligible = default!;
         /// <summary>Canonical eligibility outcome for display and support triage.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultReason? Reason { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultReason? _explicitNullValueReason = default!;
         /// <summary>Machine-readable next step.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultRecommendedAction? RecommendedAction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultRecommendedAction? RecommendedAction { get => _explicitNullValueRecommendedAction; set { _explicitNullValueRecommendedAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommended_action"); else _explicitNullProperties?.Remove("recommended_action"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultRecommendedAction? _explicitNullValueRecommendedAction = default!;
         /// <summary>Whether the customer can resolve this themselves (vs contact support).</summary>
-        public bool? Recoverable { get; set; }
+        public bool? Recoverable { get => _explicitNullValueRecoverable; set { _explicitNullValueRecoverable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recoverable"); else _explicitNullProperties?.Remove("recoverable"); } }
+        private bool? _explicitNullValueRecoverable = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult"/> and sets the default values.
         /// </summary>
@@ -51,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultReason>("reason", Reason);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultRecommendedAction>("recommended_action", RecommendedAction);
             writer.WriteBoolValue("recoverable", Recoverable);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

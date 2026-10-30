@@ -11,29 +11,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReportsAccountIndustryPatchResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("industry") is { } nullNodeIndustry && nullNodeIndustry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Industry = null;
+            if (parseNode.GetChildNode("unlock_time") is { } nullNodeUnlockTime && nullNodeUnlockTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnlockTime = null;
+            if (parseNode.GetChildNode("valid_from") is { } nullNodeValidFrom && nullNodeValidFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidFrom = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Industry string value</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry? Industry { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry? Industry { get => _explicitNullValueIndustry; set { _explicitNullValueIndustry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industry"); else _explicitNullProperties?.Remove("industry"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry? _explicitNullValueIndustry = default!;
         /// <summary>Time when the industry can be updated again</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnlockTime { get; set; }
+        public string? UnlockTime { get => _explicitNullValueUnlockTime; set { _explicitNullValueUnlockTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unlock_time"); else _explicitNullProperties?.Remove("unlock_time"); } }
+        private string? _explicitNullValueUnlockTime = default!;
 #nullable restore
 #else
-        public string UnlockTime { get; set; }
+        public string UnlockTime { get => _explicitNullValueUnlockTime; set { _explicitNullValueUnlockTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unlock_time"); else _explicitNullProperties?.Remove("unlock_time"); } }
+        private string _explicitNullValueUnlockTime = default!;
 #endif
         /// <summary>Start date for this industry association</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidFrom { get; set; }
+        public string? ValidFrom { get => _explicitNullValueValidFrom; set { _explicitNullValueValidFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_from"); else _explicitNullProperties?.Remove("valid_from"); } }
+        private string? _explicitNullValueValidFrom = default!;
 #nullable restore
 #else
-        public string ValidFrom { get; set; }
+        public string ValidFrom { get => _explicitNullValueValidFrom; set { _explicitNullValueValidFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_from"); else _explicitNullProperties?.Remove("valid_from"); } }
+        private string _explicitNullValueValidFrom = default!;
 #endif
         /// <summary>Version number for this association</summary>
-        public int? Version { get; set; }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponse"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponse();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("unlock_time", UnlockTime);
             writer.WriteStringValue("valid_from", ValidFrom);
             writer.WriteIntValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

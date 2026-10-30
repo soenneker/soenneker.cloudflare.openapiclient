@@ -11,35 +11,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("outputs") is { } nullNodeOutputs && nullNodeOutputs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outputs = null;
+            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The outputs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Outputs? Outputs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Outputs? Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Outputs? _explicitNullValueOutputs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Outputs Outputs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Outputs Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Outputs _explicitNullValueOutputs = default!;
 #endif
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Properties? Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Properties? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Properties? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Properties Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Properties Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Properties _explicitNullValueProperties = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ModelType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ModelType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ModelType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5"/> and sets the default values.
         /// </summary>
@@ -55,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Outputs>("outputs", Outputs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigPostGatewayDynamicRouteDeployment200ResponseResultElementsItemOneOf5Properties>("properties", Properties);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ModelType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

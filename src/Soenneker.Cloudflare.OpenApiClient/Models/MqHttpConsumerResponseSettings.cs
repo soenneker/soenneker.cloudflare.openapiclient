@@ -11,17 +11,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MqHttpConsumerResponseSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("batch_size") is { } nullNodeBatchSize && nullNodeBatchSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchSize = null;
+            if (parseNode.GetChildNode("max_retries") is { } nullNodeMaxRetries && nullNodeMaxRetries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRetries = null;
+            if (parseNode.GetChildNode("retry_delay") is { } nullNodeRetryDelay && nullNodeRetryDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryDelay = null;
+            if (parseNode.GetChildNode("visibility_timeout_ms") is { } nullNodeVisibilityTimeoutMs && nullNodeVisibilityTimeoutMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisibilityTimeoutMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of messages to include in a batch.</summary>
-        public double? BatchSize { get; set; }
+        public double? BatchSize { get => _explicitNullValueBatchSize; set { _explicitNullValueBatchSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_size"); else _explicitNullProperties?.Remove("batch_size"); } }
+        private double? _explicitNullValueBatchSize = default!;
         /// <summary>The maximum number of retries</summary>
-        public double? MaxRetries { get; set; }
+        public double? MaxRetries { get => _explicitNullValueMaxRetries; set { _explicitNullValueMaxRetries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_retries"); else _explicitNullProperties?.Remove("max_retries"); } }
+        private double? _explicitNullValueMaxRetries = default!;
         /// <summary>The number of seconds to delay before making the message available for another attempt.</summary>
-        public double? RetryDelay { get; set; }
+        public double? RetryDelay { get => _explicitNullValueRetryDelay; set { _explicitNullValueRetryDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_delay"); else _explicitNullProperties?.Remove("retry_delay"); } }
+        private double? _explicitNullValueRetryDelay = default!;
         /// <summary>The number of milliseconds that a message is exclusively leased. After the timeout, the message becomes available for another attempt.</summary>
-        public double? VisibilityTimeoutMs { get; set; }
+        public double? VisibilityTimeoutMs { get => _explicitNullValueVisibilityTimeoutMs; set { _explicitNullValueVisibilityTimeoutMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility_timeout_ms"); else _explicitNullProperties?.Remove("visibility_timeout_ms"); } }
+        private double? _explicitNullValueVisibilityTimeoutMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponseSettings"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponseSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponseSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponseSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("max_retries", MaxRetries);
             writer.WriteDoubleValue("retry_delay", RetryDelay);
             writer.WriteDoubleValue("visibility_timeout_ms", VisibilityTimeoutMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

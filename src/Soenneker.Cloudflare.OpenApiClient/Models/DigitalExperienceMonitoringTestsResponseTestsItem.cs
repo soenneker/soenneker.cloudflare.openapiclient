@@ -11,118 +11,170 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DigitalExperienceMonitoringTestsResponseTestsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("httpResults") is { } nullNodeHttpResults && nullNodeHttpResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpResults = null;
+            if (parseNode.GetChildNode("httpResultsByColo") is { } nullNodeHttpResultsByColo && nullNodeHttpResultsByColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpResultsByColo = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("targeted") is { } nullNodeTargeted && nullNodeTargeted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Targeted = null;
+            if (parseNode.GetChildNode("target_policies") is { } nullNodeTargetPolicies && nullNodeTargetPolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetPolicies = null;
+            if (parseNode.GetChildNode("tracerouteResults") is { } nullNodeTracerouteResults && nullNodeTracerouteResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TracerouteResults = null;
+            if (parseNode.GetChildNode("tracerouteResultsByColo") is { } nullNodeTracerouteResultsByColo && nullNodeTracerouteResultsByColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TracerouteResultsByColo = null;
+            if (parseNode.GetChildNode("updated") is { } nullNodeUpdated && nullNodeUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updated = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>date the test was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Created { get; set; }
+        public string? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private string? _explicitNullValueCreated = default!;
 #nullable restore
 #else
-        public string Created { get; set; }
+        public string Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private string _explicitNullValueCreated = default!;
 #endif
         /// <summary>the test description defined during configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>if true, then the test will run on targeted devices. Else, the test will not run.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get; set; }
+        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        private string? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public string Host { get; set; }
+        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        private string _explicitNullValueHost = default!;
 #endif
         /// <summary>The httpResults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResults? HttpResults { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResults? HttpResults { get => _explicitNullValueHttpResults; set { _explicitNullValueHttpResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpResults"); else _explicitNullProperties?.Remove("httpResults"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResults? _explicitNullValueHttpResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResults HttpResults { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResults HttpResults { get => _explicitNullValueHttpResults; set { _explicitNullValueHttpResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpResults"); else _explicitNullProperties?.Remove("httpResults"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResults _explicitNullValueHttpResults = default!;
 #endif
         /// <summary>The httpResultsByColo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResultsByColoItem>? HttpResultsByColo { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResultsByColoItem>? HttpResultsByColo { get => _explicitNullValueHttpResultsByColo; set { _explicitNullValueHttpResultsByColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpResultsByColo"); else _explicitNullProperties?.Remove("httpResultsByColo"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResultsByColoItem>? _explicitNullValueHttpResultsByColo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResultsByColoItem> HttpResultsByColo { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResultsByColoItem> HttpResultsByColo { get => _explicitNullValueHttpResultsByColo; set { _explicitNullValueHttpResultsByColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpResultsByColo"); else _explicitNullProperties?.Remove("httpResultsByColo"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemHttpResultsByColoItem> _explicitNullValueHttpResultsByColo = default!;
 #endif
         /// <summary>API Resource UUID tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The interval at which the synthetic application test is set to run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Interval { get; set; }
+        public string? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private string? _explicitNullValueInterval = default!;
 #nullable restore
 #else
-        public string Interval { get; set; }
+        public string Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private string _explicitNullValueInterval = default!;
 #endif
         /// <summary>test type, http or traceroute</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemKind? Kind { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemKind? _explicitNullValueKind = default!;
         /// <summary>for HTTP, the method to use when running the test</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method { get; set; }
+        public string? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private string? _explicitNullValueMethod = default!;
 #nullable restore
 #else
-        public string Method { get; set; }
+        public string Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private string _explicitNullValueMethod = default!;
 #endif
         /// <summary>name given to this test</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The targeted property</summary>
-        public bool? Targeted { get; set; }
+        public bool? Targeted { get => _explicitNullValueTargeted; set { _explicitNullValueTargeted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targeted"); else _explicitNullProperties?.Remove("targeted"); } }
+        private bool? _explicitNullValueTargeted = default!;
         /// <summary>The target_policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTargetPoliciesItem>? TargetPolicies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTargetPoliciesItem>? TargetPolicies { get => _explicitNullValueTargetPolicies; set { _explicitNullValueTargetPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_policies"); else _explicitNullProperties?.Remove("target_policies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTargetPoliciesItem>? _explicitNullValueTargetPolicies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTargetPoliciesItem> TargetPolicies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTargetPoliciesItem> TargetPolicies { get => _explicitNullValueTargetPolicies; set { _explicitNullValueTargetPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_policies"); else _explicitNullProperties?.Remove("target_policies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTargetPoliciesItem> _explicitNullValueTargetPolicies = default!;
 #endif
         /// <summary>The tracerouteResults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResults? TracerouteResults { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResults? TracerouteResults { get => _explicitNullValueTracerouteResults; set { _explicitNullValueTracerouteResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteResults"); else _explicitNullProperties?.Remove("tracerouteResults"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResults? _explicitNullValueTracerouteResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResults TracerouteResults { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResults TracerouteResults { get => _explicitNullValueTracerouteResults; set { _explicitNullValueTracerouteResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteResults"); else _explicitNullProperties?.Remove("tracerouteResults"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResults _explicitNullValueTracerouteResults = default!;
 #endif
         /// <summary>The tracerouteResultsByColo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResultsByColoItem>? TracerouteResultsByColo { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResultsByColoItem>? TracerouteResultsByColo { get => _explicitNullValueTracerouteResultsByColo; set { _explicitNullValueTracerouteResultsByColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteResultsByColo"); else _explicitNullProperties?.Remove("tracerouteResultsByColo"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResultsByColoItem>? _explicitNullValueTracerouteResultsByColo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResultsByColoItem> TracerouteResultsByColo { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResultsByColoItem> TracerouteResultsByColo { get => _explicitNullValueTracerouteResultsByColo; set { _explicitNullValueTracerouteResultsByColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteResultsByColo"); else _explicitNullProperties?.Remove("tracerouteResultsByColo"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResultsByColoItem> _explicitNullValueTracerouteResultsByColo = default!;
 #endif
         /// <summary>The updated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Updated { get; set; }
+        public string? Updated { get => _explicitNullValueUpdated; set { _explicitNullValueUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated"); else _explicitNullProperties?.Remove("updated"); } }
+        private string? _explicitNullValueUpdated = default!;
 #nullable restore
 #else
-        public string Updated { get; set; }
+        public string Updated { get => _explicitNullValueUpdated; set { _explicitNullValueUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated"); else _explicitNullProperties?.Remove("updated"); } }
+        private string _explicitNullValueUpdated = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItem"/> and sets the default values.
@@ -139,7 +191,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -190,6 +242,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResults>("tracerouteResults", TracerouteResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItemTracerouteResultsByColoItem>("tracerouteResultsByColo", TracerouteResultsByColo);
             writer.WriteStringValue("updated", Updated);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

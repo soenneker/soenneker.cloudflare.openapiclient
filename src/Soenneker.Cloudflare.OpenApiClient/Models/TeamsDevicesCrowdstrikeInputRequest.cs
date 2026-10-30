@@ -11,63 +11,98 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TeamsDevicesCrowdstrikeInputRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("connection_id") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
+            if (parseNode.GetChildNode("last_seen") is { } nullNodeLastSeen && nullNodeLastSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeen = null;
+            if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
+            if (parseNode.GetChildNode("os") is { } nullNodeOs && nullNodeOs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Os = null;
+            if (parseNode.GetChildNode("overall") is { } nullNodeOverall && nullNodeOverall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overall = null;
+            if (parseNode.GetChildNode("sensor_config") is { } nullNodeSensorConfig && nullNodeSensorConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SensorConfig = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("versionOperator") is { } nullNodeVersionOperator && nullNodeVersionOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionOperator = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Posture Integration ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get; set; }
+        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        private string? _explicitNullValueConnectionId = default!;
 #nullable restore
 #else
-        public string ConnectionId { get; set; }
+        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        private string _explicitNullValueConnectionId = default!;
 #endif
         /// <summary>For more details on last seen, please refer to the Crowdstrike documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastSeen { get; set; }
+        public string? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_seen"); else _explicitNullProperties?.Remove("last_seen"); } }
+        private string? _explicitNullValueLastSeen = default!;
 #nullable restore
 #else
-        public string LastSeen { get; set; }
+        public string LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_seen"); else _explicitNullProperties?.Remove("last_seen"); } }
+        private string _explicitNullValueLastSeen = default!;
 #endif
         /// <summary>Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestOperator? Operator { get; set; }
+#nullable enable
+        public string? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        private string? _explicitNullValueOperator = default!;
+#nullable restore
         /// <summary>Os Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Os { get; set; }
+        public string? Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
+        private string? _explicitNullValueOs = default!;
 #nullable restore
 #else
-        public string Os { get; set; }
+        public string Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
+        private string _explicitNullValueOs = default!;
 #endif
         /// <summary>Overall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Overall { get; set; }
+        public string? Overall { get => _explicitNullValueOverall; set { _explicitNullValueOverall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall"); else _explicitNullProperties?.Remove("overall"); } }
+        private string? _explicitNullValueOverall = default!;
 #nullable restore
 #else
-        public string Overall { get; set; }
+        public string Overall { get => _explicitNullValueOverall; set { _explicitNullValueOverall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall"); else _explicitNullProperties?.Remove("overall"); } }
+        private string _explicitNullValueOverall = default!;
 #endif
         /// <summary>SensorConfig.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SensorConfig { get; set; }
+        public string? SensorConfig { get => _explicitNullValueSensorConfig; set { _explicitNullValueSensorConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensor_config"); else _explicitNullProperties?.Remove("sensor_config"); } }
+        private string? _explicitNullValueSensorConfig = default!;
 #nullable restore
 #else
-        public string SensorConfig { get; set; }
+        public string SensorConfig { get => _explicitNullValueSensorConfig; set { _explicitNullValueSensorConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensor_config"); else _explicitNullProperties?.Remove("sensor_config"); } }
+        private string _explicitNullValueSensorConfig = default!;
 #endif
         /// <summary>For more details on state, please refer to the Crowdstrike documentation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestState? State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestState? _explicitNullValueState = default!;
         /// <summary>Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get; set; }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get; set; }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>Version Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestVersionOperator? VersionOperator { get; set; }
+#nullable enable
+        public string? VersionOperator { get => _explicitNullValueVersionOperator; set { _explicitNullValueVersionOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionOperator"); else _explicitNullProperties?.Remove("versionOperator"); } }
+        private string? _explicitNullValueVersionOperator = default!;
+#nullable restore
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest"/> and sets the default values.
         /// </summary>
@@ -83,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,13 +130,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "connection_id", n => { ConnectionId = n.GetStringValue(); } },
                 { "last_seen", n => { LastSeen = n.GetStringValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestOperator>(); } },
+                { "operator", n => { Operator = n.GetStringValue(); } },
                 { "os", n => { Os = n.GetStringValue(); } },
                 { "overall", n => { Overall = n.GetStringValue(); } },
                 { "sensor_config", n => { SensorConfig = n.GetStringValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestState>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
-                { "versionOperator", n => { VersionOperator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestVersionOperator>(); } },
+                { "versionOperator", n => { VersionOperator = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -113,13 +148,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connection_id", ConnectionId);
             writer.WriteStringValue("last_seen", LastSeen);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestOperator>("operator", Operator);
+            writer.WriteStringValue("operator", Operator);
             writer.WriteStringValue("os", Os);
             writer.WriteStringValue("overall", Overall);
             writer.WriteStringValue("sensor_config", SensorConfig);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestState>("state", State);
             writer.WriteStringValue("version", Version);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestVersionOperator>("versionOperator", VersionOperator);
+            writer.WriteStringValue("versionOperator", VersionOperator);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,48 +12,70 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesetsSetCacheSettingsCustomCacheKey : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cookie") is { } nullNodeCookie && nullNodeCookie.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cookie = null;
+            if (parseNode.GetChildNode("header") is { } nullNodeHeader && nullNodeHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Header = null;
+            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("query_string") is { } nullNodeQueryString && nullNodeQueryString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryString = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Which cookies to include in the cache key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyCookie? Cookie { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyCookie? Cookie { get => _explicitNullValueCookie; set { _explicitNullValueCookie = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie"); else _explicitNullProperties?.Remove("cookie"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyCookie? _explicitNullValueCookie = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyCookie Cookie { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyCookie Cookie { get => _explicitNullValueCookie; set { _explicitNullValueCookie = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie"); else _explicitNullProperties?.Remove("cookie"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyCookie _explicitNullValueCookie = default!;
 #endif
         /// <summary>Which headers to include in the cache key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeader? Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeader? Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeader? _explicitNullValueHeader = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeader Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeader Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeader _explicitNullValueHeader = default!;
 #endif
         /// <summary>How to use the host in the cache key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHost? Host { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHost? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHost? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHost Host { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHost Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHost _explicitNullValueHost = default!;
 #endif
         /// <summary>Which query string parameters to include in or exclude from the cache key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyQueryString? QueryString { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyQueryString? QueryString { get => _explicitNullValueQueryString; set { _explicitNullValueQueryString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_string"); else _explicitNullProperties?.Remove("query_string"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyQueryString? _explicitNullValueQueryString = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyQueryString QueryString { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyQueryString QueryString { get => _explicitNullValueQueryString; set { _explicitNullValueQueryString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_string"); else _explicitNullProperties?.Remove("query_string"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyQueryString _explicitNullValueQueryString = default!;
 #endif
         /// <summary>How to use characteristics of the request user agent in the cache key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyUser? User { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyUser? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyUser User { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyUser User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyUser _explicitNullValueUser = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHost>("host", Host);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyQueryString>("query_string", QueryString);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyUser>("user", User);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

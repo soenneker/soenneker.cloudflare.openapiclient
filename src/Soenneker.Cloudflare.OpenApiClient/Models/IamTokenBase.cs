@@ -11,16 +11,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class IamTokenBase : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
+            if (parseNode.GetChildNode("expires_on") is { } nullNodeExpiresOn && nullNodeExpiresOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresOn = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("not_before") is { } nullNodeNotBefore && nullNodeNotBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotBefore = null;
+            if (parseNode.GetChildNode("policies") is { } nullNodePolicies && nullNodePolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policies = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition? Condition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition? _explicitNullValueCondition = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition Condition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition _explicitNullValueCondition = default!;
 #endif
         /// <summary>The email address of the user who created the token at the time ofcreation. Only present for Account Owned API Tokens when a creator emailwas available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +46,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CreatorEmailAtCreation { get; private set; }
 #endif
         /// <summary>The expiration time on or after which the JWT MUST NOT be accepted for processing.</summary>
-        public DateTimeOffset? ExpiresOn { get; set; }
+        public DateTimeOffset? ExpiresOn { get => _explicitNullValueExpiresOn; set { _explicitNullValueExpiresOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_on"); else _explicitNullProperties?.Remove("expires_on"); } }
+        private DateTimeOffset? _explicitNullValueExpiresOn = default!;
         /// <summary>Token identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,20 +65,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Token name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The time before which the token MUST NOT be accepted for processing.</summary>
-        public DateTimeOffset? NotBefore { get; set; }
+        public DateTimeOffset? NotBefore { get => _explicitNullValueNotBefore; set { _explicitNullValueNotBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_before"); else _explicitNullProperties?.Remove("not_before"); } }
+        private DateTimeOffset? _explicitNullValueNotBefore = default!;
         /// <summary>List of access policies assigned to the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources>? Policies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources>? Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources>? _explicitNullValuePolicies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources> Policies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources> Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources> _explicitNullValuePolicies = default!;
 #endif
         /// <summary>The identifier of the service that provisioned the token. For anOAuth-provisioned token, this is the OAuth client identifier. Presentwhen `provisioner_type` is present and null when the identifier isunavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +102,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ProvisionerType { get; private set; }
 #endif
         /// <summary>Status of the token.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus? _explicitNullValueStatus = default!;
+        /// <summary>The prefix of the token value, before the first underscore. Use it with`token_suffix` to identify a token. Only present for tokens created orrolled after this field was added.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TokenPrefix { get; private set; }
+#nullable restore
+#else
+        public string TokenPrefix { get; private set; }
+#endif
+        /// <summary>The last 4 characters of the token value. Use it with `token_prefix` toidentify a token. It is not unique. Only present for tokens created orrolled after this field was added.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TokenSuffix { get; private set; }
+#nullable restore
+#else
+        public string TokenSuffix { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenBase"/> and sets the default values.
         /// </summary>
@@ -97,7 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenBase();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenBase(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,6 +158,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "provisioner_id", n => { ProvisionerId = n.GetStringValue(); } },
                 { "provisioner_type", n => { ProvisionerType = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus>(); } },
+                { "token_prefix", n => { TokenPrefix = n.GetStringValue(); } },
+                { "token_suffix", n => { TokenSuffix = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -135,6 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("not_before", NotBefore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources>("policies", Policies);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

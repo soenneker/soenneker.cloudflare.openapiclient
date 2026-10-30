@@ -11,61 +11,100 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersAiPostRunModelRequestTextGenerationMessages : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("frequency_penalty") is { } nullNodeFrequencyPenalty && nullNodeFrequencyPenalty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyPenalty = null;
+            if (parseNode.GetChildNode("functions") is { } nullNodeFunctions && nullNodeFunctions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Functions = null;
+            if (parseNode.GetChildNode("max_tokens") is { } nullNodeMaxTokens && nullNodeMaxTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTokens = null;
+            if (parseNode.GetChildNode("messages") is { } nullNodeMessages && nullNodeMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messages = null;
+            if (parseNode.GetChildNode("presence_penalty") is { } nullNodePresencePenalty && nullNodePresencePenalty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresencePenalty = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("repetition_penalty") is { } nullNodeRepetitionPenalty && nullNodeRepetitionPenalty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepetitionPenalty = null;
+            if (parseNode.GetChildNode("response_format") is { } nullNodeResponseFormat && nullNodeResponseFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFormat = null;
+            if (parseNode.GetChildNode("seed") is { } nullNodeSeed && nullNodeSeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seed = null;
+            if (parseNode.GetChildNode("stream") is { } nullNodeStream && nullNodeStream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stream = null;
+            if (parseNode.GetChildNode("temperature") is { } nullNodeTemperature && nullNodeTemperature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Temperature = null;
+            if (parseNode.GetChildNode("tools") is { } nullNodeTools && nullNodeTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tools = null;
+            if (parseNode.GetChildNode("top_k") is { } nullNodeTopK && nullNodeTopK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopK = null;
+            if (parseNode.GetChildNode("top_p") is { } nullNodeTopP && nullNodeTopP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopP = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Decreases the likelihood of the model repeating the same lines verbatim.</summary>
-        public double? FrequencyPenalty { get; set; }
+        public double? FrequencyPenalty { get => _explicitNullValueFrequencyPenalty; set { _explicitNullValueFrequencyPenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency_penalty"); else _explicitNullProperties?.Remove("frequency_penalty"); } }
+        private double? _explicitNullValueFrequencyPenalty = default!;
         /// <summary>The functions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesFunctionsItem>? Functions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesFunctionsItem>? Functions { get => _explicitNullValueFunctions; set { _explicitNullValueFunctions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions"); else _explicitNullProperties?.Remove("functions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesFunctionsItem>? _explicitNullValueFunctions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesFunctionsItem> Functions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesFunctionsItem> Functions { get => _explicitNullValueFunctions; set { _explicitNullValueFunctions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions"); else _explicitNullProperties?.Remove("functions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesFunctionsItem> _explicitNullValueFunctions = default!;
 #endif
         /// <summary>The maximum number of tokens to generate in the response.</summary>
-        public int? MaxTokens { get; set; }
+        public int? MaxTokens { get => _explicitNullValueMaxTokens; set { _explicitNullValueMaxTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_tokens"); else _explicitNullProperties?.Remove("max_tokens"); } }
+        private int? _explicitNullValueMaxTokens = default!;
         /// <summary>An array of message objects representing the conversation history.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesMessagesItem>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesMessagesItem>? Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesMessagesItem>? _explicitNullValueMessages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesMessagesItem> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesMessagesItem> Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesMessagesItem> _explicitNullValueMessages = default!;
 #endif
         /// <summary>Increases the likelihood of the model introducing new topics.</summary>
-        public double? PresencePenalty { get; set; }
+        public double? PresencePenalty { get => _explicitNullValuePresencePenalty; set { _explicitNullValuePresencePenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presence_penalty"); else _explicitNullProperties?.Remove("presence_penalty"); } }
+        private double? _explicitNullValuePresencePenalty = default!;
         /// <summary>If true, a chat template is not applied and you must adhere to the specific model&apos;s expected formatting.</summary>
-        public bool? Raw { get; set; }
+        public bool? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private bool? _explicitNullValueRaw = default!;
         /// <summary>Penalty for repeated tokens; higher values discourage repetition.</summary>
-        public double? RepetitionPenalty { get; set; }
+        public double? RepetitionPenalty { get => _explicitNullValueRepetitionPenalty; set { _explicitNullValueRepetitionPenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repetition_penalty"); else _explicitNullProperties?.Remove("repetition_penalty"); } }
+        private double? _explicitNullValueRepetitionPenalty = default!;
         /// <summary>The response_format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesResponseFormat? ResponseFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesResponseFormat? ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesResponseFormat? _explicitNullValueResponseFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesResponseFormat ResponseFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesResponseFormat ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesResponseFormat _explicitNullValueResponseFormat = default!;
 #endif
         /// <summary>Random seed for reproducibility of the generation.</summary>
-        public int? Seed { get; set; }
+        public int? Seed { get => _explicitNullValueSeed; set { _explicitNullValueSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seed"); else _explicitNullProperties?.Remove("seed"); } }
+        private int? _explicitNullValueSeed = default!;
         /// <summary>If true, the response will be streamed back incrementally using SSE, Server Sent Events.</summary>
-        public bool? Stream { get; set; }
+        public bool? Stream { get => _explicitNullValueStream; set { _explicitNullValueStream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream"); else _explicitNullProperties?.Remove("stream"); } }
+        private bool? _explicitNullValueStream = default!;
         /// <summary>Controls the randomness of the output; higher values produce more random results.</summary>
-        public double? Temperature { get; set; }
+        public double? Temperature { get => _explicitNullValueTemperature; set { _explicitNullValueTemperature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temperature"); else _explicitNullProperties?.Remove("temperature"); } }
+        private double? _explicitNullValueTemperature = default!;
         /// <summary>A list of tools available for the assistant to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem>? Tools { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem>? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem>? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem> Tools { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem> Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem> _explicitNullValueTools = default!;
 #endif
         /// <summary>Limits the AI to choose from the top &apos;k&apos; most probable words. Lower values make responses more focused; higher values introduce more variety and potential surprises.</summary>
-        public int? TopK { get; set; }
+        public int? TopK { get => _explicitNullValueTopK; set { _explicitNullValueTopK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_k"); else _explicitNullProperties?.Remove("top_k"); } }
+        private int? _explicitNullValueTopK = default!;
         /// <summary>Adjusts the creativity of the AI&apos;s responses by controlling how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.</summary>
-        public double? TopP { get; set; }
+        public double? TopP { get => _explicitNullValueTopP; set { _explicitNullValueTopP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_p"); else _explicitNullProperties?.Remove("top_p"); } }
+        private double? _explicitNullValueTopP = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages"/> and sets the default values.
         /// </summary>
@@ -85,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +171,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem>("tools", Tools);
             writer.WriteIntValue("top_k", TopK);
             writer.WriteDoubleValue("top_p", TopP);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

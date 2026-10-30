@@ -12,21 +12,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrapiPostCrawlRequestAnyOf1Viewport : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deviceScaleFactor") is { } nullNodeDeviceScaleFactor && nullNodeDeviceScaleFactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceScaleFactor = null;
+            if (parseNode.GetChildNode("hasTouch") is { } nullNodeHasTouch && nullNodeHasTouch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasTouch = null;
+            if (parseNode.GetChildNode("height") is { } nullNodeHeight && nullNodeHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Height = null;
+            if (parseNode.GetChildNode("isLandscape") is { } nullNodeIsLandscape && nullNodeIsLandscape.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLandscape = null;
+            if (parseNode.GetChildNode("isMobile") is { } nullNodeIsMobile && nullNodeIsMobile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMobile = null;
+            if (parseNode.GetChildNode("width") is { } nullNodeWidth && nullNodeWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Width = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The deviceScaleFactor property</summary>
-        public double? DeviceScaleFactor { get; set; }
+        public double? DeviceScaleFactor { get => _explicitNullValueDeviceScaleFactor; set { _explicitNullValueDeviceScaleFactor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceScaleFactor"); else _explicitNullProperties?.Remove("deviceScaleFactor"); } }
+        private double? _explicitNullValueDeviceScaleFactor = default!;
         /// <summary>The hasTouch property</summary>
-        public bool? HasTouch { get; set; }
+        public bool? HasTouch { get => _explicitNullValueHasTouch; set { _explicitNullValueHasTouch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasTouch"); else _explicitNullProperties?.Remove("hasTouch"); } }
+        private bool? _explicitNullValueHasTouch = default!;
         /// <summary>The height property</summary>
-        public double? Height { get; set; }
+        public double? Height { get => _explicitNullValueHeight; set { _explicitNullValueHeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("height"); else _explicitNullProperties?.Remove("height"); } }
+        private double? _explicitNullValueHeight = default!;
         /// <summary>The isLandscape property</summary>
-        public bool? IsLandscape { get; set; }
+        public bool? IsLandscape { get => _explicitNullValueIsLandscape; set { _explicitNullValueIsLandscape = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isLandscape"); else _explicitNullProperties?.Remove("isLandscape"); } }
+        private bool? _explicitNullValueIsLandscape = default!;
         /// <summary>The isMobile property</summary>
-        public bool? IsMobile { get; set; }
+        public bool? IsMobile { get => _explicitNullValueIsMobile; set { _explicitNullValueIsMobile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMobile"); else _explicitNullProperties?.Remove("isMobile"); } }
+        private bool? _explicitNullValueIsMobile = default!;
         /// <summary>The width property</summary>
-        public double? Width { get; set; }
+        public double? Width { get => _explicitNullValueWidth; set { _explicitNullValueWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width"); else _explicitNullProperties?.Remove("width"); } }
+        private double? _explicitNullValueWidth = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport"/> and sets the default values.
         /// </summary>
@@ -42,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1Viewport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("isLandscape", IsLandscape);
             writer.WriteBoolValue("isMobile", IsMobile);
             writer.WriteDoubleValue("width", Width);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

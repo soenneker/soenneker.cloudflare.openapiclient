@@ -12,18 +12,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BillableUsageApiUsageInfoResponseResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("covered") is { } nullNodeCovered && nullNodeCovered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Covered = null;
+            if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the account is covered.</summary>
-        public bool? Covered { get; set; }
+        public bool? Covered { get => _explicitNullValueCovered; set { _explicitNullValueCovered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("covered"); else _explicitNullProperties?.Remove("covered"); } }
+        private bool? _explicitNullValueCovered = default!;
         /// <summary>List of subscriptions for the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResultSubscriptionsItem>? Subscriptions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResultSubscriptionsItem>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResultSubscriptionsItem>? _explicitNullValueSubscriptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResultSubscriptionsItem> Subscriptions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResultSubscriptionsItem> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResultSubscriptionsItem> _explicitNullValueSubscriptions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResult"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("covered", Covered);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageInfoResponseResultSubscriptionsItem>("subscriptions", Subscriptions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -65,6 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Subscriptions.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountSubscriptionsDeleteSubscription200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccountSubscriptionsDeleteSubscription200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Subscriptions.Item
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountSubscriptionResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountSubscriptionResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -115,6 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Subscriptions.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountSubscriptionResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountSubscriptionResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

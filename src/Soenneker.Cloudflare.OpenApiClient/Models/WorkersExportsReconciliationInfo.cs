@@ -12,37 +12,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersExportsReconciliationInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("class") is { } nullNodeClass && nullNodeClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Class = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("namespace_id") is { } nullNodeNamespaceId && nullNodeNamespaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NamespaceId = null;
+            if (parseNode.GetChildNode("referencing_scripts") is { } nullNodeReferencingScripts && nullNodeReferencingScripts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencingScripts = null;
+            if (parseNode.GetChildNode("scenario") is { } nullNodeScenario && nullNodeScenario.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scenario = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The class name the info entry is about.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Class { get; set; }
+        public string? Class { get => _explicitNullValueClass; set { _explicitNullValueClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class"); else _explicitNullProperties?.Remove("class"); } }
+        private string? _explicitNullValueClass = default!;
 #nullable restore
 #else
-        public string Class { get; set; }
+        public string Class { get => _explicitNullValueClass; set { _explicitNullValueClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class"); else _explicitNullProperties?.Remove("class"); } }
+        private string _explicitNullValueClass = default!;
 #endif
         /// <summary>Human-readable explanation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>The provisioned namespace the entry relates to, when applicable.</summary>
-        public Guid? NamespaceId { get; set; }
+        public Guid? NamespaceId { get => _explicitNullValueNamespaceId; set { _explicitNullValueNamespaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace_id"); else _explicitNullProperties?.Remove("namespace_id"); } }
+        private Guid? _explicitNullValueNamespaceId = default!;
         /// <summary>Other Workers in the account that still bind to the affectedclass. Advisory: while non-empty the tombstone is not yet safeto remove — redeploy these Workers with bindings re-pointedfirst.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReferencingScripts { get; set; }
+        public List<string>? ReferencingScripts { get => _explicitNullValueReferencingScripts; set { _explicitNullValueReferencingScripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referencing_scripts"); else _explicitNullProperties?.Remove("referencing_scripts"); } }
+        private List<string>? _explicitNullValueReferencingScripts = default!;
 #nullable restore
 #else
-        public List<string> ReferencingScripts { get; set; }
+        public List<string> ReferencingScripts { get => _explicitNullValueReferencingScripts; set { _explicitNullValueReferencingScripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referencing_scripts"); else _explicitNullProperties?.Remove("referencing_scripts"); } }
+        private List<string> _explicitNullValueReferencingScripts = default!;
 #endif
         /// <summary>Stable, machine-readable tag identifying which reconciliationscenario produced an error, warning, or info entry. Clients maybranch on this value instead of parsing `message`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationScenario? Scenario { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationScenario? Scenario { get => _explicitNullValueScenario; set { _explicitNullValueScenario = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scenario"); else _explicitNullProperties?.Remove("scenario"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationScenario? _explicitNullValueScenario = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo"/> and sets the default values.
         /// </summary>
@@ -58,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("namespace_id", NamespaceId);
             writer.WriteCollectionOfPrimitiveValues<string>("referencing_scripts", ReferencingScripts);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationScenario>("scenario", Scenario);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

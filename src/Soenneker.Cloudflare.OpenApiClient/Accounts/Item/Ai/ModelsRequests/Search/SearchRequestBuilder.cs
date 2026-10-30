@@ -53,6 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Sea
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SecurityCenterIssuePayload : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("detection_method") is { } nullNodeDetectionMethod && nullNodeDetectionMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DetectionMethod = null;
+            if (parseNode.GetChildNode("zone_tag") is { } nullNodeZoneTag && nullNodeZoneTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneTag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Describes the method used to detect insight.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetectionMethod { get; set; }
+        public string? DetectionMethod { get => _explicitNullValueDetectionMethod; set { _explicitNullValueDetectionMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detection_method"); else _explicitNullProperties?.Remove("detection_method"); } }
+        private string? _explicitNullValueDetectionMethod = default!;
 #nullable restore
 #else
-        public string DetectionMethod { get; set; }
+        public string DetectionMethod { get => _explicitNullValueDetectionMethod; set { _explicitNullValueDetectionMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detection_method"); else _explicitNullProperties?.Remove("detection_method"); } }
+        private string _explicitNullValueDetectionMethod = default!;
 #endif
         /// <summary>The zone_tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZoneTag { get; set; }
+        public string? ZoneTag { get => _explicitNullValueZoneTag; set { _explicitNullValueZoneTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_tag"); else _explicitNullProperties?.Remove("zone_tag"); } }
+        private string? _explicitNullValueZoneTag = default!;
 #nullable restore
 #else
-        public string ZoneTag { get; set; }
+        public string ZoneTag { get => _explicitNullValueZoneTag; set { _explicitNullValueZoneTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_tag"); else _explicitNullProperties?.Remove("zone_tag"); } }
+        private string _explicitNullValueZoneTag = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detection_method", DetectionMethod);
             writer.WriteStringValue("zone_tag", ZoneTag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

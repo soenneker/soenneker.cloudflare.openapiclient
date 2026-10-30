@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Media.Usage
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\media\usage
+    /// Builds and executes requests for operations under \zones\{zoneId}\media\usage
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Media.Usage
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/media/usage{?filters*,limit*,metrics*,since*,time_delta*,until*}", pathParameters)
+        public UsageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/media/usage{?filters*,limit*,metrics*,since*,time_delta*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Media.Usage
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/media/usage{?filters*,limit*,metrics*,since*,time_delta*,until*}", rawUrl)
+        public UsageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/media/usage{?filters*,limit*,metrics*,since*,time_delta*,until*}", rawUrl)
         {
         }
         /// <summary>
@@ -57,6 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Media.Usage
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.UsageAnalyticsErrorResponse.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.UsageAnalyticsErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.UsageAnalyticsErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UsageAnalyticsStreamUsageResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UsageAnalyticsStreamUsageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

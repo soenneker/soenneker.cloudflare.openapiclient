@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListsItemsUpdateRequestCollectionItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsUpdateRequestCollectionItem();
             if("ListsListItemAsnComment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListsListItemAsnComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment();
+                
             }
             else if("ListsListItemHostnameComment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListsListItemHostnameComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameComment();
+                
             }
             else if("ListsListItemIpComment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListsListItemIpComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemIpComment();
+                
             }
             else if("ListsListItemRedirectComment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListsListItemRedirectComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemRedirectComment();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("ip") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("redirect") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("hostname") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("asn") != null))();
+            if (result.ListsListItemAsnComment == null && result.ListsListItemHostnameComment == null && result.ListsListItemIpComment == null && result.ListsListItemRedirectComment == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ListsListItemIpComment = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemIpComment(), parseNode);
+            if (result.ListsListItemAsnComment == null && result.ListsListItemHostnameComment == null && result.ListsListItemIpComment == null && result.ListsListItemRedirectComment == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ListsListItemRedirectComment = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemRedirectComment(), parseNode);
+            if (result.ListsListItemAsnComment == null && result.ListsListItemHostnameComment == null && result.ListsListItemIpComment == null && result.ListsListItemRedirectComment == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.ListsListItemHostnameComment = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameComment(), parseNode);
+            if (result.ListsListItemAsnComment == null && result.ListsListItemHostnameComment == null && result.ListsListItemIpComment == null && result.ListsListItemRedirectComment == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ListsListItemAsnComment = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment(), parseNode);
+            if (result.ListsListItemAsnComment == null && result.ListsListItemHostnameComment == null && result.ListsListItemIpComment == null && result.ListsListItemRedirectComment == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ListsListItemAsnComment == null && ListsListItemHostnameComment == null && ListsListItemIpComment == null && ListsListItemRedirectComment == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ListsListItemAsnComment != null && ListsListItemHostnameComment == null && ListsListItemIpComment == null && ListsListItemRedirectComment == null) { if (ListsListItemAsnComment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListsListItemAsnComment); return; }
+            if (ListsListItemHostnameComment != null && ListsListItemAsnComment == null && ListsListItemIpComment == null && ListsListItemRedirectComment == null) { if (ListsListItemHostnameComment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListsListItemHostnameComment); return; }
+            if (ListsListItemIpComment != null && ListsListItemAsnComment == null && ListsListItemHostnameComment == null && ListsListItemRedirectComment == null) { if (ListsListItemIpComment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListsListItemIpComment); return; }
+            if (ListsListItemRedirectComment != null && ListsListItemAsnComment == null && ListsListItemHostnameComment == null && ListsListItemIpComment == null) { if (ListsListItemRedirectComment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListsListItemRedirectComment); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ListsListItemAsnComment != null)
             {
+                if (ListsListItemAsnComment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment>(null, ListsListItemAsnComment);
             }
             else if(ListsListItemHostnameComment != null)
             {
+                if (ListsListItemHostnameComment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameComment>(null, ListsListItemHostnameComment);
             }
             else if(ListsListItemIpComment != null)
             {
+                if (ListsListItemIpComment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemIpComment>(null, ListsListItemIpComment);
             }
             else if(ListsListItemRedirectComment != null)
             {
+                if (ListsListItemRedirectComment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemRedirectComment>(null, ListsListItemRedirectComment);
             }
         }

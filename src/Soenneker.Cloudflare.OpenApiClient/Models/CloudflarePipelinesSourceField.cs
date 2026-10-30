@@ -7,71 +7,259 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf10"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf11"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf9"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CloudflarePipelinesSourceField : global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFieldType, IParsable
-    #pragma warning restore CS1591
-    {
-        /// <summary>The metadata_key property</summary>
+    public partial class CloudflarePipelinesSourceField : IComposedTypeWrapper, IParsable
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetadataKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf1? CloudflarePipelinesSourceFieldOneOf1 { get; set; }
 #nullable restore
 #else
-        public string MetadataKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf1 CloudflarePipelinesSourceFieldOneOf1 { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public new string? Name { get => base.Name; set => base.Name = value; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf10? CloudflarePipelinesSourceFieldOneOf10 { get; set; }
 #nullable restore
 #else
-        public new string Name { get => base.Name; set => base.Name = value; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf10 CloudflarePipelinesSourceFieldOneOf10 { get; set; }
 #endif
-        /// <summary>The required property</summary>
-        public bool? Required { get; set; }
-        /// <summary>The sql_name property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SqlName { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf11? CloudflarePipelinesSourceFieldOneOf11 { get; set; }
 #nullable restore
 #else
-        public string SqlName { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf11 CloudflarePipelinesSourceFieldOneOf11 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf2? CloudflarePipelinesSourceFieldOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf2 CloudflarePipelinesSourceFieldOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf3? CloudflarePipelinesSourceFieldOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf3 CloudflarePipelinesSourceFieldOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf4? CloudflarePipelinesSourceFieldOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf4 CloudflarePipelinesSourceFieldOneOf4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf5? CloudflarePipelinesSourceFieldOneOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf5 CloudflarePipelinesSourceFieldOneOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf6? CloudflarePipelinesSourceFieldOneOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf6 CloudflarePipelinesSourceFieldOneOf6 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf7? CloudflarePipelinesSourceFieldOneOf7 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf7 CloudflarePipelinesSourceFieldOneOf7 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf8? CloudflarePipelinesSourceFieldOneOf8 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf8 CloudflarePipelinesSourceFieldOneOf8 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf9? CloudflarePipelinesSourceFieldOneOf9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf9 CloudflarePipelinesSourceFieldOneOf9 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField();
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("int32".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("int64".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("float32".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("float64".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("bool".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("string".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("binary".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("timestamp".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null && (parseNode.GetChildNode("unit") == null || (parseNode.GetChildNode("unit")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("second".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "millisecond".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "microsecond".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "nanosecond".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("json".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            bool matchesUnionBranch9 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("fields") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("struct".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            bool matchesUnionBranch10 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("items") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("list".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null))();
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf1(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf2(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf3(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf4(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf5(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf6(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf7 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf7(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf8 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf8(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch8 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch9 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf9 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf9(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch9 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch10) result.CloudflarePipelinesSourceFieldOneOf10 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf10(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null && matchesUnionBranch10 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9) result.CloudflarePipelinesSourceFieldOneOf11 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf11(), parseNode);
+            if (result.CloudflarePipelinesSourceFieldOneOf1 == null && result.CloudflarePipelinesSourceFieldOneOf10 == null && result.CloudflarePipelinesSourceFieldOneOf11 == null && result.CloudflarePipelinesSourceFieldOneOf2 == null && result.CloudflarePipelinesSourceFieldOneOf3 == null && result.CloudflarePipelinesSourceFieldOneOf4 == null && result.CloudflarePipelinesSourceFieldOneOf5 == null && result.CloudflarePipelinesSourceFieldOneOf6 == null && result.CloudflarePipelinesSourceFieldOneOf7 == null && result.CloudflarePipelinesSourceFieldOneOf8 == null && result.CloudflarePipelinesSourceFieldOneOf9 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            if(CloudflarePipelinesSourceFieldOneOf1 != null)
             {
-                { "metadata_key", n => { MetadataKey = n.GetStringValue(); } },
-                { "required", n => { Required = n.GetBoolValue(); } },
-                { "sql_name", n => { SqlName = n.GetStringValue(); } },
-            };
+                return CloudflarePipelinesSourceFieldOneOf1.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf10 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf10.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf11 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf11.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf2 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf2.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf3 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf3.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf4 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf4.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf5 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf5.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf6 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf6.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf7 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf7.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf8 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf8.GetFieldDeserializers();
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf9 != null)
+            {
+                return CloudflarePipelinesSourceFieldOneOf9.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CloudflarePipelinesSourceFieldOneOf1 == null && CloudflarePipelinesSourceFieldOneOf10 == null && CloudflarePipelinesSourceFieldOneOf11 == null && CloudflarePipelinesSourceFieldOneOf2 == null && CloudflarePipelinesSourceFieldOneOf3 == null && CloudflarePipelinesSourceFieldOneOf4 == null && CloudflarePipelinesSourceFieldOneOf5 == null && CloudflarePipelinesSourceFieldOneOf6 == null && CloudflarePipelinesSourceFieldOneOf7 == null && CloudflarePipelinesSourceFieldOneOf8 == null && CloudflarePipelinesSourceFieldOneOf9 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
-            writer.WriteStringValue("metadata_key", MetadataKey);
-            writer.WriteBoolValue("required", Required);
-            writer.WriteStringValue("sql_name", SqlName);
+            if(CloudflarePipelinesSourceFieldOneOf1 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf1>(null, CloudflarePipelinesSourceFieldOneOf1);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf10 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf10>(null, CloudflarePipelinesSourceFieldOneOf10);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf11 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf11 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf11>(null, CloudflarePipelinesSourceFieldOneOf11);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf2 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf2>(null, CloudflarePipelinesSourceFieldOneOf2);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf3 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf3>(null, CloudflarePipelinesSourceFieldOneOf3);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf4 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf4>(null, CloudflarePipelinesSourceFieldOneOf4);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf5 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf5>(null, CloudflarePipelinesSourceFieldOneOf5);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf6 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf6>(null, CloudflarePipelinesSourceFieldOneOf6);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf7 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf7>(null, CloudflarePipelinesSourceFieldOneOf7);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf8 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf8>(null, CloudflarePipelinesSourceFieldOneOf8);
+            }
+            else if(CloudflarePipelinesSourceFieldOneOf9 != null)
+            {
+                if (CloudflarePipelinesSourceFieldOneOf9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf9>(null, CloudflarePipelinesSourceFieldOneOf9);
+            }
         }
     }
 }

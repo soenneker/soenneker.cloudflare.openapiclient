@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DevicePostureIntegrationsCreateDevicePostureIntegrationRequestConfig : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,37 +94,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DevicePostureIntegrationsCreateDevicePostureIntegrationRequestConfig();
             if("TeamsDevicesCrowdstrikeConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesCrowdstrikeConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest();
+                
             }
             else if("TeamsDevicesCustomS2SConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesCustomS2SConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SConfigRequest();
+                
             }
             else if("TeamsDevicesIntuneConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesIntuneConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneConfigRequest();
+                
             }
             else if("TeamsDevicesKolideConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesKolideConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideConfigRequest();
+                
             }
             else if("TeamsDevicesSentineloneS2SConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesSentineloneS2SConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SConfigRequest();
+                
             }
             else if("TeamsDevicesTaniumConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesTaniumConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumConfigRequest();
+                
             }
             else if("TeamsDevicesUptycsConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesUptycsConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUptycsConfigRequest();
+                
             }
             else if("TeamsDevicesWorkspaceOneConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesWorkspaceOneConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneConfigRequest();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("api_url") != null && parseNode.GetChildNode("auth_url") != null && parseNode.GetChildNode("client_id") != null && parseNode.GetChildNode("client_secret") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("api_url") != null && parseNode.GetChildNode("customer_id") != null && parseNode.GetChildNode("client_id") != null && parseNode.GetChildNode("client_secret") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("api_url") != null && parseNode.GetChildNode("client_key") != null && parseNode.GetChildNode("customer_id") != null && parseNode.GetChildNode("client_secret") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("customer_id") != null && parseNode.GetChildNode("client_id") != null && parseNode.GetChildNode("client_secret") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("client_id") != null && parseNode.GetChildNode("client_secret") != null))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("api_url") != null && parseNode.GetChildNode("client_secret") != null))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("api_url") != null && parseNode.GetChildNode("client_secret") != null))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("api_url") != null && parseNode.GetChildNode("access_client_id") != null && parseNode.GetChildNode("access_client_secret") != null))();
+            if (result.TeamsDevicesCrowdstrikeConfigRequest == null && result.TeamsDevicesCustomS2SConfigRequest == null && result.TeamsDevicesIntuneConfigRequest == null && result.TeamsDevicesKolideConfigRequest == null && result.TeamsDevicesSentineloneS2SConfigRequest == null && result.TeamsDevicesTaniumConfigRequest == null && result.TeamsDevicesUptycsConfigRequest == null && result.TeamsDevicesWorkspaceOneConfigRequest == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.TeamsDevicesWorkspaceOneConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneConfigRequest(), parseNode);
+            if (result.TeamsDevicesCrowdstrikeConfigRequest == null && result.TeamsDevicesCustomS2SConfigRequest == null && result.TeamsDevicesIntuneConfigRequest == null && result.TeamsDevicesKolideConfigRequest == null && result.TeamsDevicesSentineloneS2SConfigRequest == null && result.TeamsDevicesTaniumConfigRequest == null && result.TeamsDevicesUptycsConfigRequest == null && result.TeamsDevicesWorkspaceOneConfigRequest == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.TeamsDevicesCrowdstrikeConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest(), parseNode);
+            if (result.TeamsDevicesCrowdstrikeConfigRequest == null && result.TeamsDevicesCustomS2SConfigRequest == null && result.TeamsDevicesIntuneConfigRequest == null && result.TeamsDevicesKolideConfigRequest == null && result.TeamsDevicesSentineloneS2SConfigRequest == null && result.TeamsDevicesTaniumConfigRequest == null && result.TeamsDevicesUptycsConfigRequest == null && result.TeamsDevicesWorkspaceOneConfigRequest == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.TeamsDevicesUptycsConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUptycsConfigRequest(), parseNode);
+            if (result.TeamsDevicesCrowdstrikeConfigRequest == null && result.TeamsDevicesCustomS2SConfigRequest == null && result.TeamsDevicesIntuneConfigRequest == null && result.TeamsDevicesKolideConfigRequest == null && result.TeamsDevicesSentineloneS2SConfigRequest == null && result.TeamsDevicesTaniumConfigRequest == null && result.TeamsDevicesUptycsConfigRequest == null && result.TeamsDevicesWorkspaceOneConfigRequest == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.TeamsDevicesIntuneConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneConfigRequest(), parseNode);
+            if (result.TeamsDevicesCrowdstrikeConfigRequest == null && result.TeamsDevicesCustomS2SConfigRequest == null && result.TeamsDevicesIntuneConfigRequest == null && result.TeamsDevicesKolideConfigRequest == null && result.TeamsDevicesSentineloneS2SConfigRequest == null && result.TeamsDevicesTaniumConfigRequest == null && result.TeamsDevicesUptycsConfigRequest == null && result.TeamsDevicesWorkspaceOneConfigRequest == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.TeamsDevicesKolideConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideConfigRequest(), parseNode);
+            if (result.TeamsDevicesCrowdstrikeConfigRequest == null && result.TeamsDevicesCustomS2SConfigRequest == null && result.TeamsDevicesIntuneConfigRequest == null && result.TeamsDevicesKolideConfigRequest == null && result.TeamsDevicesSentineloneS2SConfigRequest == null && result.TeamsDevicesTaniumConfigRequest == null && result.TeamsDevicesUptycsConfigRequest == null && result.TeamsDevicesWorkspaceOneConfigRequest == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7) result.TeamsDevicesTaniumConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumConfigRequest(), parseNode);
+            if (result.TeamsDevicesCrowdstrikeConfigRequest == null && result.TeamsDevicesCustomS2SConfigRequest == null && result.TeamsDevicesIntuneConfigRequest == null && result.TeamsDevicesKolideConfigRequest == null && result.TeamsDevicesSentineloneS2SConfigRequest == null && result.TeamsDevicesTaniumConfigRequest == null && result.TeamsDevicesUptycsConfigRequest == null && result.TeamsDevicesWorkspaceOneConfigRequest == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7) result.TeamsDevicesSentineloneS2SConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SConfigRequest(), parseNode);
+            if (result.TeamsDevicesCrowdstrikeConfigRequest == null && result.TeamsDevicesCustomS2SConfigRequest == null && result.TeamsDevicesIntuneConfigRequest == null && result.TeamsDevicesKolideConfigRequest == null && result.TeamsDevicesSentineloneS2SConfigRequest == null && result.TeamsDevicesTaniumConfigRequest == null && result.TeamsDevicesUptycsConfigRequest == null && result.TeamsDevicesWorkspaceOneConfigRequest == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6) result.TeamsDevicesCustomS2SConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SConfigRequest(), parseNode);
+            if (result.TeamsDevicesCrowdstrikeConfigRequest == null && result.TeamsDevicesCustomS2SConfigRequest == null && result.TeamsDevicesIntuneConfigRequest == null && result.TeamsDevicesKolideConfigRequest == null && result.TeamsDevicesSentineloneS2SConfigRequest == null && result.TeamsDevicesTaniumConfigRequest == null && result.TeamsDevicesUptycsConfigRequest == null && result.TeamsDevicesWorkspaceOneConfigRequest == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -167,37 +191,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (TeamsDevicesCrowdstrikeConfigRequest == null && TeamsDevicesCustomS2SConfigRequest == null && TeamsDevicesIntuneConfigRequest == null && TeamsDevicesKolideConfigRequest == null && TeamsDevicesSentineloneS2SConfigRequest == null && TeamsDevicesTaniumConfigRequest == null && TeamsDevicesUptycsConfigRequest == null && TeamsDevicesWorkspaceOneConfigRequest == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (TeamsDevicesCrowdstrikeConfigRequest != null && TeamsDevicesCustomS2SConfigRequest == null && TeamsDevicesIntuneConfigRequest == null && TeamsDevicesKolideConfigRequest == null && TeamsDevicesSentineloneS2SConfigRequest == null && TeamsDevicesTaniumConfigRequest == null && TeamsDevicesUptycsConfigRequest == null && TeamsDevicesWorkspaceOneConfigRequest == null) { if (TeamsDevicesCrowdstrikeConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesCrowdstrikeConfigRequest); return; }
+            if (TeamsDevicesCustomS2SConfigRequest != null && TeamsDevicesCrowdstrikeConfigRequest == null && TeamsDevicesIntuneConfigRequest == null && TeamsDevicesKolideConfigRequest == null && TeamsDevicesSentineloneS2SConfigRequest == null && TeamsDevicesTaniumConfigRequest == null && TeamsDevicesUptycsConfigRequest == null && TeamsDevicesWorkspaceOneConfigRequest == null) { if (TeamsDevicesCustomS2SConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesCustomS2SConfigRequest); return; }
+            if (TeamsDevicesIntuneConfigRequest != null && TeamsDevicesCrowdstrikeConfigRequest == null && TeamsDevicesCustomS2SConfigRequest == null && TeamsDevicesKolideConfigRequest == null && TeamsDevicesSentineloneS2SConfigRequest == null && TeamsDevicesTaniumConfigRequest == null && TeamsDevicesUptycsConfigRequest == null && TeamsDevicesWorkspaceOneConfigRequest == null) { if (TeamsDevicesIntuneConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesIntuneConfigRequest); return; }
+            if (TeamsDevicesKolideConfigRequest != null && TeamsDevicesCrowdstrikeConfigRequest == null && TeamsDevicesCustomS2SConfigRequest == null && TeamsDevicesIntuneConfigRequest == null && TeamsDevicesSentineloneS2SConfigRequest == null && TeamsDevicesTaniumConfigRequest == null && TeamsDevicesUptycsConfigRequest == null && TeamsDevicesWorkspaceOneConfigRequest == null) { if (TeamsDevicesKolideConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesKolideConfigRequest); return; }
+            if (TeamsDevicesSentineloneS2SConfigRequest != null && TeamsDevicesCrowdstrikeConfigRequest == null && TeamsDevicesCustomS2SConfigRequest == null && TeamsDevicesIntuneConfigRequest == null && TeamsDevicesKolideConfigRequest == null && TeamsDevicesTaniumConfigRequest == null && TeamsDevicesUptycsConfigRequest == null && TeamsDevicesWorkspaceOneConfigRequest == null) { if (TeamsDevicesSentineloneS2SConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesSentineloneS2SConfigRequest); return; }
+            if (TeamsDevicesTaniumConfigRequest != null && TeamsDevicesCrowdstrikeConfigRequest == null && TeamsDevicesCustomS2SConfigRequest == null && TeamsDevicesIntuneConfigRequest == null && TeamsDevicesKolideConfigRequest == null && TeamsDevicesSentineloneS2SConfigRequest == null && TeamsDevicesUptycsConfigRequest == null && TeamsDevicesWorkspaceOneConfigRequest == null) { if (TeamsDevicesTaniumConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesTaniumConfigRequest); return; }
+            if (TeamsDevicesUptycsConfigRequest != null && TeamsDevicesCrowdstrikeConfigRequest == null && TeamsDevicesCustomS2SConfigRequest == null && TeamsDevicesIntuneConfigRequest == null && TeamsDevicesKolideConfigRequest == null && TeamsDevicesSentineloneS2SConfigRequest == null && TeamsDevicesTaniumConfigRequest == null && TeamsDevicesWorkspaceOneConfigRequest == null) { if (TeamsDevicesUptycsConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesUptycsConfigRequest); return; }
+            if (TeamsDevicesWorkspaceOneConfigRequest != null && TeamsDevicesCrowdstrikeConfigRequest == null && TeamsDevicesCustomS2SConfigRequest == null && TeamsDevicesIntuneConfigRequest == null && TeamsDevicesKolideConfigRequest == null && TeamsDevicesSentineloneS2SConfigRequest == null && TeamsDevicesTaniumConfigRequest == null && TeamsDevicesUptycsConfigRequest == null) { if (TeamsDevicesWorkspaceOneConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesWorkspaceOneConfigRequest); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(TeamsDevicesCrowdstrikeConfigRequest != null)
             {
+                if (TeamsDevicesCrowdstrikeConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest>(null, TeamsDevicesCrowdstrikeConfigRequest);
             }
             else if(TeamsDevicesCustomS2SConfigRequest != null)
             {
+                if (TeamsDevicesCustomS2SConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SConfigRequest>(null, TeamsDevicesCustomS2SConfigRequest);
             }
             else if(TeamsDevicesIntuneConfigRequest != null)
             {
+                if (TeamsDevicesIntuneConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneConfigRequest>(null, TeamsDevicesIntuneConfigRequest);
             }
             else if(TeamsDevicesKolideConfigRequest != null)
             {
+                if (TeamsDevicesKolideConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideConfigRequest>(null, TeamsDevicesKolideConfigRequest);
             }
             else if(TeamsDevicesSentineloneS2SConfigRequest != null)
             {
+                if (TeamsDevicesSentineloneS2SConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SConfigRequest>(null, TeamsDevicesSentineloneS2SConfigRequest);
             }
             else if(TeamsDevicesTaniumConfigRequest != null)
             {
+                if (TeamsDevicesTaniumConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumConfigRequest>(null, TeamsDevicesTaniumConfigRequest);
             }
             else if(TeamsDevicesUptycsConfigRequest != null)
             {
+                if (TeamsDevicesUptycsConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUptycsConfigRequest>(null, TeamsDevicesUptycsConfigRequest);
             }
             else if(TeamsDevicesWorkspaceOneConfigRequest != null)
             {
+                if (TeamsDevicesWorkspaceOneConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneConfigRequest>(null, TeamsDevicesWorkspaceOneConfigRequest);
             }
         }

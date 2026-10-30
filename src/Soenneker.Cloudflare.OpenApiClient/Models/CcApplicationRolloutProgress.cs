@@ -12,24 +12,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcApplicationRolloutProgress : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("current_step") is { } nullNodeCurrentStep && nullNodeCurrentStep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentStep = null;
+            if (parseNode.GetChildNode("total_instances") is { } nullNodeTotalInstances && nullNodeTotalInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInstances = null;
+            if (parseNode.GetChildNode("total_steps") is { } nullNodeTotalSteps && nullNodeTotalSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSteps = null;
+            if (parseNode.GetChildNode("updated_instances") is { } nullNodeUpdatedInstances && nullNodeUpdatedInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedInstances = null;
+            if (parseNode.GetChildNode("version_distribution") is { } nullNodeVersionDistribution && nullNodeVersionDistribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionDistribution = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Current step being executed in the rollout process. Initialized to 0.</summary>
-        public int? CurrentStep { get; set; }
+        public int? CurrentStep { get => _explicitNullValueCurrentStep; set { _explicitNullValueCurrentStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_step"); else _explicitNullProperties?.Remove("current_step"); } }
+        private int? _explicitNullValueCurrentStep = default!;
         /// <summary>Total number of instances the rollout affects.</summary>
-        public int? TotalInstances { get; set; }
+        public int? TotalInstances { get => _explicitNullValueTotalInstances; set { _explicitNullValueTotalInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_instances"); else _explicitNullProperties?.Remove("total_instances"); } }
+        private int? _explicitNullValueTotalInstances = default!;
         /// <summary>Total number of steps in the rollout.</summary>
-        public int? TotalSteps { get; set; }
+        public int? TotalSteps { get => _explicitNullValueTotalSteps; set { _explicitNullValueTotalSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_steps"); else _explicitNullProperties?.Remove("total_steps"); } }
+        private int? _explicitNullValueTotalSteps = default!;
         /// <summary>Number of instances updated in the rollout process.</summary>
-        public int? UpdatedInstances { get; set; }
+        public int? UpdatedInstances { get => _explicitNullValueUpdatedInstances; set { _explicitNullValueUpdatedInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_instances"); else _explicitNullProperties?.Remove("updated_instances"); } }
+        private int? _explicitNullValueUpdatedInstances = default!;
         /// <summary>Expected distribution of instances per version, based on the current percentage split.Populated during active rollouts. Values derive from the version percentage weightsrather than actual running instance counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgressVersionDistribution? VersionDistribution { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgressVersionDistribution? VersionDistribution { get => _explicitNullValueVersionDistribution; set { _explicitNullValueVersionDistribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_distribution"); else _explicitNullProperties?.Remove("version_distribution"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgressVersionDistribution? _explicitNullValueVersionDistribution = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgressVersionDistribution VersionDistribution { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgressVersionDistribution VersionDistribution { get => _explicitNullValueVersionDistribution; set { _explicitNullValueVersionDistribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_distribution"); else _explicitNullProperties?.Remove("version_distribution"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgressVersionDistribution _explicitNullValueVersionDistribution = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress"/> and sets the default values.
@@ -46,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("total_steps", TotalSteps);
             writer.WriteIntValue("updated_instances", UpdatedInstances);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgressVersionDistribution>("version_distribution", VersionDistribution);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -71,5 +71,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Redirect,
         #pragma warning restore CS1591
+        [EnumMember(Value = "forward")]
+        #pragma warning disable CS1591
+        Forward,
+        #pragma warning restore CS1591
     }
 }

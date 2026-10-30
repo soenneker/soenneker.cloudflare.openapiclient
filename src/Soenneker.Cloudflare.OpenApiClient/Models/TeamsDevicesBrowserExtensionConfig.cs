@@ -12,11 +12,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamsDevicesBrowserExtensionConfig : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("proxy_control") is { } nullNodeProxyControl && nullNodeProxyControl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyControl = null;
+            if (parseNode.GetChildNode("proxy_enabled") is { } nullNodeProxyEnabled && nullNodeProxyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyEnabled = null;
+        }
+
         /// <summary>Whether the user may disable the browser extension proxy.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfigProxyControl? ProxyControl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfigProxyControl? ProxyControl { get => _explicitNullValueProxyControl; set { _explicitNullValueProxyControl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy_control"); else _explicitNullProperties?.Remove("proxy_control"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfigProxyControl? _explicitNullValueProxyControl = default!;
         /// <summary>Whether the browser extension proxy is active.</summary>
-        public bool? ProxyEnabled { get; set; }
+        public bool? ProxyEnabled { get => _explicitNullValueProxyEnabled; set { _explicitNullValueProxyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy_enabled"); else _explicitNullProperties?.Remove("proxy_enabled"); } }
+        private bool? _explicitNullValueProxyEnabled = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -25,7 +36,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfig();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesBrowserExtensionConfigProxyControl>("proxy_control", ProxyControl);
-            writer.WriteBoolValue("proxy_enabled", ProxyEnabled);
+            writer.WriteBoolValue("proxy_enabled", ProxyEnabled);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

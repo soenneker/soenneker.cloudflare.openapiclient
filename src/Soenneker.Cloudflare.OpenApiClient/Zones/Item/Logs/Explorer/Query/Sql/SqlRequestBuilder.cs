@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Query.Sql
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\logs\explorer\query\sql
+    /// Builds and executes requests for operations under \zones\{zoneId}\logs\explorer\query\sql
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SqlRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Query.Sql
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SqlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/logs/explorer/query/sql", pathParameters)
+        public SqlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/logs/explorer/query/sql", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Query.Sql
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SqlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/logs/explorer/query/sql", rawUrl)
+        public SqlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/logs/explorer/query/sql", rawUrl)
         {
         }
         /// <summary>
@@ -60,6 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Query.Sql
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "507", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -91,6 +93,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Query.Sql
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "507", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -109,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Query.Sql
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Query.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/zones/{zoneIdentifier}/logs/explorer/query/sql?query={query}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/zones/{zoneId}/logs/explorer/query/sql?query={query}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

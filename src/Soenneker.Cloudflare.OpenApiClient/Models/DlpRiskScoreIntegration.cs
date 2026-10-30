@@ -11,48 +11,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DlpRiskScoreIntegration : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_tag") is { } nullNodeAccountTag && nullNodeAccountTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountTag = null;
+            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("integration_type") is { } nullNodeIntegrationType && nullNodeIntegrationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationType = null;
+            if (parseNode.GetChildNode("reference_id") is { } nullNodeReferenceId && nullNodeReferenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceId = null;
+            if (parseNode.GetChildNode("tenant_url") is { } nullNodeTenantUrl && nullNodeTenantUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantUrl = null;
+            if (parseNode.GetChildNode("well_known_url") is { } nullNodeWellKnownUrl && nullNodeWellKnownUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WellKnownUrl = null;
+        }
+
         /// <summary>The Cloudflare account tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountTag { get; set; }
+        public string? AccountTag { get => _explicitNullValueAccountTag; set { _explicitNullValueAccountTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_tag"); else _explicitNullProperties?.Remove("account_tag"); } }
+        private string? _explicitNullValueAccountTag = default!;
 #nullable restore
 #else
-        public string AccountTag { get; set; }
+        public string AccountTag { get => _explicitNullValueAccountTag; set { _explicitNullValueAccountTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_tag"); else _explicitNullProperties?.Remove("account_tag"); } }
+        private string _explicitNullValueAccountTag = default!;
 #endif
         /// <summary>Whether this integration is enabled and should export changes in risk score.</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the integration was created in RFC3339 format.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The id of the integration, a UUIDv4.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The integration_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegrationType? IntegrationType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegrationType? IntegrationType { get => _explicitNullValueIntegrationType; set { _explicitNullValueIntegrationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_type"); else _explicitNullProperties?.Remove("integration_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegrationType? _explicitNullValueIntegrationType = default!;
         /// <summary>A reference ID defined by the client.Should be set to the Access-Okta IDP integration ID.Useful when the risk-score integration needs to be associated with a secondary asset and recalled using that ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceId { get; set; }
+        public string? ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
+        private string? _explicitNullValueReferenceId = default!;
 #nullable restore
 #else
-        public string ReferenceId { get; set; }
+        public string ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
+        private string _explicitNullValueReferenceId = default!;
 #endif
         /// <summary>The base URL for the tenant. E.g. &quot;https://tenant.okta.com&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantUrl { get; set; }
+        public string? TenantUrl { get => _explicitNullValueTenantUrl; set { _explicitNullValueTenantUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_url"); else _explicitNullProperties?.Remove("tenant_url"); } }
+        private string? _explicitNullValueTenantUrl = default!;
 #nullable restore
 #else
-        public string TenantUrl { get; set; }
+        public string TenantUrl { get => _explicitNullValueTenantUrl; set { _explicitNullValueTenantUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_url"); else _explicitNullProperties?.Remove("tenant_url"); } }
+        private string _explicitNullValueTenantUrl = default!;
 #endif
         /// <summary>The URL for the Shared Signals Framework configuration, e.g. &quot;/.well-known/sse-configuration/{integration_uuid}/&quot;. https://openid.net/specs/openid-sse-framework-1_0.html#rfc.section.6.2.1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WellKnownUrl { get; set; }
+        public string? WellKnownUrl { get => _explicitNullValueWellKnownUrl; set { _explicitNullValueWellKnownUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("well_known_url"); else _explicitNullProperties?.Remove("well_known_url"); } }
+        private string? _explicitNullValueWellKnownUrl = default!;
 #nullable restore
 #else
-        public string WellKnownUrl { get; set; }
+        public string WellKnownUrl { get => _explicitNullValueWellKnownUrl; set { _explicitNullValueWellKnownUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("well_known_url"); else _explicitNullProperties?.Remove("well_known_url"); } }
+        private string _explicitNullValueWellKnownUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegration"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("reference_id", ReferenceId);
             writer.WriteStringValue("tenant_url", TenantUrl);
             writer.WriteStringValue("well_known_url", WellKnownUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

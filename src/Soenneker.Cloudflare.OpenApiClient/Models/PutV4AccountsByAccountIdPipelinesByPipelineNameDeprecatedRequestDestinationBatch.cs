@@ -11,15 +11,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_bytes") is { } nullNodeMaxBytes && nullNodeMaxBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxBytes = null;
+            if (parseNode.GetChildNode("max_duration_s") is { } nullNodeMaxDurationS && nullNodeMaxDurationS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDurationS = null;
+            if (parseNode.GetChildNode("max_rows") is { } nullNodeMaxRows && nullNodeMaxRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRows = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies rough maximum size of files.</summary>
-        public int? MaxBytes { get; set; }
+        public int? MaxBytes { get => _explicitNullValueMaxBytes; set { _explicitNullValueMaxBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_bytes"); else _explicitNullProperties?.Remove("max_bytes"); } }
+        private int? _explicitNullValueMaxBytes = default!;
         /// <summary>Specifies duration to wait to aggregate batches files.</summary>
-        public double? MaxDurationS { get; set; }
+        public double? MaxDurationS { get => _explicitNullValueMaxDurationS; set { _explicitNullValueMaxDurationS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_duration_s"); else _explicitNullProperties?.Remove("max_duration_s"); } }
+        private double? _explicitNullValueMaxDurationS = default!;
         /// <summary>Specifies rough maximum number of rows per file.</summary>
-        public int? MaxRows { get; set; }
+        public int? MaxRows { get => _explicitNullValueMaxRows; set { _explicitNullValueMaxRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_rows"); else _explicitNullProperties?.Remove("max_rows"); } }
+        private int? _explicitNullValueMaxRows = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch"/> and sets the default values.
         /// </summary>
@@ -38,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("max_bytes", MaxBytes);
             writer.WriteDoubleValue("max_duration_s", MaxDurationS);
             writer.WriteIntValue("max_rows", MaxRows);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

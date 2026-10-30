@@ -11,31 +11,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSecurityBulkActionRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
+            if (parseNode.GetChildNode("destination") is { } nullNodeDestination && nullNodeDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destination = null;
+            if (parseNode.GetChildNode("expected_disposition") is { } nullNodeExpectedDisposition && nullNodeExpectedDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDisposition = null;
+            if (parseNode.GetChildNode("search_params") is { } nullNodeSearchParams && nullNodeSearchParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchParams = null;
+        }
+
         /// <summary>The action the job performs on every message matching the search parameters.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestAction? Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional note describing the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string? _explicitNullValueComment = default!;
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string _explicitNullValueComment = default!;
 #endif
         /// <summary>The mailbox folder to move messages to.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination? Destination { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination? Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination? _explicitNullValueDestination = default!;
         /// <summary>The verdict Email Security assigns to a message.</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestExpectedDisposition? ExpectedDisposition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestExpectedDisposition? ExpectedDisposition { get => _explicitNullValueExpectedDisposition; set { _explicitNullValueExpectedDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_disposition"); else _explicitNullProperties?.Remove("expected_disposition"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestExpectedDisposition? _explicitNullValueExpectedDisposition = default!;
         /// <summary>The search_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams? SearchParams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams? SearchParams { get => _explicitNullValueSearchParams; set { _explicitNullValueSearchParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_params"); else _explicitNullProperties?.Remove("search_params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams? _explicitNullValueSearchParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams SearchParams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams SearchParams { get => _explicitNullValueSearchParams; set { _explicitNullValueSearchParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_params"); else _explicitNullProperties?.Remove("search_params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams _explicitNullValueSearchParams = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequest"/> and sets the default values.
@@ -52,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination>("destination", Destination);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestExpectedDisposition>("expected_disposition", ExpectedDisposition);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams>("search_params", SearchParams);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

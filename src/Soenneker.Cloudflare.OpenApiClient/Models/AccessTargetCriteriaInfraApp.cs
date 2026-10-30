@@ -12,8 +12,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class AccessTargetCriteriaInfraApp : global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaBase, IParsable
     #pragma warning restore CS1591
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("protocol") is { } nullNodeProtocol && nullNodeProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocol = null;
+        }
+
         /// <summary>The communication protocol your application secures.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraAppAllOf2Protocol? Protocol { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraAppAllOf2Protocol? Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraAppAllOf2Protocol? _explicitNullValueProtocol = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -22,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraAppAllOf2Protocol>("protocol", Protocol);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraAppAllOf2Protocol>("protocol", Protocol);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

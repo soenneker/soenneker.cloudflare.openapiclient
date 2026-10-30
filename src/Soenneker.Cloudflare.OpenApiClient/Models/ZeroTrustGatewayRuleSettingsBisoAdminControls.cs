@@ -12,35 +12,68 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGatewayRuleSettingsBisoAdminControls : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("copy") is { } nullNodeCopy && nullNodeCopy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Copy = null;
+            if (parseNode.GetChildNode("dcp") is { } nullNodeDcp && nullNodeDcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dcp = null;
+            if (parseNode.GetChildNode("dd") is { } nullNodeDd && nullNodeDd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dd = null;
+            if (parseNode.GetChildNode("dk") is { } nullNodeDk && nullNodeDk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dk = null;
+            if (parseNode.GetChildNode("download") is { } nullNodeDownload && nullNodeDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Download = null;
+            if (parseNode.GetChildNode("dp") is { } nullNodeDp && nullNodeDp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dp = null;
+            if (parseNode.GetChildNode("du") is { } nullNodeDu && nullNodeDu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Du = null;
+            if (parseNode.GetChildNode("keyboard") is { } nullNodeKeyboard && nullNodeKeyboard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keyboard = null;
+            if (parseNode.GetChildNode("paste") is { } nullNodePaste && nullNodePaste.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paste = null;
+            if (parseNode.GetChildNode("printing") is { } nullNodePrinting && nullNodePrinting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Printing = null;
+            if (parseNode.GetChildNode("upload") is { } nullNodeUpload && nullNodeUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upload = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("wm_id") is { } nullNodeWmId && nullNodeWmId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WmId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy? Copy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy? Copy { get => _explicitNullValueCopy; set { _explicitNullValueCopy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copy"); else _explicitNullProperties?.Remove("copy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy? _explicitNullValueCopy = default!;
         /// <summary>Set to false to enable copy-pasting. Only applies when `version == &quot;v1&quot;`.</summary>
-        public bool? Dcp { get; set; }
+        public bool? Dcp { get => _explicitNullValueDcp; set { _explicitNullValueDcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dcp"); else _explicitNullProperties?.Remove("dcp"); } }
+        private bool? _explicitNullValueDcp = default!;
         /// <summary>Set to false to enable downloading. Only applies when `version == &quot;v1&quot;`.</summary>
-        public bool? Dd { get; set; }
+        public bool? Dd { get => _explicitNullValueDd; set { _explicitNullValueDd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dd"); else _explicitNullProperties?.Remove("dd"); } }
+        private bool? _explicitNullValueDd = default!;
         /// <summary>Set to false to enable keyboard usage. Only applies when `version == &quot;v1&quot;`.</summary>
-        public bool? Dk { get; set; }
+        public bool? Dk { get => _explicitNullValueDk; set { _explicitNullValueDk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dk"); else _explicitNullProperties?.Remove("dk"); } }
+        private bool? _explicitNullValueDk = default!;
         /// <summary>Configure download behavior. When set to remote_only, users can view downloads but cannot save them. If this field is absent, downloading remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload? Download { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload? Download { get => _explicitNullValueDownload; set { _explicitNullValueDownload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("download"); else _explicitNullProperties?.Remove("download"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload? _explicitNullValueDownload = default!;
         /// <summary>Set to false to enable printing. Only applies when `version == &quot;v1&quot;`.</summary>
-        public bool? Dp { get; set; }
+        public bool? Dp { get => _explicitNullValueDp; set { _explicitNullValueDp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dp"); else _explicitNullProperties?.Remove("dp"); } }
+        private bool? _explicitNullValueDp = default!;
         /// <summary>Set to false to enable uploading. Only applies when `version == &quot;v1&quot;`.</summary>
-        public bool? Du { get; set; }
-        /// <summary>Configure keyboard usage behavior. If this field is absent, keyboard usage remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard? Keyboard { get; set; }
+        public bool? Du { get => _explicitNullValueDu; set { _explicitNullValueDu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("du"); else _explicitNullProperties?.Remove("du"); } }
+        private bool? _explicitNullValueDu = default!;
+        /// <summary>Configure keyboard usage behavior. When set to enable_read_only_actions, only approved browser commands (find, copy, print, zoom, and select-all) may execute; other keyboard input is blocked from reaching the page. Copy and print remain subject to their independent controls. If this field is absent, keyboard usage remains enabled. Applies only when version == &quot;v2&quot;. The enable_read_only_actions value requires an explicit version of &quot;v2&quot;.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard? Keyboard { get => _explicitNullValueKeyboard; set { _explicitNullValueKeyboard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyboard"); else _explicitNullProperties?.Remove("keyboard"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard? _explicitNullValueKeyboard = default!;
         /// <summary>Configure paste behavior. If set to remote_only, users cannot paste content from the local clipboard into isolated pages. If this field is absent, pasting remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste? Paste { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste? Paste { get => _explicitNullValuePaste; set { _explicitNullValuePaste = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paste"); else _explicitNullProperties?.Remove("paste"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste? _explicitNullValuePaste = default!;
         /// <summary>Configure print behavior. Default, Printing is enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting? Printing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting? Printing { get => _explicitNullValuePrinting; set { _explicitNullValuePrinting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing"); else _explicitNullProperties?.Remove("printing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting? _explicitNullValuePrinting = default!;
         /// <summary>Configure upload behavior. If this field is absent, uploading remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? Upload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? Upload { get => _explicitNullValueUpload; set { _explicitNullValueUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload"); else _explicitNullProperties?.Remove("upload"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? _explicitNullValueUpload = default!;
         /// <summary>Indicate which version of the browser isolation controls should apply.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion? Version { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion? _explicitNullValueVersion = default!;
         /// <summary>Specify the watermark ID (UUID) to apply to the isolated browser session. When present, enables watermark rendering in the isolated browser.</summary>
-        public Guid? WmId { get; set; }
+        public Guid? WmId { get => _explicitNullValueWmId; set { _explicitNullValueWmId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wm_id"); else _explicitNullProperties?.Remove("wm_id"); } }
+        private Guid? _explicitNullValueWmId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls"/> and sets the default values.
         /// </summary>
@@ -56,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,6 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload>("upload", Upload);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion>("version", Version);
             writer.WriteGuidValue("wm_id", WmId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

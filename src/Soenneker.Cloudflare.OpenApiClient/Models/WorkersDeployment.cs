@@ -11,16 +11,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersDeployment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("annotations") is { } nullNodeAnnotations && nullNodeAnnotations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Annotations = null;
+            if (parseNode.GetChildNode("code_update_strategy") is { } nullNodeCodeUpdateStrategy && nullNodeCodeUpdateStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeUpdateStrategy = null;
+            if (parseNode.GetChildNode("strategy") is { } nullNodeStrategy && nullNodeStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Strategy = null;
+            if (parseNode.GetChildNode("versions") is { } nullNodeVersions && nullNodeVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Versions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations? Annotations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations? Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations? _explicitNullValueAnnotations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations Annotations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations _explicitNullValueAnnotations = default!;
 #endif
         /// <summary>The author_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,6 +42,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string AuthorEmail { get; private set; }
+#endif
+        /// <summary>Choose whether to apply Durable Object code updates immediately or defer them. When omitted, the default strategy applies.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy? CodeUpdateStrategy { get => _explicitNullValueCodeUpdateStrategy; set { _explicitNullValueCodeUpdateStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code_update_strategy"); else _explicitNullProperties?.Remove("code_update_strategy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy? _explicitNullValueCodeUpdateStrategy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy CodeUpdateStrategy { get => _explicitNullValueCodeUpdateStrategy; set { _explicitNullValueCodeUpdateStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code_update_strategy"); else _explicitNullProperties?.Remove("code_update_strategy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy _explicitNullValueCodeUpdateStrategy = default!;
 #endif
         /// <summary>The created_on property</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
@@ -43,14 +66,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Source { get; private set; }
 #endif
         /// <summary>The strategy property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PercentageStrategy? Strategy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PercentageStrategy? Strategy { get => _explicitNullValueStrategy; set { _explicitNullValueStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strategy"); else _explicitNullProperties?.Remove("strategy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PercentageStrategy? _explicitNullValueStrategy = default!;
         /// <summary>Worker versions included in this deployment. Each object must contain a `version_id` UUID and a `percentage`; percentages across all objects must total 100. In the `cf` CLI, pass the entire array as one JSON value to `--versions`, either inline, for example `--versions &apos;[{&quot;version_id&quot;:&quot;023e105f-2a42-4f8b-a1c1-73f6a2a30c0f&quot;,&quot;percentage&quot;:100}]&apos;`, or from a JSON file with `--versions @versions.json`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem>? Versions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem>? Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem>? _explicitNullValueVersions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem> Versions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem> Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem> _explicitNullValueVersions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment"/> and sets the default values.
@@ -67,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations.CreateFromDiscriminatorValue); } },
                 { "author_email", n => { AuthorEmail = n.GetStringValue(); } },
+                { "code_update_strategy", n => { CodeUpdateStrategy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy.CreateFromDiscriminatorValue); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
@@ -94,8 +121,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations>("annotations", Annotations);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy>("code_update_strategy", CodeUpdateStrategy);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PercentageStrategy>("strategy", Strategy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem>("versions", Versions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

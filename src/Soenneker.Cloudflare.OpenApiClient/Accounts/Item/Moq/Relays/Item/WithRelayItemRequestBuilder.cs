@@ -63,6 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysDelete200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,6 +92,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -119,6 +123,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysUpdate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysUpdate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

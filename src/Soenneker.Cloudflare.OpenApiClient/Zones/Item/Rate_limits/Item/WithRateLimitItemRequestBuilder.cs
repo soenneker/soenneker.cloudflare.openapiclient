@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\rate_limits\{rateLimitId}
+    /// Builds and executes requests for operations under \zones\{zoneId}\rate_limits\{rateLimitId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRateLimitItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRateLimitItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/rate_limits/{rateLimitId}", pathParameters)
+        public WithRateLimitItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/rate_limits/{rateLimitId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRateLimitItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/rate_limits/{rateLimitId}", rawUrl)
+        public WithRateLimitItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/rate_limits/{rateLimitId}", rawUrl)
         {
         }
         /// <summary>
@@ -54,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "410", global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallApiResponseDeprecated.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,6 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "410", global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallApiResponseDeprecated.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -104,6 +108,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "410", global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallApiResponseDeprecated.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

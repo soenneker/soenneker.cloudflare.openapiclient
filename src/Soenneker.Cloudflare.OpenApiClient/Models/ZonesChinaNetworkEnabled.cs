@@ -12,17 +12,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZonesChinaNetworkEnabled : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).</summary>
         public bool? Editable { get; private set; }
         /// <summary>ID of the zone setting.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ChinaNetworkEnabledId? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ChinaNetworkEnabledId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ChinaNetworkEnabledId? _explicitNullValueId = default!;
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Value of the zone setting.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesChinaNetworkEnabledValueEnum? Value { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesChinaNetworkEnabledValueComposed? Value { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesChinaNetworkEnabled"/> and sets the default values.
         /// </summary>
@@ -38,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesChinaNetworkEnabled CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesChinaNetworkEnabled();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesChinaNetworkEnabled(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "editable", n => { Editable = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ChinaNetworkEnabledId>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesChinaNetworkEnabledValueEnum>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesChinaNetworkEnabledValueComposed>(); } },
             };
         }
         /// <summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ChinaNetworkEnabledId>("id", Id);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

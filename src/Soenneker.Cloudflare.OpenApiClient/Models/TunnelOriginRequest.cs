@@ -12,69 +12,111 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TunnelOriginRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
+            if (parseNode.GetChildNode("caPool") is { } nullNodeCaPool && nullNodeCaPool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaPool = null;
+            if (parseNode.GetChildNode("connectTimeout") is { } nullNodeConnectTimeout && nullNodeConnectTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectTimeout = null;
+            if (parseNode.GetChildNode("disableChunkedEncoding") is { } nullNodeDisableChunkedEncoding && nullNodeDisableChunkedEncoding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableChunkedEncoding = null;
+            if (parseNode.GetChildNode("http2Origin") is { } nullNodeHttp2Origin && nullNodeHttp2Origin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Http2Origin = null;
+            if (parseNode.GetChildNode("httpHostHeader") is { } nullNodeHttpHostHeader && nullNodeHttpHostHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpHostHeader = null;
+            if (parseNode.GetChildNode("keepAliveConnections") is { } nullNodeKeepAliveConnections && nullNodeKeepAliveConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeepAliveConnections = null;
+            if (parseNode.GetChildNode("keepAliveTimeout") is { } nullNodeKeepAliveTimeout && nullNodeKeepAliveTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeepAliveTimeout = null;
+            if (parseNode.GetChildNode("matchSNItoHost") is { } nullNodeMatchSNItoHost && nullNodeMatchSNItoHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchSNItoHost = null;
+            if (parseNode.GetChildNode("noHappyEyeballs") is { } nullNodeNoHappyEyeballs && nullNodeNoHappyEyeballs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoHappyEyeballs = null;
+            if (parseNode.GetChildNode("noTLSVerify") is { } nullNodeNoTLSVerify && nullNodeNoTLSVerify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoTLSVerify = null;
+            if (parseNode.GetChildNode("originServerName") is { } nullNodeOriginServerName && nullNodeOriginServerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginServerName = null;
+            if (parseNode.GetChildNode("proxyType") is { } nullNodeProxyType && nullNodeProxyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyType = null;
+            if (parseNode.GetChildNode("tcpKeepAlive") is { } nullNodeTcpKeepAlive && nullNodeTcpKeepAlive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcpKeepAlive = null;
+            if (parseNode.GetChildNode("tlsTimeout") is { } nullNodeTlsTimeout && nullNodeTlsTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsTimeout = null;
+        }
+
         /// <summary>For all L7 requests to this hostname, cloudflared will validate each request&apos;s Cf-Access-Jwt-Assertion request header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequestAccess? Access { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequestAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequestAccess? _explicitNullValueAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequestAccess Access { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequestAccess Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequestAccess _explicitNullValueAccess = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Path to the certificate authority (CA) for the certificate of your origin. This option should be used only if your certificate is not signed by Cloudflare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CaPool { get; set; }
+        public string? CaPool { get => _explicitNullValueCaPool; set { _explicitNullValueCaPool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caPool"); else _explicitNullProperties?.Remove("caPool"); } }
+        private string? _explicitNullValueCaPool = default!;
 #nullable restore
 #else
-        public string CaPool { get; set; }
+        public string CaPool { get => _explicitNullValueCaPool; set { _explicitNullValueCaPool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caPool"); else _explicitNullProperties?.Remove("caPool"); } }
+        private string _explicitNullValueCaPool = default!;
 #endif
         /// <summary>Timeout for establishing a new TCP connection to your origin server. This excludes the time taken to establish TLS, which is controlled by tlsTimeout.</summary>
-        public int? ConnectTimeout { get; set; }
+        public int? ConnectTimeout { get => _explicitNullValueConnectTimeout; set { _explicitNullValueConnectTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectTimeout"); else _explicitNullProperties?.Remove("connectTimeout"); } }
+        private int? _explicitNullValueConnectTimeout = default!;
         /// <summary>Disables chunked transfer encoding. Useful if you are running a WSGI server.</summary>
-        public bool? DisableChunkedEncoding { get; set; }
+        public bool? DisableChunkedEncoding { get => _explicitNullValueDisableChunkedEncoding; set { _explicitNullValueDisableChunkedEncoding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableChunkedEncoding"); else _explicitNullProperties?.Remove("disableChunkedEncoding"); } }
+        private bool? _explicitNullValueDisableChunkedEncoding = default!;
         /// <summary>Attempt to connect to origin using HTTP2. Origin must be configured as https.</summary>
-        public bool? Http2Origin { get; set; }
+        public bool? Http2Origin { get => _explicitNullValueHttp2Origin; set { _explicitNullValueHttp2Origin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http2Origin"); else _explicitNullProperties?.Remove("http2Origin"); } }
+        private bool? _explicitNullValueHttp2Origin = default!;
         /// <summary>Sets the HTTP Host header on requests sent to the local service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HttpHostHeader { get; set; }
+        public string? HttpHostHeader { get => _explicitNullValueHttpHostHeader; set { _explicitNullValueHttpHostHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpHostHeader"); else _explicitNullProperties?.Remove("httpHostHeader"); } }
+        private string? _explicitNullValueHttpHostHeader = default!;
 #nullable restore
 #else
-        public string HttpHostHeader { get; set; }
+        public string HttpHostHeader { get => _explicitNullValueHttpHostHeader; set { _explicitNullValueHttpHostHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpHostHeader"); else _explicitNullProperties?.Remove("httpHostHeader"); } }
+        private string _explicitNullValueHttpHostHeader = default!;
 #endif
         /// <summary>Maximum number of idle keepalive connections between Tunnel and your origin. This does not restrict the total number of concurrent connections.</summary>
-        public int? KeepAliveConnections { get; set; }
+        public int? KeepAliveConnections { get => _explicitNullValueKeepAliveConnections; set { _explicitNullValueKeepAliveConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keepAliveConnections"); else _explicitNullProperties?.Remove("keepAliveConnections"); } }
+        private int? _explicitNullValueKeepAliveConnections = default!;
         /// <summary>Timeout after which an idle keepalive connection can be discarded.</summary>
-        public int? KeepAliveTimeout { get; set; }
+        public int? KeepAliveTimeout { get => _explicitNullValueKeepAliveTimeout; set { _explicitNullValueKeepAliveTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keepAliveTimeout"); else _explicitNullProperties?.Remove("keepAliveTimeout"); } }
+        private int? _explicitNullValueKeepAliveTimeout = default!;
         /// <summary>Auto configure the Hostname on the origin server certificate.</summary>
-        public bool? MatchSNItoHost { get; set; }
+        public bool? MatchSNItoHost { get => _explicitNullValueMatchSNItoHost; set { _explicitNullValueMatchSNItoHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchSNItoHost"); else _explicitNullProperties?.Remove("matchSNItoHost"); } }
+        private bool? _explicitNullValueMatchSNItoHost = default!;
         /// <summary>Disable the “happy eyeballs” algorithm for IPv4/IPv6 fallback if your local network has misconfigured one of the protocols.</summary>
-        public bool? NoHappyEyeballs { get; set; }
+        public bool? NoHappyEyeballs { get => _explicitNullValueNoHappyEyeballs; set { _explicitNullValueNoHappyEyeballs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noHappyEyeballs"); else _explicitNullProperties?.Remove("noHappyEyeballs"); } }
+        private bool? _explicitNullValueNoHappyEyeballs = default!;
         /// <summary>Disables TLS verification of the certificate presented by your origin. Will allow any certificate from the origin to be accepted.</summary>
-        public bool? NoTLSVerify { get; set; }
+        public bool? NoTLSVerify { get => _explicitNullValueNoTLSVerify; set { _explicitNullValueNoTLSVerify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noTLSVerify"); else _explicitNullProperties?.Remove("noTLSVerify"); } }
+        private bool? _explicitNullValueNoTLSVerify = default!;
         /// <summary>Hostname that cloudflared should expect from your origin server certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginServerName { get; set; }
+        public string? OriginServerName { get => _explicitNullValueOriginServerName; set { _explicitNullValueOriginServerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originServerName"); else _explicitNullProperties?.Remove("originServerName"); } }
+        private string? _explicitNullValueOriginServerName = default!;
 #nullable restore
 #else
-        public string OriginServerName { get; set; }
+        public string OriginServerName { get => _explicitNullValueOriginServerName; set { _explicitNullValueOriginServerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originServerName"); else _explicitNullProperties?.Remove("originServerName"); } }
+        private string _explicitNullValueOriginServerName = default!;
 #endif
         /// <summary>cloudflared starts a proxy server to translate HTTP traffic into TCP when proxying, for example, SSH or RDP. This configures what type of proxy will be started. Valid options are: &quot;&quot; for the regular proxy and &quot;socks&quot; for a SOCKS5 proxy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyType { get; set; }
+        public string? ProxyType { get => _explicitNullValueProxyType; set { _explicitNullValueProxyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxyType"); else _explicitNullProperties?.Remove("proxyType"); } }
+        private string? _explicitNullValueProxyType = default!;
 #nullable restore
 #else
-        public string ProxyType { get; set; }
+        public string ProxyType { get => _explicitNullValueProxyType; set { _explicitNullValueProxyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxyType"); else _explicitNullProperties?.Remove("proxyType"); } }
+        private string _explicitNullValueProxyType = default!;
 #endif
         /// <summary>The timeout after which a TCP keepalive packet is sent on a connection between Tunnel and the origin server.</summary>
-        public int? TcpKeepAlive { get; set; }
+        public int? TcpKeepAlive { get => _explicitNullValueTcpKeepAlive; set { _explicitNullValueTcpKeepAlive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcpKeepAlive"); else _explicitNullProperties?.Remove("tcpKeepAlive"); } }
+        private int? _explicitNullValueTcpKeepAlive = default!;
         /// <summary>Timeout for completing a TLS handshake to your origin server, if you have chosen to connect Tunnel to an HTTPS server.</summary>
-        public int? TlsTimeout { get; set; }
+        public int? TlsTimeout { get => _explicitNullValueTlsTimeout; set { _explicitNullValueTlsTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlsTimeout"); else _explicitNullProperties?.Remove("tlsTimeout"); } }
+        private int? _explicitNullValueTlsTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest"/> and sets the default values.
         /// </summary>
@@ -90,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,6 +181,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("proxyType", ProxyType);
             writer.WriteIntValue("tcpKeepAlive", TcpKeepAlive);
             writer.WriteIntValue("tlsTimeout", TlsTimeout);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

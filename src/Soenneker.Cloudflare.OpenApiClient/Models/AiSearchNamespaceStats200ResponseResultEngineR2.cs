@@ -12,15 +12,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiSearchNamespaceStats200ResponseResultEngineR2 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("metadataSizeBytes") is { } nullNodeMetadataSizeBytes && nullNodeMetadataSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataSizeBytes = null;
+            if (parseNode.GetChildNode("objectCount") is { } nullNodeObjectCount && nullNodeObjectCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectCount = null;
+            if (parseNode.GetChildNode("payloadSizeBytes") is { } nullNodePayloadSizeBytes && nullNodePayloadSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayloadSizeBytes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The metadataSizeBytes property</summary>
-        public int? MetadataSizeBytes { get; set; }
+        public int? MetadataSizeBytes { get => _explicitNullValueMetadataSizeBytes; set { _explicitNullValueMetadataSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataSizeBytes"); else _explicitNullProperties?.Remove("metadataSizeBytes"); } }
+        private int? _explicitNullValueMetadataSizeBytes = default!;
         /// <summary>The objectCount property</summary>
-        public int? ObjectCount { get; set; }
+        public int? ObjectCount { get => _explicitNullValueObjectCount; set { _explicitNullValueObjectCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectCount"); else _explicitNullProperties?.Remove("objectCount"); } }
+        private int? _explicitNullValueObjectCount = default!;
         /// <summary>The payloadSizeBytes property</summary>
-        public int? PayloadSizeBytes { get; set; }
+        public int? PayloadSizeBytes { get => _explicitNullValuePayloadSizeBytes; set { _explicitNullValuePayloadSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payloadSizeBytes"); else _explicitNullProperties?.Remove("payloadSizeBytes"); } }
+        private int? _explicitNullValuePayloadSizeBytes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("metadataSizeBytes", MetadataSizeBytes);
             writer.WriteIntValue("objectCount", ObjectCount);
             writer.WriteIntValue("payloadSizeBytes", PayloadSizeBytes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

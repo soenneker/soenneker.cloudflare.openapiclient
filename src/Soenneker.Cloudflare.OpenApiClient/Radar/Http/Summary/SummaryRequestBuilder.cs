@@ -24,41 +24,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bot_class property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Bot_class.Bot_classRequestBuilder Bot_class
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Bot_class.Bot_classRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The device_type property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Device_type.Device_typeRequestBuilder Device_type
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Device_type.Device_typeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The http_protocol property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Http_protocol.Http_protocolRequestBuilder Http_protocol
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Http_protocol.Http_protocolRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The http_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Http_version.Http_versionRequestBuilder Http_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Http_version.Http_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Ip_version.Ip_versionRequestBuilder Ip_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The os property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Os.OsRequestBuilder Os
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Os.OsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The post_quantum property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Post_quantum.Post_quantumRequestBuilder Post_quantum
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Post_quantum.Post_quantumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tls_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Tls_version.Tls_versionRequestBuilder Tls_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);

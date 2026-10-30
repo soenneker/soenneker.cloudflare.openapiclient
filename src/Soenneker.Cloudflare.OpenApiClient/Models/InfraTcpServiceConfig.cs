@@ -11,43 +11,65 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class InfraTcpServiceConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("app_protocol") is { } nullNodeAppProtocol && nullNodeAppProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppProtocol = null;
+            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("tcp_port") is { } nullNodeTcpPort && nullNodeTcpPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcpPort = null;
+            if (parseNode.GetChildNode("tls_settings") is { } nullNodeTlsSettings && nullNodeTlsSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsSettings = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The app_protocol property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfigAppProtocol? AppProtocol { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfigAppProtocol? AppProtocol { get => _explicitNullValueAppProtocol; set { _explicitNullValueAppProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_protocol"); else _explicitNullProperties?.Remove("app_protocol"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfigAppProtocol? _explicitNullValueAppProtocol = default!;
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost? Host { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost Host { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost _explicitNullValueHost = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The service_id property</summary>
         public Guid? ServiceId { get; private set; }
         /// <summary>The tcp_port property</summary>
-        public int? TcpPort { get; set; }
+        public int? TcpPort { get => _explicitNullValueTcpPort; set { _explicitNullValueTcpPort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcp_port"); else _explicitNullProperties?.Remove("tcp_port"); } }
+        private int? _explicitNullValueTcpPort = default!;
         /// <summary>The tls_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings? TlsSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings? TlsSettings { get => _explicitNullValueTlsSettings; set { _explicitNullValueTlsSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_settings"); else _explicitNullProperties?.Remove("tls_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings? _explicitNullValueTlsSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings TlsSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings TlsSettings { get => _explicitNullValueTlsSettings; set { _explicitNullValueTlsSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_settings"); else _explicitNullProperties?.Remove("tls_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings _explicitNullValueTlsSettings = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType? _explicitNullValueType = default!;
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
@@ -65,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("tcp_port", TcpPort);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings>("tls_settings", TlsSettings);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

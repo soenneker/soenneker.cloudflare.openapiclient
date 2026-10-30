@@ -18,11 +18,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Timeseries_group
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The model property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Timeseries_groups.Model.ModelRequestBuilder Model
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Timeseries_groups.Model.ModelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The task property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Timeseries_groups.TaskNamespace.TaskRequestBuilder Task
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Timeseries_groups.TaskNamespace.TaskRequestBuilder(PathParameters, RequestAdapter);

@@ -11,56 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CloudforceOneGetEmailRuleSchema200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("arrays") is { } nullNodeArrays && nullNodeArrays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Arrays = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("operators") is { } nullNodeOperators && nullNodeOperators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operators = null;
+            if (parseNode.GetChildNode("scalars") is { } nullNodeScalars && nullNodeScalars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scalars = null;
+            if (parseNode.GetChildNode("string_arrays") is { } nullNodeStringArrays && nullNodeStringArrays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StringArrays = null;
+            if (parseNode.GetChildNode("structs") is { } nullNodeStructs && nullNodeStructs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Structs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The arrays property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseArraysItem>? Arrays { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseArraysItem>? Arrays { get => _explicitNullValueArrays; set { _explicitNullValueArrays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arrays"); else _explicitNullProperties?.Remove("arrays"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseArraysItem>? _explicitNullValueArrays = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseArraysItem> Arrays { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseArraysItem> Arrays { get => _explicitNullValueArrays; set { _explicitNullValueArrays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arrays"); else _explicitNullProperties?.Remove("arrays"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseArraysItem> _explicitNullValueArrays = default!;
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseHeaders? Headers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseHeaders Headers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The operators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseOperators? Operators { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseOperators? Operators { get => _explicitNullValueOperators; set { _explicitNullValueOperators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operators"); else _explicitNullProperties?.Remove("operators"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseOperators? _explicitNullValueOperators = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseOperators Operators { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseOperators Operators { get => _explicitNullValueOperators; set { _explicitNullValueOperators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operators"); else _explicitNullProperties?.Remove("operators"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseOperators _explicitNullValueOperators = default!;
 #endif
         /// <summary>The scalars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseScalarsItem>? Scalars { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseScalarsItem>? Scalars { get => _explicitNullValueScalars; set { _explicitNullValueScalars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scalars"); else _explicitNullProperties?.Remove("scalars"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseScalarsItem>? _explicitNullValueScalars = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseScalarsItem> Scalars { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseScalarsItem> Scalars { get => _explicitNullValueScalars; set { _explicitNullValueScalars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scalars"); else _explicitNullProperties?.Remove("scalars"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseScalarsItem> _explicitNullValueScalars = default!;
 #endif
         /// <summary>The string_arrays property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStringArraysItem>? StringArrays { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStringArraysItem>? StringArrays { get => _explicitNullValueStringArrays; set { _explicitNullValueStringArrays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_arrays"); else _explicitNullProperties?.Remove("string_arrays"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStringArraysItem>? _explicitNullValueStringArrays = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStringArraysItem> StringArrays { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStringArraysItem> StringArrays { get => _explicitNullValueStringArrays; set { _explicitNullValueStringArrays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_arrays"); else _explicitNullProperties?.Remove("string_arrays"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStringArraysItem> _explicitNullValueStringArrays = default!;
 #endif
         /// <summary>The structs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStructsItem>? Structs { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStructsItem>? Structs { get => _explicitNullValueStructs; set { _explicitNullValueStructs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structs"); else _explicitNullProperties?.Remove("structs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStructsItem>? _explicitNullValueStructs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStructsItem> Structs { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStructsItem> Structs { get => _explicitNullValueStructs; set { _explicitNullValueStructs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structs"); else _explicitNullProperties?.Remove("structs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStructsItem> _explicitNullValueStructs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200Response"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseScalarsItem>("scalars", Scalars);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStringArraysItem>("string_arrays", StringArrays);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneGetEmailRuleSchema200ResponseStructsItem>("structs", Structs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

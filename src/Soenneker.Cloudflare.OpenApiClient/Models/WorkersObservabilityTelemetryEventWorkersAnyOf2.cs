@@ -11,115 +11,168 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersObservabilityTelemetryEventWorkersAnyOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cpuTimeMs") is { } nullNodeCpuTimeMs && nullNodeCpuTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeMs = null;
+            if (parseNode.GetChildNode("diagnosticsChannelEvents") is { } nullNodeDiagnosticsChannelEvents && nullNodeDiagnosticsChannelEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiagnosticsChannelEvents = null;
+            if (parseNode.GetChildNode("dispatchNamespace") is { } nullNodeDispatchNamespace && nullNodeDispatchNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DispatchNamespace = null;
+            if (parseNode.GetChildNode("durableObjectId") is { } nullNodeDurableObjectId && nullNodeDurableObjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurableObjectId = null;
+            if (parseNode.GetChildNode("entrypoint") is { } nullNodeEntrypoint && nullNodeEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoint = null;
+            if (parseNode.GetChildNode("event") is { } nullNodeEvent && nullNodeEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Event = null;
+            if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("executionModel") is { } nullNodeExecutionModel && nullNodeExecutionModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionModel = null;
+            if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
+            if (parseNode.GetChildNode("preview") is { } nullNodePreview && nullNodePreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preview = null;
+            if (parseNode.GetChildNode("requestId") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("scriptName") is { } nullNodeScriptName && nullNodeScriptName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptName = null;
+            if (parseNode.GetChildNode("scriptVersion") is { } nullNodeScriptVersion && nullNodeScriptVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptVersion = null;
+            if (parseNode.GetChildNode("spanId") is { } nullNodeSpanId && nullNodeSpanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpanId = null;
+            if (parseNode.GetChildNode("traceId") is { } nullNodeTraceId && nullNodeTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceId = null;
+            if (parseNode.GetChildNode("truncated") is { } nullNodeTruncated && nullNodeTruncated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Truncated = null;
+            if (parseNode.GetChildNode("wallTimeMs") is { } nullNodeWallTimeMs && nullNodeWallTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WallTimeMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cpuTimeMs property</summary>
-        public double? CpuTimeMs { get; set; }
+        public double? CpuTimeMs { get => _explicitNullValueCpuTimeMs; set { _explicitNullValueCpuTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpuTimeMs"); else _explicitNullProperties?.Remove("cpuTimeMs"); } }
+        private double? _explicitNullValueCpuTimeMs = default!;
         /// <summary>The diagnosticsChannelEvents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2DiagnosticsChannelEventsItem>? DiagnosticsChannelEvents { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2DiagnosticsChannelEventsItem>? DiagnosticsChannelEvents { get => _explicitNullValueDiagnosticsChannelEvents; set { _explicitNullValueDiagnosticsChannelEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diagnosticsChannelEvents"); else _explicitNullProperties?.Remove("diagnosticsChannelEvents"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2DiagnosticsChannelEventsItem>? _explicitNullValueDiagnosticsChannelEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2DiagnosticsChannelEventsItem> DiagnosticsChannelEvents { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2DiagnosticsChannelEventsItem> DiagnosticsChannelEvents { get => _explicitNullValueDiagnosticsChannelEvents; set { _explicitNullValueDiagnosticsChannelEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diagnosticsChannelEvents"); else _explicitNullProperties?.Remove("diagnosticsChannelEvents"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2DiagnosticsChannelEventsItem> _explicitNullValueDiagnosticsChannelEvents = default!;
 #endif
         /// <summary>The dispatchNamespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DispatchNamespace { get; set; }
+        public string? DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatchNamespace"); else _explicitNullProperties?.Remove("dispatchNamespace"); } }
+        private string? _explicitNullValueDispatchNamespace = default!;
 #nullable restore
 #else
-        public string DispatchNamespace { get; set; }
+        public string DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatchNamespace"); else _explicitNullProperties?.Remove("dispatchNamespace"); } }
+        private string _explicitNullValueDispatchNamespace = default!;
 #endif
         /// <summary>The durableObjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DurableObjectId { get; set; }
+        public string? DurableObjectId { get => _explicitNullValueDurableObjectId; set { _explicitNullValueDurableObjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durableObjectId"); else _explicitNullProperties?.Remove("durableObjectId"); } }
+        private string? _explicitNullValueDurableObjectId = default!;
 #nullable restore
 #else
-        public string DurableObjectId { get; set; }
+        public string DurableObjectId { get => _explicitNullValueDurableObjectId; set { _explicitNullValueDurableObjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durableObjectId"); else _explicitNullProperties?.Remove("durableObjectId"); } }
+        private string _explicitNullValueDurableObjectId = default!;
 #endif
         /// <summary>The entrypoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Entrypoint { get; set; }
+        public string? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private string? _explicitNullValueEntrypoint = default!;
 #nullable restore
 #else
-        public string Entrypoint { get; set; }
+        public string Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private string _explicitNullValueEntrypoint = default!;
 #endif
         /// <summary>The event property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2EventProperty? Event { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2EventProperty? Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2EventProperty? _explicitNullValueEvent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2EventProperty Event { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2EventProperty Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2EventProperty _explicitNullValueEvent = default!;
 #endif
         /// <summary>The eventType property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2EventType? EventType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2EventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2EventType? _explicitNullValueEventType = default!;
         /// <summary>The executionModel property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2ExecutionModel? ExecutionModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2ExecutionModel? ExecutionModel { get => _explicitNullValueExecutionModel; set { _explicitNullValueExecutionModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionModel"); else _explicitNullProperties?.Remove("executionModel"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2ExecutionModel? _explicitNullValueExecutionModel = default!;
         /// <summary>The outcome property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Outcome { get; set; }
+        public string? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        private string? _explicitNullValueOutcome = default!;
 #nullable restore
 #else
-        public string Outcome { get; set; }
+        public string Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        private string _explicitNullValueOutcome = default!;
 #endif
         /// <summary>The preview property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2Preview? Preview { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2Preview? Preview { get => _explicitNullValuePreview; set { _explicitNullValuePreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview"); else _explicitNullProperties?.Remove("preview"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2Preview? _explicitNullValuePreview = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2Preview Preview { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2Preview Preview { get => _explicitNullValuePreview; set { _explicitNullValuePreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview"); else _explicitNullProperties?.Remove("preview"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2Preview _explicitNullValuePreview = default!;
 #endif
         /// <summary>The requestId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestId"); else _explicitNullProperties?.Remove("requestId"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestId"); else _explicitNullProperties?.Remove("requestId"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>The scriptName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptName { get; set; }
+        public string? ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptName"); else _explicitNullProperties?.Remove("scriptName"); } }
+        private string? _explicitNullValueScriptName = default!;
 #nullable restore
 #else
-        public string ScriptName { get; set; }
+        public string ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptName"); else _explicitNullProperties?.Remove("scriptName"); } }
+        private string _explicitNullValueScriptName = default!;
 #endif
         /// <summary>The scriptVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2ScriptVersion? ScriptVersion { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2ScriptVersion? ScriptVersion { get => _explicitNullValueScriptVersion; set { _explicitNullValueScriptVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptVersion"); else _explicitNullProperties?.Remove("scriptVersion"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2ScriptVersion? _explicitNullValueScriptVersion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2ScriptVersion ScriptVersion { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2ScriptVersion ScriptVersion { get => _explicitNullValueScriptVersion; set { _explicitNullValueScriptVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptVersion"); else _explicitNullProperties?.Remove("scriptVersion"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2ScriptVersion _explicitNullValueScriptVersion = default!;
 #endif
         /// <summary>The spanId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SpanId { get; set; }
+        public string? SpanId { get => _explicitNullValueSpanId; set { _explicitNullValueSpanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spanId"); else _explicitNullProperties?.Remove("spanId"); } }
+        private string? _explicitNullValueSpanId = default!;
 #nullable restore
 #else
-        public string SpanId { get; set; }
+        public string SpanId { get => _explicitNullValueSpanId; set { _explicitNullValueSpanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spanId"); else _explicitNullProperties?.Remove("spanId"); } }
+        private string _explicitNullValueSpanId = default!;
 #endif
         /// <summary>The traceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TraceId { get; set; }
+        public string? TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceId"); else _explicitNullProperties?.Remove("traceId"); } }
+        private string? _explicitNullValueTraceId = default!;
 #nullable restore
 #else
-        public string TraceId { get; set; }
+        public string TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceId"); else _explicitNullProperties?.Remove("traceId"); } }
+        private string _explicitNullValueTraceId = default!;
 #endif
         /// <summary>The truncated property</summary>
-        public bool? Truncated { get; set; }
+        public bool? Truncated { get => _explicitNullValueTruncated; set { _explicitNullValueTruncated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("truncated"); else _explicitNullProperties?.Remove("truncated"); } }
+        private bool? _explicitNullValueTruncated = default!;
         /// <summary>The wallTimeMs property</summary>
-        public double? WallTimeMs { get; set; }
+        public double? WallTimeMs { get => _explicitNullValueWallTimeMs; set { _explicitNullValueWallTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wallTimeMs"); else _explicitNullProperties?.Remove("wallTimeMs"); } }
+        private double? _explicitNullValueWallTimeMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2"/> and sets the default values.
         /// </summary>
@@ -135,7 +188,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -188,6 +241,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("traceId", TraceId);
             writer.WriteBoolValue("truncated", Truncated);
             writer.WriteDoubleValue("wallTimeMs", WallTimeMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

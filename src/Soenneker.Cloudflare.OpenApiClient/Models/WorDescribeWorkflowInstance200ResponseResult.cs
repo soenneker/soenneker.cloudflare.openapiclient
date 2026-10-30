@@ -11,79 +11,121 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorDescribeWorkflowInstance200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end") is { } nullNodeEnd && nullNodeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) End = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("output") is { } nullNodeOutput && nullNodeOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Output = null;
+            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("queued") is { } nullNodeQueued && nullNodeQueued.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queued = null;
+            if (parseNode.GetChildNode("rollback") is { } nullNodeRollback && nullNodeRollback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rollback = null;
+            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("step_count") is { } nullNodeStepCount && nullNodeStepCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StepCount = null;
+            if (parseNode.GetChildNode("steps") is { } nullNodeSteps && nullNodeSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Steps = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
+            if (parseNode.GetChildNode("versionId") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end property</summary>
-        public DateTimeOffset? End { get; set; }
+        public DateTimeOffset? End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private DateTimeOffset? _explicitNullValueEnd = default!;
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultError? Error { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultError Error { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultError _explicitNullValueError = default!;
 #endif
         /// <summary>The output property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult.WorDescribeWorkflowInstance200ResponseResult_output? Output { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? Output { get => _explicitNullValueOutput; set { _explicitNullValueOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output"); else _explicitNullProperties?.Remove("output"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueOutput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult.WorDescribeWorkflowInstance200ResponseResult_output Output { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode Output { get => _explicitNullValueOutput; set { _explicitNullValueOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output"); else _explicitNullProperties?.Remove("output"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueOutput = default!;
 #endif
         /// <summary>The params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultParams? Params { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultParams? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultParams? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultParams Params { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultParams Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultParams _explicitNullValueParams = default!;
 #endif
         /// <summary>The queued property</summary>
-        public DateTimeOffset? Queued { get; set; }
+        public DateTimeOffset? Queued { get => _explicitNullValueQueued; set { _explicitNullValueQueued = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queued"); else _explicitNullProperties?.Remove("queued"); } }
+        private DateTimeOffset? _explicitNullValueQueued = default!;
         /// <summary>The rollback property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultRollback? Rollback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultRollback? Rollback { get => _explicitNullValueRollback; set { _explicitNullValueRollback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollback"); else _explicitNullProperties?.Remove("rollback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultRollback? _explicitNullValueRollback = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultRollback Rollback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultRollback Rollback { get => _explicitNullValueRollback; set { _explicitNullValueRollback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollback"); else _explicitNullProperties?.Remove("rollback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultRollback _explicitNullValueRollback = default!;
 #endif
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultSchedule? Schedule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultSchedule? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultSchedule Schedule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultSchedule Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultSchedule _explicitNullValueSchedule = default!;
 #endif
         /// <summary>The start property</summary>
-        public DateTimeOffset? Start { get; set; }
+        public DateTimeOffset? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private DateTimeOffset? _explicitNullValueStart = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStatus? _explicitNullValueStatus = default!;
         /// <summary>The step_count property</summary>
-        public int? StepCount { get; set; }
+        public int? StepCount { get => _explicitNullValueStepCount; set { _explicitNullValueStepCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step_count"); else _explicitNullProperties?.Remove("step_count"); } }
+        private int? _explicitNullValueStepCount = default!;
         /// <summary>The steps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem>? Steps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem>? Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem>? _explicitNullValueSteps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem> Steps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem> Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem> _explicitNullValueSteps = default!;
 #endif
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>The trigger property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger? Trigger { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger? _explicitNullValueTrigger = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger Trigger { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger _explicitNullValueTrigger = default!;
 #endif
         /// <summary>The versionId property</summary>
-        public Guid? VersionId { get; set; }
+        public Guid? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionId"); else _explicitNullProperties?.Remove("versionId"); } }
+        private Guid? _explicitNullValueVersionId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -99,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "end", n => { End = n.GetDateTimeOffsetValue(); } },
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultError>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultError.CreateFromDiscriminatorValue); } },
-                { "output", n => { Output = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult.WorDescribeWorkflowInstance200ResponseResult_output>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult.WorDescribeWorkflowInstance200ResponseResult_output.CreateFromDiscriminatorValue); } },
+                { "output", n => { Output = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultParams.CreateFromDiscriminatorValue); } },
                 { "queued", n => { Queued = n.GetDateTimeOffsetValue(); } },
                 { "rollback", n => { Rollback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultRollback>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultRollback.CreateFromDiscriminatorValue); } },
@@ -134,7 +176,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("end", End);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultError>("error", Error);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult.WorDescribeWorkflowInstance200ResponseResult_output>("output", Output);
+            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("output", Output);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultParams>("params", Params);
             writer.WriteDateTimeOffsetValue("queued", Queued);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultRollback>("rollback", Rollback);
@@ -146,6 +188,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("success", Success);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger>("trigger", Trigger);
             writer.WriteGuidValue("versionId", VersionId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
@@ -171,14 +214,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult.WorDescribeWorkflowInstance200ResponseResult_output CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult.WorDescribeWorkflowInstance200ResponseResult_output();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResult.WorDescribeWorkflowInstance200ResponseResult_output();
-                if(parseNode.GetDoubleValue() is double doubleValue)
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal) && parseNode.GetDoubleValue() is double doubleValue)
                 {
                     result.Double = doubleValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -198,6 +245,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Double == null && String == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Double != null)
                 {

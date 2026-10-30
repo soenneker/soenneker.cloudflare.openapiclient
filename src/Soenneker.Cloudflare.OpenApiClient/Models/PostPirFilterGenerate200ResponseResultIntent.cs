@@ -12,30 +12,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostPirFilterGenerate200ResponseResultIntent : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("clauses") is { } nullNodeClauses && nullNodeClauses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clauses = null;
+            if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
+            if (parseNode.GetChildNode("unsupported_terms") is { } nullNodeUnsupportedTerms && nullNodeUnsupportedTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsupportedTerms = null;
+        }
+
         /// <summary>The clauses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntentClausesItem>? Clauses { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntentClausesItem>? Clauses { get => _explicitNullValueClauses; set { _explicitNullValueClauses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clauses"); else _explicitNullProperties?.Remove("clauses"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntentClausesItem>? _explicitNullValueClauses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntentClausesItem> Clauses { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntentClausesItem> Clauses { get => _explicitNullValueClauses; set { _explicitNullValueClauses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clauses"); else _explicitNullProperties?.Remove("clauses"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntentClausesItem> _explicitNullValueClauses = default!;
 #endif
         /// <summary>The indicators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Indicators { get; set; }
+        public List<string>? Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
+        private List<string>? _explicitNullValueIndicators = default!;
 #nullable restore
 #else
-        public List<string> Indicators { get; set; }
+        public List<string> Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
+        private List<string> _explicitNullValueIndicators = default!;
 #endif
         /// <summary>The unsupported_terms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UnsupportedTerms { get; set; }
+        public List<string>? UnsupportedTerms { get => _explicitNullValueUnsupportedTerms; set { _explicitNullValueUnsupportedTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsupported_terms"); else _explicitNullProperties?.Remove("unsupported_terms"); } }
+        private List<string>? _explicitNullValueUnsupportedTerms = default!;
 #nullable restore
 #else
-        public List<string> UnsupportedTerms { get; set; }
+        public List<string> UnsupportedTerms { get => _explicitNullValueUnsupportedTerms; set { _explicitNullValueUnsupportedTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsupported_terms"); else _explicitNullProperties?.Remove("unsupported_terms"); } }
+        private List<string> _explicitNullValueUnsupportedTerms = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultIntentClausesItem>("clauses", Clauses);
             writer.WriteCollectionOfPrimitiveValues<string>("indicators", Indicators);
-            writer.WriteCollectionOfPrimitiveValues<string>("unsupported_terms", UnsupportedTerms);
+            writer.WriteCollectionOfPrimitiveValues<string>("unsupported_terms", UnsupportedTerms);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

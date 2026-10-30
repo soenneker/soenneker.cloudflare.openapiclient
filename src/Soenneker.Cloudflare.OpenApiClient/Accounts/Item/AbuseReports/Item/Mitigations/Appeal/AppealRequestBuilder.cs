@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mit
         /// Request a review of mitigations applied because of an abuse report, or submit a report-level appeal.- To request a review of specific mitigations, send `appeals` with the mitigation IDs and reasons. Repeating a request for a mitigation with an unresolved appeal is idempotent and returns that mitigation in the in-review state.- To submit a report-level appeal, send `type` and, for a `counter_notice`, the counter-notice details in `data`. Report-level appeals are currently available only for DMCA (copyright) reports.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppealResult"/></returns>
-        /// <param name="body">Submit an appeal for a report. Provide either a list of mitigations to appeal, or an appeal type with its supporting details, but not both. When type is &quot;counter_notice&quot;, the counter-notice details are required.</param>
+        /// <param name="body">Submit an appeal for a report. Provide either a list of mitigations to appeal, or an appeal type with its supporting details, but not both. When type is &quot;counter_notice&quot;, the counter-notice details are required. A &quot;content_removed&quot; appeal takes an optional explanation instead and is accepted only while the report is in its Notice and Takedown notice period (`has_pending_notice` on the eligibility response). Reports that allow a single appeal (`max_appeals` of 1) never have a notice period and accept it whenever `appealable` is true.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsCloudflareApiErrorResponse">When receiving a 403 status code</exception>
@@ -57,6 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mit
             {
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsCloudflareApiErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.RequestReview500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppealResult>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppealResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -64,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mit
         /// Request a review of mitigations applied because of an abuse report, or submit a report-level appeal.- To request a review of specific mitigations, send `appeals` with the mitigation IDs and reasons. Repeating a request for a mitigation with an unresolved appeal is idempotent and returns that mitigation in the in-review state.- To submit a report-level appeal, send `type` and, for a `counter_notice`, the counter-notice details in `data`. Report-level appeals are currently available only for DMCA (copyright) reports.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Submit an appeal for a report. Provide either a list of mitigations to appeal, or an appeal type with its supporting details, but not both. When type is &quot;counter_notice&quot;, the counter-notice details are required.</param>
+        /// <param name="body">Submit an appeal for a report. Provide either a list of mitigations to appeal, or an appeal type with its supporting details, but not both. When type is &quot;counter_notice&quot;, the counter-notice details are required. A &quot;content_removed&quot; appeal takes an optional explanation instead and is accepted only while the report is in its Notice and Takedown notice period (`has_pending_notice` on the eligibility response). Reports that allow a single appeal (`max_appeals` of 1) never have a notice period and accept it whenever `appealable` is true.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

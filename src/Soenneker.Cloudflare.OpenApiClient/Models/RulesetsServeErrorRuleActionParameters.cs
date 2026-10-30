@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesetsServeErrorRuleActionParameters : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember1? RulesetsServeErrorRuleActionParametersMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf1? RulesetsServeErrorRuleActionParametersOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember1 RulesetsServeErrorRuleActionParametersMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf1 RulesetsServeErrorRuleActionParametersOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember2? RulesetsServeErrorRuleActionParametersMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf2? RulesetsServeErrorRuleActionParametersOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember2 RulesetsServeErrorRuleActionParametersMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf2 RulesetsServeErrorRuleActionParametersOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +44,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParameters();
-            return result;
+            if("RulesetsServeErrorRuleActionParametersOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("RulesetsServeErrorRuleActionParametersOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("content") != null && parseNode.GetChildNode("content_type") != null && (parseNode.GetChildNode("content_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("application/json".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "text/html".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "text/plain".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "text/xml".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("asset_name") != null && parseNode.GetChildNode("content_type") != null && (parseNode.GetChildNode("content_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("application/json".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "text/html".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "text/plain".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "text/xml".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.RulesetsServeErrorRuleActionParametersOneOf1 == null && result.RulesetsServeErrorRuleActionParametersOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.RulesetsServeErrorRuleActionParametersOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf1(), parseNode);
+            if (result.RulesetsServeErrorRuleActionParametersOneOf1 == null && result.RulesetsServeErrorRuleActionParametersOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.RulesetsServeErrorRuleActionParametersOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf2(), parseNode);
+            if (result.RulesetsServeErrorRuleActionParametersOneOf1 == null && result.RulesetsServeErrorRuleActionParametersOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,13 +67,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RulesetsServeErrorRuleActionParametersMember1 != null)
+            if(RulesetsServeErrorRuleActionParametersOneOf1 != null)
             {
-                return RulesetsServeErrorRuleActionParametersMember1.GetFieldDeserializers();
+                return RulesetsServeErrorRuleActionParametersOneOf1.GetFieldDeserializers();
             }
-            else if(RulesetsServeErrorRuleActionParametersMember2 != null)
+            else if(RulesetsServeErrorRuleActionParametersOneOf2 != null)
             {
-                return RulesetsServeErrorRuleActionParametersMember2.GetFieldDeserializers();
+                return RulesetsServeErrorRuleActionParametersOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -63,14 +83,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (RulesetsServeErrorRuleActionParametersOneOf1 == null && RulesetsServeErrorRuleActionParametersOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (RulesetsServeErrorRuleActionParametersOneOf1 != null && RulesetsServeErrorRuleActionParametersOneOf2 == null) { if (RulesetsServeErrorRuleActionParametersOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsServeErrorRuleActionParametersOneOf1); return; }
+            if (RulesetsServeErrorRuleActionParametersOneOf2 != null && RulesetsServeErrorRuleActionParametersOneOf1 == null) { if (RulesetsServeErrorRuleActionParametersOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsServeErrorRuleActionParametersOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RulesetsServeErrorRuleActionParametersMember1 != null)
+            if(RulesetsServeErrorRuleActionParametersOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember1>(null, RulesetsServeErrorRuleActionParametersMember1);
+                if (RulesetsServeErrorRuleActionParametersOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf1>(null, RulesetsServeErrorRuleActionParametersOneOf1);
             }
-            else if(RulesetsServeErrorRuleActionParametersMember2 != null)
+            else if(RulesetsServeErrorRuleActionParametersOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersMember2>(null, RulesetsServeErrorRuleActionParametersMember2);
+                if (RulesetsServeErrorRuleActionParametersOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRuleActionParametersOneOf2>(null, RulesetsServeErrorRuleActionParametersOneOf2);
             }
         }
     }

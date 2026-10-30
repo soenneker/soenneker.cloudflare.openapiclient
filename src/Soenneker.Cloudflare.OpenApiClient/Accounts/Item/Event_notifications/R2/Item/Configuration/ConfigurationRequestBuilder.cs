@@ -61,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetEventNotificationConfigs200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetEventNotificationConfigs200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,72 +12,105 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrapiGetCrawlResult200ResponseResultRecordsItemMetadata : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("lastModified") is { } nullNodeLastModified && nullNodeLastModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModified = null;
+            if (parseNode.GetChildNode("og:description") is { } nullNodeOgDescription && nullNodeOgDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OgDescription = null;
+            if (parseNode.GetChildNode("og:image") is { } nullNodeOgImage && nullNodeOgImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OgImage = null;
+            if (parseNode.GetChildNode("og:site_name") is { } nullNodeOgSiteName && nullNodeOgSiteName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OgSiteName = null;
+            if (parseNode.GetChildNode("og:title") is { } nullNodeOgTitle && nullNodeOgTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OgTitle = null;
+            if (parseNode.GetChildNode("og:type") is { } nullNodeOgType && nullNodeOgType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OgType = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Value of the Last-Modified response header, when provided by the origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastModified { get; set; }
+        public string? LastModified { get => _explicitNullValueLastModified; set { _explicitNullValueLastModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModified"); else _explicitNullProperties?.Remove("lastModified"); } }
+        private string? _explicitNullValueLastModified = default!;
 #nullable restore
 #else
-        public string LastModified { get; set; }
+        public string LastModified { get => _explicitNullValueLastModified; set { _explicitNullValueLastModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModified"); else _explicitNullProperties?.Remove("lastModified"); } }
+        private string _explicitNullValueLastModified = default!;
 #endif
         /// <summary>Open Graph description of the crawled page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OgDescription { get; set; }
+        public string? OgDescription { get => _explicitNullValueOgDescription; set { _explicitNullValueOgDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:description"); else _explicitNullProperties?.Remove("og:description"); } }
+        private string? _explicitNullValueOgDescription = default!;
 #nullable restore
 #else
-        public string OgDescription { get; set; }
+        public string OgDescription { get => _explicitNullValueOgDescription; set { _explicitNullValueOgDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:description"); else _explicitNullProperties?.Remove("og:description"); } }
+        private string _explicitNullValueOgDescription = default!;
 #endif
         /// <summary>Open Graph image of the crawled page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OgImage { get; set; }
+        public string? OgImage { get => _explicitNullValueOgImage; set { _explicitNullValueOgImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:image"); else _explicitNullProperties?.Remove("og:image"); } }
+        private string? _explicitNullValueOgImage = default!;
 #nullable restore
 #else
-        public string OgImage { get; set; }
+        public string OgImage { get => _explicitNullValueOgImage; set { _explicitNullValueOgImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:image"); else _explicitNullProperties?.Remove("og:image"); } }
+        private string _explicitNullValueOgImage = default!;
 #endif
         /// <summary>Open Graph site name of the crawled page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OgSiteName { get; set; }
+        public string? OgSiteName { get => _explicitNullValueOgSiteName; set { _explicitNullValueOgSiteName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:site_name"); else _explicitNullProperties?.Remove("og:site_name"); } }
+        private string? _explicitNullValueOgSiteName = default!;
 #nullable restore
 #else
-        public string OgSiteName { get; set; }
+        public string OgSiteName { get => _explicitNullValueOgSiteName; set { _explicitNullValueOgSiteName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:site_name"); else _explicitNullProperties?.Remove("og:site_name"); } }
+        private string _explicitNullValueOgSiteName = default!;
 #endif
         /// <summary>Open Graph title of the crawled page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OgTitle { get; set; }
+        public string? OgTitle { get => _explicitNullValueOgTitle; set { _explicitNullValueOgTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:title"); else _explicitNullProperties?.Remove("og:title"); } }
+        private string? _explicitNullValueOgTitle = default!;
 #nullable restore
 #else
-        public string OgTitle { get; set; }
+        public string OgTitle { get => _explicitNullValueOgTitle; set { _explicitNullValueOgTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:title"); else _explicitNullProperties?.Remove("og:title"); } }
+        private string _explicitNullValueOgTitle = default!;
 #endif
         /// <summary>Open Graph type of the crawled page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OgType { get; set; }
+        public string? OgType { get => _explicitNullValueOgType; set { _explicitNullValueOgType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:type"); else _explicitNullProperties?.Remove("og:type"); } }
+        private string? _explicitNullValueOgType = default!;
 #nullable restore
 #else
-        public string OgType { get; set; }
+        public string OgType { get => _explicitNullValueOgType; set { _explicitNullValueOgType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("og:type"); else _explicitNullProperties?.Remove("og:type"); } }
+        private string _explicitNullValueOgType = default!;
 #endif
         /// <summary>HTTP status code of the crawled page.</summary>
-        public double? Status { get; set; }
+        public double? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private double? _explicitNullValueStatus = default!;
         /// <summary>Title of the crawled page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>Final URL of the crawled page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -87,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetCrawlResult200ResponseResultRecordsItemMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetCrawlResult200ResponseResultRecordsItemMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetCrawlResult200ResponseResultRecordsItemMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,7 +156,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("og:type", OgType);
             writer.WriteDoubleValue("status", Status);
             writer.WriteStringValue("title", Title);
-            writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("url", Url);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

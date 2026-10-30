@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Audit_logs
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of audit logs for a user account. Can be filtered by who made the change, on which zone, and the timeframe of the change.

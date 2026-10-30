@@ -11,64 +11,102 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CustomIndicatorFeedsGetIndicatorFeedMetadata4XxResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_on") is { } nullNodeCreatedOn && nullNodeCreatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedOn = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_attributable") is { } nullNodeIsAttributable && nullNodeIsAttributable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAttributable = null;
+            if (parseNode.GetChildNode("is_downloadable") is { } nullNodeIsDownloadable && nullNodeIsDownloadable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDownloadable = null;
+            if (parseNode.GetChildNode("is_public") is { } nullNodeIsPublic && nullNodeIsPublic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPublic = null;
+            if (parseNode.GetChildNode("last_upload_summary") is { } nullNodeLastUploadSummary && nullNodeLastUploadSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUploadSummary = null;
+            if (parseNode.GetChildNode("latest_upload_error") is { } nullNodeLatestUploadError && nullNodeLatestUploadError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestUploadError = null;
+            if (parseNode.GetChildNode("latest_upload_status") is { } nullNodeLatestUploadStatus && nullNodeLatestUploadStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestUploadStatus = null;
+            if (parseNode.GetChildNode("modified_on") is { } nullNodeModifiedOn && nullNodeModifiedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedOn = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("provider_id") is { } nullNodeProviderId && nullNodeProviderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderId = null;
+            if (parseNode.GetChildNode("provider_name") is { } nullNodeProviderName && nullNodeProviderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time when the data entry was created</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get => _explicitNullValueCreatedOn; set { _explicitNullValueCreatedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_on"); else _explicitNullProperties?.Remove("created_on"); } }
+        private DateTimeOffset? _explicitNullValueCreatedOn = default!;
         /// <summary>The description of the example test</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The unique identifier for the indicator feed</summary>
-        public int? Id { get; set; }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private int? _explicitNullValueId = default!;
         /// <summary>Whether the indicator feed can be attributed to a provider</summary>
-        public bool? IsAttributable { get; set; }
+        public bool? IsAttributable { get => _explicitNullValueIsAttributable; set { _explicitNullValueIsAttributable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_attributable"); else _explicitNullProperties?.Remove("is_attributable"); } }
+        private bool? _explicitNullValueIsAttributable = default!;
         /// <summary>Whether the indicator feed can be downloaded</summary>
-        public bool? IsDownloadable { get; set; }
+        public bool? IsDownloadable { get => _explicitNullValueIsDownloadable; set { _explicitNullValueIsDownloadable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_downloadable"); else _explicitNullProperties?.Remove("is_downloadable"); } }
+        private bool? _explicitNullValueIsDownloadable = default!;
         /// <summary>Whether the indicator feed is exposed to customers</summary>
-        public bool? IsPublic { get; set; }
+        public bool? IsPublic { get => _explicitNullValueIsPublic; set { _explicitNullValueIsPublic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_public"); else _explicitNullProperties?.Remove("is_public"); } }
+        private bool? _explicitNullValueIsPublic = default!;
         /// <summary>Summary of indicator counts from the last successful upload to thisfeed. Populated by the custom-threat-feeds loader at the end of eachsuccessful load. Absent (omitted) when no upload has completedsuccessfully or the upload errored before the summary write.Surfaces silent-failure paths so operators can see when theirindicators were dropped (popularity allowlist, expired valid_until,etc.) without reading loader logs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary? LastUploadSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary? LastUploadSummary { get => _explicitNullValueLastUploadSummary; set { _explicitNullValueLastUploadSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_upload_summary"); else _explicitNullProperties?.Remove("last_upload_summary"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary? _explicitNullValueLastUploadSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary LastUploadSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary LastUploadSummary { get => _explicitNullValueLastUploadSummary; set { _explicitNullValueLastUploadSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_upload_summary"); else _explicitNullProperties?.Remove("last_upload_summary"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary _explicitNullValueLastUploadSummary = default!;
 #endif
         /// <summary>Human-readable error message describing why the latest uploadfailed. Populated only when `latest_upload_status` is `Error`.Returns one of a small fixed set of category-level messages(invalid domain / IP / URL entries, malformed row or header,invalid valid_until timestamp, etc.) or the generic`Upload failed` for unknown or infrastructure-level errors.Never echoes raw error text from the underlying loader.Intel accounts receive the verbatim loader/API error text(including specific offending values) instead of thesecategory-level messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LatestUploadError { get; set; }
+        public string? LatestUploadError { get => _explicitNullValueLatestUploadError; set { _explicitNullValueLatestUploadError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_upload_error"); else _explicitNullProperties?.Remove("latest_upload_error"); } }
+        private string? _explicitNullValueLatestUploadError = default!;
 #nullable restore
 #else
-        public string LatestUploadError { get; set; }
+        public string LatestUploadError { get => _explicitNullValueLatestUploadError; set { _explicitNullValueLatestUploadError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_upload_error"); else _explicitNullProperties?.Remove("latest_upload_error"); } }
+        private string _explicitNullValueLatestUploadError = default!;
 #endif
         /// <summary>Status of the latest snapshot uploaded</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus? LatestUploadStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus? LatestUploadStatus { get => _explicitNullValueLatestUploadStatus; set { _explicitNullValueLatestUploadStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_upload_status"); else _explicitNullProperties?.Remove("latest_upload_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus? _explicitNullValueLatestUploadStatus = default!;
         /// <summary>The date and time when the data entry was last modified</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get => _explicitNullValueModifiedOn; set { _explicitNullValueModifiedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_on"); else _explicitNullProperties?.Remove("modified_on"); } }
+        private DateTimeOffset? _explicitNullValueModifiedOn = default!;
         /// <summary>The name of the indicator feed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The unique identifier for the provider</summary>
-        public int? ProviderId { get; set; }
+        public int? ProviderId { get => _explicitNullValueProviderId; set { _explicitNullValueProviderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_id"); else _explicitNullProperties?.Remove("provider_id"); } }
+        private int? _explicitNullValueProviderId = default!;
         /// <summary>The provider of the indicator feed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderName { get; set; }
+        public string? ProviderName { get => _explicitNullValueProviderName; set { _explicitNullValueProviderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_name"); else _explicitNullProperties?.Remove("provider_name"); } }
+        private string? _explicitNullValueProviderName = default!;
 #nullable restore
 #else
-        public string ProviderName { get; set; }
+        public string ProviderName { get => _explicitNullValueProviderName; set { _explicitNullValueProviderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_name"); else _explicitNullProperties?.Remove("provider_name"); } }
+        private string _explicitNullValueProviderName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsGetIndicatorFeedMetadata4XxResponseResult"/> and sets the default values.
@@ -85,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsGetIndicatorFeedMetadata4XxResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsGetIndicatorFeedMetadata4XxResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsGetIndicatorFeedMetadata4XxResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,6 +168,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("provider_id", ProviderId);
             writer.WriteStringValue("provider_name", ProviderName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,42 +12,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersObservabilityDistributionResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bins") is { } nullNodeBins && nullNodeBins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bins = null;
+            if (parseNode.GetChildNode("bucketBoundaries") is { } nullNodeBucketBoundaries && nullNodeBucketBoundaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BucketBoundaries = null;
+            if (parseNode.GetChildNode("bucketMode") is { } nullNodeBucketMode && nullNodeBucketMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BucketMode = null;
+            if (parseNode.GetChildNode("buckets") is { } nullNodeBuckets && nullNodeBuckets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Buckets = null;
+            if (parseNode.GetChildNode("matrix") is { } nullNodeMatrix && nullNodeMatrix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Matrix = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Time-bucket labels (ISO-8601 strings), one per matrix column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Bins { get; set; }
+        public List<string>? Bins { get => _explicitNullValueBins; set { _explicitNullValueBins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bins"); else _explicitNullProperties?.Remove("bins"); } }
+        private List<string>? _explicitNullValueBins = default!;
 #nullable restore
 #else
-        public List<string> Bins { get; set; }
+        public List<string> Bins { get => _explicitNullValueBins; set { _explicitNullValueBins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bins"); else _explicitNullProperties?.Remove("bins"); } }
+        private List<string> _explicitNullValueBins = default!;
 #endif
         /// <summary>Raw bucket edges in the value&apos;s native unit, length buckets.length + 1. Used for the colour scale and percentile mapping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? BucketBoundaries { get; set; }
+        public List<double?>? BucketBoundaries { get => _explicitNullValueBucketBoundaries; set { _explicitNullValueBucketBoundaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketBoundaries"); else _explicitNullProperties?.Remove("bucketBoundaries"); } }
+        private List<double?>? _explicitNullValueBucketBoundaries = default!;
 #nullable restore
 #else
-        public List<double?> BucketBoundaries { get; set; }
+        public List<double?> BucketBoundaries { get => _explicitNullValueBucketBoundaries; set { _explicitNullValueBucketBoundaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketBoundaries"); else _explicitNullProperties?.Remove("bucketBoundaries"); } }
+        private List<double?> _explicitNullValueBucketBoundaries = default!;
 #endif
         /// <summary>Bucketing scheme used to derive the boundaries. &apos;log&apos; produces geometric edges; &apos;linear&apos; produces fixed-width edges.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResultBucketMode? BucketMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResultBucketMode? BucketMode { get => _explicitNullValueBucketMode; set { _explicitNullValueBucketMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketMode"); else _explicitNullProperties?.Remove("bucketMode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResultBucketMode? _explicitNullValueBucketMode = default!;
         /// <summary>Value-range labels, one per matrix row (e.g. &apos;50–100ms&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Buckets { get; set; }
+        public List<string>? Buckets { get => _explicitNullValueBuckets; set { _explicitNullValueBuckets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buckets"); else _explicitNullProperties?.Remove("buckets"); } }
+        private List<string>? _explicitNullValueBuckets = default!;
 #nullable restore
 #else
-        public List<string> Buckets { get; set; }
+        public List<string> Buckets { get => _explicitNullValueBuckets; set { _explicitNullValueBuckets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buckets"); else _explicitNullProperties?.Remove("buckets"); } }
+        private List<string> _explicitNullValueBuckets = default!;
 #endif
         /// <summary>Sampling-corrected counts. matrix[bucketIdx][binIdx] is the estimated number of events in value-bucket &apos;bucketIdx&apos; during time-bin &apos;binIdx&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Matrix { get; set; }
+        public UntypedNode? Matrix { get => _explicitNullValueMatrix; set { _explicitNullValueMatrix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matrix"); else _explicitNullProperties?.Remove("matrix"); } }
+        private UntypedNode? _explicitNullValueMatrix = default!;
 #nullable restore
 #else
-        public UntypedNode Matrix { get; set; }
+        public UntypedNode Matrix { get => _explicitNullValueMatrix; set { _explicitNullValueMatrix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matrix"); else _explicitNullProperties?.Remove("matrix"); } }
+        private UntypedNode _explicitNullValueMatrix = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResultBucketMode>("bucketMode", BucketMode);
             writer.WriteCollectionOfPrimitiveValues<string>("buckets", Buckets);
             writer.WriteObjectValue<UntypedNode>("matrix", Matrix);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

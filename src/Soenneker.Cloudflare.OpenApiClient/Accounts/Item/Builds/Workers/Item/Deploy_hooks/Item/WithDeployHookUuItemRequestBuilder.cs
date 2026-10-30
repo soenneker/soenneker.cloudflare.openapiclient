@@ -39,8 +39,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteDeployHook200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsNotFoundResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteDeployHook200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,8 +53,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsNotFoundResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteDeployHook200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteDeployHook200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -64,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetDeployHook200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsNotFoundResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDeployHook200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,8 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsNotFoundResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDeployHook200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetDeployHook200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,10 +94,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBadRequestResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsNotFoundResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConflictResponse">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateDeployHook200Response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateDeployHookRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -107,10 +111,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
-                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBadRequestResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsNotFoundResponse.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConflictResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateDeployHook200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateDeployHook200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

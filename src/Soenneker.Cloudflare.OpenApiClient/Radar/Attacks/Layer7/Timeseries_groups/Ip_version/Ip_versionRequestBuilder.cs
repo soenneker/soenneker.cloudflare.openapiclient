@@ -54,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByIpVersion400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByIpVersion200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TimeseriesGroupByIpVersion200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,37 +12,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoadBalancingPoolSetOverrides : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fallback_pool") is { } nullNodeFallbackPool && nullNodeFallbackPool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackPool = null;
+            if (parseNode.GetChildNode("pool_default_weight") is { } nullNodePoolDefaultWeight && nullNodePoolDefaultWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoolDefaultWeight = null;
+            if (parseNode.GetChildNode("pools") is { } nullNodePools && nullNodePools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pools = null;
+            if (parseNode.GetChildNode("pool_weights") is { } nullNodePoolWeights && nullNodePoolWeights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoolWeights = null;
+            if (parseNode.GetChildNode("steering_policy") is { } nullNodeSteeringPolicy && nullNodeSteeringPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SteeringPolicy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The pool ID to use when all other pools are detected as unhealthy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FallbackPool { get; set; }
+        public string? FallbackPool { get => _explicitNullValueFallbackPool; set { _explicitNullValueFallbackPool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_pool"); else _explicitNullProperties?.Remove("fallback_pool"); } }
+        private string? _explicitNullValueFallbackPool = default!;
 #nullable restore
 #else
-        public string FallbackPool { get; set; }
+        public string FallbackPool { get => _explicitNullValueFallbackPool; set { _explicitNullValueFallbackPool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_pool"); else _explicitNullProperties?.Remove("fallback_pool"); } }
+        private string _explicitNullValueFallbackPool = default!;
 #endif
         /// <summary>The default weight for pools not listed in `pool_weights`. The declarative alternative to `random_steering.default_weight`; mutually exclusive with `random_steering`.</summary>
-        public double? PoolDefaultWeight { get; set; }
+        public double? PoolDefaultWeight { get => _explicitNullValuePoolDefaultWeight; set { _explicitNullValuePoolDefaultWeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_default_weight"); else _explicitNullProperties?.Remove("pool_default_weight"); } }
+        private double? _explicitNullValuePoolDefaultWeight = default!;
         /// <summary>A flat, ordered list of pool IDs to route the matched audience to. Replaces the resolved topology with exactly these pools. Mutually exclusive with `fixed_response`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Pools { get; set; }
+        public List<string>? Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
+        private List<string>? _explicitNullValuePools = default!;
 #nullable restore
 #else
-        public List<string> Pools { get; set; }
+        public List<string> Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
+        private List<string> _explicitNullValuePools = default!;
 #endif
         /// <summary>A mapping of pool IDs to custom weights, relative to the other pools. The declarative alternative to `random_steering.pool_weights`; mutually exclusive with `random_steering`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverridesPoolWeights? PoolWeights { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverridesPoolWeights? PoolWeights { get => _explicitNullValuePoolWeights; set { _explicitNullValuePoolWeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_weights"); else _explicitNullProperties?.Remove("pool_weights"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverridesPoolWeights? _explicitNullValuePoolWeights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverridesPoolWeights PoolWeights { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverridesPoolWeights PoolWeights { get => _explicitNullValuePoolWeights; set { _explicitNullValuePoolWeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_weights"); else _explicitNullProperties?.Remove("pool_weights"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverridesPoolWeights _explicitNullValuePoolWeights = default!;
 #endif
         /// <summary>Steering Policy for this load balancer.- `&quot;off&quot;`: Use `default_pools`.- `&quot;geo&quot;`: Use `region_pools`/`country_pools`/`pop_pools`. For non-proxied requests, the country for `country_pools` is determined by `location_strategy`.- `&quot;random&quot;`: Select a pool randomly.- `&quot;dynamic_latency&quot;`: Use round trip time to select the closest pool in default_pools (requires pool health checks).- `&quot;proximity&quot;`: Use the pools&apos; latitude and longitude to select the closest pool using the Cloudflare PoP location for proxied requests or the location determined by `location_strategy` for non-proxied requests.- `&quot;least_outstanding_requests&quot;`: Select a pool by taking into consideration `random_steering` weights, as well as each pool&apos;s number of outstanding requests. Pools with more pending requests are weighted proportionately less relative to others.- `&quot;least_connections&quot;`: Select a pool by taking into consideration `random_steering` weights, as well as each pool&apos;s number of open connections. Pools with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.- `&quot;&quot;`: Will map to `&quot;geo&quot;` if you use `region_pools`/`country_pools`/`pop_pools` otherwise `&quot;off&quot;`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSteeringPolicy? SteeringPolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSteeringPolicy? SteeringPolicy { get => _explicitNullValueSteeringPolicy; set { _explicitNullValueSteeringPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steering_policy"); else _explicitNullProperties?.Remove("steering_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSteeringPolicy? _explicitNullValueSteeringPolicy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverrides"/> and sets the default values.
         /// </summary>
@@ -58,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverrides CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverrides();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverrides(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("pools", Pools);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSetOverridesPoolWeights>("pool_weights", PoolWeights);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSteeringPolicy>("steering_policy", SteeringPolicy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

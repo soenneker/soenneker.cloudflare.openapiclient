@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostTakedownNoticeLookup200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostTakedownNoticeLookup200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostTakedownNoticeLookup200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostTakedownNoticeLookup200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Bulk lookup of takedown notices by domain names. Returns an array of { domain, queryId, notice } entries (notice is null when no match exists). Supports optional queryId or queryIds to scope lookups per query. Uses POST to avoid URL length limits when looking up many domains. This endpoint is read-only. Domains are normalized (trimmed, lowercased) and deduplicated.

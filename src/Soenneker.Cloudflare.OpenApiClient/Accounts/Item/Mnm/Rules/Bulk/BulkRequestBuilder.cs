@@ -55,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules.Bulk
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringRulesCreateRulesBulk4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRulesCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRulesCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -80,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules.Bulk
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringRulesUpdateRulesBulk4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRulesCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRulesCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

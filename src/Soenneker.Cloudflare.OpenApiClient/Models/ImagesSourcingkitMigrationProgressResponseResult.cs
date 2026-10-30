@@ -11,37 +11,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ImagesSourcingkitMigrationProgressResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("endedAt") is { } nullNodeEndedAt && nullNodeEndedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndedAt = null;
+            if (parseNode.GetChildNode("importErrorsCount") is { } nullNodeImportErrorsCount && nullNodeImportErrorsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportErrorsCount = null;
+            if (parseNode.GetChildNode("importSuccessCount") is { } nullNodeImportSuccessCount && nullNodeImportSuccessCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportSuccessCount = null;
+            if (parseNode.GetChildNode("isAccurate") is { } nullNodeIsAccurate && nullNodeIsAccurate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAccurate = null;
+            if (parseNode.GetChildNode("scannedCount") is { } nullNodeScannedCount && nullNodeScannedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScannedCount = null;
+            if (parseNode.GetChildNode("skippedConflictCount") is { } nullNodeSkippedConflictCount && nullNodeSkippedConflictCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedConflictCount = null;
+            if (parseNode.GetChildNode("skippedExcludedContentTypeCount") is { } nullNodeSkippedExcludedContentTypeCount && nullNodeSkippedExcludedContentTypeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedExcludedContentTypeCount = null;
+            if (parseNode.GetChildNode("skippedInvalidMediaCount") is { } nullNodeSkippedInvalidMediaCount && nullNodeSkippedInvalidMediaCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedInvalidMediaCount = null;
+            if (parseNode.GetChildNode("skippedInvalidNameCount") is { } nullNodeSkippedInvalidNameCount && nullNodeSkippedInvalidNameCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedInvalidNameCount = null;
+            if (parseNode.GetChildNode("skippedOversizeCount") is { } nullNodeSkippedOversizeCount && nullNodeSkippedOversizeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedOversizeCount = null;
+            if (parseNode.GetChildNode("skippedStorageClassCount") is { } nullNodeSkippedStorageClassCount && nullNodeSkippedStorageClassCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedStorageClassCount = null;
+            if (parseNode.GetChildNode("skippedUnsupportedContentTypeCount") is { } nullNodeSkippedUnsupportedContentTypeCount && nullNodeSkippedUnsupportedContentTypeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedUnsupportedContentTypeCount = null;
+            if (parseNode.GetChildNode("startedAt") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The endedAt property</summary>
-        public DateTimeOffset? EndedAt { get; set; }
+        public DateTimeOffset? EndedAt { get => _explicitNullValueEndedAt; set { _explicitNullValueEndedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endedAt"); else _explicitNullProperties?.Remove("endedAt"); } }
+        private DateTimeOffset? _explicitNullValueEndedAt = default!;
         /// <summary>Objects that failed to import.</summary>
-        public int? ImportErrorsCount { get; set; }
+        public int? ImportErrorsCount { get => _explicitNullValueImportErrorsCount; set { _explicitNullValueImportErrorsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importErrorsCount"); else _explicitNullProperties?.Remove("importErrorsCount"); } }
+        private int? _explicitNullValueImportErrorsCount = default!;
         /// <summary>Objects successfully imported.</summary>
-        public int? ImportSuccessCount { get; set; }
+        public int? ImportSuccessCount { get => _explicitNullValueImportSuccessCount; set { _explicitNullValueImportSuccessCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importSuccessCount"); else _explicitNullProperties?.Remove("importSuccessCount"); } }
+        private int? _explicitNullValueImportSuccessCount = default!;
         /// <summary>Whether the counts are accurate or estimated.</summary>
-        public bool? IsAccurate { get; set; }
+        public bool? IsAccurate { get => _explicitNullValueIsAccurate; set { _explicitNullValueIsAccurate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isAccurate"); else _explicitNullProperties?.Remove("isAccurate"); } }
+        private bool? _explicitNullValueIsAccurate = default!;
         /// <summary>Total number of objects scanned in the source.</summary>
-        public int? ScannedCount { get; set; }
+        public int? ScannedCount { get => _explicitNullValueScannedCount; set { _explicitNullValueScannedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scannedCount"); else _explicitNullProperties?.Remove("scannedCount"); } }
+        private int? _explicitNullValueScannedCount = default!;
         /// <summary>Objects skipped due to existing images at destination.</summary>
-        public int? SkippedConflictCount { get; set; }
+        public int? SkippedConflictCount { get => _explicitNullValueSkippedConflictCount; set { _explicitNullValueSkippedConflictCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedConflictCount"); else _explicitNullProperties?.Remove("skippedConflictCount"); } }
+        private int? _explicitNullValueSkippedConflictCount = default!;
         /// <summary>Objects skipped because their content type was excluded.</summary>
-        public int? SkippedExcludedContentTypeCount { get; set; }
+        public int? SkippedExcludedContentTypeCount { get => _explicitNullValueSkippedExcludedContentTypeCount; set { _explicitNullValueSkippedExcludedContentTypeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedExcludedContentTypeCount"); else _explicitNullProperties?.Remove("skippedExcludedContentTypeCount"); } }
+        private int? _explicitNullValueSkippedExcludedContentTypeCount = default!;
         /// <summary>Objects skipped because the media could not be decoded.</summary>
-        public int? SkippedInvalidMediaCount { get; set; }
+        public int? SkippedInvalidMediaCount { get => _explicitNullValueSkippedInvalidMediaCount; set { _explicitNullValueSkippedInvalidMediaCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedInvalidMediaCount"); else _explicitNullProperties?.Remove("skippedInvalidMediaCount"); } }
+        private int? _explicitNullValueSkippedInvalidMediaCount = default!;
         /// <summary>Objects skipped because their name is not valid.</summary>
-        public int? SkippedInvalidNameCount { get; set; }
+        public int? SkippedInvalidNameCount { get => _explicitNullValueSkippedInvalidNameCount; set { _explicitNullValueSkippedInvalidNameCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedInvalidNameCount"); else _explicitNullProperties?.Remove("skippedInvalidNameCount"); } }
+        private int? _explicitNullValueSkippedInvalidNameCount = default!;
         /// <summary>Objects skipped because they exceed the size limit.</summary>
-        public int? SkippedOversizeCount { get; set; }
+        public int? SkippedOversizeCount { get => _explicitNullValueSkippedOversizeCount; set { _explicitNullValueSkippedOversizeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedOversizeCount"); else _explicitNullProperties?.Remove("skippedOversizeCount"); } }
+        private int? _explicitNullValueSkippedOversizeCount = default!;
         /// <summary>Objects skipped due to unsupported storage class.</summary>
-        public int? SkippedStorageClassCount { get; set; }
+        public int? SkippedStorageClassCount { get => _explicitNullValueSkippedStorageClassCount; set { _explicitNullValueSkippedStorageClassCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedStorageClassCount"); else _explicitNullProperties?.Remove("skippedStorageClassCount"); } }
+        private int? _explicitNullValueSkippedStorageClassCount = default!;
         /// <summary>Objects skipped because their content type is not supported.</summary>
-        public int? SkippedUnsupportedContentTypeCount { get; set; }
+        public int? SkippedUnsupportedContentTypeCount { get => _explicitNullValueSkippedUnsupportedContentTypeCount; set { _explicitNullValueSkippedUnsupportedContentTypeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedUnsupportedContentTypeCount"); else _explicitNullProperties?.Remove("skippedUnsupportedContentTypeCount"); } }
+        private int? _explicitNullValueSkippedUnsupportedContentTypeCount = default!;
         /// <summary>The startedAt property</summary>
-        public DateTimeOffset? StartedAt { get; set; }
+        public DateTimeOffset? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startedAt"); else _explicitNullProperties?.Remove("startedAt"); } }
+        private DateTimeOffset? _explicitNullValueStartedAt = default!;
         /// <summary>Current status of the migration.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationProgressResponseResult"/> and sets the default values.
         /// </summary>
@@ -57,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationProgressResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationProgressResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationProgressResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("skippedUnsupportedContentTypeCount", SkippedUnsupportedContentTypeCount);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

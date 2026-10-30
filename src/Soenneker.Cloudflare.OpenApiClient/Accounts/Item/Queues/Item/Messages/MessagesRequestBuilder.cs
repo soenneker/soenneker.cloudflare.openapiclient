@@ -45,6 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Peek.PeekRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The preview property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Preview.PreviewRequestBuilder Preview
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
@@ -97,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MqApiV4Failure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

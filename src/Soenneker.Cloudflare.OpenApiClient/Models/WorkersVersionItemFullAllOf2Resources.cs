@@ -11,16 +11,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersVersionItemFullAllOf2Resources : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bindings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings? Bindings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>? Bindings { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings Bindings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem> Bindings { get; private set; }
 #endif
         /// <summary>The script property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bindings", n => { Bindings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings.CreateFromDiscriminatorValue); } },
+                { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "script", n => { Script = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesScript>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesScript.CreateFromDiscriminatorValue); } },
                 { "script_runtime", n => { ScriptRuntime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesScriptRuntime>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesScriptRuntime.CreateFromDiscriminatorValue); } },
             };
@@ -75,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings>("bindings", Bindings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

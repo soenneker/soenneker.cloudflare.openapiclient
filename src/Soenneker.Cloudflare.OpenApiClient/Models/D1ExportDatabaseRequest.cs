@@ -11,27 +11,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class D1ExportDatabaseRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("current_bookmark") is { } nullNodeCurrentBookmark && nullNodeCurrentBookmark.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentBookmark = null;
+            if (parseNode.GetChildNode("dump_options") is { } nullNodeDumpOptions && nullNodeDumpOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DumpOptions = null;
+            if (parseNode.GetChildNode("output_format") is { } nullNodeOutputFormat && nullNodeOutputFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormat = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>To poll an in-progress export, provide the current bookmark (returned by your first polling response)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentBookmark { get; set; }
+        public string? CurrentBookmark { get => _explicitNullValueCurrentBookmark; set { _explicitNullValueCurrentBookmark = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_bookmark"); else _explicitNullProperties?.Remove("current_bookmark"); } }
+        private string? _explicitNullValueCurrentBookmark = default!;
 #nullable restore
 #else
-        public string CurrentBookmark { get; set; }
+        public string CurrentBookmark { get => _explicitNullValueCurrentBookmark; set { _explicitNullValueCurrentBookmark = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_bookmark"); else _explicitNullProperties?.Remove("current_bookmark"); } }
+        private string _explicitNullValueCurrentBookmark = default!;
 #endif
         /// <summary>The dump_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptions? DumpOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptions? DumpOptions { get => _explicitNullValueDumpOptions; set { _explicitNullValueDumpOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dump_options"); else _explicitNullProperties?.Remove("dump_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptions? _explicitNullValueDumpOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptions DumpOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptions DumpOptions { get => _explicitNullValueDumpOptions; set { _explicitNullValueDumpOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dump_options"); else _explicitNullProperties?.Remove("dump_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptions _explicitNullValueDumpOptions = default!;
 #endif
         /// <summary>Specifies that you will poll this endpoint until the export completes</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PollingOutputFormat? OutputFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PollingOutputFormat? OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_format"); else _explicitNullProperties?.Remove("output_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PollingOutputFormat? _explicitNullValueOutputFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequest"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("current_bookmark", CurrentBookmark);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptions>("dump_options", DumpOptions);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PollingOutputFormat>("output_format", OutputFormat);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,13 +11,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiSearchDeleteInstance200ResponseResultIndexingOptions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("keyword_tokenizer") is { } nullNodeKeywordTokenizer && nullNodeKeywordTokenizer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordTokenizer = null;
+            if (parseNode.GetChildNode("use_ocr") is { } nullNodeUseOcr && nullNodeUseOcr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseOcr = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer? KeywordTokenizer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer? KeywordTokenizer { get => _explicitNullValueKeywordTokenizer; set { _explicitNullValueKeywordTokenizer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword_tokenizer"); else _explicitNullProperties?.Remove("keyword_tokenizer"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer? _explicitNullValueKeywordTokenizer = default!;
         /// <summary>Enables OCR ingestion for PDFs and images. Changing this triggers a full re-index. Defaults to false.</summary>
-        public bool? UseOcr { get; set; }
+        public bool? UseOcr { get => _explicitNullValueUseOcr; set { _explicitNullValueUseOcr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_ocr"); else _explicitNullProperties?.Remove("use_ocr"); } }
+        private bool? _explicitNullValueUseOcr = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptions"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptions();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer>("keyword_tokenizer", KeywordTokenizer);
             writer.WriteBoolValue("use_ocr", UseOcr);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

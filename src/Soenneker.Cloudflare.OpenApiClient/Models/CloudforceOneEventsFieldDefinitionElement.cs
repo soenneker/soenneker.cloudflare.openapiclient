@@ -12,83 +12,126 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudforceOneEventsFieldDefinitionElement : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowedValues") is { } nullNodeAllowedValues && nullNodeAllowedValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedValues = null;
+            if (parseNode.GetChildNode("annotations") is { } nullNodeAnnotations && nullNodeAnnotations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Annotations = null;
+            if (parseNode.GetChildNode("deprecated") is { } nullNodeDeprecated && nullNodeDeprecated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deprecated = null;
+            if (parseNode.GetChildNode("deprecatedValues") is { } nullNodeDeprecatedValues && nullNodeDeprecatedValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeprecatedValues = null;
+            if (parseNode.GetChildNode("element") is { } nullNodeElement && nullNodeElement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Element = null;
+            if (parseNode.GetChildNode("enforcement") is { } nullNodeEnforcement && nullNodeEnforcement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enforcement = null;
+            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("maxLength") is { } nullNodeMaxLength && nullNodeMaxLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLength = null;
+            if (parseNode.GetChildNode("numberConstraint") is { } nullNodeNumberConstraint && nullNodeNumberConstraint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberConstraint = null;
+            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("required") is { } nullNodeRequired && nullNodeRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Required = null;
+        }
+
         /// <summary>The allowedValues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedValues { get; set; }
+        public List<string>? AllowedValues { get => _explicitNullValueAllowedValues; set { _explicitNullValueAllowedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedValues"); else _explicitNullProperties?.Remove("allowedValues"); } }
+        private List<string>? _explicitNullValueAllowedValues = default!;
 #nullable restore
 #else
-        public List<string> AllowedValues { get; set; }
+        public List<string> AllowedValues { get => _explicitNullValueAllowedValues; set { _explicitNullValueAllowedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedValues"); else _explicitNullProperties?.Remove("allowedValues"); } }
+        private List<string> _explicitNullValueAllowedValues = default!;
 #endif
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionAnnotations? Annotations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionAnnotations? Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionAnnotations? _explicitNullValueAnnotations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionAnnotations Annotations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionAnnotations Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionAnnotations _explicitNullValueAnnotations = default!;
 #endif
         /// <summary>Marks a field as unavailable for new values while retaining its definition for historical values.</summary>
-        public bool? Deprecated { get; set; }
+        public bool? Deprecated { get => _explicitNullValueDeprecated; set { _explicitNullValueDeprecated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecated"); else _explicitNullProperties?.Remove("deprecated"); } }
+        private bool? _explicitNullValueDeprecated = default!;
         /// <summary>Enum values unavailable for new writes but retained in allowedValues for historical display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeprecatedValues { get; set; }
+        public List<string>? DeprecatedValues { get => _explicitNullValueDeprecatedValues; set { _explicitNullValueDeprecatedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecatedValues"); else _explicitNullProperties?.Remove("deprecatedValues"); } }
+        private List<string>? _explicitNullValueDeprecatedValues = default!;
 #nullable restore
 #else
-        public List<string> DeprecatedValues { get; set; }
+        public List<string> DeprecatedValues { get => _explicitNullValueDeprecatedValues; set { _explicitNullValueDeprecatedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecatedValues"); else _explicitNullProperties?.Remove("deprecatedValues"); } }
+        private List<string> _explicitNullValueDeprecatedValues = default!;
 #endif
         /// <summary>Nested FieldDefinition describing the element type of an array field. Required when kind is &apos;array&apos;. See FieldDefinition (recursive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionElement? Element { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionElement? Element { get => _explicitNullValueElement; set { _explicitNullValueElement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("element"); else _explicitNullProperties?.Remove("element"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionElement? _explicitNullValueElement = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionElement Element { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionElement Element { get => _explicitNullValueElement; set { _explicitNullValueElement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("element"); else _explicitNullProperties?.Remove("element"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionElement _explicitNullValueElement = default!;
 #endif
         /// <summary>The enforcement property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionEnforcement? Enforcement { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionEnforcement? Enforcement { get => _explicitNullValueEnforcement; set { _explicitNullValueEnforcement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforcement"); else _explicitNullProperties?.Remove("enforcement"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionEnforcement? _explicitNullValueEnforcement = default!;
         /// <summary>The format property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionFormat? Format { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionFormat? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionFormat? _explicitNullValueFormat = default!;
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The kind property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionKind? Kind { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionKind? _explicitNullValueKind = default!;
         /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get; set; }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get; set; }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>The maxLength property</summary>
-        public int? MaxLength { get; set; }
+        public int? MaxLength { get => _explicitNullValueMaxLength; set { _explicitNullValueMaxLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxLength"); else _explicitNullProperties?.Remove("maxLength"); } }
+        private int? _explicitNullValueMaxLength = default!;
         /// <summary>The numberConstraint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint? NumberConstraint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint? NumberConstraint { get => _explicitNullValueNumberConstraint; set { _explicitNullValueNumberConstraint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numberConstraint"); else _explicitNullProperties?.Remove("numberConstraint"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint? _explicitNullValueNumberConstraint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint NumberConstraint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint NumberConstraint { get => _explicitNullValueNumberConstraint; set { _explicitNullValueNumberConstraint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numberConstraint"); else _explicitNullProperties?.Remove("numberConstraint"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint _explicitNullValueNumberConstraint = default!;
 #endif
         /// <summary>Map of property key to FieldDefinition for object fields. Required when kind is &apos;object&apos;. See FieldDefinition (recursive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties? Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties _explicitNullValueProperties = default!;
 #endif
         /// <summary>The required property</summary>
-        public bool? Required { get; set; }
+        public bool? Required { get => _explicitNullValueRequired; set { _explicitNullValueRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required"); else _explicitNullProperties?.Remove("required"); } }
+        private bool? _explicitNullValueRequired = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -97,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionElement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionElement();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionElement(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,7 +186,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("maxLength", MaxLength);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint>("numberConstraint", NumberConstraint);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties>("properties", Properties);
-            writer.WriteBoolValue("required", Required);
+            writer.WriteBoolValue("required", Required);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

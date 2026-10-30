@@ -55,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Pages.Assets.CheckMissing
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.PagesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesPagesAssetsCheckMissingResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PagesPagesAssetsCheckMissingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,28 +11,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("certificateRecordType") is { } nullNodeCertificateRecordType && nullNodeCertificateRecordType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateRecordType = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("revocationStatus") is { } nullNodeRevocationStatus && nullNodeRevocationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevocationStatus = null;
+            if (parseNode.GetChildNode("sha256Fingerprint") is { } nullNodeSha256Fingerprint && nullNodeSha256Fingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sha256Fingerprint = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the type of certificate in the trust chain.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItemCertificateRecordType? CertificateRecordType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItemCertificateRecordType? CertificateRecordType { get => _explicitNullValueCertificateRecordType; set { _explicitNullValueCertificateRecordType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateRecordType"); else _explicitNullProperties?.Remove("certificateRecordType"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItemCertificateRecordType? _explicitNullValueCertificateRecordType = default!;
         /// <summary>The full name of the certificate authority (CA).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The current revocation status of a Certificate Authority (CA) certificate.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItemRevocationStatus? RevocationStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItemRevocationStatus? RevocationStatus { get => _explicitNullValueRevocationStatus; set { _explicitNullValueRevocationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocationStatus"); else _explicitNullProperties?.Remove("revocationStatus"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItemRevocationStatus? _explicitNullValueRevocationStatus = default!;
         /// <summary>The SHA-256 fingerprint of the intermediate certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha256Fingerprint { get; set; }
+        public string? Sha256Fingerprint { get => _explicitNullValueSha256Fingerprint; set { _explicitNullValueSha256Fingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha256Fingerprint"); else _explicitNullProperties?.Remove("sha256Fingerprint"); } }
+        private string? _explicitNullValueSha256Fingerprint = default!;
 #nullable restore
 #else
-        public string Sha256Fingerprint { get; set; }
+        public string Sha256Fingerprint { get => _explicitNullValueSha256Fingerprint; set { _explicitNullValueSha256Fingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha256Fingerprint"); else _explicitNullProperties?.Remove("sha256Fingerprint"); } }
+        private string _explicitNullValueSha256Fingerprint = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItem"/> and sets the default values.
@@ -49,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityRelatedItemRevocationStatus>("revocationStatus", RevocationStatus);
             writer.WriteStringValue("sha256Fingerprint", Sha256Fingerprint);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

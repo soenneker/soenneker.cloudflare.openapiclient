@@ -12,31 +12,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MagicVisibilityPcapsPcapsFilterV1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destination_address") is { } nullNodeDestinationAddress && nullNodeDestinationAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationAddress = null;
+            if (parseNode.GetChildNode("destination_port") is { } nullNodeDestinationPort && nullNodeDestinationPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationPort = null;
+            if (parseNode.GetChildNode("protocol") is { } nullNodeProtocol && nullNodeProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocol = null;
+            if (parseNode.GetChildNode("source_address") is { } nullNodeSourceAddress && nullNodeSourceAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAddress = null;
+            if (parseNode.GetChildNode("source_port") is { } nullNodeSourcePort && nullNodeSourcePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourcePort = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The destination IP address of the packet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationAddress { get; set; }
+        public string? DestinationAddress { get => _explicitNullValueDestinationAddress; set { _explicitNullValueDestinationAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_address"); else _explicitNullProperties?.Remove("destination_address"); } }
+        private string? _explicitNullValueDestinationAddress = default!;
 #nullable restore
 #else
-        public string DestinationAddress { get; set; }
+        public string DestinationAddress { get => _explicitNullValueDestinationAddress; set { _explicitNullValueDestinationAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_address"); else _explicitNullProperties?.Remove("destination_address"); } }
+        private string _explicitNullValueDestinationAddress = default!;
 #endif
         /// <summary>The destination port of the packet.</summary>
-        public double? DestinationPort { get; set; }
+        public double? DestinationPort { get => _explicitNullValueDestinationPort; set { _explicitNullValueDestinationPort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_port"); else _explicitNullProperties?.Remove("destination_port"); } }
+        private double? _explicitNullValueDestinationPort = default!;
         /// <summary>The protocol number of the packet.</summary>
-        public double? Protocol { get; set; }
+        public double? Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
+        private double? _explicitNullValueProtocol = default!;
         /// <summary>The source IP address of the packet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceAddress { get; set; }
+        public string? SourceAddress { get => _explicitNullValueSourceAddress; set { _explicitNullValueSourceAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_address"); else _explicitNullProperties?.Remove("source_address"); } }
+        private string? _explicitNullValueSourceAddress = default!;
 #nullable restore
 #else
-        public string SourceAddress { get; set; }
+        public string SourceAddress { get => _explicitNullValueSourceAddress; set { _explicitNullValueSourceAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_address"); else _explicitNullProperties?.Remove("source_address"); } }
+        private string _explicitNullValueSourceAddress = default!;
 #endif
         /// <summary>The source port of the packet.</summary>
-        public double? SourcePort { get; set; }
+        public double? SourcePort { get => _explicitNullValueSourcePort; set { _explicitNullValueSourcePort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_port"); else _explicitNullProperties?.Remove("source_port"); } }
+        private double? _explicitNullValueSourcePort = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("protocol", Protocol);
             writer.WriteStringValue("source_address", SourceAddress);
             writer.WriteDoubleValue("source_port", SourcePort);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,30 +11,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSecurityPostBulkMoveRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destination") is { } nullNodeDestination && nullNodeDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destination = null;
+            if (parseNode.GetChildNode("expected_disposition") is { } nullNodeExpectedDisposition && nullNodeExpectedDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDisposition = null;
+            if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
+            if (parseNode.GetChildNode("postfix_ids") is { } nullNodePostfixIds && nullNodePostfixIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostfixIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The mailbox folder to move messages to.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMailboxDestination? Destination { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMailboxDestination? Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMailboxDestination? _explicitNullValueDestination = default!;
         /// <summary>The verdict Email Security assigns to a message.</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPostBulkMoveRequestExpectedDisposition? ExpectedDisposition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPostBulkMoveRequestExpectedDisposition? ExpectedDisposition { get => _explicitNullValueExpectedDisposition; set { _explicitNullValueExpectedDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_disposition"); else _explicitNullProperties?.Remove("expected_disposition"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPostBulkMoveRequestExpectedDisposition? _explicitNullValueExpectedDisposition = default!;
         /// <summary>List of message IDs to move.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids { get; set; }
+        public List<string>? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        private List<string>? _explicitNullValueIds = default!;
 #nullable restore
 #else
-        public List<string> Ids { get; set; }
+        public List<string> Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        private List<string> _explicitNullValueIds = default!;
 #endif
         /// <summary>Deprecated, use `ids` instead. End of life: November 1, 2026.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PostfixIds { get; set; }
+        public List<string>? PostfixIds { get => _explicitNullValuePostfixIds; set { _explicitNullValuePostfixIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postfix_ids"); else _explicitNullProperties?.Remove("postfix_ids"); } }
+        private List<string>? _explicitNullValuePostfixIds = default!;
 #nullable restore
 #else
-        public List<string> PostfixIds { get; set; }
+        public List<string> PostfixIds { get => _explicitNullValuePostfixIds; set { _explicitNullValuePostfixIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postfix_ids"); else _explicitNullProperties?.Remove("postfix_ids"); } }
+        private List<string> _explicitNullValuePostfixIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPostBulkMoveRequest"/> and sets the default values.
@@ -51,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPostBulkMoveRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPostBulkMoveRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPostBulkMoveRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPostBulkMoveRequestExpectedDisposition>("expected_disposition", ExpectedDisposition);
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
             writer.WriteCollectionOfPrimitiveValues<string>("postfix_ids", PostfixIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

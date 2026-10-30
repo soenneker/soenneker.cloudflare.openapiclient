@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\custom_hostnames
+    /// Builds and executes requests for operations under \zones\{zoneId}\custom_hostnames
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Custom_hostnamesRequestBuilder : BaseRequestBuilder
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_hostnamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname%2Eexact*,hostname%2EstartsWith*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", pathParameters)
+        public Custom_hostnamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname%2Eexact*,hostname%2EstartsWith*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_hostnamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname%2Eexact*,hostname%2EstartsWith*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", rawUrl)
+        public Custom_hostnamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname%2Eexact*,hostname%2EstartsWith*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", rawUrl)
         {
         }
         /// <summary>
@@ -78,6 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnames4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -103,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostname4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,97 +11,142 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReportsApplicationSecurityReportV1Data : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("account_name") is { } nullNodeAccountName && nullNodeAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountName = null;
+            if (parseNode.GetChildNode("industry") is { } nullNodeIndustry && nullNodeIndustry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Industry = null;
+            if (parseNode.GetChildNode("industry_percentile") is { } nullNodeIndustryPercentile && nullNodeIndustryPercentile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndustryPercentile = null;
+            if (parseNode.GetChildNode("time_range") is { } nullNodeTimeRange && nullNodeTimeRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeRange = null;
+            if (parseNode.GetChildNode("top_countries_by_mitigated_requests") is { } nullNodeTopCountriesByMitigatedRequests && nullNodeTopCountriesByMitigatedRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopCountriesByMitigatedRequests = null;
+            if (parseNode.GetChildNode("top_countries_by_served_requests") is { } nullNodeTopCountriesByServedRequests && nullNodeTopCountriesByServedRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopCountriesByServedRequests = null;
+            if (parseNode.GetChildNode("top_hostnames_by_mitigated_requests") is { } nullNodeTopHostnamesByMitigatedRequests && nullNodeTopHostnamesByMitigatedRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopHostnamesByMitigatedRequests = null;
+            if (parseNode.GetChildNode("top_rules_by_mitigated_requests") is { } nullNodeTopRulesByMitigatedRequests && nullNodeTopRulesByMitigatedRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopRulesByMitigatedRequests = null;
+            if (parseNode.GetChildNode("total_requests") is { } nullNodeTotalRequests && nullNodeTotalRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRequests = null;
+            if (parseNode.GetChildNode("total_requests_mitigated") is { } nullNodeTotalRequestsMitigated && nullNodeTotalRequestsMitigated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRequestsMitigated = null;
+            if (parseNode.GetChildNode("total_requests_served") is { } nullNodeTotalRequestsServed && nullNodeTotalRequestsServed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRequestsServed = null;
+            if (parseNode.GetChildNode("total_zones") is { } nullNodeTotalZones && nullNodeTotalZones.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalZones = null;
+            if (parseNode.GetChildNode("total_zones_analyzed") is { } nullNodeTotalZonesAnalyzed && nullNodeTotalZonesAnalyzed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalZonesAnalyzed = null;
+        }
+
         /// <summary>Cloudflare account ID this report was generated for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Human-readable name of the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get => _explicitNullValueAccountName; set { _explicitNullValueAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_name"); else _explicitNullProperties?.Remove("account_name"); } }
+        private string? _explicitNullValueAccountName = default!;
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get => _explicitNullValueAccountName; set { _explicitNullValueAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_name"); else _explicitNullProperties?.Remove("account_name"); } }
+        private string _explicitNullValueAccountName = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The industry of the account.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry? Industry { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry? Industry { get => _explicitNullValueIndustry; set { _explicitNullValueIndustry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industry"); else _explicitNullProperties?.Remove("industry"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry? _explicitNullValueIndustry = default!;
         /// <summary>Percentile ranking of this account&apos;s security posture within their industry (0-100). Null when industry is unknown/unsupported or benchmarks are unavailable.</summary>
-        public double? IndustryPercentile { get; set; }
+        public double? IndustryPercentile { get => _explicitNullValueIndustryPercentile; set { _explicitNullValueIndustryPercentile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industry_percentile"); else _explicitNullProperties?.Remove("industry_percentile"); } }
+        private double? _explicitNullValueIndustryPercentile = default!;
         /// <summary>Time range specification for reports and queries. Used to define the period of data to include in analysis.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTimeRange? TimeRange { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTimeRange? TimeRange { get => _explicitNullValueTimeRange; set { _explicitNullValueTimeRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_range"); else _explicitNullProperties?.Remove("time_range"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTimeRange? _explicitNullValueTimeRange = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTimeRange TimeRange { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTimeRange TimeRange { get => _explicitNullValueTimeRange; set { _explicitNullValueTimeRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_range"); else _explicitNullProperties?.Remove("time_range"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTimeRange _explicitNullValueTimeRange = default!;
 #endif
         /// <summary>Countries that generated the most mitigated (blocked/challenged) requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByMitigatedRequestsItem>? TopCountriesByMitigatedRequests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByMitigatedRequestsItem>? TopCountriesByMitigatedRequests { get => _explicitNullValueTopCountriesByMitigatedRequests; set { _explicitNullValueTopCountriesByMitigatedRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_countries_by_mitigated_requests"); else _explicitNullProperties?.Remove("top_countries_by_mitigated_requests"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByMitigatedRequestsItem>? _explicitNullValueTopCountriesByMitigatedRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByMitigatedRequestsItem> TopCountriesByMitigatedRequests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByMitigatedRequestsItem> TopCountriesByMitigatedRequests { get => _explicitNullValueTopCountriesByMitigatedRequests; set { _explicitNullValueTopCountriesByMitigatedRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_countries_by_mitigated_requests"); else _explicitNullProperties?.Remove("top_countries_by_mitigated_requests"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByMitigatedRequestsItem> _explicitNullValueTopCountriesByMitigatedRequests = default!;
 #endif
         /// <summary>Countries that generated the most legitimate (served) requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByServedRequestsItem>? TopCountriesByServedRequests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByServedRequestsItem>? TopCountriesByServedRequests { get => _explicitNullValueTopCountriesByServedRequests; set { _explicitNullValueTopCountriesByServedRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_countries_by_served_requests"); else _explicitNullProperties?.Remove("top_countries_by_served_requests"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByServedRequestsItem>? _explicitNullValueTopCountriesByServedRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByServedRequestsItem> TopCountriesByServedRequests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByServedRequestsItem> TopCountriesByServedRequests { get => _explicitNullValueTopCountriesByServedRequests; set { _explicitNullValueTopCountriesByServedRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_countries_by_served_requests"); else _explicitNullProperties?.Remove("top_countries_by_served_requests"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByServedRequestsItem> _explicitNullValueTopCountriesByServedRequests = default!;
 #endif
         /// <summary>Hostnames with the highest number of mitigated (blocked/challenged) requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopHostnamesByMitigatedRequestsItem>? TopHostnamesByMitigatedRequests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopHostnamesByMitigatedRequestsItem>? TopHostnamesByMitigatedRequests { get => _explicitNullValueTopHostnamesByMitigatedRequests; set { _explicitNullValueTopHostnamesByMitigatedRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_hostnames_by_mitigated_requests"); else _explicitNullProperties?.Remove("top_hostnames_by_mitigated_requests"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopHostnamesByMitigatedRequestsItem>? _explicitNullValueTopHostnamesByMitigatedRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopHostnamesByMitigatedRequestsItem> TopHostnamesByMitigatedRequests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopHostnamesByMitigatedRequestsItem> TopHostnamesByMitigatedRequests { get => _explicitNullValueTopHostnamesByMitigatedRequests; set { _explicitNullValueTopHostnamesByMitigatedRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_hostnames_by_mitigated_requests"); else _explicitNullProperties?.Remove("top_hostnames_by_mitigated_requests"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopHostnamesByMitigatedRequestsItem> _explicitNullValueTopHostnamesByMitigatedRequests = default!;
 #endif
         /// <summary>Firewall rules that blocked or challenged the most requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItem>? TopRulesByMitigatedRequests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItem>? TopRulesByMitigatedRequests { get => _explicitNullValueTopRulesByMitigatedRequests; set { _explicitNullValueTopRulesByMitigatedRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_rules_by_mitigated_requests"); else _explicitNullProperties?.Remove("top_rules_by_mitigated_requests"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItem>? _explicitNullValueTopRulesByMitigatedRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItem> TopRulesByMitigatedRequests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItem> TopRulesByMitigatedRequests { get => _explicitNullValueTopRulesByMitigatedRequests; set { _explicitNullValueTopRulesByMitigatedRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_rules_by_mitigated_requests"); else _explicitNullProperties?.Remove("top_rules_by_mitigated_requests"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItem> _explicitNullValueTopRulesByMitigatedRequests = default!;
 #endif
         /// <summary>Summary statistics for request counts with optional period-over-period comparison</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequests? TotalRequests { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequests? TotalRequests { get => _explicitNullValueTotalRequests; set { _explicitNullValueTotalRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_requests"); else _explicitNullProperties?.Remove("total_requests"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequests? _explicitNullValueTotalRequests = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequests TotalRequests { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequests TotalRequests { get => _explicitNullValueTotalRequests; set { _explicitNullValueTotalRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_requests"); else _explicitNullProperties?.Remove("total_requests"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequests _explicitNullValueTotalRequests = default!;
 #endif
         /// <summary>Summary statistics for request counts with optional period-over-period comparison</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsMitigated? TotalRequestsMitigated { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsMitigated? TotalRequestsMitigated { get => _explicitNullValueTotalRequestsMitigated; set { _explicitNullValueTotalRequestsMitigated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_requests_mitigated"); else _explicitNullProperties?.Remove("total_requests_mitigated"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsMitigated? _explicitNullValueTotalRequestsMitigated = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsMitigated TotalRequestsMitigated { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsMitigated TotalRequestsMitigated { get => _explicitNullValueTotalRequestsMitigated; set { _explicitNullValueTotalRequestsMitigated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_requests_mitigated"); else _explicitNullProperties?.Remove("total_requests_mitigated"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsMitigated _explicitNullValueTotalRequestsMitigated = default!;
 #endif
         /// <summary>Summary statistics for request counts with optional period-over-period comparison</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsServed? TotalRequestsServed { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsServed? TotalRequestsServed { get => _explicitNullValueTotalRequestsServed; set { _explicitNullValueTotalRequestsServed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_requests_served"); else _explicitNullProperties?.Remove("total_requests_served"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsServed? _explicitNullValueTotalRequestsServed = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsServed TotalRequestsServed { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsServed TotalRequestsServed { get => _explicitNullValueTotalRequestsServed; set { _explicitNullValueTotalRequestsServed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_requests_served"); else _explicitNullProperties?.Remove("total_requests_served"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsServed _explicitNullValueTotalRequestsServed = default!;
 #endif
         /// <summary>Total number of zones (domains) in this account</summary>
-        public int? TotalZones { get; set; }
+        public int? TotalZones { get => _explicitNullValueTotalZones; set { _explicitNullValueTotalZones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_zones"); else _explicitNullProperties?.Remove("total_zones"); } }
+        private int? _explicitNullValueTotalZones = default!;
         /// <summary>Number of zones that were included in this security analysis</summary>
-        public int? TotalZonesAnalyzed { get; set; }
+        public int? TotalZonesAnalyzed { get => _explicitNullValueTotalZonesAnalyzed; set { _explicitNullValueTotalZonesAnalyzed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_zones_analyzed"); else _explicitNullProperties?.Remove("total_zones_analyzed"); } }
+        private int? _explicitNullValueTotalZonesAnalyzed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1Data"/> and sets the default values.
         /// </summary>
@@ -117,7 +162,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1Data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1Data();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1Data(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,6 +209,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTotalRequestsServed>("total_requests_served", TotalRequestsServed);
             writer.WriteIntValue("total_zones", TotalZones);
             writer.WriteIntValue("total_zones_analyzed", TotalZonesAnalyzed);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

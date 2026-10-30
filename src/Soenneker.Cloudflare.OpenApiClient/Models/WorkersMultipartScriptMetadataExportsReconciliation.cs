@@ -12,80 +12,114 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersMultipartScriptMetadataExportsReconciliation : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
+            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+            if (parseNode.GetChildNode("removable_entries") is { } nullNodeRemovableEntries && nullNodeRemovableEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovableEntries = null;
+            if (parseNode.GetChildNode("renamed") is { } nullNodeRenamed && nullNodeRenamed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Renamed = null;
+            if (parseNode.GetChildNode("transfer_pending") is { } nullNodeTransferPending && nullNodeTransferPending.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferPending = null;
+            if (parseNode.GetChildNode("transferred") is { } nullNodeTransferred && nullNodeTransferred.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transferred = null;
+            if (parseNode.GetChildNode("updated") is { } nullNodeUpdated && nullNodeUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updated = null;
+            if (parseNode.GetChildNode("warnings") is { } nullNodeWarnings && nullNodeWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warnings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Class names for which a new namespace was provisioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Created { get; set; }
+        public List<string>? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private List<string>? _explicitNullValueCreated = default!;
 #nullable restore
 #else
-        public List<string> Created { get; set; }
+        public List<string> Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private List<string> _explicitNullValueCreated = default!;
 #endif
         /// <summary>Class names whose namespace was deleted by a `deleted` tombstone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Deleted { get; set; }
+        public List<string>? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        private List<string>? _explicitNullValueDeleted = default!;
 #nullable restore
 #else
-        public List<string> Deleted { get; set; }
+        public List<string> Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        private List<string> _explicitNullValueDeleted = default!;
 #endif
         /// <summary>Non-blocking info entries (stale tombstones, tombstone appliedwith class still in code). See `exports_reconciliation_info`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo>? Info { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo>? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo>? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo> Info { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo> Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationInfo> _explicitNullValueInfo = default!;
 #endif
         /// <summary>Source class names whose tombstone entry is now stale and safeto delete from `exports` (no remaining referencing scripts).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemovableEntries { get; set; }
+        public List<string>? RemovableEntries { get => _explicitNullValueRemovableEntries; set { _explicitNullValueRemovableEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removable_entries"); else _explicitNullProperties?.Remove("removable_entries"); } }
+        private List<string>? _explicitNullValueRemovableEntries = default!;
 #nullable restore
 #else
-        public List<string> RemovableEntries { get; set; }
+        public List<string> RemovableEntries { get => _explicitNullValueRemovableEntries; set { _explicitNullValueRemovableEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removable_entries"); else _explicitNullProperties?.Remove("removable_entries"); } }
+        private List<string> _explicitNullValueRemovableEntries = default!;
 #endif
         /// <summary>Applied `renamed` tombstones.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationRename>? Renamed { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationRename>? Renamed { get => _explicitNullValueRenamed; set { _explicitNullValueRenamed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed"); else _explicitNullProperties?.Remove("renamed"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationRename>? _explicitNullValueRenamed = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationRename> Renamed { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationRename> Renamed { get => _explicitNullValueRenamed; set { _explicitNullValueRenamed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed"); else _explicitNullProperties?.Remove("renamed"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationRename> _explicitNullValueRenamed = default!;
 #endif
         /// <summary>Phase-1 transfer hints recorded on the target side.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransferPending>? TransferPending { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransferPending>? TransferPending { get => _explicitNullValueTransferPending; set { _explicitNullValueTransferPending = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_pending"); else _explicitNullProperties?.Remove("transfer_pending"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransferPending>? _explicitNullValueTransferPending = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransferPending> TransferPending { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransferPending> TransferPending { get => _explicitNullValueTransferPending; set { _explicitNullValueTransferPending = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_pending"); else _explicitNullProperties?.Remove("transfer_pending"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransferPending> _explicitNullValueTransferPending = default!;
 #endif
         /// <summary>Committed `transferred` tombstones (phase-2).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransfer>? Transferred { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransfer>? Transferred { get => _explicitNullValueTransferred; set { _explicitNullValueTransferred = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferred"); else _explicitNullProperties?.Remove("transferred"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransfer>? _explicitNullValueTransferred = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransfer> Transferred { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransfer> Transferred { get => _explicitNullValueTransferred; set { _explicitNullValueTransferred = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferred"); else _explicitNullProperties?.Remove("transferred"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransfer> _explicitNullValueTransferred = default!;
 #endif
         /// <summary>Class names whose provisioned namespace was mutated in place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Updated { get; set; }
+        public List<string>? Updated { get => _explicitNullValueUpdated; set { _explicitNullValueUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated"); else _explicitNullProperties?.Remove("updated"); } }
+        private List<string>? _explicitNullValueUpdated = default!;
 #nullable restore
 #else
-        public List<string> Updated { get; set; }
+        public List<string> Updated { get => _explicitNullValueUpdated; set { _explicitNullValueUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated"); else _explicitNullProperties?.Remove("updated"); } }
+        private List<string> _explicitNullValueUpdated = default!;
 #endif
         /// <summary>Non-blocking warnings. See `exports_reconciliation_warning`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationWarning>? Warnings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationWarning>? Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationWarning>? _explicitNullValueWarnings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationWarning> Warnings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationWarning> Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationWarning> _explicitNullValueWarnings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipartScriptMetadataExportsReconciliation"/> and sets the default values.
@@ -102,7 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipartScriptMetadataExportsReconciliation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipartScriptMetadataExportsReconciliation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipartScriptMetadataExportsReconciliation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,6 +173,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationTransfer>("transferred", Transferred);
             writer.WriteCollectionOfPrimitiveValues<string>("updated", Updated);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersExportsReconciliationWarning>("warnings", Warnings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

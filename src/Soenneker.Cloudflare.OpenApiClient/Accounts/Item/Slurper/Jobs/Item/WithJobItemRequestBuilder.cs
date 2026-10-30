@@ -85,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item
             {
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperApiV4Failure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperApiV4Failure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SlurperDeleteJob200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SlurperDeleteJob200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -108,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperApiV4Failure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SlurperGetJob200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SlurperGetJob200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

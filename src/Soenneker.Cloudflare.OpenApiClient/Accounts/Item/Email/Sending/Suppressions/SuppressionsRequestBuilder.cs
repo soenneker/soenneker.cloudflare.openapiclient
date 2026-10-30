@@ -72,6 +72,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSendingSuppressions400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSendingSuppressions200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSendingSuppressions200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -103,6 +105,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppression403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppression404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppression409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppression200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppression200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

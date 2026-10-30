@@ -11,53 +11,84 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorDescribeWorkflowVersions200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("class_name") is { } nullNodeClassName && nullNodeClassName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClassName = null;
+            if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
+            if (parseNode.GetChildNode("created_on") is { } nullNodeCreatedOn && nullNodeCreatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedOn = null;
+            if (parseNode.GetChildNode("default_retention") is { } nullNodeDefaultRetention && nullNodeDefaultRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRetention = null;
+            if (parseNode.GetChildNode("has_dag") is { } nullNodeHasDag && nullNodeHasDag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasDag = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("limits") is { } nullNodeLimits && nullNodeLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limits = null;
+            if (parseNode.GetChildNode("modified_on") is { } nullNodeModifiedOn && nullNodeModifiedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedOn = null;
+            if (parseNode.GetChildNode("workflow_id") is { } nullNodeWorkflowId && nullNodeWorkflowId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The class_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassName { get; set; }
+        public string? ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
+        private string? _explicitNullValueClassName = default!;
 #nullable restore
 #else
-        public string ClassName { get; set; }
+        public string ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
+        private string _explicitNullValueClassName = default!;
 #endif
         /// <summary>The concurrency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultConcurrency? Concurrency { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultConcurrency? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultConcurrency? _explicitNullValueConcurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultConcurrency Concurrency { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultConcurrency Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultConcurrency _explicitNullValueConcurrency = default!;
 #endif
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get => _explicitNullValueCreatedOn; set { _explicitNullValueCreatedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_on"); else _explicitNullProperties?.Remove("created_on"); } }
+        private DateTimeOffset? _explicitNullValueCreatedOn = default!;
         /// <summary>The default_retention property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultDefaultRetention? DefaultRetention { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultDefaultRetention? DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultDefaultRetention? _explicitNullValueDefaultRetention = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultDefaultRetention DefaultRetention { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultDefaultRetention DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultDefaultRetention _explicitNullValueDefaultRetention = default!;
 #endif
         /// <summary>The has_dag property</summary>
-        public bool? HasDag { get; set; }
+        public bool? HasDag { get => _explicitNullValueHasDag; set { _explicitNullValueHasDag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_dag"); else _explicitNullProperties?.Remove("has_dag"); } }
+        private bool? _explicitNullValueHasDag = default!;
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The programming language of the workflow implementation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLanguage? Language { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLanguage? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLanguage? _explicitNullValueLanguage = default!;
         /// <summary>The limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLimits? Limits { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLimits? Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLimits? _explicitNullValueLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLimits Limits { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLimits Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLimits _explicitNullValueLimits = default!;
 #endif
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get => _explicitNullValueModifiedOn; set { _explicitNullValueModifiedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_on"); else _explicitNullProperties?.Remove("modified_on"); } }
+        private DateTimeOffset? _explicitNullValueModifiedOn = default!;
         /// <summary>The workflow_id property</summary>
-        public Guid? WorkflowId { get; set; }
+        public Guid? WorkflowId { get => _explicitNullValueWorkflowId; set { _explicitNullValueWorkflowId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_id"); else _explicitNullProperties?.Remove("workflow_id"); } }
+        private Guid? _explicitNullValueWorkflowId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -73,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersions200ResponseResultLimits>("limits", Limits);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteGuidValue("workflow_id", WorkflowId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

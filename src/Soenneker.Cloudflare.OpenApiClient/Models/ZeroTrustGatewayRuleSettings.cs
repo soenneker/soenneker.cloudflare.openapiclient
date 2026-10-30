@@ -12,176 +12,267 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGatewayRuleSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("add_headers") is { } nullNodeAddHeaders && nullNodeAddHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddHeaders = null;
+            if (parseNode.GetChildNode("allow_child_bypass") is { } nullNodeAllowChildBypass && nullNodeAllowChildBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowChildBypass = null;
+            if (parseNode.GetChildNode("biso_admin_controls") is { } nullNodeBisoAdminControls && nullNodeBisoAdminControls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BisoAdminControls = null;
+            if (parseNode.GetChildNode("block_page") is { } nullNodeBlockPage && nullNodeBlockPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockPage = null;
+            if (parseNode.GetChildNode("block_page_enabled") is { } nullNodeBlockPageEnabled && nullNodeBlockPageEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockPageEnabled = null;
+            if (parseNode.GetChildNode("block_reason") is { } nullNodeBlockReason && nullNodeBlockReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockReason = null;
+            if (parseNode.GetChildNode("bypass_parent_rule") is { } nullNodeBypassParentRule && nullNodeBypassParentRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassParentRule = null;
+            if (parseNode.GetChildNode("check_session") is { } nullNodeCheckSession && nullNodeCheckSession.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckSession = null;
+            if (parseNode.GetChildNode("delete_headers") is { } nullNodeDeleteHeaders && nullNodeDeleteHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteHeaders = null;
+            if (parseNode.GetChildNode("dns_resolvers") is { } nullNodeDnsResolvers && nullNodeDnsResolvers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsResolvers = null;
+            if (parseNode.GetChildNode("egress") is { } nullNodeEgress && nullNodeEgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Egress = null;
+            if (parseNode.GetChildNode("forensic_copy") is { } nullNodeForensicCopy && nullNodeForensicCopy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForensicCopy = null;
+            if (parseNode.GetChildNode("forward") is { } nullNodeForward && nullNodeForward.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Forward = null;
+            if (parseNode.GetChildNode("ignore_cname_category_matches") is { } nullNodeIgnoreCnameCategoryMatches && nullNodeIgnoreCnameCategoryMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCnameCategoryMatches = null;
+            if (parseNode.GetChildNode("insecure_disable_dnssec_validation") is { } nullNodeInsecureDisableDnssecValidation && nullNodeInsecureDisableDnssecValidation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsecureDisableDnssecValidation = null;
+            if (parseNode.GetChildNode("ip_categories") is { } nullNodeIpCategories && nullNodeIpCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpCategories = null;
+            if (parseNode.GetChildNode("ip_indicator_feeds") is { } nullNodeIpIndicatorFeeds && nullNodeIpIndicatorFeeds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpIndicatorFeeds = null;
+            if (parseNode.GetChildNode("l4override") is { } nullNodeL4override && nullNodeL4override.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) L4override = null;
+            if (parseNode.GetChildNode("notification_settings") is { } nullNodeNotificationSettings && nullNodeNotificationSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationSettings = null;
+            if (parseNode.GetChildNode("override_host") is { } nullNodeOverrideHost && nullNodeOverrideHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideHost = null;
+            if (parseNode.GetChildNode("override_ips") is { } nullNodeOverrideIps && nullNodeOverrideIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideIps = null;
+            if (parseNode.GetChildNode("payload_log") is { } nullNodePayloadLog && nullNodePayloadLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayloadLog = null;
+            if (parseNode.GetChildNode("quarantine") is { } nullNodeQuarantine && nullNodeQuarantine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quarantine = null;
+            if (parseNode.GetChildNode("redirect") is { } nullNodeRedirect && nullNodeRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redirect = null;
+            if (parseNode.GetChildNode("resolve_dns_internally") is { } nullNodeResolveDnsInternally && nullNodeResolveDnsInternally.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolveDnsInternally = null;
+            if (parseNode.GetChildNode("resolve_dns_through_cloudflare") is { } nullNodeResolveDnsThroughCloudflare && nullNodeResolveDnsThroughCloudflare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolveDnsThroughCloudflare = null;
+            if (parseNode.GetChildNode("set_headers") is { } nullNodeSetHeaders && nullNodeSetHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetHeaders = null;
+            if (parseNode.GetChildNode("untrusted_cert") is { } nullNodeUntrustedCert && nullNodeUntrustedCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UntrustedCert = null;
+        }
+
         /// <summary>Add custom headers to allowed requests as key-value pairs. Use header names as keys that map to arrays of header values. Header values may contain `@{selector.name}` variable references that are interpolated at the edge. Use `@@{` to escape a literal `@{`. A maximum of 20 header operations (add + set + delete) is allowed per policy. Each header name may not exceed 256 bytes and each header value may not exceed 4 KB. Settable only for `http` rules with the action set to `allow`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsAddHeadersProperty? AddHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsAddHeadersProperty? AddHeaders { get => _explicitNullValueAddHeaders; set { _explicitNullValueAddHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_headers"); else _explicitNullProperties?.Remove("add_headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsAddHeadersProperty? _explicitNullValueAddHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsAddHeadersProperty AddHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsAddHeadersProperty AddHeaders { get => _explicitNullValueAddHeaders; set { _explicitNullValueAddHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_headers"); else _explicitNullProperties?.Remove("add_headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsAddHeadersProperty _explicitNullValueAddHeaders = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to enable MSP children to bypass this rule. Only parent MSP accounts can set this. this rule. Settable for all types of rules.</summary>
-        public bool? AllowChildBypass { get; set; }
+        public bool? AllowChildBypass { get => _explicitNullValueAllowChildBypass; set { _explicitNullValueAllowChildBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_child_bypass"); else _explicitNullProperties?.Remove("allow_child_bypass"); } }
+        private bool? _explicitNullValueAllowChildBypass = default!;
         /// <summary>Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls? BisoAdminControls { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls? BisoAdminControls { get => _explicitNullValueBisoAdminControls; set { _explicitNullValueBisoAdminControls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("biso_admin_controls"); else _explicitNullProperties?.Remove("biso_admin_controls"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls? _explicitNullValueBisoAdminControls = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls BisoAdminControls { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls BisoAdminControls { get => _explicitNullValueBisoAdminControls; set { _explicitNullValueBisoAdminControls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("biso_admin_controls"); else _explicitNullProperties?.Remove("biso_admin_controls"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls _explicitNullValueBisoAdminControls = default!;
 #endif
         /// <summary>Configure custom block page settings. If missing or null, use the account settings. Settable only for `http` rules with the action set to `block`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBlockPage? BlockPage { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBlockPage? BlockPage { get => _explicitNullValueBlockPage; set { _explicitNullValueBlockPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_page"); else _explicitNullProperties?.Remove("block_page"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBlockPage? _explicitNullValueBlockPage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBlockPage BlockPage { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBlockPage BlockPage { get => _explicitNullValueBlockPage; set { _explicitNullValueBlockPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_page"); else _explicitNullProperties?.Remove("block_page"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBlockPage _explicitNullValueBlockPage = default!;
 #endif
         /// <summary>Enable the custom block page. Settable only for `dns` rules with action `block`.</summary>
-        public bool? BlockPageEnabled { get; set; }
+        public bool? BlockPageEnabled { get => _explicitNullValueBlockPageEnabled; set { _explicitNullValueBlockPageEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_page_enabled"); else _explicitNullProperties?.Remove("block_page_enabled"); } }
+        private bool? _explicitNullValueBlockPageEnabled = default!;
         /// <summary>Explain why the rule blocks the request. The custom block page shows this text (if enabled). Settable only for `dns`, `l4`, and `http` rules when the action set to `block`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockReason { get; set; }
+        public string? BlockReason { get => _explicitNullValueBlockReason; set { _explicitNullValueBlockReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_reason"); else _explicitNullProperties?.Remove("block_reason"); } }
+        private string? _explicitNullValueBlockReason = default!;
 #nullable restore
 #else
-        public string BlockReason { get; set; }
+        public string BlockReason { get => _explicitNullValueBlockReason; set { _explicitNullValueBlockReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_reason"); else _explicitNullProperties?.Remove("block_reason"); } }
+        private string _explicitNullValueBlockReason = default!;
 #endif
         /// <summary>Set to enable MSP accounts to bypass their parent&apos;s rules. Only MSP child accounts can set this. Settable for all types of rules.</summary>
-        public bool? BypassParentRule { get; set; }
+        public bool? BypassParentRule { get => _explicitNullValueBypassParentRule; set { _explicitNullValueBypassParentRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypass_parent_rule"); else _explicitNullProperties?.Remove("bypass_parent_rule"); } }
+        private bool? _explicitNullValueBypassParentRule = default!;
         /// <summary>Configure session check behavior. Settable only for `l4` and `http` rules with the action set to `allow`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsCheckSession? CheckSession { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsCheckSession? CheckSession { get => _explicitNullValueCheckSession; set { _explicitNullValueCheckSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_session"); else _explicitNullProperties?.Remove("check_session"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsCheckSession? _explicitNullValueCheckSession = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsCheckSession CheckSession { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsCheckSession CheckSession { get => _explicitNullValueCheckSession; set { _explicitNullValueCheckSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_session"); else _explicitNullProperties?.Remove("check_session"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsCheckSession _explicitNullValueCheckSession = default!;
 #endif
         /// <summary>Remove headers from allowed requests by name. A maximum of 20 header operations (add + set + delete) is allowed per policy. Each header name may not exceed 256 bytes. Settable only for `http` rules with the action set to `allow`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeleteHeaders { get; set; }
+        public List<string>? DeleteHeaders { get => _explicitNullValueDeleteHeaders; set { _explicitNullValueDeleteHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_headers"); else _explicitNullProperties?.Remove("delete_headers"); } }
+        private List<string>? _explicitNullValueDeleteHeaders = default!;
 #nullable restore
 #else
-        public List<string> DeleteHeaders { get; set; }
+        public List<string> DeleteHeaders { get => _explicitNullValueDeleteHeaders; set { _explicitNullValueDeleteHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_headers"); else _explicitNullProperties?.Remove("delete_headers"); } }
+        private List<string> _explicitNullValueDeleteHeaders = default!;
 #endif
         /// <summary>Configure custom resolvers to route queries that match the resolver policy. Unused with &apos;resolve_dns_through_cloudflare&apos; or &apos;resolve_dns_internally&apos; settings. DNS queries get routed to the address closest to their origin. Only valid when a rule&apos;s action set to &apos;resolve&apos;. Settable only for `dns_resolver` rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsDnsResolvers? DnsResolvers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsDnsResolvers? DnsResolvers { get => _explicitNullValueDnsResolvers; set { _explicitNullValueDnsResolvers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_resolvers"); else _explicitNullProperties?.Remove("dns_resolvers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsDnsResolvers? _explicitNullValueDnsResolvers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsDnsResolvers DnsResolvers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsDnsResolvers DnsResolvers { get => _explicitNullValueDnsResolvers; set { _explicitNullValueDnsResolvers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_resolvers"); else _explicitNullProperties?.Remove("dns_resolvers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsDnsResolvers _explicitNullValueDnsResolvers = default!;
 #endif
         /// <summary>Configure how Gateway Proxy traffic egresses. You can enable this setting for rules with Egress actions and filters, or omit it to indicate local egress via WARP IPs. Settable only for `egress` rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsEgress? Egress { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsEgress? Egress { get => _explicitNullValueEgress; set { _explicitNullValueEgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egress"); else _explicitNullProperties?.Remove("egress"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsEgress? _explicitNullValueEgress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsEgress Egress { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsEgress Egress { get => _explicitNullValueEgress; set { _explicitNullValueEgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egress"); else _explicitNullProperties?.Remove("egress"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsEgress _explicitNullValueEgress = default!;
 #endif
         /// <summary>Configure whether a copy of the HTTP request will be sent to storage when the rule matches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForensicCopy? ForensicCopy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForensicCopy? ForensicCopy { get => _explicitNullValueForensicCopy; set { _explicitNullValueForensicCopy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forensic_copy"); else _explicitNullProperties?.Remove("forensic_copy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForensicCopy? _explicitNullValueForensicCopy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForensicCopy ForensicCopy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForensicCopy ForensicCopy { get => _explicitNullValueForensicCopy; set { _explicitNullValueForensicCopy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forensic_copy"); else _explicitNullProperties?.Remove("forensic_copy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForensicCopy _explicitNullValueForensicCopy = default!;
+#endif
+        /// <summary>Forward matching HTTP requests to a Worker. Required for `http` rules with the action set to `forward`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForward? Forward { get => _explicitNullValueForward; set { _explicitNullValueForward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forward"); else _explicitNullProperties?.Remove("forward"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForward? _explicitNullValueForward = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForward Forward { get => _explicitNullValueForward; set { _explicitNullValueForward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forward"); else _explicitNullProperties?.Remove("forward"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForward _explicitNullValueForward = default!;
 #endif
         /// <summary>Ignore category matches at CNAME domains in a response. When off, evaluate categories in this rule against all CNAME domain categories in the response. Settable only for `dns` and `dns_resolver` rules.</summary>
-        public bool? IgnoreCnameCategoryMatches { get; set; }
+        public bool? IgnoreCnameCategoryMatches { get => _explicitNullValueIgnoreCnameCategoryMatches; set { _explicitNullValueIgnoreCnameCategoryMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_cname_category_matches"); else _explicitNullProperties?.Remove("ignore_cname_category_matches"); } }
+        private bool? _explicitNullValueIgnoreCnameCategoryMatches = default!;
         /// <summary>Specify whether to disable DNSSEC validation (for Allow actions) [INSECURE]. Settable only for `dns` rules.</summary>
-        public bool? InsecureDisableDnssecValidation { get; set; }
+        public bool? InsecureDisableDnssecValidation { get => _explicitNullValueInsecureDisableDnssecValidation; set { _explicitNullValueInsecureDisableDnssecValidation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insecure_disable_dnssec_validation"); else _explicitNullProperties?.Remove("insecure_disable_dnssec_validation"); } }
+        private bool? _explicitNullValueInsecureDisableDnssecValidation = default!;
         /// <summary>Enable IPs in DNS resolver category blocks. The system blocks only domain name categories unless you enable this setting. Settable only for `dns` and `dns_resolver` rules.</summary>
-        public bool? IpCategories { get; set; }
+        public bool? IpCategories { get => _explicitNullValueIpCategories; set { _explicitNullValueIpCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_categories"); else _explicitNullProperties?.Remove("ip_categories"); } }
+        private bool? _explicitNullValueIpCategories = default!;
         /// <summary>Indicates whether to include IPs in DNS resolver indicator feed blocks. Default, indicator feeds block only domain names. Settable only for `dns` and `dns_resolver` rules.</summary>
-        public bool? IpIndicatorFeeds { get; set; }
+        public bool? IpIndicatorFeeds { get => _explicitNullValueIpIndicatorFeeds; set { _explicitNullValueIpIndicatorFeeds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_indicator_feeds"); else _explicitNullProperties?.Remove("ip_indicator_feeds"); } }
+        private bool? _explicitNullValueIpIndicatorFeeds = default!;
         /// <summary>Send matching traffic to the supplied destination IP address and port. Settable only for `l4` rules with the action set to `l4_override`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsL4Override? L4override { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsL4Override? L4override { get => _explicitNullValueL4override; set { _explicitNullValueL4override = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("l4override"); else _explicitNullProperties?.Remove("l4override"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsL4Override? _explicitNullValueL4override = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsL4Override L4override { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsL4Override L4override { get => _explicitNullValueL4override; set { _explicitNullValueL4override = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("l4override"); else _explicitNullProperties?.Remove("l4override"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsL4Override _explicitNullValueL4override = default!;
 #endif
         /// <summary>Configure a notification to display on the user&apos;s device when this rule matched. Settable for all types of rules with the action set to `block`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsNotificationSettings? NotificationSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsNotificationSettings? NotificationSettings { get => _explicitNullValueNotificationSettings; set { _explicitNullValueNotificationSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_settings"); else _explicitNullProperties?.Remove("notification_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsNotificationSettings? _explicitNullValueNotificationSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsNotificationSettings NotificationSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsNotificationSettings NotificationSettings { get => _explicitNullValueNotificationSettings; set { _explicitNullValueNotificationSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_settings"); else _explicitNullProperties?.Remove("notification_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsNotificationSettings _explicitNullValueNotificationSettings = default!;
 #endif
         /// <summary>Defines a hostname for override, for the matching DNS queries. Settable only for `dns` rules with the action set to `override`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OverrideHost { get; set; }
+        public string? OverrideHost { get => _explicitNullValueOverrideHost; set { _explicitNullValueOverrideHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_host"); else _explicitNullProperties?.Remove("override_host"); } }
+        private string? _explicitNullValueOverrideHost = default!;
 #nullable restore
 #else
-        public string OverrideHost { get; set; }
+        public string OverrideHost { get => _explicitNullValueOverrideHost; set { _explicitNullValueOverrideHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_host"); else _explicitNullProperties?.Remove("override_host"); } }
+        private string _explicitNullValueOverrideHost = default!;
 #endif
         /// <summary>Defines a an IP or set of IPs for overriding matched DNS queries. Settable only for `dns` rules with the action set to `override`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OverrideIps { get; set; }
+        public List<string>? OverrideIps { get => _explicitNullValueOverrideIps; set { _explicitNullValueOverrideIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_ips"); else _explicitNullProperties?.Remove("override_ips"); } }
+        private List<string>? _explicitNullValueOverrideIps = default!;
 #nullable restore
 #else
-        public List<string> OverrideIps { get; set; }
+        public List<string> OverrideIps { get => _explicitNullValueOverrideIps; set { _explicitNullValueOverrideIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_ips"); else _explicitNullProperties?.Remove("override_ips"); } }
+        private List<string> _explicitNullValueOverrideIps = default!;
 #endif
         /// <summary>Configure DLP payload logging. Settable only for `http` rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsPayloadLog? PayloadLog { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsPayloadLog? PayloadLog { get => _explicitNullValuePayloadLog; set { _explicitNullValuePayloadLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_log"); else _explicitNullProperties?.Remove("payload_log"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsPayloadLog? _explicitNullValuePayloadLog = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsPayloadLog PayloadLog { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsPayloadLog PayloadLog { get => _explicitNullValuePayloadLog; set { _explicitNullValuePayloadLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_log"); else _explicitNullProperties?.Remove("payload_log"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsPayloadLog _explicitNullValuePayloadLog = default!;
 #endif
         /// <summary>Configure settings that apply to quarantine rules. Settable only for `http` rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantine? Quarantine { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantine? Quarantine { get => _explicitNullValueQuarantine; set { _explicitNullValueQuarantine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quarantine"); else _explicitNullProperties?.Remove("quarantine"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantine? _explicitNullValueQuarantine = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantine Quarantine { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantine Quarantine { get => _explicitNullValueQuarantine; set { _explicitNullValueQuarantine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quarantine"); else _explicitNullProperties?.Remove("quarantine"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantine _explicitNullValueQuarantine = default!;
 #endif
         /// <summary>Apply settings to redirect rules. Settable only for `http` rules with the action set to `redirect`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect? Redirect { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect? Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect? _explicitNullValueRedirect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect Redirect { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect _explicitNullValueRedirect = default!;
 #endif
         /// <summary>Configure to forward the query to the internal DNS service, passing the specified &apos;view_id&apos; as input. Not used when &apos;dns_resolvers&apos; is specified or &apos;resolve_dns_through_cloudflare&apos; is set. Only valid when a rule&apos;s action set to &apos;resolve&apos;. Settable only for `dns_resolver` rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsResolveDnsInternally? ResolveDnsInternally { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsResolveDnsInternally? ResolveDnsInternally { get => _explicitNullValueResolveDnsInternally; set { _explicitNullValueResolveDnsInternally = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolve_dns_internally"); else _explicitNullProperties?.Remove("resolve_dns_internally"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsResolveDnsInternally? _explicitNullValueResolveDnsInternally = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsResolveDnsInternally ResolveDnsInternally { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsResolveDnsInternally ResolveDnsInternally { get => _explicitNullValueResolveDnsInternally; set { _explicitNullValueResolveDnsInternally = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolve_dns_internally"); else _explicitNullProperties?.Remove("resolve_dns_internally"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsResolveDnsInternally _explicitNullValueResolveDnsInternally = default!;
 #endif
         /// <summary>Enable to send queries that match the policy to Cloudflare&apos;s default 1.1.1.1 DNS resolver. Cannot set when &apos;dns_resolvers&apos; specified or &apos;resolve_dns_internally&apos; is set. Only valid when a rule&apos;s action set to &apos;resolve&apos;. Settable only for `dns_resolver` rules.</summary>
-        public bool? ResolveDnsThroughCloudflare { get; set; }
+        public bool? ResolveDnsThroughCloudflare { get => _explicitNullValueResolveDnsThroughCloudflare; set { _explicitNullValueResolveDnsThroughCloudflare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolve_dns_through_cloudflare"); else _explicitNullProperties?.Remove("resolve_dns_through_cloudflare"); } }
+        private bool? _explicitNullValueResolveDnsThroughCloudflare = default!;
         /// <summary>Replace existing headers on allowed requests with the specified key-value pairs. If a header does not exist, it is added. Header values may contain `@{selector.name}` variable references that are interpolated at the edge. Use `@@{` to escape a literal `@{`. A maximum of 20 header operations (add + set + delete) is allowed per policy. Each header name may not exceed 256 bytes and each header value may not exceed 4 KB. Settable only for `http` rules with the action set to `allow`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsSetHeadersProperty? SetHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsSetHeadersProperty? SetHeaders { get => _explicitNullValueSetHeaders; set { _explicitNullValueSetHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("set_headers"); else _explicitNullProperties?.Remove("set_headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsSetHeadersProperty? _explicitNullValueSetHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsSetHeadersProperty SetHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsSetHeadersProperty SetHeaders { get => _explicitNullValueSetHeaders; set { _explicitNullValueSetHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("set_headers"); else _explicitNullProperties?.Remove("set_headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsSetHeadersProperty _explicitNullValueSetHeaders = default!;
 #endif
         /// <summary>Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsUntrustedCert? UntrustedCert { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsUntrustedCert? UntrustedCert { get => _explicitNullValueUntrustedCert; set { _explicitNullValueUntrustedCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("untrusted_cert"); else _explicitNullProperties?.Remove("untrusted_cert"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsUntrustedCert? _explicitNullValueUntrustedCert = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsUntrustedCert UntrustedCert { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsUntrustedCert UntrustedCert { get => _explicitNullValueUntrustedCert; set { _explicitNullValueUntrustedCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("untrusted_cert"); else _explicitNullProperties?.Remove("untrusted_cert"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsUntrustedCert _explicitNullValueUntrustedCert = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettings"/> and sets the default values.
@@ -198,7 +289,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -220,6 +311,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dns_resolvers", n => { DnsResolvers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsDnsResolvers>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsDnsResolvers.CreateFromDiscriminatorValue); } },
                 { "egress", n => { Egress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsEgress>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsEgress.CreateFromDiscriminatorValue); } },
                 { "forensic_copy", n => { ForensicCopy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForensicCopy>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForensicCopy.CreateFromDiscriminatorValue); } },
+                { "forward", n => { Forward = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForward>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForward.CreateFromDiscriminatorValue); } },
                 { "ignore_cname_category_matches", n => { IgnoreCnameCategoryMatches = n.GetBoolValue(); } },
                 { "insecure_disable_dnssec_validation", n => { InsecureDisableDnssecValidation = n.GetBoolValue(); } },
                 { "ip_categories", n => { IpCategories = n.GetBoolValue(); } },
@@ -256,6 +348,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsDnsResolvers>("dns_resolvers", DnsResolvers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsEgress>("egress", Egress);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForensicCopy>("forensic_copy", ForensicCopy);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsForward>("forward", Forward);
             writer.WriteBoolValue("ignore_cname_category_matches", IgnoreCnameCategoryMatches);
             writer.WriteBoolValue("insecure_disable_dnssec_validation", InsecureDisableDnssecValidation);
             writer.WriteBoolValue("ip_categories", IpCategories);
@@ -271,6 +364,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("resolve_dns_through_cloudflare", ResolveDnsThroughCloudflare);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsSetHeadersProperty>("set_headers", SetHeaders);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsUntrustedCert>("untrusted_cert", UntrustedCert);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

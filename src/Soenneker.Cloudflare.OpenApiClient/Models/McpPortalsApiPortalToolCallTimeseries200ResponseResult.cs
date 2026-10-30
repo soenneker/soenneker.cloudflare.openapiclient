@@ -11,36 +11,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class McpPortalsApiPortalToolCallTimeseries200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aggregate") is { } nullNodeAggregate && nullNodeAggregate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregate = null;
+            if (parseNode.GetChildNode("end") is { } nullNodeEnd && nullNodeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) End = null;
+            if (parseNode.GetChildNode("granularity") is { } nullNodeGranularity && nullNodeGranularity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Granularity = null;
+            if (parseNode.GetChildNode("response_status") is { } nullNodeResponseStatus && nullNodeResponseStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseStatus = null;
+            if (parseNode.GetChildNode("series") is { } nullNodeSeries && nullNodeSeries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Series = null;
+            if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("tz") is { } nullNodeTz && nullNodeTz.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tz = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The aggregate property</summary>
-        public bool? Aggregate { get; set; }
+        public bool? Aggregate { get => _explicitNullValueAggregate; set { _explicitNullValueAggregate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregate"); else _explicitNullProperties?.Remove("aggregate"); } }
+        private bool? _explicitNullValueAggregate = default!;
         /// <summary>The end property</summary>
-        public int? End { get; set; }
+        public int? End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private int? _explicitNullValueEnd = default!;
         /// <summary>The granularity property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultGranularity? Granularity { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultGranularity? Granularity { get => _explicitNullValueGranularity; set { _explicitNullValueGranularity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("granularity"); else _explicitNullProperties?.Remove("granularity"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultGranularity? _explicitNullValueGranularity = default!;
         /// <summary>The response_status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultResponseStatus? ResponseStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultResponseStatus? ResponseStatus { get => _explicitNullValueResponseStatus; set { _explicitNullValueResponseStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_status"); else _explicitNullProperties?.Remove("response_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultResponseStatus? _explicitNullValueResponseStatus = default!;
         /// <summary>The series property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultSeriesItem>? Series { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultSeriesItem>? Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultSeriesItem>? _explicitNullValueSeries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultSeriesItem> Series { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultSeriesItem> Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResultSeriesItem> _explicitNullValueSeries = default!;
 #endif
         /// <summary>The start property</summary>
-        public int? Start { get; set; }
+        public int? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private int? _explicitNullValueStart = default!;
         /// <summary>The total property</summary>
-        public int? Total { get; set; }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private int? _explicitNullValueTotal = default!;
         /// <summary>The tz property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tz { get; set; }
+        public string? Tz { get => _explicitNullValueTz; set { _explicitNullValueTz = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tz"); else _explicitNullProperties?.Remove("tz"); } }
+        private string? _explicitNullValueTz = default!;
 #nullable restore
 #else
-        public string Tz { get; set; }
+        public string Tz { get => _explicitNullValueTz; set { _explicitNullValueTz = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tz"); else _explicitNullProperties?.Remove("tz"); } }
+        private string _explicitNullValueTz = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResult"/> and sets the default values.
@@ -57,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiPortalToolCallTimeseries200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("start", Start);
             writer.WriteIntValue("total", Total);
             writer.WriteStringValue("tz", Tz);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

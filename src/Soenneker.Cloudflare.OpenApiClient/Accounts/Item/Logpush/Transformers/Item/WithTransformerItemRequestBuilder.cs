@@ -67,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Transformers.
             {
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteAccountsAccountIdLogpushTransformersTransformerId409Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteAccountsAccountIdLogpushTransformersTransformerId4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushTransformerDeleteResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushTransformerDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Transformers.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.GetAccountsAccountIdLogpushTransformersTransformerId4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushTransformerResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushTransformerResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -115,6 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Transformers.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.PutAccountsAccountIdLogpushTransformersTransformerId4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushTransformerResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushTransformerResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,70 +11,101 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostPirCreateRequestIntentClausesItem : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actors") is { } nullNodeActors && nullNodeActors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actors = null;
+            if (parseNode.GetChildNode("attacker_countries") is { } nullNodeAttackerCountries && nullNodeAttackerCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackerCountries = null;
+            if (parseNode.GetChildNode("categories") is { } nullNodeCategories && nullNodeCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories = null;
+            if (parseNode.GetChildNode("cves") is { } nullNodeCves && nullNodeCves.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cves = null;
+            if (parseNode.GetChildNode("keywords") is { } nullNodeKeywords && nullNodeKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keywords = null;
+            if (parseNode.GetChildNode("target_countries") is { } nullNodeTargetCountries && nullNodeTargetCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetCountries = null;
+            if (parseNode.GetChildNode("target_industries") is { } nullNodeTargetIndustries && nullNodeTargetIndustries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetIndustries = null;
+            if (parseNode.GetChildNode("techniques") is { } nullNodeTechniques && nullNodeTechniques.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Techniques = null;
+        }
+
         /// <summary>The actors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Actors { get; set; }
+        public List<string>? Actors { get => _explicitNullValueActors; set { _explicitNullValueActors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actors"); else _explicitNullProperties?.Remove("actors"); } }
+        private List<string>? _explicitNullValueActors = default!;
 #nullable restore
 #else
-        public List<string> Actors { get; set; }
+        public List<string> Actors { get => _explicitNullValueActors; set { _explicitNullValueActors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actors"); else _explicitNullProperties?.Remove("actors"); } }
+        private List<string> _explicitNullValueActors = default!;
 #endif
         /// <summary>The attacker_countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttackerCountries { get; set; }
+        public List<string>? AttackerCountries { get => _explicitNullValueAttackerCountries; set { _explicitNullValueAttackerCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attacker_countries"); else _explicitNullProperties?.Remove("attacker_countries"); } }
+        private List<string>? _explicitNullValueAttackerCountries = default!;
 #nullable restore
 #else
-        public List<string> AttackerCountries { get; set; }
+        public List<string> AttackerCountries { get => _explicitNullValueAttackerCountries; set { _explicitNullValueAttackerCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attacker_countries"); else _explicitNullProperties?.Remove("attacker_countries"); } }
+        private List<string> _explicitNullValueAttackerCountries = default!;
 #endif
         /// <summary>The categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories { get; set; }
+        public List<string>? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<string>? _explicitNullValueCategories = default!;
 #nullable restore
 #else
-        public List<string> Categories { get; set; }
+        public List<string> Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<string> _explicitNullValueCategories = default!;
 #endif
         /// <summary>The cves property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Cves { get; set; }
+        public List<string>? Cves { get => _explicitNullValueCves; set { _explicitNullValueCves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cves"); else _explicitNullProperties?.Remove("cves"); } }
+        private List<string>? _explicitNullValueCves = default!;
 #nullable restore
 #else
-        public List<string> Cves { get; set; }
+        public List<string> Cves { get => _explicitNullValueCves; set { _explicitNullValueCves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cves"); else _explicitNullProperties?.Remove("cves"); } }
+        private List<string> _explicitNullValueCves = default!;
 #endif
         /// <summary>The keywords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords { get; set; }
+        public List<string>? Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        private List<string>? _explicitNullValueKeywords = default!;
 #nullable restore
 #else
-        public List<string> Keywords { get; set; }
+        public List<string> Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        private List<string> _explicitNullValueKeywords = default!;
 #endif
         /// <summary>The target_countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TargetCountries { get; set; }
+        public List<string>? TargetCountries { get => _explicitNullValueTargetCountries; set { _explicitNullValueTargetCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_countries"); else _explicitNullProperties?.Remove("target_countries"); } }
+        private List<string>? _explicitNullValueTargetCountries = default!;
 #nullable restore
 #else
-        public List<string> TargetCountries { get; set; }
+        public List<string> TargetCountries { get => _explicitNullValueTargetCountries; set { _explicitNullValueTargetCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_countries"); else _explicitNullProperties?.Remove("target_countries"); } }
+        private List<string> _explicitNullValueTargetCountries = default!;
 #endif
         /// <summary>The target_industries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TargetIndustries { get; set; }
+        public List<string>? TargetIndustries { get => _explicitNullValueTargetIndustries; set { _explicitNullValueTargetIndustries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_industries"); else _explicitNullProperties?.Remove("target_industries"); } }
+        private List<string>? _explicitNullValueTargetIndustries = default!;
 #nullable restore
 #else
-        public List<string> TargetIndustries { get; set; }
+        public List<string> TargetIndustries { get => _explicitNullValueTargetIndustries; set { _explicitNullValueTargetIndustries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_industries"); else _explicitNullProperties?.Remove("target_industries"); } }
+        private List<string> _explicitNullValueTargetIndustries = default!;
 #endif
         /// <summary>The techniques property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Techniques { get; set; }
+        public List<string>? Techniques { get => _explicitNullValueTechniques; set { _explicitNullValueTechniques = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("techniques"); else _explicitNullProperties?.Remove("techniques"); } }
+        private List<string>? _explicitNullValueTechniques = default!;
 #nullable restore
 #else
-        public List<string> Techniques { get; set; }
+        public List<string> Techniques { get => _explicitNullValueTechniques; set { _explicitNullValueTechniques = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("techniques"); else _explicitNullProperties?.Remove("techniques"); } }
+        private List<string> _explicitNullValueTechniques = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestIntentClausesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestIntentClausesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestIntentClausesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,7 +149,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
             writer.WriteCollectionOfPrimitiveValues<string>("target_countries", TargetCountries);
             writer.WriteCollectionOfPrimitiveValues<string>("target_industries", TargetIndustries);
-            writer.WriteCollectionOfPrimitiveValues<string>("techniques", Techniques);
+            writer.WriteCollectionOfPrimitiveValues<string>("techniques", Techniques);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

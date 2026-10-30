@@ -68,6 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -91,6 +93,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingTypeResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingTypeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -130,6 +134,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
                 { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCustomFindingTypeSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCustomFindingTypeSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

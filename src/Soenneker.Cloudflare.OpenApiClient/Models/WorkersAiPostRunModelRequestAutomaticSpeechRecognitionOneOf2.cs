@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersAiPostRunModelRequestAutomaticSpeechRecognitionOneOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio") is { } nullNodeAudio && nullNodeAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audio = null;
+            if (parseNode.GetChildNode("source_lang") is { } nullNodeSourceLang && nullNodeSourceLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLang = null;
+            if (parseNode.GetChildNode("target_lang") is { } nullNodeTargetLang && nullNodeTargetLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetLang = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of integers that represent the audio data constrained to 8-bit unsigned integer values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Audio { get; set; }
+        public List<double?>? Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private List<double?>? _explicitNullValueAudio = default!;
 #nullable restore
 #else
-        public List<double?> Audio { get; set; }
+        public List<double?> Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private List<double?> _explicitNullValueAudio = default!;
 #endif
         /// <summary>The language of the recorded audio</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLang { get; set; }
+        public string? SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
+        private string? _explicitNullValueSourceLang = default!;
 #nullable restore
 #else
-        public string SourceLang { get; set; }
+        public string SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
+        private string _explicitNullValueSourceLang = default!;
 #endif
         /// <summary>The language to translate the transcription into. Currently only English is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetLang { get; set; }
+        public string? TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
+        private string? _explicitNullValueTargetLang = default!;
 #nullable restore
 #else
-        public string TargetLang { get; set; }
+        public string TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
+        private string _explicitNullValueTargetLang = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestAutomaticSpeechRecognitionOneOf2"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestAutomaticSpeechRecognitionOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestAutomaticSpeechRecognitionOneOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestAutomaticSpeechRecognitionOneOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("audio", Audio);
             writer.WriteStringValue("source_lang", SourceLang);
             writer.WriteStringValue("target_lang", TargetLang);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

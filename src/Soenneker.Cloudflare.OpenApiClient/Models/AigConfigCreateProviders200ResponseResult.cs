@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -11,64 +12,101 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigConfigCreateProviders200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alias") is { } nullNodeAlias && nullNodeAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alias = null;
+            if (parseNode.GetChildNode("default_config") is { } nullNodeDefaultConfig && nullNodeDefaultConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultConfig = null;
+            if (parseNode.GetChildNode("gateway_id") is { } nullNodeGatewayId && nullNodeGatewayId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewayId = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_used_at") is { } nullNodeLastUsedAt && nullNodeLastUsedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUsedAt = null;
+            if (parseNode.GetChildNode("modified_at") is { } nullNodeModifiedAt && nullNodeModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedAt = null;
+            if (parseNode.GetChildNode("provider_slug") is { } nullNodeProviderSlug && nullNodeProviderSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderSlug = null;
+            if (parseNode.GetChildNode("rate_limit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
+            if (parseNode.GetChildNode("rate_limit_period") is { } nullNodeRateLimitPeriod && nullNodeRateLimitPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimitPeriod = null;
+            if (parseNode.GetChildNode("secret_id") is { } nullNodeSecretId && nullNodeSecretId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretId = null;
+            if (parseNode.GetChildNode("secret_preview") is { } nullNodeSecretPreview && nullNodeSecretPreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretPreview = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get; set; }
+        public string? Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        private string? _explicitNullValueAlias = default!;
 #nullable restore
 #else
-        public string Alias { get; set; }
+        public string Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        private string _explicitNullValueAlias = default!;
 #endif
         /// <summary>The default_config property</summary>
-        public bool? DefaultConfig { get; set; }
+        public bool? DefaultConfig { get => _explicitNullValueDefaultConfig; set { _explicitNullValueDefaultConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_config"); else _explicitNullProperties?.Remove("default_config"); } }
+        private bool? _explicitNullValueDefaultConfig = default!;
         /// <summary>Unique identifier of the AI Gateway within the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GatewayId { get; set; }
+        public string? GatewayId { get => _explicitNullValueGatewayId; set { _explicitNullValueGatewayId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_id"); else _explicitNullProperties?.Remove("gateway_id"); } }
+        private string? _explicitNullValueGatewayId = default!;
 #nullable restore
 #else
-        public string GatewayId { get; set; }
+        public string GatewayId { get => _explicitNullValueGatewayId; set { _explicitNullValueGatewayId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_id"); else _explicitNullProperties?.Remove("gateway_id"); } }
+        private string _explicitNullValueGatewayId = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
+        /// <summary>UTC date (YYYY-MM-DD) the gateway last selected this key to authenticate a request to the provider, whether or not the request succeeded. Updated at most once a day. Null if the gateway has not used the key since this field was introduced.</summary>
+        public Date? LastUsedAt { get => _explicitNullValueLastUsedAt; set { _explicitNullValueLastUsedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_at"); else _explicitNullProperties?.Remove("last_used_at"); } }
+        private Date? _explicitNullValueLastUsedAt = default!;
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get => _explicitNullValueModifiedAt; set { _explicitNullValueModifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_at"); else _explicitNullProperties?.Remove("modified_at"); } }
+        private DateTimeOffset? _explicitNullValueModifiedAt = default!;
         /// <summary>The provider_slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderSlug { get; set; }
+        public string? ProviderSlug { get => _explicitNullValueProviderSlug; set { _explicitNullValueProviderSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_slug"); else _explicitNullProperties?.Remove("provider_slug"); } }
+        private string? _explicitNullValueProviderSlug = default!;
 #nullable restore
 #else
-        public string ProviderSlug { get; set; }
+        public string ProviderSlug { get => _explicitNullValueProviderSlug; set { _explicitNullValueProviderSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_slug"); else _explicitNullProperties?.Remove("provider_slug"); } }
+        private string _explicitNullValueProviderSlug = default!;
 #endif
         /// <summary>The rate_limit property</summary>
-        public double? RateLimit { get; set; }
+        public double? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limit"); else _explicitNullProperties?.Remove("rate_limit"); } }
+        private double? _explicitNullValueRateLimit = default!;
         /// <summary>The rate_limit_period property</summary>
-        public double? RateLimitPeriod { get; set; }
+        public double? RateLimitPeriod { get => _explicitNullValueRateLimitPeriod; set { _explicitNullValueRateLimitPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limit_period"); else _explicitNullProperties?.Remove("rate_limit_period"); } }
+        private double? _explicitNullValueRateLimitPeriod = default!;
         /// <summary>The secret_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretId { get; set; }
+        public string? SecretId { get => _explicitNullValueSecretId; set { _explicitNullValueSecretId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_id"); else _explicitNullProperties?.Remove("secret_id"); } }
+        private string? _explicitNullValueSecretId = default!;
 #nullable restore
 #else
-        public string SecretId { get; set; }
+        public string SecretId { get => _explicitNullValueSecretId; set { _explicitNullValueSecretId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_id"); else _explicitNullProperties?.Remove("secret_id"); } }
+        private string _explicitNullValueSecretId = default!;
 #endif
         /// <summary>The secret_preview property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretPreview { get; set; }
+        public string? SecretPreview { get => _explicitNullValueSecretPreview; set { _explicitNullValueSecretPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_preview"); else _explicitNullProperties?.Remove("secret_preview"); } }
+        private string? _explicitNullValueSecretPreview = default!;
 #nullable restore
 #else
-        public string SecretPreview { get; set; }
+        public string SecretPreview { get => _explicitNullValueSecretPreview; set { _explicitNullValueSecretPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_preview"); else _explicitNullProperties?.Remove("secret_preview"); } }
+        private string _explicitNullValueSecretPreview = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateProviders200ResponseResult"/> and sets the default values.
@@ -86,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateProviders200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateProviders200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateProviders200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "default_config", n => { DefaultConfig = n.GetBoolValue(); } },
                 { "gateway_id", n => { GatewayId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "last_used_at", n => { LastUsedAt = n.GetDateValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "provider_slug", n => { ProviderSlug = n.GetStringValue(); } },
                 { "rate_limit", n => { RateLimit = n.GetDoubleValue(); } },
@@ -119,12 +158,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("default_config", DefaultConfig);
             writer.WriteStringValue("gateway_id", GatewayId);
             writer.WriteStringValue("id", Id);
+            writer.WriteDateValue("last_used_at", LastUsedAt);
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("provider_slug", ProviderSlug);
             writer.WriteDoubleValue("rate_limit", RateLimit);
             writer.WriteDoubleValue("rate_limit_period", RateLimitPeriod);
             writer.WriteStringValue("secret_id", SecretId);
             writer.WriteStringValue("secret_preview", SecretPreview);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

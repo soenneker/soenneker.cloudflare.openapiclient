@@ -25,46 +25,55 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The arc property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Arc.ArcRequestBuilder Arc
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Arc.ArcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dkim property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder Dkim
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dmarc property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dmarc.DmarcRequestBuilder Dmarc
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dmarc.DmarcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The malicious property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Malicious.MaliciousRequestBuilder Malicious
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Malicious.MaliciousRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spam property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spam.SpamRequestBuilder Spam
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spam.SpamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spf property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spf.SpfRequestBuilder Spf
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spf.SpfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spoof property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spoof.SpoofRequestBuilder Spoof
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spoof.SpoofRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The threat_category property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Threat_category.Threat_categoryRequestBuilder Threat_category
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Threat_category.Threat_categoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tls_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Tls_version.Tls_versionRequestBuilder Tls_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);

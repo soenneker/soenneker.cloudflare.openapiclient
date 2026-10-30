@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\web3\hostnames\{identifier}\ipfs_universal_path
+    /// Builds and executes requests for operations under \zones\{zoneId}\web3\hostnames\{identifier}\ipfs_universal_path
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Ipfs_universal_pathRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ipfs_universal_pathRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/web3/hostnames/{identifier}/ipfs_universal_path", pathParameters)
+        public Ipfs_universal_pathRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/web3/hostnames/{identifier}/ipfs_universal_path", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ipfs_universal_pathRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/web3/hostnames/{identifier}/ipfs_universal_path", rawUrl)
+        public Ipfs_universal_pathRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/web3/hostnames/{identifier}/ipfs_universal_path", rawUrl)
         {
         }
     }

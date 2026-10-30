@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Configure keyboard usage behavior. If this field is absent, keyboard usage remains enabled. Applies only when version == &quot;v2&quot;.</summary>
+    /// <summary>Configure keyboard usage behavior. When set to enable_read_only_actions, only approved browser commands (find, copy, print, zoom, and select-all) may execute; other keyboard input is blocked from reaching the page. Copy and print remain subject to their independent controls. If this field is absent, keyboard usage remains enabled. Applies only when version == &quot;v2&quot;. The enable_read_only_actions value requires an explicit version of &quot;v2&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard
     {
@@ -14,6 +14,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "disabled")]
         #pragma warning disable CS1591
         Disabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "enable_read_only_actions")]
+        #pragma warning disable CS1591
+        EnableReadOnlyActions,
         #pragma warning restore CS1591
     }
 }

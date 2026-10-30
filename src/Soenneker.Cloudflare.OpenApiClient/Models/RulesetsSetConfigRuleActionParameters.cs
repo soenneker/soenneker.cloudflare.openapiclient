@@ -12,71 +12,128 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesetsSetConfigRuleActionParameters : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("automatic_https_rewrites") is { } nullNodeAutomaticHttpsRewrites && nullNodeAutomaticHttpsRewrites.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticHttpsRewrites = null;
+            if (parseNode.GetChildNode("autominify") is { } nullNodeAutominify && nullNodeAutominify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autominify = null;
+            if (parseNode.GetChildNode("bic") is { } nullNodeBic && nullNodeBic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bic = null;
+            if (parseNode.GetChildNode("content_converter") is { } nullNodeContentConverter && nullNodeContentConverter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentConverter = null;
+            if (parseNode.GetChildNode("disable_apps") is { } nullNodeDisableApps && nullNodeDisableApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableApps = null;
+            if (parseNode.GetChildNode("disable_pay_per_crawl") is { } nullNodeDisablePayPerCrawl && nullNodeDisablePayPerCrawl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisablePayPerCrawl = null;
+            if (parseNode.GetChildNode("disable_rum") is { } nullNodeDisableRum && nullNodeDisableRum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableRum = null;
+            if (parseNode.GetChildNode("disable_zaraz") is { } nullNodeDisableZaraz && nullNodeDisableZaraz.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableZaraz = null;
+            if (parseNode.GetChildNode("email_obfuscation") is { } nullNodeEmailObfuscation && nullNodeEmailObfuscation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailObfuscation = null;
+            if (parseNode.GetChildNode("fonts") is { } nullNodeFonts && nullNodeFonts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fonts = null;
+            if (parseNode.GetChildNode("hotlink_protection") is { } nullNodeHotlinkProtection && nullNodeHotlinkProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HotlinkProtection = null;
+            if (parseNode.GetChildNode("mirage") is { } nullNodeMirage && nullNodeMirage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mirage = null;
+            if (parseNode.GetChildNode("opportunistic_encryption") is { } nullNodeOpportunisticEncryption && nullNodeOpportunisticEncryption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpportunisticEncryption = null;
+            if (parseNode.GetChildNode("polish") is { } nullNodePolish && nullNodePolish.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Polish = null;
+            if (parseNode.GetChildNode("redirects_for_ai_training") is { } nullNodeRedirectsForAiTraining && nullNodeRedirectsForAiTraining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectsForAiTraining = null;
+            if (parseNode.GetChildNode("request_body_buffering") is { } nullNodeRequestBodyBuffering && nullNodeRequestBodyBuffering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestBodyBuffering = null;
+            if (parseNode.GetChildNode("response_body_buffering") is { } nullNodeResponseBodyBuffering && nullNodeResponseBodyBuffering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseBodyBuffering = null;
+            if (parseNode.GetChildNode("rocket_loader") is { } nullNodeRocketLoader && nullNodeRocketLoader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RocketLoader = null;
+            if (parseNode.GetChildNode("security_level") is { } nullNodeSecurityLevel && nullNodeSecurityLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityLevel = null;
+            if (parseNode.GetChildNode("server_side_excludes") is { } nullNodeServerSideExcludes && nullNodeServerSideExcludes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerSideExcludes = null;
+            if (parseNode.GetChildNode("ssl") is { } nullNodeSsl && nullNodeSsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssl = null;
+            if (parseNode.GetChildNode("sxg") is { } nullNodeSxg && nullNodeSxg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sxg = null;
+            if (parseNode.GetChildNode("webmcp_enabled") is { } nullNodeWebmcpEnabled && nullNodeWebmcpEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebmcpEnabled = null;
+            if (parseNode.GetChildNode("webmcp_packs") is { } nullNodeWebmcpPacks && nullNodeWebmcpPacks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebmcpPacks = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to enable Automatic HTTPS Rewrites.</summary>
-        public bool? AutomaticHttpsRewrites { get; set; }
+        public bool? AutomaticHttpsRewrites { get => _explicitNullValueAutomaticHttpsRewrites; set { _explicitNullValueAutomaticHttpsRewrites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_https_rewrites"); else _explicitNullProperties?.Remove("automatic_https_rewrites"); } }
+        private bool? _explicitNullValueAutomaticHttpsRewrites = default!;
         /// <summary>Which file extensions to minify automatically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify? Autominify { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify? Autominify { get => _explicitNullValueAutominify; set { _explicitNullValueAutominify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autominify"); else _explicitNullProperties?.Remove("autominify"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify? _explicitNullValueAutominify = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify Autominify { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify Autominify { get => _explicitNullValueAutominify; set { _explicitNullValueAutominify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autominify"); else _explicitNullProperties?.Remove("autominify"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify _explicitNullValueAutominify = default!;
 #endif
         /// <summary>Whether to enable Browser Integrity Check (BIC).</summary>
-        public bool? Bic { get; set; }
+        public bool? Bic { get => _explicitNullValueBic; set { _explicitNullValueBic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bic"); else _explicitNullProperties?.Remove("bic"); } }
+        private bool? _explicitNullValueBic = default!;
         /// <summary>Whether to enable content conversion (e.g., HTML to Markdown).</summary>
-        public bool? ContentConverter { get; set; }
+        public bool? ContentConverter { get => _explicitNullValueContentConverter; set { _explicitNullValueContentConverter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_converter"); else _explicitNullProperties?.Remove("content_converter"); } }
+        private bool? _explicitNullValueContentConverter = default!;
         /// <summary>Whether to disable Cloudflare Apps.</summary>
         [Obsolete("")]
-        public bool? DisableApps { get; set; }
+        public bool? DisableApps { get => _explicitNullValueDisableApps; set { _explicitNullValueDisableApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_apps"); else _explicitNullProperties?.Remove("disable_apps"); } }
+        private bool? _explicitNullValueDisableApps = default!;
         /// <summary>Whether to disable Pay Per Crawl.</summary>
-        public bool? DisablePayPerCrawl { get; set; }
+        public bool? DisablePayPerCrawl { get => _explicitNullValueDisablePayPerCrawl; set { _explicitNullValueDisablePayPerCrawl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_pay_per_crawl"); else _explicitNullProperties?.Remove("disable_pay_per_crawl"); } }
+        private bool? _explicitNullValueDisablePayPerCrawl = default!;
         /// <summary>Whether to disable Real User Monitoring (RUM).</summary>
-        public bool? DisableRum { get; set; }
+        public bool? DisableRum { get => _explicitNullValueDisableRum; set { _explicitNullValueDisableRum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_rum"); else _explicitNullProperties?.Remove("disable_rum"); } }
+        private bool? _explicitNullValueDisableRum = default!;
         /// <summary>Whether to disable Zaraz.</summary>
-        public bool? DisableZaraz { get; set; }
+        public bool? DisableZaraz { get => _explicitNullValueDisableZaraz; set { _explicitNullValueDisableZaraz = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_zaraz"); else _explicitNullProperties?.Remove("disable_zaraz"); } }
+        private bool? _explicitNullValueDisableZaraz = default!;
         /// <summary>Whether to enable Email Obfuscation.</summary>
-        public bool? EmailObfuscation { get; set; }
+        public bool? EmailObfuscation { get => _explicitNullValueEmailObfuscation; set { _explicitNullValueEmailObfuscation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_obfuscation"); else _explicitNullProperties?.Remove("email_obfuscation"); } }
+        private bool? _explicitNullValueEmailObfuscation = default!;
         /// <summary>Whether to enable Cloudflare Fonts.</summary>
-        public bool? Fonts { get; set; }
+        public bool? Fonts { get => _explicitNullValueFonts; set { _explicitNullValueFonts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fonts"); else _explicitNullProperties?.Remove("fonts"); } }
+        private bool? _explicitNullValueFonts = default!;
         /// <summary>Whether to enable Hotlink Protection.</summary>
-        public bool? HotlinkProtection { get; set; }
+        public bool? HotlinkProtection { get => _explicitNullValueHotlinkProtection; set { _explicitNullValueHotlinkProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hotlink_protection"); else _explicitNullProperties?.Remove("hotlink_protection"); } }
+        private bool? _explicitNullValueHotlinkProtection = default!;
         /// <summary>Whether to enable Mirage.</summary>
         [Obsolete("")]
-        public bool? Mirage { get; set; }
+        public bool? Mirage { get => _explicitNullValueMirage; set { _explicitNullValueMirage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mirage"); else _explicitNullProperties?.Remove("mirage"); } }
+        private bool? _explicitNullValueMirage = default!;
         /// <summary>Whether to enable Opportunistic Encryption.</summary>
-        public bool? OpportunisticEncryption { get; set; }
+        public bool? OpportunisticEncryption { get => _explicitNullValueOpportunisticEncryption; set { _explicitNullValueOpportunisticEncryption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunistic_encryption"); else _explicitNullProperties?.Remove("opportunistic_encryption"); } }
+        private bool? _explicitNullValueOpportunisticEncryption = default!;
         /// <summary>The Polish level to configure.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersPolish? Polish { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersPolish? Polish { get => _explicitNullValuePolish; set { _explicitNullValuePolish = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("polish"); else _explicitNullProperties?.Remove("polish"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersPolish? _explicitNullValuePolish = default!;
         /// <summary>Whether to redirect verified AI training crawlers to canonical URLs found in the HTML response.</summary>
-        public bool? RedirectsForAiTraining { get; set; }
+        public bool? RedirectsForAiTraining { get => _explicitNullValueRedirectsForAiTraining; set { _explicitNullValueRedirectsForAiTraining = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirects_for_ai_training"); else _explicitNullProperties?.Remove("redirects_for_ai_training"); } }
+        private bool? _explicitNullValueRedirectsForAiTraining = default!;
         /// <summary>The request body buffering mode.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersRequestBodyBuffering? RequestBodyBuffering { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersRequestBodyBuffering? RequestBodyBuffering { get => _explicitNullValueRequestBodyBuffering; set { _explicitNullValueRequestBodyBuffering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_body_buffering"); else _explicitNullProperties?.Remove("request_body_buffering"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersRequestBodyBuffering? _explicitNullValueRequestBodyBuffering = default!;
         /// <summary>The response body buffering mode.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersResponseBodyBuffering? ResponseBodyBuffering { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersResponseBodyBuffering? ResponseBodyBuffering { get => _explicitNullValueResponseBodyBuffering; set { _explicitNullValueResponseBodyBuffering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_body_buffering"); else _explicitNullProperties?.Remove("response_body_buffering"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersResponseBodyBuffering? _explicitNullValueResponseBodyBuffering = default!;
         /// <summary>Whether to enable Rocket Loader.</summary>
-        public bool? RocketLoader { get; set; }
+        public bool? RocketLoader { get => _explicitNullValueRocketLoader; set { _explicitNullValueRocketLoader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rocket_loader"); else _explicitNullProperties?.Remove("rocket_loader"); } }
+        private bool? _explicitNullValueRocketLoader = default!;
         /// <summary>The Security Level to configure.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSecurityLevel? SecurityLevel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSecurityLevel? SecurityLevel { get => _explicitNullValueSecurityLevel; set { _explicitNullValueSecurityLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_level"); else _explicitNullProperties?.Remove("security_level"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSecurityLevel? _explicitNullValueSecurityLevel = default!;
         /// <summary>Whether to enable Server-Side Excludes.</summary>
-        public bool? ServerSideExcludes { get; set; }
+        public bool? ServerSideExcludes { get => _explicitNullValueServerSideExcludes; set { _explicitNullValueServerSideExcludes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_side_excludes"); else _explicitNullProperties?.Remove("server_side_excludes"); } }
+        private bool? _explicitNullValueServerSideExcludes = default!;
         /// <summary>The SSL level to configure.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSsl? Ssl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSsl? Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSsl? _explicitNullValueSsl = default!;
         /// <summary>Whether to enable Signed Exchanges (SXG).</summary>
         [Obsolete("")]
-        public bool? Sxg { get; set; }
+        public bool? Sxg { get => _explicitNullValueSxg; set { _explicitNullValueSxg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sxg"); else _explicitNullProperties?.Remove("sxg"); } }
+        private bool? _explicitNullValueSxg = default!;
         /// <summary>Whether to serve the WebMCP bridge script, which exposes the page&apos;s tools to browser AI agents.</summary>
-        public bool? WebmcpEnabled { get; set; }
+        public bool? WebmcpEnabled { get => _explicitNullValueWebmcpEnabled; set { _explicitNullValueWebmcpEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webmcp_enabled"); else _explicitNullProperties?.Remove("webmcp_enabled"); } }
+        private bool? _explicitNullValueWebmcpEnabled = default!;
         /// <summary>Bundled WebMCP tool packs to activate for matching requests. An empty array disables all packs. Omitting this parameter leaves the pack selection unchanged. Does not enable the WebMCP bridge itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WebmcpPacks { get; set; }
+        public List<string>? WebmcpPacks { get => _explicitNullValueWebmcpPacks; set { _explicitNullValueWebmcpPacks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webmcp_packs"); else _explicitNullProperties?.Remove("webmcp_packs"); } }
+        private List<string>? _explicitNullValueWebmcpPacks = default!;
 #nullable restore
 #else
-        public List<string> WebmcpPacks { get; set; }
+        public List<string> WebmcpPacks { get => _explicitNullValueWebmcpPacks; set { _explicitNullValueWebmcpPacks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webmcp_packs"); else _explicitNullProperties?.Remove("webmcp_packs"); } }
+        private List<string> _explicitNullValueWebmcpPacks = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleActionParameters"/> and sets the default values.
@@ -93,7 +150,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleActionParameters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleActionParameters();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleActionParameters(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -160,6 +217,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("sxg", Sxg);
             writer.WriteBoolValue("webmcp_enabled", WebmcpEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("webmcp_packs", WebmcpPacks);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

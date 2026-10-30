@@ -11,48 +11,70 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationsApiTenantUnit : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("unit_memberships") is { } nullNodeUnitMemberships && nullNodeUnitMemberships.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitMemberships = null;
+            if (parseNode.GetChildNode("unit_metadata") is { } nullNodeUnitMetadata && nullNodeUnitMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitMetadata = null;
+            if (parseNode.GetChildNode("unit_name") is { } nullNodeUnitName && nullNodeUnitName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitName = null;
+            if (parseNode.GetChildNode("unit_status") is { } nullNodeUnitStatus && nullNodeUnitStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitStatus = null;
+            if (parseNode.GetChildNode("unit_tag") is { } nullNodeUnitTag && nullNodeUnitTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitTag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unit_memberships property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty>? UnitMemberships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembership>? UnitMemberships { get => _explicitNullValueUnitMemberships; set { _explicitNullValueUnitMemberships = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_memberships"); else _explicitNullProperties?.Remove("unit_memberships"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembership>? _explicitNullValueUnitMemberships = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty> UnitMemberships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembership> UnitMemberships { get => _explicitNullValueUnitMemberships; set { _explicitNullValueUnitMemberships = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_memberships"); else _explicitNullProperties?.Remove("unit_memberships"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembership> _explicitNullValueUnitMemberships = default!;
 #endif
         /// <summary>The unit_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty? UnitMetadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty? UnitMetadata { get => _explicitNullValueUnitMetadata; set { _explicitNullValueUnitMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_metadata"); else _explicitNullProperties?.Remove("unit_metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty? _explicitNullValueUnitMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty UnitMetadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty UnitMetadata { get => _explicitNullValueUnitMetadata; set { _explicitNullValueUnitMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_metadata"); else _explicitNullProperties?.Remove("unit_metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty _explicitNullValueUnitMetadata = default!;
 #endif
         /// <summary>The unit_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitName { get; set; }
+        public string? UnitName { get => _explicitNullValueUnitName; set { _explicitNullValueUnitName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_name"); else _explicitNullProperties?.Remove("unit_name"); } }
+        private string? _explicitNullValueUnitName = default!;
 #nullable restore
 #else
-        public string UnitName { get; set; }
+        public string UnitName { get => _explicitNullValueUnitName; set { _explicitNullValueUnitName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_name"); else _explicitNullProperties?.Remove("unit_name"); } }
+        private string _explicitNullValueUnitName = default!;
 #endif
         /// <summary>The unit_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitStatus { get; set; }
+        public string? UnitStatus { get => _explicitNullValueUnitStatus; set { _explicitNullValueUnitStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_status"); else _explicitNullProperties?.Remove("unit_status"); } }
+        private string? _explicitNullValueUnitStatus = default!;
 #nullable restore
 #else
-        public string UnitStatus { get; set; }
+        public string UnitStatus { get => _explicitNullValueUnitStatus; set { _explicitNullValueUnitStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_status"); else _explicitNullProperties?.Remove("unit_status"); } }
+        private string _explicitNullValueUnitStatus = default!;
 #endif
         /// <summary>The unit_tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitTag { get; set; }
+        public string? UnitTag { get => _explicitNullValueUnitTag; set { _explicitNullValueUnitTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_tag"); else _explicitNullProperties?.Remove("unit_tag"); } }
+        private string? _explicitNullValueUnitTag = default!;
 #nullable restore
 #else
-        public string UnitTag { get; set; }
+        public string UnitTag { get => _explicitNullValueUnitTag; set { _explicitNullValueUnitTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_tag"); else _explicitNullProperties?.Remove("unit_tag"); } }
+        private string _explicitNullValueUnitTag = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "unit_memberships", n => { UnitMemberships = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unit_memberships", n => { UnitMemberships = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembership>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembership.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "unit_metadata", n => { UnitMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "unit_name", n => { UnitName = n.GetStringValue(); } },
                 { "unit_status", n => { UnitStatus = n.GetStringValue(); } },
@@ -93,11 +115,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty>("unit_memberships", UnitMemberships);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembership>("unit_memberships", UnitMemberships);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty>("unit_metadata", UnitMetadata);
             writer.WriteStringValue("unit_name", UnitName);
             writer.WriteStringValue("unit_status", UnitStatus);
             writer.WriteStringValue("unit_tag", UnitTag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

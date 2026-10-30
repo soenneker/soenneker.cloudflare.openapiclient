@@ -11,49 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiSearchNamespaceStats200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("completed") is { } nullNodeCompleted && nullNodeCompleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Completed = null;
+            if (parseNode.GetChildNode("degraded") is { } nullNodeDegraded && nullNodeDegraded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Degraded = null;
+            if (parseNode.GetChildNode("engine") is { } nullNodeEngine && nullNodeEngine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Engine = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("file_embed_errors") is { } nullNodeFileEmbedErrors && nullNodeFileEmbedErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileEmbedErrors = null;
+            if (parseNode.GetChildNode("index_source_errors") is { } nullNodeIndexSourceErrors && nullNodeIndexSourceErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexSourceErrors = null;
+            if (parseNode.GetChildNode("last_activity") is { } nullNodeLastActivity && nullNodeLastActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastActivity = null;
+            if (parseNode.GetChildNode("outdated") is { } nullNodeOutdated && nullNodeOutdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outdated = null;
+            if (parseNode.GetChildNode("queued") is { } nullNodeQueued && nullNodeQueued.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queued = null;
+            if (parseNode.GetChildNode("running") is { } nullNodeRunning && nullNodeRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Running = null;
+            if (parseNode.GetChildNode("skipped") is { } nullNodeSkipped && nullNodeSkipped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skipped = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The completed property</summary>
-        public int? Completed { get; set; }
+        public int? Completed { get => _explicitNullValueCompleted; set { _explicitNullValueCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed"); else _explicitNullProperties?.Remove("completed"); } }
+        private int? _explicitNullValueCompleted = default!;
         /// <summary>True when the API cannot compute status counts (e.g. the legacy stats query exceeded the D1 statement-size limit). The response omits counts in this case.</summary>
-        public bool? Degraded { get; set; }
+        public bool? Degraded { get => _explicitNullValueDegraded; set { _explicitNullValueDegraded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("degraded"); else _explicitNullProperties?.Remove("degraded"); } }
+        private bool? _explicitNullValueDegraded = default!;
         /// <summary>Engine-specific metadata. Present only for managed (v3) instances.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngine? Engine { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngine? Engine { get => _explicitNullValueEngine; set { _explicitNullValueEngine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engine"); else _explicitNullProperties?.Remove("engine"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngine? _explicitNullValueEngine = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngine Engine { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngine Engine { get => _explicitNullValueEngine; set { _explicitNullValueEngine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engine"); else _explicitNullProperties?.Remove("engine"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngine _explicitNullValueEngine = default!;
 #endif
         /// <summary>The error property</summary>
-        public int? Error { get; set; }
+        public int? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private int? _explicitNullValueError = default!;
         /// <summary>The file_embed_errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultFileEmbedErrors? FileEmbedErrors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultFileEmbedErrors? FileEmbedErrors { get => _explicitNullValueFileEmbedErrors; set { _explicitNullValueFileEmbedErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_embed_errors"); else _explicitNullProperties?.Remove("file_embed_errors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultFileEmbedErrors? _explicitNullValueFileEmbedErrors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultFileEmbedErrors FileEmbedErrors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultFileEmbedErrors FileEmbedErrors { get => _explicitNullValueFileEmbedErrors; set { _explicitNullValueFileEmbedErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_embed_errors"); else _explicitNullProperties?.Remove("file_embed_errors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultFileEmbedErrors _explicitNullValueFileEmbedErrors = default!;
 #endif
         /// <summary>The index_source_errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultIndexSourceErrors? IndexSourceErrors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultIndexSourceErrors? IndexSourceErrors { get => _explicitNullValueIndexSourceErrors; set { _explicitNullValueIndexSourceErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_source_errors"); else _explicitNullProperties?.Remove("index_source_errors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultIndexSourceErrors? _explicitNullValueIndexSourceErrors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultIndexSourceErrors IndexSourceErrors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultIndexSourceErrors IndexSourceErrors { get => _explicitNullValueIndexSourceErrors; set { _explicitNullValueIndexSourceErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_source_errors"); else _explicitNullProperties?.Remove("index_source_errors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultIndexSourceErrors _explicitNullValueIndexSourceErrors = default!;
 #endif
         /// <summary>The last_activity property</summary>
-        public DateTimeOffset? LastActivity { get; set; }
+        public DateTimeOffset? LastActivity { get => _explicitNullValueLastActivity; set { _explicitNullValueLastActivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_activity"); else _explicitNullProperties?.Remove("last_activity"); } }
+        private DateTimeOffset? _explicitNullValueLastActivity = default!;
         /// <summary>The outdated property</summary>
-        public int? Outdated { get; set; }
+        public int? Outdated { get => _explicitNullValueOutdated; set { _explicitNullValueOutdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outdated"); else _explicitNullProperties?.Remove("outdated"); } }
+        private int? _explicitNullValueOutdated = default!;
         /// <summary>The queued property</summary>
-        public int? Queued { get; set; }
+        public int? Queued { get => _explicitNullValueQueued; set { _explicitNullValueQueued = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queued"); else _explicitNullProperties?.Remove("queued"); } }
+        private int? _explicitNullValueQueued = default!;
         /// <summary>The running property</summary>
-        public int? Running { get; set; }
+        public int? Running { get => _explicitNullValueRunning; set { _explicitNullValueRunning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("running"); else _explicitNullProperties?.Remove("running"); } }
+        private int? _explicitNullValueRunning = default!;
         /// <summary>The skipped property</summary>
-        public int? Skipped { get; set; }
+        public int? Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
+        private int? _explicitNullValueSkipped = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -69,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +142,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("queued", Queued);
             writer.WriteIntValue("running", Running);
             writer.WriteIntValue("skipped", Skipped);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

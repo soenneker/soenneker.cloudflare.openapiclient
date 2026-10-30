@@ -11,21 +11,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostPermissionCreateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("subjectId") is { } nullNodeSubjectId && nullNodeSubjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectId = null;
+            if (parseNode.GetChildNode("subjectType") is { } nullNodeSubjectType && nullNodeSubjectType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The role property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequestRole? Role { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequestRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequestRole? _explicitNullValueRole = default!;
         /// <summary>The subjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectId { get; set; }
+        public string? SubjectId { get => _explicitNullValueSubjectId; set { _explicitNullValueSubjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectId"); else _explicitNullProperties?.Remove("subjectId"); } }
+        private string? _explicitNullValueSubjectId = default!;
 #nullable restore
 #else
-        public string SubjectId { get; set; }
+        public string SubjectId { get => _explicitNullValueSubjectId; set { _explicitNullValueSubjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectId"); else _explicitNullProperties?.Remove("subjectId"); } }
+        private string _explicitNullValueSubjectId = default!;
 #endif
         /// <summary>The subjectType property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequestSubjectType? SubjectType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequestSubjectType? SubjectType { get => _explicitNullValueSubjectType; set { _explicitNullValueSubjectType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectType"); else _explicitNullProperties?.Remove("subjectType"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequestSubjectType? _explicitNullValueSubjectType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequest"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequestRole>("role", Role);
             writer.WriteStringValue("subjectId", SubjectId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPermissionCreateRequestSubjectType>("subjectType", SubjectType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

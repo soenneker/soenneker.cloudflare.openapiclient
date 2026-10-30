@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArticlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", pathParameters)
+        public ArticlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,severity*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArticlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", rawUrl)
+        public ArticlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,severity*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Marks up to 50 Threat Signals articles as read or unread.
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleBulkMarkRead200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleBulkMarkRead200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleBulkMarkRead200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleBulkMarkRead200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists articles from the account&apos;s Threat Signals feeds.
@@ -239,6 +239,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
             #pragma warning disable CS1591
             [QueryParameter("search")]
             public string Search { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("severity")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleListSeverityParameterItem[]? Severity { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("severity")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleListSeverityParameterItem[] Severity { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

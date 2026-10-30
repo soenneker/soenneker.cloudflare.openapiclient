@@ -12,16 +12,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessLinkedAppTokenRule : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("linked_app_token") is { } nullNodeLinkedAppToken && nullNodeLinkedAppToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedAppToken = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The linked_app_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken? LinkedAppToken { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken? LinkedAppToken { get => _explicitNullValueLinkedAppToken; set { _explicitNullValueLinkedAppToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_app_token"); else _explicitNullProperties?.Remove("linked_app_token"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken? _explicitNullValueLinkedAppToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken LinkedAppToken { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken LinkedAppToken { get => _explicitNullValueLinkedAppToken; set { _explicitNullValueLinkedAppToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_app_token"); else _explicitNullProperties?.Remove("linked_app_token"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken _explicitNullValueLinkedAppToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRule"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRule();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRule(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken>("linked_app_token", LinkedAppToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SecurityCenterScansListResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("quota") is { } nullNodeQuota && nullNodeQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quota = null;
+            if (parseNode.GetChildNode("scans") is { } nullNodeScans && nullNodeScans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scans = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Quota information for on-demand scans. Scans are rate limited per account per 24-hour rolling window.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanQuota? Quota { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanQuota? Quota { get => _explicitNullValueQuota; set { _explicitNullValueQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota"); else _explicitNullProperties?.Remove("quota"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanQuota? _explicitNullValueQuota = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanQuota Quota { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanQuota Quota { get => _explicitNullValueQuota; set { _explicitNullValueQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota"); else _explicitNullProperties?.Remove("quota"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanQuota _explicitNullValueQuota = default!;
 #endif
         /// <summary>List of on-demand scans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse>? Scans { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse>? Scans { get => _explicitNullValueScans; set { _explicitNullValueScans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scans"); else _explicitNullProperties?.Remove("scans"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse>? _explicitNullValueScans = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse> Scans { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse> Scans { get => _explicitNullValueScans; set { _explicitNullValueScans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scans"); else _explicitNullProperties?.Remove("scans"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse> _explicitNullValueScans = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScansListResponse"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScansListResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScansListResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScansListResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanQuota>("quota", Quota);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse>("scans", Scans);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,57 +11,82 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicLanDhcpServer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dhcp_options") is { } nullNodeDhcpOptions && nullNodeDhcpOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DhcpOptions = null;
+            if (parseNode.GetChildNode("dhcp_pool_end") is { } nullNodeDhcpPoolEnd && nullNodeDhcpPoolEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DhcpPoolEnd = null;
+            if (parseNode.GetChildNode("dhcp_pool_start") is { } nullNodeDhcpPoolStart && nullNodeDhcpPoolStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DhcpPoolStart = null;
+            if (parseNode.GetChildNode("dns_server") is { } nullNodeDnsServer && nullNodeDnsServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsServer = null;
+            if (parseNode.GetChildNode("dns_servers") is { } nullNodeDnsServers && nullNodeDnsServers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsServers = null;
+            if (parseNode.GetChildNode("reservations") is { } nullNodeReservations && nullNodeReservations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reservations = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional list of custom DHCP options to include in DHCP responses. Only valid when DHCP server is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOption>? DhcpOptions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOption>? DhcpOptions { get => _explicitNullValueDhcpOptions; set { _explicitNullValueDhcpOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_options"); else _explicitNullProperties?.Remove("dhcp_options"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOption>? _explicitNullValueDhcpOptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOption> DhcpOptions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOption> DhcpOptions { get => _explicitNullValueDhcpOptions; set { _explicitNullValueDhcpOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_options"); else _explicitNullProperties?.Remove("dhcp_options"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOption> _explicitNullValueDhcpOptions = default!;
 #endif
         /// <summary>A valid IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DhcpPoolEnd { get; set; }
+        public string? DhcpPoolEnd { get => _explicitNullValueDhcpPoolEnd; set { _explicitNullValueDhcpPoolEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_pool_end"); else _explicitNullProperties?.Remove("dhcp_pool_end"); } }
+        private string? _explicitNullValueDhcpPoolEnd = default!;
 #nullable restore
 #else
-        public string DhcpPoolEnd { get; set; }
+        public string DhcpPoolEnd { get => _explicitNullValueDhcpPoolEnd; set { _explicitNullValueDhcpPoolEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_pool_end"); else _explicitNullProperties?.Remove("dhcp_pool_end"); } }
+        private string _explicitNullValueDhcpPoolEnd = default!;
 #endif
         /// <summary>A valid IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DhcpPoolStart { get; set; }
+        public string? DhcpPoolStart { get => _explicitNullValueDhcpPoolStart; set { _explicitNullValueDhcpPoolStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_pool_start"); else _explicitNullProperties?.Remove("dhcp_pool_start"); } }
+        private string? _explicitNullValueDhcpPoolStart = default!;
 #nullable restore
 #else
-        public string DhcpPoolStart { get; set; }
+        public string DhcpPoolStart { get => _explicitNullValueDhcpPoolStart; set { _explicitNullValueDhcpPoolStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_pool_start"); else _explicitNullProperties?.Remove("dhcp_pool_start"); } }
+        private string _explicitNullValueDhcpPoolStart = default!;
 #endif
         /// <summary>A valid IPv4 address.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DnsServer { get; set; }
+        public string? DnsServer { get => _explicitNullValueDnsServer; set { _explicitNullValueDnsServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_server"); else _explicitNullProperties?.Remove("dns_server"); } }
+        private string? _explicitNullValueDnsServer = default!;
 #nullable restore
 #else
-        public string DnsServer { get; set; }
+        public string DnsServer { get => _explicitNullValueDnsServer; set { _explicitNullValueDnsServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_server"); else _explicitNullProperties?.Remove("dns_server"); } }
+        private string _explicitNullValueDnsServer = default!;
 #endif
         /// <summary>The dns_servers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DnsServers { get; set; }
+        public List<string>? DnsServers { get => _explicitNullValueDnsServers; set { _explicitNullValueDnsServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_servers"); else _explicitNullProperties?.Remove("dns_servers"); } }
+        private List<string>? _explicitNullValueDnsServers = default!;
 #nullable restore
 #else
-        public List<string> DnsServers { get; set; }
+        public List<string> DnsServers { get => _explicitNullValueDnsServers; set { _explicitNullValueDnsServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_servers"); else _explicitNullProperties?.Remove("dns_servers"); } }
+        private List<string> _explicitNullValueDnsServers = default!;
 #endif
         /// <summary>Mapping of MAC addresses to IP addresses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty? Reservations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty? Reservations { get => _explicitNullValueReservations; set { _explicitNullValueReservations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reservations"); else _explicitNullProperties?.Remove("reservations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty? _explicitNullValueReservations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty Reservations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty Reservations { get => _explicitNullValueReservations; set { _explicitNullValueReservations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reservations"); else _explicitNullProperties?.Remove("reservations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty _explicitNullValueReservations = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("dns_server", DnsServer);
             writer.WriteCollectionOfPrimitiveValues<string>("dns_servers", DnsServers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty>("reservations", Reservations);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

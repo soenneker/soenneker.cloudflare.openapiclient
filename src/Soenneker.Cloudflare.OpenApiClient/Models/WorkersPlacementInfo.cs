@@ -8,74 +8,79 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember8"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf8"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersPlacementInfo : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember1? WorkersPlacementInfoMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf1? WorkersPlacementInfoOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember1 WorkersPlacementInfoMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf1 WorkersPlacementInfoOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember2? WorkersPlacementInfoMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf2? WorkersPlacementInfoOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember2 WorkersPlacementInfoMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf2 WorkersPlacementInfoOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember3? WorkersPlacementInfoMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf3? WorkersPlacementInfoOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember3 WorkersPlacementInfoMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf3 WorkersPlacementInfoOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember4? WorkersPlacementInfoMember4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf4? WorkersPlacementInfoOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember4 WorkersPlacementInfoMember4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf4 WorkersPlacementInfoOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember5? WorkersPlacementInfoMember5 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf5? WorkersPlacementInfoOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember5 WorkersPlacementInfoMember5 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf5 WorkersPlacementInfoOneOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember6"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember6? WorkersPlacementInfoMember6 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf6? WorkersPlacementInfoOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember6 WorkersPlacementInfoMember6 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf6 WorkersPlacementInfoOneOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember7"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember7? WorkersPlacementInfoMember7 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf7? WorkersPlacementInfoOneOf7 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember7 WorkersPlacementInfoMember7 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf7 WorkersPlacementInfoOneOf7 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember8"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember8? WorkersPlacementInfoMember8 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf8? WorkersPlacementInfoOneOf8 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember8 WorkersPlacementInfoMember8 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf8 WorkersPlacementInfoOneOf8 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -87,7 +92,58 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfo();
-            return result;
+            if("WorkersPlacementInfoOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("WorkersPlacementInfoOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("WorkersPlacementInfoOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("WorkersPlacementInfoOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("WorkersPlacementInfoOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("WorkersPlacementInfoOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("WorkersPlacementInfoOneOf7".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("WorkersPlacementInfoOneOf8".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("mode") != null && (parseNode.GetChildNode("mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("smart".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("SUCCESS".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "UNSUPPORTED_APPLICATION".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "INSUFFICIENT_INVOCATIONS".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("region") != null && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("SUCCESS".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "UNSUPPORTED_APPLICATION".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "INSUFFICIENT_INVOCATIONS".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("hostname") != null && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("SUCCESS".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "UNSUPPORTED_APPLICATION".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "INSUFFICIENT_INVOCATIONS".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("host") != null && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("SUCCESS".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "UNSUPPORTED_APPLICATION".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "INSUFFICIENT_INVOCATIONS".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("mode") != null && (parseNode.GetChildNode("mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("targeted".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("region") != null && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("SUCCESS".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "UNSUPPORTED_APPLICATION".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "INSUFFICIENT_INVOCATIONS".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("mode") != null && (parseNode.GetChildNode("mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("targeted".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("hostname") != null && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("SUCCESS".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "UNSUPPORTED_APPLICATION".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "INSUFFICIENT_INVOCATIONS".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("mode") != null && (parseNode.GetChildNode("mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("targeted".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("host") != null && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("SUCCESS".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "UNSUPPORTED_APPLICATION".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "INSUFFICIENT_INVOCATIONS".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("mode") != null && (parseNode.GetChildNode("mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("targeted".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("target") != null && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("SUCCESS".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "UNSUPPORTED_APPLICATION".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "INSUFFICIENT_INVOCATIONS".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.WorkersPlacementInfoOneOf1 == null && result.WorkersPlacementInfoOneOf2 == null && result.WorkersPlacementInfoOneOf3 == null && result.WorkersPlacementInfoOneOf4 == null && result.WorkersPlacementInfoOneOf5 == null && result.WorkersPlacementInfoOneOf6 == null && result.WorkersPlacementInfoOneOf7 == null && result.WorkersPlacementInfoOneOf8 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.WorkersPlacementInfoOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf1(), parseNode);
+            if (result.WorkersPlacementInfoOneOf1 == null && result.WorkersPlacementInfoOneOf2 == null && result.WorkersPlacementInfoOneOf3 == null && result.WorkersPlacementInfoOneOf4 == null && result.WorkersPlacementInfoOneOf5 == null && result.WorkersPlacementInfoOneOf6 == null && result.WorkersPlacementInfoOneOf7 == null && result.WorkersPlacementInfoOneOf8 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.WorkersPlacementInfoOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf2(), parseNode);
+            if (result.WorkersPlacementInfoOneOf1 == null && result.WorkersPlacementInfoOneOf2 == null && result.WorkersPlacementInfoOneOf3 == null && result.WorkersPlacementInfoOneOf4 == null && result.WorkersPlacementInfoOneOf5 == null && result.WorkersPlacementInfoOneOf6 == null && result.WorkersPlacementInfoOneOf7 == null && result.WorkersPlacementInfoOneOf8 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.WorkersPlacementInfoOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf3(), parseNode);
+            if (result.WorkersPlacementInfoOneOf1 == null && result.WorkersPlacementInfoOneOf2 == null && result.WorkersPlacementInfoOneOf3 == null && result.WorkersPlacementInfoOneOf4 == null && result.WorkersPlacementInfoOneOf5 == null && result.WorkersPlacementInfoOneOf6 == null && result.WorkersPlacementInfoOneOf7 == null && result.WorkersPlacementInfoOneOf8 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.WorkersPlacementInfoOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf4(), parseNode);
+            if (result.WorkersPlacementInfoOneOf1 == null && result.WorkersPlacementInfoOneOf2 == null && result.WorkersPlacementInfoOneOf3 == null && result.WorkersPlacementInfoOneOf4 == null && result.WorkersPlacementInfoOneOf5 == null && result.WorkersPlacementInfoOneOf6 == null && result.WorkersPlacementInfoOneOf7 == null && result.WorkersPlacementInfoOneOf8 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.WorkersPlacementInfoOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf5(), parseNode);
+            if (result.WorkersPlacementInfoOneOf1 == null && result.WorkersPlacementInfoOneOf2 == null && result.WorkersPlacementInfoOneOf3 == null && result.WorkersPlacementInfoOneOf4 == null && result.WorkersPlacementInfoOneOf5 == null && result.WorkersPlacementInfoOneOf6 == null && result.WorkersPlacementInfoOneOf7 == null && result.WorkersPlacementInfoOneOf8 == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7) result.WorkersPlacementInfoOneOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf6(), parseNode);
+            if (result.WorkersPlacementInfoOneOf1 == null && result.WorkersPlacementInfoOneOf2 == null && result.WorkersPlacementInfoOneOf3 == null && result.WorkersPlacementInfoOneOf4 == null && result.WorkersPlacementInfoOneOf5 == null && result.WorkersPlacementInfoOneOf6 == null && result.WorkersPlacementInfoOneOf7 == null && result.WorkersPlacementInfoOneOf8 == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7) result.WorkersPlacementInfoOneOf7 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf7(), parseNode);
+            if (result.WorkersPlacementInfoOneOf1 == null && result.WorkersPlacementInfoOneOf2 == null && result.WorkersPlacementInfoOneOf3 == null && result.WorkersPlacementInfoOneOf4 == null && result.WorkersPlacementInfoOneOf5 == null && result.WorkersPlacementInfoOneOf6 == null && result.WorkersPlacementInfoOneOf7 == null && result.WorkersPlacementInfoOneOf8 == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6) result.WorkersPlacementInfoOneOf8 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf8(), parseNode);
+            if (result.WorkersPlacementInfoOneOf1 == null && result.WorkersPlacementInfoOneOf2 == null && result.WorkersPlacementInfoOneOf3 == null && result.WorkersPlacementInfoOneOf4 == null && result.WorkersPlacementInfoOneOf5 == null && result.WorkersPlacementInfoOneOf6 == null && result.WorkersPlacementInfoOneOf7 == null && result.WorkersPlacementInfoOneOf8 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,37 +151,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WorkersPlacementInfoMember1 != null)
+            if(WorkersPlacementInfoOneOf1 != null)
             {
-                return WorkersPlacementInfoMember1.GetFieldDeserializers();
+                return WorkersPlacementInfoOneOf1.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoMember2 != null)
+            else if(WorkersPlacementInfoOneOf2 != null)
             {
-                return WorkersPlacementInfoMember2.GetFieldDeserializers();
+                return WorkersPlacementInfoOneOf2.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoMember3 != null)
+            else if(WorkersPlacementInfoOneOf3 != null)
             {
-                return WorkersPlacementInfoMember3.GetFieldDeserializers();
+                return WorkersPlacementInfoOneOf3.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoMember4 != null)
+            else if(WorkersPlacementInfoOneOf4 != null)
             {
-                return WorkersPlacementInfoMember4.GetFieldDeserializers();
+                return WorkersPlacementInfoOneOf4.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoMember5 != null)
+            else if(WorkersPlacementInfoOneOf5 != null)
             {
-                return WorkersPlacementInfoMember5.GetFieldDeserializers();
+                return WorkersPlacementInfoOneOf5.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoMember6 != null)
+            else if(WorkersPlacementInfoOneOf6 != null)
             {
-                return WorkersPlacementInfoMember6.GetFieldDeserializers();
+                return WorkersPlacementInfoOneOf6.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoMember7 != null)
+            else if(WorkersPlacementInfoOneOf7 != null)
             {
-                return WorkersPlacementInfoMember7.GetFieldDeserializers();
+                return WorkersPlacementInfoOneOf7.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoMember8 != null)
+            else if(WorkersPlacementInfoOneOf8 != null)
             {
-                return WorkersPlacementInfoMember8.GetFieldDeserializers();
+                return WorkersPlacementInfoOneOf8.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -135,38 +191,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (WorkersPlacementInfoOneOf1 == null && WorkersPlacementInfoOneOf2 == null && WorkersPlacementInfoOneOf3 == null && WorkersPlacementInfoOneOf4 == null && WorkersPlacementInfoOneOf5 == null && WorkersPlacementInfoOneOf6 == null && WorkersPlacementInfoOneOf7 == null && WorkersPlacementInfoOneOf8 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (WorkersPlacementInfoOneOf1 != null && WorkersPlacementInfoOneOf2 == null && WorkersPlacementInfoOneOf3 == null && WorkersPlacementInfoOneOf4 == null && WorkersPlacementInfoOneOf5 == null && WorkersPlacementInfoOneOf6 == null && WorkersPlacementInfoOneOf7 == null && WorkersPlacementInfoOneOf8 == null) { if (WorkersPlacementInfoOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersPlacementInfoOneOf1); return; }
+            if (WorkersPlacementInfoOneOf2 != null && WorkersPlacementInfoOneOf1 == null && WorkersPlacementInfoOneOf3 == null && WorkersPlacementInfoOneOf4 == null && WorkersPlacementInfoOneOf5 == null && WorkersPlacementInfoOneOf6 == null && WorkersPlacementInfoOneOf7 == null && WorkersPlacementInfoOneOf8 == null) { if (WorkersPlacementInfoOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersPlacementInfoOneOf2); return; }
+            if (WorkersPlacementInfoOneOf3 != null && WorkersPlacementInfoOneOf1 == null && WorkersPlacementInfoOneOf2 == null && WorkersPlacementInfoOneOf4 == null && WorkersPlacementInfoOneOf5 == null && WorkersPlacementInfoOneOf6 == null && WorkersPlacementInfoOneOf7 == null && WorkersPlacementInfoOneOf8 == null) { if (WorkersPlacementInfoOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersPlacementInfoOneOf3); return; }
+            if (WorkersPlacementInfoOneOf4 != null && WorkersPlacementInfoOneOf1 == null && WorkersPlacementInfoOneOf2 == null && WorkersPlacementInfoOneOf3 == null && WorkersPlacementInfoOneOf5 == null && WorkersPlacementInfoOneOf6 == null && WorkersPlacementInfoOneOf7 == null && WorkersPlacementInfoOneOf8 == null) { if (WorkersPlacementInfoOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersPlacementInfoOneOf4); return; }
+            if (WorkersPlacementInfoOneOf5 != null && WorkersPlacementInfoOneOf1 == null && WorkersPlacementInfoOneOf2 == null && WorkersPlacementInfoOneOf3 == null && WorkersPlacementInfoOneOf4 == null && WorkersPlacementInfoOneOf6 == null && WorkersPlacementInfoOneOf7 == null && WorkersPlacementInfoOneOf8 == null) { if (WorkersPlacementInfoOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersPlacementInfoOneOf5); return; }
+            if (WorkersPlacementInfoOneOf6 != null && WorkersPlacementInfoOneOf1 == null && WorkersPlacementInfoOneOf2 == null && WorkersPlacementInfoOneOf3 == null && WorkersPlacementInfoOneOf4 == null && WorkersPlacementInfoOneOf5 == null && WorkersPlacementInfoOneOf7 == null && WorkersPlacementInfoOneOf8 == null) { if (WorkersPlacementInfoOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersPlacementInfoOneOf6); return; }
+            if (WorkersPlacementInfoOneOf7 != null && WorkersPlacementInfoOneOf1 == null && WorkersPlacementInfoOneOf2 == null && WorkersPlacementInfoOneOf3 == null && WorkersPlacementInfoOneOf4 == null && WorkersPlacementInfoOneOf5 == null && WorkersPlacementInfoOneOf6 == null && WorkersPlacementInfoOneOf8 == null) { if (WorkersPlacementInfoOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersPlacementInfoOneOf7); return; }
+            if (WorkersPlacementInfoOneOf8 != null && WorkersPlacementInfoOneOf1 == null && WorkersPlacementInfoOneOf2 == null && WorkersPlacementInfoOneOf3 == null && WorkersPlacementInfoOneOf4 == null && WorkersPlacementInfoOneOf5 == null && WorkersPlacementInfoOneOf6 == null && WorkersPlacementInfoOneOf7 == null) { if (WorkersPlacementInfoOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersPlacementInfoOneOf8); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(WorkersPlacementInfoMember1 != null)
+            if(WorkersPlacementInfoOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember1>(null, WorkersPlacementInfoMember1);
+                if (WorkersPlacementInfoOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf1>(null, WorkersPlacementInfoOneOf1);
             }
-            else if(WorkersPlacementInfoMember2 != null)
+            else if(WorkersPlacementInfoOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember2>(null, WorkersPlacementInfoMember2);
+                if (WorkersPlacementInfoOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf2>(null, WorkersPlacementInfoOneOf2);
             }
-            else if(WorkersPlacementInfoMember3 != null)
+            else if(WorkersPlacementInfoOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember3>(null, WorkersPlacementInfoMember3);
+                if (WorkersPlacementInfoOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf3>(null, WorkersPlacementInfoOneOf3);
             }
-            else if(WorkersPlacementInfoMember4 != null)
+            else if(WorkersPlacementInfoOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember4>(null, WorkersPlacementInfoMember4);
+                if (WorkersPlacementInfoOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf4>(null, WorkersPlacementInfoOneOf4);
             }
-            else if(WorkersPlacementInfoMember5 != null)
+            else if(WorkersPlacementInfoOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember5>(null, WorkersPlacementInfoMember5);
+                if (WorkersPlacementInfoOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf5>(null, WorkersPlacementInfoOneOf5);
             }
-            else if(WorkersPlacementInfoMember6 != null)
+            else if(WorkersPlacementInfoOneOf6 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember6>(null, WorkersPlacementInfoMember6);
+                if (WorkersPlacementInfoOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf6>(null, WorkersPlacementInfoOneOf6);
             }
-            else if(WorkersPlacementInfoMember7 != null)
+            else if(WorkersPlacementInfoOneOf7 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember7>(null, WorkersPlacementInfoMember7);
+                if (WorkersPlacementInfoOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf7>(null, WorkersPlacementInfoOneOf7);
             }
-            else if(WorkersPlacementInfoMember8 != null)
+            else if(WorkersPlacementInfoOneOf8 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoMember8>(null, WorkersPlacementInfoMember8);
+                if (WorkersPlacementInfoOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoOneOf8>(null, WorkersPlacementInfoOneOf8);
             }
         }
     }

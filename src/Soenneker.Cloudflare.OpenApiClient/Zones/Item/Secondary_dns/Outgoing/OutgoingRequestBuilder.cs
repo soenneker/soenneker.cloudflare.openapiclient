@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Outgoing
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\secondary_dns\outgoing
+    /// Builds and executes requests for operations under \zones\{zoneId}\secondary_dns\outgoing
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutgoingRequestBuilder : BaseRequestBuilder
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Outgoing
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutgoingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/secondary_dns/outgoing", pathParameters)
+        public OutgoingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/secondary_dns/outgoing", pathParameters)
         {
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Outgoing
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutgoingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/secondary_dns/outgoing", rawUrl)
+        public OutgoingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/secondary_dns/outgoing", rawUrl)
         {
         }
         /// <summary>
@@ -77,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Outgoing
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsIdResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -100,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Outgoing
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsPrimaryZonePrimaryZoneConfigurationDetails4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsSingleResponseOutgoing>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsSingleResponseOutgoing.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -125,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Outgoing
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsPrimaryZoneCreatePrimaryZoneConfiguration4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsSingleResponseOutgoing>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsSingleResponseOutgoing.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -150,6 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Outgoing
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsPrimaryZoneUpdatePrimaryZoneConfiguration4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsSingleResponseOutgoing>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDnsSingleResponseOutgoing.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

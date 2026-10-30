@@ -11,50 +11,74 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetIndicatorRelationshipsList200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("counts") is { } nullNodeCounts && nullNodeCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counts = null;
+            if (parseNode.GetChildNode("cursor") is { } nullNodeCursor && nullNodeCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cursor = null;
+            if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
+            if (parseNode.GetChildNode("hasMore") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("hydrationErrors") is { } nullNodeHydrationErrors && nullNodeHydrationErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HydrationErrors = null;
+            if (parseNode.GetChildNode("relationships") is { } nullNodeRelationships && nullNodeRelationships.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Relationships = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The counts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultCounts? Counts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultCounts? Counts { get => _explicitNullValueCounts; set { _explicitNullValueCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counts"); else _explicitNullProperties?.Remove("counts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultCounts? _explicitNullValueCounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultCounts Counts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultCounts Counts { get => _explicitNullValueCounts; set { _explicitNullValueCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counts"); else _explicitNullProperties?.Remove("counts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultCounts _explicitNullValueCounts = default!;
 #endif
         /// <summary>The cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cursor { get; set; }
+        public string? Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
+        private string? _explicitNullValueCursor = default!;
 #nullable restore
 #else
-        public string Cursor { get; set; }
+        public string Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
+        private string _explicitNullValueCursor = default!;
 #endif
         /// <summary>The entities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultEntitiesItem>? Entities { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultEntitiesItem>? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultEntitiesItem>? _explicitNullValueEntities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultEntitiesItem> Entities { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultEntitiesItem> Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultEntitiesItem> _explicitNullValueEntities = default!;
 #endif
         /// <summary>The hasMore property</summary>
-        public bool? HasMore { get; set; }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasMore"); else _explicitNullProperties?.Remove("hasMore"); } }
+        private bool? _explicitNullValueHasMore = default!;
         /// <summary>The hydrationErrors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultHydrationErrors? HydrationErrors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultHydrationErrors? HydrationErrors { get => _explicitNullValueHydrationErrors; set { _explicitNullValueHydrationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hydrationErrors"); else _explicitNullProperties?.Remove("hydrationErrors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultHydrationErrors? _explicitNullValueHydrationErrors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultHydrationErrors HydrationErrors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultHydrationErrors HydrationErrors { get => _explicitNullValueHydrationErrors; set { _explicitNullValueHydrationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hydrationErrors"); else _explicitNullProperties?.Remove("hydrationErrors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultHydrationErrors _explicitNullValueHydrationErrors = default!;
 #endif
         /// <summary>The relationships property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsRelationshipEdge>? Relationships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsRelationshipEdge>? Relationships { get => _explicitNullValueRelationships; set { _explicitNullValueRelationships = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationships"); else _explicitNullProperties?.Remove("relationships"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsRelationshipEdge>? _explicitNullValueRelationships = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsRelationshipEdge> Relationships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsRelationshipEdge> Relationships { get => _explicitNullValueRelationships; set { _explicitNullValueRelationships = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationships"); else _explicitNullProperties?.Remove("relationships"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsRelationshipEdge> _explicitNullValueRelationships = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResult"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("hasMore", HasMore);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorRelationshipsList200ResponseResultHydrationErrors>("hydrationErrors", HydrationErrors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsRelationshipEdge>("relationships", Relationships);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

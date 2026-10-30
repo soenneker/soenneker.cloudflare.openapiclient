@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BrapiPostDevtoolsLiveView200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("devtoolsFrontendUrl") is { } nullNodeDevtoolsFrontendUrl && nullNodeDevtoolsFrontendUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DevtoolsFrontendUrl = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
+            if (parseNode.GetChildNode("webSocketDebuggerUrl") is { } nullNodeWebSocketDebuggerUrl && nullNodeWebSocketDebuggerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebSocketDebuggerUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URL to open the live view in a browser</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DevtoolsFrontendUrl { get; set; }
+        public string? DevtoolsFrontendUrl { get => _explicitNullValueDevtoolsFrontendUrl; set { _explicitNullValueDevtoolsFrontendUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devtoolsFrontendUrl"); else _explicitNullProperties?.Remove("devtoolsFrontendUrl"); } }
+        private string? _explicitNullValueDevtoolsFrontendUrl = default!;
 #nullable restore
 #else
-        public string DevtoolsFrontendUrl { get; set; }
+        public string DevtoolsFrontendUrl { get => _explicitNullValueDevtoolsFrontendUrl; set { _explicitNullValueDevtoolsFrontendUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devtoolsFrontendUrl"); else _explicitNullProperties?.Remove("devtoolsFrontendUrl"); } }
+        private string _explicitNullValueDevtoolsFrontendUrl = default!;
 #endif
         /// <summary>Target ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions? Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions? _explicitNullValueOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions _explicitNullValueOptions = default!;
 #endif
         /// <summary>WebSocket URL for CDP connection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebSocketDebuggerUrl { get; set; }
+        public string? WebSocketDebuggerUrl { get => _explicitNullValueWebSocketDebuggerUrl; set { _explicitNullValueWebSocketDebuggerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webSocketDebuggerUrl"); else _explicitNullProperties?.Remove("webSocketDebuggerUrl"); } }
+        private string? _explicitNullValueWebSocketDebuggerUrl = default!;
 #nullable restore
 #else
-        public string WebSocketDebuggerUrl { get; set; }
+        public string WebSocketDebuggerUrl { get => _explicitNullValueWebSocketDebuggerUrl; set { _explicitNullValueWebSocketDebuggerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webSocketDebuggerUrl"); else _explicitNullProperties?.Remove("webSocketDebuggerUrl"); } }
+        private string _explicitNullValueWebSocketDebuggerUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200Response"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveView200ResponseOptions>("options", Options);
             writer.WriteStringValue("webSocketDebuggerUrl", WebSocketDebuggerUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -6,6 +6,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.BadDebt;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Credits;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.History;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Profile;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.SpendPolicies;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.UnpaidInvoice;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage;
 using System.Collections.Generic;
@@ -39,6 +40,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Profile.ProfileRequestBuilder Profile
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Profile.ProfileRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The spendPolicies property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.SpendPolicies.SpendPoliciesRequestBuilder SpendPolicies
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.SpendPolicies.SpendPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unpaidInvoice property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.UnpaidInvoice.UnpaidInvoiceRequestBuilder UnpaidInvoice

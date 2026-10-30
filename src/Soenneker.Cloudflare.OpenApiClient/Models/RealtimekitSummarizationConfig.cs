@@ -12,15 +12,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitSummarizationConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("summary_type") is { } nullNodeSummaryType && nullNodeSummaryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryType = null;
+            if (parseNode.GetChildNode("text_format") is { } nullNodeTextFormat && nullNodeTextFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextFormat = null;
+            if (parseNode.GetChildNode("word_limit") is { } nullNodeWordLimit && nullNodeWordLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordLimit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the style of the summary, such as general, team meeting, or sales call.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType? SummaryType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType? SummaryType { get => _explicitNullValueSummaryType; set { _explicitNullValueSummaryType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_type"); else _explicitNullProperties?.Remove("summary_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType? _explicitNullValueSummaryType = default!;
         /// <summary>Determines the text format of the summary, such as plain text or markdown.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat? TextFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat? TextFormat { get => _explicitNullValueTextFormat; set { _explicitNullValueTextFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_format"); else _explicitNullProperties?.Remove("text_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat? _explicitNullValueTextFormat = default!;
         /// <summary>Sets the maximum number of words in the meeting summary.</summary>
-        public int? WordLimit { get; set; }
+        public int? WordLimit { get => _explicitNullValueWordLimit; set { _explicitNullValueWordLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_limit"); else _explicitNullProperties?.Remove("word_limit"); } }
+        private int? _explicitNullValueWordLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig"/> and sets the default values.
         /// </summary>
@@ -37,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType>("summary_type", SummaryType);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat>("text_format", TextFormat);
             writer.WriteIntValue("word_limit", WordLimit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

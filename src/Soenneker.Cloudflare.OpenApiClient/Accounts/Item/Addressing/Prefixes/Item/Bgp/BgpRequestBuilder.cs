@@ -22,6 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.I
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The status property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status.StatusRequestBuilder Status
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status.StatusRequestBuilder(PathParameters, RequestAdapter);

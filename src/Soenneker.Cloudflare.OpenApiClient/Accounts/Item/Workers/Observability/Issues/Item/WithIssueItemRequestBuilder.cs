@@ -71,6 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesGet403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesGet404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesGet500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -104,6 +106,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesPatch403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesPatch404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesPatch500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesPatch200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesPatch200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

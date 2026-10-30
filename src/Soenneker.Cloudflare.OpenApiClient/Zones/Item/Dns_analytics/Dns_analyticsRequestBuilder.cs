@@ -10,12 +10,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\dns_analytics
+    /// Builds and executes requests for operations under \zones\{zoneId}\dns_analytics
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dns_analyticsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The report property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report.ReportRequestBuilder Report
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report.ReportRequestBuilder(PathParameters, RequestAdapter);
@@ -25,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_analyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/dns_analytics", pathParameters)
+        public Dns_analyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_analytics", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_analyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/dns_analytics", rawUrl)
+        public Dns_analyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_analytics", rawUrl)
         {
         }
     }

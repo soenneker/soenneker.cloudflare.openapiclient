@@ -7,281 +7,185 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf10"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf11"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf12"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf13"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf14"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf15"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf16"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf17"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf18"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf19"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf20"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf21"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf9"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class RulesetsRequestRule : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
-    #pragma warning restore CS1591
-    {
-        /// <summary>The action property</summary>
+    public partial class RulesetsRequestRule : IComposedTypeWrapper, IParsable
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf1? RulesetsRequestRuleOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf1 RulesetsRequestRuleOneOf1 { get; set; }
 #endif
-        /// <summary>The parameters configuring the rule&apos;s action.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRuleActionParameters? ActionParameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf10? RulesetsRequestRuleOneOf10 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRuleActionParameters ActionParameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf10 RulesetsRequestRuleOneOf10 { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The categories of the rule.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf11? RulesetsRequestRuleOneOf11 { get; set; }
 #nullable restore
 #else
-        public List<string> Categories { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf11 RulesetsRequestRuleOneOf11 { get; set; }
 #endif
-        /// <summary>An informative description of the rule.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf12? RulesetsRequestRuleOneOf12 { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf12 RulesetsRequestRuleOneOf12 { get; set; }
 #endif
-        /// <summary>Whether the rule should be executed.</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>Configuration for exposed credential checking.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck? ExposedCredentialCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf13? RulesetsRequestRuleOneOf13 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck ExposedCredentialCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf13 RulesetsRequestRuleOneOf13 { get; set; }
 #endif
-        /// <summary>The expression defining which traffic will match the rule.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf14"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf14? RulesetsRequestRuleOneOf14 { get; set; }
 #nullable restore
 #else
-        public string Expression { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf14 RulesetsRequestRuleOneOf14 { get; set; }
 #endif
-        /// <summary>The unique ID of the rule.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf15"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf15? RulesetsRequestRuleOneOf15 { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf15 RulesetsRequestRuleOneOf15 { get; set; }
 #endif
-        /// <summary>The timestamp of when the rule was last modified.</summary>
-        public DateTimeOffset? LastUpdated { get; private set; }
-        /// <summary>An object configuring the rule&apos;s logging behavior.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf16"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleLogging? Logging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf16? RulesetsRequestRuleOneOf16 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleLogging Logging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf16 RulesetsRequestRuleOneOf16 { get; set; }
 #endif
-        /// <summary>An object configuring the rule&apos;s rate limit behavior.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf17"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRatelimit? Ratelimit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf17? RulesetsRequestRuleOneOf17 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRatelimit Ratelimit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf17 RulesetsRequestRuleOneOf17 { get; set; }
 #endif
-        /// <summary>The reference of the rule (the rule&apos;s ID by default).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf18"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ref { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf18? RulesetsRequestRuleOneOf18 { get; set; }
 #nullable restore
 #else
-        public string Ref { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf18 RulesetsRequestRuleOneOf18 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf19"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRule? RulesetsBlockRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf19? RulesetsRequestRuleOneOf19 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRule RulesetsBlockRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf19 RulesetsRequestRuleOneOf19 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsChallengeRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsChallengeRule? RulesetsChallengeRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf2? RulesetsRequestRuleOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsChallengeRule RulesetsChallengeRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf2 RulesetsRequestRuleOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf20"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRule? RulesetsCompressResponseRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf20? RulesetsRequestRuleOneOf20 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRule RulesetsCompressResponseRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf20 RulesetsRequestRuleOneOf20 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsDDoSDynamicRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf21"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsDDoSDynamicRule? RulesetsDDoSDynamicRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf21? RulesetsRequestRuleOneOf21 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsDDoSDynamicRule RulesetsDDoSDynamicRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf21 RulesetsRequestRuleOneOf21 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsExecuteRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsExecuteRule? RulesetsExecuteRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf3? RulesetsRequestRuleOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsExecuteRule RulesetsExecuteRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf3 RulesetsRequestRuleOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsForceConnectionCloseRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsForceConnectionCloseRule? RulesetsForceConnectionCloseRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf4? RulesetsRequestRuleOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsForceConnectionCloseRule RulesetsForceConnectionCloseRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf4 RulesetsRequestRuleOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsJsChallengeRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsJsChallengeRule? RulesetsJsChallengeRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf5? RulesetsRequestRuleOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsJsChallengeRule RulesetsJsChallengeRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf5 RulesetsRequestRuleOneOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRule? RulesetsLogCustomFieldRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf6? RulesetsRequestRuleOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRule RulesetsLogCustomFieldRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf6 RulesetsRequestRuleOneOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogRule? RulesetsLogRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf7? RulesetsRequestRuleOneOf7 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogRule RulesetsLogRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf7 RulesetsRequestRuleOneOf7 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedChallengeRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedChallengeRule? RulesetsManagedChallengeRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf8? RulesetsRequestRuleOneOf8 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedChallengeRule RulesetsManagedChallengeRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf8 RulesetsRequestRuleOneOf8 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectRule"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf9"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectRule? RulesetsRedirectRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf9? RulesetsRequestRuleOneOf9 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectRule RulesetsRedirectRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf9 RulesetsRequestRuleOneOf9 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRewriteRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRewriteRule? RulesetsRewriteRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRewriteRule RulesetsRewriteRule { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteRule? RulesetsRouteRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteRule RulesetsRouteRule { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsScoreRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsScoreRule? RulesetsScoreRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsScoreRule RulesetsScoreRule { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRule? RulesetsServeErrorRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRule RulesetsServeErrorRule { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlRule? RulesetsSetCacheControlRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlRule RulesetsSetCacheControlRule { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsRule? RulesetsSetCacheSettingsRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsRule RulesetsSetCacheSettingsRule { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheTagsRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheTagsRule? RulesetsSetCacheTagsRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheTagsRule RulesetsSetCacheTagsRule { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRule? RulesetsSetConfigRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRule RulesetsSetConfigRule { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule? RulesetsSkipRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule RulesetsSkipRule { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule? RulesetsTransformResponseHtmlRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule RulesetsTransformResponseHtmlRule { get; set; }
-#endif
-        /// <summary>The version of the rule.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Version { get; private set; }
-#nullable restore
-#else
-        public string Version { get; private set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule"/> and sets the default values.
-        /// </summary>
-        public RulesetsRequestRule()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            Enabled = true;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -290,129 +194,138 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("action")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule();
-            if("block".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RulesetsRequestRuleOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsBlockRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRule();
+                
             }
-            else if("challenge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf10".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsChallengeRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsChallengeRule();
+                
             }
-            else if("compress_response".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf11".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsCompressResponseRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRule();
+                
             }
-            else if("ddos_dynamic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf12".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsDDoSDynamicRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsDDoSDynamicRule();
+                
             }
-            else if("execute".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf13".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsExecuteRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsExecuteRule();
+                
             }
-            else if("force_connection_close".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf14".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsForceConnectionCloseRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsForceConnectionCloseRule();
+                
             }
-            else if("js_challenge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf15".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsJsChallengeRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsJsChallengeRule();
+                
             }
-            else if("log_custom_field".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf16".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsLogCustomFieldRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRule();
+                
             }
-            else if("log".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf17".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsLogRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogRule();
+                
             }
-            else if("managed_challenge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf18".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsManagedChallengeRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedChallengeRule();
+                
             }
-            else if("redirect".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf19".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsRedirectRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectRule();
+                
             }
-            else if("rewrite".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsRewriteRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRewriteRule();
+                
             }
-            else if("route".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf20".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsRouteRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteRule();
+                
             }
-            else if("score".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf21".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsScoreRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsScoreRule();
+                
             }
-            else if("serve_error".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsServeErrorRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRule();
+                
             }
-            else if("set_cache_control".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsSetCacheControlRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlRule();
+                
             }
-            else if("set_cache_settings".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsSetCacheSettingsRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsRule();
+                
             }
-            else if("set_cache_tags".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsSetCacheTagsRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheTagsRule();
+                
             }
-            else if("set_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf7".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsSetConfigRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRule();
+                
             }
-            else if("skip".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf8".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsSkipRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule();
+                
             }
-            else if("transform_response_html".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesetsRequestRuleOneOf9".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesetsTransformResponseHtmlRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule();
+                
             }
-            else if(parseNode.GetStringValue() is string actionValue)
-            {
-                result.Action = actionValue;
-            }
-            else if(parseNode.GetStringValue() is string descriptionValue)
-            {
-                result.Description = descriptionValue;
-            }
-            else if(parseNode.GetBoolValue() is bool enabledValue)
-            {
-                result.Enabled = enabledValue;
-            }
-            else if(parseNode.GetStringValue() is string expressionValue)
-            {
-                result.Expression = expressionValue;
-            }
-            else if(parseNode.GetStringValue() is string idValue)
-            {
-                result.Id = idValue;
-            }
-            else if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset lastUpdatedValue)
-            {
-                result.LastUpdated = lastUpdatedValue;
-            }
-            else if(parseNode.GetStringValue() is string refValue)
-            {
-                result.Ref = refValue;
-            }
-            else if(parseNode.GetStringValue() is string versionValue)
-            {
-                result.Version = versionValue;
-            }
-            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> categoriesValue)
-            {
-                result.Categories = categoriesValue;
-            }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch9 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch10 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch11 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch12 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch13 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch14 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch15 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch16 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch17 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch18 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch19 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            bool matchesUnionBranch20 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("version") != null && parseNode.GetChildNode("last_updated") != null && parseNode.GetChildNode("action") != null))();
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf1(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf2(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf3(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf4(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf5(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf6(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf7 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf7(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf8 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf8(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch8 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf9 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf9(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch9 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf10 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf10(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch10 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf11 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf11(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch11 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf12 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf12(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch12 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf13 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf13(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch13 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf14 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf14(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch14 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf15 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf15(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch15 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf16 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf16(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch16 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf17 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf17(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch17 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf18 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf18(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch18 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch19 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf19 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf19(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch19 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch20) result.RulesetsRequestRuleOneOf20 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf20(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null && matchesUnionBranch20 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19) result.RulesetsRequestRuleOneOf21 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf21(), parseNode);
+            if (result.RulesetsRequestRuleOneOf1 == null && result.RulesetsRequestRuleOneOf10 == null && result.RulesetsRequestRuleOneOf11 == null && result.RulesetsRequestRuleOneOf12 == null && result.RulesetsRequestRuleOneOf13 == null && result.RulesetsRequestRuleOneOf14 == null && result.RulesetsRequestRuleOneOf15 == null && result.RulesetsRequestRuleOneOf16 == null && result.RulesetsRequestRuleOneOf17 == null && result.RulesetsRequestRuleOneOf18 == null && result.RulesetsRequestRuleOneOf19 == null && result.RulesetsRequestRuleOneOf2 == null && result.RulesetsRequestRuleOneOf20 == null && result.RulesetsRequestRuleOneOf21 == null && result.RulesetsRequestRuleOneOf3 == null && result.RulesetsRequestRuleOneOf4 == null && result.RulesetsRequestRuleOneOf5 == null && result.RulesetsRequestRuleOneOf6 == null && result.RulesetsRequestRuleOneOf7 == null && result.RulesetsRequestRuleOneOf8 == null && result.RulesetsRequestRuleOneOf9 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -420,105 +333,89 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ActionParameters != null)
+            if(RulesetsRequestRuleOneOf1 != null)
             {
-                return ActionParameters.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf1.GetFieldDeserializers();
             }
-            else if(ExposedCredentialCheck != null)
+            else if(RulesetsRequestRuleOneOf10 != null)
             {
-                return ExposedCredentialCheck.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf10.GetFieldDeserializers();
             }
-            else if(Logging != null)
+            else if(RulesetsRequestRuleOneOf11 != null)
             {
-                return Logging.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf11.GetFieldDeserializers();
             }
-            else if(Ratelimit != null)
+            else if(RulesetsRequestRuleOneOf12 != null)
             {
-                return Ratelimit.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf12.GetFieldDeserializers();
             }
-            else if(RulesetsBlockRule != null)
+            else if(RulesetsRequestRuleOneOf13 != null)
             {
-                return RulesetsBlockRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf13.GetFieldDeserializers();
             }
-            else if(RulesetsChallengeRule != null)
+            else if(RulesetsRequestRuleOneOf14 != null)
             {
-                return RulesetsChallengeRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf14.GetFieldDeserializers();
             }
-            else if(RulesetsCompressResponseRule != null)
+            else if(RulesetsRequestRuleOneOf15 != null)
             {
-                return RulesetsCompressResponseRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf15.GetFieldDeserializers();
             }
-            else if(RulesetsDDoSDynamicRule != null)
+            else if(RulesetsRequestRuleOneOf16 != null)
             {
-                return RulesetsDDoSDynamicRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf16.GetFieldDeserializers();
             }
-            else if(RulesetsExecuteRule != null)
+            else if(RulesetsRequestRuleOneOf17 != null)
             {
-                return RulesetsExecuteRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf17.GetFieldDeserializers();
             }
-            else if(RulesetsForceConnectionCloseRule != null)
+            else if(RulesetsRequestRuleOneOf18 != null)
             {
-                return RulesetsForceConnectionCloseRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf18.GetFieldDeserializers();
             }
-            else if(RulesetsJsChallengeRule != null)
+            else if(RulesetsRequestRuleOneOf19 != null)
             {
-                return RulesetsJsChallengeRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf19.GetFieldDeserializers();
             }
-            else if(RulesetsLogCustomFieldRule != null)
+            else if(RulesetsRequestRuleOneOf2 != null)
             {
-                return RulesetsLogCustomFieldRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf2.GetFieldDeserializers();
             }
-            else if(RulesetsLogRule != null)
+            else if(RulesetsRequestRuleOneOf20 != null)
             {
-                return RulesetsLogRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf20.GetFieldDeserializers();
             }
-            else if(RulesetsManagedChallengeRule != null)
+            else if(RulesetsRequestRuleOneOf21 != null)
             {
-                return RulesetsManagedChallengeRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf21.GetFieldDeserializers();
             }
-            else if(RulesetsRedirectRule != null)
+            else if(RulesetsRequestRuleOneOf3 != null)
             {
-                return RulesetsRedirectRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf3.GetFieldDeserializers();
             }
-            else if(RulesetsRewriteRule != null)
+            else if(RulesetsRequestRuleOneOf4 != null)
             {
-                return RulesetsRewriteRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf4.GetFieldDeserializers();
             }
-            else if(RulesetsRouteRule != null)
+            else if(RulesetsRequestRuleOneOf5 != null)
             {
-                return RulesetsRouteRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf5.GetFieldDeserializers();
             }
-            else if(RulesetsScoreRule != null)
+            else if(RulesetsRequestRuleOneOf6 != null)
             {
-                return RulesetsScoreRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf6.GetFieldDeserializers();
             }
-            else if(RulesetsServeErrorRule != null)
+            else if(RulesetsRequestRuleOneOf7 != null)
             {
-                return RulesetsServeErrorRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf7.GetFieldDeserializers();
             }
-            else if(RulesetsSetCacheControlRule != null)
+            else if(RulesetsRequestRuleOneOf8 != null)
             {
-                return RulesetsSetCacheControlRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf8.GetFieldDeserializers();
             }
-            else if(RulesetsSetCacheSettingsRule != null)
+            else if(RulesetsRequestRuleOneOf9 != null)
             {
-                return RulesetsSetCacheSettingsRule.GetFieldDeserializers();
-            }
-            else if(RulesetsSetCacheTagsRule != null)
-            {
-                return RulesetsSetCacheTagsRule.GetFieldDeserializers();
-            }
-            else if(RulesetsSetConfigRule != null)
-            {
-                return RulesetsSetConfigRule.GetFieldDeserializers();
-            }
-            else if(RulesetsSkipRule != null)
-            {
-                return RulesetsSkipRule.GetFieldDeserializers();
-            }
-            else if(RulesetsTransformResponseHtmlRule != null)
-            {
-                return RulesetsTransformResponseHtmlRule.GetFieldDeserializers();
+                return RulesetsRequestRuleOneOf9.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -528,144 +425,136 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (RulesetsRequestRuleOneOf1 != null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf1); return; }
+            if (RulesetsRequestRuleOneOf10 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf10); return; }
+            if (RulesetsRequestRuleOneOf11 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf11 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf11); return; }
+            if (RulesetsRequestRuleOneOf12 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf12 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf12); return; }
+            if (RulesetsRequestRuleOneOf13 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf13 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf13); return; }
+            if (RulesetsRequestRuleOneOf14 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf14 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf14); return; }
+            if (RulesetsRequestRuleOneOf15 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf15 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf15); return; }
+            if (RulesetsRequestRuleOneOf16 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf16 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf16); return; }
+            if (RulesetsRequestRuleOneOf17 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf17 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf17); return; }
+            if (RulesetsRequestRuleOneOf18 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf18 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf18); return; }
+            if (RulesetsRequestRuleOneOf19 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf19 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf19); return; }
+            if (RulesetsRequestRuleOneOf2 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf2); return; }
+            if (RulesetsRequestRuleOneOf20 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf20 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf20); return; }
+            if (RulesetsRequestRuleOneOf21 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf21 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf21); return; }
+            if (RulesetsRequestRuleOneOf3 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf3); return; }
+            if (RulesetsRequestRuleOneOf4 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf4); return; }
+            if (RulesetsRequestRuleOneOf5 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf5); return; }
+            if (RulesetsRequestRuleOneOf6 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf6); return; }
+            if (RulesetsRequestRuleOneOf7 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf8 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf7); return; }
+            if (RulesetsRequestRuleOneOf8 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf9 == null) { if (RulesetsRequestRuleOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf8); return; }
+            if (RulesetsRequestRuleOneOf9 != null && RulesetsRequestRuleOneOf1 == null && RulesetsRequestRuleOneOf10 == null && RulesetsRequestRuleOneOf11 == null && RulesetsRequestRuleOneOf12 == null && RulesetsRequestRuleOneOf13 == null && RulesetsRequestRuleOneOf14 == null && RulesetsRequestRuleOneOf15 == null && RulesetsRequestRuleOneOf16 == null && RulesetsRequestRuleOneOf17 == null && RulesetsRequestRuleOneOf18 == null && RulesetsRequestRuleOneOf19 == null && RulesetsRequestRuleOneOf2 == null && RulesetsRequestRuleOneOf20 == null && RulesetsRequestRuleOneOf21 == null && RulesetsRequestRuleOneOf3 == null && RulesetsRequestRuleOneOf4 == null && RulesetsRequestRuleOneOf5 == null && RulesetsRequestRuleOneOf6 == null && RulesetsRequestRuleOneOf7 == null && RulesetsRequestRuleOneOf8 == null) { if (RulesetsRequestRuleOneOf9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RulesetsRequestRuleOneOf9); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ActionParameters != null)
+            if(RulesetsRequestRuleOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRuleActionParameters>(null, ActionParameters);
+                if (RulesetsRequestRuleOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf1>(null, RulesetsRequestRuleOneOf1);
             }
-            else if(ExposedCredentialCheck != null)
+            else if(RulesetsRequestRuleOneOf10 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck>(null, ExposedCredentialCheck);
+                if (RulesetsRequestRuleOneOf10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf10>(null, RulesetsRequestRuleOneOf10);
             }
-            else if(Logging != null)
+            else if(RulesetsRequestRuleOneOf11 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleLogging>(null, Logging);
+                if (RulesetsRequestRuleOneOf11 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf11>(null, RulesetsRequestRuleOneOf11);
             }
-            else if(Ratelimit != null)
+            else if(RulesetsRequestRuleOneOf12 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRatelimit>(null, Ratelimit);
+                if (RulesetsRequestRuleOneOf12 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf12>(null, RulesetsRequestRuleOneOf12);
             }
-            else if(RulesetsBlockRule != null)
+            else if(RulesetsRequestRuleOneOf13 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRule>(null, RulesetsBlockRule);
+                if (RulesetsRequestRuleOneOf13 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf13>(null, RulesetsRequestRuleOneOf13);
             }
-            else if(RulesetsChallengeRule != null)
+            else if(RulesetsRequestRuleOneOf14 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsChallengeRule>(null, RulesetsChallengeRule);
+                if (RulesetsRequestRuleOneOf14 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf14>(null, RulesetsRequestRuleOneOf14);
             }
-            else if(RulesetsCompressResponseRule != null)
+            else if(RulesetsRequestRuleOneOf15 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRule>(null, RulesetsCompressResponseRule);
+                if (RulesetsRequestRuleOneOf15 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf15>(null, RulesetsRequestRuleOneOf15);
             }
-            else if(RulesetsDDoSDynamicRule != null)
+            else if(RulesetsRequestRuleOneOf16 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsDDoSDynamicRule>(null, RulesetsDDoSDynamicRule);
+                if (RulesetsRequestRuleOneOf16 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf16>(null, RulesetsRequestRuleOneOf16);
             }
-            else if(RulesetsExecuteRule != null)
+            else if(RulesetsRequestRuleOneOf17 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsExecuteRule>(null, RulesetsExecuteRule);
+                if (RulesetsRequestRuleOneOf17 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf17>(null, RulesetsRequestRuleOneOf17);
             }
-            else if(RulesetsForceConnectionCloseRule != null)
+            else if(RulesetsRequestRuleOneOf18 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsForceConnectionCloseRule>(null, RulesetsForceConnectionCloseRule);
+                if (RulesetsRequestRuleOneOf18 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf18>(null, RulesetsRequestRuleOneOf18);
             }
-            else if(RulesetsJsChallengeRule != null)
+            else if(RulesetsRequestRuleOneOf19 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsJsChallengeRule>(null, RulesetsJsChallengeRule);
+                if (RulesetsRequestRuleOneOf19 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf19>(null, RulesetsRequestRuleOneOf19);
             }
-            else if(RulesetsLogCustomFieldRule != null)
+            else if(RulesetsRequestRuleOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRule>(null, RulesetsLogCustomFieldRule);
+                if (RulesetsRequestRuleOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf2>(null, RulesetsRequestRuleOneOf2);
             }
-            else if(RulesetsLogRule != null)
+            else if(RulesetsRequestRuleOneOf20 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogRule>(null, RulesetsLogRule);
+                if (RulesetsRequestRuleOneOf20 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf20>(null, RulesetsRequestRuleOneOf20);
             }
-            else if(RulesetsManagedChallengeRule != null)
+            else if(RulesetsRequestRuleOneOf21 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedChallengeRule>(null, RulesetsManagedChallengeRule);
+                if (RulesetsRequestRuleOneOf21 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf21>(null, RulesetsRequestRuleOneOf21);
             }
-            else if(RulesetsRedirectRule != null)
+            else if(RulesetsRequestRuleOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectRule>(null, RulesetsRedirectRule);
+                if (RulesetsRequestRuleOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf3>(null, RulesetsRequestRuleOneOf3);
             }
-            else if(RulesetsRewriteRule != null)
+            else if(RulesetsRequestRuleOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRewriteRule>(null, RulesetsRewriteRule);
+                if (RulesetsRequestRuleOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf4>(null, RulesetsRequestRuleOneOf4);
             }
-            else if(RulesetsRouteRule != null)
+            else if(RulesetsRequestRuleOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteRule>(null, RulesetsRouteRule);
+                if (RulesetsRequestRuleOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf5>(null, RulesetsRequestRuleOneOf5);
             }
-            else if(RulesetsScoreRule != null)
+            else if(RulesetsRequestRuleOneOf6 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsScoreRule>(null, RulesetsScoreRule);
+                if (RulesetsRequestRuleOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf6>(null, RulesetsRequestRuleOneOf6);
             }
-            else if(RulesetsServeErrorRule != null)
+            else if(RulesetsRequestRuleOneOf7 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRule>(null, RulesetsServeErrorRule);
+                if (RulesetsRequestRuleOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf7>(null, RulesetsRequestRuleOneOf7);
             }
-            else if(RulesetsSetCacheControlRule != null)
+            else if(RulesetsRequestRuleOneOf8 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlRule>(null, RulesetsSetCacheControlRule);
+                if (RulesetsRequestRuleOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf8>(null, RulesetsRequestRuleOneOf8);
             }
-            else if(RulesetsSetCacheSettingsRule != null)
+            else if(RulesetsRequestRuleOneOf9 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsRule>(null, RulesetsSetCacheSettingsRule);
+                if (RulesetsRequestRuleOneOf9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRuleOneOf9>(null, RulesetsRequestRuleOneOf9);
             }
-            else if(RulesetsSetCacheTagsRule != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheTagsRule>(null, RulesetsSetCacheTagsRule);
-            }
-            else if(RulesetsSetConfigRule != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRule>(null, RulesetsSetConfigRule);
-            }
-            else if(RulesetsSkipRule != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule>(null, RulesetsSkipRule);
-            }
-            else if(RulesetsTransformResponseHtmlRule != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule>(null, RulesetsTransformResponseHtmlRule);
-            }
-            else if(Action != null)
-            {
-                writer.WriteStringValue(null, Action);
-            }
-            else if(Description != null)
-            {
-                writer.WriteStringValue(null, Description);
-            }
-            else if(Enabled != null)
-            {
-                writer.WriteBoolValue(null, Enabled);
-            }
-            else if(Expression != null)
-            {
-                writer.WriteStringValue(null, Expression);
-            }
-            else if(Id != null)
-            {
-                writer.WriteStringValue(null, Id);
-            }
-            else if(LastUpdated != null)
-            {
-                writer.WriteDateTimeOffsetValue(null, LastUpdated);
-            }
-            else if(Ref != null)
-            {
-                writer.WriteStringValue(null, Ref);
-            }
-            else if(Version != null)
-            {
-                writer.WriteStringValue(null, Version);
-            }
-            else if(Categories != null)
-            {
-                writer.WriteCollectionOfPrimitiveValues<string>(null, Categories);
-            }
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

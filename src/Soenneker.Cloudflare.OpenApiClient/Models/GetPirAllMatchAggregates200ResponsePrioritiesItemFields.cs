@@ -11,56 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetPirAllMatchAggregates200ResponsePrioritiesItemFields : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attacker") is { } nullNodeAttacker && nullNodeAttacker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attacker = null;
+            if (parseNode.GetChildNode("attacker_country") is { } nullNodeAttackerCountry && nullNodeAttackerCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackerCountry = null;
+            if (parseNode.GetChildNode("indicator") is { } nullNodeIndicator && nullNodeIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicator = null;
+            if (parseNode.GetChildNode("indicator_type") is { } nullNodeIndicatorType && nullNodeIndicatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorType = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("target_industry") is { } nullNodeTargetIndustry && nullNodeTargetIndustry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetIndustry = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attacker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttacker? Attacker { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttacker? Attacker { get => _explicitNullValueAttacker; set { _explicitNullValueAttacker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attacker"); else _explicitNullProperties?.Remove("attacker"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttacker? _explicitNullValueAttacker = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttacker Attacker { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttacker Attacker { get => _explicitNullValueAttacker; set { _explicitNullValueAttacker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attacker"); else _explicitNullProperties?.Remove("attacker"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttacker _explicitNullValueAttacker = default!;
 #endif
         /// <summary>The attacker_country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttackerCountry? AttackerCountry { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttackerCountry? AttackerCountry { get => _explicitNullValueAttackerCountry; set { _explicitNullValueAttackerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attacker_country"); else _explicitNullProperties?.Remove("attacker_country"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttackerCountry? _explicitNullValueAttackerCountry = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttackerCountry AttackerCountry { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttackerCountry AttackerCountry { get => _explicitNullValueAttackerCountry; set { _explicitNullValueAttackerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attacker_country"); else _explicitNullProperties?.Remove("attacker_country"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsAttackerCountry _explicitNullValueAttackerCountry = default!;
 #endif
         /// <summary>The indicator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicator? Indicator { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicator? Indicator { get => _explicitNullValueIndicator; set { _explicitNullValueIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator"); else _explicitNullProperties?.Remove("indicator"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicator? _explicitNullValueIndicator = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicator Indicator { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicator Indicator { get => _explicitNullValueIndicator; set { _explicitNullValueIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator"); else _explicitNullProperties?.Remove("indicator"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicator _explicitNullValueIndicator = default!;
 #endif
         /// <summary>The indicator_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicatorType? IndicatorType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicatorType? IndicatorType { get => _explicitNullValueIndicatorType; set { _explicitNullValueIndicatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator_type"); else _explicitNullProperties?.Remove("indicator_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicatorType? _explicitNullValueIndicatorType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicatorType IndicatorType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicatorType IndicatorType { get => _explicitNullValueIndicatorType; set { _explicitNullValueIndicatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator_type"); else _explicitNullProperties?.Remove("indicator_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicatorType _explicitNullValueIndicatorType = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTags? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTags? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTags? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTags Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTags Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTags _explicitNullValueTags = default!;
 #endif
         /// <summary>The target_industry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry? TargetIndustry { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry? TargetIndustry { get => _explicitNullValueTargetIndustry; set { _explicitNullValueTargetIndustry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_industry"); else _explicitNullProperties?.Remove("target_industry"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry? _explicitNullValueTargetIndustry = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry TargetIndustry { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry TargetIndustry { get => _explicitNullValueTargetIndustry; set { _explicitNullValueTargetIndustry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_industry"); else _explicitNullProperties?.Remove("target_industry"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry _explicitNullValueTargetIndustry = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFields"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFields CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFields();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFields(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsIndicatorType>("indicator_type", IndicatorType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTags>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItemFieldsTargetIndustry>("target_industry", TargetIndustry);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

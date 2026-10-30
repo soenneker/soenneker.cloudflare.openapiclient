@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetAttacksLayer3SummaryByProtocol200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("GRE") is { } nullNodeGRE && nullNodeGRE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GRE = null;
+            if (parseNode.GetChildNode("ICMP") is { } nullNodeICMP && nullNodeICMP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ICMP = null;
+            if (parseNode.GetChildNode("TCP") is { } nullNodeTCP && nullNodeTCP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TCP = null;
+            if (parseNode.GetChildNode("UDP") is { } nullNodeUDP && nullNodeUDP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UDP = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GRE { get; set; }
+        public string? GRE { get => _explicitNullValueGRE; set { _explicitNullValueGRE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GRE"); else _explicitNullProperties?.Remove("GRE"); } }
+        private string? _explicitNullValueGRE = default!;
 #nullable restore
 #else
-        public string GRE { get; set; }
+        public string GRE { get => _explicitNullValueGRE; set { _explicitNullValueGRE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GRE"); else _explicitNullProperties?.Remove("GRE"); } }
+        private string _explicitNullValueGRE = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ICMP { get; set; }
+        public string? ICMP { get => _explicitNullValueICMP; set { _explicitNullValueICMP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ICMP"); else _explicitNullProperties?.Remove("ICMP"); } }
+        private string? _explicitNullValueICMP = default!;
 #nullable restore
 #else
-        public string ICMP { get; set; }
+        public string ICMP { get => _explicitNullValueICMP; set { _explicitNullValueICMP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ICMP"); else _explicitNullProperties?.Remove("ICMP"); } }
+        private string _explicitNullValueICMP = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TCP { get; set; }
+        public string? TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
+        private string? _explicitNullValueTCP = default!;
 #nullable restore
 #else
-        public string TCP { get; set; }
+        public string TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
+        private string _explicitNullValueTCP = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UDP { get; set; }
+        public string? UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
+        private string? _explicitNullValueUDP = default!;
 #nullable restore
 #else
-        public string UDP { get; set; }
+        public string UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
+        private string _explicitNullValueUDP = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer3SummaryByProtocol200ResponseResultSummary0"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer3SummaryByProtocol200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer3SummaryByProtocol200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer3SummaryByProtocol200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("ICMP", ICMP);
             writer.WriteStringValue("TCP", TCP);
             writer.WriteStringValue("UDP", UDP);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Beta. Count only articles at or above this relevance band for any active Priority Intelligence Requirement, as the article list&apos;s min_relevance does without pir_id. Excludes articles that have not been scored against an active PIR.</summary>
+    /// <summary>Beta. Count only articles at or above this relevance band: in articles, for any active Priority Intelligence Requirement, as the article list&apos;s min_relevance does without pir_id; in each priority, for that PIR. Excludes articles that have not been scored against an active PIR.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RssArticleSeverityAggregateMinRelevanceParameter
     {

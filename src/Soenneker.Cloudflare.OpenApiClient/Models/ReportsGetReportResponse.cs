@@ -11,49 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReportsGetReportResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("generated_on") is { } nullNodeGeneratedOn && nullNodeGeneratedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedOn = null;
+            if (parseNode.GetChildNode("generation_id") is { } nullNodeGenerationId && nullNodeGenerationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationId = null;
+            if (parseNode.GetChildNode("policy_id") is { } nullNodePolicyId && nullNodePolicyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyId = null;
+            if (parseNode.GetChildNode("policy_version") is { } nullNodePolicyVersion && nullNodePolicyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyVersion = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("report") is { } nullNodeReport && nullNodeReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Report = null;
+            if (parseNode.GetChildNode("report_id") is { } nullNodeReportId && nullNodeReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportId = null;
+            if (parseNode.GetChildNode("report_settings") is { } nullNodeReportSettings && nullNodeReportSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportSettings = null;
+            if (parseNode.GetChildNode("report_status") is { } nullNodeReportStatus && nullNodeReportStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportStatus = null;
+            if (parseNode.GetChildNode("scheduled_for") is { } nullNodeScheduledFor && nullNodeScheduledFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledFor = null;
+            if (parseNode.GetChildNode("scheduled_on") is { } nullNodeScheduledOn && nullNodeScheduledOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledOn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When this report was actually completed (only present when report is finished)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GeneratedOn { get; set; }
+        public string? GeneratedOn { get => _explicitNullValueGeneratedOn; set { _explicitNullValueGeneratedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_on"); else _explicitNullProperties?.Remove("generated_on"); } }
+        private string? _explicitNullValueGeneratedOn = default!;
 #nullable restore
 #else
-        public string GeneratedOn { get; set; }
+        public string GeneratedOn { get => _explicitNullValueGeneratedOn; set { _explicitNullValueGeneratedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_on"); else _explicitNullProperties?.Remove("generated_on"); } }
+        private string _explicitNullValueGeneratedOn = default!;
 #endif
         /// <summary>Unique identifier for this generation attempt (for retry/deduplication)</summary>
-        public Guid? GenerationId { get; set; }
+        public Guid? GenerationId { get => _explicitNullValueGenerationId; set { _explicitNullValueGenerationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation_id"); else _explicitNullProperties?.Remove("generation_id"); } }
+        private Guid? _explicitNullValueGenerationId = default!;
         /// <summary>Reference to the policy that generated this report</summary>
-        public Guid? PolicyId { get; set; }
+        public Guid? PolicyId { get => _explicitNullValuePolicyId; set { _explicitNullValuePolicyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_id"); else _explicitNullProperties?.Remove("policy_id"); } }
+        private Guid? _explicitNullValuePolicyId = default!;
         /// <summary>Version of the policy that was used to generate this report (positive integer starting at 1)</summary>
-        public int? PolicyVersion { get; set; }
+        public int? PolicyVersion { get => _explicitNullValuePolicyVersion; set { _explicitNullValuePolicyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_version"); else _explicitNullProperties?.Remove("policy_version"); } }
+        private int? _explicitNullValuePolicyVersion = default!;
         /// <summary>Optional reason enum providing additional context about the report status (e.g., cancellation reason, error details)</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason? Reason { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason? _explicitNullValueReason = default!;
         /// <summary>The actual report data and findings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReport? Report { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReport? Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReport? _explicitNullValueReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReport Report { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReport Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReport _explicitNullValueReport = default!;
 #endif
         /// <summary>Unique identifier for this specific report instance</summary>
-        public Guid? ReportId { get; set; }
+        public Guid? ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        private Guid? _explicitNullValueReportId = default!;
         /// <summary>Configuration settings used to generate this report, including report type and parameters (may be missing for older reports)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings? ReportSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings? ReportSettings { get => _explicitNullValueReportSettings; set { _explicitNullValueReportSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_settings"); else _explicitNullProperties?.Remove("report_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings? _explicitNullValueReportSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings ReportSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings ReportSettings { get => _explicitNullValueReportSettings; set { _explicitNullValueReportSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_settings"); else _explicitNullProperties?.Remove("report_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings _explicitNullValueReportSettings = default!;
 #endif
         /// <summary>The generation status of the report.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus? ReportStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus? ReportStatus { get => _explicitNullValueReportStatus; set { _explicitNullValueReportStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_status"); else _explicitNullProperties?.Remove("report_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus? _explicitNullValueReportStatus = default!;
         /// <summary>When this report should actually run (execution timestamp)</summary>
-        public DateTimeOffset? ScheduledFor { get; set; }
+        public DateTimeOffset? ScheduledFor { get => _explicitNullValueScheduledFor; set { _explicitNullValueScheduledFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_for"); else _explicitNullProperties?.Remove("scheduled_for"); } }
+        private DateTimeOffset? _explicitNullValueScheduledFor = default!;
         /// <summary>When this report was scheduled (creation timestamp)</summary>
-        public DateTimeOffset? ScheduledOn { get; set; }
+        public DateTimeOffset? ScheduledOn { get => _explicitNullValueScheduledOn; set { _explicitNullValueScheduledOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_on"); else _explicitNullProperties?.Remove("scheduled_on"); } }
+        private DateTimeOffset? _explicitNullValueScheduledOn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponse"/> and sets the default values.
         /// </summary>
@@ -69,7 +101,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponse();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus>("report_status", ReportStatus);
             writer.WriteDateTimeOffsetValue("scheduled_for", ScheduledFor);
             writer.WriteDateTimeOffsetValue("scheduled_on", ScheduledOn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

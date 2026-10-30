@@ -12,49 +12,91 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MconnTelemetrySnapshotNetdev : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("recv_bytes") is { } nullNodeRecvBytes && nullNodeRecvBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecvBytes = null;
+            if (parseNode.GetChildNode("recv_compressed") is { } nullNodeRecvCompressed && nullNodeRecvCompressed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecvCompressed = null;
+            if (parseNode.GetChildNode("recv_drop") is { } nullNodeRecvDrop && nullNodeRecvDrop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecvDrop = null;
+            if (parseNode.GetChildNode("recv_errs") is { } nullNodeRecvErrs && nullNodeRecvErrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecvErrs = null;
+            if (parseNode.GetChildNode("recv_fifo") is { } nullNodeRecvFifo && nullNodeRecvFifo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecvFifo = null;
+            if (parseNode.GetChildNode("recv_frame") is { } nullNodeRecvFrame && nullNodeRecvFrame.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecvFrame = null;
+            if (parseNode.GetChildNode("recv_multicast") is { } nullNodeRecvMulticast && nullNodeRecvMulticast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecvMulticast = null;
+            if (parseNode.GetChildNode("recv_packets") is { } nullNodeRecvPackets && nullNodeRecvPackets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecvPackets = null;
+            if (parseNode.GetChildNode("sent_bytes") is { } nullNodeSentBytes && nullNodeSentBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentBytes = null;
+            if (parseNode.GetChildNode("sent_carrier") is { } nullNodeSentCarrier && nullNodeSentCarrier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentCarrier = null;
+            if (parseNode.GetChildNode("sent_colls") is { } nullNodeSentColls && nullNodeSentColls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentColls = null;
+            if (parseNode.GetChildNode("sent_compressed") is { } nullNodeSentCompressed && nullNodeSentCompressed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentCompressed = null;
+            if (parseNode.GetChildNode("sent_drop") is { } nullNodeSentDrop && nullNodeSentDrop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentDrop = null;
+            if (parseNode.GetChildNode("sent_errs") is { } nullNodeSentErrs && nullNodeSentErrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentErrs = null;
+            if (parseNode.GetChildNode("sent_fifo") is { } nullNodeSentFifo && nullNodeSentFifo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentFifo = null;
+            if (parseNode.GetChildNode("sent_packets") is { } nullNodeSentPackets && nullNodeSentPackets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentPackets = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the network device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Total bytes received</summary>
-        public double? RecvBytes { get; set; }
+        public double? RecvBytes { get => _explicitNullValueRecvBytes; set { _explicitNullValueRecvBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recv_bytes"); else _explicitNullProperties?.Remove("recv_bytes"); } }
+        private double? _explicitNullValueRecvBytes = default!;
         /// <summary>Compressed packets received</summary>
-        public double? RecvCompressed { get; set; }
+        public double? RecvCompressed { get => _explicitNullValueRecvCompressed; set { _explicitNullValueRecvCompressed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recv_compressed"); else _explicitNullProperties?.Remove("recv_compressed"); } }
+        private double? _explicitNullValueRecvCompressed = default!;
         /// <summary>Packets dropped</summary>
-        public double? RecvDrop { get; set; }
+        public double? RecvDrop { get => _explicitNullValueRecvDrop; set { _explicitNullValueRecvDrop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recv_drop"); else _explicitNullProperties?.Remove("recv_drop"); } }
+        private double? _explicitNullValueRecvDrop = default!;
         /// <summary>Bad packets received</summary>
-        public double? RecvErrs { get; set; }
+        public double? RecvErrs { get => _explicitNullValueRecvErrs; set { _explicitNullValueRecvErrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recv_errs"); else _explicitNullProperties?.Remove("recv_errs"); } }
+        private double? _explicitNullValueRecvErrs = default!;
         /// <summary>FIFO overruns</summary>
-        public double? RecvFifo { get; set; }
+        public double? RecvFifo { get => _explicitNullValueRecvFifo; set { _explicitNullValueRecvFifo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recv_fifo"); else _explicitNullProperties?.Remove("recv_fifo"); } }
+        private double? _explicitNullValueRecvFifo = default!;
         /// <summary>Frame alignment errors</summary>
-        public double? RecvFrame { get; set; }
+        public double? RecvFrame { get => _explicitNullValueRecvFrame; set { _explicitNullValueRecvFrame = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recv_frame"); else _explicitNullProperties?.Remove("recv_frame"); } }
+        private double? _explicitNullValueRecvFrame = default!;
         /// <summary>Multicast packets received</summary>
-        public double? RecvMulticast { get; set; }
+        public double? RecvMulticast { get => _explicitNullValueRecvMulticast; set { _explicitNullValueRecvMulticast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recv_multicast"); else _explicitNullProperties?.Remove("recv_multicast"); } }
+        private double? _explicitNullValueRecvMulticast = default!;
         /// <summary>Total packets received</summary>
-        public double? RecvPackets { get; set; }
+        public double? RecvPackets { get => _explicitNullValueRecvPackets; set { _explicitNullValueRecvPackets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recv_packets"); else _explicitNullProperties?.Remove("recv_packets"); } }
+        private double? _explicitNullValueRecvPackets = default!;
         /// <summary>Total bytes transmitted</summary>
-        public double? SentBytes { get; set; }
+        public double? SentBytes { get => _explicitNullValueSentBytes; set { _explicitNullValueSentBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_bytes"); else _explicitNullProperties?.Remove("sent_bytes"); } }
+        private double? _explicitNullValueSentBytes = default!;
         /// <summary>Number of packets not sent due to carrier errors</summary>
-        public double? SentCarrier { get; set; }
+        public double? SentCarrier { get => _explicitNullValueSentCarrier; set { _explicitNullValueSentCarrier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_carrier"); else _explicitNullProperties?.Remove("sent_carrier"); } }
+        private double? _explicitNullValueSentCarrier = default!;
         /// <summary>Number of collisions</summary>
-        public double? SentColls { get; set; }
+        public double? SentColls { get => _explicitNullValueSentColls; set { _explicitNullValueSentColls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_colls"); else _explicitNullProperties?.Remove("sent_colls"); } }
+        private double? _explicitNullValueSentColls = default!;
         /// <summary>Number of compressed packets transmitted</summary>
-        public double? SentCompressed { get; set; }
+        public double? SentCompressed { get => _explicitNullValueSentCompressed; set { _explicitNullValueSentCompressed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_compressed"); else _explicitNullProperties?.Remove("sent_compressed"); } }
+        private double? _explicitNullValueSentCompressed = default!;
         /// <summary>Number of packets dropped during transmission</summary>
-        public double? SentDrop { get; set; }
+        public double? SentDrop { get => _explicitNullValueSentDrop; set { _explicitNullValueSentDrop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_drop"); else _explicitNullProperties?.Remove("sent_drop"); } }
+        private double? _explicitNullValueSentDrop = default!;
         /// <summary>Number of transmission errors</summary>
-        public double? SentErrs { get; set; }
+        public double? SentErrs { get => _explicitNullValueSentErrs; set { _explicitNullValueSentErrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_errs"); else _explicitNullProperties?.Remove("sent_errs"); } }
+        private double? _explicitNullValueSentErrs = default!;
         /// <summary>FIFO overruns</summary>
-        public double? SentFifo { get; set; }
+        public double? SentFifo { get => _explicitNullValueSentFifo; set { _explicitNullValueSentFifo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_fifo"); else _explicitNullProperties?.Remove("sent_fifo"); } }
+        private double? _explicitNullValueSentFifo = default!;
         /// <summary>Total packets transmitted</summary>
-        public double? SentPackets { get; set; }
+        public double? SentPackets { get => _explicitNullValueSentPackets; set { _explicitNullValueSentPackets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_packets"); else _explicitNullProperties?.Remove("sent_packets"); } }
+        private double? _explicitNullValueSentPackets = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev"/> and sets the default values.
         /// </summary>
@@ -70,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,6 +165,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("sent_errs", SentErrs);
             writer.WriteDoubleValue("sent_fifo", SentFifo);
             writer.WriteDoubleValue("sent_packets", SentPackets);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

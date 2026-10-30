@@ -17,6 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize
     public partial class VectorizeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The indexes property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.Indexes.IndexesRequestBuilder Indexes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.Indexes.IndexesRequestBuilder(PathParameters, RequestAdapter);

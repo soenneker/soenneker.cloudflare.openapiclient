@@ -12,7 +12,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TunnelWarpConnectorTunnel : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("connections") is { } nullNodeConnections && nullNodeConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connections = null;
+            if (parseNode.GetChildNode("conns_active_at") is { } nullNodeConnsActiveAt && nullNodeConnsActiveAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnsActiveAt = null;
+            if (parseNode.GetChildNode("conns_inactive_at") is { } nullNodeConnsInactiveAt && nullNodeConnsInactiveAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnsInactiveAt = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("tun_type") is { } nullNodeTunType && nullNodeTunType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunType = null;
+        }
+
         /// <summary>Cloudflare account ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,15 +41,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasConnection>? Connections { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasConnection>? Connections { get => _explicitNullValueConnections; set { _explicitNullValueConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connections"); else _explicitNullProperties?.Remove("connections"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasConnection>? _explicitNullValueConnections = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasConnection> Connections { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasConnection> Connections { get => _explicitNullValueConnections; set { _explicitNullValueConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connections"); else _explicitNullProperties?.Remove("connections"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasConnection> _explicitNullValueConnections = default!;
 #endif
         /// <summary>Timestamp of when the tunnel established at least one connection to Cloudflare&apos;s edge. If `null`, the tunnel is inactive.</summary>
-        public DateTimeOffset? ConnsActiveAt { get; set; }
+        public DateTimeOffset? ConnsActiveAt { get => _explicitNullValueConnsActiveAt; set { _explicitNullValueConnsActiveAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conns_active_at"); else _explicitNullProperties?.Remove("conns_active_at"); } }
+        private DateTimeOffset? _explicitNullValueConnsActiveAt = default!;
         /// <summary>Timestamp of when the tunnel became inactive (no connections to Cloudflare&apos;s edge). If `null`, the tunnel is active.</summary>
-        public DateTimeOffset? ConnsInactiveAt { get; set; }
+        public DateTimeOffset? ConnsInactiveAt { get => _explicitNullValueConnsInactiveAt; set { _explicitNullValueConnsInactiveAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conns_inactive_at"); else _explicitNullProperties?.Remove("conns_inactive_at"); } }
+        private DateTimeOffset? _explicitNullValueConnsInactiveAt = default!;
         /// <summary>Timestamp of when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.</summary>
@@ -45,23 +63,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Metadata associated with the tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnelMetadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnelMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnelMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnelMetadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnelMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnelMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>A user-friendly name for a tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelStatus? _explicitNullValueStatus = default!;
         /// <summary>The type of tunnel.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType? TunType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType? TunType { get => _explicitNullValueTunType; set { _explicitNullValueTunType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tun_type"); else _explicitNullProperties?.Remove("tun_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType? _explicitNullValueTunType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnel"/> and sets the default values.
         /// </summary>
@@ -77,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorTunnel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType>("tun_type", TunType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -22,31 +22,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The dnssec property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Dnssec.DnssecRequestBuilder Dnssec
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The edns property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Edns.EdnsRequestBuilder Edns
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Edns.EdnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder Ip_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The protocol property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Protocol.ProtocolRequestBuilder Protocol
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The query_type property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Query_type.Query_typeRequestBuilder Query_type
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Query_type.Query_typeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The response_codes property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Response_codes.Response_codesRequestBuilder Response_codes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Response_codes.Response_codesRequestBuilder(PathParameters, RequestAdapter);

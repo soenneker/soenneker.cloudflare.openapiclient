@@ -11,60 +11,89 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParams : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorized_hosts") is { } nullNodeAuthorizedHosts && nullNodeAuthorizedHosts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedHosts = null;
+            if (parseNode.GetChildNode("chat_completions_endpoint") is { } nullNodeChatCompletionsEndpoint && nullNodeChatCompletionsEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatCompletionsEndpoint = null;
+            if (parseNode.GetChildNode("custom_domains") is { } nullNodeCustomDomains && nullNodeCustomDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDomains = null;
+            if (parseNode.GetChildNode("default_domain_enabled") is { } nullNodeDefaultDomainEnabled && nullNodeDefaultDomainEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultDomainEnabled = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("mcp") is { } nullNodeMcp && nullNodeMcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mcp = null;
+            if (parseNode.GetChildNode("rate_limit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
+            if (parseNode.GetChildNode("search_endpoint") is { } nullNodeSearchEndpoint && nullNodeSearchEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchEndpoint = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authorized_hosts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AuthorizedHosts { get; set; }
+        public List<string>? AuthorizedHosts { get => _explicitNullValueAuthorizedHosts; set { _explicitNullValueAuthorizedHosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_hosts"); else _explicitNullProperties?.Remove("authorized_hosts"); } }
+        private List<string>? _explicitNullValueAuthorizedHosts = default!;
 #nullable restore
 #else
-        public List<string> AuthorizedHosts { get; set; }
+        public List<string> AuthorizedHosts { get => _explicitNullValueAuthorizedHosts; set { _explicitNullValueAuthorizedHosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_hosts"); else _explicitNullProperties?.Remove("authorized_hosts"); } }
+        private List<string> _explicitNullValueAuthorizedHosts = default!;
 #endif
         /// <summary>The chat_completions_endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsChatCompletionsEndpoint? ChatCompletionsEndpoint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsChatCompletionsEndpoint? ChatCompletionsEndpoint { get => _explicitNullValueChatCompletionsEndpoint; set { _explicitNullValueChatCompletionsEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat_completions_endpoint"); else _explicitNullProperties?.Remove("chat_completions_endpoint"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsChatCompletionsEndpoint? _explicitNullValueChatCompletionsEndpoint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsChatCompletionsEndpoint ChatCompletionsEndpoint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsChatCompletionsEndpoint ChatCompletionsEndpoint { get => _explicitNullValueChatCompletionsEndpoint; set { _explicitNullValueChatCompletionsEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat_completions_endpoint"); else _explicitNullProperties?.Remove("chat_completions_endpoint"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsChatCompletionsEndpoint _explicitNullValueChatCompletionsEndpoint = default!;
 #endif
         /// <summary>The custom_domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomDomains { get; set; }
+        public List<string>? CustomDomains { get => _explicitNullValueCustomDomains; set { _explicitNullValueCustomDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domains"); else _explicitNullProperties?.Remove("custom_domains"); } }
+        private List<string>? _explicitNullValueCustomDomains = default!;
 #nullable restore
 #else
-        public List<string> CustomDomains { get; set; }
+        public List<string> CustomDomains { get => _explicitNullValueCustomDomains; set { _explicitNullValueCustomDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domains"); else _explicitNullProperties?.Remove("custom_domains"); } }
+        private List<string> _explicitNullValueCustomDomains = default!;
 #endif
         /// <summary>The default_domain_enabled property</summary>
-        public bool? DefaultDomainEnabled { get; set; }
+        public bool? DefaultDomainEnabled { get => _explicitNullValueDefaultDomainEnabled; set { _explicitNullValueDefaultDomainEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_domain_enabled"); else _explicitNullProperties?.Remove("default_domain_enabled"); } }
+        private bool? _explicitNullValueDefaultDomainEnabled = default!;
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The mcp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsMcp? Mcp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsMcp? Mcp { get => _explicitNullValueMcp; set { _explicitNullValueMcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp"); else _explicitNullProperties?.Remove("mcp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsMcp? _explicitNullValueMcp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsMcp Mcp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsMcp Mcp { get => _explicitNullValueMcp; set { _explicitNullValueMcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp"); else _explicitNullProperties?.Remove("mcp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsMcp _explicitNullValueMcp = default!;
 #endif
         /// <summary>The rate_limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsRateLimit? RateLimit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsRateLimit? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limit"); else _explicitNullProperties?.Remove("rate_limit"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsRateLimit? _explicitNullValueRateLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsRateLimit RateLimit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsRateLimit RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limit"); else _explicitNullProperties?.Remove("rate_limit"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsRateLimit _explicitNullValueRateLimit = default!;
 #endif
         /// <summary>The search_endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsSearchEndpoint? SearchEndpoint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsSearchEndpoint? SearchEndpoint { get => _explicitNullValueSearchEndpoint; set { _explicitNullValueSearchEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_endpoint"); else _explicitNullProperties?.Remove("search_endpoint"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsSearchEndpoint? _explicitNullValueSearchEndpoint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsSearchEndpoint SearchEndpoint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsSearchEndpoint SearchEndpoint { get => _explicitNullValueSearchEndpoint; set { _explicitNullValueSearchEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_endpoint"); else _explicitNullProperties?.Remove("search_endpoint"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsSearchEndpoint _explicitNullValueSearchEndpoint = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParams"/> and sets the default values.
@@ -81,7 +110,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParams CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParams();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParams(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsMcp>("mcp", Mcp);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsRateLimit>("rate_limit", RateLimit);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemPublicEndpointParamsSearchEndpoint>("search_endpoint", SearchEndpoint);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

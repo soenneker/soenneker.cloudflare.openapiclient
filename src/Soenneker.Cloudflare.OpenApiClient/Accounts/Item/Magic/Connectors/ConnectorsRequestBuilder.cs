@@ -72,6 +72,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,6 +109,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

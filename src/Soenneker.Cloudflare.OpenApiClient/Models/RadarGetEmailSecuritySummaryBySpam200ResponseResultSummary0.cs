@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetEmailSecuritySummaryBySpam200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("NOT_SPAM") is { } nullNodeNOTSPAM && nullNodeNOTSPAM.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTSPAM = null;
+            if (parseNode.GetChildNode("SPAM") is { } nullNodeSPAM && nullNodeSPAM.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SPAM = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NOTSPAM { get; set; }
+        public string? NOTSPAM { get => _explicitNullValueNOTSPAM; set { _explicitNullValueNOTSPAM = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPAM"); else _explicitNullProperties?.Remove("NOT_SPAM"); } }
+        private string? _explicitNullValueNOTSPAM = default!;
 #nullable restore
 #else
-        public string NOTSPAM { get; set; }
+        public string NOTSPAM { get => _explicitNullValueNOTSPAM; set { _explicitNullValueNOTSPAM = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPAM"); else _explicitNullProperties?.Remove("NOT_SPAM"); } }
+        private string _explicitNullValueNOTSPAM = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SPAM { get; set; }
+        public string? SPAM { get => _explicitNullValueSPAM; set { _explicitNullValueSPAM = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPAM"); else _explicitNullProperties?.Remove("SPAM"); } }
+        private string? _explicitNullValueSPAM = default!;
 #nullable restore
 #else
-        public string SPAM { get; set; }
+        public string SPAM { get => _explicitNullValueSPAM; set { _explicitNullValueSPAM = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPAM"); else _explicitNullProperties?.Remove("SPAM"); } }
+        private string _explicitNullValueSPAM = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryBySpam200ResponseResultSummary0"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryBySpam200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryBySpam200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryBySpam200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("NOT_SPAM", NOTSPAM);
             writer.WriteStringValue("SPAM", SPAM);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,49 +12,73 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcContainersCreateDurableObjectApplicationRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("configuration") is { } nullNodeConfiguration && nullNodeConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configuration = null;
+            if (parseNode.GetChildNode("constraints") is { } nullNodeConstraints && nullNodeConstraints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Constraints = null;
+            if (parseNode.GetChildNode("durable_objects") is { } nullNodeDurableObjects && nullNodeDurableObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurableObjects = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("observability") is { } nullNodeObservability && nullNodeObservability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Observability = null;
+            if (parseNode.GetChildNode("scheduling_policy") is { } nullNodeSchedulingPolicy && nullNodeSchedulingPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchedulingPolicy = null;
+        }
+
         /// <summary>Configuration for a Durable Object-managed application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestConfiguration? Configuration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestConfiguration? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestConfiguration? _explicitNullValueConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestConfiguration Configuration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestConfiguration Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestConfiguration _explicitNullValueConfiguration = default!;
 #endif
         /// <summary>The jurisdiction of a Durable Object-managed application&apos;s primary control-plane object.Set this when creating the application; it cannot be changed afterwards.Other placement constraints are not supported by this scheduling policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationConstraints? Constraints { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationConstraints? Constraints { get => _explicitNullValueConstraints; set { _explicitNullValueConstraints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraints"); else _explicitNullProperties?.Remove("constraints"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationConstraints? _explicitNullValueConstraints = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationConstraints Constraints { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationConstraints Constraints { get => _explicitNullValueConstraints; set { _explicitNullValueConstraints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraints"); else _explicitNullProperties?.Remove("constraints"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationConstraints _explicitNullValueConstraints = default!;
 #endif
         /// <summary>The customer-owned Durable Object namespace that owns this application and its instances.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects? DurableObjects { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects? DurableObjects { get => _explicitNullValueDurableObjects; set { _explicitNullValueDurableObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_objects"); else _explicitNullProperties?.Remove("durable_objects"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects? _explicitNullValueDurableObjects = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects DurableObjects { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects DurableObjects { get => _explicitNullValueDurableObjects; set { _explicitNullValueDurableObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_objects"); else _explicitNullProperties?.Remove("durable_objects"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects _explicitNullValueDurableObjects = default!;
 #endif
         /// <summary>The name for this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Application-wide logging settings for a Durable Object-managed application.The application publishes these settings to its runtime metadata. Updatingthem does not create a deployment or rollout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability? Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability? Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability? _explicitNullValueObservability = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability _explicitNullValueObservability = default!;
 #endif
         /// <summary>Selects a Durable Object-managed application. Each Durable Object creates andmanages the lifecycle of its container instance. Configure application-wideobservability settings here. Deployment configuration, scaling, placementconstraints, versions, and rollouts do not apply.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy? SchedulingPolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy? SchedulingPolicy { get => _explicitNullValueSchedulingPolicy; set { _explicitNullValueSchedulingPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduling_policy"); else _explicitNullProperties?.Remove("scheduling_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy? _explicitNullValueSchedulingPolicy = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,7 +117,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects>("durable_objects", DurableObjects);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability>("observability", Observability);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy>("scheduling_policy", SchedulingPolicy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy>("scheduling_policy", SchedulingPolicy);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

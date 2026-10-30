@@ -8,66 +8,71 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf7"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DlpEntryWithSharedProfiles : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom? DlpEntryWithSharedProfilesCustom { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf1? DlpEntryWithSharedProfilesOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom DlpEntryWithSharedProfilesCustom { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf1 DlpEntryWithSharedProfilesOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic? DlpEntryWithSharedProfilesCustomPromptTopic { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf2? DlpEntryWithSharedProfilesOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic DlpEntryWithSharedProfilesCustomPromptTopic { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf2 DlpEntryWithSharedProfilesOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint? DlpEntryWithSharedProfilesDocumentFingerprint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf3? DlpEntryWithSharedProfilesOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint DlpEntryWithSharedProfilesDocumentFingerprint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf3 DlpEntryWithSharedProfilesOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData? DlpEntryWithSharedProfilesExactData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf4? DlpEntryWithSharedProfilesOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData DlpEntryWithSharedProfilesExactData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf4 DlpEntryWithSharedProfilesOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration? DlpEntryWithSharedProfilesIntegration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf5? DlpEntryWithSharedProfilesOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration DlpEntryWithSharedProfilesIntegration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf5 DlpEntryWithSharedProfilesOneOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined? DlpEntryWithSharedProfilesPredefined { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf6? DlpEntryWithSharedProfilesOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined DlpEntryWithSharedProfilesPredefined { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf6 DlpEntryWithSharedProfilesOneOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList? DlpEntryWithSharedProfilesWordList { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf7? DlpEntryWithSharedProfilesOneOf7 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList DlpEntryWithSharedProfilesWordList { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf7 DlpEntryWithSharedProfilesOneOf7 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -81,33 +86,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfiles();
             if("custom".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DlpEntryWithSharedProfilesCustom = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom();
+                
             }
             else if("custom_prompt_topic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DlpEntryWithSharedProfilesCustomPromptTopic = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic();
-            }
-            else if("document_fingerprint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DlpEntryWithSharedProfilesDocumentFingerprint = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint();
-            }
-            else if("exact_data".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DlpEntryWithSharedProfilesExactData = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData();
-            }
-            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DlpEntryWithSharedProfilesIntegration = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration();
+                
             }
             else if("predefined".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DlpEntryWithSharedProfilesPredefined = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined();
+                
+            }
+            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("exact_data".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("document_fingerprint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
             }
             else if("word_list".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DlpEntryWithSharedProfilesWordList = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("created_at") != null && parseNode.GetChildNode("updated_at") != null && parseNode.GetChildNode("pattern") != null && parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag7 && ("custom".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("profiles") != null && (parseNode.GetChildNode("upload_status") == null || (parseNode.GetChildNode("upload_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag9 && ("empty".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "uploading".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "pending".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "processing".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "complete".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("created_at") != null && parseNode.GetChildNode("updated_at") != null && parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("custom_prompt_topic".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("profiles") != null && (parseNode.GetChildNode("upload_status") == null || (parseNode.GetChildNode("upload_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("empty".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "uploading".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "pending".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "processing".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "complete".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("confidence") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("predefined".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("profiles") != null && (parseNode.GetChildNode("upload_status") == null || (parseNode.GetChildNode("upload_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag7 && ("empty".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "uploading".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "pending".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "processing".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "complete".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("created_at") != null && parseNode.GetChildNode("updated_at") != null && parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("integration".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("profiles") != null && (parseNode.GetChildNode("upload_status") == null || (parseNode.GetChildNode("upload_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("empty".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "uploading".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "pending".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "processing".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "complete".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("created_at") != null && parseNode.GetChildNode("updated_at") != null && parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("secret") != null && parseNode.GetChildNode("case_sensitive") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag8 && ("exact_data".Equals(tag8.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("profiles") != null && (parseNode.GetChildNode("upload_status") == null || (parseNode.GetChildNode("upload_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag10 && ("empty".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "uploading".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "pending".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "processing".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "complete".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("created_at") != null && parseNode.GetChildNode("updated_at") != null && parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("document_fingerprint".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("profiles") != null && (parseNode.GetChildNode("upload_status") == null || (parseNode.GetChildNode("upload_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("empty".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "uploading".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "pending".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "processing".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "complete".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("created_at") != null && parseNode.GetChildNode("updated_at") != null && parseNode.GetChildNode("word_list") != null && parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag7 && ("word_list".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("profiles") != null && (parseNode.GetChildNode("upload_status") == null || (parseNode.GetChildNode("upload_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag9 && ("empty".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "uploading".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "pending".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "processing".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "complete".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.DlpEntryWithSharedProfilesOneOf1 == null && result.DlpEntryWithSharedProfilesOneOf2 == null && result.DlpEntryWithSharedProfilesOneOf3 == null && result.DlpEntryWithSharedProfilesOneOf4 == null && result.DlpEntryWithSharedProfilesOneOf5 == null && result.DlpEntryWithSharedProfilesOneOf6 == null && result.DlpEntryWithSharedProfilesOneOf7 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6) result.DlpEntryWithSharedProfilesOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf1(), parseNode);
+            if (result.DlpEntryWithSharedProfilesOneOf1 == null && result.DlpEntryWithSharedProfilesOneOf2 == null && result.DlpEntryWithSharedProfilesOneOf3 == null && result.DlpEntryWithSharedProfilesOneOf4 == null && result.DlpEntryWithSharedProfilesOneOf5 == null && result.DlpEntryWithSharedProfilesOneOf6 == null && result.DlpEntryWithSharedProfilesOneOf7 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6) result.DlpEntryWithSharedProfilesOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf2(), parseNode);
+            if (result.DlpEntryWithSharedProfilesOneOf1 == null && result.DlpEntryWithSharedProfilesOneOf2 == null && result.DlpEntryWithSharedProfilesOneOf3 == null && result.DlpEntryWithSharedProfilesOneOf4 == null && result.DlpEntryWithSharedProfilesOneOf5 == null && result.DlpEntryWithSharedProfilesOneOf6 == null && result.DlpEntryWithSharedProfilesOneOf7 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6) result.DlpEntryWithSharedProfilesOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf3(), parseNode);
+            if (result.DlpEntryWithSharedProfilesOneOf1 == null && result.DlpEntryWithSharedProfilesOneOf2 == null && result.DlpEntryWithSharedProfilesOneOf3 == null && result.DlpEntryWithSharedProfilesOneOf4 == null && result.DlpEntryWithSharedProfilesOneOf5 == null && result.DlpEntryWithSharedProfilesOneOf6 == null && result.DlpEntryWithSharedProfilesOneOf7 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6) result.DlpEntryWithSharedProfilesOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf4(), parseNode);
+            if (result.DlpEntryWithSharedProfilesOneOf1 == null && result.DlpEntryWithSharedProfilesOneOf2 == null && result.DlpEntryWithSharedProfilesOneOf3 == null && result.DlpEntryWithSharedProfilesOneOf4 == null && result.DlpEntryWithSharedProfilesOneOf5 == null && result.DlpEntryWithSharedProfilesOneOf6 == null && result.DlpEntryWithSharedProfilesOneOf7 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6) result.DlpEntryWithSharedProfilesOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf5(), parseNode);
+            if (result.DlpEntryWithSharedProfilesOneOf1 == null && result.DlpEntryWithSharedProfilesOneOf2 == null && result.DlpEntryWithSharedProfilesOneOf3 == null && result.DlpEntryWithSharedProfilesOneOf4 == null && result.DlpEntryWithSharedProfilesOneOf5 == null && result.DlpEntryWithSharedProfilesOneOf6 == null && result.DlpEntryWithSharedProfilesOneOf7 == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6) result.DlpEntryWithSharedProfilesOneOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf6(), parseNode);
+            if (result.DlpEntryWithSharedProfilesOneOf1 == null && result.DlpEntryWithSharedProfilesOneOf2 == null && result.DlpEntryWithSharedProfilesOneOf3 == null && result.DlpEntryWithSharedProfilesOneOf4 == null && result.DlpEntryWithSharedProfilesOneOf5 == null && result.DlpEntryWithSharedProfilesOneOf6 == null && result.DlpEntryWithSharedProfilesOneOf7 == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.DlpEntryWithSharedProfilesOneOf7 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf7(), parseNode);
+            if (result.DlpEntryWithSharedProfilesOneOf1 == null && result.DlpEntryWithSharedProfilesOneOf2 == null && result.DlpEntryWithSharedProfilesOneOf3 == null && result.DlpEntryWithSharedProfilesOneOf4 == null && result.DlpEntryWithSharedProfilesOneOf5 == null && result.DlpEntryWithSharedProfilesOneOf6 == null && result.DlpEntryWithSharedProfilesOneOf7 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,33 +137,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DlpEntryWithSharedProfilesCustom != null)
+            if(DlpEntryWithSharedProfilesOneOf1 != null)
             {
-                return DlpEntryWithSharedProfilesCustom.GetFieldDeserializers();
+                return DlpEntryWithSharedProfilesOneOf1.GetFieldDeserializers();
             }
-            else if(DlpEntryWithSharedProfilesCustomPromptTopic != null)
+            else if(DlpEntryWithSharedProfilesOneOf2 != null)
             {
-                return DlpEntryWithSharedProfilesCustomPromptTopic.GetFieldDeserializers();
+                return DlpEntryWithSharedProfilesOneOf2.GetFieldDeserializers();
             }
-            else if(DlpEntryWithSharedProfilesDocumentFingerprint != null)
+            else if(DlpEntryWithSharedProfilesOneOf3 != null)
             {
-                return DlpEntryWithSharedProfilesDocumentFingerprint.GetFieldDeserializers();
+                return DlpEntryWithSharedProfilesOneOf3.GetFieldDeserializers();
             }
-            else if(DlpEntryWithSharedProfilesExactData != null)
+            else if(DlpEntryWithSharedProfilesOneOf4 != null)
             {
-                return DlpEntryWithSharedProfilesExactData.GetFieldDeserializers();
+                return DlpEntryWithSharedProfilesOneOf4.GetFieldDeserializers();
             }
-            else if(DlpEntryWithSharedProfilesIntegration != null)
+            else if(DlpEntryWithSharedProfilesOneOf5 != null)
             {
-                return DlpEntryWithSharedProfilesIntegration.GetFieldDeserializers();
+                return DlpEntryWithSharedProfilesOneOf5.GetFieldDeserializers();
             }
-            else if(DlpEntryWithSharedProfilesPredefined != null)
+            else if(DlpEntryWithSharedProfilesOneOf6 != null)
             {
-                return DlpEntryWithSharedProfilesPredefined.GetFieldDeserializers();
+                return DlpEntryWithSharedProfilesOneOf6.GetFieldDeserializers();
             }
-            else if(DlpEntryWithSharedProfilesWordList != null)
+            else if(DlpEntryWithSharedProfilesOneOf7 != null)
             {
-                return DlpEntryWithSharedProfilesWordList.GetFieldDeserializers();
+                return DlpEntryWithSharedProfilesOneOf7.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -151,34 +173,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (DlpEntryWithSharedProfilesOneOf1 == null && DlpEntryWithSharedProfilesOneOf2 == null && DlpEntryWithSharedProfilesOneOf3 == null && DlpEntryWithSharedProfilesOneOf4 == null && DlpEntryWithSharedProfilesOneOf5 == null && DlpEntryWithSharedProfilesOneOf6 == null && DlpEntryWithSharedProfilesOneOf7 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (DlpEntryWithSharedProfilesOneOf1 != null && DlpEntryWithSharedProfilesOneOf2 == null && DlpEntryWithSharedProfilesOneOf3 == null && DlpEntryWithSharedProfilesOneOf4 == null && DlpEntryWithSharedProfilesOneOf5 == null && DlpEntryWithSharedProfilesOneOf6 == null && DlpEntryWithSharedProfilesOneOf7 == null) { if (DlpEntryWithSharedProfilesOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryWithSharedProfilesOneOf1); return; }
+            if (DlpEntryWithSharedProfilesOneOf2 != null && DlpEntryWithSharedProfilesOneOf1 == null && DlpEntryWithSharedProfilesOneOf3 == null && DlpEntryWithSharedProfilesOneOf4 == null && DlpEntryWithSharedProfilesOneOf5 == null && DlpEntryWithSharedProfilesOneOf6 == null && DlpEntryWithSharedProfilesOneOf7 == null) { if (DlpEntryWithSharedProfilesOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryWithSharedProfilesOneOf2); return; }
+            if (DlpEntryWithSharedProfilesOneOf3 != null && DlpEntryWithSharedProfilesOneOf1 == null && DlpEntryWithSharedProfilesOneOf2 == null && DlpEntryWithSharedProfilesOneOf4 == null && DlpEntryWithSharedProfilesOneOf5 == null && DlpEntryWithSharedProfilesOneOf6 == null && DlpEntryWithSharedProfilesOneOf7 == null) { if (DlpEntryWithSharedProfilesOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryWithSharedProfilesOneOf3); return; }
+            if (DlpEntryWithSharedProfilesOneOf4 != null && DlpEntryWithSharedProfilesOneOf1 == null && DlpEntryWithSharedProfilesOneOf2 == null && DlpEntryWithSharedProfilesOneOf3 == null && DlpEntryWithSharedProfilesOneOf5 == null && DlpEntryWithSharedProfilesOneOf6 == null && DlpEntryWithSharedProfilesOneOf7 == null) { if (DlpEntryWithSharedProfilesOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryWithSharedProfilesOneOf4); return; }
+            if (DlpEntryWithSharedProfilesOneOf5 != null && DlpEntryWithSharedProfilesOneOf1 == null && DlpEntryWithSharedProfilesOneOf2 == null && DlpEntryWithSharedProfilesOneOf3 == null && DlpEntryWithSharedProfilesOneOf4 == null && DlpEntryWithSharedProfilesOneOf6 == null && DlpEntryWithSharedProfilesOneOf7 == null) { if (DlpEntryWithSharedProfilesOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryWithSharedProfilesOneOf5); return; }
+            if (DlpEntryWithSharedProfilesOneOf6 != null && DlpEntryWithSharedProfilesOneOf1 == null && DlpEntryWithSharedProfilesOneOf2 == null && DlpEntryWithSharedProfilesOneOf3 == null && DlpEntryWithSharedProfilesOneOf4 == null && DlpEntryWithSharedProfilesOneOf5 == null && DlpEntryWithSharedProfilesOneOf7 == null) { if (DlpEntryWithSharedProfilesOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryWithSharedProfilesOneOf6); return; }
+            if (DlpEntryWithSharedProfilesOneOf7 != null && DlpEntryWithSharedProfilesOneOf1 == null && DlpEntryWithSharedProfilesOneOf2 == null && DlpEntryWithSharedProfilesOneOf3 == null && DlpEntryWithSharedProfilesOneOf4 == null && DlpEntryWithSharedProfilesOneOf5 == null && DlpEntryWithSharedProfilesOneOf6 == null) { if (DlpEntryWithSharedProfilesOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryWithSharedProfilesOneOf7); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DlpEntryWithSharedProfilesCustom != null)
+            if(DlpEntryWithSharedProfilesOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom>(null, DlpEntryWithSharedProfilesCustom);
+                if (DlpEntryWithSharedProfilesOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf1>(null, DlpEntryWithSharedProfilesOneOf1);
             }
-            else if(DlpEntryWithSharedProfilesCustomPromptTopic != null)
+            else if(DlpEntryWithSharedProfilesOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic>(null, DlpEntryWithSharedProfilesCustomPromptTopic);
+                if (DlpEntryWithSharedProfilesOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf2>(null, DlpEntryWithSharedProfilesOneOf2);
             }
-            else if(DlpEntryWithSharedProfilesDocumentFingerprint != null)
+            else if(DlpEntryWithSharedProfilesOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint>(null, DlpEntryWithSharedProfilesDocumentFingerprint);
+                if (DlpEntryWithSharedProfilesOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf3>(null, DlpEntryWithSharedProfilesOneOf3);
             }
-            else if(DlpEntryWithSharedProfilesExactData != null)
+            else if(DlpEntryWithSharedProfilesOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData>(null, DlpEntryWithSharedProfilesExactData);
+                if (DlpEntryWithSharedProfilesOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf4>(null, DlpEntryWithSharedProfilesOneOf4);
             }
-            else if(DlpEntryWithSharedProfilesIntegration != null)
+            else if(DlpEntryWithSharedProfilesOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration>(null, DlpEntryWithSharedProfilesIntegration);
+                if (DlpEntryWithSharedProfilesOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf5>(null, DlpEntryWithSharedProfilesOneOf5);
             }
-            else if(DlpEntryWithSharedProfilesPredefined != null)
+            else if(DlpEntryWithSharedProfilesOneOf6 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined>(null, DlpEntryWithSharedProfilesPredefined);
+                if (DlpEntryWithSharedProfilesOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf6>(null, DlpEntryWithSharedProfilesOneOf6);
             }
-            else if(DlpEntryWithSharedProfilesWordList != null)
+            else if(DlpEntryWithSharedProfilesOneOf7 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList>(null, DlpEntryWithSharedProfilesWordList);
+                if (DlpEntryWithSharedProfilesOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf7>(null, DlpEntryWithSharedProfilesOneOf7);
             }
         }
     }

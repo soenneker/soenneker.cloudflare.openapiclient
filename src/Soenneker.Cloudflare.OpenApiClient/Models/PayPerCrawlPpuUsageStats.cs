@@ -11,41 +11,65 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PayPerCrawlPpuUsageStats : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("buyers") is { } nullNodeBuyers && nullNodeBuyers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Buyers = null;
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("last_updated_at") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
+            if (parseNode.GetChildNode("since") is { } nullNodeSince && nullNodeSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Since = null;
+            if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
+            if (parseNode.GetChildNode("until") is { } nullNodeUntil && nullNodeUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Until = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Range-wide usage and gross value totals for the current buyer page, ordered by buyer name and operator ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer>? Buyers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer>? Buyers { get => _explicitNullValueBuyers; set { _explicitNullValueBuyers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buyers"); else _explicitNullProperties?.Remove("buyers"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer>? _explicitNullValueBuyers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer> Buyers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer> Buyers { get => _explicitNullValueBuyers; set { _explicitNullValueBuyers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buyers"); else _explicitNullProperties?.Remove("buyers"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer> _explicitNullValueBuyers = default!;
 #endif
         /// <summary>Sparse time-series data for buyers on the current page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsDataPoint>? Data { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsDataPoint>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsDataPoint>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsDataPoint> Data { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsDataPoint> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsDataPoint> _explicitNullValueData = default!;
 #endif
         /// <summary>UTC aggregation interval selected from the requested range duration.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsInterval? Interval { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsInterval? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsInterval? _explicitNullValueInterval = default!;
         /// <summary>Time the latest included usage-report rollup run finished, or null before the first run completes.</summary>
-        public DateTimeOffset? LastUpdatedAt { get; set; }
+        public DateTimeOffset? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private DateTimeOffset? _explicitNullValueLastUpdatedAt = default!;
         /// <summary>Inclusive beginning of the resolved range after UTC interval alignment.</summary>
-        public DateTimeOffset? Since { get; set; }
+        public DateTimeOffset? Since { get => _explicitNullValueSince; set { _explicitNullValueSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("since"); else _explicitNullProperties?.Remove("since"); } }
+        private DateTimeOffset? _explicitNullValueSince = default!;
         /// <summary>The totals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsTotals? Totals { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsTotals? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsTotals? _explicitNullValueTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsTotals Totals { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsTotals Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsTotals _explicitNullValueTotals = default!;
 #endif
         /// <summary>Exclusive end of the resolved range after UTC interval alignment.</summary>
-        public DateTimeOffset? Until { get; set; }
+        public DateTimeOffset? Until { get => _explicitNullValueUntil; set { _explicitNullValueUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("until"); else _explicitNullProperties?.Remove("until"); } }
+        private DateTimeOffset? _explicitNullValueUntil = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStats"/> and sets the default values.
         /// </summary>
@@ -61,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStats();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStats(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("since", Since);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsTotals>("totals", Totals);
             writer.WriteDateTimeOffsetValue("until", Until);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

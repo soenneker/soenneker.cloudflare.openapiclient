@@ -12,44 +12,67 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessScimConfig2 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
+            if (parseNode.GetChildNode("deactivate_on_delete") is { } nullNodeDeactivateOnDelete && nullNodeDeactivateOnDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivateOnDelete = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("idp_uid") is { } nullNodeIdpUid && nullNodeIdpUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpUid = null;
+            if (parseNode.GetChildNode("mappings") is { } nullNodeMappings && nullNodeMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mappings = null;
+            if (parseNode.GetChildNode("remote_uri") is { } nullNodeRemoteUri && nullNodeRemoteUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteUri = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authentication property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2Authentication? Authentication { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2Authentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2Authentication? _explicitNullValueAuthentication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2Authentication Authentication { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2Authentication Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2Authentication _explicitNullValueAuthentication = default!;
 #endif
         /// <summary>If false, we propagate DELETE requests to the target application for SCIM resources. If true, we only set `active` to false on the SCIM resource. This is useful because some targets do not support DELETE operations.</summary>
-        public bool? DeactivateOnDelete { get; set; }
+        public bool? DeactivateOnDelete { get => _explicitNullValueDeactivateOnDelete; set { _explicitNullValueDeactivateOnDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivate_on_delete"); else _explicitNullProperties?.Remove("deactivate_on_delete"); } }
+        private bool? _explicitNullValueDeactivateOnDelete = default!;
         /// <summary>Whether SCIM provisioning is turned on for this application.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The UID of the IdP to use as the source for SCIM resources to provision to this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdpUid { get; set; }
+        public string? IdpUid { get => _explicitNullValueIdpUid; set { _explicitNullValueIdpUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_uid"); else _explicitNullProperties?.Remove("idp_uid"); } }
+        private string? _explicitNullValueIdpUid = default!;
 #nullable restore
 #else
-        public string IdpUid { get; set; }
+        public string IdpUid { get => _explicitNullValueIdpUid; set { _explicitNullValueIdpUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_uid"); else _explicitNullProperties?.Remove("idp_uid"); } }
+        private string _explicitNullValueIdpUid = default!;
 #endif
         /// <summary>A list of mappings to apply to SCIM resources before provisioning them in this application. These can transform or filter the resources to be provisioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping>? Mappings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping>? Mappings { get => _explicitNullValueMappings; set { _explicitNullValueMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mappings"); else _explicitNullProperties?.Remove("mappings"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping>? _explicitNullValueMappings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping> Mappings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping> Mappings { get => _explicitNullValueMappings; set { _explicitNullValueMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mappings"); else _explicitNullProperties?.Remove("mappings"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping> _explicitNullValueMappings = default!;
 #endif
         /// <summary>The base URI for the application&apos;s SCIM-compatible API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteUri { get; set; }
+        public string? RemoteUri { get => _explicitNullValueRemoteUri; set { _explicitNullValueRemoteUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_uri"); else _explicitNullProperties?.Remove("remote_uri"); } }
+        private string? _explicitNullValueRemoteUri = default!;
 #nullable restore
 #else
-        public string RemoteUri { get; set; }
+        public string RemoteUri { get => _explicitNullValueRemoteUri; set { _explicitNullValueRemoteUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_uri"); else _explicitNullProperties?.Remove("remote_uri"); } }
+        private string _explicitNullValueRemoteUri = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2"/> and sets the default values.
@@ -66,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("idp_uid", IdpUid);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping>("mappings", Mappings);
             writer.WriteStringValue("remote_uri", RemoteUri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

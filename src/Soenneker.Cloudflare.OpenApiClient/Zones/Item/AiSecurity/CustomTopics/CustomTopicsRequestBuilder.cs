@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\ai-security\custom-topics
+    /// Builds and executes requests for operations under \zones\{zoneId}\ai-security\custom-topics
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomTopicsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomTopicsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/ai-security/custom-topics", pathParameters)
+        public CustomTopicsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/ai-security/custom-topics", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomTopicsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/ai-security/custom-topics", rawUrl)
+        public CustomTopicsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/ai-security/custom-topics", rawUrl)
         {
         }
         /// <summary>
@@ -53,11 +53,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsGet4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the custom topic list of the zone, overwriting it entirely with the topics in the request, so includeevery topic you want to keep. Changes can take up to a minute to propagate.Each entry has a `label`, used to reference the topic in rule expressions and analytics, and a `topic`description, which the classifier scores prompts against while AI Security for Apps is enabled. The followingrules apply:- A zone can hold at most 20 topics.- `label` must be 2–20 characters, using only lowercase letters (a–z), digits (0–9), and hyphens.- `topic` must be 2–50 printable ASCII characters.- Labels must be unique within the zone, and so must topic descriptions.
+        /// Update the custom topic list of the zone, overwriting it entirely with the topics in the request, so includeevery topic you want to keep. Changes can take up to a minute to propagate.Each entry has a `label`, used to reference the topic in rule expressions and analytics, and a `topic`description, which the classifier scores prompts against while AI Security for Apps is enabled. The followingrules apply:- A zone can hold at most 20 topics.- `label` must be 2–20 characters, using only lowercase letters (a–z), digits (0–9), and hyphens.- `topic` must be 2–50 UTF-8 bytes. Text in any language is supported, including spaces, numbers,  punctuation, and symbols. Tabs, line breaks, invalid text, and invisible formatting characters are not allowed.- Labels must be unique within the zone, and so must topic descriptions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics"/></returns>
         /// <param name="body">The request body</param>
@@ -78,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsPut4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
             return requestInfo;
         }
         /// <summary>
-        /// Update the custom topic list of the zone, overwriting it entirely with the topics in the request, so includeevery topic you want to keep. Changes can take up to a minute to propagate.Each entry has a `label`, used to reference the topic in rule expressions and analytics, and a `topic`description, which the classifier scores prompts against while AI Security for Apps is enabled. The followingrules apply:- A zone can hold at most 20 topics.- `label` must be 2–20 characters, using only lowercase letters (a–z), digits (0–9), and hyphens.- `topic` must be 2–50 printable ASCII characters.- Labels must be unique within the zone, and so must topic descriptions.
+        /// Update the custom topic list of the zone, overwriting it entirely with the topics in the request, so includeevery topic you want to keep. Changes can take up to a minute to propagate.Each entry has a `label`, used to reference the topic in rule expressions and analytics, and a `topic`description, which the classifier scores prompts against while AI Security for Apps is enabled. The followingrules apply:- A zone can hold at most 20 topics.- `label` must be 2–20 characters, using only lowercase letters (a–z), digits (0–9), and hyphens.- `topic` must be 2–50 UTF-8 bytes. Text in any language is supported, including spaces, numbers,  punctuation, and symbols. Tabs, line breaks, invalid text, and invisible formatting characters are not allowed.- Labels must be unique within the zone, and so must topic descriptions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

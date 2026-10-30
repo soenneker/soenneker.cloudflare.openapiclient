@@ -11,56 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BrapiGetDevtoolsJsonVersion200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Browser") is { } nullNodeBrowser && nullNodeBrowser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Browser = null;
+            if (parseNode.GetChildNode("Protocol-Version") is { } nullNodeProtocolVersion && nullNodeProtocolVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtocolVersion = null;
+            if (parseNode.GetChildNode("User-Agent") is { } nullNodeUserAgent && nullNodeUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgent = null;
+            if (parseNode.GetChildNode("V8-Version") is { } nullNodeV8Version && nullNodeV8Version.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) V8Version = null;
+            if (parseNode.GetChildNode("WebKit-Version") is { } nullNodeWebKitVersion && nullNodeWebKitVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebKitVersion = null;
+            if (parseNode.GetChildNode("webSocketDebuggerUrl") is { } nullNodeWebSocketDebuggerUrl && nullNodeWebSocketDebuggerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebSocketDebuggerUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Browser name and version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Browser { get; set; }
+        public string? Browser { get => _explicitNullValueBrowser; set { _explicitNullValueBrowser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Browser"); else _explicitNullProperties?.Remove("Browser"); } }
+        private string? _explicitNullValueBrowser = default!;
 #nullable restore
 #else
-        public string Browser { get; set; }
+        public string Browser { get => _explicitNullValueBrowser; set { _explicitNullValueBrowser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Browser"); else _explicitNullProperties?.Remove("Browser"); } }
+        private string _explicitNullValueBrowser = default!;
 #endif
         /// <summary>Chrome DevTools Protocol version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtocolVersion { get; set; }
+        public string? ProtocolVersion { get => _explicitNullValueProtocolVersion; set { _explicitNullValueProtocolVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Protocol-Version"); else _explicitNullProperties?.Remove("Protocol-Version"); } }
+        private string? _explicitNullValueProtocolVersion = default!;
 #nullable restore
 #else
-        public string ProtocolVersion { get; set; }
+        public string ProtocolVersion { get => _explicitNullValueProtocolVersion; set { _explicitNullValueProtocolVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Protocol-Version"); else _explicitNullProperties?.Remove("Protocol-Version"); } }
+        private string _explicitNullValueProtocolVersion = default!;
 #endif
         /// <summary>User agent string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserAgent { get; set; }
+        public string? UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("User-Agent"); else _explicitNullProperties?.Remove("User-Agent"); } }
+        private string? _explicitNullValueUserAgent = default!;
 #nullable restore
 #else
-        public string UserAgent { get; set; }
+        public string UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("User-Agent"); else _explicitNullProperties?.Remove("User-Agent"); } }
+        private string _explicitNullValueUserAgent = default!;
 #endif
         /// <summary>V8 JavaScript engine version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? V8Version { get; set; }
+        public string? V8Version { get => _explicitNullValueV8Version; set { _explicitNullValueV8Version = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("V8-Version"); else _explicitNullProperties?.Remove("V8-Version"); } }
+        private string? _explicitNullValueV8Version = default!;
 #nullable restore
 #else
-        public string V8Version { get; set; }
+        public string V8Version { get => _explicitNullValueV8Version; set { _explicitNullValueV8Version = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("V8-Version"); else _explicitNullProperties?.Remove("V8-Version"); } }
+        private string _explicitNullValueV8Version = default!;
 #endif
         /// <summary>WebKit version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebKitVersion { get; set; }
+        public string? WebKitVersion { get => _explicitNullValueWebKitVersion; set { _explicitNullValueWebKitVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("WebKit-Version"); else _explicitNullProperties?.Remove("WebKit-Version"); } }
+        private string? _explicitNullValueWebKitVersion = default!;
 #nullable restore
 #else
-        public string WebKitVersion { get; set; }
+        public string WebKitVersion { get => _explicitNullValueWebKitVersion; set { _explicitNullValueWebKitVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("WebKit-Version"); else _explicitNullProperties?.Remove("WebKit-Version"); } }
+        private string _explicitNullValueWebKitVersion = default!;
 #endif
         /// <summary>WebSocket URL for debugging the browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebSocketDebuggerUrl { get; set; }
+        public string? WebSocketDebuggerUrl { get => _explicitNullValueWebSocketDebuggerUrl; set { _explicitNullValueWebSocketDebuggerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webSocketDebuggerUrl"); else _explicitNullProperties?.Remove("webSocketDebuggerUrl"); } }
+        private string? _explicitNullValueWebSocketDebuggerUrl = default!;
 #nullable restore
 #else
-        public string WebSocketDebuggerUrl { get; set; }
+        public string WebSocketDebuggerUrl { get => _explicitNullValueWebSocketDebuggerUrl; set { _explicitNullValueWebSocketDebuggerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webSocketDebuggerUrl"); else _explicitNullProperties?.Remove("webSocketDebuggerUrl"); } }
+        private string _explicitNullValueWebSocketDebuggerUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonVersion200Response"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonVersion200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonVersion200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonVersion200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("V8-Version", V8Version);
             writer.WriteStringValue("WebKit-Version", WebKitVersion);
             writer.WriteStringValue("webSocketDebuggerUrl", WebSocketDebuggerUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

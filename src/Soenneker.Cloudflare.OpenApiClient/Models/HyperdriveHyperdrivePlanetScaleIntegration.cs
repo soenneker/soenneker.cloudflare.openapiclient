@@ -12,45 +12,68 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HyperdriveHyperdrivePlanetScaleIntegration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_database_name") is { } nullNodeCustomDatabaseName && nullNodeCustomDatabaseName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDatabaseName = null;
+            if (parseNode.GetChildNode("database_branch_name") is { } nullNodeDatabaseBranchName && nullNodeDatabaseBranchName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatabaseBranchName = null;
+            if (parseNode.GetChildNode("database_name") is { } nullNodeDatabaseName && nullNodeDatabaseName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatabaseName = null;
+            if (parseNode.GetChildNode("organization_name") is { } nullNodeOrganizationName && nullNodeOrganizationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationName = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("scheme") is { } nullNodeScheme && nullNodeScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scheme = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The database name to use when connecting. Defaults to `postgres` for PostgreSQL and `mysql` for MySQL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomDatabaseName { get; set; }
+        public string? CustomDatabaseName { get => _explicitNullValueCustomDatabaseName; set { _explicitNullValueCustomDatabaseName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_database_name"); else _explicitNullProperties?.Remove("custom_database_name"); } }
+        private string? _explicitNullValueCustomDatabaseName = default!;
 #nullable restore
 #else
-        public string CustomDatabaseName { get; set; }
+        public string CustomDatabaseName { get => _explicitNullValueCustomDatabaseName; set { _explicitNullValueCustomDatabaseName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_database_name"); else _explicitNullProperties?.Remove("custom_database_name"); } }
+        private string _explicitNullValueCustomDatabaseName = default!;
 #endif
         /// <summary>The name of the PlanetScale database branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatabaseBranchName { get; set; }
+        public string? DatabaseBranchName { get => _explicitNullValueDatabaseBranchName; set { _explicitNullValueDatabaseBranchName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_branch_name"); else _explicitNullProperties?.Remove("database_branch_name"); } }
+        private string? _explicitNullValueDatabaseBranchName = default!;
 #nullable restore
 #else
-        public string DatabaseBranchName { get; set; }
+        public string DatabaseBranchName { get => _explicitNullValueDatabaseBranchName; set { _explicitNullValueDatabaseBranchName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_branch_name"); else _explicitNullProperties?.Remove("database_branch_name"); } }
+        private string _explicitNullValueDatabaseBranchName = default!;
 #endif
         /// <summary>The name of the PlanetScale database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatabaseName { get; set; }
+        public string? DatabaseName { get => _explicitNullValueDatabaseName; set { _explicitNullValueDatabaseName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_name"); else _explicitNullProperties?.Remove("database_name"); } }
+        private string? _explicitNullValueDatabaseName = default!;
 #nullable restore
 #else
-        public string DatabaseName { get; set; }
+        public string DatabaseName { get => _explicitNullValueDatabaseName; set { _explicitNullValueDatabaseName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_name"); else _explicitNullProperties?.Remove("database_name"); } }
+        private string _explicitNullValueDatabaseName = default!;
 #endif
         /// <summary>The name of the PlanetScale organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationName { get; set; }
+        public string? OrganizationName { get => _explicitNullValueOrganizationName; set { _explicitNullValueOrganizationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_name"); else _explicitNullProperties?.Remove("organization_name"); } }
+        private string? _explicitNullValueOrganizationName = default!;
 #nullable restore
 #else
-        public string OrganizationName { get; set; }
+        public string OrganizationName { get => _explicitNullValueOrganizationName; set { _explicitNullValueOrganizationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_name"); else _explicitNullProperties?.Remove("organization_name"); } }
+        private string _explicitNullValueOrganizationName = default!;
 #endif
         /// <summary>The database integration provider used by this operation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveIntegrationProvider? Provider { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveIntegrationProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveIntegrationProvider? _explicitNullValueProvider = default!;
         /// <summary>Specifies the URL scheme used to connect to your origin database.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveScheme? Scheme { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveScheme? _explicitNullValueScheme = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration"/> and sets the default values.
         /// </summary>
@@ -66,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdrivePlanetScaleIntegration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("organization_name", OrganizationName);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveIntegrationProvider>("provider", Provider);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveScheme>("scheme", Scheme);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

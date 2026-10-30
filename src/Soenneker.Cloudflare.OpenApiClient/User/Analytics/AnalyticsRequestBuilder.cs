@@ -16,6 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Analytics
     public partial class AnalyticsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The dashboard property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.User.Analytics.Dashboard.DashboardRequestBuilder Dashboard
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.Analytics.Dashboard.DashboardRequestBuilder(PathParameters, RequestAdapter);

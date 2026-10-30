@@ -8,38 +8,48 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// HTTP response body preview.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class VulnScannerBolaTestResponseBody : IAdditionalDataHolder, IParsable
-    {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contents property</summary>
+    public partial class VulnScannerBolaTestResponseBody : IComposedTypeWrapper, IParsable
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Contents { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf1? VulnScannerBolaTestResponseBodyOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Contents { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf1 VulnScannerBolaTestResponseBodyOneOf1 { get; set; }
 #endif
-        /// <summary>The kind property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf2? VulnScannerBolaTestResponseBodyOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Kind { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf2 VulnScannerBolaTestResponseBodyOneOf2 { get; set; }
 #endif
-        /// <summary>The truncated property</summary>
-        public bool? Truncated { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBody"/> and sets the default values.
-        /// </summary>
-        public VulnScannerBolaTestResponseBody()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf3? VulnScannerBolaTestResponseBodyOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf3 VulnScannerBolaTestResponseBodyOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf4? VulnScannerBolaTestResponseBodyOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf4 VulnScannerBolaTestResponseBodyOneOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +58,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBody();
+            var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBody();
+            if("not_found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("bytes".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("json".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("not_found".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("bytes".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("contents") != null && parseNode.GetChildNode("truncated") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("text".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("contents") != null && parseNode.GetChildNode("truncated") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("json".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("contents") != null && parseNode.GetChildNode("truncated") != null))();
+            if (result.VulnScannerBolaTestResponseBodyOneOf1 == null && result.VulnScannerBolaTestResponseBodyOneOf2 == null && result.VulnScannerBolaTestResponseBodyOneOf3 == null && result.VulnScannerBolaTestResponseBodyOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.VulnScannerBolaTestResponseBodyOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf1(), parseNode);
+            if (result.VulnScannerBolaTestResponseBodyOneOf1 == null && result.VulnScannerBolaTestResponseBodyOneOf2 == null && result.VulnScannerBolaTestResponseBodyOneOf3 == null && result.VulnScannerBolaTestResponseBodyOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.VulnScannerBolaTestResponseBodyOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf2(), parseNode);
+            if (result.VulnScannerBolaTestResponseBodyOneOf1 == null && result.VulnScannerBolaTestResponseBodyOneOf2 == null && result.VulnScannerBolaTestResponseBodyOneOf3 == null && result.VulnScannerBolaTestResponseBodyOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.VulnScannerBolaTestResponseBodyOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf3(), parseNode);
+            if (result.VulnScannerBolaTestResponseBodyOneOf1 == null && result.VulnScannerBolaTestResponseBodyOneOf2 == null && result.VulnScannerBolaTestResponseBodyOneOf3 == null && result.VulnScannerBolaTestResponseBodyOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.VulnScannerBolaTestResponseBodyOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf4(), parseNode);
+            if (result.VulnScannerBolaTestResponseBodyOneOf1 == null && result.VulnScannerBolaTestResponseBodyOneOf2 == null && result.VulnScannerBolaTestResponseBodyOneOf3 == null && result.VulnScannerBolaTestResponseBodyOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,12 +95,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(VulnScannerBolaTestResponseBodyOneOf1 != null)
             {
-                { "contents", n => { Contents = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
-                { "truncated", n => { Truncated = n.GetBoolValue(); } },
-            };
+                return VulnScannerBolaTestResponseBodyOneOf1.GetFieldDeserializers();
+            }
+            else if(VulnScannerBolaTestResponseBodyOneOf2 != null)
+            {
+                return VulnScannerBolaTestResponseBodyOneOf2.GetFieldDeserializers();
+            }
+            else if(VulnScannerBolaTestResponseBodyOneOf3 != null)
+            {
+                return VulnScannerBolaTestResponseBodyOneOf3.GetFieldDeserializers();
+            }
+            else if(VulnScannerBolaTestResponseBodyOneOf4 != null)
+            {
+                return VulnScannerBolaTestResponseBodyOneOf4.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -69,11 +119,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (VulnScannerBolaTestResponseBodyOneOf1 == null && VulnScannerBolaTestResponseBodyOneOf2 == null && VulnScannerBolaTestResponseBodyOneOf3 == null && VulnScannerBolaTestResponseBodyOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (VulnScannerBolaTestResponseBodyOneOf1 != null && VulnScannerBolaTestResponseBodyOneOf2 == null && VulnScannerBolaTestResponseBodyOneOf3 == null && VulnScannerBolaTestResponseBodyOneOf4 == null) { if (VulnScannerBolaTestResponseBodyOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, VulnScannerBolaTestResponseBodyOneOf1); return; }
+            if (VulnScannerBolaTestResponseBodyOneOf2 != null && VulnScannerBolaTestResponseBodyOneOf1 == null && VulnScannerBolaTestResponseBodyOneOf3 == null && VulnScannerBolaTestResponseBodyOneOf4 == null) { if (VulnScannerBolaTestResponseBodyOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, VulnScannerBolaTestResponseBodyOneOf2); return; }
+            if (VulnScannerBolaTestResponseBodyOneOf3 != null && VulnScannerBolaTestResponseBodyOneOf1 == null && VulnScannerBolaTestResponseBodyOneOf2 == null && VulnScannerBolaTestResponseBodyOneOf4 == null) { if (VulnScannerBolaTestResponseBodyOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, VulnScannerBolaTestResponseBodyOneOf3); return; }
+            if (VulnScannerBolaTestResponseBodyOneOf4 != null && VulnScannerBolaTestResponseBodyOneOf1 == null && VulnScannerBolaTestResponseBodyOneOf2 == null && VulnScannerBolaTestResponseBodyOneOf3 == null) { if (VulnScannerBolaTestResponseBodyOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, VulnScannerBolaTestResponseBodyOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("contents", Contents);
-            writer.WriteStringValue("kind", Kind);
-            writer.WriteBoolValue("truncated", Truncated);
-            writer.WriteAdditionalData(AdditionalData);
+            if(VulnScannerBolaTestResponseBodyOneOf1 != null)
+            {
+                if (VulnScannerBolaTestResponseBodyOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf1>(null, VulnScannerBolaTestResponseBodyOneOf1);
+            }
+            else if(VulnScannerBolaTestResponseBodyOneOf2 != null)
+            {
+                if (VulnScannerBolaTestResponseBodyOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf2>(null, VulnScannerBolaTestResponseBodyOneOf2);
+            }
+            else if(VulnScannerBolaTestResponseBodyOneOf3 != null)
+            {
+                if (VulnScannerBolaTestResponseBodyOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf3>(null, VulnScannerBolaTestResponseBodyOneOf3);
+            }
+            else if(VulnScannerBolaTestResponseBodyOneOf4 != null)
+            {
+                if (VulnScannerBolaTestResponseBodyOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf4>(null, VulnScannerBolaTestResponseBodyOneOf4);
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Bytime
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\spectrum\analytics\events\bytime
+    /// Builds and executes requests for operations under \zones\{zoneId}\spectrum\analytics\events\bytime
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BytimeRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BytimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/spectrum/analytics/events/bytime?time_delta={time_delta}{&dimensions*,filters*,metrics*,since*,sort*,until*}", pathParameters)
+        public BytimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/spectrum/analytics/events/bytime?time_delta={time_delta}{&dimensions*,filters*,metrics*,since*,sort*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BytimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/spectrum/analytics/events/bytime?time_delta={time_delta}{&dimensions*,filters*,metrics*,since*,sort*,until*}", rawUrl)
+        public BytimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/spectrum/analytics/events/bytime?time_delta={time_delta}{&dimensions*,filters*,metrics*,since*,sort*,until*}", rawUrl)
         {
         }
         /// <summary>
@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsQueryResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsQueryResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,25 +11,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ZoneObservabilityTracingSettingsGet200ResponseResult : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destinations") is { } nullNodeDestinations && nullNodeDestinations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destinations = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("forward_context") is { } nullNodeForwardContext && nullNodeForwardContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForwardContext = null;
+            if (parseNode.GetChildNode("persist") is { } nullNodePersist && nullNodePersist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Persist = null;
+            if (parseNode.GetChildNode("propagation_policy") is { } nullNodePropagationPolicy && nullNodePropagationPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropagationPolicy = null;
+            if (parseNode.GetChildNode("sampling_ratio") is { } nullNodeSamplingRatio && nullNodeSamplingRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamplingRatio = null;
+        }
+
         /// <summary>Up to 100 OpenTelemetry destination identifiers that receive traces.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Destinations { get; set; }
+        public List<string>? Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
+        private List<string>? _explicitNullValueDestinations = default!;
 #nullable restore
 #else
-        public List<string> Destinations { get; set; }
+        public List<string> Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
+        private List<string> _explicitNullValueDestinations = default!;
 #endif
         /// <summary>Whether Cloudflare Traces is enabled for the zone.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Whether trace context is sent externally or across a zone boundary.</summary>
-        public bool? ForwardContext { get; set; }
+        public bool? ForwardContext { get => _explicitNullValueForwardContext; set { _explicitNullValueForwardContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forward_context"); else _explicitNullProperties?.Remove("forward_context"); } }
+        private bool? _explicitNullValueForwardContext = default!;
         /// <summary>Whether traces are persisted in Cloudflare.</summary>
-        public bool? Persist { get; set; }
+        public bool? Persist { get => _explicitNullValuePersist; set { _explicitNullValuePersist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persist"); else _explicitNullProperties?.Remove("persist"); } }
+        private bool? _explicitNullValuePersist = default!;
         /// <summary>When inbound trace context may be continued. Authenticated propagation is not supported yet.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingSettingsGet200ResponseResultPropagationPolicy? PropagationPolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingSettingsGet200ResponseResultPropagationPolicy? PropagationPolicy { get => _explicitNullValuePropagationPolicy; set { _explicitNullValuePropagationPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("propagation_policy"); else _explicitNullProperties?.Remove("propagation_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingSettingsGet200ResponseResultPropagationPolicy? _explicitNullValuePropagationPolicy = default!;
         /// <summary>The ratio of requests sampled for tracing, from 0 to 1.</summary>
-        public double? SamplingRatio { get; set; }
+        public double? SamplingRatio { get => _explicitNullValueSamplingRatio; set { _explicitNullValueSamplingRatio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampling_ratio"); else _explicitNullProperties?.Remove("sampling_ratio"); } }
+        private double? _explicitNullValueSamplingRatio = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingSettingsGet200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingSettingsGet200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingSettingsGet200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +88,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("forward_context", ForwardContext);
             writer.WriteBoolValue("persist", Persist);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneObservabilityTracingSettingsGet200ResponseResultPropagationPolicy>("propagation_policy", PropagationPolicy);
-            writer.WriteDoubleValue("sampling_ratio", SamplingRatio);
+            writer.WriteDoubleValue("sampling_ratio", SamplingRatio);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

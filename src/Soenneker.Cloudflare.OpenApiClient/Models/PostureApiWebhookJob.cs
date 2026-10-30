@@ -12,57 +12,92 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostureApiWebhookJob : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("asset_data") is { } nullNodeAssetData && nullNodeAssetData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetData = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("failure_details") is { } nullNodeFailureDetails && nullNodeFailureDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureDetails = null;
+            if (parseNode.GetChildNode("failure_reason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("integration_id") is { } nullNodeIntegrationId && nullNodeIntegrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationId = null;
+            if (parseNode.GetChildNode("last_updated_at") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
+            if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("triggered_by_actor") is { } nullNodeTriggeredByActor && nullNodeTriggeredByActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredByActor = null;
+            if (parseNode.GetChildNode("triggered_by_id") is { } nullNodeTriggeredById && nullNodeTriggeredById.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredById = null;
+            if (parseNode.GetChildNode("webhook_id") is { } nullNodeWebhookId && nullNodeWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Asset data associated with this webhook job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobAssetDataProperty? AssetData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobAssetDataProperty? AssetData { get => _explicitNullValueAssetData; set { _explicitNullValueAssetData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_data"); else _explicitNullProperties?.Remove("asset_data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobAssetDataProperty? _explicitNullValueAssetData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobAssetDataProperty AssetData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobAssetDataProperty AssetData { get => _explicitNullValueAssetData; set { _explicitNullValueAssetData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_data"); else _explicitNullProperties?.Remove("asset_data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobAssetDataProperty _explicitNullValueAssetData = default!;
 #endif
         /// <summary>When the webhook job was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Additional details about the failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobFailureDetailsProperty? FailureDetails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobFailureDetailsProperty? FailureDetails { get => _explicitNullValueFailureDetails; set { _explicitNullValueFailureDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_details"); else _explicitNullProperties?.Remove("failure_details"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobFailureDetailsProperty? _explicitNullValueFailureDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobFailureDetailsProperty FailureDetails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobFailureDetailsProperty FailureDetails { get => _explicitNullValueFailureDetails; set { _explicitNullValueFailureDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_details"); else _explicitNullProperties?.Remove("failure_details"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobFailureDetailsProperty _explicitNullValueFailureDetails = default!;
 #endif
         /// <summary>Reason for webhook job failure.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobFailureReasonEnum? FailureReason { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobFailureReasonEnum? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobFailureReasonEnum? _explicitNullValueFailureReason = default!;
         /// <summary>Unique identifier for the webhook job.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>ID of the integration.</summary>
-        public Guid? IntegrationId { get; set; }
+        public Guid? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
+        private Guid? _explicitNullValueIntegrationId = default!;
         /// <summary>When the webhook job was last updated.</summary>
-        public DateTimeOffset? LastUpdatedAt { get; set; }
+        public DateTimeOffset? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private DateTimeOffset? _explicitNullValueLastUpdatedAt = default!;
         /// <summary>Parameters for a webhook job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobParameters? Parameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobParameters? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobParameters? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobParameters Parameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobParameters Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobParameters _explicitNullValueParameters = default!;
 #endif
         /// <summary>Status of a webhook job.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobStatusEnum? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobStatusEnum? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobStatusEnum? _explicitNullValueStatus = default!;
         /// <summary>Type of actor that triggered the webhook job.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobActorTypeEnum? TriggeredByActor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobActorTypeEnum? TriggeredByActor { get => _explicitNullValueTriggeredByActor; set { _explicitNullValueTriggeredByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_by_actor"); else _explicitNullProperties?.Remove("triggered_by_actor"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobActorTypeEnum? _explicitNullValueTriggeredByActor = default!;
         /// <summary>ID of the actor that triggered the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TriggeredById { get; set; }
+        public string? TriggeredById { get => _explicitNullValueTriggeredById; set { _explicitNullValueTriggeredById = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_by_id"); else _explicitNullProperties?.Remove("triggered_by_id"); } }
+        private string? _explicitNullValueTriggeredById = default!;
 #nullable restore
 #else
-        public string TriggeredById { get; set; }
+        public string TriggeredById { get => _explicitNullValueTriggeredById; set { _explicitNullValueTriggeredById = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_by_id"); else _explicitNullProperties?.Remove("triggered_by_id"); } }
+        private string _explicitNullValueTriggeredById = default!;
 #endif
         /// <summary>ID of the webhook configuration.</summary>
-        public Guid? WebhookId { get; set; }
+        public Guid? WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
+        private Guid? _explicitNullValueWebhookId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJob"/> and sets the default values.
         /// </summary>
@@ -78,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJob CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJob();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJob(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -121,6 +156,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobActorTypeEnum>("triggered_by_actor", TriggeredByActor);
             writer.WriteStringValue("triggered_by_id", TriggeredById);
             writer.WriteGuidValue("webhook_id", WebhookId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

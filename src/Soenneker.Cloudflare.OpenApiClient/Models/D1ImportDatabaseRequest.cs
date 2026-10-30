@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class D1ImportDatabaseRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequest();
             if("ingest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.D1ImportDatabaseRequestIngest = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest();
+                
             }
             else if("init".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.D1ImportDatabaseRequestInit = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestInit();
+                
             }
             else if("poll".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.D1ImportDatabaseRequestPoll = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestPoll();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("action") != null && (parseNode.GetChildNode("action")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("init".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("etag") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("action") != null && (parseNode.GetChildNode("action")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("ingest".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("etag") != null && parseNode.GetChildNode("filename") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("action") != null && (parseNode.GetChildNode("action")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("poll".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("current_bookmark") != null))();
+            if (result.D1ImportDatabaseRequestIngest == null && result.D1ImportDatabaseRequestInit == null && result.D1ImportDatabaseRequestPoll == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.D1ImportDatabaseRequestInit = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestInit(), parseNode);
+            if (result.D1ImportDatabaseRequestIngest == null && result.D1ImportDatabaseRequestInit == null && result.D1ImportDatabaseRequestPoll == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.D1ImportDatabaseRequestIngest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest(), parseNode);
+            if (result.D1ImportDatabaseRequestIngest == null && result.D1ImportDatabaseRequestInit == null && result.D1ImportDatabaseRequestPoll == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.D1ImportDatabaseRequestPoll = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestPoll(), parseNode);
+            if (result.D1ImportDatabaseRequestIngest == null && result.D1ImportDatabaseRequestInit == null && result.D1ImportDatabaseRequestPoll == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (D1ImportDatabaseRequestIngest == null && D1ImportDatabaseRequestInit == null && D1ImportDatabaseRequestPoll == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (D1ImportDatabaseRequestIngest != null && D1ImportDatabaseRequestInit == null && D1ImportDatabaseRequestPoll == null) { if (D1ImportDatabaseRequestIngest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, D1ImportDatabaseRequestIngest); return; }
+            if (D1ImportDatabaseRequestInit != null && D1ImportDatabaseRequestIngest == null && D1ImportDatabaseRequestPoll == null) { if (D1ImportDatabaseRequestInit is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, D1ImportDatabaseRequestInit); return; }
+            if (D1ImportDatabaseRequestPoll != null && D1ImportDatabaseRequestIngest == null && D1ImportDatabaseRequestInit == null) { if (D1ImportDatabaseRequestPoll is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, D1ImportDatabaseRequestPoll); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(D1ImportDatabaseRequestIngest != null)
             {
+                if (D1ImportDatabaseRequestIngest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest>(null, D1ImportDatabaseRequestIngest);
             }
             else if(D1ImportDatabaseRequestInit != null)
             {
+                if (D1ImportDatabaseRequestInit is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestInit>(null, D1ImportDatabaseRequestInit);
             }
             else if(D1ImportDatabaseRequestPoll != null)
             {
+                if (D1ImportDatabaseRequestPoll is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestPoll>(null, D1ImportDatabaseRequestPoll);
             }
         }

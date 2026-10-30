@@ -11,15 +11,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetPostQuantumTlsSupport200ResponseResultBugs : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hrrFailure") is { } nullNodeHrrFailure && nullNodeHrrFailure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HrrFailure = null;
+            if (parseNode.GetChildNode("splitClientHello") is { } nullNodeSplitClientHello && nullNodeSplitClientHello.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SplitClientHello = null;
+            if (parseNode.GetChildNode("unknownKeyshare") is { } nullNodeUnknownKeyshare && nullNodeUnknownKeyshare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnknownKeyshare = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Server sends a HelloRetryRequest but fails to complete the handshake after the client sends the second ClientHello. Often caused by non-compliant TLS 1.3 implementations on shared hosting providers.</summary>
-        public bool? HrrFailure { get; set; }
+        public bool? HrrFailure { get => _explicitNullValueHrrFailure; set { _explicitNullValueHrrFailure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hrrFailure"); else _explicitNullProperties?.Remove("hrrFailure"); } }
+        private bool? _explicitNullValueHrrFailure = default!;
         /// <summary>Server rejects fragmented ClientHello caused by large PQ keyshare, but accepts classical (non-PQ) handshakes. Typically caused by middleboxes or firewalls that cannot reassemble split TLS ClientHello messages.</summary>
-        public bool? SplitClientHello { get; set; }
+        public bool? SplitClientHello { get => _explicitNullValueSplitClientHello; set { _explicitNullValueSplitClientHello = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("splitClientHello"); else _explicitNullProperties?.Remove("splitClientHello"); } }
+        private bool? _explicitNullValueSplitClientHello = default!;
         /// <summary>Server cannot handle an unknown key exchange algorithm in the ClientHello keyshare extension. Compliant servers should respond with HelloRetryRequest for a supported algorithm.</summary>
-        public bool? UnknownKeyshare { get; set; }
+        public bool? UnknownKeyshare { get => _explicitNullValueUnknownKeyshare; set { _explicitNullValueUnknownKeyshare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unknownKeyshare"); else _explicitNullProperties?.Remove("unknownKeyshare"); } }
+        private bool? _explicitNullValueUnknownKeyshare = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("hrrFailure", HrrFailure);
             writer.WriteBoolValue("splitClientHello", SplitClientHello);
             writer.WriteBoolValue("unknownKeyshare", UnknownKeyshare);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

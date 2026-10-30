@@ -12,26 +12,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZoneAnalyticsApiQueryResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("since") is { } nullNodeSince && nullNodeSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Since = null;
+            if (parseNode.GetChildNode("time_delta") is { } nullNodeTimeDelta && nullNodeTimeDelta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeDelta = null;
+            if (parseNode.GetChildNode("until") is { } nullNodeUntil && nullNodeUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Until = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The (inclusive) beginning of the requested time frame. This value can be a negative integer representing the number of minutes in the past relative to time the request is made, or can be an absolute timestamp that conforms to RFC 3339. At this point in time, it cannot exceed a time in the past greater than one year.Ranges that the Cloudflare web application provides will provide the following period length for each point:- Last 60 minutes (from -59 to -1): 1 minute resolution- Last 7 hours (from -419 to -60): 15 minutes resolution- Last 15 hours (from -899 to -420): 30 minutes resolution- Last 72 hours (from -4320 to -900): 1 hour resolution- Older than 3 days (-525600 to -4320): 1 day resolution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince? Since { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince? Since { get => _explicitNullValueSince; set { _explicitNullValueSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("since"); else _explicitNullProperties?.Remove("since"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince? _explicitNullValueSince = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince Since { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince Since { get => _explicitNullValueSince; set { _explicitNullValueSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("since"); else _explicitNullProperties?.Remove("since"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince _explicitNullValueSince = default!;
 #endif
         /// <summary>The amount of time (in minutes) that each data point in the timeseries represents. The granularity of the time-series returned (e.g. each bucket in the time series representing 1-minute vs 1-day) is calculated by the API based on the time-range provided to the API.</summary>
-        public int? TimeDelta { get; set; }
+        public int? TimeDelta { get => _explicitNullValueTimeDelta; set { _explicitNullValueTimeDelta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_delta"); else _explicitNullProperties?.Remove("time_delta"); } }
+        private int? _explicitNullValueTimeDelta = default!;
         /// <summary>The (exclusive) end of the requested time frame. This value can be a negative integer representing the number of minutes in the past relative to time the request is made, or can be an absolute timestamp that conforms to RFC 3339. If omitted, the time of the request is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil? Until { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil? Until { get => _explicitNullValueUntil; set { _explicitNullValueUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("until"); else _explicitNullProperties?.Remove("until"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil? _explicitNullValueUntil = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil Until { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil Until { get => _explicitNullValueUntil; set { _explicitNullValueUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("until"); else _explicitNullProperties?.Remove("until"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil _explicitNullValueUntil = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiQueryResponse"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiQueryResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiQueryResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiQueryResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiSince>("since", Since);
             writer.WriteIntValue("time_delta", TimeDelta);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiUntil>("until", Until);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

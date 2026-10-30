@@ -60,6 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Dis
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

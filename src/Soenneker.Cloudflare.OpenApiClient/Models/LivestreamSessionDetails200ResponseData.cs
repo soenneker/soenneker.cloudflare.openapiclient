@@ -11,32 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LivestreamSessionDetails200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("paging") is { } nullNodePaging && nullNodePaging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paging = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The livestreams property</summary>
+        /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataLivestreamsItem>? Livestreams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataLivestreamsItem> Livestreams { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataData _explicitNullValueData = default!;
 #endif
         /// <summary>The paging property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataPaging? Paging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo? Paging { get => _explicitNullValuePaging; set { _explicitNullValuePaging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paging"); else _explicitNullProperties?.Remove("paging"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo? _explicitNullValuePaging = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataPaging Paging { get; set; }
-#endif
-        /// <summary>The sessions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataSessions? Sessions { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataSessions Sessions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo Paging { get => _explicitNullValuePaging; set { _explicitNullValuePaging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paging"); else _explicitNullProperties?.Remove("paging"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo _explicitNullValuePaging = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseData"/> and sets the default values.
@@ -53,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "livestreams", n => { Livestreams = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataLivestreamsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataLivestreamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "paging", n => { Paging = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataPaging>(global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataPaging.CreateFromDiscriminatorValue); } },
-                { "sessions", n => { Sessions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataSessions>(global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataSessions.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataData>(global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataData.CreateFromDiscriminatorValue); } },
+                { "paging", n => { Paging = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +79,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataLivestreamsItem>("livestreams", Livestreams);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataPaging>("paging", Paging);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataSessions>("sessions", Sessions);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LivestreamSessionDetails200ResponseDataData>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPagingInfo>("paging", Paging);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

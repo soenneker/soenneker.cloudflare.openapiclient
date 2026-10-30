@@ -12,56 +12,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostureApiPolicyLogTriggerResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("date_detected") is { } nullNodeDateDetected && nullNodeDateDetected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateDetected = null;
+            if (parseNode.GetChildNode("fields_of_interest") is { } nullNodeFieldsOfInterest && nullNodeFieldsOfInterest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldsOfInterest = null;
+            if (parseNode.GetChildNode("finding_type_name") is { } nullNodeFindingTypeName && nullNodeFindingTypeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindingTypeName = null;
+            if (parseNode.GetChildNode("instance_asset") is { } nullNodeInstanceAsset && nullNodeInstanceAsset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceAsset = null;
+            if (parseNode.GetChildNode("integration_name") is { } nullNodeIntegrationName && nullNodeIntegrationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationName = null;
+            if (parseNode.GetChildNode("integration_url") is { } nullNodeIntegrationUrl && nullNodeIntegrationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the finding was first detected, in ISO 8601 / RFC3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateDetected { get; set; }
+        public string? DateDetected { get => _explicitNullValueDateDetected; set { _explicitNullValueDateDetected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_detected"); else _explicitNullProperties?.Remove("date_detected"); } }
+        private string? _explicitNullValueDateDetected = default!;
 #nullable restore
 #else
-        public string DateDetected { get; set; }
+        public string DateDetected { get => _explicitNullValueDateDetected; set { _explicitNullValueDateDetected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_detected"); else _explicitNullProperties?.Remove("date_detected"); } }
+        private string _explicitNullValueDateDetected = default!;
 #endif
         /// <summary>Free-form JSON object containing finding-type-specific context fields (e.g. file owner, sharing scope). Schema varies per finding type; consumers should treat unknown keys defensively. Null when the upstream row had no fields_of_interest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponseFieldsOfInterestProperty? FieldsOfInterest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponseFieldsOfInterestProperty? FieldsOfInterest { get => _explicitNullValueFieldsOfInterest; set { _explicitNullValueFieldsOfInterest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields_of_interest"); else _explicitNullProperties?.Remove("fields_of_interest"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponseFieldsOfInterestProperty? _explicitNullValueFieldsOfInterest = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponseFieldsOfInterestProperty FieldsOfInterest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponseFieldsOfInterestProperty FieldsOfInterest { get => _explicitNullValueFieldsOfInterest; set { _explicitNullValueFieldsOfInterest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields_of_interest"); else _explicitNullProperties?.Remove("fields_of_interest"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponseFieldsOfInterestProperty _explicitNullValueFieldsOfInterest = default!;
 #endif
         /// <summary>Display name of the finding type that triggered the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FindingTypeName { get; set; }
+        public string? FindingTypeName { get => _explicitNullValueFindingTypeName; set { _explicitNullValueFindingTypeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding_type_name"); else _explicitNullProperties?.Remove("finding_type_name"); } }
+        private string? _explicitNullValueFindingTypeName = default!;
 #nullable restore
 #else
-        public string FindingTypeName { get; set; }
+        public string FindingTypeName { get => _explicitNullValueFindingTypeName; set { _explicitNullValueFindingTypeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding_type_name"); else _explicitNullProperties?.Remove("finding_type_name"); } }
+        private string _explicitNullValueFindingTypeName = default!;
 #endif
         /// <summary>Name of the specific resource (file, drive item, etc.) the finding was raised against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstanceAsset { get; set; }
+        public string? InstanceAsset { get => _explicitNullValueInstanceAsset; set { _explicitNullValueInstanceAsset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_asset"); else _explicitNullProperties?.Remove("instance_asset"); } }
+        private string? _explicitNullValueInstanceAsset = default!;
 #nullable restore
 #else
-        public string InstanceAsset { get; set; }
+        public string InstanceAsset { get => _explicitNullValueInstanceAsset; set { _explicitNullValueInstanceAsset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_asset"); else _explicitNullProperties?.Remove("instance_asset"); } }
+        private string _explicitNullValueInstanceAsset = default!;
 #endif
         /// <summary>Display name of the CASB integration that produced the finding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationName { get; set; }
+        public string? IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_name"); else _explicitNullProperties?.Remove("integration_name"); } }
+        private string? _explicitNullValueIntegrationName = default!;
 #nullable restore
 #else
-        public string IntegrationName { get; set; }
+        public string IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_name"); else _explicitNullProperties?.Remove("integration_name"); } }
+        private string _explicitNullValueIntegrationName = default!;
 #endif
         /// <summary>Path to the integration in the dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationUrl { get; set; }
+        public string? IntegrationUrl { get => _explicitNullValueIntegrationUrl; set { _explicitNullValueIntegrationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_url"); else _explicitNullProperties?.Remove("integration_url"); } }
+        private string? _explicitNullValueIntegrationUrl = default!;
 #nullable restore
 #else
-        public string IntegrationUrl { get; set; }
+        public string IntegrationUrl { get => _explicitNullValueIntegrationUrl; set { _explicitNullValueIntegrationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_url"); else _explicitNullProperties?.Remove("integration_url"); } }
+        private string _explicitNullValueIntegrationUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponse"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("instance_asset", InstanceAsset);
             writer.WriteStringValue("integration_name", IntegrationName);
             writer.WriteStringValue("integration_url", IntegrationUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

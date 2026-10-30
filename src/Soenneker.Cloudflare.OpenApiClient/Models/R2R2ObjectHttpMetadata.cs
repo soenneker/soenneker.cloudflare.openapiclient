@@ -12,50 +12,74 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class R2R2ObjectHttpMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cacheControl") is { } nullNodeCacheControl && nullNodeCacheControl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheControl = null;
+            if (parseNode.GetChildNode("cacheExpiry") is { } nullNodeCacheExpiry && nullNodeCacheExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheExpiry = null;
+            if (parseNode.GetChildNode("contentDisposition") is { } nullNodeContentDisposition && nullNodeContentDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentDisposition = null;
+            if (parseNode.GetChildNode("contentEncoding") is { } nullNodeContentEncoding && nullNodeContentEncoding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentEncoding = null;
+            if (parseNode.GetChildNode("contentLanguage") is { } nullNodeContentLanguage && nullNodeContentLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentLanguage = null;
+            if (parseNode.GetChildNode("contentType") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies caching behavior for the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CacheControl { get; set; }
+        public string? CacheControl { get => _explicitNullValueCacheControl; set { _explicitNullValueCacheControl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheControl"); else _explicitNullProperties?.Remove("cacheControl"); } }
+        private string? _explicitNullValueCacheControl = default!;
 #nullable restore
 #else
-        public string CacheControl { get; set; }
+        public string CacheControl { get => _explicitNullValueCacheControl; set { _explicitNullValueCacheControl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheControl"); else _explicitNullProperties?.Remove("cacheControl"); } }
+        private string _explicitNullValueCacheControl = default!;
 #endif
         /// <summary>The date and time at which the object&apos;s cache entry expires.</summary>
-        public DateTimeOffset? CacheExpiry { get; set; }
+        public DateTimeOffset? CacheExpiry { get => _explicitNullValueCacheExpiry; set { _explicitNullValueCacheExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheExpiry"); else _explicitNullProperties?.Remove("cacheExpiry"); } }
+        private DateTimeOffset? _explicitNullValueCacheExpiry = default!;
         /// <summary>Specifies presentational information for the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentDisposition { get; set; }
+        public string? ContentDisposition { get => _explicitNullValueContentDisposition; set { _explicitNullValueContentDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentDisposition"); else _explicitNullProperties?.Remove("contentDisposition"); } }
+        private string? _explicitNullValueContentDisposition = default!;
 #nullable restore
 #else
-        public string ContentDisposition { get; set; }
+        public string ContentDisposition { get => _explicitNullValueContentDisposition; set { _explicitNullValueContentDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentDisposition"); else _explicitNullProperties?.Remove("contentDisposition"); } }
+        private string _explicitNullValueContentDisposition = default!;
 #endif
         /// <summary>Specifies the content encoding applied to the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentEncoding { get; set; }
+        public string? ContentEncoding { get => _explicitNullValueContentEncoding; set { _explicitNullValueContentEncoding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentEncoding"); else _explicitNullProperties?.Remove("contentEncoding"); } }
+        private string? _explicitNullValueContentEncoding = default!;
 #nullable restore
 #else
-        public string ContentEncoding { get; set; }
+        public string ContentEncoding { get => _explicitNullValueContentEncoding; set { _explicitNullValueContentEncoding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentEncoding"); else _explicitNullProperties?.Remove("contentEncoding"); } }
+        private string _explicitNullValueContentEncoding = default!;
 #endif
         /// <summary>The language of the object content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentLanguage { get; set; }
+        public string? ContentLanguage { get => _explicitNullValueContentLanguage; set { _explicitNullValueContentLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentLanguage"); else _explicitNullProperties?.Remove("contentLanguage"); } }
+        private string? _explicitNullValueContentLanguage = default!;
 #nullable restore
 #else
-        public string ContentLanguage { get; set; }
+        public string ContentLanguage { get => _explicitNullValueContentLanguage; set { _explicitNullValueContentLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentLanguage"); else _explicitNullProperties?.Remove("contentLanguage"); } }
+        private string _explicitNullValueContentLanguage = default!;
 #endif
         /// <summary>The MIME type of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType { get; set; }
+        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        private string? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public string ContentType { get; set; }
+        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        private string _explicitNullValueContentType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectHttpMetadata"/> and sets the default values.
@@ -72,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectHttpMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectHttpMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectHttpMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("contentEncoding", ContentEncoding);
             writer.WriteStringValue("contentLanguage", ContentLanguage);
             writer.WriteStringValue("contentType", ContentType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

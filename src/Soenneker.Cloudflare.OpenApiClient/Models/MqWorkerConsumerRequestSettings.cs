@@ -11,19 +11,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MqWorkerConsumerRequestSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("batch_size") is { } nullNodeBatchSize && nullNodeBatchSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchSize = null;
+            if (parseNode.GetChildNode("max_concurrency") is { } nullNodeMaxConcurrency && nullNodeMaxConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxConcurrency = null;
+            if (parseNode.GetChildNode("max_retries") is { } nullNodeMaxRetries && nullNodeMaxRetries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRetries = null;
+            if (parseNode.GetChildNode("max_wait_time_ms") is { } nullNodeMaxWaitTimeMs && nullNodeMaxWaitTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxWaitTimeMs = null;
+            if (parseNode.GetChildNode("retry_delay") is { } nullNodeRetryDelay && nullNodeRetryDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryDelay = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of messages to include in a batch.</summary>
-        public double? BatchSize { get; set; }
+        public double? BatchSize { get => _explicitNullValueBatchSize; set { _explicitNullValueBatchSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_size"); else _explicitNullProperties?.Remove("batch_size"); } }
+        private double? _explicitNullValueBatchSize = default!;
         /// <summary>Maximum number of concurrent consumers that may consume from this Queue. Set to `null` to automatically opt in to the platform&apos;s maximum (recommended).</summary>
-        public double? MaxConcurrency { get; set; }
+        public double? MaxConcurrency { get => _explicitNullValueMaxConcurrency; set { _explicitNullValueMaxConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_concurrency"); else _explicitNullProperties?.Remove("max_concurrency"); } }
+        private double? _explicitNullValueMaxConcurrency = default!;
         /// <summary>The maximum number of retries</summary>
-        public double? MaxRetries { get; set; }
+        public double? MaxRetries { get => _explicitNullValueMaxRetries; set { _explicitNullValueMaxRetries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_retries"); else _explicitNullProperties?.Remove("max_retries"); } }
+        private double? _explicitNullValueMaxRetries = default!;
         /// <summary>The number of milliseconds to wait for a batch to fill up before attempting to deliver it</summary>
-        public double? MaxWaitTimeMs { get; set; }
+        public double? MaxWaitTimeMs { get => _explicitNullValueMaxWaitTimeMs; set { _explicitNullValueMaxWaitTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_wait_time_ms"); else _explicitNullProperties?.Remove("max_wait_time_ms"); } }
+        private double? _explicitNullValueMaxWaitTimeMs = default!;
         /// <summary>The number of seconds to delay before making the message available for another attempt.</summary>
-        public double? RetryDelay { get; set; }
+        public double? RetryDelay { get => _explicitNullValueRetryDelay; set { _explicitNullValueRetryDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_delay"); else _explicitNullProperties?.Remove("retry_delay"); } }
+        private double? _explicitNullValueRetryDelay = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequestSettings"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequestSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequestSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequestSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("max_retries", MaxRetries);
             writer.WriteDoubleValue("max_wait_time_ms", MaxWaitTimeMs);
             writer.WriteDoubleValue("retry_delay", RetryDelay);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

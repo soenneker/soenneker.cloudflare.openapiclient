@@ -12,53 +12,84 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MconnTelemetrySnapshotMount : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available_bytes") is { } nullNodeAvailableBytes && nullNodeAvailableBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableBytes = null;
+            if (parseNode.GetChildNode("available_inodes") is { } nullNodeAvailableInodes && nullNodeAvailableInodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableInodes = null;
+            if (parseNode.GetChildNode("file_system") is { } nullNodeFileSystem && nullNodeFileSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileSystem = null;
+            if (parseNode.GetChildNode("is_read_only") is { } nullNodeIsReadOnly && nullNodeIsReadOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsReadOnly = null;
+            if (parseNode.GetChildNode("is_removable") is { } nullNodeIsRemovable && nullNodeIsRemovable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRemovable = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("mount_point") is { } nullNodeMountPoint && nullNodeMountPoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MountPoint = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("total_bytes") is { } nullNodeTotalBytes && nullNodeTotalBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalBytes = null;
+            if (parseNode.GetChildNode("total_inodes") is { } nullNodeTotalInodes && nullNodeTotalInodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInodes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Available disk size (bytes)</summary>
-        public double? AvailableBytes { get; set; }
+        public double? AvailableBytes { get => _explicitNullValueAvailableBytes; set { _explicitNullValueAvailableBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_bytes"); else _explicitNullProperties?.Remove("available_bytes"); } }
+        private double? _explicitNullValueAvailableBytes = default!;
         /// <summary>Available inodes on filesystem</summary>
-        public double? AvailableInodes { get; set; }
+        public double? AvailableInodes { get => _explicitNullValueAvailableInodes; set { _explicitNullValueAvailableInodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_inodes"); else _explicitNullProperties?.Remove("available_inodes"); } }
+        private double? _explicitNullValueAvailableInodes = default!;
         /// <summary>File system on disk (EXT4, NTFS, etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileSystem { get; set; }
+        public string? FileSystem { get => _explicitNullValueFileSystem; set { _explicitNullValueFileSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_system"); else _explicitNullProperties?.Remove("file_system"); } }
+        private string? _explicitNullValueFileSystem = default!;
 #nullable restore
 #else
-        public string FileSystem { get; set; }
+        public string FileSystem { get => _explicitNullValueFileSystem; set { _explicitNullValueFileSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_system"); else _explicitNullProperties?.Remove("file_system"); } }
+        private string _explicitNullValueFileSystem = default!;
 #endif
         /// <summary>Determines whether the disk is read-only</summary>
-        public bool? IsReadOnly { get; set; }
+        public bool? IsReadOnly { get => _explicitNullValueIsReadOnly; set { _explicitNullValueIsReadOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_read_only"); else _explicitNullProperties?.Remove("is_read_only"); } }
+        private bool? _explicitNullValueIsReadOnly = default!;
         /// <summary>Determines whether the disk is removable</summary>
-        public bool? IsRemovable { get; set; }
+        public bool? IsRemovable { get => _explicitNullValueIsRemovable; set { _explicitNullValueIsRemovable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_removable"); else _explicitNullProperties?.Remove("is_removable"); } }
+        private bool? _explicitNullValueIsRemovable = default!;
         /// <summary>Kind of disk (HDD, SSD, etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string? _explicitNullValueKind = default!;
 #nullable restore
 #else
-        public string Kind { get; set; }
+        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string _explicitNullValueKind = default!;
 #endif
         /// <summary>Path where disk is mounted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MountPoint { get; set; }
+        public string? MountPoint { get => _explicitNullValueMountPoint; set { _explicitNullValueMountPoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mount_point"); else _explicitNullProperties?.Remove("mount_point"); } }
+        private string? _explicitNullValueMountPoint = default!;
 #nullable restore
 #else
-        public string MountPoint { get; set; }
+        public string MountPoint { get => _explicitNullValueMountPoint; set { _explicitNullValueMountPoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mount_point"); else _explicitNullProperties?.Remove("mount_point"); } }
+        private string _explicitNullValueMountPoint = default!;
 #endif
         /// <summary>Name of the disk mount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Total disk size (bytes)</summary>
-        public double? TotalBytes { get; set; }
+        public double? TotalBytes { get => _explicitNullValueTotalBytes; set { _explicitNullValueTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_bytes"); else _explicitNullProperties?.Remove("total_bytes"); } }
+        private double? _explicitNullValueTotalBytes = default!;
         /// <summary>Total inodes on filesystem</summary>
-        public double? TotalInodes { get; set; }
+        public double? TotalInodes { get => _explicitNullValueTotalInodes; set { _explicitNullValueTotalInodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inodes"); else _explicitNullProperties?.Remove("total_inodes"); } }
+        private double? _explicitNullValueTotalInodes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount"/> and sets the default values.
         /// </summary>
@@ -74,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("total_bytes", TotalBytes);
             writer.WriteDoubleValue("total_inodes", TotalInodes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

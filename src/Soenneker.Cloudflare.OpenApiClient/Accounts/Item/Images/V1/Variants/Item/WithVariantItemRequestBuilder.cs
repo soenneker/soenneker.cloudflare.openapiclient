@@ -19,6 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.It
     public partial class WithVariantItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The flat property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.Item.Flat.FlatRequestBuilder Flat
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.Item.Flat.FlatRequestBuilder(PathParameters, RequestAdapter);
@@ -55,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.It
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesDeletedResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesDeletedResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesDeletedResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesDeletedResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetch details for a CF Images variant.
@@ -73,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.It
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a CF Images variant. This will purge the cache for all images associated with the variant.
@@ -93,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.It
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a CF Images variant. This will purge the cache for all images associated with the variant.

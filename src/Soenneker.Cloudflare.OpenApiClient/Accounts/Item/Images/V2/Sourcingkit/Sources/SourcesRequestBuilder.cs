@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Sourcingkit
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitSourceListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitSourceListResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitSourceListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitSourceListResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Configure an S3 source for CF Images imports.
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Sourcingkit
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitSourceCreateResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitSourceCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitSourceCreateResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitSourceCreateResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List sources configured for CF Images imports.

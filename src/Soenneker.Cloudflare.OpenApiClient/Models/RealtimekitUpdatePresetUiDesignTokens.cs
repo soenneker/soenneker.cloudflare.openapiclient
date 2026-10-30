@@ -11,49 +11,76 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RealtimekitUpdatePresetUiDesignTokens : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("border_radius") is { } nullNodeBorderRadius && nullNodeBorderRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BorderRadius = null;
+            if (parseNode.GetChildNode("border_width") is { } nullNodeBorderWidth && nullNodeBorderWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BorderWidth = null;
+            if (parseNode.GetChildNode("colors") is { } nullNodeColors && nullNodeColors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colors = null;
+            if (parseNode.GetChildNode("font_family") is { } nullNodeFontFamily && nullNodeFontFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FontFamily = null;
+            if (parseNode.GetChildNode("google_font") is { } nullNodeGoogleFont && nullNodeGoogleFont.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoogleFont = null;
+            if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("spacing_base") is { } nullNodeSpacingBase && nullNodeSpacingBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpacingBase = null;
+            if (parseNode.GetChildNode("theme") is { } nullNodeTheme && nullNodeTheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Theme = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The border_radius property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensBorderRadius? BorderRadius { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensBorderRadius? BorderRadius { get => _explicitNullValueBorderRadius; set { _explicitNullValueBorderRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("border_radius"); else _explicitNullProperties?.Remove("border_radius"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensBorderRadius? _explicitNullValueBorderRadius = default!;
         /// <summary>The border_width property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensBorderWidth? BorderWidth { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensBorderWidth? BorderWidth { get => _explicitNullValueBorderWidth; set { _explicitNullValueBorderWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("border_width"); else _explicitNullProperties?.Remove("border_width"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensBorderWidth? _explicitNullValueBorderWidth = default!;
         /// <summary>The colors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensColors? Colors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensColors? Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensColors? _explicitNullValueColors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensColors Colors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensColors Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensColors _explicitNullValueColors = default!;
 #endif
         /// <summary>The font_family property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FontFamily { get; set; }
+        public string? FontFamily { get => _explicitNullValueFontFamily; set { _explicitNullValueFontFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("font_family"); else _explicitNullProperties?.Remove("font_family"); } }
+        private string? _explicitNullValueFontFamily = default!;
 #nullable restore
 #else
-        public string FontFamily { get; set; }
+        public string FontFamily { get => _explicitNullValueFontFamily; set { _explicitNullValueFontFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("font_family"); else _explicitNullProperties?.Remove("font_family"); } }
+        private string _explicitNullValueFontFamily = default!;
 #endif
         /// <summary>The google_font property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GoogleFont { get; set; }
+        public string? GoogleFont { get => _explicitNullValueGoogleFont; set { _explicitNullValueGoogleFont = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google_font"); else _explicitNullProperties?.Remove("google_font"); } }
+        private string? _explicitNullValueGoogleFont = default!;
 #nullable restore
 #else
-        public string GoogleFont { get; set; }
+        public string GoogleFont { get => _explicitNullValueGoogleFont; set { _explicitNullValueGoogleFont = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google_font"); else _explicitNullProperties?.Remove("google_font"); } }
+        private string _explicitNullValueGoogleFont = default!;
 #endif
         /// <summary>The logo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Logo { get; set; }
+        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private string? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public string Logo { get; set; }
+        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private string _explicitNullValueLogo = default!;
 #endif
         /// <summary>The spacing_base property</summary>
-        public double? SpacingBase { get; set; }
+        public double? SpacingBase { get => _explicitNullValueSpacingBase; set { _explicitNullValueSpacingBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spacing_base"); else _explicitNullProperties?.Remove("spacing_base"); } }
+        private double? _explicitNullValueSpacingBase = default!;
         /// <summary>The theme property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensTheme? Theme { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensTheme? Theme { get => _explicitNullValueTheme; set { _explicitNullValueTheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("theme"); else _explicitNullProperties?.Remove("theme"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensTheme? _explicitNullValueTheme = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokens"/> and sets the default values.
         /// </summary>
@@ -69,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokens CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokens();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokens(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("logo", Logo);
             writer.WriteDoubleValue("spacing_base", SpacingBase);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensTheme>("theme", Theme);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

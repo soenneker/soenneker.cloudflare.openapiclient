@@ -16,6 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
     public partial class WithConfigurationTypeItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The queue property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.Item.MaintenanceConfigs.Item.Queue.QueueRequestBuilder Queue
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.Item.MaintenanceConfigs.Item.Queue.QueueRequestBuilder(PathParameters, RequestAdapter);

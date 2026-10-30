@@ -22,31 +22,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_grou
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The arc property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Arc.ArcRequestBuilder Arc
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Arc.ArcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dkim property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dkim.DkimRequestBuilder Dkim
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dkim.DkimRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dmarc property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.DmarcRequestBuilder Dmarc
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.DmarcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The encrypted property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder Encrypted
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spf property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Spf.SpfRequestBuilder Spf
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Spf.SpfRequestBuilder(PathParameters, RequestAdapter);

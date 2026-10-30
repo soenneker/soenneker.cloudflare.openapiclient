@@ -11,13 +11,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ZeroTrustAccountsPatchConnectivitySettingsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("icmp_proxy_enabled") is { } nullNodeIcmpProxyEnabled && nullNodeIcmpProxyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IcmpProxyEnabled = null;
+            if (parseNode.GetChildNode("offramp_warp_enabled") is { } nullNodeOfframpWarpEnabled && nullNodeOfframpWarpEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OfframpWarpEnabled = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A flag to enable the ICMP proxy for the account network.</summary>
-        public bool? IcmpProxyEnabled { get; set; }
+        public bool? IcmpProxyEnabled { get => _explicitNullValueIcmpProxyEnabled; set { _explicitNullValueIcmpProxyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icmp_proxy_enabled"); else _explicitNullProperties?.Remove("icmp_proxy_enabled"); } }
+        private bool? _explicitNullValueIcmpProxyEnabled = default!;
         /// <summary>A flag to enable WARP to WARP traffic.</summary>
-        public bool? OfframpWarpEnabled { get; set; }
+        public bool? OfframpWarpEnabled { get => _explicitNullValueOfframpWarpEnabled; set { _explicitNullValueOfframpWarpEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offramp_warp_enabled"); else _explicitNullProperties?.Remove("offramp_warp_enabled"); } }
+        private bool? _explicitNullValueOfframpWarpEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustAccountsPatchConnectivitySettingsRequest"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustAccountsPatchConnectivitySettingsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustAccountsPatchConnectivitySettingsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustAccountsPatchConnectivitySettingsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("icmp_proxy_enabled", IcmpProxyEnabled);
             writer.WriteBoolValue("offramp_warp_enabled", OfframpWarpEnabled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -63,6 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposBlobGet404Response.CreateFromDiscriminatorValue },
                 { "413", global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposBlobGet413Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposBlobGet500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,56 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("gt_121d") is { } nullNodeGt121d && nullNodeGt121d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt121d = null;
+            if (parseNode.GetChildNode("gt_16d_lte_31d") is { } nullNodeGt16dLte31d && nullNodeGt16dLte31d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt16dLte31d = null;
+            if (parseNode.GetChildNode("gt_31d_lte_91d") is { } nullNodeGt31dLte91d && nullNodeGt31dLte91d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt31dLte91d = null;
+            if (parseNode.GetChildNode("gt_3d_lte_16d") is { } nullNodeGt3dLte16d && nullNodeGt3dLte16d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt3dLte16d = null;
+            if (parseNode.GetChildNode("gt_91d_lte_121d") is { } nullNodeGt91dLte121d && nullNodeGt91dLte121d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt91dLte121d = null;
+            if (parseNode.GetChildNode("lte_3d") is { } nullNodeLte3d && nullNodeLte3d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lte3d = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The gt_121d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Gt121d { get; set; }
+        public List<string>? Gt121d { get => _explicitNullValueGt121d; set { _explicitNullValueGt121d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_121d"); else _explicitNullProperties?.Remove("gt_121d"); } }
+        private List<string>? _explicitNullValueGt121d = default!;
 #nullable restore
 #else
-        public List<string> Gt121d { get; set; }
+        public List<string> Gt121d { get => _explicitNullValueGt121d; set { _explicitNullValueGt121d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_121d"); else _explicitNullProperties?.Remove("gt_121d"); } }
+        private List<string> _explicitNullValueGt121d = default!;
 #endif
         /// <summary>The gt_16d_lte_31d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Gt16dLte31d { get; set; }
+        public List<string>? Gt16dLte31d { get => _explicitNullValueGt16dLte31d; set { _explicitNullValueGt16dLte31d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_16d_lte_31d"); else _explicitNullProperties?.Remove("gt_16d_lte_31d"); } }
+        private List<string>? _explicitNullValueGt16dLte31d = default!;
 #nullable restore
 #else
-        public List<string> Gt16dLte31d { get; set; }
+        public List<string> Gt16dLte31d { get => _explicitNullValueGt16dLte31d; set { _explicitNullValueGt16dLte31d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_16d_lte_31d"); else _explicitNullProperties?.Remove("gt_16d_lte_31d"); } }
+        private List<string> _explicitNullValueGt16dLte31d = default!;
 #endif
         /// <summary>The gt_31d_lte_91d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Gt31dLte91d { get; set; }
+        public List<string>? Gt31dLte91d { get => _explicitNullValueGt31dLte91d; set { _explicitNullValueGt31dLte91d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_31d_lte_91d"); else _explicitNullProperties?.Remove("gt_31d_lte_91d"); } }
+        private List<string>? _explicitNullValueGt31dLte91d = default!;
 #nullable restore
 #else
-        public List<string> Gt31dLte91d { get; set; }
+        public List<string> Gt31dLte91d { get => _explicitNullValueGt31dLte91d; set { _explicitNullValueGt31dLte91d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_31d_lte_91d"); else _explicitNullProperties?.Remove("gt_31d_lte_91d"); } }
+        private List<string> _explicitNullValueGt31dLte91d = default!;
 #endif
         /// <summary>The gt_3d_lte_16d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Gt3dLte16d { get; set; }
+        public List<string>? Gt3dLte16d { get => _explicitNullValueGt3dLte16d; set { _explicitNullValueGt3dLte16d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_3d_lte_16d"); else _explicitNullProperties?.Remove("gt_3d_lte_16d"); } }
+        private List<string>? _explicitNullValueGt3dLte16d = default!;
 #nullable restore
 #else
-        public List<string> Gt3dLte16d { get; set; }
+        public List<string> Gt3dLte16d { get => _explicitNullValueGt3dLte16d; set { _explicitNullValueGt3dLte16d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_3d_lte_16d"); else _explicitNullProperties?.Remove("gt_3d_lte_16d"); } }
+        private List<string> _explicitNullValueGt3dLte16d = default!;
 #endif
         /// <summary>The gt_91d_lte_121d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Gt91dLte121d { get; set; }
+        public List<string>? Gt91dLte121d { get => _explicitNullValueGt91dLte121d; set { _explicitNullValueGt91dLte121d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_91d_lte_121d"); else _explicitNullProperties?.Remove("gt_91d_lte_121d"); } }
+        private List<string>? _explicitNullValueGt91dLte121d = default!;
 #nullable restore
 #else
-        public List<string> Gt91dLte121d { get; set; }
+        public List<string> Gt91dLte121d { get => _explicitNullValueGt91dLte121d; set { _explicitNullValueGt91dLte121d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_91d_lte_121d"); else _explicitNullProperties?.Remove("gt_91d_lte_121d"); } }
+        private List<string> _explicitNullValueGt91dLte121d = default!;
 #endif
         /// <summary>The lte_3d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Lte3d { get; set; }
+        public List<string>? Lte3d { get => _explicitNullValueLte3d; set { _explicitNullValueLte3d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lte_3d"); else _explicitNullProperties?.Remove("lte_3d"); } }
+        private List<string>? _explicitNullValueLte3d = default!;
 #nullable restore
 #else
-        public List<string> Lte3d { get; set; }
+        public List<string> Lte3d { get => _explicitNullValueLte3d; set { _explicitNullValueLte3d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lte_3d"); else _explicitNullProperties?.Remove("lte_3d"); } }
+        private List<string> _explicitNullValueLte3d = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("gt_3d_lte_16d", Gt3dLte16d);
             writer.WriteCollectionOfPrimitiveValues<string>("gt_91d_lte_121d", Gt91dLte121d);
             writer.WriteCollectionOfPrimitiveValues<string>("lte_3d", Lte3d);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

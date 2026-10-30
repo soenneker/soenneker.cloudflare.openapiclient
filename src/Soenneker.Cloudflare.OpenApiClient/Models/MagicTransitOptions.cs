@@ -11,19 +11,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicTransitOptions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_ttl") is { } nullNodeMaxTtl && nullNodeMaxTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTtl = null;
+            if (parseNode.GetChildNode("packets_per_ttl") is { } nullNodePacketsPerTtl && nullNodePacketsPerTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsPerTtl = null;
+            if (parseNode.GetChildNode("packet_type") is { } nullNodePacketType && nullNodePacketType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketType = null;
+            if (parseNode.GetChildNode("port") is { } nullNodePort && nullNodePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Port = null;
+            if (parseNode.GetChildNode("wait_time") is { } nullNodeWaitTime && nullNodeWaitTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitTime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Max TTL.</summary>
-        public int? MaxTtl { get; set; }
+        public int? MaxTtl { get => _explicitNullValueMaxTtl; set { _explicitNullValueMaxTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ttl"); else _explicitNullProperties?.Remove("max_ttl"); } }
+        private int? _explicitNullValueMaxTtl = default!;
         /// <summary>Number of packets sent at each TTL.</summary>
-        public int? PacketsPerTtl { get; set; }
+        public int? PacketsPerTtl { get => _explicitNullValuePacketsPerTtl; set { _explicitNullValuePacketsPerTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_per_ttl"); else _explicitNullProperties?.Remove("packets_per_ttl"); } }
+        private int? _explicitNullValuePacketsPerTtl = default!;
         /// <summary>Type of packet sent.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType? PacketType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType? PacketType { get => _explicitNullValuePacketType; set { _explicitNullValuePacketType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_type"); else _explicitNullProperties?.Remove("packet_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType? _explicitNullValuePacketType = default!;
         /// <summary>For UDP and TCP, specifies the destination port. For ICMP, specifies the initial ICMP sequence value. Default value 0 will choose the best value to use for each protocol.</summary>
-        public int? Port { get; set; }
+        public int? Port { get => _explicitNullValuePort; set { _explicitNullValuePort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port"); else _explicitNullProperties?.Remove("port"); } }
+        private int? _explicitNullValuePort = default!;
         /// <summary>Set the time (in seconds) to wait for a response to a probe.</summary>
-        public int? WaitTime { get; set; }
+        public int? WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wait_time"); else _explicitNullProperties?.Remove("wait_time"); } }
+        private int? _explicitNullValueWaitTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitOptions"/> and sets the default values.
         /// </summary>
@@ -43,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType>("packet_type", PacketType);
             writer.WriteIntValue("port", Port);
             writer.WriteIntValue("wait_time", WaitTime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

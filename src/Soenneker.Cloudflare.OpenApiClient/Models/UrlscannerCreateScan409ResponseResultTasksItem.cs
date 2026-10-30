@@ -11,81 +11,120 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UrlscannerCreateScan409ResponseResultTasksItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("clientLocation") is { } nullNodeClientLocation && nullNodeClientLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientLocation = null;
+            if (parseNode.GetChildNode("clientType") is { } nullNodeClientType && nullNodeClientType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientType = null;
+            if (parseNode.GetChildNode("effectiveUrl") is { } nullNodeEffectiveUrl && nullNodeEffectiveUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveUrl = null;
+            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("scannedFrom") is { } nullNodeScannedFrom && nullNodeScannedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScannedFrom = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("time") is { } nullNodeTime && nullNodeTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Time = null;
+            if (parseNode.GetChildNode("timeEnd") is { } nullNodeTimeEnd && nullNodeTimeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeEnd = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("uuid") is { } nullNodeUuid && nullNodeUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uuid = null;
+            if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Submitter location</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientLocation { get; set; }
+        public string? ClientLocation { get => _explicitNullValueClientLocation; set { _explicitNullValueClientLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientLocation"); else _explicitNullProperties?.Remove("clientLocation"); } }
+        private string? _explicitNullValueClientLocation = default!;
 #nullable restore
 #else
-        public string ClientLocation { get; set; }
+        public string ClientLocation { get => _explicitNullValueClientLocation; set { _explicitNullValueClientLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientLocation"); else _explicitNullProperties?.Remove("clientLocation"); } }
+        private string _explicitNullValueClientLocation = default!;
 #endif
         /// <summary>The clientType property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemClientType? ClientType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemClientType? ClientType { get => _explicitNullValueClientType; set { _explicitNullValueClientType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientType"); else _explicitNullProperties?.Remove("clientType"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemClientType? _explicitNullValueClientType = default!;
         /// <summary>URL of the primary request, after all HTTP redirects</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EffectiveUrl { get; set; }
+        public string? EffectiveUrl { get => _explicitNullValueEffectiveUrl; set { _explicitNullValueEffectiveUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effectiveUrl"); else _explicitNullProperties?.Remove("effectiveUrl"); } }
+        private string? _explicitNullValueEffectiveUrl = default!;
 #nullable restore
 #else
-        public string EffectiveUrl { get; set; }
+        public string EffectiveUrl { get => _explicitNullValueEffectiveUrl; set { _explicitNullValueEffectiveUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effectiveUrl"); else _explicitNullProperties?.Remove("effectiveUrl"); } }
+        private string _explicitNullValueEffectiveUrl = default!;
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemErrorsItem>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemErrorsItem>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemErrorsItem>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemErrorsItem> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemErrorsItem> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemErrorsItem> _explicitNullValueErrors = default!;
 #endif
         /// <summary>The scannedFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemScannedFrom? ScannedFrom { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemScannedFrom? ScannedFrom { get => _explicitNullValueScannedFrom; set { _explicitNullValueScannedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scannedFrom"); else _explicitNullProperties?.Remove("scannedFrom"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemScannedFrom? _explicitNullValueScannedFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemScannedFrom ScannedFrom { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemScannedFrom ScannedFrom { get => _explicitNullValueScannedFrom; set { _explicitNullValueScannedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scannedFrom"); else _explicitNullProperties?.Remove("scannedFrom"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemScannedFrom _explicitNullValueScannedFrom = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemStatus? _explicitNullValueStatus = default!;
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>The time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Time { get; set; }
+        public string? Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
+        private string? _explicitNullValueTime = default!;
 #nullable restore
 #else
-        public string Time { get; set; }
+        public string Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
+        private string _explicitNullValueTime = default!;
 #endif
         /// <summary>The timeEnd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeEnd { get; set; }
+        public string? TimeEnd { get => _explicitNullValueTimeEnd; set { _explicitNullValueTimeEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeEnd"); else _explicitNullProperties?.Remove("timeEnd"); } }
+        private string? _explicitNullValueTimeEnd = default!;
 #nullable restore
 #else
-        public string TimeEnd { get; set; }
+        public string TimeEnd { get => _explicitNullValueTimeEnd; set { _explicitNullValueTimeEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeEnd"); else _explicitNullProperties?.Remove("timeEnd"); } }
+        private string _explicitNullValueTimeEnd = default!;
 #endif
         /// <summary>Submitted URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>Scan ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uuid { get; set; }
+        public string? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        private string? _explicitNullValueUuid = default!;
 #nullable restore
 #else
-        public string Uuid { get; set; }
+        public string Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        private string _explicitNullValueUuid = default!;
 #endif
         /// <summary>The visibility property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemVisibility? Visibility { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemVisibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemVisibility? _explicitNullValueVisibility = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItem"/> and sets the default values.
         /// </summary>
@@ -101,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -144,6 +183,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("uuid", Uuid);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409ResponseResultTasksItemVisibility>("visibility", Visibility);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

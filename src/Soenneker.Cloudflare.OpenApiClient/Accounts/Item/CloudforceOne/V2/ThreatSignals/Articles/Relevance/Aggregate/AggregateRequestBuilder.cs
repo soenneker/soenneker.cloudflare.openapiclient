@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AggregateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles/relevance/aggregate{?published_after*,published_before*}", pathParameters)
+        public AggregateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles/relevance/aggregate{?published_after*,published_before*,read*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AggregateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles/relevance/aggregate{?published_after*,published_before*}", rawUrl)
+        public AggregateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles/relevance/aggregate{?published_after*,published_before*,read*}", rawUrl)
         {
         }
         /// <summary>
-        /// Beta. Counts the account&apos;s Threat Signals articles in each relevance band, for each active Priority Intelligence Requirement and across all of them. Uses the same PIRs as article relevance: active PIRs, including those the matcher paused; drafts and deleted PIRs are excluded. Articles not scored against a PIR are not counted for it. The combined counts place each article once, in the band of its best score, so they are not the sum of the per-PIR counts. All counts are read together and are exact.
+        /// Beta. Counts the account&apos;s Threat Signals articles in each relevance band, for each active Priority Intelligence Requirement and across all of them. Uses the same PIRs as article relevance: active PIRs, including those the matcher paused; drafts and deleted PIRs are excluded. Articles not scored against a PIR are not counted for it. The combined counts place each article once, in the band of its best score, so they are not the sum of the per-PIR counts. read counts only read or only unread articles. All counts are read together and are exact.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Beta. Counts the account&apos;s Threat Signals articles in each relevance band, for each active Priority Intelligence Requirement and across all of them. Uses the same PIRs as article relevance: active PIRs, including those the matcher paused; drafts and deleted PIRs are excluded. Articles not scored against a PIR are not counted for it. The combined counts place each article once, in the band of its best score, so they are not the sum of the per-PIR counts. All counts are read together and are exact.
+        /// Beta. Counts the account&apos;s Threat Signals articles in each relevance band, for each active Priority Intelligence Requirement and across all of them. Uses the same PIRs as article relevance: active PIRs, including those the matcher paused; drafts and deleted PIRs are excluded. Articles not scored against a PIR are not counted for it. The combined counts place each article once, in the band of its best score, so they are not the sum of the per-PIR counts. read counts only read or only unread articles. All counts are read together and are exact.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Relevance.Aggregate.AggregateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Beta. Counts the account&apos;s Threat Signals articles in each relevance band, for each active Priority Intelligence Requirement and across all of them. Uses the same PIRs as article relevance: active PIRs, including those the matcher paused; drafts and deleted PIRs are excluded. Articles not scored against a PIR are not counted for it. The combined counts place each article once, in the band of its best score, so they are not the sum of the per-PIR counts. All counts are read together and are exact.
+        /// Beta. Counts the account&apos;s Threat Signals articles in each relevance band, for each active Priority Intelligence Requirement and across all of them. Uses the same PIRs as article relevance: active PIRs, including those the matcher paused; drafts and deleted PIRs are excluded. Articles not scored against a PIR are not counted for it. The combined counts place each article once, in the band of its best score, so they are not the sum of the per-PIR counts. read counts only read or only unread articles. All counts are read together and are exact.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AggregateRequestBuilderGetQueryParameters 
@@ -92,6 +92,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
             #pragma warning disable CS1591
             [QueryParameter("published_before")]
             public DateTimeOffset? PublishedBefore { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("read")]
+            public bool? Read { get; set; }
             #pragma warning restore CS1591
         }
     }

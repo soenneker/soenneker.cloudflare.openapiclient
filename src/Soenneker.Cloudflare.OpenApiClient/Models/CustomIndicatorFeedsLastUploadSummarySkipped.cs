@@ -12,15 +12,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomIndicatorFeedsLastUploadSummarySkipped : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowlisted_domains") is { } nullNodeAllowlistedDomains && nullNodeAllowlistedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowlistedDomains = null;
+            if (parseNode.GetChildNode("expired_indicators") is { } nullNodeExpiredIndicators && nullNodeExpiredIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiredIndicators = null;
+            if (parseNode.GetChildNode("invalid_indicators") is { } nullNodeInvalidIndicators && nullNodeInvalidIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvalidIndicators = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Domains filtered by the global popularity allowlist at QSprovisioning time. Popular domains (bing.com, naver.com,etc.) are protected from custom-threat-feed enforcement.</summary>
-        public int? AllowlistedDomains { get; set; }
+        public int? AllowlistedDomains { get => _explicitNullValueAllowlistedDomains; set { _explicitNullValueAllowlistedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowlisted_domains"); else _explicitNullProperties?.Remove("allowlisted_domains"); } }
+        private int? _explicitNullValueAllowlistedDomains = default!;
         /// <summary>Indicators in the upload whose valid_until is already inthe past. These are not added to QS; the expiration cronhandles cleanup.</summary>
-        public int? ExpiredIndicators { get; set; }
+        public int? ExpiredIndicators { get => _explicitNullValueExpiredIndicators; set { _explicitNullValueExpiredIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expired_indicators"); else _explicitNullProperties?.Remove("expired_indicators"); } }
+        private int? _explicitNullValueExpiredIndicators = default!;
         /// <summary>Reserved for future use. Currently always 0 — the unifieraborts the entire upload on a single bad indicator.</summary>
-        public int? InvalidIndicators { get; set; }
+        public int? InvalidIndicators { get => _explicitNullValueInvalidIndicators; set { _explicitNullValueInvalidIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalid_indicators"); else _explicitNullProperties?.Remove("invalid_indicators"); } }
+        private int? _explicitNullValueInvalidIndicators = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("allowlisted_domains", AllowlistedDomains);
             writer.WriteIntValue("expired_indicators", ExpiredIndicators);
             writer.WriteIntValue("invalid_indicators", InvalidIndicators);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

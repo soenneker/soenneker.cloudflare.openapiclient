@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Payload_logging;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Access_rulesRequestBuilder Access_rules
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Access_rulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The payload_logging property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Payload_logging.Payload_loggingRequestBuilder Payload_logging
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Payload_logging.Payload_loggingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.FirewallRequestBuilder"/> and sets the default values.

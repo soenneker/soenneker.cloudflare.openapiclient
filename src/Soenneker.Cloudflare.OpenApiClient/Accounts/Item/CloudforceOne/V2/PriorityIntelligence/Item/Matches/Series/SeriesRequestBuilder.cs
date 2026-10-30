@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirMatchSeries200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirMatchSeries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirMatchSeries200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirMatchSeries200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the PIR&apos;s matches per UTC day of when each matched event was added to its dataset, over the same matches as the matches list, in datasets the account can read now. Every day in the range is listed, including days with no matches. The range defaults to the last 30 days and is at most 90 days, because matches are kept for 90 days. Days before the PIR was activated hold only the most recent backfill matches. Requires the Threat Events entitlement.

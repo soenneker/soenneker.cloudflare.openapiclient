@@ -11,57 +11,87 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bodySize") is { } nullNodeBodySize && nullNodeBodySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BodySize = null;
+            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("headersSize") is { } nullNodeHeadersSize && nullNodeHeadersSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadersSize = null;
+            if (parseNode.GetChildNode("httpVersion") is { } nullNodeHttpVersion && nullNodeHttpVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpVersion = null;
+            if (parseNode.GetChildNode("redirectURL") is { } nullNodeRedirectURL && nullNodeRedirectURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectURL = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("statusText") is { } nullNodeStatusText && nullNodeStatusText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusText = null;
+            if (parseNode.GetChildNode("_transferSize") is { } nullNodeTransferSize && nullNodeTransferSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferSize = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bodySize property</summary>
-        public double? BodySize { get; set; }
+        public double? BodySize { get => _explicitNullValueBodySize; set { _explicitNullValueBodySize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bodySize"); else _explicitNullProperties?.Remove("bodySize"); } }
+        private double? _explicitNullValueBodySize = default!;
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseContent? Content { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseContent? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseContent? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseContent Content { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseContent Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseContent _explicitNullValueContent = default!;
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseHeadersItem>? Headers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseHeadersItem>? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseHeadersItem>? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseHeadersItem> Headers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseHeadersItem> Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseHeadersItem> _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The headersSize property</summary>
-        public double? HeadersSize { get; set; }
+        public double? HeadersSize { get => _explicitNullValueHeadersSize; set { _explicitNullValueHeadersSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headersSize"); else _explicitNullProperties?.Remove("headersSize"); } }
+        private double? _explicitNullValueHeadersSize = default!;
         /// <summary>The httpVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HttpVersion { get; set; }
+        public string? HttpVersion { get => _explicitNullValueHttpVersion; set { _explicitNullValueHttpVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpVersion"); else _explicitNullProperties?.Remove("httpVersion"); } }
+        private string? _explicitNullValueHttpVersion = default!;
 #nullable restore
 #else
-        public string HttpVersion { get; set; }
+        public string HttpVersion { get => _explicitNullValueHttpVersion; set { _explicitNullValueHttpVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpVersion"); else _explicitNullProperties?.Remove("httpVersion"); } }
+        private string _explicitNullValueHttpVersion = default!;
 #endif
         /// <summary>The redirectURL property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedirectURL { get; set; }
+        public string? RedirectURL { get => _explicitNullValueRedirectURL; set { _explicitNullValueRedirectURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectURL"); else _explicitNullProperties?.Remove("redirectURL"); } }
+        private string? _explicitNullValueRedirectURL = default!;
 #nullable restore
 #else
-        public string RedirectURL { get; set; }
+        public string RedirectURL { get => _explicitNullValueRedirectURL; set { _explicitNullValueRedirectURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectURL"); else _explicitNullProperties?.Remove("redirectURL"); } }
+        private string _explicitNullValueRedirectURL = default!;
 #endif
         /// <summary>The status property</summary>
-        public double? Status { get; set; }
+        public double? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private double? _explicitNullValueStatus = default!;
         /// <summary>The statusText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusText { get; set; }
+        public string? StatusText { get => _explicitNullValueStatusText; set { _explicitNullValueStatusText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusText"); else _explicitNullProperties?.Remove("statusText"); } }
+        private string? _explicitNullValueStatusText = default!;
 #nullable restore
 #else
-        public string StatusText { get; set; }
+        public string StatusText { get => _explicitNullValueStatusText; set { _explicitNullValueStatusText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusText"); else _explicitNullProperties?.Remove("statusText"); } }
+        private string _explicitNullValueStatusText = default!;
 #endif
         /// <summary>The transferSize property</summary>
-        public double? TransferSize { get; set; }
+        public double? TransferSize { get => _explicitNullValueTransferSize; set { _explicitNullValueTransferSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_transferSize"); else _explicitNullProperties?.Remove("_transferSize"); } }
+        private double? _explicitNullValueTransferSize = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponse"/> and sets the default values.
         /// </summary>
@@ -77,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,6 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("status", Status);
             writer.WriteStringValue("statusText", StatusText);
             writer.WriteDoubleValue("_transferSize", TransferSize);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

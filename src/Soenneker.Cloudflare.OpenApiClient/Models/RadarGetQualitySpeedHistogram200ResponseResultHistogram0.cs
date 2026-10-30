@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetQualitySpeedHistogram200ResponseResultHistogram0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bandwidthDownload") is { } nullNodeBandwidthDownload && nullNodeBandwidthDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthDownload = null;
+            if (parseNode.GetChildNode("bandwidthUpload") is { } nullNodeBandwidthUpload && nullNodeBandwidthUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthUpload = null;
+            if (parseNode.GetChildNode("bucketMin") is { } nullNodeBucketMin && nullNodeBucketMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BucketMin = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bandwidthDownload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BandwidthDownload { get; set; }
+        public List<string>? BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
+        private List<string>? _explicitNullValueBandwidthDownload = default!;
 #nullable restore
 #else
-        public List<string> BandwidthDownload { get; set; }
+        public List<string> BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
+        private List<string> _explicitNullValueBandwidthDownload = default!;
 #endif
         /// <summary>The bandwidthUpload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BandwidthUpload { get; set; }
+        public List<string>? BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
+        private List<string>? _explicitNullValueBandwidthUpload = default!;
 #nullable restore
 #else
-        public List<string> BandwidthUpload { get; set; }
+        public List<string> BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
+        private List<string> _explicitNullValueBandwidthUpload = default!;
 #endif
         /// <summary>The bucketMin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BucketMin { get; set; }
+        public List<string>? BucketMin { get => _explicitNullValueBucketMin; set { _explicitNullValueBucketMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketMin"); else _explicitNullProperties?.Remove("bucketMin"); } }
+        private List<string>? _explicitNullValueBucketMin = default!;
 #nullable restore
 #else
-        public List<string> BucketMin { get; set; }
+        public List<string> BucketMin { get => _explicitNullValueBucketMin; set { _explicitNullValueBucketMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketMin"); else _explicitNullProperties?.Remove("bucketMin"); } }
+        private List<string> _explicitNullValueBucketMin = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("bandwidthDownload", BandwidthDownload);
             writer.WriteCollectionOfPrimitiveValues<string>("bandwidthUpload", BandwidthUpload);
             writer.WriteCollectionOfPrimitiveValues<string>("bucketMin", BucketMin);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

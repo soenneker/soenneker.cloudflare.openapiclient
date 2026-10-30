@@ -75,6 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.GetAbuseReport400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsCloudflareApiErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.GetAbuseReport500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetAbuseReport200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetAbuseReport200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,6 +108,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsCloudflareApiErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRateLimitedErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitReportResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitReportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,31 +12,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegistrarApiDomainCheckResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pricing") is { } nullNodePricing && nullNodePricing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pricing = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("registrable") is { } nullNodeRegistrable && nullNodeRegistrable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registrable = null;
+            if (parseNode.GetChildNode("tier") is { } nullNodeTier && nullNodeTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tier = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fully qualified domain name (FQDN) in punycode format for internationalized domain names (IDNs).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The pricing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiPricingRegistration? Pricing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiPricingRegistration? Pricing { get => _explicitNullValuePricing; set { _explicitNullValuePricing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing"); else _explicitNullProperties?.Remove("pricing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiPricingRegistration? _explicitNullValuePricing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiPricingRegistration Pricing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiPricingRegistration Pricing { get => _explicitNullValuePricing; set { _explicitNullValuePricing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing"); else _explicitNullProperties?.Remove("pricing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiPricingRegistration _explicitNullValuePricing = default!;
 #endif
         /// <summary>Appears only when `registrable` is `false` and explains the result.- `extension_not_supported_via_api`: Cloudflare Registrar supports this extension in the dashboard but currently excludes it from programmatic registration through this API. The user can register via `https://dash.cloudflare.com/{account_id}/domains/registrations`.- `extension_not_supported`: Cloudflare Registrar excludes this extension entirely.- `extension_disallows_registration`: The extension&apos;s registry temporarily or permanently freezes new registrations. Registrars currently cannot register domains on this extension.- `domain_premium`: The domain carries premium pricing. This API currently supports standard registrations only.- `domain_unavailable`: An existing registration, reservation, or other registry restriction makes the domain unavailable on a supported extension.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResultReason? Reason { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResultReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResultReason? _explicitNullValueReason = default!;
         /// <summary>Indicates programmatic registration eligibility according to a real-time registry check.- `true`: The domain is available for registration. The response includes the `pricing` object.- `false`: A restriction prevents registration. See the `reason` field for details. Some results, such as premium domains, may still include `tier`.</summary>
-        public bool? Registrable { get; set; }
+        public bool? Registrable { get => _explicitNullValueRegistrable; set { _explicitNullValueRegistrable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrable"); else _explicitNullProperties?.Remove("registrable"); } }
+        private bool? _explicitNullValueRegistrable = default!;
         /// <summary>The pricing tier for this domain. A `registrable` value of `true` always includes this field, which defaults to `standard` for most domains. A `registrable` value of `false` may omit it.- `standard`: Standard registry pricing.- `premium`: Premium domain with higher pricing from the registry.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResultTier? Tier { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResultTier? Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResultTier? _explicitNullValueTier = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResult"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResultReason>("reason", Reason);
             writer.WriteBoolValue("registrable", Registrable);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainCheckResultTier>("tier", Tier);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

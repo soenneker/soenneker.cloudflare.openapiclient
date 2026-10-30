@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetDnsTimeseriesGroupByProtocol200ResponseResultSerie0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("HTTPS") is { } nullNodeHTTPS && nullNodeHTTPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTPS = null;
+            if (parseNode.GetChildNode("TCP") is { } nullNodeTCP && nullNodeTCP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TCP = null;
+            if (parseNode.GetChildNode("TLS") is { } nullNodeTLS && nullNodeTLS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS = null;
+            if (parseNode.GetChildNode("UDP") is { } nullNodeUDP && nullNodeUDP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UDP = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The HTTPS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HTTPS { get; set; }
+        public List<string>? HTTPS { get => _explicitNullValueHTTPS; set { _explicitNullValueHTTPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTPS"); else _explicitNullProperties?.Remove("HTTPS"); } }
+        private List<string>? _explicitNullValueHTTPS = default!;
 #nullable restore
 #else
-        public List<string> HTTPS { get; set; }
+        public List<string> HTTPS { get => _explicitNullValueHTTPS; set { _explicitNullValueHTTPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTPS"); else _explicitNullProperties?.Remove("HTTPS"); } }
+        private List<string> _explicitNullValueHTTPS = default!;
 #endif
         /// <summary>The TCP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TCP { get; set; }
+        public List<string>? TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
+        private List<string>? _explicitNullValueTCP = default!;
 #nullable restore
 #else
-        public List<string> TCP { get; set; }
+        public List<string> TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
+        private List<string> _explicitNullValueTCP = default!;
 #endif
         /// <summary>The TLS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TLS { get; set; }
+        public List<string>? TLS { get => _explicitNullValueTLS; set { _explicitNullValueTLS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS"); else _explicitNullProperties?.Remove("TLS"); } }
+        private List<string>? _explicitNullValueTLS = default!;
 #nullable restore
 #else
-        public List<string> TLS { get; set; }
+        public List<string> TLS { get => _explicitNullValueTLS; set { _explicitNullValueTLS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS"); else _explicitNullProperties?.Remove("TLS"); } }
+        private List<string> _explicitNullValueTLS = default!;
 #endif
         /// <summary>The UDP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UDP { get; set; }
+        public List<string>? UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
+        private List<string>? _explicitNullValueUDP = default!;
 #nullable restore
 #else
-        public List<string> UDP { get; set; }
+        public List<string> UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
+        private List<string> _explicitNullValueUDP = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupByProtocol200ResponseResultSerie0"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupByProtocol200ResponseResultSerie0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupByProtocol200ResponseResultSerie0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupByProtocol200ResponseResultSerie0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("TCP", TCP);
             writer.WriteCollectionOfPrimitiveValues<string>("TLS", TLS);
             writer.WriteCollectionOfPrimitiveValues<string>("UDP", UDP);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

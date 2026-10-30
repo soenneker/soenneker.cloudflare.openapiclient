@@ -11,180 +11,256 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PatchTagUpdateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activeDuration") is { } nullNodeActiveDuration && nullNodeActiveDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveDuration = null;
+            if (parseNode.GetChildNode("actorCategory") is { } nullNodeActorCategory && nullNodeActorCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorCategory = null;
+            if (parseNode.GetChildNode("aliases") is { } nullNodeAliases && nullNodeAliases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aliases = null;
+            if (parseNode.GetChildNode("aliasGroupNames") is { } nullNodeAliasGroupNames && nullNodeAliasGroupNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AliasGroupNames = null;
+            if (parseNode.GetChildNode("aliasGroupNamesInternal") is { } nullNodeAliasGroupNamesInternal && nullNodeAliasGroupNamesInternal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AliasGroupNamesInternal = null;
+            if (parseNode.GetChildNode("attributionOrganization") is { } nullNodeAttributionOrganization && nullNodeAttributionOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributionOrganization = null;
+            if (parseNode.GetChildNode("categoryUuid") is { } nullNodeCategoryUuid && nullNodeCategoryUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryUuid = null;
+            if (parseNode.GetChildNode("confidence") is { } nullNodeConfidence && nullNodeConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Confidence = null;
+            if (parseNode.GetChildNode("dateOfDiscovery") is { } nullNodeDateOfDiscovery && nullNodeDateOfDiscovery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfDiscovery = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("externalReferenceLinks") is { } nullNodeExternalReferenceLinks && nullNodeExternalReferenceLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalReferenceLinks = null;
+            if (parseNode.GetChildNode("externalReferences") is { } nullNodeExternalReferences && nullNodeExternalReferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalReferences = null;
+            if (parseNode.GetChildNode("internalAliases") is { } nullNodeInternalAliases && nullNodeInternalAliases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalAliases = null;
+            if (parseNode.GetChildNode("internalDescription") is { } nullNodeInternalDescription && nullNodeInternalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalDescription = null;
+            if (parseNode.GetChildNode("lastSeen") is { } nullNodeLastSeen && nullNodeLastSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeen = null;
+            if (parseNode.GetChildNode("motive") is { } nullNodeMotive && nullNodeMotive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Motive = null;
+            if (parseNode.GetChildNode("opsecLevel") is { } nullNodeOpsecLevel && nullNodeOpsecLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpsecLevel = null;
+            if (parseNode.GetChildNode("originCountryISO") is { } nullNodeOriginCountryISO && nullNodeOriginCountryISO.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginCountryISO = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("sophisticationLevel") is { } nullNodeSophisticationLevel && nullNodeSophisticationLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SophisticationLevel = null;
+            if (parseNode.GetChildNode("tlp") is { } nullNodeTlp && nullNodeTlp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tlp = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>The activeDuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActiveDuration? ActiveDuration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActiveDuration? ActiveDuration { get => _explicitNullValueActiveDuration; set { _explicitNullValueActiveDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeDuration"); else _explicitNullProperties?.Remove("activeDuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActiveDuration? _explicitNullValueActiveDuration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActiveDuration ActiveDuration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActiveDuration ActiveDuration { get => _explicitNullValueActiveDuration; set { _explicitNullValueActiveDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeDuration"); else _explicitNullProperties?.Remove("activeDuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActiveDuration _explicitNullValueActiveDuration = default!;
 #endif
         /// <summary>The actorCategory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActorCategory? ActorCategory { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActorCategory? ActorCategory { get => _explicitNullValueActorCategory; set { _explicitNullValueActorCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorCategory"); else _explicitNullProperties?.Remove("actorCategory"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActorCategory? _explicitNullValueActorCategory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActorCategory ActorCategory { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActorCategory ActorCategory { get => _explicitNullValueActorCategory; set { _explicitNullValueActorCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorCategory"); else _explicitNullProperties?.Remove("actorCategory"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActorCategory _explicitNullValueActorCategory = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Structured aliases ({ value, confidence 1-10, tlp }). Public: returned to all accounts with per-entry TLP filtering (entries with tlp: purple are removed for non-CFONE accounts).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAliasesItem>? Aliases { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAliasesItem>? Aliases { get => _explicitNullValueAliases; set { _explicitNullValueAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliases"); else _explicitNullProperties?.Remove("aliases"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAliasesItem>? _explicitNullValueAliases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAliasesItem> Aliases { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAliasesItem> Aliases { get => _explicitNullValueAliases; set { _explicitNullValueAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliases"); else _explicitNullProperties?.Remove("aliases"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAliasesItem> _explicitNullValueAliases = default!;
 #endif
         /// <summary>The aliasGroupNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AliasGroupNames { get; set; }
+        public List<string>? AliasGroupNames { get => _explicitNullValueAliasGroupNames; set { _explicitNullValueAliasGroupNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasGroupNames"); else _explicitNullProperties?.Remove("aliasGroupNames"); } }
+        private List<string>? _explicitNullValueAliasGroupNames = default!;
 #nullable restore
 #else
-        public List<string> AliasGroupNames { get; set; }
+        public List<string> AliasGroupNames { get => _explicitNullValueAliasGroupNames; set { _explicitNullValueAliasGroupNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasGroupNames"); else _explicitNullProperties?.Remove("aliasGroupNames"); } }
+        private List<string> _explicitNullValueAliasGroupNames = default!;
 #endif
         /// <summary>The aliasGroupNamesInternal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AliasGroupNamesInternal { get; set; }
+        public List<string>? AliasGroupNamesInternal { get => _explicitNullValueAliasGroupNamesInternal; set { _explicitNullValueAliasGroupNamesInternal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasGroupNamesInternal"); else _explicitNullProperties?.Remove("aliasGroupNamesInternal"); } }
+        private List<string>? _explicitNullValueAliasGroupNamesInternal = default!;
 #nullable restore
 #else
-        public List<string> AliasGroupNamesInternal { get; set; }
+        public List<string> AliasGroupNamesInternal { get => _explicitNullValueAliasGroupNamesInternal; set { _explicitNullValueAliasGroupNamesInternal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasGroupNamesInternal"); else _explicitNullProperties?.Remove("aliasGroupNamesInternal"); } }
+        private List<string> _explicitNullValueAliasGroupNamesInternal = default!;
 #endif
         /// <summary>The attributionOrganization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAttributionOrganization? AttributionOrganization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAttributionOrganization? AttributionOrganization { get => _explicitNullValueAttributionOrganization; set { _explicitNullValueAttributionOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributionOrganization"); else _explicitNullProperties?.Remove("attributionOrganization"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAttributionOrganization? _explicitNullValueAttributionOrganization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAttributionOrganization AttributionOrganization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAttributionOrganization AttributionOrganization { get => _explicitNullValueAttributionOrganization; set { _explicitNullValueAttributionOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributionOrganization"); else _explicitNullProperties?.Remove("attributionOrganization"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestAttributionOrganization _explicitNullValueAttributionOrganization = default!;
 #endif
         /// <summary>Tag type (category) UUID. When changed, existing `properties` are re-validated against the new category&apos;s schema (400 on mismatch). Set to null to unlink (typeless; properties stop being validated).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CategoryUuid { get; set; }
+        public string? CategoryUuid { get => _explicitNullValueCategoryUuid; set { _explicitNullValueCategoryUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryUuid"); else _explicitNullProperties?.Remove("categoryUuid"); } }
+        private string? _explicitNullValueCategoryUuid = default!;
 #nullable restore
 #else
-        public string CategoryUuid { get; set; }
+        public string CategoryUuid { get => _explicitNullValueCategoryUuid; set { _explicitNullValueCategoryUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryUuid"); else _explicitNullProperties?.Remove("categoryUuid"); } }
+        private string _explicitNullValueCategoryUuid = default!;
 #endif
         /// <summary>Overall tag confidence (1-10). Omit to preserve existing.</summary>
-        public int? Confidence { get; set; }
+        public int? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
+        private int? _explicitNullValueConfidence = default!;
         /// <summary>Date of discovery (ISO YYYY-MM-DD). Omit to preserve existing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateOfDiscovery { get; set; }
+        public string? DateOfDiscovery { get => _explicitNullValueDateOfDiscovery; set { _explicitNullValueDateOfDiscovery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfDiscovery"); else _explicitNullProperties?.Remove("dateOfDiscovery"); } }
+        private string? _explicitNullValueDateOfDiscovery = default!;
 #nullable restore
 #else
-        public string DateOfDiscovery { get; set; }
+        public string DateOfDiscovery { get => _explicitNullValueDateOfDiscovery; set { _explicitNullValueDateOfDiscovery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfDiscovery"); else _explicitNullProperties?.Remove("dateOfDiscovery"); } }
+        private string _explicitNullValueDateOfDiscovery = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The externalReferenceLinks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExternalReferenceLinks { get; set; }
+        public List<string>? ExternalReferenceLinks { get => _explicitNullValueExternalReferenceLinks; set { _explicitNullValueExternalReferenceLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalReferenceLinks"); else _explicitNullProperties?.Remove("externalReferenceLinks"); } }
+        private List<string>? _explicitNullValueExternalReferenceLinks = default!;
 #nullable restore
 #else
-        public List<string> ExternalReferenceLinks { get; set; }
+        public List<string> ExternalReferenceLinks { get => _explicitNullValueExternalReferenceLinks; set { _explicitNullValueExternalReferenceLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalReferenceLinks"); else _explicitNullProperties?.Remove("externalReferenceLinks"); } }
+        private List<string> _explicitNullValueExternalReferenceLinks = default!;
 #endif
         /// <summary>Structured external references ({ url, description }). Public: returned to all accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestExternalReferencesItem>? ExternalReferences { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestExternalReferencesItem>? ExternalReferences { get => _explicitNullValueExternalReferences; set { _explicitNullValueExternalReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalReferences"); else _explicitNullProperties?.Remove("externalReferences"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestExternalReferencesItem>? _explicitNullValueExternalReferences = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestExternalReferencesItem> ExternalReferences { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestExternalReferencesItem> ExternalReferences { get => _explicitNullValueExternalReferences; set { _explicitNullValueExternalReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalReferences"); else _explicitNullProperties?.Remove("externalReferences"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestExternalReferencesItem> _explicitNullValueExternalReferences = default!;
 #endif
         /// <summary>Owner-private structured aliases ({ value, confidence 1-10, tlp }). Returned to the owning account and omitted from shared-catalog non-owner responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestInternalAliasesItem>? InternalAliases { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestInternalAliasesItem>? InternalAliases { get => _explicitNullValueInternalAliases; set { _explicitNullValueInternalAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalAliases"); else _explicitNullProperties?.Remove("internalAliases"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestInternalAliasesItem>? _explicitNullValueInternalAliases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestInternalAliasesItem> InternalAliases { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestInternalAliasesItem> InternalAliases { get => _explicitNullValueInternalAliases; set { _explicitNullValueInternalAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalAliases"); else _explicitNullProperties?.Remove("internalAliases"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestInternalAliasesItem> _explicitNullValueInternalAliases = default!;
 #endif
         /// <summary>The internalDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalDescription { get; set; }
+        public string? InternalDescription { get => _explicitNullValueInternalDescription; set { _explicitNullValueInternalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalDescription"); else _explicitNullProperties?.Remove("internalDescription"); } }
+        private string? _explicitNullValueInternalDescription = default!;
 #nullable restore
 #else
-        public string InternalDescription { get; set; }
+        public string InternalDescription { get => _explicitNullValueInternalDescription; set { _explicitNullValueInternalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalDescription"); else _explicitNullProperties?.Remove("internalDescription"); } }
+        private string _explicitNullValueInternalDescription = default!;
 #endif
         /// <summary>The lastSeen property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastSeen { get; set; }
+        public string? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSeen"); else _explicitNullProperties?.Remove("lastSeen"); } }
+        private string? _explicitNullValueLastSeen = default!;
 #nullable restore
 #else
-        public string LastSeen { get; set; }
+        public string LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSeen"); else _explicitNullProperties?.Remove("lastSeen"); } }
+        private string _explicitNullValueLastSeen = default!;
 #endif
         /// <summary>The motive property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestMotive? Motive { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestMotive? Motive { get => _explicitNullValueMotive; set { _explicitNullValueMotive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("motive"); else _explicitNullProperties?.Remove("motive"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestMotive? _explicitNullValueMotive = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestMotive Motive { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestMotive Motive { get => _explicitNullValueMotive; set { _explicitNullValueMotive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("motive"); else _explicitNullProperties?.Remove("motive"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestMotive _explicitNullValueMotive = default!;
 #endif
         /// <summary>The opsecLevel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOpsecLevel? OpsecLevel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOpsecLevel? OpsecLevel { get => _explicitNullValueOpsecLevel; set { _explicitNullValueOpsecLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opsecLevel"); else _explicitNullProperties?.Remove("opsecLevel"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOpsecLevel? _explicitNullValueOpsecLevel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOpsecLevel OpsecLevel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOpsecLevel OpsecLevel { get => _explicitNullValueOpsecLevel; set { _explicitNullValueOpsecLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opsecLevel"); else _explicitNullProperties?.Remove("opsecLevel"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOpsecLevel _explicitNullValueOpsecLevel = default!;
 #endif
         /// <summary>The originCountryISO property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOriginCountryIso? OriginCountryISO { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOriginCountryIso? OriginCountryISO { get => _explicitNullValueOriginCountryISO; set { _explicitNullValueOriginCountryISO = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originCountryISO"); else _explicitNullProperties?.Remove("originCountryISO"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOriginCountryIso? _explicitNullValueOriginCountryISO = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOriginCountryIso OriginCountryISO { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOriginCountryIso OriginCountryISO { get => _explicitNullValueOriginCountryISO; set { _explicitNullValueOriginCountryISO = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originCountryISO"); else _explicitNullProperties?.Remove("originCountryISO"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestOriginCountryIso _explicitNullValueOriginCountryISO = default!;
 #endif
         /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority? Priority { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority? _explicitNullValuePriority = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority Priority { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority _explicitNullValuePriority = default!;
 #endif
         /// <summary>Custom field values blob. When omitted, the existing value is preserved. When provided, performs a shallow per-key merge over the stored value (unmentioned keys are retained). Setting an individual key to null deletes that key. Validation runs against the merged result, so a partial update may omit a schema-required key if the stored value supplies it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestProperties? Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestProperties? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestProperties? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestProperties Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestProperties Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestProperties _explicitNullValueProperties = default!;
 #endif
         /// <summary>The sophisticationLevel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestSophisticationLevel? SophisticationLevel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestSophisticationLevel? SophisticationLevel { get => _explicitNullValueSophisticationLevel; set { _explicitNullValueSophisticationLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sophisticationLevel"); else _explicitNullProperties?.Remove("sophisticationLevel"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestSophisticationLevel? _explicitNullValueSophisticationLevel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestSophisticationLevel SophisticationLevel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestSophisticationLevel SophisticationLevel { get => _explicitNullValueSophisticationLevel; set { _explicitNullValueSophisticationLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sophisticationLevel"); else _explicitNullProperties?.Remove("sophisticationLevel"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestSophisticationLevel _explicitNullValueSophisticationLevel = default!;
 #endif
         /// <summary>Tag-level TLP marking. Omit to preserve existing. Cannot be cleared to null.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestTlp? Tlp { get; set; }
+#nullable enable
+        public string? Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        private string? _explicitNullValueTlp = default!;
+#nullable restore
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequest"/> and sets the default values.
@@ -201,7 +277,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -232,7 +308,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority>(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestProperties>(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestProperties.CreateFromDiscriminatorValue); } },
                 { "sophisticationLevel", n => { SophisticationLevel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestSophisticationLevel>(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestSophisticationLevel.CreateFromDiscriminatorValue); } },
-                { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestTlp>(); } },
+                { "tlp", n => { Tlp = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -264,8 +340,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority>("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestProperties>("properties", Properties);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestSophisticationLevel>("sophisticationLevel", SophisticationLevel);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestTlp>("tlp", Tlp);
+            writer.WriteStringValue("tlp", Tlp);
             writer.WriteStringValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

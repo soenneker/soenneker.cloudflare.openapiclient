@@ -89,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.D1ApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.D1DeleteDatabase200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.D1DeleteDatabase200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -112,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.D1ApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.D1GetDatabase200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.D1GetDatabase200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -137,6 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.D1ApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.D1UpdatePartialDatabase200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.D1UpdatePartialDatabase200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -162,6 +165,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.D1ApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.D1UpdateDatabase200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.D1UpdateDatabase200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

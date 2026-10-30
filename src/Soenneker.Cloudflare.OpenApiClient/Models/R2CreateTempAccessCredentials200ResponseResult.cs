@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class R2CreateTempAccessCredentials200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accessKeyId") is { } nullNodeAccessKeyId && nullNodeAccessKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessKeyId = null;
+            if (parseNode.GetChildNode("secretAccessKey") is { } nullNodeSecretAccessKey && nullNodeSecretAccessKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretAccessKey = null;
+            if (parseNode.GetChildNode("sessionToken") is { } nullNodeSessionToken && nullNodeSessionToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionToken = null;
+        }
+
         /// <summary>ID for new access key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessKeyId { get; set; }
+        public string? AccessKeyId { get => _explicitNullValueAccessKeyId; set { _explicitNullValueAccessKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessKeyId"); else _explicitNullProperties?.Remove("accessKeyId"); } }
+        private string? _explicitNullValueAccessKeyId = default!;
 #nullable restore
 #else
-        public string AccessKeyId { get; set; }
+        public string AccessKeyId { get => _explicitNullValueAccessKeyId; set { _explicitNullValueAccessKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessKeyId"); else _explicitNullProperties?.Remove("accessKeyId"); } }
+        private string _explicitNullValueAccessKeyId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Secret access key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretAccessKey { get; set; }
+        public string? SecretAccessKey { get => _explicitNullValueSecretAccessKey; set { _explicitNullValueSecretAccessKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretAccessKey"); else _explicitNullProperties?.Remove("secretAccessKey"); } }
+        private string? _explicitNullValueSecretAccessKey = default!;
 #nullable restore
 #else
-        public string SecretAccessKey { get; set; }
+        public string SecretAccessKey { get => _explicitNullValueSecretAccessKey; set { _explicitNullValueSecretAccessKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretAccessKey"); else _explicitNullProperties?.Remove("secretAccessKey"); } }
+        private string _explicitNullValueSecretAccessKey = default!;
 #endif
         /// <summary>Security token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionToken { get; set; }
+        public string? SessionToken { get => _explicitNullValueSessionToken; set { _explicitNullValueSessionToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionToken"); else _explicitNullProperties?.Remove("sessionToken"); } }
+        private string? _explicitNullValueSessionToken = default!;
 #nullable restore
 #else
-        public string SessionToken { get; set; }
+        public string SessionToken { get => _explicitNullValueSessionToken; set { _explicitNullValueSessionToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionToken"); else _explicitNullProperties?.Remove("sessionToken"); } }
+        private string _explicitNullValueSessionToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateTempAccessCredentials200ResponseResult"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateTempAccessCredentials200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateTempAccessCredentials200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateTempAccessCredentials200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("accessKeyId", AccessKeyId);
             writer.WriteStringValue("secretAccessKey", SecretAccessKey);
             writer.WriteStringValue("sessionToken", SessionToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

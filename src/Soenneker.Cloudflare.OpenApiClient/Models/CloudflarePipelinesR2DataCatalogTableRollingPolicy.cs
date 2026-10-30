@@ -12,13 +12,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudflarePipelinesR2DataCatalogTableRollingPolicy : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("file_size_bytes") is { } nullNodeFileSizeBytes && nullNodeFileSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileSizeBytes = null;
+            if (parseNode.GetChildNode("inactivity_seconds") is { } nullNodeInactivitySeconds && nullNodeInactivitySeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InactivitySeconds = null;
+            if (parseNode.GetChildNode("interval_seconds") is { } nullNodeIntervalSeconds && nullNodeIntervalSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntervalSeconds = null;
+        }
+
         /// <summary>Files will be rolled after reaching this number of bytes</summary>
-        public int? FileSizeBytes { get; set; }
+        public int? FileSizeBytes { get => _explicitNullValueFileSizeBytes; set { _explicitNullValueFileSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_size_bytes"); else _explicitNullProperties?.Remove("file_size_bytes"); } }
+        private int? _explicitNullValueFileSizeBytes = default!;
         /// <summary>Number of seconds of inactivity to wait before rolling over to a new file</summary>
-        public int? InactivitySeconds { get; set; }
+        public int? InactivitySeconds { get => _explicitNullValueInactivitySeconds; set { _explicitNullValueInactivitySeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inactivity_seconds"); else _explicitNullProperties?.Remove("inactivity_seconds"); } }
+        private int? _explicitNullValueInactivitySeconds = default!;
         /// <summary>Number of seconds to wait before rolling over to a new file</summary>
-        public int? IntervalSeconds { get; set; }
+        public int? IntervalSeconds { get => _explicitNullValueIntervalSeconds; set { _explicitNullValueIntervalSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval_seconds"); else _explicitNullProperties?.Remove("interval_seconds"); } }
+        private int? _explicitNullValueIntervalSeconds = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -27,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("file_size_bytes", FileSizeBytes);
             writer.WriteIntValue("inactivity_seconds", InactivitySeconds);
-            writer.WriteIntValue("interval_seconds", IntervalSeconds);
+            writer.WriteIntValue("interval_seconds", IntervalSeconds);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

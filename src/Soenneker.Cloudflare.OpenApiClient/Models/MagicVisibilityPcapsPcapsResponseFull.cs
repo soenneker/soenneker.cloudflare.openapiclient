@@ -11,71 +11,110 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicVisibilityPcapsPcapsResponseFull : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("byte_limit") is { } nullNodeByteLimit && nullNodeByteLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByteLimit = null;
+            if (parseNode.GetChildNode("colo_name") is { } nullNodeColoName && nullNodeColoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoName = null;
+            if (parseNode.GetChildNode("destination_conf") is { } nullNodeDestinationConf && nullNodeDestinationConf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationConf = null;
+            if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("filter_v1") is { } nullNodeFilterV1 && nullNodeFilterV1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterV1 = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("packets_captured") is { } nullNodePacketsCaptured && nullNodePacketsCaptured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsCaptured = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("stop_requested") is { } nullNodeStopRequested && nullNodeStopRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopRequested = null;
+            if (parseNode.GetChildNode("submitted") is { } nullNodeSubmitted && nullNodeSubmitted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Submitted = null;
+            if (parseNode.GetChildNode("system") is { } nullNodeSystem && nullNodeSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) System = null;
+            if (parseNode.GetChildNode("time_limit") is { } nullNodeTimeLimit && nullNodeTimeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeLimit = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of bytes to capture. This field only applies to `full` packet captures.</summary>
-        public double? ByteLimit { get; set; }
+        public double? ByteLimit { get => _explicitNullValueByteLimit; set { _explicitNullValueByteLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byte_limit"); else _explicitNullProperties?.Remove("byte_limit"); } }
+        private double? _explicitNullValueByteLimit = default!;
         /// <summary>The name of the data center used for the packet capture. This can be a specific colo (ord02) or a multi-colo name (ORD). This field only applies to `full` packet captures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ColoName { get; set; }
+        public string? ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
+        private string? _explicitNullValueColoName = default!;
 #nullable restore
 #else
-        public string ColoName { get; set; }
+        public string ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
+        private string _explicitNullValueColoName = default!;
 #endif
         /// <summary>The full URI for the bucket. This field only applies to `full` packet captures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationConf { get; set; }
+        public string? DestinationConf { get => _explicitNullValueDestinationConf; set { _explicitNullValueDestinationConf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_conf"); else _explicitNullProperties?.Remove("destination_conf"); } }
+        private string? _explicitNullValueDestinationConf = default!;
 #nullable restore
 #else
-        public string DestinationConf { get; set; }
+        public string DestinationConf { get => _explicitNullValueDestinationConf; set { _explicitNullValueDestinationConf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_conf"); else _explicitNullProperties?.Remove("destination_conf"); } }
+        private string _explicitNullValueDestinationConf = default!;
 #endif
         /// <summary>An error message that describes why the packet capture failed. This field only applies to `full` packet captures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get; set; }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>The packet capture filter. When this field is empty, all packets are captured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1? FilterV1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1? FilterV1 { get => _explicitNullValueFilterV1; set { _explicitNullValueFilterV1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_v1"); else _explicitNullProperties?.Remove("filter_v1"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1? _explicitNullValueFilterV1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1 FilterV1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1 FilterV1 { get => _explicitNullValueFilterV1; set { _explicitNullValueFilterV1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_v1"); else _explicitNullProperties?.Remove("filter_v1"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1 _explicitNullValueFilterV1 = default!;
 #endif
         /// <summary>The ID for the packet capture.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The number of packets captured.</summary>
-        public int? PacketsCaptured { get; set; }
+        public int? PacketsCaptured { get => _explicitNullValuePacketsCaptured; set { _explicitNullValuePacketsCaptured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_captured"); else _explicitNullProperties?.Remove("packets_captured"); } }
+        private int? _explicitNullValuePacketsCaptured = default!;
         /// <summary>The status of the packet capture request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsStatus? _explicitNullValueStatus = default!;
         /// <summary>The RFC 3339 timestamp when stopping the packet capture was requested. This field only applies to `full` packet captures.</summary>
-        public DateTimeOffset? StopRequested { get; set; }
+        public DateTimeOffset? StopRequested { get => _explicitNullValueStopRequested; set { _explicitNullValueStopRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_requested"); else _explicitNullProperties?.Remove("stop_requested"); } }
+        private DateTimeOffset? _explicitNullValueStopRequested = default!;
         /// <summary>The RFC 3339 timestamp when the packet capture was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Submitted { get; set; }
+        public string? Submitted { get => _explicitNullValueSubmitted; set { _explicitNullValueSubmitted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitted"); else _explicitNullProperties?.Remove("submitted"); } }
+        private string? _explicitNullValueSubmitted = default!;
 #nullable restore
 #else
-        public string Submitted { get; set; }
+        public string Submitted { get => _explicitNullValueSubmitted; set { _explicitNullValueSubmitted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitted"); else _explicitNullProperties?.Remove("submitted"); } }
+        private string _explicitNullValueSubmitted = default!;
 #endif
         /// <summary>The system used to collect packet captures.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSystem? System { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSystem? System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSystem? _explicitNullValueSystem = default!;
         /// <summary>The packet capture duration in seconds.</summary>
-        public double? TimeLimit { get; set; }
+        public double? TimeLimit { get => _explicitNullValueTimeLimit; set { _explicitNullValueTimeLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_limit"); else _explicitNullProperties?.Remove("time_limit"); } }
+        private double? _explicitNullValueTimeLimit = default!;
         /// <summary>The type of packet capture. `Simple` captures sampled packets, and `full` captures entire payloads and non-sampled packets.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsResponseFull"/> and sets the default values.
         /// </summary>
@@ -91,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsResponseFull CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsResponseFull();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsResponseFull(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,6 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSystem>("system", System);
             writer.WriteDoubleValue("time_limit", TimeLimit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

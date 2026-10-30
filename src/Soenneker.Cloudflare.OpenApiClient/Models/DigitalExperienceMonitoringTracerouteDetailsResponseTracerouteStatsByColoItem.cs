@@ -11,51 +11,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("availabilityPct") is { } nullNodeAvailabilityPct && nullNodeAvailabilityPct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailabilityPct = null;
+            if (parseNode.GetChildNode("colo") is { } nullNodeColo && nullNodeColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colo = null;
+            if (parseNode.GetChildNode("hopsCount") is { } nullNodeHopsCount && nullNodeHopsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HopsCount = null;
+            if (parseNode.GetChildNode("packetLossPct") is { } nullNodePacketLossPct && nullNodePacketLossPct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketLossPct = null;
+            if (parseNode.GetChildNode("roundTripTimeMs") is { } nullNodeRoundTripTimeMs && nullNodeRoundTripTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoundTripTimeMs = null;
+            if (parseNode.GetChildNode("uniqueDevicesTotal") is { } nullNodeUniqueDevicesTotal && nullNodeUniqueDevicesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueDevicesTotal = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The availabilityPct property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime? AvailabilityPct { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime? AvailabilityPct { get => _explicitNullValueAvailabilityPct; set { _explicitNullValueAvailabilityPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availabilityPct"); else _explicitNullProperties?.Remove("availabilityPct"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime? _explicitNullValueAvailabilityPct = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime AvailabilityPct { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime AvailabilityPct { get => _explicitNullValueAvailabilityPct; set { _explicitNullValueAvailabilityPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availabilityPct"); else _explicitNullProperties?.Remove("availabilityPct"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime _explicitNullValueAvailabilityPct = default!;
 #endif
         /// <summary>The colo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Colo { get; set; }
+        public string? Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
+        private string? _explicitNullValueColo = default!;
 #nullable restore
 #else
-        public string Colo { get; set; }
+        public string Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
+        private string _explicitNullValueColo = default!;
 #endif
         /// <summary>The hopsCount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime? HopsCount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime? HopsCount { get => _explicitNullValueHopsCount; set { _explicitNullValueHopsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hopsCount"); else _explicitNullProperties?.Remove("hopsCount"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime? _explicitNullValueHopsCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime HopsCount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime HopsCount { get => _explicitNullValueHopsCount; set { _explicitNullValueHopsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hopsCount"); else _explicitNullProperties?.Remove("hopsCount"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime _explicitNullValueHopsCount = default!;
 #endif
         /// <summary>The packetLossPct property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime? PacketLossPct { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime? PacketLossPct { get => _explicitNullValuePacketLossPct; set { _explicitNullValuePacketLossPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetLossPct"); else _explicitNullProperties?.Remove("packetLossPct"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime? _explicitNullValuePacketLossPct = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime PacketLossPct { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime PacketLossPct { get => _explicitNullValuePacketLossPct; set { _explicitNullValuePacketLossPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetLossPct"); else _explicitNullProperties?.Remove("packetLossPct"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime _explicitNullValuePacketLossPct = default!;
 #endif
         /// <summary>The roundTripTimeMs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime? RoundTripTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime? RoundTripTimeMs { get => _explicitNullValueRoundTripTimeMs; set { _explicitNullValueRoundTripTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roundTripTimeMs"); else _explicitNullProperties?.Remove("roundTripTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime? _explicitNullValueRoundTripTimeMs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime RoundTripTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime RoundTripTimeMs { get => _explicitNullValueRoundTripTimeMs; set { _explicitNullValueRoundTripTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roundTripTimeMs"); else _explicitNullProperties?.Remove("roundTripTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime _explicitNullValueRoundTripTimeMs = default!;
 #endif
         /// <summary>Count of unique devices that have run this test in the given time period.</summary>
-        public int? UniqueDevicesTotal { get; set; }
+        public int? UniqueDevicesTotal { get => _explicitNullValueUniqueDevicesTotal; set { _explicitNullValueUniqueDevicesTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueDevicesTotal"); else _explicitNullProperties?.Remove("uniqueDevicesTotal"); } }
+        private int? _explicitNullValueUniqueDevicesTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem"/> and sets the default values.
         /// </summary>
@@ -71,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatPctOverTime>("packetLossPct", PacketLossPct);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime>("roundTripTimeMs", RoundTripTimeMs);
             writer.WriteIntValue("uniqueDevicesTotal", UniqueDevicesTotal);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\dns_analytics\report
+    /// Builds and executes requests for operations under \zones\{zoneId}\dns_analytics\report
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportRequestBuilder : BaseRequestBuilder
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/dns_analytics/report{?dimensions*,filters*,limit*,metrics*,since*,sort*,until*}", pathParameters)
+        public ReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_analytics/report{?dimensions*,filters*,limit*,metrics*,since*,sort*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/dns_analytics/report{?dimensions*,filters*,limit*,metrics*,since*,sort*,until*}", rawUrl)
+        public ReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_analytics/report{?dimensions*,filters*,limit*,metrics*,since*,sort*,until*}", rawUrl)
         {
         }
         /// <summary>
@@ -61,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsTable4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsTable200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsTable200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

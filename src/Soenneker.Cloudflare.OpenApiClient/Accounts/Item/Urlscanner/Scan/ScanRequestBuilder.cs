@@ -68,6 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScans400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScans200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScans200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,6 +100,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan400Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan409Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan429Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScan200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

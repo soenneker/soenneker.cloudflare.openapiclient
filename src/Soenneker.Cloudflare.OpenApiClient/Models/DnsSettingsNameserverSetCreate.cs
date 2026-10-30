@@ -11,20 +11,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DnsSettingsNameserverSetCreate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("advanced") is { } nullNodeAdvanced && nullNodeAdvanced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advanced = null;
+            if (parseNode.GetChildNode("ip_set") is { } nullNodeIpSet && nullNodeIpSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpSet = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("nameservers") is { } nullNodeNameservers && nullNodeNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nameservers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allocate the nameservers from distinct Advanced anycast groups.</summary>
-        public bool? Advanced { get; set; }
+        public bool? Advanced { get => _explicitNullValueAdvanced; set { _explicitNullValueAdvanced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advanced"); else _explicitNullProperties?.Remove("advanced"); } }
+        private bool? _explicitNullValueAdvanced = default!;
         /// <summary>Selects the account-specific IP set that supplies the nameserver addresses. Nameserver sets with the same `ip_set` and `advanced` value may reuse addresses; otherwise, they use disjoint address groups.</summary>
-        public long? IpSet { get; set; }
+        public long? IpSet { get => _explicitNullValueIpSet; set { _explicitNullValueIpSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_set"); else _explicitNullProperties?.Remove("ip_set"); } }
+        private long? _explicitNullValueIpSet = default!;
+        /// <summary>Customer-defined name, unique within the account by exact string equality (case-sensitive, with no Unicode normalization). Must be valid UTF-8 and at most 255 UTF-8 bytes, not 255 characters. Only graphical Unicode characters are allowed; leading or trailing whitespace is rejected. The name can be changed without changing the set&apos;s nameservers or addresses.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
+#nullable restore
+#else
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
+#endif
         /// <summary>Lists each nameserver and the number of addresses to allocate to it. Requires a unique name for each entry in the set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreateMember>? Nameservers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreateMember>? Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreateMember>? _explicitNullValueNameservers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreateMember> Nameservers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreateMember> Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreateMember> _explicitNullValueNameservers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreate"/> and sets the default values.
@@ -43,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "advanced", n => { Advanced = n.GetBoolValue(); } },
                 { "ip_set", n => { IpSet = n.GetLongValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "nameservers", n => { Nameservers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreateMember>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreateMember.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -67,7 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("advanced", Advanced);
             writer.WriteLongValue("ip_set", IpSet);
+            writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetCreateMember>("nameservers", Nameservers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

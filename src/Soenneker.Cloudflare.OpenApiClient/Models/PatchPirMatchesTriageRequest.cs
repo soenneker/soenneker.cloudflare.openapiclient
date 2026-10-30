@@ -11,17 +11,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PatchPirMatchesTriageRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("matches") is { } nullNodeMatches && nullNodeMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Matches = null;
+            if (parseNode.GetChildNode("triage_state") is { } nullNodeTriageState && nullNodeTriageState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriageState = null;
+        }
+
         /// <summary>Up to 100 matches to set the triage state on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestMatchesItem>? Matches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestMatchesItem>? Matches { get => _explicitNullValueMatches; set { _explicitNullValueMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matches"); else _explicitNullProperties?.Remove("matches"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestMatchesItem>? _explicitNullValueMatches = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestMatchesItem> Matches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestMatchesItem> Matches { get => _explicitNullValueMatches; set { _explicitNullValueMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matches"); else _explicitNullProperties?.Remove("matches"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestMatchesItem> _explicitNullValueMatches = default!;
 #endif
         /// <summary>The triage_state property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestTriageState? TriageState { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestTriageState? TriageState { get => _explicitNullValueTriageState; set { _explicitNullValueTriageState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triage_state"); else _explicitNullProperties?.Remove("triage_state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestTriageState? _explicitNullValueTriageState = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestMatchesItem>("matches", Matches);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestTriageState>("triage_state", TriageState);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPirMatchesTriageRequestTriageState>("triage_state", TriageState);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The user_agent property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.User_agent.User_agentRequestBuilder User_agent
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.User_agent.User_agentRequestBuilder(PathParameters, RequestAdapter);

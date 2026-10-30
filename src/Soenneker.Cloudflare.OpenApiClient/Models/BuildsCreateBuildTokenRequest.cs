@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BuildsCreateBuildTokenRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("build_token_name") is { } nullNodeBuildTokenName && nullNodeBuildTokenName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenName = null;
+            if (parseNode.GetChildNode("build_token_secret") is { } nullNodeBuildTokenSecret && nullNodeBuildTokenSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenSecret = null;
+            if (parseNode.GetChildNode("cloudflare_token_id") is { } nullNodeCloudflareTokenId && nullNodeCloudflareTokenId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareTokenId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The build_token_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildTokenName { get; set; }
+        public string? BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
+        private string? _explicitNullValueBuildTokenName = default!;
 #nullable restore
 #else
-        public string BuildTokenName { get; set; }
+        public string BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
+        private string _explicitNullValueBuildTokenName = default!;
 #endif
         /// <summary>The build_token_secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildTokenSecret { get; set; }
+        public string? BuildTokenSecret { get => _explicitNullValueBuildTokenSecret; set { _explicitNullValueBuildTokenSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_secret"); else _explicitNullProperties?.Remove("build_token_secret"); } }
+        private string? _explicitNullValueBuildTokenSecret = default!;
 #nullable restore
 #else
-        public string BuildTokenSecret { get; set; }
+        public string BuildTokenSecret { get => _explicitNullValueBuildTokenSecret; set { _explicitNullValueBuildTokenSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_secret"); else _explicitNullProperties?.Remove("build_token_secret"); } }
+        private string _explicitNullValueBuildTokenSecret = default!;
 #endif
         /// <summary>The cloudflare_token_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudflareTokenId { get; set; }
+        public string? CloudflareTokenId { get => _explicitNullValueCloudflareTokenId; set { _explicitNullValueCloudflareTokenId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_token_id"); else _explicitNullProperties?.Remove("cloudflare_token_id"); } }
+        private string? _explicitNullValueCloudflareTokenId = default!;
 #nullable restore
 #else
-        public string CloudflareTokenId { get; set; }
+        public string CloudflareTokenId { get => _explicitNullValueCloudflareTokenId; set { _explicitNullValueCloudflareTokenId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_token_id"); else _explicitNullProperties?.Remove("cloudflare_token_id"); } }
+        private string _explicitNullValueCloudflareTokenId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildTokenRequest"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildTokenRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildTokenRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildTokenRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("build_token_name", BuildTokenName);
             writer.WriteStringValue("build_token_secret", BuildTokenSecret);
             writer.WriteStringValue("cloudflare_token_id", CloudflareTokenId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,24 +12,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessOAuthConfigurationGrant : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_token_lifetime") is { } nullNodeAccessTokenLifetime && nullNodeAccessTokenLifetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessTokenLifetime = null;
+            if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
+        }
+
         /// <summary>The lifetime of the access token. Must be in the format `300ms` or `2h45m`. Valid time units are ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessTokenLifetime { get; set; }
+        public string? AccessTokenLifetime { get => _explicitNullValueAccessTokenLifetime; set { _explicitNullValueAccessTokenLifetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_token_lifetime"); else _explicitNullProperties?.Remove("access_token_lifetime"); } }
+        private string? _explicitNullValueAccessTokenLifetime = default!;
 #nullable restore
 #else
-        public string AccessTokenLifetime { get; set; }
+        public string AccessTokenLifetime { get => _explicitNullValueAccessTokenLifetime; set { _explicitNullValueAccessTokenLifetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_token_lifetime"); else _explicitNullProperties?.Remove("access_token_lifetime"); } }
+        private string _explicitNullValueAccessTokenLifetime = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the OAuth session. Must be in the format `300ms` or `2h45m`. Valid time units are ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionDuration { get; set; }
+        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string? _explicitNullValueSessionDuration = default!;
 #nullable restore
 #else
-        public string SessionDuration { get; set; }
+        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string _explicitNullValueSessionDuration = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("access_token_lifetime", AccessTokenLifetime);
             writer.WriteStringValue("session_duration", SessionDuration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

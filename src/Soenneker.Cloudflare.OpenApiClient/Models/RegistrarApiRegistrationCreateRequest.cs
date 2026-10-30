@@ -11,47 +11,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RegistrarApiRegistrationCreateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acknowledgements") is { } nullNodeAcknowledgements && nullNodeAcknowledgements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Acknowledgements = null;
+            if (parseNode.GetChildNode("auto_renew") is { } nullNodeAutoRenew && nullNodeAutoRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRenew = null;
+            if (parseNode.GetChildNode("contact_extensions") is { } nullNodeContactExtensions && nullNodeContactExtensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactExtensions = null;
+            if (parseNode.GetChildNode("contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
+            if (parseNode.GetChildNode("domain_name") is { } nullNodeDomainName && nullNodeDomainName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainName = null;
+            if (parseNode.GetChildNode("privacy_mode") is { } nullNodePrivacyMode && nullNodePrivacyMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivacyMode = null;
+            if (parseNode.GetChildNode("years") is { } nullNodeYears && nullNodeYears.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Years = null;
+        }
+
         /// <summary>Provides user acknowledgements for a specific extension or premiumregistration flow. The extension registration schema from theextension discovery endpoint identifies the required keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty? Acknowledgements { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty? Acknowledgements { get => _explicitNullValueAcknowledgements; set { _explicitNullValueAcknowledgements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acknowledgements"); else _explicitNullProperties?.Remove("acknowledgements"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty? _explicitNullValueAcknowledgements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty Acknowledgements { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty Acknowledgements { get => _explicitNullValueAcknowledgements; set { _explicitNullValueAcknowledgements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acknowledgements"); else _explicitNullProperties?.Remove("acknowledgements"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty _explicitNullValueAcknowledgements = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable or disable automatic renewal. Defaults to `false` if omitted.Setting this field to `true` is an explicit opt-in authorizingCloudflare to charge the account&apos;s default payment method up to 30days before domain expiry to renew the domain automatically.Renewal pricing may change over time based on registry pricing.</summary>
-        public bool? AutoRenew { get; set; }
+        public bool? AutoRenew { get => _explicitNullValueAutoRenew; set { _explicitNullValueAutoRenew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_renew"); else _explicitNullProperties?.Remove("auto_renew"); } }
+        private bool? _explicitNullValueAutoRenew = default!;
         /// <summary>Provides registry-specific contact extension values for the registrant.`GET /accounts/{account_id}/registrar/extensions/{extension}` identifiesthe required keys and allowed values for each extension in the`registration_schema.properties.contact_extensions` object.Examples include `.us` nexus fields, `.uk` registrant type fields,and `.ca` legal type fields. Omit this object when the extension&apos;sregistration schema excludes `contact_extensions`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty? ContactExtensions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty? ContactExtensions { get => _explicitNullValueContactExtensions; set { _explicitNullValueContactExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_extensions"); else _explicitNullProperties?.Remove("contact_extensions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty? _explicitNullValueContactExtensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty ContactExtensions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty ContactExtensions { get => _explicitNullValueContactExtensions; set { _explicitNullValueContactExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_extensions"); else _explicitNullProperties?.Remove("contact_extensions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty _explicitNullValueContactExtensions = default!;
 #endif
         /// <summary>The contacts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts? Contacts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts? Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contacts"); else _explicitNullProperties?.Remove("contacts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts? _explicitNullValueContacts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts Contacts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contacts"); else _explicitNullProperties?.Remove("contacts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts _explicitNullValueContacts = default!;
 #endif
         /// <summary>Provides a fully qualified domain name (FQDN), including the extension(e.g., `example.com`, `mybrand.app`). The domain name uniquely identifiesa registration. Cloudflare permits only one registration per domain, makingthe domain name a natural idempotency key for registration requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainName { get; set; }
+        public string? DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_name"); else _explicitNullProperties?.Remove("domain_name"); } }
+        private string? _explicitNullValueDomainName = default!;
 #nullable restore
 #else
-        public string DomainName { get; set; }
+        public string DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_name"); else _explicitNullProperties?.Remove("domain_name"); } }
+        private string _explicitNullValueDomainName = default!;
 #endif
         /// <summary>Sets the WHOIS privacy mode for the registration. Defaults to `redaction`.- `off`: Disables WHOIS privacy.- `redaction`: Requests WHOIS redaction where the extension supports it.  Some extensions exclude privacy and redaction.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestPrivacyMode? PrivacyMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestPrivacyMode? PrivacyMode { get => _explicitNullValuePrivacyMode; set { _explicitNullValuePrivacyMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy_mode"); else _explicitNullProperties?.Remove("privacy_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestPrivacyMode? _explicitNullValuePrivacyMode = default!;
         /// <summary>Sets the registration term from 1 to 10 years. When omitted, thisfield defaults to the registry&apos;s minimum registration period for theextension. Most extensions require 1 year, while some require longerminimum terms (e.g., `.ai` requires 2 years).Each registry may also enforce its own maximum registration term. Arequest above that maximum fails. When uncertain, omit this field touse the default.</summary>
-        public int? Years { get; set; }
+        public int? Years { get => _explicitNullValueYears; set { _explicitNullValueYears = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("years"); else _explicitNullProperties?.Remove("years"); } }
+        private int? _explicitNullValueYears = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequest"/> and sets the default values.
         /// </summary>
@@ -68,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("domain_name", DomainName);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestPrivacyMode>("privacy_mode", PrivacyMode);
             writer.WriteIntValue("years", Years);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LoadBalancingHealthDetailsResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("pool_id") is { } nullNodePoolId && nullNodePoolId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoolId = null;
+            if (parseNode.GetChildNode("pop_health") is { } nullNodePopHealth && nullNodePopHealth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PopHealth = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Pool ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PoolId { get; set; }
+        public string? PoolId { get => _explicitNullValuePoolId; set { _explicitNullValuePoolId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_id"); else _explicitNullProperties?.Remove("pool_id"); } }
+        private string? _explicitNullValuePoolId = default!;
 #nullable restore
 #else
-        public string PoolId { get; set; }
+        public string PoolId { get => _explicitNullValuePoolId; set { _explicitNullValuePoolId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_id"); else _explicitNullProperties?.Remove("pool_id"); } }
+        private string _explicitNullValuePoolId = default!;
 #endif
         /// <summary>List of regions and associated health status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsAllOf2ResultPopHealth? PopHealth { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsAllOf2ResultPopHealth? PopHealth { get => _explicitNullValuePopHealth; set { _explicitNullValuePopHealth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pop_health"); else _explicitNullProperties?.Remove("pop_health"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsAllOf2ResultPopHealth? _explicitNullValuePopHealth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsAllOf2ResultPopHealth PopHealth { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsAllOf2ResultPopHealth PopHealth { get => _explicitNullValuePopHealth; set { _explicitNullValuePopHealth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pop_health"); else _explicitNullProperties?.Remove("pop_health"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsAllOf2ResultPopHealth _explicitNullValuePopHealth = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsResult"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("pool_id", PoolId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthDetailsAllOf2ResultPopHealth>("pop_health", PopHealth);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

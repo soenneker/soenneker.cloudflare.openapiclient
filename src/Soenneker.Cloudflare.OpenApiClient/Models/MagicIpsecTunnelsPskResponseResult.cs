@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicIpsecTunnelsPskResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("successfully_applied_psks") is { } nullNodeSuccessfullyAppliedPsks && nullNodeSuccessfullyAppliedPsks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessfullyAppliedPsks = null;
+            if (parseNode.GetChildNode("unapplied_psks") is { } nullNodeUnappliedPsks && nullNodeUnappliedPsks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnappliedPsks = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Map of tunnel IDs to successfully applied PSK details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultSuccessfullyAppliedPsksProperty? SuccessfullyAppliedPsks { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultSuccessfullyAppliedPsksProperty? SuccessfullyAppliedPsks { get => _explicitNullValueSuccessfullyAppliedPsks; set { _explicitNullValueSuccessfullyAppliedPsks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successfully_applied_psks"); else _explicitNullProperties?.Remove("successfully_applied_psks"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultSuccessfullyAppliedPsksProperty? _explicitNullValueSuccessfullyAppliedPsks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultSuccessfullyAppliedPsksProperty SuccessfullyAppliedPsks { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultSuccessfullyAppliedPsksProperty SuccessfullyAppliedPsks { get => _explicitNullValueSuccessfullyAppliedPsks; set { _explicitNullValueSuccessfullyAppliedPsks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successfully_applied_psks"); else _explicitNullProperties?.Remove("successfully_applied_psks"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultSuccessfullyAppliedPsksProperty _explicitNullValueSuccessfullyAppliedPsks = default!;
 #endif
         /// <summary>Map of tunnel IDs to failure reasons for PSKs that could not be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultUnappliedPsksProperty? UnappliedPsks { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultUnappliedPsksProperty? UnappliedPsks { get => _explicitNullValueUnappliedPsks; set { _explicitNullValueUnappliedPsks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unapplied_psks"); else _explicitNullProperties?.Remove("unapplied_psks"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultUnappliedPsksProperty? _explicitNullValueUnappliedPsks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultUnappliedPsksProperty UnappliedPsks { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultUnappliedPsksProperty UnappliedPsks { get => _explicitNullValueUnappliedPsks; set { _explicitNullValueUnappliedPsks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unapplied_psks"); else _explicitNullProperties?.Remove("unapplied_psks"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultUnappliedPsksProperty _explicitNullValueUnappliedPsks = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseResult"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultSuccessfullyAppliedPsksProperty>("successfully_applied_psks", SuccessfullyAppliedPsks);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsPskResponseAllOf2ResultUnappliedPsksProperty>("unapplied_psks", UnappliedPsks);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

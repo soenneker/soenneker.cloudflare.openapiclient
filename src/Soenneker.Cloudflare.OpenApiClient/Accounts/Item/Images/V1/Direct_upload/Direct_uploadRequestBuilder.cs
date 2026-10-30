@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Direct_uplo
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageDirectUploadResponseV1>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageDirectUploadResponseV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageDirectUploadResponseV1>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageDirectUploadResponseV1.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Direct uploads allow users to upload images without API keys. A common usecase are web apps, client-side applications, or mobile devices where usersupload content directly to Cloudflare Images. This method creates a one-timeupload URL. Use the V2 endpoint for additional features such as custom IDs andmetadata.

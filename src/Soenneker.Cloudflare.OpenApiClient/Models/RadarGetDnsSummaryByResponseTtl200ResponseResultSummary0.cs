@@ -11,64 +11,92 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetDnsSummaryByResponseTtl200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("gt_15m_lte_1h") is { } nullNodeGt15mLte1h && nullNodeGt15mLte1h.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt15mLte1h = null;
+            if (parseNode.GetChildNode("gt_1d_lte_1w") is { } nullNodeGt1dLte1w && nullNodeGt1dLte1w.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt1dLte1w = null;
+            if (parseNode.GetChildNode("gt_1h_lte_1d") is { } nullNodeGt1hLte1d && nullNodeGt1hLte1d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt1hLte1d = null;
+            if (parseNode.GetChildNode("gt_1m_lte_5m") is { } nullNodeGt1mLte5m && nullNodeGt1mLte5m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt1mLte5m = null;
+            if (parseNode.GetChildNode("gt_1w") is { } nullNodeGt1w && nullNodeGt1w.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt1w = null;
+            if (parseNode.GetChildNode("gt_5m_lte_15m") is { } nullNodeGt5mLte15m && nullNodeGt5mLte15m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt5mLte15m = null;
+            if (parseNode.GetChildNode("lte_1m") is { } nullNodeLte1m && nullNodeLte1m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lte1m = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gt15mLte1h { get; set; }
+        public string? Gt15mLte1h { get => _explicitNullValueGt15mLte1h; set { _explicitNullValueGt15mLte1h = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_15m_lte_1h"); else _explicitNullProperties?.Remove("gt_15m_lte_1h"); } }
+        private string? _explicitNullValueGt15mLte1h = default!;
 #nullable restore
 #else
-        public string Gt15mLte1h { get; set; }
+        public string Gt15mLte1h { get => _explicitNullValueGt15mLte1h; set { _explicitNullValueGt15mLte1h = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_15m_lte_1h"); else _explicitNullProperties?.Remove("gt_15m_lte_1h"); } }
+        private string _explicitNullValueGt15mLte1h = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gt1dLte1w { get; set; }
+        public string? Gt1dLte1w { get => _explicitNullValueGt1dLte1w; set { _explicitNullValueGt1dLte1w = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_1d_lte_1w"); else _explicitNullProperties?.Remove("gt_1d_lte_1w"); } }
+        private string? _explicitNullValueGt1dLte1w = default!;
 #nullable restore
 #else
-        public string Gt1dLte1w { get; set; }
+        public string Gt1dLte1w { get => _explicitNullValueGt1dLte1w; set { _explicitNullValueGt1dLte1w = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_1d_lte_1w"); else _explicitNullProperties?.Remove("gt_1d_lte_1w"); } }
+        private string _explicitNullValueGt1dLte1w = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gt1hLte1d { get; set; }
+        public string? Gt1hLte1d { get => _explicitNullValueGt1hLte1d; set { _explicitNullValueGt1hLte1d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_1h_lte_1d"); else _explicitNullProperties?.Remove("gt_1h_lte_1d"); } }
+        private string? _explicitNullValueGt1hLte1d = default!;
 #nullable restore
 #else
-        public string Gt1hLte1d { get; set; }
+        public string Gt1hLte1d { get => _explicitNullValueGt1hLte1d; set { _explicitNullValueGt1hLte1d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_1h_lte_1d"); else _explicitNullProperties?.Remove("gt_1h_lte_1d"); } }
+        private string _explicitNullValueGt1hLte1d = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gt1mLte5m { get; set; }
+        public string? Gt1mLte5m { get => _explicitNullValueGt1mLte5m; set { _explicitNullValueGt1mLte5m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_1m_lte_5m"); else _explicitNullProperties?.Remove("gt_1m_lte_5m"); } }
+        private string? _explicitNullValueGt1mLte5m = default!;
 #nullable restore
 #else
-        public string Gt1mLte5m { get; set; }
+        public string Gt1mLte5m { get => _explicitNullValueGt1mLte5m; set { _explicitNullValueGt1mLte5m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_1m_lte_5m"); else _explicitNullProperties?.Remove("gt_1m_lte_5m"); } }
+        private string _explicitNullValueGt1mLte5m = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gt1w { get; set; }
+        public string? Gt1w { get => _explicitNullValueGt1w; set { _explicitNullValueGt1w = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_1w"); else _explicitNullProperties?.Remove("gt_1w"); } }
+        private string? _explicitNullValueGt1w = default!;
 #nullable restore
 #else
-        public string Gt1w { get; set; }
+        public string Gt1w { get => _explicitNullValueGt1w; set { _explicitNullValueGt1w = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_1w"); else _explicitNullProperties?.Remove("gt_1w"); } }
+        private string _explicitNullValueGt1w = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gt5mLte15m { get; set; }
+        public string? Gt5mLte15m { get => _explicitNullValueGt5mLte15m; set { _explicitNullValueGt5mLte15m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_5m_lte_15m"); else _explicitNullProperties?.Remove("gt_5m_lte_15m"); } }
+        private string? _explicitNullValueGt5mLte15m = default!;
 #nullable restore
 #else
-        public string Gt5mLte15m { get; set; }
+        public string Gt5mLte15m { get => _explicitNullValueGt5mLte15m; set { _explicitNullValueGt5mLte15m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt_5m_lte_15m"); else _explicitNullProperties?.Remove("gt_5m_lte_15m"); } }
+        private string _explicitNullValueGt5mLte15m = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Lte1m { get; set; }
+        public string? Lte1m { get => _explicitNullValueLte1m; set { _explicitNullValueLte1m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lte_1m"); else _explicitNullProperties?.Remove("lte_1m"); } }
+        private string? _explicitNullValueLte1m = default!;
 #nullable restore
 #else
-        public string Lte1m { get; set; }
+        public string Lte1m { get => _explicitNullValueLte1m; set { _explicitNullValueLte1m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lte_1m"); else _explicitNullProperties?.Remove("lte_1m"); } }
+        private string _explicitNullValueLte1m = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByResponseTtl200ResponseResultSummary0"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByResponseTtl200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByResponseTtl200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByResponseTtl200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("gt_1w", Gt1w);
             writer.WriteStringValue("gt_5m_lte_15m", Gt5mLte15m);
             writer.WriteStringValue("lte_1m", Lte1m);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

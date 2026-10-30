@@ -11,42 +11,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PatchEventQueryUpdateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alert_enabled") is { } nullNodeAlertEnabled && nullNodeAlertEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertEnabled = null;
+            if (parseNode.GetChildNode("alert_rollup_enabled") is { } nullNodeAlertRollupEnabled && nullNodeAlertRollupEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertRollupEnabled = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("query_json") is { } nullNodeQueryJson && nullNodeQueryJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryJson = null;
+            if (parseNode.GetChildNode("rule_enabled") is { } nullNodeRuleEnabled && nullNodeRuleEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleEnabled = null;
+            if (parseNode.GetChildNode("rule_scope") is { } nullNodeRuleScope && nullNodeRuleScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleScope = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Deprecated and ignored: saved-query alerting and rules were removed.</summary>
         [Obsolete("")]
-        public bool? AlertEnabled { get; set; }
+        public bool? AlertEnabled { get => _explicitNullValueAlertEnabled; set { _explicitNullValueAlertEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_enabled"); else _explicitNullProperties?.Remove("alert_enabled"); } }
+        private bool? _explicitNullValueAlertEnabled = default!;
         /// <summary>Deprecated and ignored: saved-query alerting and rules were removed.</summary>
         [Obsolete("")]
-        public bool? AlertRollupEnabled { get; set; }
+        public bool? AlertRollupEnabled { get => _explicitNullValueAlertRollupEnabled; set { _explicitNullValueAlertRollupEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_rollup_enabled"); else _explicitNullProperties?.Remove("alert_rollup_enabled"); } }
+        private bool? _explicitNullValueAlertRollupEnabled = default!;
         /// <summary>Unique name for the saved query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>JSON string containing the query parameters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryJson { get; set; }
+        public string? QueryJson { get => _explicitNullValueQueryJson; set { _explicitNullValueQueryJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_json"); else _explicitNullProperties?.Remove("query_json"); } }
+        private string? _explicitNullValueQueryJson = default!;
 #nullable restore
 #else
-        public string QueryJson { get; set; }
+        public string QueryJson { get => _explicitNullValueQueryJson; set { _explicitNullValueQueryJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_json"); else _explicitNullProperties?.Remove("query_json"); } }
+        private string _explicitNullValueQueryJson = default!;
 #endif
         /// <summary>Deprecated and ignored: saved-query alerting and rules were removed.</summary>
         [Obsolete("")]
-        public bool? RuleEnabled { get; set; }
+        public bool? RuleEnabled { get => _explicitNullValueRuleEnabled; set { _explicitNullValueRuleEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_enabled"); else _explicitNullProperties?.Remove("rule_enabled"); } }
+        private bool? _explicitNullValueRuleEnabled = default!;
         /// <summary>Deprecated and ignored: saved-query alerting and rules were removed.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleScope { get; set; }
+        public string? RuleScope { get => _explicitNullValueRuleScope; set { _explicitNullValueRuleScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_scope"); else _explicitNullProperties?.Remove("rule_scope"); } }
+        private string? _explicitNullValueRuleScope = default!;
 #nullable restore
 #else
-        public string RuleScope { get; set; }
+        public string RuleScope { get => _explicitNullValueRuleScope; set { _explicitNullValueRuleScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_scope"); else _explicitNullProperties?.Remove("rule_scope"); } }
+        private string _explicitNullValueRuleScope = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventQueryUpdateRequest"/> and sets the default values.
@@ -63,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventQueryUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventQueryUpdateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventQueryUpdateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("query_json", QueryJson);
             writer.WriteBoolValue("rule_enabled", RuleEnabled);
             writer.WriteStringValue("rule_scope", RuleScope);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

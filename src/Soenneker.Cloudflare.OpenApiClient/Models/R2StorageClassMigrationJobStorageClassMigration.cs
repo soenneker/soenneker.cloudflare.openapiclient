@@ -11,27 +11,52 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class R2StorageClassMigrationJobStorageClassMigration : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destinationStorageClass") is { } nullNodeDestinationStorageClass && nullNodeDestinationStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationStorageClass = null;
+            if (parseNode.GetChildNode("failedBytes") is { } nullNodeFailedBytes && nullNodeFailedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedBytes = null;
+            if (parseNode.GetChildNode("failedObjects") is { } nullNodeFailedObjects && nullNodeFailedObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedObjects = null;
+            if (parseNode.GetChildNode("migratedBytes") is { } nullNodeMigratedBytes && nullNodeMigratedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedBytes = null;
+            if (parseNode.GetChildNode("migratedMetadataBytes") is { } nullNodeMigratedMetadataBytes && nullNodeMigratedMetadataBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedMetadataBytes = null;
+            if (parseNode.GetChildNode("migratedObjects") is { } nullNodeMigratedObjects && nullNodeMigratedObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedObjects = null;
+            if (parseNode.GetChildNode("skippedBytes") is { } nullNodeSkippedBytes && nullNodeSkippedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedBytes = null;
+            if (parseNode.GetChildNode("skippedObjects") is { } nullNodeSkippedObjects && nullNodeSkippedObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedObjects = null;
+            if (parseNode.GetChildNode("sourceStorageClass") is { } nullNodeSourceStorageClass && nullNodeSourceStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceStorageClass = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The storage class objects are migrated to. The source and destination storageclasses always differ.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigrationDestinationStorageClass? DestinationStorageClass { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigrationDestinationStorageClass? DestinationStorageClass { get => _explicitNullValueDestinationStorageClass; set { _explicitNullValueDestinationStorageClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationStorageClass"); else _explicitNullProperties?.Remove("destinationStorageClass"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigrationDestinationStorageClass? _explicitNullValueDestinationStorageClass = default!;
         /// <summary>Payload bytes belonging to failed object versions.</summary>
-        public int? FailedBytes { get; set; }
+        public int? FailedBytes { get => _explicitNullValueFailedBytes; set { _explicitNullValueFailedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedBytes"); else _explicitNullProperties?.Remove("failedBytes"); } }
+        private int? _explicitNullValueFailedBytes = default!;
         /// <summary>Number of object versions that failed migration.</summary>
-        public int? FailedObjects { get; set; }
+        public int? FailedObjects { get => _explicitNullValueFailedObjects; set { _explicitNullValueFailedObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedObjects"); else _explicitNullProperties?.Remove("failedObjects"); } }
+        private int? _explicitNullValueFailedObjects = default!;
         /// <summary>Object payload bytes migrated successfully. Present for Metadata Worker jobs.</summary>
-        public int? MigratedBytes { get; set; }
+        public int? MigratedBytes { get => _explicitNullValueMigratedBytes; set { _explicitNullValueMigratedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedBytes"); else _explicitNullProperties?.Remove("migratedBytes"); } }
+        private int? _explicitNullValueMigratedBytes = default!;
         /// <summary>Object metadata bytes migrated successfully. Present for Metadata Worker jobs.</summary>
-        public int? MigratedMetadataBytes { get; set; }
+        public int? MigratedMetadataBytes { get => _explicitNullValueMigratedMetadataBytes; set { _explicitNullValueMigratedMetadataBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedMetadataBytes"); else _explicitNullProperties?.Remove("migratedMetadataBytes"); } }
+        private int? _explicitNullValueMigratedMetadataBytes = default!;
         /// <summary>Number of object versions migrated successfully.</summary>
-        public int? MigratedObjects { get; set; }
+        public int? MigratedObjects { get => _explicitNullValueMigratedObjects; set { _explicitNullValueMigratedObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedObjects"); else _explicitNullProperties?.Remove("migratedObjects"); } }
+        private int? _explicitNullValueMigratedObjects = default!;
         /// <summary>Payload bytes belonging to skipped object versions.</summary>
-        public int? SkippedBytes { get; set; }
+        public int? SkippedBytes { get => _explicitNullValueSkippedBytes; set { _explicitNullValueSkippedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedBytes"); else _explicitNullProperties?.Remove("skippedBytes"); } }
+        private int? _explicitNullValueSkippedBytes = default!;
         /// <summary>Number of object versions skipped.</summary>
-        public int? SkippedObjects { get; set; }
+        public int? SkippedObjects { get => _explicitNullValueSkippedObjects; set { _explicitNullValueSkippedObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedObjects"); else _explicitNullProperties?.Remove("skippedObjects"); } }
+        private int? _explicitNullValueSkippedObjects = default!;
         /// <summary>The storage class objects are migrated from.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigrationSourceStorageClass? SourceStorageClass { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigrationSourceStorageClass? SourceStorageClass { get => _explicitNullValueSourceStorageClass; set { _explicitNullValueSourceStorageClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceStorageClass"); else _explicitNullProperties?.Remove("sourceStorageClass"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigrationSourceStorageClass? _explicitNullValueSourceStorageClass = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigration"/> and sets the default values.
         /// </summary>
@@ -47,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("skippedBytes", SkippedBytes);
             writer.WriteIntValue("skippedObjects", SkippedObjects);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigrationSourceStorageClass>("sourceStorageClass", SourceStorageClass);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

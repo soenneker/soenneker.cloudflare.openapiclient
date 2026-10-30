@@ -23,6 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Response.ResponseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scan property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.ScanRequestBuilder Scan
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.ScanRequestBuilder(PathParameters, RequestAdapter);

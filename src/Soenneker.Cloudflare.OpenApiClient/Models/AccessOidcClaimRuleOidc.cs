@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessOidcClaimRuleOidc : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("claim_name") is { } nullNodeClaimName && nullNodeClaimName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimName = null;
+            if (parseNode.GetChildNode("claim_value") is { } nullNodeClaimValue && nullNodeClaimValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimValue = null;
+            if (parseNode.GetChildNode("identity_provider_id") is { } nullNodeIdentityProviderId && nullNodeIdentityProviderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityProviderId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the OIDC claim.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClaimName { get; set; }
+        public string? ClaimName { get => _explicitNullValueClaimName; set { _explicitNullValueClaimName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_name"); else _explicitNullProperties?.Remove("claim_name"); } }
+        private string? _explicitNullValueClaimName = default!;
 #nullable restore
 #else
-        public string ClaimName { get; set; }
+        public string ClaimName { get => _explicitNullValueClaimName; set { _explicitNullValueClaimName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_name"); else _explicitNullProperties?.Remove("claim_name"); } }
+        private string _explicitNullValueClaimName = default!;
 #endif
         /// <summary>The OIDC claim value to look for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClaimValue { get; set; }
+        public string? ClaimValue { get => _explicitNullValueClaimValue; set { _explicitNullValueClaimValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_value"); else _explicitNullProperties?.Remove("claim_value"); } }
+        private string? _explicitNullValueClaimValue = default!;
 #nullable restore
 #else
-        public string ClaimValue { get; set; }
+        public string ClaimValue { get => _explicitNullValueClaimValue; set { _explicitNullValueClaimValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_value"); else _explicitNullProperties?.Remove("claim_value"); } }
+        private string _explicitNullValueClaimValue = default!;
 #endif
         /// <summary>The ID of your OIDC identity provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityProviderId { get; set; }
+        public string? IdentityProviderId { get => _explicitNullValueIdentityProviderId; set { _explicitNullValueIdentityProviderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_provider_id"); else _explicitNullProperties?.Remove("identity_provider_id"); } }
+        private string? _explicitNullValueIdentityProviderId = default!;
 #nullable restore
 #else
-        public string IdentityProviderId { get; set; }
+        public string IdentityProviderId { get => _explicitNullValueIdentityProviderId; set { _explicitNullValueIdentityProviderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_provider_id"); else _explicitNullProperties?.Remove("identity_provider_id"); } }
+        private string _explicitNullValueIdentityProviderId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("claim_name", ClaimName);
             writer.WriteStringValue("claim_value", ClaimValue);
             writer.WriteStringValue("identity_provider_id", IdentityProviderId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

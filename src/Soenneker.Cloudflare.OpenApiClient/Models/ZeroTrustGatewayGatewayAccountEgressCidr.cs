@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ZeroTrustGatewayGatewayAccountEgressCidr : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("geolocation") is { } nullNodeGeolocation && nullNodeGeolocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geolocation = null;
+            if (parseNode.GetChildNode("ipv4") is { } nullNodeIpv4 && nullNodeIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4 = null;
+            if (parseNode.GetChildNode("ipv4_colo_name") is { } nullNodeIpv4ColoName && nullNodeIpv4ColoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4ColoName = null;
+            if (parseNode.GetChildNode("ipv6_cidr") is { } nullNodeIpv6Cidr && nullNodeIpv6Cidr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv6Cidr = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the geographic location of this CIDR pair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidrGeolocation? Geolocation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidrGeolocation? Geolocation { get => _explicitNullValueGeolocation; set { _explicitNullValueGeolocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocation"); else _explicitNullProperties?.Remove("geolocation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidrGeolocation? _explicitNullValueGeolocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidrGeolocation Geolocation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidrGeolocation Geolocation { get => _explicitNullValueGeolocation; set { _explicitNullValueGeolocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocation"); else _explicitNullProperties?.Remove("geolocation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidrGeolocation _explicitNullValueGeolocation = default!;
 #endif
         /// <summary>Specify the IPv4 address of this egress CIDR pair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ipv4 { get; set; }
+        public string? Ipv4 { get => _explicitNullValueIpv4; set { _explicitNullValueIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4"); else _explicitNullProperties?.Remove("ipv4"); } }
+        private string? _explicitNullValueIpv4 = default!;
 #nullable restore
 #else
-        public string Ipv4 { get; set; }
+        public string Ipv4 { get => _explicitNullValueIpv4; set { _explicitNullValueIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4"); else _explicitNullProperties?.Remove("ipv4"); } }
+        private string _explicitNullValueIpv4 = default!;
 #endif
         /// <summary>Specify the colocation from which this IPv4 address egresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ipv4ColoName { get; set; }
+        public string? Ipv4ColoName { get => _explicitNullValueIpv4ColoName; set { _explicitNullValueIpv4ColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4_colo_name"); else _explicitNullProperties?.Remove("ipv4_colo_name"); } }
+        private string? _explicitNullValueIpv4ColoName = default!;
 #nullable restore
 #else
-        public string Ipv4ColoName { get; set; }
+        public string Ipv4ColoName { get => _explicitNullValueIpv4ColoName; set { _explicitNullValueIpv4ColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4_colo_name"); else _explicitNullProperties?.Remove("ipv4_colo_name"); } }
+        private string _explicitNullValueIpv4ColoName = default!;
 #endif
         /// <summary>Specify the IPv6 network address of this egress CIDR pair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ipv6Cidr { get; set; }
+        public string? Ipv6Cidr { get => _explicitNullValueIpv6Cidr; set { _explicitNullValueIpv6Cidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6_cidr"); else _explicitNullProperties?.Remove("ipv6_cidr"); } }
+        private string? _explicitNullValueIpv6Cidr = default!;
 #nullable restore
 #else
-        public string Ipv6Cidr { get; set; }
+        public string Ipv6Cidr { get => _explicitNullValueIpv6Cidr; set { _explicitNullValueIpv6Cidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6_cidr"); else _explicitNullProperties?.Remove("ipv6_cidr"); } }
+        private string _explicitNullValueIpv6Cidr = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidr"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidr CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidr();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountEgressCidr(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("ipv4", Ipv4);
             writer.WriteStringValue("ipv4_colo_name", Ipv4ColoName);
             writer.WriteStringValue("ipv6_cidr", Ipv6Cidr);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

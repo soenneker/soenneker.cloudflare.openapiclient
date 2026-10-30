@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetDnsSummaryByDnssec200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("INSECURE") is { } nullNodeINSECURE && nullNodeINSECURE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) INSECURE = null;
+            if (parseNode.GetChildNode("INVALID") is { } nullNodeINVALID && nullNodeINVALID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) INVALID = null;
+            if (parseNode.GetChildNode("OTHER") is { } nullNodeOTHER && nullNodeOTHER.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OTHER = null;
+            if (parseNode.GetChildNode("SECURE") is { } nullNodeSECURE && nullNodeSECURE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SECURE = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? INSECURE { get; set; }
+        public string? INSECURE { get => _explicitNullValueINSECURE; set { _explicitNullValueINSECURE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INSECURE"); else _explicitNullProperties?.Remove("INSECURE"); } }
+        private string? _explicitNullValueINSECURE = default!;
 #nullable restore
 #else
-        public string INSECURE { get; set; }
+        public string INSECURE { get => _explicitNullValueINSECURE; set { _explicitNullValueINSECURE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INSECURE"); else _explicitNullProperties?.Remove("INSECURE"); } }
+        private string _explicitNullValueINSECURE = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? INVALID { get; set; }
+        public string? INVALID { get => _explicitNullValueINVALID; set { _explicitNullValueINVALID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INVALID"); else _explicitNullProperties?.Remove("INVALID"); } }
+        private string? _explicitNullValueINVALID = default!;
 #nullable restore
 #else
-        public string INVALID { get; set; }
+        public string INVALID { get => _explicitNullValueINVALID; set { _explicitNullValueINVALID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INVALID"); else _explicitNullProperties?.Remove("INVALID"); } }
+        private string _explicitNullValueINVALID = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OTHER { get; set; }
+        public string? OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
+        private string? _explicitNullValueOTHER = default!;
 #nullable restore
 #else
-        public string OTHER { get; set; }
+        public string OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
+        private string _explicitNullValueOTHER = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SECURE { get; set; }
+        public string? SECURE { get => _explicitNullValueSECURE; set { _explicitNullValueSECURE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SECURE"); else _explicitNullProperties?.Remove("SECURE"); } }
+        private string? _explicitNullValueSECURE = default!;
 #nullable restore
 #else
-        public string SECURE { get; set; }
+        public string SECURE { get => _explicitNullValueSECURE; set { _explicitNullValueSECURE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SECURE"); else _explicitNullProperties?.Remove("SECURE"); } }
+        private string _explicitNullValueSECURE = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssec200ResponseResultSummary0"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssec200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssec200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsSummaryByDnssec200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("INVALID", INVALID);
             writer.WriteStringValue("OTHER", OTHER);
             writer.WriteStringValue("SECURE", SECURE);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

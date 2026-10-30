@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversDeleteTenantCustomNameserver4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversEmptyResponse3>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversEmptyResponse3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,58 +12,85 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OneAuthMethodDetail : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
+            if (parseNode.GetChildNode("human_interaction_required") is { } nullNodeHumanInteractionRequired && nullNodeHumanInteractionRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HumanInteractionRequired = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("instructions") is { } nullNodeInstructions && nullNodeInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instructions = null;
+            if (parseNode.GetChildNode("payload_example") is { } nullNodePayloadExample && nullNodePayloadExample.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayloadExample = null;
+            if (parseNode.GetChildNode("payload_schema") is { } nullNodePayloadSchema && nullNodePayloadSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayloadSchema = null;
+            if (parseNode.GetChildNode("redirect_url") is { } nullNodeRedirectUrl && nullNodeRedirectUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Human-readable auth method name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get; set; }
+        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string? _explicitNullValueDisplayName = default!;
 #nullable restore
 #else
-        public string DisplayName { get; set; }
+        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string _explicitNullValueDisplayName = default!;
 #endif
         /// <summary>Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction).</summary>
-        public bool? HumanInteractionRequired { get; set; }
+        public bool? HumanInteractionRequired { get => _explicitNullValueHumanInteractionRequired; set { _explicitNullValueHumanInteractionRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("human_interaction_required"); else _explicitNullProperties?.Remove("human_interaction_required"); } }
+        private bool? _explicitNullValueHumanInteractionRequired = default!;
         /// <summary>Auth method identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Step-by-step instructions for obtaining credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailInstructions? Instructions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailInstructions? Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailInstructions? _explicitNullValueInstructions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailInstructions Instructions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailInstructions Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailInstructions _explicitNullValueInstructions = default!;
 #endif
         /// <summary>Example credentials payload with placeholder values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadExampleProperty? PayloadExample { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadExampleProperty? PayloadExample { get => _explicitNullValuePayloadExample; set { _explicitNullValuePayloadExample = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_example"); else _explicitNullProperties?.Remove("payload_example"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadExampleProperty? _explicitNullValuePayloadExample = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadExampleProperty PayloadExample { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadExampleProperty PayloadExample { get => _explicitNullValuePayloadExample; set { _explicitNullValuePayloadExample = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_example"); else _explicitNullProperties?.Remove("payload_example"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadExampleProperty _explicitNullValuePayloadExample = default!;
 #endif
         /// <summary>JSON Schema for the credentials object in POST /v2/integrations request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadSchemaProperty? PayloadSchema { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadSchemaProperty? PayloadSchema { get => _explicitNullValuePayloadSchema; set { _explicitNullValuePayloadSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_schema"); else _explicitNullProperties?.Remove("payload_schema"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadSchemaProperty? _explicitNullValuePayloadSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadSchemaProperty PayloadSchema { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadSchemaProperty PayloadSchema { get => _explicitNullValuePayloadSchema; set { _explicitNullValuePayloadSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_schema"); else _explicitNullProperties?.Remove("payload_schema"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadSchemaProperty _explicitNullValuePayloadSchema = default!;
 #endif
         /// <summary>OAuth redirect URL for vendors requiring human interaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedirectUrl { get; set; }
+        public string? RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_url"); else _explicitNullProperties?.Remove("redirect_url"); } }
+        private string? _explicitNullValueRedirectUrl = default!;
 #nullable restore
 #else
-        public string RedirectUrl { get; set; }
+        public string RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_url"); else _explicitNullProperties?.Remove("redirect_url"); } }
+        private string _explicitNullValueRedirectUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetail"/> and sets the default values.
@@ -80,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadExampleProperty>("payload_example", PayloadExample);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneAuthMethodDetailPayloadSchemaProperty>("payload_schema", PayloadSchema);
             writer.WriteStringValue("redirect_url", RedirectUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

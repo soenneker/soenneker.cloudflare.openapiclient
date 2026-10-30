@@ -23,36 +23,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The http_method property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Http_method.Http_methodRequestBuilder Http_method
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Http_method.Http_methodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The http_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Http_version.Http_versionRequestBuilder Http_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Http_version.Http_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The industry property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Industry.IndustryRequestBuilder Industry
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.Ip_versionRequestBuilder Ip_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The managed_rules property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.Managed_rulesRequestBuilder Managed_rules
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.Managed_rulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mitigation_product property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Mitigation_product.Mitigation_productRequestBuilder Mitigation_product
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Mitigation_product.Mitigation_productRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The vertical property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Vertical.VerticalRequestBuilder Vertical
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);

@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AggregateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles/severity/aggregate{?min_relevance*,published_after*,published_before*}", pathParameters)
+        public AggregateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles/severity/aggregate{?min_relevance*,pir_id*,published_after*,published_before*,read*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AggregateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles/severity/aggregate{?min_relevance*,published_after*,published_before*}", rawUrl)
+        public AggregateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles/severity/aggregate{?min_relevance*,pir_id*,published_after*,published_before*,read*}", rawUrl)
         {
         }
         /// <summary>
-        /// Beta. Counts the account&apos;s Threat Signals articles in each intrinsic severity band. An article&apos;s band is the severity level nearest its severity, from informational to critical. Articles without a severity are not counted. min_relevance counts only articles at or above a relevance band for any active Priority Intelligence Requirement. Like the article severity field, severity is reported only while the account has an active Priority Intelligence Requirement, including one the matcher paused; otherwise every count is zero. All counts are read together and are exact.
+        /// Beta. Counts the account&apos;s Threat Signals articles in each intrinsic severity band. An article&apos;s band is the one reported as its severity, from informational to critical. Articles without a severity are not counted. Also counts, for each active Priority Intelligence Requirement, the articles scored against it. min_relevance counts only articles at or above a relevance band: overall, for any active PIR; per PIR, for that PIR, the same rule as the per-PIR relevance counts. pir_id counts for one active PIR only. read counts only read or only unread articles, in both articles and priorities. Like the article severity field, severity is reported only while the account has an active Priority Intelligence Requirement, including one the matcher paused; otherwise every count is zero and priorities is empty. All counts are read together and are exact.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Beta. Counts the account&apos;s Threat Signals articles in each intrinsic severity band. An article&apos;s band is the severity level nearest its severity, from informational to critical. Articles without a severity are not counted. min_relevance counts only articles at or above a relevance band for any active Priority Intelligence Requirement. Like the article severity field, severity is reported only while the account has an active Priority Intelligence Requirement, including one the matcher paused; otherwise every count is zero. All counts are read together and are exact.
+        /// Beta. Counts the account&apos;s Threat Signals articles in each intrinsic severity band. An article&apos;s band is the one reported as its severity, from informational to critical. Articles without a severity are not counted. Also counts, for each active Priority Intelligence Requirement, the articles scored against it. min_relevance counts only articles at or above a relevance band: overall, for any active PIR; per PIR, for that PIR, the same rule as the per-PIR relevance counts. pir_id counts for one active PIR only. read counts only read or only unread articles, in both articles and priorities. Like the article severity field, severity is reported only while the account has an active Priority Intelligence Requirement, including one the matcher paused; otherwise every count is zero and priorities is empty. All counts are read together and are exact.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Severity.Aggregate.AggregateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Beta. Counts the account&apos;s Threat Signals articles in each intrinsic severity band. An article&apos;s band is the severity level nearest its severity, from informational to critical. Articles without a severity are not counted. min_relevance counts only articles at or above a relevance band for any active Priority Intelligence Requirement. Like the article severity field, severity is reported only while the account has an active Priority Intelligence Requirement, including one the matcher paused; otherwise every count is zero. All counts are read together and are exact.
+        /// Beta. Counts the account&apos;s Threat Signals articles in each intrinsic severity band. An article&apos;s band is the one reported as its severity, from informational to critical. Articles without a severity are not counted. Also counts, for each active Priority Intelligence Requirement, the articles scored against it. min_relevance counts only articles at or above a relevance band: overall, for any active PIR; per PIR, for that PIR, the same rule as the per-PIR relevance counts. pir_id counts for one active PIR only. read counts only read or only unread articles, in both articles and priorities. Like the article severity field, severity is reported only while the account has an active Priority Intelligence Requirement, including one the matcher paused; otherwise every count is zero and priorities is empty. All counts are read together and are exact.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AggregateRequestBuilderGetQueryParameters 
@@ -90,12 +90,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
             public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregateMinRelevanceParameter? MinRelevance { get; set; }
             #pragma warning restore CS1591
             #pragma warning disable CS1591
+            [QueryParameter("pir_id")]
+            public Guid? PirId { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("published_after")]
             public DateTimeOffset? PublishedAfter { get; set; }
             #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("published_before")]
             public DateTimeOffset? PublishedBefore { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("read")]
+            public bool? Read { get; set; }
             #pragma warning restore CS1591
         }
     }

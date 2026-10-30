@@ -12,9 +12,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsSqlIntrospectionDatasetKindEvents : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("sampling") is { } nullNodeSampling && nullNodeSampling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sampling = null;
+        }
+
         /// <summary>Whether the dataset is sampled. `unsampled` means every row is recorded. `adaptive` means Adaptive Bit Rate (ABR) sampling is applied, and aggregates must be weighted accordingly.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionSampling? Sampling { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionSampling? Sampling { get => _explicitNullValueSampling; set { _explicitNullValueSampling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampling"); else _explicitNullProperties?.Remove("sampling"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionSampling? _explicitNullValueSampling = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -23,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionSampling>("sampling", Sampling);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionSampling>("sampling", Sampling);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

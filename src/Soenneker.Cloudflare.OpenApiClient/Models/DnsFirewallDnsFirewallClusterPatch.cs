@@ -11,46 +11,76 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DnsFirewallDnsFirewallClusterPatch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attack_mitigation") is { } nullNodeAttackMitigation && nullNodeAttackMitigation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackMitigation = null;
+            if (parseNode.GetChildNode("deprecate_any_requests") is { } nullNodeDeprecateAnyRequests && nullNodeDeprecateAnyRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeprecateAnyRequests = null;
+            if (parseNode.GetChildNode("ecs_fallback") is { } nullNodeEcsFallback && nullNodeEcsFallback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EcsFallback = null;
+            if (parseNode.GetChildNode("maximum_cache_ttl") is { } nullNodeMaximumCacheTtl && nullNodeMaximumCacheTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumCacheTtl = null;
+            if (parseNode.GetChildNode("minimum_cache_ttl") is { } nullNodeMinimumCacheTtl && nullNodeMinimumCacheTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumCacheTtl = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("negative_cache_ttl") is { } nullNodeNegativeCacheTtl && nullNodeNegativeCacheTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeCacheTtl = null;
+            if (parseNode.GetChildNode("ratelimit") is { } nullNodeRatelimit && nullNodeRatelimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ratelimit = null;
+            if (parseNode.GetChildNode("retries") is { } nullNodeRetries && nullNodeRetries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retries = null;
+            if (parseNode.GetChildNode("upstream_ips") is { } nullNodeUpstreamIps && nullNodeUpstreamIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpstreamIps = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Attack mitigation settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation? AttackMitigation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation? AttackMitigation { get => _explicitNullValueAttackMitigation; set { _explicitNullValueAttackMitigation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attack_mitigation"); else _explicitNullProperties?.Remove("attack_mitigation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation? _explicitNullValueAttackMitigation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation AttackMitigation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation AttackMitigation { get => _explicitNullValueAttackMitigation; set { _explicitNullValueAttackMitigation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attack_mitigation"); else _explicitNullProperties?.Remove("attack_mitigation"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation _explicitNullValueAttackMitigation = default!;
 #endif
         /// <summary>Whether to refuse to answer queries for the ANY type</summary>
-        public bool? DeprecateAnyRequests { get; set; }
+        public bool? DeprecateAnyRequests { get => _explicitNullValueDeprecateAnyRequests; set { _explicitNullValueDeprecateAnyRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecate_any_requests"); else _explicitNullProperties?.Remove("deprecate_any_requests"); } }
+        private bool? _explicitNullValueDeprecateAnyRequests = default!;
         /// <summary>Whether to forward client IP (resolver) subnet if no EDNS Client Subnet is sent</summary>
-        public bool? EcsFallback { get; set; }
+        public bool? EcsFallback { get => _explicitNullValueEcsFallback; set { _explicitNullValueEcsFallback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ecs_fallback"); else _explicitNullProperties?.Remove("ecs_fallback"); } }
+        private bool? _explicitNullValueEcsFallback = default!;
         /// <summary>By default, Cloudflare attempts to cache responses for as long asindicated by the TTL received from upstream nameservers. This settingsets an upper bound on this duration. For caching purposes, higher TTLswill be decreased to the maximum value defined by this setting.This setting does not affect the TTL value in the DNS responseCloudflare returns to clients. Cloudflare will always forward the TTLvalue received from upstream nameservers.</summary>
-        public double? MaximumCacheTtl { get; set; }
+        public double? MaximumCacheTtl { get => _explicitNullValueMaximumCacheTtl; set { _explicitNullValueMaximumCacheTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_cache_ttl"); else _explicitNullProperties?.Remove("maximum_cache_ttl"); } }
+        private double? _explicitNullValueMaximumCacheTtl = default!;
         /// <summary>By default, Cloudflare attempts to cache responses for as long asindicated by the TTL received from upstream nameservers. This settingsets a lower bound on this duration. For caching purposes, lower TTLswill be increased to the minimum value defined by this setting.This setting does not affect the TTL value in the DNS responseCloudflare returns to clients. Cloudflare will always forward the TTLvalue received from upstream nameservers.Note that, even with this setting, there is no guarantee that aresponse will be cached for at least the specified duration. Cachedresponses may be removed earlier for capacity or other operationalreasons.</summary>
-        public double? MinimumCacheTtl { get; set; }
+        public double? MinimumCacheTtl { get => _explicitNullValueMinimumCacheTtl; set { _explicitNullValueMinimumCacheTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_cache_ttl"); else _explicitNullProperties?.Remove("minimum_cache_ttl"); } }
+        private double? _explicitNullValueMinimumCacheTtl = default!;
         /// <summary>DNS Firewall cluster name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>This setting controls how long DNS Firewall should cache negativeresponses (e.g., NXDOMAIN) from the upstream servers.This setting does not affect the TTL value in the DNS responseCloudflare returns to clients. Cloudflare will always forward the TTLvalue received from upstream nameservers.</summary>
-        public double? NegativeCacheTtl { get; set; }
+        public double? NegativeCacheTtl { get => _explicitNullValueNegativeCacheTtl; set { _explicitNullValueNegativeCacheTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_cache_ttl"); else _explicitNullProperties?.Remove("negative_cache_ttl"); } }
+        private double? _explicitNullValueNegativeCacheTtl = default!;
         /// <summary>Maximum number of DNS queries per second that will be forwarded to your upstream nameservers. The limit is enforced per server, where each server receives a fraction of the configured value. The actual aggregate rate for a data center may vary depending on how many servers are present. Responses served from cache do not count toward this limit. Set to null to disable rate limiting.</summary>
-        public double? Ratelimit { get; set; }
+        public double? Ratelimit { get => _explicitNullValueRatelimit; set { _explicitNullValueRatelimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ratelimit"); else _explicitNullProperties?.Remove("ratelimit"); } }
+        private double? _explicitNullValueRatelimit = default!;
         /// <summary>Number of retries for fetching DNS responses from upstream nameservers (not counting the initial attempt)</summary>
-        public double? Retries { get; set; }
+        public double? Retries { get => _explicitNullValueRetries; set { _explicitNullValueRetries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retries"); else _explicitNullProperties?.Remove("retries"); } }
+        private double? _explicitNullValueRetries = default!;
         /// <summary>The upstream_ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UpstreamIps { get; set; }
+        public List<string>? UpstreamIps { get => _explicitNullValueUpstreamIps; set { _explicitNullValueUpstreamIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upstream_ips"); else _explicitNullProperties?.Remove("upstream_ips"); } }
+        private List<string>? _explicitNullValueUpstreamIps = default!;
 #nullable restore
 #else
-        public List<string> UpstreamIps { get; set; }
+        public List<string> UpstreamIps { get => _explicitNullValueUpstreamIps; set { _explicitNullValueUpstreamIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upstream_ips"); else _explicitNullProperties?.Remove("upstream_ips"); } }
+        private List<string> _explicitNullValueUpstreamIps = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallClusterPatch"/> and sets the default values.
@@ -70,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallClusterPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallClusterPatch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallClusterPatch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("ratelimit", Ratelimit);
             writer.WriteDoubleValue("retries", Retries);
             writer.WriteCollectionOfPrimitiveValues<string>("upstream_ips", UpstreamIps);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

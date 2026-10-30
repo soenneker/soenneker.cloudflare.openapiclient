@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MagicVisibilityPcapsPcapsSingleResponseResult : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember1? MagicVisibilityPcapsPcapsSingleResponseResultMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1? MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember1 MagicVisibilityPcapsPcapsSingleResponseResultMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1 MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember2? MagicVisibilityPcapsPcapsSingleResponseResultMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2? MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember2 MagicVisibilityPcapsPcapsSingleResponseResultMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2 MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,9 +43,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResult();
-            result.MagicVisibilityPcapsPcapsSingleResponseResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember1();
-            result.MagicVisibilityPcapsPcapsSingleResponseResultMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember2();
-            return result;
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1 == null && result.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,9 +56,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(MagicVisibilityPcapsPcapsSingleResponseResultMember1 != null || MagicVisibilityPcapsPcapsSingleResponseResultMember2 != null)
+            if(MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1 != null || MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MagicVisibilityPcapsPcapsSingleResponseResultMember1, MagicVisibilityPcapsPcapsSingleResponseResultMember2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1, MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -60,8 +68,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1 == null && MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1 != null && MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2 == null) { if (MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1); return; }
+            if (MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2 != null && MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1 == null) { if (MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultMember1>(null, MagicVisibilityPcapsPcapsSingleResponseResultMember1, MagicVisibilityPcapsPcapsSingleResponseResultMember2);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1>(null, MagicVisibilityPcapsPcapsSingleResponseResultAnyOf1, MagicVisibilityPcapsPcapsSingleResponseResultAnyOf2);
         }
     }
 }

@@ -8,31 +8,57 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Submit an appeal for a report. Provide either a list of mitigations to appeal, or an appeal type with its supporting details, but not both. When type is &quot;counter_notice&quot;, the counter-notice details are required.
+    /// Submit an appeal for a report. Provide either a list of mitigations to appeal, or an appeal type with its supporting details, but not both. When type is &quot;counter_notice&quot;, the counter-notice details are required. A &quot;content_removed&quot; appeal takes an optional explanation instead and is accepted only while the report is in its Notice and Takedown notice period (`has_pending_notice` on the eligibility response). Reports that allow a single appeal (`max_appeals` of 1) never have a notice period and accept it whenever `appealable` is true.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbuseReportsMitigationAppealRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("appeals") is { } nullNodeAppeals && nullNodeAppeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Appeals = null;
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("explanation") is { } nullNodeExplanation && nullNodeExplanation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Explanation = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of mitigations to appeal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal>? Appeals { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal>? Appeals { get => _explicitNullValueAppeals; set { _explicitNullValueAppeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appeals"); else _explicitNullProperties?.Remove("appeals"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal>? _explicitNullValueAppeals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal> Appeals { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal> Appeals { get => _explicitNullValueAppeals; set { _explicitNullValueAppeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appeals"); else _explicitNullProperties?.Remove("appeals"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal> _explicitNullValueAppeals = default!;
 #endif
         /// <summary>Counter-notice details supporting an appeal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice? Data { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice Data { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice _explicitNullValueData = default!;
+#endif
+        /// <summary>Optional explanation for a &quot;content_removed&quot; appeal, such as how the content was removed. Not accepted for other appeal types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Explanation { get => _explicitNullValueExplanation; set { _explicitNullValueExplanation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explanation"); else _explicitNullProperties?.Remove("explanation"); } }
+        private string? _explicitNullValueExplanation = default!;
+#nullable restore
+#else
+        public string Explanation { get => _explicitNullValueExplanation; set { _explicitNullValueExplanation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explanation"); else _explicitNullProperties?.Remove("explanation"); } }
+        private string _explicitNullValueExplanation = default!;
 #endif
         /// <summary>The type of appeal being submitted.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppealRequest"/> and sets the default values.
         /// </summary>
@@ -48,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppealRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppealRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppealRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "appeals", n => { Appeals = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice.CreateFromDiscriminatorValue); } },
+                { "explanation", n => { Explanation = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealType>(); } },
             };
         }
@@ -72,7 +99,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal>("appeals", Appeals);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice>("data", Data);
+            writer.WriteStringValue("explanation", Explanation);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

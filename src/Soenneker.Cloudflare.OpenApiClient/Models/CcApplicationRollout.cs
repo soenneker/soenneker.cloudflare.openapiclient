@@ -12,102 +12,153 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcApplicationRollout : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("current_configuration") is { } nullNodeCurrentConfiguration && nullNodeCurrentConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentConfiguration = null;
+            if (parseNode.GetChildNode("current_version") is { } nullNodeCurrentVersion && nullNodeCurrentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentVersion = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("health") is { } nullNodeHealth && nullNodeHealth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Health = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("last_updated_at") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
+            if (parseNode.GetChildNode("percentage") is { } nullNodePercentage && nullNodePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Percentage = null;
+            if (parseNode.GetChildNode("progress") is { } nullNodeProgress && nullNodeProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Progress = null;
+            if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("steps") is { } nullNodeSteps && nullNodeSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Steps = null;
+            if (parseNode.GetChildNode("strategy") is { } nullNodeStrategy && nullNodeStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Strategy = null;
+            if (parseNode.GetChildNode("target_configuration") is { } nullNodeTargetConfiguration && nullNodeTargetConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetConfiguration = null;
+            if (parseNode.GetChildNode("target_version") is { } nullNodeTargetVersion && nullNodeTargetVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetVersion = null;
+            if (parseNode.GetChildNode("version_distribution") is { } nullNodeVersionDistribution && nullNodeVersionDistribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionDistribution = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UTC timestamp string in ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>User-specified container configuration changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration? CurrentConfiguration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration? CurrentConfiguration { get => _explicitNullValueCurrentConfiguration; set { _explicitNullValueCurrentConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_configuration"); else _explicitNullProperties?.Remove("current_configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration? _explicitNullValueCurrentConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration CurrentConfiguration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration CurrentConfiguration { get => _explicitNullValueCurrentConfiguration; set { _explicitNullValueCurrentConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_configuration"); else _explicitNullProperties?.Remove("current_configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration _explicitNullValueCurrentConfiguration = default!;
 #endif
         /// <summary>Current application version before the rollout.</summary>
-        public int? CurrentVersion { get; set; }
+        public int? CurrentVersion { get => _explicitNullValueCurrentVersion; set { _explicitNullValueCurrentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_version"); else _explicitNullProperties?.Remove("current_version"); } }
+        private int? _explicitNullValueCurrentVersion = default!;
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The health property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth? Health { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth? Health { get => _explicitNullValueHealth; set { _explicitNullValueHealth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health"); else _explicitNullProperties?.Remove("health"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth? _explicitNullValueHealth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth Health { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth Health { get => _explicitNullValueHealth; set { _explicitNullValueHealth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health"); else _explicitNullProperties?.Remove("health"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealth _explicitNullValueHealth = default!;
 #endif
         /// <summary>An identifier for a specific rollout within an application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Kind of the rollout process. - &quot;full_auto&quot;: For rolling rollouts, starts progressing steps upon rollout creation. For new_instances rollouts, advances percentage targets automatically after target-version health is observed. - &quot;full_manual&quot;: Requires manually progressing each step in the rollout using the UpdateRollout&apos;s action paramater. - &quot;durable_objects_auto&quot;: Default when the application is a DO application.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutKind? Kind { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutKind? _explicitNullValueKind = default!;
         /// <summary>UTC timestamp string in ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUpdatedAt { get; set; }
+        public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private string? _explicitNullValueLastUpdatedAt = default!;
 #nullable restore
 #else
-        public string LastUpdatedAt { get; set; }
+        public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private string _explicitNullValueLastUpdatedAt = default!;
 #endif
         /// <summary>Current target version percentage (0-100). Only present for &quot;new_instances&quot; strategy.</summary>
-        public int? Percentage { get; set; }
+        public int? Percentage { get => _explicitNullValuePercentage; set { _explicitNullValuePercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentage"); else _explicitNullProperties?.Remove("percentage"); } }
+        private int? _explicitNullValuePercentage = default!;
         /// <summary>Progress details of an application rollout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress? Progress { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress? Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress? _explicitNullValueProgress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress Progress { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutProgress _explicitNullValueProgress = default!;
 #endif
         /// <summary>Timestamp when the rollout started.</summary>
-        public DateTimeOffset? StartedAt { get; set; }
+        public DateTimeOffset? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private DateTimeOffset? _explicitNullValueStartedAt = default!;
         /// <summary>Current status of the rollout.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutStatus? _explicitNullValueStatus = default!;
         /// <summary>The steps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStep>? Steps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStep>? Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStep>? _explicitNullValueSteps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStep> Steps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStep> Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStep> _explicitNullValueSteps = default!;
 #endif
         /// <summary>The rollout strategy.- &quot;rolling&quot;: Step-based rollout with health gates. Actively replaces instances to reach each step&apos;s target percentage. Response includes steps and progress.- &quot;new_instances&quot;: Percentage control over version distribution. Version sync actively replaces instances to match the configured percentage. &quot;full_auto&quot; ramps through fixed percentage targets after target-version health is observed. Response includes percentage, version_distribution, and health.summary.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutStrategy? Strategy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutStrategy? Strategy { get => _explicitNullValueStrategy; set { _explicitNullValueStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strategy"); else _explicitNullProperties?.Remove("strategy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutStrategy? _explicitNullValueStrategy = default!;
         /// <summary>User-specified container configuration changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration? TargetConfiguration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration? TargetConfiguration { get => _explicitNullValueTargetConfiguration; set { _explicitNullValueTargetConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_configuration"); else _explicitNullProperties?.Remove("target_configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration? _explicitNullValueTargetConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration TargetConfiguration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration TargetConfiguration { get => _explicitNullValueTargetConfiguration; set { _explicitNullValueTargetConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_configuration"); else _explicitNullProperties?.Remove("target_configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration _explicitNullValueTargetConfiguration = default!;
 #endif
         /// <summary>Target application version after the rollout is complete and applied to all current instances.</summary>
-        public int? TargetVersion { get; set; }
+        public int? TargetVersion { get => _explicitNullValueTargetVersion; set { _explicitNullValueTargetVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_version"); else _explicitNullProperties?.Remove("target_version"); } }
+        private int? _explicitNullValueTargetVersion = default!;
         /// <summary>Version percentage distribution. Only present for &quot;new_instances&quot; strategy.For &quot;rolling&quot; strategy, see progress.version_distribution instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutVersionDistribution? VersionDistribution { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutVersionDistribution? VersionDistribution { get => _explicitNullValueVersionDistribution; set { _explicitNullValueVersionDistribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_distribution"); else _explicitNullProperties?.Remove("version_distribution"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutVersionDistribution? _explicitNullValueVersionDistribution = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutVersionDistribution VersionDistribution { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutVersionDistribution VersionDistribution { get => _explicitNullValueVersionDistribution; set { _explicitNullValueVersionDistribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_distribution"); else _explicitNullProperties?.Remove("version_distribution"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutVersionDistribution _explicitNullValueVersionDistribution = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRollout"/> and sets the default values.
@@ -124,7 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRollout CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRollout();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRollout(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -177,6 +228,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration>("target_configuration", TargetConfiguration);
             writer.WriteIntValue("target_version", TargetVersion);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutVersionDistribution>("version_distribution", VersionDistribution);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

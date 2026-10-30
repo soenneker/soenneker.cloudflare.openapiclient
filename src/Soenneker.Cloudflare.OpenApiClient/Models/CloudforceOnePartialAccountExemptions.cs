@@ -11,30 +11,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CloudforceOnePartialAccountExemptions : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("namespace") is { } nullNodeNamespace && nullNodeNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Namespace = null;
+            if (parseNode.GetChildNode("tag_match") is { } nullNodeTagMatch && nullNodeTagMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagMatch = null;
+            if (parseNode.GetChildNode("worker_name") is { } nullNodeWorkerName && nullNodeWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerName = null;
+        }
+
         /// <summary>The namespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Namespace { get; set; }
+        public List<string>? Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
+        private List<string>? _explicitNullValueNamespace = default!;
 #nullable restore
 #else
-        public List<string> Namespace { get; set; }
+        public List<string> Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
+        private List<string> _explicitNullValueNamespace = default!;
 #endif
         /// <summary>The tag_match property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TagMatch { get; set; }
+        public List<string>? TagMatch { get => _explicitNullValueTagMatch; set { _explicitNullValueTagMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_match"); else _explicitNullProperties?.Remove("tag_match"); } }
+        private List<string>? _explicitNullValueTagMatch = default!;
 #nullable restore
 #else
-        public List<string> TagMatch { get; set; }
+        public List<string> TagMatch { get => _explicitNullValueTagMatch; set { _explicitNullValueTagMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_match"); else _explicitNullProperties?.Remove("tag_match"); } }
+        private List<string> _explicitNullValueTagMatch = default!;
 #endif
         /// <summary>The worker_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WorkerName { get; set; }
+        public List<string>? WorkerName { get => _explicitNullValueWorkerName; set { _explicitNullValueWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_name"); else _explicitNullProperties?.Remove("worker_name"); } }
+        private List<string>? _explicitNullValueWorkerName = default!;
 #nullable restore
 #else
-        public List<string> WorkerName { get; set; }
+        public List<string> WorkerName { get => _explicitNullValueWorkerName; set { _explicitNullValueWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_name"); else _explicitNullProperties?.Remove("worker_name"); } }
+        private List<string> _explicitNullValueWorkerName = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePartialAccountExemptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePartialAccountExemptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePartialAccountExemptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +84,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("namespace", Namespace);
             writer.WriteCollectionOfPrimitiveValues<string>("tag_match", TagMatch);
-            writer.WriteCollectionOfPrimitiveValues<string>("worker_name", WorkerName);
+            writer.WriteCollectionOfPrimitiveValues<string>("worker_name", WorkerName);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

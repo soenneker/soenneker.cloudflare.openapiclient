@@ -12,40 +12,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class R2DataCatalogNamespaceListResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
+            if (parseNode.GetChildNode("namespaces") is { } nullNodeNamespaces && nullNodeNamespaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Namespaces = null;
+            if (parseNode.GetChildNode("namespace_uuids") is { } nullNodeNamespaceUuids && nullNodeNamespaceUuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NamespaceUuids = null;
+            if (parseNode.GetChildNode("next_page_token") is { } nullNodeNextPageToken && nullNodeNextPageToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageToken = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains detailed metadata for each namespace when return_details is true.Each object includes the namespace, UUID, and timestamps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceDetails>? Details { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceDetails>? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceDetails>? _explicitNullValueDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceDetails> Details { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceDetails> Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceDetails> _explicitNullValueDetails = default!;
 #endif
         /// <summary>Lists namespaces in the catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Namespaces { get; set; }
+        public UntypedNode? Namespaces { get => _explicitNullValueNamespaces; set { _explicitNullValueNamespaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespaces"); else _explicitNullProperties?.Remove("namespaces"); } }
+        private UntypedNode? _explicitNullValueNamespaces = default!;
 #nullable restore
 #else
-        public UntypedNode Namespaces { get; set; }
+        public UntypedNode Namespaces { get => _explicitNullValueNamespaces; set { _explicitNullValueNamespaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespaces"); else _explicitNullProperties?.Remove("namespaces"); } }
+        private UntypedNode _explicitNullValueNamespaces = default!;
 #endif
         /// <summary>Contains UUIDs for each namespace when return_uuids is true.The order corresponds to the namespaces array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? NamespaceUuids { get; set; }
+        public List<Guid?>? NamespaceUuids { get => _explicitNullValueNamespaceUuids; set { _explicitNullValueNamespaceUuids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace_uuids"); else _explicitNullProperties?.Remove("namespace_uuids"); } }
+        private List<Guid?>? _explicitNullValueNamespaceUuids = default!;
 #nullable restore
 #else
-        public List<Guid?> NamespaceUuids { get; set; }
+        public List<Guid?> NamespaceUuids { get => _explicitNullValueNamespaceUuids; set { _explicitNullValueNamespaceUuids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace_uuids"); else _explicitNullProperties?.Remove("namespace_uuids"); } }
+        private List<Guid?> _explicitNullValueNamespaceUuids = default!;
 #endif
         /// <summary>Use this opaque token to fetch the next page of results.A null or absent value indicates the last page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextPageToken { get; set; }
+        public string? NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_token"); else _explicitNullProperties?.Remove("next_page_token"); } }
+        private string? _explicitNullValueNextPageToken = default!;
 #nullable restore
 #else
-        public string NextPageToken { get; set; }
+        public string NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_token"); else _explicitNullProperties?.Remove("next_page_token"); } }
+        private string _explicitNullValueNextPageToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceListResponse"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceListResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceListResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNamespaceListResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("namespaces", Namespaces);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("namespace_uuids", NamespaceUuids);
             writer.WriteStringValue("next_page_token", NextPageToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

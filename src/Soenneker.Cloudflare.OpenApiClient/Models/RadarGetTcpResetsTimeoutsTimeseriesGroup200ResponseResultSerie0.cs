@@ -11,56 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetTcpResetsTimeoutsTimeseriesGroup200ResponseResultSerie0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("later_in_flow") is { } nullNodeLaterInFlow && nullNodeLaterInFlow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LaterInFlow = null;
+            if (parseNode.GetChildNode("no_match") is { } nullNodeNoMatch && nullNodeNoMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoMatch = null;
+            if (parseNode.GetChildNode("post_ack") is { } nullNodePostAck && nullNodePostAck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostAck = null;
+            if (parseNode.GetChildNode("post_psh") is { } nullNodePostPsh && nullNodePostPsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostPsh = null;
+            if (parseNode.GetChildNode("post_syn") is { } nullNodePostSyn && nullNodePostSyn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostSyn = null;
+            if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The later_in_flow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LaterInFlow { get; set; }
+        public List<string>? LaterInFlow { get => _explicitNullValueLaterInFlow; set { _explicitNullValueLaterInFlow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("later_in_flow"); else _explicitNullProperties?.Remove("later_in_flow"); } }
+        private List<string>? _explicitNullValueLaterInFlow = default!;
 #nullable restore
 #else
-        public List<string> LaterInFlow { get; set; }
+        public List<string> LaterInFlow { get => _explicitNullValueLaterInFlow; set { _explicitNullValueLaterInFlow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("later_in_flow"); else _explicitNullProperties?.Remove("later_in_flow"); } }
+        private List<string> _explicitNullValueLaterInFlow = default!;
 #endif
         /// <summary>The no_match property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NoMatch { get; set; }
+        public List<string>? NoMatch { get => _explicitNullValueNoMatch; set { _explicitNullValueNoMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_match"); else _explicitNullProperties?.Remove("no_match"); } }
+        private List<string>? _explicitNullValueNoMatch = default!;
 #nullable restore
 #else
-        public List<string> NoMatch { get; set; }
+        public List<string> NoMatch { get => _explicitNullValueNoMatch; set { _explicitNullValueNoMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_match"); else _explicitNullProperties?.Remove("no_match"); } }
+        private List<string> _explicitNullValueNoMatch = default!;
 #endif
         /// <summary>The post_ack property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PostAck { get; set; }
+        public List<string>? PostAck { get => _explicitNullValuePostAck; set { _explicitNullValuePostAck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_ack"); else _explicitNullProperties?.Remove("post_ack"); } }
+        private List<string>? _explicitNullValuePostAck = default!;
 #nullable restore
 #else
-        public List<string> PostAck { get; set; }
+        public List<string> PostAck { get => _explicitNullValuePostAck; set { _explicitNullValuePostAck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_ack"); else _explicitNullProperties?.Remove("post_ack"); } }
+        private List<string> _explicitNullValuePostAck = default!;
 #endif
         /// <summary>The post_psh property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PostPsh { get; set; }
+        public List<string>? PostPsh { get => _explicitNullValuePostPsh; set { _explicitNullValuePostPsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_psh"); else _explicitNullProperties?.Remove("post_psh"); } }
+        private List<string>? _explicitNullValuePostPsh = default!;
 #nullable restore
 #else
-        public List<string> PostPsh { get; set; }
+        public List<string> PostPsh { get => _explicitNullValuePostPsh; set { _explicitNullValuePostPsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_psh"); else _explicitNullProperties?.Remove("post_psh"); } }
+        private List<string> _explicitNullValuePostPsh = default!;
 #endif
         /// <summary>The post_syn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PostSyn { get; set; }
+        public List<string>? PostSyn { get => _explicitNullValuePostSyn; set { _explicitNullValuePostSyn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_syn"); else _explicitNullProperties?.Remove("post_syn"); } }
+        private List<string>? _explicitNullValuePostSyn = default!;
 #nullable restore
 #else
-        public List<string> PostSyn { get; set; }
+        public List<string> PostSyn { get => _explicitNullValuePostSyn; set { _explicitNullValuePostSyn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_syn"); else _explicitNullProperties?.Remove("post_syn"); } }
+        private List<string> _explicitNullValuePostSyn = default!;
 #endif
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DateTimeOffset?>? Timestamps { get; set; }
+        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        private List<DateTimeOffset?>? _explicitNullValueTimestamps = default!;
 #nullable restore
 #else
-        public List<DateTimeOffset?> Timestamps { get; set; }
+        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        private List<DateTimeOffset?> _explicitNullValueTimestamps = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTcpResetsTimeoutsTimeseriesGroup200ResponseResultSerie0"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTcpResetsTimeoutsTimeseriesGroup200ResponseResultSerie0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTcpResetsTimeoutsTimeseriesGroup200ResponseResultSerie0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTcpResetsTimeoutsTimeseriesGroup200ResponseResultSerie0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("post_psh", PostPsh);
             writer.WriteCollectionOfPrimitiveValues<string>("post_syn", PostSyn);
             writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

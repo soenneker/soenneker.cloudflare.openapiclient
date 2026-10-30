@@ -11,124 +11,177 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostEventCreateBulkRequestDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountId") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("attacker") is { } nullNodeAttacker && nullNodeAttacker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attacker = null;
+            if (parseNode.GetChildNode("attackerCountry") is { } nullNodeAttackerCountry && nullNodeAttackerCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackerCountry = null;
+            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("datasetId") is { } nullNodeDatasetId && nullNodeDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetId = null;
+            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("event") is { } nullNodeEvent && nullNodeEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Event = null;
+            if (parseNode.GetChildNode("indicator") is { } nullNodeIndicator && nullNodeIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicator = null;
+            if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
+            if (parseNode.GetChildNode("indicatorType") is { } nullNodeIndicatorType && nullNodeIndicatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorType = null;
+            if (parseNode.GetChildNode("insight") is { } nullNodeInsight && nullNodeInsight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Insight = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("targetCountry") is { } nullNodeTargetCountry && nullNodeTargetCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetCountry = null;
+            if (parseNode.GetChildNode("targetIndustry") is { } nullNodeTargetIndustry && nullNodeTargetIndustry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetIndustry = null;
+            if (parseNode.GetChildNode("tlp") is { } nullNodeTlp && nullNodeTlp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tlp = null;
+        }
+
         /// <summary>The accountId property</summary>
-        public double? AccountId { get; set; }
+        public double? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountId"); else _explicitNullProperties?.Remove("accountId"); } }
+        private double? _explicitNullValueAccountId = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attacker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Attacker { get; set; }
+        public string? Attacker { get => _explicitNullValueAttacker; set { _explicitNullValueAttacker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attacker"); else _explicitNullProperties?.Remove("attacker"); } }
+        private string? _explicitNullValueAttacker = default!;
 #nullable restore
 #else
-        public string Attacker { get; set; }
+        public string Attacker { get => _explicitNullValueAttacker; set { _explicitNullValueAttacker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attacker"); else _explicitNullProperties?.Remove("attacker"); } }
+        private string _explicitNullValueAttacker = default!;
 #endif
         /// <summary>The attackerCountry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttackerCountry { get; set; }
+        public string? AttackerCountry { get => _explicitNullValueAttackerCountry; set { _explicitNullValueAttackerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackerCountry"); else _explicitNullProperties?.Remove("attackerCountry"); } }
+        private string? _explicitNullValueAttackerCountry = default!;
 #nullable restore
 #else
-        public string AttackerCountry { get; set; }
+        public string AttackerCountry { get => _explicitNullValueAttackerCountry; set { _explicitNullValueAttackerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackerCountry"); else _explicitNullProperties?.Remove("attackerCountry"); } }
+        private string _explicitNullValueAttackerCountry = default!;
 #endif
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category { get; set; }
+        public string? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private string? _explicitNullValueCategory = default!;
 #nullable restore
 #else
-        public string Category { get; set; }
+        public string Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private string _explicitNullValueCategory = default!;
 #endif
         /// <summary>The datasetId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatasetId { get; set; }
+        public string? DatasetId { get => _explicitNullValueDatasetId; set { _explicitNullValueDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetId"); else _explicitNullProperties?.Remove("datasetId"); } }
+        private string? _explicitNullValueDatasetId = default!;
 #nullable restore
 #else
-        public string DatasetId { get; set; }
+        public string DatasetId { get => _explicitNullValueDatasetId; set { _explicitNullValueDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetId"); else _explicitNullProperties?.Remove("datasetId"); } }
+        private string _explicitNullValueDatasetId = default!;
 #endif
         /// <summary>The date property</summary>
-        public DateTimeOffset? Date { get; set; }
+        public DateTimeOffset? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        private DateTimeOffset? _explicitNullValueDate = default!;
         /// <summary>The event property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Event { get; set; }
+        public string? Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private string? _explicitNullValueEvent = default!;
 #nullable restore
 #else
-        public string Event { get; set; }
+        public string Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private string _explicitNullValueEvent = default!;
 #endif
         /// <summary>The indicator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Indicator { get; set; }
+        public string? Indicator { get => _explicitNullValueIndicator; set { _explicitNullValueIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator"); else _explicitNullProperties?.Remove("indicator"); } }
+        private string? _explicitNullValueIndicator = default!;
 #nullable restore
 #else
-        public string Indicator { get; set; }
+        public string Indicator { get => _explicitNullValueIndicator; set { _explicitNullValueIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator"); else _explicitNullProperties?.Remove("indicator"); } }
+        private string _explicitNullValueIndicator = default!;
 #endif
         /// <summary>Array of indicators for this event. Supports multiple indicators per event for complex scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemIndicatorsItem>? Indicators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemIndicatorsItem>? Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemIndicatorsItem>? _explicitNullValueIndicators = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemIndicatorsItem> Indicators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemIndicatorsItem> Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemIndicatorsItem> _explicitNullValueIndicators = default!;
 #endif
         /// <summary>The indicatorType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndicatorType { get; set; }
+        public string? IndicatorType { get => _explicitNullValueIndicatorType; set { _explicitNullValueIndicatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorType"); else _explicitNullProperties?.Remove("indicatorType"); } }
+        private string? _explicitNullValueIndicatorType = default!;
 #nullable restore
 #else
-        public string IndicatorType { get; set; }
+        public string IndicatorType { get => _explicitNullValueIndicatorType; set { _explicitNullValueIndicatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorType"); else _explicitNullProperties?.Remove("indicatorType"); } }
+        private string _explicitNullValueIndicatorType = default!;
 #endif
         /// <summary>The insight property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Insight { get; set; }
+        public string? Insight { get => _explicitNullValueInsight; set { _explicitNullValueInsight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insight"); else _explicitNullProperties?.Remove("insight"); } }
+        private string? _explicitNullValueInsight = default!;
 #nullable restore
 #else
-        public string Insight { get; set; }
+        public string Insight { get => _explicitNullValueInsight; set { _explicitNullValueInsight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insight"); else _explicitNullProperties?.Remove("insight"); } }
+        private string _explicitNullValueInsight = default!;
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemRaw? Raw { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemRaw? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemRaw? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemRaw Raw { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemRaw Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItemRaw _explicitNullValueRaw = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>The targetCountry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetCountry { get; set; }
+        public string? TargetCountry { get => _explicitNullValueTargetCountry; set { _explicitNullValueTargetCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetCountry"); else _explicitNullProperties?.Remove("targetCountry"); } }
+        private string? _explicitNullValueTargetCountry = default!;
 #nullable restore
 #else
-        public string TargetCountry { get; set; }
+        public string TargetCountry { get => _explicitNullValueTargetCountry; set { _explicitNullValueTargetCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetCountry"); else _explicitNullProperties?.Remove("targetCountry"); } }
+        private string _explicitNullValueTargetCountry = default!;
 #endif
         /// <summary>The targetIndustry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetIndustry { get; set; }
+        public string? TargetIndustry { get => _explicitNullValueTargetIndustry; set { _explicitNullValueTargetIndustry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetIndustry"); else _explicitNullProperties?.Remove("targetIndustry"); } }
+        private string? _explicitNullValueTargetIndustry = default!;
 #nullable restore
 #else
-        public string TargetIndustry { get; set; }
+        public string TargetIndustry { get => _explicitNullValueTargetIndustry; set { _explicitNullValueTargetIndustry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetIndustry"); else _explicitNullProperties?.Remove("targetIndustry"); } }
+        private string _explicitNullValueTargetIndustry = default!;
 #endif
         /// <summary>The tlp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tlp { get; set; }
+        public string? Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        private string? _explicitNullValueTlp = default!;
 #nullable restore
 #else
-        public string Tlp { get; set; }
+        public string Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        private string _explicitNullValueTlp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItem"/> and sets the default values.
@@ -145,7 +198,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulkRequestDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -196,6 +249,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("targetCountry", TargetCountry);
             writer.WriteStringValue("targetIndustry", TargetIndustry);
             writer.WriteStringValue("tlp", Tlp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

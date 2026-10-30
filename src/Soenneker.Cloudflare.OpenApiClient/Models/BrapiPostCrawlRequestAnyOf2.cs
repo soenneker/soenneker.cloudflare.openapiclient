@@ -11,60 +11,96 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BrapiPostCrawlRequestAnyOf2 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contentUse") is { } nullNodeContentUse && nullNodeContentUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentUse = null;
+            if (parseNode.GetChildNode("crawlPurposes") is { } nullNodeCrawlPurposes && nullNodeCrawlPurposes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrawlPurposes = null;
+            if (parseNode.GetChildNode("depth") is { } nullNodeDepth && nullNodeDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Depth = null;
+            if (parseNode.GetChildNode("formats") is { } nullNodeFormats && nullNodeFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formats = null;
+            if (parseNode.GetChildNode("jsonOptions") is { } nullNodeJsonOptions && nullNodeJsonOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonOptions = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("maxAge") is { } nullNodeMaxAge && nullNodeMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAge = null;
+            if (parseNode.GetChildNode("modifiedSince") is { } nullNodeModifiedSince && nullNodeModifiedSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedSince = null;
+            if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
+            if (parseNode.GetChildNode("render") is { } nullNodeRender && nullNodeRender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Render = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Intended content use level to respect the `use` Content-Signal directive in robots.txt. Levels (least to most permissive): &apos;reference&apos;, &apos;full&apos;. A URL is disallowed when the publisher&apos;s declared `use` level is lower than this intent. Learn more: https://contentsignals.org/. Default: &apos;full&apos;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2ContentUse? ContentUse { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2ContentUse? ContentUse { get => _explicitNullValueContentUse; set { _explicitNullValueContentUse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentUse"); else _explicitNullProperties?.Remove("contentUse"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2ContentUse? _explicitNullValueContentUse = default!;
         /// <summary>List of crawl purposes to respect Content-Signal directives in robots.txt. Allowed values: &apos;search&apos;, &apos;ai-input&apos;, &apos;ai-train&apos;. Learn more: https://contentsignals.org/. Default: [&apos;search&apos;, &apos;ai-input&apos;, &apos;ai-train&apos;].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2CrawlPurposesItem?>? CrawlPurposes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2CrawlPurposesItem?>? CrawlPurposes { get => _explicitNullValueCrawlPurposes; set { _explicitNullValueCrawlPurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlPurposes"); else _explicitNullProperties?.Remove("crawlPurposes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2CrawlPurposesItem?>? _explicitNullValueCrawlPurposes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2CrawlPurposesItem?> CrawlPurposes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2CrawlPurposesItem?> CrawlPurposes { get => _explicitNullValueCrawlPurposes; set { _explicitNullValueCrawlPurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlPurposes"); else _explicitNullProperties?.Remove("crawlPurposes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2CrawlPurposesItem?> _explicitNullValueCrawlPurposes = default!;
 #endif
         /// <summary>Maximum number of levels deep the crawler will traverse from the starting URL.</summary>
-        public double? Depth { get; set; }
+        public double? Depth { get => _explicitNullValueDepth; set { _explicitNullValueDepth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depth"); else _explicitNullProperties?.Remove("depth"); } }
+        private double? _explicitNullValueDepth = default!;
         /// <summary>Formats to return. Default is `html`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2FormatsItem?>? Formats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2FormatsItem?>? Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2FormatsItem?>? _explicitNullValueFormats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2FormatsItem?> Formats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2FormatsItem?> Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2FormatsItem?> _explicitNullValueFormats = default!;
 #endif
         /// <summary>Options for JSON extraction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptions? JsonOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptions? JsonOptions { get => _explicitNullValueJsonOptions; set { _explicitNullValueJsonOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonOptions"); else _explicitNullProperties?.Remove("jsonOptions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptions? _explicitNullValueJsonOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptions JsonOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptions JsonOptions { get => _explicitNullValueJsonOptions; set { _explicitNullValueJsonOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonOptions"); else _explicitNullProperties?.Remove("jsonOptions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptions _explicitNullValueJsonOptions = default!;
 #endif
         /// <summary>Maximum number of URLs to crawl.</summary>
-        public double? Limit { get; set; }
+        public double? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private double? _explicitNullValueLimit = default!;
         /// <summary>Maximum age of a resource that can be returned from cache in seconds. Default is 1 day.</summary>
-        public double? MaxAge { get; set; }
+        public double? MaxAge { get => _explicitNullValueMaxAge; set { _explicitNullValueMaxAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAge"); else _explicitNullProperties?.Remove("maxAge"); } }
+        private double? _explicitNullValueMaxAge = default!;
         /// <summary>Unix timestamp (seconds since epoch) indicating to only crawl pages that were modified since this time. For sitemap URLs with a lastmod field, this is compared directly. For other URLs, the crawler will use If-Modified-Since header when fetching. URLs without modification information (no lastmod in sitemap and no Last-Modified header support) will be crawled. Note: This works in conjunction with maxAge - both filters must pass for a cached resource to be used. Must be within the last year and not in the future.</summary>
-        public int? ModifiedSince { get; set; }
+        public int? ModifiedSince { get => _explicitNullValueModifiedSince; set { _explicitNullValueModifiedSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modifiedSince"); else _explicitNullProperties?.Remove("modifiedSince"); } }
+        private int? _explicitNullValueModifiedSince = default!;
         /// <summary>Additional options for the crawler.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Options? Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Options? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Options? _explicitNullValueOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Options Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Options Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Options _explicitNullValueOptions = default!;
 #endif
         /// <summary>Whether to render the page or fetch static content. True by default.</summary>
-        public bool? Render { get; set; }
+        public bool? Render { get => _explicitNullValueRender; set { _explicitNullValueRender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render"); else _explicitNullProperties?.Remove("render"); } }
+        private bool? _explicitNullValueRender = default!;
         /// <summary>Source of links to crawl. &apos;sitemaps&apos; - only crawl URLs from sitemaps, &apos;links&apos; - only crawl URLs scraped from pages, &apos;all&apos; - crawl both sitemap and scraped links (default).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Source? Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Source? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Source? _explicitNullValueSource = default!;
         /// <summary>URL to navigate to, eg. `https://example.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2"/> and sets the default values.
@@ -83,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,7 +161,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Options>("options", Options);
             writer.WriteBoolValue("render", Render);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Source>("source", Source);
-            writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("url", Url);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

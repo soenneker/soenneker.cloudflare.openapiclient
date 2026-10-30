@@ -11,138 +11,210 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class StreamVideos : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowedOrigins") is { } nullNodeAllowedOrigins && nullNodeAllowedOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedOrigins = null;
+            if (parseNode.GetChildNode("clippedFrom") is { } nullNodeClippedFrom && nullNodeClippedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClippedFrom = null;
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("creator") is { } nullNodeCreator && nullNodeCreator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creator = null;
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
+            if (parseNode.GetChildNode("liveInput") is { } nullNodeLiveInput && nullNodeLiveInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveInput = null;
+            if (parseNode.GetChildNode("maxDurationSeconds") is { } nullNodeMaxDurationSeconds && nullNodeMaxDurationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDurationSeconds = null;
+            if (parseNode.GetChildNode("maxSizeBytes") is { } nullNodeMaxSizeBytes && nullNodeMaxSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSizeBytes = null;
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("playback") is { } nullNodePlayback && nullNodePlayback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback = null;
+            if (parseNode.GetChildNode("preview") is { } nullNodePreview && nullNodePreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preview = null;
+            if (parseNode.GetChildNode("publicDetails") is { } nullNodePublicDetails && nullNodePublicDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicDetails = null;
+            if (parseNode.GetChildNode("readyToStream") is { } nullNodeReadyToStream && nullNodeReadyToStream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyToStream = null;
+            if (parseNode.GetChildNode("readyToStreamAt") is { } nullNodeReadyToStreamAt && nullNodeReadyToStreamAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyToStreamAt = null;
+            if (parseNode.GetChildNode("requireSignedURLs") is { } nullNodeRequireSignedURLs && nullNodeRequireSignedURLs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireSignedURLs = null;
+            if (parseNode.GetChildNode("scheduledDeletion") is { } nullNodeScheduledDeletion && nullNodeScheduledDeletion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledDeletion = null;
+            if (parseNode.GetChildNode("size") is { } nullNodeSize && nullNodeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Size = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("thumbnail") is { } nullNodeThumbnail && nullNodeThumbnail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Thumbnail = null;
+            if (parseNode.GetChildNode("thumbnailTimestampPct") is { } nullNodeThumbnailTimestampPct && nullNodeThumbnailTimestampPct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThumbnailTimestampPct = null;
+            if (parseNode.GetChildNode("uid") is { } nullNodeUid && nullNodeUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uid = null;
+            if (parseNode.GetChildNode("uploaded") is { } nullNodeUploaded && nullNodeUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uploaded = null;
+            if (parseNode.GetChildNode("uploadExpiry") is { } nullNodeUploadExpiry && nullNodeUploadExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadExpiry = null;
+            if (parseNode.GetChildNode("watermark") is { } nullNodeWatermark && nullNodeWatermark.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Watermark = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedOrigins { get; set; }
+        public List<string>? AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
+        private List<string>? _explicitNullValueAllowedOrigins = default!;
 #nullable restore
 #else
-        public List<string> AllowedOrigins { get; set; }
+        public List<string> AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
+        private List<string> _explicitNullValueAllowedOrigins = default!;
 #endif
         /// <summary>The unique identifier of the source video this video was clipped from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClippedFrom { get; set; }
+        public string? ClippedFrom { get => _explicitNullValueClippedFrom; set { _explicitNullValueClippedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clippedFrom"); else _explicitNullProperties?.Remove("clippedFrom"); } }
+        private string? _explicitNullValueClippedFrom = default!;
 #nullable restore
 #else
-        public string ClippedFrom { get; set; }
+        public string ClippedFrom { get => _explicitNullValueClippedFrom; set { _explicitNullValueClippedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clippedFrom"); else _explicitNullProperties?.Remove("clippedFrom"); } }
+        private string _explicitNullValueClippedFrom = default!;
 #endif
         /// <summary>The date and time the media item was created.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private DateTimeOffset? _explicitNullValueCreated = default!;
         /// <summary>A user-defined identifier for the media creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Creator { get; set; }
+        public string? Creator { get => _explicitNullValueCreator; set { _explicitNullValueCreator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator"); else _explicitNullProperties?.Remove("creator"); } }
+        private string? _explicitNullValueCreator = default!;
 #nullable restore
 #else
-        public string Creator { get; set; }
+        public string Creator { get => _explicitNullValueCreator; set { _explicitNullValueCreator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator"); else _explicitNullProperties?.Remove("creator"); } }
+        private string _explicitNullValueCreator = default!;
 #endif
         /// <summary>The duration of the video in seconds. A value of `-1` means the duration is unknown. The duration becomes available after the upload and before the video is ready.</summary>
-        public double? Duration { get; set; }
+        public double? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private double? _explicitNullValueDuration = default!;
         /// <summary>The input property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInput? Input { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInput? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInput? _explicitNullValueInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInput Input { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInput Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInput _explicitNullValueInput = default!;
 #endif
         /// <summary>The live input ID used to upload a video with Stream Live.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LiveInput { get; set; }
+        public string? LiveInput { get => _explicitNullValueLiveInput; set { _explicitNullValueLiveInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liveInput"); else _explicitNullProperties?.Remove("liveInput"); } }
+        private string? _explicitNullValueLiveInput = default!;
 #nullable restore
 #else
-        public string LiveInput { get; set; }
+        public string LiveInput { get => _explicitNullValueLiveInput; set { _explicitNullValueLiveInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liveInput"); else _explicitNullProperties?.Remove("liveInput"); } }
+        private string _explicitNullValueLiveInput = default!;
 #endif
         /// <summary>The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.</summary>
-        public int? MaxDurationSeconds { get; set; }
+        public int? MaxDurationSeconds { get => _explicitNullValueMaxDurationSeconds; set { _explicitNullValueMaxDurationSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxDurationSeconds"); else _explicitNullProperties?.Remove("maxDurationSeconds"); } }
+        private int? _explicitNullValueMaxDurationSeconds = default!;
         /// <summary>The maximum size in bytes for the video upload.</summary>
-        public long? MaxSizeBytes { get; set; }
+        public long? MaxSizeBytes { get => _explicitNullValueMaxSizeBytes; set { _explicitNullValueMaxSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxSizeBytes"); else _explicitNullProperties?.Remove("maxSizeBytes"); } }
+        private long? _explicitNullValueMaxSizeBytes = default!;
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing videos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The date and time the media item was last modified.</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        private DateTimeOffset? _explicitNullValueModified = default!;
         /// <summary>The playback property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlayback? Playback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlayback? Playback { get => _explicitNullValuePlayback; set { _explicitNullValuePlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback"); else _explicitNullProperties?.Remove("playback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlayback? _explicitNullValuePlayback = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlayback Playback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlayback Playback { get => _explicitNullValuePlayback; set { _explicitNullValuePlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback"); else _explicitNullProperties?.Remove("playback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlayback _explicitNullValuePlayback = default!;
 #endif
         /// <summary>The video&apos;s preview page URI. This field is omitted until encoding is complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Preview { get; set; }
+        public string? Preview { get => _explicitNullValuePreview; set { _explicitNullValuePreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview"); else _explicitNullProperties?.Remove("preview"); } }
+        private string? _explicitNullValuePreview = default!;
 #nullable restore
 #else
-        public string Preview { get; set; }
+        public string Preview { get => _explicitNullValuePreview; set { _explicitNullValuePreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview"); else _explicitNullProperties?.Remove("preview"); } }
+        private string _explicitNullValuePreview = default!;
 #endif
         /// <summary>Public details for the video including title, share link, channel link, and logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosPublicDetails? PublicDetails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosPublicDetails? PublicDetails { get => _explicitNullValuePublicDetails; set { _explicitNullValuePublicDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicDetails"); else _explicitNullProperties?.Remove("publicDetails"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosPublicDetails? _explicitNullValuePublicDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosPublicDetails PublicDetails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosPublicDetails PublicDetails { get => _explicitNullValuePublicDetails; set { _explicitNullValuePublicDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicDetails"); else _explicitNullProperties?.Remove("publicDetails"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosPublicDetails _explicitNullValuePublicDetails = default!;
 #endif
         /// <summary>Indicates whether the video is playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.</summary>
-        public bool? ReadyToStream { get; set; }
+        public bool? ReadyToStream { get => _explicitNullValueReadyToStream; set { _explicitNullValueReadyToStream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyToStream"); else _explicitNullProperties?.Remove("readyToStream"); } }
+        private bool? _explicitNullValueReadyToStream = default!;
         /// <summary>Indicates the time at which the video became playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.</summary>
-        public DateTimeOffset? ReadyToStreamAt { get; set; }
+        public DateTimeOffset? ReadyToStreamAt { get => _explicitNullValueReadyToStreamAt; set { _explicitNullValueReadyToStreamAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyToStreamAt"); else _explicitNullProperties?.Remove("readyToStreamAt"); } }
+        private DateTimeOffset? _explicitNullValueReadyToStreamAt = default!;
         /// <summary>Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.</summary>
-        public bool? RequireSignedURLs { get; set; }
+        public bool? RequireSignedURLs { get => _explicitNullValueRequireSignedURLs; set { _explicitNullValueRequireSignedURLs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireSignedURLs"); else _explicitNullProperties?.Remove("requireSignedURLs"); } }
+        private bool? _explicitNullValueRequireSignedURLs = default!;
         /// <summary>Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.</summary>
-        public DateTimeOffset? ScheduledDeletion { get; set; }
+        public DateTimeOffset? ScheduledDeletion { get => _explicitNullValueScheduledDeletion; set { _explicitNullValueScheduledDeletion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduledDeletion"); else _explicitNullProperties?.Remove("scheduledDeletion"); } }
+        private DateTimeOffset? _explicitNullValueScheduledDeletion = default!;
         /// <summary>The size of the media item in bytes.</summary>
-        public double? Size { get; set; }
+        public double? Size { get => _explicitNullValueSize; set { _explicitNullValueSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size"); else _explicitNullProperties?.Remove("size"); } }
+        private double? _explicitNullValueSize = default!;
         /// <summary>Specifies a detailed status for a video. If the `state` is `inprogress` or `error`, the `step` field returns `encoding` or `manifest`. If the `state` is `inprogress`, `pctComplete` returns a number between 0 and 100 to indicate the approximate percent of completion. If the `state` is `error`, `errorReasonCode` and `errorReasonText` provide additional details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaStatus _explicitNullValueStatus = default!;
 #endif
         /// <summary>The media item&apos;s thumbnail URI. This field is omitted until encoding is complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Thumbnail { get; set; }
+        public string? Thumbnail { get => _explicitNullValueThumbnail; set { _explicitNullValueThumbnail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail"); else _explicitNullProperties?.Remove("thumbnail"); } }
+        private string? _explicitNullValueThumbnail = default!;
 #nullable restore
 #else
-        public string Thumbnail { get; set; }
+        public string Thumbnail { get => _explicitNullValueThumbnail; set { _explicitNullValueThumbnail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail"); else _explicitNullProperties?.Remove("thumbnail"); } }
+        private string _explicitNullValueThumbnail = default!;
 #endif
         /// <summary>The timestamp for a thumbnail image calculated as a percentage value of the video&apos;s duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.</summary>
-        public double? ThumbnailTimestampPct { get; set; }
+        public double? ThumbnailTimestampPct { get => _explicitNullValueThumbnailTimestampPct; set { _explicitNullValueThumbnailTimestampPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnailTimestampPct"); else _explicitNullProperties?.Remove("thumbnailTimestampPct"); } }
+        private double? _explicitNullValueThumbnailTimestampPct = default!;
         /// <summary>A Cloudflare-generated unique identifier for a media item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uid { get; set; }
+        public string? Uid { get => _explicitNullValueUid; set { _explicitNullValueUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uid"); else _explicitNullProperties?.Remove("uid"); } }
+        private string? _explicitNullValueUid = default!;
 #nullable restore
 #else
-        public string Uid { get; set; }
+        public string Uid { get => _explicitNullValueUid; set { _explicitNullValueUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uid"); else _explicitNullProperties?.Remove("uid"); } }
+        private string _explicitNullValueUid = default!;
 #endif
         /// <summary>The date and time the media item was uploaded.</summary>
-        public DateTimeOffset? Uploaded { get; set; }
+        public DateTimeOffset? Uploaded { get => _explicitNullValueUploaded; set { _explicitNullValueUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded"); else _explicitNullProperties?.Remove("uploaded"); } }
+        private DateTimeOffset? _explicitNullValueUploaded = default!;
         /// <summary>The date and time when the video upload URL is no longer valid for direct user uploads.</summary>
-        public DateTimeOffset? UploadExpiry { get; set; }
+        public DateTimeOffset? UploadExpiry { get => _explicitNullValueUploadExpiry; set { _explicitNullValueUploadExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadExpiry"); else _explicitNullProperties?.Remove("uploadExpiry"); } }
+        private DateTimeOffset? _explicitNullValueUploadExpiry = default!;
         /// <summary>The watermark property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarks? Watermark { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarks? Watermark { get => _explicitNullValueWatermark; set { _explicitNullValueWatermark = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watermark"); else _explicitNullProperties?.Remove("watermark"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarks? _explicitNullValueWatermark = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarks Watermark { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarks Watermark { get => _explicitNullValueWatermark; set { _explicitNullValueWatermark = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watermark"); else _explicitNullProperties?.Remove("watermark"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarks _explicitNullValueWatermark = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideos"/> and sets the default values.
@@ -161,7 +233,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideos CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideos();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideos(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -232,6 +304,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("uploaded", Uploaded);
             writer.WriteDateTimeOffsetValue("uploadExpiry", UploadExpiry);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarks>("watermark", Watermark);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -83,6 +83,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipDeleteApp200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipDeleteApp200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -116,6 +118,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipGetApp200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipGetApp200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -151,6 +155,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipUpdateApp200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipUpdateApp200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

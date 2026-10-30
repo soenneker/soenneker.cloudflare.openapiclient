@@ -11,47 +11,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TelemetryKeysListRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("datasets") is { } nullNodeDatasets && nullNodeDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datasets = null;
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
+            if (parseNode.GetChildNode("keyNeedle") is { } nullNodeKeyNeedle && nullNodeKeyNeedle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyNeedle = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("needle") is { } nullNodeNeedle && nullNodeNeedle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Needle = null;
+            if (parseNode.GetChildNode("to") is { } nullNodeTo && nullNodeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) To = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Leave this empty to use the default datasets</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Datasets { get; set; }
+        public List<string>? Datasets { get => _explicitNullValueDatasets; set { _explicitNullValueDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasets"); else _explicitNullProperties?.Remove("datasets"); } }
+        private List<string>? _explicitNullValueDatasets = default!;
 #nullable restore
 #else
-        public List<string> Datasets { get; set; }
+        public List<string> Datasets { get => _explicitNullValueDatasets; set { _explicitNullValueDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasets"); else _explicitNullProperties?.Remove("datasets"); } }
+        private List<string> _explicitNullValueDatasets = default!;
 #endif
         /// <summary>Apply filters to narrow key discovery. Supports nested groups via kind: &apos;group&apos;. Maximum nesting depth is 4.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Filters { get; set; }
+        public List<UntypedNode>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<UntypedNode>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Filters { get; set; }
+        public List<UntypedNode> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<UntypedNode> _explicitNullValueFilters = default!;
 #endif
         /// <summary>The from property</summary>
-        public double? From { get; set; }
+        public double? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        private double? _explicitNullValueFrom = default!;
         /// <summary>If the user suggests a key, use this to narrow down the list of keys returned. Make sure matchCase is false to avoid case sensitivity issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle? KeyNeedle { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle? KeyNeedle { get => _explicitNullValueKeyNeedle; set { _explicitNullValueKeyNeedle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyNeedle"); else _explicitNullProperties?.Remove("keyNeedle"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle? _explicitNullValueKeyNeedle = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle KeyNeedle { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle KeyNeedle { get => _explicitNullValueKeyNeedle; set { _explicitNullValueKeyNeedle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyNeedle"); else _explicitNullProperties?.Remove("keyNeedle"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle _explicitNullValueKeyNeedle = default!;
 #endif
         /// <summary>Advanced usage: set limit=1000+ to retrieve comprehensive key options without needing additional filtering.</summary>
-        public double? Limit { get; set; }
+        public double? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private double? _explicitNullValueLimit = default!;
         /// <summary>Search for a specific substring in any of the events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestNeedle? Needle { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestNeedle? Needle { get => _explicitNullValueNeedle; set { _explicitNullValueNeedle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needle"); else _explicitNullProperties?.Remove("needle"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestNeedle? _explicitNullValueNeedle = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestNeedle Needle { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestNeedle Needle { get => _explicitNullValueNeedle; set { _explicitNullValueNeedle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needle"); else _explicitNullProperties?.Remove("needle"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestNeedle _explicitNullValueNeedle = default!;
 #endif
         /// <summary>The to property</summary>
-        public double? To { get; set; }
+        public double? To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
+        private double? _explicitNullValueTo = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequest"/> and sets the default values.
         /// </summary>
@@ -67,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "datasets", n => { Datasets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "filters", n => { Filters = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from", n => { From = n.GetDoubleValue(); } },
                 { "keyNeedle", n => { KeyNeedle = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
@@ -100,6 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("limit", Limit);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestNeedle>("needle", Needle);
             writer.WriteDoubleValue("to", To);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

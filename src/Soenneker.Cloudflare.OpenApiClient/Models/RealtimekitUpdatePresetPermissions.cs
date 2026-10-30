@@ -11,91 +11,155 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RealtimekitUpdatePresetPermissions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accept_stage_requests") is { } nullNodeAcceptStageRequests && nullNodeAcceptStageRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptStageRequests = null;
+            if (parseNode.GetChildNode("accept_waiting_requests") is { } nullNodeAcceptWaitingRequests && nullNodeAcceptWaitingRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptWaitingRequests = null;
+            if (parseNode.GetChildNode("can_accept_production_requests") is { } nullNodeCanAcceptProductionRequests && nullNodeCanAcceptProductionRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanAcceptProductionRequests = null;
+            if (parseNode.GetChildNode("can_change_participant_permissions") is { } nullNodeCanChangeParticipantPermissions && nullNodeCanChangeParticipantPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanChangeParticipantPermissions = null;
+            if (parseNode.GetChildNode("can_edit_display_name") is { } nullNodeCanEditDisplayName && nullNodeCanEditDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanEditDisplayName = null;
+            if (parseNode.GetChildNode("can_livestream") is { } nullNodeCanLivestream && nullNodeCanLivestream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanLivestream = null;
+            if (parseNode.GetChildNode("can_record") is { } nullNodeCanRecord && nullNodeCanRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanRecord = null;
+            if (parseNode.GetChildNode("can_spotlight") is { } nullNodeCanSpotlight && nullNodeCanSpotlight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanSpotlight = null;
+            if (parseNode.GetChildNode("chat") is { } nullNodeChat && nullNodeChat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chat = null;
+            if (parseNode.GetChildNode("connected_meetings") is { } nullNodeConnectedMeetings && nullNodeConnectedMeetings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedMeetings = null;
+            if (parseNode.GetChildNode("disable_participant_audio") is { } nullNodeDisableParticipantAudio && nullNodeDisableParticipantAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableParticipantAudio = null;
+            if (parseNode.GetChildNode("disable_participant_screensharing") is { } nullNodeDisableParticipantScreensharing && nullNodeDisableParticipantScreensharing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableParticipantScreensharing = null;
+            if (parseNode.GetChildNode("disable_participant_video") is { } nullNodeDisableParticipantVideo && nullNodeDisableParticipantVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableParticipantVideo = null;
+            if (parseNode.GetChildNode("hidden_participant") is { } nullNodeHiddenParticipant && nullNodeHiddenParticipant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HiddenParticipant = null;
+            if (parseNode.GetChildNode("is_recorder") is { } nullNodeIsRecorder && nullNodeIsRecorder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRecorder = null;
+            if (parseNode.GetChildNode("kick_participant") is { } nullNodeKickParticipant && nullNodeKickParticipant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KickParticipant = null;
+            if (parseNode.GetChildNode("media") is { } nullNodeMedia && nullNodeMedia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Media = null;
+            if (parseNode.GetChildNode("pin_participant") is { } nullNodePinParticipant && nullNodePinParticipant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PinParticipant = null;
+            if (parseNode.GetChildNode("plugins") is { } nullNodePlugins && nullNodePlugins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plugins = null;
+            if (parseNode.GetChildNode("polls") is { } nullNodePolls && nullNodePolls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Polls = null;
+            if (parseNode.GetChildNode("recorder_type") is { } nullNodeRecorderType && nullNodeRecorderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecorderType = null;
+            if (parseNode.GetChildNode("show_participant_list") is { } nullNodeShowParticipantList && nullNodeShowParticipantList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowParticipantList = null;
+            if (parseNode.GetChildNode("stage_access") is { } nullNodeStageAccess && nullNodeStageAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StageAccess = null;
+            if (parseNode.GetChildNode("stage_enabled") is { } nullNodeStageEnabled && nullNodeStageEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StageEnabled = null;
+            if (parseNode.GetChildNode("transcription_enabled") is { } nullNodeTranscriptionEnabled && nullNodeTranscriptionEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptionEnabled = null;
+            if (parseNode.GetChildNode("waiting_room_type") is { } nullNodeWaitingRoomType && nullNodeWaitingRoomType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitingRoomType = null;
+        }
+
         /// <summary>The accept_stage_requests property</summary>
-        public bool? AcceptStageRequests { get; set; }
+        public bool? AcceptStageRequests { get => _explicitNullValueAcceptStageRequests; set { _explicitNullValueAcceptStageRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_stage_requests"); else _explicitNullProperties?.Remove("accept_stage_requests"); } }
+        private bool? _explicitNullValueAcceptStageRequests = default!;
         /// <summary>Whether this participant can accept waiting requests</summary>
-        public bool? AcceptWaitingRequests { get; set; }
+        public bool? AcceptWaitingRequests { get => _explicitNullValueAcceptWaitingRequests; set { _explicitNullValueAcceptWaitingRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_waiting_requests"); else _explicitNullProperties?.Remove("accept_waiting_requests"); } }
+        private bool? _explicitNullValueAcceptWaitingRequests = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The can_accept_production_requests property</summary>
-        public bool? CanAcceptProductionRequests { get; set; }
+        public bool? CanAcceptProductionRequests { get => _explicitNullValueCanAcceptProductionRequests; set { _explicitNullValueCanAcceptProductionRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_accept_production_requests"); else _explicitNullProperties?.Remove("can_accept_production_requests"); } }
+        private bool? _explicitNullValueCanAcceptProductionRequests = default!;
         /// <summary>The can_change_participant_permissions property</summary>
-        public bool? CanChangeParticipantPermissions { get; set; }
+        public bool? CanChangeParticipantPermissions { get => _explicitNullValueCanChangeParticipantPermissions; set { _explicitNullValueCanChangeParticipantPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_change_participant_permissions"); else _explicitNullProperties?.Remove("can_change_participant_permissions"); } }
+        private bool? _explicitNullValueCanChangeParticipantPermissions = default!;
         /// <summary>The can_edit_display_name property</summary>
-        public bool? CanEditDisplayName { get; set; }
+        public bool? CanEditDisplayName { get => _explicitNullValueCanEditDisplayName; set { _explicitNullValueCanEditDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_edit_display_name"); else _explicitNullProperties?.Remove("can_edit_display_name"); } }
+        private bool? _explicitNullValueCanEditDisplayName = default!;
         /// <summary>The can_livestream property</summary>
-        public bool? CanLivestream { get; set; }
+        public bool? CanLivestream { get => _explicitNullValueCanLivestream; set { _explicitNullValueCanLivestream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_livestream"); else _explicitNullProperties?.Remove("can_livestream"); } }
+        private bool? _explicitNullValueCanLivestream = default!;
         /// <summary>The can_record property</summary>
-        public bool? CanRecord { get; set; }
+        public bool? CanRecord { get => _explicitNullValueCanRecord; set { _explicitNullValueCanRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_record"); else _explicitNullProperties?.Remove("can_record"); } }
+        private bool? _explicitNullValueCanRecord = default!;
         /// <summary>The can_spotlight property</summary>
-        public bool? CanSpotlight { get; set; }
+        public bool? CanSpotlight { get => _explicitNullValueCanSpotlight; set { _explicitNullValueCanSpotlight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_spotlight"); else _explicitNullProperties?.Remove("can_spotlight"); } }
+        private bool? _explicitNullValueCanSpotlight = default!;
         /// <summary>The chat property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsChat? Chat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsChat? Chat { get => _explicitNullValueChat; set { _explicitNullValueChat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat"); else _explicitNullProperties?.Remove("chat"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsChat? _explicitNullValueChat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsChat Chat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsChat Chat { get => _explicitNullValueChat; set { _explicitNullValueChat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat"); else _explicitNullProperties?.Remove("chat"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsChat _explicitNullValueChat = default!;
 #endif
         /// <summary>The connected_meetings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsConnectedMeetings? ConnectedMeetings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsConnectedMeetings? ConnectedMeetings { get => _explicitNullValueConnectedMeetings; set { _explicitNullValueConnectedMeetings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_meetings"); else _explicitNullProperties?.Remove("connected_meetings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsConnectedMeetings? _explicitNullValueConnectedMeetings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsConnectedMeetings ConnectedMeetings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsConnectedMeetings ConnectedMeetings { get => _explicitNullValueConnectedMeetings; set { _explicitNullValueConnectedMeetings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_meetings"); else _explicitNullProperties?.Remove("connected_meetings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsConnectedMeetings _explicitNullValueConnectedMeetings = default!;
 #endif
         /// <summary>The disable_participant_audio property</summary>
-        public bool? DisableParticipantAudio { get; set; }
+        public bool? DisableParticipantAudio { get => _explicitNullValueDisableParticipantAudio; set { _explicitNullValueDisableParticipantAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_participant_audio"); else _explicitNullProperties?.Remove("disable_participant_audio"); } }
+        private bool? _explicitNullValueDisableParticipantAudio = default!;
         /// <summary>The disable_participant_screensharing property</summary>
-        public bool? DisableParticipantScreensharing { get; set; }
+        public bool? DisableParticipantScreensharing { get => _explicitNullValueDisableParticipantScreensharing; set { _explicitNullValueDisableParticipantScreensharing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_participant_screensharing"); else _explicitNullProperties?.Remove("disable_participant_screensharing"); } }
+        private bool? _explicitNullValueDisableParticipantScreensharing = default!;
         /// <summary>The disable_participant_video property</summary>
-        public bool? DisableParticipantVideo { get; set; }
+        public bool? DisableParticipantVideo { get => _explicitNullValueDisableParticipantVideo; set { _explicitNullValueDisableParticipantVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_participant_video"); else _explicitNullProperties?.Remove("disable_participant_video"); } }
+        private bool? _explicitNullValueDisableParticipantVideo = default!;
         /// <summary>Whether this participant is visible to others or not</summary>
-        public bool? HiddenParticipant { get; set; }
+        public bool? HiddenParticipant { get => _explicitNullValueHiddenParticipant; set { _explicitNullValueHiddenParticipant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hidden_participant"); else _explicitNullProperties?.Remove("hidden_participant"); } }
+        private bool? _explicitNullValueHiddenParticipant = default!;
         /// <summary>The is_recorder property</summary>
-        public bool? IsRecorder { get; set; }
+        public bool? IsRecorder { get => _explicitNullValueIsRecorder; set { _explicitNullValueIsRecorder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_recorder"); else _explicitNullProperties?.Remove("is_recorder"); } }
+        private bool? _explicitNullValueIsRecorder = default!;
         /// <summary>The kick_participant property</summary>
-        public bool? KickParticipant { get; set; }
+        public bool? KickParticipant { get => _explicitNullValueKickParticipant; set { _explicitNullValueKickParticipant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kick_participant"); else _explicitNullProperties?.Remove("kick_participant"); } }
+        private bool? _explicitNullValueKickParticipant = default!;
         /// <summary>Media permissions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMedia? Media { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMedia? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMedia? _explicitNullValueMedia = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMedia Media { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMedia Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMedia _explicitNullValueMedia = default!;
 #endif
         /// <summary>The pin_participant property</summary>
-        public bool? PinParticipant { get; set; }
+        public bool? PinParticipant { get => _explicitNullValuePinParticipant; set { _explicitNullValuePinParticipant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pin_participant"); else _explicitNullProperties?.Remove("pin_participant"); } }
+        private bool? _explicitNullValuePinParticipant = default!;
         /// <summary>Plugin permissions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPlugins? Plugins { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPlugins? Plugins { get => _explicitNullValuePlugins; set { _explicitNullValuePlugins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plugins"); else _explicitNullProperties?.Remove("plugins"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPlugins? _explicitNullValuePlugins = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPlugins Plugins { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPlugins Plugins { get => _explicitNullValuePlugins; set { _explicitNullValuePlugins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plugins"); else _explicitNullProperties?.Remove("plugins"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPlugins _explicitNullValuePlugins = default!;
 #endif
         /// <summary>Poll permissions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls? Polls { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls? Polls { get => _explicitNullValuePolls; set { _explicitNullValuePolls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("polls"); else _explicitNullProperties?.Remove("polls"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls? _explicitNullValuePolls = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls Polls { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls Polls { get => _explicitNullValuePolls; set { _explicitNullValuePolls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("polls"); else _explicitNullProperties?.Remove("polls"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls _explicitNullValuePolls = default!;
 #endif
         /// <summary>Type of the recording peer</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsRecorderType? RecorderType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsRecorderType? RecorderType { get => _explicitNullValueRecorderType; set { _explicitNullValueRecorderType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recorder_type"); else _explicitNullProperties?.Remove("recorder_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsRecorderType? _explicitNullValueRecorderType = default!;
         /// <summary>The show_participant_list property</summary>
-        public bool? ShowParticipantList { get; set; }
+        public bool? ShowParticipantList { get => _explicitNullValueShowParticipantList; set { _explicitNullValueShowParticipantList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_participant_list"); else _explicitNullProperties?.Remove("show_participant_list"); } }
+        private bool? _explicitNullValueShowParticipantList = default!;
         /// <summary>The stage_access property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsStageAccess? StageAccess { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsStageAccess? StageAccess { get => _explicitNullValueStageAccess; set { _explicitNullValueStageAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stage_access"); else _explicitNullProperties?.Remove("stage_access"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsStageAccess? _explicitNullValueStageAccess = default!;
         /// <summary>The stage_enabled property</summary>
-        public bool? StageEnabled { get; set; }
+        public bool? StageEnabled { get => _explicitNullValueStageEnabled; set { _explicitNullValueStageEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stage_enabled"); else _explicitNullProperties?.Remove("stage_enabled"); } }
+        private bool? _explicitNullValueStageEnabled = default!;
         /// <summary>The transcription_enabled property</summary>
-        public bool? TranscriptionEnabled { get; set; }
+        public bool? TranscriptionEnabled { get => _explicitNullValueTranscriptionEnabled; set { _explicitNullValueTranscriptionEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription_enabled"); else _explicitNullProperties?.Remove("transcription_enabled"); } }
+        private bool? _explicitNullValueTranscriptionEnabled = default!;
         /// <summary>Waiting room type</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsWaitingRoomType? WaitingRoomType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsWaitingRoomType? WaitingRoomType { get => _explicitNullValueWaitingRoomType; set { _explicitNullValueWaitingRoomType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waiting_room_type"); else _explicitNullProperties?.Remove("waiting_room_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsWaitingRoomType? _explicitNullValueWaitingRoomType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions"/> and sets the default values.
         /// </summary>
@@ -111,7 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,6 +246,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("stage_enabled", StageEnabled);
             writer.WriteBoolValue("transcription_enabled", TranscriptionEnabled);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsWaitingRoomType>("waiting_room_type", WaitingRoomType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

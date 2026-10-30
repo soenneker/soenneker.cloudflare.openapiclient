@@ -11,7 +11,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class McpPortalsApiListServers200ResponseResultItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_shared_oauth_callback_enabled") is { } nullNodeIsSharedOauthCallbackEnabled && nullNodeIsSharedOauthCallbackEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSharedOauthCallbackEnabled = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("secure_web_gateway") is { } nullNodeSecureWebGateway && nullNodeSecureWebGateway.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecureWebGateway = null;
+            if (parseNode.GetChildNode("updated_prompts") is { } nullNodeUpdatedPrompts && nullNodeUpdatedPrompts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedPrompts = null;
+            if (parseNode.GetChildNode("updated_tools") is { } nullNodeUpdatedTools && nullNodeUpdatedTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedTools = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Safe subset of auth_credentials surfaced to the dashboard. Includes auth_mode (dcr|manual), has_client_secret, client_secret_version, and the OAuth endpoints + client_id for manual servers. Never includes the secret value.</summary>
@@ -25,7 +41,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether administrative authentication is required before capabilities can be synced. Manual OAuth is user-managed and has no administrative authentication flow.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemAuthenticationStatus? AuthenticationStatus { get; private set; }
         /// <summary>Authentication method used to connect to the upstream MCP server.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemAuthType? AuthType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemAuthType? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemAuthType? _explicitNullValueAuthType = default!;
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The created_by property</summary>
@@ -39,10 +56,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Optional description of the MCP server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,21 +82,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>URL of the upstream MCP endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get; set; }
+        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        private string? _explicitNullValueHostname = default!;
 #nullable restore
 #else
-        public string Hostname { get; set; }
+        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        private string _explicitNullValueHostname = default!;
 #endif
         /// <summary>Unique identifier for the MCP server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
-        /// <summary>When true, the gateway worker uses the shared Cloudflare-owned OAuth callback endpoint as the redirect_uri for upstream on-behalf OAuth, instead of the customer portal hostname. Defaults to false (off); opt in per server by setting true.</summary>
-        public bool? IsSharedOauthCallbackEnabled { get; set; }
+        /// <summary>When true, per-user authorization uses the shared Cloudflare callback URL as the &apos;redirect_uri&apos; instead of the portal callback URL. The default is false. Set &apos;is_shared_oauth_callback_enabled&apos; to true to enable the shared Cloudflare callback URL for this MCP server.</summary>
+        public bool? IsSharedOauthCallbackEnabled { get => _explicitNullValueIsSharedOauthCallbackEnabled; set { _explicitNullValueIsSharedOauthCallbackEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_shared_oauth_callback_enabled"); else _explicitNullProperties?.Remove("is_shared_oauth_callback_enabled"); } }
+        private bool? _explicitNullValueIsSharedOauthCallbackEnabled = default!;
         /// <summary>The last_successful_sync property</summary>
         public DateTimeOffset? LastSuccessfulSync { get; private set; }
         /// <summary>The last_synced property</summary>
@@ -95,10 +119,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Display name for the MCP server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The prompts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +137,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Timestamp of the most recent successful admin OAuth registration.</summary>
         public DateTimeOffset? RegisteredAt { get; private set; }
         /// <summary>Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.</summary>
-        public bool? SecureWebGateway { get; set; }
+        public bool? SecureWebGateway { get => _explicitNullValueSecureWebGateway; set { _explicitNullValueSecureWebGateway = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secure_web_gateway"); else _explicitNullProperties?.Remove("secure_web_gateway"); } }
+        private bool? _explicitNullValueSecureWebGateway = default!;
         /// <summary>Current sync state of the server</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemStatus? Status { get; private set; }
         /// <summary>The tools property</summary>
@@ -125,18 +152,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Server-wide prompt capability overrides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedPromptsItem>? UpdatedPrompts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedPromptsItem>? UpdatedPrompts { get => _explicitNullValueUpdatedPrompts; set { _explicitNullValueUpdatedPrompts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_prompts"); else _explicitNullProperties?.Remove("updated_prompts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedPromptsItem>? _explicitNullValueUpdatedPrompts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedPromptsItem> UpdatedPrompts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedPromptsItem> UpdatedPrompts { get => _explicitNullValueUpdatedPrompts; set { _explicitNullValueUpdatedPrompts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_prompts"); else _explicitNullProperties?.Remove("updated_prompts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedPromptsItem> _explicitNullValueUpdatedPrompts = default!;
 #endif
         /// <summary>Server-wide tool capability overrides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedToolsItem>? UpdatedTools { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedToolsItem>? UpdatedTools { get => _explicitNullValueUpdatedTools; set { _explicitNullValueUpdatedTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_tools"); else _explicitNullProperties?.Remove("updated_tools"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedToolsItem>? _explicitNullValueUpdatedTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedToolsItem> UpdatedTools { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedToolsItem> UpdatedTools { get => _explicitNullValueUpdatedTools; set { _explicitNullValueUpdatedTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_tools"); else _explicitNullProperties?.Remove("updated_tools"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedToolsItem> _explicitNullValueUpdatedTools = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItem"/> and sets the default values.
@@ -155,7 +186,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -206,6 +237,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("secure_web_gateway", SecureWebGateway);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedPromptsItem>("updated_prompts", UpdatedPrompts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListServers200ResponseResultItemUpdatedToolsItem>("updated_tools", UpdatedTools);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

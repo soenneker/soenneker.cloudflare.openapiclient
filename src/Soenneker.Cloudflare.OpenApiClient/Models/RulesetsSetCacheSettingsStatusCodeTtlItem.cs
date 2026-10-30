@@ -11,21 +11,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RulesetsSetCacheSettingsStatusCodeTtlItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("status_code") is { } nullNodeStatusCode && nullNodeStatusCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusCode = null;
+            if (parseNode.GetChildNode("status_code_range") is { } nullNodeStatusCodeRange && nullNodeStatusCodeRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusCodeRange = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A single status code to apply the TTL to.</summary>
-        public int? StatusCode { get; set; }
+        public int? StatusCode { get => _explicitNullValueStatusCode; set { _explicitNullValueStatusCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_code"); else _explicitNullProperties?.Remove("status_code"); } }
+        private int? _explicitNullValueStatusCode = default!;
         /// <summary>A range of status codes to apply the TTL to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItemStatusCodeRange? StatusCodeRange { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItemStatusCodeRange? StatusCodeRange { get => _explicitNullValueStatusCodeRange; set { _explicitNullValueStatusCodeRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_code_range"); else _explicitNullProperties?.Remove("status_code_range"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItemStatusCodeRange? _explicitNullValueStatusCodeRange = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItemStatusCodeRange StatusCodeRange { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItemStatusCodeRange StatusCodeRange { get => _explicitNullValueStatusCodeRange; set { _explicitNullValueStatusCodeRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_code_range"); else _explicitNullProperties?.Remove("status_code_range"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItemStatusCodeRange _explicitNullValueStatusCodeRange = default!;
 #endif
         /// <summary>The time to cache the response for (in seconds). A value of 0 is equivalent to setting the cache control header with the value &quot;no-cache&quot;. A value of -1 is equivalent to setting the cache control header with the value of &quot;no-store&quot;.</summary>
-        public int? Value { get; set; }
+        public int? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private int? _explicitNullValueValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("status_code", StatusCode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItemStatusCodeRange>("status_code_range", StatusCodeRange);
             writer.WriteIntValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

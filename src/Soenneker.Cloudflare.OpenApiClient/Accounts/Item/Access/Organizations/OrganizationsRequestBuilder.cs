@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Doh;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Revoke_user;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Trust_settings;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -28,6 +29,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Revoke_user.Revoke_userRequestBuilder Revoke_user
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Revoke_user.Revoke_userRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The trust_settings property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Trust_settings.Trust_settingsRequestBuilder Trust_settings
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Trust_settings.Trust_settingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder"/> and sets the default values.
@@ -65,6 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,6 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -115,6 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

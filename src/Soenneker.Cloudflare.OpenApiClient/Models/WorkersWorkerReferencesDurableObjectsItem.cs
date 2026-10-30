@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersWorkerReferencesDurableObjectsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("namespace_id") is { } nullNodeNamespaceId && nullNodeNamespaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NamespaceId = null;
+            if (parseNode.GetChildNode("namespace_name") is { } nullNodeNamespaceName && nullNodeNamespaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NamespaceName = null;
+            if (parseNode.GetChildNode("worker_id") is { } nullNodeWorkerId && nullNodeWorkerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerId = null;
+            if (parseNode.GetChildNode("worker_name") is { } nullNodeWorkerName && nullNodeWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the Durable Object namespace being used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NamespaceId { get; set; }
+        public string? NamespaceId { get => _explicitNullValueNamespaceId; set { _explicitNullValueNamespaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace_id"); else _explicitNullProperties?.Remove("namespace_id"); } }
+        private string? _explicitNullValueNamespaceId = default!;
 #nullable restore
 #else
-        public string NamespaceId { get; set; }
+        public string NamespaceId { get => _explicitNullValueNamespaceId; set { _explicitNullValueNamespaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace_id"); else _explicitNullProperties?.Remove("namespace_id"); } }
+        private string _explicitNullValueNamespaceId = default!;
 #endif
         /// <summary>Name of the Durable Object namespace being used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NamespaceName { get; set; }
+        public string? NamespaceName { get => _explicitNullValueNamespaceName; set { _explicitNullValueNamespaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace_name"); else _explicitNullProperties?.Remove("namespace_name"); } }
+        private string? _explicitNullValueNamespaceName = default!;
 #nullable restore
 #else
-        public string NamespaceName { get; set; }
+        public string NamespaceName { get => _explicitNullValueNamespaceName; set { _explicitNullValueNamespaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace_name"); else _explicitNullProperties?.Remove("namespace_name"); } }
+        private string _explicitNullValueNamespaceName = default!;
 #endif
         /// <summary>ID of the Worker using the Durable Object implementation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkerId { get; set; }
+        public string? WorkerId { get => _explicitNullValueWorkerId; set { _explicitNullValueWorkerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_id"); else _explicitNullProperties?.Remove("worker_id"); } }
+        private string? _explicitNullValueWorkerId = default!;
 #nullable restore
 #else
-        public string WorkerId { get; set; }
+        public string WorkerId { get => _explicitNullValueWorkerId; set { _explicitNullValueWorkerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_id"); else _explicitNullProperties?.Remove("worker_id"); } }
+        private string _explicitNullValueWorkerId = default!;
 #endif
         /// <summary>Name of the Worker using the Durable Object implementation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkerName { get; set; }
+        public string? WorkerName { get => _explicitNullValueWorkerName; set { _explicitNullValueWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_name"); else _explicitNullProperties?.Remove("worker_name"); } }
+        private string? _explicitNullValueWorkerName = default!;
 #nullable restore
 #else
-        public string WorkerName { get; set; }
+        public string WorkerName { get => _explicitNullValueWorkerName; set { _explicitNullValueWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_name"); else _explicitNullProperties?.Remove("worker_name"); } }
+        private string _explicitNullValueWorkerName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("namespace_name", NamespaceName);
             writer.WriteStringValue("worker_id", WorkerId);
             writer.WriteStringValue("worker_name", WorkerName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

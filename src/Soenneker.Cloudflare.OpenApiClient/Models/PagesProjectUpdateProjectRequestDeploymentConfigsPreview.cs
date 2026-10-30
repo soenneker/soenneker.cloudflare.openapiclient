@@ -12,161 +12,230 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesProjectUpdateProjectRequestDeploymentConfigsPreview : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ai_bindings") is { } nullNodeAiBindings && nullNodeAiBindings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiBindings = null;
+            if (parseNode.GetChildNode("always_use_latest_compatibility_date") is { } nullNodeAlwaysUseLatestCompatibilityDate && nullNodeAlwaysUseLatestCompatibilityDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlwaysUseLatestCompatibilityDate = null;
+            if (parseNode.GetChildNode("analytics_engine_datasets") is { } nullNodeAnalyticsEngineDatasets && nullNodeAnalyticsEngineDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyticsEngineDatasets = null;
+            if (parseNode.GetChildNode("browsers") is { } nullNodeBrowsers && nullNodeBrowsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Browsers = null;
+            if (parseNode.GetChildNode("build_image_major_version") is { } nullNodeBuildImageMajorVersion && nullNodeBuildImageMajorVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildImageMajorVersion = null;
+            if (parseNode.GetChildNode("compatibility_date") is { } nullNodeCompatibilityDate && nullNodeCompatibilityDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompatibilityDate = null;
+            if (parseNode.GetChildNode("compatibility_flags") is { } nullNodeCompatibilityFlags && nullNodeCompatibilityFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompatibilityFlags = null;
+            if (parseNode.GetChildNode("d1_databases") is { } nullNodeD1Databases && nullNodeD1Databases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) D1Databases = null;
+            if (parseNode.GetChildNode("durable_object_namespaces") is { } nullNodeDurableObjectNamespaces && nullNodeDurableObjectNamespaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurableObjectNamespaces = null;
+            if (parseNode.GetChildNode("env_vars") is { } nullNodeEnvVars && nullNodeEnvVars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVars = null;
+            if (parseNode.GetChildNode("fail_open") is { } nullNodeFailOpen && nullNodeFailOpen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailOpen = null;
+            if (parseNode.GetChildNode("hyperdrive_bindings") is { } nullNodeHyperdriveBindings && nullNodeHyperdriveBindings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HyperdriveBindings = null;
+            if (parseNode.GetChildNode("kv_namespaces") is { } nullNodeKvNamespaces && nullNodeKvNamespaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KvNamespaces = null;
+            if (parseNode.GetChildNode("limits") is { } nullNodeLimits && nullNodeLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limits = null;
+            if (parseNode.GetChildNode("mtls_certificates") is { } nullNodeMtlsCertificates && nullNodeMtlsCertificates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MtlsCertificates = null;
+            if (parseNode.GetChildNode("placement") is { } nullNodePlacement && nullNodePlacement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Placement = null;
+            if (parseNode.GetChildNode("queue_producers") is { } nullNodeQueueProducers && nullNodeQueueProducers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueProducers = null;
+            if (parseNode.GetChildNode("r2_buckets") is { } nullNodeR2Buckets && nullNodeR2Buckets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2Buckets = null;
+            if (parseNode.GetChildNode("services") is { } nullNodeServices && nullNodeServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Services = null;
+            if (parseNode.GetChildNode("usage_model") is { } nullNodeUsageModel && nullNodeUsageModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageModel = null;
+            if (parseNode.GetChildNode("vectorize_bindings") is { } nullNodeVectorizeBindings && nullNodeVectorizeBindings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VectorizeBindings = null;
+            if (parseNode.GetChildNode("wrangler_config_hash") is { } nullNodeWranglerConfigHash && nullNodeWranglerConfigHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WranglerConfigHash = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Constellation bindings used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAiBindings? AiBindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAiBindings? AiBindings { get => _explicitNullValueAiBindings; set { _explicitNullValueAiBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_bindings"); else _explicitNullProperties?.Remove("ai_bindings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAiBindings? _explicitNullValueAiBindings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAiBindings AiBindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAiBindings AiBindings { get => _explicitNullValueAiBindings; set { _explicitNullValueAiBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_bindings"); else _explicitNullProperties?.Remove("ai_bindings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAiBindings _explicitNullValueAiBindings = default!;
 #endif
         /// <summary>Whether to always use the latest compatibility date for Pages Functions.</summary>
-        public bool? AlwaysUseLatestCompatibilityDate { get; set; }
+        public bool? AlwaysUseLatestCompatibilityDate { get => _explicitNullValueAlwaysUseLatestCompatibilityDate; set { _explicitNullValueAlwaysUseLatestCompatibilityDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("always_use_latest_compatibility_date"); else _explicitNullProperties?.Remove("always_use_latest_compatibility_date"); } }
+        private bool? _explicitNullValueAlwaysUseLatestCompatibilityDate = default!;
         /// <summary>Analytics Engine bindings used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAnalyticsEngineDatasets? AnalyticsEngineDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAnalyticsEngineDatasets? AnalyticsEngineDatasets { get => _explicitNullValueAnalyticsEngineDatasets; set { _explicitNullValueAnalyticsEngineDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics_engine_datasets"); else _explicitNullProperties?.Remove("analytics_engine_datasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAnalyticsEngineDatasets? _explicitNullValueAnalyticsEngineDatasets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAnalyticsEngineDatasets AnalyticsEngineDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAnalyticsEngineDatasets AnalyticsEngineDatasets { get => _explicitNullValueAnalyticsEngineDatasets; set { _explicitNullValueAnalyticsEngineDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics_engine_datasets"); else _explicitNullProperties?.Remove("analytics_engine_datasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewAnalyticsEngineDatasets _explicitNullValueAnalyticsEngineDatasets = default!;
 #endif
         /// <summary>Browser bindings used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewBrowsers? Browsers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewBrowsers? Browsers { get => _explicitNullValueBrowsers; set { _explicitNullValueBrowsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browsers"); else _explicitNullProperties?.Remove("browsers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewBrowsers? _explicitNullValueBrowsers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewBrowsers Browsers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewBrowsers Browsers { get => _explicitNullValueBrowsers; set { _explicitNullValueBrowsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browsers"); else _explicitNullProperties?.Remove("browsers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewBrowsers _explicitNullValueBrowsers = default!;
 #endif
         /// <summary>The major version of the build image to use for Pages Functions. Version 1 is retired and its projects are moved to version 3. Once a project&apos;s builds have been moved, a request that sets version 1 is rejected.</summary>
-        public int? BuildImageMajorVersion { get; set; }
+        public int? BuildImageMajorVersion { get => _explicitNullValueBuildImageMajorVersion; set { _explicitNullValueBuildImageMajorVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_image_major_version"); else _explicitNullProperties?.Remove("build_image_major_version"); } }
+        private int? _explicitNullValueBuildImageMajorVersion = default!;
         /// <summary>Compatibility date used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompatibilityDate { get; set; }
+        public string? CompatibilityDate { get => _explicitNullValueCompatibilityDate; set { _explicitNullValueCompatibilityDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compatibility_date"); else _explicitNullProperties?.Remove("compatibility_date"); } }
+        private string? _explicitNullValueCompatibilityDate = default!;
 #nullable restore
 #else
-        public string CompatibilityDate { get; set; }
+        public string CompatibilityDate { get => _explicitNullValueCompatibilityDate; set { _explicitNullValueCompatibilityDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compatibility_date"); else _explicitNullProperties?.Remove("compatibility_date"); } }
+        private string _explicitNullValueCompatibilityDate = default!;
 #endif
         /// <summary>Compatibility flags used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CompatibilityFlags { get; set; }
+        public List<string>? CompatibilityFlags { get => _explicitNullValueCompatibilityFlags; set { _explicitNullValueCompatibilityFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compatibility_flags"); else _explicitNullProperties?.Remove("compatibility_flags"); } }
+        private List<string>? _explicitNullValueCompatibilityFlags = default!;
 #nullable restore
 #else
-        public List<string> CompatibilityFlags { get; set; }
+        public List<string> CompatibilityFlags { get => _explicitNullValueCompatibilityFlags; set { _explicitNullValueCompatibilityFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compatibility_flags"); else _explicitNullProperties?.Remove("compatibility_flags"); } }
+        private List<string> _explicitNullValueCompatibilityFlags = default!;
 #endif
         /// <summary>D1 databases used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewD1Databases? D1Databases { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewD1Databases? D1Databases { get => _explicitNullValueD1Databases; set { _explicitNullValueD1Databases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("d1_databases"); else _explicitNullProperties?.Remove("d1_databases"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewD1Databases? _explicitNullValueD1Databases = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewD1Databases D1Databases { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewD1Databases D1Databases { get => _explicitNullValueD1Databases; set { _explicitNullValueD1Databases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("d1_databases"); else _explicitNullProperties?.Remove("d1_databases"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewD1Databases _explicitNullValueD1Databases = default!;
 #endif
         /// <summary>Durable Object namespaces used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewDurableObjectNamespaces? DurableObjectNamespaces { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewDurableObjectNamespaces? DurableObjectNamespaces { get => _explicitNullValueDurableObjectNamespaces; set { _explicitNullValueDurableObjectNamespaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_object_namespaces"); else _explicitNullProperties?.Remove("durable_object_namespaces"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewDurableObjectNamespaces? _explicitNullValueDurableObjectNamespaces = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewDurableObjectNamespaces DurableObjectNamespaces { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewDurableObjectNamespaces DurableObjectNamespaces { get => _explicitNullValueDurableObjectNamespaces; set { _explicitNullValueDurableObjectNamespaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_object_namespaces"); else _explicitNullProperties?.Remove("durable_object_namespaces"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewDurableObjectNamespaces _explicitNullValueDurableObjectNamespaces = default!;
 #endif
         /// <summary>Environment variables used for builds and Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewEnvVars? EnvVars { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewEnvVars? EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_vars"); else _explicitNullProperties?.Remove("env_vars"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewEnvVars? _explicitNullValueEnvVars = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewEnvVars EnvVars { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewEnvVars EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_vars"); else _explicitNullProperties?.Remove("env_vars"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewEnvVars _explicitNullValueEnvVars = default!;
 #endif
         /// <summary>Whether to fail open when the deployment config cannot be applied.</summary>
-        public bool? FailOpen { get; set; }
+        public bool? FailOpen { get => _explicitNullValueFailOpen; set { _explicitNullValueFailOpen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fail_open"); else _explicitNullProperties?.Remove("fail_open"); } }
+        private bool? _explicitNullValueFailOpen = default!;
         /// <summary>Hyperdrive bindings used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewHyperdriveBindings? HyperdriveBindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewHyperdriveBindings? HyperdriveBindings { get => _explicitNullValueHyperdriveBindings; set { _explicitNullValueHyperdriveBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hyperdrive_bindings"); else _explicitNullProperties?.Remove("hyperdrive_bindings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewHyperdriveBindings? _explicitNullValueHyperdriveBindings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewHyperdriveBindings HyperdriveBindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewHyperdriveBindings HyperdriveBindings { get => _explicitNullValueHyperdriveBindings; set { _explicitNullValueHyperdriveBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hyperdrive_bindings"); else _explicitNullProperties?.Remove("hyperdrive_bindings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewHyperdriveBindings _explicitNullValueHyperdriveBindings = default!;
 #endif
         /// <summary>KV namespaces used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewKvNamespaces? KvNamespaces { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewKvNamespaces? KvNamespaces { get => _explicitNullValueKvNamespaces; set { _explicitNullValueKvNamespaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kv_namespaces"); else _explicitNullProperties?.Remove("kv_namespaces"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewKvNamespaces? _explicitNullValueKvNamespaces = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewKvNamespaces KvNamespaces { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewKvNamespaces KvNamespaces { get => _explicitNullValueKvNamespaces; set { _explicitNullValueKvNamespaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kv_namespaces"); else _explicitNullProperties?.Remove("kv_namespaces"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewKvNamespaces _explicitNullValueKvNamespaces = default!;
 #endif
         /// <summary>Limits for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestLimits? Limits { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestLimits? Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestLimits? _explicitNullValueLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestLimits Limits { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestLimits Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestLimits _explicitNullValueLimits = default!;
 #endif
         /// <summary>mTLS bindings used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewMtlsCertificates? MtlsCertificates { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewMtlsCertificates? MtlsCertificates { get => _explicitNullValueMtlsCertificates; set { _explicitNullValueMtlsCertificates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls_certificates"); else _explicitNullProperties?.Remove("mtls_certificates"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewMtlsCertificates? _explicitNullValueMtlsCertificates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewMtlsCertificates MtlsCertificates { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewMtlsCertificates MtlsCertificates { get => _explicitNullValueMtlsCertificates; set { _explicitNullValueMtlsCertificates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls_certificates"); else _explicitNullProperties?.Remove("mtls_certificates"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewMtlsCertificates _explicitNullValueMtlsCertificates = default!;
 #endif
         /// <summary>Placement setting used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestPlacement? Placement { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestPlacement? Placement { get => _explicitNullValuePlacement; set { _explicitNullValuePlacement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placement"); else _explicitNullProperties?.Remove("placement"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestPlacement? _explicitNullValuePlacement = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestPlacement Placement { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestPlacement Placement { get => _explicitNullValuePlacement; set { _explicitNullValuePlacement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placement"); else _explicitNullProperties?.Remove("placement"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestPlacement _explicitNullValuePlacement = default!;
 #endif
         /// <summary>Queue Producer bindings used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewQueueProducers? QueueProducers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewQueueProducers? QueueProducers { get => _explicitNullValueQueueProducers; set { _explicitNullValueQueueProducers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_producers"); else _explicitNullProperties?.Remove("queue_producers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewQueueProducers? _explicitNullValueQueueProducers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewQueueProducers QueueProducers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewQueueProducers QueueProducers { get => _explicitNullValueQueueProducers; set { _explicitNullValueQueueProducers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_producers"); else _explicitNullProperties?.Remove("queue_producers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewQueueProducers _explicitNullValueQueueProducers = default!;
 #endif
         /// <summary>R2 buckets used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewR2Buckets? R2Buckets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewR2Buckets? R2Buckets { get => _explicitNullValueR2Buckets; set { _explicitNullValueR2Buckets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_buckets"); else _explicitNullProperties?.Remove("r2_buckets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewR2Buckets? _explicitNullValueR2Buckets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewR2Buckets R2Buckets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewR2Buckets R2Buckets { get => _explicitNullValueR2Buckets; set { _explicitNullValueR2Buckets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_buckets"); else _explicitNullProperties?.Remove("r2_buckets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewR2Buckets _explicitNullValueR2Buckets = default!;
 #endif
         /// <summary>Services used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewServices? Services { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewServices? Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewServices? _explicitNullValueServices = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewServices Services { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewServices Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewServices _explicitNullValueServices = default!;
 #endif
         /// <summary>The usage model for Pages Functions.</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestUsageModel? UsageModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestUsageModel? UsageModel { get => _explicitNullValueUsageModel; set { _explicitNullValueUsageModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_model"); else _explicitNullProperties?.Remove("usage_model"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestUsageModel? _explicitNullValueUsageModel = default!;
         /// <summary>Vectorize bindings used for Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewVectorizeBindings? VectorizeBindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewVectorizeBindings? VectorizeBindings { get => _explicitNullValueVectorizeBindings; set { _explicitNullValueVectorizeBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vectorize_bindings"); else _explicitNullProperties?.Remove("vectorize_bindings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewVectorizeBindings? _explicitNullValueVectorizeBindings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewVectorizeBindings VectorizeBindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewVectorizeBindings VectorizeBindings { get => _explicitNullValueVectorizeBindings; set { _explicitNullValueVectorizeBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vectorize_bindings"); else _explicitNullProperties?.Remove("vectorize_bindings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewVectorizeBindings _explicitNullValueVectorizeBindings = default!;
 #endif
         /// <summary>Hash of the Wrangler configuration used for the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WranglerConfigHash { get; set; }
+        public string? WranglerConfigHash { get => _explicitNullValueWranglerConfigHash; set { _explicitNullValueWranglerConfigHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrangler_config_hash"); else _explicitNullProperties?.Remove("wrangler_config_hash"); } }
+        private string? _explicitNullValueWranglerConfigHash = default!;
 #nullable restore
 #else
-        public string WranglerConfigHash { get; set; }
+        public string WranglerConfigHash { get => _explicitNullValueWranglerConfigHash; set { _explicitNullValueWranglerConfigHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrangler_config_hash"); else _explicitNullProperties?.Remove("wrangler_config_hash"); } }
+        private string _explicitNullValueWranglerConfigHash = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview"/> and sets the default values.
@@ -186,7 +255,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreview(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -249,6 +318,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentConfigValuesRequestUsageModel>("usage_model", UsageModel);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigsPreviewVectorizeBindings>("vectorize_bindings", VectorizeBindings);
             writer.WriteStringValue("wrangler_config_hash", WranglerConfigHash);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

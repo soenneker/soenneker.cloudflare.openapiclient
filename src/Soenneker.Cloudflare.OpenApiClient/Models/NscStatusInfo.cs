@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NscStatusInfo : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,25 +58,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("state")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfo();
             if("NscStatusInfoOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NscStatusInfoOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1();
+                
             }
             else if("NscStatusInfoOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NscStatusInfoOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2();
+                
             }
             else if("NscStatusInfoOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NscStatusInfoOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3();
+                
             }
             else if("NscStatusInfoOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NscStatusInfoOneOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("state") != null && (parseNode.GetChildNode("state")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("Pending".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("state") != null && (parseNode.GetChildNode("state")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("Down".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("state") != null && (parseNode.GetChildNode("state")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("Unhealthy".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("state") != null && (parseNode.GetChildNode("state")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("Healthy".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.NscStatusInfoOneOf1 == null && result.NscStatusInfoOneOf2 == null && result.NscStatusInfoOneOf3 == null && result.NscStatusInfoOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.NscStatusInfoOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1(), parseNode);
+            if (result.NscStatusInfoOneOf1 == null && result.NscStatusInfoOneOf2 == null && result.NscStatusInfoOneOf3 == null && result.NscStatusInfoOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.NscStatusInfoOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2(), parseNode);
+            if (result.NscStatusInfoOneOf1 == null && result.NscStatusInfoOneOf2 == null && result.NscStatusInfoOneOf3 == null && result.NscStatusInfoOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.NscStatusInfoOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3(), parseNode);
+            if (result.NscStatusInfoOneOf1 == null && result.NscStatusInfoOneOf2 == null && result.NscStatusInfoOneOf3 == null && result.NscStatusInfoOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.NscStatusInfoOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4(), parseNode);
+            if (result.NscStatusInfoOneOf1 == null && result.NscStatusInfoOneOf2 == null && result.NscStatusInfoOneOf3 == null && result.NscStatusInfoOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (NscStatusInfoOneOf1 == null && NscStatusInfoOneOf2 == null && NscStatusInfoOneOf3 == null && NscStatusInfoOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (NscStatusInfoOneOf1 != null && NscStatusInfoOneOf2 == null && NscStatusInfoOneOf3 == null && NscStatusInfoOneOf4 == null) { if (NscStatusInfoOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NscStatusInfoOneOf1); return; }
+            if (NscStatusInfoOneOf2 != null && NscStatusInfoOneOf1 == null && NscStatusInfoOneOf3 == null && NscStatusInfoOneOf4 == null) { if (NscStatusInfoOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NscStatusInfoOneOf2); return; }
+            if (NscStatusInfoOneOf3 != null && NscStatusInfoOneOf1 == null && NscStatusInfoOneOf2 == null && NscStatusInfoOneOf4 == null) { if (NscStatusInfoOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NscStatusInfoOneOf3); return; }
+            if (NscStatusInfoOneOf4 != null && NscStatusInfoOneOf1 == null && NscStatusInfoOneOf2 == null && NscStatusInfoOneOf3 == null) { if (NscStatusInfoOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NscStatusInfoOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(NscStatusInfoOneOf1 != null)
             {
+                if (NscStatusInfoOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1>(null, NscStatusInfoOneOf1);
             }
             else if(NscStatusInfoOneOf2 != null)
             {
+                if (NscStatusInfoOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2>(null, NscStatusInfoOneOf2);
             }
             else if(NscStatusInfoOneOf3 != null)
             {
+                if (NscStatusInfoOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3>(null, NscStatusInfoOneOf3);
             }
             else if(NscStatusInfoOneOf4 != null)
             {
+                if (NscStatusInfoOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4>(null, NscStatusInfoOneOf4);
             }
         }

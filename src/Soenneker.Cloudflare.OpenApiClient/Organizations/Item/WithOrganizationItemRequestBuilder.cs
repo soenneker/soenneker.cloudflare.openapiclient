@@ -82,12 +82,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
         {
         }
         /// <summary>
-        /// Delete an organization. The organization MUST be empty before deleting.It must not contain any sub-organizations, accounts, members or users. Sub-organizationdeletion availability depends on the organization&apos;s capabilities.**Access Control:** Restricted to enterprise organizations.
+        /// Delete an organization. It must not contain active sub-organizations or accounts. A rootorganization must also have no active managed users. Sub-organization deletion availabilitydepends on the organization&apos;s capabilities.**Access Control:** Root deletion is restricted to enterprise organizations.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsDelete200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsDelete200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsDelete200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsRetrieve200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsRetrieve200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -123,37 +123,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsRetrieve200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsRetrieve200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an organization&apos;s name.
+        /// Update an organization&apos;s name. Supplying `parent_id` verifies the current parent; thisendpoint cannot move an organization. Organization names are limited to 65 UTF-8 bytes.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsModify200Response"/></returns>
-        /// <param name="body">References an Organization in the Cloudflare data model.</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsModify200Response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsModify200Response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiModifyOrganizationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsModify200Response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsModify200Response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiModifyOrganizationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsModify200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsModify200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an organization. The organization MUST be empty before deleting.It must not contain any sub-organizations, accounts, members or users. Sub-organizationdeletion availability depends on the organization&apos;s capabilities.**Access Control:** Restricted to enterprise organizations.
+        /// Delete an organization. It must not contain active sub-organizations or accounts. A rootorganization must also have no active managed users. Sub-organization deletion availabilitydepends on the organization&apos;s capabilities.**Access Control:** Root deletion is restricted to enterprise organizations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,18 +191,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an organization&apos;s name.
+        /// Update an organization&apos;s name. Supplying `parent_id` verifies the current parent; thisendpoint cannot move an organization. Organization names are limited to 65 UTF-8 bytes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">References an Organization in the Cloudflare data model.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiModifyOrganizationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiModifyOrganizationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RegistrarApiExtensionResponseSingleResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("registration_schema") is { } nullNodeRegistrationSchema && nullNodeRegistrationSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationSchema = null;
+            if (parseNode.GetChildNode("transfer_schema") is { } nullNodeTransferSchema && nullNodeTransferSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferSchema = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Extension metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemMetadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemMetadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>JSON Schema describing the expected input structure for registration operations on this extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemRegistrationSchemaProperty? RegistrationSchema { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemRegistrationSchemaProperty? RegistrationSchema { get => _explicitNullValueRegistrationSchema; set { _explicitNullValueRegistrationSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_schema"); else _explicitNullProperties?.Remove("registration_schema"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemRegistrationSchemaProperty? _explicitNullValueRegistrationSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemRegistrationSchemaProperty RegistrationSchema { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemRegistrationSchemaProperty RegistrationSchema { get => _explicitNullValueRegistrationSchema; set { _explicitNullValueRegistrationSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_schema"); else _explicitNullProperties?.Remove("registration_schema"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemRegistrationSchemaProperty _explicitNullValueRegistrationSchema = default!;
 #endif
         /// <summary>JSON Schema describing the expected input structure for transfer operations on this extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemTransferSchemaProperty? TransferSchema { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemTransferSchemaProperty? TransferSchema { get => _explicitNullValueTransferSchema; set { _explicitNullValueTransferSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_schema"); else _explicitNullProperties?.Remove("transfer_schema"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemTransferSchemaProperty? _explicitNullValueTransferSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemTransferSchemaProperty TransferSchema { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemTransferSchemaProperty TransferSchema { get => _explicitNullValueTransferSchema; set { _explicitNullValueTransferSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_schema"); else _explicitNullProperties?.Remove("transfer_schema"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemTransferSchemaProperty _explicitNullValueTransferSchema = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionResponseSingleResult"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionResponseSingleResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionResponseSingleResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionResponseSingleResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemRegistrationSchemaProperty>("registration_schema", RegistrationSchema);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiExtensionItemTransferSchemaProperty>("transfer_schema", TransferSchema);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

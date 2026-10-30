@@ -54,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spam
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryBySpam400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryBySpam200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryBySpam200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

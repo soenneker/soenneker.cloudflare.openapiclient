@@ -11,23 +11,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicTransitHopResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("nodes") is { } nullNodeNodes && nullNodeNodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nodes = null;
+            if (parseNode.GetChildNode("packets_lost") is { } nullNodePacketsLost && nullNodePacketsLost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsLost = null;
+            if (parseNode.GetChildNode("packets_sent") is { } nullNodePacketsSent && nullNodePacketsSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsSent = null;
+            if (parseNode.GetChildNode("packets_ttl") is { } nullNodePacketsTtl && nullNodePacketsTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsTtl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of node objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult>? Nodes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult>? Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult>? _explicitNullValueNodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult> Nodes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult> Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult> _explicitNullValueNodes = default!;
 #endif
         /// <summary>Number of packets where no response was received.</summary>
-        public int? PacketsLost { get; set; }
+        public int? PacketsLost { get => _explicitNullValuePacketsLost; set { _explicitNullValuePacketsLost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_lost"); else _explicitNullProperties?.Remove("packets_lost"); } }
+        private int? _explicitNullValuePacketsLost = default!;
         /// <summary>Number of packets sent with specified TTL.</summary>
-        public int? PacketsSent { get; set; }
+        public int? PacketsSent { get => _explicitNullValuePacketsSent; set { _explicitNullValuePacketsSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_sent"); else _explicitNullProperties?.Remove("packets_sent"); } }
+        private int? _explicitNullValuePacketsSent = default!;
         /// <summary>The time to live (TTL).</summary>
-        public int? PacketsTtl { get; set; }
+        public int? PacketsTtl { get => _explicitNullValuePacketsTtl; set { _explicitNullValuePacketsTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_ttl"); else _explicitNullProperties?.Remove("packets_ttl"); } }
+        private int? _explicitNullValuePacketsTtl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("packets_lost", PacketsLost);
             writer.WriteIntValue("packets_sent", PacketsSent);
             writer.WriteIntValue("packets_ttl", PacketsTtl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,60 +11,89 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class NscCni : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("bgp") is { } nullNodeBgp && nullNodeBgp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bgp = null;
+            if (parseNode.GetChildNode("bgp_mode") is { } nullNodeBgpMode && nullNodeBgpMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BgpMode = null;
+            if (parseNode.GetChildNode("cust_ip") is { } nullNodeCustIp && nullNodeCustIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustIp = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("interconnect") is { } nullNodeInterconnect && nullNodeInterconnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interconnect = null;
+            if (parseNode.GetChildNode("magic") is { } nullNodeMagic && nullNodeMagic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Magic = null;
+            if (parseNode.GetChildNode("p2p_ip") is { } nullNodeP2pIp && nullNodeP2pIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P2pIp = null;
+        }
+
         /// <summary>Customer account tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Account { get; set; }
+        public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public string Account { get; set; }
+        public string Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string _explicitNullValueAccount = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bgp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? Bgp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? _explicitNullValueBgp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl Bgp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl _explicitNullValueBgp = default!;
 #endif
         /// <summary>The BGP mode for a CNI.One of the following:* `dynamic_route_exchange`* `advertise_only`</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode? BgpMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode? BgpMode { get => _explicitNullValueBgpMode; set { _explicitNullValueBgpMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp_mode"); else _explicitNullProperties?.Remove("bgp_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode? _explicitNullValueBgpMode = default!;
         /// <summary>Customer end of the point-to-point linkThis should always be inside the same prefix as `p2p_ip`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustIp { get; set; }
+        public string? CustIp { get => _explicitNullValueCustIp; set { _explicitNullValueCustIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cust_ip"); else _explicitNullProperties?.Remove("cust_ip"); } }
+        private string? _explicitNullValueCustIp = default!;
 #nullable restore
 #else
-        public string CustIp { get; set; }
+        public string CustIp { get => _explicitNullValueCustIp; set { _explicitNullValueCustIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cust_ip"); else _explicitNullProperties?.Remove("cust_ip"); } }
+        private string _explicitNullValueCustIp = default!;
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>Interconnect identifier hosting this CNI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Interconnect { get; set; }
+        public string? Interconnect { get => _explicitNullValueInterconnect; set { _explicitNullValueInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interconnect"); else _explicitNullProperties?.Remove("interconnect"); } }
+        private string? _explicitNullValueInterconnect = default!;
 #nullable restore
 #else
-        public string Interconnect { get; set; }
+        public string Interconnect { get => _explicitNullValueInterconnect; set { _explicitNullValueInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interconnect"); else _explicitNullProperties?.Remove("interconnect"); } }
+        private string _explicitNullValueInterconnect = default!;
 #endif
         /// <summary>The magic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings? Magic { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings? Magic { get => _explicitNullValueMagic; set { _explicitNullValueMagic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("magic"); else _explicitNullProperties?.Remove("magic"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings? _explicitNullValueMagic = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings Magic { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings Magic { get => _explicitNullValueMagic; set { _explicitNullValueMagic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("magic"); else _explicitNullProperties?.Remove("magic"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings _explicitNullValueMagic = default!;
 #endif
         /// <summary>Cloudflare end of the point-to-point link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? P2pIp { get; set; }
+        public string? P2pIp { get => _explicitNullValueP2pIp; set { _explicitNullValueP2pIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p2p_ip"); else _explicitNullProperties?.Remove("p2p_ip"); } }
+        private string? _explicitNullValueP2pIp = default!;
 #nullable restore
 #else
-        public string P2pIp { get; set; }
+        public string P2pIp { get => _explicitNullValueP2pIp; set { _explicitNullValueP2pIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p2p_ip"); else _explicitNullProperties?.Remove("p2p_ip"); } }
+        private string _explicitNullValueP2pIp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni"/> and sets the default values.
@@ -81,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("interconnect", Interconnect);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings>("magic", Magic);
             writer.WriteStringValue("p2p_ip", P2pIp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

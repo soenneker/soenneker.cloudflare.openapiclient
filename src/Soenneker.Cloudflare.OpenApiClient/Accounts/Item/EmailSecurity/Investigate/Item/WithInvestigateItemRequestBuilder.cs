@@ -50,6 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Raw.RawRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The reclassify property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Reclassify.ReclassifyRequestBuilder Reclassify
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Reclassify.ReclassifyRequestBuilder(PathParameters, RequestAdapter);
@@ -95,6 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityGetMessage200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityGetMessage200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

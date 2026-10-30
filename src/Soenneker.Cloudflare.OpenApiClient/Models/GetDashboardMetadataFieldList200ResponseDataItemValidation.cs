@@ -11,48 +11,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetDashboardMetadataFieldList200ResponseDataItemValidation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max") is { } nullNodeMax && nullNodeMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Max = null;
+            if (parseNode.GetChildNode("maxLength") is { } nullNodeMaxLength && nullNodeMaxLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLength = null;
+            if (parseNode.GetChildNode("min") is { } nullNodeMin && nullNodeMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Min = null;
+            if (parseNode.GetChildNode("minLength") is { } nullNodeMinLength && nullNodeMinLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinLength = null;
+            if (parseNode.GetChildNode("pattern") is { } nullNodePattern && nullNodePattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pattern = null;
+            if (parseNode.GetChildNode("requiredWhen") is { } nullNodeRequiredWhen && nullNodeRequiredWhen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredWhen = null;
+            if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+            if (parseNode.GetChildNode("visibleWhen") is { } nullNodeVisibleWhen && nullNodeVisibleWhen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisibleWhen = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The max property</summary>
-        public double? Max { get; set; }
+        public double? Max { get => _explicitNullValueMax; set { _explicitNullValueMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max"); else _explicitNullProperties?.Remove("max"); } }
+        private double? _explicitNullValueMax = default!;
         /// <summary>The maxLength property</summary>
-        public double? MaxLength { get; set; }
+        public double? MaxLength { get => _explicitNullValueMaxLength; set { _explicitNullValueMaxLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxLength"); else _explicitNullProperties?.Remove("maxLength"); } }
+        private double? _explicitNullValueMaxLength = default!;
         /// <summary>The min property</summary>
-        public double? Min { get; set; }
+        public double? Min { get => _explicitNullValueMin; set { _explicitNullValueMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min"); else _explicitNullProperties?.Remove("min"); } }
+        private double? _explicitNullValueMin = default!;
         /// <summary>The minLength property</summary>
-        public double? MinLength { get; set; }
+        public double? MinLength { get => _explicitNullValueMinLength; set { _explicitNullValueMinLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minLength"); else _explicitNullProperties?.Remove("minLength"); } }
+        private double? _explicitNullValueMinLength = default!;
         /// <summary>The pattern property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pattern { get; set; }
+        public string? Pattern { get => _explicitNullValuePattern; set { _explicitNullValuePattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pattern"); else _explicitNullProperties?.Remove("pattern"); } }
+        private string? _explicitNullValuePattern = default!;
 #nullable restore
 #else
-        public string Pattern { get; set; }
+        public string Pattern { get => _explicitNullValuePattern; set { _explicitNullValuePattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pattern"); else _explicitNullProperties?.Remove("pattern"); } }
+        private string _explicitNullValuePattern = default!;
 #endif
         /// <summary>Require this field only when the predicate matches sibling values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationRequiredWhen? RequiredWhen { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationRequiredWhen? RequiredWhen { get => _explicitNullValueRequiredWhen; set { _explicitNullValueRequiredWhen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredWhen"); else _explicitNullProperties?.Remove("requiredWhen"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationRequiredWhen? _explicitNullValueRequiredWhen = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationRequiredWhen RequiredWhen { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationRequiredWhen RequiredWhen { get => _explicitNullValueRequiredWhen; set { _explicitNullValueRequiredWhen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredWhen"); else _explicitNullProperties?.Remove("requiredWhen"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationRequiredWhen _explicitNullValueRequiredWhen = default!;
 #endif
         /// <summary>Controls which request types and countries this field is shown for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility? Visibility { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility? _explicitNullValueVisibility = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility Visibility { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility _explicitNullValueVisibility = default!;
 #endif
         /// <summary>Show this field only when the predicate matches sibling values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibleWhen? VisibleWhen { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibleWhen? VisibleWhen { get => _explicitNullValueVisibleWhen; set { _explicitNullValueVisibleWhen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibleWhen"); else _explicitNullProperties?.Remove("visibleWhen"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibleWhen? _explicitNullValueVisibleWhen = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibleWhen VisibleWhen { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibleWhen VisibleWhen { get => _explicitNullValueVisibleWhen; set { _explicitNullValueVisibleWhen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibleWhen"); else _explicitNullProperties?.Remove("visibleWhen"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibleWhen _explicitNullValueVisibleWhen = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidation"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationRequiredWhen>("requiredWhen", RequiredWhen);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibility>("visibility", Visibility);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardMetadataFieldList200ResponseDataItemValidationVisibleWhen>("visibleWhen", VisibleWhen);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

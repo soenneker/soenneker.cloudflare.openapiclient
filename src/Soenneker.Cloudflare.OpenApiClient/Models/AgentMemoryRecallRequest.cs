@@ -11,29 +11,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentMemoryRecallRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("referenceDate") is { } nullNodeReferenceDate && nullNodeReferenceDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceDate = null;
+            if (parseNode.GetChildNode("responseLength") is { } nullNodeResponseLength && nullNodeResponseLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseLength = null;
+            if (parseNode.GetChildNode("thinkingLevel") is { } nullNodeThinkingLevel && nullNodeThinkingLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThinkingLevel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Natural-language query to match against stored memories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>Temporal anchor for relative date references in the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceDate { get; set; }
+        public string? ReferenceDate { get => _explicitNullValueReferenceDate; set { _explicitNullValueReferenceDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceDate"); else _explicitNullProperties?.Remove("referenceDate"); } }
+        private string? _explicitNullValueReferenceDate = default!;
 #nullable restore
 #else
-        public string ReferenceDate { get; set; }
+        public string ReferenceDate { get => _explicitNullValueReferenceDate; set { _explicitNullValueReferenceDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceDate"); else _explicitNullProperties?.Remove("referenceDate"); } }
+        private string _explicitNullValueReferenceDate = default!;
 #endif
         /// <summary>Verbosity of the synthesized answer. Defaults to &apos;medium&apos;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequestResponseLength? ResponseLength { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequestResponseLength? ResponseLength { get => _explicitNullValueResponseLength; set { _explicitNullValueResponseLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseLength"); else _explicitNullProperties?.Remove("responseLength"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequestResponseLength? _explicitNullValueResponseLength = default!;
         /// <summary>Recall intensity / search depth. Defaults to &apos;low&apos;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequestThinkingLevel? ThinkingLevel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequestThinkingLevel? ThinkingLevel { get => _explicitNullValueThinkingLevel; set { _explicitNullValueThinkingLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thinkingLevel"); else _explicitNullProperties?.Remove("thinkingLevel"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequestThinkingLevel? _explicitNullValueThinkingLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequest"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("referenceDate", ReferenceDate);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequestResponseLength>("responseLength", ResponseLength);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AgentMemoryRecallRequestThinkingLevel>("thinkingLevel", ThinkingLevel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

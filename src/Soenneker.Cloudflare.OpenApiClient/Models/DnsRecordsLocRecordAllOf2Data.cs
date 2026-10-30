@@ -12,33 +12,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DnsRecordsLocRecordAllOf2Data : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("altitude") is { } nullNodeAltitude && nullNodeAltitude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Altitude = null;
+            if (parseNode.GetChildNode("lat_degrees") is { } nullNodeLatDegrees && nullNodeLatDegrees.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatDegrees = null;
+            if (parseNode.GetChildNode("lat_direction") is { } nullNodeLatDirection && nullNodeLatDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatDirection = null;
+            if (parseNode.GetChildNode("lat_minutes") is { } nullNodeLatMinutes && nullNodeLatMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatMinutes = null;
+            if (parseNode.GetChildNode("lat_seconds") is { } nullNodeLatSeconds && nullNodeLatSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatSeconds = null;
+            if (parseNode.GetChildNode("long_degrees") is { } nullNodeLongDegrees && nullNodeLongDegrees.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongDegrees = null;
+            if (parseNode.GetChildNode("long_direction") is { } nullNodeLongDirection && nullNodeLongDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongDirection = null;
+            if (parseNode.GetChildNode("long_minutes") is { } nullNodeLongMinutes && nullNodeLongMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongMinutes = null;
+            if (parseNode.GetChildNode("long_seconds") is { } nullNodeLongSeconds && nullNodeLongSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongSeconds = null;
+            if (parseNode.GetChildNode("precision_horz") is { } nullNodePrecisionHorz && nullNodePrecisionHorz.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrecisionHorz = null;
+            if (parseNode.GetChildNode("precision_vert") is { } nullNodePrecisionVert && nullNodePrecisionVert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrecisionVert = null;
+            if (parseNode.GetChildNode("size") is { } nullNodeSize && nullNodeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Size = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Altitude of location in meters.</summary>
-        public double? Altitude { get; set; }
+        public double? Altitude { get => _explicitNullValueAltitude; set { _explicitNullValueAltitude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("altitude"); else _explicitNullProperties?.Remove("altitude"); } }
+        private double? _explicitNullValueAltitude = default!;
         /// <summary>Degrees of latitude.</summary>
-        public double? LatDegrees { get; set; }
+        public double? LatDegrees { get => _explicitNullValueLatDegrees; set { _explicitNullValueLatDegrees = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lat_degrees"); else _explicitNullProperties?.Remove("lat_degrees"); } }
+        private double? _explicitNullValueLatDegrees = default!;
         /// <summary>Latitude direction.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2DataLatDirection? LatDirection { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2DataLatDirection? LatDirection { get => _explicitNullValueLatDirection; set { _explicitNullValueLatDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lat_direction"); else _explicitNullProperties?.Remove("lat_direction"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2DataLatDirection? _explicitNullValueLatDirection = default!;
         /// <summary>Minutes of latitude.</summary>
-        public double? LatMinutes { get; set; }
+        public double? LatMinutes { get => _explicitNullValueLatMinutes; set { _explicitNullValueLatMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lat_minutes"); else _explicitNullProperties?.Remove("lat_minutes"); } }
+        private double? _explicitNullValueLatMinutes = default!;
         /// <summary>Seconds of latitude.</summary>
-        public double? LatSeconds { get; set; }
+        public double? LatSeconds { get => _explicitNullValueLatSeconds; set { _explicitNullValueLatSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lat_seconds"); else _explicitNullProperties?.Remove("lat_seconds"); } }
+        private double? _explicitNullValueLatSeconds = default!;
         /// <summary>Degrees of longitude.</summary>
-        public double? LongDegrees { get; set; }
+        public double? LongDegrees { get => _explicitNullValueLongDegrees; set { _explicitNullValueLongDegrees = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_degrees"); else _explicitNullProperties?.Remove("long_degrees"); } }
+        private double? _explicitNullValueLongDegrees = default!;
         /// <summary>Longitude direction.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2DataLongDirection? LongDirection { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2DataLongDirection? LongDirection { get => _explicitNullValueLongDirection; set { _explicitNullValueLongDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_direction"); else _explicitNullProperties?.Remove("long_direction"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2DataLongDirection? _explicitNullValueLongDirection = default!;
         /// <summary>Minutes of longitude.</summary>
-        public double? LongMinutes { get; set; }
+        public double? LongMinutes { get => _explicitNullValueLongMinutes; set { _explicitNullValueLongMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_minutes"); else _explicitNullProperties?.Remove("long_minutes"); } }
+        private double? _explicitNullValueLongMinutes = default!;
         /// <summary>Seconds of longitude.</summary>
-        public double? LongSeconds { get; set; }
+        public double? LongSeconds { get => _explicitNullValueLongSeconds; set { _explicitNullValueLongSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_seconds"); else _explicitNullProperties?.Remove("long_seconds"); } }
+        private double? _explicitNullValueLongSeconds = default!;
         /// <summary>Horizontal precision of location.</summary>
-        public double? PrecisionHorz { get; set; }
+        public double? PrecisionHorz { get => _explicitNullValuePrecisionHorz; set { _explicitNullValuePrecisionHorz = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precision_horz"); else _explicitNullProperties?.Remove("precision_horz"); } }
+        private double? _explicitNullValuePrecisionHorz = default!;
         /// <summary>Vertical precision of location.</summary>
-        public double? PrecisionVert { get; set; }
+        public double? PrecisionVert { get => _explicitNullValuePrecisionVert; set { _explicitNullValuePrecisionVert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precision_vert"); else _explicitNullProperties?.Remove("precision_vert"); } }
+        private double? _explicitNullValuePrecisionVert = default!;
         /// <summary>Size of location in meters.</summary>
-        public double? Size { get; set; }
+        public double? Size { get => _explicitNullValueSize; set { _explicitNullValueSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size"); else _explicitNullProperties?.Remove("size"); } }
+        private double? _explicitNullValueSize = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2Data"/> and sets the default values.
         /// </summary>
@@ -54,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2Data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2Data();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsLocRecordAllOf2Data(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("precision_horz", PrecisionHorz);
             writer.WriteDoubleValue("precision_vert", PrecisionVert);
             writer.WriteDoubleValue("size", Size);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

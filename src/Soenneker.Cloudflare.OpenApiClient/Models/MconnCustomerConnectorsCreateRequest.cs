@@ -11,54 +11,82 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MconnCustomerConnectorsCreateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activated") is { } nullNodeActivated && nullNodeActivated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activated = null;
+            if (parseNode.GetChildNode("device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
+            if (parseNode.GetChildNode("interrupt_window_days_of_week") is { } nullNodeInterruptWindowDaysOfWeek && nullNodeInterruptWindowDaysOfWeek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowDaysOfWeek = null;
+            if (parseNode.GetChildNode("interrupt_window_duration_hours") is { } nullNodeInterruptWindowDurationHours && nullNodeInterruptWindowDurationHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowDurationHours = null;
+            if (parseNode.GetChildNode("interrupt_window_embargo_dates") is { } nullNodeInterruptWindowEmbargoDates && nullNodeInterruptWindowEmbargoDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowEmbargoDates = null;
+            if (parseNode.GetChildNode("interrupt_window_hour_of_day") is { } nullNodeInterruptWindowHourOfDay && nullNodeInterruptWindowHourOfDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowHourOfDay = null;
+            if (parseNode.GetChildNode("notes") is { } nullNodeNotes && nullNodeNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notes = null;
+            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+        }
+
         /// <summary>The activated property</summary>
-        public bool? Activated { get; set; }
+        public bool? Activated { get => _explicitNullValueActivated; set { _explicitNullValueActivated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activated"); else _explicitNullProperties?.Remove("activated"); } }
+        private bool? _explicitNullValueActivated = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Exactly one of id, serial_number, or provision_license must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerDeviceOptions? Device { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerDeviceOptions? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerDeviceOptions? _explicitNullValueDevice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerDeviceOptions Device { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerDeviceOptions Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerDeviceOptions _explicitNullValueDevice = default!;
 #endif
         /// <summary>Allowed days of the week for upgrades. Default is all days.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?>? InterruptWindowDaysOfWeek { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?>? InterruptWindowDaysOfWeek { get => _explicitNullValueInterruptWindowDaysOfWeek; set { _explicitNullValueInterruptWindowDaysOfWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_days_of_week"); else _explicitNullProperties?.Remove("interrupt_window_days_of_week"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?>? _explicitNullValueInterruptWindowDaysOfWeek = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?> InterruptWindowDaysOfWeek { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?> InterruptWindowDaysOfWeek { get => _explicitNullValueInterruptWindowDaysOfWeek; set { _explicitNullValueInterruptWindowDaysOfWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_days_of_week"); else _explicitNullProperties?.Remove("interrupt_window_days_of_week"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?> _explicitNullValueInterruptWindowDaysOfWeek = default!;
 #endif
         /// <summary>The interrupt_window_duration_hours property</summary>
-        public double? InterruptWindowDurationHours { get; set; }
+        public double? InterruptWindowDurationHours { get => _explicitNullValueInterruptWindowDurationHours; set { _explicitNullValueInterruptWindowDurationHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_duration_hours"); else _explicitNullProperties?.Remove("interrupt_window_duration_hours"); } }
+        private double? _explicitNullValueInterruptWindowDurationHours = default!;
         /// <summary>List of dates (YYYY-MM-DD) when upgrades are blocked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InterruptWindowEmbargoDates { get; set; }
+        public List<string>? InterruptWindowEmbargoDates { get => _explicitNullValueInterruptWindowEmbargoDates; set { _explicitNullValueInterruptWindowEmbargoDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_embargo_dates"); else _explicitNullProperties?.Remove("interrupt_window_embargo_dates"); } }
+        private List<string>? _explicitNullValueInterruptWindowEmbargoDates = default!;
 #nullable restore
 #else
-        public List<string> InterruptWindowEmbargoDates { get; set; }
+        public List<string> InterruptWindowEmbargoDates { get => _explicitNullValueInterruptWindowEmbargoDates; set { _explicitNullValueInterruptWindowEmbargoDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_embargo_dates"); else _explicitNullProperties?.Remove("interrupt_window_embargo_dates"); } }
+        private List<string> _explicitNullValueInterruptWindowEmbargoDates = default!;
 #endif
         /// <summary>The interrupt_window_hour_of_day property</summary>
-        public double? InterruptWindowHourOfDay { get; set; }
+        public double? InterruptWindowHourOfDay { get => _explicitNullValueInterruptWindowHourOfDay; set { _explicitNullValueInterruptWindowHourOfDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_hour_of_day"); else _explicitNullProperties?.Remove("interrupt_window_hour_of_day"); } }
+        private double? _explicitNullValueInterruptWindowHourOfDay = default!;
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string? _explicitNullValueNotes = default!;
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string _explicitNullValueNotes = default!;
 #endif
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateRequest"/> and sets the default values.
@@ -75,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("interrupt_window_hour_of_day", InterruptWindowHourOfDay);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("timezone", Timezone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains.Item.Ve
         {
         }
         /// <summary>
-        /// Requires an empty body. Schedules an expedited check and coalesces queued or leased work. It does not accept verification results, bypass activation gates, or perform customer DNS checks synchronously. Follow the Location header after Retry-After seconds until verification.observed_at appears or advances beyond the value in this 202 response; status may remain unchanged. Candidate expiry returns 404. Available only to the configured OpenAI pilot account behind a default-off gate. Authentication failures may use the gateway error envelope.
+        /// Requires an empty body. Schedules an expedited check and coalesces queued or leased work. It does not accept verification results, bypass activation gates, or perform customer DNS checks synchronously. Follow the Location header after Retry-After seconds until verification.observed_at appears or advances beyond the value in this 202 response; status may remain unchanged. Candidate expiry returns 404. A repeat within 30 seconds returns error 2082 with the remaining cooldown in Retry-After. Only a request that schedules a check counts toward the account rate limit, error 2088. Available only to the configured OpenAI pilot account behind a default-off gate; while the gate is off, the pilot account gets 503 with error 2090 and Retry-After, and existing domains are unaffected. Unsupported methods return 405 with error 2091. Authentication failures may use the gateway error envelope.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,11 +65,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains.Item.Ve
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainErrorResponse.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Requires an empty body. Schedules an expedited check and coalesces queued or leased work. It does not accept verification results, bypass activation gates, or perform customer DNS checks synchronously. Follow the Location header after Retry-After seconds until verification.observed_at appears or advances beyond the value in this 202 response; status may remain unchanged. Candidate expiry returns 404. Available only to the configured OpenAI pilot account behind a default-off gate. Authentication failures may use the gateway error envelope.
+        /// Requires an empty body. Schedules an expedited check and coalesces queued or leased work. It does not accept verification results, bypass activation gates, or perform customer DNS checks synchronously. Follow the Location header after Retry-After seconds until verification.observed_at appears or advances beyond the value in this 202 response; status may remain unchanged. Candidate expiry returns 404. A repeat within 30 seconds returns error 2082 with the remaining cooldown in Retry-After. Only a request that schedules a check counts toward the account rate limit, error 2088. Available only to the configured OpenAI pilot account behind a default-off gate; while the gate is off, the pilot account gets 503 with error 2090 and Retry-After, and existing domains are unaffected. Unsupported methods return 405 with error 2091. Authentication failures may use the gateway error envelope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

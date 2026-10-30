@@ -11,15 +11,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MqQueueSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("delivery_delay") is { } nullNodeDeliveryDelay && nullNodeDeliveryDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryDelay = null;
+            if (parseNode.GetChildNode("delivery_paused") is { } nullNodeDeliveryPaused && nullNodeDeliveryPaused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryPaused = null;
+            if (parseNode.GetChildNode("message_retention_period") is { } nullNodeMessageRetentionPeriod && nullNodeMessageRetentionPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageRetentionPeriod = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of seconds to delay delivery of all messages to consumers.</summary>
-        public double? DeliveryDelay { get; set; }
+        public double? DeliveryDelay { get => _explicitNullValueDeliveryDelay; set { _explicitNullValueDeliveryDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_delay"); else _explicitNullProperties?.Remove("delivery_delay"); } }
+        private double? _explicitNullValueDeliveryDelay = default!;
         /// <summary>Indicates if message delivery to consumers is currently paused.</summary>
-        public bool? DeliveryPaused { get; set; }
+        public bool? DeliveryPaused { get => _explicitNullValueDeliveryPaused; set { _explicitNullValueDeliveryPaused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_paused"); else _explicitNullProperties?.Remove("delivery_paused"); } }
+        private bool? _explicitNullValueDeliveryPaused = default!;
         /// <summary>Number of seconds after which an unconsumed message will be delayed.</summary>
-        public double? MessageRetentionPeriod { get; set; }
+        public double? MessageRetentionPeriod { get => _explicitNullValueMessageRetentionPeriod; set { _explicitNullValueMessageRetentionPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_retention_period"); else _explicitNullProperties?.Remove("message_retention_period"); } }
+        private double? _explicitNullValueMessageRetentionPeriod = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueSettings"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("delivery_delay", DeliveryDelay);
             writer.WriteBoolValue("delivery_paused", DeliveryPaused);
             writer.WriteDoubleValue("message_retention_period", MessageRetentionPeriod);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

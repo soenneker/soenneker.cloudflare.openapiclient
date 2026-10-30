@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetGetDomainQueries200ResponseResultAnyOf2Parameters : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_time") is { } nullNodeMaxTime && nullNodeMaxTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTime = null;
+            if (parseNode.GetChildNode("min_time") is { } nullNodeMinTime && nullNodeMinTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTime = null;
+            if (parseNode.GetChildNode("string_matches") is { } nullNodeStringMatches && nullNodeStringMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StringMatches = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The max_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxTime { get; set; }
+        public string? MaxTime { get => _explicitNullValueMaxTime; set { _explicitNullValueMaxTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_time"); else _explicitNullProperties?.Remove("max_time"); } }
+        private string? _explicitNullValueMaxTime = default!;
 #nullable restore
 #else
-        public string MaxTime { get; set; }
+        public string MaxTime { get => _explicitNullValueMaxTime; set { _explicitNullValueMaxTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_time"); else _explicitNullProperties?.Remove("max_time"); } }
+        private string _explicitNullValueMaxTime = default!;
 #endif
         /// <summary>The min_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinTime { get; set; }
+        public string? MinTime { get => _explicitNullValueMinTime; set { _explicitNullValueMinTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_time"); else _explicitNullProperties?.Remove("min_time"); } }
+        private string? _explicitNullValueMinTime = default!;
 #nullable restore
 #else
-        public string MinTime { get; set; }
+        public string MinTime { get => _explicitNullValueMinTime; set { _explicitNullValueMinTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_time"); else _explicitNullProperties?.Remove("min_time"); } }
+        private string _explicitNullValueMinTime = default!;
 #endif
         /// <summary>The string_matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2ParametersStringMatchesItem>? StringMatches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2ParametersStringMatchesItem>? StringMatches { get => _explicitNullValueStringMatches; set { _explicitNullValueStringMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_matches"); else _explicitNullProperties?.Remove("string_matches"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2ParametersStringMatchesItem>? _explicitNullValueStringMatches = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2ParametersStringMatchesItem> StringMatches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2ParametersStringMatchesItem> StringMatches { get => _explicitNullValueStringMatches; set { _explicitNullValueStringMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_matches"); else _explicitNullProperties?.Remove("string_matches"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2ParametersStringMatchesItem> _explicitNullValueStringMatches = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2Parameters"/> and sets the default values.
@@ -53,7 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2Parameters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2Parameters();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2Parameters(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("max_time", MaxTime);
             writer.WriteStringValue("min_time", MinTime);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetGetDomainQueries200ResponseResultAnyOf2ParametersStringMatchesItem>("string_matches", StringMatches);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,15 +11,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetLivestreamAnalyticsComplete200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("total_ingest_seconds") is { } nullNodeTotalIngestSeconds && nullNodeTotalIngestSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalIngestSeconds = null;
+            if (parseNode.GetChildNode("total_viewer_seconds") is { } nullNodeTotalViewerSeconds && nullNodeTotalViewerSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalViewerSeconds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Count of total livestreams.</summary>
-        public int? Count { get; set; }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private int? _explicitNullValueCount = default!;
         /// <summary>Total time duration for which the input was given or the meeting was streamed.</summary>
-        public int? TotalIngestSeconds { get; set; }
+        public double? TotalIngestSeconds { get => _explicitNullValueTotalIngestSeconds; set { _explicitNullValueTotalIngestSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_ingest_seconds"); else _explicitNullProperties?.Remove("total_ingest_seconds"); } }
+        private double? _explicitNullValueTotalIngestSeconds = default!;
         /// <summary>Total view time for which the viewers watched the stream.</summary>
-        public int? TotalViewerSeconds { get; set; }
+        public double? TotalViewerSeconds { get => _explicitNullValueTotalViewerSeconds; set { _explicitNullValueTotalViewerSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_viewer_seconds"); else _explicitNullProperties?.Remove("total_viewer_seconds"); } }
+        private double? _explicitNullValueTotalViewerSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200ResponseData"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,8 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "total_ingest_seconds", n => { TotalIngestSeconds = n.GetIntValue(); } },
-                { "total_viewer_seconds", n => { TotalViewerSeconds = n.GetIntValue(); } },
+                { "total_ingest_seconds", n => { TotalIngestSeconds = n.GetDoubleValue(); } },
+                { "total_viewer_seconds", n => { TotalViewerSeconds = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +71,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteIntValue("total_ingest_seconds", TotalIngestSeconds);
-            writer.WriteIntValue("total_viewer_seconds", TotalViewerSeconds);
+            writer.WriteDoubleValue("total_ingest_seconds", TotalIngestSeconds);
+            writer.WriteDoubleValue("total_viewer_seconds", TotalViewerSeconds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

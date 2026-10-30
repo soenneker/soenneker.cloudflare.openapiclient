@@ -11,53 +11,79 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigBillingGetInvoicePreviewResultInvoiceLinesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("pretax_credit_amounts") is { } nullNodePretaxCreditAmounts && nullNodePretaxCreditAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PretaxCreditAmounts = null;
+            if (parseNode.GetChildNode("pricing") is { } nullNodePricing && nullNodePricing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pricing = null;
+            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount property</summary>
-        public double? Amount { get; set; }
+        public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private double? _explicitNullValueAmount = default!;
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The period property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPeriod? Period { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPeriod? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPeriod? _explicitNullValuePeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPeriod Period { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPeriod Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPeriod _explicitNullValuePeriod = default!;
 #endif
         /// <summary>The pretax_credit_amounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPretaxCreditAmountsItem>? PretaxCreditAmounts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPretaxCreditAmountsItem>? PretaxCreditAmounts { get => _explicitNullValuePretaxCreditAmounts; set { _explicitNullValuePretaxCreditAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pretax_credit_amounts"); else _explicitNullProperties?.Remove("pretax_credit_amounts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPretaxCreditAmountsItem>? _explicitNullValuePretaxCreditAmounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPretaxCreditAmountsItem> PretaxCreditAmounts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPretaxCreditAmountsItem> PretaxCreditAmounts { get => _explicitNullValuePretaxCreditAmounts; set { _explicitNullValuePretaxCreditAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pretax_credit_amounts"); else _explicitNullProperties?.Remove("pretax_credit_amounts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPretaxCreditAmountsItem> _explicitNullValuePretaxCreditAmounts = default!;
 #endif
         /// <summary>The pricing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPricing? Pricing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPricing? Pricing { get => _explicitNullValuePricing; set { _explicitNullValuePricing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing"); else _explicitNullProperties?.Remove("pricing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPricing? _explicitNullValuePricing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPricing Pricing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPricing Pricing { get => _explicitNullValuePricing; set { _explicitNullValuePricing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing"); else _explicitNullProperties?.Remove("pricing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPricing _explicitNullValuePricing = default!;
 #endif
         /// <summary>The quantity property</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        private double? _explicitNullValueQuantity = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItem"/> and sets the default values.
         /// </summary>
@@ -73,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPretaxCreditAmountsItem>("pretax_credit_amounts", PretaxCreditAmounts);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItemPricing>("pricing", Pricing);
             writer.WriteDoubleValue("quantity", Quantity);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

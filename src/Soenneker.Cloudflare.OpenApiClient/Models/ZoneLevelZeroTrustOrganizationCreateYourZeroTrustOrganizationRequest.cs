@@ -11,52 +11,78 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_domain") is { } nullNodeAuthDomain && nullNodeAuthDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthDomain = null;
+            if (parseNode.GetChildNode("is_ui_read_only") is { } nullNodeIsUiReadOnly && nullNodeIsUiReadOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUiReadOnly = null;
+            if (parseNode.GetChildNode("login_design") is { } nullNodeLoginDesign && nullNodeLoginDesign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginDesign = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("strict_service_token_auth") is { } nullNodeStrictServiceTokenAuth && nullNodeStrictServiceTokenAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrictServiceTokenAuth = null;
+            if (parseNode.GetChildNode("ui_read_only_toggle_reason") is { } nullNodeUiReadOnlyToggleReason && nullNodeUiReadOnlyToggleReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UiReadOnlyToggleReason = null;
+            if (parseNode.GetChildNode("user_seat_expiration_inactive_time") is { } nullNodeUserSeatExpirationInactiveTime && nullNodeUserSeatExpirationInactiveTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSeatExpirationInactiveTime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique subdomain assigned to your Zero Trust organization. Auto-generated if omitted on creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthDomain { get; set; }
+        public string? AuthDomain { get => _explicitNullValueAuthDomain; set { _explicitNullValueAuthDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_domain"); else _explicitNullProperties?.Remove("auth_domain"); } }
+        private string? _explicitNullValueAuthDomain = default!;
 #nullable restore
 #else
-        public string AuthDomain { get; set; }
+        public string AuthDomain { get => _explicitNullValueAuthDomain; set { _explicitNullValueAuthDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_domain"); else _explicitNullProperties?.Remove("auth_domain"); } }
+        private string _explicitNullValueAuthDomain = default!;
 #endif
         /// <summary>Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.</summary>
-        public bool? IsUiReadOnly { get; set; }
+        public bool? IsUiReadOnly { get => _explicitNullValueIsUiReadOnly; set { _explicitNullValueIsUiReadOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_ui_read_only"); else _explicitNullProperties?.Remove("is_ui_read_only"); } }
+        private bool? _explicitNullValueIsUiReadOnly = default!;
         /// <summary>The login_design property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginDesign? LoginDesign { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginDesign? LoginDesign { get => _explicitNullValueLoginDesign; set { _explicitNullValueLoginDesign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_design"); else _explicitNullProperties?.Remove("login_design"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginDesign? _explicitNullValueLoginDesign = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginDesign LoginDesign { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginDesign LoginDesign { get => _explicitNullValueLoginDesign; set { _explicitNullValueLoginDesign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_design"); else _explicitNullProperties?.Remove("login_design"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginDesign _explicitNullValueLoginDesign = default!;
 #endif
         /// <summary>The name of your Zero Trust organization. When omitted on creation, defaults to the provided auth_domain; when both are omitted, defaults to the auto-generated subdomain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Enables new behaviors for requests made with Access service tokens. Unauthorized requests emit audit logs, and return a 401 or 403 status code in the response instead of redirecting to the login page. Successful requests no longer receive a CF_Authorization cookie in the response. Zero Trust organizations created on or after October 5, 2026 will have this setting enabled by default, and cannot disable it.</summary>
-        public bool? StrictServiceTokenAuth { get; set; }
+        public bool? StrictServiceTokenAuth { get => _explicitNullValueStrictServiceTokenAuth; set { _explicitNullValueStrictServiceTokenAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strict_service_token_auth"); else _explicitNullProperties?.Remove("strict_service_token_auth"); } }
+        private bool? _explicitNullValueStrictServiceTokenAuth = default!;
         /// <summary>A description of the reason why the UI read only field is being toggled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UiReadOnlyToggleReason { get; set; }
+        public string? UiReadOnlyToggleReason { get => _explicitNullValueUiReadOnlyToggleReason; set { _explicitNullValueUiReadOnlyToggleReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_read_only_toggle_reason"); else _explicitNullProperties?.Remove("ui_read_only_toggle_reason"); } }
+        private string? _explicitNullValueUiReadOnlyToggleReason = default!;
 #nullable restore
 #else
-        public string UiReadOnlyToggleReason { get; set; }
+        public string UiReadOnlyToggleReason { get => _explicitNullValueUiReadOnlyToggleReason; set { _explicitNullValueUiReadOnlyToggleReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_read_only_toggle_reason"); else _explicitNullProperties?.Remove("ui_read_only_toggle_reason"); } }
+        private string _explicitNullValueUiReadOnlyToggleReason = default!;
 #endif
         /// <summary>The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count. Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserSeatExpirationInactiveTime { get; set; }
+        public string? UserSeatExpirationInactiveTime { get => _explicitNullValueUserSeatExpirationInactiveTime; set { _explicitNullValueUserSeatExpirationInactiveTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_seat_expiration_inactive_time"); else _explicitNullProperties?.Remove("user_seat_expiration_inactive_time"); } }
+        private string? _explicitNullValueUserSeatExpirationInactiveTime = default!;
 #nullable restore
 #else
-        public string UserSeatExpirationInactiveTime { get; set; }
+        public string UserSeatExpirationInactiveTime { get => _explicitNullValueUserSeatExpirationInactiveTime; set { _explicitNullValueUserSeatExpirationInactiveTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_seat_expiration_inactive_time"); else _explicitNullProperties?.Remove("user_seat_expiration_inactive_time"); } }
+        private string _explicitNullValueUserSeatExpirationInactiveTime = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest"/> and sets the default values.
@@ -73,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("strict_service_token_auth", StrictServiceTokenAuth);
             writer.WriteStringValue("ui_read_only_toggle_reason", UiReadOnlyToggleReason);
             writer.WriteStringValue("user_seat_expiration_inactive_time", UserSeatExpirationInactiveTime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

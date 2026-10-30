@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FirewallPackage : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallAnomalyPackage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallPackage();
             if("FirewallAnomalyPackage".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FirewallAnomalyPackage = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallAnomalyPackage();
+                
             }
             else if("FirewallPackageDefinition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FirewallPackageDefinition = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallPackageDefinition();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("detection_mode") != null && (parseNode.GetChildNode("detection_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("anomaly".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "traditional".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("zone_id") != null && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag6 && ("active".Equals(optionalTag6.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("zone_id") != null && parseNode.GetChildNode("detection_mode") != null && (parseNode.GetChildNode("detection_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("anomaly".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "traditional".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("sensitivity") != null && (parseNode.GetChildNode("sensitivity")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag7 && ("high".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal) || "medium".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal) || "low".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal) || "off".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("action_mode") != null && (parseNode.GetChildNode("action_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag9 && ("simulate".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "block".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "challenge".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("status") == null || (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag10 && ("active".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.FirewallAnomalyPackage == null && result.FirewallPackageDefinition == null && matchesUnionBranch0 && !matchesUnionBranch1) result.FirewallPackageDefinition = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallPackageDefinition(), parseNode);
+            if (result.FirewallAnomalyPackage == null && result.FirewallPackageDefinition == null && matchesUnionBranch1 && !matchesUnionBranch0) result.FirewallAnomalyPackage = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallAnomalyPackage(), parseNode);
+            if (result.FirewallAnomalyPackage == null && result.FirewallPackageDefinition == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (FirewallAnomalyPackage == null && FirewallPackageDefinition == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (FirewallAnomalyPackage != null && FirewallPackageDefinition == null) { if (FirewallAnomalyPackage is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FirewallAnomalyPackage); return; }
+            if (FirewallPackageDefinition != null && FirewallAnomalyPackage == null) { if (FirewallPackageDefinition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FirewallPackageDefinition); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(FirewallAnomalyPackage != null)
             {
+                if (FirewallAnomalyPackage is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallAnomalyPackage>(null, FirewallAnomalyPackage);
             }
             else if(FirewallPackageDefinition != null)
             {
+                if (FirewallPackageDefinition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallPackageDefinition>(null, FirewallPackageDefinition);
             }
         }

@@ -11,23 +11,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSendingReputationProperties : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_policy") is { } nullNodeActivePolicy && nullNodeActivePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivePolicy = null;
+            if (parseNode.GetChildNode("evaluated_at") is { } nullNodeEvaluatedAt && nullNodeEvaluatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatedAt = null;
+            if (parseNode.GetChildNode("grace_started_at") is { } nullNodeGraceStartedAt && nullNodeGraceStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GraceStartedAt = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("status_since") is { } nullNodeStatusSince && nullNodeStatusSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusSince = null;
+        }
+
         /// <summary>The reputation policy thresholds currently applied to the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy? ActivePolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy? ActivePolicy { get => _explicitNullValueActivePolicy; set { _explicitNullValueActivePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_policy"); else _explicitNullProperties?.Remove("active_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy? _explicitNullValueActivePolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy ActivePolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy ActivePolicy { get => _explicitNullValueActivePolicy; set { _explicitNullValueActivePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_policy"); else _explicitNullProperties?.Remove("active_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy _explicitNullValueActivePolicy = default!;
 #endif
         /// <summary>When the account&apos;s reputation was last evaluated. Null when the account has never been evaluated.</summary>
-        public DateTimeOffset? EvaluatedAt { get; set; }
-        /// <summary>When the current At Risk suspension grace period started. This can be later than status_since if the grace period was restarted. Null outside At Risk. Automatic suspension remains subject to enforcement and suspension exemptions.</summary>
-        public DateTimeOffset? GraceStartedAt { get; set; }
+        public DateTimeOffset? EvaluatedAt { get => _explicitNullValueEvaluatedAt; set { _explicitNullValueEvaluatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluated_at"); else _explicitNullProperties?.Remove("evaluated_at"); } }
+        private DateTimeOffset? _explicitNullValueEvaluatedAt = default!;
+        /// <summary>When the current At Risk suspension grace period started. This can be later than status_since if the grace period was restarted. Null outside At Risk, and null when the account cannot be suspended automatically.</summary>
+        public DateTimeOffset? GraceStartedAt { get => _explicitNullValueGraceStartedAt; set { _explicitNullValueGraceStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grace_started_at"); else _explicitNullProperties?.Remove("grace_started_at"); } }
+        private DateTimeOffset? _explicitNullValueGraceStartedAt = default!;
         /// <summary>The account&apos;s current reputation status.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesStatus? _explicitNullValueStatus = default!;
         /// <summary>When the account most recently transitioned into its current status. Null if the account has been Healthy since it was first tracked and has never changed status.</summary>
-        public DateTimeOffset? StatusSince { get; set; }
+        public DateTimeOffset? StatusSince { get => _explicitNullValueStatusSince; set { _explicitNullValueStatusSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_since"); else _explicitNullProperties?.Remove("status_since"); } }
+        private DateTimeOffset? _explicitNullValueStatusSince = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationProperties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationProperties();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationProperties(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,7 +82,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("evaluated_at", EvaluatedAt);
             writer.WriteDateTimeOffsetValue("grace_started_at", GraceStartedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesStatus>("status", Status);
-            writer.WriteDateTimeOffsetValue("status_since", StatusSince);
+            writer.WriteDateTimeOffsetValue("status_since", StatusSince);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

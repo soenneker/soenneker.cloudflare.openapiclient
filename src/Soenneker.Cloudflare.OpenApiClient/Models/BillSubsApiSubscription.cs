@@ -11,25 +11,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BillSubsApiSubscription : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("app") is { } nullNodeApp && nullNodeApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) App = null;
+            if (parseNode.GetChildNode("component_values") is { } nullNodeComponentValues && nullNodeComponentValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComponentValues = null;
+            if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("rate_plan") is { } nullNodeRatePlan && nullNodeRatePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RatePlan = null;
+            if (parseNode.GetChildNode("zone") is { } nullNodeZone && nullNodeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zone = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cloudflare Apps Marketplace is sunset. This field is retained for legacy grandfathered app subscriptions only.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App? App { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App? App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App? _explicitNullValueApp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App App { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App _explicitNullValueApp = default!;
 #endif
         /// <summary>Configurable component values for the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue>? ComponentValues { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue>? ComponentValues { get => _explicitNullValueComponentValues; set { _explicitNullValueComponentValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_values"); else _explicitNullProperties?.Remove("component_values"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue>? _explicitNullValueComponentValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue> ComponentValues { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue> ComponentValues { get => _explicitNullValueComponentValues; set { _explicitNullValueComponentValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_values"); else _explicitNullProperties?.Remove("component_values"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue> _explicitNullValueComponentValues = default!;
 #endif
         /// <summary>The monetary unit in which pricing information is displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When the current billing period started. May match initial_period_start if this is the first period.</summary>
         public DateTimeOffset? CurrentPeriodStart { get; private set; }
         /// <summary>How often the subscription is renewed automatically.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency? Frequency { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency? _explicitNullValueFrequency = default!;
         /// <summary>Subscription identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,20 +75,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The rate plan applied to the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan? RatePlan { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan? RatePlan { get => _explicitNullValueRatePlan; set { _explicitNullValueRatePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_plan"); else _explicitNullProperties?.Remove("rate_plan"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan? _explicitNullValueRatePlan = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan RatePlan { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan RatePlan { get => _explicitNullValueRatePlan; set { _explicitNullValueRatePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_plan"); else _explicitNullProperties?.Remove("rate_plan"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan _explicitNullValueRatePlan = default!;
 #endif
         /// <summary>The state that the subscription is in.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiState? State { get; private set; }
-        /// <summary>A simple zone object. May have null properties if not a zone subscription.</summary>
+        /// <summary>The zone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiZone? Zone { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone? Zone { get => _explicitNullValueZone; set { _explicitNullValueZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone"); else _explicitNullProperties?.Remove("zone"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone? _explicitNullValueZone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiZone Zone { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone Zone { get => _explicitNullValueZone; set { _explicitNullValueZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone"); else _explicitNullProperties?.Remove("zone"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone _explicitNullValueZone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription"/> and sets the default values.
@@ -88,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "rate_plan", n => { RatePlan = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiState>(); } },
-                { "zone", n => { Zone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiZone>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiZone.CreateFromDiscriminatorValue); } },
+                { "zone", n => { Zone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,7 +143,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue>("component_values", ComponentValues);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency>("frequency", Frequency);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan>("rate_plan", RatePlan);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiZone>("zone", Zone);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone>("zone", Zone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RealtimekitChatMessage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chat_download_url") is { } nullNodeChatDownloadUrl && nullNodeChatDownloadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatDownloadUrl = null;
+            if (parseNode.GetChildNode("chat_download_url_expiry") is { } nullNodeChatDownloadUrlExpiry && nullNodeChatDownloadUrlExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatDownloadUrlExpiry = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URL where the chat logs can be downloaded</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChatDownloadUrl { get; set; }
+        public string? ChatDownloadUrl { get => _explicitNullValueChatDownloadUrl; set { _explicitNullValueChatDownloadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat_download_url"); else _explicitNullProperties?.Remove("chat_download_url"); } }
+        private string? _explicitNullValueChatDownloadUrl = default!;
 #nullable restore
 #else
-        public string ChatDownloadUrl { get; set; }
+        public string ChatDownloadUrl { get => _explicitNullValueChatDownloadUrl; set { _explicitNullValueChatDownloadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat_download_url"); else _explicitNullProperties?.Remove("chat_download_url"); } }
+        private string _explicitNullValueChatDownloadUrl = default!;
 #endif
         /// <summary>Time when the download URL will expire</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChatDownloadUrlExpiry { get; set; }
+        public string? ChatDownloadUrlExpiry { get => _explicitNullValueChatDownloadUrlExpiry; set { _explicitNullValueChatDownloadUrlExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat_download_url_expiry"); else _explicitNullProperties?.Remove("chat_download_url_expiry"); } }
+        private string? _explicitNullValueChatDownloadUrlExpiry = default!;
 #nullable restore
 #else
-        public string ChatDownloadUrlExpiry { get; set; }
+        public string ChatDownloadUrlExpiry { get => _explicitNullValueChatDownloadUrlExpiry; set { _explicitNullValueChatDownloadUrlExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat_download_url_expiry"); else _explicitNullProperties?.Remove("chat_download_url_expiry"); } }
+        private string _explicitNullValueChatDownloadUrlExpiry = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitChatMessage"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitChatMessage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitChatMessage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitChatMessage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("chat_download_url", ChatDownloadUrl);
             writer.WriteStringValue("chat_download_url_expiry", ChatDownloadUrlExpiry);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

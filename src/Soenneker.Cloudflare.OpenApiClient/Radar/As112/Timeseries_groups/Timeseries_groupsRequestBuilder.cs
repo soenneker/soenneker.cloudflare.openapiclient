@@ -22,31 +22,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The dnssec property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Dnssec.DnssecRequestBuilder Dnssec
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The edns property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Edns.EdnsRequestBuilder Edns
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Edns.EdnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The protocol property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Protocol.ProtocolRequestBuilder Protocol
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The query_type property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Query_type.Query_typeRequestBuilder Query_type
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Query_type.Query_typeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The response_codes property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Response_codes.Response_codesRequestBuilder Response_codes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Response_codes.Response_codesRequestBuilder(PathParameters, RequestAdapter);

@@ -11,55 +11,83 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UrlscannerCreateScanV2Request : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agentReadiness") is { } nullNodeAgentReadiness && nullNodeAgentReadiness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentReadiness = null;
+            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("customagent") is { } nullNodeCustomagent && nullNodeCustomagent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Customagent = null;
+            if (parseNode.GetChildNode("customHeaders") is { } nullNodeCustomHeaders && nullNodeCustomHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomHeaders = null;
+            if (parseNode.GetChildNode("referer") is { } nullNodeReferer && nullNodeReferer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referer = null;
+            if (parseNode.GetChildNode("screenshotsResolutions") is { } nullNodeScreenshotsResolutions && nullNodeScreenshotsResolutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshotsResolutions = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable agent readiness checks.</summary>
-        public bool? AgentReadiness { get; set; }
+        public bool? AgentReadiness { get => _explicitNullValueAgentReadiness; set { _explicitNullValueAgentReadiness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentReadiness"); else _explicitNullProperties?.Remove("agentReadiness"); } }
+        private bool? _explicitNullValueAgentReadiness = default!;
         /// <summary>Country to geo egress from</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCountry? Country { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCountry? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCountry? _explicitNullValueCountry = default!;
         /// <summary>The customagent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Customagent { get; set; }
+        public string? Customagent { get => _explicitNullValueCustomagent; set { _explicitNullValueCustomagent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customagent"); else _explicitNullProperties?.Remove("customagent"); } }
+        private string? _explicitNullValueCustomagent = default!;
 #nullable restore
 #else
-        public string Customagent { get; set; }
+        public string Customagent { get => _explicitNullValueCustomagent; set { _explicitNullValueCustomagent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customagent"); else _explicitNullProperties?.Remove("customagent"); } }
+        private string _explicitNullValueCustomagent = default!;
 #endif
         /// <summary>Set custom headers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCustomHeaders? CustomHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCustomHeaders? CustomHeaders { get => _explicitNullValueCustomHeaders; set { _explicitNullValueCustomHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customHeaders"); else _explicitNullProperties?.Remove("customHeaders"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCustomHeaders? _explicitNullValueCustomHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCustomHeaders CustomHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCustomHeaders CustomHeaders { get => _explicitNullValueCustomHeaders; set { _explicitNullValueCustomHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customHeaders"); else _explicitNullProperties?.Remove("customHeaders"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCustomHeaders _explicitNullValueCustomHeaders = default!;
 #endif
         /// <summary>The referer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Referer { get; set; }
+        public string? Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
+        private string? _explicitNullValueReferer = default!;
 #nullable restore
 #else
-        public string Referer { get; set; }
+        public string Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
+        private string _explicitNullValueReferer = default!;
 #endif
         /// <summary>Take multiple screenshots targeting different device types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestScreenshotsResolutionsItem?>? ScreenshotsResolutions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestScreenshotsResolutionsItem?>? ScreenshotsResolutions { get => _explicitNullValueScreenshotsResolutions; set { _explicitNullValueScreenshotsResolutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshotsResolutions"); else _explicitNullProperties?.Remove("screenshotsResolutions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestScreenshotsResolutionsItem?>? _explicitNullValueScreenshotsResolutions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestScreenshotsResolutionsItem?> ScreenshotsResolutions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestScreenshotsResolutionsItem?> ScreenshotsResolutions { get => _explicitNullValueScreenshotsResolutions; set { _explicitNullValueScreenshotsResolutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshotsResolutions"); else _explicitNullProperties?.Remove("screenshotsResolutions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestScreenshotsResolutionsItem?> _explicitNullValueScreenshotsResolutions = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan&apos;s ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestVisibility? Visibility { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestVisibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestVisibility? _explicitNullValueVisibility = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2Request"/> and sets the default values.
         /// </summary>
@@ -75,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2Request CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2Request();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2Request(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestScreenshotsResolutionsItem>("screenshotsResolutions", ScreenshotsResolutions);
             writer.WriteStringValue("url", Url);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestVisibility>("visibility", Visibility);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

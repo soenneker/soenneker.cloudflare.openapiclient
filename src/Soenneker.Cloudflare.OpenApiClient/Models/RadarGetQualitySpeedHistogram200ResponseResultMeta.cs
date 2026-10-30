@@ -12,46 +12,71 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RadarGetQualitySpeedHistogram200ResponseResultMeta : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bucketSize") is { } nullNodeBucketSize && nullNodeBucketSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BucketSize = null;
+            if (parseNode.GetChildNode("confidenceInfo") is { } nullNodeConfidenceInfo && nullNodeConfidenceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceInfo = null;
+            if (parseNode.GetChildNode("dateRange") is { } nullNodeDateRange && nullNodeDateRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateRange = null;
+            if (parseNode.GetChildNode("lastUpdated") is { } nullNodeLastUpdated && nullNodeLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdated = null;
+            if (parseNode.GetChildNode("normalization") is { } nullNodeNormalization && nullNodeNormalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Normalization = null;
+            if (parseNode.GetChildNode("totalTests") is { } nullNodeTotalTests && nullNodeTotalTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTests = null;
+            if (parseNode.GetChildNode("units") is { } nullNodeUnits && nullNodeUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Units = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The width for every bucket in the histogram.</summary>
-        public int? BucketSize { get; set; }
+        public int? BucketSize { get => _explicitNullValueBucketSize; set { _explicitNullValueBucketSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketSize"); else _explicitNullProperties?.Remove("bucketSize"); } }
+        private int? _explicitNullValueBucketSize = default!;
         /// <summary>The confidenceInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaConfidenceInfo? ConfidenceInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaConfidenceInfo? ConfidenceInfo { get => _explicitNullValueConfidenceInfo; set { _explicitNullValueConfidenceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidenceInfo"); else _explicitNullProperties?.Remove("confidenceInfo"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaConfidenceInfo? _explicitNullValueConfidenceInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaConfidenceInfo ConfidenceInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaConfidenceInfo ConfidenceInfo { get => _explicitNullValueConfidenceInfo; set { _explicitNullValueConfidenceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidenceInfo"); else _explicitNullProperties?.Remove("confidenceInfo"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaConfidenceInfo _explicitNullValueConfidenceInfo = default!;
 #endif
         /// <summary>The dateRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaDateRangeItem>? DateRange { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaDateRangeItem>? DateRange { get => _explicitNullValueDateRange; set { _explicitNullValueDateRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateRange"); else _explicitNullProperties?.Remove("dateRange"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaDateRangeItem>? _explicitNullValueDateRange = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaDateRangeItem> DateRange { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaDateRangeItem> DateRange { get => _explicitNullValueDateRange; set { _explicitNullValueDateRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateRange"); else _explicitNullProperties?.Remove("dateRange"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaDateRangeItem> _explicitNullValueDateRange = default!;
 #endif
         /// <summary>Timestamp of the last dataset update.</summary>
-        public DateTimeOffset? LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdated"); else _explicitNullProperties?.Remove("lastUpdated"); } }
+        private DateTimeOffset? _explicitNullValueLastUpdated = default!;
         /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaNormalization? Normalization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaNormalization? Normalization { get => _explicitNullValueNormalization; set { _explicitNullValueNormalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalization"); else _explicitNullProperties?.Remove("normalization"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaNormalization? _explicitNullValueNormalization = default!;
         /// <summary>The totalTests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? TotalTests { get; set; }
+        public List<int?>? TotalTests { get => _explicitNullValueTotalTests; set { _explicitNullValueTotalTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalTests"); else _explicitNullProperties?.Remove("totalTests"); } }
+        private List<int?>? _explicitNullValueTotalTests = default!;
 #nullable restore
 #else
-        public List<int?> TotalTests { get; set; }
+        public List<int?> TotalTests { get => _explicitNullValueTotalTests; set { _explicitNullValueTotalTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalTests"); else _explicitNullProperties?.Remove("totalTests"); } }
+        private List<int?> _explicitNullValueTotalTests = default!;
 #endif
         /// <summary>Measurement units for the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaUnitsItem>? Units { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaUnitsItem>? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaUnitsItem>? _explicitNullValueUnits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaUnitsItem> Units { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaUnitsItem> Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaUnitsItem> _explicitNullValueUnits = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta"/> and sets the default values.
@@ -68,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaNormalization>("normalization", Normalization);
             writer.WriteCollectionOfPrimitiveValues<int?>("totalTests", TotalTests);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMetaUnitsItem>("units", Units);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

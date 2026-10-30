@@ -28,6 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The suppression property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Suppression.SuppressionRequestBuilder Suppression
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Suppression.SuppressionRequestBuilder(PathParameters, RequestAdapter);

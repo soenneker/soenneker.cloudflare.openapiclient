@@ -11,26 +11,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("estimatedUsers") is { } nullNodeEstimatedUsers && nullNodeEstimatedUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedUsers = null;
+            if (parseNode.GetChildNode("locationAlpha2") is { } nullNodeLocationAlpha2 && nullNodeLocationAlpha2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationAlpha2 = null;
+            if (parseNode.GetChildNode("locationName") is { } nullNodeLocationName && nullNodeLocationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Estimated users per location.</summary>
-        public int? EstimatedUsers { get; set; }
+        public int? EstimatedUsers { get => _explicitNullValueEstimatedUsers; set { _explicitNullValueEstimatedUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimatedUsers"); else _explicitNullProperties?.Remove("estimatedUsers"); } }
+        private int? _explicitNullValueEstimatedUsers = default!;
         /// <summary>The locationAlpha2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationAlpha2 { get; set; }
+        public string? LocationAlpha2 { get => _explicitNullValueLocationAlpha2; set { _explicitNullValueLocationAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationAlpha2"); else _explicitNullProperties?.Remove("locationAlpha2"); } }
+        private string? _explicitNullValueLocationAlpha2 = default!;
 #nullable restore
 #else
-        public string LocationAlpha2 { get; set; }
+        public string LocationAlpha2 { get => _explicitNullValueLocationAlpha2; set { _explicitNullValueLocationAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationAlpha2"); else _explicitNullProperties?.Remove("locationAlpha2"); } }
+        private string _explicitNullValueLocationAlpha2 = default!;
 #endif
         /// <summary>The locationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationName { get; set; }
+        public string? LocationName { get => _explicitNullValueLocationName; set { _explicitNullValueLocationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationName"); else _explicitNullProperties?.Remove("locationName"); } }
+        private string? _explicitNullValueLocationName = default!;
 #nullable restore
 #else
-        public string LocationName { get; set; }
+        public string LocationName { get => _explicitNullValueLocationName; set { _explicitNullValueLocationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationName"); else _explicitNullProperties?.Remove("locationName"); } }
+        private string _explicitNullValueLocationName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsItem"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("estimatedUsers", EstimatedUsers);
             writer.WriteStringValue("locationAlpha2", LocationAlpha2);
             writer.WriteStringValue("locationName", LocationName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

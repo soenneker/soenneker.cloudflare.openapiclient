@@ -12,102 +12,153 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StreamLiveInput2 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("deleteRecordingAfterDays") is { } nullNodeDeleteRecordingAfterDays && nullNodeDeleteRecordingAfterDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteRecordingAfterDays = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("keysRotatedAt") is { } nullNodeKeysRotatedAt && nullNodeKeysRotatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeysRotatedAt = null;
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("playback") is { } nullNodePlayback && nullNodePlayback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback = null;
+            if (parseNode.GetChildNode("preferLowLatency") is { } nullNodePreferLowLatency && nullNodePreferLowLatency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferLowLatency = null;
+            if (parseNode.GetChildNode("recording") is { } nullNodeRecording && nullNodeRecording.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recording = null;
+            if (parseNode.GetChildNode("rtmps") is { } nullNodeRtmps && nullNodeRtmps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rtmps = null;
+            if (parseNode.GetChildNode("rtmpsPlayback") is { } nullNodeRtmpsPlayback && nullNodeRtmpsPlayback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RtmpsPlayback = null;
+            if (parseNode.GetChildNode("srt") is { } nullNodeSrt && nullNodeSrt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Srt = null;
+            if (parseNode.GetChildNode("srtPlayback") is { } nullNodeSrtPlayback && nullNodeSrtPlayback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrtPlayback = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("uid") is { } nullNodeUid && nullNodeUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uid = null;
+            if (parseNode.GetChildNode("webRTC") is { } nullNodeWebRTC && nullNodeWebRTC.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebRTC = null;
+            if (parseNode.GetChildNode("webRTCPlayback") is { } nullNodeWebRTCPlayback && nullNodeWebRTCPlayback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebRTCPlayback = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the live input was created.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private DateTimeOffset? _explicitNullValueCreated = default!;
         /// <summary>Indicates the number of days after which the live inputs recordings will be deleted. When a stream completes and the recording is ready, the value is used to calculate a scheduled deletion date for that recording. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion.</summary>
-        public double? DeleteRecordingAfterDays { get; set; }
+        public double? DeleteRecordingAfterDays { get => _explicitNullValueDeleteRecordingAfterDays; set { _explicitNullValueDeleteRecordingAfterDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleteRecordingAfterDays"); else _explicitNullProperties?.Remove("deleteRecordingAfterDays"); } }
+        private double? _explicitNullValueDeleteRecordingAfterDays = default!;
         /// <summary>Indicates whether the live input is enabled and can accept streams.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The date and time the live input keys were last rotated. Omitted for live inputs that have never had their keys rotated.</summary>
-        public DateTimeOffset? KeysRotatedAt { get; set; }
+        public DateTimeOffset? KeysRotatedAt { get => _explicitNullValueKeysRotatedAt; set { _explicitNullValueKeysRotatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keysRotatedAt"); else _explicitNullProperties?.Remove("keysRotatedAt"); } }
+        private DateTimeOffset? _explicitNullValueKeysRotatedAt = default!;
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing live inputs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2Meta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2Meta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2Meta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2Meta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2Meta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2Meta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The date and time the live input was last modified.</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        private DateTimeOffset? _explicitNullValueModified = default!;
         /// <summary>Details for playing a live input&apos;s broadcast using the HLS or DASH manifests. URLs reference the live input ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputPlayback? Playback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputPlayback? Playback { get => _explicitNullValuePlayback; set { _explicitNullValuePlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback"); else _explicitNullProperties?.Remove("playback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputPlayback? _explicitNullValuePlayback = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputPlayback Playback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputPlayback Playback { get => _explicitNullValuePlayback; set { _explicitNullValuePlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback"); else _explicitNullProperties?.Remove("playback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputPlayback _explicitNullValuePlayback = default!;
 #endif
         /// <summary>When enabled, the live stream is delivered using Low-Latency HLS (LL-HLS), reducing glass-to-glass latency for viewers at the cost of reduced player compatibility.</summary>
-        public bool? PreferLowLatency { get; set; }
+        public bool? PreferLowLatency { get => _explicitNullValuePreferLowLatency; set { _explicitNullValuePreferLowLatency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferLowLatency"); else _explicitNullProperties?.Remove("preferLowLatency"); } }
+        private bool? _explicitNullValuePreferLowLatency = default!;
         /// <summary>Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings? Recording { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings? Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings? _explicitNullValueRecording = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings Recording { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings _explicitNullValueRecording = default!;
 #endif
         /// <summary>Details for streaming to an live input using RTMPS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputRtmps? Rtmps { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputRtmps? Rtmps { get => _explicitNullValueRtmps; set { _explicitNullValueRtmps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmps"); else _explicitNullProperties?.Remove("rtmps"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputRtmps? _explicitNullValueRtmps = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputRtmps Rtmps { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputRtmps Rtmps { get => _explicitNullValueRtmps; set { _explicitNullValueRtmps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmps"); else _explicitNullProperties?.Remove("rtmps"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputRtmps _explicitNullValueRtmps = default!;
 #endif
         /// <summary>Details for playback from an live input using RTMPS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackRtmps? RtmpsPlayback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackRtmps? RtmpsPlayback { get => _explicitNullValueRtmpsPlayback; set { _explicitNullValueRtmpsPlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmpsPlayback"); else _explicitNullProperties?.Remove("rtmpsPlayback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackRtmps? _explicitNullValueRtmpsPlayback = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackRtmps RtmpsPlayback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackRtmps RtmpsPlayback { get => _explicitNullValueRtmpsPlayback; set { _explicitNullValueRtmpsPlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmpsPlayback"); else _explicitNullProperties?.Remove("rtmpsPlayback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackRtmps _explicitNullValueRtmpsPlayback = default!;
 #endif
         /// <summary>Details for streaming to a live input using SRT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputSrt? Srt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputSrt? Srt { get => _explicitNullValueSrt; set { _explicitNullValueSrt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srt"); else _explicitNullProperties?.Remove("srt"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputSrt? _explicitNullValueSrt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputSrt Srt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputSrt Srt { get => _explicitNullValueSrt; set { _explicitNullValueSrt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srt"); else _explicitNullProperties?.Remove("srt"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputSrt _explicitNullValueSrt = default!;
 #endif
         /// <summary>Details for playback from an live input using SRT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt? SrtPlayback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt? SrtPlayback { get => _explicitNullValueSrtPlayback; set { _explicitNullValueSrtPlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srtPlayback"); else _explicitNullProperties?.Remove("srtPlayback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt? _explicitNullValueSrtPlayback = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt SrtPlayback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt SrtPlayback { get => _explicitNullValueSrtPlayback; set { _explicitNullValueSrtPlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srtPlayback"); else _explicitNullProperties?.Remove("srtPlayback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt _explicitNullValueSrtPlayback = default!;
 #endif
         /// <summary>The connection status of a live input.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus? _explicitNullValueStatus = default!;
         /// <summary>A unique identifier for a live input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uid { get; set; }
+        public string? Uid { get => _explicitNullValueUid; set { _explicitNullValueUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uid"); else _explicitNullProperties?.Remove("uid"); } }
+        private string? _explicitNullValueUid = default!;
 #nullable restore
 #else
-        public string Uid { get; set; }
+        public string Uid { get => _explicitNullValueUid; set { _explicitNullValueUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uid"); else _explicitNullProperties?.Remove("uid"); } }
+        private string _explicitNullValueUid = default!;
 #endif
         /// <summary>Details for streaming to a live input using WebRTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc? WebRTC { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc? WebRTC { get => _explicitNullValueWebRTC; set { _explicitNullValueWebRTC = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webRTC"); else _explicitNullProperties?.Remove("webRTC"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc? _explicitNullValueWebRTC = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc WebRTC { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc WebRTC { get => _explicitNullValueWebRTC; set { _explicitNullValueWebRTC = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webRTC"); else _explicitNullProperties?.Remove("webRTC"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc _explicitNullValueWebRTC = default!;
 #endif
         /// <summary>Details for playback from a live input using WebRTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc? WebRTCPlayback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc? WebRTCPlayback { get => _explicitNullValueWebRTCPlayback; set { _explicitNullValueWebRTCPlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webRTCPlayback"); else _explicitNullProperties?.Remove("webRTCPlayback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc? _explicitNullValueWebRTCPlayback = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc WebRTCPlayback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc WebRTCPlayback { get => _explicitNullValueWebRTCPlayback; set { _explicitNullValueWebRTCPlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webRTCPlayback"); else _explicitNullProperties?.Remove("webRTCPlayback"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc _explicitNullValueWebRTCPlayback = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2"/> and sets the default values.
@@ -126,7 +177,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInput2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -179,6 +230,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("uid", Uid);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc>("webRTC", WebRTC);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc>("webRTCPlayback", WebRTCPlayback);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

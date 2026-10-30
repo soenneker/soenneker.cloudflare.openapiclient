@@ -12,176 +12,246 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DigitalExperienceMonitoringDeviceStateOverTime : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("battery_cycles") is { } nullNodeBatteryCycles && nullNodeBatteryCycles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatteryCycles = null;
+            if (parseNode.GetChildNode("battery_pct") is { } nullNodeBatteryPct && nullNodeBatteryPct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatteryPct = null;
+            if (parseNode.GetChildNode("connection_type") is { } nullNodeConnectionType && nullNodeConnectionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionType = null;
+            if (parseNode.GetChildNode("cpu_pct") is { } nullNodeCpuPct && nullNodeCpuPct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuPct = null;
+            if (parseNode.GetChildNode("disk_read_bps") is { } nullNodeDiskReadBps && nullNodeDiskReadBps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiskReadBps = null;
+            if (parseNode.GetChildNode("disk_usage_pct") is { } nullNodeDiskUsagePct && nullNodeDiskUsagePct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiskUsagePct = null;
+            if (parseNode.GetChildNode("disk_write_bps") is { } nullNodeDiskWriteBps && nullNodeDiskWriteBps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiskWriteBps = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("network_rcvd_bps") is { } nullNodeNetworkRcvdBps && nullNodeNetworkRcvdBps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkRcvdBps = null;
+            if (parseNode.GetChildNode("network_sent_bps") is { } nullNodeNetworkSentBps && nullNodeNetworkSentBps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkSentBps = null;
+            if (parseNode.GetChildNode("network_ssid") is { } nullNodeNetworkSsid && nullNodeNetworkSsid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkSsid = null;
+            if (parseNode.GetChildNode("ram_available_kb") is { } nullNodeRamAvailableKb && nullNodeRamAvailableKb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RamAvailableKb = null;
+            if (parseNode.GetChildNode("ram_used_pct") is { } nullNodeRamUsedPct && nullNodeRamUsedPct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RamUsedPct = null;
+            if (parseNode.GetChildNode("rtt") is { } nullNodeRtt && nullNodeRtt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rtt = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("top_cpu_applications") is { } nullNodeTopCpuApplications && nullNodeTopCpuApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopCpuApplications = null;
+            if (parseNode.GetChildNode("top_ram_applications") is { } nullNodeTopRamApplications && nullNodeTopRamApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopRamApplications = null;
+            if (parseNode.GetChildNode("tunnel_stats") is { } nullNodeTunnelStats && nullNodeTunnelStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelStats = null;
+            if (parseNode.GetChildNode("tunnel_type") is { } nullNodeTunnelType && nullNodeTunnelType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelType = null;
+            if (parseNode.GetChildNode("unique_networks") is { } nullNodeUniqueNetworks && nullNodeUniqueNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueNetworks = null;
+            if (parseNode.GetChildNode("wifi_strength_dbm") is { } nullNodeWifiStrengthDbm && nullNodeWifiStrengthDbm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WifiStrengthDbm = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Battery cycle count over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? BatteryCycles { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? BatteryCycles { get => _explicitNullValueBatteryCycles; set { _explicitNullValueBatteryCycles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("battery_cycles"); else _explicitNullProperties?.Remove("battery_cycles"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? _explicitNullValueBatteryCycles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> BatteryCycles { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> BatteryCycles { get => _explicitNullValueBatteryCycles; set { _explicitNullValueBatteryCycles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("battery_cycles"); else _explicitNullProperties?.Remove("battery_cycles"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> _explicitNullValueBatteryCycles = default!;
 #endif
         /// <summary>Battery percentage over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? BatteryPct { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? BatteryPct { get => _explicitNullValueBatteryPct; set { _explicitNullValueBatteryPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("battery_pct"); else _explicitNullProperties?.Remove("battery_pct"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? _explicitNullValueBatteryPct = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> BatteryPct { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> BatteryPct { get => _explicitNullValueBatteryPct; set { _explicitNullValueBatteryPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("battery_pct"); else _explicitNullProperties?.Remove("battery_pct"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> _explicitNullValueBatteryPct = default!;
 #endif
         /// <summary>Connection type over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? ConnectionType { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? ConnectionType { get => _explicitNullValueConnectionType; set { _explicitNullValueConnectionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_type"); else _explicitNullProperties?.Remove("connection_type"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? _explicitNullValueConnectionType = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> ConnectionType { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> ConnectionType { get => _explicitNullValueConnectionType; set { _explicitNullValueConnectionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_type"); else _explicitNullProperties?.Remove("connection_type"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> _explicitNullValueConnectionType = default!;
 #endif
         /// <summary>CPU usage percentage over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? CpuPct { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? CpuPct { get => _explicitNullValueCpuPct; set { _explicitNullValueCpuPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_pct"); else _explicitNullProperties?.Remove("cpu_pct"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? _explicitNullValueCpuPct = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> CpuPct { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> CpuPct { get => _explicitNullValueCpuPct; set { _explicitNullValueCpuPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_pct"); else _explicitNullProperties?.Remove("cpu_pct"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> _explicitNullValueCpuPct = default!;
 #endif
         /// <summary>Disk read throughput in bytes per second over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? DiskReadBps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? DiskReadBps { get => _explicitNullValueDiskReadBps; set { _explicitNullValueDiskReadBps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk_read_bps"); else _explicitNullProperties?.Remove("disk_read_bps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? _explicitNullValueDiskReadBps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> DiskReadBps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> DiskReadBps { get => _explicitNullValueDiskReadBps; set { _explicitNullValueDiskReadBps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk_read_bps"); else _explicitNullProperties?.Remove("disk_read_bps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> _explicitNullValueDiskReadBps = default!;
 #endif
         /// <summary>Disk usage percentage over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? DiskUsagePct { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? DiskUsagePct { get => _explicitNullValueDiskUsagePct; set { _explicitNullValueDiskUsagePct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk_usage_pct"); else _explicitNullProperties?.Remove("disk_usage_pct"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? _explicitNullValueDiskUsagePct = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> DiskUsagePct { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> DiskUsagePct { get => _explicitNullValueDiskUsagePct; set { _explicitNullValueDiskUsagePct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk_usage_pct"); else _explicitNullProperties?.Remove("disk_usage_pct"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> _explicitNullValueDiskUsagePct = default!;
 #endif
         /// <summary>Disk write throughput in bytes per second over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? DiskWriteBps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? DiskWriteBps { get => _explicitNullValueDiskWriteBps; set { _explicitNullValueDiskWriteBps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk_write_bps"); else _explicitNullProperties?.Remove("disk_write_bps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? _explicitNullValueDiskWriteBps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> DiskWriteBps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> DiskWriteBps { get => _explicitNullValueDiskWriteBps; set { _explicitNullValueDiskWriteBps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk_write_bps"); else _explicitNullProperties?.Remove("disk_write_bps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> _explicitNullValueDiskWriteBps = default!;
 #endif
         /// <summary>WARP mode over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? Mode { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? _explicitNullValueMode = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> Mode { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> _explicitNullValueMode = default!;
 #endif
         /// <summary>Network bytes received per second over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? NetworkRcvdBps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? NetworkRcvdBps { get => _explicitNullValueNetworkRcvdBps; set { _explicitNullValueNetworkRcvdBps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_rcvd_bps"); else _explicitNullProperties?.Remove("network_rcvd_bps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? _explicitNullValueNetworkRcvdBps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> NetworkRcvdBps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> NetworkRcvdBps { get => _explicitNullValueNetworkRcvdBps; set { _explicitNullValueNetworkRcvdBps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_rcvd_bps"); else _explicitNullProperties?.Remove("network_rcvd_bps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> _explicitNullValueNetworkRcvdBps = default!;
 #endif
         /// <summary>Network bytes sent per second over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? NetworkSentBps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? NetworkSentBps { get => _explicitNullValueNetworkSentBps; set { _explicitNullValueNetworkSentBps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_sent_bps"); else _explicitNullProperties?.Remove("network_sent_bps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? _explicitNullValueNetworkSentBps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> NetworkSentBps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> NetworkSentBps { get => _explicitNullValueNetworkSentBps; set { _explicitNullValueNetworkSentBps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_sent_bps"); else _explicitNullProperties?.Remove("network_sent_bps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> _explicitNullValueNetworkSentBps = default!;
 #endif
         /// <summary>Network SSID over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? NetworkSsid { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? NetworkSsid { get => _explicitNullValueNetworkSsid; set { _explicitNullValueNetworkSsid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_ssid"); else _explicitNullProperties?.Remove("network_ssid"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? _explicitNullValueNetworkSsid = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> NetworkSsid { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> NetworkSsid { get => _explicitNullValueNetworkSsid; set { _explicitNullValueNetworkSsid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_ssid"); else _explicitNullProperties?.Remove("network_ssid"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> _explicitNullValueNetworkSsid = default!;
 #endif
         /// <summary>Available RAM in kilobytes over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? RamAvailableKb { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? RamAvailableKb { get => _explicitNullValueRamAvailableKb; set { _explicitNullValueRamAvailableKb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ram_available_kb"); else _explicitNullProperties?.Remove("ram_available_kb"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? _explicitNullValueRamAvailableKb = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> RamAvailableKb { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> RamAvailableKb { get => _explicitNullValueRamAvailableKb; set { _explicitNullValueRamAvailableKb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ram_available_kb"); else _explicitNullProperties?.Remove("ram_available_kb"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> _explicitNullValueRamAvailableKb = default!;
 #endif
         /// <summary>RAM usage percentage over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? RamUsedPct { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? RamUsedPct { get => _explicitNullValueRamUsedPct; set { _explicitNullValueRamUsedPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ram_used_pct"); else _explicitNullProperties?.Remove("ram_used_pct"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>? _explicitNullValueRamUsedPct = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> RamUsedPct { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> RamUsedPct { get => _explicitNullValueRamUsedPct; set { _explicitNullValueRamUsedPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ram_used_pct"); else _explicitNullProperties?.Remove("ram_used_pct"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat> _explicitNullValueRamUsedPct = default!;
 #endif
         /// <summary>Round-trip time stats over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRttStats>? Rtt { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRttStats>? Rtt { get => _explicitNullValueRtt; set { _explicitNullValueRtt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtt"); else _explicitNullProperties?.Remove("rtt"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRttStats>? _explicitNullValueRtt = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRttStats> Rtt { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRttStats> Rtt { get => _explicitNullValueRtt; set { _explicitNullValueRtt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtt"); else _explicitNullProperties?.Remove("rtt"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRttStats> _explicitNullValueRtt = default!;
 #endif
         /// <summary>Device status over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? Status { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> Status { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> _explicitNullValueStatus = default!;
 #endif
         /// <summary>Top CPU-consuming applications over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotCpuApps>? TopCpuApplications { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotCpuApps>? TopCpuApplications { get => _explicitNullValueTopCpuApplications; set { _explicitNullValueTopCpuApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_cpu_applications"); else _explicitNullProperties?.Remove("top_cpu_applications"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotCpuApps>? _explicitNullValueTopCpuApplications = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotCpuApps> TopCpuApplications { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotCpuApps> TopCpuApplications { get => _explicitNullValueTopCpuApplications; set { _explicitNullValueTopCpuApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_cpu_applications"); else _explicitNullProperties?.Remove("top_cpu_applications"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotCpuApps> _explicitNullValueTopCpuApplications = default!;
 #endif
         /// <summary>Top RAM-consuming applications over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRamApps>? TopRamApplications { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRamApps>? TopRamApplications { get => _explicitNullValueTopRamApplications; set { _explicitNullValueTopRamApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_ram_applications"); else _explicitNullProperties?.Remove("top_ram_applications"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRamApps>? _explicitNullValueTopRamApplications = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRamApps> TopRamApplications { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRamApps> TopRamApplications { get => _explicitNullValueTopRamApplications; set { _explicitNullValueTopRamApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_ram_applications"); else _explicitNullProperties?.Remove("top_ram_applications"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotRamApps> _explicitNullValueTopRamApplications = default!;
 #endif
         /// <summary>Tunnel stats over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStats>? TunnelStats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStats>? TunnelStats { get => _explicitNullValueTunnelStats; set { _explicitNullValueTunnelStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_stats"); else _explicitNullProperties?.Remove("tunnel_stats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStats>? _explicitNullValueTunnelStats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStats> TunnelStats { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStats> TunnelStats { get => _explicitNullValueTunnelStats; set { _explicitNullValueTunnelStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_stats"); else _explicitNullProperties?.Remove("tunnel_stats"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStats> _explicitNullValueTunnelStats = default!;
 #endif
         /// <summary>Tunnel type over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? TunnelType { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? TunnelType { get => _explicitNullValueTunnelType; set { _explicitNullValueTunnelType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_type"); else _explicitNullProperties?.Remove("tunnel_type"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>? _explicitNullValueTunnelType = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> TunnelType { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> TunnelType { get => _explicitNullValueTunnelType; set { _explicitNullValueTunnelType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_type"); else _explicitNullProperties?.Remove("tunnel_type"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString> _explicitNullValueTunnelType = default!;
 #endif
         /// <summary>Unique network count over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? UniqueNetworks { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? UniqueNetworks { get => _explicitNullValueUniqueNetworks; set { _explicitNullValueUniqueNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_networks"); else _explicitNullProperties?.Remove("unique_networks"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? _explicitNullValueUniqueNetworks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> UniqueNetworks { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> UniqueNetworks { get => _explicitNullValueUniqueNetworks; set { _explicitNullValueUniqueNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_networks"); else _explicitNullProperties?.Remove("unique_networks"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> _explicitNullValueUniqueNetworks = default!;
 #endif
         /// <summary>Wi-Fi signal strength over time in dBm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? WifiStrengthDbm { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? WifiStrengthDbm { get => _explicitNullValueWifiStrengthDbm; set { _explicitNullValueWifiStrengthDbm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wifi_strength_dbm"); else _explicitNullProperties?.Remove("wifi_strength_dbm"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>? _explicitNullValueWifiStrengthDbm = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> WifiStrengthDbm { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> WifiStrengthDbm { get => _explicitNullValueWifiStrengthDbm; set { _explicitNullValueWifiStrengthDbm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wifi_strength_dbm"); else _explicitNullProperties?.Remove("wifi_strength_dbm"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt> _explicitNullValueWifiStrengthDbm = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime"/> and sets the default values.
@@ -198,7 +268,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -259,6 +329,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotString>("tunnel_type", TunnelType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>("unique_networks", UniqueNetworks);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>("wifi_strength_dbm", WifiStrengthDbm);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,15 +11,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DigitalExperienceMonitoringTestsResponseOverviewMetrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("avgHttpAvailabilityPct") is { } nullNodeAvgHttpAvailabilityPct && nullNodeAvgHttpAvailabilityPct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgHttpAvailabilityPct = null;
+            if (parseNode.GetChildNode("avgTracerouteAvailabilityPct") is { } nullNodeAvgTracerouteAvailabilityPct && nullNodeAvgTracerouteAvailabilityPct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgTracerouteAvailabilityPct = null;
+            if (parseNode.GetChildNode("testsTotal") is { } nullNodeTestsTotal && nullNodeTestsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestsTotal = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>percentage availability for all HTTP test results in response.</summary>
-        public float? AvgHttpAvailabilityPct { get; set; }
+        public float? AvgHttpAvailabilityPct { get => _explicitNullValueAvgHttpAvailabilityPct; set { _explicitNullValueAvgHttpAvailabilityPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avgHttpAvailabilityPct"); else _explicitNullProperties?.Remove("avgHttpAvailabilityPct"); } }
+        private float? _explicitNullValueAvgHttpAvailabilityPct = default!;
         /// <summary>percentage availability for all traceroutes results in response.</summary>
-        public float? AvgTracerouteAvailabilityPct { get; set; }
+        public float? AvgTracerouteAvailabilityPct { get => _explicitNullValueAvgTracerouteAvailabilityPct; set { _explicitNullValueAvgTracerouteAvailabilityPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avgTracerouteAvailabilityPct"); else _explicitNullProperties?.Remove("avgTracerouteAvailabilityPct"); } }
+        private float? _explicitNullValueAvgTracerouteAvailabilityPct = default!;
         /// <summary>number of tests.</summary>
-        public int? TestsTotal { get; set; }
+        public int? TestsTotal { get => _explicitNullValueTestsTotal; set { _explicitNullValueTestsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testsTotal"); else _explicitNullProperties?.Remove("testsTotal"); } }
+        private int? _explicitNullValueTestsTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseOverviewMetrics"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseOverviewMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseOverviewMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseOverviewMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteFloatValue("avgHttpAvailabilityPct", AvgHttpAvailabilityPct);
             writer.WriteFloatValue("avgTracerouteAvailabilityPct", AvgTracerouteAvailabilityPct);
             writer.WriteIntValue("testsTotal", TestsTotal);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

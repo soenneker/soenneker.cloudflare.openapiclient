@@ -17,11 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Billing
     public partial class BillingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The history property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.User.Billing.History.HistoryRequestBuilder History
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.Billing.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The profile property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.User.Billing.Profile.ProfileRequestBuilder Profile
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.Billing.Profile.ProfileRequestBuilder(PathParameters, RequestAdapter);

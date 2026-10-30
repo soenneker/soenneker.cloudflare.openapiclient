@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Enables Gateway identity for the binding. Requires network_id to be &quot;cf1:network&quot; and cannot be combined with tunnel_id.</summary>
+    /// <summary>Enables Gateway identity for the binding. Requires network_id to be &quot;cf1:network&quot; and cannot be combined with tunnel_id or an explicit &quot;cf1:vnet:&lt;UUID&gt;&quot; network_id.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RuntimeEmailAlphaIdentity
     {

@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourceTaggingDeleteTagsRequestAccountLevel : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,17 +42,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("resource_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevel();
-            if("access_application".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ResourceTaggingDeleteTagsRequestAccountLevelBase".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ResourceTaggingDeleteTagsRequestAccountLevelBase = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase();
+                
             }
-            else if("worker_version".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("resource_type") != null && (parseNode.GetChildNode("resource_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("worker_version".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("resource_id") != null && parseNode.GetChildNode("worker_id") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("resource_type") != null && (parseNode.GetChildNode("resource_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("access_application".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "access_group".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "access_service_token".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "account".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "account_ruleset".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "ai_gateway".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "ai_search_instance".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "ai_search_namespace".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "alerting_policy".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "alerting_webhook".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "cloudflared_tunnel".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "cws_deployment".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "cws_policy".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "cws_policy_set".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "cws_workload".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "d1_database".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "device".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "durable_object_namespace".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "gateway_list".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "gateway_rule".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "image".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "infrastructure_target".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "kv_namespace".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "load_balancer_monitor".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "load_balancer_pool".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "namespace_worker".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "pages_project".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "queue".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "r2_bucket".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "resource_share".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "stream_live_input".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "stream_video".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "vectorize_index".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "worker".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("resource_id") != null))();
+            if (result.ResourceTaggingDeleteTagsRequestAccountLevelBase == null && result.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(), parseNode);
+            if (result.ResourceTaggingDeleteTagsRequestAccountLevelBase == null && result.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ResourceTaggingDeleteTagsRequestAccountLevelBase = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase(), parseNode);
+            if (result.ResourceTaggingDeleteTagsRequestAccountLevelBase == null && result.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ResourceTaggingDeleteTagsRequestAccountLevelBase == null && ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ResourceTaggingDeleteTagsRequestAccountLevelBase != null && ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == null) { if (ResourceTaggingDeleteTagsRequestAccountLevelBase is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ResourceTaggingDeleteTagsRequestAccountLevelBase); return; }
+            if (ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion != null && ResourceTaggingDeleteTagsRequestAccountLevelBase == null) { if (ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ResourceTaggingDeleteTagsRequestAccountLevelBase != null)
             {
+                if (ResourceTaggingDeleteTagsRequestAccountLevelBase is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase>(null, ResourceTaggingDeleteTagsRequestAccountLevelBase);
             }
             else if(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion != null)
             {
+                if (ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion>(null, ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion);
             }
         }

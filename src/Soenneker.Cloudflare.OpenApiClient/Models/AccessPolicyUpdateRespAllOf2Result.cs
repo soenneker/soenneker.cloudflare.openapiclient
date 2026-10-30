@@ -11,35 +11,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessPolicyUpdateRespAllOf2Result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("percent_approved") is { } nullNodePercentApproved && nullNodePercentApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentApproved = null;
+            if (parseNode.GetChildNode("percent_blocked") is { } nullNodePercentBlocked && nullNodePercentBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentBlocked = null;
+            if (parseNode.GetChildNode("percent_errored") is { } nullNodePercentErrored && nullNodePercentErrored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentErrored = null;
+            if (parseNode.GetChildNode("percent_users_processed") is { } nullNodePercentUsersProcessed && nullNodePercentUsersProcessed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentUsersProcessed = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("total_users") is { } nullNodeTotalUsers && nullNodeTotalUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalUsers = null;
+            if (parseNode.GetChildNode("users_approved") is { } nullNodeUsersApproved && nullNodeUsersApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersApproved = null;
+            if (parseNode.GetChildNode("users_blocked") is { } nullNodeUsersBlocked && nullNodeUsersBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersBlocked = null;
+            if (parseNode.GetChildNode("users_errored") is { } nullNodeUsersErrored && nullNodeUsersErrored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersErrored = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The UUID of the policy test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The percentage of (processed) users approved based on policy evaluation results.</summary>
-        public int? PercentApproved { get; set; }
+        public int? PercentApproved { get => _explicitNullValuePercentApproved; set { _explicitNullValuePercentApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percent_approved"); else _explicitNullProperties?.Remove("percent_approved"); } }
+        private int? _explicitNullValuePercentApproved = default!;
         /// <summary>The percentage of (processed) users blocked based on policy evaluation results.</summary>
-        public int? PercentBlocked { get; set; }
+        public int? PercentBlocked { get => _explicitNullValuePercentBlocked; set { _explicitNullValuePercentBlocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percent_blocked"); else _explicitNullProperties?.Remove("percent_blocked"); } }
+        private int? _explicitNullValuePercentBlocked = default!;
         /// <summary>The percentage of (processed) users errored based on policy evaluation results.</summary>
-        public int? PercentErrored { get; set; }
+        public int? PercentErrored { get => _explicitNullValuePercentErrored; set { _explicitNullValuePercentErrored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percent_errored"); else _explicitNullProperties?.Remove("percent_errored"); } }
+        private int? _explicitNullValuePercentErrored = default!;
         /// <summary>The percentage of users processed so far (of the entire user base).</summary>
-        public int? PercentUsersProcessed { get; set; }
+        public int? PercentUsersProcessed { get => _explicitNullValuePercentUsersProcessed; set { _explicitNullValuePercentUsersProcessed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percent_users_processed"); else _explicitNullProperties?.Remove("percent_users_processed"); } }
+        private int? _explicitNullValuePercentUsersProcessed = default!;
         /// <summary>The status of the policy test.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdateStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdateStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdateStatus? _explicitNullValueStatus = default!;
         /// <summary>The total number of users in the user base.</summary>
-        public int? TotalUsers { get; set; }
+        public int? TotalUsers { get => _explicitNullValueTotalUsers; set { _explicitNullValueTotalUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_users"); else _explicitNullProperties?.Remove("total_users"); } }
+        private int? _explicitNullValueTotalUsers = default!;
         /// <summary>The number of (processed) users approved based on policy evaluation results.</summary>
-        public int? UsersApproved { get; set; }
+        public int? UsersApproved { get => _explicitNullValueUsersApproved; set { _explicitNullValueUsersApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_approved"); else _explicitNullProperties?.Remove("users_approved"); } }
+        private int? _explicitNullValueUsersApproved = default!;
         /// <summary>The number of (processed) users blocked based on policy evaluation results.</summary>
-        public int? UsersBlocked { get; set; }
+        public int? UsersBlocked { get => _explicitNullValueUsersBlocked; set { _explicitNullValueUsersBlocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_blocked"); else _explicitNullProperties?.Remove("users_blocked"); } }
+        private int? _explicitNullValueUsersBlocked = default!;
         /// <summary>The number of (processed) users errored based on policy evaluation results.</summary>
-        public int? UsersErrored { get; set; }
+        public int? UsersErrored { get => _explicitNullValueUsersErrored; set { _explicitNullValueUsersErrored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_errored"); else _explicitNullProperties?.Remove("users_errored"); } }
+        private int? _explicitNullValueUsersErrored = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyUpdateRespAllOf2Result"/> and sets the default values.
         /// </summary>
@@ -55,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyUpdateRespAllOf2Result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyUpdateRespAllOf2Result();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyUpdateRespAllOf2Result(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("users_approved", UsersApproved);
             writer.WriteIntValue("users_blocked", UsersBlocked);
             writer.WriteIntValue("users_errored", UsersErrored);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,27 +11,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetBgpRoutesAsns200ResponseResultMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dataTime") is { } nullNodeDataTime && nullNodeDataTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataTime = null;
+            if (parseNode.GetChildNode("queryTime") is { } nullNodeQueryTime && nullNodeQueryTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryTime = null;
+            if (parseNode.GetChildNode("totalPeers") is { } nullNodeTotalPeers && nullNodeTotalPeers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPeers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp of when the data is generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataTime { get; set; }
+        public string? DataTime { get => _explicitNullValueDataTime; set { _explicitNullValueDataTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataTime"); else _explicitNullProperties?.Remove("dataTime"); } }
+        private string? _explicitNullValueDataTime = default!;
 #nullable restore
 #else
-        public string DataTime { get; set; }
+        public string DataTime { get => _explicitNullValueDataTime; set { _explicitNullValueDataTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataTime"); else _explicitNullProperties?.Remove("dataTime"); } }
+        private string _explicitNullValueDataTime = default!;
 #endif
         /// <summary>The timestamp of the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryTime { get; set; }
+        public string? QueryTime { get => _explicitNullValueQueryTime; set { _explicitNullValueQueryTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryTime"); else _explicitNullProperties?.Remove("queryTime"); } }
+        private string? _explicitNullValueQueryTime = default!;
 #nullable restore
 #else
-        public string QueryTime { get; set; }
+        public string QueryTime { get => _explicitNullValueQueryTime; set { _explicitNullValueQueryTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryTime"); else _explicitNullProperties?.Remove("queryTime"); } }
+        private string _explicitNullValueQueryTime = default!;
 #endif
         /// <summary>Total number of route collector peers used to generate this data.</summary>
-        public int? TotalPeers { get; set; }
+        public int? TotalPeers { get => _explicitNullValueTotalPeers; set { _explicitNullValueTotalPeers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalPeers"); else _explicitNullProperties?.Remove("totalPeers"); } }
+        private int? _explicitNullValueTotalPeers = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200ResponseResultMeta"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200ResponseResultMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200ResponseResultMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200ResponseResultMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("dataTime", DataTime);
             writer.WriteStringValue("queryTime", QueryTime);
             writer.WriteIntValue("totalPeers", TotalPeers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

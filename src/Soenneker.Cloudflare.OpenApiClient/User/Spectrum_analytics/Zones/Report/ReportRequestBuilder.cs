@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Spectrum_analytics.Zones.Repor
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsZonesReportResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsZonesReportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

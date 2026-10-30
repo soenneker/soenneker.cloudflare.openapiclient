@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PatchEventUpdateBulkRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("datasetId") is { } nullNodeDatasetId && nullNodeDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetId = null;
+            if (parseNode.GetChildNode("eventIds") is { } nullNodeEventIds && nullNodeEventIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventIds = null;
+            if (parseNode.GetChildNode("updates") is { } nullNodeUpdates && nullNodeUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updates = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Dataset ID containing the events to update. Required to prevent cross-account modifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatasetId { get; set; }
+        public string? DatasetId { get => _explicitNullValueDatasetId; set { _explicitNullValueDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetId"); else _explicitNullProperties?.Remove("datasetId"); } }
+        private string? _explicitNullValueDatasetId = default!;
 #nullable restore
 #else
-        public string DatasetId { get; set; }
+        public string DatasetId { get => _explicitNullValueDatasetId; set { _explicitNullValueDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetId"); else _explicitNullProperties?.Remove("datasetId"); } }
+        private string _explicitNullValueDatasetId = default!;
 #endif
         /// <summary>List of event UUIDs to update (1-100)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EventIds { get; set; }
+        public List<string>? EventIds { get => _explicitNullValueEventIds; set { _explicitNullValueEventIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIds"); else _explicitNullProperties?.Remove("eventIds"); } }
+        private List<string>? _explicitNullValueEventIds = default!;
 #nullable restore
 #else
-        public List<string> EventIds { get; set; }
+        public List<string> EventIds { get => _explicitNullValueEventIds; set { _explicitNullValueEventIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIds"); else _explicitNullProperties?.Remove("eventIds"); } }
+        private List<string> _explicitNullValueEventIds = default!;
 #endif
         /// <summary>Fields to update on all specified events. All fields including &apos;insight&apos; are supported, except &apos;date&apos; which requires shard migration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequestUpdates? Updates { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequestUpdates? Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequestUpdates? _explicitNullValueUpdates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequestUpdates Updates { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequestUpdates Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequestUpdates _explicitNullValueUpdates = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequest"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("datasetId", DatasetId);
             writer.WriteCollectionOfPrimitiveValues<string>("eventIds", EventIds);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulkRequestUpdates>("updates", Updates);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

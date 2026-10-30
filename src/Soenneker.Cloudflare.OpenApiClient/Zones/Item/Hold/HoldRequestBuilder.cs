@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -13,29 +12,17 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\hold
+    /// Builds and executes requests for operations under \zones\{zoneId}\hold
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HoldRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.hold.item collection</summary>
-        /// <param name="position">The hostname to check for a zone hold. May be a subdomain (e.g. `subdomain.example.com`)or an apex domain (e.g. `example.com`). The service checks the hostname and its ancestordomains for active holds with `include_subdomains` enabled.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.Item.WithZoneNameItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.Item.WithZoneNameItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("zoneName", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.Item.WithZoneNameItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HoldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/hold{?hold_after*,include_subdomains*}", pathParameters)
+        public HoldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/hold{?hold_after*,include_subdomains*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HoldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/hold{?hold_after*,include_subdomains*}", rawUrl)
+        public HoldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/hold{?hold_after*,include_subdomains*}", rawUrl)
         {
         }
         /// <summary>
@@ -66,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -89,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -114,6 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -137,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

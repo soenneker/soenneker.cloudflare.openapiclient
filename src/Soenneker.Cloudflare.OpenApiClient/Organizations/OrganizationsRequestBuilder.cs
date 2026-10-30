@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations{?containing%2Eaccount,containing%2Eorganization,containing%2Euser,id,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,page_size,page_token,parent%2Eid}", pathParameters)
+        public OrganizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations{?containing%2Eaccount,containing%2Eorganization,containing%2Euser,direction,id*,member%2Eemail*,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token,parent%2Eid}", pathParameters)
         {
         }
         /// <summary>
@@ -43,16 +43,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations{?containing%2Eaccount,containing%2Eorganization,containing%2Euser,id,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,page_size,page_token,parent%2Eid}", rawUrl)
+        public OrganizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations{?containing%2Eaccount,containing%2Eorganization,containing%2Euser,direction,id*,member%2Eemail*,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token,parent%2Eid}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve a list of organizations a particular user has access to.
+        /// Retrieve a list of organizations a particular user has access to. At most one of`containing.account`, `containing.user`, or `containing.organization` may be provided.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,37 +65,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new organization for a user. Sub-organization creation availability depends onthe organization&apos;s capabilities.
+        /// Create a new organization for a user. Sub-organization creation availability depends onthe organization&apos;s capabilities. The optional `profile` object accepts partial profiledetails; its individual fields are not required. Organization names are limited to 65UTF-8 bytes. Each profile field is limited to 1,000 UTF-8 bytes, and a non-empty businessemail must be valid. At least one of business name, address, phone, or email must benon-empty to persist a profile.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response"/></returns>
-        /// <param name="body">References an Organization in the Cloudflare data model.</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateOrganizationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateOrganizationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of organizations a particular user has access to.
+        /// Retrieve a list of organizations a particular user has access to. At most one of`containing.account`, `containing.user`, or `containing.organization` may be provided.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,18 +114,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new organization for a user. Sub-organization creation availability depends onthe organization&apos;s capabilities.
+        /// Create a new organization for a user. Sub-organization creation availability depends onthe organization&apos;s capabilities. The optional `profile` object accepts partial profiledetails; its individual fields are not required. Organization names are limited to 65UTF-8 bytes. Each profile field is limited to 1,000 UTF-8 bytes, and a non-empty businessemail must be valid. At least one of business name, address, phone, or email must benon-empty to persist a profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">References an Organization in the Cloudflare data model.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateOrganizationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateOrganizationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             return new global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of organizations a particular user has access to.
+        /// Retrieve a list of organizations a particular user has access to. At most one of`containing.account`, `containing.user`, or `containing.organization` may be provided.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationsRequestBuilderGetQueryParameters 
@@ -180,6 +180,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             [QueryParameter("containing%2Euser")]
             public string ContainingUser { get; set; }
 #endif
+            /// <summary>Sort direction for the `order_by` field. Defaults to `asc` when `order_by` isspecified.</summary>
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizationsDirectionParameter? Direction { get; set; }
             /// <summary>Only return organizations with the specified IDs (ex. id=foo&amp;id=bar). Send multiple elementsby repeating the query value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -189,6 +192,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
 #else
             [QueryParameter("id")]
             public string[] Id { get; set; }
+#endif
+            /// <summary>Filter organizations to those where the given user, by email, is an active member ofthat exact organization. This does not include hierarchy-derived access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("member%2Eemail")]
+            public string? MemberEmail { get; set; }
+#nullable restore
+#else
+            [QueryParameter("member%2Eemail")]
+            public string MemberEmail { get; set; }
 #endif
             /// <summary>(case-sensitive) Filter the list of organizations to where the name is equal to aparticular string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -230,6 +243,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             [QueryParameter("name%2EstartsWith")]
             public string NameStartsWith { get; set; }
 #endif
+            /// <summary>Field to order results by. Currently supported values: `name`.When not specified, results are ordered by hierarchy.</summary>
+            [QueryParameter("order_by")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.NameOrderBy? OrderBy { get; set; }
             /// <summary>The amount of items to return. Defaults to 10.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }

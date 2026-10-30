@@ -12,70 +12,106 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGatewayBlockPageSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("background_color") is { } nullNodeBackgroundColor && nullNodeBackgroundColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundColor = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("footer_text") is { } nullNodeFooterText && nullNodeFooterText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FooterText = null;
+            if (parseNode.GetChildNode("header_text") is { } nullNodeHeaderText && nullNodeHeaderText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderText = null;
+            if (parseNode.GetChildNode("include_context") is { } nullNodeIncludeContext && nullNodeIncludeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeContext = null;
+            if (parseNode.GetChildNode("logo_path") is { } nullNodeLogoPath && nullNodeLogoPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoPath = null;
+            if (parseNode.GetChildNode("mailto_address") is { } nullNodeMailtoAddress && nullNodeMailtoAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailtoAddress = null;
+            if (parseNode.GetChildNode("mailto_subject") is { } nullNodeMailtoSubject && nullNodeMailtoSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailtoSubject = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("suppress_footer") is { } nullNodeSuppressFooter && nullNodeSuppressFooter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuppressFooter = null;
+            if (parseNode.GetChildNode("target_uri") is { } nullNodeTargetUri && nullNodeTargetUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetUri = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the block page background color in `#rrggbb` format when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackgroundColor { get; set; }
+        public string? BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        private string? _explicitNullValueBackgroundColor = default!;
 #nullable restore
 #else
-        public string BackgroundColor { get; set; }
+        public string BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        private string _explicitNullValueBackgroundColor = default!;
 #endif
         /// <summary>Specify whether to enable the custom block page.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Specify the block page footer text when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FooterText { get; set; }
+        public string? FooterText { get => _explicitNullValueFooterText; set { _explicitNullValueFooterText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_text"); else _explicitNullProperties?.Remove("footer_text"); } }
+        private string? _explicitNullValueFooterText = default!;
 #nullable restore
 #else
-        public string FooterText { get; set; }
+        public string FooterText { get => _explicitNullValueFooterText; set { _explicitNullValueFooterText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_text"); else _explicitNullProperties?.Remove("footer_text"); } }
+        private string _explicitNullValueFooterText = default!;
 #endif
         /// <summary>Specify the block page header text when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderText { get; set; }
+        public string? HeaderText { get => _explicitNullValueHeaderText; set { _explicitNullValueHeaderText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_text"); else _explicitNullProperties?.Remove("header_text"); } }
+        private string? _explicitNullValueHeaderText = default!;
 #nullable restore
 #else
-        public string HeaderText { get; set; }
+        public string HeaderText { get => _explicitNullValueHeaderText; set { _explicitNullValueHeaderText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_text"); else _explicitNullProperties?.Remove("header_text"); } }
+        private string _explicitNullValueHeaderText = default!;
 #endif
         /// <summary>Specify whether to append context to target_uri as query parameters. This applies only when the mode is redirect_uri.</summary>
-        public bool? IncludeContext { get; set; }
+        public bool? IncludeContext { get => _explicitNullValueIncludeContext; set { _explicitNullValueIncludeContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_context"); else _explicitNullProperties?.Remove("include_context"); } }
+        private bool? _explicitNullValueIncludeContext = default!;
         /// <summary>Specify the full URL to the logo file when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoPath { get; set; }
+        public string? LogoPath { get => _explicitNullValueLogoPath; set { _explicitNullValueLogoPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_path"); else _explicitNullProperties?.Remove("logo_path"); } }
+        private string? _explicitNullValueLogoPath = default!;
 #nullable restore
 #else
-        public string LogoPath { get; set; }
+        public string LogoPath { get => _explicitNullValueLogoPath; set { _explicitNullValueLogoPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_path"); else _explicitNullProperties?.Remove("logo_path"); } }
+        private string _explicitNullValueLogoPath = default!;
 #endif
         /// <summary>Specify the admin email for users to contact when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MailtoAddress { get; set; }
+        public string? MailtoAddress { get => _explicitNullValueMailtoAddress; set { _explicitNullValueMailtoAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mailto_address"); else _explicitNullProperties?.Remove("mailto_address"); } }
+        private string? _explicitNullValueMailtoAddress = default!;
 #nullable restore
 #else
-        public string MailtoAddress { get; set; }
+        public string MailtoAddress { get => _explicitNullValueMailtoAddress; set { _explicitNullValueMailtoAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mailto_address"); else _explicitNullProperties?.Remove("mailto_address"); } }
+        private string _explicitNullValueMailtoAddress = default!;
 #endif
         /// <summary>Specify the subject line for emails created from the block page when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MailtoSubject { get; set; }
+        public string? MailtoSubject { get => _explicitNullValueMailtoSubject; set { _explicitNullValueMailtoSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mailto_subject"); else _explicitNullProperties?.Remove("mailto_subject"); } }
+        private string? _explicitNullValueMailtoSubject = default!;
 #nullable restore
 #else
-        public string MailtoSubject { get; set; }
+        public string MailtoSubject { get => _explicitNullValueMailtoSubject; set { _explicitNullValueMailtoSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mailto_subject"); else _explicitNullProperties?.Remove("mailto_subject"); } }
+        private string _explicitNullValueMailtoSubject = default!;
 #endif
         /// <summary>Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettingsMode? Mode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettingsMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettingsMode? _explicitNullValueMode = default!;
         /// <summary>Specify the block page title when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Indicate that this setting was shared via the Orgs API and read only for the current account.</summary>
         public bool? ReadOnly { get; private set; }
@@ -88,14 +124,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SourceAccount { get; private set; }
 #endif
         /// <summary>Specify whether to suppress detailed information at the bottom of the block page when the mode is customized_block_page.</summary>
-        public bool? SuppressFooter { get; set; }
+        public bool? SuppressFooter { get => _explicitNullValueSuppressFooter; set { _explicitNullValueSuppressFooter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppress_footer"); else _explicitNullProperties?.Remove("suppress_footer"); } }
+        private bool? _explicitNullValueSuppressFooter = default!;
         /// <summary>Specify the URI to redirect users to when the mode is redirect_uri.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetUri { get; set; }
+        public string? TargetUri { get => _explicitNullValueTargetUri; set { _explicitNullValueTargetUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_uri"); else _explicitNullProperties?.Remove("target_uri"); } }
+        private string? _explicitNullValueTargetUri = default!;
 #nullable restore
 #else
-        public string TargetUri { get; set; }
+        public string TargetUri { get => _explicitNullValueTargetUri; set { _explicitNullValueTargetUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_uri"); else _explicitNullProperties?.Remove("target_uri"); } }
+        private string _explicitNullValueTargetUri = default!;
 #endif
         /// <summary>Indicate the version number of the setting.</summary>
         public int? Version { get; private set; }
@@ -114,7 +153,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -160,6 +201,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("suppress_footer", SuppressFooter);
             writer.WriteStringValue("target_uri", TargetUri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

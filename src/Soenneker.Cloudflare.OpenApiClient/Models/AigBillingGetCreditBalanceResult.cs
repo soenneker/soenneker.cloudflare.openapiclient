@@ -11,30 +11,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigBillingGetCreditBalanceResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("balance") is { } nullNodeBalance && nullNodeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Balance = null;
+            if (parseNode.GetChildNode("first_topup_success") is { } nullNodeFirstTopupSuccess && nullNodeFirstTopupSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstTopupSuccess = null;
+            if (parseNode.GetChildNode("has_default_payment_method") is { } nullNodeHasDefaultPaymentMethod && nullNodeHasDefaultPaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasDefaultPaymentMethod = null;
+            if (parseNode.GetChildNode("payment_method") is { } nullNodePaymentMethod && nullNodePaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethod = null;
+            if (parseNode.GetChildNode("topup_config") is { } nullNodeTopupConfig && nullNodeTopupConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopupConfig = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The balance property</summary>
-        public double? Balance { get; set; }
+        public double? Balance { get => _explicitNullValueBalance; set { _explicitNullValueBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance"); else _explicitNullProperties?.Remove("balance"); } }
+        private double? _explicitNullValueBalance = default!;
         /// <summary>The first_topup_success property</summary>
-        public bool? FirstTopupSuccess { get; set; }
+        public bool? FirstTopupSuccess { get => _explicitNullValueFirstTopupSuccess; set { _explicitNullValueFirstTopupSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_topup_success"); else _explicitNullProperties?.Remove("first_topup_success"); } }
+        private bool? _explicitNullValueFirstTopupSuccess = default!;
         /// <summary>The has_default_payment_method property</summary>
-        public bool? HasDefaultPaymentMethod { get; set; }
+        public bool? HasDefaultPaymentMethod { get => _explicitNullValueHasDefaultPaymentMethod; set { _explicitNullValueHasDefaultPaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_default_payment_method"); else _explicitNullProperties?.Remove("has_default_payment_method"); } }
+        private bool? _explicitNullValueHasDefaultPaymentMethod = default!;
         /// <summary>The payment_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod? PaymentMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method"); else _explicitNullProperties?.Remove("payment_method"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod? _explicitNullValuePaymentMethod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod PaymentMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method"); else _explicitNullProperties?.Remove("payment_method"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod _explicitNullValuePaymentMethod = default!;
 #endif
         /// <summary>The topup_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig? TopupConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig? TopupConfig { get => _explicitNullValueTopupConfig; set { _explicitNullValueTopupConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topup_config"); else _explicitNullProperties?.Remove("topup_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig? _explicitNullValueTopupConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig TopupConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig TopupConfig { get => _explicitNullValueTopupConfig; set { _explicitNullValueTopupConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topup_config"); else _explicitNullProperties?.Remove("topup_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig _explicitNullValueTopupConfig = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult"/> and sets the default values.
@@ -51,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("has_default_payment_method", HasDefaultPaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod>("payment_method", PaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig>("topup_config", TopupConfig);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

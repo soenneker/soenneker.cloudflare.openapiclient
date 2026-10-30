@@ -11,7 +11,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TunnelSchemasConnection : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_version") is { } nullNodeClientVersion && nullNodeClientVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientVersion = null;
+            if (parseNode.GetChildNode("colo_name") is { } nullNodeColoName && nullNodeColoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoName = null;
+            if (parseNode.GetChildNode("is_pending_reconnect") is { } nullNodeIsPendingReconnect && nullNodeIsPendingReconnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPendingReconnect = null;
+            if (parseNode.GetChildNode("opened_at") is { } nullNodeOpenedAt && nullNodeOpenedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedAt = null;
+            if (parseNode.GetChildNode("origin_ip") is { } nullNodeOriginIp && nullNodeOriginIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginIp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UUID of the Cloudflare Tunnel connector.</summary>
@@ -19,33 +31,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cloudflared version used to establish this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientVersion { get; set; }
+        public string? ClientVersion { get => _explicitNullValueClientVersion; set { _explicitNullValueClientVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_version"); else _explicitNullProperties?.Remove("client_version"); } }
+        private string? _explicitNullValueClientVersion = default!;
 #nullable restore
 #else
-        public string ClientVersion { get; set; }
+        public string ClientVersion { get => _explicitNullValueClientVersion; set { _explicitNullValueClientVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_version"); else _explicitNullProperties?.Remove("client_version"); } }
+        private string _explicitNullValueClientVersion = default!;
 #endif
         /// <summary>The Cloudflare data center used for this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ColoName { get; set; }
+        public string? ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
+        private string? _explicitNullValueColoName = default!;
 #nullable restore
 #else
-        public string ColoName { get; set; }
+        public string ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
+        private string _explicitNullValueColoName = default!;
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
         public Guid? Id { get; private set; }
         /// <summary>Cloudflare continues to track connections for several minutes after they disconnect. This is an optimization to improve latency and reliability of reconnecting.  If `true`, the connection has disconnected but is still being tracked. If `false`, the connection is actively serving traffic.</summary>
         [Obsolete("")]
-        public bool? IsPendingReconnect { get; set; }
+        public bool? IsPendingReconnect { get => _explicitNullValueIsPendingReconnect; set { _explicitNullValueIsPendingReconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_pending_reconnect"); else _explicitNullProperties?.Remove("is_pending_reconnect"); } }
+        private bool? _explicitNullValueIsPendingReconnect = default!;
         /// <summary>Timestamp of when the connection was established.</summary>
-        public DateTimeOffset? OpenedAt { get; set; }
+        public DateTimeOffset? OpenedAt { get => _explicitNullValueOpenedAt; set { _explicitNullValueOpenedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_at"); else _explicitNullProperties?.Remove("opened_at"); } }
+        private DateTimeOffset? _explicitNullValueOpenedAt = default!;
         /// <summary>The public IP address of the host running cloudflared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginIp { get; set; }
+        public string? OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
+        private string? _explicitNullValueOriginIp = default!;
 #nullable restore
 #else
-        public string OriginIp { get; set; }
+        public string OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
+        private string _explicitNullValueOriginIp = default!;
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
         public Guid? Uuid { get; private set; }
@@ -64,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasConnection();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasConnection(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_pending_reconnect", IsPendingReconnect);
             writer.WriteDateTimeOffsetValue("opened_at", OpenedAt);
             writer.WriteStringValue("origin_ip", OriginIp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

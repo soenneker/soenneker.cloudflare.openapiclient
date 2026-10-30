@@ -11,7 +11,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BotManagementFeedbackReport : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("expression") is { } nullNodeExpression && nullNodeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expression = null;
+            if (parseNode.GetChildNode("first_request_seen_at") is { } nullNodeFirstRequestSeenAt && nullNodeFirstRequestSeenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstRequestSeenAt = null;
+            if (parseNode.GetChildNode("last_request_seen_at") is { } nullNodeLastRequestSeenAt && nullNodeLastRequestSeenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRequestSeenAt = null;
+            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("requests_by_attribute") is { } nullNodeRequestsByAttribute && nullNodeRequestsByAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsByAttribute = null;
+            if (parseNode.GetChildNode("requests_by_score") is { } nullNodeRequestsByScore && nullNodeRequestsByScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsByScore = null;
+            if (parseNode.GetChildNode("requests_by_score_src") is { } nullNodeRequestsByScoreSrc && nullNodeRequestsByScoreSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsByScoreSrc = null;
+            if (parseNode.GetChildNode("subtype") is { } nullNodeSubtype && nullNodeSubtype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtype = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
@@ -19,59 +36,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Wirefilter expression describing the traffic being reported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression { get; set; }
+        public string? Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        private string? _explicitNullValueExpression = default!;
 #nullable restore
 #else
-        public string Expression { get; set; }
+        public string Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        private string _explicitNullValueExpression = default!;
 #endif
         /// <summary>The first_request_seen_at property</summary>
-        public DateTimeOffset? FirstRequestSeenAt { get; set; }
+        public DateTimeOffset? FirstRequestSeenAt { get => _explicitNullValueFirstRequestSeenAt; set { _explicitNullValueFirstRequestSeenAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_request_seen_at"); else _explicitNullProperties?.Remove("first_request_seen_at"); } }
+        private DateTimeOffset? _explicitNullValueFirstRequestSeenAt = default!;
         /// <summary>The last_request_seen_at property</summary>
-        public DateTimeOffset? LastRequestSeenAt { get; set; }
+        public DateTimeOffset? LastRequestSeenAt { get => _explicitNullValueLastRequestSeenAt; set { _explicitNullValueLastRequestSeenAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_request_seen_at"); else _explicitNullProperties?.Remove("last_request_seen_at"); } }
+        private DateTimeOffset? _explicitNullValueLastRequestSeenAt = default!;
         /// <summary>The requests property</summary>
-        public long? Requests { get; set; }
+        public long? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private long? _explicitNullValueRequests = default!;
         /// <summary>Top attributes contributing to the feedback sample. Keys include topASNs, topCountries, topHosts, topIPs, topJA3Hashes, topJA4s, topPaths, topUserAgents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute? RequestsByAttribute { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute? RequestsByAttribute { get => _explicitNullValueRequestsByAttribute; set { _explicitNullValueRequestsByAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_by_attribute"); else _explicitNullProperties?.Remove("requests_by_attribute"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute? _explicitNullValueRequestsByAttribute = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute RequestsByAttribute { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute RequestsByAttribute { get => _explicitNullValueRequestsByAttribute; set { _explicitNullValueRequestsByAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_by_attribute"); else _explicitNullProperties?.Remove("requests_by_attribute"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute _explicitNullValueRequestsByAttribute = default!;
 #endif
         /// <summary>Map of bot scores (1-99) to request counts. Sum must equal `requests`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore? RequestsByScore { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore? RequestsByScore { get => _explicitNullValueRequestsByScore; set { _explicitNullValueRequestsByScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_by_score"); else _explicitNullProperties?.Remove("requests_by_score"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore? _explicitNullValueRequestsByScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore RequestsByScore { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore RequestsByScore { get => _explicitNullValueRequestsByScore; set { _explicitNullValueRequestsByScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_by_score"); else _explicitNullProperties?.Remove("requests_by_score"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore _explicitNullValueRequestsByScore = default!;
 #endif
         /// <summary>Map of score source to request counts. Sum must equal `requests`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc? RequestsByScoreSrc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc? RequestsByScoreSrc { get => _explicitNullValueRequestsByScoreSrc; set { _explicitNullValueRequestsByScoreSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_by_score_src"); else _explicitNullProperties?.Remove("requests_by_score_src"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc? _explicitNullValueRequestsByScoreSrc = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc RequestsByScoreSrc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc RequestsByScoreSrc { get => _explicitNullValueRequestsByScoreSrc; set { _explicitNullValueRequestsByScoreSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_by_score_src"); else _explicitNullProperties?.Remove("requests_by_score_src"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc _explicitNullValueRequestsByScoreSrc = default!;
 #endif
         /// <summary>The subtype property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subtype { get; set; }
+        public string? Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
+        private string? _explicitNullValueSubtype = default!;
 #nullable restore
 #else
-        public string Subtype { get; set; }
+        public string Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
+        private string _explicitNullValueSubtype = default!;
 #endif
         /// <summary>Type of feedback report.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport"/> and sets the default values.
         /// </summary>
@@ -87,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,6 +160,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc>("requests_by_score_src", RequestsByScoreSrc);
             writer.WriteStringValue("subtype", Subtype);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

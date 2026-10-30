@@ -22,19 +22,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
     public partial class IndicatorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bulk property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.Bulk.BulkRequestBuilder Bulk
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.Bulk.BulkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The create property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.Create.CreateRequestBuilder Create
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tags property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.Tags.TagsRequestBuilder Tags
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
@@ -68,6 +65,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         {
         }
         /// <summary>
+        /// Deletes up to 200 indicators from a dataset. Pass the indicator UUIDs in `indicatorIds`; UUIDs that are not found are returned in `missingUUIDs`.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorDeleteBulk200Response"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorDeleteBulk400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorDeleteBulk404Response">When receiving a 404 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorDeleteBulk200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.IndicatorsRequestBuilder.IndicatorsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorDeleteBulk200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.IndicatorsRequestBuilder.IndicatorsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorDeleteBulk400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorDeleteBulk404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorDeleteBulk200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorDeleteBulk200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Legacy. Use `threat-intel indicators list` (`GET /events/indicators`) instead. It supports multiple datasets and cursor pagination.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorListLegacy200Response"/></returns>
@@ -84,7 +108,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorListLegacy200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorListLegacy200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorListLegacy200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorListLegacy200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Deletes up to 200 indicators from a dataset. Pass the indicator UUIDs in `indicatorIds`; UUIDs that are not found are returned in `missingUUIDs`.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.IndicatorsRequestBuilder.IndicatorsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.IndicatorsRequestBuilder.IndicatorsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/dataset/{datasetId}/indicators{?indicatorIds*}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Legacy. Use `threat-intel indicators list` (`GET /events/indicators`) instead. It supports multiple datasets and cursor pagination.
@@ -111,10 +154,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.IndicatorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.IndicatorsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.IndicatorsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Deletes up to 200 indicators from a dataset. Pass the indicator UUIDs in `indicatorIds`; UUIDs that are not found are returned in `missingUUIDs`.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class IndicatorsRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>Indicator UUIDs to delete, 1-200 per request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("indicatorIds")]
+            public Guid?[]? IndicatorIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("indicatorIds")]
+            public Guid?[] IndicatorIds { get; set; }
+#endif
         }
         /// <summary>
         /// Legacy. Use `threat-intel indicators list` (`GET /events/indicators`) instead. It supports multiple datasets and cursor pagination.

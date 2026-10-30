@@ -11,34 +11,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TeamsDevicesKolideInputRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_state") is { } nullNodeAuthState && nullNodeAuthState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthState = null;
+            if (parseNode.GetChildNode("connection_id") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
+            if (parseNode.GetChildNode("countOperator") is { } nullNodeCountOperator && nullNodeCountOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountOperator = null;
+            if (parseNode.GetChildNode("issue_count") is { } nullNodeIssueCount && nullNodeIssueCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The set of Kolide device authentication states that pass the posture check. Device must match one of the specified states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?>? AuthState { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?>? AuthState { get => _explicitNullValueAuthState; set { _explicitNullValueAuthState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_state"); else _explicitNullProperties?.Remove("auth_state"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?>? _explicitNullValueAuthState = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?> AuthState { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?> AuthState { get => _explicitNullValueAuthState; set { _explicitNullValueAuthState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_state"); else _explicitNullProperties?.Remove("auth_state"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?> _explicitNullValueAuthState = default!;
 #endif
         /// <summary>Posture Integration ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get; set; }
+        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        private string? _explicitNullValueConnectionId = default!;
 #nullable restore
 #else
-        public string ConnectionId { get; set; }
+        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        private string _explicitNullValueConnectionId = default!;
 #endif
         /// <summary>Count Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestCountOperator? CountOperator { get; set; }
+#nullable enable
+        public string? CountOperator { get => _explicitNullValueCountOperator; set { _explicitNullValueCountOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countOperator"); else _explicitNullProperties?.Remove("countOperator"); } }
+        private string? _explicitNullValueCountOperator = default!;
+#nullable restore
         /// <summary>The Number of Issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssueCount { get; set; }
+        public string? IssueCount { get => _explicitNullValueIssueCount; set { _explicitNullValueIssueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_count"); else _explicitNullProperties?.Remove("issue_count"); } }
+        private string? _explicitNullValueIssueCount = default!;
 #nullable restore
 #else
-        public string IssueCount { get; set; }
+        public string IssueCount { get => _explicitNullValueIssueCount; set { _explicitNullValueIssueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_count"); else _explicitNullProperties?.Remove("issue_count"); } }
+        private string _explicitNullValueIssueCount = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest"/> and sets the default values.
@@ -55,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "auth_state", n => { AuthState = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem>()?.AsList(); } },
                 { "connection_id", n => { ConnectionId = n.GetStringValue(); } },
-                { "countOperator", n => { CountOperator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestCountOperator>(); } },
+                { "countOperator", n => { CountOperator = n.GetStringValue(); } },
                 { "issue_count", n => { IssueCount = n.GetStringValue(); } },
             };
         }
@@ -80,8 +100,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem>("auth_state", AuthState);
             writer.WriteStringValue("connection_id", ConnectionId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestCountOperator>("countOperator", CountOperator);
+            writer.WriteStringValue("countOperator", CountOperator);
             writer.WriteStringValue("issue_count", IssueCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

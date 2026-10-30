@@ -8,23 +8,40 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Beta. Number of articles in each severity band: the severity level nearest the article&apos;s severity. Articles without a severity are not counted, and every count is zero when the account has no active Priority Intelligence Requirements.
+    /// Beta. Number of articles in each severity band, the band reported as the article&apos;s severity. Articles without a severity are not counted, and every count is zero when the account has no active Priority Intelligence Requirements.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RssArticleSeverityAggregate200ResponseResultArticles : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("critical") is { } nullNodeCritical && nullNodeCritical.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Critical = null;
+            if (parseNode.GetChildNode("high") is { } nullNodeHigh && nullNodeHigh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) High = null;
+            if (parseNode.GetChildNode("informational") is { } nullNodeInformational && nullNodeInformational.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Informational = null;
+            if (parseNode.GetChildNode("low") is { } nullNodeLow && nullNodeLow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Low = null;
+            if (parseNode.GetChildNode("medium") is { } nullNodeMedium && nullNodeMedium.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Medium = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The critical property</summary>
-        public int? Critical { get; set; }
+        public int? Critical { get => _explicitNullValueCritical; set { _explicitNullValueCritical = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical"); else _explicitNullProperties?.Remove("critical"); } }
+        private int? _explicitNullValueCritical = default!;
         /// <summary>The high property</summary>
-        public int? High { get; set; }
+        public int? High { get => _explicitNullValueHigh; set { _explicitNullValueHigh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("high"); else _explicitNullProperties?.Remove("high"); } }
+        private int? _explicitNullValueHigh = default!;
         /// <summary>The informational property</summary>
-        public int? Informational { get; set; }
+        public int? Informational { get => _explicitNullValueInformational; set { _explicitNullValueInformational = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("informational"); else _explicitNullProperties?.Remove("informational"); } }
+        private int? _explicitNullValueInformational = default!;
         /// <summary>The low property</summary>
-        public int? Low { get; set; }
+        public int? Low { get => _explicitNullValueLow; set { _explicitNullValueLow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("low"); else _explicitNullProperties?.Remove("low"); } }
+        private int? _explicitNullValueLow = default!;
         /// <summary>The medium property</summary>
-        public int? Medium { get; set; }
+        public int? Medium { get => _explicitNullValueMedium; set { _explicitNullValueMedium = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medium"); else _explicitNullProperties?.Remove("medium"); } }
+        private int? _explicitNullValueMedium = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("informational", Informational);
             writer.WriteIntValue("low", Low);
             writer.WriteIntValue("medium", Medium);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,128 +11,180 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UrlscannerGetScan200ResponseResultScanIpsIp : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("asn") is { } nullNodeAsn && nullNodeAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn = null;
+            if (parseNode.GetChildNode("asnDescription") is { } nullNodeAsnDescription && nullNodeAsnDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnDescription = null;
+            if (parseNode.GetChildNode("asnLocationAlpha2") is { } nullNodeAsnLocationAlpha2 && nullNodeAsnLocationAlpha2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnLocationAlpha2 = null;
+            if (parseNode.GetChildNode("asnName") is { } nullNodeAsnName && nullNodeAsnName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnName = null;
+            if (parseNode.GetChildNode("asnOrgName") is { } nullNodeAsnOrgName && nullNodeAsnOrgName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnOrgName = null;
+            if (parseNode.GetChildNode("continent") is { } nullNodeContinent && nullNodeContinent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Continent = null;
+            if (parseNode.GetChildNode("geonameId") is { } nullNodeGeonameId && nullNodeGeonameId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeonameId = null;
+            if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
+            if (parseNode.GetChildNode("ipVersion") is { } nullNodeIpVersion && nullNodeIpVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpVersion = null;
+            if (parseNode.GetChildNode("latitude") is { } nullNodeLatitude && nullNodeLatitude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Latitude = null;
+            if (parseNode.GetChildNode("locationAlpha2") is { } nullNodeLocationAlpha2 && nullNodeLocationAlpha2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationAlpha2 = null;
+            if (parseNode.GetChildNode("locationName") is { } nullNodeLocationName && nullNodeLocationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationName = null;
+            if (parseNode.GetChildNode("longitude") is { } nullNodeLongitude && nullNodeLongitude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Longitude = null;
+            if (parseNode.GetChildNode("subdivision1Name") is { } nullNodeSubdivision1Name && nullNodeSubdivision1Name.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subdivision1Name = null;
+            if (parseNode.GetChildNode("subdivision2Name") is { } nullNodeSubdivision2Name && nullNodeSubdivision2Name.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subdivision2Name = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Asn { get; set; }
+        public string? Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
+        private string? _explicitNullValueAsn = default!;
 #nullable restore
 #else
-        public string Asn { get; set; }
+        public string Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
+        private string _explicitNullValueAsn = default!;
 #endif
         /// <summary>The asnDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AsnDescription { get; set; }
+        public string? AsnDescription { get => _explicitNullValueAsnDescription; set { _explicitNullValueAsnDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnDescription"); else _explicitNullProperties?.Remove("asnDescription"); } }
+        private string? _explicitNullValueAsnDescription = default!;
 #nullable restore
 #else
-        public string AsnDescription { get; set; }
+        public string AsnDescription { get => _explicitNullValueAsnDescription; set { _explicitNullValueAsnDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnDescription"); else _explicitNullProperties?.Remove("asnDescription"); } }
+        private string _explicitNullValueAsnDescription = default!;
 #endif
         /// <summary>The asnLocationAlpha2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AsnLocationAlpha2 { get; set; }
+        public string? AsnLocationAlpha2 { get => _explicitNullValueAsnLocationAlpha2; set { _explicitNullValueAsnLocationAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnLocationAlpha2"); else _explicitNullProperties?.Remove("asnLocationAlpha2"); } }
+        private string? _explicitNullValueAsnLocationAlpha2 = default!;
 #nullable restore
 #else
-        public string AsnLocationAlpha2 { get; set; }
+        public string AsnLocationAlpha2 { get => _explicitNullValueAsnLocationAlpha2; set { _explicitNullValueAsnLocationAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnLocationAlpha2"); else _explicitNullProperties?.Remove("asnLocationAlpha2"); } }
+        private string _explicitNullValueAsnLocationAlpha2 = default!;
 #endif
         /// <summary>The asnName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AsnName { get; set; }
+        public string? AsnName { get => _explicitNullValueAsnName; set { _explicitNullValueAsnName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnName"); else _explicitNullProperties?.Remove("asnName"); } }
+        private string? _explicitNullValueAsnName = default!;
 #nullable restore
 #else
-        public string AsnName { get; set; }
+        public string AsnName { get => _explicitNullValueAsnName; set { _explicitNullValueAsnName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnName"); else _explicitNullProperties?.Remove("asnName"); } }
+        private string _explicitNullValueAsnName = default!;
 #endif
         /// <summary>The asnOrgName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AsnOrgName { get; set; }
+        public string? AsnOrgName { get => _explicitNullValueAsnOrgName; set { _explicitNullValueAsnOrgName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnOrgName"); else _explicitNullProperties?.Remove("asnOrgName"); } }
+        private string? _explicitNullValueAsnOrgName = default!;
 #nullable restore
 #else
-        public string AsnOrgName { get; set; }
+        public string AsnOrgName { get => _explicitNullValueAsnOrgName; set { _explicitNullValueAsnOrgName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnOrgName"); else _explicitNullProperties?.Remove("asnOrgName"); } }
+        private string _explicitNullValueAsnOrgName = default!;
 #endif
         /// <summary>The continent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Continent { get; set; }
+        public string? Continent { get => _explicitNullValueContinent; set { _explicitNullValueContinent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("continent"); else _explicitNullProperties?.Remove("continent"); } }
+        private string? _explicitNullValueContinent = default!;
 #nullable restore
 #else
-        public string Continent { get; set; }
+        public string Continent { get => _explicitNullValueContinent; set { _explicitNullValueContinent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("continent"); else _explicitNullProperties?.Remove("continent"); } }
+        private string _explicitNullValueContinent = default!;
 #endif
         /// <summary>The geonameId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GeonameId { get; set; }
+        public string? GeonameId { get => _explicitNullValueGeonameId; set { _explicitNullValueGeonameId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geonameId"); else _explicitNullProperties?.Remove("geonameId"); } }
+        private string? _explicitNullValueGeonameId = default!;
 #nullable restore
 #else
-        public string GeonameId { get; set; }
+        public string GeonameId { get => _explicitNullValueGeonameId; set { _explicitNullValueGeonameId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geonameId"); else _explicitNullProperties?.Remove("geonameId"); } }
+        private string _explicitNullValueGeonameId = default!;
 #endif
         /// <summary>The ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get; set; }
+        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        private string? _explicitNullValueIp = default!;
 #nullable restore
 #else
-        public string Ip { get; set; }
+        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        private string _explicitNullValueIp = default!;
 #endif
         /// <summary>The ipVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpVersion { get; set; }
+        public string? IpVersion { get => _explicitNullValueIpVersion; set { _explicitNullValueIpVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipVersion"); else _explicitNullProperties?.Remove("ipVersion"); } }
+        private string? _explicitNullValueIpVersion = default!;
 #nullable restore
 #else
-        public string IpVersion { get; set; }
+        public string IpVersion { get => _explicitNullValueIpVersion; set { _explicitNullValueIpVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipVersion"); else _explicitNullProperties?.Remove("ipVersion"); } }
+        private string _explicitNullValueIpVersion = default!;
 #endif
         /// <summary>The latitude property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Latitude { get; set; }
+        public string? Latitude { get => _explicitNullValueLatitude; set { _explicitNullValueLatitude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latitude"); else _explicitNullProperties?.Remove("latitude"); } }
+        private string? _explicitNullValueLatitude = default!;
 #nullable restore
 #else
-        public string Latitude { get; set; }
+        public string Latitude { get => _explicitNullValueLatitude; set { _explicitNullValueLatitude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latitude"); else _explicitNullProperties?.Remove("latitude"); } }
+        private string _explicitNullValueLatitude = default!;
 #endif
         /// <summary>The locationAlpha2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationAlpha2 { get; set; }
+        public string? LocationAlpha2 { get => _explicitNullValueLocationAlpha2; set { _explicitNullValueLocationAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationAlpha2"); else _explicitNullProperties?.Remove("locationAlpha2"); } }
+        private string? _explicitNullValueLocationAlpha2 = default!;
 #nullable restore
 #else
-        public string LocationAlpha2 { get; set; }
+        public string LocationAlpha2 { get => _explicitNullValueLocationAlpha2; set { _explicitNullValueLocationAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationAlpha2"); else _explicitNullProperties?.Remove("locationAlpha2"); } }
+        private string _explicitNullValueLocationAlpha2 = default!;
 #endif
         /// <summary>The locationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationName { get; set; }
+        public string? LocationName { get => _explicitNullValueLocationName; set { _explicitNullValueLocationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationName"); else _explicitNullProperties?.Remove("locationName"); } }
+        private string? _explicitNullValueLocationName = default!;
 #nullable restore
 #else
-        public string LocationName { get; set; }
+        public string LocationName { get => _explicitNullValueLocationName; set { _explicitNullValueLocationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationName"); else _explicitNullProperties?.Remove("locationName"); } }
+        private string _explicitNullValueLocationName = default!;
 #endif
         /// <summary>The longitude property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Longitude { get; set; }
+        public string? Longitude { get => _explicitNullValueLongitude; set { _explicitNullValueLongitude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("longitude"); else _explicitNullProperties?.Remove("longitude"); } }
+        private string? _explicitNullValueLongitude = default!;
 #nullable restore
 #else
-        public string Longitude { get; set; }
+        public string Longitude { get => _explicitNullValueLongitude; set { _explicitNullValueLongitude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("longitude"); else _explicitNullProperties?.Remove("longitude"); } }
+        private string _explicitNullValueLongitude = default!;
 #endif
         /// <summary>The subdivision1Name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subdivision1Name { get; set; }
+        public string? Subdivision1Name { get => _explicitNullValueSubdivision1Name; set { _explicitNullValueSubdivision1Name = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdivision1Name"); else _explicitNullProperties?.Remove("subdivision1Name"); } }
+        private string? _explicitNullValueSubdivision1Name = default!;
 #nullable restore
 #else
-        public string Subdivision1Name { get; set; }
+        public string Subdivision1Name { get => _explicitNullValueSubdivision1Name; set { _explicitNullValueSubdivision1Name = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdivision1Name"); else _explicitNullProperties?.Remove("subdivision1Name"); } }
+        private string _explicitNullValueSubdivision1Name = default!;
 #endif
         /// <summary>The subdivision2Name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subdivision2Name { get; set; }
+        public string? Subdivision2Name { get => _explicitNullValueSubdivision2Name; set { _explicitNullValueSubdivision2Name = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdivision2Name"); else _explicitNullProperties?.Remove("subdivision2Name"); } }
+        private string? _explicitNullValueSubdivision2Name = default!;
 #nullable restore
 #else
-        public string Subdivision2Name { get; set; }
+        public string Subdivision2Name { get => _explicitNullValueSubdivision2Name; set { _explicitNullValueSubdivision2Name = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subdivision2Name"); else _explicitNullProperties?.Remove("subdivision2Name"); } }
+        private string _explicitNullValueSubdivision2Name = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanIpsIp"/> and sets the default values.
@@ -149,7 +201,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanIpsIp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanIpsIp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanIpsIp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -198,6 +250,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("longitude", Longitude);
             writer.WriteStringValue("subdivision1Name", Subdivision1Name);
             writer.WriteStringValue("subdivision2Name", Subdivision2Name);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

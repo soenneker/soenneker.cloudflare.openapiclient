@@ -83,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelDeleteAWarpConnectorTunnel4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelGetAWarpConnectorTunnel4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -131,6 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelUpdateAWarpConnectorTunnel4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelWarpConnectorResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

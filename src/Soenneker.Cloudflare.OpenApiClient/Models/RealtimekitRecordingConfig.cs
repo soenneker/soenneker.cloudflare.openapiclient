@@ -12,58 +12,85 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitRecordingConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio_config") is { } nullNodeAudioConfig && nullNodeAudioConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioConfig = null;
+            if (parseNode.GetChildNode("file_name_prefix") is { } nullNodeFileNamePrefix && nullNodeFileNamePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileNamePrefix = null;
+            if (parseNode.GetChildNode("live_streaming_config") is { } nullNodeLiveStreamingConfig && nullNodeLiveStreamingConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveStreamingConfig = null;
+            if (parseNode.GetChildNode("max_seconds") is { } nullNodeMaxSeconds && nullNodeMaxSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSeconds = null;
+            if (parseNode.GetChildNode("realtimekit_bucket_config") is { } nullNodeRealtimekitBucketConfig && nullNodeRealtimekitBucketConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RealtimekitBucketConfig = null;
+            if (parseNode.GetChildNode("storage_config") is { } nullNodeStorageConfig && nullNodeStorageConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageConfig = null;
+            if (parseNode.GetChildNode("video_config") is { } nullNodeVideoConfig && nullNodeVideoConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoConfig = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Object containing configuration regarding the audio that is being recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig? AudioConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig? AudioConfig { get => _explicitNullValueAudioConfig; set { _explicitNullValueAudioConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_config"); else _explicitNullProperties?.Remove("audio_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig? _explicitNullValueAudioConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig AudioConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig AudioConfig { get => _explicitNullValueAudioConfig; set { _explicitNullValueAudioConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_config"); else _explicitNullProperties?.Remove("audio_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig _explicitNullValueAudioConfig = default!;
 #endif
         /// <summary>Adds a prefix to the beginning of the file name of the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileNamePrefix { get; set; }
+        public string? FileNamePrefix { get => _explicitNullValueFileNamePrefix; set { _explicitNullValueFileNamePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name_prefix"); else _explicitNullProperties?.Remove("file_name_prefix"); } }
+        private string? _explicitNullValueFileNamePrefix = default!;
 #nullable restore
 #else
-        public string FileNamePrefix { get; set; }
+        public string FileNamePrefix { get => _explicitNullValueFileNamePrefix; set { _explicitNullValueFileNamePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name_prefix"); else _explicitNullProperties?.Remove("file_name_prefix"); } }
+        private string _explicitNullValueFileNamePrefix = default!;
 #endif
         /// <summary>The live_streaming_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig? LiveStreamingConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig? LiveStreamingConfig { get => _explicitNullValueLiveStreamingConfig; set { _explicitNullValueLiveStreamingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_streaming_config"); else _explicitNullProperties?.Remove("live_streaming_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig? _explicitNullValueLiveStreamingConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig LiveStreamingConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig LiveStreamingConfig { get => _explicitNullValueLiveStreamingConfig; set { _explicitNullValueLiveStreamingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_streaming_config"); else _explicitNullProperties?.Remove("live_streaming_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig _explicitNullValueLiveStreamingConfig = default!;
 #endif
         /// <summary>Specifies the maximum duration for recording in seconds, ranging from a minimum of 60 seconds to a maximum of 24 hours.</summary>
-        public double? MaxSeconds { get; set; }
+        public double? MaxSeconds { get => _explicitNullValueMaxSeconds; set { _explicitNullValueMaxSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_seconds"); else _explicitNullProperties?.Remove("max_seconds"); } }
+        private double? _explicitNullValueMaxSeconds = default!;
         /// <summary>The realtimekit_bucket_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig? RealtimekitBucketConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig? RealtimekitBucketConfig { get => _explicitNullValueRealtimekitBucketConfig; set { _explicitNullValueRealtimekitBucketConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realtimekit_bucket_config"); else _explicitNullProperties?.Remove("realtimekit_bucket_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig? _explicitNullValueRealtimekitBucketConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig RealtimekitBucketConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig RealtimekitBucketConfig { get => _explicitNullValueRealtimekitBucketConfig; set { _explicitNullValueRealtimekitBucketConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realtimekit_bucket_config"); else _explicitNullProperties?.Remove("realtimekit_bucket_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig _explicitNullValueRealtimekitBucketConfig = default!;
 #endif
         /// <summary>The storage_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig? StorageConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig? StorageConfig { get => _explicitNullValueStorageConfig; set { _explicitNullValueStorageConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_config"); else _explicitNullProperties?.Remove("storage_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig? _explicitNullValueStorageConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig StorageConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig StorageConfig { get => _explicitNullValueStorageConfig; set { _explicitNullValueStorageConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_config"); else _explicitNullProperties?.Remove("storage_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig _explicitNullValueStorageConfig = default!;
 #endif
         /// <summary>The video_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig? VideoConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig? VideoConfig { get => _explicitNullValueVideoConfig; set { _explicitNullValueVideoConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_config"); else _explicitNullProperties?.Remove("video_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig? _explicitNullValueVideoConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig VideoConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig VideoConfig { get => _explicitNullValueVideoConfig; set { _explicitNullValueVideoConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_config"); else _explicitNullProperties?.Remove("video_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig _explicitNullValueVideoConfig = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig"/> and sets the default values.
@@ -80,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig>("realtimekit_bucket_config", RealtimekitBucketConfig);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig>("storage_config", StorageConfig);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig>("video_config", VideoConfig);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

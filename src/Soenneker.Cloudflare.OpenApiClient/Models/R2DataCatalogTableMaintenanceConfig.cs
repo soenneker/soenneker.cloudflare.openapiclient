@@ -12,16 +12,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class R2DataCatalogTableMaintenanceConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("compaction") is { } nullNodeCompaction && nullNodeCompaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compaction = null;
+            if (parseNode.GetChildNode("snapshot_expiration") is { } nullNodeSnapshotExpiration && nullNodeSnapshotExpiration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotExpiration = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configures compaction settings for table optimization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig? Compaction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig? Compaction { get => _explicitNullValueCompaction; set { _explicitNullValueCompaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compaction"); else _explicitNullProperties?.Remove("compaction"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig? _explicitNullValueCompaction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig Compaction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig Compaction { get => _explicitNullValueCompaction; set { _explicitNullValueCompaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compaction"); else _explicitNullProperties?.Remove("compaction"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig _explicitNullValueCompaction = default!;
 #endif
         /// <summary>Scheduling interval between normal table maintenance runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,10 +45,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The snapshot_expiration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig? SnapshotExpiration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig? SnapshotExpiration { get => _explicitNullValueSnapshotExpiration; set { _explicitNullValueSnapshotExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_expiration"); else _explicitNullProperties?.Remove("snapshot_expiration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig? _explicitNullValueSnapshotExpiration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig SnapshotExpiration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig SnapshotExpiration { get => _explicitNullValueSnapshotExpiration; set { _explicitNullValueSnapshotExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_expiration"); else _explicitNullProperties?.Remove("snapshot_expiration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig _explicitNullValueSnapshotExpiration = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig"/> and sets the default values.
@@ -54,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig>("compaction", Compaction);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig>("snapshot_expiration", SnapshotExpiration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

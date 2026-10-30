@@ -11,17 +11,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VectorizeIndexInfo200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("processedUpToMutation") is { } nullNodeProcessedUpToMutation && nullNodeProcessedUpToMutation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessedUpToMutation = null;
+            if (parseNode.GetChildNode("vectorCount") is { } nullNodeVectorCount && nullNodeVectorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VectorCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the number of dimensions for the index</summary>
-        public int? Dimensions { get; set; }
+        public int? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private int? _explicitNullValueDimensions = default!;
         /// <summary>Specifies the timestamp the last mutation batch was processed as an ISO8601 string.</summary>
         public DateTimeOffset? ProcessedUpToDatetime { get; private set; }
         /// <summary>The unique identifier for the async mutation operation containing the changeset.</summary>
-        public Guid? ProcessedUpToMutation { get; set; }
+        public Guid? ProcessedUpToMutation { get => _explicitNullValueProcessedUpToMutation; set { _explicitNullValueProcessedUpToMutation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedUpToMutation"); else _explicitNullProperties?.Remove("processedUpToMutation"); } }
+        private Guid? _explicitNullValueProcessedUpToMutation = default!;
         /// <summary>Specifies the number of vectors present in the index</summary>
-        public int? VectorCount { get; set; }
+        public int? VectorCount { get => _explicitNullValueVectorCount; set { _explicitNullValueVectorCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vectorCount"); else _explicitNullProperties?.Remove("vectorCount"); } }
+        private int? _explicitNullValueVectorCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexInfo200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -37,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexInfo200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexInfo200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexInfo200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("dimensions", Dimensions);
             writer.WriteGuidValue("processedUpToMutation", ProcessedUpToMutation);
             writer.WriteIntValue("vectorCount", VectorCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,24 +12,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesetsRuleExposedCredentialCheck : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("password_expression") is { } nullNodePasswordExpression && nullNodePasswordExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordExpression = null;
+            if (parseNode.GetChildNode("username_expression") is { } nullNodeUsernameExpression && nullNodeUsernameExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsernameExpression = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An expression that selects the password used in the credentials check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PasswordExpression { get; set; }
+        public string? PasswordExpression { get => _explicitNullValuePasswordExpression; set { _explicitNullValuePasswordExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password_expression"); else _explicitNullProperties?.Remove("password_expression"); } }
+        private string? _explicitNullValuePasswordExpression = default!;
 #nullable restore
 #else
-        public string PasswordExpression { get; set; }
+        public string PasswordExpression { get => _explicitNullValuePasswordExpression; set { _explicitNullValuePasswordExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password_expression"); else _explicitNullProperties?.Remove("password_expression"); } }
+        private string _explicitNullValuePasswordExpression = default!;
 #endif
         /// <summary>An expression that selects the user ID used in the credentials check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UsernameExpression { get; set; }
+        public string? UsernameExpression { get => _explicitNullValueUsernameExpression; set { _explicitNullValueUsernameExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username_expression"); else _explicitNullProperties?.Remove("username_expression"); } }
+        private string? _explicitNullValueUsernameExpression = default!;
 #nullable restore
 #else
-        public string UsernameExpression { get; set; }
+        public string UsernameExpression { get => _explicitNullValueUsernameExpression; set { _explicitNullValueUsernameExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username_expression"); else _explicitNullProperties?.Remove("username_expression"); } }
+        private string _explicitNullValueUsernameExpression = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("password_expression", PasswordExpression);
             writer.WriteStringValue("username_expression", UsernameExpression);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

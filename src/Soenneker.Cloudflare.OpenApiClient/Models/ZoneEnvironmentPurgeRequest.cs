@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZoneEnvironmentPurgeRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeEverything"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,13 +75,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneEnvironmentPurgeRequest();
-            result.CachePurgeEverything = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeEverything();
-            result.CachePurgeFlexPurgeByHostnames = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeFlexPurgeByHostnames();
-            result.CachePurgeFlexPurgeByPrefixes = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeFlexPurgeByPrefixes();
-            result.CachePurgeFlexPurgeByTags = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeFlexPurgeByTags();
-            result.CachePurgeSingleFile = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFile();
-            result.CachePurgeSingleFileWithUrlAndHeaders = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeaders();
-            return result;
+            
+            
+            
+            
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.CachePurgeEverything == null && result.CachePurgeFlexPurgeByHostnames == null && result.CachePurgeFlexPurgeByPrefixes == null && result.CachePurgeFlexPurgeByTags == null && result.CachePurgeSingleFile == null && result.CachePurgeSingleFileWithUrlAndHeaders == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +104,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CachePurgeEverything == null && CachePurgeFlexPurgeByHostnames == null && CachePurgeFlexPurgeByPrefixes == null && CachePurgeFlexPurgeByTags == null && CachePurgeSingleFile == null && CachePurgeSingleFileWithUrlAndHeaders == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CachePurgeEverything != null && CachePurgeFlexPurgeByHostnames == null && CachePurgeFlexPurgeByPrefixes == null && CachePurgeFlexPurgeByTags == null && CachePurgeSingleFile == null && CachePurgeSingleFileWithUrlAndHeaders == null) { if (CachePurgeEverything is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CachePurgeEverything); return; }
+            if (CachePurgeFlexPurgeByHostnames != null && CachePurgeEverything == null && CachePurgeFlexPurgeByPrefixes == null && CachePurgeFlexPurgeByTags == null && CachePurgeSingleFile == null && CachePurgeSingleFileWithUrlAndHeaders == null) { if (CachePurgeFlexPurgeByHostnames is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CachePurgeFlexPurgeByHostnames); return; }
+            if (CachePurgeFlexPurgeByPrefixes != null && CachePurgeEverything == null && CachePurgeFlexPurgeByHostnames == null && CachePurgeFlexPurgeByTags == null && CachePurgeSingleFile == null && CachePurgeSingleFileWithUrlAndHeaders == null) { if (CachePurgeFlexPurgeByPrefixes is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CachePurgeFlexPurgeByPrefixes); return; }
+            if (CachePurgeFlexPurgeByTags != null && CachePurgeEverything == null && CachePurgeFlexPurgeByHostnames == null && CachePurgeFlexPurgeByPrefixes == null && CachePurgeSingleFile == null && CachePurgeSingleFileWithUrlAndHeaders == null) { if (CachePurgeFlexPurgeByTags is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CachePurgeFlexPurgeByTags); return; }
+            if (CachePurgeSingleFile != null && CachePurgeEverything == null && CachePurgeFlexPurgeByHostnames == null && CachePurgeFlexPurgeByPrefixes == null && CachePurgeFlexPurgeByTags == null && CachePurgeSingleFileWithUrlAndHeaders == null) { if (CachePurgeSingleFile is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CachePurgeSingleFile); return; }
+            if (CachePurgeSingleFileWithUrlAndHeaders != null && CachePurgeEverything == null && CachePurgeFlexPurgeByHostnames == null && CachePurgeFlexPurgeByPrefixes == null && CachePurgeFlexPurgeByTags == null && CachePurgeSingleFile == null) { if (CachePurgeSingleFileWithUrlAndHeaders is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CachePurgeSingleFileWithUrlAndHeaders); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeEverything>(null, CachePurgeEverything, CachePurgeFlexPurgeByHostnames, CachePurgeFlexPurgeByPrefixes, CachePurgeFlexPurgeByTags, CachePurgeSingleFile, CachePurgeSingleFileWithUrlAndHeaders);
         }

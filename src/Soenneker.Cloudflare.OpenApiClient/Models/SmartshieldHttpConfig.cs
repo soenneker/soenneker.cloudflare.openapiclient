@@ -12,49 +12,76 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmartshieldHttpConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_insecure") is { } nullNodeAllowInsecure && nullNodeAllowInsecure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowInsecure = null;
+            if (parseNode.GetChildNode("expected_body") is { } nullNodeExpectedBody && nullNodeExpectedBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedBody = null;
+            if (parseNode.GetChildNode("expected_codes") is { } nullNodeExpectedCodes && nullNodeExpectedCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedCodes = null;
+            if (parseNode.GetChildNode("follow_redirects") is { } nullNodeFollowRedirects && nullNodeFollowRedirects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowRedirects = null;
+            if (parseNode.GetChildNode("header") is { } nullNodeHeader && nullNodeHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Header = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("port") is { } nullNodePort && nullNodePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Port = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Do not validate the certificate when the health check uses HTTPS.</summary>
-        public bool? AllowInsecure { get; set; }
+        public bool? AllowInsecure { get => _explicitNullValueAllowInsecure; set { _explicitNullValueAllowInsecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_insecure"); else _explicitNullProperties?.Remove("allow_insecure"); } }
+        private bool? _explicitNullValueAllowInsecure = default!;
         /// <summary>A case-insensitive sub-string to look for in the response body. If this string is not found, the origin will be marked as unhealthy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedBody { get; set; }
+        public string? ExpectedBody { get => _explicitNullValueExpectedBody; set { _explicitNullValueExpectedBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_body"); else _explicitNullProperties?.Remove("expected_body"); } }
+        private string? _explicitNullValueExpectedBody = default!;
 #nullable restore
 #else
-        public string ExpectedBody { get; set; }
+        public string ExpectedBody { get => _explicitNullValueExpectedBody; set { _explicitNullValueExpectedBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_body"); else _explicitNullProperties?.Remove("expected_body"); } }
+        private string _explicitNullValueExpectedBody = default!;
 #endif
         /// <summary>The expected HTTP response codes (e.g. &quot;200&quot;) or code ranges (e.g. &quot;2xx&quot; for all codes starting with 2) of the health check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExpectedCodes { get; set; }
+        public List<string>? ExpectedCodes { get => _explicitNullValueExpectedCodes; set { _explicitNullValueExpectedCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_codes"); else _explicitNullProperties?.Remove("expected_codes"); } }
+        private List<string>? _explicitNullValueExpectedCodes = default!;
 #nullable restore
 #else
-        public List<string> ExpectedCodes { get; set; }
+        public List<string> ExpectedCodes { get => _explicitNullValueExpectedCodes; set { _explicitNullValueExpectedCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_codes"); else _explicitNullProperties?.Remove("expected_codes"); } }
+        private List<string> _explicitNullValueExpectedCodes = default!;
 #endif
         /// <summary>Follow redirects if the origin returns a 3xx status code.</summary>
-        public bool? FollowRedirects { get; set; }
+        public bool? FollowRedirects { get => _explicitNullValueFollowRedirects; set { _explicitNullValueFollowRedirects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follow_redirects"); else _explicitNullProperties?.Remove("follow_redirects"); } }
+        private bool? _explicitNullValueFollowRedirects = default!;
         /// <summary>The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty? Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty? Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty? _explicitNullValueHeader = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty _explicitNullValueHeader = default!;
 #endif
         /// <summary>The HTTP method to use for the health check.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigMethod? Method { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigMethod? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigMethod? _explicitNullValueMethod = default!;
         /// <summary>The endpoint path to health check against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get; set; }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get; set; }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string _explicitNullValuePath = default!;
 #endif
         /// <summary>Port number to connect to for the health check. Defaults to 80 if type is HTTP or 443 if type is HTTPS.</summary>
-        public int? Port { get; set; }
+        public int? Port { get => _explicitNullValuePort; set { _explicitNullValuePort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port"); else _explicitNullProperties?.Remove("port"); } }
+        private int? _explicitNullValuePort = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig"/> and sets the default values.
         /// </summary>
@@ -74,7 +101,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigMethod>("method", Method);
             writer.WriteStringValue("path", Path);
             writer.WriteIntValue("port", Port);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

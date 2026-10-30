@@ -10,12 +10,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\api_gateway\expression-template
+    /// Builds and executes requests for operations under \zones\{zoneId}\api_gateway\expression-template
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExpressionTemplateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The fallthrough property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough.FallthroughRequestBuilder Fallthrough
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough.FallthroughRequestBuilder(PathParameters, RequestAdapter);
@@ -25,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTe
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpressionTemplateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/api_gateway/expression-template", pathParameters)
+        public ExpressionTemplateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/api_gateway/expression-template", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTe
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpressionTemplateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/api_gateway/expression-template", rawUrl)
+        public ExpressionTemplateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/api_gateway/expression-template", rawUrl)
         {
         }
     }

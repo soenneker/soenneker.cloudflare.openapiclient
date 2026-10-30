@@ -11,42 +11,78 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class StartLivestreaming201ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("ingest_server") is { } nullNodeIngestServer && nullNodeIngestServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IngestServer = null;
+            if (parseNode.GetChildNode("meeting_id") is { } nullNodeMeetingId && nullNodeMeetingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeetingId = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("playback_url") is { } nullNodePlaybackUrl && nullNodePlaybackUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaybackUrl = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("stream_key") is { } nullNodeStreamKey && nullNodeStreamKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamKey = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The livestream ID.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>ID of the livestream.</summary>
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The server URL to which the RTMP encoder sends the video and audio data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IngestServer { get; set; }
+        public string? IngestServer { get => _explicitNullValueIngestServer; set { _explicitNullValueIngestServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingest_server"); else _explicitNullProperties?.Remove("ingest_server"); } }
+        private string? _explicitNullValueIngestServer = default!;
 #nullable restore
 #else
-        public string IngestServer { get; set; }
+        public string IngestServer { get => _explicitNullValueIngestServer; set { _explicitNullValueIngestServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingest_server"); else _explicitNullProperties?.Remove("ingest_server"); } }
+        private string _explicitNullValueIngestServer = default!;
+#endif
+        /// <summary>ID of the meeting being livestreamed, if any.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingId { get => _explicitNullValueMeetingId; set { _explicitNullValueMeetingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_id"); else _explicitNullProperties?.Remove("meeting_id"); } }
+        private string? _explicitNullValueMeetingId = default!;
+#nullable restore
+#else
+        public string MeetingId { get => _explicitNullValueMeetingId; set { _explicitNullValueMeetingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_id"); else _explicitNullProperties?.Remove("meeting_id"); } }
+        private string _explicitNullValueMeetingId = default!;
+#endif
+        /// <summary>Name of the livestream.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
+#nullable restore
+#else
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The web address that viewers can use to watch the livestream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlaybackUrl { get; set; }
+        public string? PlaybackUrl { get => _explicitNullValuePlaybackUrl; set { _explicitNullValuePlaybackUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_url"); else _explicitNullProperties?.Remove("playback_url"); } }
+        private string? _explicitNullValuePlaybackUrl = default!;
 #nullable restore
 #else
-        public string PlaybackUrl { get; set; }
+        public string PlaybackUrl { get => _explicitNullValuePlaybackUrl; set { _explicitNullValuePlaybackUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_url"); else _explicitNullProperties?.Remove("playback_url"); } }
+        private string _explicitNullValuePlaybackUrl = default!;
 #endif
-        /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StartLivestreaming201ResponseDataStatus? Status { get; set; }
-        /// <summary>Unique key for accessing each livestream.</summary>
+        /// <summary>Status of the livestream.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StartLivestreaming201ResponseDataStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StartLivestreaming201ResponseDataStatus? _explicitNullValueStatus = default!;
+        /// <summary>Unique key for accessing each livestream. Empty if the livestream is disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StreamKey { get; set; }
+        public string? StreamKey { get => _explicitNullValueStreamKey; set { _explicitNullValueStreamKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_key"); else _explicitNullProperties?.Remove("stream_key"); } }
+        private string? _explicitNullValueStreamKey = default!;
 #nullable restore
 #else
-        public string StreamKey { get; set; }
+        public string StreamKey { get => _explicitNullValueStreamKey; set { _explicitNullValueStreamKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_key"); else _explicitNullProperties?.Remove("stream_key"); } }
+        private string _explicitNullValueStreamKey = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StartLivestreaming201ResponseData"/> and sets the default values.
@@ -63,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.StartLivestreaming201ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.StartLivestreaming201ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.StartLivestreaming201ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,8 +109,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
                 { "ingest_server", n => { IngestServer = n.GetStringValue(); } },
+                { "meeting_id", n => { MeetingId = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "playback_url", n => { PlaybackUrl = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StartLivestreaming201ResponseDataStatus>(); } },
                 { "stream_key", n => { StreamKey = n.GetStringValue(); } },
@@ -87,11 +125,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
+            writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("ingest_server", IngestServer);
+            writer.WriteStringValue("meeting_id", MeetingId);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("playback_url", PlaybackUrl);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StartLivestreaming201ResponseDataStatus>("status", Status);
             writer.WriteStringValue("stream_key", StreamKey);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

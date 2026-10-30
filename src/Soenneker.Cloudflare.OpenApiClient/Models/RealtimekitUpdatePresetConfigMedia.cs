@@ -12,32 +12,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitUpdatePresetConfigMedia : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio") is { } nullNodeAudio && nullNodeAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audio = null;
+            if (parseNode.GetChildNode("screenshare") is { } nullNodeScreenshare && nullNodeScreenshare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screenshare = null;
+            if (parseNode.GetChildNode("video") is { } nullNodeVideo && nullNodeVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Video = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Control options for Audio quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio? Audio { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio? Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio? _explicitNullValueAudio = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio Audio { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio _explicitNullValueAudio = default!;
 #endif
         /// <summary>Configuration options for participant screen shares</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare? Screenshare { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare? Screenshare { get => _explicitNullValueScreenshare; set { _explicitNullValueScreenshare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare"); else _explicitNullProperties?.Remove("screenshare"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare? _explicitNullValueScreenshare = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare Screenshare { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare Screenshare { get => _explicitNullValueScreenshare; set { _explicitNullValueScreenshare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare"); else _explicitNullProperties?.Remove("screenshare"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare _explicitNullValueScreenshare = default!;
 #endif
         /// <summary>Configuration options for participant videos</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo? Video { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo? Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo? _explicitNullValueVideo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo Video { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo _explicitNullValueVideo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio>("audio", Audio);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare>("screenshare", Screenshare);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo>("video", Video);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

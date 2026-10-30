@@ -11,152 +11,219 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LoadBalancingLoadBalancer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("adaptive_routing") is { } nullNodeAdaptiveRouting && nullNodeAdaptiveRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdaptiveRouting = null;
+            if (parseNode.GetChildNode("country_pools") is { } nullNodeCountryPools && nullNodeCountryPools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryPools = null;
+            if (parseNode.GetChildNode("default_pools") is { } nullNodeDefaultPools && nullNodeDefaultPools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultPools = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("fallback_pool") is { } nullNodeFallbackPool && nullNodeFallbackPool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackPool = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("location_strategy") is { } nullNodeLocationStrategy && nullNodeLocationStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationStrategy = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("networks") is { } nullNodeNetworks && nullNodeNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Networks = null;
+            if (parseNode.GetChildNode("pool_sets") is { } nullNodePoolSets && nullNodePoolSets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoolSets = null;
+            if (parseNode.GetChildNode("pop_pools") is { } nullNodePopPools && nullNodePopPools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PopPools = null;
+            if (parseNode.GetChildNode("proxied") is { } nullNodeProxied && nullNodeProxied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proxied = null;
+            if (parseNode.GetChildNode("random_steering") is { } nullNodeRandomSteering && nullNodeRandomSteering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RandomSteering = null;
+            if (parseNode.GetChildNode("region_pools") is { } nullNodeRegionPools && nullNodeRegionPools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionPools = null;
+            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("session_affinity") is { } nullNodeSessionAffinity && nullNodeSessionAffinity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionAffinity = null;
+            if (parseNode.GetChildNode("session_affinity_attributes") is { } nullNodeSessionAffinityAttributes && nullNodeSessionAffinityAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionAffinityAttributes = null;
+            if (parseNode.GetChildNode("session_affinity_ttl") is { } nullNodeSessionAffinityTtl && nullNodeSessionAffinityTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionAffinityTtl = null;
+            if (parseNode.GetChildNode("steering_policy") is { } nullNodeSteeringPolicy && nullNodeSteeringPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SteeringPolicy = null;
+            if (parseNode.GetChildNode("ttl") is { } nullNodeTtl && nullNodeTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttl = null;
+            if (parseNode.GetChildNode("zone_name") is { } nullNodeZoneName && nullNodeZoneName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneName = null;
+        }
+
         /// <summary>Controls features that modify the routing of requests to pools and origins in response to dynamic conditions, such as during the interval between active health monitoring requests. For example, zero-downtime failover occurs immediately when an origin becomes unavailable due to HTTP 521, 522, or 523 response codes. If there is another healthy origin in the same pool, the request is retried once against this alternate origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting? AdaptiveRouting { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting? AdaptiveRouting { get => _explicitNullValueAdaptiveRouting; set { _explicitNullValueAdaptiveRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adaptive_routing"); else _explicitNullProperties?.Remove("adaptive_routing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting? _explicitNullValueAdaptiveRouting = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting AdaptiveRouting { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting AdaptiveRouting { get => _explicitNullValueAdaptiveRouting; set { _explicitNullValueAdaptiveRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adaptive_routing"); else _explicitNullProperties?.Remove("adaptive_routing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting _explicitNullValueAdaptiveRouting = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A mapping of country codes to a list of pool IDs (ordered by their failover priority) for the given country. Any country not explicitly defined will fall back to using the corresponding region_pool mapping if it exists else to default_pools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerCountryPools? CountryPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerCountryPools? CountryPools { get => _explicitNullValueCountryPools; set { _explicitNullValueCountryPools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_pools"); else _explicitNullProperties?.Remove("country_pools"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerCountryPools? _explicitNullValueCountryPools = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerCountryPools CountryPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerCountryPools CountryPools { get => _explicitNullValueCountryPools; set { _explicitNullValueCountryPools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_pools"); else _explicitNullProperties?.Remove("country_pools"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerCountryPools _explicitNullValueCountryPools = default!;
 #endif
         /// <summary>The created_on property</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DefaultPools { get; set; }
+        public List<string>? DefaultPools { get => _explicitNullValueDefaultPools; set { _explicitNullValueDefaultPools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_pools"); else _explicitNullProperties?.Remove("default_pools"); } }
+        private List<string>? _explicitNullValueDefaultPools = default!;
 #nullable restore
 #else
-        public List<string> DefaultPools { get; set; }
+        public List<string> DefaultPools { get => _explicitNullValueDefaultPools; set { _explicitNullValueDefaultPools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_pools"); else _explicitNullProperties?.Remove("default_pools"); } }
+        private List<string> _explicitNullValueDefaultPools = default!;
 #endif
         /// <summary>Object description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Whether to enable (the default) this load balancer.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The pool ID to use when all other pools are detected as unhealthy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FallbackPool { get; set; }
+        public string? FallbackPool { get => _explicitNullValueFallbackPool; set { _explicitNullValueFallbackPool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_pool"); else _explicitNullProperties?.Remove("fallback_pool"); } }
+        private string? _explicitNullValueFallbackPool = default!;
 #nullable restore
 #else
-        public string FallbackPool { get; set; }
+        public string FallbackPool { get => _explicitNullValueFallbackPool; set { _explicitNullValueFallbackPool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_pool"); else _explicitNullProperties?.Remove("fallback_pool"); } }
+        private string _explicitNullValueFallbackPool = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Controls location-based steering for non-proxied requests. See `steering_policy` to learn how steering is affected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy? LocationStrategy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy? LocationStrategy { get => _explicitNullValueLocationStrategy; set { _explicitNullValueLocationStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_strategy"); else _explicitNullProperties?.Remove("location_strategy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy? _explicitNullValueLocationStrategy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy LocationStrategy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy LocationStrategy { get => _explicitNullValueLocationStrategy; set { _explicitNullValueLocationStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_strategy"); else _explicitNullProperties?.Remove("location_strategy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy _explicitNullValueLocationStrategy = default!;
 #endif
         /// <summary>The modified_on property</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare&apos;s DNS, the Load Balancer will take precedence and the DNS record will not be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>List of networks where Load Balancer or Pool is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Networks { get; set; }
+        public List<string>? Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
+        private List<string>? _explicitNullValueNetworks = default!;
 #nullable restore
 #else
-        public List<string> Networks { get; set; }
+        public List<string> Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
+        private List<string> _explicitNullValueNetworks = default!;
 #endif
         /// <summary>An optional list of pool sets, evaluated in array order with first match wins. Pool sets are independent from the standard steering fields (`region_pools` / `country_pools` / `pop_pools` / `default_pools` / `steering_policy` / `random_steering` / `fallback_pool` / `rules`). On a PATCH, an empty array (`pool_sets: []`) clears all pool sets, while omitting the field leaves existing pool sets unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet>? PoolSets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet>? PoolSets { get => _explicitNullValuePoolSets; set { _explicitNullValuePoolSets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_sets"); else _explicitNullProperties?.Remove("pool_sets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet>? _explicitNullValuePoolSets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet> PoolSets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet> PoolSets { get => _explicitNullValuePoolSets; set { _explicitNullValuePoolSets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_sets"); else _explicitNullProperties?.Remove("pool_sets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet> _explicitNullValuePoolSets = default!;
 #endif
         /// <summary>Enterprise only: A mapping of Cloudflare PoP identifiers to a list of pool IDs (ordered by their failover priority) for the PoP (datacenter). Any PoPs not explicitly defined will fall back to using the corresponding country_pool, then region_pool mapping if it exists else to default_pools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerPopPools? PopPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerPopPools? PopPools { get => _explicitNullValuePopPools; set { _explicitNullValuePopPools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pop_pools"); else _explicitNullProperties?.Remove("pop_pools"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerPopPools? _explicitNullValuePopPools = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerPopPools PopPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerPopPools PopPools { get => _explicitNullValuePopPools; set { _explicitNullValuePopPools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pop_pools"); else _explicitNullProperties?.Remove("pop_pools"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerPopPools _explicitNullValuePopPools = default!;
 #endif
         /// <summary>Whether the hostname should be gray clouded (false) or orange clouded (true).</summary>
-        public bool? Proxied { get; set; }
+        public bool? Proxied { get => _explicitNullValueProxied; set { _explicitNullValueProxied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxied"); else _explicitNullProperties?.Remove("proxied"); } }
+        private bool? _explicitNullValueProxied = default!;
         /// <summary>Configures pool weights.- `steering_policy=&quot;random&quot;`: A random pool is selected with probability proportional to pool weights.- `steering_policy=&quot;least_outstanding_requests&quot;`: Use pool weights to scale each pool&apos;s outstanding requests.- `steering_policy=&quot;least_connections&quot;`: Use pool weights to scale each pool&apos;s open connections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering? RandomSteering { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering? RandomSteering { get => _explicitNullValueRandomSteering; set { _explicitNullValueRandomSteering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("random_steering"); else _explicitNullProperties?.Remove("random_steering"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering? _explicitNullValueRandomSteering = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering RandomSteering { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering RandomSteering { get => _explicitNullValueRandomSteering; set { _explicitNullValueRandomSteering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("random_steering"); else _explicitNullProperties?.Remove("random_steering"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering _explicitNullValueRandomSteering = default!;
 #endif
         /// <summary>A mapping of region codes to a list of pool IDs (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using default_pools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerRegionPools? RegionPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerRegionPools? RegionPools { get => _explicitNullValueRegionPools; set { _explicitNullValueRegionPools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_pools"); else _explicitNullProperties?.Remove("region_pools"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerRegionPools? _explicitNullValueRegionPools = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerRegionPools RegionPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerRegionPools RegionPools { get => _explicitNullValueRegionPools; set { _explicitNullValueRegionPools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_pools"); else _explicitNullProperties?.Remove("region_pools"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerRegionPools _explicitNullValueRegionPools = default!;
 #endif
         /// <summary>BETA Field Not General Access: A list of rules for this load balancer to execute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItem>? Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItem>? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItem> Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItem> _explicitNullValueRules = default!;
 #endif
         /// <summary>Specifies the type of session affinity the load balancer should use unless specified as `&quot;none&quot;`. The supported types are: - `&quot;cookie&quot;`: On the first request to a proxied load balancer, a cookie is generated, encoding information of which origin the request will be forwarded to. Subsequent requests, by the same client to the same load balancer, will be sent to the origin server the cookie encodes, for the duration of the cookie and as long as the origin server remains healthy. If the cookie has expired or the origin server is unhealthy, then a new origin server is calculated and used. - `&quot;ip_cookie&quot;`: Behaves the same as `&quot;cookie&quot;` except the initial origin selection is stable and based on the client&apos;s ip address. - `&quot;header&quot;`: On the first request to a proxied load balancer, a session key based on the configured HTTP headers (see `session_affinity_attributes.headers`) is generated, encoding the request headers used for storing in the load balancer session state which origin the request will be forwarded to. Subsequent requests to the load balancer with the same headers will be sent to the same origin server, for the duration of the session and as long as the origin server remains healthy. If the session has been idle for the duration of `session_affinity_ttl` seconds or the origin server is unhealthy, then a new origin server is calculated and used. See `headers` in `session_affinity_attributes` for additional required configuration.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinity? SessionAffinity { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinity? SessionAffinity { get => _explicitNullValueSessionAffinity; set { _explicitNullValueSessionAffinity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_affinity"); else _explicitNullProperties?.Remove("session_affinity"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinity? _explicitNullValueSessionAffinity = default!;
         /// <summary>Configures attributes for session affinity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes? SessionAffinityAttributes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes? SessionAffinityAttributes { get => _explicitNullValueSessionAffinityAttributes; set { _explicitNullValueSessionAffinityAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_affinity_attributes"); else _explicitNullProperties?.Remove("session_affinity_attributes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes? _explicitNullValueSessionAffinityAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes SessionAffinityAttributes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes SessionAffinityAttributes { get => _explicitNullValueSessionAffinityAttributes; set { _explicitNullValueSessionAffinityAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_affinity_attributes"); else _explicitNullProperties?.Remove("session_affinity_attributes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSessionAffinityAttributes _explicitNullValueSessionAffinityAttributes = default!;
 #endif
         /// <summary>Time, in seconds, until a client&apos;s session expires after being created. Once the expiry time has been reached, subsequent requests may get sent to a different origin server. The accepted ranges per `session_affinity` policy are: - `&quot;cookie&quot;` / `&quot;ip_cookie&quot;`: The current default of 23 hours will be used unless explicitly set. The accepted range of values is between [1800, 604800]. - `&quot;header&quot;`: The current default of 1800 seconds will be used unless explicitly set. The accepted range of values is between [30, 3600]. Note: With session affinity by header, sessions only expire after they haven&apos;t been used for the number of seconds specified.</summary>
-        public double? SessionAffinityTtl { get; set; }
+        public double? SessionAffinityTtl { get => _explicitNullValueSessionAffinityTtl; set { _explicitNullValueSessionAffinityTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_affinity_ttl"); else _explicitNullProperties?.Remove("session_affinity_ttl"); } }
+        private double? _explicitNullValueSessionAffinityTtl = default!;
         /// <summary>Steering Policy for this load balancer.- `&quot;off&quot;`: Use `default_pools`.- `&quot;geo&quot;`: Use `region_pools`/`country_pools`/`pop_pools`. For non-proxied requests, the country for `country_pools` is determined by `location_strategy`.- `&quot;random&quot;`: Select a pool randomly.- `&quot;dynamic_latency&quot;`: Use round trip time to select the closest pool in default_pools (requires pool health checks).- `&quot;proximity&quot;`: Use the pools&apos; latitude and longitude to select the closest pool using the Cloudflare PoP location for proxied requests or the location determined by `location_strategy` for non-proxied requests.- `&quot;least_outstanding_requests&quot;`: Select a pool by taking into consideration `random_steering` weights, as well as each pool&apos;s number of outstanding requests. Pools with more pending requests are weighted proportionately less relative to others.- `&quot;least_connections&quot;`: Select a pool by taking into consideration `random_steering` weights, as well as each pool&apos;s number of open connections. Pools with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.- `&quot;&quot;`: Will map to `&quot;geo&quot;` if you use `region_pools`/`country_pools`/`pop_pools` otherwise `&quot;off&quot;`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSteeringPolicy? SteeringPolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSteeringPolicy? SteeringPolicy { get => _explicitNullValueSteeringPolicy; set { _explicitNullValueSteeringPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steering_policy"); else _explicitNullProperties?.Remove("steering_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSteeringPolicy? _explicitNullValueSteeringPolicy = default!;
         /// <summary>Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This only applies to gray-clouded (unproxied) load balancers.</summary>
-        public double? Ttl { get; set; }
+        public double? Ttl { get => _explicitNullValueTtl; set { _explicitNullValueTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl"); else _explicitNullProperties?.Remove("ttl"); } }
+        private double? _explicitNullValueTtl = default!;
         /// <summary>The zone_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZoneName { get; set; }
+        public string? ZoneName { get => _explicitNullValueZoneName; set { _explicitNullValueZoneName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_name"); else _explicitNullProperties?.Remove("zone_name"); } }
+        private string? _explicitNullValueZoneName = default!;
 #nullable restore
 #else
-        public string ZoneName { get; set; }
+        public string ZoneName { get => _explicitNullValueZoneName; set { _explicitNullValueZoneName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_name"); else _explicitNullProperties?.Remove("zone_name"); } }
+        private string _explicitNullValueZoneName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancer"/> and sets the default values.
@@ -175,7 +242,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -240,6 +307,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSteeringPolicy>("steering_policy", SteeringPolicy);
             writer.WriteDoubleValue("ttl", Ttl);
             writer.WriteStringValue("zone_name", ZoneName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

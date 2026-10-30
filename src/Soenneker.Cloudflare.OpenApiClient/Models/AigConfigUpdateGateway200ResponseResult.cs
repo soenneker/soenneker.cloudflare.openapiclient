@@ -11,117 +11,192 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigConfigUpdateGateway200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
+            if (parseNode.GetChildNode("byok_only") is { } nullNodeByokOnly && nullNodeByokOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByokOnly = null;
+            if (parseNode.GetChildNode("cache_invalidate_on_update") is { } nullNodeCacheInvalidateOnUpdate && nullNodeCacheInvalidateOnUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheInvalidateOnUpdate = null;
+            if (parseNode.GetChildNode("cache_ttl") is { } nullNodeCacheTtl && nullNodeCacheTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheTtl = null;
+            if (parseNode.GetChildNode("collect_logs") is { } nullNodeCollectLogs && nullNodeCollectLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectLogs = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("dlp") is { } nullNodeDlp && nullNodeDlp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dlp = null;
+            if (parseNode.GetChildNode("fedramp_level") is { } nullNodeFedrampLevel && nullNodeFedrampLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FedrampLevel = null;
+            if (parseNode.GetChildNode("fedramp_mode") is { } nullNodeFedrampMode && nullNodeFedrampMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FedrampMode = null;
+            if (parseNode.GetChildNode("guardrails") is { } nullNodeGuardrails && nullNodeGuardrails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guardrails = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_default") is { } nullNodeIsDefault && nullNodeIsDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefault = null;
+            if (parseNode.GetChildNode("log_classification") is { } nullNodeLogClassification && nullNodeLogClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogClassification = null;
+            if (parseNode.GetChildNode("log_management") is { } nullNodeLogManagement && nullNodeLogManagement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogManagement = null;
+            if (parseNode.GetChildNode("log_management_strategy") is { } nullNodeLogManagementStrategy && nullNodeLogManagementStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogManagementStrategy = null;
+            if (parseNode.GetChildNode("logpush") is { } nullNodeLogpush && nullNodeLogpush.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logpush = null;
+            if (parseNode.GetChildNode("logpush_public_key") is { } nullNodeLogpushPublicKey && nullNodeLogpushPublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogpushPublicKey = null;
+            if (parseNode.GetChildNode("modified_at") is { } nullNodeModifiedAt && nullNodeModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedAt = null;
+            if (parseNode.GetChildNode("otel") is { } nullNodeOtel && nullNodeOtel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Otel = null;
+            if (parseNode.GetChildNode("rate_limiting_interval") is { } nullNodeRateLimitingInterval && nullNodeRateLimitingInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimitingInterval = null;
+            if (parseNode.GetChildNode("rate_limiting_limit") is { } nullNodeRateLimitingLimit && nullNodeRateLimitingLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimitingLimit = null;
+            if (parseNode.GetChildNode("rate_limiting_technique") is { } nullNodeRateLimitingTechnique && nullNodeRateLimitingTechnique.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimitingTechnique = null;
+            if (parseNode.GetChildNode("retry_backoff") is { } nullNodeRetryBackoff && nullNodeRetryBackoff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryBackoff = null;
+            if (parseNode.GetChildNode("retry_delay") is { } nullNodeRetryDelay && nullNodeRetryDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryDelay = null;
+            if (parseNode.GetChildNode("retry_max_attempts") is { } nullNodeRetryMaxAttempts && nullNodeRetryMaxAttempts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryMaxAttempts = null;
+            if (parseNode.GetChildNode("spend_limits") is { } nullNodeSpendLimits && nullNodeSpendLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpendLimits = null;
+            if (parseNode.GetChildNode("store_id") is { } nullNodeStoreId && nullNodeStoreId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreId = null;
+            if (parseNode.GetChildNode("stripe") is { } nullNodeStripe && nullNodeStripe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stripe = null;
+            if (parseNode.GetChildNode("workers_ai_billing_mode") is { } nullNodeWorkersAiBillingMode && nullNodeWorkersAiBillingMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersAiBillingMode = null;
+            if (parseNode.GetChildNode("zdr") is { } nullNodeZdr && nullNodeZdr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zdr = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authentication property</summary>
-        public bool? Authentication { get; set; }
+        /// <summary>Require authentication for gateway access. New gateways must have authentication enabled. Once enabled, authentication cannot be disabled.</summary>
+        public bool? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private bool? _explicitNullValueAuthentication = default!;
         /// <summary>Requires customer-provided provider credentials and prevents fallback to Unified Billing.</summary>
-        public bool? ByokOnly { get; set; }
+        public bool? ByokOnly { get => _explicitNullValueByokOnly; set { _explicitNullValueByokOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byok_only"); else _explicitNullProperties?.Remove("byok_only"); } }
+        private bool? _explicitNullValueByokOnly = default!;
         /// <summary>The cache_invalidate_on_update property</summary>
-        public bool? CacheInvalidateOnUpdate { get; set; }
+        public bool? CacheInvalidateOnUpdate { get => _explicitNullValueCacheInvalidateOnUpdate; set { _explicitNullValueCacheInvalidateOnUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_invalidate_on_update"); else _explicitNullProperties?.Remove("cache_invalidate_on_update"); } }
+        private bool? _explicitNullValueCacheInvalidateOnUpdate = default!;
         /// <summary>The cache_ttl property</summary>
-        public int? CacheTtl { get; set; }
+        public int? CacheTtl { get => _explicitNullValueCacheTtl; set { _explicitNullValueCacheTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_ttl"); else _explicitNullProperties?.Remove("cache_ttl"); } }
+        private int? _explicitNullValueCacheTtl = default!;
         /// <summary>The collect_logs property</summary>
-        public bool? CollectLogs { get; set; }
+        public bool? CollectLogs { get => _explicitNullValueCollectLogs; set { _explicitNullValueCollectLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collect_logs"); else _explicitNullProperties?.Remove("collect_logs"); } }
+        private bool? _explicitNullValueCollectLogs = default!;
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The dlp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultDlp? Dlp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultDlp? Dlp { get => _explicitNullValueDlp; set { _explicitNullValueDlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dlp"); else _explicitNullProperties?.Remove("dlp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultDlp? _explicitNullValueDlp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultDlp Dlp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultDlp Dlp { get => _explicitNullValueDlp; set { _explicitNullValueDlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dlp"); else _explicitNullProperties?.Remove("dlp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultDlp _explicitNullValueDlp = default!;
 #endif
         /// <summary>FedRAMP compliance level: fedramp-medium or fedramp-high.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultFedrampLevel? FedrampLevel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultFedrampLevel? FedrampLevel { get => _explicitNullValueFedrampLevel; set { _explicitNullValueFedrampLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fedramp_level"); else _explicitNullProperties?.Remove("fedramp_level"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultFedrampLevel? _explicitNullValueFedrampLevel = default!;
         /// <summary>FedRAMP enforcement mode. &quot;prefer&quot; prioritizes compliant connectors but allows fallback. &quot;require&quot; strictly filters.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultFedrampMode? FedrampMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultFedrampMode? FedrampMode { get => _explicitNullValueFedrampMode; set { _explicitNullValueFedrampMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fedramp_mode"); else _explicitNullProperties?.Remove("fedramp_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultFedrampMode? _explicitNullValueFedrampMode = default!;
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultGuardrails? Guardrails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultGuardrails? Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultGuardrails? _explicitNullValueGuardrails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultGuardrails Guardrails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultGuardrails Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultGuardrails _explicitNullValueGuardrails = default!;
 #endif
         /// <summary>Unique identifier of the AI Gateway within the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The is_default property</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault { get => _explicitNullValueIsDefault; set { _explicitNullValueIsDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_default"); else _explicitNullProperties?.Remove("is_default"); } }
+        private bool? _explicitNullValueIsDefault = default!;
         /// <summary>The log_classification property</summary>
-        public bool? LogClassification { get; set; }
+        public bool? LogClassification { get => _explicitNullValueLogClassification; set { _explicitNullValueLogClassification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_classification"); else _explicitNullProperties?.Remove("log_classification"); } }
+        private bool? _explicitNullValueLogClassification = default!;
         /// <summary>The log_management property</summary>
-        public int? LogManagement { get; set; }
+        public int? LogManagement { get => _explicitNullValueLogManagement; set { _explicitNullValueLogManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_management"); else _explicitNullProperties?.Remove("log_management"); } }
+        private int? _explicitNullValueLogManagement = default!;
         /// <summary>The log_management_strategy property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultLogManagementStrategy? LogManagementStrategy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultLogManagementStrategy? LogManagementStrategy { get => _explicitNullValueLogManagementStrategy; set { _explicitNullValueLogManagementStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_management_strategy"); else _explicitNullProperties?.Remove("log_management_strategy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultLogManagementStrategy? _explicitNullValueLogManagementStrategy = default!;
         /// <summary>The logpush property</summary>
-        public bool? Logpush { get; set; }
+        public bool? Logpush { get => _explicitNullValueLogpush; set { _explicitNullValueLogpush = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logpush"); else _explicitNullProperties?.Remove("logpush"); } }
+        private bool? _explicitNullValueLogpush = default!;
         /// <summary>The logpush_public_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogpushPublicKey { get; set; }
+        public string? LogpushPublicKey { get => _explicitNullValueLogpushPublicKey; set { _explicitNullValueLogpushPublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logpush_public_key"); else _explicitNullProperties?.Remove("logpush_public_key"); } }
+        private string? _explicitNullValueLogpushPublicKey = default!;
 #nullable restore
 #else
-        public string LogpushPublicKey { get; set; }
+        public string LogpushPublicKey { get => _explicitNullValueLogpushPublicKey; set { _explicitNullValueLogpushPublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logpush_public_key"); else _explicitNullProperties?.Remove("logpush_public_key"); } }
+        private string _explicitNullValueLogpushPublicKey = default!;
 #endif
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get => _explicitNullValueModifiedAt; set { _explicitNullValueModifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_at"); else _explicitNullProperties?.Remove("modified_at"); } }
+        private DateTimeOffset? _explicitNullValueModifiedAt = default!;
         /// <summary>The otel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultOtelItem>? Otel { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultOtelItem>? Otel { get => _explicitNullValueOtel; set { _explicitNullValueOtel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otel"); else _explicitNullProperties?.Remove("otel"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultOtelItem>? _explicitNullValueOtel = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultOtelItem> Otel { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultOtelItem> Otel { get => _explicitNullValueOtel; set { _explicitNullValueOtel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otel"); else _explicitNullProperties?.Remove("otel"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultOtelItem> _explicitNullValueOtel = default!;
 #endif
         /// <summary>The rate_limiting_interval property</summary>
-        public int? RateLimitingInterval { get; set; }
+        public int? RateLimitingInterval { get => _explicitNullValueRateLimitingInterval; set { _explicitNullValueRateLimitingInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limiting_interval"); else _explicitNullProperties?.Remove("rate_limiting_interval"); } }
+        private int? _explicitNullValueRateLimitingInterval = default!;
         /// <summary>The rate_limiting_limit property</summary>
-        public int? RateLimitingLimit { get; set; }
+        public int? RateLimitingLimit { get => _explicitNullValueRateLimitingLimit; set { _explicitNullValueRateLimitingLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limiting_limit"); else _explicitNullProperties?.Remove("rate_limiting_limit"); } }
+        private int? _explicitNullValueRateLimitingLimit = default!;
         /// <summary>The rate_limiting_technique property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultRateLimitingTechnique? RateLimitingTechnique { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultRateLimitingTechnique? RateLimitingTechnique { get => _explicitNullValueRateLimitingTechnique; set { _explicitNullValueRateLimitingTechnique = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limiting_technique"); else _explicitNullProperties?.Remove("rate_limiting_technique"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultRateLimitingTechnique? _explicitNullValueRateLimitingTechnique = default!;
         /// <summary>Backoff strategy for retry delays</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultRetryBackoff? RetryBackoff { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultRetryBackoff? RetryBackoff { get => _explicitNullValueRetryBackoff; set { _explicitNullValueRetryBackoff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_backoff"); else _explicitNullProperties?.Remove("retry_backoff"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultRetryBackoff? _explicitNullValueRetryBackoff = default!;
         /// <summary>Delay between retry attempts in milliseconds (0-60000)</summary>
-        public int? RetryDelay { get; set; }
+        public int? RetryDelay { get => _explicitNullValueRetryDelay; set { _explicitNullValueRetryDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_delay"); else _explicitNullProperties?.Remove("retry_delay"); } }
+        private int? _explicitNullValueRetryDelay = default!;
         /// <summary>Maximum number of retry attempts for failed requests (1-5)</summary>
-        public int? RetryMaxAttempts { get; set; }
+        public int? RetryMaxAttempts { get => _explicitNullValueRetryMaxAttempts; set { _explicitNullValueRetryMaxAttempts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_max_attempts"); else _explicitNullProperties?.Remove("retry_max_attempts"); } }
+        private int? _explicitNullValueRetryMaxAttempts = default!;
         /// <summary>The spend_limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultSpendLimits? SpendLimits { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultSpendLimits? SpendLimits { get => _explicitNullValueSpendLimits; set { _explicitNullValueSpendLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_limits"); else _explicitNullProperties?.Remove("spend_limits"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultSpendLimits? _explicitNullValueSpendLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultSpendLimits SpendLimits { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultSpendLimits SpendLimits { get => _explicitNullValueSpendLimits; set { _explicitNullValueSpendLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_limits"); else _explicitNullProperties?.Remove("spend_limits"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultSpendLimits _explicitNullValueSpendLimits = default!;
 #endif
         /// <summary>Secrets Store used by this gateway. Omit on update to keep the current store. Cannot be cleared while stored keys or secret references depend on it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreId { get; set; }
+        public string? StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store_id"); else _explicitNullProperties?.Remove("store_id"); } }
+        private string? _explicitNullValueStoreId = default!;
 #nullable restore
 #else
-        public string StoreId { get; set; }
+        public string StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store_id"); else _explicitNullProperties?.Remove("store_id"); } }
+        private string _explicitNullValueStoreId = default!;
 #endif
         /// <summary>The stripe property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultStripe? Stripe { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultStripe? Stripe { get => _explicitNullValueStripe; set { _explicitNullValueStripe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripe"); else _explicitNullProperties?.Remove("stripe"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultStripe? _explicitNullValueStripe = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultStripe Stripe { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultStripe Stripe { get => _explicitNullValueStripe; set { _explicitNullValueStripe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripe"); else _explicitNullProperties?.Remove("stripe"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultStripe _explicitNullValueStripe = default!;
 #endif
         /// <summary>Controls how Workers AI inference calls routed through this gateway are billed. &apos;postpaid&apos; bills the account directly through Workers AI; &apos;unified&apos; deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultWorkersAiBillingMode? WorkersAiBillingMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultWorkersAiBillingMode? WorkersAiBillingMode { get => _explicitNullValueWorkersAiBillingMode; set { _explicitNullValueWorkersAiBillingMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers_ai_billing_mode"); else _explicitNullProperties?.Remove("workers_ai_billing_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultWorkersAiBillingMode? _explicitNullValueWorkersAiBillingMode = default!;
         /// <summary>The zdr property</summary>
-        public bool? Zdr { get; set; }
+        public bool? Zdr { get => _explicitNullValueZdr; set { _explicitNullValueZdr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zdr"); else _explicitNullProperties?.Remove("zdr"); } }
+        private bool? _explicitNullValueZdr = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -137,7 +212,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -216,6 +291,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultStripe>("stripe", Stripe);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200ResponseResultWorkersAiBillingMode>("workers_ai_billing_mode", WorkersAiBillingMode);
             writer.WriteBoolValue("zdr", Zdr);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

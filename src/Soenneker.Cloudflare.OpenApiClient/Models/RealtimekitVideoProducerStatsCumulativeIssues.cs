@@ -11,19 +11,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RealtimekitVideoProducerStatsCumulativeIssues : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bandwidth_quality_limitation_fraction") is { } nullNodeBandwidthQualityLimitationFraction && nullNodeBandwidthQualityLimitationFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthQualityLimitationFraction = null;
+            if (parseNode.GetChildNode("cpu_quality_limitation_fraction") is { } nullNodeCpuQualityLimitationFraction && nullNodeCpuQualityLimitationFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuQualityLimitationFraction = null;
+            if (parseNode.GetChildNode("no_video_fraction") is { } nullNodeNoVideoFraction && nullNodeNoVideoFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoVideoFraction = null;
+            if (parseNode.GetChildNode("poor_resolution_fraction") is { } nullNodePoorResolutionFraction && nullNodePoorResolutionFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoorResolutionFraction = null;
+            if (parseNode.GetChildNode("quality_limitation_fraction") is { } nullNodeQualityLimitationFraction && nullNodeQualityLimitationFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QualityLimitationFraction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bandwidth_quality_limitation_fraction property</summary>
-        public double? BandwidthQualityLimitationFraction { get; set; }
+        public double? BandwidthQualityLimitationFraction { get => _explicitNullValueBandwidthQualityLimitationFraction; set { _explicitNullValueBandwidthQualityLimitationFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidth_quality_limitation_fraction"); else _explicitNullProperties?.Remove("bandwidth_quality_limitation_fraction"); } }
+        private double? _explicitNullValueBandwidthQualityLimitationFraction = default!;
         /// <summary>The cpu_quality_limitation_fraction property</summary>
-        public double? CpuQualityLimitationFraction { get; set; }
+        public double? CpuQualityLimitationFraction { get => _explicitNullValueCpuQualityLimitationFraction; set { _explicitNullValueCpuQualityLimitationFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_quality_limitation_fraction"); else _explicitNullProperties?.Remove("cpu_quality_limitation_fraction"); } }
+        private double? _explicitNullValueCpuQualityLimitationFraction = default!;
         /// <summary>The no_video_fraction property</summary>
-        public double? NoVideoFraction { get; set; }
+        public double? NoVideoFraction { get => _explicitNullValueNoVideoFraction; set { _explicitNullValueNoVideoFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_video_fraction"); else _explicitNullProperties?.Remove("no_video_fraction"); } }
+        private double? _explicitNullValueNoVideoFraction = default!;
         /// <summary>The poor_resolution_fraction property</summary>
-        public double? PoorResolutionFraction { get; set; }
+        public double? PoorResolutionFraction { get => _explicitNullValuePoorResolutionFraction; set { _explicitNullValuePoorResolutionFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poor_resolution_fraction"); else _explicitNullProperties?.Remove("poor_resolution_fraction"); } }
+        private double? _explicitNullValuePoorResolutionFraction = default!;
         /// <summary>The quality_limitation_fraction property</summary>
-        public double? QualityLimitationFraction { get; set; }
+        public double? QualityLimitationFraction { get => _explicitNullValueQualityLimitationFraction; set { _explicitNullValueQualityLimitationFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_limitation_fraction"); else _explicitNullProperties?.Remove("quality_limitation_fraction"); } }
+        private double? _explicitNullValueQualityLimitationFraction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulativeIssues"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulativeIssues CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulativeIssues();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoProducerStatsCumulativeIssues(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("no_video_fraction", NoVideoFraction);
             writer.WriteDoubleValue("poor_resolution_fraction", PoorResolutionFraction);
             writer.WriteDoubleValue("quality_limitation_fraction", QualityLimitationFraction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

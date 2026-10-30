@@ -65,6 +65,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryValuesList429Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryValuesList500Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryValuesList504Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryValuesList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryValuesList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

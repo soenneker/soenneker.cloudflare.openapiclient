@@ -11,42 +11,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetWorkerConfigAutofill200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("config_file") is { } nullNodeConfigFile && nullNodeConfigFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigFile = null;
+            if (parseNode.GetChildNode("default_worker_name") is { } nullNodeDefaultWorkerName && nullNodeDefaultWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultWorkerName = null;
+            if (parseNode.GetChildNode("env_worker_names") is { } nullNodeEnvWorkerNames && nullNodeEnvWorkerNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvWorkerNames = null;
+            if (parseNode.GetChildNode("package_manager") is { } nullNodePackageManager && nullNodePackageManager.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageManager = null;
+            if (parseNode.GetChildNode("scripts") is { } nullNodeScripts && nullNodeScripts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scripts = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The config_file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigFile { get; set; }
+        public string? ConfigFile { get => _explicitNullValueConfigFile; set { _explicitNullValueConfigFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config_file"); else _explicitNullProperties?.Remove("config_file"); } }
+        private string? _explicitNullValueConfigFile = default!;
 #nullable restore
 #else
-        public string ConfigFile { get; set; }
+        public string ConfigFile { get => _explicitNullValueConfigFile; set { _explicitNullValueConfigFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config_file"); else _explicitNullProperties?.Remove("config_file"); } }
+        private string _explicitNullValueConfigFile = default!;
 #endif
         /// <summary>The default_worker_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultWorkerName { get; set; }
+        public string? DefaultWorkerName { get => _explicitNullValueDefaultWorkerName; set { _explicitNullValueDefaultWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_worker_name"); else _explicitNullProperties?.Remove("default_worker_name"); } }
+        private string? _explicitNullValueDefaultWorkerName = default!;
 #nullable restore
 #else
-        public string DefaultWorkerName { get; set; }
+        public string DefaultWorkerName { get => _explicitNullValueDefaultWorkerName; set { _explicitNullValueDefaultWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_worker_name"); else _explicitNullProperties?.Remove("default_worker_name"); } }
+        private string _explicitNullValueDefaultWorkerName = default!;
 #endif
         /// <summary>The env_worker_names property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty? EnvWorkerNames { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty? EnvWorkerNames { get => _explicitNullValueEnvWorkerNames; set { _explicitNullValueEnvWorkerNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_worker_names"); else _explicitNullProperties?.Remove("env_worker_names"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty? _explicitNullValueEnvWorkerNames = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty EnvWorkerNames { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty EnvWorkerNames { get => _explicitNullValueEnvWorkerNames; set { _explicitNullValueEnvWorkerNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_worker_names"); else _explicitNullProperties?.Remove("env_worker_names"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty _explicitNullValueEnvWorkerNames = default!;
 #endif
         /// <summary>Package manager inferred from repository lockfiles; defaults to npm when none is detected.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager? PackageManager { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager? PackageManager { get => _explicitNullValuePackageManager; set { _explicitNullValuePackageManager = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package_manager"); else _explicitNullProperties?.Remove("package_manager"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager? _explicitNullValuePackageManager = default!;
         /// <summary>The scripts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty? Scripts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty? Scripts { get => _explicitNullValueScripts; set { _explicitNullValueScripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scripts"); else _explicitNullProperties?.Remove("scripts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty? _explicitNullValueScripts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty Scripts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty Scripts { get => _explicitNullValueScripts; set { _explicitNullValueScripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scripts"); else _explicitNullProperties?.Remove("scripts"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty _explicitNullValueScripts = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200ResponseResult"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty>("env_worker_names", EnvWorkerNames);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager>("package_manager", PackageManager);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty>("scripts", Scripts);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

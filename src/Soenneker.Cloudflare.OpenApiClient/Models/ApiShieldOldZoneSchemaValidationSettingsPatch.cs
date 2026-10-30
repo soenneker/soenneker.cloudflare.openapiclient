@@ -11,13 +11,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ApiShieldOldZoneSchemaValidationSettingsPatch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("validation_default_mitigation_action") is { } nullNodeValidationDefaultMitigationAction && nullNodeValidationDefaultMitigationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationDefaultMitigationAction = null;
+            if (parseNode.GetChildNode("validation_override_mitigation_action") is { } nullNodeValidationOverrideMitigationAction && nullNodeValidationOverrideMitigationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationOverrideMitigationAction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default mitigation action used when there is no mitigation action defined on the operationMitigation actions are as follows:  * `log` - log request when request does not conform to schema  * `block` - deny access to the site when request does not conform to schemaA special value of of `none` will skip running schema validation entirely for the request when there is no mitigation action defined on the operation`null` will have no effect.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldValidationDefaultMitigationActionPatch? ValidationDefaultMitigationAction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldValidationDefaultMitigationActionPatch? ValidationDefaultMitigationAction { get => _explicitNullValueValidationDefaultMitigationAction; set { _explicitNullValueValidationDefaultMitigationAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_default_mitigation_action"); else _explicitNullProperties?.Remove("validation_default_mitigation_action"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldValidationDefaultMitigationActionPatch? _explicitNullValueValidationDefaultMitigationAction = default!;
         /// <summary>When set, this overrides both zone level and operation level mitigation actions.  - `none` will skip running schema validation entirely for the requestTo clear any override, use the special value `disable_override``null` will have no effect.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldValidationOverrideMitigationActionPatch? ValidationOverrideMitigationAction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldValidationOverrideMitigationActionPatch? ValidationOverrideMitigationAction { get => _explicitNullValueValidationOverrideMitigationAction; set { _explicitNullValueValidationOverrideMitigationAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_override_mitigation_action"); else _explicitNullProperties?.Remove("validation_override_mitigation_action"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldValidationOverrideMitigationActionPatch? _explicitNullValueValidationOverrideMitigationAction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldZoneSchemaValidationSettingsPatch"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldZoneSchemaValidationSettingsPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldZoneSchemaValidationSettingsPatch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldZoneSchemaValidationSettingsPatch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldValidationDefaultMitigationActionPatch>("validation_default_mitigation_action", ValidationDefaultMitigationAction);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldValidationOverrideMitigationActionPatch>("validation_override_mitigation_action", ValidationOverrideMitigationAction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

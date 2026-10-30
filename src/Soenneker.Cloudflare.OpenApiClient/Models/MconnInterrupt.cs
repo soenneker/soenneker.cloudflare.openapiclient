@@ -12,30 +12,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MconnInterrupt : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("reboot") is { } nullNodeReboot && nullNodeReboot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reboot = null;
+            if (parseNode.GetChildNode("restart") is { } nullNodeRestart && nullNodeRestart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restart = null;
+            if (parseNode.GetChildNode("shutdown") is { } nullNodeShutdown && nullNodeShutdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shutdown = null;
+        }
+
         /// <summary>The reboot property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot? Reboot { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot? Reboot { get => _explicitNullValueReboot; set { _explicitNullValueReboot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reboot"); else _explicitNullProperties?.Remove("reboot"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot? _explicitNullValueReboot = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot Reboot { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot Reboot { get => _explicitNullValueReboot; set { _explicitNullValueReboot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reboot"); else _explicitNullProperties?.Remove("reboot"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot _explicitNullValueReboot = default!;
 #endif
         /// <summary>The restart property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart? Restart { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart? Restart { get => _explicitNullValueRestart; set { _explicitNullValueRestart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restart"); else _explicitNullProperties?.Remove("restart"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart? _explicitNullValueRestart = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart Restart { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart Restart { get => _explicitNullValueRestart; set { _explicitNullValueRestart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restart"); else _explicitNullProperties?.Remove("restart"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart _explicitNullValueRestart = default!;
 #endif
         /// <summary>The shutdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown? Shutdown { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown? Shutdown { get => _explicitNullValueShutdown; set { _explicitNullValueShutdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shutdown"); else _explicitNullProperties?.Remove("shutdown"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown? _explicitNullValueShutdown = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown Shutdown { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown Shutdown { get => _explicitNullValueShutdown; set { _explicitNullValueShutdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shutdown"); else _explicitNullProperties?.Remove("shutdown"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown _explicitNullValueShutdown = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterrupt CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterrupt();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterrupt(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot>("reboot", Reboot);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart>("restart", Restart);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown>("shutdown", Shutdown);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown>("shutdown", Shutdown);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

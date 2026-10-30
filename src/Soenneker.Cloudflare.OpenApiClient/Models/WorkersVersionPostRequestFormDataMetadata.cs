@@ -12,83 +12,119 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersVersionPostRequestFormDataMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("annotations") is { } nullNodeAnnotations && nullNodeAnnotations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Annotations = null;
+            if (parseNode.GetChildNode("bindings") is { } nullNodeBindings && nullNodeBindings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bindings = null;
+            if (parseNode.GetChildNode("cache_options") is { } nullNodeCacheOptions && nullNodeCacheOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheOptions = null;
+            if (parseNode.GetChildNode("compatibility_date") is { } nullNodeCompatibilityDate && nullNodeCompatibilityDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompatibilityDate = null;
+            if (parseNode.GetChildNode("compatibility_flags") is { } nullNodeCompatibilityFlags && nullNodeCompatibilityFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompatibilityFlags = null;
+            if (parseNode.GetChildNode("exports") is { } nullNodeExports && nullNodeExports.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exports = null;
+            if (parseNode.GetChildNode("keep_bindings") is { } nullNodeKeepBindings && nullNodeKeepBindings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeepBindings = null;
+            if (parseNode.GetChildNode("main_module") is { } nullNodeMainModule && nullNodeMainModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainModule = null;
+            if (parseNode.GetChildNode("package_dependencies") is { } nullNodePackageDependencies && nullNodePackageDependencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageDependencies = null;
+            if (parseNode.GetChildNode("usage_model") is { } nullNodeUsageModel && nullNodeUsageModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageModel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataAnnotations? Annotations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataAnnotations? Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataAnnotations? _explicitNullValueAnnotations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataAnnotations Annotations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataAnnotations Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataAnnotations _explicitNullValueAnnotations = default!;
 #endif
         /// <summary>List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>? Bindings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>? Bindings { get => _explicitNullValueBindings; set { _explicitNullValueBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bindings"); else _explicitNullProperties?.Remove("bindings"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>? _explicitNullValueBindings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem> Bindings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem> Bindings { get => _explicitNullValueBindings; set { _explicitNullValueBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bindings"); else _explicitNullProperties?.Remove("bindings"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem> _explicitNullValueBindings = default!;
 #endif
         /// <summary>Global CacheW configuration for the Worker. When caching is on,the platform provisions a `cloudflare.app` zone for the Worker.A `type: worker` entry in the `exports` map can override thisvalue for a single entrypoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions? CacheOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions? CacheOptions { get => _explicitNullValueCacheOptions; set { _explicitNullValueCacheOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_options"); else _explicitNullProperties?.Remove("cache_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions? _explicitNullValueCacheOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions CacheOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions CacheOptions { get => _explicitNullValueCacheOptions; set { _explicitNullValueCacheOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_options"); else _explicitNullProperties?.Remove("cache_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions _explicitNullValueCacheOptions = default!;
 #endif
         /// <summary>Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompatibilityDate { get; set; }
+        public string? CompatibilityDate { get => _explicitNullValueCompatibilityDate; set { _explicitNullValueCompatibilityDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compatibility_date"); else _explicitNullProperties?.Remove("compatibility_date"); } }
+        private string? _explicitNullValueCompatibilityDate = default!;
 #nullable restore
 #else
-        public string CompatibilityDate { get; set; }
+        public string CompatibilityDate { get => _explicitNullValueCompatibilityDate; set { _explicitNullValueCompatibilityDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compatibility_date"); else _explicitNullProperties?.Remove("compatibility_date"); } }
+        private string _explicitNullValueCompatibilityDate = default!;
 #endif
         /// <summary>Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CompatibilityFlags { get; set; }
+        public List<string>? CompatibilityFlags { get => _explicitNullValueCompatibilityFlags; set { _explicitNullValueCompatibilityFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compatibility_flags"); else _explicitNullProperties?.Remove("compatibility_flags"); } }
+        private List<string>? _explicitNullValueCompatibilityFlags = default!;
 #nullable restore
 #else
-        public List<string> CompatibilityFlags { get; set; }
+        public List<string> CompatibilityFlags { get => _explicitNullValueCompatibilityFlags; set { _explicitNullValueCompatibilityFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compatibility_flags"); else _explicitNullProperties?.Remove("compatibility_flags"); } }
+        private List<string> _explicitNullValueCompatibilityFlags = default!;
 #endif
         /// <summary>Declarative exports for this version. Workerentrypoint entries (`type: worker`) carry cacheconfiguration for that entrypoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataExports? Exports { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataExports? Exports { get => _explicitNullValueExports; set { _explicitNullValueExports = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exports"); else _explicitNullProperties?.Remove("exports"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataExports? _explicitNullValueExports = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataExports Exports { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataExports Exports { get => _explicitNullValueExports; set { _explicitNullValueExports = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exports"); else _explicitNullProperties?.Remove("exports"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataExports _explicitNullValueExports = default!;
 #endif
         /// <summary>List of binding types to keep from previous_upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? KeepBindings { get; set; }
+        public List<string>? KeepBindings { get => _explicitNullValueKeepBindings; set { _explicitNullValueKeepBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keep_bindings"); else _explicitNullProperties?.Remove("keep_bindings"); } }
+        private List<string>? _explicitNullValueKeepBindings = default!;
 #nullable restore
 #else
-        public List<string> KeepBindings { get; set; }
+        public List<string> KeepBindings { get => _explicitNullValueKeepBindings; set { _explicitNullValueKeepBindings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keep_bindings"); else _explicitNullProperties?.Remove("keep_bindings"); } }
+        private List<string> _explicitNullValueKeepBindings = default!;
 #endif
         /// <summary>Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker, which is required for Version Upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MainModule { get; set; }
+        public string? MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
+        private string? _explicitNullValueMainModule = default!;
 #nullable restore
 #else
-        public string MainModule { get; set; }
+        public string MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
+        private string _explicitNullValueMainModule = default!;
 #endif
         /// <summary>The list of npm packages that were installed and used when this Workerversion was built.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataPackageDependenciesItem>? PackageDependencies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataPackageDependenciesItem>? PackageDependencies { get => _explicitNullValuePackageDependencies; set { _explicitNullValuePackageDependencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package_dependencies"); else _explicitNullProperties?.Remove("package_dependencies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataPackageDependenciesItem>? _explicitNullValuePackageDependencies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataPackageDependenciesItem> PackageDependencies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataPackageDependenciesItem> PackageDependencies { get => _explicitNullValuePackageDependencies; set { _explicitNullValuePackageDependencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package_dependencies"); else _explicitNullProperties?.Remove("package_dependencies"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataPackageDependenciesItem> _explicitNullValuePackageDependencies = default!;
 #endif
         /// <summary>Usage model for the Worker invocations.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel? UsageModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel? UsageModel { get => _explicitNullValueUsageModel; set { _explicitNullValueUsageModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_model"); else _explicitNullProperties?.Remove("usage_model"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel? _explicitNullValueUsageModel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadata"/> and sets the default values.
         /// </summary>
@@ -104,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,6 +179,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("main_module", MainModule);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionPostRequestFormDataMetadataPackageDependenciesItem>("package_dependencies", PackageDependencies);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel>("usage_model", UsageModel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,43 +11,69 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReportsPoliciesListResponseResultItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("policy_description") is { } nullNodePolicyDescription && nullNodePolicyDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyDescription = null;
+            if (parseNode.GetChildNode("policy_id") is { } nullNodePolicyId && nullNodePolicyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyId = null;
+            if (parseNode.GetChildNode("policy_name") is { } nullNodePolicyName && nullNodePolicyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyName = null;
+            if (parseNode.GetChildNode("policy_schedule") is { } nullNodePolicySchedule && nullNodePolicySchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicySchedule = null;
+            if (parseNode.GetChildNode("valid_from") is { } nullNodeValidFrom && nullNodeValidFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidFrom = null;
+            if (parseNode.GetChildNode("valid_to") is { } nullNodeValidTo && nullNodeValidTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidTo = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the policy is currently active and will generate reports according to schedule</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Optional detailed description of what the policy does and when it runs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyDescription { get; set; }
+        public string? PolicyDescription { get => _explicitNullValuePolicyDescription; set { _explicitNullValuePolicyDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_description"); else _explicitNullProperties?.Remove("policy_description"); } }
+        private string? _explicitNullValuePolicyDescription = default!;
 #nullable restore
 #else
-        public string PolicyDescription { get; set; }
+        public string PolicyDescription { get => _explicitNullValuePolicyDescription; set { _explicitNullValuePolicyDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_description"); else _explicitNullProperties?.Remove("policy_description"); } }
+        private string _explicitNullValuePolicyDescription = default!;
 #endif
         /// <summary>Unique identifier for the policy (UUID format)</summary>
-        public Guid? PolicyId { get; set; }
+        public Guid? PolicyId { get => _explicitNullValuePolicyId; set { _explicitNullValuePolicyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_id"); else _explicitNullProperties?.Remove("policy_id"); } }
+        private Guid? _explicitNullValuePolicyId = default!;
         /// <summary>Human-readable name for the policy (required, non-empty)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyName { get; set; }
+        public string? PolicyName { get => _explicitNullValuePolicyName; set { _explicitNullValuePolicyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_name"); else _explicitNullProperties?.Remove("policy_name"); } }
+        private string? _explicitNullValuePolicyName = default!;
 #nullable restore
 #else
-        public string PolicyName { get; set; }
+        public string PolicyName { get => _explicitNullValuePolicyName; set { _explicitNullValuePolicyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_name"); else _explicitNullProperties?.Remove("policy_name"); } }
+        private string _explicitNullValuePolicyName = default!;
 #endif
         /// <summary>Cron expression for scheduling (format: minute hour day month weekday). Example: &apos;0 9 * * 1&apos; runs every Monday at 9:00 AM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicySchedule { get; set; }
+        public string? PolicySchedule { get => _explicitNullValuePolicySchedule; set { _explicitNullValuePolicySchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_schedule"); else _explicitNullProperties?.Remove("policy_schedule"); } }
+        private string? _explicitNullValuePolicySchedule = default!;
 #nullable restore
 #else
-        public string PolicySchedule { get; set; }
+        public string PolicySchedule { get => _explicitNullValuePolicySchedule; set { _explicitNullValuePolicySchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_schedule"); else _explicitNullProperties?.Remove("policy_schedule"); } }
+        private string _explicitNullValuePolicySchedule = default!;
 #endif
         /// <summary>Start date when this policy version becomes effective</summary>
-        public DateTimeOffset? ValidFrom { get; set; }
+        public DateTimeOffset? ValidFrom { get => _explicitNullValueValidFrom; set { _explicitNullValueValidFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_from"); else _explicitNullProperties?.Remove("valid_from"); } }
+        private DateTimeOffset? _explicitNullValueValidFrom = default!;
         /// <summary>End date when this policy version expires (omitted for active policies)</summary>
-        public DateTimeOffset? ValidTo { get; set; }
+        public DateTimeOffset? ValidTo { get => _explicitNullValueValidTo; set { _explicitNullValueValidTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_to"); else _explicitNullProperties?.Remove("valid_to"); } }
+        private DateTimeOffset? _explicitNullValueValidTo = default!;
         /// <summary>Version number of the policy (incremented when policy is modified, starts at 1)</summary>
-        public int? Version { get; set; }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPoliciesListResponseResultItem"/> and sets the default values.
         /// </summary>
@@ -63,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPoliciesListResponseResultItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPoliciesListResponseResultItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPoliciesListResponseResultItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("valid_from", ValidFrom);
             writer.WriteDateTimeOffsetValue("valid_to", ValidTo);
             writer.WriteIntValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

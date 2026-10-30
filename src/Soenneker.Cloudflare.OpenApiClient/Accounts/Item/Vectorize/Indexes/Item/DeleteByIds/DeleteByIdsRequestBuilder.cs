@@ -56,6 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.Indexes.Ite
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeDeprecatedDeleteVectorsById200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeDeprecatedDeleteVectorsById200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetAttacksLayer7TopIndustries200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("top_0") is { } nullNodeTop0 && nullNodeTop0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Top0 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Metadata for the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultMeta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultMeta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The top_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultTop0Item>? Top0 { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultTop0Item>? Top0 { get => _explicitNullValueTop0; set { _explicitNullValueTop0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_0"); else _explicitNullProperties?.Remove("top_0"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultTop0Item>? _explicitNullValueTop0 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultTop0Item> Top0 { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultTop0Item> Top0 { get => _explicitNullValueTop0; set { _explicitNullValueTop0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_0"); else _explicitNullProperties?.Remove("top_0"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultTop0Item> _explicitNullValueTop0 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResult"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultMeta>("meta", Meta);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAttacksLayer7TopIndustries200ResponseResultTop0Item>("top_0", Top0);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

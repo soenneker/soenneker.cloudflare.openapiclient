@@ -12,21 +12,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomIndicatorFeedsLastUploadSummaryPersisted : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("domains_added") is { } nullNodeDomainsAdded && nullNodeDomainsAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainsAdded = null;
+            if (parseNode.GetChildNode("domains_removed") is { } nullNodeDomainsRemoved && nullNodeDomainsRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainsRemoved = null;
+            if (parseNode.GetChildNode("ips_added") is { } nullNodeIpsAdded && nullNodeIpsAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpsAdded = null;
+            if (parseNode.GetChildNode("ips_removed") is { } nullNodeIpsRemoved && nullNodeIpsRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpsRemoved = null;
+            if (parseNode.GetChildNode("urls_added") is { } nullNodeUrlsAdded && nullNodeUrlsAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlsAdded = null;
+            if (parseNode.GetChildNode("urls_removed") is { } nullNodeUrlsRemoved && nullNodeUrlsRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlsRemoved = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The domains_added property</summary>
-        public int? DomainsAdded { get; set; }
+        public int? DomainsAdded { get => _explicitNullValueDomainsAdded; set { _explicitNullValueDomainsAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains_added"); else _explicitNullProperties?.Remove("domains_added"); } }
+        private int? _explicitNullValueDomainsAdded = default!;
         /// <summary>The domains_removed property</summary>
-        public int? DomainsRemoved { get; set; }
+        public int? DomainsRemoved { get => _explicitNullValueDomainsRemoved; set { _explicitNullValueDomainsRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains_removed"); else _explicitNullProperties?.Remove("domains_removed"); } }
+        private int? _explicitNullValueDomainsRemoved = default!;
         /// <summary>The ips_added property</summary>
-        public int? IpsAdded { get; set; }
+        public int? IpsAdded { get => _explicitNullValueIpsAdded; set { _explicitNullValueIpsAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips_added"); else _explicitNullProperties?.Remove("ips_added"); } }
+        private int? _explicitNullValueIpsAdded = default!;
         /// <summary>The ips_removed property</summary>
-        public int? IpsRemoved { get; set; }
+        public int? IpsRemoved { get => _explicitNullValueIpsRemoved; set { _explicitNullValueIpsRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips_removed"); else _explicitNullProperties?.Remove("ips_removed"); } }
+        private int? _explicitNullValueIpsRemoved = default!;
         /// <summary>The urls_added property</summary>
-        public int? UrlsAdded { get; set; }
+        public int? UrlsAdded { get => _explicitNullValueUrlsAdded; set { _explicitNullValueUrlsAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls_added"); else _explicitNullProperties?.Remove("urls_added"); } }
+        private int? _explicitNullValueUrlsAdded = default!;
         /// <summary>The urls_removed property</summary>
-        public int? UrlsRemoved { get; set; }
+        public int? UrlsRemoved { get => _explicitNullValueUrlsRemoved; set { _explicitNullValueUrlsRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls_removed"); else _explicitNullProperties?.Remove("urls_removed"); } }
+        private int? _explicitNullValueUrlsRemoved = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted"/> and sets the default values.
         /// </summary>
@@ -42,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("ips_removed", IpsRemoved);
             writer.WriteIntValue("urls_added", UrlsAdded);
             writer.WriteIntValue("urls_removed", UrlsRemoved);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

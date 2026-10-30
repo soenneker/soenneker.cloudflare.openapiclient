@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetEmailSecuritySummaryByThreatCategory200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("BrandImpersonation") is { } nullNodeBrandImpersonation && nullNodeBrandImpersonation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandImpersonation = null;
+            if (parseNode.GetChildNode("CredentialHarvester") is { } nullNodeCredentialHarvester && nullNodeCredentialHarvester.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialHarvester = null;
+            if (parseNode.GetChildNode("IdentityDeception") is { } nullNodeIdentityDeception && nullNodeIdentityDeception.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityDeception = null;
+            if (parseNode.GetChildNode("Link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrandImpersonation { get; set; }
+        public string? BrandImpersonation { get => _explicitNullValueBrandImpersonation; set { _explicitNullValueBrandImpersonation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BrandImpersonation"); else _explicitNullProperties?.Remove("BrandImpersonation"); } }
+        private string? _explicitNullValueBrandImpersonation = default!;
 #nullable restore
 #else
-        public string BrandImpersonation { get; set; }
+        public string BrandImpersonation { get => _explicitNullValueBrandImpersonation; set { _explicitNullValueBrandImpersonation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BrandImpersonation"); else _explicitNullProperties?.Remove("BrandImpersonation"); } }
+        private string _explicitNullValueBrandImpersonation = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CredentialHarvester { get; set; }
+        public string? CredentialHarvester { get => _explicitNullValueCredentialHarvester; set { _explicitNullValueCredentialHarvester = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CredentialHarvester"); else _explicitNullProperties?.Remove("CredentialHarvester"); } }
+        private string? _explicitNullValueCredentialHarvester = default!;
 #nullable restore
 #else
-        public string CredentialHarvester { get; set; }
+        public string CredentialHarvester { get => _explicitNullValueCredentialHarvester; set { _explicitNullValueCredentialHarvester = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CredentialHarvester"); else _explicitNullProperties?.Remove("CredentialHarvester"); } }
+        private string _explicitNullValueCredentialHarvester = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityDeception { get; set; }
+        public string? IdentityDeception { get => _explicitNullValueIdentityDeception; set { _explicitNullValueIdentityDeception = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentityDeception"); else _explicitNullProperties?.Remove("IdentityDeception"); } }
+        private string? _explicitNullValueIdentityDeception = default!;
 #nullable restore
 #else
-        public string IdentityDeception { get; set; }
+        public string IdentityDeception { get => _explicitNullValueIdentityDeception; set { _explicitNullValueIdentityDeception = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentityDeception"); else _explicitNullProperties?.Remove("IdentityDeception"); } }
+        private string _explicitNullValueIdentityDeception = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Link { get; set; }
+        public string? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Link"); else _explicitNullProperties?.Remove("Link"); } }
+        private string? _explicitNullValueLink = default!;
 #nullable restore
 #else
-        public string Link { get; set; }
+        public string Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Link"); else _explicitNullProperties?.Remove("Link"); } }
+        private string _explicitNullValueLink = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryByThreatCategory200ResponseResultSummary0"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryByThreatCategory200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryByThreatCategory200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryByThreatCategory200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("CredentialHarvester", CredentialHarvester);
             writer.WriteStringValue("IdentityDeception", IdentityDeception);
             writer.WriteStringValue("Link", Link);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

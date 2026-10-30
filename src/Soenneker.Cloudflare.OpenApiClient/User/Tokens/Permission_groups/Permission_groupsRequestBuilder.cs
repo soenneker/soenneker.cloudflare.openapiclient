@@ -53,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tokens.Permission_groups
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionsGroupResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionsGroupResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

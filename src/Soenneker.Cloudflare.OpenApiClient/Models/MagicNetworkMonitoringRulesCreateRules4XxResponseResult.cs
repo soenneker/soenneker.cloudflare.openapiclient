@@ -11,49 +11,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicNetworkMonitoringRulesCreateRules4XxResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("automatic_advertisement") is { } nullNodeAutomaticAdvertisement && nullNodeAutomaticAdvertisement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticAdvertisement = null;
+            if (parseNode.GetChildNode("bandwidth_threshold") is { } nullNodeBandwidthThreshold && nullNodeBandwidthThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthThreshold = null;
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("packet_threshold") is { } nullNodePacketThreshold && nullNodePacketThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketThreshold = null;
+            if (parseNode.GetChildNode("prefixes") is { } nullNodePrefixes && nullNodePrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefixes = null;
+            if (parseNode.GetChildNode("prefix_match") is { } nullNodePrefixMatch && nullNodePrefixMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixMatch = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("zscore_sensitivity") is { } nullNodeZscoreSensitivity && nullNodeZscoreSensitivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZscoreSensitivity = null;
+            if (parseNode.GetChildNode("zscore_target") is { } nullNodeZscoreTarget && nullNodeZscoreTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZscoreTarget = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.</summary>
-        public bool? AutomaticAdvertisement { get; set; }
+        public bool? AutomaticAdvertisement { get => _explicitNullValueAutomaticAdvertisement; set { _explicitNullValueAutomaticAdvertisement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_advertisement"); else _explicitNullProperties?.Remove("automatic_advertisement"); } }
+        private bool? _explicitNullValueAutomaticAdvertisement = default!;
         /// <summary>The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.</summary>
-        public double? BandwidthThreshold { get; set; }
+        public double? BandwidthThreshold { get => _explicitNullValueBandwidthThreshold; set { _explicitNullValueBandwidthThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidth_threshold"); else _explicitNullProperties?.Remove("bandwidth_threshold"); } }
+        private double? _explicitNullValueBandwidthThreshold = default!;
         /// <summary>The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values [&quot;1m&quot;,&quot;5m&quot;,&quot;10m&quot;,&quot;15m&quot;,&quot;20m&quot;,&quot;30m&quot;,&quot;45m&quot;,&quot;60m&quot;].</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleDuration? Duration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleDuration? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleDuration? _explicitNullValueDuration = default!;
         /// <summary>The id of the rule. Must be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The number of packets per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.</summary>
-        public double? PacketThreshold { get; set; }
+        public double? PacketThreshold { get => _explicitNullValuePacketThreshold; set { _explicitNullValuePacketThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_threshold"); else _explicitNullProperties?.Remove("packet_threshold"); } }
+        private double? _explicitNullValuePacketThreshold = default!;
         /// <summary>The prefixes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Prefixes { get; set; }
+        public List<string>? Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
+        private List<string>? _explicitNullValuePrefixes = default!;
 #nullable restore
 #else
-        public List<string> Prefixes { get; set; }
+        public List<string> Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
+        private List<string> _explicitNullValuePrefixes = default!;
 #endif
         /// <summary>Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRulePrefixMatch? PrefixMatch { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRulePrefixMatch? PrefixMatch { get => _explicitNullValuePrefixMatch; set { _explicitNullValuePrefixMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_match"); else _explicitNullProperties?.Remove("prefix_match"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRulePrefixMatch? _explicitNullValuePrefixMatch = default!;
         /// <summary>MNM rule type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleType? _explicitNullValueType = default!;
         /// <summary>Level of sensitivity set for zscore rules.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleZscoreSensitivity? ZscoreSensitivity { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleZscoreSensitivity? ZscoreSensitivity { get => _explicitNullValueZscoreSensitivity; set { _explicitNullValueZscoreSensitivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zscore_sensitivity"); else _explicitNullProperties?.Remove("zscore_sensitivity"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleZscoreSensitivity? _explicitNullValueZscoreSensitivity = default!;
         /// <summary>Target of the zscore rule analysis.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleZscoreTarget? ZscoreTarget { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleZscoreTarget? ZscoreTarget { get => _explicitNullValueZscoreTarget; set { _explicitNullValueZscoreTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zscore_target"); else _explicitNullProperties?.Remove("zscore_target"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleZscoreTarget? _explicitNullValueZscoreTarget = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringRulesCreateRules4XxResponseResult"/> and sets the default values.
         /// </summary>
@@ -69,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringRulesCreateRules4XxResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringRulesCreateRules4XxResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringRulesCreateRules4XxResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +142,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleZscoreSensitivity>("zscore_sensitivity", ZscoreSensitivity);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleZscoreTarget>("zscore_target", ZscoreTarget);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

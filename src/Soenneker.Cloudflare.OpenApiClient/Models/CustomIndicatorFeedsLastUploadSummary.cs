@@ -12,32 +12,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomIndicatorFeedsLastUploadSummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("persisted") is { } nullNodePersisted && nullNodePersisted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Persisted = null;
+            if (parseNode.GetChildNode("skipped") is { } nullNodeSkipped && nullNodeSkipped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skipped = null;
+            if (parseNode.GetChildNode("uploaded") is { } nullNodeUploaded && nullNodeUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uploaded = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Net delta applied to feed indicators by this upload. Snapshotuploads emit both *_added and *_removed; delta-add emits only*_added; delta-remove emits only *_removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted? Persisted { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted? Persisted { get => _explicitNullValuePersisted; set { _explicitNullValuePersisted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persisted"); else _explicitNullProperties?.Remove("persisted"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted? _explicitNullValuePersisted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted Persisted { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted Persisted { get => _explicitNullValuePersisted; set { _explicitNullValuePersisted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persisted"); else _explicitNullProperties?.Remove("persisted"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted _explicitNullValuePersisted = default!;
 #endif
         /// <summary>Counts of indicators that were uploaded but did not reachQuickSilver, broken down by reason.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped? Skipped { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped? Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped? _explicitNullValueSkipped = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped Skipped { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped _explicitNullValueSkipped = default!;
 #endif
         /// <summary>Indicator counts from the unified file the loader received</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryUploaded? Uploaded { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryUploaded? Uploaded { get => _explicitNullValueUploaded; set { _explicitNullValueUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded"); else _explicitNullProperties?.Remove("uploaded"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryUploaded? _explicitNullValueUploaded = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryUploaded Uploaded { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryUploaded Uploaded { get => _explicitNullValueUploaded; set { _explicitNullValueUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded"); else _explicitNullProperties?.Remove("uploaded"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryUploaded _explicitNullValueUploaded = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryPersisted>("persisted", Persisted);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummarySkipped>("skipped", Skipped);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummaryUploaded>("uploaded", Uploaded);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

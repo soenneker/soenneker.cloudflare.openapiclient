@@ -20,14 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.WithZoneIdentifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.WithZoneIdentifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.WithZoneItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.WithZoneItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("zoneIdentifier", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.WithZoneIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("zoneId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.WithZoneItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -66,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -91,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

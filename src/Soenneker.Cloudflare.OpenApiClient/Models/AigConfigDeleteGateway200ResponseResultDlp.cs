@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AigConfigDeleteGateway200ResponseResultDlp : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,9 +43,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlp();
-            result.AigConfigDeleteGateway200ResponseResultDlpAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1();
-            result.AigConfigDeleteGateway200ResponseResultDlpAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf2();
-            return result;
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("profiles") != null && parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("action") != null && (parseNode.GetChildNode("action")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("BLOCK".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "FLAG".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("policies") != null))();
+            if (result.AigConfigDeleteGateway200ResponseResultDlpAnyOf1 == null && result.AigConfigDeleteGateway200ResponseResultDlpAnyOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.AigConfigDeleteGateway200ResponseResultDlpAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1(), parseNode);
+            if (result.AigConfigDeleteGateway200ResponseResultDlpAnyOf1 == null && result.AigConfigDeleteGateway200ResponseResultDlpAnyOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.AigConfigDeleteGateway200ResponseResultDlpAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf2(), parseNode);
+            if (result.AigConfigDeleteGateway200ResponseResultDlpAnyOf1 == null && result.AigConfigDeleteGateway200ResponseResultDlpAnyOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +72,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AigConfigDeleteGateway200ResponseResultDlpAnyOf1 == null && AigConfigDeleteGateway200ResponseResultDlpAnyOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AigConfigDeleteGateway200ResponseResultDlpAnyOf1 != null && AigConfigDeleteGateway200ResponseResultDlpAnyOf2 == null) { if (AigConfigDeleteGateway200ResponseResultDlpAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AigConfigDeleteGateway200ResponseResultDlpAnyOf1); return; }
+            if (AigConfigDeleteGateway200ResponseResultDlpAnyOf2 != null && AigConfigDeleteGateway200ResponseResultDlpAnyOf1 == null) { if (AigConfigDeleteGateway200ResponseResultDlpAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AigConfigDeleteGateway200ResponseResultDlpAnyOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1>(null, AigConfigDeleteGateway200ResponseResultDlpAnyOf1, AigConfigDeleteGateway200ResponseResultDlpAnyOf2);
         }

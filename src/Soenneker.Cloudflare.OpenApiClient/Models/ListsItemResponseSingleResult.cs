@@ -8,42 +8,47 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember4"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListsItemResponseSingleResult : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember1? ListsItemResponseSingleResultMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf1? ListsItemResponseSingleResultOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember1 ListsItemResponseSingleResultMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf1 ListsItemResponseSingleResultOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember2? ListsItemResponseSingleResultMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf2? ListsItemResponseSingleResultOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember2 ListsItemResponseSingleResultMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf2 ListsItemResponseSingleResultOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember3? ListsItemResponseSingleResultMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf3? ListsItemResponseSingleResultOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember3 ListsItemResponseSingleResultMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf3 ListsItemResponseSingleResultOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember4? ListsItemResponseSingleResultMember4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf4? ListsItemResponseSingleResultOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember4 ListsItemResponseSingleResultMember4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf4 ListsItemResponseSingleResultOneOf4 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,7 +60,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResult();
-            return result;
+            if("ListsItemResponseSingleResultOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("ListsItemResponseSingleResultOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("ListsItemResponseSingleResultOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("ListsItemResponseSingleResultOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("ip") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("hostname") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("redirect") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("asn") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null))();
+            if (result.ListsItemResponseSingleResultOneOf1 == null && result.ListsItemResponseSingleResultOneOf2 == null && result.ListsItemResponseSingleResultOneOf3 == null && result.ListsItemResponseSingleResultOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ListsItemResponseSingleResultOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf1(), parseNode);
+            if (result.ListsItemResponseSingleResultOneOf1 == null && result.ListsItemResponseSingleResultOneOf2 == null && result.ListsItemResponseSingleResultOneOf3 == null && result.ListsItemResponseSingleResultOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ListsItemResponseSingleResultOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf2(), parseNode);
+            if (result.ListsItemResponseSingleResultOneOf1 == null && result.ListsItemResponseSingleResultOneOf2 == null && result.ListsItemResponseSingleResultOneOf3 == null && result.ListsItemResponseSingleResultOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.ListsItemResponseSingleResultOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf3(), parseNode);
+            if (result.ListsItemResponseSingleResultOneOf1 == null && result.ListsItemResponseSingleResultOneOf2 == null && result.ListsItemResponseSingleResultOneOf3 == null && result.ListsItemResponseSingleResultOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ListsItemResponseSingleResultOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf4(), parseNode);
+            if (result.ListsItemResponseSingleResultOneOf1 == null && result.ListsItemResponseSingleResultOneOf2 == null && result.ListsItemResponseSingleResultOneOf3 == null && result.ListsItemResponseSingleResultOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,21 +95,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ListsItemResponseSingleResultMember1 != null)
+            if(ListsItemResponseSingleResultOneOf1 != null)
             {
-                return ListsItemResponseSingleResultMember1.GetFieldDeserializers();
+                return ListsItemResponseSingleResultOneOf1.GetFieldDeserializers();
             }
-            else if(ListsItemResponseSingleResultMember2 != null)
+            else if(ListsItemResponseSingleResultOneOf2 != null)
             {
-                return ListsItemResponseSingleResultMember2.GetFieldDeserializers();
+                return ListsItemResponseSingleResultOneOf2.GetFieldDeserializers();
             }
-            else if(ListsItemResponseSingleResultMember3 != null)
+            else if(ListsItemResponseSingleResultOneOf3 != null)
             {
-                return ListsItemResponseSingleResultMember3.GetFieldDeserializers();
+                return ListsItemResponseSingleResultOneOf3.GetFieldDeserializers();
             }
-            else if(ListsItemResponseSingleResultMember4 != null)
+            else if(ListsItemResponseSingleResultOneOf4 != null)
             {
-                return ListsItemResponseSingleResultMember4.GetFieldDeserializers();
+                return ListsItemResponseSingleResultOneOf4.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -87,22 +119,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ListsItemResponseSingleResultOneOf1 == null && ListsItemResponseSingleResultOneOf2 == null && ListsItemResponseSingleResultOneOf3 == null && ListsItemResponseSingleResultOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ListsItemResponseSingleResultOneOf1 != null && ListsItemResponseSingleResultOneOf2 == null && ListsItemResponseSingleResultOneOf3 == null && ListsItemResponseSingleResultOneOf4 == null) { if (ListsItemResponseSingleResultOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListsItemResponseSingleResultOneOf1); return; }
+            if (ListsItemResponseSingleResultOneOf2 != null && ListsItemResponseSingleResultOneOf1 == null && ListsItemResponseSingleResultOneOf3 == null && ListsItemResponseSingleResultOneOf4 == null) { if (ListsItemResponseSingleResultOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListsItemResponseSingleResultOneOf2); return; }
+            if (ListsItemResponseSingleResultOneOf3 != null && ListsItemResponseSingleResultOneOf1 == null && ListsItemResponseSingleResultOneOf2 == null && ListsItemResponseSingleResultOneOf4 == null) { if (ListsItemResponseSingleResultOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListsItemResponseSingleResultOneOf3); return; }
+            if (ListsItemResponseSingleResultOneOf4 != null && ListsItemResponseSingleResultOneOf1 == null && ListsItemResponseSingleResultOneOf2 == null && ListsItemResponseSingleResultOneOf3 == null) { if (ListsItemResponseSingleResultOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListsItemResponseSingleResultOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ListsItemResponseSingleResultMember1 != null)
+            if(ListsItemResponseSingleResultOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember1>(null, ListsItemResponseSingleResultMember1);
+                if (ListsItemResponseSingleResultOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf1>(null, ListsItemResponseSingleResultOneOf1);
             }
-            else if(ListsItemResponseSingleResultMember2 != null)
+            else if(ListsItemResponseSingleResultOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember2>(null, ListsItemResponseSingleResultMember2);
+                if (ListsItemResponseSingleResultOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf2>(null, ListsItemResponseSingleResultOneOf2);
             }
-            else if(ListsItemResponseSingleResultMember3 != null)
+            else if(ListsItemResponseSingleResultOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember3>(null, ListsItemResponseSingleResultMember3);
+                if (ListsItemResponseSingleResultOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf3>(null, ListsItemResponseSingleResultOneOf3);
             }
-            else if(ListsItemResponseSingleResultMember4 != null)
+            else if(ListsItemResponseSingleResultOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultMember4>(null, ListsItemResponseSingleResultMember4);
+                if (ListsItemResponseSingleResultOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemResponseSingleResultOneOf4>(null, ListsItemResponseSingleResultOneOf4);
             }
         }
     }

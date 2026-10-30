@@ -11,23 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class R2DataCatalogTableSnapshotExpirationConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_snapshot_age") is { } nullNodeMaxSnapshotAge && nullNodeMaxSnapshotAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSnapshotAge = null;
+            if (parseNode.GetChildNode("min_snapshots_to_keep") is { } nullNodeMinSnapshotsToKeep && nullNodeMinSnapshotsToKeep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinSnapshotsToKeep = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the maximum age for snapshots.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxSnapshotAge { get; set; }
+        public string? MaxSnapshotAge { get => _explicitNullValueMaxSnapshotAge; set { _explicitNullValueMaxSnapshotAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_snapshot_age"); else _explicitNullProperties?.Remove("max_snapshot_age"); } }
+        private string? _explicitNullValueMaxSnapshotAge = default!;
 #nullable restore
 #else
-        public string MaxSnapshotAge { get; set; }
+        public string MaxSnapshotAge { get => _explicitNullValueMaxSnapshotAge; set { _explicitNullValueMaxSnapshotAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_snapshot_age"); else _explicitNullProperties?.Remove("max_snapshot_age"); } }
+        private string _explicitNullValueMaxSnapshotAge = default!;
 #endif
         /// <summary>Specifies the minimum number of snapshots to retain. Defaults to 100.</summary>
-        public long? MinSnapshotsToKeep { get; set; }
+        public long? MinSnapshotsToKeep { get => _explicitNullValueMinSnapshotsToKeep; set { _explicitNullValueMinSnapshotsToKeep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_snapshots_to_keep"); else _explicitNullProperties?.Remove("min_snapshots_to_keep"); } }
+        private long? _explicitNullValueMinSnapshotsToKeep = default!;
         /// <summary>Earliest time when the scheduler can claim this operation. Null when disabled.</summary>
         public DateTimeOffset? NextEligibleAt { get; private set; }
         /// <summary>Specifies the state of maintenance operations.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState? State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState? _explicitNullValueState = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig"/> and sets the default values.
         /// </summary>
@@ -43,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("max_snapshot_age", MaxSnapshotAge);
             writer.WriteLongValue("min_snapshots_to_keep", MinSnapshotsToKeep);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState>("state", State);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

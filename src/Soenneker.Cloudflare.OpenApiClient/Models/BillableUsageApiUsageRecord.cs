@@ -12,152 +12,228 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BillableUsageApiUsageRecord : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("BilledCost") is { } nullNodeBilledCost && nullNodeBilledCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BilledCost = null;
+            if (parseNode.GetChildNode("BillingAccountId") is { } nullNodeBillingAccountId && nullNodeBillingAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAccountId = null;
+            if (parseNode.GetChildNode("BillingAccountName") is { } nullNodeBillingAccountName && nullNodeBillingAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAccountName = null;
+            if (parseNode.GetChildNode("BillingCurrency") is { } nullNodeBillingCurrency && nullNodeBillingCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingCurrency = null;
+            if (parseNode.GetChildNode("BillingPeriodStart") is { } nullNodeBillingPeriodStart && nullNodeBillingPeriodStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriodStart = null;
+            if (parseNode.GetChildNode("ChargeCategory") is { } nullNodeChargeCategory && nullNodeChargeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargeCategory = null;
+            if (parseNode.GetChildNode("ChargeClass") is { } nullNodeChargeClass && nullNodeChargeClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargeClass = null;
+            if (parseNode.GetChildNode("ChargeDescription") is { } nullNodeChargeDescription && nullNodeChargeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargeDescription = null;
+            if (parseNode.GetChildNode("ChargePeriodEnd") is { } nullNodeChargePeriodEnd && nullNodeChargePeriodEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargePeriodEnd = null;
+            if (parseNode.GetChildNode("ChargePeriodStart") is { } nullNodeChargePeriodStart && nullNodeChargePeriodStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargePeriodStart = null;
+            if (parseNode.GetChildNode("ConsumedQuantity") is { } nullNodeConsumedQuantity && nullNodeConsumedQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumedQuantity = null;
+            if (parseNode.GetChildNode("ConsumedUnit") is { } nullNodeConsumedUnit && nullNodeConsumedUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumedUnit = null;
+            if (parseNode.GetChildNode("ContractedCost") is { } nullNodeContractedCost && nullNodeContractedCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContractedCost = null;
+            if (parseNode.GetChildNode("CumulatedContractedCost") is { } nullNodeCumulatedContractedCost && nullNodeCumulatedContractedCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CumulatedContractedCost = null;
+            if (parseNode.GetChildNode("CumulatedPricingQuantity") is { } nullNodeCumulatedPricingQuantity && nullNodeCumulatedPricingQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CumulatedPricingQuantity = null;
+            if (parseNode.GetChildNode("EffectiveCost") is { } nullNodeEffectiveCost && nullNodeEffectiveCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveCost = null;
+            if (parseNode.GetChildNode("HostProviderName") is { } nullNodeHostProviderName && nullNodeHostProviderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostProviderName = null;
+            if (parseNode.GetChildNode("InvoiceIssuerName") is { } nullNodeInvoiceIssuerName && nullNodeInvoiceIssuerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvoiceIssuerName = null;
+            if (parseNode.GetChildNode("ListCost") is { } nullNodeListCost && nullNodeListCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListCost = null;
+            if (parseNode.GetChildNode("PricingQuantity") is { } nullNodePricingQuantity && nullNodePricingQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricingQuantity = null;
+            if (parseNode.GetChildNode("PricingUnit") is { } nullNodePricingUnit && nullNodePricingUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricingUnit = null;
+            if (parseNode.GetChildNode("ServiceFamilyName") is { } nullNodeServiceFamilyName && nullNodeServiceFamilyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceFamilyName = null;
+            if (parseNode.GetChildNode("ServiceName") is { } nullNodeServiceName && nullNodeServiceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceName = null;
+            if (parseNode.GetChildNode("ServiceProviderName") is { } nullNodeServiceProviderName && nullNodeServiceProviderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceProviderName = null;
+            if (parseNode.GetChildNode("SubscriptionId") is { } nullNodeSubscriptionId && nullNodeSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionId = null;
+            if (parseNode.GetChildNode("ZoneId") is { } nullNodeZoneId && nullNodeZoneId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneId = null;
+            if (parseNode.GetChildNode("ZoneName") is { } nullNodeZoneName && nullNodeZoneName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount invoiced for this charge. PayGo is billed directly by Cloudflare, so this equals ContractedCost.</summary>
-        public double? BilledCost { get; set; }
+        public double? BilledCost { get => _explicitNullValueBilledCost; set { _explicitNullValueBilledCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BilledCost"); else _explicitNullProperties?.Remove("BilledCost"); } }
+        private double? _explicitNullValueBilledCost = default!;
         /// <summary>The identifier of the account the charge is billed to (account tag).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingAccountId { get; set; }
+        public string? BillingAccountId { get => _explicitNullValueBillingAccountId; set { _explicitNullValueBillingAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BillingAccountId"); else _explicitNullProperties?.Remove("BillingAccountId"); } }
+        private string? _explicitNullValueBillingAccountId = default!;
 #nullable restore
 #else
-        public string BillingAccountId { get; set; }
+        public string BillingAccountId { get => _explicitNullValueBillingAccountId; set { _explicitNullValueBillingAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BillingAccountId"); else _explicitNullProperties?.Remove("BillingAccountId"); } }
+        private string _explicitNullValueBillingAccountId = default!;
 #endif
         /// <summary>The display name of the billing account. Null when the name could not be resolved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingAccountName { get; set; }
+        public string? BillingAccountName { get => _explicitNullValueBillingAccountName; set { _explicitNullValueBillingAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BillingAccountName"); else _explicitNullProperties?.Remove("BillingAccountName"); } }
+        private string? _explicitNullValueBillingAccountName = default!;
 #nullable restore
 #else
-        public string BillingAccountName { get; set; }
+        public string BillingAccountName { get => _explicitNullValueBillingAccountName; set { _explicitNullValueBillingAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BillingAccountName"); else _explicitNullProperties?.Remove("BillingAccountName"); } }
+        private string _explicitNullValueBillingAccountName = default!;
 #endif
         /// <summary>Specifies the billing currency code (ISO 4217).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingCurrency { get; set; }
+        public string? BillingCurrency { get => _explicitNullValueBillingCurrency; set { _explicitNullValueBillingCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BillingCurrency"); else _explicitNullProperties?.Remove("BillingCurrency"); } }
+        private string? _explicitNullValueBillingCurrency = default!;
 #nullable restore
 #else
-        public string BillingCurrency { get; set; }
+        public string BillingCurrency { get => _explicitNullValueBillingCurrency; set { _explicitNullValueBillingCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BillingCurrency"); else _explicitNullProperties?.Remove("BillingCurrency"); } }
+        private string _explicitNullValueBillingCurrency = default!;
 #endif
         /// <summary>Indicates the start of the billing period. There is no `BillingPeriodEnd` counterpart; see the known gaps described on this schema.</summary>
-        public DateTimeOffset? BillingPeriodStart { get; set; }
+        public DateTimeOffset? BillingPeriodStart { get => _explicitNullValueBillingPeriodStart; set { _explicitNullValueBillingPeriodStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BillingPeriodStart"); else _explicitNullProperties?.Remove("BillingPeriodStart"); } }
+        private DateTimeOffset? _explicitNullValueBillingPeriodStart = default!;
         /// <summary>Highest-level classification of a charge based on the nature of how it gets billed. Currently only &quot;Usage&quot; is supported.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UsageChargeCategory? ChargeCategory { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UsageChargeCategory? ChargeCategory { get => _explicitNullValueChargeCategory; set { _explicitNullValueChargeCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ChargeCategory"); else _explicitNullProperties?.Remove("ChargeCategory"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UsageChargeCategory? _explicitNullValueChargeCategory = default!;
         /// <summary>Indicates whether the row corrects a previously invoiced billing period. Always null for this endpoint, which does not return corrections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChargeClass { get; set; }
+        public string? ChargeClass { get => _explicitNullValueChargeClass; set { _explicitNullValueChargeClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ChargeClass"); else _explicitNullProperties?.Remove("ChargeClass"); } }
+        private string? _explicitNullValueChargeClass = default!;
 #nullable restore
 #else
-        public string ChargeClass { get; set; }
+        public string ChargeClass { get => _explicitNullValueChargeClass; set { _explicitNullValueChargeClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ChargeClass"); else _explicitNullProperties?.Remove("ChargeClass"); } }
+        private string _explicitNullValueChargeClass = default!;
 #endif
         /// <summary>A human-readable summary of the charge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChargeDescription { get; set; }
+        public string? ChargeDescription { get => _explicitNullValueChargeDescription; set { _explicitNullValueChargeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ChargeDescription"); else _explicitNullProperties?.Remove("ChargeDescription"); } }
+        private string? _explicitNullValueChargeDescription = default!;
 #nullable restore
 #else
-        public string ChargeDescription { get; set; }
+        public string ChargeDescription { get => _explicitNullValueChargeDescription; set { _explicitNullValueChargeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ChargeDescription"); else _explicitNullProperties?.Remove("ChargeDescription"); } }
+        private string _explicitNullValueChargeDescription = default!;
 #endif
         /// <summary>Indicates the end of the charge period.</summary>
-        public DateTimeOffset? ChargePeriodEnd { get; set; }
+        public DateTimeOffset? ChargePeriodEnd { get => _explicitNullValueChargePeriodEnd; set { _explicitNullValueChargePeriodEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ChargePeriodEnd"); else _explicitNullProperties?.Remove("ChargePeriodEnd"); } }
+        private DateTimeOffset? _explicitNullValueChargePeriodEnd = default!;
         /// <summary>Indicates the start of the charge period.</summary>
-        public DateTimeOffset? ChargePeriodStart { get; set; }
+        public DateTimeOffset? ChargePeriodStart { get => _explicitNullValueChargePeriodStart; set { _explicitNullValueChargePeriodStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ChargePeriodStart"); else _explicitNullProperties?.Remove("ChargePeriodStart"); } }
+        private DateTimeOffset? _explicitNullValueChargePeriodStart = default!;
         /// <summary>Specifies the quantity consumed during this charge period.</summary>
-        public double? ConsumedQuantity { get; set; }
+        public double? ConsumedQuantity { get => _explicitNullValueConsumedQuantity; set { _explicitNullValueConsumedQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ConsumedQuantity"); else _explicitNullProperties?.Remove("ConsumedQuantity"); } }
+        private double? _explicitNullValueConsumedQuantity = default!;
         /// <summary>A display name for the unit of measurement used for the product (for example, &quot;GB-months&quot;, &quot;GB-seconds&quot;). May be empty when the unit is implicit in the service name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumedUnit { get; set; }
+        public string? ConsumedUnit { get => _explicitNullValueConsumedUnit; set { _explicitNullValueConsumedUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ConsumedUnit"); else _explicitNullProperties?.Remove("ConsumedUnit"); } }
+        private string? _explicitNullValueConsumedUnit = default!;
 #nullable restore
 #else
-        public string ConsumedUnit { get; set; }
+        public string ConsumedUnit { get => _explicitNullValueConsumedUnit; set { _explicitNullValueConsumedUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ConsumedUnit"); else _explicitNullProperties?.Remove("ConsumedUnit"); } }
+        private string _explicitNullValueConsumedUnit = default!;
 #endif
         /// <summary>Specifies the cost for this charge period in the billing currency.</summary>
-        public double? ContractedCost { get; set; }
+        public double? ContractedCost { get => _explicitNullValueContractedCost; set { _explicitNullValueContractedCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ContractedCost"); else _explicitNullProperties?.Remove("ContractedCost"); } }
+        private double? _explicitNullValueContractedCost = default!;
         /// <summary>Specifies the cumulated cost for the billing period in the billing currency.</summary>
-        public double? CumulatedContractedCost { get; set; }
+        public double? CumulatedContractedCost { get => _explicitNullValueCumulatedContractedCost; set { _explicitNullValueCumulatedContractedCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CumulatedContractedCost"); else _explicitNullProperties?.Remove("CumulatedContractedCost"); } }
+        private double? _explicitNullValueCumulatedContractedCost = default!;
         /// <summary>Specifies the portion of usage that is actually subject to a unit price.</summary>
-        public int? CumulatedPricingQuantity { get; set; }
+        public int? CumulatedPricingQuantity { get => _explicitNullValueCumulatedPricingQuantity; set { _explicitNullValueCumulatedPricingQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CumulatedPricingQuantity"); else _explicitNullProperties?.Remove("CumulatedPricingQuantity"); } }
+        private int? _explicitNullValueCumulatedPricingQuantity = default!;
         /// <summary>The amortized cost of the charge. PayGo has no upfront commitments, so this equals ContractedCost.</summary>
-        public double? EffectiveCost { get; set; }
+        public double? EffectiveCost { get => _explicitNullValueEffectiveCost; set { _explicitNullValueEffectiveCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EffectiveCost"); else _explicitNullProperties?.Remove("EffectiveCost"); } }
+        private double? _explicitNullValueEffectiveCost = default!;
         /// <summary>The provider that hosts the infrastructure or platform the service runs on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostProviderName { get; set; }
+        public string? HostProviderName { get => _explicitNullValueHostProviderName; set { _explicitNullValueHostProviderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HostProviderName"); else _explicitNullProperties?.Remove("HostProviderName"); } }
+        private string? _explicitNullValueHostProviderName = default!;
 #nullable restore
 #else
-        public string HostProviderName { get; set; }
+        public string HostProviderName { get => _explicitNullValueHostProviderName; set { _explicitNullValueHostProviderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HostProviderName"); else _explicitNullProperties?.Remove("HostProviderName"); } }
+        private string _explicitNullValueHostProviderName = default!;
 #endif
         /// <summary>The entity that issues the invoice for this charge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceIssuerName { get; set; }
+        public string? InvoiceIssuerName { get => _explicitNullValueInvoiceIssuerName; set { _explicitNullValueInvoiceIssuerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InvoiceIssuerName"); else _explicitNullProperties?.Remove("InvoiceIssuerName"); } }
+        private string? _explicitNullValueInvoiceIssuerName = default!;
 #nullable restore
 #else
-        public string InvoiceIssuerName { get; set; }
+        public string InvoiceIssuerName { get => _explicitNullValueInvoiceIssuerName; set { _explicitNullValueInvoiceIssuerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InvoiceIssuerName"); else _explicitNullProperties?.Remove("InvoiceIssuerName"); } }
+        private string _explicitNullValueInvoiceIssuerName = default!;
 #endif
         /// <summary>The cost at published list prices, before any discount. PayGo has no commitment discounts, so this equals ContractedCost.</summary>
-        public double? ListCost { get; set; }
+        public double? ListCost { get => _explicitNullValueListCost; set { _explicitNullValueListCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ListCost"); else _explicitNullProperties?.Remove("ListCost"); } }
+        private double? _explicitNullValueListCost = default!;
         /// <summary>Specifies the pricing quantity for this charge period.</summary>
-        public int? PricingQuantity { get; set; }
+        public int? PricingQuantity { get => _explicitNullValuePricingQuantity; set { _explicitNullValuePricingQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PricingQuantity"); else _explicitNullProperties?.Remove("PricingQuantity"); } }
+        private int? _explicitNullValuePricingQuantity = default!;
         /// <summary>The unit that PricingQuantity is expressed in. Unlike ConsumedUnit this is never empty; it falls back to &quot;Count&quot; when the service has no explicit unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PricingUnit { get; set; }
+        public string? PricingUnit { get => _explicitNullValuePricingUnit; set { _explicitNullValuePricingUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PricingUnit"); else _explicitNullProperties?.Remove("PricingUnit"); } }
+        private string? _explicitNullValuePricingUnit = default!;
 #nullable restore
 #else
-        public string PricingUnit { get; set; }
+        public string PricingUnit { get => _explicitNullValuePricingUnit; set { _explicitNullValuePricingUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PricingUnit"); else _explicitNullProperties?.Remove("PricingUnit"); } }
+        private string _explicitNullValuePricingUnit = default!;
 #endif
         /// <summary>Identifies the product family for the Cloudflare service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceFamilyName { get; set; }
+        public string? ServiceFamilyName { get => _explicitNullValueServiceFamilyName; set { _explicitNullValueServiceFamilyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceFamilyName"); else _explicitNullProperties?.Remove("ServiceFamilyName"); } }
+        private string? _explicitNullValueServiceFamilyName = default!;
 #nullable restore
 #else
-        public string ServiceFamilyName { get; set; }
+        public string ServiceFamilyName { get => _explicitNullValueServiceFamilyName; set { _explicitNullValueServiceFamilyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceFamilyName"); else _explicitNullProperties?.Remove("ServiceFamilyName"); } }
+        private string _explicitNullValueServiceFamilyName = default!;
 #endif
         /// <summary>Identifies the Cloudflare service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceName { get; set; }
+        public string? ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceName"); else _explicitNullProperties?.Remove("ServiceName"); } }
+        private string? _explicitNullValueServiceName = default!;
 #nullable restore
 #else
-        public string ServiceName { get; set; }
+        public string ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceName"); else _explicitNullProperties?.Remove("ServiceName"); } }
+        private string _explicitNullValueServiceName = default!;
 #endif
         /// <summary>The provider of the purchased service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceProviderName { get; set; }
+        public string? ServiceProviderName { get => _explicitNullValueServiceProviderName; set { _explicitNullValueServiceProviderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceProviderName"); else _explicitNullProperties?.Remove("ServiceProviderName"); } }
+        private string? _explicitNullValueServiceProviderName = default!;
 #nullable restore
 #else
-        public string ServiceProviderName { get; set; }
+        public string ServiceProviderName { get => _explicitNullValueServiceProviderName; set { _explicitNullValueServiceProviderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceProviderName"); else _explicitNullProperties?.Remove("ServiceProviderName"); } }
+        private string _explicitNullValueServiceProviderName = default!;
 #endif
         /// <summary>The identifier for the Cloudflare subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId { get; set; }
+        public string? SubscriptionId { get => _explicitNullValueSubscriptionId; set { _explicitNullValueSubscriptionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SubscriptionId"); else _explicitNullProperties?.Remove("SubscriptionId"); } }
+        private string? _explicitNullValueSubscriptionId = default!;
 #nullable restore
 #else
-        public string SubscriptionId { get; set; }
+        public string SubscriptionId { get => _explicitNullValueSubscriptionId; set { _explicitNullValueSubscriptionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SubscriptionId"); else _explicitNullProperties?.Remove("SubscriptionId"); } }
+        private string _explicitNullValueSubscriptionId = default!;
 #endif
         /// <summary>The identifier for the Cloudflare zone (zone tag).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZoneId { get; set; }
+        public string? ZoneId { get => _explicitNullValueZoneId; set { _explicitNullValueZoneId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ZoneId"); else _explicitNullProperties?.Remove("ZoneId"); } }
+        private string? _explicitNullValueZoneId = default!;
 #nullable restore
 #else
-        public string ZoneId { get; set; }
+        public string ZoneId { get => _explicitNullValueZoneId; set { _explicitNullValueZoneId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ZoneId"); else _explicitNullProperties?.Remove("ZoneId"); } }
+        private string _explicitNullValueZoneId = default!;
 #endif
         /// <summary>The display name of the Cloudflare zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZoneName { get; set; }
+        public string? ZoneName { get => _explicitNullValueZoneName; set { _explicitNullValueZoneName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ZoneName"); else _explicitNullProperties?.Remove("ZoneName"); } }
+        private string? _explicitNullValueZoneName = default!;
 #nullable restore
 #else
-        public string ZoneName { get; set; }
+        public string ZoneName { get => _explicitNullValueZoneName; set { _explicitNullValueZoneName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ZoneName"); else _explicitNullProperties?.Remove("ZoneName"); } }
+        private string _explicitNullValueZoneName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageRecord"/> and sets the default values.
@@ -174,7 +250,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageRecord();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageRecord(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -247,6 +323,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("SubscriptionId", SubscriptionId);
             writer.WriteStringValue("ZoneId", ZoneId);
             writer.WriteStringValue("ZoneName", ZoneName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

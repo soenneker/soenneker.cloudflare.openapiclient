@@ -11,60 +11,89 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DnsAnalyticsByTime4XxResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("data_lag") is { } nullNodeDataLag && nullNodeDataLag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataLag = null;
+            if (parseNode.GetChildNode("max") is { } nullNodeMax && nullNodeMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Max = null;
+            if (parseNode.GetChildNode("min") is { } nullNodeMin && nullNodeMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Min = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("rows") is { } nullNodeRows && nullNodeRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rows = null;
+            if (parseNode.GetChildNode("time_intervals") is { } nullNodeTimeIntervals && nullNodeTimeIntervals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeIntervals = null;
+            if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeData? Data { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeData Data { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeData _explicitNullValueData = default!;
 #endif
         /// <summary>Number of seconds between current time and last processed event, in another words how many seconds of data could be missing.</summary>
-        public double? DataLag { get; set; }
+        public double? DataLag { get => _explicitNullValueDataLag; set { _explicitNullValueDataLag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_lag"); else _explicitNullProperties?.Remove("data_lag"); } }
+        private double? _explicitNullValueDataLag = default!;
         /// <summary>Maximum results for each metric (object mapping metric names to values). Currently always an empty object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMax? Max { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMax? Max { get => _explicitNullValueMax; set { _explicitNullValueMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max"); else _explicitNullProperties?.Remove("max"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMax? _explicitNullValueMax = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMax Max { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMax Max { get => _explicitNullValueMax; set { _explicitNullValueMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max"); else _explicitNullProperties?.Remove("max"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMax _explicitNullValueMax = default!;
 #endif
         /// <summary>Minimum results for each metric (object mapping metric names to values). Currently always an empty object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMin? Min { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMin? Min { get => _explicitNullValueMin; set { _explicitNullValueMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min"); else _explicitNullProperties?.Remove("min"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMin? _explicitNullValueMin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMin Min { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMin Min { get => _explicitNullValueMin; set { _explicitNullValueMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min"); else _explicitNullProperties?.Remove("min"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeMin _explicitNullValueMin = default!;
 #endif
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeQuery? Query { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeQuery? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeQuery? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeQuery Query { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeQuery Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeQuery _explicitNullValueQuery = default!;
 #endif
         /// <summary>Total number of rows in the result.</summary>
-        public double? Rows { get; set; }
+        public double? Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
+        private double? _explicitNullValueRows = default!;
         /// <summary>Array of time intervals in the response data. Each interval is represented as an array containing two values: the start time, and the end time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TimeIntervals { get; set; }
+        public UntypedNode? TimeIntervals { get => _explicitNullValueTimeIntervals; set { _explicitNullValueTimeIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_intervals"); else _explicitNullProperties?.Remove("time_intervals"); } }
+        private UntypedNode? _explicitNullValueTimeIntervals = default!;
 #nullable restore
 #else
-        public UntypedNode TimeIntervals { get; set; }
+        public UntypedNode TimeIntervals { get => _explicitNullValueTimeIntervals; set { _explicitNullValueTimeIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_intervals"); else _explicitNullProperties?.Remove("time_intervals"); } }
+        private UntypedNode _explicitNullValueTimeIntervals = default!;
 #endif
         /// <summary>Total results for metrics across all data (object mapping metric names to values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeTotals? Totals { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeTotals? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeTotals? _explicitNullValueTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeTotals Totals { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeTotals Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeTotals _explicitNullValueTotals = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsByTime4XxResponseResult"/> and sets the default values.
@@ -81,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsByTime4XxResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsByTime4XxResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsByTime4XxResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("rows", Rows);
             writer.WriteObjectValue<UntypedNode>("time_intervals", TimeIntervals);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportBytimeTotals>("totals", Totals);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

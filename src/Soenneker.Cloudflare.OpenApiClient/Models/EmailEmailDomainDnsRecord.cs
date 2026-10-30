@@ -11,45 +11,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailEmailDomainDnsRecord : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("observed_at") is { } nullNodeObservedAt && nullNodeObservedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservedAt = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("purpose") is { } nullNodePurpose && nullNodePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purpose = null;
+            if (parseNode.GetChildNode("required_for") is { } nullNodeRequiredFor && nullNodeRequiredFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredFor = null;
+            if (parseNode.GetChildNode("selector") is { } nullNodeSelector && nullNodeSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Selector = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("validation_status") is { } nullNodeValidationStatus && nullNodeValidationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationStatus = null;
+            if (parseNode.GetChildNode("verification_group") is { } nullNodeVerificationGroup && nullNodeVerificationGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationGroup = null;
+        }
+
         /// <summary>Assigned target. CNAME targets contain the enrollment token; use the returned value verbatim.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get; set; }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string _explicitNullValueContent = default!;
 #endif
         /// <summary>Exact owner name to publish in the customer&apos;s DNS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Time of the latest accepted observation for this assignment.</summary>
-        public DateTimeOffset? ObservedAt { get; set; }
+        public DateTimeOffset? ObservedAt { get => _explicitNullValueObservedAt; set { _explicitNullValueObservedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observed_at"); else _explicitNullProperties?.Remove("observed_at"); } }
+        private DateTimeOffset? _explicitNullValueObservedAt = default!;
         /// <summary>MX preference; present only for MX records.</summary>
-        public long? Priority { get; set; }
+        public long? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private long? _explicitNullValuePriority = default!;
         /// <summary>Role of this DNS assignment.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordPurpose? Purpose { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordPurpose? Purpose { get => _explicitNullValuePurpose; set { _explicitNullValuePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose"); else _explicitNullProperties?.Remove("purpose"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordPurpose? _explicitNullValuePurpose = default!;
         /// <summary>Capabilities that depend on this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordRequiredForItem?>? RequiredFor { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordRequiredForItem?>? RequiredFor { get => _explicitNullValueRequiredFor; set { _explicitNullValueRequiredFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_for"); else _explicitNullProperties?.Remove("required_for"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordRequiredForItem?>? _explicitNullValueRequiredFor = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordRequiredForItem?> RequiredFor { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordRequiredForItem?> RequiredFor { get => _explicitNullValueRequiredFor; set { _explicitNullValueRequiredFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_for"); else _explicitNullProperties?.Remove("required_for"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordRequiredForItem?> _explicitNullValueRequiredFor = default!;
 #endif
-        /// <summary>DKIM selector; present only for DKIM assignments.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordSelector? Selector { get; set; }
+        /// <summary>DKIM selector, the first label of name; present only for DKIM assignments. New enrollments use cf1 and cf2. Enrollments created before cf1 and cf2 keep s1 and s2.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordSelector? Selector { get => _explicitNullValueSelector; set { _explicitNullValueSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selector"); else _explicitNullProperties?.Remove("selector"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordSelector? _explicitNullValueSelector = default!;
         /// <summary>DNS record type to publish.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordType? _explicitNullValueType = default!;
         /// <summary>Observation of the exact customer record.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordValidationStatus? ValidationStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordValidationStatus? ValidationStatus { get => _explicitNullValueValidationStatus; set { _explicitNullValueValidationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_status"); else _explicitNullProperties?.Remove("validation_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordValidationStatus? _explicitNullValueValidationStatus = default!;
         /// <summary>Either current DKIM alias can establish ownership.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OwnershipAnyVerificationGroup? VerificationGroup { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OwnershipAnyVerificationGroup? VerificationGroup { get => _explicitNullValueVerificationGroup; set { _explicitNullValueVerificationGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_group"); else _explicitNullProperties?.Remove("verification_group"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OwnershipAnyVerificationGroup? _explicitNullValueVerificationGroup = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecord();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecord(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,7 +126,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordSelector>("selector", Selector);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailDomainDnsRecordValidationStatus>("validation_status", ValidationStatus);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OwnershipAnyVerificationGroup>("verification_group", VerificationGroup);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OwnershipAnyVerificationGroup>("verification_group", VerificationGroup);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

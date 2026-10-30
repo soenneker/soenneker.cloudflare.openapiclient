@@ -11,29 +11,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BillSubsApiBadDebtResponseSingleResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("already_paid") is { } nullNodeAlreadyPaid && nullNodeAlreadyPaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlreadyPaid = null;
+            if (parseNode.GetChildNode("bad_debt_status") is { } nullNodeBadDebtStatus && nullNodeBadDebtStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BadDebtStatus = null;
+            if (parseNode.GetChildNode("invoices") is { } nullNodeInvoices && nullNodeInvoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invoices = null;
+            if (parseNode.GetChildNode("total_debt_amount") is { } nullNodeTotalDebtAmount && nullNodeTotalDebtAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalDebtAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount already paid towards the debt.</summary>
-        public double? AlreadyPaid { get; set; }
+        public double? AlreadyPaid { get => _explicitNullValueAlreadyPaid; set { _explicitNullValueAlreadyPaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("already_paid"); else _explicitNullProperties?.Remove("already_paid"); } }
+        private double? _explicitNullValueAlreadyPaid = default!;
         /// <summary>The current bad debt status of the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BadDebtStatus { get; set; }
+        public string? BadDebtStatus { get => _explicitNullValueBadDebtStatus; set { _explicitNullValueBadDebtStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bad_debt_status"); else _explicitNullProperties?.Remove("bad_debt_status"); } }
+        private string? _explicitNullValueBadDebtStatus = default!;
 #nullable restore
 #else
-        public string BadDebtStatus { get; set; }
+        public string BadDebtStatus { get => _explicitNullValueBadDebtStatus; set { _explicitNullValueBadDebtStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bad_debt_status"); else _explicitNullProperties?.Remove("bad_debt_status"); } }
+        private string _explicitNullValueBadDebtStatus = default!;
 #endif
         /// <summary>List of outstanding invoices contributing to bad debt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountBillingHistory>? Invoices { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountBillingHistory>? Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoices"); else _explicitNullProperties?.Remove("invoices"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountBillingHistory>? _explicitNullValueInvoices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountBillingHistory> Invoices { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountBillingHistory> Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoices"); else _explicitNullProperties?.Remove("invoices"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountBillingHistory> _explicitNullValueInvoices = default!;
 #endif
         /// <summary>Total outstanding debt amount.</summary>
-        public double? TotalDebtAmount { get; set; }
+        public double? TotalDebtAmount { get => _explicitNullValueTotalDebtAmount; set { _explicitNullValueTotalDebtAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_debt_amount"); else _explicitNullProperties?.Remove("total_debt_amount"); } }
+        private double? _explicitNullValueTotalDebtAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBadDebtResponseSingleResult"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBadDebtResponseSingleResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBadDebtResponseSingleResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBadDebtResponseSingleResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("bad_debt_status", BadDebtStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAccountBillingHistory>("invoices", Invoices);
             writer.WriteDoubleValue("total_debt_amount", TotalDebtAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

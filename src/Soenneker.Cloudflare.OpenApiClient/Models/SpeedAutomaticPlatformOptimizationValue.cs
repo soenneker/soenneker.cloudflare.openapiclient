@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SpeedAutomaticPlatformOptimizationValue : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1"/></summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1? SpeedAutomaticPlatformOptimizationValueOneOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2"/></summary>
@@ -33,15 +38,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValue();
-            if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1>() is global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1 speedAutomaticPlatformOptimizationValueOneOf1Value)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue0 && ("off".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1>() is global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1 speedAutomaticPlatformOptimizationValueOneOf1Value)
             {
                 result.SpeedAutomaticPlatformOptimizationValueOneOf1 = speedAutomaticPlatformOptimizationValueOneOf1Value;
             }
             else if("SpeedAutomaticPlatformOptimizationValueOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SpeedAutomaticPlatformOptimizationValueOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("cf") != null && parseNode.GetChildNode("enabled") != null && parseNode.GetChildNode("wordpress") != null && parseNode.GetChildNode("wp_plugin") != null))();
+            if (result.SpeedAutomaticPlatformOptimizationValueOneOf1 == null && result.SpeedAutomaticPlatformOptimizationValueOneOf2 == null && matchesUnionBranch0) result.SpeedAutomaticPlatformOptimizationValueOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2(), parseNode);
+            if (result.SpeedAutomaticPlatformOptimizationValueOneOf1 == null && result.SpeedAutomaticPlatformOptimizationValueOneOf2 == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.SpeedAutomaticPlatformOptimizationValueOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2(), parseNode);
+            if (result.SpeedAutomaticPlatformOptimizationValueOneOf1 == null && result.SpeedAutomaticPlatformOptimizationValueOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (SpeedAutomaticPlatformOptimizationValueOneOf1 == null && SpeedAutomaticPlatformOptimizationValueOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (SpeedAutomaticPlatformOptimizationValueOneOf2 != null && SpeedAutomaticPlatformOptimizationValueOneOf1 == null) { if (SpeedAutomaticPlatformOptimizationValueOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SpeedAutomaticPlatformOptimizationValueOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(SpeedAutomaticPlatformOptimizationValueOneOf1 != null)
             {
@@ -68,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             }
             else if(SpeedAutomaticPlatformOptimizationValueOneOf2 != null)
             {
+                if (SpeedAutomaticPlatformOptimizationValueOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2>(null, SpeedAutomaticPlatformOptimizationValueOneOf2);
             }
         }

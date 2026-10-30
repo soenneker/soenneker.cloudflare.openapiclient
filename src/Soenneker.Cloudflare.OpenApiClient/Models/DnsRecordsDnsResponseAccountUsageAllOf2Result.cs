@@ -11,17 +11,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DnsRecordsDnsResponseAccountUsageAllOf2Result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("internal_record_quota") is { } nullNodeInternalRecordQuota && nullNodeInternalRecordQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalRecordQuota = null;
+            if (parseNode.GetChildNode("internal_record_usage") is { } nullNodeInternalRecordUsage && nullNodeInternalRecordUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalRecordUsage = null;
+            if (parseNode.GetChildNode("record_quota") is { } nullNodeRecordQuota && nullNodeRecordQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordQuota = null;
+            if (parseNode.GetChildNode("record_usage") is { } nullNodeRecordUsage && nullNodeRecordUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordUsage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum number of DNS records allowed across all internal zones in the account. Only present if internal DNS is enabled.</summary>
-        public int? InternalRecordQuota { get; set; }
+        public int? InternalRecordQuota { get => _explicitNullValueInternalRecordQuota; set { _explicitNullValueInternalRecordQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_record_quota"); else _explicitNullProperties?.Remove("internal_record_quota"); } }
+        private int? _explicitNullValueInternalRecordQuota = default!;
         /// <summary>Current number of DNS records across all internal zones in the account. Only present if internal DNS is enabled.</summary>
-        public int? InternalRecordUsage { get; set; }
+        public int? InternalRecordUsage { get => _explicitNullValueInternalRecordUsage; set { _explicitNullValueInternalRecordUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_record_usage"); else _explicitNullProperties?.Remove("internal_record_usage"); } }
+        private int? _explicitNullValueInternalRecordUsage = default!;
         /// <summary>Maximum number of DNS records allowed across all public zones in the account. Null if using zone-level quota.</summary>
-        public int? RecordQuota { get; set; }
+        public int? RecordQuota { get => _explicitNullValueRecordQuota; set { _explicitNullValueRecordQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_quota"); else _explicitNullProperties?.Remove("record_quota"); } }
+        private int? _explicitNullValueRecordQuota = default!;
         /// <summary>Current number of DNS records across all public zones in the account.</summary>
-        public int? RecordUsage { get; set; }
+        public int? RecordUsage { get => _explicitNullValueRecordUsage; set { _explicitNullValueRecordUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_usage"); else _explicitNullProperties?.Remove("record_usage"); } }
+        private int? _explicitNullValueRecordUsage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseAccountUsageAllOf2Result"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseAccountUsageAllOf2Result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseAccountUsageAllOf2Result();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseAccountUsageAllOf2Result(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("internal_record_usage", InternalRecordUsage);
             writer.WriteIntValue("record_quota", RecordQuota);
             writer.WriteIntValue("record_usage", RecordUsage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

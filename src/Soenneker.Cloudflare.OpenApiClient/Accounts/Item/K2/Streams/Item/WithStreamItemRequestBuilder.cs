@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.K2.Streams.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteV4AccountsByAccountIdK2StreamsByStreamId200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteV4AccountsByAccountIdK2StreamsByStreamId200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteV4AccountsByAccountIdK2StreamsByStreamId200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteV4AccountsByAccountIdK2StreamsByStreamId200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get K2 stream details.
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.K2.Streams.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2StreamResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2StreamResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2StreamResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2StreamResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a K2 stream. Omitted `http` settings, such as `authentication` and `cors`, keep their current values. Disabling HTTP keeps them, so enabling HTTP again restores them. At least one input must remain enabled.
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.K2.Streams.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2StreamResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2StreamResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2StreamResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2StreamResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a K2 stream in an account. Deleting a stream that does not exist also succeeds.

@@ -11,107 +11,167 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CloudforceOneRuleApprovalDetailResponseApproval : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audit_log_id") is { } nullNodeAuditLogId && nullNodeAuditLogId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditLogId = null;
+            if (parseNode.GetChildNode("cancelled_at") is { } nullNodeCancelledAt && nullNodeCancelledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelledAt = null;
+            if (parseNode.GetChildNode("cancelled_by") is { } nullNodeCancelledBy && nullNodeCancelledBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelledBy = null;
+            if (parseNode.GetChildNode("can_review") is { } nullNodeCanReview && nullNodeCanReview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanReview = null;
+            if (parseNode.GetChildNode("change_description") is { } nullNodeChangeDescription && nullNodeChangeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeDescription = null;
+            if (parseNode.GetChildNode("change_type") is { } nullNodeChangeType && nullNodeChangeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeType = null;
+            if (parseNode.GetChildNode("commit_message") is { } nullNodeCommitMessage && nullNodeCommitMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitMessage = null;
+            if (parseNode.GetChildNode("compiler_warnings") is { } nullNodeCompilerWarnings && nullNodeCompilerWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompilerWarnings = null;
+            if (parseNode.GetChildNode("current_rule") is { } nullNodeCurrentRule && nullNodeCurrentRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentRule = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("proposed_changes") is { } nullNodeProposedChanges && nullNodeProposedChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProposedChanges = null;
+            if (parseNode.GetChildNode("rejection_reason") is { } nullNodeRejectionReason && nullNodeRejectionReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectionReason = null;
+            if (parseNode.GetChildNode("requested_at") is { } nullNodeRequestedAt && nullNodeRequestedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAt = null;
+            if (parseNode.GetChildNode("requested_by") is { } nullNodeRequestedBy && nullNodeRequestedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedBy = null;
+            if (parseNode.GetChildNode("reviewed_at") is { } nullNodeReviewedAt && nullNodeReviewedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewedAt = null;
+            if (parseNode.GetChildNode("reviewer_scope") is { } nullNodeReviewerScope && nullNodeReviewerScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewerScope = null;
+            if (parseNode.GetChildNode("revision_number") is { } nullNodeRevisionNumber && nullNodeRevisionNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevisionNumber = null;
+            if (parseNode.GetChildNode("rule_id") is { } nullNodeRuleId && nullNodeRuleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleId = null;
+            if (parseNode.GetChildNode("rule_name") is { } nullNodeRuleName && nullNodeRuleName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleName = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("superseded_by_approval_id") is { } nullNodeSupersededByApprovalId && nullNodeSupersededByApprovalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupersededByApprovalId = null;
+            if (parseNode.GetChildNode("supersedes_approval_id") is { } nullNodeSupersedesApprovalId && nullNodeSupersedesApprovalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupersedesApprovalId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The audit_log_id property</summary>
-        public double? AuditLogId { get; set; }
+        public double? AuditLogId { get => _explicitNullValueAuditLogId; set { _explicitNullValueAuditLogId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_log_id"); else _explicitNullProperties?.Remove("audit_log_id"); } }
+        private double? _explicitNullValueAuditLogId = default!;
         /// <summary>Time at which the requester cancelled the approval.</summary>
-        public double? CancelledAt { get; set; }
+        public double? CancelledAt { get => _explicitNullValueCancelledAt; set { _explicitNullValueCancelledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelled_at"); else _explicitNullProperties?.Remove("cancelled_at"); } }
+        private double? _explicitNullValueCancelledAt = default!;
         /// <summary>Requester who cancelled the pending approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CancelledBy { get; set; }
+        public string? CancelledBy { get => _explicitNullValueCancelledBy; set { _explicitNullValueCancelledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelled_by"); else _explicitNullProperties?.Remove("cancelled_by"); } }
+        private string? _explicitNullValueCancelledBy = default!;
 #nullable restore
 #else
-        public string CancelledBy { get; set; }
+        public string CancelledBy { get => _explicitNullValueCancelledBy; set { _explicitNullValueCancelledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelled_by"); else _explicitNullProperties?.Remove("cancelled_by"); } }
+        private string _explicitNullValueCancelledBy = default!;
 #endif
         /// <summary>Whether the authenticated user may approve or reject this pending change.</summary>
-        public bool? CanReview { get; set; }
+        public bool? CanReview { get => _explicitNullValueCanReview; set { _explicitNullValueCanReview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_review"); else _explicitNullProperties?.Remove("can_review"); } }
+        private bool? _explicitNullValueCanReview = default!;
         /// <summary>The change_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChangeDescription { get; set; }
+        public string? ChangeDescription { get => _explicitNullValueChangeDescription; set { _explicitNullValueChangeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_description"); else _explicitNullProperties?.Remove("change_description"); } }
+        private string? _explicitNullValueChangeDescription = default!;
 #nullable restore
 #else
-        public string ChangeDescription { get; set; }
+        public string ChangeDescription { get => _explicitNullValueChangeDescription; set { _explicitNullValueChangeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_description"); else _explicitNullProperties?.Remove("change_description"); } }
+        private string _explicitNullValueChangeDescription = default!;
 #endif
         /// <summary>The change_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalChangeType? ChangeType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalChangeType? ChangeType { get => _explicitNullValueChangeType; set { _explicitNullValueChangeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_type"); else _explicitNullProperties?.Remove("change_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalChangeType? _explicitNullValueChangeType = default!;
         /// <summary>The requester supplies this human-readable justification with the change. Internal-account mutations require it; customer accounts and sync-originated changes may omit it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitMessage { get; set; }
+        public string? CommitMessage { get => _explicitNullValueCommitMessage; set { _explicitNullValueCommitMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_message"); else _explicitNullProperties?.Remove("commit_message"); } }
+        private string? _explicitNullValueCommitMessage = default!;
 #nullable restore
 #else
-        public string CommitMessage { get; set; }
+        public string CommitMessage { get => _explicitNullValueCommitMessage; set { _explicitNullValueCommitMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_message"); else _explicitNullProperties?.Remove("commit_message"); } }
+        private string _explicitNullValueCommitMessage = default!;
 #endif
         /// <summary>The compiler_warnings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCompilerWarning>? CompilerWarnings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCompilerWarning>? CompilerWarnings { get => _explicitNullValueCompilerWarnings; set { _explicitNullValueCompilerWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compiler_warnings"); else _explicitNullProperties?.Remove("compiler_warnings"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCompilerWarning>? _explicitNullValueCompilerWarnings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCompilerWarning> CompilerWarnings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCompilerWarning> CompilerWarnings { get => _explicitNullValueCompilerWarnings; set { _explicitNullValueCompilerWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compiler_warnings"); else _explicitNullProperties?.Remove("compiler_warnings"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCompilerWarning> _explicitNullValueCompilerWarnings = default!;
 #endif
         /// <summary>The current_rule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule? CurrentRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule? CurrentRule { get => _explicitNullValueCurrentRule; set { _explicitNullValueCurrentRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_rule"); else _explicitNullProperties?.Remove("current_rule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule? _explicitNullValueCurrentRule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule CurrentRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule CurrentRule { get => _explicitNullValueCurrentRule; set { _explicitNullValueCurrentRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_rule"); else _explicitNullProperties?.Remove("current_rule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule _explicitNullValueCurrentRule = default!;
 #endif
         /// <summary>The id property</summary>
-        public double? Id { get; set; }
+        public double? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private double? _explicitNullValueId = default!;
         /// <summary>Contains structured proposed rule changes, or null for unresolved persisted data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges? ProposedChanges { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges? ProposedChanges { get => _explicitNullValueProposedChanges; set { _explicitNullValueProposedChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposed_changes"); else _explicitNullProperties?.Remove("proposed_changes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges? _explicitNullValueProposedChanges = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges ProposedChanges { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges ProposedChanges { get => _explicitNullValueProposedChanges; set { _explicitNullValueProposedChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposed_changes"); else _explicitNullProperties?.Remove("proposed_changes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges _explicitNullValueProposedChanges = default!;
 #endif
         /// <summary>The reviewer may supply a reason when rejecting the change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RejectionReason { get; set; }
+        public string? RejectionReason { get => _explicitNullValueRejectionReason; set { _explicitNullValueRejectionReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejection_reason"); else _explicitNullProperties?.Remove("rejection_reason"); } }
+        private string? _explicitNullValueRejectionReason = default!;
 #nullable restore
 #else
-        public string RejectionReason { get; set; }
+        public string RejectionReason { get => _explicitNullValueRejectionReason; set { _explicitNullValueRejectionReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejection_reason"); else _explicitNullProperties?.Remove("rejection_reason"); } }
+        private string _explicitNullValueRejectionReason = default!;
 #endif
         /// <summary>The requested_at property</summary>
-        public double? RequestedAt { get; set; }
+        public double? RequestedAt { get => _explicitNullValueRequestedAt; set { _explicitNullValueRequestedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_at"); else _explicitNullProperties?.Remove("requested_at"); } }
+        private double? _explicitNullValueRequestedAt = default!;
         /// <summary>The requested_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedBy { get; set; }
+        public string? RequestedBy { get => _explicitNullValueRequestedBy; set { _explicitNullValueRequestedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_by"); else _explicitNullProperties?.Remove("requested_by"); } }
+        private string? _explicitNullValueRequestedBy = default!;
 #nullable restore
 #else
-        public string RequestedBy { get; set; }
+        public string RequestedBy { get => _explicitNullValueRequestedBy; set { _explicitNullValueRequestedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_by"); else _explicitNullProperties?.Remove("requested_by"); } }
+        private string _explicitNullValueRequestedBy = default!;
 #endif
         /// <summary>The reviewed_at property</summary>
-        public double? ReviewedAt { get; set; }
+        public double? ReviewedAt { get => _explicitNullValueReviewedAt; set { _explicitNullValueReviewedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_at"); else _explicitNullProperties?.Remove("reviewed_at"); } }
+        private double? _explicitNullValueReviewedAt = default!;
         /// <summary>Review policy: general Nomos approvers for default; general approvers or Phishguard for email.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalReviewerScope? ReviewerScope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalReviewerScope? ReviewerScope { get => _explicitNullValueReviewerScope; set { _explicitNullValueReviewerScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewer_scope"); else _explicitNullProperties?.Remove("reviewer_scope"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalReviewerScope? _explicitNullValueReviewerScope = default!;
         /// <summary>Revision number within this approval request chain.</summary>
-        public int? RevisionNumber { get; set; }
+        public int? RevisionNumber { get => _explicitNullValueRevisionNumber; set { _explicitNullValueRevisionNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revision_number"); else _explicitNullProperties?.Remove("revision_number"); } }
+        private int? _explicitNullValueRevisionNumber = default!;
         /// <summary>The rule_id property</summary>
-        public Guid? RuleId { get; set; }
+        public Guid? RuleId { get => _explicitNullValueRuleId; set { _explicitNullValueRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_id"); else _explicitNullProperties?.Remove("rule_id"); } }
+        private Guid? _explicitNullValueRuleId = default!;
         /// <summary>The rule_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleName { get; set; }
+        public string? RuleName { get => _explicitNullValueRuleName; set { _explicitNullValueRuleName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_name"); else _explicitNullProperties?.Remove("rule_name"); } }
+        private string? _explicitNullValueRuleName = default!;
 #nullable restore
 #else
-        public string RuleName { get; set; }
+        public string RuleName { get => _explicitNullValueRuleName; set { _explicitNullValueRuleName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_name"); else _explicitNullProperties?.Remove("rule_name"); } }
+        private string _explicitNullValueRuleName = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalStatus? _explicitNullValueStatus = default!;
         /// <summary>Newer approval revision that replaced this approval.</summary>
-        public double? SupersededByApprovalId { get; set; }
+        public double? SupersededByApprovalId { get => _explicitNullValueSupersededByApprovalId; set { _explicitNullValueSupersededByApprovalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("superseded_by_approval_id"); else _explicitNullProperties?.Remove("superseded_by_approval_id"); } }
+        private double? _explicitNullValueSupersededByApprovalId = default!;
         /// <summary>This approval replaces the referenced approval revision.</summary>
-        public double? SupersedesApprovalId { get; set; }
+        public double? SupersedesApprovalId { get => _explicitNullValueSupersedesApprovalId; set { _explicitNullValueSupersedesApprovalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supersedes_approval_id"); else _explicitNullProperties?.Remove("supersedes_approval_id"); } }
+        private double? _explicitNullValueSupersedesApprovalId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApproval"/> and sets the default values.
         /// </summary>
@@ -127,7 +187,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApproval CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApproval();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApproval(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -190,6 +250,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalStatus>("status", Status);
             writer.WriteDoubleValue("superseded_by_approval_id", SupersededByApprovalId);
             writer.WriteDoubleValue("supersedes_approval_id", SupersedesApprovalId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

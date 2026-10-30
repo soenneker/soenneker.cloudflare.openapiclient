@@ -12,63 +12,99 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IamScimSchemaAttr : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("canonicalValues") is { } nullNodeCanonicalValues && nullNodeCanonicalValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanonicalValues = null;
+            if (parseNode.GetChildNode("caseExact") is { } nullNodeCaseExact && nullNodeCaseExact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaseExact = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("multiValued") is { } nullNodeMultiValued && nullNodeMultiValued.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiValued = null;
+            if (parseNode.GetChildNode("mutability") is { } nullNodeMutability && nullNodeMutability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mutability = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("referenceTypes") is { } nullNodeReferenceTypes && nullNodeReferenceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceTypes = null;
+            if (parseNode.GetChildNode("required") is { } nullNodeRequired && nullNodeRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Required = null;
+            if (parseNode.GetChildNode("returned") is { } nullNodeReturned && nullNodeReturned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Returned = null;
+            if (parseNode.GetChildNode("subAttributes") is { } nullNodeSubAttributes && nullNodeSubAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubAttributes = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("uniqueness") is { } nullNodeUniqueness && nullNodeUniqueness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uniqueness = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A collection of canonical values for the attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CanonicalValues { get; set; }
+        public List<string>? CanonicalValues { get => _explicitNullValueCanonicalValues; set { _explicitNullValueCanonicalValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonicalValues"); else _explicitNullProperties?.Remove("canonicalValues"); } }
+        private List<string>? _explicitNullValueCanonicalValues = default!;
 #nullable restore
 #else
-        public List<string> CanonicalValues { get; set; }
+        public List<string> CanonicalValues { get => _explicitNullValueCanonicalValues; set { _explicitNullValueCanonicalValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonicalValues"); else _explicitNullProperties?.Remove("canonicalValues"); } }
+        private List<string> _explicitNullValueCanonicalValues = default!;
 #endif
         /// <summary>Indicates if the string attribute is case-sensitive.</summary>
-        public bool? CaseExact { get; set; }
+        public bool? CaseExact { get => _explicitNullValueCaseExact; set { _explicitNullValueCaseExact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caseExact"); else _explicitNullProperties?.Remove("caseExact"); } }
+        private bool? _explicitNullValueCaseExact = default!;
         /// <summary>A human-readable description of the attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Indicates if the attribute is multi-valued.</summary>
-        public bool? MultiValued { get; set; }
+        public bool? MultiValued { get => _explicitNullValueMultiValued; set { _explicitNullValueMultiValued = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiValued"); else _explicitNullProperties?.Remove("multiValued"); } }
+        private bool? _explicitNullValueMultiValued = default!;
         /// <summary>Indicates the circumstances under which the value of the attribute can be defined or redefined.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrMutability? Mutability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrMutability? Mutability { get => _explicitNullValueMutability; set { _explicitNullValueMutability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutability"); else _explicitNullProperties?.Remove("mutability"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrMutability? _explicitNullValueMutability = default!;
         /// <summary>The attribute&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>A multi-valued attribute that indicates the SCIM resource types that may be referenced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReferenceTypes { get; set; }
+        public List<string>? ReferenceTypes { get => _explicitNullValueReferenceTypes; set { _explicitNullValueReferenceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceTypes"); else _explicitNullProperties?.Remove("referenceTypes"); } }
+        private List<string>? _explicitNullValueReferenceTypes = default!;
 #nullable restore
 #else
-        public List<string> ReferenceTypes { get; set; }
+        public List<string> ReferenceTypes { get => _explicitNullValueReferenceTypes; set { _explicitNullValueReferenceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceTypes"); else _explicitNullProperties?.Remove("referenceTypes"); } }
+        private List<string> _explicitNullValueReferenceTypes = default!;
 #endif
         /// <summary>Indicates if the attribute is required.</summary>
-        public bool? Required { get; set; }
+        public bool? Required { get => _explicitNullValueRequired; set { _explicitNullValueRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required"); else _explicitNullProperties?.Remove("required"); } }
+        private bool? _explicitNullValueRequired = default!;
         /// <summary>Indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrReturned? Returned { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrReturned? Returned { get => _explicitNullValueReturned; set { _explicitNullValueReturned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returned"); else _explicitNullProperties?.Remove("returned"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrReturned? _explicitNullValueReturned = default!;
         /// <summary>Defines a set of sub-attributes when the attribute type is `complex`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr>? SubAttributes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr>? SubAttributes { get => _explicitNullValueSubAttributes; set { _explicitNullValueSubAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subAttributes"); else _explicitNullProperties?.Remove("subAttributes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr>? _explicitNullValueSubAttributes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr> SubAttributes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr> SubAttributes { get => _explicitNullValueSubAttributes; set { _explicitNullValueSubAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subAttributes"); else _explicitNullProperties?.Remove("subAttributes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr> _explicitNullValueSubAttributes = default!;
 #endif
         /// <summary>The attribute&apos;s data type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrType? _explicitNullValueType = default!;
         /// <summary>Indicates how the service provider enforces uniqueness of attribute values.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrUniqueness? Uniqueness { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrUniqueness? Uniqueness { get => _explicitNullValueUniqueness; set { _explicitNullValueUniqueness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueness"); else _explicitNullProperties?.Remove("uniqueness"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrUniqueness? _explicitNullValueUniqueness = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr"/> and sets the default values.
         /// </summary>
@@ -84,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,6 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr>("subAttributes", SubAttributes);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrUniqueness>("uniqueness", Uniqueness);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

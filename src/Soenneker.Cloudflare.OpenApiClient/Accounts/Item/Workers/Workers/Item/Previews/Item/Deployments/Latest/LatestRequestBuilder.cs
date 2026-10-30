@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewsDeploymentsPatchLatest200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewsDeploymentsPatchLatest200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewsDeploymentsPatchLatest200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewsDeploymentsPatchLatest200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Only `/deployments/latest` is supported. Creates a new preview deployment by applying a JSON Merge Patch (RFC 7396) to the latest deployment. Patching a specific deployment ID is not supported. Omitted fields are inherited from the latest deployment. Preview base config is used for the first deployment.

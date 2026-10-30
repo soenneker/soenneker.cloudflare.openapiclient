@@ -12,46 +12,76 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitAudioProducerStats : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bytes_sent") is { } nullNodeBytesSent && nullNodeBytesSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesSent = null;
+            if (parseNode.GetChildNode("jitter") is { } nullNodeJitter && nullNodeJitter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jitter = null;
+            if (parseNode.GetChildNode("mid") is { } nullNodeMid && nullNodeMid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mid = null;
+            if (parseNode.GetChildNode("mos_quality") is { } nullNodeMosQuality && nullNodeMosQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MosQuality = null;
+            if (parseNode.GetChildNode("packets_lost") is { } nullNodePacketsLost && nullNodePacketsLost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsLost = null;
+            if (parseNode.GetChildNode("packets_sent") is { } nullNodePacketsSent && nullNodePacketsSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsSent = null;
+            if (parseNode.GetChildNode("producer_id") is { } nullNodeProducerId && nullNodeProducerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProducerId = null;
+            if (parseNode.GetChildNode("rtt") is { } nullNodeRtt && nullNodeRtt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rtt = null;
+            if (parseNode.GetChildNode("ssrc") is { } nullNodeSsrc && nullNodeSsrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssrc = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bytes_sent property</summary>
-        public double? BytesSent { get; set; }
+        public double? BytesSent { get => _explicitNullValueBytesSent; set { _explicitNullValueBytesSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytes_sent"); else _explicitNullProperties?.Remove("bytes_sent"); } }
+        private double? _explicitNullValueBytesSent = default!;
         /// <summary>The jitter property</summary>
-        public double? Jitter { get; set; }
+        public double? Jitter { get => _explicitNullValueJitter; set { _explicitNullValueJitter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter"); else _explicitNullProperties?.Remove("jitter"); } }
+        private double? _explicitNullValueJitter = default!;
         /// <summary>The mid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mid { get; set; }
+        public string? Mid { get => _explicitNullValueMid; set { _explicitNullValueMid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mid"); else _explicitNullProperties?.Remove("mid"); } }
+        private string? _explicitNullValueMid = default!;
 #nullable restore
 #else
-        public string Mid { get; set; }
+        public string Mid { get => _explicitNullValueMid; set { _explicitNullValueMid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mid"); else _explicitNullProperties?.Remove("mid"); } }
+        private string _explicitNullValueMid = default!;
 #endif
         /// <summary>The mos_quality property</summary>
-        public double? MosQuality { get; set; }
+        public double? MosQuality { get => _explicitNullValueMosQuality; set { _explicitNullValueMosQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mos_quality"); else _explicitNullProperties?.Remove("mos_quality"); } }
+        private double? _explicitNullValueMosQuality = default!;
         /// <summary>The packets_lost property</summary>
-        public double? PacketsLost { get; set; }
+        public double? PacketsLost { get => _explicitNullValuePacketsLost; set { _explicitNullValuePacketsLost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_lost"); else _explicitNullProperties?.Remove("packets_lost"); } }
+        private double? _explicitNullValuePacketsLost = default!;
         /// <summary>The packets_sent property</summary>
-        public double? PacketsSent { get; set; }
+        public double? PacketsSent { get => _explicitNullValuePacketsSent; set { _explicitNullValuePacketsSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_sent"); else _explicitNullProperties?.Remove("packets_sent"); } }
+        private double? _explicitNullValuePacketsSent = default!;
         /// <summary>The producer_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProducerId { get; set; }
+        public string? ProducerId { get => _explicitNullValueProducerId; set { _explicitNullValueProducerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("producer_id"); else _explicitNullProperties?.Remove("producer_id"); } }
+        private string? _explicitNullValueProducerId = default!;
 #nullable restore
 #else
-        public string ProducerId { get; set; }
+        public string ProducerId { get => _explicitNullValueProducerId; set { _explicitNullValueProducerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("producer_id"); else _explicitNullProperties?.Remove("producer_id"); } }
+        private string _explicitNullValueProducerId = default!;
 #endif
         /// <summary>The rtt property</summary>
-        public double? Rtt { get; set; }
+        public double? Rtt { get => _explicitNullValueRtt; set { _explicitNullValueRtt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtt"); else _explicitNullProperties?.Remove("rtt"); } }
+        private double? _explicitNullValueRtt = default!;
         /// <summary>The ssrc property</summary>
-        public double? Ssrc { get; set; }
+        public double? Ssrc { get => _explicitNullValueSsrc; set { _explicitNullValueSsrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssrc"); else _explicitNullProperties?.Remove("ssrc"); } }
+        private double? _explicitNullValueSsrc = default!;
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get; set; }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats"/> and sets the default values.
@@ -68,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioProducerStats(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("rtt", Rtt);
             writer.WriteDoubleValue("ssrc", Ssrc);
             writer.WriteStringValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

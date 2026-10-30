@@ -12,50 +12,74 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VulnScannerBolaTestStepRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("credential_set") is { } nullNodeCredentialSet && nullNodeCredentialSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialSet = null;
+            if (parseNode.GetChildNode("header_names") is { } nullNodeHeaderNames && nullNodeHeaderNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderNames = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("variable_captures") is { } nullNodeVariableCaptures && nullNodeVariableCaptures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariableCaptures = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Request body, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequestBody? Body { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequestBody? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequestBody? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequestBody Body { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequestBody Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequestBody _explicitNullValueBody = default!;
 #endif
         /// <summary>Credential set that was used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet? CredentialSet { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet? CredentialSet { get => _explicitNullValueCredentialSet; set { _explicitNullValueCredentialSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_set"); else _explicitNullProperties?.Remove("credential_set"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet? _explicitNullValueCredentialSet = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet CredentialSet { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet CredentialSet { get => _explicitNullValueCredentialSet; set { _explicitNullValueCredentialSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_set"); else _explicitNullProperties?.Remove("credential_set"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet _explicitNullValueCredentialSet = default!;
 #endif
         /// <summary>Names of headers that were sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HeaderNames { get; set; }
+        public List<string>? HeaderNames { get => _explicitNullValueHeaderNames; set { _explicitNullValueHeaderNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_names"); else _explicitNullProperties?.Remove("header_names"); } }
+        private List<string>? _explicitNullValueHeaderNames = default!;
 #nullable restore
 #else
-        public List<string> HeaderNames { get; set; }
+        public List<string> HeaderNames { get => _explicitNullValueHeaderNames; set { _explicitNullValueHeaderNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_names"); else _explicitNullProperties?.Remove("header_names"); } }
+        private List<string> _explicitNullValueHeaderNames = default!;
 #endif
         /// <summary>HTTP method.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod? Method { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod? _explicitNullValueMethod = default!;
         /// <summary>Exact and full URL (including host, query parameters) that was requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>Variable captures requested for this step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture>? VariableCaptures { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture>? VariableCaptures { get => _explicitNullValueVariableCaptures; set { _explicitNullValueVariableCaptures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_captures"); else _explicitNullProperties?.Remove("variable_captures"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture>? _explicitNullValueVariableCaptures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture> VariableCaptures { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture> VariableCaptures { get => _explicitNullValueVariableCaptures; set { _explicitNullValueVariableCaptures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_captures"); else _explicitNullProperties?.Remove("variable_captures"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture> _explicitNullValueVariableCaptures = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequest"/> and sets the default values.
@@ -72,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod>("method", Method);
             writer.WriteStringValue("url", Url);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture>("variable_captures", VariableCaptures);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

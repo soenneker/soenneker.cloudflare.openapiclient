@@ -12,42 +12,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSendingSubdomainConfigError : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("conflicting_subdomain") is { } nullNodeConflictingSubdomain && nullNodeConflictingSubdomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConflictingSubdomain = null;
+            if (parseNode.GetChildNode("existing") is { } nullNodeExisting && nullNodeExisting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Existing = null;
+            if (parseNode.GetChildNode("missing") is { } nullNodeMissing && nullNodeMissing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Missing = null;
+            if (parseNode.GetChildNode("multiple") is { } nullNodeMultiple && nullNodeMultiple.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Multiple = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Error code identifying the type of issue. `dkim.conflict` isreported whenever 2+ TXT records exist at the DKIM selector,even if one matches the canonical Cloudflare content — multi-recordDKIM can permerror at recipient verification regardless of whichentry is correct. `domainkey.delegated` indicates that`_domainkey.&lt;subdomain&gt;` has NS records in the Cloudflare zone,creating a zone cut that shadows the DKIM TXT record we publish;the customer must remove the NS delegation for DKIM to verify.`dmarc.incompatible` indicates that a wildcard sending row no longersatisfies its DMARC safety requirements, such as relaxed alignment,a valid governing policy, and the organizational-domain constraint.The customer must correct the zone or policy configuration manually;DNS Fix cannot resolve this error.`sending_subdomain.conflict` is reported by preview when an enabledexplicit or wildcard sending row would give some senders a differentsigning identity.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorCode? Code { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorCode? _explicitNullValueCode = default!;
         /// <summary>The enabled sending-subdomain row that conflicts with the requested name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConflictingSubdomain { get; set; }
+        public string? ConflictingSubdomain { get => _explicitNullValueConflictingSubdomain; set { _explicitNullValueConflictingSubdomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conflicting_subdomain"); else _explicitNullProperties?.Remove("conflicting_subdomain"); } }
+        private string? _explicitNullValueConflictingSubdomain = default!;
 #nullable restore
 #else
-        public string ConflictingSubdomain { get; set; }
+        public string ConflictingSubdomain { get => _explicitNullValueConflictingSubdomain; set { _explicitNullValueConflictingSubdomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conflicting_subdomain"); else _explicitNullProperties?.Remove("conflicting_subdomain"); } }
+        private string _explicitNullValueConflictingSubdomain = default!;
 #endif
         /// <summary>The conflicting DNS record found in the zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting? Existing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting? Existing { get => _explicitNullValueExisting; set { _explicitNullValueExisting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("existing"); else _explicitNullProperties?.Remove("existing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting? _explicitNullValueExisting = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting Existing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting Existing { get => _explicitNullValueExisting; set { _explicitNullValueExisting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("existing"); else _explicitNullProperties?.Remove("existing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting _explicitNullValueExisting = default!;
 #endif
         /// <summary>The DNS record that must be added to resolve this error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing? Missing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing? Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing? _explicitNullValueMissing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing Missing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing _explicitNullValueMissing = default!;
 #endif
         /// <summary>Multiple conflicting DNS records found, for example more than one SPF or DMARC TXT record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>? Multiple { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>? Multiple { get => _explicitNullValueMultiple; set { _explicitNullValueMultiple = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiple"); else _explicitNullProperties?.Remove("multiple"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>? _explicitNullValueMultiple = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord> Multiple { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord> Multiple { get => _explicitNullValueMultiple; set { _explicitNullValueMultiple = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiple"); else _explicitNullProperties?.Remove("multiple"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord> _explicitNullValueMultiple = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigError"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigError();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigError(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting>("existing", Existing);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing>("missing", Missing);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>("multiple", Multiple);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,33 +11,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigConfigUpdateAccountProviderCostRequestTokenPricing : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("input_audio_tokens") is { } nullNodeInputAudioTokens && nullNodeInputAudioTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputAudioTokens = null;
+            if (parseNode.GetChildNode("input_cache_creation_tokens") is { } nullNodeInputCacheCreationTokens && nullNodeInputCacheCreationTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputCacheCreationTokens = null;
+            if (parseNode.GetChildNode("input_cached_tokens") is { } nullNodeInputCachedTokens && nullNodeInputCachedTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputCachedTokens = null;
+            if (parseNode.GetChildNode("input_image_count") is { } nullNodeInputImageCount && nullNodeInputImageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputImageCount = null;
+            if (parseNode.GetChildNode("input_image_tokens") is { } nullNodeInputImageTokens && nullNodeInputImageTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputImageTokens = null;
+            if (parseNode.GetChildNode("input_text_tokens") is { } nullNodeInputTextTokens && nullNodeInputTextTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputTextTokens = null;
+            if (parseNode.GetChildNode("input_tokens") is { } nullNodeInputTokens && nullNodeInputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputTokens = null;
+            if (parseNode.GetChildNode("input_video_tokens") is { } nullNodeInputVideoTokens && nullNodeInputVideoTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputVideoTokens = null;
+            if (parseNode.GetChildNode("output_image_count") is { } nullNodeOutputImageCount && nullNodeOutputImageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputImageCount = null;
+            if (parseNode.GetChildNode("output_reasoning_tokens") is { } nullNodeOutputReasoningTokens && nullNodeOutputReasoningTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputReasoningTokens = null;
+            if (parseNode.GetChildNode("output_tokens") is { } nullNodeOutputTokens && nullNodeOutputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputTokens = null;
+            if (parseNode.GetChildNode("total_tokens") is { } nullNodeTotalTokens && nullNodeTotalTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTokens = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The input_audio_tokens property</summary>
-        public double? InputAudioTokens { get; set; }
+        public double? InputAudioTokens { get => _explicitNullValueInputAudioTokens; set { _explicitNullValueInputAudioTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_audio_tokens"); else _explicitNullProperties?.Remove("input_audio_tokens"); } }
+        private double? _explicitNullValueInputAudioTokens = default!;
         /// <summary>The input_cache_creation_tokens property</summary>
-        public double? InputCacheCreationTokens { get; set; }
+        public double? InputCacheCreationTokens { get => _explicitNullValueInputCacheCreationTokens; set { _explicitNullValueInputCacheCreationTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_cache_creation_tokens"); else _explicitNullProperties?.Remove("input_cache_creation_tokens"); } }
+        private double? _explicitNullValueInputCacheCreationTokens = default!;
         /// <summary>The input_cached_tokens property</summary>
-        public double? InputCachedTokens { get; set; }
+        public double? InputCachedTokens { get => _explicitNullValueInputCachedTokens; set { _explicitNullValueInputCachedTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_cached_tokens"); else _explicitNullProperties?.Remove("input_cached_tokens"); } }
+        private double? _explicitNullValueInputCachedTokens = default!;
         /// <summary>The input_image_count property</summary>
-        public double? InputImageCount { get; set; }
+        public double? InputImageCount { get => _explicitNullValueInputImageCount; set { _explicitNullValueInputImageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_image_count"); else _explicitNullProperties?.Remove("input_image_count"); } }
+        private double? _explicitNullValueInputImageCount = default!;
         /// <summary>The input_image_tokens property</summary>
-        public double? InputImageTokens { get; set; }
+        public double? InputImageTokens { get => _explicitNullValueInputImageTokens; set { _explicitNullValueInputImageTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_image_tokens"); else _explicitNullProperties?.Remove("input_image_tokens"); } }
+        private double? _explicitNullValueInputImageTokens = default!;
         /// <summary>The input_text_tokens property</summary>
-        public double? InputTextTokens { get; set; }
+        public double? InputTextTokens { get => _explicitNullValueInputTextTokens; set { _explicitNullValueInputTextTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_text_tokens"); else _explicitNullProperties?.Remove("input_text_tokens"); } }
+        private double? _explicitNullValueInputTextTokens = default!;
         /// <summary>The input_tokens property</summary>
-        public double? InputTokens { get; set; }
+        public double? InputTokens { get => _explicitNullValueInputTokens; set { _explicitNullValueInputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_tokens"); else _explicitNullProperties?.Remove("input_tokens"); } }
+        private double? _explicitNullValueInputTokens = default!;
         /// <summary>The input_video_tokens property</summary>
-        public double? InputVideoTokens { get; set; }
+        public double? InputVideoTokens { get => _explicitNullValueInputVideoTokens; set { _explicitNullValueInputVideoTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_video_tokens"); else _explicitNullProperties?.Remove("input_video_tokens"); } }
+        private double? _explicitNullValueInputVideoTokens = default!;
         /// <summary>The output_image_count property</summary>
-        public double? OutputImageCount { get; set; }
+        public double? OutputImageCount { get => _explicitNullValueOutputImageCount; set { _explicitNullValueOutputImageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_image_count"); else _explicitNullProperties?.Remove("output_image_count"); } }
+        private double? _explicitNullValueOutputImageCount = default!;
         /// <summary>The output_reasoning_tokens property</summary>
-        public double? OutputReasoningTokens { get; set; }
+        public double? OutputReasoningTokens { get => _explicitNullValueOutputReasoningTokens; set { _explicitNullValueOutputReasoningTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_reasoning_tokens"); else _explicitNullProperties?.Remove("output_reasoning_tokens"); } }
+        private double? _explicitNullValueOutputReasoningTokens = default!;
         /// <summary>The output_tokens property</summary>
-        public double? OutputTokens { get; set; }
+        public double? OutputTokens { get => _explicitNullValueOutputTokens; set { _explicitNullValueOutputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_tokens"); else _explicitNullProperties?.Remove("output_tokens"); } }
+        private double? _explicitNullValueOutputTokens = default!;
         /// <summary>The total_tokens property</summary>
-        public double? TotalTokens { get; set; }
+        public double? TotalTokens { get => _explicitNullValueTotalTokens; set { _explicitNullValueTotalTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_tokens"); else _explicitNullProperties?.Remove("total_tokens"); } }
+        private double? _explicitNullValueTotalTokens = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing"/> and sets the default values.
         /// </summary>
@@ -53,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("output_reasoning_tokens", OutputReasoningTokens);
             writer.WriteDoubleValue("output_tokens", OutputTokens);
             writer.WriteDoubleValue("total_tokens", TotalTokens);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

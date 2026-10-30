@@ -12,45 +12,68 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BotManagementBotFightModeConfigAllOf2StaleZoneConfiguration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("optimize_wordpress") is { } nullNodeOptimizeWordpress && nullNodeOptimizeWordpress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizeWordpress = null;
+            if (parseNode.GetChildNode("sbfm_definitely_automated") is { } nullNodeSbfmDefinitelyAutomated && nullNodeSbfmDefinitelyAutomated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SbfmDefinitelyAutomated = null;
+            if (parseNode.GetChildNode("sbfm_likely_automated") is { } nullNodeSbfmLikelyAutomated && nullNodeSbfmLikelyAutomated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SbfmLikelyAutomated = null;
+            if (parseNode.GetChildNode("sbfm_static_resource_protection") is { } nullNodeSbfmStaticResourceProtection && nullNodeSbfmStaticResourceProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SbfmStaticResourceProtection = null;
+            if (parseNode.GetChildNode("sbfm_verified_bots") is { } nullNodeSbfmVerifiedBots && nullNodeSbfmVerifiedBots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SbfmVerifiedBots = null;
+            if (parseNode.GetChildNode("suppress_session_score") is { } nullNodeSuppressSessionScore && nullNodeSuppressSessionScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuppressSessionScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates that the zone&apos;s wordpress optimization for SBFM is turned on.</summary>
-        public bool? OptimizeWordpress { get; set; }
+        public bool? OptimizeWordpress { get => _explicitNullValueOptimizeWordpress; set { _explicitNullValueOptimizeWordpress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimize_wordpress"); else _explicitNullProperties?.Remove("optimize_wordpress"); } }
+        private bool? _explicitNullValueOptimizeWordpress = default!;
         /// <summary>Indicates that the zone&apos;s definitely automated requests are being blocked or challenged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SbfmDefinitelyAutomated { get; set; }
+        public string? SbfmDefinitelyAutomated { get => _explicitNullValueSbfmDefinitelyAutomated; set { _explicitNullValueSbfmDefinitelyAutomated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_definitely_automated"); else _explicitNullProperties?.Remove("sbfm_definitely_automated"); } }
+        private string? _explicitNullValueSbfmDefinitelyAutomated = default!;
 #nullable restore
 #else
-        public string SbfmDefinitelyAutomated { get; set; }
+        public string SbfmDefinitelyAutomated { get => _explicitNullValueSbfmDefinitelyAutomated; set { _explicitNullValueSbfmDefinitelyAutomated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_definitely_automated"); else _explicitNullProperties?.Remove("sbfm_definitely_automated"); } }
+        private string _explicitNullValueSbfmDefinitelyAutomated = default!;
 #endif
         /// <summary>Indicates that the zone&apos;s likely automated requests are being blocked or challenged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SbfmLikelyAutomated { get; set; }
+        public string? SbfmLikelyAutomated { get => _explicitNullValueSbfmLikelyAutomated; set { _explicitNullValueSbfmLikelyAutomated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_likely_automated"); else _explicitNullProperties?.Remove("sbfm_likely_automated"); } }
+        private string? _explicitNullValueSbfmLikelyAutomated = default!;
 #nullable restore
 #else
-        public string SbfmLikelyAutomated { get; set; }
+        public string SbfmLikelyAutomated { get => _explicitNullValueSbfmLikelyAutomated; set { _explicitNullValueSbfmLikelyAutomated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_likely_automated"); else _explicitNullProperties?.Remove("sbfm_likely_automated"); } }
+        private string _explicitNullValueSbfmLikelyAutomated = default!;
 #endif
         /// <summary>Indicates that the zone&apos;s static resource protection is turned on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SbfmStaticResourceProtection { get; set; }
+        public string? SbfmStaticResourceProtection { get => _explicitNullValueSbfmStaticResourceProtection; set { _explicitNullValueSbfmStaticResourceProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_static_resource_protection"); else _explicitNullProperties?.Remove("sbfm_static_resource_protection"); } }
+        private string? _explicitNullValueSbfmStaticResourceProtection = default!;
 #nullable restore
 #else
-        public string SbfmStaticResourceProtection { get; set; }
+        public string SbfmStaticResourceProtection { get => _explicitNullValueSbfmStaticResourceProtection; set { _explicitNullValueSbfmStaticResourceProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_static_resource_protection"); else _explicitNullProperties?.Remove("sbfm_static_resource_protection"); } }
+        private string _explicitNullValueSbfmStaticResourceProtection = default!;
 #endif
         /// <summary>Indicates that the zone&apos;s verified bot requests are being blocked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SbfmVerifiedBots { get; set; }
+        public string? SbfmVerifiedBots { get => _explicitNullValueSbfmVerifiedBots; set { _explicitNullValueSbfmVerifiedBots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_verified_bots"); else _explicitNullProperties?.Remove("sbfm_verified_bots"); } }
+        private string? _explicitNullValueSbfmVerifiedBots = default!;
 #nullable restore
 #else
-        public string SbfmVerifiedBots { get; set; }
+        public string SbfmVerifiedBots { get => _explicitNullValueSbfmVerifiedBots; set { _explicitNullValueSbfmVerifiedBots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_verified_bots"); else _explicitNullProperties?.Remove("sbfm_verified_bots"); } }
+        private string _explicitNullValueSbfmVerifiedBots = default!;
 #endif
         /// <summary>Indicates that the zone&apos;s session score tracking is disabled.</summary>
-        public bool? SuppressSessionScore { get; set; }
+        public bool? SuppressSessionScore { get => _explicitNullValueSuppressSessionScore; set { _explicitNullValueSuppressSessionScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppress_session_score"); else _explicitNullProperties?.Remove("suppress_session_score"); } }
+        private bool? _explicitNullValueSuppressSessionScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotFightModeConfigAllOf2StaleZoneConfiguration"/> and sets the default values.
         /// </summary>
@@ -66,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotFightModeConfigAllOf2StaleZoneConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotFightModeConfigAllOf2StaleZoneConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotFightModeConfigAllOf2StaleZoneConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("sbfm_static_resource_protection", SbfmStaticResourceProtection);
             writer.WriteStringValue("sbfm_verified_bots", SbfmVerifiedBots);
             writer.WriteBoolValue("suppress_session_score", SuppressSessionScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

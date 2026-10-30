@@ -12,19 +12,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbuseReportsMitigationSummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accepted_url_count") is { } nullNodeAcceptedUrlCount && nullNodeAcceptedUrlCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedUrlCount = null;
+            if (parseNode.GetChildNode("active_count") is { } nullNodeActiveCount && nullNodeActiveCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveCount = null;
+            if (parseNode.GetChildNode("external_host_notified") is { } nullNodeExternalHostNotified && nullNodeExternalHostNotified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalHostNotified = null;
+            if (parseNode.GetChildNode("in_review_count") is { } nullNodeInReviewCount && nullNodeInReviewCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InReviewCount = null;
+            if (parseNode.GetChildNode("pending_count") is { } nullNodePendingCount && nullNodePendingCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingCount = null;
+        }
+
         /// <summary>How many of the reported URLs were confirmed as abusive.</summary>
-        public int? AcceptedUrlCount { get; set; }
+        public int? AcceptedUrlCount { get => _explicitNullValueAcceptedUrlCount; set { _explicitNullValueAcceptedUrlCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accepted_url_count"); else _explicitNullProperties?.Remove("accepted_url_count"); } }
+        private int? _explicitNullValueAcceptedUrlCount = default!;
         /// <summary>How many mitigations are active.</summary>
-        public int? ActiveCount { get; set; }
+        public int? ActiveCount { get => _explicitNullValueActiveCount; set { _explicitNullValueActiveCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_count"); else _explicitNullProperties?.Remove("active_count"); } }
+        private int? _explicitNullValueActiveCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the report has been forwarded to an external hosting provider.</summary>
-        public bool? ExternalHostNotified { get; set; }
+        public bool? ExternalHostNotified { get => _explicitNullValueExternalHostNotified; set { _explicitNullValueExternalHostNotified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_host_notified"); else _explicitNullProperties?.Remove("external_host_notified"); } }
+        private bool? _explicitNullValueExternalHostNotified = default!;
         /// <summary>How many mitigations are under review.</summary>
-        public int? InReviewCount { get; set; }
+        public int? InReviewCount { get => _explicitNullValueInReviewCount; set { _explicitNullValueInReviewCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_review_count"); else _explicitNullProperties?.Remove("in_review_count"); } }
+        private int? _explicitNullValueInReviewCount = default!;
         /// <summary>How many mitigations are pending their effective date.</summary>
-        public int? PendingCount { get; set; }
+        public int? PendingCount { get => _explicitNullValuePendingCount; set { _explicitNullValuePendingCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_count"); else _explicitNullProperties?.Remove("pending_count"); } }
+        private int? _explicitNullValuePendingCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("external_host_notified", ExternalHostNotified);
             writer.WriteIntValue("in_review_count", InReviewCount);
             writer.WriteIntValue("pending_count", PendingCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

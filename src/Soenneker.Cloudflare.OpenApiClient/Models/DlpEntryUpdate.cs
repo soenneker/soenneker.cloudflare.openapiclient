@@ -8,34 +8,39 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateCustom"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateIntegration"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdatePredefined"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DlpEntryUpdate : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateCustom"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateCustom? DlpEntryUpdateCustom { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf1? DlpEntryUpdateOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateCustom DlpEntryUpdateCustom { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf1 DlpEntryUpdateOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateIntegration"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateIntegration? DlpEntryUpdateIntegration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf2? DlpEntryUpdateOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateIntegration DlpEntryUpdateIntegration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf2 DlpEntryUpdateOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdatePredefined"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdatePredefined? DlpEntryUpdatePredefined { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf3? DlpEntryUpdateOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdatePredefined DlpEntryUpdatePredefined { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf3 DlpEntryUpdateOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,17 +54,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdate();
             if("custom".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DlpEntryUpdateCustom = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateCustom();
-            }
-            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DlpEntryUpdateIntegration = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateIntegration();
+                
             }
             else if("predefined".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DlpEntryUpdatePredefined = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdatePredefined();
+                
             }
-            return result;
+            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("pattern") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("custom".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("enabled") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("predefined".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("enabled") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("integration".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("enabled") != null))();
+            if (result.DlpEntryUpdateOneOf1 == null && result.DlpEntryUpdateOneOf2 == null && result.DlpEntryUpdateOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.DlpEntryUpdateOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf1(), parseNode);
+            if (result.DlpEntryUpdateOneOf1 == null && result.DlpEntryUpdateOneOf2 == null && result.DlpEntryUpdateOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.DlpEntryUpdateOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf2(), parseNode);
+            if (result.DlpEntryUpdateOneOf1 == null && result.DlpEntryUpdateOneOf2 == null && result.DlpEntryUpdateOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.DlpEntryUpdateOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf3(), parseNode);
+            if (result.DlpEntryUpdateOneOf1 == null && result.DlpEntryUpdateOneOf2 == null && result.DlpEntryUpdateOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,17 +81,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DlpEntryUpdateCustom != null)
+            if(DlpEntryUpdateOneOf1 != null)
             {
-                return DlpEntryUpdateCustom.GetFieldDeserializers();
+                return DlpEntryUpdateOneOf1.GetFieldDeserializers();
             }
-            else if(DlpEntryUpdateIntegration != null)
+            else if(DlpEntryUpdateOneOf2 != null)
             {
-                return DlpEntryUpdateIntegration.GetFieldDeserializers();
+                return DlpEntryUpdateOneOf2.GetFieldDeserializers();
             }
-            else if(DlpEntryUpdatePredefined != null)
+            else if(DlpEntryUpdateOneOf3 != null)
             {
-                return DlpEntryUpdatePredefined.GetFieldDeserializers();
+                return DlpEntryUpdateOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -87,18 +101,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (DlpEntryUpdateOneOf1 == null && DlpEntryUpdateOneOf2 == null && DlpEntryUpdateOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (DlpEntryUpdateOneOf1 != null && DlpEntryUpdateOneOf2 == null && DlpEntryUpdateOneOf3 == null) { if (DlpEntryUpdateOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryUpdateOneOf1); return; }
+            if (DlpEntryUpdateOneOf2 != null && DlpEntryUpdateOneOf1 == null && DlpEntryUpdateOneOf3 == null) { if (DlpEntryUpdateOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryUpdateOneOf2); return; }
+            if (DlpEntryUpdateOneOf3 != null && DlpEntryUpdateOneOf1 == null && DlpEntryUpdateOneOf2 == null) { if (DlpEntryUpdateOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DlpEntryUpdateOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DlpEntryUpdateCustom != null)
+            if(DlpEntryUpdateOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateCustom>(null, DlpEntryUpdateCustom);
+                if (DlpEntryUpdateOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf1>(null, DlpEntryUpdateOneOf1);
             }
-            else if(DlpEntryUpdateIntegration != null)
+            else if(DlpEntryUpdateOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateIntegration>(null, DlpEntryUpdateIntegration);
+                if (DlpEntryUpdateOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf2>(null, DlpEntryUpdateOneOf2);
             }
-            else if(DlpEntryUpdatePredefined != null)
+            else if(DlpEntryUpdateOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdatePredefined>(null, DlpEntryUpdatePredefined);
+                if (DlpEntryUpdateOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryUpdateOneOf3>(null, DlpEntryUpdateOneOf3);
             }
         }
     }

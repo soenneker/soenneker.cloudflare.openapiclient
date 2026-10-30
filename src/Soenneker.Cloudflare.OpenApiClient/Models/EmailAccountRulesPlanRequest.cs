@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailAccountRulesPlanRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("catch_all_rules") is { } nullNodeCatchAllRules && nullNodeCatchAllRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CatchAllRules = null;
+            if (parseNode.GetChildNode("owner_worker_tag") is { } nullNodeOwnerWorkerTag && nullNodeOwnerWorkerTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerWorkerTag = null;
+            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Desired catch-all Email Routing rules managed by the deploying Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanCatchAllEntry>? CatchAllRules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanCatchAllEntry>? CatchAllRules { get => _explicitNullValueCatchAllRules; set { _explicitNullValueCatchAllRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("catch_all_rules"); else _explicitNullProperties?.Remove("catch_all_rules"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanCatchAllEntry>? _explicitNullValueCatchAllRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanCatchAllEntry> CatchAllRules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanCatchAllEntry> CatchAllRules { get => _explicitNullValueCatchAllRules; set { _explicitNullValueCatchAllRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("catch_all_rules"); else _explicitNullProperties?.Remove("catch_all_rules"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanCatchAllEntry> _explicitNullValueCatchAllRules = default!;
 #endif
         /// <summary>Public tag (script_tag) of the Worker that owns this rule. Required when`source` is `wrangler`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerWorkerTag { get; set; }
+        public string? OwnerWorkerTag { get => _explicitNullValueOwnerWorkerTag; set { _explicitNullValueOwnerWorkerTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_worker_tag"); else _explicitNullProperties?.Remove("owner_worker_tag"); } }
+        private string? _explicitNullValueOwnerWorkerTag = default!;
 #nullable restore
 #else
-        public string OwnerWorkerTag { get; set; }
+        public string OwnerWorkerTag { get => _explicitNullValueOwnerWorkerTag; set { _explicitNullValueOwnerWorkerTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_worker_tag"); else _explicitNullProperties?.Remove("owner_worker_tag"); } }
+        private string _explicitNullValueOwnerWorkerTag = default!;
 #endif
         /// <summary>Desired normal Email Routing rules managed by the deploying Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRule>? Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRule>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRule>? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRule> Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRule> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRule> _explicitNullValueRules = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRequest"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanCatchAllEntry>("catch_all_rules", CatchAllRules);
             writer.WriteStringValue("owner_worker_tag", OwnerWorkerTag);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRulesPlanRule>("rules", Rules);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

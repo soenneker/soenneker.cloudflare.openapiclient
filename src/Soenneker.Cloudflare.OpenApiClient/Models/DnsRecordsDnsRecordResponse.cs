@@ -8,178 +8,183 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf10"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf11"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf12"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf13"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf9"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DnsRecordsDnsRecordResponse : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA? DnsRecordsDnsRecordResponseA { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1? DnsRecordsDnsRecordResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA DnsRecordsDnsRecordResponseA { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1 DnsRecordsDnsRecordResponseOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa? DnsRecordsDnsRecordResponseAaaa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf10? DnsRecordsDnsRecordResponseOneOf10 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa DnsRecordsDnsRecordResponseAaaa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf10 DnsRecordsDnsRecordResponseOneOf10 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa? DnsRecordsDnsRecordResponseCaa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf11? DnsRecordsDnsRecordResponseOneOf11 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa DnsRecordsDnsRecordResponseCaa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf11 DnsRecordsDnsRecordResponseOneOf11 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert? DnsRecordsDnsRecordResponseCert { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf12? DnsRecordsDnsRecordResponseOneOf12 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert DnsRecordsDnsRecordResponseCert { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf12 DnsRecordsDnsRecordResponseOneOf12 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname? DnsRecordsDnsRecordResponseCname { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf13? DnsRecordsDnsRecordResponseOneOf13 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname DnsRecordsDnsRecordResponseCname { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf13 DnsRecordsDnsRecordResponseOneOf13 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey? DnsRecordsDnsRecordResponseDnskey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1Branch? DnsRecordsDnsRecordResponseOneOf1Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey DnsRecordsDnsRecordResponseDnskey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1Branch DnsRecordsDnsRecordResponseOneOf1Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs? DnsRecordsDnsRecordResponseDs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2? DnsRecordsDnsRecordResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs DnsRecordsDnsRecordResponseDs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2 DnsRecordsDnsRecordResponseOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps? DnsRecordsDnsRecordResponseHttps { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2Branch? DnsRecordsDnsRecordResponseOneOf2Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps DnsRecordsDnsRecordResponseHttps { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2Branch DnsRecordsDnsRecordResponseOneOf2Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc? DnsRecordsDnsRecordResponseLoc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3? DnsRecordsDnsRecordResponseOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc DnsRecordsDnsRecordResponseLoc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3 DnsRecordsDnsRecordResponseOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx? DnsRecordsDnsRecordResponseMx { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3Branch? DnsRecordsDnsRecordResponseOneOf3Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx DnsRecordsDnsRecordResponseMx { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3Branch DnsRecordsDnsRecordResponseOneOf3Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr? DnsRecordsDnsRecordResponseNaptr { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4? DnsRecordsDnsRecordResponseOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr DnsRecordsDnsRecordResponseNaptr { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4 DnsRecordsDnsRecordResponseOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs? DnsRecordsDnsRecordResponseNs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4Branch? DnsRecordsDnsRecordResponseOneOf4Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs DnsRecordsDnsRecordResponseNs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4Branch DnsRecordsDnsRecordResponseOneOf4Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey? DnsRecordsDnsRecordResponseOpenpgpkey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5? DnsRecordsDnsRecordResponseOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey DnsRecordsDnsRecordResponseOpenpgpkey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5 DnsRecordsDnsRecordResponseOneOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr? DnsRecordsDnsRecordResponsePtr { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5Branch? DnsRecordsDnsRecordResponseOneOf5Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr DnsRecordsDnsRecordResponsePtr { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5Branch DnsRecordsDnsRecordResponseOneOf5Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea? DnsRecordsDnsRecordResponseSmimea { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6? DnsRecordsDnsRecordResponseOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea DnsRecordsDnsRecordResponseSmimea { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6 DnsRecordsDnsRecordResponseOneOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv? DnsRecordsDnsRecordResponseSrv { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6Branch? DnsRecordsDnsRecordResponseOneOf6Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv DnsRecordsDnsRecordResponseSrv { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6Branch DnsRecordsDnsRecordResponseOneOf6Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp? DnsRecordsDnsRecordResponseSshfp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7? DnsRecordsDnsRecordResponseOneOf7 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp DnsRecordsDnsRecordResponseSshfp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7 DnsRecordsDnsRecordResponseOneOf7 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb? DnsRecordsDnsRecordResponseSvcb { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7Branch? DnsRecordsDnsRecordResponseOneOf7Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb DnsRecordsDnsRecordResponseSvcb { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7Branch DnsRecordsDnsRecordResponseOneOf7Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa? DnsRecordsDnsRecordResponseTlsa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8? DnsRecordsDnsRecordResponseOneOf8 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa DnsRecordsDnsRecordResponseTlsa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8 DnsRecordsDnsRecordResponseOneOf8 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt? DnsRecordsDnsRecordResponseTxt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8Branch? DnsRecordsDnsRecordResponseOneOf8Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt DnsRecordsDnsRecordResponseTxt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8Branch DnsRecordsDnsRecordResponseOneOf8Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf9"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri? DnsRecordsDnsRecordResponseUri { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf9? DnsRecordsDnsRecordResponseOneOf9 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri DnsRecordsDnsRecordResponseUri { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf9 DnsRecordsDnsRecordResponseOneOf9 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -193,89 +198,134 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse();
             if("A".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DnsRecordsDnsRecordResponseA = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA();
-            }
-            else if("AAAA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseAaaa = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa();
-            }
-            else if("CAA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseCaa = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa();
-            }
-            else if("CERT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseCert = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert();
-            }
-            else if("CNAME".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseCname = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname();
-            }
-            else if("DNSKEY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseDnskey = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey();
-            }
-            else if("DS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseDs = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs();
-            }
-            else if("HTTPS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseHttps = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps();
-            }
-            else if("LOC".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseLoc = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc();
-            }
-            else if("MX".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseMx = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx();
-            }
-            else if("NAPTR".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseNaptr = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr();
-            }
-            else if("NS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseNs = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs();
-            }
-            else if("OPENPGPKEY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseOpenpgpkey = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey();
-            }
-            else if("PTR".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponsePtr = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr();
-            }
-            else if("SMIMEA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseSmimea = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea();
-            }
-            else if("SRV".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseSrv = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv();
+                
             }
             else if("SSHFP".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DnsRecordsDnsRecordResponseSshfp = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp();
+                
             }
             else if("SVCB".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DnsRecordsDnsRecordResponseSvcb = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb();
+                
             }
             else if("TLSA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DnsRecordsDnsRecordResponseTlsa = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa();
-            }
-            else if("TXT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DnsRecordsDnsRecordResponseTxt = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt();
+                
             }
             else if("URI".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DnsRecordsDnsRecordResponseUri = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri();
+                
             }
-            return result;
+            else if("CAA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("AAAA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("CERT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("CNAME".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("DNSKEY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("MX".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("DS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("NS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("HTTPS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("OPENPGPKEY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("LOC".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("PTR".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("NAPTR".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("TXT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("SMIMEA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("SRV".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("A".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("AAAA".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("CNAME".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("MX".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("NS".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("OPENPGPKEY".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("PTR".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("TXT".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("CAA".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch9 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("CERT".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch10 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("DNSKEY".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch11 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("DS".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch12 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("HTTPS".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch13 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("LOC".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch14 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("NAPTR".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch15 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("SMIMEA".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch16 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("SRV".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch17 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("SSHFP".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch18 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("SVCB".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch19 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("TLSA".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            bool matchesUnionBranch20 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("URI".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content") != null && parseNode.GetChildNode("data") != null && parseNode.GetChildNode("proxied") != null && parseNode.GetChildNode("ttl") != null && parseNode.GetChildNode("settings") != null && parseNode.GetChildNode("comment") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("proxiable") != null && parseNode.GetChildNode("created_on") != null && parseNode.GetChildNode("modified_on") != null && parseNode.GetChildNode("meta") != null))();
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf7 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf8 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch8 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf1Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1Branch(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch9 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf2Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2Branch(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch10 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf3Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3Branch(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch11 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf4Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4Branch(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch12 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf5Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5Branch(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch13 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf6Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6Branch(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch14 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf7Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7Branch(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch15 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf8Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8Branch(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch16 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf9 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf9(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch17 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch18 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf10 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf10(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch18 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch19 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf11 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf11(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch19 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch20) result.DnsRecordsDnsRecordResponseOneOf12 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf12(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null && matchesUnionBranch20 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10 && !matchesUnionBranch11 && !matchesUnionBranch12 && !matchesUnionBranch13 && !matchesUnionBranch14 && !matchesUnionBranch15 && !matchesUnionBranch16 && !matchesUnionBranch17 && !matchesUnionBranch18 && !matchesUnionBranch19) result.DnsRecordsDnsRecordResponseOneOf13 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf13(), parseNode);
+            if (result.DnsRecordsDnsRecordResponseOneOf1 == null && result.DnsRecordsDnsRecordResponseOneOf10 == null && result.DnsRecordsDnsRecordResponseOneOf11 == null && result.DnsRecordsDnsRecordResponseOneOf12 == null && result.DnsRecordsDnsRecordResponseOneOf13 == null && result.DnsRecordsDnsRecordResponseOneOf1Branch == null && result.DnsRecordsDnsRecordResponseOneOf2 == null && result.DnsRecordsDnsRecordResponseOneOf2Branch == null && result.DnsRecordsDnsRecordResponseOneOf3 == null && result.DnsRecordsDnsRecordResponseOneOf3Branch == null && result.DnsRecordsDnsRecordResponseOneOf4 == null && result.DnsRecordsDnsRecordResponseOneOf4Branch == null && result.DnsRecordsDnsRecordResponseOneOf5 == null && result.DnsRecordsDnsRecordResponseOneOf5Branch == null && result.DnsRecordsDnsRecordResponseOneOf6 == null && result.DnsRecordsDnsRecordResponseOneOf6Branch == null && result.DnsRecordsDnsRecordResponseOneOf7 == null && result.DnsRecordsDnsRecordResponseOneOf7Branch == null && result.DnsRecordsDnsRecordResponseOneOf8 == null && result.DnsRecordsDnsRecordResponseOneOf8Branch == null && result.DnsRecordsDnsRecordResponseOneOf9 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -283,89 +333,89 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DnsRecordsDnsRecordResponseA != null)
+            if(DnsRecordsDnsRecordResponseOneOf1 != null)
             {
-                return DnsRecordsDnsRecordResponseA.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf1.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseAaaa != null)
+            else if(DnsRecordsDnsRecordResponseOneOf10 != null)
             {
-                return DnsRecordsDnsRecordResponseAaaa.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf10.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseCaa != null)
+            else if(DnsRecordsDnsRecordResponseOneOf11 != null)
             {
-                return DnsRecordsDnsRecordResponseCaa.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf11.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseCert != null)
+            else if(DnsRecordsDnsRecordResponseOneOf12 != null)
             {
-                return DnsRecordsDnsRecordResponseCert.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf12.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseCname != null)
+            else if(DnsRecordsDnsRecordResponseOneOf13 != null)
             {
-                return DnsRecordsDnsRecordResponseCname.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf13.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseDnskey != null)
+            else if(DnsRecordsDnsRecordResponseOneOf1Branch != null)
             {
-                return DnsRecordsDnsRecordResponseDnskey.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf1Branch.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseDs != null)
+            else if(DnsRecordsDnsRecordResponseOneOf2 != null)
             {
-                return DnsRecordsDnsRecordResponseDs.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf2.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseHttps != null)
+            else if(DnsRecordsDnsRecordResponseOneOf2Branch != null)
             {
-                return DnsRecordsDnsRecordResponseHttps.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf2Branch.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseLoc != null)
+            else if(DnsRecordsDnsRecordResponseOneOf3 != null)
             {
-                return DnsRecordsDnsRecordResponseLoc.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf3.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseMx != null)
+            else if(DnsRecordsDnsRecordResponseOneOf3Branch != null)
             {
-                return DnsRecordsDnsRecordResponseMx.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf3Branch.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseNaptr != null)
+            else if(DnsRecordsDnsRecordResponseOneOf4 != null)
             {
-                return DnsRecordsDnsRecordResponseNaptr.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf4.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseNs != null)
+            else if(DnsRecordsDnsRecordResponseOneOf4Branch != null)
             {
-                return DnsRecordsDnsRecordResponseNs.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf4Branch.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseOpenpgpkey != null)
+            else if(DnsRecordsDnsRecordResponseOneOf5 != null)
             {
-                return DnsRecordsDnsRecordResponseOpenpgpkey.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf5.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponsePtr != null)
+            else if(DnsRecordsDnsRecordResponseOneOf5Branch != null)
             {
-                return DnsRecordsDnsRecordResponsePtr.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf5Branch.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseSmimea != null)
+            else if(DnsRecordsDnsRecordResponseOneOf6 != null)
             {
-                return DnsRecordsDnsRecordResponseSmimea.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf6.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseSrv != null)
+            else if(DnsRecordsDnsRecordResponseOneOf6Branch != null)
             {
-                return DnsRecordsDnsRecordResponseSrv.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf6Branch.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseSshfp != null)
+            else if(DnsRecordsDnsRecordResponseOneOf7 != null)
             {
-                return DnsRecordsDnsRecordResponseSshfp.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf7.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseSvcb != null)
+            else if(DnsRecordsDnsRecordResponseOneOf7Branch != null)
             {
-                return DnsRecordsDnsRecordResponseSvcb.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf7Branch.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseTlsa != null)
+            else if(DnsRecordsDnsRecordResponseOneOf8 != null)
             {
-                return DnsRecordsDnsRecordResponseTlsa.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf8.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseTxt != null)
+            else if(DnsRecordsDnsRecordResponseOneOf8Branch != null)
             {
-                return DnsRecordsDnsRecordResponseTxt.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf8Branch.GetFieldDeserializers();
             }
-            else if(DnsRecordsDnsRecordResponseUri != null)
+            else if(DnsRecordsDnsRecordResponseOneOf9 != null)
             {
-                return DnsRecordsDnsRecordResponseUri.GetFieldDeserializers();
+                return DnsRecordsDnsRecordResponseOneOf9.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -375,90 +425,135 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (DnsRecordsDnsRecordResponseOneOf1 != null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf1); return; }
+            if (DnsRecordsDnsRecordResponseOneOf10 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf10); return; }
+            if (DnsRecordsDnsRecordResponseOneOf11 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf11 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf11); return; }
+            if (DnsRecordsDnsRecordResponseOneOf12 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf12 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf12); return; }
+            if (DnsRecordsDnsRecordResponseOneOf13 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf13 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf13); return; }
+            if (DnsRecordsDnsRecordResponseOneOf1Branch != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf1Branch); return; }
+            if (DnsRecordsDnsRecordResponseOneOf2 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf2); return; }
+            if (DnsRecordsDnsRecordResponseOneOf2Branch != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf2Branch); return; }
+            if (DnsRecordsDnsRecordResponseOneOf3 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf3); return; }
+            if (DnsRecordsDnsRecordResponseOneOf3Branch != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf3Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf3Branch); return; }
+            if (DnsRecordsDnsRecordResponseOneOf4 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf4); return; }
+            if (DnsRecordsDnsRecordResponseOneOf4Branch != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf4Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf4Branch); return; }
+            if (DnsRecordsDnsRecordResponseOneOf5 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf5); return; }
+            if (DnsRecordsDnsRecordResponseOneOf5Branch != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf5Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf5Branch); return; }
+            if (DnsRecordsDnsRecordResponseOneOf6 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf6); return; }
+            if (DnsRecordsDnsRecordResponseOneOf6Branch != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf6Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf6Branch); return; }
+            if (DnsRecordsDnsRecordResponseOneOf7 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf7); return; }
+            if (DnsRecordsDnsRecordResponseOneOf7Branch != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf7Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf7Branch); return; }
+            if (DnsRecordsDnsRecordResponseOneOf8 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8Branch == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf8); return; }
+            if (DnsRecordsDnsRecordResponseOneOf8Branch != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf9 == null) { if (DnsRecordsDnsRecordResponseOneOf8Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf8Branch); return; }
+            if (DnsRecordsDnsRecordResponseOneOf9 != null && DnsRecordsDnsRecordResponseOneOf1 == null && DnsRecordsDnsRecordResponseOneOf10 == null && DnsRecordsDnsRecordResponseOneOf11 == null && DnsRecordsDnsRecordResponseOneOf12 == null && DnsRecordsDnsRecordResponseOneOf13 == null && DnsRecordsDnsRecordResponseOneOf1Branch == null && DnsRecordsDnsRecordResponseOneOf2 == null && DnsRecordsDnsRecordResponseOneOf2Branch == null && DnsRecordsDnsRecordResponseOneOf3 == null && DnsRecordsDnsRecordResponseOneOf3Branch == null && DnsRecordsDnsRecordResponseOneOf4 == null && DnsRecordsDnsRecordResponseOneOf4Branch == null && DnsRecordsDnsRecordResponseOneOf5 == null && DnsRecordsDnsRecordResponseOneOf5Branch == null && DnsRecordsDnsRecordResponseOneOf6 == null && DnsRecordsDnsRecordResponseOneOf6Branch == null && DnsRecordsDnsRecordResponseOneOf7 == null && DnsRecordsDnsRecordResponseOneOf7Branch == null && DnsRecordsDnsRecordResponseOneOf8 == null && DnsRecordsDnsRecordResponseOneOf8Branch == null) { if (DnsRecordsDnsRecordResponseOneOf9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordResponseOneOf9); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DnsRecordsDnsRecordResponseA != null)
+            if(DnsRecordsDnsRecordResponseOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA>(null, DnsRecordsDnsRecordResponseA);
+                if (DnsRecordsDnsRecordResponseOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1>(null, DnsRecordsDnsRecordResponseOneOf1);
             }
-            else if(DnsRecordsDnsRecordResponseAaaa != null)
+            else if(DnsRecordsDnsRecordResponseOneOf10 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa>(null, DnsRecordsDnsRecordResponseAaaa);
+                if (DnsRecordsDnsRecordResponseOneOf10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf10>(null, DnsRecordsDnsRecordResponseOneOf10);
             }
-            else if(DnsRecordsDnsRecordResponseCaa != null)
+            else if(DnsRecordsDnsRecordResponseOneOf11 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa>(null, DnsRecordsDnsRecordResponseCaa);
+                if (DnsRecordsDnsRecordResponseOneOf11 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf11>(null, DnsRecordsDnsRecordResponseOneOf11);
             }
-            else if(DnsRecordsDnsRecordResponseCert != null)
+            else if(DnsRecordsDnsRecordResponseOneOf12 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert>(null, DnsRecordsDnsRecordResponseCert);
+                if (DnsRecordsDnsRecordResponseOneOf12 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf12>(null, DnsRecordsDnsRecordResponseOneOf12);
             }
-            else if(DnsRecordsDnsRecordResponseCname != null)
+            else if(DnsRecordsDnsRecordResponseOneOf13 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname>(null, DnsRecordsDnsRecordResponseCname);
+                if (DnsRecordsDnsRecordResponseOneOf13 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf13>(null, DnsRecordsDnsRecordResponseOneOf13);
             }
-            else if(DnsRecordsDnsRecordResponseDnskey != null)
+            else if(DnsRecordsDnsRecordResponseOneOf1Branch != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey>(null, DnsRecordsDnsRecordResponseDnskey);
+                if (DnsRecordsDnsRecordResponseOneOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf1Branch>(null, DnsRecordsDnsRecordResponseOneOf1Branch);
             }
-            else if(DnsRecordsDnsRecordResponseDs != null)
+            else if(DnsRecordsDnsRecordResponseOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs>(null, DnsRecordsDnsRecordResponseDs);
+                if (DnsRecordsDnsRecordResponseOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2>(null, DnsRecordsDnsRecordResponseOneOf2);
             }
-            else if(DnsRecordsDnsRecordResponseHttps != null)
+            else if(DnsRecordsDnsRecordResponseOneOf2Branch != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps>(null, DnsRecordsDnsRecordResponseHttps);
+                if (DnsRecordsDnsRecordResponseOneOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf2Branch>(null, DnsRecordsDnsRecordResponseOneOf2Branch);
             }
-            else if(DnsRecordsDnsRecordResponseLoc != null)
+            else if(DnsRecordsDnsRecordResponseOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc>(null, DnsRecordsDnsRecordResponseLoc);
+                if (DnsRecordsDnsRecordResponseOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3>(null, DnsRecordsDnsRecordResponseOneOf3);
             }
-            else if(DnsRecordsDnsRecordResponseMx != null)
+            else if(DnsRecordsDnsRecordResponseOneOf3Branch != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx>(null, DnsRecordsDnsRecordResponseMx);
+                if (DnsRecordsDnsRecordResponseOneOf3Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf3Branch>(null, DnsRecordsDnsRecordResponseOneOf3Branch);
             }
-            else if(DnsRecordsDnsRecordResponseNaptr != null)
+            else if(DnsRecordsDnsRecordResponseOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr>(null, DnsRecordsDnsRecordResponseNaptr);
+                if (DnsRecordsDnsRecordResponseOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4>(null, DnsRecordsDnsRecordResponseOneOf4);
             }
-            else if(DnsRecordsDnsRecordResponseNs != null)
+            else if(DnsRecordsDnsRecordResponseOneOf4Branch != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs>(null, DnsRecordsDnsRecordResponseNs);
+                if (DnsRecordsDnsRecordResponseOneOf4Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf4Branch>(null, DnsRecordsDnsRecordResponseOneOf4Branch);
             }
-            else if(DnsRecordsDnsRecordResponseOpenpgpkey != null)
+            else if(DnsRecordsDnsRecordResponseOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey>(null, DnsRecordsDnsRecordResponseOpenpgpkey);
+                if (DnsRecordsDnsRecordResponseOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5>(null, DnsRecordsDnsRecordResponseOneOf5);
             }
-            else if(DnsRecordsDnsRecordResponsePtr != null)
+            else if(DnsRecordsDnsRecordResponseOneOf5Branch != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr>(null, DnsRecordsDnsRecordResponsePtr);
+                if (DnsRecordsDnsRecordResponseOneOf5Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf5Branch>(null, DnsRecordsDnsRecordResponseOneOf5Branch);
             }
-            else if(DnsRecordsDnsRecordResponseSmimea != null)
+            else if(DnsRecordsDnsRecordResponseOneOf6 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea>(null, DnsRecordsDnsRecordResponseSmimea);
+                if (DnsRecordsDnsRecordResponseOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6>(null, DnsRecordsDnsRecordResponseOneOf6);
             }
-            else if(DnsRecordsDnsRecordResponseSrv != null)
+            else if(DnsRecordsDnsRecordResponseOneOf6Branch != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv>(null, DnsRecordsDnsRecordResponseSrv);
+                if (DnsRecordsDnsRecordResponseOneOf6Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf6Branch>(null, DnsRecordsDnsRecordResponseOneOf6Branch);
             }
-            else if(DnsRecordsDnsRecordResponseSshfp != null)
+            else if(DnsRecordsDnsRecordResponseOneOf7 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp>(null, DnsRecordsDnsRecordResponseSshfp);
+                if (DnsRecordsDnsRecordResponseOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7>(null, DnsRecordsDnsRecordResponseOneOf7);
             }
-            else if(DnsRecordsDnsRecordResponseSvcb != null)
+            else if(DnsRecordsDnsRecordResponseOneOf7Branch != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb>(null, DnsRecordsDnsRecordResponseSvcb);
+                if (DnsRecordsDnsRecordResponseOneOf7Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf7Branch>(null, DnsRecordsDnsRecordResponseOneOf7Branch);
             }
-            else if(DnsRecordsDnsRecordResponseTlsa != null)
+            else if(DnsRecordsDnsRecordResponseOneOf8 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa>(null, DnsRecordsDnsRecordResponseTlsa);
+                if (DnsRecordsDnsRecordResponseOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8>(null, DnsRecordsDnsRecordResponseOneOf8);
             }
-            else if(DnsRecordsDnsRecordResponseTxt != null)
+            else if(DnsRecordsDnsRecordResponseOneOf8Branch != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt>(null, DnsRecordsDnsRecordResponseTxt);
+                if (DnsRecordsDnsRecordResponseOneOf8Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf8Branch>(null, DnsRecordsDnsRecordResponseOneOf8Branch);
             }
-            else if(DnsRecordsDnsRecordResponseUri != null)
+            else if(DnsRecordsDnsRecordResponseOneOf9 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri>(null, DnsRecordsDnsRecordResponseUri);
+                if (DnsRecordsDnsRecordResponseOneOf9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOneOf9>(null, DnsRecordsDnsRecordResponseOneOf9);
             }
         }
     }

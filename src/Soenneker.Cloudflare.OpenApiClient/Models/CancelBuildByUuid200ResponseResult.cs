@@ -11,15 +11,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CancelBuildByUuid200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("build_outcome") is { } nullNodeBuildOutcome && nullNodeBuildOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildOutcome = null;
+            if (parseNode.GetChildNode("build_uuid") is { } nullNodeBuildUuid && nullNodeBuildUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildUuid = null;
+            if (parseNode.GetChildNode("stopped_on") is { } nullNodeStoppedOn && nullNodeStoppedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoppedOn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The build_outcome property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildOutcome? BuildOutcome { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildOutcome? BuildOutcome { get => _explicitNullValueBuildOutcome; set { _explicitNullValueBuildOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_outcome"); else _explicitNullProperties?.Remove("build_outcome"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildOutcome? _explicitNullValueBuildOutcome = default!;
         /// <summary>Build UUID.</summary>
-        public Guid? BuildUuid { get; set; }
+        public Guid? BuildUuid { get => _explicitNullValueBuildUuid; set { _explicitNullValueBuildUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_uuid"); else _explicitNullProperties?.Remove("build_uuid"); } }
+        private Guid? _explicitNullValueBuildUuid = default!;
         /// <summary>The stopped_on property</summary>
-        public DateTimeOffset? StoppedOn { get; set; }
+        public DateTimeOffset? StoppedOn { get => _explicitNullValueStoppedOn; set { _explicitNullValueStoppedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopped_on"); else _explicitNullProperties?.Remove("stopped_on"); } }
+        private DateTimeOffset? _explicitNullValueStoppedOn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CancelBuildByUuid200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CancelBuildByUuid200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CancelBuildByUuid200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CancelBuildByUuid200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildOutcome>("build_outcome", BuildOutcome);
             writer.WriteGuidValue("build_uuid", BuildUuid);
             writer.WriteDateTimeOffsetValue("stopped_on", StoppedOn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

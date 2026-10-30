@@ -12,105 +12,153 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZarazZarazConfigBaseConsent : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("buttonTextTranslations") is { } nullNodeButtonTextTranslations && nullNodeButtonTextTranslations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ButtonTextTranslations = null;
+            if (parseNode.GetChildNode("companyEmail") is { } nullNodeCompanyEmail && nullNodeCompanyEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyEmail = null;
+            if (parseNode.GetChildNode("companyName") is { } nullNodeCompanyName && nullNodeCompanyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyName = null;
+            if (parseNode.GetChildNode("companyStreetAddress") is { } nullNodeCompanyStreetAddress && nullNodeCompanyStreetAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyStreetAddress = null;
+            if (parseNode.GetChildNode("consentModalIntroHTML") is { } nullNodeConsentModalIntroHTML && nullNodeConsentModalIntroHTML.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentModalIntroHTML = null;
+            if (parseNode.GetChildNode("consentModalIntroHTMLWithTranslations") is { } nullNodeConsentModalIntroHTMLWithTranslations && nullNodeConsentModalIntroHTMLWithTranslations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentModalIntroHTMLWithTranslations = null;
+            if (parseNode.GetChildNode("cookieName") is { } nullNodeCookieName && nullNodeCookieName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CookieName = null;
+            if (parseNode.GetChildNode("customCSS") is { } nullNodeCustomCSS && nullNodeCustomCSS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomCSS = null;
+            if (parseNode.GetChildNode("customIntroDisclaimerDismissed") is { } nullNodeCustomIntroDisclaimerDismissed && nullNodeCustomIntroDisclaimerDismissed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomIntroDisclaimerDismissed = null;
+            if (parseNode.GetChildNode("defaultLanguage") is { } nullNodeDefaultLanguage && nullNodeDefaultLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultLanguage = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("hideModal") is { } nullNodeHideModal && nullNodeHideModal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideModal = null;
+            if (parseNode.GetChildNode("purposes") is { } nullNodePurposes && nullNodePurposes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purposes = null;
+            if (parseNode.GetChildNode("purposesWithTranslations") is { } nullNodePurposesWithTranslations && nullNodePurposesWithTranslations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurposesWithTranslations = null;
+            if (parseNode.GetChildNode("tcfCompliant") is { } nullNodeTcfCompliant && nullNodeTcfCompliant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcfCompliant = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The buttonTextTranslations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations? ButtonTextTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations? ButtonTextTranslations { get => _explicitNullValueButtonTextTranslations; set { _explicitNullValueButtonTextTranslations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonTextTranslations"); else _explicitNullProperties?.Remove("buttonTextTranslations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations? _explicitNullValueButtonTextTranslations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations ButtonTextTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations ButtonTextTranslations { get => _explicitNullValueButtonTextTranslations; set { _explicitNullValueButtonTextTranslations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonTextTranslations"); else _explicitNullProperties?.Remove("buttonTextTranslations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations _explicitNullValueButtonTextTranslations = default!;
 #endif
         /// <summary>The companyEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyEmail { get; set; }
+        public string? CompanyEmail { get => _explicitNullValueCompanyEmail; set { _explicitNullValueCompanyEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyEmail"); else _explicitNullProperties?.Remove("companyEmail"); } }
+        private string? _explicitNullValueCompanyEmail = default!;
 #nullable restore
 #else
-        public string CompanyEmail { get; set; }
+        public string CompanyEmail { get => _explicitNullValueCompanyEmail; set { _explicitNullValueCompanyEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyEmail"); else _explicitNullProperties?.Remove("companyEmail"); } }
+        private string _explicitNullValueCompanyEmail = default!;
 #endif
         /// <summary>The companyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyName { get; set; }
+        public string? CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
+        private string? _explicitNullValueCompanyName = default!;
 #nullable restore
 #else
-        public string CompanyName { get; set; }
+        public string CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
+        private string _explicitNullValueCompanyName = default!;
 #endif
         /// <summary>The companyStreetAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyStreetAddress { get; set; }
+        public string? CompanyStreetAddress { get => _explicitNullValueCompanyStreetAddress; set { _explicitNullValueCompanyStreetAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyStreetAddress"); else _explicitNullProperties?.Remove("companyStreetAddress"); } }
+        private string? _explicitNullValueCompanyStreetAddress = default!;
 #nullable restore
 #else
-        public string CompanyStreetAddress { get; set; }
+        public string CompanyStreetAddress { get => _explicitNullValueCompanyStreetAddress; set { _explicitNullValueCompanyStreetAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyStreetAddress"); else _explicitNullProperties?.Remove("companyStreetAddress"); } }
+        private string _explicitNullValueCompanyStreetAddress = default!;
 #endif
         /// <summary>The consentModalIntroHTML property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsentModalIntroHTML { get; set; }
+        public string? ConsentModalIntroHTML { get => _explicitNullValueConsentModalIntroHTML; set { _explicitNullValueConsentModalIntroHTML = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consentModalIntroHTML"); else _explicitNullProperties?.Remove("consentModalIntroHTML"); } }
+        private string? _explicitNullValueConsentModalIntroHTML = default!;
 #nullable restore
 #else
-        public string ConsentModalIntroHTML { get; set; }
+        public string ConsentModalIntroHTML { get => _explicitNullValueConsentModalIntroHTML; set { _explicitNullValueConsentModalIntroHTML = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consentModalIntroHTML"); else _explicitNullProperties?.Remove("consentModalIntroHTML"); } }
+        private string _explicitNullValueConsentModalIntroHTML = default!;
 #endif
         /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty? ConsentModalIntroHTMLWithTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty? ConsentModalIntroHTMLWithTranslations { get => _explicitNullValueConsentModalIntroHTMLWithTranslations; set { _explicitNullValueConsentModalIntroHTMLWithTranslations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consentModalIntroHTMLWithTranslations"); else _explicitNullProperties?.Remove("consentModalIntroHTMLWithTranslations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty? _explicitNullValueConsentModalIntroHTMLWithTranslations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty ConsentModalIntroHTMLWithTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty ConsentModalIntroHTMLWithTranslations { get => _explicitNullValueConsentModalIntroHTMLWithTranslations; set { _explicitNullValueConsentModalIntroHTMLWithTranslations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consentModalIntroHTMLWithTranslations"); else _explicitNullProperties?.Remove("consentModalIntroHTMLWithTranslations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty _explicitNullValueConsentModalIntroHTMLWithTranslations = default!;
 #endif
         /// <summary>The cookieName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CookieName { get; set; }
+        public string? CookieName { get => _explicitNullValueCookieName; set { _explicitNullValueCookieName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookieName"); else _explicitNullProperties?.Remove("cookieName"); } }
+        private string? _explicitNullValueCookieName = default!;
 #nullable restore
 #else
-        public string CookieName { get; set; }
+        public string CookieName { get => _explicitNullValueCookieName; set { _explicitNullValueCookieName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookieName"); else _explicitNullProperties?.Remove("cookieName"); } }
+        private string _explicitNullValueCookieName = default!;
 #endif
         /// <summary>The customCSS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomCSS { get; set; }
+        public string? CustomCSS { get => _explicitNullValueCustomCSS; set { _explicitNullValueCustomCSS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customCSS"); else _explicitNullProperties?.Remove("customCSS"); } }
+        private string? _explicitNullValueCustomCSS = default!;
 #nullable restore
 #else
-        public string CustomCSS { get; set; }
+        public string CustomCSS { get => _explicitNullValueCustomCSS; set { _explicitNullValueCustomCSS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customCSS"); else _explicitNullProperties?.Remove("customCSS"); } }
+        private string _explicitNullValueCustomCSS = default!;
 #endif
         /// <summary>The customIntroDisclaimerDismissed property</summary>
-        public bool? CustomIntroDisclaimerDismissed { get; set; }
+        public bool? CustomIntroDisclaimerDismissed { get => _explicitNullValueCustomIntroDisclaimerDismissed; set { _explicitNullValueCustomIntroDisclaimerDismissed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customIntroDisclaimerDismissed"); else _explicitNullProperties?.Remove("customIntroDisclaimerDismissed"); } }
+        private bool? _explicitNullValueCustomIntroDisclaimerDismissed = default!;
         /// <summary>The defaultLanguage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultLanguage { get; set; }
+        public string? DefaultLanguage { get => _explicitNullValueDefaultLanguage; set { _explicitNullValueDefaultLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultLanguage"); else _explicitNullProperties?.Remove("defaultLanguage"); } }
+        private string? _explicitNullValueDefaultLanguage = default!;
 #nullable restore
 #else
-        public string DefaultLanguage { get; set; }
+        public string DefaultLanguage { get => _explicitNullValueDefaultLanguage; set { _explicitNullValueDefaultLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultLanguage"); else _explicitNullProperties?.Remove("defaultLanguage"); } }
+        private string _explicitNullValueDefaultLanguage = default!;
 #endif
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The hideModal property</summary>
-        public bool? HideModal { get; set; }
+        public bool? HideModal { get => _explicitNullValueHideModal; set { _explicitNullValueHideModal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideModal"); else _explicitNullProperties?.Remove("hideModal"); } }
+        private bool? _explicitNullValueHideModal = default!;
         /// <summary>Object where keys are purpose alpha-numeric IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty? Purposes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty? Purposes { get => _explicitNullValuePurposes; set { _explicitNullValuePurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposes"); else _explicitNullProperties?.Remove("purposes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty? _explicitNullValuePurposes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty Purposes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty Purposes { get => _explicitNullValuePurposes; set { _explicitNullValuePurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposes"); else _explicitNullProperties?.Remove("purposes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty _explicitNullValuePurposes = default!;
 #endif
         /// <summary>Object where keys are purpose alpha-numeric IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty? PurposesWithTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty? PurposesWithTranslations { get => _explicitNullValuePurposesWithTranslations; set { _explicitNullValuePurposesWithTranslations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposesWithTranslations"); else _explicitNullProperties?.Remove("purposesWithTranslations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty? _explicitNullValuePurposesWithTranslations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty PurposesWithTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty PurposesWithTranslations { get => _explicitNullValuePurposesWithTranslations; set { _explicitNullValuePurposesWithTranslations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposesWithTranslations"); else _explicitNullProperties?.Remove("purposesWithTranslations"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty _explicitNullValuePurposesWithTranslations = default!;
 #endif
         /// <summary>The tcfCompliant property</summary>
-        public bool? TcfCompliant { get; set; }
+        public bool? TcfCompliant { get => _explicitNullValueTcfCompliant; set { _explicitNullValueTcfCompliant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcfCompliant"); else _explicitNullProperties?.Remove("tcfCompliant"); } }
+        private bool? _explicitNullValueTcfCompliant = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent"/> and sets the default values.
         /// </summary>
@@ -126,7 +174,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -175,6 +223,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty>("purposes", Purposes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty>("purposesWithTranslations", PurposesWithTranslations);
             writer.WriteBoolValue("tcfCompliant", TcfCompliant);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

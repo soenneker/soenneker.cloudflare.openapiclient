@@ -12,55 +12,103 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MconnTelemetrySnapshotDisk : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("discards") is { } nullNodeDiscards && nullNodeDiscards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discards = null;
+            if (parseNode.GetChildNode("discards_merged") is { } nullNodeDiscardsMerged && nullNodeDiscardsMerged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscardsMerged = null;
+            if (parseNode.GetChildNode("flushes") is { } nullNodeFlushes && nullNodeFlushes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flushes = null;
+            if (parseNode.GetChildNode("in_progress") is { } nullNodeInProgress && nullNodeInProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InProgress = null;
+            if (parseNode.GetChildNode("major") is { } nullNodeMajor && nullNodeMajor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Major = null;
+            if (parseNode.GetChildNode("merged") is { } nullNodeMerged && nullNodeMerged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merged = null;
+            if (parseNode.GetChildNode("minor") is { } nullNodeMinor && nullNodeMinor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Minor = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("reads") is { } nullNodeReads && nullNodeReads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reads = null;
+            if (parseNode.GetChildNode("sectors_discarded") is { } nullNodeSectorsDiscarded && nullNodeSectorsDiscarded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SectorsDiscarded = null;
+            if (parseNode.GetChildNode("sectors_read") is { } nullNodeSectorsRead && nullNodeSectorsRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SectorsRead = null;
+            if (parseNode.GetChildNode("sectors_written") is { } nullNodeSectorsWritten && nullNodeSectorsWritten.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SectorsWritten = null;
+            if (parseNode.GetChildNode("time_discarding_ms") is { } nullNodeTimeDiscardingMs && nullNodeTimeDiscardingMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeDiscardingMs = null;
+            if (parseNode.GetChildNode("time_flushing_ms") is { } nullNodeTimeFlushingMs && nullNodeTimeFlushingMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeFlushingMs = null;
+            if (parseNode.GetChildNode("time_in_progress_ms") is { } nullNodeTimeInProgressMs && nullNodeTimeInProgressMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeInProgressMs = null;
+            if (parseNode.GetChildNode("time_reading_ms") is { } nullNodeTimeReadingMs && nullNodeTimeReadingMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeReadingMs = null;
+            if (parseNode.GetChildNode("time_writing_ms") is { } nullNodeTimeWritingMs && nullNodeTimeWritingMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeWritingMs = null;
+            if (parseNode.GetChildNode("weighted_time_in_progress_ms") is { } nullNodeWeightedTimeInProgressMs && nullNodeWeightedTimeInProgressMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WeightedTimeInProgressMs = null;
+            if (parseNode.GetChildNode("writes") is { } nullNodeWrites && nullNodeWrites.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Writes = null;
+            if (parseNode.GetChildNode("writes_merged") is { } nullNodeWritesMerged && nullNodeWritesMerged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WritesMerged = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Discards completed successfully</summary>
-        public double? Discards { get; set; }
+        public double? Discards { get => _explicitNullValueDiscards; set { _explicitNullValueDiscards = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discards"); else _explicitNullProperties?.Remove("discards"); } }
+        private double? _explicitNullValueDiscards = default!;
         /// <summary>Discards merged</summary>
-        public double? DiscardsMerged { get; set; }
+        public double? DiscardsMerged { get => _explicitNullValueDiscardsMerged; set { _explicitNullValueDiscardsMerged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discards_merged"); else _explicitNullProperties?.Remove("discards_merged"); } }
+        private double? _explicitNullValueDiscardsMerged = default!;
         /// <summary>Flushes completed successfully</summary>
-        public double? Flushes { get; set; }
+        public double? Flushes { get => _explicitNullValueFlushes; set { _explicitNullValueFlushes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flushes"); else _explicitNullProperties?.Remove("flushes"); } }
+        private double? _explicitNullValueFlushes = default!;
         /// <summary>I/Os currently in progress</summary>
-        public double? InProgress { get; set; }
+        public double? InProgress { get => _explicitNullValueInProgress; set { _explicitNullValueInProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_progress"); else _explicitNullProperties?.Remove("in_progress"); } }
+        private double? _explicitNullValueInProgress = default!;
         /// <summary>Device major number</summary>
-        public double? Major { get; set; }
+        public double? Major { get => _explicitNullValueMajor; set { _explicitNullValueMajor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("major"); else _explicitNullProperties?.Remove("major"); } }
+        private double? _explicitNullValueMajor = default!;
         /// <summary>Reads merged</summary>
-        public double? Merged { get; set; }
+        public double? Merged { get => _explicitNullValueMerged; set { _explicitNullValueMerged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged"); else _explicitNullProperties?.Remove("merged"); } }
+        private double? _explicitNullValueMerged = default!;
         /// <summary>Device minor number</summary>
-        public double? Minor { get; set; }
+        public double? Minor { get => _explicitNullValueMinor; set { _explicitNullValueMinor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minor"); else _explicitNullProperties?.Remove("minor"); } }
+        private double? _explicitNullValueMinor = default!;
         /// <summary>Device name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Reads completed successfully</summary>
-        public double? Reads { get; set; }
+        public double? Reads { get => _explicitNullValueReads; set { _explicitNullValueReads = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reads"); else _explicitNullProperties?.Remove("reads"); } }
+        private double? _explicitNullValueReads = default!;
         /// <summary>Sectors discarded</summary>
-        public double? SectorsDiscarded { get; set; }
+        public double? SectorsDiscarded { get => _explicitNullValueSectorsDiscarded; set { _explicitNullValueSectorsDiscarded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sectors_discarded"); else _explicitNullProperties?.Remove("sectors_discarded"); } }
+        private double? _explicitNullValueSectorsDiscarded = default!;
         /// <summary>Sectors read successfully</summary>
-        public double? SectorsRead { get; set; }
+        public double? SectorsRead { get => _explicitNullValueSectorsRead; set { _explicitNullValueSectorsRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sectors_read"); else _explicitNullProperties?.Remove("sectors_read"); } }
+        private double? _explicitNullValueSectorsRead = default!;
         /// <summary>Sectors written successfully</summary>
-        public double? SectorsWritten { get; set; }
+        public double? SectorsWritten { get => _explicitNullValueSectorsWritten; set { _explicitNullValueSectorsWritten = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sectors_written"); else _explicitNullProperties?.Remove("sectors_written"); } }
+        private double? _explicitNullValueSectorsWritten = default!;
         /// <summary>Time spent discarding (milliseconds)</summary>
-        public double? TimeDiscardingMs { get; set; }
+        public double? TimeDiscardingMs { get => _explicitNullValueTimeDiscardingMs; set { _explicitNullValueTimeDiscardingMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_discarding_ms"); else _explicitNullProperties?.Remove("time_discarding_ms"); } }
+        private double? _explicitNullValueTimeDiscardingMs = default!;
         /// <summary>Time spent flushing (milliseconds)</summary>
-        public double? TimeFlushingMs { get; set; }
+        public double? TimeFlushingMs { get => _explicitNullValueTimeFlushingMs; set { _explicitNullValueTimeFlushingMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_flushing_ms"); else _explicitNullProperties?.Remove("time_flushing_ms"); } }
+        private double? _explicitNullValueTimeFlushingMs = default!;
         /// <summary>Time spent doing I/Os (milliseconds)</summary>
-        public double? TimeInProgressMs { get; set; }
+        public double? TimeInProgressMs { get => _explicitNullValueTimeInProgressMs; set { _explicitNullValueTimeInProgressMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_in_progress_ms"); else _explicitNullProperties?.Remove("time_in_progress_ms"); } }
+        private double? _explicitNullValueTimeInProgressMs = default!;
         /// <summary>Time spent reading (milliseconds)</summary>
-        public double? TimeReadingMs { get; set; }
+        public double? TimeReadingMs { get => _explicitNullValueTimeReadingMs; set { _explicitNullValueTimeReadingMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_reading_ms"); else _explicitNullProperties?.Remove("time_reading_ms"); } }
+        private double? _explicitNullValueTimeReadingMs = default!;
         /// <summary>Time spent writing (milliseconds)</summary>
-        public double? TimeWritingMs { get; set; }
+        public double? TimeWritingMs { get => _explicitNullValueTimeWritingMs; set { _explicitNullValueTimeWritingMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_writing_ms"); else _explicitNullProperties?.Remove("time_writing_ms"); } }
+        private double? _explicitNullValueTimeWritingMs = default!;
         /// <summary>Weighted time spent doing I/Os (milliseconds)</summary>
-        public double? WeightedTimeInProgressMs { get; set; }
+        public double? WeightedTimeInProgressMs { get => _explicitNullValueWeightedTimeInProgressMs; set { _explicitNullValueWeightedTimeInProgressMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weighted_time_in_progress_ms"); else _explicitNullProperties?.Remove("weighted_time_in_progress_ms"); } }
+        private double? _explicitNullValueWeightedTimeInProgressMs = default!;
         /// <summary>Writes completed</summary>
-        public double? Writes { get; set; }
+        public double? Writes { get => _explicitNullValueWrites; set { _explicitNullValueWrites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("writes"); else _explicitNullProperties?.Remove("writes"); } }
+        private double? _explicitNullValueWrites = default!;
         /// <summary>Writes merged</summary>
-        public double? WritesMerged { get; set; }
+        public double? WritesMerged { get => _explicitNullValueWritesMerged; set { _explicitNullValueWritesMerged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("writes_merged"); else _explicitNullProperties?.Remove("writes_merged"); } }
+        private double? _explicitNullValueWritesMerged = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk"/> and sets the default values.
         /// </summary>
@@ -76,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -135,6 +183,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("weighted_time_in_progress_ms", WeightedTimeInProgressMs);
             writer.WriteDoubleValue("writes", Writes);
             writer.WriteDoubleValue("writes_merged", WritesMerged);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

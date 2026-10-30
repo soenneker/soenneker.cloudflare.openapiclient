@@ -11,52 +11,78 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkersBindingKindSecretKey : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("algorithm") is { } nullNodeAlgorithm && nullNodeAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Algorithm = null;
+            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("key_base64") is { } nullNodeKeyBase64 && nullNodeKeyBase64.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyBase64 = null;
+            if (parseNode.GetChildNode("key_jwk") is { } nullNodeKeyJwk && nullNodeKeyJwk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyJwk = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("usages") is { } nullNodeUsages && nullNodeUsages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usages = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Algorithm-specific key parameters. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#algorithm).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty? Algorithm { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty? Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty? _explicitNullValueAlgorithm = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty Algorithm { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty _explicitNullValueAlgorithm = default!;
 #endif
         /// <summary>Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyFormat? Format { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyFormat? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyFormat? _explicitNullValueFormat = default!;
         /// <summary>Base64-encoded key data. Required if `format` is &quot;raw&quot;, &quot;pkcs8&quot;, or &quot;spki&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyBase64 { get; set; }
+        public string? KeyBase64 { get => _explicitNullValueKeyBase64; set { _explicitNullValueKeyBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_base64"); else _explicitNullProperties?.Remove("key_base64"); } }
+        private string? _explicitNullValueKeyBase64 = default!;
 #nullable restore
 #else
-        public string KeyBase64 { get; set; }
+        public string KeyBase64 { get => _explicitNullValueKeyBase64; set { _explicitNullValueKeyBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_base64"); else _explicitNullProperties?.Remove("key_base64"); } }
+        private string _explicitNullValueKeyBase64 = default!;
 #endif
         /// <summary>Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is &quot;jwk&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty? KeyJwk { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty? KeyJwk { get => _explicitNullValueKeyJwk; set { _explicitNullValueKeyJwk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_jwk"); else _explicitNullProperties?.Remove("key_jwk"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty? _explicitNullValueKeyJwk = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty KeyJwk { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty KeyJwk { get => _explicitNullValueKeyJwk; set { _explicitNullValueKeyJwk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_jwk"); else _explicitNullProperties?.Remove("key_jwk"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty _explicitNullValueKeyJwk = default!;
 #endif
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretKeyType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretKeyType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecretKeyType? _explicitNullValueType = default!;
         /// <summary>Allowed operations with the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#keyUsages).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem?>? Usages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem?>? Usages { get => _explicitNullValueUsages; set { _explicitNullValueUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usages"); else _explicitNullProperties?.Remove("usages"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem?>? _explicitNullValueUsages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem?> Usages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem?> Usages { get => _explicitNullValueUsages; set { _explicitNullValueUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usages"); else _explicitNullProperties?.Remove("usages"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem?> _explicitNullValueUsages = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey"/> and sets the default values.
@@ -73,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretKeyType>("type", Type);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem>("usages", Usages);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,19 +11,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicAclDeletedResponse_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("forward_locally") is { } nullNodeForwardLocally && nullNodeForwardLocally.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForwardLocally = null;
+            if (parseNode.GetChildNode("lan_1") is { } nullNodeLan1 && nullNodeLan1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lan1 = null;
+            if (parseNode.GetChildNode("lan_2") is { } nullNodeLan2 && nullNodeLan2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lan2 = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("protocols") is { } nullNodeProtocols && nullNodeProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocols = null;
+            if (parseNode.GetChildNode("unidirectional") is { } nullNodeUnidirectional && nullNodeUnidirectional.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unidirectional = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Description for the ACL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The desired forwarding action for this ACL policy. If set to &quot;false&quot;, the policy will forward traffic to Cloudflare. If set to &quot;true&quot;, the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.</summary>
-        public bool? ForwardLocally { get; set; }
+        public bool? ForwardLocally { get => _explicitNullValueForwardLocally; set { _explicitNullValueForwardLocally = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forward_locally"); else _explicitNullProperties?.Remove("forward_locally"); } }
+        private bool? _explicitNullValueForwardLocally = default!;
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,37 +52,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The lan_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration? Lan1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration? Lan1 { get => _explicitNullValueLan1; set { _explicitNullValueLan1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_1"); else _explicitNullProperties?.Remove("lan_1"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration? _explicitNullValueLan1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration Lan1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration Lan1 { get => _explicitNullValueLan1; set { _explicitNullValueLan1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_1"); else _explicitNullProperties?.Remove("lan_1"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration _explicitNullValueLan1 = default!;
 #endif
         /// <summary>The lan_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration? Lan2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration? Lan2 { get => _explicitNullValueLan2; set { _explicitNullValueLan2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_2"); else _explicitNullProperties?.Remove("lan_2"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration? _explicitNullValueLan2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration Lan2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration Lan2 { get => _explicitNullValueLan2; set { _explicitNullValueLan2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_2"); else _explicitNullProperties?.Remove("lan_2"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration _explicitNullValueLan2 = default!;
 #endif
         /// <summary>The name of the ACL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The protocols property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclProtocolsItem?>? Protocols { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclProtocolsItem?>? Protocols { get => _explicitNullValueProtocols; set { _explicitNullValueProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocols"); else _explicitNullProperties?.Remove("protocols"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclProtocolsItem?>? _explicitNullValueProtocols = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclProtocolsItem?> Protocols { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclProtocolsItem?> Protocols { get => _explicitNullValueProtocols; set { _explicitNullValueProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocols"); else _explicitNullProperties?.Remove("protocols"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclProtocolsItem?> _explicitNullValueProtocols = default!;
 #endif
         /// <summary>The desired traffic direction for this ACL policy. If set to &quot;false&quot;, the policy will allow bidirectional traffic. If set to &quot;true&quot;, the policy will only allow traffic in one direction. If not included in request, will default to false.</summary>
-        public bool? Unidirectional { get; set; }
+        public bool? Unidirectional { get => _explicitNullValueUnidirectional; set { _explicitNullValueUnidirectional = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unidirectional"); else _explicitNullProperties?.Remove("unidirectional"); } }
+        private bool? _explicitNullValueUnidirectional = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclDeletedResponse_result"/> and sets the default values.
         /// </summary>
@@ -81,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclDeletedResponse_result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclDeletedResponse_result();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclDeletedResponse_result(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,6 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclProtocolsItem>("protocols", Protocols);
             writer.WriteBoolValue("unidirectional", Unidirectional);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetDnsAs112TimeseriesByDnssec200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("NOT_SUPPORTED") is { } nullNodeNOTSUPPORTED && nullNodeNOTSUPPORTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTSUPPORTED = null;
+            if (parseNode.GetChildNode("SUPPORTED") is { } nullNodeSUPPORTED && nullNodeSUPPORTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SUPPORTED = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NOTSUPPORTED { get; set; }
+        public string? NOTSUPPORTED { get => _explicitNullValueNOTSUPPORTED; set { _explicitNullValueNOTSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SUPPORTED"); else _explicitNullProperties?.Remove("NOT_SUPPORTED"); } }
+        private string? _explicitNullValueNOTSUPPORTED = default!;
 #nullable restore
 #else
-        public string NOTSUPPORTED { get; set; }
+        public string NOTSUPPORTED { get => _explicitNullValueNOTSUPPORTED; set { _explicitNullValueNOTSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SUPPORTED"); else _explicitNullProperties?.Remove("NOT_SUPPORTED"); } }
+        private string _explicitNullValueNOTSUPPORTED = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SUPPORTED { get; set; }
+        public string? SUPPORTED { get => _explicitNullValueSUPPORTED; set { _explicitNullValueSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SUPPORTED"); else _explicitNullProperties?.Remove("SUPPORTED"); } }
+        private string? _explicitNullValueSUPPORTED = default!;
 #nullable restore
 #else
-        public string SUPPORTED { get; set; }
+        public string SUPPORTED { get => _explicitNullValueSUPPORTED; set { _explicitNullValueSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SUPPORTED"); else _explicitNullProperties?.Remove("SUPPORTED"); } }
+        private string _explicitNullValueSUPPORTED = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsAs112TimeseriesByDnssec200ResponseResultSummary0"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsAs112TimeseriesByDnssec200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsAs112TimeseriesByDnssec200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsAs112TimeseriesByDnssec200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("NOT_SUPPORTED", NOTSUPPORTED);
             writer.WriteStringValue("SUPPORTED", SUPPORTED);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

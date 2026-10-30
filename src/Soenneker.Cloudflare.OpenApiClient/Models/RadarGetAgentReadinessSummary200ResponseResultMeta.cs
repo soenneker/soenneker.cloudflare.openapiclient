@@ -12,34 +12,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetAgentReadinessSummary200ResponseResultMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("domainCategories") is { } nullNodeDomainCategories && nullNodeDomainCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainCategories = null;
+            if (parseNode.GetChildNode("lastUpdated") is { } nullNodeLastUpdated && nullNodeLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdated = null;
+            if (parseNode.GetChildNode("normalization") is { } nullNodeNormalization && nullNodeNormalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Normalization = null;
+            if (parseNode.GetChildNode("successfulDomains") is { } nullNodeSuccessfulDomains && nullNodeSuccessfulDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessfulDomains = null;
+            if (parseNode.GetChildNode("totalDomains") is { } nullNodeTotalDomains && nullNodeTotalDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalDomains = null;
+            if (parseNode.GetChildNode("units") is { } nullNodeUnits && nullNodeUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Units = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date of the returned scan (YYYY-MM-DD). May differ from the requested date if no scan exists for that exact date.</summary>
-        public Date? Date { get; set; }
+        public Date? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        private Date? _explicitNullValueDate = default!;
         /// <summary>Available domain sub-categories with their scan counts. Use as filter options for the domainCategory parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaDomainCategoriesItem>? DomainCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaDomainCategoriesItem>? DomainCategories { get => _explicitNullValueDomainCategories; set { _explicitNullValueDomainCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCategories"); else _explicitNullProperties?.Remove("domainCategories"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaDomainCategoriesItem>? _explicitNullValueDomainCategories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaDomainCategoriesItem> DomainCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaDomainCategoriesItem> DomainCategories { get => _explicitNullValueDomainCategories; set { _explicitNullValueDomainCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCategories"); else _explicitNullProperties?.Remove("domainCategories"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaDomainCategoriesItem> _explicitNullValueDomainCategories = default!;
 #endif
         /// <summary>Timestamp of the last dataset update.</summary>
-        public DateTimeOffset? LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdated"); else _explicitNullProperties?.Remove("lastUpdated"); } }
+        private DateTimeOffset? _explicitNullValueLastUpdated = default!;
         /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaNormalization? Normalization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaNormalization? Normalization { get => _explicitNullValueNormalization; set { _explicitNullValueNormalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalization"); else _explicitNullProperties?.Remove("normalization"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaNormalization? _explicitNullValueNormalization = default!;
         /// <summary>Domains successfully scanned (excludes errors).</summary>
-        public int? SuccessfulDomains { get; set; }
+        public int? SuccessfulDomains { get => _explicitNullValueSuccessfulDomains; set { _explicitNullValueSuccessfulDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successfulDomains"); else _explicitNullProperties?.Remove("successfulDomains"); } }
+        private int? _explicitNullValueSuccessfulDomains = default!;
         /// <summary>Total domains attempted in the scan.</summary>
-        public int? TotalDomains { get; set; }
+        public int? TotalDomains { get => _explicitNullValueTotalDomains; set { _explicitNullValueTotalDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalDomains"); else _explicitNullProperties?.Remove("totalDomains"); } }
+        private int? _explicitNullValueTotalDomains = default!;
         /// <summary>Measurement units for the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaUnitsItem>? Units { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaUnitsItem>? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaUnitsItem>? _explicitNullValueUnits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaUnitsItem> Units { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaUnitsItem> Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaUnitsItem> _explicitNullValueUnits = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMeta"/> and sets the default values.
@@ -56,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("successfulDomains", SuccessfulDomains);
             writer.WriteIntValue("totalDomains", TotalDomains);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaUnitsItem>("units", Units);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

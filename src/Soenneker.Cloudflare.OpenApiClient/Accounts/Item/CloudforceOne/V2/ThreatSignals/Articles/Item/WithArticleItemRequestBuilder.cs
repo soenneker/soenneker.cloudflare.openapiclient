@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Content;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Reprocess;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Skills;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Tag;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Tags;
@@ -25,6 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Content.ContentRequestBuilder Content
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The reprocess property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Reprocess.ReprocessRequestBuilder Reprocess
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Reprocess.ReprocessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The skills property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.Skills.SkillsRequestBuilder Skills
@@ -73,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleGet200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleGet200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Marks a Threat Signals article as read or unread.
@@ -93,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a Threat Signals article with its summary, tags, indicator status and relevance to the account&apos;s Priority Intelligence Requirements.

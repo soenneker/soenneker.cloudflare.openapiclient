@@ -11,29 +11,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetBgpTimeseries200ResponseResultMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aggInterval") is { } nullNodeAggInterval && nullNodeAggInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggInterval = null;
+            if (parseNode.GetChildNode("confidenceInfo") is { } nullNodeConfidenceInfo && nullNodeConfidenceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceInfo = null;
+            if (parseNode.GetChildNode("dateRange") is { } nullNodeDateRange && nullNodeDateRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateRange = null;
+            if (parseNode.GetChildNode("lastUpdated") is { } nullNodeLastUpdated && nullNodeLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdated = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The aggInterval property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaAggInterval? AggInterval { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaAggInterval? AggInterval { get => _explicitNullValueAggInterval; set { _explicitNullValueAggInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggInterval"); else _explicitNullProperties?.Remove("aggInterval"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaAggInterval? _explicitNullValueAggInterval = default!;
         /// <summary>The confidenceInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaConfidenceInfo? ConfidenceInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaConfidenceInfo? ConfidenceInfo { get => _explicitNullValueConfidenceInfo; set { _explicitNullValueConfidenceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidenceInfo"); else _explicitNullProperties?.Remove("confidenceInfo"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaConfidenceInfo? _explicitNullValueConfidenceInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaConfidenceInfo ConfidenceInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaConfidenceInfo ConfidenceInfo { get => _explicitNullValueConfidenceInfo; set { _explicitNullValueConfidenceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidenceInfo"); else _explicitNullProperties?.Remove("confidenceInfo"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaConfidenceInfo _explicitNullValueConfidenceInfo = default!;
 #endif
         /// <summary>The dateRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaDateRangeItem>? DateRange { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaDateRangeItem>? DateRange { get => _explicitNullValueDateRange; set { _explicitNullValueDateRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateRange"); else _explicitNullProperties?.Remove("dateRange"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaDateRangeItem>? _explicitNullValueDateRange = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaDateRangeItem> DateRange { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaDateRangeItem> DateRange { get => _explicitNullValueDateRange; set { _explicitNullValueDateRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateRange"); else _explicitNullProperties?.Remove("dateRange"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaDateRangeItem> _explicitNullValueDateRange = default!;
 #endif
         /// <summary>The lastUpdated property</summary>
-        public DateTimeOffset? LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdated"); else _explicitNullProperties?.Remove("lastUpdated"); } }
+        private DateTimeOffset? _explicitNullValueLastUpdated = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMeta"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaConfidenceInfo>("confidenceInfo", ConfidenceInfo);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaDateRangeItem>("dateRange", DateRange);
             writer.WriteDateTimeOffsetValue("lastUpdated", LastUpdated);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

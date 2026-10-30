@@ -12,40 +12,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcContainersCreateApplicationRolloutRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("percentage") is { } nullNodePercentage && nullNodePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Percentage = null;
+            if (parseNode.GetChildNode("step_percentage") is { } nullNodeStepPercentage && nullNodeStepPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StepPercentage = null;
+            if (parseNode.GetChildNode("steps") is { } nullNodeSteps && nullNodeSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Steps = null;
+            if (parseNode.GetChildNode("strategy") is { } nullNodeStrategy && nullNodeStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Strategy = null;
+            if (parseNode.GetChildNode("target_configuration") is { } nullNodeTargetConfiguration && nullNodeTargetConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetConfiguration = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Description of the rollout process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Kind of the rollout process. Defaults to &quot;full_auto&quot;. - &quot;full_auto&quot;: For rolling rollouts, starts progressing steps upon rollout creation. For new_instances rollouts, advances percentage targets automatically after target-version health is observed. - &quot;full_manual&quot;: Requires manually progressing each step in the rollout using the UpdateRollout&apos;s action parameter.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequestKind? Kind { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequestKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequestKind? _explicitNullValueKind = default!;
         /// <summary>Initial target version percentage (0-100). Version sync actively replaces instances to match.Required when strategy is &quot;new_instances&quot; and kind is &quot;full_manual&quot;. When strategy is &quot;new_instances&quot; and kind is &quot;full_auto&quot;, omitted percentage starts at 10% or the smallest percentage that targets at least one instance. Unused for &quot;rolling&quot;.</summary>
-        public int? Percentage { get; set; }
+        public int? Percentage { get => _explicitNullValuePercentage; set { _explicitNullValuePercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentage"); else _explicitNullProperties?.Remove("percentage"); } }
+        private int? _explicitNullValuePercentage = default!;
         /// <summary>Percentage of rollout to increase in each step when &quot;steps&quot; is absent. Applicable values: 5, 10, 20, 25, 50, 100.These create rollouts with 20, 10, 5, 4, 2, 1 steps respectively.Only valid for &quot;rolling&quot; strategy.</summary>
-        public int? StepPercentage { get; set; }
+        public int? StepPercentage { get => _explicitNullValueStepPercentage; set { _explicitNullValueStepPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step_percentage"); else _explicitNullProperties?.Remove("step_percentage"); } }
+        private int? _explicitNullValueStepPercentage = default!;
         /// <summary>Steps defining the rollout process, used when &quot;step_percentage&quot; is absent.Specify only one of &quot;step_percentage&quot; or &quot;steps&quot; when creating a rollout.&quot;steps&quot; allow granular control over each step.Only valid for &quot;rolling&quot; strategy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStepRequest>? Steps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStepRequest>? Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStepRequest>? _explicitNullValueSteps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStepRequest> Steps { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStepRequest> Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStepRequest> _explicitNullValueSteps = default!;
 #endif
         /// <summary>Strategy used for the rollout.- &quot;rolling&quot;: Step-based rollout with health gates. Actively replaces instances to reach each step&apos;s target percentage.- &quot;new_instances&quot;: Percentage control over version distribution. Version sync actively replaces instances to match the configured percentage. The &quot;full_auto&quot; kind advances through fixed percentage targets after target-version health is observed.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequestStrategy? Strategy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequestStrategy? Strategy { get => _explicitNullValueStrategy; set { _explicitNullValueStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strategy"); else _explicitNullProperties?.Remove("strategy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequestStrategy? _explicitNullValueStrategy = default!;
         /// <summary>User-specified container configuration changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration? TargetConfiguration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration? TargetConfiguration { get => _explicitNullValueTargetConfiguration; set { _explicitNullValueTargetConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_configuration"); else _explicitNullProperties?.Remove("target_configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration? _explicitNullValueTargetConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration TargetConfiguration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration TargetConfiguration { get => _explicitNullValueTargetConfiguration; set { _explicitNullValueTargetConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_configuration"); else _explicitNullProperties?.Remove("target_configuration"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration _explicitNullValueTargetConfiguration = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequest"/> and sets the default values.
@@ -62,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CcRolloutStepRequest>("steps", Steps);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRolloutRequestStrategy>("strategy", Strategy);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration>("target_configuration", TargetConfiguration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -69,6 +69,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Fl
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipDeleteFlag200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipDeleteFlag200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,6 +104,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Fl
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipGetFlag200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipGetFlag200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -137,6 +141,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Fl
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipPatchFlag200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipPatchFlag200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -172,6 +178,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Fl
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipUpdateFlag200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipUpdateFlag200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

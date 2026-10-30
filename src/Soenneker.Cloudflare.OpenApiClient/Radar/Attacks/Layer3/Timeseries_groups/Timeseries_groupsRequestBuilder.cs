@@ -23,36 +23,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_gro
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bitrate property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder Bitrate
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The duration property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Duration.DurationRequestBuilder Duration
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Duration.DurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The industry property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Industry.IndustryRequestBuilder Industry
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The protocol property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Protocol.ProtocolRequestBuilder Protocol
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The vector property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.VectorRequestBuilder Vector
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.VectorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The vertical property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vertical.VerticalRequestBuilder Vertical
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);

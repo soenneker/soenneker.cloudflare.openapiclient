@@ -18,11 +18,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The model property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Model.ModelRequestBuilder Model
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Model.ModelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The task property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.TaskNamespace.TaskRequestBuilder Task
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.TaskNamespace.TaskRequestBuilder(PathParameters, RequestAdapter);

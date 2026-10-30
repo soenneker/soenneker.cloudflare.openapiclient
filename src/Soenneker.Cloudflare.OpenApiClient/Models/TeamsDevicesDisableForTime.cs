@@ -11,48 +11,70 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TeamsDevicesDisableForTime : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("1") is { } nullNodeOne && nullNodeOne.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) One = null;
+            if (parseNode.GetChildNode("12") is { } nullNodeOneTwo && nullNodeOneTwo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneTwo = null;
+            if (parseNode.GetChildNode("6") is { } nullNodeSix && nullNodeSix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Six = null;
+            if (parseNode.GetChildNode("3") is { } nullNodeThree && nullNodeThree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Three = null;
+            if (parseNode.GetChildNode("24") is { } nullNodeTwoFour && nullNodeTwoFour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoFour = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Override code that is valid for 1 hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? One { get; set; }
+        public string? One { get => _explicitNullValueOne; set { _explicitNullValueOne = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1"); else _explicitNullProperties?.Remove("1"); } }
+        private string? _explicitNullValueOne = default!;
 #nullable restore
 #else
-        public string One { get; set; }
+        public string One { get => _explicitNullValueOne; set { _explicitNullValueOne = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1"); else _explicitNullProperties?.Remove("1"); } }
+        private string _explicitNullValueOne = default!;
 #endif
         /// <summary>Override code that is valid for 12 hour2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OneTwo { get; set; }
+        public string? OneTwo { get => _explicitNullValueOneTwo; set { _explicitNullValueOneTwo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("12"); else _explicitNullProperties?.Remove("12"); } }
+        private string? _explicitNullValueOneTwo = default!;
 #nullable restore
 #else
-        public string OneTwo { get; set; }
+        public string OneTwo { get => _explicitNullValueOneTwo; set { _explicitNullValueOneTwo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("12"); else _explicitNullProperties?.Remove("12"); } }
+        private string _explicitNullValueOneTwo = default!;
 #endif
         /// <summary>Override code that is valid for 6 hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Six { get; set; }
+        public string? Six { get => _explicitNullValueSix; set { _explicitNullValueSix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6"); else _explicitNullProperties?.Remove("6"); } }
+        private string? _explicitNullValueSix = default!;
 #nullable restore
 #else
-        public string Six { get; set; }
+        public string Six { get => _explicitNullValueSix; set { _explicitNullValueSix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6"); else _explicitNullProperties?.Remove("6"); } }
+        private string _explicitNullValueSix = default!;
 #endif
         /// <summary>Override code that is valid for 3 hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Three { get; set; }
+        public string? Three { get => _explicitNullValueThree; set { _explicitNullValueThree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3"); else _explicitNullProperties?.Remove("3"); } }
+        private string? _explicitNullValueThree = default!;
 #nullable restore
 #else
-        public string Three { get; set; }
+        public string Three { get => _explicitNullValueThree; set { _explicitNullValueThree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3"); else _explicitNullProperties?.Remove("3"); } }
+        private string _explicitNullValueThree = default!;
 #endif
         /// <summary>Override code that is valid for 24 hour.2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TwoFour { get; set; }
+        public string? TwoFour { get => _explicitNullValueTwoFour; set { _explicitNullValueTwoFour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24"); else _explicitNullProperties?.Remove("24"); } }
+        private string? _explicitNullValueTwoFour = default!;
 #nullable restore
 #else
-        public string TwoFour { get; set; }
+        public string TwoFour { get => _explicitNullValueTwoFour; set { _explicitNullValueTwoFour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24"); else _explicitNullProperties?.Remove("24"); } }
+        private string _explicitNullValueTwoFour = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("6", Six);
             writer.WriteStringValue("3", Three);
             writer.WriteStringValue("24", TwoFour);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,27 +11,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmailSecurityReclassifyRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("eml_content") is { } nullNodeEmlContent && nullNodeEmlContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmlContent = null;
+            if (parseNode.GetChildNode("escalated_submission_id") is { } nullNodeEscalatedSubmissionId && nullNodeEscalatedSubmissionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscalatedSubmissionId = null;
+            if (parseNode.GetChildNode("expected_disposition") is { } nullNodeExpectedDisposition && nullNodeExpectedDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDisposition = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Base64 encoded content of the EML file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmlContent { get; set; }
+        public string? EmlContent { get => _explicitNullValueEmlContent; set { _explicitNullValueEmlContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eml_content"); else _explicitNullProperties?.Remove("eml_content"); } }
+        private string? _explicitNullValueEmlContent = default!;
 #nullable restore
 #else
-        public string EmlContent { get; set; }
+        public string EmlContent { get => _explicitNullValueEmlContent; set { _explicitNullValueEmlContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eml_content"); else _explicitNullProperties?.Remove("eml_content"); } }
+        private string _explicitNullValueEmlContent = default!;
 #endif
         /// <summary>Submission ID of the original user submission, when reclassifying an escalated user report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EscalatedSubmissionId { get; set; }
+        public string? EscalatedSubmissionId { get => _explicitNullValueEscalatedSubmissionId; set { _explicitNullValueEscalatedSubmissionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_submission_id"); else _explicitNullProperties?.Remove("escalated_submission_id"); } }
+        private string? _explicitNullValueEscalatedSubmissionId = default!;
 #nullable restore
 #else
-        public string EscalatedSubmissionId { get; set; }
+        public string EscalatedSubmissionId { get => _explicitNullValueEscalatedSubmissionId; set { _explicitNullValueEscalatedSubmissionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_submission_id"); else _explicitNullProperties?.Remove("escalated_submission_id"); } }
+        private string _explicitNullValueEscalatedSubmissionId = default!;
 #endif
         /// <summary>The disposition the message should have.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequestExpectedDisposition? ExpectedDisposition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequestExpectedDisposition? ExpectedDisposition { get => _explicitNullValueExpectedDisposition; set { _explicitNullValueExpectedDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_disposition"); else _explicitNullProperties?.Remove("expected_disposition"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequestExpectedDisposition? _explicitNullValueExpectedDisposition = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequest"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("eml_content", EmlContent);
             writer.WriteStringValue("escalated_submission_id", EscalatedSubmissionId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequestExpectedDisposition>("expected_disposition", ExpectedDisposition);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

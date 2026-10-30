@@ -11,132 +11,193 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RssArticleMarkRead200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bullet_points") is { } nullNodeBulletPoints && nullNodeBulletPoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BulletPoints = null;
+            if (parseNode.GetChildNode("content_r2_key") is { } nullNodeContentR2Key && nullNodeContentR2Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentR2Key = null;
+            if (parseNode.GetChildNode("feed_display_name") is { } nullNodeFeedDisplayName && nullNodeFeedDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedDisplayName = null;
+            if (parseNode.GetChildNode("feed_id") is { } nullNodeFeedId && nullNodeFeedId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedId = null;
+            if (parseNode.GetChildNode("fetched_at") is { } nullNodeFetchedAt && nullNodeFetchedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FetchedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("indicator_extraction_status") is { } nullNodeIndicatorExtractionStatus && nullNodeIndicatorExtractionStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorExtractionStatus = null;
+            if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("published_at") is { } nullNodePublishedAt && nullNodePublishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishedAt = null;
+            if (parseNode.GetChildNode("read") is { } nullNodeRead && nullNodeRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Read = null;
+            if (parseNode.GetChildNode("read_at") is { } nullNodeReadAt && nullNodeReadAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadAt = null;
+            if (parseNode.GetChildNode("severity") is { } nullNodeSeverity && nullNodeSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severity = null;
+            if (parseNode.GetChildNode("skill_version") is { } nullNodeSkillVersion && nullNodeSkillVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkillVersion = null;
+            if (parseNode.GetChildNode("source_count") is { } nullNodeSourceCount && nullNodeSourceCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceCount = null;
+            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+            if (parseNode.GetChildNode("summary_r2_key") is { } nullNodeSummaryR2Key && nullNodeSummaryR2Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryR2Key = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("tag_skill_version") is { } nullNodeTagSkillVersion && nullNodeTagSkillVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagSkillVersion = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bullet_points property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultBulletPoints? BulletPoints { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultBulletPoints? BulletPoints { get => _explicitNullValueBulletPoints; set { _explicitNullValueBulletPoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bullet_points"); else _explicitNullProperties?.Remove("bullet_points"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultBulletPoints? _explicitNullValueBulletPoints = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultBulletPoints BulletPoints { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultBulletPoints BulletPoints { get => _explicitNullValueBulletPoints; set { _explicitNullValueBulletPoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bullet_points"); else _explicitNullProperties?.Remove("bullet_points"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultBulletPoints _explicitNullValueBulletPoints = default!;
 #endif
         /// <summary>The content_r2_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentR2Key { get; set; }
+        public string? ContentR2Key { get => _explicitNullValueContentR2Key; set { _explicitNullValueContentR2Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_r2_key"); else _explicitNullProperties?.Remove("content_r2_key"); } }
+        private string? _explicitNullValueContentR2Key = default!;
 #nullable restore
 #else
-        public string ContentR2Key { get; set; }
+        public string ContentR2Key { get => _explicitNullValueContentR2Key; set { _explicitNullValueContentR2Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_r2_key"); else _explicitNullProperties?.Remove("content_r2_key"); } }
+        private string _explicitNullValueContentR2Key = default!;
 #endif
         /// <summary>The feed_display_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FeedDisplayName { get; set; }
+        public string? FeedDisplayName { get => _explicitNullValueFeedDisplayName; set { _explicitNullValueFeedDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feed_display_name"); else _explicitNullProperties?.Remove("feed_display_name"); } }
+        private string? _explicitNullValueFeedDisplayName = default!;
 #nullable restore
 #else
-        public string FeedDisplayName { get; set; }
+        public string FeedDisplayName { get => _explicitNullValueFeedDisplayName; set { _explicitNullValueFeedDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feed_display_name"); else _explicitNullProperties?.Remove("feed_display_name"); } }
+        private string _explicitNullValueFeedDisplayName = default!;
 #endif
         /// <summary>The feed_id property</summary>
-        public Guid? FeedId { get; set; }
+        public Guid? FeedId { get => _explicitNullValueFeedId; set { _explicitNullValueFeedId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feed_id"); else _explicitNullProperties?.Remove("feed_id"); } }
+        private Guid? _explicitNullValueFeedId = default!;
         /// <summary>The fetched_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FetchedAt { get; set; }
+        public string? FetchedAt { get => _explicitNullValueFetchedAt; set { _explicitNullValueFetchedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at"); else _explicitNullProperties?.Remove("fetched_at"); } }
+        private string? _explicitNullValueFetchedAt = default!;
 #nullable restore
 #else
-        public string FetchedAt { get; set; }
+        public string FetchedAt { get => _explicitNullValueFetchedAt; set { _explicitNullValueFetchedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at"); else _explicitNullProperties?.Remove("fetched_at"); } }
+        private string _explicitNullValueFetchedAt = default!;
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>Progress of the article&apos;s indicator extraction and IOC contextualization run. complete and failed are terminal; unknown means no run has been recorded.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultIndicatorExtractionStatus? IndicatorExtractionStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultIndicatorExtractionStatus? IndicatorExtractionStatus { get => _explicitNullValueIndicatorExtractionStatus; set { _explicitNullValueIndicatorExtractionStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator_extraction_status"); else _explicitNullProperties?.Remove("indicator_extraction_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultIndicatorExtractionStatus? _explicitNullValueIndicatorExtractionStatus = default!;
         /// <summary>The link property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Link { get; set; }
+        public string? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        private string? _explicitNullValueLink = default!;
 #nullable restore
 #else
-        public string Link { get; set; }
+        public string Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        private string _explicitNullValueLink = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultMetadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultMetadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The published_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublishedAt { get; set; }
+        public string? PublishedAt { get => _explicitNullValuePublishedAt; set { _explicitNullValuePublishedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("published_at"); else _explicitNullProperties?.Remove("published_at"); } }
+        private string? _explicitNullValuePublishedAt = default!;
 #nullable restore
 #else
-        public string PublishedAt { get; set; }
+        public string PublishedAt { get => _explicitNullValuePublishedAt; set { _explicitNullValuePublishedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("published_at"); else _explicitNullProperties?.Remove("published_at"); } }
+        private string _explicitNullValuePublishedAt = default!;
 #endif
         /// <summary>The read property</summary>
-        public bool? Read { get; set; }
+        public bool? Read { get => _explicitNullValueRead; set { _explicitNullValueRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read"); else _explicitNullProperties?.Remove("read"); } }
+        private bool? _explicitNullValueRead = default!;
         /// <summary>The read_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReadAt { get; set; }
+        public string? ReadAt { get => _explicitNullValueReadAt; set { _explicitNullValueReadAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_at"); else _explicitNullProperties?.Remove("read_at"); } }
+        private string? _explicitNullValueReadAt = default!;
 #nullable restore
 #else
-        public string ReadAt { get; set; }
+        public string ReadAt { get => _explicitNullValueReadAt; set { _explicitNullValueReadAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_at"); else _explicitNullProperties?.Remove("read_at"); } }
+        private string _explicitNullValueReadAt = default!;
 #endif
-        /// <summary>Intrinsic article severity from 1 (informational) to 5 (critical). Null when the account has no active Priority Intelligence Requirements, scoring has not completed, or a historic article has not entered an automatic rescore window.</summary>
-        public double? Severity { get; set; }
+        /// <summary>Beta. Intrinsic article severity band, from informational to critical, independent of any organisation or Priority Intelligence Requirement. Null when the account has no active Priority Intelligence Requirements, scoring has not completed, or a historic article has not entered an automatic rescore window.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultSeverity? Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultSeverity? _explicitNullValueSeverity = default!;
         /// <summary>The skill_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SkillVersion { get; set; }
+        public string? SkillVersion { get => _explicitNullValueSkillVersion; set { _explicitNullValueSkillVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skill_version"); else _explicitNullProperties?.Remove("skill_version"); } }
+        private string? _explicitNullValueSkillVersion = default!;
 #nullable restore
 #else
-        public string SkillVersion { get; set; }
+        public string SkillVersion { get => _explicitNullValueSkillVersion; set { _explicitNullValueSkillVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skill_version"); else _explicitNullProperties?.Remove("skill_version"); } }
+        private string _explicitNullValueSkillVersion = default!;
 #endif
         /// <summary>The source_count property</summary>
-        public double? SourceCount { get; set; }
+        public double? SourceCount { get => _explicitNullValueSourceCount; set { _explicitNullValueSourceCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_count"); else _explicitNullProperties?.Remove("source_count"); } }
+        private double? _explicitNullValueSourceCount = default!;
         /// <summary>Persisted enrichment summary. Null until enrichment produces a summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Summary { get; set; }
+        public string? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private string? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public string Summary { get; set; }
+        public string Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private string _explicitNullValueSummary = default!;
 #endif
         /// <summary>The summary_r2_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SummaryR2Key { get; set; }
+        public string? SummaryR2Key { get => _explicitNullValueSummaryR2Key; set { _explicitNullValueSummaryR2Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_r2_key"); else _explicitNullProperties?.Remove("summary_r2_key"); } }
+        private string? _explicitNullValueSummaryR2Key = default!;
 #nullable restore
 #else
-        public string SummaryR2Key { get; set; }
+        public string SummaryR2Key { get => _explicitNullValueSummaryR2Key; set { _explicitNullValueSummaryR2Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_r2_key"); else _explicitNullProperties?.Remove("summary_r2_key"); } }
+        private string _explicitNullValueSummaryR2Key = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultTagsItem>? Tags { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultTagsItem>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultTagsItem>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultTagsItem> Tags { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultTagsItem> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultTagsItem> _explicitNullValueTags = default!;
 #endif
         /// <summary>The tag_skill_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TagSkillVersion { get; set; }
+        public string? TagSkillVersion { get => _explicitNullValueTagSkillVersion; set { _explicitNullValueTagSkillVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_skill_version"); else _explicitNullProperties?.Remove("tag_skill_version"); } }
+        private string? _explicitNullValueTagSkillVersion = default!;
 #nullable restore
 #else
-        public string TagSkillVersion { get; set; }
+        public string TagSkillVersion { get => _explicitNullValueTagSkillVersion; set { _explicitNullValueTagSkillVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_skill_version"); else _explicitNullProperties?.Remove("tag_skill_version"); } }
+        private string _explicitNullValueTagSkillVersion = default!;
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResult"/> and sets the default values.
@@ -153,7 +214,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -175,7 +236,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "published_at", n => { PublishedAt = n.GetStringValue(); } },
                 { "read", n => { Read = n.GetBoolValue(); } },
                 { "read_at", n => { ReadAt = n.GetStringValue(); } },
-                { "severity", n => { Severity = n.GetDoubleValue(); } },
+                { "severity", n => { Severity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultSeverity>(); } },
                 { "skill_version", n => { SkillVersion = n.GetStringValue(); } },
                 { "source_count", n => { SourceCount = n.GetDoubleValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
@@ -204,7 +265,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("published_at", PublishedAt);
             writer.WriteBoolValue("read", Read);
             writer.WriteStringValue("read_at", ReadAt);
-            writer.WriteDoubleValue("severity", Severity);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultSeverity>("severity", Severity);
             writer.WriteStringValue("skill_version", SkillVersion);
             writer.WriteDoubleValue("source_count", SourceCount);
             writer.WriteStringValue("summary", Summary);
@@ -212,6 +273,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleMarkRead200ResponseResultTagsItem>("tags", Tags);
             writer.WriteStringValue("tag_skill_version", TagSkillVersion);
             writer.WriteStringValue("title", Title);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

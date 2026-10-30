@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\cache
+    /// Builds and executes requests for operations under \zones\{zoneId}\cache
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CacheRequestBuilder : BaseRequestBuilder
@@ -32,11 +32,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve_clear.Cache_reserve_clearRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_cloud_regions property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_cloud_regions.Origin_cloud_regionsRequestBuilder Origin_cloud_regions
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_cloud_regions.Origin_cloud_regionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_post_quantum_encryption property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantum_encryption.Origin_post_quantum_encryptionRequestBuilder Origin_post_quantum_encryption
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantum_encryption.Origin_post_quantum_encryptionRequestBuilder(PathParameters, RequestAdapter);
@@ -61,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/cache", pathParameters)
+        public CacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/cache", pathParameters)
         {
         }
         /// <summary>
@@ -69,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/cache", rawUrl)
+        public CacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/cache", rawUrl)
         {
         }
     }

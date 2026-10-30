@@ -11,32 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetAnnotationById200ResponseResultAnnotationEntitiesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("entityLocation") is { } nullNodeEntityLocation && nullNodeEntityLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityLocation = null;
+            if (parseNode.GetChildNode("entityName") is { } nullNodeEntityName && nullNodeEntityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityName = null;
+            if (parseNode.GetChildNode("entityType") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
+            if (parseNode.GetChildNode("entityValue") is { } nullNodeEntityValue && nullNodeEntityValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Alpha-2 code of the country the entity belongs to (GEOLOCATION and AS entities only).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EntityLocation { get => _explicitNullValueEntityLocation; set { _explicitNullValueEntityLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityLocation"); else _explicitNullProperties?.Remove("entityLocation"); } }
+        private string? _explicitNullValueEntityLocation = default!;
+#nullable restore
+#else
+        public string EntityLocation { get => _explicitNullValueEntityLocation; set { _explicitNullValueEntityLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityLocation"); else _explicitNullProperties?.Remove("entityLocation"); } }
+        private string _explicitNullValueEntityLocation = default!;
+#endif
         /// <summary>The entityName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityName { get; set; }
+        public string? EntityName { get => _explicitNullValueEntityName; set { _explicitNullValueEntityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityName"); else _explicitNullProperties?.Remove("entityName"); } }
+        private string? _explicitNullValueEntityName = default!;
 #nullable restore
 #else
-        public string EntityName { get; set; }
+        public string EntityName { get => _explicitNullValueEntityName; set { _explicitNullValueEntityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityName"); else _explicitNullProperties?.Remove("entityName"); } }
+        private string _explicitNullValueEntityName = default!;
 #endif
         /// <summary>The entityType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityType { get; set; }
+        public string? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
+        private string? _explicitNullValueEntityType = default!;
 #nullable restore
 #else
-        public string EntityType { get; set; }
+        public string EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
+        private string _explicitNullValueEntityType = default!;
 #endif
         /// <summary>The entityValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityValue { get; set; }
+        public string? EntityValue { get => _explicitNullValueEntityValue; set { _explicitNullValueEntityValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityValue"); else _explicitNullProperties?.Remove("entityValue"); } }
+        private string? _explicitNullValueEntityValue = default!;
 #nullable restore
 #else
-        public string EntityValue { get; set; }
+        public string EntityValue { get => _explicitNullValueEntityValue; set { _explicitNullValueEntityValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityValue"); else _explicitNullProperties?.Remove("entityValue"); } }
+        private string _explicitNullValueEntityValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotationEntitiesItem"/> and sets the default values.
@@ -53,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotationEntitiesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotationEntitiesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotationEntitiesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "entityLocation", n => { EntityLocation = n.GetStringValue(); } },
                 { "entityName", n => { EntityName = n.GetStringValue(); } },
                 { "entityType", n => { EntityType = n.GetStringValue(); } },
                 { "entityValue", n => { EntityValue = n.GetStringValue(); } },
@@ -75,9 +103,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("entityLocation", EntityLocation);
             writer.WriteStringValue("entityName", EntityName);
             writer.WriteStringValue("entityType", EntityType);
             writer.WriteStringValue("entityValue", EntityValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

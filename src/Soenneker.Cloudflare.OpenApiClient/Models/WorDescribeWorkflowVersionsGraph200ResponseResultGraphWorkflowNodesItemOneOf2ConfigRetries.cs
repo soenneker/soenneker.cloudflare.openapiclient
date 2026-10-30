@@ -12,21 +12,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("backoff") is { } nullNodeBackoff && nullNodeBackoff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Backoff = null;
+            if (parseNode.GetChildNode("delay") is { } nullNodeDelay && nullNodeDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delay = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Backoff strategy for step retries.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetriesBackoff? Backoff { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetriesBackoff? Backoff { get => _explicitNullValueBackoff; set { _explicitNullValueBackoff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backoff"); else _explicitNullProperties?.Remove("backoff"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetriesBackoff? _explicitNullValueBackoff = default!;
         /// <summary>Duration as milliseconds (number) or human-readable string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries_delay? Delay { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? Delay { get => _explicitNullValueDelay; set { _explicitNullValueDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delay"); else _explicitNullProperties?.Remove("delay"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueDelay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries_delay Delay { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode Delay { get => _explicitNullValueDelay; set { _explicitNullValueDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delay"); else _explicitNullProperties?.Remove("delay"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueDelay = default!;
 #endif
         /// <summary>The limit property</summary>
-        public double? Limit { get; set; }
+        public double? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private double? _explicitNullValueLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "backoff", n => { Backoff = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetriesBackoff>(); } },
-                { "delay", n => { Delay = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries_delay>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries_delay.CreateFromDiscriminatorValue); } },
+                { "delay", n => { Delay = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
             };
         }
@@ -65,8 +79,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetriesBackoff>("backoff", Backoff);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries_delay>("delay", Delay);
+            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("delay", Delay);
             writer.WriteDoubleValue("limit", Limit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
@@ -92,14 +107,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries_delay CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries_delay();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2ConfigRetries_delay();
-                if(parseNode.GetDoubleValue() is double doubleValue)
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal) && parseNode.GetDoubleValue() is double doubleValue)
                 {
                     result.Double = doubleValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -119,6 +138,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Double == null && String == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Double != null)
                 {

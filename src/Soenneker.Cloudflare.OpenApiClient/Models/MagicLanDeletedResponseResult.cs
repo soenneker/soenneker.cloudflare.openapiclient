@@ -11,13 +11,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicLanDeletedResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bond_id") is { } nullNodeBondId && nullNodeBondId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BondId = null;
+            if (parseNode.GetChildNode("ha_link") is { } nullNodeHaLink && nullNodeHaLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HaLink = null;
+            if (parseNode.GetChildNode("is_breakout") is { } nullNodeIsBreakout && nullNodeIsBreakout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBreakout = null;
+            if (parseNode.GetChildNode("is_prioritized") is { } nullNodeIsPrioritized && nullNodeIsPrioritized.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPrioritized = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("nat") is { } nullNodeNat && nullNodeNat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nat = null;
+            if (parseNode.GetChildNode("physport") is { } nullNodePhysport && nullNodePhysport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Physport = null;
+            if (parseNode.GetChildNode("remote_subnets") is { } nullNodeRemoteSubnets && nullNodeRemoteSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteSubnets = null;
+            if (parseNode.GetChildNode("routed_subnets") is { } nullNodeRoutedSubnets && nullNodeRoutedSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutedSubnets = null;
+            if (parseNode.GetChildNode("static_addressing") is { } nullNodeStaticAddressing && nullNodeStaticAddressing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticAddressing = null;
+            if (parseNode.GetChildNode("vlan_tag") is { } nullNodeVlanTag && nullNodeVlanTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VlanTag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bond_id property</summary>
-        public int? BondId { get; set; }
+        public int? BondId { get => _explicitNullValueBondId; set { _explicitNullValueBondId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bond_id"); else _explicitNullProperties?.Remove("bond_id"); } }
+        private int? _explicitNullValueBondId = default!;
         /// <summary>mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.</summary>
-        public bool? HaLink { get; set; }
+        public bool? HaLink { get => _explicitNullValueHaLink; set { _explicitNullValueHaLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ha_link"); else _explicitNullProperties?.Remove("ha_link"); } }
+        private bool? _explicitNullValueHaLink = default!;
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,34 +47,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>mark true to use this LAN for source-based breakout traffic</summary>
-        public bool? IsBreakout { get; set; }
+        public bool? IsBreakout { get => _explicitNullValueIsBreakout; set { _explicitNullValueIsBreakout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_breakout"); else _explicitNullProperties?.Remove("is_breakout"); } }
+        private bool? _explicitNullValueIsBreakout = default!;
         /// <summary>mark true to use this LAN for source-based prioritized traffic</summary>
-        public bool? IsPrioritized { get; set; }
+        public bool? IsPrioritized { get => _explicitNullValueIsPrioritized; set { _explicitNullValueIsPrioritized = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_prioritized"); else _explicitNullProperties?.Remove("is_prioritized"); } }
+        private bool? _explicitNullValueIsPrioritized = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The nat property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat? Nat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat? Nat { get => _explicitNullValueNat; set { _explicitNullValueNat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nat"); else _explicitNullProperties?.Remove("nat"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat? _explicitNullValueNat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat Nat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat Nat { get => _explicitNullValueNat; set { _explicitNullValueNat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nat"); else _explicitNullProperties?.Remove("nat"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat _explicitNullValueNat = default!;
 #endif
         /// <summary>The physport property</summary>
-        public int? Physport { get; set; }
+        public int? Physport { get => _explicitNullValuePhysport; set { _explicitNullValuePhysport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("physport"); else _explicitNullProperties?.Remove("physport"); } }
+        private int? _explicitNullValuePhysport = default!;
+        /// <summary>The remote_subnets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRemoteSubnet>? RemoteSubnets { get => _explicitNullValueRemoteSubnets; set { _explicitNullValueRemoteSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_subnets"); else _explicitNullProperties?.Remove("remote_subnets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRemoteSubnet>? _explicitNullValueRemoteSubnets = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRemoteSubnet> RemoteSubnets { get => _explicitNullValueRemoteSubnets; set { _explicitNullValueRemoteSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_subnets"); else _explicitNullProperties?.Remove("remote_subnets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRemoteSubnet> _explicitNullValueRemoteSubnets = default!;
+#endif
         /// <summary>The routed_subnets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoutedSubnet>? RoutedSubnets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoutedSubnet>? RoutedSubnets { get => _explicitNullValueRoutedSubnets; set { _explicitNullValueRoutedSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routed_subnets"); else _explicitNullProperties?.Remove("routed_subnets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoutedSubnet>? _explicitNullValueRoutedSubnets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoutedSubnet> RoutedSubnets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoutedSubnet> RoutedSubnets { get => _explicitNullValueRoutedSubnets; set { _explicitNullValueRoutedSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routed_subnets"); else _explicitNullProperties?.Remove("routed_subnets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoutedSubnet> _explicitNullValueRoutedSubnets = default!;
 #endif
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,13 +106,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanStaticAddressing? StaticAddressing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanStaticAddressing? StaticAddressing { get => _explicitNullValueStaticAddressing; set { _explicitNullValueStaticAddressing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_addressing"); else _explicitNullProperties?.Remove("static_addressing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanStaticAddressing? _explicitNullValueStaticAddressing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanStaticAddressing StaticAddressing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanStaticAddressing StaticAddressing { get => _explicitNullValueStaticAddressing; set { _explicitNullValueStaticAddressing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_addressing"); else _explicitNullProperties?.Remove("static_addressing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanStaticAddressing _explicitNullValueStaticAddressing = default!;
 #endif
         /// <summary>VLAN ID. Use zero for untagged.</summary>
-        public int? VlanTag { get; set; }
+        public int? VlanTag { get => _explicitNullValueVlanTag; set { _explicitNullValueVlanTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vlan_tag"); else _explicitNullProperties?.Remove("vlan_tag"); } }
+        private int? _explicitNullValueVlanTag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDeletedResponseResult"/> and sets the default values.
         /// </summary>
@@ -89,7 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDeletedResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDeletedResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDeletedResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +149,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nat", n => { Nat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat.CreateFromDiscriminatorValue); } },
                 { "physport", n => { Physport = n.GetIntValue(); } },
+                { "remote_subnets", n => { RemoteSubnets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRemoteSubnet>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRemoteSubnet.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "routed_subnets", n => { RoutedSubnets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoutedSubnet>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoutedSubnet.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "site_id", n => { SiteId = n.GetStringValue(); } },
                 { "static_addressing", n => { StaticAddressing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanStaticAddressing>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanStaticAddressing.CreateFromDiscriminatorValue); } },
@@ -127,9 +170,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat>("nat", Nat);
             writer.WriteIntValue("physport", Physport);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRemoteSubnet>("remote_subnets", RemoteSubnets);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRoutedSubnet>("routed_subnets", RoutedSubnets);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanStaticAddressing>("static_addressing", StaticAddressing);
             writer.WriteIntValue("vlan_tag", VlanTag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,31 +11,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostEventMoveToNewDs200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deletionFailures") is { } nullNodeDeletionFailures && nullNodeDeletionFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletionFailures = null;
+            if (parseNode.GetChildNode("indicatorsCopied") is { } nullNodeIndicatorsCopied && nullNodeIndicatorsCopied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorsCopied = null;
+            if (parseNode.GetChildNode("insertFailures") is { } nullNodeInsertFailures && nullNodeInsertFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsertFailures = null;
+            if (parseNode.GetChildNode("moved") is { } nullNodeMoved && nullNodeMoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Moved = null;
+            if (parseNode.GetChildNode("relationshipsCopied") is { } nullNodeRelationshipsCopied && nullNodeRelationshipsCopied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelationshipsCopied = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Array of source datasets where deletion failed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseDeletionFailuresItem>? DeletionFailures { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseDeletionFailuresItem>? DeletionFailures { get => _explicitNullValueDeletionFailures; set { _explicitNullValueDeletionFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletionFailures"); else _explicitNullProperties?.Remove("deletionFailures"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseDeletionFailuresItem>? _explicitNullValueDeletionFailures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseDeletionFailuresItem> DeletionFailures { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseDeletionFailuresItem> DeletionFailures { get => _explicitNullValueDeletionFailures; set { _explicitNullValueDeletionFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletionFailures"); else _explicitNullProperties?.Remove("deletionFailures"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseDeletionFailuresItem> _explicitNullValueDeletionFailures = default!;
 #endif
         /// <summary>Number of indicators successfully copied</summary>
-        public double? IndicatorsCopied { get; set; }
+        public double? IndicatorsCopied { get => _explicitNullValueIndicatorsCopied; set { _explicitNullValueIndicatorsCopied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorsCopied"); else _explicitNullProperties?.Remove("indicatorsCopied"); } }
+        private double? _explicitNullValueIndicatorsCopied = default!;
         /// <summary>Array of events that failed to insert into destination</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseInsertFailuresItem>? InsertFailures { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseInsertFailuresItem>? InsertFailures { get => _explicitNullValueInsertFailures; set { _explicitNullValueInsertFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insertFailures"); else _explicitNullProperties?.Remove("insertFailures"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseInsertFailuresItem>? _explicitNullValueInsertFailures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseInsertFailuresItem> InsertFailures { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseInsertFailuresItem> InsertFailures { get => _explicitNullValueInsertFailures; set { _explicitNullValueInsertFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insertFailures"); else _explicitNullProperties?.Remove("insertFailures"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseInsertFailuresItem> _explicitNullValueInsertFailures = default!;
 #endif
         /// <summary>Number of events successfully moved</summary>
-        public double? Moved { get; set; }
+        public double? Moved { get => _explicitNullValueMoved; set { _explicitNullValueMoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moved"); else _explicitNullProperties?.Remove("moved"); } }
+        private double? _explicitNullValueMoved = default!;
         /// <summary>Number of relationships successfully copied</summary>
-        public double? RelationshipsCopied { get; set; }
+        public double? RelationshipsCopied { get => _explicitNullValueRelationshipsCopied; set { _explicitNullValueRelationshipsCopied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationshipsCopied"); else _explicitNullProperties?.Remove("relationshipsCopied"); } }
+        private double? _explicitNullValueRelationshipsCopied = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200Response"/> and sets the default values.
         /// </summary>
@@ -51,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventMoveToNewDs200ResponseInsertFailuresItem>("insertFailures", InsertFailures);
             writer.WriteDoubleValue("moved", Moved);
             writer.WriteDoubleValue("relationshipsCopied", RelationshipsCopied);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

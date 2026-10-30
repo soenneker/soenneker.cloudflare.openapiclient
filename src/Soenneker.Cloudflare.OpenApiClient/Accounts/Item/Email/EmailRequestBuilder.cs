@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.DomainChanges;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending;
@@ -17,6 +18,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The domainChanges property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.DomainChanges.DomainChangesRequestBuilder DomainChanges
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.DomainChanges.DomainChangesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The domains property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains.DomainsRequestBuilder Domains
         {

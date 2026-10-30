@@ -12,58 +12,85 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcModifyUserDeploymentConfiguration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorized_keys") is { } nullNodeAuthorizedKeys && nullNodeAuthorizedKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedKeys = null;
+            if (parseNode.GetChildNode("command") is { } nullNodeCommand && nullNodeCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Command = null;
+            if (parseNode.GetChildNode("entrypoint") is { } nullNodeEntrypoint && nullNodeEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoint = null;
+            if (parseNode.GetChildNode("environment_variables") is { } nullNodeEnvironmentVariables && nullNodeEnvironmentVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentVariables = null;
+            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("instance_type") is { } nullNodeInstanceType && nullNodeInstanceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceType = null;
+            if (parseNode.GetChildNode("observability") is { } nullNodeObservability && nullNodeObservability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Observability = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authorized_keys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>? AuthorizedKeys { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>? AuthorizedKeys { get => _explicitNullValueAuthorizedKeys; set { _explicitNullValueAuthorizedKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_keys"); else _explicitNullProperties?.Remove("authorized_keys"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>? _explicitNullValueAuthorizedKeys = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey> AuthorizedKeys { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey> AuthorizedKeys { get => _explicitNullValueAuthorizedKeys; set { _explicitNullValueAuthorizedKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_keys"); else _explicitNullProperties?.Remove("authorized_keys"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey> _explicitNullValueAuthorizedKeys = default!;
 #endif
         /// <summary>The command that runs when the container starts, passed to the entrypoint.You can override this at run-time. If you override only the command,it gets passed to the default entrypoint specified in the image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Command { get; set; }
+        public List<string>? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        private List<string>? _explicitNullValueCommand = default!;
 #nullable restore
 #else
-        public List<string> Command { get; set; }
+        public List<string> Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        private List<string> _explicitNullValueCommand = default!;
 #endif
         /// <summary>The entry point for the container, specifying the executable to run when the container starts.You can override this at run-time. If you do, the default command from the image is ignored.Specify both entrypoint and command at run-time to completely replace the image defaults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Entrypoint { get; set; }
+        public List<string>? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private List<string>? _explicitNullValueEntrypoint = default!;
 #nullable restore
 #else
-        public List<string> Entrypoint { get; set; }
+        public List<string> Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private List<string> _explicitNullValueEntrypoint = default!;
 #endif
         /// <summary>Container environment variables.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcEnvironmentVariable>? EnvironmentVariables { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcEnvironmentVariable>? EnvironmentVariables { get => _explicitNullValueEnvironmentVariables; set { _explicitNullValueEnvironmentVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_variables"); else _explicitNullProperties?.Remove("environment_variables"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcEnvironmentVariable>? _explicitNullValueEnvironmentVariables = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcEnvironmentVariable> EnvironmentVariables { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcEnvironmentVariable> EnvironmentVariables { get => _explicitNullValueEnvironmentVariables; set { _explicitNullValueEnvironmentVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_variables"); else _explicitNullProperties?.Remove("environment_variables"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcEnvironmentVariable> _explicitNullValueEnvironmentVariables = default!;
 #endif
         /// <summary>Image url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Image { get; set; }
+        public string? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private string? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public string Image { get; set; }
+        public string Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private string _explicitNullValueImage = default!;
 #endif
         /// <summary>The instance type configures vCPU, memory, and disk.- &quot;lite&quot;: 1/16 vCPU, 256 MiB memory, 2 GB disk- &quot;basic&quot;: 1/4 vCPU, 1 GiB memory, 4 GB disk- &quot;standard-1&quot;: 1/2 vCPU, 4 GiB memory, 8 GB disk- &quot;standard-2&quot;: 1 vCPU, 6 GiB memory, 12 GB disk- &quot;standard-3&quot;: 2 vCPU, 8 GiB memory, 16 GB disk- &quot;standard-4&quot;: 4 vCPU, 12 GiB memory, 20 GB disk</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceType? InstanceType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceType? InstanceType { get => _explicitNullValueInstanceType; set { _explicitNullValueInstanceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_type"); else _explicitNullProperties?.Remove("instance_type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceType? _explicitNullValueInstanceType = default!;
         /// <summary>Settings for deployment observability such as logging.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability? Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability? Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability? _explicitNullValueObservability = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability _explicitNullValueObservability = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration"/> and sets the default values.
@@ -80,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcModifyUserDeploymentConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("image", Image);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceType>("instance_type", InstanceType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability>("observability", Observability);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

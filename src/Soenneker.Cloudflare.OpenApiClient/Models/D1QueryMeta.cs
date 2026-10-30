@@ -11,42 +11,73 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class D1QueryMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("changed_db") is { } nullNodeChangedDb && nullNodeChangedDb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedDb = null;
+            if (parseNode.GetChildNode("changes") is { } nullNodeChanges && nullNodeChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Changes = null;
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("last_row_id") is { } nullNodeLastRowId && nullNodeLastRowId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRowId = null;
+            if (parseNode.GetChildNode("rows_read") is { } nullNodeRowsRead && nullNodeRowsRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsRead = null;
+            if (parseNode.GetChildNode("rows_written") is { } nullNodeRowsWritten && nullNodeRowsWritten.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsWritten = null;
+            if (parseNode.GetChildNode("served_by_colo") is { } nullNodeServedByColo && nullNodeServedByColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServedByColo = null;
+            if (parseNode.GetChildNode("served_by_primary") is { } nullNodeServedByPrimary && nullNodeServedByPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServedByPrimary = null;
+            if (parseNode.GetChildNode("served_by_region") is { } nullNodeServedByRegion && nullNodeServedByRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServedByRegion = null;
+            if (parseNode.GetChildNode("size_after") is { } nullNodeSizeAfter && nullNodeSizeAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeAfter = null;
+            if (parseNode.GetChildNode("timings") is { } nullNodeTimings && nullNodeTimings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes if the database has been altered in some way, like deleting rows.</summary>
-        public bool? ChangedDb { get; set; }
+        public bool? ChangedDb { get => _explicitNullValueChangedDb; set { _explicitNullValueChangedDb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_db"); else _explicitNullProperties?.Remove("changed_db"); } }
+        private bool? _explicitNullValueChangedDb = default!;
         /// <summary>Rough indication of how many rows were modified by the query, as provided by SQLite&apos;s `sqlite3_total_changes()`.</summary>
-        public double? Changes { get; set; }
+        public double? Changes { get => _explicitNullValueChanges; set { _explicitNullValueChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changes"); else _explicitNullProperties?.Remove("changes"); } }
+        private double? _explicitNullValueChanges = default!;
         /// <summary>The duration of the SQL query execution inside the database. Does not include any network communication.</summary>
-        public double? Duration { get; set; }
+        public double? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private double? _explicitNullValueDuration = default!;
         /// <summary>The row ID of the last inserted row in a table with an `INTEGER PRIMARY KEY` as provided by SQLite. Tables created with `WITHOUT ROWID` do not populate this.</summary>
-        public double? LastRowId { get; set; }
+        public double? LastRowId { get => _explicitNullValueLastRowId; set { _explicitNullValueLastRowId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_row_id"); else _explicitNullProperties?.Remove("last_row_id"); } }
+        private double? _explicitNullValueLastRowId = default!;
         /// <summary>Number of rows read during the SQL query execution, including indices (not all rows are necessarily returned).</summary>
-        public double? RowsRead { get; set; }
+        public double? RowsRead { get => _explicitNullValueRowsRead; set { _explicitNullValueRowsRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_read"); else _explicitNullProperties?.Remove("rows_read"); } }
+        private double? _explicitNullValueRowsRead = default!;
         /// <summary>Number of rows written during the SQL query execution, including indices.</summary>
-        public double? RowsWritten { get; set; }
+        public double? RowsWritten { get => _explicitNullValueRowsWritten; set { _explicitNullValueRowsWritten = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_written"); else _explicitNullProperties?.Remove("rows_written"); } }
+        private double? _explicitNullValueRowsWritten = default!;
         /// <summary>The three letters airport code of the colo that handled the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServedByColo { get; set; }
+        public string? ServedByColo { get => _explicitNullValueServedByColo; set { _explicitNullValueServedByColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("served_by_colo"); else _explicitNullProperties?.Remove("served_by_colo"); } }
+        private string? _explicitNullValueServedByColo = default!;
 #nullable restore
 #else
-        public string ServedByColo { get; set; }
+        public string ServedByColo { get => _explicitNullValueServedByColo; set { _explicitNullValueServedByColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("served_by_colo"); else _explicitNullProperties?.Remove("served_by_colo"); } }
+        private string _explicitNullValueServedByColo = default!;
 #endif
         /// <summary>Denotes if the query has been handled by the database primary instance.</summary>
-        public bool? ServedByPrimary { get; set; }
+        public bool? ServedByPrimary { get => _explicitNullValueServedByPrimary; set { _explicitNullValueServedByPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("served_by_primary"); else _explicitNullProperties?.Remove("served_by_primary"); } }
+        private bool? _explicitNullValueServedByPrimary = default!;
         /// <summary>Region location hint of the database instance that handled the query.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ServedByRegion? ServedByRegion { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ServedByRegion? ServedByRegion { get => _explicitNullValueServedByRegion; set { _explicitNullValueServedByRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("served_by_region"); else _explicitNullProperties?.Remove("served_by_region"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.D1ServedByRegion? _explicitNullValueServedByRegion = default!;
         /// <summary>Size of the database after the query committed, in bytes.</summary>
-        public double? SizeAfter { get; set; }
+        public double? SizeAfter { get => _explicitNullValueSizeAfter; set { _explicitNullValueSizeAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_after"); else _explicitNullProperties?.Remove("size_after"); } }
+        private double? _explicitNullValueSizeAfter = default!;
         /// <summary>Various durations for the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMetaTimings? Timings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMetaTimings? Timings { get => _explicitNullValueTimings; set { _explicitNullValueTimings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timings"); else _explicitNullProperties?.Remove("timings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMetaTimings? _explicitNullValueTimings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMetaTimings Timings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMetaTimings Timings { get => _explicitNullValueTimings; set { _explicitNullValueTimings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timings"); else _explicitNullProperties?.Remove("timings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMetaTimings _explicitNullValueTimings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta"/> and sets the default values.
@@ -63,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ServedByRegion>("served_by_region", ServedByRegion);
             writer.WriteDoubleValue("size_after", SizeAfter);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMetaTimings>("timings", Timings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

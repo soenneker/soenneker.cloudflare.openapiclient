@@ -18,11 +18,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Time
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bot_class property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.Bot_classRequestBuilder Bot_class
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.Bot_classRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The compromised property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Compromised.CompromisedRequestBuilder Compromised
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Compromised.CompromisedRequestBuilder(PathParameters, RequestAdapter);

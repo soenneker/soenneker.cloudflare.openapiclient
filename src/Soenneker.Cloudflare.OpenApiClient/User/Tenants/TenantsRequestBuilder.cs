@@ -34,12 +34,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tenants
         {
         }
         /// <summary>
-        /// Retrieves list of tenants the authenticated user / method has access to.
+        /// Retrieves the legacy Tenants associated with the authenticated user. Use `GET /organizations`to list modern Organizations the user has access to.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UserListUserTenants200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UserListUserTenants200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,12 +52,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tenants
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UserListUserTenants200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UserListUserTenants200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves list of tenants the authenticated user / method has access to.
+        /// Retrieves the legacy Tenants associated with the authenticated user. Use `GET /organizations`to list modern Organizations the user has access to.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

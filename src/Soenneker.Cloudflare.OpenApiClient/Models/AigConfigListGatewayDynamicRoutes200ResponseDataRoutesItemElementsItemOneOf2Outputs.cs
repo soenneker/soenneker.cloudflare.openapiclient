@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2Outputs : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("false") is { } nullNodeFalse && nullNodeFalse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) False = null;
+            if (parseNode.GetChildNode("true") is { } nullNodeTrue && nullNodeTrue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) True = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The false property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsFalse? False { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsFalse? False { get => _explicitNullValueFalse; set { _explicitNullValueFalse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("false"); else _explicitNullProperties?.Remove("false"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsFalse? _explicitNullValueFalse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsFalse False { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsFalse False { get => _explicitNullValueFalse; set { _explicitNullValueFalse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("false"); else _explicitNullProperties?.Remove("false"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsFalse _explicitNullValueFalse = default!;
 #endif
         /// <summary>The true property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsTrue? True { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsTrue? True { get => _explicitNullValueTrue; set { _explicitNullValueTrue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("true"); else _explicitNullProperties?.Remove("true"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsTrue? _explicitNullValueTrue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsTrue True { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsTrue True { get => _explicitNullValueTrue; set { _explicitNullValueTrue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("true"); else _explicitNullProperties?.Remove("true"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsTrue _explicitNullValueTrue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2Outputs"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2Outputs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2Outputs();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2Outputs(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsFalse>("false", False);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2OutputsTrue>("true", True);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

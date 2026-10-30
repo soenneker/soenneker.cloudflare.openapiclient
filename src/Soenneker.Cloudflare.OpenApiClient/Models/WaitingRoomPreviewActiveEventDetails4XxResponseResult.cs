@@ -11,7 +11,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WaitingRoomPreviewActiveEventDetails4XxResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_page_html") is { } nullNodeCustomPageHtml && nullNodeCustomPageHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomPageHtml = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("disable_session_renewal") is { } nullNodeDisableSessionRenewal && nullNodeDisableSessionRenewal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableSessionRenewal = null;
+            if (parseNode.GetChildNode("event_end_time") is { } nullNodeEventEndTime && nullNodeEventEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventEndTime = null;
+            if (parseNode.GetChildNode("event_start_time") is { } nullNodeEventStartTime && nullNodeEventStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventStartTime = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("new_users_per_minute") is { } nullNodeNewUsersPerMinute && nullNodeNewUsersPerMinute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewUsersPerMinute = null;
+            if (parseNode.GetChildNode("prequeue_start_time") is { } nullNodePrequeueStartTime && nullNodePrequeueStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrequeueStartTime = null;
+            if (parseNode.GetChildNode("queueing_method") is { } nullNodeQueueingMethod && nullNodeQueueingMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueingMethod = null;
+            if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
+            if (parseNode.GetChildNode("shuffle_at_event_start") is { } nullNodeShuffleAtEventStart && nullNodeShuffleAtEventStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShuffleAtEventStart = null;
+            if (parseNode.GetChildNode("suspended") is { } nullNodeSuspended && nullNodeSuspended.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Suspended = null;
+            if (parseNode.GetChildNode("total_active_users") is { } nullNodeTotalActiveUsers && nullNodeTotalActiveUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalActiveUsers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_on property</summary>
@@ -19,81 +40,103 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The custom_page_html property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomPageHtml { get; set; }
+        public string? CustomPageHtml { get => _explicitNullValueCustomPageHtml; set { _explicitNullValueCustomPageHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_page_html"); else _explicitNullProperties?.Remove("custom_page_html"); } }
+        private string? _explicitNullValueCustomPageHtml = default!;
 #nullable restore
 #else
-        public string CustomPageHtml { get; set; }
+        public string CustomPageHtml { get => _explicitNullValueCustomPageHtml; set { _explicitNullValueCustomPageHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_page_html"); else _explicitNullProperties?.Remove("custom_page_html"); } }
+        private string _explicitNullValueCustomPageHtml = default!;
 #endif
         /// <summary>A note that you can use to add more details about the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The disable_session_renewal property</summary>
-        public bool? DisableSessionRenewal { get; set; }
+        public bool? DisableSessionRenewal { get => _explicitNullValueDisableSessionRenewal; set { _explicitNullValueDisableSessionRenewal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_session_renewal"); else _explicitNullProperties?.Remove("disable_session_renewal"); } }
+        private bool? _explicitNullValueDisableSessionRenewal = default!;
         /// <summary>An ISO 8601 timestamp that marks the end of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventEndTime { get; set; }
+        public string? EventEndTime { get => _explicitNullValueEventEndTime; set { _explicitNullValueEventEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_end_time"); else _explicitNullProperties?.Remove("event_end_time"); } }
+        private string? _explicitNullValueEventEndTime = default!;
 #nullable restore
 #else
-        public string EventEndTime { get; set; }
+        public string EventEndTime { get => _explicitNullValueEventEndTime; set { _explicitNullValueEventEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_end_time"); else _explicitNullProperties?.Remove("event_end_time"); } }
+        private string _explicitNullValueEventEndTime = default!;
 #endif
         /// <summary>An ISO 8601 timestamp that marks the start of the event. At this time, queued users will be processed with the event&apos;s configuration. The start time must be at least one minute before `event_end_time`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventStartTime { get; set; }
+        public string? EventStartTime { get => _explicitNullValueEventStartTime; set { _explicitNullValueEventStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_start_time"); else _explicitNullProperties?.Remove("event_start_time"); } }
+        private string? _explicitNullValueEventStartTime = default!;
 #nullable restore
 #else
-        public string EventStartTime { get; set; }
+        public string EventStartTime { get => _explicitNullValueEventStartTime; set { _explicitNullValueEventStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_start_time"); else _explicitNullProperties?.Remove("event_start_time"); } }
+        private string _explicitNullValueEventStartTime = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The modified_on property</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>A unique name to identify the event. Only alphanumeric characters, hyphens and underscores are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The new_users_per_minute property</summary>
-        public int? NewUsersPerMinute { get; set; }
+        public int? NewUsersPerMinute { get => _explicitNullValueNewUsersPerMinute; set { _explicitNullValueNewUsersPerMinute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_users_per_minute"); else _explicitNullProperties?.Remove("new_users_per_minute"); } }
+        private int? _explicitNullValueNewUsersPerMinute = default!;
         /// <summary>An ISO 8601 timestamp that marks when to begin queueing all users before the event starts. The prequeue must start at least five minutes before `event_start_time`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrequeueStartTime { get; set; }
+        public string? PrequeueStartTime { get => _explicitNullValuePrequeueStartTime; set { _explicitNullValuePrequeueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prequeue_start_time"); else _explicitNullProperties?.Remove("prequeue_start_time"); } }
+        private string? _explicitNullValuePrequeueStartTime = default!;
 #nullable restore
 #else
-        public string PrequeueStartTime { get; set; }
+        public string PrequeueStartTime { get => _explicitNullValuePrequeueStartTime; set { _explicitNullValuePrequeueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prequeue_start_time"); else _explicitNullProperties?.Remove("prequeue_start_time"); } }
+        private string _explicitNullValuePrequeueStartTime = default!;
 #endif
         /// <summary>The queueing_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueueingMethod { get; set; }
+        public string? QueueingMethod { get => _explicitNullValueQueueingMethod; set { _explicitNullValueQueueingMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queueing_method"); else _explicitNullProperties?.Remove("queueing_method"); } }
+        private string? _explicitNullValueQueueingMethod = default!;
 #nullable restore
 #else
-        public string QueueingMethod { get; set; }
+        public string QueueingMethod { get => _explicitNullValueQueueingMethod; set { _explicitNullValueQueueingMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queueing_method"); else _explicitNullProperties?.Remove("queueing_method"); } }
+        private string _explicitNullValueQueueingMethod = default!;
 #endif
         /// <summary>The session_duration property</summary>
-        public int? SessionDuration { get; set; }
+        public int? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private int? _explicitNullValueSessionDuration = default!;
         /// <summary>If enabled, users in the prequeue will be shuffled randomly at the `event_start_time`. Requires that `prequeue_start_time` is not null. This is useful for situations when many users will join the event prequeue at the same time and you want to shuffle them to ensure fairness. Naturally, it makes the most sense to enable this feature when the `queueing_method` during the event respects ordering such as **fifo**, or else the shuffling may be unnecessary.</summary>
-        public bool? ShuffleAtEventStart { get; set; }
+        public bool? ShuffleAtEventStart { get => _explicitNullValueShuffleAtEventStart; set { _explicitNullValueShuffleAtEventStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shuffle_at_event_start"); else _explicitNullProperties?.Remove("shuffle_at_event_start"); } }
+        private bool? _explicitNullValueShuffleAtEventStart = default!;
         /// <summary>Suspends or allows an event. If set to `true`, the event is ignored and traffic will be handled based on the waiting room configuration.</summary>
-        public bool? Suspended { get; set; }
+        public bool? Suspended { get => _explicitNullValueSuspended; set { _explicitNullValueSuspended = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspended"); else _explicitNullProperties?.Remove("suspended"); } }
+        private bool? _explicitNullValueSuspended = default!;
         /// <summary>The total_active_users property</summary>
-        public int? TotalActiveUsers { get; set; }
+        public int? TotalActiveUsers { get => _explicitNullValueTotalActiveUsers; set { _explicitNullValueTotalActiveUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_active_users"); else _explicitNullProperties?.Remove("total_active_users"); } }
+        private int? _explicitNullValueTotalActiveUsers = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPreviewActiveEventDetails4XxResponseResult"/> and sets the default values.
         /// </summary>
@@ -111,7 +154,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPreviewActiveEventDetails4XxResponseResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPreviewActiveEventDetails4XxResponseResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPreviewActiveEventDetails4XxResponseResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -160,6 +203,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("shuffle_at_event_start", ShuffleAtEventStart);
             writer.WriteBoolValue("suspended", Suspended);
             writer.WriteIntValue("total_active_users", TotalActiveUsers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,23 +12,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesetsSetCacheSettingsCacheKey : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cache_by_device_type") is { } nullNodeCacheByDeviceType && nullNodeCacheByDeviceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheByDeviceType = null;
+            if (parseNode.GetChildNode("cache_deception_armor") is { } nullNodeCacheDeceptionArmor && nullNodeCacheDeceptionArmor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheDeceptionArmor = null;
+            if (parseNode.GetChildNode("custom_key") is { } nullNodeCustomKey && nullNodeCustomKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomKey = null;
+            if (parseNode.GetChildNode("ignore_query_strings_order") is { } nullNodeIgnoreQueryStringsOrder && nullNodeIgnoreQueryStringsOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreQueryStringsOrder = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to separate cached content based on the visitor&apos;s device type.</summary>
-        public bool? CacheByDeviceType { get; set; }
+        public bool? CacheByDeviceType { get => _explicitNullValueCacheByDeviceType; set { _explicitNullValueCacheByDeviceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_by_device_type"); else _explicitNullProperties?.Remove("cache_by_device_type"); } }
+        private bool? _explicitNullValueCacheByDeviceType = default!;
         /// <summary>Whether to protect from web cache deception attacks, while allowing static assets to be cached.</summary>
-        public bool? CacheDeceptionArmor { get; set; }
+        public bool? CacheDeceptionArmor { get => _explicitNullValueCacheDeceptionArmor; set { _explicitNullValueCacheDeceptionArmor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_deception_armor"); else _explicitNullProperties?.Remove("cache_deception_armor"); } }
+        private bool? _explicitNullValueCacheDeceptionArmor = default!;
         /// <summary>Which components of the request are included or excluded from the cache key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey? CustomKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey? CustomKey { get => _explicitNullValueCustomKey; set { _explicitNullValueCustomKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_key"); else _explicitNullProperties?.Remove("custom_key"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey? _explicitNullValueCustomKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey CustomKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey CustomKey { get => _explicitNullValueCustomKey; set { _explicitNullValueCustomKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_key"); else _explicitNullProperties?.Remove("custom_key"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey _explicitNullValueCustomKey = default!;
 #endif
         /// <summary>Whether to treat requests with the same query parameters the same, regardless of the order those query parameters are in.</summary>
-        public bool? IgnoreQueryStringsOrder { get; set; }
+        public bool? IgnoreQueryStringsOrder { get => _explicitNullValueIgnoreQueryStringsOrder; set { _explicitNullValueIgnoreQueryStringsOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_query_strings_order"); else _explicitNullProperties?.Remove("ignore_query_strings_order"); } }
+        private bool? _explicitNullValueIgnoreQueryStringsOrder = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCacheKey"/> and sets the default values.
         /// </summary>
@@ -44,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCacheKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCacheKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCacheKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("cache_deception_armor", CacheDeceptionArmor);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKey>("custom_key", CustomKey);
             writer.WriteBoolValue("ignore_query_strings_order", IgnoreQueryStringsOrder);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

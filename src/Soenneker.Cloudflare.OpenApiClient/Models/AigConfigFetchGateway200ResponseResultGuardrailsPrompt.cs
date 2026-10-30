@@ -11,37 +11,76 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigConfigFetchGateway200ResponseResultGuardrailsPrompt : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("P1") is { } nullNodeP1 && nullNodeP1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P1 = null;
+            if (parseNode.GetChildNode("S1") is { } nullNodeS1 && nullNodeS1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S1 = null;
+            if (parseNode.GetChildNode("S10") is { } nullNodeS10 && nullNodeS10.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S10 = null;
+            if (parseNode.GetChildNode("S11") is { } nullNodeS11 && nullNodeS11.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S11 = null;
+            if (parseNode.GetChildNode("S12") is { } nullNodeS12 && nullNodeS12.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S12 = null;
+            if (parseNode.GetChildNode("S13") is { } nullNodeS13 && nullNodeS13.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S13 = null;
+            if (parseNode.GetChildNode("S14") is { } nullNodeS14 && nullNodeS14.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S14 = null;
+            if (parseNode.GetChildNode("S2") is { } nullNodeS2 && nullNodeS2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S2 = null;
+            if (parseNode.GetChildNode("S3") is { } nullNodeS3 && nullNodeS3.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S3 = null;
+            if (parseNode.GetChildNode("S4") is { } nullNodeS4 && nullNodeS4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S4 = null;
+            if (parseNode.GetChildNode("S5") is { } nullNodeS5 && nullNodeS5.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S5 = null;
+            if (parseNode.GetChildNode("S6") is { } nullNodeS6 && nullNodeS6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S6 = null;
+            if (parseNode.GetChildNode("S7") is { } nullNodeS7 && nullNodeS7.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S7 = null;
+            if (parseNode.GetChildNode("S8") is { } nullNodeS8 && nullNodeS8.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S8 = null;
+            if (parseNode.GetChildNode("S9") is { } nullNodeS9 && nullNodeS9.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S9 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The P1 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptP1? P1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptP1? P1 { get => _explicitNullValueP1; set { _explicitNullValueP1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("P1"); else _explicitNullProperties?.Remove("P1"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptP1? _explicitNullValueP1 = default!;
         /// <summary>The S1 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS1? S1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS1? S1 { get => _explicitNullValueS1; set { _explicitNullValueS1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S1"); else _explicitNullProperties?.Remove("S1"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS1? _explicitNullValueS1 = default!;
         /// <summary>The S10 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS10? S10 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS10? S10 { get => _explicitNullValueS10; set { _explicitNullValueS10 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S10"); else _explicitNullProperties?.Remove("S10"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS10? _explicitNullValueS10 = default!;
         /// <summary>The S11 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS11? S11 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS11? S11 { get => _explicitNullValueS11; set { _explicitNullValueS11 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S11"); else _explicitNullProperties?.Remove("S11"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS11? _explicitNullValueS11 = default!;
         /// <summary>The S12 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS12? S12 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS12? S12 { get => _explicitNullValueS12; set { _explicitNullValueS12 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S12"); else _explicitNullProperties?.Remove("S12"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS12? _explicitNullValueS12 = default!;
         /// <summary>The S13 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS13? S13 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS13? S13 { get => _explicitNullValueS13; set { _explicitNullValueS13 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S13"); else _explicitNullProperties?.Remove("S13"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS13? _explicitNullValueS13 = default!;
+        /// <summary>The S14 property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS14? S14 { get => _explicitNullValueS14; set { _explicitNullValueS14 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S14"); else _explicitNullProperties?.Remove("S14"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS14? _explicitNullValueS14 = default!;
         /// <summary>The S2 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS2? S2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS2? S2 { get => _explicitNullValueS2; set { _explicitNullValueS2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S2"); else _explicitNullProperties?.Remove("S2"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS2? _explicitNullValueS2 = default!;
         /// <summary>The S3 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS3? S3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS3? S3 { get => _explicitNullValueS3; set { _explicitNullValueS3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S3"); else _explicitNullProperties?.Remove("S3"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS3? _explicitNullValueS3 = default!;
         /// <summary>The S4 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS4? S4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS4? S4 { get => _explicitNullValueS4; set { _explicitNullValueS4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S4"); else _explicitNullProperties?.Remove("S4"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS4? _explicitNullValueS4 = default!;
         /// <summary>The S5 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS5? S5 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS5? S5 { get => _explicitNullValueS5; set { _explicitNullValueS5 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S5"); else _explicitNullProperties?.Remove("S5"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS5? _explicitNullValueS5 = default!;
         /// <summary>The S6 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS6? S6 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS6? S6 { get => _explicitNullValueS6; set { _explicitNullValueS6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S6"); else _explicitNullProperties?.Remove("S6"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS6? _explicitNullValueS6 = default!;
         /// <summary>The S7 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS7? S7 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS7? S7 { get => _explicitNullValueS7; set { _explicitNullValueS7 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S7"); else _explicitNullProperties?.Remove("S7"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS7? _explicitNullValueS7 = default!;
         /// <summary>The S8 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS8? S8 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS8? S8 { get => _explicitNullValueS8; set { _explicitNullValueS8 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S8"); else _explicitNullProperties?.Remove("S8"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS8? _explicitNullValueS8 = default!;
         /// <summary>The S9 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS9? S9 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS9? S9 { get => _explicitNullValueS9; set { _explicitNullValueS9 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("S9"); else _explicitNullProperties?.Remove("S9"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS9? _explicitNullValueS9 = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPrompt"/> and sets the default values.
         /// </summary>
@@ -57,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPrompt CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPrompt();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPrompt(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "S11", n => { S11 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS11>(); } },
                 { "S12", n => { S12 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS12>(); } },
                 { "S13", n => { S13 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS13>(); } },
+                { "S14", n => { S14 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS14>(); } },
                 { "S2", n => { S2 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS2>(); } },
                 { "S3", n => { S3 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS3>(); } },
                 { "S4", n => { S4 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS4>(); } },
@@ -96,6 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS11>("S11", S11);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS12>("S12", S12);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS13>("S13", S13);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS14>("S14", S14);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS2>("S2", S2);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS3>("S3", S3);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS4>("S4", S4);
@@ -104,6 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS7>("S7", S7);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS8>("S8", S8);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS9>("S9", S9);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

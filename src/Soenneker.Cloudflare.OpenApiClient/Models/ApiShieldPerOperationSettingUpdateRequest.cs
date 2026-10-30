@@ -11,11 +11,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ApiShieldPerOperationSettingUpdateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("mitigation_action") is { } nullNodeMitigationAction && nullNodeMitigationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitigationAction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When set, this applies a mitigation action to this operation  - `&quot;log&quot;` - log request when request does not conform to schema for this operation  - `&quot;block&quot;` - deny access to the site when request does not conform to schema for this operation  - `&quot;none&quot;` - will skip mitigation for this operation  - `null` - clears any mitigation action</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingChangeBaseMitigationAction? MitigationAction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingChangeBaseMitigationAction? MitigationAction { get => _explicitNullValueMitigationAction; set { _explicitNullValueMitigationAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigation_action"); else _explicitNullProperties?.Remove("mitigation_action"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingChangeBaseMitigationAction? _explicitNullValueMitigationAction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingUpdateRequest"/> and sets the default values.
         /// </summary>
@@ -31,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingUpdateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingUpdateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingChangeBaseMitigationAction>("mitigation_action", MitigationAction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

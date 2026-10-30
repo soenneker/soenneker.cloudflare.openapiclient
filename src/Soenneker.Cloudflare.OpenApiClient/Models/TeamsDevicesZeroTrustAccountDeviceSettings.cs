@@ -11,45 +11,73 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TeamsDevicesZeroTrustAccountDeviceSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("disable_for_time") is { } nullNodeDisableForTime && nullNodeDisableForTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableForTime = null;
+            if (parseNode.GetChildNode("external_emergency_signal_enabled") is { } nullNodeExternalEmergencySignalEnabled && nullNodeExternalEmergencySignalEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalEmergencySignalEnabled = null;
+            if (parseNode.GetChildNode("external_emergency_signal_fingerprint") is { } nullNodeExternalEmergencySignalFingerprint && nullNodeExternalEmergencySignalFingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalEmergencySignalFingerprint = null;
+            if (parseNode.GetChildNode("external_emergency_signal_interval") is { } nullNodeExternalEmergencySignalInterval && nullNodeExternalEmergencySignalInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalEmergencySignalInterval = null;
+            if (parseNode.GetChildNode("external_emergency_signal_url") is { } nullNodeExternalEmergencySignalUrl && nullNodeExternalEmergencySignalUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalEmergencySignalUrl = null;
+            if (parseNode.GetChildNode("gateway_proxy_enabled") is { } nullNodeGatewayProxyEnabled && nullNodeGatewayProxyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewayProxyEnabled = null;
+            if (parseNode.GetChildNode("gateway_udp_proxy_enabled") is { } nullNodeGatewayUdpProxyEnabled && nullNodeGatewayUdpProxyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewayUdpProxyEnabled = null;
+            if (parseNode.GetChildNode("root_certificate_installation_enabled") is { } nullNodeRootCertificateInstallationEnabled && nullNodeRootCertificateInstallationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootCertificateInstallationEnabled = null;
+            if (parseNode.GetChildNode("use_zt_virtual_ip") is { } nullNodeUseZtVirtualIp && nullNodeUseZtVirtualIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseZtVirtualIp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Sets the time limit, in seconds, that a user can use an override code to bypass WARP.</summary>
-        public double? DisableForTime { get; set; }
+        public double? DisableForTime { get => _explicitNullValueDisableForTime; set { _explicitNullValueDisableForTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_for_time"); else _explicitNullProperties?.Remove("disable_for_time"); } }
+        private double? _explicitNullValueDisableForTime = default!;
         /// <summary>Controls whether the external emergency disconnect feature is enabled.</summary>
-        public bool? ExternalEmergencySignalEnabled { get; set; }
+        public bool? ExternalEmergencySignalEnabled { get => _explicitNullValueExternalEmergencySignalEnabled; set { _explicitNullValueExternalEmergencySignalEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_emergency_signal_enabled"); else _explicitNullProperties?.Remove("external_emergency_signal_enabled"); } }
+        private bool? _explicitNullValueExternalEmergencySignalEnabled = default!;
         /// <summary>The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the external_emergency_signal_url. If provided, the WARP client will use this value to verify the server&apos;s identity. The device will ignore any response if the server&apos;s certificate fingerprint does not exactly match this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalEmergencySignalFingerprint { get; set; }
+        public string? ExternalEmergencySignalFingerprint { get => _explicitNullValueExternalEmergencySignalFingerprint; set { _explicitNullValueExternalEmergencySignalFingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_emergency_signal_fingerprint"); else _explicitNullProperties?.Remove("external_emergency_signal_fingerprint"); } }
+        private string? _explicitNullValueExternalEmergencySignalFingerprint = default!;
 #nullable restore
 #else
-        public string ExternalEmergencySignalFingerprint { get; set; }
+        public string ExternalEmergencySignalFingerprint { get => _explicitNullValueExternalEmergencySignalFingerprint; set { _explicitNullValueExternalEmergencySignalFingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_emergency_signal_fingerprint"); else _explicitNullProperties?.Remove("external_emergency_signal_fingerprint"); } }
+        private string _explicitNullValueExternalEmergencySignalFingerprint = default!;
 #endif
         /// <summary>The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (e.g., &quot;5m&quot;, &quot;2m30s&quot;, &quot;1h&quot;). Minimum 30 seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalEmergencySignalInterval { get; set; }
+        public string? ExternalEmergencySignalInterval { get => _explicitNullValueExternalEmergencySignalInterval; set { _explicitNullValueExternalEmergencySignalInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_emergency_signal_interval"); else _explicitNullProperties?.Remove("external_emergency_signal_interval"); } }
+        private string? _explicitNullValueExternalEmergencySignalInterval = default!;
 #nullable restore
 #else
-        public string ExternalEmergencySignalInterval { get; set; }
+        public string ExternalEmergencySignalInterval { get => _explicitNullValueExternalEmergencySignalInterval; set { _explicitNullValueExternalEmergencySignalInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_emergency_signal_interval"); else _explicitNullProperties?.Remove("external_emergency_signal_interval"); } }
+        private string _explicitNullValueExternalEmergencySignalInterval = default!;
 #endif
         /// <summary>The HTTPS URL from which to fetch the emergency disconnect signal. Must use HTTPS and have an IPv4 or IPv6 address as the host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalEmergencySignalUrl { get; set; }
+        public string? ExternalEmergencySignalUrl { get => _explicitNullValueExternalEmergencySignalUrl; set { _explicitNullValueExternalEmergencySignalUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_emergency_signal_url"); else _explicitNullProperties?.Remove("external_emergency_signal_url"); } }
+        private string? _explicitNullValueExternalEmergencySignalUrl = default!;
 #nullable restore
 #else
-        public string ExternalEmergencySignalUrl { get; set; }
+        public string ExternalEmergencySignalUrl { get => _explicitNullValueExternalEmergencySignalUrl; set { _explicitNullValueExternalEmergencySignalUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_emergency_signal_url"); else _explicitNullProperties?.Remove("external_emergency_signal_url"); } }
+        private string _explicitNullValueExternalEmergencySignalUrl = default!;
 #endif
         /// <summary>Enable gateway proxy filtering on TCP.</summary>
-        public bool? GatewayProxyEnabled { get; set; }
+        public bool? GatewayProxyEnabled { get => _explicitNullValueGatewayProxyEnabled; set { _explicitNullValueGatewayProxyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_proxy_enabled"); else _explicitNullProperties?.Remove("gateway_proxy_enabled"); } }
+        private bool? _explicitNullValueGatewayProxyEnabled = default!;
         /// <summary>Enable gateway proxy filtering on UDP.</summary>
-        public bool? GatewayUdpProxyEnabled { get; set; }
+        public bool? GatewayUdpProxyEnabled { get => _explicitNullValueGatewayUdpProxyEnabled; set { _explicitNullValueGatewayUdpProxyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_udp_proxy_enabled"); else _explicitNullProperties?.Remove("gateway_udp_proxy_enabled"); } }
+        private bool? _explicitNullValueGatewayUdpProxyEnabled = default!;
         /// <summary>Enable installation of cloudflare managed root certificate.</summary>
-        public bool? RootCertificateInstallationEnabled { get; set; }
+        public bool? RootCertificateInstallationEnabled { get => _explicitNullValueRootCertificateInstallationEnabled; set { _explicitNullValueRootCertificateInstallationEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_certificate_installation_enabled"); else _explicitNullProperties?.Remove("root_certificate_installation_enabled"); } }
+        private bool? _explicitNullValueRootCertificateInstallationEnabled = default!;
         /// <summary>Enable using CGNAT virtual IPv4.</summary>
-        public bool? UseZtVirtualIp { get; set; }
+        public bool? UseZtVirtualIp { get => _explicitNullValueUseZtVirtualIp; set { _explicitNullValueUseZtVirtualIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_zt_virtual_ip"); else _explicitNullProperties?.Remove("use_zt_virtual_ip"); } }
+        private bool? _explicitNullValueUseZtVirtualIp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesZeroTrustAccountDeviceSettings"/> and sets the default values.
         /// </summary>
@@ -65,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesZeroTrustAccountDeviceSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesZeroTrustAccountDeviceSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesZeroTrustAccountDeviceSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("gateway_udp_proxy_enabled", GatewayUdpProxyEnabled);
             writer.WriteBoolValue("root_certificate_installation_enabled", RootCertificateInstallationEnabled);
             writer.WriteBoolValue("use_zt_virtual_ip", UseZtVirtualIp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

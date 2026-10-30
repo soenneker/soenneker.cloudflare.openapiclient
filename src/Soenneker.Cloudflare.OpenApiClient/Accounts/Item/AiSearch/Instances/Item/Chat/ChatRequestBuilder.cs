@@ -16,6 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
     public partial class ChatRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The completions property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat.Completions.CompletionsRequestBuilder Completions
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat.Completions.CompletionsRequestBuilder(PathParameters, RequestAdapter);

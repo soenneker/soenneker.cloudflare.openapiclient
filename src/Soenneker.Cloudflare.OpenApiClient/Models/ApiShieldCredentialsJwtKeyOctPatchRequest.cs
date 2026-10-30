@@ -12,29 +12,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiShieldCredentialsJwtKeyOctPatchRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alg") is { } nullNodeAlg && nullNodeAlg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alg = null;
+            if (parseNode.GetChildNode("k") is { } nullNodeK && nullNodeK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) K = null;
+            if (parseNode.GetChildNode("kid") is { } nullNodeKid && nullNodeKid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kid = null;
+            if (parseNode.GetChildNode("kty") is { } nullNodeKty && nullNodeKty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kty = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Algorithm</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctPatchRequestAlg? Alg { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctPatchRequestAlg? Alg { get => _explicitNullValueAlg; set { _explicitNullValueAlg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alg"); else _explicitNullProperties?.Remove("alg"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctPatchRequestAlg? _explicitNullValueAlg = default!;
         /// <summary>Symmetric key material. Optional for PATCH: omit to preserve existing secret for matching `{alg,kid}`; send a string to rotate. `k: null` is invalid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? K { get; set; }
+        public string? K { get => _explicitNullValueK; set { _explicitNullValueK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k"); else _explicitNullProperties?.Remove("k"); } }
+        private string? _explicitNullValueK = default!;
 #nullable restore
 #else
-        public string K { get; set; }
+        public string K { get => _explicitNullValueK; set { _explicitNullValueK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k"); else _explicitNullProperties?.Remove("k"); } }
+        private string _explicitNullValueK = default!;
 #endif
         /// <summary>Key ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kid { get; set; }
+        public string? Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        private string? _explicitNullValueKid = default!;
 #nullable restore
 #else
-        public string Kid { get; set; }
+        public string Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        private string _explicitNullValueKid = default!;
 #endif
         /// <summary>Key Type</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OctKty? Kty { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OctKty? Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OctKty? _explicitNullValueKty = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctPatchRequest"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctPatchRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctPatchRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyOctPatchRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("k", K);
             writer.WriteStringValue("kid", Kid);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OctKty>("kty", Kty);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\email\sending
+    /// Builds and executes requests for operations under \zones\{zoneId}\email\sending
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SendingRequestBuilder : BaseRequestBuilder
@@ -22,6 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Subdomains.SubdomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The suppression property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Suppression.SuppressionRequestBuilder Suppression
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Suppression.SuppressionRequestBuilder(PathParameters, RequestAdapter);
@@ -31,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SendingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/email/sending", pathParameters)
+        public SendingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/email/sending", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SendingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/email/sending", rawUrl)
+        public SendingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/email/sending", rawUrl)
         {
         }
     }

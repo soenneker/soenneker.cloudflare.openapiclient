@@ -80,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns.PatternsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The payload_log property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log.Payload_logRequestBuilder Payload_log
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log.Payload_logRequestBuilder(PathParameters, RequestAdapter);

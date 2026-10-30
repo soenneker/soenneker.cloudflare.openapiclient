@@ -71,6 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsAs112TopLocations404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsAs112TopLocations200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsAs112TopLocations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

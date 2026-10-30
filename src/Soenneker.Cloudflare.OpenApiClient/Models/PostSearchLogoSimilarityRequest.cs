@@ -11,21 +11,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostSearchLogoSimilarityRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("image_data") is { } nullNodeImageData && nullNodeImageData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageData = null;
+            if (parseNode.GetChildNode("score_threshold") is { } nullNodeScoreThreshold && nullNodeScoreThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreThreshold = null;
+            if (parseNode.GetChildNode("top_k") is { } nullNodeTopK && nullNodeTopK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopK = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Base64 encoded image data. Can include data URI prefix (e.g., &apos;data:image/png;base64,...&apos;) or just the base64 string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageData { get; set; }
+        public string? ImageData { get => _explicitNullValueImageData; set { _explicitNullValueImageData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_data"); else _explicitNullProperties?.Remove("image_data"); } }
+        private string? _explicitNullValueImageData = default!;
 #nullable restore
 #else
-        public string ImageData { get; set; }
+        public string ImageData { get => _explicitNullValueImageData; set { _explicitNullValueImageData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_data"); else _explicitNullProperties?.Remove("image_data"); } }
+        private string _explicitNullValueImageData = default!;
 #endif
         /// <summary>Minimum similarity score threshold for matches (0-1, default: 0)</summary>
-        public double? ScoreThreshold { get; set; }
+        public double? ScoreThreshold { get => _explicitNullValueScoreThreshold; set { _explicitNullValueScoreThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_threshold"); else _explicitNullProperties?.Remove("score_threshold"); } }
+        private double? _explicitNullValueScoreThreshold = default!;
         /// <summary>Number of closest matches to return (1-100, default: 10)</summary>
-        public int? TopK { get; set; }
+        public int? TopK { get => _explicitNullValueTopK; set { _explicitNullValueTopK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_k"); else _explicitNullProperties?.Remove("top_k"); } }
+        private int? _explicitNullValueTopK = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostSearchLogoSimilarityRequest"/> and sets the default values.
         /// </summary>
@@ -43,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostSearchLogoSimilarityRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostSearchLogoSimilarityRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostSearchLogoSimilarityRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("image_data", ImageData);
             writer.WriteDoubleValue("score_threshold", ScoreThreshold);
             writer.WriteIntValue("top_k", TopK);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

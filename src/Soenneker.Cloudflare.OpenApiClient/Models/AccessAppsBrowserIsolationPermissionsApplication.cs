@@ -11,16 +11,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessAppsBrowserIsolationPermissionsApplication : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_idps") is { } nullNodeAllowedIdps && nullNodeAllowedIdps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIdps = null;
+            if (parseNode.GetChildNode("auto_redirect_to_identity") is { } nullNodeAutoRedirectToIdentity && nullNodeAutoRedirectToIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRedirectToIdentity = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("scim_config") is { } nullNodeScimConfig && nullNodeScimConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScimConfig = null;
+            if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedIdps { get; set; }
+        public List<string>? AllowedIdps { get => _explicitNullValueAllowedIdps; set { _explicitNullValueAllowedIdps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_idps"); else _explicitNullProperties?.Remove("allowed_idps"); } }
+        private List<string>? _explicitNullValueAllowedIdps = default!;
 #nullable restore
 #else
-        public List<string> AllowedIdps { get; set; }
+        public List<string> AllowedIdps { get => _explicitNullValueAllowedIdps; set { _explicitNullValueAllowedIdps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_idps"); else _explicitNullProperties?.Remove("allowed_idps"); } }
+        private List<string> _explicitNullValueAllowedIdps = default!;
 #endif
         /// <summary>Audience tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,9 +48,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Aud { get; private set; }
 #endif
         /// <summary>When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.</summary>
-        public bool? AutoRedirectToIdentity { get; set; }
+        public bool? AutoRedirectToIdentity { get => _explicitNullValueAutoRedirectToIdentity; set { _explicitNullValueAutoRedirectToIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_redirect_to_identity"); else _explicitNullProperties?.Remove("auto_redirect_to_identity"); } }
+        private bool? _explicitNullValueAutoRedirectToIdentity = default!;
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The domain and path that Access will secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,10 +64,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,23 +82,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configuration for provisioning to this application via SCIM. This is currently in closed beta.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2? ScimConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2? ScimConfig { get => _explicitNullValueScimConfig; set { _explicitNullValueScimConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scim_config"); else _explicitNullProperties?.Remove("scim_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2? _explicitNullValueScimConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2 ScimConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2 ScimConfig { get => _explicitNullValueScimConfig; set { _explicitNullValueScimConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scim_config"); else _explicitNullProperties?.Remove("scim_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2 _explicitNullValueScimConfig = default!;
 #endif
         /// <summary>The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionDuration { get; set; }
+        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string? _explicitNullValueSessionDuration = default!;
 #nullable restore
 #else
-        public string SessionDuration { get; set; }
+        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string _explicitNullValueSessionDuration = default!;
 #endif
         /// <summary>The application type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessBisoProps2Type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessBisoProps2Type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessBisoProps2Type? _explicitNullValueType = default!;
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsBrowserIsolationPermissionsApplication"/> and sets the default values.
         /// </summary>
@@ -96,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsBrowserIsolationPermissionsApplication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsBrowserIsolationPermissionsApplication();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsBrowserIsolationPermissionsApplication(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,6 +161,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("session_duration", SessionDuration);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessBisoProps2Type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

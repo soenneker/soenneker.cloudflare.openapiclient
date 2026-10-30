@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
         {
         }
         /// <summary>
-        /// Returns decoded entries for an immutable Git tree object. Tree responses are cacheable forever by hash.
+        /// Returns decoded entries for an immutable Git tree object. A commit hash returns that commit&apos;s root tree; a blob or tag hash returns 422. Tree responses are cacheable forever by hash.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -43,6 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet401Response">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet422Response">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,12 +61,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet401Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet404Response.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet422Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposTreeGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns decoded entries for an immutable Git tree object. Tree responses are cacheable forever by hash.
+        /// Returns decoded entries for an immutable Git tree object. A commit hash returns that commit&apos;s root tree; a blob or tag hash returns 422. Tree responses are cacheable forever by hash.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

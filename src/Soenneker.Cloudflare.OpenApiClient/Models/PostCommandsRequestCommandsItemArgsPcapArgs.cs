@@ -11,13 +11,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostCommandsRequestCommandsItemArgsPcapArgs : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max-file-size-mb") is { } nullNodeMaxFileSizeMb && nullNodeMaxFileSizeMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFileSizeMb = null;
+            if (parseNode.GetChildNode("packet-size-bytes") is { } nullNodePacketSizeBytes && nullNodePacketSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketSizeBytes = null;
+            if (parseNode.GetChildNode("time-limit-min") is { } nullNodeTimeLimitMin && nullNodeTimeLimitMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeLimitMin = null;
+        }
+
         /// <summary>Maximum file size (in MB) for the capture file. If the capture artifact exceeds the specified max file size, it will NOT be uploaded.</summary>
-        public double? MaxFileSizeMb { get; set; }
+        public double? MaxFileSizeMb { get => _explicitNullValueMaxFileSizeMb; set { _explicitNullValueMaxFileSizeMb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max-file-size-mb"); else _explicitNullProperties?.Remove("max-file-size-mb"); } }
+        private double? _explicitNullValueMaxFileSizeMb = default!;
         /// <summary>Maximum number of bytes to save for each packet</summary>
-        public double? PacketSizeBytes { get; set; }
+        public double? PacketSizeBytes { get => _explicitNullValuePacketSizeBytes; set { _explicitNullValuePacketSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet-size-bytes"); else _explicitNullProperties?.Remove("packet-size-bytes"); } }
+        private double? _explicitNullValuePacketSizeBytes = default!;
         /// <summary>Limit on capture duration (in minutes)</summary>
-        public double? TimeLimitMin { get; set; }
+        public double? TimeLimitMin { get => _explicitNullValueTimeLimitMin; set { _explicitNullValueTimeLimitMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time-limit-min"); else _explicitNullProperties?.Remove("time-limit-min"); } }
+        private double? _explicitNullValueTimeLimitMin = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +72,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("max-file-size-mb", MaxFileSizeMb);
             writer.WriteDoubleValue("packet-size-bytes", PacketSizeBytes);
-            writer.WriteDoubleValue("time-limit-min", TimeLimitMin);
+            writer.WriteDoubleValue("time-limit-min", TimeLimitMin);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

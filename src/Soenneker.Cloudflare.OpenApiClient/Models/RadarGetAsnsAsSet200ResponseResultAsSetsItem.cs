@@ -11,39 +11,66 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetAsnsAsSet200ResponseResultAsSetsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("as_members_count") is { } nullNodeAsMembersCount && nullNodeAsMembersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsMembersCount = null;
+            if (parseNode.GetChildNode("asn_cone_size") is { } nullNodeAsnConeSize && nullNodeAsnConeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnConeSize = null;
+            if (parseNode.GetChildNode("as_set_members_count") is { } nullNodeAsSetMembersCount && nullNodeAsSetMembersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsSetMembersCount = null;
+            if (parseNode.GetChildNode("as_set_upstreams_count") is { } nullNodeAsSetUpstreamsCount && nullNodeAsSetUpstreamsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsSetUpstreamsCount = null;
+            if (parseNode.GetChildNode("hierarchical_asn") is { } nullNodeHierarchicalAsn && nullNodeHierarchicalAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HierarchicalAsn = null;
+            if (parseNode.GetChildNode("inferred_asn") is { } nullNodeInferredAsn && nullNodeInferredAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InferredAsn = null;
+            if (parseNode.GetChildNode("irr_sources") is { } nullNodeIrrSources && nullNodeIrrSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IrrSources = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("peeringdb_asn") is { } nullNodePeeringdbAsn && nullNodePeeringdbAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeeringdbAsn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of AS members in the AS-SET</summary>
-        public int? AsMembersCount { get; set; }
+        public int? AsMembersCount { get => _explicitNullValueAsMembersCount; set { _explicitNullValueAsMembersCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_members_count"); else _explicitNullProperties?.Remove("as_members_count"); } }
+        private int? _explicitNullValueAsMembersCount = default!;
         /// <summary>The number of unique ASNs in the AS-SETs recursive downstream</summary>
-        public int? AsnConeSize { get; set; }
+        public int? AsnConeSize { get => _explicitNullValueAsnConeSize; set { _explicitNullValueAsnConeSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn_cone_size"); else _explicitNullProperties?.Remove("asn_cone_size"); } }
+        private int? _explicitNullValueAsnConeSize = default!;
         /// <summary>The number of AS-SET members in the AS-SET</summary>
-        public int? AsSetMembersCount { get; set; }
+        public int? AsSetMembersCount { get => _explicitNullValueAsSetMembersCount; set { _explicitNullValueAsSetMembersCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_set_members_count"); else _explicitNullProperties?.Remove("as_set_members_count"); } }
+        private int? _explicitNullValueAsSetMembersCount = default!;
         /// <summary>The number of recursive upstream AS-SETs</summary>
-        public int? AsSetUpstreamsCount { get; set; }
+        public int? AsSetUpstreamsCount { get => _explicitNullValueAsSetUpstreamsCount; set { _explicitNullValueAsSetUpstreamsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_set_upstreams_count"); else _explicitNullProperties?.Remove("as_set_upstreams_count"); } }
+        private int? _explicitNullValueAsSetUpstreamsCount = default!;
         /// <summary>The AS number following hierarchical AS-SET name</summary>
-        public int? HierarchicalAsn { get; set; }
+        public int? HierarchicalAsn { get => _explicitNullValueHierarchicalAsn; set { _explicitNullValueHierarchicalAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchical_asn"); else _explicitNullProperties?.Remove("hierarchical_asn"); } }
+        private int? _explicitNullValueHierarchicalAsn = default!;
         /// <summary>The inferred AS number of the AS-SET</summary>
-        public int? InferredAsn { get; set; }
+        public int? InferredAsn { get => _explicitNullValueInferredAsn; set { _explicitNullValueInferredAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inferred_asn"); else _explicitNullProperties?.Remove("inferred_asn"); } }
+        private int? _explicitNullValueInferredAsn = default!;
         /// <summary>The IRR sources of the AS-SET</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IrrSources { get; set; }
+        public List<string>? IrrSources { get => _explicitNullValueIrrSources; set { _explicitNullValueIrrSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irr_sources"); else _explicitNullProperties?.Remove("irr_sources"); } }
+        private List<string>? _explicitNullValueIrrSources = default!;
 #nullable restore
 #else
-        public List<string> IrrSources { get; set; }
+        public List<string> IrrSources { get => _explicitNullValueIrrSources; set { _explicitNullValueIrrSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irr_sources"); else _explicitNullProperties?.Remove("irr_sources"); } }
+        private List<string> _explicitNullValueIrrSources = default!;
 #endif
         /// <summary>The name of the AS-SET</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The AS number matching PeeringDB record</summary>
-        public int? PeeringdbAsn { get; set; }
+        public int? PeeringdbAsn { get => _explicitNullValuePeeringdbAsn; set { _explicitNullValuePeeringdbAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peeringdb_asn"); else _explicitNullProperties?.Remove("peeringdb_asn"); } }
+        private int? _explicitNullValuePeeringdbAsn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem"/> and sets the default values.
         /// </summary>
@@ -59,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("irr_sources", IrrSources);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("peeringdb_asn", PeeringdbAsn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

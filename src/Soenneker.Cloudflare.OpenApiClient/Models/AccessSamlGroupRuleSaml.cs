@@ -11,32 +11,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessSamlGroupRuleSaml : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attribute_name") is { } nullNodeAttributeName && nullNodeAttributeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeName = null;
+            if (parseNode.GetChildNode("attribute_value") is { } nullNodeAttributeValue && nullNodeAttributeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeValue = null;
+            if (parseNode.GetChildNode("identity_provider_id") is { } nullNodeIdentityProviderId && nullNodeIdentityProviderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityProviderId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the SAML attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttributeName { get; set; }
+        public string? AttributeName { get => _explicitNullValueAttributeName; set { _explicitNullValueAttributeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_name"); else _explicitNullProperties?.Remove("attribute_name"); } }
+        private string? _explicitNullValueAttributeName = default!;
 #nullable restore
 #else
-        public string AttributeName { get; set; }
+        public string AttributeName { get => _explicitNullValueAttributeName; set { _explicitNullValueAttributeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_name"); else _explicitNullProperties?.Remove("attribute_name"); } }
+        private string _explicitNullValueAttributeName = default!;
 #endif
         /// <summary>The SAML attribute value to look for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttributeValue { get; set; }
+        public string? AttributeValue { get => _explicitNullValueAttributeValue; set { _explicitNullValueAttributeValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_value"); else _explicitNullProperties?.Remove("attribute_value"); } }
+        private string? _explicitNullValueAttributeValue = default!;
 #nullable restore
 #else
-        public string AttributeValue { get; set; }
+        public string AttributeValue { get => _explicitNullValueAttributeValue; set { _explicitNullValueAttributeValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_value"); else _explicitNullProperties?.Remove("attribute_value"); } }
+        private string _explicitNullValueAttributeValue = default!;
 #endif
         /// <summary>The ID of your SAML identity provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityProviderId { get; set; }
+        public string? IdentityProviderId { get => _explicitNullValueIdentityProviderId; set { _explicitNullValueIdentityProviderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_provider_id"); else _explicitNullProperties?.Remove("identity_provider_id"); } }
+        private string? _explicitNullValueIdentityProviderId = default!;
 #nullable restore
 #else
-        public string IdentityProviderId { get; set; }
+        public string IdentityProviderId { get => _explicitNullValueIdentityProviderId; set { _explicitNullValueIdentityProviderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_provider_id"); else _explicitNullProperties?.Remove("identity_provider_id"); } }
+        private string _explicitNullValueIdentityProviderId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlGroupRuleSaml"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlGroupRuleSaml CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlGroupRuleSaml();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlGroupRuleSaml(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("attribute_name", AttributeName);
             writer.WriteStringValue("attribute_value", AttributeValue);
             writer.WriteStringValue("identity_provider_id", IdentityProviderId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

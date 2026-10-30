@@ -11,19 +11,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DnssecDnssecZsk : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("DNSKEY") is { } nullNodeDNSKEY && nullNodeDNSKEY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DNSKEY = null;
+            if (parseNode.GetChildNode("Location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("SigningKey") is { } nullNodeSigningKey && nullNodeSigningKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningKey = null;
+            if (parseNode.GetChildNode("Tag") is { } nullNodeTag && nullNodeTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The DNSKEY property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecord? DNSKEY { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecord? DNSKEY { get => _explicitNullValueDNSKEY; set { _explicitNullValueDNSKEY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DNSKEY"); else _explicitNullProperties?.Remove("DNSKEY"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecord? _explicitNullValueDNSKEY = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecord DNSKEY { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecord DNSKEY { get => _explicitNullValueDNSKEY; set { _explicitNullValueDNSKEY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DNSKEY"); else _explicitNullProperties?.Remove("DNSKEY"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecord _explicitNullValueDNSKEY = default!;
 #endif
         /// <summary>Storage backend where the DNSSEC key material is stored.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecKeyStorageLocation? Location { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecKeyStorageLocation? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Location"); else _explicitNullProperties?.Remove("Location"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecKeyStorageLocation? _explicitNullValueLocation = default!;
         /// <summary>Internal key name for the ZSK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,13 +49,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The SigningKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeySigningKey? SigningKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeySigningKey? SigningKey { get => _explicitNullValueSigningKey; set { _explicitNullValueSigningKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SigningKey"); else _explicitNullProperties?.Remove("SigningKey"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeySigningKey? _explicitNullValueSigningKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeySigningKey SigningKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeySigningKey SigningKey { get => _explicitNullValueSigningKey; set { _explicitNullValueSigningKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SigningKey"); else _explicitNullProperties?.Remove("SigningKey"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeySigningKey _explicitNullValueSigningKey = default!;
 #endif
         /// <summary>Lifecycle state tag attached to the DNSSEC key.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnssecKeyState? Tag { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnssecKeyState? Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Tag"); else _explicitNullProperties?.Remove("Tag"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnssecKeyState? _explicitNullValueTag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnssecZsk"/> and sets the default values.
         /// </summary>
@@ -57,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnssecZsk CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnssecZsk();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnssecZsk(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,6 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecKeyStorageLocation>("Location", Location);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeySigningKey>("SigningKey", SigningKey);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnssecKeyState>("Tag", Tag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

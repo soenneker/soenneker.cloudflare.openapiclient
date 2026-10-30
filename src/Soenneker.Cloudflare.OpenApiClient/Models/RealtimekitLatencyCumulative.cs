@@ -12,17 +12,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitLatencyCumulative : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("avg") is { } nullNodeAvg && nullNodeAvg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Avg = null;
+            if (parseNode.GetChildNode("500ms_or_greater_event_fraction") is { } nullNodeFiveZeroZeromsOrGreaterEventFraction && nullNodeFiveZeroZeromsOrGreaterEventFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiveZeroZeromsOrGreaterEventFraction = null;
+            if (parseNode.GetChildNode("100ms_or_greater_event_fraction") is { } nullNodeOneZeroZeromsOrGreaterEventFraction && nullNodeOneZeroZeromsOrGreaterEventFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneZeroZeromsOrGreaterEventFraction = null;
+            if (parseNode.GetChildNode("250ms_or_greater_event_fraction") is { } nullNodeTwoFiveZeromsOrGreaterEventFraction && nullNodeTwoFiveZeromsOrGreaterEventFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoFiveZeromsOrGreaterEventFraction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The avg property</summary>
-        public double? Avg { get; set; }
+        public double? Avg { get => _explicitNullValueAvg; set { _explicitNullValueAvg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avg"); else _explicitNullProperties?.Remove("avg"); } }
+        private double? _explicitNullValueAvg = default!;
         /// <summary>The FiveZeroZeroms_or_greater_event_fraction property</summary>
-        public double? FiveZeroZeromsOrGreaterEventFraction { get; set; }
+        public double? FiveZeroZeromsOrGreaterEventFraction { get => _explicitNullValueFiveZeroZeromsOrGreaterEventFraction; set { _explicitNullValueFiveZeroZeromsOrGreaterEventFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("500ms_or_greater_event_fraction"); else _explicitNullProperties?.Remove("500ms_or_greater_event_fraction"); } }
+        private double? _explicitNullValueFiveZeroZeromsOrGreaterEventFraction = default!;
         /// <summary>The OneZeroZeroms_or_greater_event_fraction property</summary>
-        public double? OneZeroZeromsOrGreaterEventFraction { get; set; }
+        public double? OneZeroZeromsOrGreaterEventFraction { get => _explicitNullValueOneZeroZeromsOrGreaterEventFraction; set { _explicitNullValueOneZeroZeromsOrGreaterEventFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("100ms_or_greater_event_fraction"); else _explicitNullProperties?.Remove("100ms_or_greater_event_fraction"); } }
+        private double? _explicitNullValueOneZeroZeromsOrGreaterEventFraction = default!;
         /// <summary>The TwoFiveZeroms_or_greater_event_fraction property</summary>
-        public double? TwoFiveZeromsOrGreaterEventFraction { get; set; }
+        public double? TwoFiveZeromsOrGreaterEventFraction { get => _explicitNullValueTwoFiveZeromsOrGreaterEventFraction; set { _explicitNullValueTwoFiveZeromsOrGreaterEventFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("250ms_or_greater_event_fraction"); else _explicitNullProperties?.Remove("250ms_or_greater_event_fraction"); } }
+        private double? _explicitNullValueTwoFiveZeromsOrGreaterEventFraction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("500ms_or_greater_event_fraction", FiveZeroZeromsOrGreaterEventFraction);
             writer.WriteDoubleValue("100ms_or_greater_event_fraction", OneZeroZeromsOrGreaterEventFraction);
             writer.WriteDoubleValue("250ms_or_greater_event_fraction", TwoFiveZeromsOrGreaterEventFraction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

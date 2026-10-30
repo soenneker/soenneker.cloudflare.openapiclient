@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetEmailSecuritySummaryByTlsVersion200ResponseResultSummary0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("TLS 1.0") is { } nullNodeTLS10 && nullNodeTLS10.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS10 = null;
+            if (parseNode.GetChildNode("TLS 1.1") is { } nullNodeTLS11 && nullNodeTLS11.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS11 = null;
+            if (parseNode.GetChildNode("TLS 1.2") is { } nullNodeTLS12 && nullNodeTLS12.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS12 = null;
+            if (parseNode.GetChildNode("TLS 1.3") is { } nullNodeTLS13 && nullNodeTLS13.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS13 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TLS10 { get; set; }
+        public string? TLS10 { get => _explicitNullValueTLS10; set { _explicitNullValueTLS10 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.0"); else _explicitNullProperties?.Remove("TLS 1.0"); } }
+        private string? _explicitNullValueTLS10 = default!;
 #nullable restore
 #else
-        public string TLS10 { get; set; }
+        public string TLS10 { get => _explicitNullValueTLS10; set { _explicitNullValueTLS10 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.0"); else _explicitNullProperties?.Remove("TLS 1.0"); } }
+        private string _explicitNullValueTLS10 = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TLS11 { get; set; }
+        public string? TLS11 { get => _explicitNullValueTLS11; set { _explicitNullValueTLS11 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.1"); else _explicitNullProperties?.Remove("TLS 1.1"); } }
+        private string? _explicitNullValueTLS11 = default!;
 #nullable restore
 #else
-        public string TLS11 { get; set; }
+        public string TLS11 { get => _explicitNullValueTLS11; set { _explicitNullValueTLS11 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.1"); else _explicitNullProperties?.Remove("TLS 1.1"); } }
+        private string _explicitNullValueTLS11 = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TLS12 { get; set; }
+        public string? TLS12 { get => _explicitNullValueTLS12; set { _explicitNullValueTLS12 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.2"); else _explicitNullProperties?.Remove("TLS 1.2"); } }
+        private string? _explicitNullValueTLS12 = default!;
 #nullable restore
 #else
-        public string TLS12 { get; set; }
+        public string TLS12 { get => _explicitNullValueTLS12; set { _explicitNullValueTLS12 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.2"); else _explicitNullProperties?.Remove("TLS 1.2"); } }
+        private string _explicitNullValueTLS12 = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TLS13 { get; set; }
+        public string? TLS13 { get => _explicitNullValueTLS13; set { _explicitNullValueTLS13 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.3"); else _explicitNullProperties?.Remove("TLS 1.3"); } }
+        private string? _explicitNullValueTLS13 = default!;
 #nullable restore
 #else
-        public string TLS13 { get; set; }
+        public string TLS13 { get => _explicitNullValueTLS13; set { _explicitNullValueTLS13 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.3"); else _explicitNullProperties?.Remove("TLS 1.3"); } }
+        private string _explicitNullValueTLS13 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryByTlsVersion200ResponseResultSummary0"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryByTlsVersion200ResponseResultSummary0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryByTlsVersion200ResponseResultSummary0();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecuritySummaryByTlsVersion200ResponseResultSummary0(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("TLS 1.1", TLS11);
             writer.WriteStringValue("TLS 1.2", TLS12);
             writer.WriteStringValue("TLS 1.3", TLS13);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,41 +11,65 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ApiShieldPreviewRulesSuccessResponseAllOf2Result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available_hosts") is { } nullNodeAvailableHosts && nullNodeAvailableHosts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableHosts = null;
+            if (parseNode.GetChildNode("excluded") is { } nullNodeExcluded && nullNodeExcluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Excluded = null;
+            if (parseNode.GetChildNode("ignored") is { } nullNodeIgnored && nullNodeIgnored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ignored = null;
+            if (parseNode.GetChildNode("included") is { } nullNodeIncluded && nullNodeIncluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Included = null;
+            if (parseNode.GetChildNode("operations") is { } nullNodeOperations && nullNodeOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operations = null;
+            if (parseNode.GetChildNode("selected_hosts") is { } nullNodeSelectedHosts && nullNodeSelectedHosts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedHosts = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>All hostnames on zone used by operations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AvailableHosts { get; set; }
+        public List<string>? AvailableHosts { get => _explicitNullValueAvailableHosts; set { _explicitNullValueAvailableHosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_hosts"); else _explicitNullProperties?.Remove("available_hosts"); } }
+        private List<string>? _explicitNullValueAvailableHosts = default!;
 #nullable restore
 #else
-        public List<string> AvailableHosts { get; set; }
+        public List<string> AvailableHosts { get => _explicitNullValueAvailableHosts; set { _explicitNullValueAvailableHosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_hosts"); else _explicitNullProperties?.Remove("available_hosts"); } }
+        private List<string> _explicitNullValueAvailableHosts = default!;
 #endif
         /// <summary>Number of operations with `excluded` `state`</summary>
-        public int? Excluded { get; set; }
+        public int? Excluded { get => _explicitNullValueExcluded; set { _explicitNullValueExcluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded"); else _explicitNullProperties?.Remove("excluded"); } }
+        private int? _explicitNullValueExcluded = default!;
         /// <summary>Number of operations with `ignored` `state`</summary>
-        public int? Ignored { get; set; }
+        public int? Ignored { get => _explicitNullValueIgnored; set { _explicitNullValueIgnored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignored"); else _explicitNullProperties?.Remove("ignored"); } }
+        private int? _explicitNullValueIgnored = default!;
         /// <summary>Number of operations with `included` `state`</summary>
-        public int? Included { get; set; }
+        public int? Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
+        private int? _explicitNullValueIncluded = default!;
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2ResultOperationsItem>? Operations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2ResultOperationsItem>? Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operations"); else _explicitNullProperties?.Remove("operations"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2ResultOperationsItem>? _explicitNullValueOperations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2ResultOperationsItem> Operations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2ResultOperationsItem> Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operations"); else _explicitNullProperties?.Remove("operations"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2ResultOperationsItem> _explicitNullValueOperations = default!;
 #endif
         /// <summary>Hostnames of `included` operations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SelectedHosts { get; set; }
+        public List<string>? SelectedHosts { get => _explicitNullValueSelectedHosts; set { _explicitNullValueSelectedHosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_hosts"); else _explicitNullProperties?.Remove("selected_hosts"); } }
+        private List<string>? _explicitNullValueSelectedHosts = default!;
 #nullable restore
 #else
-        public List<string> SelectedHosts { get; set; }
+        public List<string> SelectedHosts { get => _explicitNullValueSelectedHosts; set { _explicitNullValueSelectedHosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_hosts"); else _explicitNullProperties?.Remove("selected_hosts"); } }
+        private List<string> _explicitNullValueSelectedHosts = default!;
 #endif
         /// <summary>Number of operations on zone</summary>
-        public int? Total { get; set; }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private int? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2Result"/> and sets the default values.
         /// </summary>
@@ -61,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2Result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2Result();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2Result(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponseAllOf2ResultOperationsItem>("operations", Operations);
             writer.WriteCollectionOfPrimitiveValues<string>("selected_hosts", SelectedHosts);
             writer.WriteIntValue("total", Total);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

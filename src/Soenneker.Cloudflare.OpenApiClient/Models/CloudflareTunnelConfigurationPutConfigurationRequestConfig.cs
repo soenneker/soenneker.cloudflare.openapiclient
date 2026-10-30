@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CloudflareTunnelConfigurationPutConfigurationRequestConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ingress") is { } nullNodeIngress && nullNodeIngress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ingress = null;
+            if (parseNode.GetChildNode("originRequest") is { } nullNodeOriginRequest && nullNodeOriginRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginRequest = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of public hostname definitions. At least one ingress rule needs to be defined for the tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule>? Ingress { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule>? Ingress { get => _explicitNullValueIngress; set { _explicitNullValueIngress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress"); else _explicitNullProperties?.Remove("ingress"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule>? _explicitNullValueIngress = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule> Ingress { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule> Ingress { get => _explicitNullValueIngress; set { _explicitNullValueIngress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress"); else _explicitNullProperties?.Remove("ingress"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule> _explicitNullValueIngress = default!;
 #endif
         /// <summary>Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest? OriginRequest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest? OriginRequest { get => _explicitNullValueOriginRequest; set { _explicitNullValueOriginRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originRequest"); else _explicitNullProperties?.Remove("originRequest"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest? _explicitNullValueOriginRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest OriginRequest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest OriginRequest { get => _explicitNullValueOriginRequest; set { _explicitNullValueOriginRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originRequest"); else _explicitNullProperties?.Remove("originRequest"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest _explicitNullValueOriginRequest = default!;
 #endif
         /// <summary>Enable private network access from WARP users to private network routes. This is enabled if the tunnel has an assigned route.</summary>
         [Obsolete("")]
@@ -54,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelConfigurationPutConfigurationRequestConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelConfigurationPutConfigurationRequestConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelConfigurationPutConfigurationRequestConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule>("ingress", Ingress);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest>("originRequest", OriginRequest);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

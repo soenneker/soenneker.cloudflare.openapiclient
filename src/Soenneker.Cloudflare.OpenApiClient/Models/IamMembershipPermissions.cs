@@ -12,104 +12,147 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IamMembershipPermissions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("analytics") is { } nullNodeAnalytics && nullNodeAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Analytics = null;
+            if (parseNode.GetChildNode("billing") is { } nullNodeBilling && nullNodeBilling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billing = null;
+            if (parseNode.GetChildNode("cache_purge") is { } nullNodeCachePurge && nullNodeCachePurge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CachePurge = null;
+            if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
+            if (parseNode.GetChildNode("dns_records") is { } nullNodeDnsRecords && nullNodeDnsRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsRecords = null;
+            if (parseNode.GetChildNode("lb") is { } nullNodeLb && nullNodeLb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lb = null;
+            if (parseNode.GetChildNode("logs") is { } nullNodeLogs && nullNodeLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logs = null;
+            if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("ssl") is { } nullNodeSsl && nullNodeSsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssl = null;
+            if (parseNode.GetChildNode("waf") is { } nullNodeWaf && nullNodeWaf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Waf = null;
+            if (parseNode.GetChildNode("zones") is { } nullNodeZones && nullNodeZones.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zones = null;
+            if (parseNode.GetChildNode("zone_settings") is { } nullNodeZoneSettings && nullNodeZoneSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneSettings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The analytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Analytics { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueAnalytics = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Analytics { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueAnalytics = default!;
 #endif
         /// <summary>The billing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Billing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Billing { get => _explicitNullValueBilling; set { _explicitNullValueBilling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing"); else _explicitNullProperties?.Remove("billing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueBilling = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Billing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Billing { get => _explicitNullValueBilling; set { _explicitNullValueBilling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing"); else _explicitNullProperties?.Remove("billing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueBilling = default!;
 #endif
         /// <summary>The cache_purge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? CachePurge { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? CachePurge { get => _explicitNullValueCachePurge; set { _explicitNullValueCachePurge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_purge"); else _explicitNullProperties?.Remove("cache_purge"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueCachePurge = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants CachePurge { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants CachePurge { get => _explicitNullValueCachePurge; set { _explicitNullValueCachePurge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_purge"); else _explicitNullProperties?.Remove("cache_purge"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueCachePurge = default!;
 #endif
         /// <summary>The dns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Dns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueDns = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Dns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueDns = default!;
 #endif
         /// <summary>The dns_records property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? DnsRecords { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? DnsRecords { get => _explicitNullValueDnsRecords; set { _explicitNullValueDnsRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_records"); else _explicitNullProperties?.Remove("dns_records"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueDnsRecords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants DnsRecords { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants DnsRecords { get => _explicitNullValueDnsRecords; set { _explicitNullValueDnsRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_records"); else _explicitNullProperties?.Remove("dns_records"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueDnsRecords = default!;
 #endif
         /// <summary>The lb property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Lb { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Lb { get => _explicitNullValueLb; set { _explicitNullValueLb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lb"); else _explicitNullProperties?.Remove("lb"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueLb = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Lb { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Lb { get => _explicitNullValueLb; set { _explicitNullValueLb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lb"); else _explicitNullProperties?.Remove("lb"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueLb = default!;
 #endif
         /// <summary>The logs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Logs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueLogs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Logs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueLogs = default!;
 #endif
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Organization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Organization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueOrganization = default!;
 #endif
         /// <summary>The ssl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Ssl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueSsl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Ssl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueSsl = default!;
 #endif
         /// <summary>The waf property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Waf { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Waf { get => _explicitNullValueWaf; set { _explicitNullValueWaf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waf"); else _explicitNullProperties?.Remove("waf"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueWaf = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Waf { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Waf { get => _explicitNullValueWaf; set { _explicitNullValueWaf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waf"); else _explicitNullProperties?.Remove("waf"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueWaf = default!;
 #endif
         /// <summary>The zones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Zones { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? Zones { get => _explicitNullValueZones; set { _explicitNullValueZones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zones"); else _explicitNullProperties?.Remove("zones"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueZones = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Zones { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants Zones { get => _explicitNullValueZones; set { _explicitNullValueZones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zones"); else _explicitNullProperties?.Remove("zones"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueZones = default!;
 #endif
         /// <summary>The zone_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? ZoneSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? ZoneSettings { get => _explicitNullValueZoneSettings; set { _explicitNullValueZoneSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_settings"); else _explicitNullProperties?.Remove("zone_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants? _explicitNullValueZoneSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants ZoneSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants ZoneSettings { get => _explicitNullValueZoneSettings; set { _explicitNullValueZoneSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_settings"); else _explicitNullProperties?.Remove("zone_settings"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants _explicitNullValueZoneSettings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembershipPermissions"/> and sets the default values.
@@ -126,7 +169,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembershipPermissions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembershipPermissions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembershipPermissions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,6 +212,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants>("waf", Waf);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants>("zones", Zones);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants>("zone_settings", ZoneSettings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

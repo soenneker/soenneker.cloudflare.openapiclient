@@ -55,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Logs.Audit.Item.
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2HistoryNotFound.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AaaApiResponseCommonFailure2.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgHistoryResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgHistoryResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,30 +12,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrapiPostCrawlRequestAnyOf2JsonOptions : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_ai") is { } nullNodeCustomAi && nullNodeCustomAi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomAi = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("response_format") is { } nullNodeResponseFormat && nullNodeResponseFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFormat = null;
+        }
+
         /// <summary>Optional list of custom AI models to use for the request. The models will be tried in the order provided, and in case a model returns an error, the next one will be used as fallback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsCustomAiItem>? CustomAi { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsCustomAiItem>? CustomAi { get => _explicitNullValueCustomAi; set { _explicitNullValueCustomAi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_ai"); else _explicitNullProperties?.Remove("custom_ai"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsCustomAiItem>? _explicitNullValueCustomAi = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsCustomAiItem> CustomAi { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsCustomAiItem> CustomAi { get => _explicitNullValueCustomAi; set { _explicitNullValueCustomAi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_ai"); else _explicitNullProperties?.Remove("custom_ai"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsCustomAiItem> _explicitNullValueCustomAi = default!;
 #endif
         /// <summary>The prompt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>The response_format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsResponseFormat? ResponseFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsResponseFormat? ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsResponseFormat? _explicitNullValueResponseFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsResponseFormat ResponseFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsResponseFormat ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsResponseFormat _explicitNullValueResponseFormat = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsCustomAiItem>("custom_ai", CustomAi);
             writer.WriteStringValue("prompt", Prompt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsResponseFormat>("response_format", ResponseFormat);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2JsonOptionsResponseFormat>("response_format", ResponseFormat);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

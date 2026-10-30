@@ -11,17 +11,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MetricsExportUpsertRequestRequester : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("requesterId") is { } nullNodeRequesterId && nullNodeRequesterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequesterId = null;
+            if (parseNode.GetChildNode("requesterType") is { } nullNodeRequesterType && nullNodeRequesterType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequesterType = null;
+        }
+
         /// <summary>The requesterId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequesterId { get; set; }
+        public string? RequesterId { get => _explicitNullValueRequesterId; set { _explicitNullValueRequesterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requesterId"); else _explicitNullProperties?.Remove("requesterId"); } }
+        private string? _explicitNullValueRequesterId = default!;
 #nullable restore
 #else
-        public string RequesterId { get; set; }
+        public string RequesterId { get => _explicitNullValueRequesterId; set { _explicitNullValueRequesterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requesterId"); else _explicitNullProperties?.Remove("requesterId"); } }
+        private string _explicitNullValueRequesterId = default!;
 #endif
         /// <summary>The requesterType property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersRequesterType? RequesterType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersRequesterType? RequesterType { get => _explicitNullValueRequesterType; set { _explicitNullValueRequesterType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requesterType"); else _explicitNullProperties?.Remove("requesterType"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersRequesterType? _explicitNullValueRequesterType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MetricsExportUpsertRequestRequester CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MetricsExportUpsertRequestRequester();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MetricsExportUpsertRequestRequester(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("requesterId", RequesterId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersRequesterType>("requesterType", RequesterType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersRequesterType>("requesterType", RequesterType);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

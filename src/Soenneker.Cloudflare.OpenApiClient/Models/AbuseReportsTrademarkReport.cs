@@ -11,126 +11,181 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AbuseReportsTrademarkReport : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("act") is { } nullNodeAct && nullNodeAct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Act = null;
+            if (parseNode.GetChildNode("comments") is { } nullNodeComments && nullNodeComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comments = null;
+            if (parseNode.GetChildNode("company") is { } nullNodeCompany && nullNodeCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Company = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("email2") is { } nullNodeEmail2 && nullNodeEmail2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email2 = null;
+            if (parseNode.GetChildNode("host_notification") is { } nullNodeHostNotification && nullNodeHostNotification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostNotification = null;
+            if (parseNode.GetChildNode("justification") is { } nullNodeJustification && nullNodeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Justification = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("owner_notification") is { } nullNodeOwnerNotification && nullNodeOwnerNotification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerNotification = null;
+            if (parseNode.GetChildNode("reported_country") is { } nullNodeReportedCountry && nullNodeReportedCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportedCountry = null;
+            if (parseNode.GetChildNode("reported_user_agent") is { } nullNodeReportedUserAgent && nullNodeReportedUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportedUserAgent = null;
+            if (parseNode.GetChildNode("tele") is { } nullNodeTele && nullNodeTele.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tele = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("trademark_number") is { } nullNodeTrademarkNumber && nullNodeTrademarkNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrademarkNumber = null;
+            if (parseNode.GetChildNode("trademark_office") is { } nullNodeTrademarkOffice && nullNodeTrademarkOffice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrademarkOffice = null;
+            if (parseNode.GetChildNode("trademark_symbol") is { } nullNodeTrademarkSymbol && nullNodeTrademarkSymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrademarkSymbol = null;
+            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+        }
+
         /// <summary>The report type for submitted reports.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseTrademarkAct? Act { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseTrademarkAct? Act { get => _explicitNullValueAct; set { _explicitNullValueAct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("act"); else _explicitNullProperties?.Remove("act"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseTrademarkAct? _explicitNullValueAct = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Any additional comments about the infringement not exceeding 2000 characters. Comments are kept internal to Cloudflare and not shared with the host or customer as part of regular processing. For delegated reports, comments may be shared in full.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comments { get; set; }
+        public string? Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        private string? _explicitNullValueComments = default!;
 #nullable restore
 #else
-        public string Comments { get; set; }
+        public string Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        private string _explicitNullValueComments = default!;
 #endif
         /// <summary>Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Company { get; set; }
+        public string? Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private string? _explicitNullValueCompany = default!;
 #nullable restore
 #else
-        public string Company { get; set; }
+        public string Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private string _explicitNullValueCompany = default!;
 #endif
         /// <summary>A valid email of the abuse reporter. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>Should match the value provided in `email`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email2 { get; set; }
+        public string? Email2 { get => _explicitNullValueEmail2; set { _explicitNullValueEmail2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email2"); else _explicitNullProperties?.Remove("email2"); } }
+        private string? _explicitNullValueEmail2 = default!;
 #nullable restore
 #else
-        public string Email2 { get; set; }
+        public string Email2 { get => _explicitNullValueEmail2; set { _explicitNullValueEmail2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email2"); else _explicitNullProperties?.Remove("email2"); } }
+        private string _explicitNullValueEmail2 = default!;
 #endif
         /// <summary>Notification type based on the abuse type. For delegated reports, the report—including contact information and comments—will be forwarded to the customer in full regardless of this value. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SendHostNotification? HostNotification { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SendHostNotification? HostNotification { get => _explicitNullValueHostNotification; set { _explicitNullValueHostNotification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_notification"); else _explicitNullProperties?.Remove("host_notification"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SendHostNotification? _explicitNullValueHostNotification = default!;
         /// <summary>A detailed description of the infringement, including any necessary access details and the exact steps needed to view the content, not exceeding 5000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification { get; set; }
+        public string? Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        private string? _explicitNullValueJustification = default!;
 #nullable restore
 #else
-        public string Justification { get; set; }
+        public string Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        private string _explicitNullValueJustification = default!;
 #endif
         /// <summary>Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Notification type based on the abuse type. For delegated reports, the report—including contact information and comments—will be forwarded to the customer in full regardless of this value. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SendOwnerNotification? OwnerNotification { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SendOwnerNotification? OwnerNotification { get => _explicitNullValueOwnerNotification; set { _explicitNullValueOwnerNotification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_notification"); else _explicitNullProperties?.Remove("owner_notification"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SendOwnerNotification? _explicitNullValueOwnerNotification = default!;
         /// <summary>Text containing 2 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportedCountry { get; set; }
+        public string? ReportedCountry { get => _explicitNullValueReportedCountry; set { _explicitNullValueReportedCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reported_country"); else _explicitNullProperties?.Remove("reported_country"); } }
+        private string? _explicitNullValueReportedCountry = default!;
 #nullable restore
 #else
-        public string ReportedCountry { get; set; }
+        public string ReportedCountry { get => _explicitNullValueReportedCountry; set { _explicitNullValueReportedCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reported_country"); else _explicitNullProperties?.Remove("reported_country"); } }
+        private string _explicitNullValueReportedCountry = default!;
 #endif
         /// <summary>Text not exceeding 255 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportedUserAgent { get; set; }
+        public string? ReportedUserAgent { get => _explicitNullValueReportedUserAgent; set { _explicitNullValueReportedUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reported_user_agent"); else _explicitNullProperties?.Remove("reported_user_agent"); } }
+        private string? _explicitNullValueReportedUserAgent = default!;
 #nullable restore
 #else
-        public string ReportedUserAgent { get; set; }
+        public string ReportedUserAgent { get => _explicitNullValueReportedUserAgent; set { _explicitNullValueReportedUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reported_user_agent"); else _explicitNullProperties?.Remove("reported_user_agent"); } }
+        private string _explicitNullValueReportedUserAgent = default!;
 #endif
         /// <summary>Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tele { get; set; }
+        public string? Tele { get => _explicitNullValueTele; set { _explicitNullValueTele = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tele"); else _explicitNullProperties?.Remove("tele"); } }
+        private string? _explicitNullValueTele = default!;
 #nullable restore
 #else
-        public string Tele { get; set; }
+        public string Tele { get => _explicitNullValueTele; set { _explicitNullValueTele = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tele"); else _explicitNullProperties?.Remove("tele"); } }
+        private string _explicitNullValueTele = default!;
 #endif
         /// <summary>Text not exceeding 255 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>Text not exceeding 1000 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrademarkNumber { get; set; }
+        public string? TrademarkNumber { get => _explicitNullValueTrademarkNumber; set { _explicitNullValueTrademarkNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademark_number"); else _explicitNullProperties?.Remove("trademark_number"); } }
+        private string? _explicitNullValueTrademarkNumber = default!;
 #nullable restore
 #else
-        public string TrademarkNumber { get; set; }
+        public string TrademarkNumber { get => _explicitNullValueTrademarkNumber; set { _explicitNullValueTrademarkNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademark_number"); else _explicitNullProperties?.Remove("trademark_number"); } }
+        private string _explicitNullValueTrademarkNumber = default!;
 #endif
         /// <summary>Text not exceeding 1000 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrademarkOffice { get; set; }
+        public string? TrademarkOffice { get => _explicitNullValueTrademarkOffice; set { _explicitNullValueTrademarkOffice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademark_office"); else _explicitNullProperties?.Remove("trademark_office"); } }
+        private string? _explicitNullValueTrademarkOffice = default!;
 #nullable restore
 #else
-        public string TrademarkOffice { get; set; }
+        public string TrademarkOffice { get => _explicitNullValueTrademarkOffice; set { _explicitNullValueTrademarkOffice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademark_office"); else _explicitNullProperties?.Remove("trademark_office"); } }
+        private string _explicitNullValueTrademarkOffice = default!;
 #endif
         /// <summary>Text not exceeding 1000 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrademarkSymbol { get; set; }
+        public string? TrademarkSymbol { get => _explicitNullValueTrademarkSymbol; set { _explicitNullValueTrademarkSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademark_symbol"); else _explicitNullProperties?.Remove("trademark_symbol"); } }
+        private string? _explicitNullValueTrademarkSymbol = default!;
 #nullable restore
 #else
-        public string TrademarkSymbol { get; set; }
+        public string TrademarkSymbol { get => _explicitNullValueTrademarkSymbol; set { _explicitNullValueTrademarkSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trademark_symbol"); else _explicitNullProperties?.Remove("trademark_symbol"); } }
+        private string _explicitNullValueTrademarkSymbol = default!;
 #endif
         /// <summary>A list of valid URLs separated by ‘\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Urls { get; set; }
+        public string? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private string? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public string Urls { get; set; }
+        public string Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private string _explicitNullValueUrls = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsTrademarkReport"/> and sets the default values.
@@ -147,7 +202,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsTrademarkReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsTrademarkReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsTrademarkReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -200,6 +255,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("trademark_office", TrademarkOffice);
             writer.WriteStringValue("trademark_symbol", TrademarkSymbol);
             writer.WriteStringValue("urls", Urls);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

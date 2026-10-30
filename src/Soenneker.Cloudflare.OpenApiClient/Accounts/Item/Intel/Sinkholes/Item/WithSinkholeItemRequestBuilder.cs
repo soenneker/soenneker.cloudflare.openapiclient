@@ -61,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Sinkholes.Item
             {
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesApiResponseCommonFailure2.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesApiResponseCommonFailure2.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesApiResponseSingleEmpty>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesApiResponseSingleEmpty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -84,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Sinkholes.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesApiResponseCommonFailure2.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesSinkholeSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesSinkholeSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -109,6 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Sinkholes.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesApiResponseCommonFailure2.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesApiResponseSingleEmpty>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholesApiResponseSingleEmpty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

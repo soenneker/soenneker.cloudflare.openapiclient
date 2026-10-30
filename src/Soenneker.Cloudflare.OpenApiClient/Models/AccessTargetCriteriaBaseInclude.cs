@@ -12,22 +12,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessTargetCriteriaBaseInclude : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("target_attributes") is { } nullNodeTargetAttributes && nullNodeTargetAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetAttributes = null;
+        }
+
         /// <summary>Map of target tag keys to values. Values within a key are OR&apos;d.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTagsProperty? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTagsProperty? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTagsProperty? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTagsProperty Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTagsProperty Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTagsProperty _explicitNullValueTags = default!;
 #endif
         /// <summary>Hostname selector map for include, require, or exclude rules. This is distinct from the deprecated top-level target_attributes field and only supports the hostname key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTargetAttributes? TargetAttributes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTargetAttributes? TargetAttributes { get => _explicitNullValueTargetAttributes; set { _explicitNullValueTargetAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_attributes"); else _explicitNullProperties?.Remove("target_attributes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTargetAttributes? _explicitNullValueTargetAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTargetAttributes TargetAttributes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTargetAttributes TargetAttributes { get => _explicitNullValueTargetAttributes; set { _explicitNullValueTargetAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_attributes"); else _explicitNullProperties?.Remove("target_attributes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTargetAttributes _explicitNullValueTargetAttributes = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaBaseInclude CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaBaseInclude();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaBaseInclude(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +72,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTagsProperty>("tags", Tags);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTargetAttributes>("target_attributes", TargetAttributes);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetRuleTargetAttributes>("target_attributes", TargetAttributes);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

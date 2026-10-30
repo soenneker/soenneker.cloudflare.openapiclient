@@ -12,24 +12,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcContainersModifyApplicationConfiguration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorized_keys") is { } nullNodeAuthorizedKeys && nullNodeAuthorizedKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedKeys = null;
+            if (parseNode.GetChildNode("wrangler_ssh") is { } nullNodeWranglerSsh && nullNodeWranglerSsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WranglerSsh = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authorized_keys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>? AuthorizedKeys { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>? AuthorizedKeys { get => _explicitNullValueAuthorizedKeys; set { _explicitNullValueAuthorizedKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_keys"); else _explicitNullProperties?.Remove("authorized_keys"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>? _explicitNullValueAuthorizedKeys = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey> AuthorizedKeys { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey> AuthorizedKeys { get => _explicitNullValueAuthorizedKeys; set { _explicitNullValueAuthorizedKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_keys"); else _explicitNullProperties?.Remove("authorized_keys"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey> _explicitNullValueAuthorizedKeys = default!;
 #endif
         /// <summary>Configuration properties for connecting with SSH to a container using Wrangler.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig? WranglerSsh { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig? WranglerSsh { get => _explicitNullValueWranglerSsh; set { _explicitNullValueWranglerSsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrangler_ssh"); else _explicitNullProperties?.Remove("wrangler_ssh"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig? _explicitNullValueWranglerSsh = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig WranglerSsh { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig WranglerSsh { get => _explicitNullValueWranglerSsh; set { _explicitNullValueWranglerSsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrangler_ssh"); else _explicitNullProperties?.Remove("wrangler_ssh"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig _explicitNullValueWranglerSsh = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersModifyApplicationConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>("authorized_keys", AuthorizedKeys);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig>("wrangler_ssh", WranglerSsh);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

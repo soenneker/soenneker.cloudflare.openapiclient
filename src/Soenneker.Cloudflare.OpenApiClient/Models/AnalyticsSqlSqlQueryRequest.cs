@@ -11,38 +11,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AnalyticsSqlSqlQueryRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("time_range") is { } nullNodeTimeRange && nullNodeTimeRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeRange = null;
+        }
+
         /// <summary>Positional array values for `$1`, `$2`, and similar placeholders, or named object values for placeholders such as `$status`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Params { get; set; }
+        public List<string>? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        private List<string>? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public UntypedNode Params { get; set; }
+        public List<string> Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        private List<string> _explicitNullValueParams = default!;
 #endif
         /// <summary>SQL query to execute. A trailing FORMAT selects JSON, JSONEachRow, TabSeparated, or TSV output on any dataset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>Account or zone scope applied to the query. Include exactly one scope tag. Do not include account or zone tenancy predicates in the SQL query when this field is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope? Scope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope? _explicitNullValueScope = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope Scope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope _explicitNullValueScope = default!;
 #endif
         /// <summary>Time bounds applied to the dataset&apos;s timestamp column. Do not include timestamp predicates in the SQL query when this field is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange? TimeRange { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange? TimeRange { get => _explicitNullValueTimeRange; set { _explicitNullValueTimeRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_range"); else _explicitNullProperties?.Remove("time_range"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange? _explicitNullValueTimeRange = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange TimeRange { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange TimeRange { get => _explicitNullValueTimeRange; set { _explicitNullValueTimeRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_range"); else _explicitNullProperties?.Remove("time_range"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange _explicitNullValueTimeRange = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "params", n => { Params = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "params", n => { Params = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope>(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope.CreateFromDiscriminatorValue); } },
                 { "time_range", n => { TimeRange = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange>(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange.CreateFromDiscriminatorValue); } },
@@ -75,10 +94,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("params", Params);
+            writer.WriteCollectionOfPrimitiveValues<string>("params", Params);
             writer.WriteStringValue("query", Query);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope>("scope", Scope);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange>("time_range", TimeRange);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange>("time_range", TimeRange);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

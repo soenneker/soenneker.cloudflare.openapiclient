@@ -12,18 +12,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BotManagementSbfmDefinitelyConfigAllOf2StaleZoneConfiguration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fight_mode") is { } nullNodeFightMode && nullNodeFightMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FightMode = null;
+            if (parseNode.GetChildNode("sbfm_likely_automated") is { } nullNodeSbfmLikelyAutomated && nullNodeSbfmLikelyAutomated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SbfmLikelyAutomated = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates that the zone&apos;s Bot Fight Mode is turned on.</summary>
-        public bool? FightMode { get; set; }
+        public bool? FightMode { get => _explicitNullValueFightMode; set { _explicitNullValueFightMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fight_mode"); else _explicitNullProperties?.Remove("fight_mode"); } }
+        private bool? _explicitNullValueFightMode = default!;
         /// <summary>Indicates that the zone&apos;s likely automated requests are being blocked or challenged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SbfmLikelyAutomated { get; set; }
+        public string? SbfmLikelyAutomated { get => _explicitNullValueSbfmLikelyAutomated; set { _explicitNullValueSbfmLikelyAutomated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_likely_automated"); else _explicitNullProperties?.Remove("sbfm_likely_automated"); } }
+        private string? _explicitNullValueSbfmLikelyAutomated = default!;
 #nullable restore
 #else
-        public string SbfmLikelyAutomated { get; set; }
+        public string SbfmLikelyAutomated { get => _explicitNullValueSbfmLikelyAutomated; set { _explicitNullValueSbfmLikelyAutomated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_likely_automated"); else _explicitNullProperties?.Remove("sbfm_likely_automated"); } }
+        private string _explicitNullValueSbfmLikelyAutomated = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementSbfmDefinitelyConfigAllOf2StaleZoneConfiguration"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementSbfmDefinitelyConfigAllOf2StaleZoneConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementSbfmDefinitelyConfigAllOf2StaleZoneConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementSbfmDefinitelyConfigAllOf2StaleZoneConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("fight_mode", FightMode);
             writer.WriteStringValue("sbfm_likely_automated", SbfmLikelyAutomated);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

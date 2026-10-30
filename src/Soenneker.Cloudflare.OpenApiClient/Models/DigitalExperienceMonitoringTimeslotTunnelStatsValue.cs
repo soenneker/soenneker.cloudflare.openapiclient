@@ -12,75 +12,108 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DigitalExperienceMonitoringTimeslotTunnelStatsValue : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bytesLost") is { } nullNodeBytesLost && nullNodeBytesLost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesLost = null;
+            if (parseNode.GetChildNode("bytesReceived") is { } nullNodeBytesReceived && nullNodeBytesReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesReceived = null;
+            if (parseNode.GetChildNode("bytesRetransmitted") is { } nullNodeBytesRetransmitted && nullNodeBytesRetransmitted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesRetransmitted = null;
+            if (parseNode.GetChildNode("bytesSent") is { } nullNodeBytesSent && nullNodeBytesSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesSent = null;
+            if (parseNode.GetChildNode("packetsLost") is { } nullNodePacketsLost && nullNodePacketsLost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsLost = null;
+            if (parseNode.GetChildNode("packetsReceived") is { } nullNodePacketsReceived && nullNodePacketsReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsReceived = null;
+            if (parseNode.GetChildNode("packetsRetransmitted") is { } nullNodePacketsRetransmitted && nullNodePacketsRetransmitted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsRetransmitted = null;
+            if (parseNode.GetChildNode("packetsSent") is { } nullNodePacketsSent && nullNodePacketsSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsSent = null;
+            if (parseNode.GetChildNode("statsWindowMs") is { } nullNodeStatsWindowMs && nullNodeStatsWindowMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatsWindowMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of bytes lost, split by direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesLost? BytesLost { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesLost? BytesLost { get => _explicitNullValueBytesLost; set { _explicitNullValueBytesLost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesLost"); else _explicitNullProperties?.Remove("bytesLost"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesLost? _explicitNullValueBytesLost = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesLost BytesLost { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesLost BytesLost { get => _explicitNullValueBytesLost; set { _explicitNullValueBytesLost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesLost"); else _explicitNullProperties?.Remove("bytesLost"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesLost _explicitNullValueBytesLost = default!;
 #endif
         /// <summary>Number of bytes received, split by direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesReceived? BytesReceived { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesReceived? BytesReceived { get => _explicitNullValueBytesReceived; set { _explicitNullValueBytesReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesReceived"); else _explicitNullProperties?.Remove("bytesReceived"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesReceived? _explicitNullValueBytesReceived = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesReceived BytesReceived { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesReceived BytesReceived { get => _explicitNullValueBytesReceived; set { _explicitNullValueBytesReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesReceived"); else _explicitNullProperties?.Remove("bytesReceived"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesReceived _explicitNullValueBytesReceived = default!;
 #endif
         /// <summary>Number of bytes retransmitted, split by direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesRetransmitted? BytesRetransmitted { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesRetransmitted? BytesRetransmitted { get => _explicitNullValueBytesRetransmitted; set { _explicitNullValueBytesRetransmitted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesRetransmitted"); else _explicitNullProperties?.Remove("bytesRetransmitted"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesRetransmitted? _explicitNullValueBytesRetransmitted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesRetransmitted BytesRetransmitted { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesRetransmitted BytesRetransmitted { get => _explicitNullValueBytesRetransmitted; set { _explicitNullValueBytesRetransmitted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesRetransmitted"); else _explicitNullProperties?.Remove("bytesRetransmitted"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesRetransmitted _explicitNullValueBytesRetransmitted = default!;
 #endif
         /// <summary>Number of bytes sent, split by direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesSent? BytesSent { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesSent? BytesSent { get => _explicitNullValueBytesSent; set { _explicitNullValueBytesSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesSent"); else _explicitNullProperties?.Remove("bytesSent"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesSent? _explicitNullValueBytesSent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesSent BytesSent { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesSent BytesSent { get => _explicitNullValueBytesSent; set { _explicitNullValueBytesSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesSent"); else _explicitNullProperties?.Remove("bytesSent"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsBytesSent _explicitNullValueBytesSent = default!;
 #endif
         /// <summary>Number of packets lost, split by direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsLost? PacketsLost { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsLost? PacketsLost { get => _explicitNullValuePacketsLost; set { _explicitNullValuePacketsLost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetsLost"); else _explicitNullProperties?.Remove("packetsLost"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsLost? _explicitNullValuePacketsLost = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsLost PacketsLost { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsLost PacketsLost { get => _explicitNullValuePacketsLost; set { _explicitNullValuePacketsLost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetsLost"); else _explicitNullProperties?.Remove("packetsLost"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsLost _explicitNullValuePacketsLost = default!;
 #endif
         /// <summary>Number of packets received, split by direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsReceived? PacketsReceived { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsReceived? PacketsReceived { get => _explicitNullValuePacketsReceived; set { _explicitNullValuePacketsReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetsReceived"); else _explicitNullProperties?.Remove("packetsReceived"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsReceived? _explicitNullValuePacketsReceived = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsReceived PacketsReceived { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsReceived PacketsReceived { get => _explicitNullValuePacketsReceived; set { _explicitNullValuePacketsReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetsReceived"); else _explicitNullProperties?.Remove("packetsReceived"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsReceived _explicitNullValuePacketsReceived = default!;
 #endif
         /// <summary>Number of packets retransmitted, split by direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsRetransmitted? PacketsRetransmitted { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsRetransmitted? PacketsRetransmitted { get => _explicitNullValuePacketsRetransmitted; set { _explicitNullValuePacketsRetransmitted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetsRetransmitted"); else _explicitNullProperties?.Remove("packetsRetransmitted"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsRetransmitted? _explicitNullValuePacketsRetransmitted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsRetransmitted PacketsRetransmitted { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsRetransmitted PacketsRetransmitted { get => _explicitNullValuePacketsRetransmitted; set { _explicitNullValuePacketsRetransmitted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetsRetransmitted"); else _explicitNullProperties?.Remove("packetsRetransmitted"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsRetransmitted _explicitNullValuePacketsRetransmitted = default!;
 #endif
         /// <summary>Number of packets sent, split by direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsSent? PacketsSent { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsSent? PacketsSent { get => _explicitNullValuePacketsSent; set { _explicitNullValuePacketsSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetsSent"); else _explicitNullProperties?.Remove("packetsSent"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsSent? _explicitNullValuePacketsSent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsSent PacketsSent { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsSent PacketsSent { get => _explicitNullValuePacketsSent; set { _explicitNullValuePacketsSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetsSent"); else _explicitNullProperties?.Remove("packetsSent"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsSent _explicitNullValuePacketsSent = default!;
 #endif
         /// <summary>The measurement window duration in milliseconds.</summary>
-        public int? StatsWindowMs { get; set; }
+        public int? StatsWindowMs { get => _explicitNullValueStatsWindowMs; set { _explicitNullValueStatsWindowMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statsWindowMs"); else _explicitNullProperties?.Remove("statsWindowMs"); } }
+        private int? _explicitNullValueStatsWindowMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStatsValue"/> and sets the default values.
         /// </summary>
@@ -96,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStatsValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStatsValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotTunnelStatsValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -133,6 +166,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsRetransmitted>("packetsRetransmitted", PacketsRetransmitted);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTunnelStatsPacketsSent>("packetsSent", PacketsSent);
             writer.WriteIntValue("statsWindowMs", StatsWindowMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

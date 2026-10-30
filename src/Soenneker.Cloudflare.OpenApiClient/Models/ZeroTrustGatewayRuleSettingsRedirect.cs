@@ -12,20 +12,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGatewayRuleSettingsRedirect : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("include_context") is { } nullNodeIncludeContext && nullNodeIncludeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeContext = null;
+            if (parseNode.GetChildNode("preserve_path_and_query") is { } nullNodePreservePathAndQuery && nullNodePreservePathAndQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreservePathAndQuery = null;
+            if (parseNode.GetChildNode("target_uri") is { } nullNodeTargetUri && nullNodeTargetUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetUri = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to pass the context information as query parameters.</summary>
-        public bool? IncludeContext { get; set; }
+        public bool? IncludeContext { get => _explicitNullValueIncludeContext; set { _explicitNullValueIncludeContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_context"); else _explicitNullProperties?.Remove("include_context"); } }
+        private bool? _explicitNullValueIncludeContext = default!;
         /// <summary>Specify whether to append the path and query parameters from the original request to target_uri.</summary>
-        public bool? PreservePathAndQuery { get; set; }
+        public bool? PreservePathAndQuery { get => _explicitNullValuePreservePathAndQuery; set { _explicitNullValuePreservePathAndQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_path_and_query"); else _explicitNullProperties?.Remove("preserve_path_and_query"); } }
+        private bool? _explicitNullValuePreservePathAndQuery = default!;
         /// <summary>Specify the URI to which the user is redirected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetUri { get; set; }
+        public string? TargetUri { get => _explicitNullValueTargetUri; set { _explicitNullValueTargetUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_uri"); else _explicitNullProperties?.Remove("target_uri"); } }
+        private string? _explicitNullValueTargetUri = default!;
 #nullable restore
 #else
-        public string TargetUri { get; set; }
+        public string TargetUri { get => _explicitNullValueTargetUri; set { _explicitNullValueTargetUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_uri"); else _explicitNullProperties?.Remove("target_uri"); } }
+        private string _explicitNullValueTargetUri = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect"/> and sets the default values.
@@ -42,7 +56,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsRedirect(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("include_context", IncludeContext);
             writer.WriteBoolValue("preserve_path_and_query", PreservePathAndQuery);
             writer.WriteStringValue("target_uri", TargetUri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

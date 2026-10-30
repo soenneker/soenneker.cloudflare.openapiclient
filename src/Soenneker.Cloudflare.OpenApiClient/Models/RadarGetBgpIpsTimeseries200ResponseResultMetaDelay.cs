@@ -11,29 +11,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RadarGetBgpIpsTimeseries200ResponseResultMetaDelay : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("asn_data") is { } nullNodeAsnData && nullNodeAsnData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnData = null;
+            if (parseNode.GetChildNode("country_data") is { } nullNodeCountryData && nullNodeCountryData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryData = null;
+            if (parseNode.GetChildNode("healthy") is { } nullNodeHealthy && nullNodeHealthy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Healthy = null;
+            if (parseNode.GetChildNode("nowTs") is { } nullNodeNowTs && nullNodeNowTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NowTs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asn_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayAsnData? AsnData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayAsnData? AsnData { get => _explicitNullValueAsnData; set { _explicitNullValueAsnData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn_data"); else _explicitNullProperties?.Remove("asn_data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayAsnData? _explicitNullValueAsnData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayAsnData AsnData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayAsnData AsnData { get => _explicitNullValueAsnData; set { _explicitNullValueAsnData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn_data"); else _explicitNullProperties?.Remove("asn_data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayAsnData _explicitNullValueAsnData = default!;
 #endif
         /// <summary>The country_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayCountryData? CountryData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayCountryData? CountryData { get => _explicitNullValueCountryData; set { _explicitNullValueCountryData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_data"); else _explicitNullProperties?.Remove("country_data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayCountryData? _explicitNullValueCountryData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayCountryData CountryData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayCountryData CountryData { get => _explicitNullValueCountryData; set { _explicitNullValueCountryData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_data"); else _explicitNullProperties?.Remove("country_data"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayCountryData _explicitNullValueCountryData = default!;
 #endif
         /// <summary>The healthy property</summary>
-        public bool? Healthy { get; set; }
+        public bool? Healthy { get => _explicitNullValueHealthy; set { _explicitNullValueHealthy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthy"); else _explicitNullProperties?.Remove("healthy"); } }
+        private bool? _explicitNullValueHealthy = default!;
         /// <summary>The nowTs property</summary>
-        public double? NowTs { get; set; }
+        public double? NowTs { get => _explicitNullValueNowTs; set { _explicitNullValueNowTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nowTs"); else _explicitNullProperties?.Remove("nowTs"); } }
+        private double? _explicitNullValueNowTs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelay"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelay CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelay();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelay(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTimeseries200ResponseResultMetaDelayCountryData>("country_data", CountryData);
             writer.WriteBoolValue("healthy", Healthy);
             writer.WriteDoubleValue("nowTs", NowTs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

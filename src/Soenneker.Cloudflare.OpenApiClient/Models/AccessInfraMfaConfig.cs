@@ -12,26 +12,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessInfraMfaConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_authenticators") is { } nullNodeAllowedAuthenticators && nullNodeAllowedAuthenticators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedAuthenticators = null;
+            if (parseNode.GetChildNode("mfa_disabled") is { } nullNodeMfaDisabled && nullNodeMfaDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaDisabled = null;
+            if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the MFA methods that users can authenticate with. For infrastructure applications, supported values are `piv_key` and `ssh_fido2_key`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfigAllowedAuthenticatorsItem?>? AllowedAuthenticators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfigAllowedAuthenticatorsItem?>? AllowedAuthenticators { get => _explicitNullValueAllowedAuthenticators; set { _explicitNullValueAllowedAuthenticators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_authenticators"); else _explicitNullProperties?.Remove("allowed_authenticators"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfigAllowedAuthenticatorsItem?>? _explicitNullValueAllowedAuthenticators = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfigAllowedAuthenticatorsItem?> AllowedAuthenticators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfigAllowedAuthenticatorsItem?> AllowedAuthenticators { get => _explicitNullValueAllowedAuthenticators; set { _explicitNullValueAllowedAuthenticators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_authenticators"); else _explicitNullProperties?.Remove("allowed_authenticators"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfigAllowedAuthenticatorsItem?> _explicitNullValueAllowedAuthenticators = default!;
 #endif
         /// <summary>Indicates whether to disable MFA for this resource. This option is available at the application and policy level.</summary>
-        public bool? MfaDisabled { get; set; }
+        public bool? MfaDisabled { get => _explicitNullValueMfaDisabled; set { _explicitNullValueMfaDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_disabled"); else _explicitNullProperties?.Remove("mfa_disabled"); } }
+        private bool? _explicitNullValueMfaDisabled = default!;
         /// <summary>Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples: `5m` or `24h`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionDuration { get; set; }
+        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string? _explicitNullValueSessionDuration = default!;
 #nullable restore
 #else
-        public string SessionDuration { get; set; }
+        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string _explicitNullValueSessionDuration = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfigAllowedAuthenticatorsItem>("allowed_authenticators", AllowedAuthenticators);
             writer.WriteBoolValue("mfa_disabled", MfaDisabled);
             writer.WriteStringValue("session_duration", SessionDuration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

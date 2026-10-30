@@ -11,40 +11,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CustomHostnameForAZoneEditCustomHostnameRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_metadata") is { } nullNodeCustomMetadata && nullNodeCustomMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomMetadata = null;
+            if (parseNode.GetChildNode("custom_origin_server") is { } nullNodeCustomOriginServer && nullNodeCustomOriginServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomOriginServer = null;
+            if (parseNode.GetChildNode("custom_origin_sni") is { } nullNodeCustomOriginSni && nullNodeCustomOriginSni.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomOriginSni = null;
+            if (parseNode.GetChildNode("ssl") is { } nullNodeSsl && nullNodeSsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique key/value metadata for this hostname. These are per-hostname (customer) settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequestCustomMetadata? CustomMetadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequestCustomMetadata? CustomMetadata { get => _explicitNullValueCustomMetadata; set { _explicitNullValueCustomMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_metadata"); else _explicitNullProperties?.Remove("custom_metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequestCustomMetadata? _explicitNullValueCustomMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequestCustomMetadata CustomMetadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequestCustomMetadata CustomMetadata { get => _explicitNullValueCustomMetadata; set { _explicitNullValueCustomMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_metadata"); else _explicitNullProperties?.Remove("custom_metadata"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequestCustomMetadata _explicitNullValueCustomMetadata = default!;
 #endif
         /// <summary>a valid hostname that’s been added to your DNS zone as an A, AAAA, or CNAME record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomOriginServer { get; set; }
+        public string? CustomOriginServer { get => _explicitNullValueCustomOriginServer; set { _explicitNullValueCustomOriginServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_origin_server"); else _explicitNullProperties?.Remove("custom_origin_server"); } }
+        private string? _explicitNullValueCustomOriginServer = default!;
 #nullable restore
 #else
-        public string CustomOriginServer { get; set; }
+        public string CustomOriginServer { get => _explicitNullValueCustomOriginServer; set { _explicitNullValueCustomOriginServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_origin_server"); else _explicitNullProperties?.Remove("custom_origin_server"); } }
+        private string _explicitNullValueCustomOriginServer = default!;
 #endif
         /// <summary>A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string &apos;:request_host_header:&apos; which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomOriginSni { get; set; }
+        public string? CustomOriginSni { get => _explicitNullValueCustomOriginSni; set { _explicitNullValueCustomOriginSni = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_origin_sni"); else _explicitNullProperties?.Remove("custom_origin_sni"); } }
+        private string? _explicitNullValueCustomOriginSni = default!;
 #nullable restore
 #else
-        public string CustomOriginSni { get; set; }
+        public string CustomOriginSni { get => _explicitNullValueCustomOriginSni; set { _explicitNullValueCustomOriginSni = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_origin_sni"); else _explicitNullProperties?.Remove("custom_origin_sni"); } }
+        private string _explicitNullValueCustomOriginSni = default!;
 #endif
         /// <summary>SSL properties used when creating the custom hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1? Ssl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1? Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1? _explicitNullValueSsl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1 Ssl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1 Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1 _explicitNullValueSsl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequest"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("custom_origin_server", CustomOriginServer);
             writer.WriteStringValue("custom_origin_sni", CustomOriginSni);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1>("ssl", Ssl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

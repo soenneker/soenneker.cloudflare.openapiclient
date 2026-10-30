@@ -12,13 +12,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WaitingroomCookieAttributes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("samesite") is { } nullNodeSamesite && nullNodeSamesite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Samesite = null;
+            if (parseNode.GetChildNode("secure") is { } nullNodeSecure && nullNodeSecure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secure = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configures the SameSite attribute on the waiting room cookie. Value `auto` will be translated to `lax` or `none` depending if **Always Use HTTPS** is enabled. Note that when using value `none`, the secure attribute cannot be set to `never`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSamesite? Samesite { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSamesite? Samesite { get => _explicitNullValueSamesite; set { _explicitNullValueSamesite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samesite"); else _explicitNullProperties?.Remove("samesite"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSamesite? _explicitNullValueSamesite = default!;
         /// <summary>Configures the Secure attribute on the waiting room cookie. Value `always` indicates that the Secure attribute will be set in the Set-Cookie header, `never` indicates that the Secure attribute will not be set, and `auto` will set the Secure attribute depending if **Always Use HTTPS** is enabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSecure? Secure { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSecure? Secure { get => _explicitNullValueSecure; set { _explicitNullValueSecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secure"); else _explicitNullProperties?.Remove("secure"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSecure? _explicitNullValueSecure = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSamesite>("samesite", Samesite);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSecure>("secure", Secure);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

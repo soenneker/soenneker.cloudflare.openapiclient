@@ -19,6 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows
     public partial class NetflowsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The summary property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Summary.SummaryRequestBuilder Summary
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);

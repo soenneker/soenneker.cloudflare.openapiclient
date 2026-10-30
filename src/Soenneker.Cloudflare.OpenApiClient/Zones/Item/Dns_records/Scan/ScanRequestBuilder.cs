@@ -14,19 +14,17 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\dns_records\scan
+    /// Builds and executes requests for operations under \zones\{zoneId}\dns_records\scan
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScanRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The review property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Review.ReviewRequestBuilder Review
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Review.ReviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The trigger property</summary>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Trigger.TriggerRequestBuilder Trigger
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Trigger.TriggerRequestBuilder(PathParameters, RequestAdapter);
@@ -36,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScanRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/dns_records/scan", pathParameters)
+        public ScanRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_records/scan", pathParameters)
         {
         }
         /// <summary>
@@ -44,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScanRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/dns_records/scan", rawUrl)
+        public ScanRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_records/scan", rawUrl)
         {
         }
         /// <summary>
@@ -68,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseImportScan>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseImportScan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

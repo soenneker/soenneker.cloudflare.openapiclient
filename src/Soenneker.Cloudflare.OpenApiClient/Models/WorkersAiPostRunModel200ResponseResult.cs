@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersAiPostRunModel200ResponseResult : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="byte"/> array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,59 +132,65 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResult();
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray ambiguousArray) { result.UnrecognizedValue = ambiguousArray; return result; }
             if("WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition();
+                
             }
             else if("WorkersAiPostRunModel200ResponseResultImageTextToText".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModel200ResponseResultImageTextToText = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageTextToText();
+                
             }
             else if("WorkersAiPostRunModel200ResponseResultImageToText".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModel200ResponseResultImageToText = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageToText();
+                
             }
             else if("WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings();
+                
             }
             else if("WorkersAiPostRunModel200ResponseResultSummarization".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModel200ResponseResultSummarization = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultSummarization();
+                
             }
             else if("WorkersAiPostRunModel200ResponseResultTextEmbeddings".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModel200ResponseResultTextEmbeddings = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextEmbeddings();
+                
             }
             else if("WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1();
+                
             }
             else if("WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1();
+                
             }
             else if("WorkersAiPostRunModel200ResponseResultTranslation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModel200ResponseResultTranslation = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTranslation();
+                
             }
-            else if(parseNode.GetByteArrayValue() is byte[] binaryValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetByteArrayValue() is byte[] binaryValue)
             {
                 result.Binary = binaryValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageClassificationItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageClassificationItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageClassificationItem> workersAiPostRunModel200ResponseResultImageClassificationItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageClassificationItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageClassificationItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageClassificationItem> workersAiPostRunModel200ResponseResultImageClassificationItemValue)
             {
                 result.WorkersAiPostRunModel200ResponseResultImageClassificationItem = workersAiPostRunModel200ResponseResultImageClassificationItemValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItem> workersAiPostRunModel200ResponseResultObjectDetectionItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItem> workersAiPostRunModel200ResponseResultObjectDetectionItemValue)
             {
                 result.WorkersAiPostRunModel200ResponseResultObjectDetectionItem = workersAiPostRunModel200ResponseResultObjectDetectionItemValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextClassificationItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextClassificationItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextClassificationItem> workersAiPostRunModel200ResponseResultTextClassificationItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextClassificationItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextClassificationItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextClassificationItem> workersAiPostRunModel200ResponseResultTextClassificationItemValue)
             {
                 result.WorkersAiPostRunModel200ResponseResultTextClassificationItem = workersAiPostRunModel200ResponseResultTextClassificationItemValue;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("text") != null))();
+            if (result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && result.WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultImageTextToText == null && result.WorkersAiPostRunModel200ResponseResultImageToText == null && result.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && result.WorkersAiPostRunModel200ResponseResultSummarization == null && result.WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && result.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && result.WorkersAiPostRunModel200ResponseResultTranslation == null && matchesUnionBranch0) result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition(), parseNode);
+            if (result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && result.WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultImageTextToText == null && result.WorkersAiPostRunModel200ResponseResultImageToText == null && result.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && result.WorkersAiPostRunModel200ResponseResultSummarization == null && result.WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && result.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && result.WorkersAiPostRunModel200ResponseResultTranslation == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -231,41 +242,62 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition != null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition); return; }
+            if (WorkersAiPostRunModel200ResponseResultImageTextToText != null && WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (WorkersAiPostRunModel200ResponseResultImageTextToText is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultImageTextToText); return; }
+            if (WorkersAiPostRunModel200ResponseResultImageToText != null && WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (WorkersAiPostRunModel200ResponseResultImageToText is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultImageToText); return; }
+            if (WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings != null && WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings); return; }
+            if (WorkersAiPostRunModel200ResponseResultSummarization != null && WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (WorkersAiPostRunModel200ResponseResultSummarization is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultSummarization); return; }
+            if (WorkersAiPostRunModel200ResponseResultTextEmbeddings != null && WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (WorkersAiPostRunModel200ResponseResultTextEmbeddings is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultTextEmbeddings); return; }
+            if (WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 != null && WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1); return; }
+            if (WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 != null && WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1); return; }
+            if (WorkersAiPostRunModel200ResponseResultTranslation != null && WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null) { if (WorkersAiPostRunModel200ResponseResultTranslation is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultTranslation); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition != null)
             {
+                if (WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition>(null, WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition);
             }
             else if(WorkersAiPostRunModel200ResponseResultImageTextToText != null)
             {
+                if (WorkersAiPostRunModel200ResponseResultImageTextToText is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageTextToText>(null, WorkersAiPostRunModel200ResponseResultImageTextToText);
             }
             else if(WorkersAiPostRunModel200ResponseResultImageToText != null)
             {
+                if (WorkersAiPostRunModel200ResponseResultImageToText is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageToText>(null, WorkersAiPostRunModel200ResponseResultImageToText);
             }
             else if(WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings != null)
             {
+                if (WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings>(null, WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings);
             }
             else if(WorkersAiPostRunModel200ResponseResultSummarization != null)
             {
+                if (WorkersAiPostRunModel200ResponseResultSummarization is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultSummarization>(null, WorkersAiPostRunModel200ResponseResultSummarization);
             }
             else if(WorkersAiPostRunModel200ResponseResultTextEmbeddings != null)
             {
+                if (WorkersAiPostRunModel200ResponseResultTextEmbeddings is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextEmbeddings>(null, WorkersAiPostRunModel200ResponseResultTextEmbeddings);
             }
             else if(WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 != null)
             {
+                if (WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1>(null, WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1);
             }
             else if(WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 != null)
             {
+                if (WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1>(null, WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1);
             }
             else if(WorkersAiPostRunModel200ResponseResultTranslation != null)
             {
+                if (WorkersAiPostRunModel200ResponseResultTranslation is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTranslation>(null, WorkersAiPostRunModel200ResponseResultTranslation);
             }
             else if(Binary != null)

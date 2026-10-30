@@ -12,29 +12,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageAnalyticsBillingUsageDataPoint : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("argoAcceleratedBytes") is { } nullNodeArgoAcceleratedBytes && nullNodeArgoAcceleratedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArgoAcceleratedBytes = null;
+            if (parseNode.GetChildNode("imageResizingRequests") is { } nullNodeImageResizingRequests && nullNodeImageResizingRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageResizingRequests = null;
+            if (parseNode.GetChildNode("loadBalancingQueries") is { } nullNodeLoadBalancingQueries && nullNodeLoadBalancingQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadBalancingQueries = null;
+            if (parseNode.GetChildNode("mediaUniqueTransformations") is { } nullNodeMediaUniqueTransformations && nullNodeMediaUniqueTransformations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaUniqueTransformations = null;
+            if (parseNode.GetChildNode("rateLimitingRequestsAllowed") is { } nullNodeRateLimitingRequestsAllowed && nullNodeRateLimitingRequestsAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimitingRequestsAllowed = null;
+            if (parseNode.GetChildNode("spectrumBytesTransferred") is { } nullNodeSpectrumBytesTransferred && nullNodeSpectrumBytesTransferred.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpectrumBytesTransferred = null;
+            if (parseNode.GetChildNode("streamMinutesViewed") is { } nullNodeStreamMinutesViewed && nullNodeStreamMinutesViewed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamMinutesViewed = null;
+            if (parseNode.GetChildNode("ts") is { } nullNodeTs && nullNodeTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ts = null;
+            if (parseNode.GetChildNode("workersKVReads") is { } nullNodeWorkersKVReads && nullNodeWorkersKVReads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersKVReads = null;
+            if (parseNode.GetChildNode("workersRequests") is { } nullNodeWorkersRequests && nullNodeWorkersRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersRequests = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of Argo accelerated bytes in this time period.</summary>
-        public long? ArgoAcceleratedBytes { get; set; }
+        public long? ArgoAcceleratedBytes { get => _explicitNullValueArgoAcceleratedBytes; set { _explicitNullValueArgoAcceleratedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("argoAcceleratedBytes"); else _explicitNullProperties?.Remove("argoAcceleratedBytes"); } }
+        private long? _explicitNullValueArgoAcceleratedBytes = default!;
         /// <summary>Number of Image Resizing requests in this time period.</summary>
-        public long? ImageResizingRequests { get; set; }
+        public long? ImageResizingRequests { get => _explicitNullValueImageResizingRequests; set { _explicitNullValueImageResizingRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageResizingRequests"); else _explicitNullProperties?.Remove("imageResizingRequests"); } }
+        private long? _explicitNullValueImageResizingRequests = default!;
         /// <summary>Number of Load Balancing DNS queries in this time period.</summary>
-        public long? LoadBalancingQueries { get; set; }
+        public long? LoadBalancingQueries { get => _explicitNullValueLoadBalancingQueries; set { _explicitNullValueLoadBalancingQueries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loadBalancingQueries"); else _explicitNullProperties?.Remove("loadBalancingQueries"); } }
+        private long? _explicitNullValueLoadBalancingQueries = default!;
         /// <summary>Number of Media unique image transformations in this time period.</summary>
-        public long? MediaUniqueTransformations { get; set; }
+        public long? MediaUniqueTransformations { get => _explicitNullValueMediaUniqueTransformations; set { _explicitNullValueMediaUniqueTransformations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaUniqueTransformations"); else _explicitNullProperties?.Remove("mediaUniqueTransformations"); } }
+        private long? _explicitNullValueMediaUniqueTransformations = default!;
         /// <summary>Number of Rate Limiting requests allowed in this time period.</summary>
-        public long? RateLimitingRequestsAllowed { get; set; }
+        public long? RateLimitingRequestsAllowed { get => _explicitNullValueRateLimitingRequestsAllowed; set { _explicitNullValueRateLimitingRequestsAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimitingRequestsAllowed"); else _explicitNullProperties?.Remove("rateLimitingRequestsAllowed"); } }
+        private long? _explicitNullValueRateLimitingRequestsAllowed = default!;
         /// <summary>Number of Spectrum bytes transferred in this time period.</summary>
-        public long? SpectrumBytesTransferred { get; set; }
+        public long? SpectrumBytesTransferred { get => _explicitNullValueSpectrumBytesTransferred; set { _explicitNullValueSpectrumBytesTransferred = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spectrumBytesTransferred"); else _explicitNullProperties?.Remove("spectrumBytesTransferred"); } }
+        private long? _explicitNullValueSpectrumBytesTransferred = default!;
         /// <summary>Number of Stream billable minutes viewed in this time period.</summary>
-        public long? StreamMinutesViewed { get; set; }
+        public long? StreamMinutesViewed { get => _explicitNullValueStreamMinutesViewed; set { _explicitNullValueStreamMinutesViewed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streamMinutesViewed"); else _explicitNullProperties?.Remove("streamMinutesViewed"); } }
+        private long? _explicitNullValueStreamMinutesViewed = default!;
         /// <summary>Unix timestamp (epoch seconds) for the start of this time period.</summary>
-        public long? Ts { get; set; }
+        public long? Ts { get => _explicitNullValueTs; set { _explicitNullValueTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ts"); else _explicitNullProperties?.Remove("ts"); } }
+        private long? _explicitNullValueTs = default!;
         /// <summary>Number of Workers KV reads in this time period.</summary>
-        public long? WorkersKVReads { get; set; }
+        public long? WorkersKVReads { get => _explicitNullValueWorkersKVReads; set { _explicitNullValueWorkersKVReads = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workersKVReads"); else _explicitNullProperties?.Remove("workersKVReads"); } }
+        private long? _explicitNullValueWorkersKVReads = default!;
         /// <summary>Number of Workers requests in this time period.</summary>
-        public long? WorkersRequests { get; set; }
+        public long? WorkersRequests { get => _explicitNullValueWorkersRequests; set { _explicitNullValueWorkersRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workersRequests"); else _explicitNullProperties?.Remove("workersRequests"); } }
+        private long? _explicitNullValueWorkersRequests = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UsageAnalyticsBillingUsageDataPoint"/> and sets the default values.
         /// </summary>
@@ -50,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.UsageAnalyticsBillingUsageDataPoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.UsageAnalyticsBillingUsageDataPoint();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.UsageAnalyticsBillingUsageDataPoint(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteLongValue("ts", Ts);
             writer.WriteLongValue("workersKVReads", WorkersKVReads);
             writer.WriteLongValue("workersRequests", WorkersRequests);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

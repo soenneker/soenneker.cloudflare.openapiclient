@@ -11,56 +11,86 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AutoragConfigAiSearchRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("max_num_results") is { } nullNodeMaxNumResults && nullNodeMaxNumResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxNumResults = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("ranking_options") is { } nullNodeRankingOptions && nullNodeRankingOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RankingOptions = null;
+            if (parseNode.GetChildNode("reranking") is { } nullNodeReranking && nullNodeReranking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reranking = null;
+            if (parseNode.GetChildNode("rewrite_query") is { } nullNodeRewriteQuery && nullNodeRewriteQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RewriteQuery = null;
+            if (parseNode.GetChildNode("stream") is { } nullNodeStream && nullNodeStream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stream = null;
+            if (parseNode.GetChildNode("system_prompt") is { } nullNodeSystemPrompt && nullNodeSystemPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemPrompt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestFilters? Filters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestFilters? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestFilters? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestFilters Filters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestFilters Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestFilters _explicitNullValueFilters = default!;
 #endif
         /// <summary>The max_num_results property</summary>
-        public int? MaxNumResults { get; set; }
+        public int? MaxNumResults { get => _explicitNullValueMaxNumResults; set { _explicitNullValueMaxNumResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_num_results"); else _explicitNullProperties?.Remove("max_num_results"); } }
+        private int? _explicitNullValueMaxNumResults = default!;
         /// <summary>The model property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel? Model { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel? _explicitNullValueModel = default!;
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>The ranking_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestRankingOptions? RankingOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestRankingOptions? RankingOptions { get => _explicitNullValueRankingOptions; set { _explicitNullValueRankingOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ranking_options"); else _explicitNullProperties?.Remove("ranking_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestRankingOptions? _explicitNullValueRankingOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestRankingOptions RankingOptions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestRankingOptions RankingOptions { get => _explicitNullValueRankingOptions; set { _explicitNullValueRankingOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ranking_options"); else _explicitNullProperties?.Remove("ranking_options"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestRankingOptions _explicitNullValueRankingOptions = default!;
 #endif
         /// <summary>The reranking property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestReranking? Reranking { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestReranking? Reranking { get => _explicitNullValueReranking; set { _explicitNullValueReranking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reranking"); else _explicitNullProperties?.Remove("reranking"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestReranking? _explicitNullValueReranking = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestReranking Reranking { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestReranking Reranking { get => _explicitNullValueReranking; set { _explicitNullValueReranking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reranking"); else _explicitNullProperties?.Remove("reranking"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestReranking _explicitNullValueReranking = default!;
 #endif
         /// <summary>The rewrite_query property</summary>
-        public bool? RewriteQuery { get; set; }
+        public bool? RewriteQuery { get => _explicitNullValueRewriteQuery; set { _explicitNullValueRewriteQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rewrite_query"); else _explicitNullProperties?.Remove("rewrite_query"); } }
+        private bool? _explicitNullValueRewriteQuery = default!;
         /// <summary>The stream property</summary>
-        public bool? Stream { get; set; }
+        public bool? Stream { get => _explicitNullValueStream; set { _explicitNullValueStream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream"); else _explicitNullProperties?.Remove("stream"); } }
+        private bool? _explicitNullValueStream = default!;
         /// <summary>The system_prompt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SystemPrompt { get; set; }
+        public string? SystemPrompt { get => _explicitNullValueSystemPrompt; set { _explicitNullValueSystemPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_prompt"); else _explicitNullProperties?.Remove("system_prompt"); } }
+        private string? _explicitNullValueSystemPrompt = default!;
 #nullable restore
 #else
-        public string SystemPrompt { get; set; }
+        public string SystemPrompt { get => _explicitNullValueSystemPrompt; set { _explicitNullValueSystemPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_prompt"); else _explicitNullProperties?.Remove("system_prompt"); } }
+        private string _explicitNullValueSystemPrompt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequest"/> and sets the default values.
@@ -80,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,6 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("rewrite_query", RewriteQuery);
             writer.WriteBoolValue("stream", Stream);
             writer.WriteStringValue("system_prompt", SystemPrompt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

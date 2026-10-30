@@ -11,48 +11,70 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostDatasetPopulate200ResponsePropertiesSummaryProperties : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("failedDatasets") is { } nullNodeFailedDatasets && nullNodeFailedDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedDatasets = null;
+            if (parseNode.GetChildNode("successfulDatasets") is { } nullNodeSuccessfulDatasets && nullNodeSuccessfulDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessfulDatasets = null;
+            if (parseNode.GetChildNode("totalDatasets") is { } nullNodeTotalDatasets && nullNodeTotalDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalDatasets = null;
+            if (parseNode.GetChildNode("totalIndicatorTypes") is { } nullNodeTotalIndicatorTypes && nullNodeTotalIndicatorTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalIndicatorTypes = null;
+            if (parseNode.GetChildNode("totalProcessingTimeMs") is { } nullNodeTotalProcessingTimeMs && nullNodeTotalProcessingTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalProcessingTimeMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The failedDatasets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesFailedDatasets? FailedDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesFailedDatasets? FailedDatasets { get => _explicitNullValueFailedDatasets; set { _explicitNullValueFailedDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedDatasets"); else _explicitNullProperties?.Remove("failedDatasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesFailedDatasets? _explicitNullValueFailedDatasets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesFailedDatasets FailedDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesFailedDatasets FailedDatasets { get => _explicitNullValueFailedDatasets; set { _explicitNullValueFailedDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedDatasets"); else _explicitNullProperties?.Remove("failedDatasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesFailedDatasets _explicitNullValueFailedDatasets = default!;
 #endif
         /// <summary>The successfulDatasets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesSuccessfulDatasets? SuccessfulDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesSuccessfulDatasets? SuccessfulDatasets { get => _explicitNullValueSuccessfulDatasets; set { _explicitNullValueSuccessfulDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successfulDatasets"); else _explicitNullProperties?.Remove("successfulDatasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesSuccessfulDatasets? _explicitNullValueSuccessfulDatasets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesSuccessfulDatasets SuccessfulDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesSuccessfulDatasets SuccessfulDatasets { get => _explicitNullValueSuccessfulDatasets; set { _explicitNullValueSuccessfulDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successfulDatasets"); else _explicitNullProperties?.Remove("successfulDatasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesSuccessfulDatasets _explicitNullValueSuccessfulDatasets = default!;
 #endif
         /// <summary>The totalDatasets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalDatasets? TotalDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalDatasets? TotalDatasets { get => _explicitNullValueTotalDatasets; set { _explicitNullValueTotalDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalDatasets"); else _explicitNullProperties?.Remove("totalDatasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalDatasets? _explicitNullValueTotalDatasets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalDatasets TotalDatasets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalDatasets TotalDatasets { get => _explicitNullValueTotalDatasets; set { _explicitNullValueTotalDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalDatasets"); else _explicitNullProperties?.Remove("totalDatasets"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalDatasets _explicitNullValueTotalDatasets = default!;
 #endif
         /// <summary>The totalIndicatorTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalIndicatorTypes? TotalIndicatorTypes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalIndicatorTypes? TotalIndicatorTypes { get => _explicitNullValueTotalIndicatorTypes; set { _explicitNullValueTotalIndicatorTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalIndicatorTypes"); else _explicitNullProperties?.Remove("totalIndicatorTypes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalIndicatorTypes? _explicitNullValueTotalIndicatorTypes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalIndicatorTypes TotalIndicatorTypes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalIndicatorTypes TotalIndicatorTypes { get => _explicitNullValueTotalIndicatorTypes; set { _explicitNullValueTotalIndicatorTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalIndicatorTypes"); else _explicitNullProperties?.Remove("totalIndicatorTypes"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalIndicatorTypes _explicitNullValueTotalIndicatorTypes = default!;
 #endif
         /// <summary>The totalProcessingTimeMs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalProcessingTimeMs? TotalProcessingTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalProcessingTimeMs? TotalProcessingTimeMs { get => _explicitNullValueTotalProcessingTimeMs; set { _explicitNullValueTotalProcessingTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalProcessingTimeMs"); else _explicitNullProperties?.Remove("totalProcessingTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalProcessingTimeMs? _explicitNullValueTotalProcessingTimeMs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalProcessingTimeMs TotalProcessingTimeMs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalProcessingTimeMs TotalProcessingTimeMs { get => _explicitNullValueTotalProcessingTimeMs; set { _explicitNullValueTotalProcessingTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalProcessingTimeMs"); else _explicitNullProperties?.Remove("totalProcessingTimeMs"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalProcessingTimeMs _explicitNullValueTotalProcessingTimeMs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryProperties"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryProperties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryProperties();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryProperties(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalDatasets>("totalDatasets", TotalDatasets);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalIndicatorTypes>("totalIndicatorTypes", TotalIndicatorTypes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesSummaryPropertiesTotalProcessingTimeMs>("totalProcessingTimeMs", TotalProcessingTimeMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

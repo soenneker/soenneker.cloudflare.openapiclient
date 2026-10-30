@@ -16,6 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
     public partial class WithIssueItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The dismiss property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Item.Dismiss.DismissRequestBuilder Dismiss
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Item.Dismiss.DismissRequestBuilder(PathParameters, RequestAdapter);

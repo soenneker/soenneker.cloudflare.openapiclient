@@ -17,6 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
     public partial class AttackSurfaceReportRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The issues property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder Issues
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);

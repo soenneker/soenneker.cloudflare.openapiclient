@@ -12,7 +12,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesProjectLatestDeployment : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("build_config") is { } nullNodeBuildConfig && nullNodeBuildConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildConfig = null;
+            if (parseNode.GetChildNode("env_vars") is { } nullNodeEnvVars && nullNodeEnvVars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVars = null;
+            if (parseNode.GetChildNode("project_name") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of alias URLs pointing to this deployment.</summary>
@@ -26,10 +37,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configs for the project build process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig? BuildConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig? BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_config"); else _explicitNullProperties?.Remove("build_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig? _explicitNullValueBuildConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig BuildConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_config"); else _explicitNullProperties?.Remove("build_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig _explicitNullValueBuildConfig = default!;
 #endif
         /// <summary>When the deployment was created.</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
@@ -46,10 +59,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Environment variables used for builds and Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeploymentEnvVars? EnvVars { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeploymentEnvVars? EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_vars"); else _explicitNullProperties?.Remove("env_vars"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeploymentEnvVars? _explicitNullValueEnvVars = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeploymentEnvVars EnvVars { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeploymentEnvVars EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_vars"); else _explicitNullProperties?.Remove("env_vars"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeploymentEnvVars _explicitNullValueEnvVars = default!;
 #endif
         /// <summary>Id of the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,10 +97,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Name of the Pages project. Must begin with a lowercase letter or digit and contain only lowercase letters, digits, and hyphens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_name"); else _explicitNullProperties?.Remove("project_name"); } }
+        private string? _explicitNullValueProjectName = default!;
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_name"); else _explicitNullProperties?.Remove("project_name"); } }
+        private string _explicitNullValueProjectName = default!;
 #endif
         /// <summary>Short Id (8 character) of the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,10 +117,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configs for the project source control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource? Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource _explicitNullValueSource = default!;
 #endif
         /// <summary>List of past stages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +157,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeployment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeployment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeployment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -179,6 +198,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeploymentEnvVars>("env_vars", EnvVars);
             writer.WriteStringValue("project_name", ProjectName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource>("source", Source);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

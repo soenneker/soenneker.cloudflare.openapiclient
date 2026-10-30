@@ -12,7 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchThreatIntelligence200ResponseResultItemsItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,25 +70,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItem();
             if("article".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchThreatIntelligence200ResponseResultItemsItemOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf1();
+                
             }
             else if("actor".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchThreatIntelligence200ResponseResultItemsItemOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf2();
+                
             }
             else if("tag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchThreatIntelligence200ResponseResultItemsItemOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf3();
+                
             }
             else if("event".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchThreatIntelligence200ResponseResultItemsItemOneOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf4();
+                
             }
             else if("indicator".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchThreatIntelligence200ResponseResultItemsItemOneOf5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf5();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("article".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("article_id") != null && parseNode.GetChildNode("feed_id") != null && parseNode.GetChildNode("title") != null && parseNode.GetChildNode("published_at") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("actor".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("actor_id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("description") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("tag".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("tag_id") != null && parseNode.GetChildNode("value") != null && parseNode.GetChildNode("description") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("event".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("event_id") != null && parseNode.GetChildNode("dataset_id") != null && parseNode.GetChildNode("title") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("indicator".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("indicator_id") != null && parseNode.GetChildNode("dataset_id") != null && parseNode.GetChildNode("indicator_type") != null && parseNode.GetChildNode("value") != null && parseNode.GetChildNode("tags") != null))();
+            if (result.SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.SearchThreatIntelligence200ResponseResultItemsItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf1(), parseNode);
+            if (result.SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.SearchThreatIntelligence200ResponseResultItemsItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf2(), parseNode);
+            if (result.SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4) result.SearchThreatIntelligence200ResponseResultItemsItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf3(), parseNode);
+            if (result.SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4) result.SearchThreatIntelligence200ResponseResultItemsItemOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf4(), parseNode);
+            if (result.SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.SearchThreatIntelligence200ResponseResultItemsItemOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf5(), parseNode);
+            if (result.SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && result.SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,25 +137,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (SearchThreatIntelligence200ResponseResultItemsItemOneOf1 != null && SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null) { if (SearchThreatIntelligence200ResponseResultItemsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf1); return; }
+            if (SearchThreatIntelligence200ResponseResultItemsItemOneOf2 != null && SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null) { if (SearchThreatIntelligence200ResponseResultItemsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf2); return; }
+            if (SearchThreatIntelligence200ResponseResultItemsItemOneOf3 != null && SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null) { if (SearchThreatIntelligence200ResponseResultItemsItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf3); return; }
+            if (SearchThreatIntelligence200ResponseResultItemsItemOneOf4 != null && SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf5 == null) { if (SearchThreatIntelligence200ResponseResultItemsItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf4); return; }
+            if (SearchThreatIntelligence200ResponseResultItemsItemOneOf5 != null && SearchThreatIntelligence200ResponseResultItemsItemOneOf1 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf2 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf3 == null && SearchThreatIntelligence200ResponseResultItemsItemOneOf4 == null) { if (SearchThreatIntelligence200ResponseResultItemsItemOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf5); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(SearchThreatIntelligence200ResponseResultItemsItemOneOf1 != null)
             {
+                if (SearchThreatIntelligence200ResponseResultItemsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf1>(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf1);
             }
             else if(SearchThreatIntelligence200ResponseResultItemsItemOneOf2 != null)
             {
+                if (SearchThreatIntelligence200ResponseResultItemsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf2>(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf2);
             }
             else if(SearchThreatIntelligence200ResponseResultItemsItemOneOf3 != null)
             {
+                if (SearchThreatIntelligence200ResponseResultItemsItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf3>(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf3);
             }
             else if(SearchThreatIntelligence200ResponseResultItemsItemOneOf4 != null)
             {
+                if (SearchThreatIntelligence200ResponseResultItemsItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf4>(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf4);
             }
             else if(SearchThreatIntelligence200ResponseResultItemsItemOneOf5 != null)
             {
+                if (SearchThreatIntelligence200ResponseResultItemsItemOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf5>(null, SearchThreatIntelligence200ResponseResultItemsItemOneOf5);
             }
         }

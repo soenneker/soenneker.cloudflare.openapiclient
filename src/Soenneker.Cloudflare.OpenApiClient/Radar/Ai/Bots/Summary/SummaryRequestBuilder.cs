@@ -17,6 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The user_agent property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.User_agent.User_agentRequestBuilder User_agent
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.User_agent.User_agentRequestBuilder(PathParameters, RequestAdapter);

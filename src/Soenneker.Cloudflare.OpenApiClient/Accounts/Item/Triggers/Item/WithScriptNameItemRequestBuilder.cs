@@ -55,6 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Triggers.Item
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorDeleteScriptTriggers400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorDeleteScriptTriggers404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDeleteScriptTriggers200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorDeleteScriptTriggers200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -80,6 +82,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Triggers.Item
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetScriptTriggers400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetScriptTriggers404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetScriptTriggers200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetScriptTriggers200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,6 +111,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Triggers.Item
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorAddScriptTriggers400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorAddScriptTriggers404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorAddScriptTriggers200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorAddScriptTriggers200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -134,6 +140,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Triggers.Item
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggers400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggers404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggers200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggers200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

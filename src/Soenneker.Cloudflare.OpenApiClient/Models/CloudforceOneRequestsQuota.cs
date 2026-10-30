@@ -11,17 +11,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CloudforceOneRequestsQuota : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("anniversary_date") is { } nullNodeAnniversaryDate && nullNodeAnniversaryDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnniversaryDate = null;
+            if (parseNode.GetChildNode("quarter_anniversary_date") is { } nullNodeQuarterAnniversaryDate && nullNodeQuarterAnniversaryDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuarterAnniversaryDate = null;
+            if (parseNode.GetChildNode("quota") is { } nullNodeQuota && nullNodeQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quota = null;
+            if (parseNode.GetChildNode("remaining") is { } nullNodeRemaining && nullNodeRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remaining = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Anniversary date is when annual quota limit is refreshed.</summary>
-        public DateTimeOffset? AnniversaryDate { get; set; }
+        public DateTimeOffset? AnniversaryDate { get => _explicitNullValueAnniversaryDate; set { _explicitNullValueAnniversaryDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anniversary_date"); else _explicitNullProperties?.Remove("anniversary_date"); } }
+        private DateTimeOffset? _explicitNullValueAnniversaryDate = default!;
         /// <summary>Quarter anniversary date is when quota limit is refreshed each quarter.</summary>
-        public DateTimeOffset? QuarterAnniversaryDate { get; set; }
+        public DateTimeOffset? QuarterAnniversaryDate { get => _explicitNullValueQuarterAnniversaryDate; set { _explicitNullValueQuarterAnniversaryDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quarter_anniversary_date"); else _explicitNullProperties?.Remove("quarter_anniversary_date"); } }
+        private DateTimeOffset? _explicitNullValueQuarterAnniversaryDate = default!;
         /// <summary>Tokens for the quarter.</summary>
-        public int? Quota { get; set; }
+        public int? Quota { get => _explicitNullValueQuota; set { _explicitNullValueQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota"); else _explicitNullProperties?.Remove("quota"); } }
+        private int? _explicitNullValueQuota = default!;
         /// <summary>Tokens remaining for the quarter.</summary>
-        public int? Remaining { get; set; }
+        public int? Remaining { get => _explicitNullValueRemaining; set { _explicitNullValueRemaining = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remaining"); else _explicitNullProperties?.Remove("remaining"); } }
+        private int? _explicitNullValueRemaining = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("quarter_anniversary_date", QuarterAnniversaryDate);
             writer.WriteIntValue("quota", Quota);
             writer.WriteIntValue("remaining", Remaining);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

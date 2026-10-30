@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\page_shield\cookies
+    /// Builds and executes requests for operations under \zones\{zoneId}\page_shield\cookies
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CookiesRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CookiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/page_shield/cookies{?direction*,domain*,export*,hosts*,http_only*,name*,order_by*,page*,page_url*,path*,per_page*,same_site*,secure*,type*}", pathParameters)
+        public CookiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/page_shield/cookies{?direction*,domain*,export*,hosts*,http_only*,name*,order_by*,page*,page_url*,path*,per_page*,same_site*,secure*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CookiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/page_shield/cookies{?direction*,domain*,export*,hosts*,http_only*,name*,order_by*,page*,page_url*,path*,per_page*,same_site*,secure*,type*}", rawUrl)
+        public CookiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/page_shield/cookies{?direction*,domain*,export*,hosts*,http_only*,name*,order_by*,page*,page_url*,path*,per_page*,same_site*,secure*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -66,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneCookiesResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneCookiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,65 +12,98 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OneSetupFlowStep : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("component_id") is { } nullNodeComponentId && nullNodeComponentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComponentId = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("dynamic_content") is { } nullNodeDynamicContent && nullNodeDynamicContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicContent = null;
+            if (parseNode.GetChildNode("form_fields") is { } nullNodeFormFields && nullNodeFormFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormFields = null;
+            if (parseNode.GetChildNode("is_required") is { } nullNodeIsRequired && nullNodeIsRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRequired = null;
+            if (parseNode.GetChildNode("is_used_in_create") is { } nullNodeIsUsedInCreate && nullNodeIsUsedInCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUsedInCreate = null;
+            if (parseNode.GetChildNode("is_used_in_update") is { } nullNodeIsUsedInUpdate && nullNodeIsUsedInUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUsedInUpdate = null;
+            if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Component identifier (for component type).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComponentId { get; set; }
+        public string? ComponentId { get => _explicitNullValueComponentId; set { _explicitNullValueComponentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_id"); else _explicitNullProperties?.Remove("component_id"); } }
+        private string? _explicitNullValueComponentId = default!;
 #nullable restore
 #else
-        public string ComponentId { get; set; }
+        public string ComponentId { get => _explicitNullValueComponentId; set { _explicitNullValueComponentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_id"); else _explicitNullProperties?.Remove("component_id"); } }
+        private string _explicitNullValueComponentId = default!;
 #endif
         /// <summary>Step description with markdown support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Dynamic content blocks (for instruction/form_input).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneDynamicContent>? DynamicContent { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneDynamicContent>? DynamicContent { get => _explicitNullValueDynamicContent; set { _explicitNullValueDynamicContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_content"); else _explicitNullProperties?.Remove("dynamic_content"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneDynamicContent>? _explicitNullValueDynamicContent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneDynamicContent> DynamicContent { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneDynamicContent> DynamicContent { get => _explicitNullValueDynamicContent; set { _explicitNullValueDynamicContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_content"); else _explicitNullProperties?.Remove("dynamic_content"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneDynamicContent> _explicitNullValueDynamicContent = default!;
 #endif
         /// <summary>Form fields (for form_input).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFormField>? FormFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFormField>? FormFields { get => _explicitNullValueFormFields; set { _explicitNullValueFormFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form_fields"); else _explicitNullProperties?.Remove("form_fields"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFormField>? _explicitNullValueFormFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFormField> FormFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFormField> FormFields { get => _explicitNullValueFormFields; set { _explicitNullValueFormFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form_fields"); else _explicitNullProperties?.Remove("form_fields"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFormField> _explicitNullValueFormFields = default!;
 #endif
         /// <summary>Whether step is required (for form_input).</summary>
-        public bool? IsRequired { get; set; }
+        public bool? IsRequired { get => _explicitNullValueIsRequired; set { _explicitNullValueIsRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_required"); else _explicitNullProperties?.Remove("is_required"); } }
+        private bool? _explicitNullValueIsRequired = default!;
         /// <summary>Whether this step is part of the one-time create flow.</summary>
-        public bool? IsUsedInCreate { get; set; }
+        public bool? IsUsedInCreate { get => _explicitNullValueIsUsedInCreate; set { _explicitNullValueIsUsedInCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_used_in_create"); else _explicitNullProperties?.Remove("is_used_in_create"); } }
+        private bool? _explicitNullValueIsUsedInCreate = default!;
         /// <summary>Whether this step is shown when fixing an existing integration&apos;s credentials (e.g. a re-authorize/delete-and-recreate instruction, or a step holding a patchable field).</summary>
-        public bool? IsUsedInUpdate { get; set; }
+        public bool? IsUsedInUpdate { get => _explicitNullValueIsUsedInUpdate; set { _explicitNullValueIsUsedInUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_used_in_update"); else _explicitNullProperties?.Remove("is_used_in_update"); } }
+        private bool? _explicitNullValueIsUsedInUpdate = default!;
         /// <summary>Component parameters (for component type).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepParametersProperty? Parameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepParametersProperty? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepParametersProperty? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepParametersProperty Parameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepParametersProperty Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepParametersProperty _explicitNullValueParameters = default!;
 #endif
         /// <summary>Step title (for instruction/form_input/oauth_redirect).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>Step type.* `component` - component* `instruction` - instruction* `form_input` - form_input* `oauth_redirect` - oauth_redirect</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStep"/> and sets the default values.
         /// </summary>
@@ -86,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,6 +158,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepParametersProperty>("parameters", Parameters);
             writer.WriteStringValue("title", Title);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneSetupFlowStepType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,45 +11,73 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RealtimekitCreateMeetingBodyRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ai_config") is { } nullNodeAiConfig && nullNodeAiConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfig = null;
+            if (parseNode.GetChildNode("live_stream_on_start") is { } nullNodeLiveStreamOnStart && nullNodeLiveStreamOnStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveStreamOnStart = null;
+            if (parseNode.GetChildNode("persist_chat") is { } nullNodePersistChat && nullNodePersistChat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersistChat = null;
+            if (parseNode.GetChildNode("recording_config") is { } nullNodeRecordingConfig && nullNodeRecordingConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingConfig = null;
+            if (parseNode.GetChildNode("record_on_start") is { } nullNodeRecordOnStart && nullNodeRecordOnStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordOnStart = null;
+            if (parseNode.GetChildNode("session_keep_alive_time_in_secs") is { } nullNodeSessionKeepAliveTimeInSecs && nullNodeSessionKeepAliveTimeInSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionKeepAliveTimeInSecs = null;
+            if (parseNode.GetChildNode("summarize_on_end") is { } nullNodeSummarizeOnEnd && nullNodeSummarizeOnEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummarizeOnEnd = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("transcribe_on_end") is { } nullNodeTranscribeOnEnd && nullNodeTranscribeOnEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscribeOnEnd = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AI Config allows you to customize the behavior of meeting transcriptions and summaries</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig? AiConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig? AiConfig { get => _explicitNullValueAiConfig; set { _explicitNullValueAiConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_config"); else _explicitNullProperties?.Remove("ai_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig? _explicitNullValueAiConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig AiConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig AiConfig { get => _explicitNullValueAiConfig; set { _explicitNullValueAiConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_config"); else _explicitNullProperties?.Remove("ai_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig _explicitNullValueAiConfig = default!;
 #endif
         /// <summary>Specifies if the meeting should start getting livestreamed on start.</summary>
-        public bool? LiveStreamOnStart { get; set; }
+        public bool? LiveStreamOnStart { get => _explicitNullValueLiveStreamOnStart; set { _explicitNullValueLiveStreamOnStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_stream_on_start"); else _explicitNullProperties?.Remove("live_stream_on_start"); } }
+        private bool? _explicitNullValueLiveStreamOnStart = default!;
         /// <summary>If a meeting is set to persist_chat, meeting chat would remain for a week within the meeting space.</summary>
-        public bool? PersistChat { get; set; }
+        public bool? PersistChat { get => _explicitNullValuePersistChat; set { _explicitNullValuePersistChat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persist_chat"); else _explicitNullProperties?.Remove("persist_chat"); } }
+        private bool? _explicitNullValuePersistChat = default!;
         /// <summary>Recording Configurations to be used for this meeting. This level of configs takes higher preference over App level configs on the RealtimeKit developer portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig? RecordingConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig? RecordingConfig { get => _explicitNullValueRecordingConfig; set { _explicitNullValueRecordingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_config"); else _explicitNullProperties?.Remove("recording_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig? _explicitNullValueRecordingConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig RecordingConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig RecordingConfig { get => _explicitNullValueRecordingConfig; set { _explicitNullValueRecordingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_config"); else _explicitNullProperties?.Remove("recording_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig _explicitNullValueRecordingConfig = default!;
 #endif
         /// <summary>Specifies if the meeting should start getting recorded as soon as someone joins the meeting.</summary>
-        public bool? RecordOnStart { get; set; }
+        public bool? RecordOnStart { get => _explicitNullValueRecordOnStart; set { _explicitNullValueRecordOnStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_on_start"); else _explicitNullProperties?.Remove("record_on_start"); } }
+        private bool? _explicitNullValueRecordOnStart = default!;
         /// <summary>Time in seconds, for which a session remains active, after the last participant has left the meeting.</summary>
-        public double? SessionKeepAliveTimeInSecs { get; set; }
+        public double? SessionKeepAliveTimeInSecs { get => _explicitNullValueSessionKeepAliveTimeInSecs; set { _explicitNullValueSessionKeepAliveTimeInSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_keep_alive_time_in_secs"); else _explicitNullProperties?.Remove("session_keep_alive_time_in_secs"); } }
+        private double? _explicitNullValueSessionKeepAliveTimeInSecs = default!;
         /// <summary>Automatically generate summary of meetings using transcripts. Requires Transcriptions to be enabled, and can be retrieved via Webhooks or summary API.</summary>
-        public bool? SummarizeOnEnd { get; set; }
+        public bool? SummarizeOnEnd { get => _explicitNullValueSummarizeOnEnd; set { _explicitNullValueSummarizeOnEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summarize_on_end"); else _explicitNullProperties?.Remove("summarize_on_end"); } }
+        private bool? _explicitNullValueSummarizeOnEnd = default!;
         /// <summary>Title of the meeting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>Automatically generate transcripts when the meeting ends.</summary>
-        public bool? TranscribeOnEnd { get; set; }
+        public bool? TranscribeOnEnd { get => _explicitNullValueTranscribeOnEnd; set { _explicitNullValueTranscribeOnEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcribe_on_end"); else _explicitNullProperties?.Remove("transcribe_on_end"); } }
+        private bool? _explicitNullValueTranscribeOnEnd = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCreateMeetingBodyRequest"/> and sets the default values.
         /// </summary>
@@ -71,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCreateMeetingBodyRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCreateMeetingBodyRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCreateMeetingBodyRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("summarize_on_end", SummarizeOnEnd);
             writer.WriteStringValue("title", Title);
             writer.WriteBoolValue("transcribe_on_end", TranscribeOnEnd);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

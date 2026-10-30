@@ -12,17 +12,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersAiPostRunModel200ResponseResultObjectDetectionItemBox : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("xmax") is { } nullNodeXmax && nullNodeXmax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Xmax = null;
+            if (parseNode.GetChildNode("xmin") is { } nullNodeXmin && nullNodeXmin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Xmin = null;
+            if (parseNode.GetChildNode("ymax") is { } nullNodeYmax && nullNodeYmax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ymax = null;
+            if (parseNode.GetChildNode("ymin") is { } nullNodeYmin && nullNodeYmin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ymin = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The x-coordinate of the bottom-right corner of the bounding box</summary>
-        public double? Xmax { get; set; }
+        public double? Xmax { get => _explicitNullValueXmax; set { _explicitNullValueXmax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xmax"); else _explicitNullProperties?.Remove("xmax"); } }
+        private double? _explicitNullValueXmax = default!;
         /// <summary>The x-coordinate of the top-left corner of the bounding box</summary>
-        public double? Xmin { get; set; }
+        public double? Xmin { get => _explicitNullValueXmin; set { _explicitNullValueXmin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xmin"); else _explicitNullProperties?.Remove("xmin"); } }
+        private double? _explicitNullValueXmin = default!;
         /// <summary>The y-coordinate of the bottom-right corner of the bounding box</summary>
-        public double? Ymax { get; set; }
+        public double? Ymax { get => _explicitNullValueYmax; set { _explicitNullValueYmax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ymax"); else _explicitNullProperties?.Remove("ymax"); } }
+        private double? _explicitNullValueYmax = default!;
         /// <summary>The y-coordinate of the top-left corner of the bounding box</summary>
-        public double? Ymin { get; set; }
+        public double? Ymin { get => _explicitNullValueYmin; set { _explicitNullValueYmin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ymin"); else _explicitNullProperties?.Remove("ymin"); } }
+        private double? _explicitNullValueYmin = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItemBox"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItemBox CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItemBox();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItemBox(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("xmin", Xmin);
             writer.WriteDoubleValue("ymax", Ymax);
             writer.WriteDoubleValue("ymin", Ymin);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

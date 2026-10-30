@@ -12,17 +12,19 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\analytics
+    /// Builds and executes requests for operations under \zones\{zoneId}\analytics
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The colos property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder Colos
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dashboard property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder Dashboard
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder(PathParameters, RequestAdapter);
@@ -37,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/analytics", pathParameters)
+        public AnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/analytics", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/analytics", rawUrl)
+        public AnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/analytics", rawUrl)
         {
         }
     }

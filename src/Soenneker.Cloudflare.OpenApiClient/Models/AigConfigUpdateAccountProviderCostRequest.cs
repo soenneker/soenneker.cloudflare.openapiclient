@@ -11,40 +11,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AigConfigUpdateAccountProviderCostRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cost_in") is { } nullNodeCostIn && nullNodeCostIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostIn = null;
+            if (parseNode.GetChildNode("cost_out") is { } nullNodeCostOut && nullNodeCostOut.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostOut = null;
+            if (parseNode.GetChildNode("cost_type") is { } nullNodeCostType && nullNodeCostType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostType = null;
+            if (parseNode.GetChildNode("enable") is { } nullNodeEnable && nullNodeEnable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enable = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("model_rule") is { } nullNodeModelRule && nullNodeModelRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelRule = null;
+            if (parseNode.GetChildNode("token_pricing") is { } nullNodeTokenPricing && nullNodeTokenPricing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenPricing = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cost_in property</summary>
-        public double? CostIn { get; set; }
+        public double? CostIn { get => _explicitNullValueCostIn; set { _explicitNullValueCostIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_in"); else _explicitNullProperties?.Remove("cost_in"); } }
+        private double? _explicitNullValueCostIn = default!;
         /// <summary>The cost_out property</summary>
-        public double? CostOut { get; set; }
+        public double? CostOut { get => _explicitNullValueCostOut; set { _explicitNullValueCostOut = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_out"); else _explicitNullProperties?.Remove("cost_out"); } }
+        private double? _explicitNullValueCostOut = default!;
         /// <summary>The cost_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostType { get; set; }
+        public string? CostType { get => _explicitNullValueCostType; set { _explicitNullValueCostType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_type"); else _explicitNullProperties?.Remove("cost_type"); } }
+        private string? _explicitNullValueCostType = default!;
 #nullable restore
 #else
-        public string CostType { get; set; }
+        public string CostType { get => _explicitNullValueCostType; set { _explicitNullValueCostType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_type"); else _explicitNullProperties?.Remove("cost_type"); } }
+        private string _explicitNullValueCostType = default!;
 #endif
         /// <summary>The enable property</summary>
-        public bool? Enable { get; set; }
+        public bool? Enable { get => _explicitNullValueEnable; set { _explicitNullValueEnable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable"); else _explicitNullProperties?.Remove("enable"); } }
+        private bool? _explicitNullValueEnable = default!;
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get; set; }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
         /// <summary>The model_rule property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestModelRule? ModelRule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestModelRule? ModelRule { get => _explicitNullValueModelRule; set { _explicitNullValueModelRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_rule"); else _explicitNullProperties?.Remove("model_rule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestModelRule? _explicitNullValueModelRule = default!;
         /// <summary>The token_pricing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing? TokenPricing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing? TokenPricing { get => _explicitNullValueTokenPricing; set { _explicitNullValueTokenPricing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_pricing"); else _explicitNullProperties?.Remove("token_pricing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing? _explicitNullValueTokenPricing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing TokenPricing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing TokenPricing { get => _explicitNullValueTokenPricing; set { _explicitNullValueTokenPricing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_pricing"); else _explicitNullProperties?.Remove("token_pricing"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing _explicitNullValueTokenPricing = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequest"/> and sets the default values.
@@ -62,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestModelRule>("model_rule", ModelRule);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateAccountProviderCostRequestTokenPricing>("token_pricing", TokenPricing);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

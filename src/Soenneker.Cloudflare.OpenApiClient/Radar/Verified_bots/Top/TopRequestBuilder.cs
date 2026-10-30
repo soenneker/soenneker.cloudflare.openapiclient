@@ -17,11 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots.Top
     public partial class TopRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bots property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots.Top.Bots.BotsRequestBuilder Bots
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots.Top.Bots.BotsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The categories property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots.Top.Categories.CategoriesRequestBuilder Categories
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots.Top.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);

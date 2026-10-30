@@ -11,71 +11,116 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessInfraPolicyResp : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("connection_rules") is { } nullNodeConnectionRules && nullNodeConnectionRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionRules = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("decision") is { } nullNodeDecision && nullNodeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decision = null;
+            if (parseNode.GetChildNode("exclude") is { } nullNodeExclude && nullNodeExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclude = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("include") is { } nullNodeInclude && nullNodeInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Include = null;
+            if (parseNode.GetChildNode("mfa_config") is { } nullNodeMfaConfig && nullNodeMfaConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaConfig = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("policy_resolution_account_id") is { } nullNodePolicyResolutionAccountId && nullNodePolicyResolutionAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyResolutionAccountId = null;
+            if (parseNode.GetChildNode("require") is { } nullNodeRequire && nullNodeRequire.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Require = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The rules that define how users may connect to the targets secured by your application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesInfra? ConnectionRules { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesInfra? ConnectionRules { get => _explicitNullValueConnectionRules; set { _explicitNullValueConnectionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_rules"); else _explicitNullProperties?.Remove("connection_rules"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesInfra? _explicitNullValueConnectionRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesInfra ConnectionRules { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesInfra ConnectionRules { get => _explicitNullValueConnectionRules; set { _explicitNullValueConnectionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_rules"); else _explicitNullProperties?.Remove("connection_rules"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesInfra _explicitNullValueConnectionRules = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision? Decision { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision? Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision? _explicitNullValueDecision = default!;
         /// <summary>Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Exclude { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? _explicitNullValueExclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Exclude { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> _explicitNullValueExclude = default!;
 #endif
         /// <summary>The UUID of the policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Include { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? _explicitNullValueInclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Include { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> _explicitNullValueInclude = default!;
 #endif
         /// <summary>Configures multi-factor authentication (MFA) settings for infrastructure applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig? MfaConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig? MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig? _explicitNullValueMfaConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig MfaConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig _explicitNullValueMfaConfig = default!;
 #endif
         /// <summary>The name of the Access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
+#endif
+        /// <summary>The account ID used to resolve policy resources and identity for cross-account WARP authentication. The account must be trusted by the account that owns this policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyResolutionAccountId { get => _explicitNullValuePolicyResolutionAccountId; set { _explicitNullValuePolicyResolutionAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_resolution_account_id"); else _explicitNullProperties?.Remove("policy_resolution_account_id"); } }
+        private string? _explicitNullValuePolicyResolutionAccountId = default!;
+#nullable restore
+#else
+        public string PolicyResolutionAccountId { get => _explicitNullValuePolicyResolutionAccountId; set { _explicitNullValuePolicyResolutionAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_resolution_account_id"); else _explicitNullProperties?.Remove("policy_resolution_account_id"); } }
+        private string _explicitNullValuePolicyResolutionAccountId = default!;
 #endif
         /// <summary>Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Require { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Require { get => _explicitNullValueRequire; set { _explicitNullValueRequire = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require"); else _explicitNullProperties?.Remove("require"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? _explicitNullValueRequire = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Require { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Require { get => _explicitNullValueRequire; set { _explicitNullValueRequire = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require"); else _explicitNullProperties?.Remove("require"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> _explicitNullValueRequire = default!;
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyResp"/> and sets the default values.
         /// </summary>
@@ -91,7 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyResp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyResp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyResp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +154,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mfa_config", n => { MfaConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "policy_resolution_account_id", n => { PolicyResolutionAccountId = n.GetStringValue(); } },
                 { "require", n => { Require = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -128,8 +174,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>("include", Include);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig>("mfa_config", MfaConfig);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("policy_resolution_account_id", PolicyResolutionAccountId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>("require", Require);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

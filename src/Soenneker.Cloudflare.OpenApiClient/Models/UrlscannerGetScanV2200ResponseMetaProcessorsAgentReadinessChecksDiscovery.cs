@@ -11,80 +11,125 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscovery : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("a2aAgentCard") is { } nullNodeA2aAgentCard && nullNodeA2aAgentCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) A2aAgentCard = null;
+            if (parseNode.GetChildNode("agentSkills") is { } nullNodeAgentSkills && nullNodeAgentSkills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentSkills = null;
+            if (parseNode.GetChildNode("apiCatalog") is { } nullNodeApiCatalog && nullNodeApiCatalog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiCatalog = null;
+            if (parseNode.GetChildNode("ard") is { } nullNodeArd && nullNodeArd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ard = null;
+            if (parseNode.GetChildNode("authMd") is { } nullNodeAuthMd && nullNodeAuthMd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthMd = null;
+            if (parseNode.GetChildNode("mcpServerCard") is { } nullNodeMcpServerCard && nullNodeMcpServerCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpServerCard = null;
+            if (parseNode.GetChildNode("oauthDiscovery") is { } nullNodeOauthDiscovery && nullNodeOauthDiscovery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthDiscovery = null;
+            if (parseNode.GetChildNode("oauthProtectedResource") is { } nullNodeOauthProtectedResource && nullNodeOauthProtectedResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthProtectedResource = null;
+            if (parseNode.GetChildNode("personalAgentProtocol") is { } nullNodePersonalAgentProtocol && nullNodePersonalAgentProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalAgentProtocol = null;
+            if (parseNode.GetChildNode("webMcp") is { } nullNodeWebMcp && nullNodeWebMcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebMcp = null;
+        }
+
         /// <summary>The a2aAgentCard property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryA2AAgentCard? A2aAgentCard { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryA2AAgentCard? A2aAgentCard { get => _explicitNullValueA2aAgentCard; set { _explicitNullValueA2aAgentCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a2aAgentCard"); else _explicitNullProperties?.Remove("a2aAgentCard"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryA2AAgentCard? _explicitNullValueA2aAgentCard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryA2AAgentCard A2aAgentCard { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryA2AAgentCard A2aAgentCard { get => _explicitNullValueA2aAgentCard; set { _explicitNullValueA2aAgentCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a2aAgentCard"); else _explicitNullProperties?.Remove("a2aAgentCard"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryA2AAgentCard _explicitNullValueA2aAgentCard = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agentSkills property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAgentSkills? AgentSkills { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAgentSkills? AgentSkills { get => _explicitNullValueAgentSkills; set { _explicitNullValueAgentSkills = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentSkills"); else _explicitNullProperties?.Remove("agentSkills"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAgentSkills? _explicitNullValueAgentSkills = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAgentSkills AgentSkills { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAgentSkills AgentSkills { get => _explicitNullValueAgentSkills; set { _explicitNullValueAgentSkills = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentSkills"); else _explicitNullProperties?.Remove("agentSkills"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAgentSkills _explicitNullValueAgentSkills = default!;
 #endif
         /// <summary>The apiCatalog property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryApiCatalog? ApiCatalog { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryApiCatalog? ApiCatalog { get => _explicitNullValueApiCatalog; set { _explicitNullValueApiCatalog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiCatalog"); else _explicitNullProperties?.Remove("apiCatalog"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryApiCatalog? _explicitNullValueApiCatalog = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryApiCatalog ApiCatalog { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryApiCatalog ApiCatalog { get => _explicitNullValueApiCatalog; set { _explicitNullValueApiCatalog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiCatalog"); else _explicitNullProperties?.Remove("apiCatalog"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryApiCatalog _explicitNullValueApiCatalog = default!;
 #endif
         /// <summary>The ard property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryArd? Ard { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryArd? Ard { get => _explicitNullValueArd; set { _explicitNullValueArd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ard"); else _explicitNullProperties?.Remove("ard"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryArd? _explicitNullValueArd = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryArd Ard { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryArd Ard { get => _explicitNullValueArd; set { _explicitNullValueArd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ard"); else _explicitNullProperties?.Remove("ard"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryArd _explicitNullValueArd = default!;
 #endif
         /// <summary>The authMd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAuthMd? AuthMd { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAuthMd? AuthMd { get => _explicitNullValueAuthMd; set { _explicitNullValueAuthMd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authMd"); else _explicitNullProperties?.Remove("authMd"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAuthMd? _explicitNullValueAuthMd = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAuthMd AuthMd { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAuthMd AuthMd { get => _explicitNullValueAuthMd; set { _explicitNullValueAuthMd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authMd"); else _explicitNullProperties?.Remove("authMd"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAuthMd _explicitNullValueAuthMd = default!;
 #endif
         /// <summary>The mcpServerCard property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryMcpServerCard? McpServerCard { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryMcpServerCard? McpServerCard { get => _explicitNullValueMcpServerCard; set { _explicitNullValueMcpServerCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcpServerCard"); else _explicitNullProperties?.Remove("mcpServerCard"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryMcpServerCard? _explicitNullValueMcpServerCard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryMcpServerCard McpServerCard { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryMcpServerCard McpServerCard { get => _explicitNullValueMcpServerCard; set { _explicitNullValueMcpServerCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcpServerCard"); else _explicitNullProperties?.Remove("mcpServerCard"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryMcpServerCard _explicitNullValueMcpServerCard = default!;
 #endif
         /// <summary>The oauthDiscovery property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthDiscovery? OauthDiscovery { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthDiscovery? OauthDiscovery { get => _explicitNullValueOauthDiscovery; set { _explicitNullValueOauthDiscovery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauthDiscovery"); else _explicitNullProperties?.Remove("oauthDiscovery"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthDiscovery? _explicitNullValueOauthDiscovery = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthDiscovery OauthDiscovery { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthDiscovery OauthDiscovery { get => _explicitNullValueOauthDiscovery; set { _explicitNullValueOauthDiscovery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauthDiscovery"); else _explicitNullProperties?.Remove("oauthDiscovery"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthDiscovery _explicitNullValueOauthDiscovery = default!;
 #endif
         /// <summary>The oauthProtectedResource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthProtectedResource? OauthProtectedResource { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthProtectedResource? OauthProtectedResource { get => _explicitNullValueOauthProtectedResource; set { _explicitNullValueOauthProtectedResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauthProtectedResource"); else _explicitNullProperties?.Remove("oauthProtectedResource"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthProtectedResource? _explicitNullValueOauthProtectedResource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthProtectedResource OauthProtectedResource { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthProtectedResource OauthProtectedResource { get => _explicitNullValueOauthProtectedResource; set { _explicitNullValueOauthProtectedResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauthProtectedResource"); else _explicitNullProperties?.Remove("oauthProtectedResource"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthProtectedResource _explicitNullValueOauthProtectedResource = default!;
+#endif
+        /// <summary>The personalAgentProtocol property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryPersonalAgentProtocol? PersonalAgentProtocol { get => _explicitNullValuePersonalAgentProtocol; set { _explicitNullValuePersonalAgentProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalAgentProtocol"); else _explicitNullProperties?.Remove("personalAgentProtocol"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryPersonalAgentProtocol? _explicitNullValuePersonalAgentProtocol = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryPersonalAgentProtocol PersonalAgentProtocol { get => _explicitNullValuePersonalAgentProtocol; set { _explicitNullValuePersonalAgentProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalAgentProtocol"); else _explicitNullProperties?.Remove("personalAgentProtocol"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryPersonalAgentProtocol _explicitNullValuePersonalAgentProtocol = default!;
 #endif
         /// <summary>The webMcp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryWebMcp? WebMcp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryWebMcp? WebMcp { get => _explicitNullValueWebMcp; set { _explicitNullValueWebMcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webMcp"); else _explicitNullProperties?.Remove("webMcp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryWebMcp? _explicitNullValueWebMcp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryWebMcp WebMcp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryWebMcp WebMcp { get => _explicitNullValueWebMcp; set { _explicitNullValueWebMcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webMcp"); else _explicitNullProperties?.Remove("webMcp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryWebMcp _explicitNullValueWebMcp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscovery"/> and sets the default values.
@@ -101,7 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscovery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscovery();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscovery(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "mcpServerCard", n => { McpServerCard = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryMcpServerCard>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryMcpServerCard.CreateFromDiscriminatorValue); } },
                 { "oauthDiscovery", n => { OauthDiscovery = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthDiscovery>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthDiscovery.CreateFromDiscriminatorValue); } },
                 { "oauthProtectedResource", n => { OauthProtectedResource = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthProtectedResource>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthProtectedResource.CreateFromDiscriminatorValue); } },
+                { "personalAgentProtocol", n => { PersonalAgentProtocol = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryPersonalAgentProtocol>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryPersonalAgentProtocol.CreateFromDiscriminatorValue); } },
                 { "webMcp", n => { WebMcp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryWebMcp>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryWebMcp.CreateFromDiscriminatorValue); } },
             };
         }
@@ -137,7 +183,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryMcpServerCard>("mcpServerCard", McpServerCard);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthDiscovery>("oauthDiscovery", OauthDiscovery);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryOAuthProtectedResource>("oauthProtectedResource", OauthProtectedResource);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryPersonalAgentProtocol>("personalAgentProtocol", PersonalAgentProtocol);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryWebMcp>("webMcp", WebMcp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

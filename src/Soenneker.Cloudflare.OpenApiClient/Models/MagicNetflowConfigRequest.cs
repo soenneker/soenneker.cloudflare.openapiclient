@@ -11,25 +11,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MagicNetflowConfigRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_timeout") is { } nullNodeActiveTimeout && nullNodeActiveTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveTimeout = null;
+            if (parseNode.GetChildNode("collector_ip") is { } nullNodeCollectorIp && nullNodeCollectorIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectorIp = null;
+            if (parseNode.GetChildNode("collector_port") is { } nullNodeCollectorPort && nullNodeCollectorPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectorPort = null;
+            if (parseNode.GetChildNode("inactive_timeout") is { } nullNodeInactiveTimeout && nullNodeInactiveTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InactiveTimeout = null;
+            if (parseNode.GetChildNode("sampling_rate") is { } nullNodeSamplingRate && nullNodeSamplingRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamplingRate = null;
+        }
+
         /// <summary>Timeout in seconds for active flows.</summary>
-        public int? ActiveTimeout { get; set; }
+        public int? ActiveTimeout { get => _explicitNullValueActiveTimeout; set { _explicitNullValueActiveTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_timeout"); else _explicitNullProperties?.Remove("active_timeout"); } }
+        private int? _explicitNullValueActiveTimeout = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>IPv4 address of the NetFlow collector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CollectorIp { get; set; }
+        public string? CollectorIp { get => _explicitNullValueCollectorIp; set { _explicitNullValueCollectorIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collector_ip"); else _explicitNullProperties?.Remove("collector_ip"); } }
+        private string? _explicitNullValueCollectorIp = default!;
 #nullable restore
 #else
-        public string CollectorIp { get; set; }
+        public string CollectorIp { get => _explicitNullValueCollectorIp; set { _explicitNullValueCollectorIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collector_ip"); else _explicitNullProperties?.Remove("collector_ip"); } }
+        private string _explicitNullValueCollectorIp = default!;
 #endif
         /// <summary>UDP port of the NetFlow collector.</summary>
-        public int? CollectorPort { get; set; }
+        public int? CollectorPort { get => _explicitNullValueCollectorPort; set { _explicitNullValueCollectorPort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collector_port"); else _explicitNullProperties?.Remove("collector_port"); } }
+        private int? _explicitNullValueCollectorPort = default!;
         /// <summary>Timeout in seconds for inactive flows.</summary>
-        public int? InactiveTimeout { get; set; }
+        public int? InactiveTimeout { get => _explicitNullValueInactiveTimeout; set { _explicitNullValueInactiveTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inactive_timeout"); else _explicitNullProperties?.Remove("inactive_timeout"); } }
+        private int? _explicitNullValueInactiveTimeout = default!;
         /// <summary>Sampling rate for NetFlow records (1 = every packet).</summary>
-        public int? SamplingRate { get; set; }
+        public int? SamplingRate { get => _explicitNullValueSamplingRate; set { _explicitNullValueSamplingRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampling_rate"); else _explicitNullProperties?.Remove("sampling_rate"); } }
+        private int? _explicitNullValueSamplingRate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetflowConfigRequest"/> and sets the default values.
         /// </summary>
@@ -45,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetflowConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetflowConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetflowConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("collector_port", CollectorPort);
             writer.WriteIntValue("inactive_timeout", InactiveTimeout);
             writer.WriteIntValue("sampling_rate", SamplingRate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

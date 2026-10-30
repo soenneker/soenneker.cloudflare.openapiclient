@@ -11,21 +11,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessAppsBrowserVncApplication : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_idps") is { } nullNodeAllowedIdps && nullNodeAllowedIdps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIdps = null;
+            if (parseNode.GetChildNode("allow_iframe") is { } nullNodeAllowIframe && nullNodeAllowIframe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowIframe = null;
+            if (parseNode.GetChildNode("app_launcher_visible") is { } nullNodeAppLauncherVisible && nullNodeAppLauncherVisible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppLauncherVisible = null;
+            if (parseNode.GetChildNode("auto_redirect_to_identity") is { } nullNodeAutoRedirectToIdentity && nullNodeAutoRedirectToIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRedirectToIdentity = null;
+            if (parseNode.GetChildNode("cors_headers") is { } nullNodeCorsHeaders && nullNodeCorsHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CorsHeaders = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("custom_deny_message") is { } nullNodeCustomDenyMessage && nullNodeCustomDenyMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDenyMessage = null;
+            if (parseNode.GetChildNode("custom_deny_url") is { } nullNodeCustomDenyUrl && nullNodeCustomDenyUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDenyUrl = null;
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("eager_redirect_cookie_setting") is { } nullNodeEagerRedirectCookieSetting && nullNodeEagerRedirectCookieSetting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EagerRedirectCookieSetting = null;
+            if (parseNode.GetChildNode("enable_binding_cookie") is { } nullNodeEnableBindingCookie && nullNodeEnableBindingCookie.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableBindingCookie = null;
+            if (parseNode.GetChildNode("http_only_cookie_attribute") is { } nullNodeHttpOnlyCookieAttribute && nullNodeHttpOnlyCookieAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpOnlyCookieAttribute = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("logo_url") is { } nullNodeLogoUrl && nullNodeLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUrl = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("options_preflight_bypass") is { } nullNodeOptionsPreflightBypass && nullNodeOptionsPreflightBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsPreflightBypass = null;
+            if (parseNode.GetChildNode("same_site_cookie_attribute") is { } nullNodeSameSiteCookieAttribute && nullNodeSameSiteCookieAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameSiteCookieAttribute = null;
+            if (parseNode.GetChildNode("scim_config") is { } nullNodeScimConfig && nullNodeScimConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScimConfig = null;
+            if (parseNode.GetChildNode("service_auth_401_redirect") is { } nullNodeServiceAuth401Redirect && nullNodeServiceAuth401Redirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAuth401Redirect = null;
+            if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
+            if (parseNode.GetChildNode("skip_interstitial") is { } nullNodeSkipInterstitial && nullNodeSkipInterstitial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipInterstitial = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("use_clientless_isolation_app_launcher_url") is { } nullNodeUseClientlessIsolationAppLauncherUrl && nullNodeUseClientlessIsolationAppLauncherUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseClientlessIsolationAppLauncherUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedIdps { get; set; }
+        public List<string>? AllowedIdps { get => _explicitNullValueAllowedIdps; set { _explicitNullValueAllowedIdps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_idps"); else _explicitNullProperties?.Remove("allowed_idps"); } }
+        private List<string>? _explicitNullValueAllowedIdps = default!;
 #nullable restore
 #else
-        public List<string> AllowedIdps { get; set; }
+        public List<string> AllowedIdps { get => _explicitNullValueAllowedIdps; set { _explicitNullValueAllowedIdps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_idps"); else _explicitNullProperties?.Remove("allowed_idps"); } }
+        private List<string> _explicitNullValueAllowedIdps = default!;
 #endif
         /// <summary>Enables loading application content in an iFrame.</summary>
-        public bool? AllowIframe { get; set; }
+        public bool? AllowIframe { get => _explicitNullValueAllowIframe; set { _explicitNullValueAllowIframe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_iframe"); else _explicitNullProperties?.Remove("allow_iframe"); } }
+        private bool? _explicitNullValueAllowIframe = default!;
         /// <summary>Displays the application in the App Launcher.</summary>
-        public bool? AppLauncherVisible { get; set; }
+        public bool? AppLauncherVisible { get => _explicitNullValueAppLauncherVisible; set { _explicitNullValueAppLauncherVisible = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_launcher_visible"); else _explicitNullProperties?.Remove("app_launcher_visible"); } }
+        private bool? _explicitNullValueAppLauncherVisible = default!;
         /// <summary>Audience tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,113 +70,145 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Aud { get; private set; }
 #endif
         /// <summary>When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.</summary>
-        public bool? AutoRedirectToIdentity { get; set; }
+        public bool? AutoRedirectToIdentity { get => _explicitNullValueAutoRedirectToIdentity; set { _explicitNullValueAutoRedirectToIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_redirect_to_identity"); else _explicitNullProperties?.Remove("auto_redirect_to_identity"); } }
+        private bool? _explicitNullValueAutoRedirectToIdentity = default!;
         /// <summary>The cors_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders? CorsHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders? CorsHeaders { get => _explicitNullValueCorsHeaders; set { _explicitNullValueCorsHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cors_headers"); else _explicitNullProperties?.Remove("cors_headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders? _explicitNullValueCorsHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders CorsHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders CorsHeaders { get => _explicitNullValueCorsHeaders; set { _explicitNullValueCorsHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cors_headers"); else _explicitNullProperties?.Remove("cors_headers"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders _explicitNullValueCorsHeaders = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The custom error message shown to a user when they are denied access to the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomDenyMessage { get; set; }
+        public string? CustomDenyMessage { get => _explicitNullValueCustomDenyMessage; set { _explicitNullValueCustomDenyMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_deny_message"); else _explicitNullProperties?.Remove("custom_deny_message"); } }
+        private string? _explicitNullValueCustomDenyMessage = default!;
 #nullable restore
 #else
-        public string CustomDenyMessage { get; set; }
+        public string CustomDenyMessage { get => _explicitNullValueCustomDenyMessage; set { _explicitNullValueCustomDenyMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_deny_message"); else _explicitNullProperties?.Remove("custom_deny_message"); } }
+        private string _explicitNullValueCustomDenyMessage = default!;
 #endif
         /// <summary>The custom URL a user is redirected to when they are denied access to the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomDenyUrl { get; set; }
+        public string? CustomDenyUrl { get => _explicitNullValueCustomDenyUrl; set { _explicitNullValueCustomDenyUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_deny_url"); else _explicitNullProperties?.Remove("custom_deny_url"); } }
+        private string? _explicitNullValueCustomDenyUrl = default!;
 #nullable restore
 #else
-        public string CustomDenyUrl { get; set; }
+        public string CustomDenyUrl { get => _explicitNullValueCustomDenyUrl; set { _explicitNullValueCustomDenyUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_deny_url"); else _explicitNullProperties?.Remove("custom_deny_url"); } }
+        private string _explicitNullValueCustomDenyUrl = default!;
 #endif
         /// <summary>The domain and path that Access will secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>Preemptively sets the Access session cookie on every hostname in a multi-hostname self-hosted application during the initial redirect chain, rather than setting it lazily on first visit. Defaults to true. Set to false to disable the eager redirect cookie behavior.</summary>
-        public bool? EagerRedirectCookieSetting { get; set; }
+        public bool? EagerRedirectCookieSetting { get => _explicitNullValueEagerRedirectCookieSetting; set { _explicitNullValueEagerRedirectCookieSetting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eager_redirect_cookie_setting"); else _explicitNullProperties?.Remove("eager_redirect_cookie_setting"); } }
+        private bool? _explicitNullValueEagerRedirectCookieSetting = default!;
         /// <summary>Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.</summary>
-        public bool? EnableBindingCookie { get; set; }
+        public bool? EnableBindingCookie { get => _explicitNullValueEnableBindingCookie; set { _explicitNullValueEnableBindingCookie = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_binding_cookie"); else _explicitNullProperties?.Remove("enable_binding_cookie"); } }
+        private bool? _explicitNullValueEnableBindingCookie = default!;
         /// <summary>Enables the HttpOnly cookie attribute, which increases security against XSS attacks.</summary>
-        public bool? HttpOnlyCookieAttribute { get; set; }
+        public bool? HttpOnlyCookieAttribute { get => _explicitNullValueHttpOnlyCookieAttribute; set { _explicitNullValueHttpOnlyCookieAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_only_cookie_attribute"); else _explicitNullProperties?.Remove("http_only_cookie_attribute"); } }
+        private bool? _explicitNullValueHttpOnlyCookieAttribute = default!;
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The image URL for the logo shown in the App Launcher dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUrl { get; set; }
+        public string? LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_url"); else _explicitNullProperties?.Remove("logo_url"); } }
+        private string? _explicitNullValueLogoUrl = default!;
 #nullable restore
 #else
-        public string LogoUrl { get; set; }
+        public string LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_url"); else _explicitNullProperties?.Remove("logo_url"); } }
+        private string _explicitNullValueLogoUrl = default!;
 #endif
         /// <summary>The name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Allows options preflight requests to bypass Access authentication and go directly to the origin. Cannot turn on if cors_headers is set.</summary>
-        public bool? OptionsPreflightBypass { get; set; }
+        public bool? OptionsPreflightBypass { get => _explicitNullValueOptionsPreflightBypass; set { _explicitNullValueOptionsPreflightBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options_preflight_bypass"); else _explicitNullProperties?.Remove("options_preflight_bypass"); } }
+        private bool? _explicitNullValueOptionsPreflightBypass = default!;
         /// <summary>Sets the SameSite cookie setting, which provides increased security against CSRF attacks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SameSiteCookieAttribute { get; set; }
+        public string? SameSiteCookieAttribute { get => _explicitNullValueSameSiteCookieAttribute; set { _explicitNullValueSameSiteCookieAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("same_site_cookie_attribute"); else _explicitNullProperties?.Remove("same_site_cookie_attribute"); } }
+        private string? _explicitNullValueSameSiteCookieAttribute = default!;
 #nullable restore
 #else
-        public string SameSiteCookieAttribute { get; set; }
+        public string SameSiteCookieAttribute { get => _explicitNullValueSameSiteCookieAttribute; set { _explicitNullValueSameSiteCookieAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("same_site_cookie_attribute"); else _explicitNullProperties?.Remove("same_site_cookie_attribute"); } }
+        private string _explicitNullValueSameSiteCookieAttribute = default!;
 #endif
         /// <summary>Configuration for provisioning to this application via SCIM. This is currently in closed beta.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2? ScimConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2? ScimConfig { get => _explicitNullValueScimConfig; set { _explicitNullValueScimConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scim_config"); else _explicitNullProperties?.Remove("scim_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2? _explicitNullValueScimConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2 ScimConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2 ScimConfig { get => _explicitNullValueScimConfig; set { _explicitNullValueScimConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scim_config"); else _explicitNullProperties?.Remove("scim_config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2 _explicitNullValueScimConfig = default!;
 #endif
         /// <summary>Returns a 401 status code when the request is blocked by a Service Auth policy.</summary>
-        public bool? ServiceAuth401Redirect { get; set; }
+        public bool? ServiceAuth401Redirect { get => _explicitNullValueServiceAuth401Redirect; set { _explicitNullValueServiceAuth401Redirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_auth_401_redirect"); else _explicitNullProperties?.Remove("service_auth_401_redirect"); } }
+        private bool? _explicitNullValueServiceAuth401Redirect = default!;
         /// <summary>The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionDuration { get; set; }
+        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string? _explicitNullValueSessionDuration = default!;
 #nullable restore
 #else
-        public string SessionDuration { get; set; }
+        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        private string _explicitNullValueSessionDuration = default!;
 #endif
         /// <summary>Enables automatic authentication through cloudflared.</summary>
-        public bool? SkipInterstitial { get; set; }
+        public bool? SkipInterstitial { get => _explicitNullValueSkipInterstitial; set { _explicitNullValueSkipInterstitial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_interstitial"); else _explicitNullProperties?.Remove("skip_interstitial"); } }
+        private bool? _explicitNullValueSkipInterstitial = default!;
         /// <summary>The application type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>Determines if users can access this application via a clientless browser isolation URL.This allows users to access private domains without connecting to Gateway. The option requiresClientless Browser Isolation to be set up with policies that allow users of this application.</summary>
-        public bool? UseClientlessIsolationAppLauncherUrl { get; set; }
+        public bool? UseClientlessIsolationAppLauncherUrl { get => _explicitNullValueUseClientlessIsolationAppLauncherUrl; set { _explicitNullValueUseClientlessIsolationAppLauncherUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_clientless_isolation_app_launcher_url"); else _explicitNullProperties?.Remove("use_clientless_isolation_app_launcher_url"); } }
+        private bool? _explicitNullValueUseClientlessIsolationAppLauncherUrl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsBrowserVncApplication"/> and sets the default values.
         /// </summary>
@@ -165,7 +232,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsBrowserVncApplication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsBrowserVncApplication();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsBrowserVncApplication(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -233,6 +300,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteBoolValue("use_clientless_isolation_app_launcher_url", UseClientlessIsolationAppLauncherUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

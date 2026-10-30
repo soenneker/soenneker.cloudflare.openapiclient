@@ -11,13 +11,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetPirAllMatchAggregates200ResponseCombinedFieldsTargetIndustry : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("distinct_values") is { } nullNodeDistinctValues && nullNodeDistinctValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctValues = null;
+            if (parseNode.GetChildNode("distinct_values_truncated") is { } nullNodeDistinctValuesTruncated && nullNodeDistinctValuesTruncated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctValuesTruncated = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Distinct values across the listed priorities, each counted once. Null when a priority has more distinct values than can be merged.</summary>
-        public int? DistinctValues { get; set; }
+        public int? DistinctValues { get => _explicitNullValueDistinctValues; set { _explicitNullValueDistinctValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_values"); else _explicitNullProperties?.Remove("distinct_values"); } }
+        private int? _explicitNullValueDistinctValues = default!;
         /// <summary>The distinct_values_truncated property</summary>
-        public bool? DistinctValuesTruncated { get; set; }
+        public bool? DistinctValuesTruncated { get => _explicitNullValueDistinctValuesTruncated; set { _explicitNullValueDistinctValuesTruncated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_values_truncated"); else _explicitNullProperties?.Remove("distinct_values_truncated"); } }
+        private bool? _explicitNullValueDistinctValuesTruncated = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombinedFieldsTargetIndustry"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombinedFieldsTargetIndustry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombinedFieldsTargetIndustry();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombinedFieldsTargetIndustry(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("distinct_values", DistinctValues);
             writer.WriteBoolValue("distinct_values_truncated", DistinctValuesTruncated);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

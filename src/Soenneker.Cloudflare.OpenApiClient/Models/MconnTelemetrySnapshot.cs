@@ -12,436 +12,806 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MconnTelemetrySnapshot : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bonds") is { } nullNodeBonds && nullNodeBonds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bonds = null;
+            if (parseNode.GetChildNode("count_reclaimed_paths") is { } nullNodeCountReclaimedPaths && nullNodeCountReclaimedPaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountReclaimedPaths = null;
+            if (parseNode.GetChildNode("count_reclaim_failures") is { } nullNodeCountReclaimFailures && nullNodeCountReclaimFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountReclaimFailures = null;
+            if (parseNode.GetChildNode("count_record_failed") is { } nullNodeCountRecordFailed && nullNodeCountRecordFailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountRecordFailed = null;
+            if (parseNode.GetChildNode("count_transmit_failures") is { } nullNodeCountTransmitFailures && nullNodeCountTransmitFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountTransmitFailures = null;
+            if (parseNode.GetChildNode("cpu_count") is { } nullNodeCpuCount && nullNodeCpuCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuCount = null;
+            if (parseNode.GetChildNode("cpu_pressure_10s") is { } nullNodeCpuPressure10s && nullNodeCpuPressure10s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuPressure10s = null;
+            if (parseNode.GetChildNode("cpu_pressure_300s") is { } nullNodeCpuPressure300s && nullNodeCpuPressure300s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuPressure300s = null;
+            if (parseNode.GetChildNode("cpu_pressure_60s") is { } nullNodeCpuPressure60s && nullNodeCpuPressure60s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuPressure60s = null;
+            if (parseNode.GetChildNode("cpu_pressure_total_us") is { } nullNodeCpuPressureTotalUs && nullNodeCpuPressureTotalUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuPressureTotalUs = null;
+            if (parseNode.GetChildNode("cpu_time_guest_ms") is { } nullNodeCpuTimeGuestMs && nullNodeCpuTimeGuestMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeGuestMs = null;
+            if (parseNode.GetChildNode("cpu_time_guest_nice_ms") is { } nullNodeCpuTimeGuestNiceMs && nullNodeCpuTimeGuestNiceMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeGuestNiceMs = null;
+            if (parseNode.GetChildNode("cpu_time_idle_ms") is { } nullNodeCpuTimeIdleMs && nullNodeCpuTimeIdleMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeIdleMs = null;
+            if (parseNode.GetChildNode("cpu_time_iowait_ms") is { } nullNodeCpuTimeIowaitMs && nullNodeCpuTimeIowaitMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeIowaitMs = null;
+            if (parseNode.GetChildNode("cpu_time_irq_ms") is { } nullNodeCpuTimeIrqMs && nullNodeCpuTimeIrqMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeIrqMs = null;
+            if (parseNode.GetChildNode("cpu_time_nice_ms") is { } nullNodeCpuTimeNiceMs && nullNodeCpuTimeNiceMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeNiceMs = null;
+            if (parseNode.GetChildNode("cpu_time_softirq_ms") is { } nullNodeCpuTimeSoftirqMs && nullNodeCpuTimeSoftirqMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeSoftirqMs = null;
+            if (parseNode.GetChildNode("cpu_time_steal_ms") is { } nullNodeCpuTimeStealMs && nullNodeCpuTimeStealMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeStealMs = null;
+            if (parseNode.GetChildNode("cpu_time_system_ms") is { } nullNodeCpuTimeSystemMs && nullNodeCpuTimeSystemMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeSystemMs = null;
+            if (parseNode.GetChildNode("cpu_time_user_ms") is { } nullNodeCpuTimeUserMs && nullNodeCpuTimeUserMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuTimeUserMs = null;
+            if (parseNode.GetChildNode("delta") is { } nullNodeDelta && nullNodeDelta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delta = null;
+            if (parseNode.GetChildNode("dhcp_leases") is { } nullNodeDhcpLeases && nullNodeDhcpLeases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DhcpLeases = null;
+            if (parseNode.GetChildNode("disks") is { } nullNodeDisks && nullNodeDisks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disks = null;
+            if (parseNode.GetChildNode("epsilon") is { } nullNodeEpsilon && nullNodeEpsilon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Epsilon = null;
+            if (parseNode.GetChildNode("ha_state") is { } nullNodeHaState && nullNodeHaState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HaState = null;
+            if (parseNode.GetChildNode("ha_value") is { } nullNodeHaValue && nullNodeHaValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HaValue = null;
+            if (parseNode.GetChildNode("interfaces") is { } nullNodeInterfaces && nullNodeInterfaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interfaces = null;
+            if (parseNode.GetChildNode("io_pressure_full_10s") is { } nullNodeIoPressureFull10s && nullNodeIoPressureFull10s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IoPressureFull10s = null;
+            if (parseNode.GetChildNode("io_pressure_full_300s") is { } nullNodeIoPressureFull300s && nullNodeIoPressureFull300s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IoPressureFull300s = null;
+            if (parseNode.GetChildNode("io_pressure_full_60s") is { } nullNodeIoPressureFull60s && nullNodeIoPressureFull60s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IoPressureFull60s = null;
+            if (parseNode.GetChildNode("io_pressure_full_total_us") is { } nullNodeIoPressureFullTotalUs && nullNodeIoPressureFullTotalUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IoPressureFullTotalUs = null;
+            if (parseNode.GetChildNode("io_pressure_some_10s") is { } nullNodeIoPressureSome10s && nullNodeIoPressureSome10s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IoPressureSome10s = null;
+            if (parseNode.GetChildNode("io_pressure_some_300s") is { } nullNodeIoPressureSome300s && nullNodeIoPressureSome300s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IoPressureSome300s = null;
+            if (parseNode.GetChildNode("io_pressure_some_60s") is { } nullNodeIoPressureSome60s && nullNodeIoPressureSome60s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IoPressureSome60s = null;
+            if (parseNode.GetChildNode("io_pressure_some_total_us") is { } nullNodeIoPressureSomeTotalUs && nullNodeIoPressureSomeTotalUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IoPressureSomeTotalUs = null;
+            if (parseNode.GetChildNode("kernel_btime") is { } nullNodeKernelBtime && nullNodeKernelBtime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KernelBtime = null;
+            if (parseNode.GetChildNode("kernel_ctxt") is { } nullNodeKernelCtxt && nullNodeKernelCtxt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KernelCtxt = null;
+            if (parseNode.GetChildNode("kernel_processes") is { } nullNodeKernelProcesses && nullNodeKernelProcesses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KernelProcesses = null;
+            if (parseNode.GetChildNode("kernel_processes_blocked") is { } nullNodeKernelProcessesBlocked && nullNodeKernelProcessesBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KernelProcessesBlocked = null;
+            if (parseNode.GetChildNode("kernel_processes_running") is { } nullNodeKernelProcessesRunning && nullNodeKernelProcessesRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KernelProcessesRunning = null;
+            if (parseNode.GetChildNode("load_average_15m") is { } nullNodeLoadAverage15m && nullNodeLoadAverage15m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadAverage15m = null;
+            if (parseNode.GetChildNode("load_average_1m") is { } nullNodeLoadAverage1m && nullNodeLoadAverage1m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadAverage1m = null;
+            if (parseNode.GetChildNode("load_average_5m") is { } nullNodeLoadAverage5m && nullNodeLoadAverage5m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadAverage5m = null;
+            if (parseNode.GetChildNode("load_average_cur") is { } nullNodeLoadAverageCur && nullNodeLoadAverageCur.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadAverageCur = null;
+            if (parseNode.GetChildNode("load_average_max") is { } nullNodeLoadAverageMax && nullNodeLoadAverageMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadAverageMax = null;
+            if (parseNode.GetChildNode("memory_active_bytes") is { } nullNodeMemoryActiveBytes && nullNodeMemoryActiveBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryActiveBytes = null;
+            if (parseNode.GetChildNode("memory_anon_hugepages_bytes") is { } nullNodeMemoryAnonHugepagesBytes && nullNodeMemoryAnonHugepagesBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryAnonHugepagesBytes = null;
+            if (parseNode.GetChildNode("memory_anon_pages_bytes") is { } nullNodeMemoryAnonPagesBytes && nullNodeMemoryAnonPagesBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryAnonPagesBytes = null;
+            if (parseNode.GetChildNode("memory_available_bytes") is { } nullNodeMemoryAvailableBytes && nullNodeMemoryAvailableBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryAvailableBytes = null;
+            if (parseNode.GetChildNode("memory_bounce_bytes") is { } nullNodeMemoryBounceBytes && nullNodeMemoryBounceBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryBounceBytes = null;
+            if (parseNode.GetChildNode("memory_buffers_bytes") is { } nullNodeMemoryBuffersBytes && nullNodeMemoryBuffersBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryBuffersBytes = null;
+            if (parseNode.GetChildNode("memory_cached_bytes") is { } nullNodeMemoryCachedBytes && nullNodeMemoryCachedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryCachedBytes = null;
+            if (parseNode.GetChildNode("memory_cma_free_bytes") is { } nullNodeMemoryCmaFreeBytes && nullNodeMemoryCmaFreeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryCmaFreeBytes = null;
+            if (parseNode.GetChildNode("memory_cma_total_bytes") is { } nullNodeMemoryCmaTotalBytes && nullNodeMemoryCmaTotalBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryCmaTotalBytes = null;
+            if (parseNode.GetChildNode("memory_commit_limit_bytes") is { } nullNodeMemoryCommitLimitBytes && nullNodeMemoryCommitLimitBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryCommitLimitBytes = null;
+            if (parseNode.GetChildNode("memory_committed_as_bytes") is { } nullNodeMemoryCommittedAsBytes && nullNodeMemoryCommittedAsBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryCommittedAsBytes = null;
+            if (parseNode.GetChildNode("memory_dirty_bytes") is { } nullNodeMemoryDirtyBytes && nullNodeMemoryDirtyBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryDirtyBytes = null;
+            if (parseNode.GetChildNode("memory_free_bytes") is { } nullNodeMemoryFreeBytes && nullNodeMemoryFreeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryFreeBytes = null;
+            if (parseNode.GetChildNode("memory_high_free_bytes") is { } nullNodeMemoryHighFreeBytes && nullNodeMemoryHighFreeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryHighFreeBytes = null;
+            if (parseNode.GetChildNode("memory_high_total_bytes") is { } nullNodeMemoryHighTotalBytes && nullNodeMemoryHighTotalBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryHighTotalBytes = null;
+            if (parseNode.GetChildNode("memory_hugepages_free") is { } nullNodeMemoryHugepagesFree && nullNodeMemoryHugepagesFree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryHugepagesFree = null;
+            if (parseNode.GetChildNode("memory_hugepagesize_bytes") is { } nullNodeMemoryHugepagesizeBytes && nullNodeMemoryHugepagesizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryHugepagesizeBytes = null;
+            if (parseNode.GetChildNode("memory_hugepages_rsvd") is { } nullNodeMemoryHugepagesRsvd && nullNodeMemoryHugepagesRsvd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryHugepagesRsvd = null;
+            if (parseNode.GetChildNode("memory_hugepages_surp") is { } nullNodeMemoryHugepagesSurp && nullNodeMemoryHugepagesSurp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryHugepagesSurp = null;
+            if (parseNode.GetChildNode("memory_hugepages_total") is { } nullNodeMemoryHugepagesTotal && nullNodeMemoryHugepagesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryHugepagesTotal = null;
+            if (parseNode.GetChildNode("memory_inactive_bytes") is { } nullNodeMemoryInactiveBytes && nullNodeMemoryInactiveBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryInactiveBytes = null;
+            if (parseNode.GetChildNode("memory_kernel_stack_bytes") is { } nullNodeMemoryKernelStackBytes && nullNodeMemoryKernelStackBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryKernelStackBytes = null;
+            if (parseNode.GetChildNode("memory_k_reclaimable_bytes") is { } nullNodeMemoryKReclaimableBytes && nullNodeMemoryKReclaimableBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryKReclaimableBytes = null;
+            if (parseNode.GetChildNode("memory_low_free_bytes") is { } nullNodeMemoryLowFreeBytes && nullNodeMemoryLowFreeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryLowFreeBytes = null;
+            if (parseNode.GetChildNode("memory_low_total_bytes") is { } nullNodeMemoryLowTotalBytes && nullNodeMemoryLowTotalBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryLowTotalBytes = null;
+            if (parseNode.GetChildNode("memory_mapped_bytes") is { } nullNodeMemoryMappedBytes && nullNodeMemoryMappedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryMappedBytes = null;
+            if (parseNode.GetChildNode("memory_page_tables_bytes") is { } nullNodeMemoryPageTablesBytes && nullNodeMemoryPageTablesBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPageTablesBytes = null;
+            if (parseNode.GetChildNode("memory_per_cpu_bytes") is { } nullNodeMemoryPerCpuBytes && nullNodeMemoryPerCpuBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPerCpuBytes = null;
+            if (parseNode.GetChildNode("memory_pressure_full_10s") is { } nullNodeMemoryPressureFull10s && nullNodeMemoryPressureFull10s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPressureFull10s = null;
+            if (parseNode.GetChildNode("memory_pressure_full_300s") is { } nullNodeMemoryPressureFull300s && nullNodeMemoryPressureFull300s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPressureFull300s = null;
+            if (parseNode.GetChildNode("memory_pressure_full_60s") is { } nullNodeMemoryPressureFull60s && nullNodeMemoryPressureFull60s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPressureFull60s = null;
+            if (parseNode.GetChildNode("memory_pressure_full_total_us") is { } nullNodeMemoryPressureFullTotalUs && nullNodeMemoryPressureFullTotalUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPressureFullTotalUs = null;
+            if (parseNode.GetChildNode("memory_pressure_some_10s") is { } nullNodeMemoryPressureSome10s && nullNodeMemoryPressureSome10s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPressureSome10s = null;
+            if (parseNode.GetChildNode("memory_pressure_some_300s") is { } nullNodeMemoryPressureSome300s && nullNodeMemoryPressureSome300s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPressureSome300s = null;
+            if (parseNode.GetChildNode("memory_pressure_some_60s") is { } nullNodeMemoryPressureSome60s && nullNodeMemoryPressureSome60s.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPressureSome60s = null;
+            if (parseNode.GetChildNode("memory_pressure_some_total_us") is { } nullNodeMemoryPressureSomeTotalUs && nullNodeMemoryPressureSomeTotalUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryPressureSomeTotalUs = null;
+            if (parseNode.GetChildNode("memory_secondary_page_tables_bytes") is { } nullNodeMemorySecondaryPageTablesBytes && nullNodeMemorySecondaryPageTablesBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemorySecondaryPageTablesBytes = null;
+            if (parseNode.GetChildNode("memory_shmem_bytes") is { } nullNodeMemoryShmemBytes && nullNodeMemoryShmemBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryShmemBytes = null;
+            if (parseNode.GetChildNode("memory_shmem_hugepages_bytes") is { } nullNodeMemoryShmemHugepagesBytes && nullNodeMemoryShmemHugepagesBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryShmemHugepagesBytes = null;
+            if (parseNode.GetChildNode("memory_shmem_pmd_mapped_bytes") is { } nullNodeMemoryShmemPmdMappedBytes && nullNodeMemoryShmemPmdMappedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryShmemPmdMappedBytes = null;
+            if (parseNode.GetChildNode("memory_slab_bytes") is { } nullNodeMemorySlabBytes && nullNodeMemorySlabBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemorySlabBytes = null;
+            if (parseNode.GetChildNode("memory_s_reclaimable_bytes") is { } nullNodeMemorySReclaimableBytes && nullNodeMemorySReclaimableBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemorySReclaimableBytes = null;
+            if (parseNode.GetChildNode("memory_s_unreclaim_bytes") is { } nullNodeMemorySUnreclaimBytes && nullNodeMemorySUnreclaimBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemorySUnreclaimBytes = null;
+            if (parseNode.GetChildNode("memory_swap_cached_bytes") is { } nullNodeMemorySwapCachedBytes && nullNodeMemorySwapCachedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemorySwapCachedBytes = null;
+            if (parseNode.GetChildNode("memory_swap_free_bytes") is { } nullNodeMemorySwapFreeBytes && nullNodeMemorySwapFreeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemorySwapFreeBytes = null;
+            if (parseNode.GetChildNode("memory_swap_total_bytes") is { } nullNodeMemorySwapTotalBytes && nullNodeMemorySwapTotalBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemorySwapTotalBytes = null;
+            if (parseNode.GetChildNode("memory_total_bytes") is { } nullNodeMemoryTotalBytes && nullNodeMemoryTotalBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryTotalBytes = null;
+            if (parseNode.GetChildNode("memory_vmalloc_chunk_bytes") is { } nullNodeMemoryVmallocChunkBytes && nullNodeMemoryVmallocChunkBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryVmallocChunkBytes = null;
+            if (parseNode.GetChildNode("memory_vmalloc_total_bytes") is { } nullNodeMemoryVmallocTotalBytes && nullNodeMemoryVmallocTotalBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryVmallocTotalBytes = null;
+            if (parseNode.GetChildNode("memory_vmalloc_used_bytes") is { } nullNodeMemoryVmallocUsedBytes && nullNodeMemoryVmallocUsedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryVmallocUsedBytes = null;
+            if (parseNode.GetChildNode("memory_writeback_bytes") is { } nullNodeMemoryWritebackBytes && nullNodeMemoryWritebackBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryWritebackBytes = null;
+            if (parseNode.GetChildNode("memory_writeback_tmp_bytes") is { } nullNodeMemoryWritebackTmpBytes && nullNodeMemoryWritebackTmpBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryWritebackTmpBytes = null;
+            if (parseNode.GetChildNode("memory_z_swap_bytes") is { } nullNodeMemoryZSwapBytes && nullNodeMemoryZSwapBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryZSwapBytes = null;
+            if (parseNode.GetChildNode("memory_z_swapped_bytes") is { } nullNodeMemoryZSwappedBytes && nullNodeMemoryZSwappedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryZSwappedBytes = null;
+            if (parseNode.GetChildNode("mounts") is { } nullNodeMounts && nullNodeMounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mounts = null;
+            if (parseNode.GetChildNode("netdevs") is { } nullNodeNetdevs && nullNodeNetdevs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Netdevs = null;
+            if (parseNode.GetChildNode("platform") is { } nullNodePlatform && nullNodePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Platform = null;
+            if (parseNode.GetChildNode("routes") is { } nullNodeRoutes && nullNodeRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Routes = null;
+            if (parseNode.GetChildNode("site_id") is { } nullNodeSiteId && nullNodeSiteId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteId = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_addr_mask_reps") is { } nullNodeSnmpIcmpInAddrMaskReps && nullNodeSnmpIcmpInAddrMaskReps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInAddrMaskReps = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_addr_masks") is { } nullNodeSnmpIcmpInAddrMasks && nullNodeSnmpIcmpInAddrMasks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInAddrMasks = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_csum_errors") is { } nullNodeSnmpIcmpInCsumErrors && nullNodeSnmpIcmpInCsumErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInCsumErrors = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_dest_unreachs") is { } nullNodeSnmpIcmpInDestUnreachs && nullNodeSnmpIcmpInDestUnreachs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInDestUnreachs = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_echo_reps") is { } nullNodeSnmpIcmpInEchoReps && nullNodeSnmpIcmpInEchoReps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInEchoReps = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_echos") is { } nullNodeSnmpIcmpInEchos && nullNodeSnmpIcmpInEchos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInEchos = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_errors") is { } nullNodeSnmpIcmpInErrors && nullNodeSnmpIcmpInErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInErrors = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_msgs") is { } nullNodeSnmpIcmpInMsgs && nullNodeSnmpIcmpInMsgs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInMsgs = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_parm_probs") is { } nullNodeSnmpIcmpInParmProbs && nullNodeSnmpIcmpInParmProbs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInParmProbs = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_redirects") is { } nullNodeSnmpIcmpInRedirects && nullNodeSnmpIcmpInRedirects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInRedirects = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_src_quenchs") is { } nullNodeSnmpIcmpInSrcQuenchs && nullNodeSnmpIcmpInSrcQuenchs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInSrcQuenchs = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_time_excds") is { } nullNodeSnmpIcmpInTimeExcds && nullNodeSnmpIcmpInTimeExcds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInTimeExcds = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_timestamp_reps") is { } nullNodeSnmpIcmpInTimestampReps && nullNodeSnmpIcmpInTimestampReps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInTimestampReps = null;
+            if (parseNode.GetChildNode("snmp_icmp_in_timestamps") is { } nullNodeSnmpIcmpInTimestamps && nullNodeSnmpIcmpInTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpInTimestamps = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_addr_mask_reps") is { } nullNodeSnmpIcmpOutAddrMaskReps && nullNodeSnmpIcmpOutAddrMaskReps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutAddrMaskReps = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_addr_masks") is { } nullNodeSnmpIcmpOutAddrMasks && nullNodeSnmpIcmpOutAddrMasks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutAddrMasks = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_dest_unreachs") is { } nullNodeSnmpIcmpOutDestUnreachs && nullNodeSnmpIcmpOutDestUnreachs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutDestUnreachs = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_echo_reps") is { } nullNodeSnmpIcmpOutEchoReps && nullNodeSnmpIcmpOutEchoReps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutEchoReps = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_echos") is { } nullNodeSnmpIcmpOutEchos && nullNodeSnmpIcmpOutEchos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutEchos = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_errors") is { } nullNodeSnmpIcmpOutErrors && nullNodeSnmpIcmpOutErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutErrors = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_msgs") is { } nullNodeSnmpIcmpOutMsgs && nullNodeSnmpIcmpOutMsgs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutMsgs = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_parm_probs") is { } nullNodeSnmpIcmpOutParmProbs && nullNodeSnmpIcmpOutParmProbs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutParmProbs = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_redirects") is { } nullNodeSnmpIcmpOutRedirects && nullNodeSnmpIcmpOutRedirects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutRedirects = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_src_quenchs") is { } nullNodeSnmpIcmpOutSrcQuenchs && nullNodeSnmpIcmpOutSrcQuenchs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutSrcQuenchs = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_time_excds") is { } nullNodeSnmpIcmpOutTimeExcds && nullNodeSnmpIcmpOutTimeExcds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutTimeExcds = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_timestamp_reps") is { } nullNodeSnmpIcmpOutTimestampReps && nullNodeSnmpIcmpOutTimestampReps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutTimestampReps = null;
+            if (parseNode.GetChildNode("snmp_icmp_out_timestamps") is { } nullNodeSnmpIcmpOutTimestamps && nullNodeSnmpIcmpOutTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIcmpOutTimestamps = null;
+            if (parseNode.GetChildNode("snmp_ip_default_ttl") is { } nullNodeSnmpIpDefaultTtl && nullNodeSnmpIpDefaultTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpDefaultTtl = null;
+            if (parseNode.GetChildNode("snmp_ip_forwarding_enabled") is { } nullNodeSnmpIpForwardingEnabled && nullNodeSnmpIpForwardingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpForwardingEnabled = null;
+            if (parseNode.GetChildNode("snmp_ip_forw_datagrams") is { } nullNodeSnmpIpForwDatagrams && nullNodeSnmpIpForwDatagrams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpForwDatagrams = null;
+            if (parseNode.GetChildNode("snmp_ip_frag_creates") is { } nullNodeSnmpIpFragCreates && nullNodeSnmpIpFragCreates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpFragCreates = null;
+            if (parseNode.GetChildNode("snmp_ip_frag_fails") is { } nullNodeSnmpIpFragFails && nullNodeSnmpIpFragFails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpFragFails = null;
+            if (parseNode.GetChildNode("snmp_ip_frag_oks") is { } nullNodeSnmpIpFragOks && nullNodeSnmpIpFragOks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpFragOks = null;
+            if (parseNode.GetChildNode("snmp_ip_in_addr_errors") is { } nullNodeSnmpIpInAddrErrors && nullNodeSnmpIpInAddrErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpInAddrErrors = null;
+            if (parseNode.GetChildNode("snmp_ip_in_delivers") is { } nullNodeSnmpIpInDelivers && nullNodeSnmpIpInDelivers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpInDelivers = null;
+            if (parseNode.GetChildNode("snmp_ip_in_discards") is { } nullNodeSnmpIpInDiscards && nullNodeSnmpIpInDiscards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpInDiscards = null;
+            if (parseNode.GetChildNode("snmp_ip_in_hdr_errors") is { } nullNodeSnmpIpInHdrErrors && nullNodeSnmpIpInHdrErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpInHdrErrors = null;
+            if (parseNode.GetChildNode("snmp_ip_in_receives") is { } nullNodeSnmpIpInReceives && nullNodeSnmpIpInReceives.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpInReceives = null;
+            if (parseNode.GetChildNode("snmp_ip_in_unknown_protos") is { } nullNodeSnmpIpInUnknownProtos && nullNodeSnmpIpInUnknownProtos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpInUnknownProtos = null;
+            if (parseNode.GetChildNode("snmp_ip_out_discards") is { } nullNodeSnmpIpOutDiscards && nullNodeSnmpIpOutDiscards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpOutDiscards = null;
+            if (parseNode.GetChildNode("snmp_ip_out_no_routes") is { } nullNodeSnmpIpOutNoRoutes && nullNodeSnmpIpOutNoRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpOutNoRoutes = null;
+            if (parseNode.GetChildNode("snmp_ip_out_requests") is { } nullNodeSnmpIpOutRequests && nullNodeSnmpIpOutRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpOutRequests = null;
+            if (parseNode.GetChildNode("snmp_ip_reasm_fails") is { } nullNodeSnmpIpReasmFails && nullNodeSnmpIpReasmFails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpReasmFails = null;
+            if (parseNode.GetChildNode("snmp_ip_reasm_oks") is { } nullNodeSnmpIpReasmOks && nullNodeSnmpIpReasmOks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpReasmOks = null;
+            if (parseNode.GetChildNode("snmp_ip_reasm_reqds") is { } nullNodeSnmpIpReasmReqds && nullNodeSnmpIpReasmReqds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpReasmReqds = null;
+            if (parseNode.GetChildNode("snmp_ip_reasm_timeout") is { } nullNodeSnmpIpReasmTimeout && nullNodeSnmpIpReasmTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpIpReasmTimeout = null;
+            if (parseNode.GetChildNode("snmp_tcp_active_opens") is { } nullNodeSnmpTcpActiveOpens && nullNodeSnmpTcpActiveOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpActiveOpens = null;
+            if (parseNode.GetChildNode("snmp_tcp_attempt_fails") is { } nullNodeSnmpTcpAttemptFails && nullNodeSnmpTcpAttemptFails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpAttemptFails = null;
+            if (parseNode.GetChildNode("snmp_tcp_curr_estab") is { } nullNodeSnmpTcpCurrEstab && nullNodeSnmpTcpCurrEstab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpCurrEstab = null;
+            if (parseNode.GetChildNode("snmp_tcp_estab_resets") is { } nullNodeSnmpTcpEstabResets && nullNodeSnmpTcpEstabResets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpEstabResets = null;
+            if (parseNode.GetChildNode("snmp_tcp_in_csum_errors") is { } nullNodeSnmpTcpInCsumErrors && nullNodeSnmpTcpInCsumErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpInCsumErrors = null;
+            if (parseNode.GetChildNode("snmp_tcp_in_errs") is { } nullNodeSnmpTcpInErrs && nullNodeSnmpTcpInErrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpInErrs = null;
+            if (parseNode.GetChildNode("snmp_tcp_in_segs") is { } nullNodeSnmpTcpInSegs && nullNodeSnmpTcpInSegs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpInSegs = null;
+            if (parseNode.GetChildNode("snmp_tcp_max_conn") is { } nullNodeSnmpTcpMaxConn && nullNodeSnmpTcpMaxConn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpMaxConn = null;
+            if (parseNode.GetChildNode("snmp_tcp_out_rsts") is { } nullNodeSnmpTcpOutRsts && nullNodeSnmpTcpOutRsts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpOutRsts = null;
+            if (parseNode.GetChildNode("snmp_tcp_out_segs") is { } nullNodeSnmpTcpOutSegs && nullNodeSnmpTcpOutSegs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpOutSegs = null;
+            if (parseNode.GetChildNode("snmp_tcp_passive_opens") is { } nullNodeSnmpTcpPassiveOpens && nullNodeSnmpTcpPassiveOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpPassiveOpens = null;
+            if (parseNode.GetChildNode("snmp_tcp_retrans_segs") is { } nullNodeSnmpTcpRetransSegs && nullNodeSnmpTcpRetransSegs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpRetransSegs = null;
+            if (parseNode.GetChildNode("snmp_tcp_rto_max") is { } nullNodeSnmpTcpRtoMax && nullNodeSnmpTcpRtoMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpRtoMax = null;
+            if (parseNode.GetChildNode("snmp_tcp_rto_min") is { } nullNodeSnmpTcpRtoMin && nullNodeSnmpTcpRtoMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpTcpRtoMin = null;
+            if (parseNode.GetChildNode("snmp_udp_in_datagrams") is { } nullNodeSnmpUdpInDatagrams && nullNodeSnmpUdpInDatagrams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpUdpInDatagrams = null;
+            if (parseNode.GetChildNode("snmp_udp_in_errors") is { } nullNodeSnmpUdpInErrors && nullNodeSnmpUdpInErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpUdpInErrors = null;
+            if (parseNode.GetChildNode("snmp_udp_no_ports") is { } nullNodeSnmpUdpNoPorts && nullNodeSnmpUdpNoPorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpUdpNoPorts = null;
+            if (parseNode.GetChildNode("snmp_udp_out_datagrams") is { } nullNodeSnmpUdpOutDatagrams && nullNodeSnmpUdpOutDatagrams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnmpUdpOutDatagrams = null;
+            if (parseNode.GetChildNode("system_boot_time_s") is { } nullNodeSystemBootTimeS && nullNodeSystemBootTimeS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemBootTimeS = null;
+            if (parseNode.GetChildNode("t") is { } nullNodeT && nullNodeT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) T = null;
+            if (parseNode.GetChildNode("thermals") is { } nullNodeThermals && nullNodeThermals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Thermals = null;
+            if (parseNode.GetChildNode("tunnels") is { } nullNodeTunnels && nullNodeTunnels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tunnels = null;
+            if (parseNode.GetChildNode("uptime_idle_ms") is { } nullNodeUptimeIdleMs && nullNodeUptimeIdleMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UptimeIdleMs = null;
+            if (parseNode.GetChildNode("uptime_total_ms") is { } nullNodeUptimeTotalMs && nullNodeUptimeTotalMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UptimeTotalMs = null;
+            if (parseNode.GetChildNode("v") is { } nullNodeV && nullNodeV.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) V = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bonds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotBond>? Bonds { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotBond>? Bonds { get => _explicitNullValueBonds; set { _explicitNullValueBonds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bonds"); else _explicitNullProperties?.Remove("bonds"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotBond>? _explicitNullValueBonds = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotBond> Bonds { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotBond> Bonds { get => _explicitNullValueBonds; set { _explicitNullValueBonds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bonds"); else _explicitNullProperties?.Remove("bonds"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotBond> _explicitNullValueBonds = default!;
 #endif
         /// <summary>Count of reclaimed paths</summary>
-        public double? CountReclaimedPaths { get; set; }
+        public double? CountReclaimedPaths { get => _explicitNullValueCountReclaimedPaths; set { _explicitNullValueCountReclaimedPaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_reclaimed_paths"); else _explicitNullProperties?.Remove("count_reclaimed_paths"); } }
+        private double? _explicitNullValueCountReclaimedPaths = default!;
         /// <summary>Count of failures to reclaim space</summary>
-        public double? CountReclaimFailures { get; set; }
+        public double? CountReclaimFailures { get => _explicitNullValueCountReclaimFailures; set { _explicitNullValueCountReclaimFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_reclaim_failures"); else _explicitNullProperties?.Remove("count_reclaim_failures"); } }
+        private double? _explicitNullValueCountReclaimFailures = default!;
         /// <summary>Count of failed snapshot recordings</summary>
-        public double? CountRecordFailed { get; set; }
+        public double? CountRecordFailed { get => _explicitNullValueCountRecordFailed; set { _explicitNullValueCountRecordFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_record_failed"); else _explicitNullProperties?.Remove("count_record_failed"); } }
+        private double? _explicitNullValueCountRecordFailed = default!;
         /// <summary>Count of failed snapshot transmissions</summary>
-        public double? CountTransmitFailures { get; set; }
+        public double? CountTransmitFailures { get => _explicitNullValueCountTransmitFailures; set { _explicitNullValueCountTransmitFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_transmit_failures"); else _explicitNullProperties?.Remove("count_transmit_failures"); } }
+        private double? _explicitNullValueCountTransmitFailures = default!;
         /// <summary>Count of processors/cores</summary>
-        public double? CpuCount { get; set; }
+        public double? CpuCount { get => _explicitNullValueCpuCount; set { _explicitNullValueCpuCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_count"); else _explicitNullProperties?.Remove("cpu_count"); } }
+        private double? _explicitNullValueCpuCount = default!;
         /// <summary>Percentage of time over a 10 second window that tasks were stalled</summary>
-        public double? CpuPressure10s { get; set; }
+        public double? CpuPressure10s { get => _explicitNullValueCpuPressure10s; set { _explicitNullValueCpuPressure10s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_pressure_10s"); else _explicitNullProperties?.Remove("cpu_pressure_10s"); } }
+        private double? _explicitNullValueCpuPressure10s = default!;
         /// <summary>Percentage of time over a 5 minute window that tasks were stalled</summary>
-        public double? CpuPressure300s { get; set; }
+        public double? CpuPressure300s { get => _explicitNullValueCpuPressure300s; set { _explicitNullValueCpuPressure300s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_pressure_300s"); else _explicitNullProperties?.Remove("cpu_pressure_300s"); } }
+        private double? _explicitNullValueCpuPressure300s = default!;
         /// <summary>Percentage of time over a 1 minute window that tasks were stalled</summary>
-        public double? CpuPressure60s { get; set; }
+        public double? CpuPressure60s { get => _explicitNullValueCpuPressure60s; set { _explicitNullValueCpuPressure60s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_pressure_60s"); else _explicitNullProperties?.Remove("cpu_pressure_60s"); } }
+        private double? _explicitNullValueCpuPressure60s = default!;
         /// <summary>Total stall time (microseconds)</summary>
-        public double? CpuPressureTotalUs { get; set; }
+        public double? CpuPressureTotalUs { get => _explicitNullValueCpuPressureTotalUs; set { _explicitNullValueCpuPressureTotalUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_pressure_total_us"); else _explicitNullProperties?.Remove("cpu_pressure_total_us"); } }
+        private double? _explicitNullValueCpuPressureTotalUs = default!;
         /// <summary>Time spent running a virtual CPU or guest OS (milliseconds)</summary>
-        public double? CpuTimeGuestMs { get; set; }
+        public double? CpuTimeGuestMs { get => _explicitNullValueCpuTimeGuestMs; set { _explicitNullValueCpuTimeGuestMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_guest_ms"); else _explicitNullProperties?.Remove("cpu_time_guest_ms"); } }
+        private double? _explicitNullValueCpuTimeGuestMs = default!;
         /// <summary>Time spent running a niced guest (milliseconds)</summary>
-        public double? CpuTimeGuestNiceMs { get; set; }
+        public double? CpuTimeGuestNiceMs { get => _explicitNullValueCpuTimeGuestNiceMs; set { _explicitNullValueCpuTimeGuestNiceMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_guest_nice_ms"); else _explicitNullProperties?.Remove("cpu_time_guest_nice_ms"); } }
+        private double? _explicitNullValueCpuTimeGuestNiceMs = default!;
         /// <summary>Time spent in idle state (milliseconds)</summary>
-        public double? CpuTimeIdleMs { get; set; }
+        public double? CpuTimeIdleMs { get => _explicitNullValueCpuTimeIdleMs; set { _explicitNullValueCpuTimeIdleMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_idle_ms"); else _explicitNullProperties?.Remove("cpu_time_idle_ms"); } }
+        private double? _explicitNullValueCpuTimeIdleMs = default!;
         /// <summary>Time spent wait for I/O to complete (milliseconds)</summary>
-        public double? CpuTimeIowaitMs { get; set; }
+        public double? CpuTimeIowaitMs { get => _explicitNullValueCpuTimeIowaitMs; set { _explicitNullValueCpuTimeIowaitMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_iowait_ms"); else _explicitNullProperties?.Remove("cpu_time_iowait_ms"); } }
+        private double? _explicitNullValueCpuTimeIowaitMs = default!;
         /// <summary>Time spent servicing interrupts (milliseconds)</summary>
-        public double? CpuTimeIrqMs { get; set; }
+        public double? CpuTimeIrqMs { get => _explicitNullValueCpuTimeIrqMs; set { _explicitNullValueCpuTimeIrqMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_irq_ms"); else _explicitNullProperties?.Remove("cpu_time_irq_ms"); } }
+        private double? _explicitNullValueCpuTimeIrqMs = default!;
         /// <summary>Time spent in low-priority user mode (milliseconds)</summary>
-        public double? CpuTimeNiceMs { get; set; }
+        public double? CpuTimeNiceMs { get => _explicitNullValueCpuTimeNiceMs; set { _explicitNullValueCpuTimeNiceMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_nice_ms"); else _explicitNullProperties?.Remove("cpu_time_nice_ms"); } }
+        private double? _explicitNullValueCpuTimeNiceMs = default!;
         /// <summary>Time spent servicing softirqs (milliseconds)</summary>
-        public double? CpuTimeSoftirqMs { get; set; }
+        public double? CpuTimeSoftirqMs { get => _explicitNullValueCpuTimeSoftirqMs; set { _explicitNullValueCpuTimeSoftirqMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_softirq_ms"); else _explicitNullProperties?.Remove("cpu_time_softirq_ms"); } }
+        private double? _explicitNullValueCpuTimeSoftirqMs = default!;
         /// <summary>Time stolen (milliseconds)</summary>
-        public double? CpuTimeStealMs { get; set; }
+        public double? CpuTimeStealMs { get => _explicitNullValueCpuTimeStealMs; set { _explicitNullValueCpuTimeStealMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_steal_ms"); else _explicitNullProperties?.Remove("cpu_time_steal_ms"); } }
+        private double? _explicitNullValueCpuTimeStealMs = default!;
         /// <summary>Time spent in system mode (milliseconds)</summary>
-        public double? CpuTimeSystemMs { get; set; }
+        public double? CpuTimeSystemMs { get => _explicitNullValueCpuTimeSystemMs; set { _explicitNullValueCpuTimeSystemMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_system_ms"); else _explicitNullProperties?.Remove("cpu_time_system_ms"); } }
+        private double? _explicitNullValueCpuTimeSystemMs = default!;
         /// <summary>Time spent in user mode (milliseconds)</summary>
-        public double? CpuTimeUserMs { get; set; }
+        public double? CpuTimeUserMs { get => _explicitNullValueCpuTimeUserMs; set { _explicitNullValueCpuTimeUserMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_time_user_ms"); else _explicitNullProperties?.Remove("cpu_time_user_ms"); } }
+        private double? _explicitNullValueCpuTimeUserMs = default!;
         /// <summary>Number of network operations applied during state transition</summary>
-        public double? Delta { get; set; }
+        public double? Delta { get => _explicitNullValueDelta; set { _explicitNullValueDelta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delta"); else _explicitNullProperties?.Remove("delta"); } }
+        private double? _explicitNullValueDelta = default!;
         /// <summary>The dhcp_leases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDhcpLease>? DhcpLeases { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDhcpLease>? DhcpLeases { get => _explicitNullValueDhcpLeases; set { _explicitNullValueDhcpLeases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_leases"); else _explicitNullProperties?.Remove("dhcp_leases"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDhcpLease>? _explicitNullValueDhcpLeases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDhcpLease> DhcpLeases { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDhcpLease> DhcpLeases { get => _explicitNullValueDhcpLeases; set { _explicitNullValueDhcpLeases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_leases"); else _explicitNullProperties?.Remove("dhcp_leases"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDhcpLease> _explicitNullValueDhcpLeases = default!;
 #endif
         /// <summary>The disks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk>? Disks { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk>? Disks { get => _explicitNullValueDisks; set { _explicitNullValueDisks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disks"); else _explicitNullProperties?.Remove("disks"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk>? _explicitNullValueDisks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk> Disks { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk> Disks { get => _explicitNullValueDisks; set { _explicitNullValueDisks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disks"); else _explicitNullProperties?.Remove("disks"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotDisk> _explicitNullValueDisks = default!;
 #endif
         /// <summary>Simulated number of network operations applied during state transition</summary>
-        public double? Epsilon { get; set; }
+        public double? Epsilon { get => _explicitNullValueEpsilon; set { _explicitNullValueEpsilon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("epsilon"); else _explicitNullProperties?.Remove("epsilon"); } }
+        private double? _explicitNullValueEpsilon = default!;
         /// <summary>Name of high availability state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HaState { get; set; }
+        public string? HaState { get => _explicitNullValueHaState; set { _explicitNullValueHaState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ha_state"); else _explicitNullProperties?.Remove("ha_state"); } }
+        private string? _explicitNullValueHaState = default!;
 #nullable restore
 #else
-        public string HaState { get; set; }
+        public string HaState { get => _explicitNullValueHaState; set { _explicitNullValueHaState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ha_state"); else _explicitNullProperties?.Remove("ha_state"); } }
+        private string _explicitNullValueHaState = default!;
 #endif
         /// <summary>Numeric value associated with high availability state (0 = disabled, 1 = active, 2 = standby, 3 = stopped, 4 = fault)</summary>
-        public double? HaValue { get; set; }
+        public double? HaValue { get => _explicitNullValueHaValue; set { _explicitNullValueHaValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ha_value"); else _explicitNullProperties?.Remove("ha_value"); } }
+        private double? _explicitNullValueHaValue = default!;
         /// <summary>The interfaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotInterface>? Interfaces { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotInterface>? Interfaces { get => _explicitNullValueInterfaces; set { _explicitNullValueInterfaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interfaces"); else _explicitNullProperties?.Remove("interfaces"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotInterface>? _explicitNullValueInterfaces = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotInterface> Interfaces { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotInterface> Interfaces { get => _explicitNullValueInterfaces; set { _explicitNullValueInterfaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interfaces"); else _explicitNullProperties?.Remove("interfaces"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotInterface> _explicitNullValueInterfaces = default!;
 #endif
         /// <summary>Percentage of time over a 10 second window that all tasks were stalled</summary>
-        public double? IoPressureFull10s { get; set; }
+        public double? IoPressureFull10s { get => _explicitNullValueIoPressureFull10s; set { _explicitNullValueIoPressureFull10s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("io_pressure_full_10s"); else _explicitNullProperties?.Remove("io_pressure_full_10s"); } }
+        private double? _explicitNullValueIoPressureFull10s = default!;
         /// <summary>Percentage of time over a 5 minute window that all tasks were stalled</summary>
-        public double? IoPressureFull300s { get; set; }
+        public double? IoPressureFull300s { get => _explicitNullValueIoPressureFull300s; set { _explicitNullValueIoPressureFull300s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("io_pressure_full_300s"); else _explicitNullProperties?.Remove("io_pressure_full_300s"); } }
+        private double? _explicitNullValueIoPressureFull300s = default!;
         /// <summary>Percentage of time over a 1 minute window that all tasks were stalled</summary>
-        public double? IoPressureFull60s { get; set; }
+        public double? IoPressureFull60s { get => _explicitNullValueIoPressureFull60s; set { _explicitNullValueIoPressureFull60s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("io_pressure_full_60s"); else _explicitNullProperties?.Remove("io_pressure_full_60s"); } }
+        private double? _explicitNullValueIoPressureFull60s = default!;
         /// <summary>Total stall time (microseconds)</summary>
-        public double? IoPressureFullTotalUs { get; set; }
+        public double? IoPressureFullTotalUs { get => _explicitNullValueIoPressureFullTotalUs; set { _explicitNullValueIoPressureFullTotalUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("io_pressure_full_total_us"); else _explicitNullProperties?.Remove("io_pressure_full_total_us"); } }
+        private double? _explicitNullValueIoPressureFullTotalUs = default!;
         /// <summary>Percentage of time over a 10 second window that some tasks were stalled</summary>
-        public double? IoPressureSome10s { get; set; }
+        public double? IoPressureSome10s { get => _explicitNullValueIoPressureSome10s; set { _explicitNullValueIoPressureSome10s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("io_pressure_some_10s"); else _explicitNullProperties?.Remove("io_pressure_some_10s"); } }
+        private double? _explicitNullValueIoPressureSome10s = default!;
         /// <summary>Percentage of time over a 3 minute window that some tasks were stalled</summary>
-        public double? IoPressureSome300s { get; set; }
+        public double? IoPressureSome300s { get => _explicitNullValueIoPressureSome300s; set { _explicitNullValueIoPressureSome300s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("io_pressure_some_300s"); else _explicitNullProperties?.Remove("io_pressure_some_300s"); } }
+        private double? _explicitNullValueIoPressureSome300s = default!;
         /// <summary>Percentage of time over a 1 minute window that some tasks were stalled</summary>
-        public double? IoPressureSome60s { get; set; }
+        public double? IoPressureSome60s { get => _explicitNullValueIoPressureSome60s; set { _explicitNullValueIoPressureSome60s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("io_pressure_some_60s"); else _explicitNullProperties?.Remove("io_pressure_some_60s"); } }
+        private double? _explicitNullValueIoPressureSome60s = default!;
         /// <summary>Total stall time (microseconds)</summary>
-        public double? IoPressureSomeTotalUs { get; set; }
+        public double? IoPressureSomeTotalUs { get => _explicitNullValueIoPressureSomeTotalUs; set { _explicitNullValueIoPressureSomeTotalUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("io_pressure_some_total_us"); else _explicitNullProperties?.Remove("io_pressure_some_total_us"); } }
+        private double? _explicitNullValueIoPressureSomeTotalUs = default!;
         /// <summary>Boot time (seconds since Unix epoch)</summary>
-        public double? KernelBtime { get; set; }
+        public double? KernelBtime { get => _explicitNullValueKernelBtime; set { _explicitNullValueKernelBtime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_btime"); else _explicitNullProperties?.Remove("kernel_btime"); } }
+        private double? _explicitNullValueKernelBtime = default!;
         /// <summary>Number of context switches that the system underwent</summary>
-        public double? KernelCtxt { get; set; }
+        public double? KernelCtxt { get => _explicitNullValueKernelCtxt; set { _explicitNullValueKernelCtxt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_ctxt"); else _explicitNullProperties?.Remove("kernel_ctxt"); } }
+        private double? _explicitNullValueKernelCtxt = default!;
         /// <summary>Number of forks since boot</summary>
-        public double? KernelProcesses { get; set; }
+        public double? KernelProcesses { get => _explicitNullValueKernelProcesses; set { _explicitNullValueKernelProcesses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_processes"); else _explicitNullProperties?.Remove("kernel_processes"); } }
+        private double? _explicitNullValueKernelProcesses = default!;
         /// <summary>Number of processes blocked waiting for I/O</summary>
-        public double? KernelProcessesBlocked { get; set; }
+        public double? KernelProcessesBlocked { get => _explicitNullValueKernelProcessesBlocked; set { _explicitNullValueKernelProcessesBlocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_processes_blocked"); else _explicitNullProperties?.Remove("kernel_processes_blocked"); } }
+        private double? _explicitNullValueKernelProcessesBlocked = default!;
         /// <summary>Number of processes in runnable state</summary>
-        public double? KernelProcessesRunning { get; set; }
+        public double? KernelProcessesRunning { get => _explicitNullValueKernelProcessesRunning; set { _explicitNullValueKernelProcessesRunning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_processes_running"); else _explicitNullProperties?.Remove("kernel_processes_running"); } }
+        private double? _explicitNullValueKernelProcessesRunning = default!;
         /// <summary>The fifteen-minute load average</summary>
-        public double? LoadAverage15m { get; set; }
+        public double? LoadAverage15m { get => _explicitNullValueLoadAverage15m; set { _explicitNullValueLoadAverage15m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("load_average_15m"); else _explicitNullProperties?.Remove("load_average_15m"); } }
+        private double? _explicitNullValueLoadAverage15m = default!;
         /// <summary>The one-minute load average</summary>
-        public double? LoadAverage1m { get; set; }
+        public double? LoadAverage1m { get => _explicitNullValueLoadAverage1m; set { _explicitNullValueLoadAverage1m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("load_average_1m"); else _explicitNullProperties?.Remove("load_average_1m"); } }
+        private double? _explicitNullValueLoadAverage1m = default!;
         /// <summary>The five-minute load average</summary>
-        public double? LoadAverage5m { get; set; }
+        public double? LoadAverage5m { get => _explicitNullValueLoadAverage5m; set { _explicitNullValueLoadAverage5m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("load_average_5m"); else _explicitNullProperties?.Remove("load_average_5m"); } }
+        private double? _explicitNullValueLoadAverage5m = default!;
         /// <summary>Number of currently runnable kernel scheduling entities</summary>
-        public double? LoadAverageCur { get; set; }
+        public double? LoadAverageCur { get => _explicitNullValueLoadAverageCur; set { _explicitNullValueLoadAverageCur = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("load_average_cur"); else _explicitNullProperties?.Remove("load_average_cur"); } }
+        private double? _explicitNullValueLoadAverageCur = default!;
         /// <summary>Number of kernel scheduling entities that currently exist on the system</summary>
-        public double? LoadAverageMax { get; set; }
+        public double? LoadAverageMax { get => _explicitNullValueLoadAverageMax; set { _explicitNullValueLoadAverageMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("load_average_max"); else _explicitNullProperties?.Remove("load_average_max"); } }
+        private double? _explicitNullValueLoadAverageMax = default!;
         /// <summary>Memory that has been used more recently</summary>
-        public double? MemoryActiveBytes { get; set; }
+        public double? MemoryActiveBytes { get => _explicitNullValueMemoryActiveBytes; set { _explicitNullValueMemoryActiveBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_active_bytes"); else _explicitNullProperties?.Remove("memory_active_bytes"); } }
+        private double? _explicitNullValueMemoryActiveBytes = default!;
         /// <summary>Non-file backed huge pages mapped into user-space page tables</summary>
-        public double? MemoryAnonHugepagesBytes { get; set; }
+        public double? MemoryAnonHugepagesBytes { get => _explicitNullValueMemoryAnonHugepagesBytes; set { _explicitNullValueMemoryAnonHugepagesBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_anon_hugepages_bytes"); else _explicitNullProperties?.Remove("memory_anon_hugepages_bytes"); } }
+        private double? _explicitNullValueMemoryAnonHugepagesBytes = default!;
         /// <summary>Non-file backed pages mapped into user-space page tables</summary>
-        public double? MemoryAnonPagesBytes { get; set; }
+        public double? MemoryAnonPagesBytes { get => _explicitNullValueMemoryAnonPagesBytes; set { _explicitNullValueMemoryAnonPagesBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_anon_pages_bytes"); else _explicitNullProperties?.Remove("memory_anon_pages_bytes"); } }
+        private double? _explicitNullValueMemoryAnonPagesBytes = default!;
         /// <summary>Estimate of how much memory is available for starting new applications</summary>
-        public double? MemoryAvailableBytes { get; set; }
+        public double? MemoryAvailableBytes { get => _explicitNullValueMemoryAvailableBytes; set { _explicitNullValueMemoryAvailableBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_available_bytes"); else _explicitNullProperties?.Remove("memory_available_bytes"); } }
+        private double? _explicitNullValueMemoryAvailableBytes = default!;
         /// <summary>Memory used for block device bounce buffers</summary>
-        public double? MemoryBounceBytes { get; set; }
+        public double? MemoryBounceBytes { get => _explicitNullValueMemoryBounceBytes; set { _explicitNullValueMemoryBounceBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_bounce_bytes"); else _explicitNullProperties?.Remove("memory_bounce_bytes"); } }
+        private double? _explicitNullValueMemoryBounceBytes = default!;
         /// <summary>Relatively temporary storage for raw disk blocks</summary>
-        public double? MemoryBuffersBytes { get; set; }
+        public double? MemoryBuffersBytes { get => _explicitNullValueMemoryBuffersBytes; set { _explicitNullValueMemoryBuffersBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_buffers_bytes"); else _explicitNullProperties?.Remove("memory_buffers_bytes"); } }
+        private double? _explicitNullValueMemoryBuffersBytes = default!;
         /// <summary>In-memory cache for files read from the disk</summary>
-        public double? MemoryCachedBytes { get; set; }
+        public double? MemoryCachedBytes { get => _explicitNullValueMemoryCachedBytes; set { _explicitNullValueMemoryCachedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_cached_bytes"); else _explicitNullProperties?.Remove("memory_cached_bytes"); } }
+        private double? _explicitNullValueMemoryCachedBytes = default!;
         /// <summary>Free CMA (Contiguous Memory Allocator) pages</summary>
-        public double? MemoryCmaFreeBytes { get; set; }
+        public double? MemoryCmaFreeBytes { get => _explicitNullValueMemoryCmaFreeBytes; set { _explicitNullValueMemoryCmaFreeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_cma_free_bytes"); else _explicitNullProperties?.Remove("memory_cma_free_bytes"); } }
+        private double? _explicitNullValueMemoryCmaFreeBytes = default!;
         /// <summary>Total CMA (Contiguous Memory Allocator) pages</summary>
-        public double? MemoryCmaTotalBytes { get; set; }
+        public double? MemoryCmaTotalBytes { get => _explicitNullValueMemoryCmaTotalBytes; set { _explicitNullValueMemoryCmaTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_cma_total_bytes"); else _explicitNullProperties?.Remove("memory_cma_total_bytes"); } }
+        private double? _explicitNullValueMemoryCmaTotalBytes = default!;
         /// <summary>Total amount of memory currently available to be allocated on the system</summary>
-        public double? MemoryCommitLimitBytes { get; set; }
+        public double? MemoryCommitLimitBytes { get => _explicitNullValueMemoryCommitLimitBytes; set { _explicitNullValueMemoryCommitLimitBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_commit_limit_bytes"); else _explicitNullProperties?.Remove("memory_commit_limit_bytes"); } }
+        private double? _explicitNullValueMemoryCommitLimitBytes = default!;
         /// <summary>Amount of memory presently allocated on the system</summary>
-        public double? MemoryCommittedAsBytes { get; set; }
+        public double? MemoryCommittedAsBytes { get => _explicitNullValueMemoryCommittedAsBytes; set { _explicitNullValueMemoryCommittedAsBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_committed_as_bytes"); else _explicitNullProperties?.Remove("memory_committed_as_bytes"); } }
+        private double? _explicitNullValueMemoryCommittedAsBytes = default!;
         /// <summary>Memory which is waiting to get written back to the disk</summary>
-        public double? MemoryDirtyBytes { get; set; }
+        public double? MemoryDirtyBytes { get => _explicitNullValueMemoryDirtyBytes; set { _explicitNullValueMemoryDirtyBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_dirty_bytes"); else _explicitNullProperties?.Remove("memory_dirty_bytes"); } }
+        private double? _explicitNullValueMemoryDirtyBytes = default!;
         /// <summary>The sum of LowFree and HighFree</summary>
-        public double? MemoryFreeBytes { get; set; }
+        public double? MemoryFreeBytes { get => _explicitNullValueMemoryFreeBytes; set { _explicitNullValueMemoryFreeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_free_bytes"); else _explicitNullProperties?.Remove("memory_free_bytes"); } }
+        private double? _explicitNullValueMemoryFreeBytes = default!;
         /// <summary>Amount of free highmem</summary>
-        public double? MemoryHighFreeBytes { get; set; }
+        public double? MemoryHighFreeBytes { get => _explicitNullValueMemoryHighFreeBytes; set { _explicitNullValueMemoryHighFreeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_high_free_bytes"); else _explicitNullProperties?.Remove("memory_high_free_bytes"); } }
+        private double? _explicitNullValueMemoryHighFreeBytes = default!;
         /// <summary>Total amount of highmem</summary>
-        public double? MemoryHighTotalBytes { get; set; }
+        public double? MemoryHighTotalBytes { get => _explicitNullValueMemoryHighTotalBytes; set { _explicitNullValueMemoryHighTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_high_total_bytes"); else _explicitNullProperties?.Remove("memory_high_total_bytes"); } }
+        private double? _explicitNullValueMemoryHighTotalBytes = default!;
         /// <summary>The number of huge pages in the pool that are not yet allocated</summary>
-        public double? MemoryHugepagesFree { get; set; }
+        public double? MemoryHugepagesFree { get => _explicitNullValueMemoryHugepagesFree; set { _explicitNullValueMemoryHugepagesFree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_hugepages_free"); else _explicitNullProperties?.Remove("memory_hugepages_free"); } }
+        private double? _explicitNullValueMemoryHugepagesFree = default!;
         /// <summary>The size of huge pages</summary>
-        public double? MemoryHugepagesizeBytes { get; set; }
+        public double? MemoryHugepagesizeBytes { get => _explicitNullValueMemoryHugepagesizeBytes; set { _explicitNullValueMemoryHugepagesizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_hugepagesize_bytes"); else _explicitNullProperties?.Remove("memory_hugepagesize_bytes"); } }
+        private double? _explicitNullValueMemoryHugepagesizeBytes = default!;
         /// <summary>Number of huge pages for which a commitment has been made, but no allocation has yet been made</summary>
-        public double? MemoryHugepagesRsvd { get; set; }
+        public double? MemoryHugepagesRsvd { get => _explicitNullValueMemoryHugepagesRsvd; set { _explicitNullValueMemoryHugepagesRsvd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_hugepages_rsvd"); else _explicitNullProperties?.Remove("memory_hugepages_rsvd"); } }
+        private double? _explicitNullValueMemoryHugepagesRsvd = default!;
         /// <summary>Number of huge pages in the pool above the threshold</summary>
-        public double? MemoryHugepagesSurp { get; set; }
+        public double? MemoryHugepagesSurp { get => _explicitNullValueMemoryHugepagesSurp; set { _explicitNullValueMemoryHugepagesSurp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_hugepages_surp"); else _explicitNullProperties?.Remove("memory_hugepages_surp"); } }
+        private double? _explicitNullValueMemoryHugepagesSurp = default!;
         /// <summary>The size of the pool of huge pages</summary>
-        public double? MemoryHugepagesTotal { get; set; }
+        public double? MemoryHugepagesTotal { get => _explicitNullValueMemoryHugepagesTotal; set { _explicitNullValueMemoryHugepagesTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_hugepages_total"); else _explicitNullProperties?.Remove("memory_hugepages_total"); } }
+        private double? _explicitNullValueMemoryHugepagesTotal = default!;
         /// <summary>Memory which has been less recently used</summary>
-        public double? MemoryInactiveBytes { get; set; }
+        public double? MemoryInactiveBytes { get => _explicitNullValueMemoryInactiveBytes; set { _explicitNullValueMemoryInactiveBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_inactive_bytes"); else _explicitNullProperties?.Remove("memory_inactive_bytes"); } }
+        private double? _explicitNullValueMemoryInactiveBytes = default!;
         /// <summary>Amount of memory allocated to kernel stacks</summary>
-        public double? MemoryKernelStackBytes { get; set; }
+        public double? MemoryKernelStackBytes { get => _explicitNullValueMemoryKernelStackBytes; set { _explicitNullValueMemoryKernelStackBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_kernel_stack_bytes"); else _explicitNullProperties?.Remove("memory_kernel_stack_bytes"); } }
+        private double? _explicitNullValueMemoryKernelStackBytes = default!;
         /// <summary>Kernel allocations that the kernel will attempt to reclaim under memory pressure</summary>
-        public double? MemoryKReclaimableBytes { get; set; }
+        public double? MemoryKReclaimableBytes { get => _explicitNullValueMemoryKReclaimableBytes; set { _explicitNullValueMemoryKReclaimableBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_k_reclaimable_bytes"); else _explicitNullProperties?.Remove("memory_k_reclaimable_bytes"); } }
+        private double? _explicitNullValueMemoryKReclaimableBytes = default!;
         /// <summary>Amount of free lowmem</summary>
-        public double? MemoryLowFreeBytes { get; set; }
+        public double? MemoryLowFreeBytes { get => _explicitNullValueMemoryLowFreeBytes; set { _explicitNullValueMemoryLowFreeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_low_free_bytes"); else _explicitNullProperties?.Remove("memory_low_free_bytes"); } }
+        private double? _explicitNullValueMemoryLowFreeBytes = default!;
         /// <summary>Total amount of lowmem</summary>
-        public double? MemoryLowTotalBytes { get; set; }
+        public double? MemoryLowTotalBytes { get => _explicitNullValueMemoryLowTotalBytes; set { _explicitNullValueMemoryLowTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_low_total_bytes"); else _explicitNullProperties?.Remove("memory_low_total_bytes"); } }
+        private double? _explicitNullValueMemoryLowTotalBytes = default!;
         /// <summary>Files which have been mapped into memory</summary>
-        public double? MemoryMappedBytes { get; set; }
+        public double? MemoryMappedBytes { get => _explicitNullValueMemoryMappedBytes; set { _explicitNullValueMemoryMappedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_mapped_bytes"); else _explicitNullProperties?.Remove("memory_mapped_bytes"); } }
+        private double? _explicitNullValueMemoryMappedBytes = default!;
         /// <summary>Amount of memory dedicated to the lowest level of page tables</summary>
-        public double? MemoryPageTablesBytes { get; set; }
+        public double? MemoryPageTablesBytes { get => _explicitNullValueMemoryPageTablesBytes; set { _explicitNullValueMemoryPageTablesBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_page_tables_bytes"); else _explicitNullProperties?.Remove("memory_page_tables_bytes"); } }
+        private double? _explicitNullValueMemoryPageTablesBytes = default!;
         /// <summary>Memory allocated to the per-cpu alloctor used to back per-cpu allocations</summary>
-        public double? MemoryPerCpuBytes { get; set; }
+        public double? MemoryPerCpuBytes { get => _explicitNullValueMemoryPerCpuBytes; set { _explicitNullValueMemoryPerCpuBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_per_cpu_bytes"); else _explicitNullProperties?.Remove("memory_per_cpu_bytes"); } }
+        private double? _explicitNullValueMemoryPerCpuBytes = default!;
         /// <summary>Percentage of time over a 10 second window that all tasks were stalled</summary>
-        public double? MemoryPressureFull10s { get; set; }
+        public double? MemoryPressureFull10s { get => _explicitNullValueMemoryPressureFull10s; set { _explicitNullValueMemoryPressureFull10s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_pressure_full_10s"); else _explicitNullProperties?.Remove("memory_pressure_full_10s"); } }
+        private double? _explicitNullValueMemoryPressureFull10s = default!;
         /// <summary>Percentage of time over a 5 minute window that all tasks were stalled</summary>
-        public double? MemoryPressureFull300s { get; set; }
+        public double? MemoryPressureFull300s { get => _explicitNullValueMemoryPressureFull300s; set { _explicitNullValueMemoryPressureFull300s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_pressure_full_300s"); else _explicitNullProperties?.Remove("memory_pressure_full_300s"); } }
+        private double? _explicitNullValueMemoryPressureFull300s = default!;
         /// <summary>Percentage of time over a 1 minute window that all tasks were stalled</summary>
-        public double? MemoryPressureFull60s { get; set; }
+        public double? MemoryPressureFull60s { get => _explicitNullValueMemoryPressureFull60s; set { _explicitNullValueMemoryPressureFull60s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_pressure_full_60s"); else _explicitNullProperties?.Remove("memory_pressure_full_60s"); } }
+        private double? _explicitNullValueMemoryPressureFull60s = default!;
         /// <summary>Total stall time (microseconds)</summary>
-        public double? MemoryPressureFullTotalUs { get; set; }
+        public double? MemoryPressureFullTotalUs { get => _explicitNullValueMemoryPressureFullTotalUs; set { _explicitNullValueMemoryPressureFullTotalUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_pressure_full_total_us"); else _explicitNullProperties?.Remove("memory_pressure_full_total_us"); } }
+        private double? _explicitNullValueMemoryPressureFullTotalUs = default!;
         /// <summary>Percentage of time over a 10 second window that some tasks were stalled</summary>
-        public double? MemoryPressureSome10s { get; set; }
+        public double? MemoryPressureSome10s { get => _explicitNullValueMemoryPressureSome10s; set { _explicitNullValueMemoryPressureSome10s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_pressure_some_10s"); else _explicitNullProperties?.Remove("memory_pressure_some_10s"); } }
+        private double? _explicitNullValueMemoryPressureSome10s = default!;
         /// <summary>Percentage of time over a 5 minute window that some tasks were stalled</summary>
-        public double? MemoryPressureSome300s { get; set; }
+        public double? MemoryPressureSome300s { get => _explicitNullValueMemoryPressureSome300s; set { _explicitNullValueMemoryPressureSome300s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_pressure_some_300s"); else _explicitNullProperties?.Remove("memory_pressure_some_300s"); } }
+        private double? _explicitNullValueMemoryPressureSome300s = default!;
         /// <summary>Percentage of time over a 1 minute window that some tasks were stalled</summary>
-        public double? MemoryPressureSome60s { get; set; }
+        public double? MemoryPressureSome60s { get => _explicitNullValueMemoryPressureSome60s; set { _explicitNullValueMemoryPressureSome60s = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_pressure_some_60s"); else _explicitNullProperties?.Remove("memory_pressure_some_60s"); } }
+        private double? _explicitNullValueMemoryPressureSome60s = default!;
         /// <summary>Total stall time (microseconds)</summary>
-        public double? MemoryPressureSomeTotalUs { get; set; }
+        public double? MemoryPressureSomeTotalUs { get => _explicitNullValueMemoryPressureSomeTotalUs; set { _explicitNullValueMemoryPressureSomeTotalUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_pressure_some_total_us"); else _explicitNullProperties?.Remove("memory_pressure_some_total_us"); } }
+        private double? _explicitNullValueMemoryPressureSomeTotalUs = default!;
         /// <summary>Amount of memory dedicated to the lowest level of page tables</summary>
-        public double? MemorySecondaryPageTablesBytes { get; set; }
+        public double? MemorySecondaryPageTablesBytes { get => _explicitNullValueMemorySecondaryPageTablesBytes; set { _explicitNullValueMemorySecondaryPageTablesBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_secondary_page_tables_bytes"); else _explicitNullProperties?.Remove("memory_secondary_page_tables_bytes"); } }
+        private double? _explicitNullValueMemorySecondaryPageTablesBytes = default!;
         /// <summary>Amount of memory consumed by tmpfs</summary>
-        public double? MemoryShmemBytes { get; set; }
+        public double? MemoryShmemBytes { get => _explicitNullValueMemoryShmemBytes; set { _explicitNullValueMemoryShmemBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_shmem_bytes"); else _explicitNullProperties?.Remove("memory_shmem_bytes"); } }
+        private double? _explicitNullValueMemoryShmemBytes = default!;
         /// <summary>Memory used by shmem and tmpfs, allocated with huge pages</summary>
-        public double? MemoryShmemHugepagesBytes { get; set; }
+        public double? MemoryShmemHugepagesBytes { get => _explicitNullValueMemoryShmemHugepagesBytes; set { _explicitNullValueMemoryShmemHugepagesBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_shmem_hugepages_bytes"); else _explicitNullProperties?.Remove("memory_shmem_hugepages_bytes"); } }
+        private double? _explicitNullValueMemoryShmemHugepagesBytes = default!;
         /// <summary>Shared memory mapped into user space with huge pages</summary>
-        public double? MemoryShmemPmdMappedBytes { get; set; }
+        public double? MemoryShmemPmdMappedBytes { get => _explicitNullValueMemoryShmemPmdMappedBytes; set { _explicitNullValueMemoryShmemPmdMappedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_shmem_pmd_mapped_bytes"); else _explicitNullProperties?.Remove("memory_shmem_pmd_mapped_bytes"); } }
+        private double? _explicitNullValueMemoryShmemPmdMappedBytes = default!;
         /// <summary>In-kernel data structures cache</summary>
-        public double? MemorySlabBytes { get; set; }
+        public double? MemorySlabBytes { get => _explicitNullValueMemorySlabBytes; set { _explicitNullValueMemorySlabBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_slab_bytes"); else _explicitNullProperties?.Remove("memory_slab_bytes"); } }
+        private double? _explicitNullValueMemorySlabBytes = default!;
         /// <summary>Part of slab that can be reclaimed on memory pressure</summary>
-        public double? MemorySReclaimableBytes { get; set; }
+        public double? MemorySReclaimableBytes { get => _explicitNullValueMemorySReclaimableBytes; set { _explicitNullValueMemorySReclaimableBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_s_reclaimable_bytes"); else _explicitNullProperties?.Remove("memory_s_reclaimable_bytes"); } }
+        private double? _explicitNullValueMemorySReclaimableBytes = default!;
         /// <summary>Part of slab that cannot be reclaimed on memory pressure</summary>
-        public double? MemorySUnreclaimBytes { get; set; }
+        public double? MemorySUnreclaimBytes { get => _explicitNullValueMemorySUnreclaimBytes; set { _explicitNullValueMemorySUnreclaimBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_s_unreclaim_bytes"); else _explicitNullProperties?.Remove("memory_s_unreclaim_bytes"); } }
+        private double? _explicitNullValueMemorySUnreclaimBytes = default!;
         /// <summary>Memory swapped out and back in while still in swap file</summary>
-        public double? MemorySwapCachedBytes { get; set; }
+        public double? MemorySwapCachedBytes { get => _explicitNullValueMemorySwapCachedBytes; set { _explicitNullValueMemorySwapCachedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_swap_cached_bytes"); else _explicitNullProperties?.Remove("memory_swap_cached_bytes"); } }
+        private double? _explicitNullValueMemorySwapCachedBytes = default!;
         /// <summary>Amount of swap space that is currently unused</summary>
-        public double? MemorySwapFreeBytes { get; set; }
+        public double? MemorySwapFreeBytes { get => _explicitNullValueMemorySwapFreeBytes; set { _explicitNullValueMemorySwapFreeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_swap_free_bytes"); else _explicitNullProperties?.Remove("memory_swap_free_bytes"); } }
+        private double? _explicitNullValueMemorySwapFreeBytes = default!;
         /// <summary>Total amount of swap space available</summary>
-        public double? MemorySwapTotalBytes { get; set; }
+        public double? MemorySwapTotalBytes { get => _explicitNullValueMemorySwapTotalBytes; set { _explicitNullValueMemorySwapTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_swap_total_bytes"); else _explicitNullProperties?.Remove("memory_swap_total_bytes"); } }
+        private double? _explicitNullValueMemorySwapTotalBytes = default!;
         /// <summary>Total usable RAM</summary>
-        public double? MemoryTotalBytes { get; set; }
+        public double? MemoryTotalBytes { get => _explicitNullValueMemoryTotalBytes; set { _explicitNullValueMemoryTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_total_bytes"); else _explicitNullProperties?.Remove("memory_total_bytes"); } }
+        private double? _explicitNullValueMemoryTotalBytes = default!;
         /// <summary>Largest contiguous block of vmalloc area which is free</summary>
-        public double? MemoryVmallocChunkBytes { get; set; }
+        public double? MemoryVmallocChunkBytes { get => _explicitNullValueMemoryVmallocChunkBytes; set { _explicitNullValueMemoryVmallocChunkBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_vmalloc_chunk_bytes"); else _explicitNullProperties?.Remove("memory_vmalloc_chunk_bytes"); } }
+        private double? _explicitNullValueMemoryVmallocChunkBytes = default!;
         /// <summary>Total size of vmalloc memory area</summary>
-        public double? MemoryVmallocTotalBytes { get; set; }
+        public double? MemoryVmallocTotalBytes { get => _explicitNullValueMemoryVmallocTotalBytes; set { _explicitNullValueMemoryVmallocTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_vmalloc_total_bytes"); else _explicitNullProperties?.Remove("memory_vmalloc_total_bytes"); } }
+        private double? _explicitNullValueMemoryVmallocTotalBytes = default!;
         /// <summary>Amount of vmalloc area which is used</summary>
-        public double? MemoryVmallocUsedBytes { get; set; }
+        public double? MemoryVmallocUsedBytes { get => _explicitNullValueMemoryVmallocUsedBytes; set { _explicitNullValueMemoryVmallocUsedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_vmalloc_used_bytes"); else _explicitNullProperties?.Remove("memory_vmalloc_used_bytes"); } }
+        private double? _explicitNullValueMemoryVmallocUsedBytes = default!;
         /// <summary>Memory which is actively being written back to the disk</summary>
-        public double? MemoryWritebackBytes { get; set; }
+        public double? MemoryWritebackBytes { get => _explicitNullValueMemoryWritebackBytes; set { _explicitNullValueMemoryWritebackBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_writeback_bytes"); else _explicitNullProperties?.Remove("memory_writeback_bytes"); } }
+        private double? _explicitNullValueMemoryWritebackBytes = default!;
         /// <summary>Memory used by FUSE for temporary writeback buffers</summary>
-        public double? MemoryWritebackTmpBytes { get; set; }
+        public double? MemoryWritebackTmpBytes { get => _explicitNullValueMemoryWritebackTmpBytes; set { _explicitNullValueMemoryWritebackTmpBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_writeback_tmp_bytes"); else _explicitNullProperties?.Remove("memory_writeback_tmp_bytes"); } }
+        private double? _explicitNullValueMemoryWritebackTmpBytes = default!;
         /// <summary>Memory consumed by the zswap backend, compressed</summary>
-        public double? MemoryZSwapBytes { get; set; }
+        public double? MemoryZSwapBytes { get => _explicitNullValueMemoryZSwapBytes; set { _explicitNullValueMemoryZSwapBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_z_swap_bytes"); else _explicitNullProperties?.Remove("memory_z_swap_bytes"); } }
+        private double? _explicitNullValueMemoryZSwapBytes = default!;
         /// <summary>Amount of anonymous memory stored in zswap, uncompressed</summary>
-        public double? MemoryZSwappedBytes { get; set; }
+        public double? MemoryZSwappedBytes { get => _explicitNullValueMemoryZSwappedBytes; set { _explicitNullValueMemoryZSwappedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_z_swapped_bytes"); else _explicitNullProperties?.Remove("memory_z_swapped_bytes"); } }
+        private double? _explicitNullValueMemoryZSwappedBytes = default!;
         /// <summary>The mounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount>? Mounts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount>? Mounts { get => _explicitNullValueMounts; set { _explicitNullValueMounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mounts"); else _explicitNullProperties?.Remove("mounts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount>? _explicitNullValueMounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount> Mounts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount> Mounts { get => _explicitNullValueMounts; set { _explicitNullValueMounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mounts"); else _explicitNullProperties?.Remove("mounts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount> _explicitNullValueMounts = default!;
 #endif
         /// <summary>The netdevs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev>? Netdevs { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev>? Netdevs { get => _explicitNullValueNetdevs; set { _explicitNullValueNetdevs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("netdevs"); else _explicitNullProperties?.Remove("netdevs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev>? _explicitNullValueNetdevs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev> Netdevs { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev> Netdevs { get => _explicitNullValueNetdevs; set { _explicitNullValueNetdevs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("netdevs"); else _explicitNullProperties?.Remove("netdevs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev> _explicitNullValueNetdevs = default!;
 #endif
         /// <summary>Platform identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Platform { get; set; }
+        public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string? _explicitNullValuePlatform = default!;
 #nullable restore
 #else
-        public string Platform { get; set; }
+        public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string _explicitNullValuePlatform = default!;
 #endif
         /// <summary>The routes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotRoute>? Routes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotRoute>? Routes { get => _explicitNullValueRoutes; set { _explicitNullValueRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes"); else _explicitNullProperties?.Remove("routes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotRoute>? _explicitNullValueRoutes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotRoute> Routes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotRoute> Routes { get => _explicitNullValueRoutes; set { _explicitNullValueRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes"); else _explicitNullProperties?.Remove("routes"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotRoute> _explicitNullValueRoutes = default!;
 #endif
         /// <summary>Site identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteId { get; set; }
+        public string? SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
+        private string? _explicitNullValueSiteId = default!;
 #nullable restore
 #else
-        public string SiteId { get; set; }
+        public string SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
+        private string _explicitNullValueSiteId = default!;
 #endif
         /// <summary>Number of ICMP Address Mask Reply messages received</summary>
-        public double? SnmpIcmpInAddrMaskReps { get; set; }
+        public double? SnmpIcmpInAddrMaskReps { get => _explicitNullValueSnmpIcmpInAddrMaskReps; set { _explicitNullValueSnmpIcmpInAddrMaskReps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_addr_mask_reps"); else _explicitNullProperties?.Remove("snmp_icmp_in_addr_mask_reps"); } }
+        private double? _explicitNullValueSnmpIcmpInAddrMaskReps = default!;
         /// <summary>Number of ICMP Address Mask Request messages received</summary>
-        public double? SnmpIcmpInAddrMasks { get; set; }
+        public double? SnmpIcmpInAddrMasks { get => _explicitNullValueSnmpIcmpInAddrMasks; set { _explicitNullValueSnmpIcmpInAddrMasks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_addr_masks"); else _explicitNullProperties?.Remove("snmp_icmp_in_addr_masks"); } }
+        private double? _explicitNullValueSnmpIcmpInAddrMasks = default!;
         /// <summary>Number of ICMP messages received with bad checksums</summary>
-        public double? SnmpIcmpInCsumErrors { get; set; }
+        public double? SnmpIcmpInCsumErrors { get => _explicitNullValueSnmpIcmpInCsumErrors; set { _explicitNullValueSnmpIcmpInCsumErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_csum_errors"); else _explicitNullProperties?.Remove("snmp_icmp_in_csum_errors"); } }
+        private double? _explicitNullValueSnmpIcmpInCsumErrors = default!;
         /// <summary>Number of ICMP Destination Unreachable messages received</summary>
-        public double? SnmpIcmpInDestUnreachs { get; set; }
+        public double? SnmpIcmpInDestUnreachs { get => _explicitNullValueSnmpIcmpInDestUnreachs; set { _explicitNullValueSnmpIcmpInDestUnreachs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_dest_unreachs"); else _explicitNullProperties?.Remove("snmp_icmp_in_dest_unreachs"); } }
+        private double? _explicitNullValueSnmpIcmpInDestUnreachs = default!;
         /// <summary>Number of ICMP Echo Reply messages received</summary>
-        public double? SnmpIcmpInEchoReps { get; set; }
+        public double? SnmpIcmpInEchoReps { get => _explicitNullValueSnmpIcmpInEchoReps; set { _explicitNullValueSnmpIcmpInEchoReps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_echo_reps"); else _explicitNullProperties?.Remove("snmp_icmp_in_echo_reps"); } }
+        private double? _explicitNullValueSnmpIcmpInEchoReps = default!;
         /// <summary>Number of ICMP Echo (request) messages received</summary>
-        public double? SnmpIcmpInEchos { get; set; }
+        public double? SnmpIcmpInEchos { get => _explicitNullValueSnmpIcmpInEchos; set { _explicitNullValueSnmpIcmpInEchos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_echos"); else _explicitNullProperties?.Remove("snmp_icmp_in_echos"); } }
+        private double? _explicitNullValueSnmpIcmpInEchos = default!;
         /// <summary>Number of ICMP messages received with ICMP-specific errors</summary>
-        public double? SnmpIcmpInErrors { get; set; }
+        public double? SnmpIcmpInErrors { get => _explicitNullValueSnmpIcmpInErrors; set { _explicitNullValueSnmpIcmpInErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_errors"); else _explicitNullProperties?.Remove("snmp_icmp_in_errors"); } }
+        private double? _explicitNullValueSnmpIcmpInErrors = default!;
         /// <summary>Number of ICMP messages received</summary>
-        public double? SnmpIcmpInMsgs { get; set; }
+        public double? SnmpIcmpInMsgs { get => _explicitNullValueSnmpIcmpInMsgs; set { _explicitNullValueSnmpIcmpInMsgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_msgs"); else _explicitNullProperties?.Remove("snmp_icmp_in_msgs"); } }
+        private double? _explicitNullValueSnmpIcmpInMsgs = default!;
         /// <summary>Number of ICMP Parameter Problem messages received</summary>
-        public double? SnmpIcmpInParmProbs { get; set; }
+        public double? SnmpIcmpInParmProbs { get => _explicitNullValueSnmpIcmpInParmProbs; set { _explicitNullValueSnmpIcmpInParmProbs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_parm_probs"); else _explicitNullProperties?.Remove("snmp_icmp_in_parm_probs"); } }
+        private double? _explicitNullValueSnmpIcmpInParmProbs = default!;
         /// <summary>Number of ICMP Redirect messages received</summary>
-        public double? SnmpIcmpInRedirects { get; set; }
+        public double? SnmpIcmpInRedirects { get => _explicitNullValueSnmpIcmpInRedirects; set { _explicitNullValueSnmpIcmpInRedirects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_redirects"); else _explicitNullProperties?.Remove("snmp_icmp_in_redirects"); } }
+        private double? _explicitNullValueSnmpIcmpInRedirects = default!;
         /// <summary>Number of ICMP Source Quench messages received</summary>
-        public double? SnmpIcmpInSrcQuenchs { get; set; }
+        public double? SnmpIcmpInSrcQuenchs { get => _explicitNullValueSnmpIcmpInSrcQuenchs; set { _explicitNullValueSnmpIcmpInSrcQuenchs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_src_quenchs"); else _explicitNullProperties?.Remove("snmp_icmp_in_src_quenchs"); } }
+        private double? _explicitNullValueSnmpIcmpInSrcQuenchs = default!;
         /// <summary>Number of ICMP Time Exceeded messages received</summary>
-        public double? SnmpIcmpInTimeExcds { get; set; }
+        public double? SnmpIcmpInTimeExcds { get => _explicitNullValueSnmpIcmpInTimeExcds; set { _explicitNullValueSnmpIcmpInTimeExcds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_time_excds"); else _explicitNullProperties?.Remove("snmp_icmp_in_time_excds"); } }
+        private double? _explicitNullValueSnmpIcmpInTimeExcds = default!;
         /// <summary>Number of ICMP Address Mask Request messages received</summary>
-        public double? SnmpIcmpInTimestampReps { get; set; }
+        public double? SnmpIcmpInTimestampReps { get => _explicitNullValueSnmpIcmpInTimestampReps; set { _explicitNullValueSnmpIcmpInTimestampReps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_timestamp_reps"); else _explicitNullProperties?.Remove("snmp_icmp_in_timestamp_reps"); } }
+        private double? _explicitNullValueSnmpIcmpInTimestampReps = default!;
         /// <summary>Number of ICMP Timestamp (request) messages received</summary>
-        public double? SnmpIcmpInTimestamps { get; set; }
+        public double? SnmpIcmpInTimestamps { get => _explicitNullValueSnmpIcmpInTimestamps; set { _explicitNullValueSnmpIcmpInTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_in_timestamps"); else _explicitNullProperties?.Remove("snmp_icmp_in_timestamps"); } }
+        private double? _explicitNullValueSnmpIcmpInTimestamps = default!;
         /// <summary>Number of ICMP Address Mask Reply messages sent</summary>
-        public double? SnmpIcmpOutAddrMaskReps { get; set; }
+        public double? SnmpIcmpOutAddrMaskReps { get => _explicitNullValueSnmpIcmpOutAddrMaskReps; set { _explicitNullValueSnmpIcmpOutAddrMaskReps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_addr_mask_reps"); else _explicitNullProperties?.Remove("snmp_icmp_out_addr_mask_reps"); } }
+        private double? _explicitNullValueSnmpIcmpOutAddrMaskReps = default!;
         /// <summary>Number of ICMP Address Mask Request messages sent</summary>
-        public double? SnmpIcmpOutAddrMasks { get; set; }
+        public double? SnmpIcmpOutAddrMasks { get => _explicitNullValueSnmpIcmpOutAddrMasks; set { _explicitNullValueSnmpIcmpOutAddrMasks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_addr_masks"); else _explicitNullProperties?.Remove("snmp_icmp_out_addr_masks"); } }
+        private double? _explicitNullValueSnmpIcmpOutAddrMasks = default!;
         /// <summary>Number of ICMP Destination Unreachable messages sent</summary>
-        public double? SnmpIcmpOutDestUnreachs { get; set; }
+        public double? SnmpIcmpOutDestUnreachs { get => _explicitNullValueSnmpIcmpOutDestUnreachs; set { _explicitNullValueSnmpIcmpOutDestUnreachs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_dest_unreachs"); else _explicitNullProperties?.Remove("snmp_icmp_out_dest_unreachs"); } }
+        private double? _explicitNullValueSnmpIcmpOutDestUnreachs = default!;
         /// <summary>Number of ICMP Echo Reply messages sent</summary>
-        public double? SnmpIcmpOutEchoReps { get; set; }
+        public double? SnmpIcmpOutEchoReps { get => _explicitNullValueSnmpIcmpOutEchoReps; set { _explicitNullValueSnmpIcmpOutEchoReps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_echo_reps"); else _explicitNullProperties?.Remove("snmp_icmp_out_echo_reps"); } }
+        private double? _explicitNullValueSnmpIcmpOutEchoReps = default!;
         /// <summary>Number of ICMP Echo (request) messages sent</summary>
-        public double? SnmpIcmpOutEchos { get; set; }
+        public double? SnmpIcmpOutEchos { get => _explicitNullValueSnmpIcmpOutEchos; set { _explicitNullValueSnmpIcmpOutEchos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_echos"); else _explicitNullProperties?.Remove("snmp_icmp_out_echos"); } }
+        private double? _explicitNullValueSnmpIcmpOutEchos = default!;
         /// <summary>Number of ICMP messages which this entity did not send due to ICMP-specific errors</summary>
-        public double? SnmpIcmpOutErrors { get; set; }
+        public double? SnmpIcmpOutErrors { get => _explicitNullValueSnmpIcmpOutErrors; set { _explicitNullValueSnmpIcmpOutErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_errors"); else _explicitNullProperties?.Remove("snmp_icmp_out_errors"); } }
+        private double? _explicitNullValueSnmpIcmpOutErrors = default!;
         /// <summary>Number of ICMP messages attempted to send</summary>
-        public double? SnmpIcmpOutMsgs { get; set; }
+        public double? SnmpIcmpOutMsgs { get => _explicitNullValueSnmpIcmpOutMsgs; set { _explicitNullValueSnmpIcmpOutMsgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_msgs"); else _explicitNullProperties?.Remove("snmp_icmp_out_msgs"); } }
+        private double? _explicitNullValueSnmpIcmpOutMsgs = default!;
         /// <summary>Number of ICMP Parameter Problem messages sent</summary>
-        public double? SnmpIcmpOutParmProbs { get; set; }
+        public double? SnmpIcmpOutParmProbs { get => _explicitNullValueSnmpIcmpOutParmProbs; set { _explicitNullValueSnmpIcmpOutParmProbs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_parm_probs"); else _explicitNullProperties?.Remove("snmp_icmp_out_parm_probs"); } }
+        private double? _explicitNullValueSnmpIcmpOutParmProbs = default!;
         /// <summary>Number of ICMP Redirect messages sent</summary>
-        public double? SnmpIcmpOutRedirects { get; set; }
+        public double? SnmpIcmpOutRedirects { get => _explicitNullValueSnmpIcmpOutRedirects; set { _explicitNullValueSnmpIcmpOutRedirects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_redirects"); else _explicitNullProperties?.Remove("snmp_icmp_out_redirects"); } }
+        private double? _explicitNullValueSnmpIcmpOutRedirects = default!;
         /// <summary>Number of ICMP Source Quench messages sent</summary>
-        public double? SnmpIcmpOutSrcQuenchs { get; set; }
+        public double? SnmpIcmpOutSrcQuenchs { get => _explicitNullValueSnmpIcmpOutSrcQuenchs; set { _explicitNullValueSnmpIcmpOutSrcQuenchs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_src_quenchs"); else _explicitNullProperties?.Remove("snmp_icmp_out_src_quenchs"); } }
+        private double? _explicitNullValueSnmpIcmpOutSrcQuenchs = default!;
         /// <summary>Number of ICMP Time Exceeded messages sent</summary>
-        public double? SnmpIcmpOutTimeExcds { get; set; }
+        public double? SnmpIcmpOutTimeExcds { get => _explicitNullValueSnmpIcmpOutTimeExcds; set { _explicitNullValueSnmpIcmpOutTimeExcds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_time_excds"); else _explicitNullProperties?.Remove("snmp_icmp_out_time_excds"); } }
+        private double? _explicitNullValueSnmpIcmpOutTimeExcds = default!;
         /// <summary>Number of ICMP Timestamp Reply messages sent</summary>
-        public double? SnmpIcmpOutTimestampReps { get; set; }
+        public double? SnmpIcmpOutTimestampReps { get => _explicitNullValueSnmpIcmpOutTimestampReps; set { _explicitNullValueSnmpIcmpOutTimestampReps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_timestamp_reps"); else _explicitNullProperties?.Remove("snmp_icmp_out_timestamp_reps"); } }
+        private double? _explicitNullValueSnmpIcmpOutTimestampReps = default!;
         /// <summary>Number of ICMP Timestamp (request) messages sent</summary>
-        public double? SnmpIcmpOutTimestamps { get; set; }
+        public double? SnmpIcmpOutTimestamps { get => _explicitNullValueSnmpIcmpOutTimestamps; set { _explicitNullValueSnmpIcmpOutTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_icmp_out_timestamps"); else _explicitNullProperties?.Remove("snmp_icmp_out_timestamps"); } }
+        private double? _explicitNullValueSnmpIcmpOutTimestamps = default!;
         /// <summary>Default value of the Time-To-Live field of the IP header</summary>
-        public double? SnmpIpDefaultTtl { get; set; }
+        public double? SnmpIpDefaultTtl { get => _explicitNullValueSnmpIpDefaultTtl; set { _explicitNullValueSnmpIpDefaultTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_default_ttl"); else _explicitNullProperties?.Remove("snmp_ip_default_ttl"); } }
+        private double? _explicitNullValueSnmpIpDefaultTtl = default!;
         /// <summary>Set when acting as an IP gateway</summary>
-        public bool? SnmpIpForwardingEnabled { get; set; }
+        public bool? SnmpIpForwardingEnabled { get => _explicitNullValueSnmpIpForwardingEnabled; set { _explicitNullValueSnmpIpForwardingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_forwarding_enabled"); else _explicitNullProperties?.Remove("snmp_ip_forwarding_enabled"); } }
+        private bool? _explicitNullValueSnmpIpForwardingEnabled = default!;
         /// <summary>Number of datagrams forwarded to their final destination</summary>
-        public double? SnmpIpForwDatagrams { get; set; }
+        public double? SnmpIpForwDatagrams { get => _explicitNullValueSnmpIpForwDatagrams; set { _explicitNullValueSnmpIpForwDatagrams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_forw_datagrams"); else _explicitNullProperties?.Remove("snmp_ip_forw_datagrams"); } }
+        private double? _explicitNullValueSnmpIpForwDatagrams = default!;
         /// <summary>Number of datagrams generated by fragmentation</summary>
-        public double? SnmpIpFragCreates { get; set; }
+        public double? SnmpIpFragCreates { get => _explicitNullValueSnmpIpFragCreates; set { _explicitNullValueSnmpIpFragCreates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_frag_creates"); else _explicitNullProperties?.Remove("snmp_ip_frag_creates"); } }
+        private double? _explicitNullValueSnmpIpFragCreates = default!;
         /// <summary>Number of datagrams discarded because fragmentation failed</summary>
-        public double? SnmpIpFragFails { get; set; }
+        public double? SnmpIpFragFails { get => _explicitNullValueSnmpIpFragFails; set { _explicitNullValueSnmpIpFragFails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_frag_fails"); else _explicitNullProperties?.Remove("snmp_ip_frag_fails"); } }
+        private double? _explicitNullValueSnmpIpFragFails = default!;
         /// <summary>Number of datagrams successfully fragmented</summary>
-        public double? SnmpIpFragOks { get; set; }
+        public double? SnmpIpFragOks { get => _explicitNullValueSnmpIpFragOks; set { _explicitNullValueSnmpIpFragOks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_frag_oks"); else _explicitNullProperties?.Remove("snmp_ip_frag_oks"); } }
+        private double? _explicitNullValueSnmpIpFragOks = default!;
         /// <summary>Number of input datagrams discarded due to errors in the IP address</summary>
-        public double? SnmpIpInAddrErrors { get; set; }
+        public double? SnmpIpInAddrErrors { get => _explicitNullValueSnmpIpInAddrErrors; set { _explicitNullValueSnmpIpInAddrErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_in_addr_errors"); else _explicitNullProperties?.Remove("snmp_ip_in_addr_errors"); } }
+        private double? _explicitNullValueSnmpIpInAddrErrors = default!;
         /// <summary>Number of input datagrams successfully delivered to IP user-protocols</summary>
-        public double? SnmpIpInDelivers { get; set; }
+        public double? SnmpIpInDelivers { get => _explicitNullValueSnmpIpInDelivers; set { _explicitNullValueSnmpIpInDelivers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_in_delivers"); else _explicitNullProperties?.Remove("snmp_ip_in_delivers"); } }
+        private double? _explicitNullValueSnmpIpInDelivers = default!;
         /// <summary>Number of input datagrams otherwise discarded</summary>
-        public double? SnmpIpInDiscards { get; set; }
+        public double? SnmpIpInDiscards { get => _explicitNullValueSnmpIpInDiscards; set { _explicitNullValueSnmpIpInDiscards = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_in_discards"); else _explicitNullProperties?.Remove("snmp_ip_in_discards"); } }
+        private double? _explicitNullValueSnmpIpInDiscards = default!;
         /// <summary>Number of input datagrams discarded due to errors in the IP header</summary>
-        public double? SnmpIpInHdrErrors { get; set; }
+        public double? SnmpIpInHdrErrors { get => _explicitNullValueSnmpIpInHdrErrors; set { _explicitNullValueSnmpIpInHdrErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_in_hdr_errors"); else _explicitNullProperties?.Remove("snmp_ip_in_hdr_errors"); } }
+        private double? _explicitNullValueSnmpIpInHdrErrors = default!;
         /// <summary>Number of input datagrams received from interfaces</summary>
-        public double? SnmpIpInReceives { get; set; }
+        public double? SnmpIpInReceives { get => _explicitNullValueSnmpIpInReceives; set { _explicitNullValueSnmpIpInReceives = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_in_receives"); else _explicitNullProperties?.Remove("snmp_ip_in_receives"); } }
+        private double? _explicitNullValueSnmpIpInReceives = default!;
         /// <summary>Number of input datagrams discarded due unknown or unsupported protocol</summary>
-        public double? SnmpIpInUnknownProtos { get; set; }
+        public double? SnmpIpInUnknownProtos { get => _explicitNullValueSnmpIpInUnknownProtos; set { _explicitNullValueSnmpIpInUnknownProtos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_in_unknown_protos"); else _explicitNullProperties?.Remove("snmp_ip_in_unknown_protos"); } }
+        private double? _explicitNullValueSnmpIpInUnknownProtos = default!;
         /// <summary>Number of output datagrams otherwise discarded</summary>
-        public double? SnmpIpOutDiscards { get; set; }
+        public double? SnmpIpOutDiscards { get => _explicitNullValueSnmpIpOutDiscards; set { _explicitNullValueSnmpIpOutDiscards = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_out_discards"); else _explicitNullProperties?.Remove("snmp_ip_out_discards"); } }
+        private double? _explicitNullValueSnmpIpOutDiscards = default!;
         /// <summary>Number of output datagrams discarded because no route matched</summary>
-        public double? SnmpIpOutNoRoutes { get; set; }
+        public double? SnmpIpOutNoRoutes { get => _explicitNullValueSnmpIpOutNoRoutes; set { _explicitNullValueSnmpIpOutNoRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_out_no_routes"); else _explicitNullProperties?.Remove("snmp_ip_out_no_routes"); } }
+        private double? _explicitNullValueSnmpIpOutNoRoutes = default!;
         /// <summary>Number of datagrams supplied for transmission</summary>
-        public double? SnmpIpOutRequests { get; set; }
+        public double? SnmpIpOutRequests { get => _explicitNullValueSnmpIpOutRequests; set { _explicitNullValueSnmpIpOutRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_out_requests"); else _explicitNullProperties?.Remove("snmp_ip_out_requests"); } }
+        private double? _explicitNullValueSnmpIpOutRequests = default!;
         /// <summary>Number of failures detected by the reassembly algorithm</summary>
-        public double? SnmpIpReasmFails { get; set; }
+        public double? SnmpIpReasmFails { get => _explicitNullValueSnmpIpReasmFails; set { _explicitNullValueSnmpIpReasmFails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_reasm_fails"); else _explicitNullProperties?.Remove("snmp_ip_reasm_fails"); } }
+        private double? _explicitNullValueSnmpIpReasmFails = default!;
         /// <summary>Number of datagrams successfully reassembled</summary>
-        public double? SnmpIpReasmOks { get; set; }
+        public double? SnmpIpReasmOks { get => _explicitNullValueSnmpIpReasmOks; set { _explicitNullValueSnmpIpReasmOks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_reasm_oks"); else _explicitNullProperties?.Remove("snmp_ip_reasm_oks"); } }
+        private double? _explicitNullValueSnmpIpReasmOks = default!;
         /// <summary>Number of fragments received which needed to be reassembled</summary>
-        public double? SnmpIpReasmReqds { get; set; }
+        public double? SnmpIpReasmReqds { get => _explicitNullValueSnmpIpReasmReqds; set { _explicitNullValueSnmpIpReasmReqds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_reasm_reqds"); else _explicitNullProperties?.Remove("snmp_ip_reasm_reqds"); } }
+        private double? _explicitNullValueSnmpIpReasmReqds = default!;
         /// <summary>Number of seconds fragments are held while awaiting reassembly</summary>
-        public double? SnmpIpReasmTimeout { get; set; }
+        public double? SnmpIpReasmTimeout { get => _explicitNullValueSnmpIpReasmTimeout; set { _explicitNullValueSnmpIpReasmTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_ip_reasm_timeout"); else _explicitNullProperties?.Remove("snmp_ip_reasm_timeout"); } }
+        private double? _explicitNullValueSnmpIpReasmTimeout = default!;
         /// <summary>Number of times TCP transitions to SYN-SENT from CLOSED</summary>
-        public double? SnmpTcpActiveOpens { get; set; }
+        public double? SnmpTcpActiveOpens { get => _explicitNullValueSnmpTcpActiveOpens; set { _explicitNullValueSnmpTcpActiveOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_active_opens"); else _explicitNullProperties?.Remove("snmp_tcp_active_opens"); } }
+        private double? _explicitNullValueSnmpTcpActiveOpens = default!;
         /// <summary>Number of times TCP transitions to CLOSED from SYN-SENT or SYN-RCVD, plus transitions to LISTEN from SYN-RCVD</summary>
-        public double? SnmpTcpAttemptFails { get; set; }
+        public double? SnmpTcpAttemptFails { get => _explicitNullValueSnmpTcpAttemptFails; set { _explicitNullValueSnmpTcpAttemptFails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_attempt_fails"); else _explicitNullProperties?.Remove("snmp_tcp_attempt_fails"); } }
+        private double? _explicitNullValueSnmpTcpAttemptFails = default!;
         /// <summary>Number of TCP connections in ESTABLISHED or CLOSE-WAIT</summary>
-        public double? SnmpTcpCurrEstab { get; set; }
+        public double? SnmpTcpCurrEstab { get => _explicitNullValueSnmpTcpCurrEstab; set { _explicitNullValueSnmpTcpCurrEstab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_curr_estab"); else _explicitNullProperties?.Remove("snmp_tcp_curr_estab"); } }
+        private double? _explicitNullValueSnmpTcpCurrEstab = default!;
         /// <summary>Number of times TCP transitions to CLOSED from ESTABLISHED or CLOSE-WAIT</summary>
-        public double? SnmpTcpEstabResets { get; set; }
+        public double? SnmpTcpEstabResets { get => _explicitNullValueSnmpTcpEstabResets; set { _explicitNullValueSnmpTcpEstabResets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_estab_resets"); else _explicitNullProperties?.Remove("snmp_tcp_estab_resets"); } }
+        private double? _explicitNullValueSnmpTcpEstabResets = default!;
         /// <summary>Number of TCP segments received with checksum errors</summary>
-        public double? SnmpTcpInCsumErrors { get; set; }
+        public double? SnmpTcpInCsumErrors { get => _explicitNullValueSnmpTcpInCsumErrors; set { _explicitNullValueSnmpTcpInCsumErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_in_csum_errors"); else _explicitNullProperties?.Remove("snmp_tcp_in_csum_errors"); } }
+        private double? _explicitNullValueSnmpTcpInCsumErrors = default!;
         /// <summary>Number of TCP segments received in error</summary>
-        public double? SnmpTcpInErrs { get; set; }
+        public double? SnmpTcpInErrs { get => _explicitNullValueSnmpTcpInErrs; set { _explicitNullValueSnmpTcpInErrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_in_errs"); else _explicitNullProperties?.Remove("snmp_tcp_in_errs"); } }
+        private double? _explicitNullValueSnmpTcpInErrs = default!;
         /// <summary>Number of TCP segments received</summary>
-        public double? SnmpTcpInSegs { get; set; }
+        public double? SnmpTcpInSegs { get => _explicitNullValueSnmpTcpInSegs; set { _explicitNullValueSnmpTcpInSegs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_in_segs"); else _explicitNullProperties?.Remove("snmp_tcp_in_segs"); } }
+        private double? _explicitNullValueSnmpTcpInSegs = default!;
         /// <summary>Limit on the total number of TCP connections</summary>
-        public double? SnmpTcpMaxConn { get; set; }
+        public double? SnmpTcpMaxConn { get => _explicitNullValueSnmpTcpMaxConn; set { _explicitNullValueSnmpTcpMaxConn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_max_conn"); else _explicitNullProperties?.Remove("snmp_tcp_max_conn"); } }
+        private double? _explicitNullValueSnmpTcpMaxConn = default!;
         /// <summary>Number of TCP segments sent with RST flag</summary>
-        public double? SnmpTcpOutRsts { get; set; }
+        public double? SnmpTcpOutRsts { get => _explicitNullValueSnmpTcpOutRsts; set { _explicitNullValueSnmpTcpOutRsts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_out_rsts"); else _explicitNullProperties?.Remove("snmp_tcp_out_rsts"); } }
+        private double? _explicitNullValueSnmpTcpOutRsts = default!;
         /// <summary>Number of TCP segments sent</summary>
-        public double? SnmpTcpOutSegs { get; set; }
+        public double? SnmpTcpOutSegs { get => _explicitNullValueSnmpTcpOutSegs; set { _explicitNullValueSnmpTcpOutSegs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_out_segs"); else _explicitNullProperties?.Remove("snmp_tcp_out_segs"); } }
+        private double? _explicitNullValueSnmpTcpOutSegs = default!;
         /// <summary>Number of times TCP transitions to SYN-RCVD from LISTEN</summary>
-        public double? SnmpTcpPassiveOpens { get; set; }
+        public double? SnmpTcpPassiveOpens { get => _explicitNullValueSnmpTcpPassiveOpens; set { _explicitNullValueSnmpTcpPassiveOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_passive_opens"); else _explicitNullProperties?.Remove("snmp_tcp_passive_opens"); } }
+        private double? _explicitNullValueSnmpTcpPassiveOpens = default!;
         /// <summary>Number of TCP segments retransmitted</summary>
-        public double? SnmpTcpRetransSegs { get; set; }
+        public double? SnmpTcpRetransSegs { get => _explicitNullValueSnmpTcpRetransSegs; set { _explicitNullValueSnmpTcpRetransSegs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_retrans_segs"); else _explicitNullProperties?.Remove("snmp_tcp_retrans_segs"); } }
+        private double? _explicitNullValueSnmpTcpRetransSegs = default!;
         /// <summary>Maximum value permitted by a TCP implementation for the retransmission timeout (milliseconds)</summary>
-        public double? SnmpTcpRtoMax { get; set; }
+        public double? SnmpTcpRtoMax { get => _explicitNullValueSnmpTcpRtoMax; set { _explicitNullValueSnmpTcpRtoMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_rto_max"); else _explicitNullProperties?.Remove("snmp_tcp_rto_max"); } }
+        private double? _explicitNullValueSnmpTcpRtoMax = default!;
         /// <summary>Minimum value permitted by a TCP implementation for the retransmission timeout (milliseconds)</summary>
-        public double? SnmpTcpRtoMin { get; set; }
+        public double? SnmpTcpRtoMin { get => _explicitNullValueSnmpTcpRtoMin; set { _explicitNullValueSnmpTcpRtoMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_tcp_rto_min"); else _explicitNullProperties?.Remove("snmp_tcp_rto_min"); } }
+        private double? _explicitNullValueSnmpTcpRtoMin = default!;
         /// <summary>Number of UDP datagrams delivered to UDP applications</summary>
-        public double? SnmpUdpInDatagrams { get; set; }
+        public double? SnmpUdpInDatagrams { get => _explicitNullValueSnmpUdpInDatagrams; set { _explicitNullValueSnmpUdpInDatagrams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_udp_in_datagrams"); else _explicitNullProperties?.Remove("snmp_udp_in_datagrams"); } }
+        private double? _explicitNullValueSnmpUdpInDatagrams = default!;
         /// <summary>Number of UDP datagrams failed to be delivered for reasons other than lack of application at the destination port</summary>
-        public double? SnmpUdpInErrors { get; set; }
+        public double? SnmpUdpInErrors { get => _explicitNullValueSnmpUdpInErrors; set { _explicitNullValueSnmpUdpInErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_udp_in_errors"); else _explicitNullProperties?.Remove("snmp_udp_in_errors"); } }
+        private double? _explicitNullValueSnmpUdpInErrors = default!;
         /// <summary>Number of UDP datagrams received for which there was not application at the destination port</summary>
-        public double? SnmpUdpNoPorts { get; set; }
+        public double? SnmpUdpNoPorts { get => _explicitNullValueSnmpUdpNoPorts; set { _explicitNullValueSnmpUdpNoPorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_udp_no_ports"); else _explicitNullProperties?.Remove("snmp_udp_no_ports"); } }
+        private double? _explicitNullValueSnmpUdpNoPorts = default!;
         /// <summary>Number of UDP datagrams sent</summary>
-        public double? SnmpUdpOutDatagrams { get; set; }
+        public double? SnmpUdpOutDatagrams { get => _explicitNullValueSnmpUdpOutDatagrams; set { _explicitNullValueSnmpUdpOutDatagrams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snmp_udp_out_datagrams"); else _explicitNullProperties?.Remove("snmp_udp_out_datagrams"); } }
+        private double? _explicitNullValueSnmpUdpOutDatagrams = default!;
         /// <summary>Boottime of the system (seconds since the Unix epoch)</summary>
-        public double? SystemBootTimeS { get; set; }
+        public double? SystemBootTimeS { get => _explicitNullValueSystemBootTimeS; set { _explicitNullValueSystemBootTimeS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_boot_time_s"); else _explicitNullProperties?.Remove("system_boot_time_s"); } }
+        private double? _explicitNullValueSystemBootTimeS = default!;
         /// <summary>Time the Snapshot was recorded (seconds since the Unix epoch)</summary>
-        public double? T { get; set; }
+        public double? T { get => _explicitNullValueT; set { _explicitNullValueT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("t"); else _explicitNullProperties?.Remove("t"); } }
+        private double? _explicitNullValueT = default!;
         /// <summary>The thermals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotThermal>? Thermals { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotThermal>? Thermals { get => _explicitNullValueThermals; set { _explicitNullValueThermals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thermals"); else _explicitNullProperties?.Remove("thermals"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotThermal>? _explicitNullValueThermals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotThermal> Thermals { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotThermal> Thermals { get => _explicitNullValueThermals; set { _explicitNullValueThermals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thermals"); else _explicitNullProperties?.Remove("thermals"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotThermal> _explicitNullValueThermals = default!;
 #endif
         /// <summary>The tunnels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel>? Tunnels { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel>? Tunnels { get => _explicitNullValueTunnels; set { _explicitNullValueTunnels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnels"); else _explicitNullProperties?.Remove("tunnels"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel>? _explicitNullValueTunnels = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel> Tunnels { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel> Tunnels { get => _explicitNullValueTunnels; set { _explicitNullValueTunnels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnels"); else _explicitNullProperties?.Remove("tunnels"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotTunnel> _explicitNullValueTunnels = default!;
 #endif
         /// <summary>Sum of how much time each core has spent idle</summary>
-        public double? UptimeIdleMs { get; set; }
+        public double? UptimeIdleMs { get => _explicitNullValueUptimeIdleMs; set { _explicitNullValueUptimeIdleMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uptime_idle_ms"); else _explicitNullProperties?.Remove("uptime_idle_ms"); } }
+        private double? _explicitNullValueUptimeIdleMs = default!;
         /// <summary>Uptime of the system, including time spent in suspend</summary>
-        public double? UptimeTotalMs { get; set; }
+        public double? UptimeTotalMs { get => _explicitNullValueUptimeTotalMs; set { _explicitNullValueUptimeTotalMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uptime_total_ms"); else _explicitNullProperties?.Remove("uptime_total_ms"); } }
+        private double? _explicitNullValueUptimeTotalMs = default!;
         /// <summary>Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? V { get; set; }
+        public string? V { get => _explicitNullValueV; set { _explicitNullValueV = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v"); else _explicitNullProperties?.Remove("v"); } }
+        private string? _explicitNullValueV = default!;
 #nullable restore
 #else
-        public string V { get; set; }
+        public string V { get => _explicitNullValueV; set { _explicitNullValueV = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v"); else _explicitNullProperties?.Remove("v"); } }
+        private string _explicitNullValueV = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshot"/> and sets the default values.
@@ -458,7 +828,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshot();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshot(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -827,6 +1197,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("uptime_idle_ms", UptimeIdleMs);
             writer.WriteDoubleValue("uptime_total_ms", UptimeTotalMs);
             writer.WriteStringValue("v", V);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

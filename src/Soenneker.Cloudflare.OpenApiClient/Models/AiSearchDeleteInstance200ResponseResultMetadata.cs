@@ -11,26 +11,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiSearchDeleteInstance200ResponseResultMetadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_from_aisearch_wizard") is { } nullNodeCreatedFromAisearchWizard && nullNodeCreatedFromAisearchWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFromAisearchWizard = null;
+            if (parseNode.GetChildNode("created_from_emdash_plugin") is { } nullNodeCreatedFromEmdashPlugin && nullNodeCreatedFromEmdashPlugin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFromEmdashPlugin = null;
+            if (parseNode.GetChildNode("worker_domain") is { } nullNodeWorkerDomain && nullNodeWorkerDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerDomain = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_from_aisearch_wizard property</summary>
-        public bool? CreatedFromAisearchWizard { get; set; }
+        public bool? CreatedFromAisearchWizard { get => _explicitNullValueCreatedFromAisearchWizard; set { _explicitNullValueCreatedFromAisearchWizard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from_aisearch_wizard"); else _explicitNullProperties?.Remove("created_from_aisearch_wizard"); } }
+        private bool? _explicitNullValueCreatedFromAisearchWizard = default!;
         /// <summary>The created_from_emdash_plugin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadataCreatedFromEmdashPlugin? CreatedFromEmdashPlugin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadataCreatedFromEmdashPlugin? CreatedFromEmdashPlugin { get => _explicitNullValueCreatedFromEmdashPlugin; set { _explicitNullValueCreatedFromEmdashPlugin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from_emdash_plugin"); else _explicitNullProperties?.Remove("created_from_emdash_plugin"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadataCreatedFromEmdashPlugin? _explicitNullValueCreatedFromEmdashPlugin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadataCreatedFromEmdashPlugin CreatedFromEmdashPlugin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadataCreatedFromEmdashPlugin CreatedFromEmdashPlugin { get => _explicitNullValueCreatedFromEmdashPlugin; set { _explicitNullValueCreatedFromEmdashPlugin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from_emdash_plugin"); else _explicitNullProperties?.Remove("created_from_emdash_plugin"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadataCreatedFromEmdashPlugin _explicitNullValueCreatedFromEmdashPlugin = default!;
 #endif
         /// <summary>The worker_domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkerDomain { get; set; }
+        public string? WorkerDomain { get => _explicitNullValueWorkerDomain; set { _explicitNullValueWorkerDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_domain"); else _explicitNullProperties?.Remove("worker_domain"); } }
+        private string? _explicitNullValueWorkerDomain = default!;
 #nullable restore
 #else
-        public string WorkerDomain { get; set; }
+        public string WorkerDomain { get => _explicitNullValueWorkerDomain; set { _explicitNullValueWorkerDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_domain"); else _explicitNullProperties?.Remove("worker_domain"); } }
+        private string _explicitNullValueWorkerDomain = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadata"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("created_from_aisearch_wizard", CreatedFromAisearchWizard);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultMetadataCreatedFromEmdashPlugin>("created_from_emdash_plugin", CreatedFromEmdashPlugin);
             writer.WriteStringValue("worker_domain", WorkerDomain);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

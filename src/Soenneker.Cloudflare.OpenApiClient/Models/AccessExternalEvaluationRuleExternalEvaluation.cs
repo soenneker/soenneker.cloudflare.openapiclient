@@ -11,24 +11,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccessExternalEvaluationRuleExternalEvaluation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("evaluate_url") is { } nullNodeEvaluateUrl && nullNodeEvaluateUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluateUrl = null;
+            if (parseNode.GetChildNode("keys_url") is { } nullNodeKeysUrl && nullNodeKeysUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeysUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The API endpoint containing your business logic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EvaluateUrl { get; set; }
+        public string? EvaluateUrl { get => _explicitNullValueEvaluateUrl; set { _explicitNullValueEvaluateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluate_url"); else _explicitNullProperties?.Remove("evaluate_url"); } }
+        private string? _explicitNullValueEvaluateUrl = default!;
 #nullable restore
 #else
-        public string EvaluateUrl { get; set; }
+        public string EvaluateUrl { get => _explicitNullValueEvaluateUrl; set { _explicitNullValueEvaluateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluate_url"); else _explicitNullProperties?.Remove("evaluate_url"); } }
+        private string _explicitNullValueEvaluateUrl = default!;
 #endif
         /// <summary>The API endpoint containing the key that Access uses to verify that the response came from your API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeysUrl { get; set; }
+        public string? KeysUrl { get => _explicitNullValueKeysUrl; set { _explicitNullValueKeysUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keys_url"); else _explicitNullProperties?.Remove("keys_url"); } }
+        private string? _explicitNullValueKeysUrl = default!;
 #nullable restore
 #else
-        public string KeysUrl { get; set; }
+        public string KeysUrl { get => _explicitNullValueKeysUrl; set { _explicitNullValueKeysUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keys_url"); else _explicitNullProperties?.Remove("keys_url"); } }
+        private string _explicitNullValueKeysUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("evaluate_url", EvaluateUrl);
             writer.WriteStringValue("keys_url", KeysUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

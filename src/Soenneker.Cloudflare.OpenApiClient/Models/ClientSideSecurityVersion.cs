@@ -12,39 +12,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClientSideSecurityVersion : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cryptomining_score") is { } nullNodeCryptominingScore && nullNodeCryptominingScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CryptominingScore = null;
+            if (parseNode.GetChildNode("dataflow_score") is { } nullNodeDataflowScore && nullNodeDataflowScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataflowScore = null;
+            if (parseNode.GetChildNode("fetched_at") is { } nullNodeFetchedAt && nullNodeFetchedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FetchedAt = null;
+            if (parseNode.GetChildNode("hash") is { } nullNodeHash && nullNodeHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hash = null;
+            if (parseNode.GetChildNode("js_integrity_score") is { } nullNodeJsIntegrityScore && nullNodeJsIntegrityScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsIntegrityScore = null;
+            if (parseNode.GetChildNode("magecart_score") is { } nullNodeMagecartScore && nullNodeMagecartScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MagecartScore = null;
+            if (parseNode.GetChildNode("malware_score") is { } nullNodeMalwareScore && nullNodeMalwareScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MalwareScore = null;
+            if (parseNode.GetChildNode("obfuscation_score") is { } nullNodeObfuscationScore && nullNodeObfuscationScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObfuscationScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cryptomining score of the JavaScript content.</summary>
-        public int? CryptominingScore { get; set; }
+        public int? CryptominingScore { get => _explicitNullValueCryptominingScore; set { _explicitNullValueCryptominingScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cryptomining_score"); else _explicitNullProperties?.Remove("cryptomining_score"); } }
+        private int? _explicitNullValueCryptominingScore = default!;
         /// <summary>The dataflow score of the JavaScript content. This field has been deprecated in favour of js_integrity_score.</summary>
         [Obsolete("")]
-        public int? DataflowScore { get; set; }
+        public int? DataflowScore { get => _explicitNullValueDataflowScore; set { _explicitNullValueDataflowScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataflow_score"); else _explicitNullProperties?.Remove("dataflow_score"); } }
+        private int? _explicitNullValueDataflowScore = default!;
         /// <summary>The timestamp of when the script was last fetched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FetchedAt { get; set; }
+        public string? FetchedAt { get => _explicitNullValueFetchedAt; set { _explicitNullValueFetchedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at"); else _explicitNullProperties?.Remove("fetched_at"); } }
+        private string? _explicitNullValueFetchedAt = default!;
 #nullable restore
 #else
-        public string FetchedAt { get; set; }
+        public string FetchedAt { get => _explicitNullValueFetchedAt; set { _explicitNullValueFetchedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at"); else _explicitNullProperties?.Remove("fetched_at"); } }
+        private string _explicitNullValueFetchedAt = default!;
 #endif
         /// <summary>The computed hash of the analyzed script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hash { get; set; }
+        public string? Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
+        private string? _explicitNullValueHash = default!;
 #nullable restore
 #else
-        public string Hash { get; set; }
+        public string Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
+        private string _explicitNullValueHash = default!;
 #endif
         /// <summary>The integrity score of the JavaScript content.</summary>
-        public int? JsIntegrityScore { get; set; }
+        public int? JsIntegrityScore { get => _explicitNullValueJsIntegrityScore; set { _explicitNullValueJsIntegrityScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("js_integrity_score"); else _explicitNullProperties?.Remove("js_integrity_score"); } }
+        private int? _explicitNullValueJsIntegrityScore = default!;
         /// <summary>The magecart score of the JavaScript content.</summary>
-        public int? MagecartScore { get; set; }
+        public int? MagecartScore { get => _explicitNullValueMagecartScore; set { _explicitNullValueMagecartScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("magecart_score"); else _explicitNullProperties?.Remove("magecart_score"); } }
+        private int? _explicitNullValueMagecartScore = default!;
         /// <summary>The malware score of the JavaScript content.</summary>
-        public int? MalwareScore { get; set; }
+        public int? MalwareScore { get => _explicitNullValueMalwareScore; set { _explicitNullValueMalwareScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malware_score"); else _explicitNullProperties?.Remove("malware_score"); } }
+        private int? _explicitNullValueMalwareScore = default!;
         /// <summary>The obfuscation score of the JavaScript content. This field has been deprecated in favour of js_integrity_score.</summary>
         [Obsolete("")]
-        public int? ObfuscationScore { get; set; }
+        public int? ObfuscationScore { get => _explicitNullValueObfuscationScore; set { _explicitNullValueObfuscationScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("obfuscation_score"); else _explicitNullProperties?.Remove("obfuscation_score"); } }
+        private int? _explicitNullValueObfuscationScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion"/> and sets the default values.
         /// </summary>
@@ -60,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("magecart_score", MagecartScore);
             writer.WriteIntValue("malware_score", MalwareScore);
             writer.WriteIntValue("obfuscation_score", ObfuscationScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,6 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountAbuseProtectionEvents,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai_gateway_events")]
+        #pragma warning disable CS1591
+        AiGatewayEvents,
+        #pragma warning restore CS1591
         [EnumMember(Value = "audit_logs")]
         #pragma warning disable CS1591
         AuditLogs,
