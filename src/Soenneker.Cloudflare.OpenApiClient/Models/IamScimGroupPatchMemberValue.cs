@@ -55,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "value", n => { Value = n.GetStringValue(); } },
+
             };
         }
         /// <summary>

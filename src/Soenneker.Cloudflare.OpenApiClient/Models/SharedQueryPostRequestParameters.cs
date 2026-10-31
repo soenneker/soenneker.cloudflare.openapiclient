@@ -68,12 +68,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Filters to narrow query results. Use the keys and values endpoints to discover available fields before building filters. Supports nested groups via kind: &apos;group&apos;. Maximum nesting depth is 4.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<UntypedNode>? _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersFiltersItem>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersFiltersItem>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<UntypedNode> _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersFiltersItem> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersFiltersItem> _explicitNullValueFilters = default!;
 #endif
         /// <summary>Fields to group calculation results by. Only applicable when the query view is &apos;calculations&apos;. Produces per-group aggregate values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "calculations", n => { Calculations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersCalculationsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersCalculationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "datasets", n => { Datasets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "filterCombination", n => { FilterCombination = n.GetStringValue(); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersFiltersItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "groupBys", n => { GroupBys = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersGroupBysItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersGroupBysItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "havings", n => { Havings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersHavingsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersHavingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
@@ -164,7 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersCalculationsItem>("calculations", Calculations);
             writer.WriteCollectionOfPrimitiveValues<string>("datasets", Datasets);
             writer.WriteStringValue("filterCombination", FilterCombination);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersFiltersItem>("filters", Filters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersGroupBysItem>("groupBys", GroupBys);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SharedQueryPostRequestParametersHavingsItem>("havings", Havings);
             writer.WriteIntValue("limit", Limit);

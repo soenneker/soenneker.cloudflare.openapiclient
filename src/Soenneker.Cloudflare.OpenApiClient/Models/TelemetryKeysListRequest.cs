@@ -48,12 +48,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Apply filters to narrow key discovery. Supports nested groups via kind: &apos;group&apos;. Maximum nesting depth is 4.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<UntypedNode>? _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<UntypedNode> _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem> _explicitNullValueFilters = default!;
 #endif
         /// <summary>The from property</summary>
         public double? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; AdditionalData?.Remove("from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "datasets", n => { Datasets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from", n => { From = n.GetDoubleValue(); } },
                 { "keyNeedle", n => { KeyNeedle = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
@@ -126,7 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("datasets", Datasets);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem>("filters", Filters);
             writer.WriteDoubleValue("from", From);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle>("keyNeedle", KeyNeedle);
             writer.WriteDoubleValue("limit", Limit);

@@ -80,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dns", n => { Dns = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "origin_direct", n => { OriginDirect = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "protocol", n => { Protocol = n.GetStringValue(); } },
+
             };
         }
         /// <summary>

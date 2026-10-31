@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitStorageConfig : IComposedTypeWrapper, IParsable
@@ -18,29 +18,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1? RealtimekitStorageConfigOneOf1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1Branch? RealtimekitStorageConfigOneOf1Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1 RealtimekitStorageConfigOneOf1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1Branch RealtimekitStorageConfigOneOf1Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2? RealtimekitStorageConfigOneOf2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2Branch? RealtimekitStorageConfigOneOf2Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2 RealtimekitStorageConfigOneOf2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2Branch RealtimekitStorageConfigOneOf2Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3? RealtimekitStorageConfigOneOf3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch? RealtimekitStorageConfigOneOf3Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3 RealtimekitStorageConfigOneOf3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch RealtimekitStorageConfigOneOf3Branch { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,28 +52,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("auth_method")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig();
-            if("RealtimekitStorageConfigOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RealtimekitStorageConfigOneOf1Branch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("RealtimekitStorageConfigOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RealtimekitStorageConfigOneOf2Branch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "gcs".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))))))))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("access_key") && shapeMembers1.ContainsKey("region") && (!shapeMembers1.ContainsKey("access_key") || (true)) && (!shapeMembers1.ContainsKey("region") || (true)) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "aws".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "azure".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "digitalocean".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal))))))))))();
-            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("access_key") && shapeMembers1.ContainsKey("region") && shapeMembers1.ContainsKey("auth_method") && shapeMembers1.ContainsKey("username") && shapeMembers1.ContainsKey("host") && shapeMembers1.ContainsKey("port") && (!shapeMembers1.ContainsKey("access_key") || (true)) && (!shapeMembers1.ContainsKey("region") || (true)) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "sftp".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal)))))))) && (((((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject9 || (shapeObject9.GetValue() is var shapeMembers10 && (shapeMembers10.ContainsKey("private_key") && (!shapeMembers10.ContainsKey("auth_method") || (((shapeMembers10["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers10["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal11 && "KEY".Equals(literal11.GetValue(), global::System.StringComparison.Ordinal))))))))) ? 1 : 0) + ((((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject14 || (shapeObject14.GetValue() is var shapeMembers15 && (shapeMembers15.ContainsKey("password") && (!shapeMembers15.ContainsKey("auth_method") || (((shapeMembers15["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers15["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal16 && "PASSWORD".Equals(literal16.GetValue(), global::System.StringComparison.Ordinal))))))))) ? 1 : 0) == 1)))();
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && shapeMembers1.ContainsKey("bucket") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "gcs".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("access_key") || (((shapeMembers1["access_key"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("auth_method") || (((shapeMembers1["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "KEY".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "PASSWORD".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("bucket") || (((shapeMembers1["bucket"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("host") || (((shapeMembers1["host"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("password") || (((shapeMembers1["password"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("path") || (((shapeMembers1["path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("port") || (((shapeMembers1["port"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers1.ContainsKey("private_key") || (((shapeMembers1["private_key"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("region") || (((shapeMembers1["region"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("secret") || (((shapeMembers1["secret"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("username") || (((shapeMembers1["username"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("access_key") && shapeMembers1.ContainsKey("region") && shapeMembers1.ContainsKey("type") && shapeMembers1.ContainsKey("bucket") && (!shapeMembers1.ContainsKey("access_key") || (((true) && (((shapeMembers1["access_key"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))) && (!shapeMembers1.ContainsKey("region") || (((true) && (((shapeMembers1["region"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal14 && "aws".Equals(literal14.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal15 && "azure".Equals(literal15.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal16 && "digitalocean".Equals(literal16.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("auth_method") || (((shapeMembers1["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal19 && "KEY".Equals(literal19.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["auth_method"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal20 && "PASSWORD".Equals(literal20.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("bucket") || (((shapeMembers1["bucket"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("host") || (((shapeMembers1["host"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("password") || (((shapeMembers1["password"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("path") || (((shapeMembers1["path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("port") || (((shapeMembers1["port"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers1.ContainsKey("private_key") || (((shapeMembers1["private_key"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("secret") || (((shapeMembers1["secret"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("username") || (((shapeMembers1["username"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => true))();
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0) matchingUnionBranches++;
             if (matchesUnionBranch1) matchingUnionBranches++;
             if (matchesUnionBranch2) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.RealtimekitStorageConfigOneOf1 == null && result.RealtimekitStorageConfigOneOf2 == null && result.RealtimekitStorageConfigOneOf3 == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.RealtimekitStorageConfigOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.RealtimekitStorageConfigOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.RealtimekitStorageConfigOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3(), parseNode);
-            if (result.RealtimekitStorageConfigOneOf1 == null && result.RealtimekitStorageConfigOneOf2 == null && result.RealtimekitStorageConfigOneOf3 == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.RealtimekitStorageConfigOneOf1Branch == null && result.RealtimekitStorageConfigOneOf2Branch == null && result.RealtimekitStorageConfigOneOf3Branch == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.RealtimekitStorageConfigOneOf1Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.RealtimekitStorageConfigOneOf2Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2Branch(), parseNode);
+            if (result.RealtimekitStorageConfigOneOf1Branch == null && result.RealtimekitStorageConfigOneOf2Branch == null && result.RealtimekitStorageConfigOneOf3Branch == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -84,17 +83,17 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(RealtimekitStorageConfigOneOf1 != null)
+            if(RealtimekitStorageConfigOneOf1Branch != null)
             {
-                return RealtimekitStorageConfigOneOf1.GetFieldDeserializers();
+                return RealtimekitStorageConfigOneOf1Branch.GetFieldDeserializers();
             }
-            else if(RealtimekitStorageConfigOneOf2 != null)
+            else if(RealtimekitStorageConfigOneOf2Branch != null)
             {
-                return RealtimekitStorageConfigOneOf2.GetFieldDeserializers();
+                return RealtimekitStorageConfigOneOf2Branch.GetFieldDeserializers();
             }
-            else if(RealtimekitStorageConfigOneOf3 != null)
+            else if(RealtimekitStorageConfigOneOf3Branch != null)
             {
-                return RealtimekitStorageConfigOneOf3.GetFieldDeserializers();
+                return RealtimekitStorageConfigOneOf3Branch.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -105,29 +104,29 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (RealtimekitStorageConfigOneOf1 == null && RealtimekitStorageConfigOneOf2 == null && RealtimekitStorageConfigOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (RealtimekitStorageConfigOneOf1Branch == null && RealtimekitStorageConfigOneOf2Branch == null && RealtimekitStorageConfigOneOf3Branch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (RealtimekitStorageConfigOneOf1 != null) selectedUnionBranches++;
-            if (RealtimekitStorageConfigOneOf2 != null) selectedUnionBranches++;
-            if (RealtimekitStorageConfigOneOf3 != null) selectedUnionBranches++;
-            if (RealtimekitStorageConfigOneOf1 != null && selectedUnionBranches == 1) { if (RealtimekitStorageConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RealtimekitStorageConfigOneOf1); return; }
-            if (RealtimekitStorageConfigOneOf2 != null && selectedUnionBranches == 1) { if (RealtimekitStorageConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RealtimekitStorageConfigOneOf2); return; }
+            if (RealtimekitStorageConfigOneOf1Branch != null) selectedUnionBranches++;
+            if (RealtimekitStorageConfigOneOf2Branch != null) selectedUnionBranches++;
+            if (RealtimekitStorageConfigOneOf3Branch != null) selectedUnionBranches++;
+            if (RealtimekitStorageConfigOneOf1Branch != null && selectedUnionBranches == 1) { if (RealtimekitStorageConfigOneOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RealtimekitStorageConfigOneOf1Branch); return; }
+            if (RealtimekitStorageConfigOneOf2Branch != null && selectedUnionBranches == 1) { if (RealtimekitStorageConfigOneOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RealtimekitStorageConfigOneOf2Branch); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RealtimekitStorageConfigOneOf1 != null)
+            if(RealtimekitStorageConfigOneOf1Branch != null)
             {
-                if (RealtimekitStorageConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1>(null, RealtimekitStorageConfigOneOf1);
+                if (RealtimekitStorageConfigOneOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1Branch>(null, RealtimekitStorageConfigOneOf1Branch);
             }
-            else if(RealtimekitStorageConfigOneOf2 != null)
+            else if(RealtimekitStorageConfigOneOf2Branch != null)
             {
-                if (RealtimekitStorageConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2>(null, RealtimekitStorageConfigOneOf2);
+                if (RealtimekitStorageConfigOneOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2Branch>(null, RealtimekitStorageConfigOneOf2Branch);
             }
-            else if(RealtimekitStorageConfigOneOf3 != null)
+            else if(RealtimekitStorageConfigOneOf3Branch != null)
             {
-                if (RealtimekitStorageConfigOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3>(null, RealtimekitStorageConfigOneOf3);
+                if (RealtimekitStorageConfigOneOf3Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch>(null, RealtimekitStorageConfigOneOf3Branch);
             }
         }
     }

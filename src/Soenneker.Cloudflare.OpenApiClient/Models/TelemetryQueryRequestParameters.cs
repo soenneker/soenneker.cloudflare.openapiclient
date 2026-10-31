@@ -68,12 +68,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Filters to narrow query results. Use the keys and values endpoints to discover available fields before building filters. Supports nested groups via kind: &apos;group&apos;. Maximum nesting depth is 4.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<UntypedNode>? _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersFiltersItem>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersFiltersItem>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<UntypedNode> _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersFiltersItem> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersFiltersItem> _explicitNullValueFilters = default!;
 #endif
         /// <summary>Fields to group calculation results by. Only applicable when the query view is &apos;calculations&apos;. Produces per-group aggregate values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "calculations", n => { Calculations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "datasets", n => { Datasets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "filterCombination", n => { FilterCombination = n.GetStringValue(); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersFiltersItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "groupBys", n => { GroupBys = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersGroupBysItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersGroupBysItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "havings", n => { Havings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersHavingsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersHavingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
@@ -164,7 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem>("calculations", Calculations);
             writer.WriteCollectionOfPrimitiveValues<string>("datasets", Datasets);
             writer.WriteStringValue("filterCombination", FilterCombination);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersFiltersItem>("filters", Filters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersGroupBysItem>("groupBys", GroupBys);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersHavingsItem>("havings", Havings);
             writer.WriteIntValue("limit", Limit);

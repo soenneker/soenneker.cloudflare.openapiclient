@@ -130,6 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "tls", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigTls>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTls = default; _explicitNullProperties?.Remove("tls"); AdditionalData["tls"] = unknown; } else { Tls = parsed; AdditionalData.Remove("tls"); } } },
                 { "traffic_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigTrafficType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTrafficType = default; _explicitNullProperties?.Remove("traffic_type"); AdditionalData["traffic_type"] = unknown; } else { TrafficType = parsed; AdditionalData.Remove("traffic_type"); } } },
                 { "virtual_network_id", n => { VirtualNetworkId = n.GetGuidValue(); } },
+
             };
         }
         /// <summary>

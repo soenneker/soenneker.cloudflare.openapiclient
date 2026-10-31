@@ -35,12 +35,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Apply filters to the query. Supports nested groups via kind: &apos;group&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<UntypedNode>? _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryLiveTailPostRequestFiltersItem>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryLiveTailPostRequestFiltersItem>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<UntypedNode> _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryLiveTailPostRequestFiltersItem> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryLiveTailPostRequestFiltersItem> _explicitNullValueFilters = default!;
 #endif
         /// <summary>The scriptId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filterCombination", n => { FilterCombination = n.GetStringValue(); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryLiveTailPostRequestFiltersItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryLiveTailPostRequestFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scriptId", n => { ScriptId = n.GetStringValue(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("filterCombination", FilterCombination);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryLiveTailPostRequestFiltersItem>("filters", Filters);
             writer.WriteStringValue("scriptId", ScriptId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

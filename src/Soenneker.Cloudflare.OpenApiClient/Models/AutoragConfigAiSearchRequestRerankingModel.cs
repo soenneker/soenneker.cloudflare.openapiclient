@@ -8,7 +8,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public enum AutoragConfigAiSearchRequestRerankingModel
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "")]
+        [global::System.Runtime.Serialization.EnumMember(Value = "")]
         EmptyString,
 
         [EnumMember(Value = "@cf/baai/bge-reranker-base")]

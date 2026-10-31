@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="byte"/> array, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageTextToText"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageToText"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultSummarization"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextEmbeddings"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTranslation"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageClassificationItem&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItem&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextClassificationItem&gt;
+    /// Composed type wrapper for classes <see cref="byte"/> array, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageTextToText"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageToText"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultSummarization"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextEmbeddings"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTranslation"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageClassificationItem&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItem&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextClassificationItem&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersAiPostRunModel200ResponseResult : IComposedTypeWrapper, IParsable
@@ -74,6 +74,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultObjectDetectionItem> WorkersAiPostRunModel200ResponseResultObjectDetectionItem { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf3? WorkersAiPostRunModel200ResponseResultOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf3 WorkersAiPostRunModel200ResponseResultOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf8? WorkersAiPostRunModel200ResponseResultOneOf8 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf8 WorkersAiPostRunModel200ResponseResultOneOf8 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultSummarization"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,22 +113,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextEmbeddings WorkersAiPostRunModel200ResponseResultTextEmbeddings { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1? WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1? WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTranslation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,14 +157,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 
             }
-            else if("WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                
-            }
-            else if("WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                
-            }
             else if("WorkersAiPostRunModel200ResponseResultTranslation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
@@ -187,13 +179,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("data") || (((shapeMembers1["data"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("shape") || (((shapeMembers1["shape"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("text") && (!shapeMembers1.ContainsKey("text") || (((shapeMembers1["text"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("vtt") || (((shapeMembers1["vtt"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("word_count") || (((shapeMembers1["word_count"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers1.ContainsKey("words") || (((shapeMembers1["words"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
-            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("translated_text") || (((shapeMembers1["translated_text"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
-            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("summary") || (((shapeMembers1["summary"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
-            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("description") || (((shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
-            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("description") || (((shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
-            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("data") || (((shapeMembers1["data"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("shape") || (((shapeMembers1["shape"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => true))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("data") || (((shapeMembers1["data"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("shape") || (((shapeMembers1["shape"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("text") && (!shapeMembers1.ContainsKey("text") || (((shapeMembers1["text"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("vtt") || (((shapeMembers1["vtt"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("word_count") || (((shapeMembers1["word_count"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers1.ContainsKey("words") || (((shapeMembers1["words"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => true))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("translated_text") || (((shapeMembers1["translated_text"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("summary") || (((shapeMembers1["summary"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("description") || (((shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("description") || (((shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("data") || (((shapeMembers1["data"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("shape") || (((shapeMembers1["shape"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0) matchingUnionBranches++;
             if (matchesUnionBranch1) matchingUnionBranches++;
@@ -202,15 +196,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if (matchesUnionBranch4) matchingUnionBranches++;
             if (matchesUnionBranch5) matchingUnionBranches++;
             if (matchesUnionBranch6) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && result.WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultImageTextToText == null && result.WorkersAiPostRunModel200ResponseResultImageToText == null && result.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && result.WorkersAiPostRunModel200ResponseResultSummarization == null && result.WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && result.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && result.WorkersAiPostRunModel200ResponseResultTranslation == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultTextEmbeddings = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextEmbeddings(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultTranslation = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTranslation(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch3 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultSummarization = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultSummarization(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch4 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultImageToText = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageToText(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch5 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultImageTextToText = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageTextToText(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch6 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings(), parseNode);
-            if (result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && result.WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultImageTextToText == null && result.WorkersAiPostRunModel200ResponseResultImageToText == null && result.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && result.WorkersAiPostRunModel200ResponseResultSummarization == null && result.WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && result.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && result.WorkersAiPostRunModel200ResponseResultTranslation == null) result.UnrecognizedValue = unionPayload;
+            if (matchesUnionBranch7) matchingUnionBranches++;
+            if (matchesUnionBranch8) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && result.WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultImageTextToText == null && result.WorkersAiPostRunModel200ResponseResultImageToText == null && result.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && result.WorkersAiPostRunModel200ResponseResultOneOf3 == null && result.WorkersAiPostRunModel200ResponseResultOneOf8 == null && result.WorkersAiPostRunModel200ResponseResultSummarization == null && result.WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultTranslation == null;
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultTextEmbeddings = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextEmbeddings(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch4 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultTranslation = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTranslation(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch5 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultSummarization = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultSummarization(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch6 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultImageToText = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageToText(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch7 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultImageTextToText = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultImageTextToText(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch8 && matchingUnionBranches == 1) result.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings(), parseNode);
+            if (result.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && result.WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultImageTextToText == null && result.WorkersAiPostRunModel200ResponseResultImageToText == null && result.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && result.WorkersAiPostRunModel200ResponseResultOneOf3 == null && result.WorkersAiPostRunModel200ResponseResultOneOf8 == null && result.WorkersAiPostRunModel200ResponseResultSummarization == null && result.WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && result.WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && result.WorkersAiPostRunModel200ResponseResultTranslation == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -237,6 +233,14 @@ return result;
             {
                 return WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings.GetFieldDeserializers();
             }
+            else if(WorkersAiPostRunModel200ResponseResultOneOf3 != null)
+            {
+                return WorkersAiPostRunModel200ResponseResultOneOf3.GetFieldDeserializers();
+            }
+            else if(WorkersAiPostRunModel200ResponseResultOneOf8 != null)
+            {
+                return WorkersAiPostRunModel200ResponseResultOneOf8.GetFieldDeserializers();
+            }
             else if(WorkersAiPostRunModel200ResponseResultSummarization != null)
             {
                 return WorkersAiPostRunModel200ResponseResultSummarization.GetFieldDeserializers();
@@ -244,14 +248,6 @@ return result;
             else if(WorkersAiPostRunModel200ResponseResultTextEmbeddings != null)
             {
                 return WorkersAiPostRunModel200ResponseResultTextEmbeddings.GetFieldDeserializers();
-            }
-            else if(WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 != null)
-            {
-                return WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1.GetFieldDeserializers();
-            }
-            else if(WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 != null)
-            {
-                return WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1.GetFieldDeserializers();
             }
             else if(WorkersAiPostRunModel200ResponseResultTranslation != null)
             {
@@ -266,7 +262,7 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 == null && WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition == null && WorkersAiPostRunModel200ResponseResultImageClassificationItem == null && WorkersAiPostRunModel200ResponseResultImageTextToText == null && WorkersAiPostRunModel200ResponseResultImageToText == null && WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings == null && WorkersAiPostRunModel200ResponseResultObjectDetectionItem == null && WorkersAiPostRunModel200ResponseResultOneOf3 == null && WorkersAiPostRunModel200ResponseResultOneOf8 == null && WorkersAiPostRunModel200ResponseResultSummarization == null && WorkersAiPostRunModel200ResponseResultTextClassificationItem == null && WorkersAiPostRunModel200ResponseResultTextEmbeddings == null && WorkersAiPostRunModel200ResponseResultTranslation == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition != null) selectedUnionBranches++;
             if (WorkersAiPostRunModel200ResponseResultImageClassificationItem != null) selectedUnionBranches++;
@@ -274,11 +270,11 @@ return result;
             if (WorkersAiPostRunModel200ResponseResultImageToText != null) selectedUnionBranches++;
             if (WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings != null) selectedUnionBranches++;
             if (WorkersAiPostRunModel200ResponseResultObjectDetectionItem != null) selectedUnionBranches++;
+            if (WorkersAiPostRunModel200ResponseResultOneOf3 != null) selectedUnionBranches++;
+            if (WorkersAiPostRunModel200ResponseResultOneOf8 != null) selectedUnionBranches++;
             if (WorkersAiPostRunModel200ResponseResultSummarization != null) selectedUnionBranches++;
             if (WorkersAiPostRunModel200ResponseResultTextClassificationItem != null) selectedUnionBranches++;
             if (WorkersAiPostRunModel200ResponseResultTextEmbeddings != null) selectedUnionBranches++;
-            if (WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 != null) selectedUnionBranches++;
-            if (WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 != null) selectedUnionBranches++;
             if (WorkersAiPostRunModel200ResponseResultTranslation != null) selectedUnionBranches++;
             if (WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition != null && selectedUnionBranches == 1) { if (WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognition); return; }
             if (WorkersAiPostRunModel200ResponseResultImageTextToText != null && selectedUnionBranches == 1) { if (WorkersAiPostRunModel200ResponseResultImageTextToText is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultImageTextToText); return; }
@@ -286,8 +282,6 @@ return result;
             if (WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings != null && selectedUnionBranches == 1) { if (WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings); return; }
             if (WorkersAiPostRunModel200ResponseResultSummarization != null && selectedUnionBranches == 1) { if (WorkersAiPostRunModel200ResponseResultSummarization is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultSummarization); return; }
             if (WorkersAiPostRunModel200ResponseResultTextEmbeddings != null && selectedUnionBranches == 1) { if (WorkersAiPostRunModel200ResponseResultTextEmbeddings is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultTextEmbeddings); return; }
-            if (WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 != null && selectedUnionBranches == 1) { if (WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1); return; }
-            if (WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 != null && selectedUnionBranches == 1) { if (WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1); return; }
             if (WorkersAiPostRunModel200ResponseResultTranslation != null && selectedUnionBranches == 1) { if (WorkersAiPostRunModel200ResponseResultTranslation is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkersAiPostRunModel200ResponseResultTranslation); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
@@ -311,6 +305,16 @@ return result;
                 if (WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings>(null, WorkersAiPostRunModel200ResponseResultMultimodalEmbeddings);
             }
+            else if(WorkersAiPostRunModel200ResponseResultOneOf3 != null)
+            {
+                if (WorkersAiPostRunModel200ResponseResultOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf3>(null, WorkersAiPostRunModel200ResponseResultOneOf3);
+            }
+            else if(WorkersAiPostRunModel200ResponseResultOneOf8 != null)
+            {
+                if (WorkersAiPostRunModel200ResponseResultOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultOneOf8>(null, WorkersAiPostRunModel200ResponseResultOneOf8);
+            }
             else if(WorkersAiPostRunModel200ResponseResultSummarization != null)
             {
                 if (WorkersAiPostRunModel200ResponseResultSummarization is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
@@ -320,16 +324,6 @@ return result;
             {
                 if (WorkersAiPostRunModel200ResponseResultTextEmbeddings is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextEmbeddings>(null, WorkersAiPostRunModel200ResponseResultTextEmbeddings);
-            }
-            else if(WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 != null)
-            {
-                if (WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1>(null, WorkersAiPostRunModel200ResponseResultTextGenerationOneOf1);
-            }
-            else if(WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 != null)
-            {
-                if (WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1>(null, WorkersAiPostRunModel200ResponseResultTextToSpeechOneOf1);
             }
             else if(WorkersAiPostRunModel200ResponseResultTranslation != null)
             {

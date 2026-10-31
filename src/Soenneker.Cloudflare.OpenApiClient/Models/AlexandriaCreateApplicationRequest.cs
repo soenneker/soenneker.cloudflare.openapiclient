@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2Branch"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AlexandriaCreateApplicationRequest : IComposedTypeWrapper, IParsable
@@ -18,21 +18,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1? AlexandriaCreateApplicationRequestAnyOf1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1Branch? AlexandriaCreateApplicationRequestAnyOf1Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1 AlexandriaCreateApplicationRequestAnyOf1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1Branch AlexandriaCreateApplicationRequestAnyOf1Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2? AlexandriaCreateApplicationRequestAnyOf2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2Branch? AlexandriaCreateApplicationRequestAnyOf2Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2 AlexandriaCreateApplicationRequestAnyOf2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2Branch AlexandriaCreateApplicationRequestAnyOf2Branch { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,15 +47,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("hostnames") && (!shapeMembers1.ContainsKey("hostnames") || (((shapeMembers1["hostnames"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("ip_subnets") && (!shapeMembers1.ContainsKey("ip_subnets") || (((shapeMembers1["ip_subnets"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("hostnames") && shapeMembers1.ContainsKey("name") && shapeMembers1.ContainsKey("human_id") && shapeMembers1.ContainsKey("category_id") && (!shapeMembers1.ContainsKey("hostnames") || (((shapeMembers1["hostnames"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("category_id") || ((((shapeMembers1["category_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["category_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral4 && integral4.GetValue() % 1 == 0) || (shapeMembers1["category_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral5 && integral5.GetValue() % 1 == 0) || (shapeMembers1["category_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral6 && integral6.GetValue() % 1 == 0)))))) && (!shapeMembers1.ContainsKey("human_id") || (((shapeMembers1["human_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("ip_subnets") || (((shapeMembers1["ip_subnets"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("name") || (((shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("port_protocols") || (((shapeMembers1["port_protocols"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("support_domains") || (((shapeMembers1["support_domains"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("ip_subnets") && shapeMembers1.ContainsKey("name") && shapeMembers1.ContainsKey("human_id") && shapeMembers1.ContainsKey("category_id") && (!shapeMembers1.ContainsKey("ip_subnets") || (((shapeMembers1["ip_subnets"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("category_id") || ((((shapeMembers1["category_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["category_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral4 && integral4.GetValue() % 1 == 0) || (shapeMembers1["category_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral5 && integral5.GetValue() % 1 == 0) || (shapeMembers1["category_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral6 && integral6.GetValue() % 1 == 0)))))) && (!shapeMembers1.ContainsKey("hostnames") || (((shapeMembers1["hostnames"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("human_id") || (((shapeMembers1["human_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("name") || (((shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("port_protocols") || (((shapeMembers1["port_protocols"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("support_domains") || (((shapeMembers1["support_domains"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0) matchingUnionBranches++;
             if (matchesUnionBranch1) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.AlexandriaCreateApplicationRequestAnyOf1 == null && result.AlexandriaCreateApplicationRequestAnyOf2 == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.AlexandriaCreateApplicationRequestAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.AlexandriaCreateApplicationRequestAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2(), parseNode);
-            if (result.AlexandriaCreateApplicationRequestAnyOf1 == null && result.AlexandriaCreateApplicationRequestAnyOf2 == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.AlexandriaCreateApplicationRequestAnyOf1Branch == null && result.AlexandriaCreateApplicationRequestAnyOf2Branch == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.AlexandriaCreateApplicationRequestAnyOf1Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.AlexandriaCreateApplicationRequestAnyOf2Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf2Branch(), parseNode);
+            if (result.AlexandriaCreateApplicationRequestAnyOf1Branch == null && result.AlexandriaCreateApplicationRequestAnyOf2Branch == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -66,9 +66,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(AlexandriaCreateApplicationRequestAnyOf1 != null || AlexandriaCreateApplicationRequestAnyOf2 != null)
+            if(AlexandriaCreateApplicationRequestAnyOf1Branch != null || AlexandriaCreateApplicationRequestAnyOf2Branch != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AlexandriaCreateApplicationRequestAnyOf1, AlexandriaCreateApplicationRequestAnyOf2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AlexandriaCreateApplicationRequestAnyOf1Branch, AlexandriaCreateApplicationRequestAnyOf2Branch);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,15 +79,15 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (AlexandriaCreateApplicationRequestAnyOf1 == null && AlexandriaCreateApplicationRequestAnyOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AlexandriaCreateApplicationRequestAnyOf1Branch == null && AlexandriaCreateApplicationRequestAnyOf2Branch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (AlexandriaCreateApplicationRequestAnyOf1 != null) selectedUnionBranches++;
-            if (AlexandriaCreateApplicationRequestAnyOf2 != null) selectedUnionBranches++;
-            if (AlexandriaCreateApplicationRequestAnyOf1 != null && selectedUnionBranches == 1) { if (AlexandriaCreateApplicationRequestAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AlexandriaCreateApplicationRequestAnyOf1); return; }
-            if (AlexandriaCreateApplicationRequestAnyOf2 != null && selectedUnionBranches == 1) { if (AlexandriaCreateApplicationRequestAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AlexandriaCreateApplicationRequestAnyOf2); return; }
+            if (AlexandriaCreateApplicationRequestAnyOf1Branch != null) selectedUnionBranches++;
+            if (AlexandriaCreateApplicationRequestAnyOf2Branch != null) selectedUnionBranches++;
+            if (AlexandriaCreateApplicationRequestAnyOf1Branch != null && selectedUnionBranches == 1) { if (AlexandriaCreateApplicationRequestAnyOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AlexandriaCreateApplicationRequestAnyOf1Branch); return; }
+            if (AlexandriaCreateApplicationRequestAnyOf2Branch != null && selectedUnionBranches == 1) { if (AlexandriaCreateApplicationRequestAnyOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AlexandriaCreateApplicationRequestAnyOf2Branch); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1>(null, AlexandriaCreateApplicationRequestAnyOf1, AlexandriaCreateApplicationRequestAnyOf2);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequestAnyOf1Branch>(null, AlexandriaCreateApplicationRequestAnyOf1Branch, AlexandriaCreateApplicationRequestAnyOf2Branch);
         }
     }
 }
