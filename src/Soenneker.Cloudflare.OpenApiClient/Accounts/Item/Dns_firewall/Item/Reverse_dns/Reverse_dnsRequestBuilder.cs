@@ -36,17 +36,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Rev
         /// <summary>
         /// Show reverse DNS configuration (PTR records) for a DNS Firewall cluster
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,23 +55,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Rev
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update reverse DNS configuration (PTR records) for a DNS Firewall cluster
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsPatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsPatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Rev
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Show reverse DNS configuration (PTR records) for a DNS Firewall cluster

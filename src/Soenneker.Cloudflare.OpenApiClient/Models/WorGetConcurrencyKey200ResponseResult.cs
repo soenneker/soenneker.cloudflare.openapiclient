@@ -38,8 +38,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>Maximum number of steps that may concurrently hold this key.</summary>
-        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
-        private int? _explicitNullValueLimit = default!;
+        public long? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private long? _explicitNullValueLimit = default!;
         /// <summary>Unique (per account) name of the concurrency key. Referenced by workflow steps via step config.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "limit", n => { Limit = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "referencing_workflows", n => { ReferencingWorkflows = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetConcurrencyKey200ResponseResultReferencingWorkflowsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetConcurrencyKey200ResponseResultReferencingWorkflowsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteGuidValue("id", Id);
-            writer.WriteIntValue("limit", Limit);
+            writer.WriteLongValue("limit", Limit);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetConcurrencyKey200ResponseResultReferencingWorkflowsItem>("referencing_workflows", ReferencingWorkflows);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

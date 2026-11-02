@@ -40,8 +40,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private string _explicitNullValueBranch = default!;
 #endif
         /// <summary>The depth property</summary>
-        public int? Depth { get => _explicitNullValueDepth; set { _explicitNullValueDepth = value; AdditionalData?.Remove("depth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depth"); else _explicitNullProperties?.Remove("depth"); } }
-        private int? _explicitNullValueDepth = default!;
+        public long? Depth { get => _explicitNullValueDepth; set { _explicitNullValueDepth = value; AdditionalData?.Remove("depth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depth"); else _explicitNullProperties?.Remove("depth"); } }
+        private long? _explicitNullValueDepth = default!;
         /// <summary>The read_only property</summary>
         public bool? ReadOnly { get => _explicitNullValueReadOnly; set { _explicitNullValueReadOnly = value; AdditionalData?.Remove("read_only"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_only"); else _explicitNullProperties?.Remove("read_only"); } }
         private bool? _explicitNullValueReadOnly = default!;
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "branch", n => { Branch = n.GetStringValue(); } },
-                { "depth", n => { Depth = n.GetIntValue(); } },
+                { "depth", n => { Depth = n.GetLongValue(); } },
                 { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("branch", Branch);
-            writer.WriteIntValue("depth", Depth);
+            writer.WriteLongValue("depth", Depth);
             writer.WriteBoolValue("read_only", ReadOnly);
             writer.WriteStringValue("url", Url);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

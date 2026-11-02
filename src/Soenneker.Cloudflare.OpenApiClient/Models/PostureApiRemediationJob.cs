@@ -119,8 +119,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobStatusEnum? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobStatusEnum? _explicitNullValueStatus = default!;
         /// <summary>Type of actor that triggered the remediation job. Null on legacy rows created before this column was populated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobTriggeredByActor? TriggeredByActor { get => _explicitNullValueTriggeredByActor; set { _explicitNullValueTriggeredByActor = value; AdditionalData?.Remove("triggered_by_actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_by_actor"); else _explicitNullProperties?.Remove("triggered_by_actor"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobTriggeredByActor? _explicitNullValueTriggeredByActor = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobTriggeredByActor TriggeredByActor { get => _explicitNullValueTriggeredByActor; set { _explicitNullValueTriggeredByActor = value; AdditionalData?.Remove("triggered_by_actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_by_actor"); else _explicitNullProperties?.Remove("triggered_by_actor"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobTriggeredByActor _explicitNullValueTriggeredByActor = default!;
+#endif
         /// <summary>ID of the actor that triggered the job. Meaning depends on triggered_by_actor. Null on legacy rows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,7 +184,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
                 { "remediation_type", n => { RemediationType = n.GetStringValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobStatusEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
-                { "triggered_by_actor", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobTriggeredByActor>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTriggeredByActor = default; _explicitNullProperties?.Remove("triggered_by_actor"); AdditionalData["triggered_by_actor"] = unknown; } else { TriggeredByActor = parsed; AdditionalData.Remove("triggered_by_actor"); } } },
+                { "triggered_by_actor", n => { TriggeredByActor = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobTriggeredByActor>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobTriggeredByActor.CreateFromDiscriminatorValue); } },
                 { "triggered_by_id", n => { TriggeredById = n.GetStringValue(); } },
                 { "triggered_by_user", n => { TriggeredByUser = n.GetStringValue(); } },
             };
@@ -200,7 +207,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteStringValue("remediation_type", RemediationType);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobStatusEnum>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobTriggeredByActor>("triggered_by_actor", TriggeredByActor);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiRemediationJobTriggeredByActor>("triggered_by_actor", TriggeredByActor);
             writer.WriteStringValue("triggered_by_id", TriggeredById);
             writer.WriteStringValue("triggered_by_user", TriggeredByUser);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

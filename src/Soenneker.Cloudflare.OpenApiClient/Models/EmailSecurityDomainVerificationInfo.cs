@@ -33,8 +33,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? LastCheckedAt { get => _explicitNullValueLastCheckedAt; set { _explicitNullValueLastCheckedAt = value; AdditionalData?.Remove("last_checked_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_checked_at"); else _explicitNullProperties?.Remove("last_checked_at"); } }
         private DateTimeOffset? _explicitNullValueLastCheckedAt = default!;
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>Full DNS TXT record name (e.g. `_cf-email-sec-challenge.example.com`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "last_checked_at", n => { LastCheckedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus.CreateFromDiscriminatorValue); } },
                 { "txt_record_name", n => { TxtRecordName = n.GetStringValue(); } },
                 { "txt_record_value", n => { TxtRecordValue = n.GetStringValue(); } },
             };
@@ -94,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("last_checked_at", LastCheckedAt);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus>("status", Status);
             writer.WriteStringValue("txt_record_name", TxtRecordName);
             writer.WriteStringValue("txt_record_value", TxtRecordValue);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

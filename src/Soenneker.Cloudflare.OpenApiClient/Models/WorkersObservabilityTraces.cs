@@ -52,8 +52,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Persist { get => _explicitNullValuePersist; set { _explicitNullValuePersist = value; AdditionalData?.Remove("persist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persist"); else _explicitNullProperties?.Remove("persist"); } }
         private bool? _explicitNullValuePersist = default!;
         /// <summary>Controls how inbound trace context (traceparent/tracestate) headers on incoming requests are handled. &quot;authenticated&quot; honors inbound trace context only when accompanied by a valid trace auth token. &quot;accept&quot; unconditionally accepts inbound trace context. Requires the trace propagation feature to be enabled. Returns null when the trace propagation feature is not enabled for the account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTracesPropagationPolicy? PropagationPolicy { get => _explicitNullValuePropagationPolicy; set { _explicitNullValuePropagationPolicy = value; AdditionalData?.Remove("propagation_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("propagation_policy"); else _explicitNullProperties?.Remove("propagation_policy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTracesPropagationPolicy? _explicitNullValuePropagationPolicy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTracesPropagationPolicy PropagationPolicy { get => _explicitNullValuePropagationPolicy; set { _explicitNullValuePropagationPolicy = value; AdditionalData?.Remove("propagation_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("propagation_policy"); else _explicitNullProperties?.Remove("propagation_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTracesPropagationPolicy _explicitNullValuePropagationPolicy = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTraces"/> and sets the default values.
         /// </summary>
@@ -86,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "head_sampling_rate", n => { HeadSamplingRate = n.GetDoubleValue(); } },
                 { "persist", n => { Persist = n.GetBoolValue(); } },
-                { "propagation_policy", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTracesPropagationPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePropagationPolicy = default; _explicitNullProperties?.Remove("propagation_policy"); AdditionalData["propagation_policy"] = unknown; } else { PropagationPolicy = parsed; AdditionalData.Remove("propagation_policy"); } } },
+                { "propagation_policy", n => { PropagationPolicy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTracesPropagationPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTracesPropagationPolicy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -100,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("head_sampling_rate", HeadSamplingRate);
             writer.WriteBoolValue("persist", Persist);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTracesPropagationPolicy>("propagation_policy", PropagationPolicy);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTracesPropagationPolicy>("propagation_policy", PropagationPolicy);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

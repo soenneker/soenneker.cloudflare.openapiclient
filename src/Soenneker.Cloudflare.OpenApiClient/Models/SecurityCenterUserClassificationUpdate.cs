@@ -26,8 +26,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>User-defined classification for the insight. Can be &apos;false_positive&apos;, &apos;accept_risk&apos;, &apos;other&apos;, or null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification? Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; AdditionalData?.Remove("classification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification? _explicitNullValueClassification = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; AdditionalData?.Remove("classification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification _explicitNullValueClassification = default!;
+#endif
         /// <summary>Rationale for the classification change. Required when classification is &apos;accept_risk&apos; or &apos;other&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "classification", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueClassification = default; _explicitNullProperties?.Remove("classification"); AdditionalData["classification"] = unknown; } else { Classification = parsed; AdditionalData.Remove("classification"); } } },
+                { "classification", n => { Classification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification.CreateFromDiscriminatorValue); } },
                 { "rationale", n => { Rationale = n.GetStringValue(); } },
             };
         }
@@ -74,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>("classification", Classification);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>("classification", Classification);
             writer.WriteStringValue("rationale", Rationale);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

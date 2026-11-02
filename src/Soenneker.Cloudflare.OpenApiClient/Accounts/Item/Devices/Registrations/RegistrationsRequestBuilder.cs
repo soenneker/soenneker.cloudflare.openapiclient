@@ -220,7 +220,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
 #endif
             /// <summary>The maximum number of devices to return in a single response.</summary>
             [QueryParameter("per_page")]
-            public int? PerPage { get; set; }
+            public decimal? PerPage { get; set; }
             /// <summary>Filter by the ID of the device settings profile assigned to the registration.</summary>
             [QueryParameter("policy%2Eid")]
             public Guid? PolicyId { get; set; }

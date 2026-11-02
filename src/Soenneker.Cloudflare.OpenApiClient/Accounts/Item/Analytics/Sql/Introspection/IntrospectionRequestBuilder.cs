@@ -39,6 +39,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introsp
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlMalformedRequestResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SqlApiIntrospectionAccountScoped403PlainResponseSchemaError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SqlApiIntrospectionAccountScoped422PlainResponseSchemaError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlInternalErrorResponsePlainContentError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SqlApiIntrospectionAccountScoped503PlainResponseSchemaError">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introspection.IntrospectionRequestBuilder.IntrospectionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,7 +54,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introsp
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlMalformedRequestResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.SqlApiIntrospectionAccountScoped403PlainResponseSchemaError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.SqlApiIntrospectionAccountScoped422PlainResponseSchemaError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlInternalErrorResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.SqlApiIntrospectionAccountScoped503PlainResponseSchemaError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the dataset catalogue for the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account; account_tag is not required as a query parameter. If supplied, it must match the path account. Dataset and column discovery options are identical to the legacy introspection endpoint.

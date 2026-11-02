@@ -28,8 +28,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Default price in microcents. 1 USD = 100,000,000 microcents. Must be a multiple of 100,000 ($0.001) between $0.001 and $9,999.999.</summary>
-        public int? DefaultPriceUsdMicrocents { get => _explicitNullValueDefaultPriceUsdMicrocents; set { _explicitNullValueDefaultPriceUsdMicrocents = value; AdditionalData?.Remove("default_price_usd_microcents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_price_usd_microcents"); else _explicitNullProperties?.Remove("default_price_usd_microcents"); } }
-        private int? _explicitNullValueDefaultPriceUsdMicrocents = default!;
+        public long? DefaultPriceUsdMicrocents { get => _explicitNullValueDefaultPriceUsdMicrocents; set { _explicitNullValueDefaultPriceUsdMicrocents = value; AdditionalData?.Remove("default_price_usd_microcents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_price_usd_microcents"); else _explicitNullProperties?.Remove("default_price_usd_microcents"); } }
+        private long? _explicitNullValueDefaultPriceUsdMicrocents = default!;
         /// <summary>The enabled property</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default_price_usd_microcents", n => { DefaultPriceUsdMicrocents = n.GetIntValue(); } },
+                { "default_price_usd_microcents", n => { DefaultPriceUsdMicrocents = n.GetLongValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "non_billable_since", n => { NonBillableSince = n.GetDateTimeOffsetValue(); } },
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("default_price_usd_microcents", DefaultPriceUsdMicrocents);
+            writer.WriteLongValue("default_price_usd_microcents", DefaultPriceUsdMicrocents);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("name", Name);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

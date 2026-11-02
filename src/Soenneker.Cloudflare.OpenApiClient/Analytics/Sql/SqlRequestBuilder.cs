@@ -45,6 +45,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Analytics.Sql
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlMalformedRequestResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlForbiddenResponsePlainContentError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlUnprocessableQueryResponsePlainContentError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQueryLimitExceededResponsePlainContentError">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlInternalErrorResponsePlainContentError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlNotImplementedResponsePlainContentError">When receiving a 501 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlServiceUnavailableResponsePlainContentError">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlResourceExhaustedResponsePlainContentError">When receiving a 507 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Analytics.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,7 +63,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Analytics.Sql
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlMalformedRequestResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlForbiddenResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlUnprocessableQueryResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQueryLimitExceededResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlInternalErrorResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "501", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlNotImplementedResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlServiceUnavailableResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "507", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlResourceExhaustedResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Executes a SQL query against the analytics datasets available to the caller. Send either raw SQL or a JSON object containing the query and optional positional or named parameters, time range, and account or zone scope. Raw SQL placeholders can also be bound with query parameters named `param_&lt;name&gt;`. A trailing `FORMAT JSON`, `FORMAT JSONEachRow`, `FORMAT TabSeparated`, or `FORMAT TSV` is supported for all datasets. Without FORMAT, each backend retains its existing default JSON response.
@@ -64,6 +85,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Analytics.Sql
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlMalformedRequestResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlForbiddenResponsePlainContentError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlUnprocessableQueryResponsePlainContentError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQueryLimitExceededResponsePlainContentError">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlInternalErrorResponsePlainContentError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlNotImplementedResponsePlainContentError">When receiving a 501 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlServiceUnavailableResponsePlainContentError">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlResourceExhaustedResponsePlainContentError">When receiving a 507 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,7 +104,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Analytics.Sql
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlMalformedRequestResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlForbiddenResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlUnprocessableQueryResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQueryLimitExceededResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlInternalErrorResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "501", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlNotImplementedResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlServiceUnavailableResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "507", global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlResourceExhaustedResponsePlainContentError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Executes a SQL query against the analytics datasets available to the caller. SQL placeholders can be bound with query parameters named `param_&lt;name&gt;`, such as `param_status=404` for `$status`. A trailing `FORMAT JSON`, `FORMAT JSONEachRow`, `FORMAT TabSeparated`, or `FORMAT TSV` is supported for all datasets. Without FORMAT, each backend retains its existing default JSON response.

@@ -119,8 +119,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationPromptResponseFormat _explicitNullValueResponseFormat = default!;
 #endif
         /// <summary>Random seed for reproducibility of the generation.</summary>
-        public int? Seed { get => _explicitNullValueSeed; set { _explicitNullValueSeed = value; AdditionalData?.Remove("seed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seed"); else _explicitNullProperties?.Remove("seed"); } }
-        private int? _explicitNullValueSeed = default!;
+        public long? Seed { get => _explicitNullValueSeed; set { _explicitNullValueSeed = value; AdditionalData?.Remove("seed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seed"); else _explicitNullProperties?.Remove("seed"); } }
+        private long? _explicitNullValueSeed = default!;
         /// <summary>If true, the response will be streamed back incrementally using SSE, Server Sent Events.</summary>
         public bool? Stream { get => _explicitNullValueStream; set { _explicitNullValueStream = value; AdditionalData?.Remove("stream"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream"); else _explicitNullProperties?.Remove("stream"); } }
         private bool? _explicitNullValueStream = default!;
@@ -182,7 +182,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetBoolValue(); } },
                 { "repetition_penalty", n => { RepetitionPenalty = n.GetDoubleValue(); } },
                 { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationPromptResponseFormat>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationPromptResponseFormat.CreateFromDiscriminatorValue); } },
-                { "seed", n => { Seed = n.GetIntValue(); } },
+                { "seed", n => { Seed = n.GetLongValue(); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -207,7 +207,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("raw", Raw);
             writer.WriteDoubleValue("repetition_penalty", RepetitionPenalty);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationPromptResponseFormat>("response_format", ResponseFormat);
-            writer.WriteIntValue("seed", Seed);
+            writer.WriteLongValue("seed", Seed);
             writer.WriteBoolValue("stream", Stream);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessagesToolsItem>("tools", Tools);

@@ -145,8 +145,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt _explicitNullValueSrtPlayback = default!;
 #endif
         /// <summary>The connection status of a live input.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>A unique identifier for a live input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,7 +224,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rtmpsPlayback", n => { RtmpsPlayback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackRtmps>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackRtmps.CreateFromDiscriminatorValue); } },
                 { "srt", n => { Srt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputSrt>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputSrt.CreateFromDiscriminatorValue); } },
                 { "srtPlayback", n => { SrtPlayback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt.CreateFromDiscriminatorValue); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus.CreateFromDiscriminatorValue); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "webRTC", n => { WebRTC = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc.CreateFromDiscriminatorValue); } },
                 { "webRTCPlayback", n => { WebRTCPlayback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc.CreateFromDiscriminatorValue); } },
@@ -243,7 +250,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackRtmps>("rtmpsPlayback", RtmpsPlayback);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputSrt>("srt", Srt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackSrt>("srtPlayback", SrtPlayback);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputStatus>("status", Status);
             writer.WriteStringValue("uid", Uid);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamInputWebrtc>("webRTC", WebRTC);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlaybackWebrtc>("webRTCPlayback", WebRTCPlayback);

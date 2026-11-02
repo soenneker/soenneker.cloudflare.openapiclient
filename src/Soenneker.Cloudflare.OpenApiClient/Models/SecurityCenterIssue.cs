@@ -136,8 +136,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private DateTimeOffset? _explicitNullValueTimestamp = default!;
         /// <summary>User-defined classification for the insight. Can be &apos;false_positive&apos;, &apos;accept_risk&apos;, &apos;other&apos;, or null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification? UserClassification { get => _explicitNullValueUserClassification; set { _explicitNullValueUserClassification = value; AdditionalData?.Remove("user_classification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_classification"); else _explicitNullProperties?.Remove("user_classification"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification? _explicitNullValueUserClassification = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification UserClassification { get => _explicitNullValueUserClassification; set { _explicitNullValueUserClassification = value; AdditionalData?.Remove("user_classification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_classification"); else _explicitNullProperties?.Remove("user_classification"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification _explicitNullValueUserClassification = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue"/> and sets the default values.
         /// </summary>
@@ -177,7 +184,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
-                { "user_classification", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUserClassification = default; _explicitNullProperties?.Remove("user_classification"); AdditionalData["user_classification"] = unknown; } else { UserClassification = parsed; AdditionalData.Remove("user_classification"); } } },
+                { "user_classification", n => { UserClassification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -201,7 +208,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueStatus>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>("user_classification", UserClassification);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>("user_classification", UserClassification);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

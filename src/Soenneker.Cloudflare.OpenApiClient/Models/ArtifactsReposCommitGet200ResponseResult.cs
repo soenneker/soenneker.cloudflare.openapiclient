@@ -48,11 +48,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposCommitGet200ResponseResultAuthor _explicitNullValueAuthor = default!;
 #endif
         /// <summary>The authoredAt property</summary>
-        public int? AuthoredAt { get => _explicitNullValueAuthoredAt; set { _explicitNullValueAuthoredAt = value; AdditionalData?.Remove("authoredAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authoredAt"); else _explicitNullProperties?.Remove("authoredAt"); } }
-        private int? _explicitNullValueAuthoredAt = default!;
+        public long? AuthoredAt { get => _explicitNullValueAuthoredAt; set { _explicitNullValueAuthoredAt = value; AdditionalData?.Remove("authoredAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authoredAt"); else _explicitNullProperties?.Remove("authoredAt"); } }
+        private long? _explicitNullValueAuthoredAt = default!;
         /// <summary>The committedAt property</summary>
-        public int? CommittedAt { get => _explicitNullValueCommittedAt; set { _explicitNullValueCommittedAt = value; AdditionalData?.Remove("committedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("committedAt"); else _explicitNullProperties?.Remove("committedAt"); } }
-        private int? _explicitNullValueCommittedAt = default!;
+        public long? CommittedAt { get => _explicitNullValueCommittedAt; set { _explicitNullValueCommittedAt = value; AdditionalData?.Remove("committedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("committedAt"); else _explicitNullProperties?.Remove("committedAt"); } }
+        private long? _explicitNullValueCommittedAt = default!;
         /// <summary>The committer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,8 +129,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "author", n => { Author = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposCommitGet200ResponseResultAuthor>(global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposCommitGet200ResponseResultAuthor.CreateFromDiscriminatorValue); } },
-                { "authoredAt", n => { AuthoredAt = n.GetIntValue(); } },
-                { "committedAt", n => { CommittedAt = n.GetIntValue(); } },
+                { "authoredAt", n => { AuthoredAt = n.GetLongValue(); } },
+                { "committedAt", n => { CommittedAt = n.GetLongValue(); } },
                 { "committer", n => { Committer = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposCommitGet200ResponseResultCommitter>(global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposCommitGet200ResponseResultCommitter.CreateFromDiscriminatorValue); } },
                 { "hash", n => { Hash = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
@@ -146,8 +146,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposCommitGet200ResponseResultAuthor>("author", Author);
-            writer.WriteIntValue("authoredAt", AuthoredAt);
-            writer.WriteIntValue("committedAt", CommittedAt);
+            writer.WriteLongValue("authoredAt", AuthoredAt);
+            writer.WriteLongValue("committedAt", CommittedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposCommitGet200ResponseResultCommitter>("committer", Committer);
             writer.WriteStringValue("hash", Hash);
             writer.WriteStringValue("message", Message);

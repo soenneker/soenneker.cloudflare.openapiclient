@@ -26,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Default error retention in milliseconds.</summary>
-        public int? ErrorRetention { get => _explicitNullValueErrorRetention; set { _explicitNullValueErrorRetention = value; AdditionalData?.Remove("error_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_retention"); else _explicitNullProperties?.Remove("error_retention"); } }
-        private int? _explicitNullValueErrorRetention = default!;
+        public long? ErrorRetention { get => _explicitNullValueErrorRetention; set { _explicitNullValueErrorRetention = value; AdditionalData?.Remove("error_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_retention"); else _explicitNullProperties?.Remove("error_retention"); } }
+        private long? _explicitNullValueErrorRetention = default!;
         /// <summary>Default success retention in milliseconds.</summary>
-        public int? SuccessRetention { get => _explicitNullValueSuccessRetention; set { _explicitNullValueSuccessRetention = value; AdditionalData?.Remove("success_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_retention"); else _explicitNullProperties?.Remove("success_retention"); } }
-        private int? _explicitNullValueSuccessRetention = default!;
+        public long? SuccessRetention { get => _explicitNullValueSuccessRetention; set { _explicitNullValueSuccessRetention = value; AdditionalData?.Remove("success_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_retention"); else _explicitNullProperties?.Remove("success_retention"); } }
+        private long? _explicitNullValueSuccessRetention = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowSettings200ResponseResultDefaultRetention"/> and sets the default values.
         /// </summary>
@@ -56,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error_retention", n => { ErrorRetention = n.GetIntValue(); } },
-                { "success_retention", n => { SuccessRetention = n.GetIntValue(); } },
+                { "error_retention", n => { ErrorRetention = n.GetLongValue(); } },
+                { "success_retention", n => { SuccessRetention = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("error_retention", ErrorRetention);
-            writer.WriteIntValue("success_retention", SuccessRetention);
+            writer.WriteLongValue("error_retention", ErrorRetention);
+            writer.WriteLongValue("success_retention", SuccessRetention);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

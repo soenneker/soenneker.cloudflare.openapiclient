@@ -41,8 +41,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Price in microcents 1 USD = 100,000,000 microcents. Must be 0 or a multiple of 100,000 $0.001. Range: $0.001–$9,999.999.</summary>
-        public int? PriceUsdMicrocents { get => _explicitNullValuePriceUsdMicrocents; set { _explicitNullValuePriceUsdMicrocents = value; AdditionalData?.Remove("price_usd_microcents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_usd_microcents"); else _explicitNullProperties?.Remove("price_usd_microcents"); } }
-        private int? _explicitNullValuePriceUsdMicrocents = default!;
+        public long? PriceUsdMicrocents { get => _explicitNullValuePriceUsdMicrocents; set { _explicitNullValuePriceUsdMicrocents = value; AdditionalData?.Remove("price_usd_microcents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_usd_microcents"); else _explicitNullProperties?.Remove("price_usd_microcents"); } }
+        private long? _explicitNullValuePriceUsdMicrocents = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigCreate"/> and sets the default values.
         /// </summary>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "bot_overrides", n => { BotOverrides = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigCreateBotOverrides>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigCreateBotOverrides.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "price_usd_microcents", n => { PriceUsdMicrocents = n.GetIntValue(); } },
+                { "price_usd_microcents", n => { PriceUsdMicrocents = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigCreateBotOverrides>("bot_overrides", BotOverrides);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteIntValue("price_usd_microcents", PriceUsdMicrocents);
+            writer.WriteLongValue("price_usd_microcents", PriceUsdMicrocents);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

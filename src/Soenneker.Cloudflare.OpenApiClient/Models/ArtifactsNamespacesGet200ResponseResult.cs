@@ -48,8 +48,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private string _explicitNullValueNamespace = default!;
 #endif
         /// <summary>The repo_count property</summary>
-        public int? RepoCount { get => _explicitNullValueRepoCount; set { _explicitNullValueRepoCount = value; AdditionalData?.Remove("repo_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_count"); else _explicitNullProperties?.Remove("repo_count"); } }
-        private int? _explicitNullValueRepoCount = default!;
+        public long? RepoCount { get => _explicitNullValueRepoCount; set { _explicitNullValueRepoCount = value; AdditionalData?.Remove("repo_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_count"); else _explicitNullProperties?.Remove("repo_count"); } }
+        private long? _explicitNullValueRepoCount = default!;
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "jurisdiction", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsNamespacesGet200ResponseResultJurisdiction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueJurisdiction = default; _explicitNullProperties?.Remove("jurisdiction"); AdditionalData["jurisdiction"] = unknown; } else { Jurisdiction = parsed; AdditionalData.Remove("jurisdiction"); } } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
-                { "repo_count", n => { RepoCount = n.GetIntValue(); } },
+                { "repo_count", n => { RepoCount = n.GetLongValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsNamespacesGet200ResponseResultJurisdiction>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("namespace", Namespace);
-            writer.WriteIntValue("repo_count", RepoCount);
+            writer.WriteLongValue("repo_count", RepoCount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -250,8 +250,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             public string Search { get; set; }
 #endif
             /// <summary>Filters response to domains with the provided status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus? Status { get; set; }
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
+#endif
         }
     }
 }

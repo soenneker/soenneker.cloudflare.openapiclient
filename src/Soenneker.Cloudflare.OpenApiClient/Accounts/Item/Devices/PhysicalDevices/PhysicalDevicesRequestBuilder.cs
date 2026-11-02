@@ -155,7 +155,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
 #endif
             /// <summary>The maximum number of devices to return in a single response.</summary>
             [QueryParameter("per_page")]
-            public int? PerPage { get; set; }
+            public decimal? PerPage { get; set; }
             /// <summary>Search by device details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

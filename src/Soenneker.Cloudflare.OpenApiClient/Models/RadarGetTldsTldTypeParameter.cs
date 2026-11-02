@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Filters results by TLD type.</summary>
+    /// <summary>Filters results by TLD type. GENERIC_RESTRICTED and SPONSORED are deprecated and return no results, as IANA consolidated them into GENERIC. INFRASTRUCTURE is deprecated, as IANA reclassified .arpa as SPECIAL_USE.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RadarGetTldsTldTypeParameter
     {
@@ -14,6 +14,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "COUNTRY_CODE")]
         #pragma warning disable CS1591
         CountryCode,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SPECIAL_USE")]
+        #pragma warning disable CS1591
+        SpecialUse,
         #pragma warning restore CS1591
         [EnumMember(Value = "GENERIC_RESTRICTED")]
         #pragma warning disable CS1591

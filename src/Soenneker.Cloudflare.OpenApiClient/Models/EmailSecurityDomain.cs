@@ -82,8 +82,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The dmarc_status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus? DmarcStatus { get => _explicitNullValueDmarcStatus; set { _explicitNullValueDmarcStatus = value; AdditionalData?.Remove("dmarc_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dmarc_status"); else _explicitNullProperties?.Remove("dmarc_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus? _explicitNullValueDmarcStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus DmarcStatus { get => _explicitNullValueDmarcStatus; set { _explicitNullValueDmarcStatus = value; AdditionalData?.Remove("dmarc_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dmarc_status"); else _explicitNullProperties?.Remove("dmarc_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus _explicitNullValueDmarcStatus = default!;
+#endif
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,14 +122,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed _explicitNullValueEmailsProcessed = default!;
 #endif
         /// <summary>The mailbox folder to scan, for API-scanning domains.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder? Folder { get => _explicitNullValueFolder; set { _explicitNullValueFolder = value; AdditionalData?.Remove("folder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder"); else _explicitNullProperties?.Remove("folder"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder? _explicitNullValueFolder = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder? Folder { get => _explicitNullValueFolder; set { _explicitNullValueFolder = value; AdditionalData?.Remove("folder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder"); else _explicitNullProperties?.Remove("folder"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder? _explicitNullValueFolder = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder Folder { get => _explicitNullValueFolder; set { _explicitNullValueFolder = value; AdditionalData?.Remove("folder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder"); else _explicitNullProperties?.Remove("folder"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder _explicitNullValueFolder = default!;
+#endif
         /// <summary>Domain identifier.</summary>
         public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>The inbox_provider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider? InboxProvider { get => _explicitNullValueInboxProvider; set { _explicitNullValueInboxProvider = value; AdditionalData?.Remove("inbox_provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbox_provider"); else _explicitNullProperties?.Remove("inbox_provider"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider? _explicitNullValueInboxProvider = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider InboxProvider { get => _explicitNullValueInboxProvider; set { _explicitNullValueInboxProvider = value; AdditionalData?.Remove("inbox_provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbox_provider"); else _explicitNullProperties?.Remove("inbox_provider"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider _explicitNullValueInboxProvider = default!;
+#endif
         /// <summary>The integration_id property</summary>
         public Guid? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; AdditionalData?.Remove("integration_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
         private Guid? _explicitNullValueIntegrationId = default!;
@@ -171,11 +192,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? RequireTlsOutbound { get => _explicitNullValueRequireTlsOutbound; set { _explicitNullValueRequireTlsOutbound = value; AdditionalData?.Remove("require_tls_outbound"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_tls_outbound"); else _explicitNullProperties?.Remove("require_tls_outbound"); } }
         private bool? _explicitNullValueRequireTlsOutbound = default!;
         /// <summary>The spf_status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySpfStatus? SpfStatus { get => _explicitNullValueSpfStatus; set { _explicitNullValueSpfStatus = value; AdditionalData?.Remove("spf_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spf_status"); else _explicitNullProperties?.Remove("spf_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySpfStatus? _explicitNullValueSpfStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySpfStatus SpfStatus { get => _explicitNullValueSpfStatus; set { _explicitNullValueSpfStatus = value; AdditionalData?.Remove("spf_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spf_status"); else _explicitNullProperties?.Remove("spf_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySpfStatus _explicitNullValueSpfStatus = default!;
+#endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>The transport property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -214,13 +249,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allowed_delivery_modes", n => { AllowedDeliveryModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeliveryMode>()?.AsList(); } },
                 { "authorization", n => { Authorization = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "dmarc_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDmarcStatus = default; _explicitNullProperties?.Remove("dmarc_status"); AdditionalData["dmarc_status"] = unknown; } else { DmarcStatus = parsed; AdditionalData.Remove("dmarc_status"); } } },
+                { "dmarc_status", n => { DmarcStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus.CreateFromDiscriminatorValue); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "drop_dispositions", n => { DropDispositions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>()?.AsList(); } },
                 { "emails_processed", n => { EmailsProcessed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed.CreateFromDiscriminatorValue); } },
-                { "folder", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFolder = default; _explicitNullProperties?.Remove("folder"); AdditionalData["folder"] = unknown; } else { Folder = parsed; AdditionalData.Remove("folder"); } } },
+                { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "inbox_provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInboxProvider = default; _explicitNullProperties?.Remove("inbox_provider"); AdditionalData["inbox_provider"] = unknown; } else { InboxProvider = parsed; AdditionalData.Remove("inbox_provider"); } } },
+                { "inbox_provider", n => { InboxProvider = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider.CreateFromDiscriminatorValue); } },
                 { "integration_id", n => { IntegrationId = n.GetGuidValue(); } },
                 { "ip_restrictions", n => { IpRestrictions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
@@ -230,8 +265,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "regions", n => { Regions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityRegion>()?.AsList(); } },
                 { "require_tls_inbound", n => { RequireTlsInbound = n.GetBoolValue(); } },
                 { "require_tls_outbound", n => { RequireTlsOutbound = n.GetBoolValue(); } },
-                { "spf_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySpfStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSpfStatus = default; _explicitNullProperties?.Remove("spf_status"); AdditionalData["spf_status"] = unknown; } else { SpfStatus = parsed; AdditionalData.Remove("spf_status"); } } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "spf_status", n => { SpfStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySpfStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySpfStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus.CreateFromDiscriminatorValue); } },
                 { "transport", n => { Transport = n.GetStringValue(); } },
             };
         }
@@ -244,13 +279,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeliveryMode>("allowed_delivery_modes", AllowedDeliveryModes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed>("authorization", Authorization);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus>("dmarc_status", DmarcStatus);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus>("dmarc_status", DmarcStatus);
             writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>("drop_dispositions", DropDispositions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed>("emails_processed", EmailsProcessed);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder>("folder", Folder);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder>("folder", Folder);
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider>("inbox_provider", InboxProvider);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider>("inbox_provider", InboxProvider);
             writer.WriteGuidValue("integration_id", IntegrationId);
             writer.WriteCollectionOfPrimitiveValues<string>("ip_restrictions", IpRestrictions);
             writer.WriteIntValue("lookback_hops", LookbackHops);
@@ -258,8 +293,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityRegion>("regions", Regions);
             writer.WriteBoolValue("require_tls_inbound", RequireTlsInbound);
             writer.WriteBoolValue("require_tls_outbound", RequireTlsOutbound);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySpfStatus>("spf_status", SpfStatus);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySpfStatus>("spf_status", SpfStatus);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainStatus>("status", Status);
             writer.WriteStringValue("transport", Transport);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

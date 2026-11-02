@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         {
             /// <summary>Specific attempt number to retrieve output or error for.</summary>
             [QueryParameter("attempt")]
-            public int? Attempt { get; set; }
+            public long? Attempt { get; set; }
             /// <summary>Exact step name from the instance logs response, including the generated counter suffix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

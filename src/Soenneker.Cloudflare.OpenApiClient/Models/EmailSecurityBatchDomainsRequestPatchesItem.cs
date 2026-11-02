@@ -64,8 +64,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel?> _explicitNullValueDropDispositions = default!;
 #endif
         /// <summary>The mailbox folder to scan, for API-scanning domains.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder? Folder { get => _explicitNullValueFolder; set { _explicitNullValueFolder = value; AdditionalData?.Remove("folder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder"); else _explicitNullProperties?.Remove("folder"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder? _explicitNullValueFolder = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder? Folder { get => _explicitNullValueFolder; set { _explicitNullValueFolder = value; AdditionalData?.Remove("folder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder"); else _explicitNullProperties?.Remove("folder"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder? _explicitNullValueFolder = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder Folder { get => _explicitNullValueFolder; set { _explicitNullValueFolder = value; AdditionalData?.Remove("folder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder"); else _explicitNullProperties?.Remove("folder"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder _explicitNullValueFolder = default!;
+#endif
         /// <summary>Domain identifier.</summary>
         public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
@@ -138,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "allowed_delivery_modes", n => { AllowedDeliveryModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeliveryMode>()?.AsList(); } },
                 { "drop_dispositions", n => { DropDispositions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>()?.AsList(); } },
-                { "folder", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFolder = default; _explicitNullProperties?.Remove("folder"); AdditionalData["folder"] = unknown; } else { Folder = parsed; AdditionalData.Remove("folder"); } } },
+                { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "integration_id", n => { IntegrationId = n.GetGuidValue(); } },
                 { "ip_restrictions", n => { IpRestrictions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -158,7 +165,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeliveryMode>("allowed_delivery_modes", AllowedDeliveryModes);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>("drop_dispositions", DropDispositions);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder>("folder", Folder);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateDomainFolder>("folder", Folder);
             writer.WriteGuidValue("id", Id);
             writer.WriteGuidValue("integration_id", IntegrationId);
             writer.WriteCollectionOfPrimitiveValues<string>("ip_restrictions", IpRestrictions);

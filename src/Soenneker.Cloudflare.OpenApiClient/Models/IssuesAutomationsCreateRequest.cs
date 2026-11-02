@@ -35,8 +35,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? AfterInactivitySeconds { get => _explicitNullValueAfterInactivitySeconds; set { _explicitNullValueAfterInactivitySeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("afterInactivitySeconds"); else _explicitNullProperties?.Remove("afterInactivitySeconds"); } }
         private int? _explicitNullValueAfterInactivitySeconds = default!;
         /// <summary>The afterOccurrences property</summary>
-        public int? AfterOccurrences { get => _explicitNullValueAfterOccurrences; set { _explicitNullValueAfterOccurrences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("afterOccurrences"); else _explicitNullProperties?.Remove("afterOccurrences"); } }
-        private int? _explicitNullValueAfterOccurrences = default!;
+        public long? AfterOccurrences { get => _explicitNullValueAfterOccurrences; set { _explicitNullValueAfterOccurrences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("afterOccurrences"); else _explicitNullProperties?.Remove("afterOccurrences"); } }
+        private long? _explicitNullValueAfterOccurrences = default!;
         /// <summary>The enabled property</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "afterInactivitySeconds", n => { AfterInactivitySeconds = n.GetIntValue(); } },
-                { "afterOccurrences", n => { AfterOccurrences = n.GetIntValue(); } },
+                { "afterOccurrences", n => { AfterOccurrences = n.GetLongValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("afterInactivitySeconds", AfterInactivitySeconds);
-            writer.WriteIntValue("afterOccurrences", AfterOccurrences);
+            writer.WriteLongValue("afterOccurrences", AfterOccurrences);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("policyId", PolicyId);

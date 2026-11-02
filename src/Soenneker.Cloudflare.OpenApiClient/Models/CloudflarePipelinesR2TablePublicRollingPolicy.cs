@@ -27,14 +27,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         }
 
         /// <summary>Files will be rolled after reaching this number of bytes</summary>
-        public int? FileSizeBytes { get => _explicitNullValueFileSizeBytes; set { _explicitNullValueFileSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_size_bytes"); else _explicitNullProperties?.Remove("file_size_bytes"); } }
-        private int? _explicitNullValueFileSizeBytes = default!;
+        public decimal? FileSizeBytes { get => _explicitNullValueFileSizeBytes; set { _explicitNullValueFileSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_size_bytes"); else _explicitNullProperties?.Remove("file_size_bytes"); } }
+        private decimal? _explicitNullValueFileSizeBytes = default!;
         /// <summary>Number of seconds of inactivity to wait before rolling over to a new file</summary>
-        public int? InactivitySeconds { get => _explicitNullValueInactivitySeconds; set { _explicitNullValueInactivitySeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inactivity_seconds"); else _explicitNullProperties?.Remove("inactivity_seconds"); } }
-        private int? _explicitNullValueInactivitySeconds = default!;
+        public decimal? InactivitySeconds { get => _explicitNullValueInactivitySeconds; set { _explicitNullValueInactivitySeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inactivity_seconds"); else _explicitNullProperties?.Remove("inactivity_seconds"); } }
+        private decimal? _explicitNullValueInactivitySeconds = default!;
         /// <summary>Number of seconds to wait before rolling over to a new file</summary>
-        public int? IntervalSeconds { get => _explicitNullValueIntervalSeconds; set { _explicitNullValueIntervalSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval_seconds"); else _explicitNullProperties?.Remove("interval_seconds"); } }
-        private int? _explicitNullValueIntervalSeconds = default!;
+        public decimal? IntervalSeconds { get => _explicitNullValueIntervalSeconds; set { _explicitNullValueIntervalSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval_seconds"); else _explicitNullProperties?.Remove("interval_seconds"); } }
+        private decimal? _explicitNullValueIntervalSeconds = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,9 +53,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "file_size_bytes", n => { FileSizeBytes = n.GetIntValue(); } },
-                { "inactivity_seconds", n => { InactivitySeconds = n.GetIntValue(); } },
-                { "interval_seconds", n => { IntervalSeconds = n.GetIntValue(); } },
+                { "file_size_bytes", n => { FileSizeBytes = n.GetDecimalValue(); } },
+                { "inactivity_seconds", n => { InactivitySeconds = n.GetDecimalValue(); } },
+                { "interval_seconds", n => { IntervalSeconds = n.GetDecimalValue(); } },
             };
         }
         /// <summary>
@@ -65,9 +65,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("file_size_bytes", FileSizeBytes);
-            writer.WriteIntValue("inactivity_seconds", InactivitySeconds);
-            writer.WriteIntValue("interval_seconds", IntervalSeconds);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteDecimalValue("file_size_bytes", FileSizeBytes);
+            writer.WriteDecimalValue("inactivity_seconds", InactivitySeconds);
+            writer.WriteDecimalValue("interval_seconds", IntervalSeconds);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

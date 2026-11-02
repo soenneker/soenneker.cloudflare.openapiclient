@@ -76,8 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The objects property</summary>
-        public int? Objects { get => _explicitNullValueObjects; set { _explicitNullValueObjects = value; AdditionalData?.Remove("objects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objects"); else _explicitNullProperties?.Remove("objects"); } }
-        private int? _explicitNullValueObjects = default!;
+        public long? Objects { get => _explicitNullValueObjects; set { _explicitNullValueObjects = value; AdditionalData?.Remove("objects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objects"); else _explicitNullProperties?.Remove("objects"); } }
+        private long? _explicitNullValueObjects = default!;
         /// <summary>The remote property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "objects", n => { Objects = n.GetIntValue(); } },
+                { "objects", n => { Objects = n.GetLongValue(); } },
                 { "remote", n => { Remote = n.GetStringValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
             };
@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("objects", Objects);
+            writer.WriteLongValue("objects", Objects);
             writer.WriteStringValue("remote", Remote);
             writer.WriteStringValue("token", Token);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

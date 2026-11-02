@@ -92,8 +92,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; AdditionalData?.Remove("per_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
         private double? _explicitNullValuePerPage = default!;
         /// <summary>The result property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AsnIntelligenceGetAsnSubnets4XxResponse_result? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.AsnIntelligenceGetAsnSubnets4XxResponse_result? _explicitNullValueResult = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueResult = default!;
+#nullable restore
+#else
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueResult = default!;
+#endif
         /// <summary>The subnets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,7 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "page", n => { Page = n.GetDoubleValue(); } },
                 { "per_page", n => { PerPage = n.GetDoubleValue(); } },
-                { "result", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AsnIntelligenceGetAsnSubnets4XxResponse_result>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResult = default; _explicitNullProperties?.Remove("result"); AdditionalData["result"] = unknown; } else { Result = parsed; AdditionalData.Remove("result"); } } },
+                { "result", n => { Result = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "subnets", n => { Subnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -160,7 +167,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem>("messages", Messages);
             writer.WriteDoubleValue("page", Page);
             writer.WriteDoubleValue("per_page", PerPage);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AsnIntelligenceGetAsnSubnets4XxResponse_result>("result", Result);
+            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("result", Result);
             writer.WriteCollectionOfPrimitiveValues<string>("subnets", Subnets);
             writer.WriteBoolValue("success", Success);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

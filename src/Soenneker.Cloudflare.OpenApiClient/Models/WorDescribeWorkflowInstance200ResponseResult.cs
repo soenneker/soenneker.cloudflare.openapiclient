@@ -112,8 +112,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStatus? _explicitNullValueStatus = default!;
         /// <summary>The step_count property</summary>
-        public int? StepCount { get => _explicitNullValueStepCount; set { _explicitNullValueStepCount = value; AdditionalData?.Remove("step_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step_count"); else _explicitNullProperties?.Remove("step_count"); } }
-        private int? _explicitNullValueStepCount = default!;
+        public long? StepCount { get => _explicitNullValueStepCount; set { _explicitNullValueStepCount = value; AdditionalData?.Remove("step_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step_count"); else _explicitNullProperties?.Remove("step_count"); } }
+        private long? _explicitNullValueStepCount = default!;
         /// <summary>The steps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,7 +174,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultSchedule>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultSchedule.CreateFromDiscriminatorValue); } },
                 { "start", n => { Start = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
-                { "step_count", n => { StepCount = n.GetIntValue(); } },
+                { "step_count", n => { StepCount = n.GetLongValue(); } },
                 { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
                 { "trigger", n => { Trigger = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger.CreateFromDiscriminatorValue); } },
@@ -197,7 +197,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultSchedule>("schedule", Schedule);
             writer.WriteDateTimeOffsetValue("start", Start);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStatus>("status", Status);
-            writer.WriteIntValue("step_count", StepCount);
+            writer.WriteLongValue("step_count", StepCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem>("steps", Steps);
             writer.WriteBoolValue("success", Success);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultTrigger>("trigger", Trigger);

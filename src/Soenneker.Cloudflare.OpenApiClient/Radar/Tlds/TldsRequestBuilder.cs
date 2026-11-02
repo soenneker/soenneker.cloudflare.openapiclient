@@ -140,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Tlds
             [QueryParameter("tldManager")]
             public string TldManager { get; set; }
 #endif
-            /// <summary>Filters results by TLD type.</summary>
+            /// <summary>Filters results by TLD type. GENERIC_RESTRICTED and SPONSORED are deprecated and return no results, as IANA consolidated them into GENERIC. INFRASTRUCTURE is deprecated, as IANA reclassified .arpa as SPECIAL_USE.</summary>
             [QueryParameter("tldType")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTldsTldTypeParameter? TldType { get; set; }
         }

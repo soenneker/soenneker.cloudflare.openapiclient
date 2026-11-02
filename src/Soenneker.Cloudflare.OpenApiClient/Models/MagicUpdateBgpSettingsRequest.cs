@@ -26,8 +26,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Route advertisements from Cloudflare to ramps in this account will use this ASN.</summary>
-        public int? CloudflareAsn { get => _explicitNullValueCloudflareAsn; set { _explicitNullValueCloudflareAsn = value; AdditionalData?.Remove("cloudflare_asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_asn"); else _explicitNullProperties?.Remove("cloudflare_asn"); } }
-        private int? _explicitNullValueCloudflareAsn = default!;
+        public long? CloudflareAsn { get => _explicitNullValueCloudflareAsn; set { _explicitNullValueCloudflareAsn = value; AdditionalData?.Remove("cloudflare_asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_asn"); else _explicitNullProperties?.Remove("cloudflare_asn"); } }
+        private long? _explicitNullValueCloudflareAsn = default!;
         /// <summary>Per-source toggles controlling which route sources are redistributed into BGP. Each property enables redistribution for one route source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cloudflare_asn", n => { CloudflareAsn = n.GetIntValue(); } },
+                { "cloudflare_asn", n => { CloudflareAsn = n.GetLongValue(); } },
                 { "redistribute", n => { Redistribute = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicUpdateBgpSettingsRedistributeSources>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicUpdateBgpSettingsRedistributeSources.CreateFromDiscriminatorValue); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("cloudflare_asn", CloudflareAsn);
+            writer.WriteLongValue("cloudflare_asn", CloudflareAsn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicUpdateBgpSettingsRedistributeSources>("redistribute", Redistribute);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

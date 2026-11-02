@@ -133,8 +133,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
         private bool? _explicitNullValueCache = default!;
         /// <summary>The cache_threshold property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold? CacheThreshold { get => _explicitNullValueCacheThreshold; set { _explicitNullValueCacheThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_threshold"); else _explicitNullProperties?.Remove("cache_threshold"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold? _explicitNullValueCacheThreshold = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold CacheThreshold { get => _explicitNullValueCacheThreshold; set { _explicitNullValueCacheThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_threshold"); else _explicitNullProperties?.Remove("cache_threshold"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold _explicitNullValueCacheThreshold = default!;
+#endif
         /// <summary>The cache_ttl property</summary>
         public int? CacheTtl { get => _explicitNullValueCacheTtl; set { _explicitNullValueCacheTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_ttl"); else _explicitNullProperties?.Remove("cache_ttl"); } }
         private int? _explicitNullValueCacheTtl = default!;
@@ -410,8 +417,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private string _explicitNullValueTokenId = default!;
 #endif
         /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemType? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemType _explicitNullValueType = default!;
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -433,7 +447,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ai_gateway_id", n => { AiGatewayId = n.GetStringValue(); } },
                 { "ai_search_model", n => { AiSearchModel = n.GetStringValue(); } },
                 { "cache", n => { Cache = n.GetBoolValue(); } },
-                { "cache_threshold", n => { CacheThreshold = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold>(); } },
+                { "cache_threshold", n => { CacheThreshold = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold.CreateFromDiscriminatorValue); } },
                 { "cache_ttl", n => { CacheTtl = n.GetIntValue(); } },
                 { "chunk", n => { Chunk = n.GetBoolValue(); } },
                 { "chunk_overlap", n => { ChunkOverlap = n.GetDoubleValue(); } },
@@ -474,7 +488,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "system_prompt_index_summarization", n => { SystemPromptIndexSummarization = n.GetStringValue(); } },
                 { "system_prompt_rewrite_query", n => { SystemPromptRewriteQuery = n.GetStringValue(); } },
                 { "token_id", n => { TokenId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemType>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -487,7 +501,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("ai_gateway_id", AiGatewayId);
             writer.WriteStringValue("ai_search_model", AiSearchModel);
             writer.WriteBoolValue("cache", Cache);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold>("cache_threshold", CacheThreshold);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold>("cache_threshold", CacheThreshold);
             writer.WriteIntValue("cache_ttl", CacheTtl);
             writer.WriteBoolValue("chunk", Chunk);
             writer.WriteDoubleValue("chunk_overlap", ChunkOverlap);
@@ -528,7 +542,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("system_prompt_index_summarization", SystemPromptIndexSummarization);
             writer.WriteStringValue("system_prompt_rewrite_query", SystemPromptRewriteQuery);
             writer.WriteStringValue("token_id", TokenId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

@@ -30,8 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code property</summary>
-        public int? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
-        private int? _explicitNullValueCode = default!;
+        public long? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private long? _explicitNullValueCode = default!;
         /// <summary>The documentation_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetIntValue(); } },
+                { "code", n => { Code = n.GetLongValue(); } },
                 { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposImport413ResponseMessagesItemSource>(global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposImport413ResponseMessagesItemSource.CreateFromDiscriminatorValue); } },
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("code", Code);
+            writer.WriteLongValue("code", Code);
             writer.WriteStringValue("documentation_url", DocumentationUrl);
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposImport413ResponseMessagesItemSource>("source", Source);

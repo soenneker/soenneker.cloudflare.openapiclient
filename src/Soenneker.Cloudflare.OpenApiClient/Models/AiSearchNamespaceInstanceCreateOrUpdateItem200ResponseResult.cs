@@ -78,7 +78,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Namespace { get; private set; }
 #endif
         /// <summary>The next_action property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200ResponseResultNextAction? NextAction { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200ResponseResultNextAction NextAction { get; private set; }
+#endif
         /// <summary>Identifies which data source this item belongs to. &quot;builtin&quot; for uploaded files, &quot;{type}:{source}&quot; for external sources, null for legacy items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_seen_at", n => { LastSeenAt = n.GetDateTimeOffsetValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200ResponseResultMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200ResponseResultMetadata.CreateFromDiscriminatorValue); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
-                { "next_action", n => { NextAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200ResponseResultNextAction>(); } },
+                { "next_action", n => { NextAction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200ResponseResultNextAction>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200ResponseResultNextAction.CreateFromDiscriminatorValue); } },
                 { "source_id", n => { SourceId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200ResponseResultStatus>(); } },
             };

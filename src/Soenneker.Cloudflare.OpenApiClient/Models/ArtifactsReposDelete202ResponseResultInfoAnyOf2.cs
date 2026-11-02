@@ -32,20 +32,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
-        private int? _explicitNullValueCount = default!;
+        public long? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private long? _explicitNullValueCount = default!;
         /// <summary>The page property</summary>
-        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
-        private int? _explicitNullValuePage = default!;
+        public long? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        private long? _explicitNullValuePage = default!;
         /// <summary>The per_page property</summary>
-        public int? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; AdditionalData?.Remove("per_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
-        private int? _explicitNullValuePerPage = default!;
+        public long? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; AdditionalData?.Remove("per_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
+        private long? _explicitNullValuePerPage = default!;
         /// <summary>The total_count property</summary>
-        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("total_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
-        private int? _explicitNullValueTotalCount = default!;
+        public long? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("total_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
+        private long? _explicitNullValueTotalCount = default!;
         /// <summary>The total_pages property</summary>
-        public int? TotalPages { get => _explicitNullValueTotalPages; set { _explicitNullValueTotalPages = value; AdditionalData?.Remove("total_pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_pages"); else _explicitNullProperties?.Remove("total_pages"); } }
-        private int? _explicitNullValueTotalPages = default!;
+        public long? TotalPages { get => _explicitNullValueTotalPages; set { _explicitNullValueTotalPages = value; AdditionalData?.Remove("total_pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_pages"); else _explicitNullProperties?.Remove("total_pages"); } }
+        private long? _explicitNullValueTotalPages = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposDelete202ResponseResultInfoAnyOf2"/> and sets the default values.
         /// </summary>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetIntValue(); } },
-                { "page", n => { Page = n.GetIntValue(); } },
-                { "per_page", n => { PerPage = n.GetIntValue(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
-                { "total_pages", n => { TotalPages = n.GetIntValue(); } },
+                { "count", n => { Count = n.GetLongValue(); } },
+                { "page", n => { Page = n.GetLongValue(); } },
+                { "per_page", n => { PerPage = n.GetLongValue(); } },
+                { "total_count", n => { TotalCount = n.GetLongValue(); } },
+                { "total_pages", n => { TotalPages = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -85,11 +85,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("count", Count);
-            writer.WriteIntValue("page", Page);
-            writer.WriteIntValue("per_page", PerPage);
-            writer.WriteIntValue("total_count", TotalCount);
-            writer.WriteIntValue("total_pages", TotalPages);
+            writer.WriteLongValue("count", Count);
+            writer.WriteLongValue("page", Page);
+            writer.WriteLongValue("per_page", PerPage);
+            writer.WriteLongValue("total_count", TotalCount);
+            writer.WriteLongValue("total_pages", TotalPages);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

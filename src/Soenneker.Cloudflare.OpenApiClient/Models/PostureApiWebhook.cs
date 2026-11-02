@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Timestamp when the webhook configuration was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>Version number of the configuration.</summary>
-        public int? Version { get; private set; }
+        public long? Version { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhook"/> and sets the default values.
         /// </summary>
@@ -109,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>

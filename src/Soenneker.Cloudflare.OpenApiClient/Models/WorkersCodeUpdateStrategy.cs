@@ -17,22 +17,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_delay") is null) { _explicitNullValueMaxDelay = default!; _explicitNullProperties?.Remove("max_delay"); }
-            else if (parseNode.GetChildNode("max_delay") is { } nullNodeMaxDelay && nullNodeMaxDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDelay = null;
             if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
             else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set the maximum number of seconds to wait before forcing the update. When omitted, the default maximum delay applies.</summary>
-        public double? MaxDelay { get => _explicitNullValueMaxDelay; set { _explicitNullValueMaxDelay = value; AdditionalData?.Remove("max_delay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_delay"); else _explicitNullProperties?.Remove("max_delay"); } }
-        private double? _explicitNullValueMaxDelay = default!;
-        /// <summary>Apply Durable Object code updates immediately.</summary>
+        /// <summary>The mode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private string? _explicitNullValueMode = default!;
 #nullable restore
+#else
+        public string Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private string _explicitNullValueMode = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy"/> and sets the default values.
         /// </summary>
@@ -48,7 +48,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy(), parseNode);
+            var mappingValue = parseNode.GetChildNode("mode")?.GetStringValue();
+            return mappingValue switch
+            {
+                "deferred" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategyWorkersCodeUpdateStrategyOneOf2(),
+                "immediate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategyWorkersCodeUpdateStrategyOneOf1(),
+                _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCodeUpdateStrategy(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +64,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "max_delay", n => { MaxDelay = n.GetDoubleValue(); } },
                 { "mode", n => { Mode = n.GetStringValue(); } },
             };
         }
@@ -69,7 +74,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("max_delay", MaxDelay);
             writer.WriteStringValue("mode", Mode);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

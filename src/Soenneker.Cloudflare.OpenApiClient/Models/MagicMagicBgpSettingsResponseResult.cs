@@ -28,8 +28,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Route advertisements from Cloudflare to ramps in this account will use this ASN.</summary>
-        public int? CloudflareAsn { get => _explicitNullValueCloudflareAsn; set { _explicitNullValueCloudflareAsn = value; AdditionalData?.Remove("cloudflare_asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_asn"); else _explicitNullProperties?.Remove("cloudflare_asn"); } }
-        private int? _explicitNullValueCloudflareAsn = default!;
+        public long? CloudflareAsn { get => _explicitNullValueCloudflareAsn; set { _explicitNullValueCloudflareAsn = value; AdditionalData?.Remove("cloudflare_asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_asn"); else _explicitNullProperties?.Remove("cloudflare_asn"); } }
+        private long? _explicitNullValueCloudflareAsn = default!;
         /// <summary>The modified_on property</summary>
         public DateTimeOffset? ModifiedOn { get => _explicitNullValueModifiedOn; set { _explicitNullValueModifiedOn = value; AdditionalData?.Remove("modified_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_on"); else _explicitNullProperties?.Remove("modified_on"); } }
         private DateTimeOffset? _explicitNullValueModifiedOn = default!;
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cloudflare_asn", n => { CloudflareAsn = n.GetIntValue(); } },
+                { "cloudflare_asn", n => { CloudflareAsn = n.GetLongValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "redistribute", n => { Redistribute = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources.CreateFromDiscriminatorValue); } },
             };
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("cloudflare_asn", CloudflareAsn);
+            writer.WriteLongValue("cloudflare_asn", CloudflareAsn);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources>("redistribute", Redistribute);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

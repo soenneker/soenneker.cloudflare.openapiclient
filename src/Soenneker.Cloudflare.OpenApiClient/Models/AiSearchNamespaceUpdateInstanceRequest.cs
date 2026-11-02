@@ -264,7 +264,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SummarizationModel { get => _explicitNullValueSummarizationModel; set { _explicitNullValueSummarizationModel = value; AdditionalData?.Remove("summarization_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summarization_model"); else _explicitNullProperties?.Remove("summarization_model"); } }
         private string _explicitNullValueSummarizationModel = default!;
 #endif
-        /// <summary>Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.</summary>
+        /// <summary>Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).</summary>
         public int? SyncInterval { get => _explicitNullValueSyncInterval; set { _explicitNullValueSyncInterval = value; AdditionalData?.Remove("sync_interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_interval"); else _explicitNullProperties?.Remove("sync_interval"); } }
         private int? _explicitNullValueSyncInterval = default!;
         /// <summary>The system_prompt_ai_search property</summary>

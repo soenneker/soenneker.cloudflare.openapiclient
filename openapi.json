@@ -48682,7 +48682,7 @@
                     "x-stainless-terraform-configurability": "computed_optional"
                   },
                   "sync_interval": {
-                    "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                    "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                     "anyOf": [
                       {
                         "enum": [
@@ -49457,7 +49457,7 @@
                           "readOnly": true
                         },
                         "sync_interval": {
-                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                           "anyOf": [
                             {
                               "enum": [
@@ -50523,7 +50523,7 @@
                           "readOnly": true
                         },
                         "sync_interval": {
-                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                           "anyOf": [
                             {
                               "enum": [
@@ -51444,7 +51444,7 @@
                           "readOnly": true
                         },
                         "sync_interval": {
-                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                           "anyOf": [
                             {
                               "enum": [
@@ -52269,7 +52269,7 @@
                     "x-auditable": true
                   },
                   "sync_interval": {
-                    "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                    "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                     "anyOf": [
                       {
                         "enum": [
@@ -53044,7 +53044,7 @@
                           "readOnly": true
                         },
                         "sync_interval": {
-                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                           "anyOf": [
                             {
                               "enum": [
@@ -58913,7 +58913,7 @@
                     "x-stainless-terraform-configurability": "computed_optional"
                   },
                   "sync_interval": {
-                    "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                    "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                     "anyOf": [
                       {
                         "enum": [
@@ -59688,7 +59688,7 @@
                           "readOnly": true
                         },
                         "sync_interval": {
-                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                           "anyOf": [
                             {
                               "enum": [
@@ -60784,7 +60784,7 @@
                           "readOnly": true
                         },
                         "sync_interval": {
-                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                           "anyOf": [
                             {
                               "enum": [
@@ -61725,7 +61725,7 @@
                           "readOnly": true
                         },
                         "sync_interval": {
-                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                           "anyOf": [
                             {
                               "enum": [
@@ -62852,7 +62852,7 @@
                     "x-auditable": true
                   },
                   "sync_interval": {
-                    "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                    "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                     "anyOf": [
                       {
                         "enum": [
@@ -63627,7 +63627,7 @@
                           "readOnly": true
                         },
                         "sync_interval": {
-                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.",
+                          "description": "Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).",
                           "anyOf": [
                             {
                               "enum": [
@@ -512989,13 +512989,14 @@
           {
             "name": "tldType",
             "in": "query",
-            "description": "Filters results by TLD type.",
+            "description": "Filters results by TLD type. GENERIC_RESTRICTED and SPONSORED are deprecated and return no results, as IANA consolidated them into GENERIC. INFRASTRUCTURE is deprecated, as IANA reclassified .arpa as SPECIAL_USE.",
             "schema": {
-              "description": "Filters results by TLD type.",
+              "description": "Filters results by TLD type. GENERIC_RESTRICTED and SPONSORED are deprecated and return no results, as IANA consolidated them into GENERIC. INFRASTRUCTURE is deprecated, as IANA reclassified .arpa as SPECIAL_USE.",
               "type": "string",
               "enum": [
                 "GENERIC",
                 "COUNTRY_CODE",
+                "SPECIAL_USE",
                 "GENERIC_RESTRICTED",
                 "INFRASTRUCTURE",
                 "SPONSORED"
@@ -645112,7 +645113,7 @@
           }
         ]
       },
-      "dns-firewall_dns-firewall-reverse-dns-response": {
+      "dns-firewall_dns-firewall-reverse-dns-response-with-ptr": {
         "type": "object",
         "allOf": [
           {
@@ -645188,7 +645189,7 @@
           {
             "properties": {
               "result": {
-                "$ref": "#/components/schemas/dns-firewall_dns-firewall-reverse-dns-response"
+                "$ref": "#/components/schemas/dns-firewall_dns-firewall-reverse-dns-response-with-ptr"
               }
             },
             "type": "object"
@@ -648056,7 +648057,7 @@
                   "$ref": "#/components/schemas/dns-settings_nameserver-set-advanced-response-member"
                 },
                 "maxItems": 5,
-                "minItems": 2
+                "minItems": 1
               }
             },
             "required": [
@@ -648117,7 +648118,7 @@
               "$ref": "#/components/schemas/dns-settings_nameserver-set-create-member"
             },
             "maxItems": 5,
-            "minItems": 2
+            "minItems": 1
           }
         },
         "required": [
@@ -648288,7 +648289,7 @@
                   "$ref": "#/components/schemas/dns-settings_nameserver-set-response-member"
                 },
                 "maxItems": 5,
-                "minItems": 2
+                "minItems": 1
               }
             },
             "required": [
@@ -724132,6 +724133,12 @@
               "origin_worker_id": {
                 "$ref": "#/components/schemas/spectrum-config_origin_worker_id"
               },
+              "origin_worker_name": {
+                "$ref": "#/components/schemas/spectrum-config_origin_worker_name"
+              },
+              "origin_worker_status": {
+                "$ref": "#/components/schemas/spectrum-config_origin_worker_status"
+              },
               "protocol": {
                 "$ref": "#/components/schemas/spectrum-config_protocol"
               },
@@ -724494,6 +724501,21 @@
         "type": "string",
         "example": "277b7815c871434b960b60729659000a",
         "pattern": "^[0-9a-f]{32}$"
+      },
+      "spectrum-config_origin_worker_name": {
+        "description": "Name of the Worker origin. Omitted when the Worker is not found or its name cannot be resolved.",
+        "type": "string",
+        "readOnly": true
+      },
+      "spectrum-config_origin_worker_status": {
+        "description": "Lookup status of the Worker origin. Unknown indicates that its name could not be resolved. Only returned for Worker origins.",
+        "type": "string",
+        "enum": [
+          "available",
+          "not_found",
+          "unknown"
+        ],
+        "readOnly": true
       },
       "spectrum-config_paygo_app_config": {
         "allOf": [

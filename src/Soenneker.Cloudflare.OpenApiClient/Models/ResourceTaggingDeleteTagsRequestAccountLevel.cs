@@ -8,32 +8,39 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion"/>
+    /// Request body schema for deleting tags from account-level resources. Use /zones/{zone_id}/tags for zone-level resources.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ResourceTaggingDeleteTagsRequestAccountLevel : IComposedTypeWrapper, IParsable
-    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
-        // Preserve ambiguous union payloads without inventing a discriminator.
-        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    public partial class ResourceTaggingDeleteTagsRequestAccountLevel : IAdditionalDataHolder, IParsable
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase"/></summary>
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("resource_type") is null) { _explicitNullValueResourceType = default!; _explicitNullProperties?.Remove("resource_type"); }
+            else if (parseNode.GetChildNode("resource_type") is { } nullNodeResourceType && nullNodeResourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceType = null;
+        }
+
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The resource_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase? ResourceTaggingDeleteTagsRequestAccountLevelBase { get; set; }
+        public string? ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; AdditionalData?.Remove("resource_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_type"); else _explicitNullProperties?.Remove("resource_type"); } }
+        private string? _explicitNullValueResourceType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase ResourceTaggingDeleteTagsRequestAccountLevelBase { get; set; }
+        public string ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; AdditionalData?.Remove("resource_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_type"); else _explicitNullProperties?.Remove("resource_type"); } }
+        private string _explicitNullValueResourceType = default!;
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion? ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevel"/> and sets the default values.
+        /// </summary>
+        public ResourceTaggingDeleteTagsRequestAccountLevel()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,172 +49,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevel();
-            if("ResourceTaggingDeleteTagsRequestAccountLevelBase".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("resource_type")?.GetStringValue();
+            return mappingValue switch
             {
-                
-            }
-            else if("ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                
-            }
-            
-            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? ((global::System.Func<bool?>)(() => { int remaining = 10000;
-bool IsNumber(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal;
-int StringLength(string text) { int count = 0; for (int i = 0; i < text.Length; i++, count++) if (char.IsHighSurrogate(text[i]) && i + 1 < text.Length && char.IsLowSurrogate(text[i + 1])) i++; return count; }
-bool? All(params bool?[] values) { bool? result = true; foreach (var item in values) result &= item; return result; }
-bool? Any(params bool?[] values) { bool? result = false; foreach (var item in values) result |= item; return result; }
-bool? One(params bool?[] values) { int matches = 0; bool unknown = false; foreach (var item in values) { if (item == true) matches++; if (item == null) unknown = true; } return matches > 1 ? false : unknown ? null : matches == 1; }
-decimal? Number(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) {
-    try { return node switch {
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger n => n.GetValue(),
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong n => n.GetValue(),
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat n => (decimal)n.GetValue(),
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble n => (decimal)n.GetValue(),
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal n => n.GetValue(), _ => null }; }
-    catch (global::System.OverflowException) { return null; }
-}
-bool? MatchSchema0(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject))();
-if (result == false) return false;
-if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
-result &= ((global::System.Func<bool?>)(() => fields.ContainsKey("resource_type")))();
-if (result == false) return false;
-result &= ((global::System.Func<bool?>)(() => fields.ContainsKey("resource_id")))();
-if (result == false) return false;
-result &= ((global::System.Func<bool?>)(() => fields.ContainsKey("worker_id")))();
-if (result == false) return false;
-result &= ((global::System.Func<bool?>)(() => !fields.ContainsKey("resource_id") ? (bool?)true : MatchSchema1(fields["resource_id"], depth + 1)))();
-if (result == false) return false;
-result &= ((global::System.Func<bool?>)(() => !fields.ContainsKey("resource_type") ? (bool?)true : MatchSchema2(fields["resource_type"], depth + 1)))();
-if (result == false) return false;
-result &= ((global::System.Func<bool?>)(() => !fields.ContainsKey("worker_id") ? (bool?)true : MatchSchema3(fields["worker_id"], depth + 1)))();
-if (result == false) return false;
-}
-return result;
-}
-bool? MatchSchema1(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))();
-if (result == false) return false;
-return result;
-}
-bool? MatchSchema2(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))();
-if (result == false) return false;
-bool? enumMatch = false;
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "worker_version".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-result &= ((global::System.Func<bool?>)(() => enumMatch))();
-if (result == false) return false;
-return result;
-}
-bool? MatchSchema3(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))();
-if (result == false) return false;
-return result;
-}
-return MatchSchema0(unionPayload, 0); }))() : (bool?)false;
-            bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? ((global::System.Func<bool?>)(() => { int remaining = 10000;
-bool IsNumber(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal;
-int StringLength(string text) { int count = 0; for (int i = 0; i < text.Length; i++, count++) if (char.IsHighSurrogate(text[i]) && i + 1 < text.Length && char.IsLowSurrogate(text[i + 1])) i++; return count; }
-bool? All(params bool?[] values) { bool? result = true; foreach (var item in values) result &= item; return result; }
-bool? Any(params bool?[] values) { bool? result = false; foreach (var item in values) result |= item; return result; }
-bool? One(params bool?[] values) { int matches = 0; bool unknown = false; foreach (var item in values) { if (item == true) matches++; if (item == null) unknown = true; } return matches > 1 ? false : unknown ? null : matches == 1; }
-decimal? Number(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) {
-    try { return node switch {
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger n => n.GetValue(),
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong n => n.GetValue(),
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat n => (decimal)n.GetValue(),
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble n => (decimal)n.GetValue(),
-        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal n => n.GetValue(), _ => null }; }
-    catch (global::System.OverflowException) { return null; }
-}
-bool? MatchSchema0(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject))();
-if (result == false) return false;
-if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
-result &= ((global::System.Func<bool?>)(() => fields.ContainsKey("resource_type")))();
-if (result == false) return false;
-result &= ((global::System.Func<bool?>)(() => fields.ContainsKey("resource_id")))();
-if (result == false) return false;
-result &= ((global::System.Func<bool?>)(() => !fields.ContainsKey("resource_id") ? (bool?)true : MatchSchema1(fields["resource_id"], depth + 1)))();
-if (result == false) return false;
-result &= ((global::System.Func<bool?>)(() => !fields.ContainsKey("resource_type") ? (bool?)true : MatchSchema2(fields["resource_type"], depth + 1)))();
-if (result == false) return false;
-}
-return result;
-}
-bool? MatchSchema1(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))();
-if (result == false) return false;
-return result;
-}
-bool? MatchSchema2(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))();
-if (result == false) return false;
-bool? enumMatch = false;
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "access_application".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "access_group".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "access_service_token".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "account".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "account_ruleset".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "ai_gateway".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "ai_search_instance".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "ai_search_namespace".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "alerting_policy".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "alerting_webhook".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "cloudflared_tunnel".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "cws_deployment".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "cws_policy".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "cws_policy_set".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "cws_workload".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "d1_database".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "device".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "durable_object_namespace".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "gateway_list".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "gateway_rule".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "image".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "infrastructure_target".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "kv_namespace".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "load_balancer_monitor".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "load_balancer_pool".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "namespace_worker".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "pages_project".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "queue".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "r2_bucket".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "resource_share".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "stream_live_input".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "stream_video".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "vectorize_index".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "worker".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
-result &= ((global::System.Func<bool?>)(() => enumMatch))();
-if (result == false) return false;
-return result;
-}
-return MatchSchema0(unionPayload, 0); }))() : (bool?)false;
-            int matchingUnionBranches = 0;
-            if (matchesUnionBranch0 != false) matchingUnionBranches++;
-            if (matchesUnionBranch1 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.ResourceTaggingDeleteTagsRequestAccountLevelBase == null && result.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.ResourceTaggingDeleteTagsRequestAccountLevelBase = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase(), parseNode);
-            if (result.ResourceTaggingDeleteTagsRequestAccountLevelBase == null && result.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == null) result.UnrecognizedValue = unionPayload;
-return result;
+                "access_application" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "access_group" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "access_service_token" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "account" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "account_ruleset" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "ai_gateway" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "ai_search_instance" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "ai_search_namespace" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "alerting_policy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "alerting_webhook" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "cloudflared_tunnel" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "cws_deployment" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "cws_policy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "cws_policy_set" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "cws_workload" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "d1_database" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "device" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "durable_object_namespace" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "gateway_list" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "gateway_rule" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "image" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "infrastructure_target" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "kv_namespace" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "load_balancer_monitor" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "load_balancer_pool" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "namespace_worker" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "pages_project" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "queue" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "r2_bucket" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "resource_share" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "stream_live_input" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "stream_video" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "vectorize_index" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "worker" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelBase(),
+                "worker_version" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(),
+                _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevel(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -215,17 +96,10 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
-
-            if(ResourceTaggingDeleteTagsRequestAccountLevelBase != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ResourceTaggingDeleteTagsRequestAccountLevelBase.GetFieldDeserializers();
-            }
-            else if(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion != null)
-            {
-                return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "resource_type", n => { ResourceType = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -233,25 +107,10 @@ return result;
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (ResourceTaggingDeleteTagsRequestAccountLevelBase == null && ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            int selectedUnionBranches = 0;
-            if (ResourceTaggingDeleteTagsRequestAccountLevelBase != null) selectedUnionBranches++;
-            if (ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion != null) selectedUnionBranches++;
-            if (ResourceTaggingDeleteTagsRequestAccountLevelBase != null && selectedUnionBranches == 1) { if (ResourceTaggingDeleteTagsRequestAccountLevelBase is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ResourceTaggingDeleteTagsRequestAccountLevelBase); return; }
-            if (ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion != null && selectedUnionBranches == 1) { if (ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion); return; }
-
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ResourceTaggingDeleteTagsRequestAccountLevelBase != null)
-            {
-                if (ResourceTaggingDeleteTagsRequestAccountLevelBase is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase>(null, ResourceTaggingDeleteTagsRequestAccountLevelBase);
-            }
-            else if(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion != null)
-            {
-                if (ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion>(null, ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion);
-            }
+            writer.WriteStringValue("resource_type", ResourceType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

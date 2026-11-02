@@ -309,15 +309,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Status { get; private set; }
 #endif
-        /// <summary>Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.</summary>
+        /// <summary>Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 86400 (24h).</summary>
         public int? SyncInterval { get => _explicitNullValueSyncInterval; set { _explicitNullValueSyncInterval = value; AdditionalData?.Remove("sync_interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_interval"); else _explicitNullProperties?.Remove("sync_interval"); } }
         private int? _explicitNullValueSyncInterval = default!;
         /// <summary>The token_id property</summary>
         public Guid? TokenId { get => _explicitNullValueTokenId; set { _explicitNullValueTokenId = value; AdditionalData?.Remove("token_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_id"); else _explicitNullProperties?.Remove("token_id"); } }
         private Guid? _explicitNullValueTokenId = default!;
         /// <summary>Source type. When omitted or null with a non-blank source, HTTP(S) URLs infer web-crawler and existing R2 bucket names infer r2. A missing or blank source without a type uses managed upload-only storage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultType? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultType _explicitNullValueType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResult"/> and sets the default values.
         /// </summary>
@@ -387,7 +394,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "sync_interval", n => { SyncInterval = n.GetIntValue(); } },
                 { "token_id", n => { TokenId = n.GetGuidValue(); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultType>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -426,7 +433,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultSourceParams>("source_params", SourceParams);
             writer.WriteIntValue("sync_interval", SyncInterval);
             writer.WriteGuidValue("token_id", TokenId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance201ResponseResultType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

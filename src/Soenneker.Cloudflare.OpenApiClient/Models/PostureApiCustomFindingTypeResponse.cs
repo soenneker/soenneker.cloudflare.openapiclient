@@ -125,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Vendor { get; private set; }
 #endif
         /// <summary>Current version of the finding type. Incremented on each update.</summary>
-        public int? Version { get; private set; }
+        public long? Version { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCustomFindingTypeResponse"/> and sets the default values.
         /// </summary>
@@ -167,7 +167,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "severity", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiBaseFindingTypeSeverity>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSeverity = default; _explicitNullProperties?.Remove("severity"); AdditionalData["severity"] = unknown; } else { Severity = parsed; AdditionalData.Remove("severity"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "vendor", n => { Vendor = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>
