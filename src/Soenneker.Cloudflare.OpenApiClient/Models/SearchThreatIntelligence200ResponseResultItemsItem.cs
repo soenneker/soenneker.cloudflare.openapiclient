@@ -51,11 +51,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "actor" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemSearchThreatIntelligence200ResponseResultItemsItemOneOf2(),
-                "article" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemSearchThreatIntelligence200ResponseResultItemsItemOneOf1(),
-                "event" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemSearchThreatIntelligence200ResponseResultItemsItemOneOf4(),
-                "indicator" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemSearchThreatIntelligence200ResponseResultItemsItemOneOf5(),
-                "tag" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemSearchThreatIntelligence200ResponseResultItemsItemOneOf3(),
+                "actor" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf2Variant(),
+                "article" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf1Variant(),
+                "event" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf4Variant(),
+                "indicator" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf5Variant(),
+                "tag" => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItemOneOf3Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligence200ResponseResultItemsItem(),
             };
         }

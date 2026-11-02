@@ -52,17 +52,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("resource_type")?.GetStringValue();
             return mappingValue switch
             {
-                "access_application_policy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(),
-                "api_gateway_operation" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
-                "custom_certificate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
-                "custom_hostname" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
-                "dns_record" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
-                "healthcheck" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
-                "load_balancer" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
-                "managed_client_certificate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
-                "worker_route" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
-                "zone" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
-                "zone_ruleset" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelResourceTaggingDeleteTagsRequestZoneLevelBase(),
+                "access_application_policy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicyVariant(),
+                "api_gateway_operation" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
+                "custom_certificate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
+                "custom_hostname" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
+                "dns_record" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
+                "healthcheck" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
+                "load_balancer" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
+                "managed_client_certificate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
+                "worker_route" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
+                "zone" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
+                "zone_ruleset" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelBaseVariant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevel(),
             };
         }

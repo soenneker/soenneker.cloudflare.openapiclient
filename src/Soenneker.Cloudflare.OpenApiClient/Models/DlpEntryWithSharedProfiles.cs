@@ -51,13 +51,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "custom" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDlpEntryWithSharedProfilesOneOf1(),
-                "custom_prompt_topic" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDlpEntryWithSharedProfilesOneOf2(),
-                "document_fingerprint" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDlpEntryWithSharedProfilesOneOf6(),
-                "exact_data" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDlpEntryWithSharedProfilesOneOf5(),
-                "integration" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDlpEntryWithSharedProfilesOneOf4(),
-                "predefined" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDlpEntryWithSharedProfilesOneOf3(),
-                "word_list" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDlpEntryWithSharedProfilesOneOf7(),
+                "custom" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf1Variant(),
+                "custom_prompt_topic" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf2Variant(),
+                "document_fingerprint" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf6Variant(),
+                "exact_data" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf5Variant(),
+                "integration" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf4Variant(),
+                "predefined" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf3Variant(),
+                "word_list" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesOneOf7Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfiles(),
             };
         }

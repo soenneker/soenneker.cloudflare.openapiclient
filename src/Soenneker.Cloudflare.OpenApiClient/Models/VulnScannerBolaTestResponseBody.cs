@@ -52,10 +52,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
             return mappingValue switch
             {
-                "bytes" => new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyVulnScannerBolaTestResponseBodyOneOf2(),
-                "json" => new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyVulnScannerBolaTestResponseBodyOneOf4(),
-                "not_found" => new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyVulnScannerBolaTestResponseBodyOneOf1(),
-                "text" => new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyVulnScannerBolaTestResponseBodyOneOf3(),
+                "bytes" => new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf2Variant(),
+                "json" => new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf4Variant(),
+                "not_found" => new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf1Variant(),
+                "text" => new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBodyOneOf3Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestResponseBody(),
             };
         }

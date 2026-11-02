@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return mappingValue switch
             {
                 "array" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleConditionCloudforceOneEmailRuleArrayCondition(),
-                "group" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleConditionCloudforceOneEmailRuleConditionGroup(),
+                "group" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleConditionGroupVariant(),
                 "header" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleConditionCloudforceOneEmailRuleHeaderCondition(),
                 "scalar" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleConditionCloudforceOneEmailRuleScalarCondition(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleCondition(),

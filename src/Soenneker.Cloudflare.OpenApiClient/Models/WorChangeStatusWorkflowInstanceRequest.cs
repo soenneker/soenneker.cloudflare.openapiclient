@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             return mappingValue switch
             {
-                "pause" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestWorChangeStatusWorkflowInstanceRequestOneOf1(),
-                "restart" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestWorChangeStatusWorkflowInstanceRequestOneOf4(),
-                "resume" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestWorChangeStatusWorkflowInstanceRequestOneOf2(),
-                "terminate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestWorChangeStatusWorkflowInstanceRequestOneOf3(),
+                "pause" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1Variant(),
+                "restart" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4Variant(),
+                "resume" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2Variant(),
+                "terminate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequest(),
             };
         }

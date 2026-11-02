@@ -51,11 +51,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "and" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerPutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf1(),
-                "extension" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerPutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf4(),
-                "or" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerPutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf2(),
-                "path" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerPutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf3(),
-                "query-param" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerPutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf5(),
+                "and" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf1Variant(),
+                "extension" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf4Variant(),
+                "or" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf2Variant(),
+                "path" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf3Variant(),
+                "query-param" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2TriggerOneOf5Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.PutFlowsUpdateRequestFlowsItemOneOf2Trigger(),
             };
         }

@@ -52,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
             return mappingValue switch
             {
-                "proximity_words" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorDlpValidatorProximityWordValidator(),
-                "worker" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorDlpValidatorWorkerValidator(),
+                "proximity_words" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorProximityWordValidatorVariant(),
+                "worker" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorWorkerValidatorVariant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidator(),
             };
         }

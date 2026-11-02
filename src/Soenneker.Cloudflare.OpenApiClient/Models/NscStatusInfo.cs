@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("state")?.GetStringValue();
             return mappingValue switch
             {
-                "Down" => new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoNscStatusInfoOneOf2(),
-                "Healthy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoNscStatusInfoOneOf4(),
-                "Pending" => new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoNscStatusInfoOneOf1(),
-                "Unhealthy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoNscStatusInfoOneOf3(),
+                "Down" => new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2Variant(),
+                "Healthy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4Variant(),
+                "Pending" => new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1Variant(),
+                "Unhealthy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfo(),
             };
         }

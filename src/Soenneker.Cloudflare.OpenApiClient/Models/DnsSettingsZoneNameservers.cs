@@ -52,12 +52,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "cloudflare.advanced" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversDnsSettingsZoneNameserversCloudflare(),
-                "cloudflare.standard" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversDnsSettingsZoneNameserversCloudflare(),
-                "custom" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversDnsSettingsZoneNameserversCustomSet(),
-                "custom.account" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversDnsSettingsZoneNameserversCustomExisting(),
-                "custom.tenant" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversDnsSettingsZoneNameserversCustomExisting(),
-                "custom.zone" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversDnsSettingsZoneNameserversCustomExisting(),
+                "cloudflare.advanced" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflareVariant(),
+                "cloudflare.standard" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflareVariant(),
+                "custom" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomSetVariant(),
+                "custom.account" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomExistingVariant(),
+                "custom.tenant" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomExistingVariant(),
+                "custom.zone" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomExistingVariant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers(),
             };
         }

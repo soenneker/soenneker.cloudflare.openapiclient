@@ -52,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "datasets" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestDatasetScopePostPirCreateRequestDatasetScopeOneOf2(),
-                "default" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestDatasetScopePostPirCreateRequestDatasetScopeOneOf1(),
+                "datasets" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestDatasetScopeOneOf2Variant(),
+                "default" => new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestDatasetScopeOneOf1Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestDatasetScope(),
             };
         }

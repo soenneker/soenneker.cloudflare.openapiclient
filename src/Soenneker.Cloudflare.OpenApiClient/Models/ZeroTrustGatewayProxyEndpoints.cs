@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return mappingValue switch
             {
                 "identity" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsZeroTrustGatewayProxyEndpointIdentity(),
-                "ip" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsZeroTrustGatewayProxyEndpointsOneOf1(),
+                "ip" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsOneOf1Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpoints(),
             };
         }

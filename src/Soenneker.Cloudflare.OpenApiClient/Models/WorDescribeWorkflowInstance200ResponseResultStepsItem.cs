@@ -51,11 +51,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "rollback" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemWorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1(),
-                "sleep" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemWorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2(),
-                "step" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemWorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1(),
-                "termination" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemWorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3(),
-                "waitForEvent" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemWorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4(),
+                "rollback" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1Variant(),
+                "sleep" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2Variant(),
+                "step" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1Variant(),
+                "termination" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3Variant(),
+                "waitForEvent" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem(),
             };
         }

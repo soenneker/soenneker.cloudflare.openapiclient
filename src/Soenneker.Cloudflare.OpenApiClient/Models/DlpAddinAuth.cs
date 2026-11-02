@@ -51,8 +51,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "NoAuth" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuthDlpAddinAuthOneOf2(),
-                "Org" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuthDlpAddinAuthOneOf1(),
+                "NoAuth" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuthOneOf2Variant(),
+                "Org" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuthOneOf1Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth(),
             };
         }

@@ -51,17 +51,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "binary" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf7(),
-                "bool" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf5(),
-                "float32" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf3(),
-                "float64" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf4(),
-                "int32" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf1(),
-                "int64" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf2(),
-                "json" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf9(),
-                "list" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf11(),
-                "string" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf6(),
-                "struct" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf10(),
-                "timestamp" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldCloudflarePipelinesSourceFieldOneOf8(),
+                "binary" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf7Variant(),
+                "bool" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf5Variant(),
+                "float32" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf3Variant(),
+                "float64" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf4Variant(),
+                "int32" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf1Variant(),
+                "int64" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf2Variant(),
+                "json" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf9Variant(),
+                "list" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf11Variant(),
+                "string" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf6Variant(),
+                "struct" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf10Variant(),
+                "timestamp" => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceFieldOneOf8Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField(),
             };
         }

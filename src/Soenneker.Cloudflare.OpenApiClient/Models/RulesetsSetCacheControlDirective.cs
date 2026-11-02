@@ -52,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("operation")?.GetStringValue();
             return mappingValue switch
             {
-                "remove" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveRulesetsSetCacheControlDirectiveRemoveDirective(),
-                "set" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveRulesetsSetCacheControlDirectiveSetDirective(),
+                "remove" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveRemoveDirectiveVariant(),
+                "set" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveSetDirectiveVariant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective(),
             };
         }

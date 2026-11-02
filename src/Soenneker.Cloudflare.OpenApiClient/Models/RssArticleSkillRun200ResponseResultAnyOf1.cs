@@ -51,9 +51,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("skill_id")?.GetStringValue();
             return mappingValue switch
             {
-                "default-ioc-context-skill" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1RssArticleSkillRun200ResponseResultAnyOf1OneOf3(),
-                "default-summary-skill" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1RssArticleSkillRun200ResponseResultAnyOf1OneOf1(),
-                "default-tagging-skill" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1RssArticleSkillRun200ResponseResultAnyOf1OneOf2(),
+                "default-ioc-context-skill" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1OneOf3Variant(),
+                "default-summary-skill" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1OneOf1Variant(),
+                "default-tagging-skill" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1OneOf2Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1(),
             };
         }

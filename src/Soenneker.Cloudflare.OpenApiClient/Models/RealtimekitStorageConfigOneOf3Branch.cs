@@ -51,8 +51,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("auth_method")?.GetStringValue();
             return mappingValue switch
             {
-                "KEY" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3BranchRealtimekitStorageConfigOneOf3BranchKey(),
-                "PASSWORD" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3BranchRealtimekitStorageConfigOneOf3BranchPassword(),
+                "KEY" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3BranchKeyVariant(),
+                "PASSWORD" => new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3BranchPasswordVariant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch(),
             };
         }

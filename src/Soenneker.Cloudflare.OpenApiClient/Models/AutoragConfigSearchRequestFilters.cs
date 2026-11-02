@@ -51,14 +51,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "and" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAutoragConfigSearchRequestFiltersAnyOf2(),
-                "eq" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAutoragConfigSearchRequestFiltersAnyOf1(),
-                "gt" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAutoragConfigSearchRequestFiltersAnyOf1(),
-                "gte" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAutoragConfigSearchRequestFiltersAnyOf1(),
-                "lt" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAutoragConfigSearchRequestFiltersAnyOf1(),
-                "lte" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAutoragConfigSearchRequestFiltersAnyOf1(),
-                "ne" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAutoragConfigSearchRequestFiltersAnyOf1(),
-                "or" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAutoragConfigSearchRequestFiltersAnyOf2(),
+                "and" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAnyOf2Variant(),
+                "eq" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAnyOf1Variant(),
+                "gt" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAnyOf1Variant(),
+                "gte" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAnyOf1Variant(),
+                "lt" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAnyOf1Variant(),
+                "lte" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAnyOf1Variant(),
+                "ne" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAnyOf1Variant(),
+                "or" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFiltersAnyOf2Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestFilters(),
             };
         }

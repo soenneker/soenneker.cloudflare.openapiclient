@@ -52,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "object" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11PayloadWorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11PayloadAnyOf2(),
-                "unknown" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11PayloadWorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11PayloadAnyOf1(),
+                "object" => new global::Soenneker.Cloudflare.OpenApiClient.Models.TaggedObjectVariant7124CF768A881DB3(),
+                "unknown" => new global::Soenneker.Cloudflare.OpenApiClient.Models.TaggedUnknownVariantD7D02E822590779C(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11Payload(),
             };
         }

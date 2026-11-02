@@ -51,9 +51,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "file" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200ResponseChoicesItemMessageContentAnyOf2ItemAiSearchNamespaceMultiInstanceChatCompletion200ResponseChoicesItemMessageContentAnyOf2ItemOneOf3(),
-                "image_url" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200ResponseChoicesItemMessageContentAnyOf2ItemAiSearchNamespaceMultiInstanceChatCompletion200ResponseChoicesItemMessageContentAnyOf2ItemOneOf2(),
-                "text" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200ResponseChoicesItemMessageContentAnyOf2ItemAiSearchNamespaceMultiInstanceChatCompletion200ResponseChoicesItemMessageContentAnyOf2ItemOneOf1(),
+                "file" => new global::Soenneker.Cloudflare.OpenApiClient.Models.TaggedFileVariant31B2DB125FF193A7(),
+                "image_url" => new global::Soenneker.Cloudflare.OpenApiClient.Models.TaggedImageUrlVariant230D7FA75259E820(),
+                "text" => new global::Soenneker.Cloudflare.OpenApiClient.Models.TaggedTextVariant9E0534AFE1C90C4C(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200ResponseChoicesItemMessageContentAnyOf2Item(),
             };
         }

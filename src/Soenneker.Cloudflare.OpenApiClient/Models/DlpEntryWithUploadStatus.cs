@@ -51,13 +51,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "custom" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDlpEntryWithUploadStatusOneOf1(),
-                "custom_prompt_topic" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDlpEntryWithUploadStatusOneOf2(),
-                "document_fingerprint" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDlpEntryWithUploadStatusOneOf6(),
-                "exact_data" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDlpEntryWithUploadStatusOneOf5(),
-                "integration" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDlpEntryWithUploadStatusOneOf4(),
-                "predefined" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDlpEntryWithUploadStatusOneOf3(),
-                "word_list" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDlpEntryWithUploadStatusOneOf7(),
+                "custom" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusOneOf1Variant(),
+                "custom_prompt_topic" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusOneOf2Variant(),
+                "document_fingerprint" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusOneOf6Variant(),
+                "exact_data" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusOneOf5Variant(),
+                "integration" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusOneOf4Variant(),
+                "predefined" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusOneOf3Variant(),
+                "word_list" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusOneOf7Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus(),
             };
         }

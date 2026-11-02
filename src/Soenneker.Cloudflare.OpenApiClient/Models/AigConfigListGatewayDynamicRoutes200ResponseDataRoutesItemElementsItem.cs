@@ -51,12 +51,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "conditional" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemAigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2(),
-                "end" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemAigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf6(),
-                "model" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemAigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf5(),
-                "percentage" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemAigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf3(),
-                "rate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemAigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf4(),
-                "start" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemAigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf1(),
+                "conditional" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf2Variant(),
+                "end" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf6Variant(),
+                "model" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf5Variant(),
+                "percentage" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf3Variant(),
+                "rate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf4Variant(),
+                "start" => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItemOneOf1Variant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRoutes200ResponseDataRoutesItemElementsItem(),
             };
         }

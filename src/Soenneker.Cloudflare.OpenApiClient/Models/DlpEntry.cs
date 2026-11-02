@@ -51,13 +51,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "custom" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDlpEntryCustomEntry(),
-                "custom_prompt_topic" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDlpEntryCustomPromptTopicEntry(),
-                "document_fingerprint" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDlpEntryDocumentFingerprintEntry(),
-                "exact_data" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDlpEntryExactDataEntry(),
-                "integration" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDlpEntryIntegrationEntry(),
-                "predefined" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDlpEntryPredefinedEntry(),
-                "word_list" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDlpEntryWordListEntry(),
+                "custom" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomEntryVariant(),
+                "custom_prompt_topic" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomPromptTopicEntryVariant(),
+                "document_fingerprint" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDocumentFingerprintEntryVariant(),
+                "exact_data" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryExactDataEntryVariant(),
+                "integration" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryIntegrationEntryVariant(),
+                "predefined" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryPredefinedEntryVariant(),
+                "word_list" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWordListEntryVariant(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry(),
             };
         }
