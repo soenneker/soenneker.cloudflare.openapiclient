@@ -403867,6 +403867,7 @@
           }
         ],
         "description": "Contains structured proposed rule changes, or null for unresolved persisted data.",
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -556026,109 +556027,12 @@
         ]
       },
       "CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule": {
-        "required": [
-          "id",
-          "name",
-          "path",
-          "description",
-          "namespaces",
-          "is_public",
-          "enabled",
-          "created_at",
-          "updated_at",
-          "created_by",
-          "updated_by",
-          "pending_approval_id",
-          "pending_change"
-        ],
-        "type": "object",
-        "properties": {
-          "content": {
-            "type": "string",
-            "example": "rule example { condition: true }"
-          },
-          "created_at": {
-            "type": "number",
-            "example": 1679529600000,
-            "x-auditable": true
-          },
-          "created_by": {
-            "type": "string",
-            "example": "user@example.com",
-            "x-auditable": true
-          },
-          "description": {
-            "type": "string",
-            "example": "Detects malicious proxy workers"
-          },
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether this rule is active for dice consumers.",
-            "example": true
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "example": "550e8400-e29b-41d4-a716-446655440000",
-            "x-auditable": true
-          },
-          "is_public": {
-            "type": "boolean",
-            "description": "Whether this rule is visible to other internal accounts.",
-            "example": false,
-            "x-auditable": true
-          },
-          "meta": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CloudforceOneRuleMetaEntry"
-            },
-            "description": "Structured meta entries for the rule (parsed from content plus any request-supplied meta). Returned in source order."
-          },
-          "name": {
-            "type": "string",
-            "example": "block-malicious-workers",
-            "x-auditable": true
-          },
-          "namespaces": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "example": [
-              "yara/workers"
-            ],
-            "x-auditable": true
-          },
-          "path": {
-            "type": "string",
-            "example": "yara/workers",
-            "x-auditable": true
-          },
-          "pending_approval_id": {
-            "type": "number",
-            "description": "ID of an open approval workflow targeting this rule, or null if none is pending.",
-            "nullable": true
-          },
-          "pending_change": {
-            "$ref": "#/components/schemas/CloudforceOnePendingRuleChange"
-          },
-          "structured_source": {
-            "type": "string",
-            "description": "Original JSON payload for rules created via the structured rules API. Null for hand-written rules.",
-            "nullable": true
-          },
-          "updated_at": {
-            "type": "number",
-            "example": 1679529600000,
-            "x-auditable": true
-          },
-          "updated_by": {
-            "type": "string",
-            "example": "user@example.com",
-            "x-auditable": true
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CloudforceOneRulePreview"
           }
-        }
+        ],
+        "nullable": true
       },
       "CloudforceOneRuleSearchResultAllOf2": {
         "type": "object",
@@ -567650,7 +567554,8 @@
           "status": {
             "$ref": "#/components/schemas/PayPerCrawlPpuPriceStatus"
           }
-        }
+        },
+        "nullable": true
       },
       "PayPerCrawlPpuZoneConfigurationResultAllOf2": {
         "required": [
@@ -585297,7 +585202,8 @@
             "example": "eu",
             "x-auditable": true
           }
-        }
+        },
+        "nullable": true
       },
       "LogcontrolRetentionFlagResponseSingleAllOf2Result": {
         "type": "object",
@@ -585308,7 +585214,8 @@
             "example": true,
             "x-auditable": true
           }
-        }
+        },
+        "nullable": true
       },
       "LogpushInstantLogsJobResponseCollectionAllOf2ResultItem": {
         "type": "object",
@@ -588460,109 +588367,12 @@
         }
       },
       "CloudforceOneEditApprovalResponseApprovalAllOf2CurrentRule": {
-        "required": [
-          "id",
-          "name",
-          "path",
-          "description",
-          "namespaces",
-          "is_public",
-          "enabled",
-          "created_at",
-          "updated_at",
-          "created_by",
-          "updated_by",
-          "pending_approval_id",
-          "pending_change"
-        ],
-        "type": "object",
-        "properties": {
-          "content": {
-            "type": "string",
-            "example": "rule example { condition: true }"
-          },
-          "created_at": {
-            "type": "number",
-            "example": 1679529600000,
-            "x-auditable": true
-          },
-          "created_by": {
-            "type": "string",
-            "example": "user@example.com",
-            "x-auditable": true
-          },
-          "description": {
-            "type": "string",
-            "example": "Detects malicious proxy workers"
-          },
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether this rule is active for dice consumers.",
-            "example": true
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "example": "550e8400-e29b-41d4-a716-446655440000",
-            "x-auditable": true
-          },
-          "is_public": {
-            "type": "boolean",
-            "description": "Whether this rule is visible to other internal accounts.",
-            "example": false,
-            "x-auditable": true
-          },
-          "meta": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CloudforceOneRuleMetaEntry"
-            },
-            "description": "Structured meta entries for the rule (parsed from content plus any request-supplied meta). Returned in source order."
-          },
-          "name": {
-            "type": "string",
-            "example": "block-malicious-workers",
-            "x-auditable": true
-          },
-          "namespaces": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "example": [
-              "yara/workers"
-            ],
-            "x-auditable": true
-          },
-          "path": {
-            "type": "string",
-            "example": "yara/workers",
-            "x-auditable": true
-          },
-          "pending_approval_id": {
-            "type": "number",
-            "description": "ID of an open approval workflow targeting this rule, or null if none is pending.",
-            "nullable": true
-          },
-          "pending_change": {
-            "$ref": "#/components/schemas/CloudforceOnePendingRuleChange"
-          },
-          "structured_source": {
-            "type": "string",
-            "description": "Original JSON payload for rules created via the structured rules API. Null for hand-written rules.",
-            "nullable": true
-          },
-          "updated_at": {
-            "type": "number",
-            "example": 1679529600000,
-            "x-auditable": true
-          },
-          "updated_by": {
-            "type": "string",
-            "example": "user@example.com",
-            "x-auditable": true
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CloudforceOneRulePreview"
           }
-        }
+        ],
+        "nullable": true
       },
       "IamResponseCreateAllOf2ResultAllOf2": {
         "type": "object",
@@ -597678,7 +597488,8 @@
             {
               "type": "string"
             }
-          ]
+          ],
+          "nullable": true
         },
         "description": "Event-specific metadata. Keys vary per event; values are primitive scalars (string, number, boolean, or null)."
       },
@@ -800454,7 +800265,8 @@
             {
               "type": "string"
             }
-          ]
+          ],
+          "nullable": true
         },
         "description": "Event-specific metadata. Keys vary per event; values are primitive scalars (string, number, boolean, or null)."
       },
@@ -1103931,6 +1103743,7 @@
         ],
         "type": "string",
         "description": "The type of a validator, and the accepted values of the \u0060kind\u0060 filter when listing.",
+        "nullable": true,
         "x-ms-enum": {
           "name": "DlpValidatorsListValidatorsKindParameter",
           "modelAsString": false,

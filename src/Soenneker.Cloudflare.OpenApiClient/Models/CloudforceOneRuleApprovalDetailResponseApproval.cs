@@ -120,12 +120,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The current_rule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule? CurrentRule { get => _explicitNullValueCurrentRule; set { _explicitNullValueCurrentRule = value; AdditionalData?.Remove("current_rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_rule"); else _explicitNullProperties?.Remove("current_rule"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule? _explicitNullValueCurrentRule = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview? CurrentRule { get => _explicitNullValueCurrentRule; set { _explicitNullValueCurrentRule = value; AdditionalData?.Remove("current_rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_rule"); else _explicitNullProperties?.Remove("current_rule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview? _explicitNullValueCurrentRule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule CurrentRule { get => _explicitNullValueCurrentRule; set { _explicitNullValueCurrentRule = value; AdditionalData?.Remove("current_rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_rule"); else _explicitNullProperties?.Remove("current_rule"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule _explicitNullValueCurrentRule = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview CurrentRule { get => _explicitNullValueCurrentRule; set { _explicitNullValueCurrentRule = value; AdditionalData?.Remove("current_rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_rule"); else _explicitNullProperties?.Remove("current_rule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview _explicitNullValueCurrentRule = default!;
 #endif
         /// <summary>The id property</summary>
         public double? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -227,7 +227,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "change_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalChangeType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueChangeType = default; _explicitNullProperties?.Remove("change_type"); AdditionalData["change_type"] = unknown; } else { ChangeType = parsed; AdditionalData.Remove("change_type"); } } },
                 { "commit_message", n => { CommitMessage = n.GetStringValue(); } },
                 { "compiler_warnings", n => { CompilerWarnings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCompilerWarning>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCompilerWarning.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "current_rule", n => { CurrentRule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule.CreateFromDiscriminatorValue); } },
+                { "current_rule", n => { CurrentRule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetDoubleValue(); } },
                 { "proposed_changes", n => { ProposedChanges = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges.CreateFromDiscriminatorValue); } },
                 { "rejection_reason", n => { RejectionReason = n.GetStringValue(); } },
@@ -258,7 +258,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalChangeType>("change_type", ChangeType);
             writer.WriteStringValue("commit_message", CommitMessage);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCompilerWarning>("compiler_warnings", CompilerWarnings);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleApprovalDetailResponseApprovalCurrentRule>("current_rule", CurrentRule);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview>("current_rule", CurrentRule);
             writer.WriteDoubleValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges>("proposed_changes", ProposedChanges);
             writer.WriteStringValue("rejection_reason", RejectionReason);
