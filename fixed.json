@@ -161890,7 +161890,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "ssl.mtls-certificates.associations",
-        "x-fern-sdk-method-name": "get"
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/accounts/{accountId}/oauth_clients": {
@@ -200208,6 +200208,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -200243,6 +200245,9 @@
           },
           {
             "$ref": "#/components/parameters/resource-sharing_include_recipient_counts"
+          },
+          {
+            "$ref": "#/components/parameters/resource-sharing_include_tags_from"
           },
           {
             "$ref": "#/components/parameters/resource-sharing_tag"
@@ -200313,7 +200318,7 @@
           "Resource Sharing"
         ],
         "summary": "Trigger a share creation",
-        "description": "Creates a new resource share for sharing Cloudflare resources with other accounts or organizations.",
+        "description": "Creates a share that makes a resource available to specific accounts in the caller\u0027s organization, or to the whole organization.",
         "operationId": "ShareCreate",
         "parameters": [
           {
@@ -200322,6 +200327,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -200415,6 +200422,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -200427,6 +200436,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -200498,6 +200509,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -200510,6 +200523,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -200521,6 +200536,9 @@
           },
           {
             "$ref": "#/components/parameters/resource-sharing_include_recipient_counts"
+          },
+          {
+            "$ref": "#/components/parameters/resource-sharing_include_tags_from"
           }
         ],
         "responses": {
@@ -200586,8 +200604,8 @@
         "tags": [
           "Resource Sharing"
         ],
-        "summary": "Trigger a share rename",
-        "description": "Updates the share\u0027s display name and tags. This endpoint does **not**\nmodify recipients or resources \u2014 those are managed via dedicated\nsubresource endpoints:\n\n- **Recipients**: Use \u0060POST /accounts/{account_id}/shares/{share_id}/recipients\u0060\n  to add a single recipient, \u0060PUT /accounts/{account_id}/shares/{share_id}/recipients\u0060\n  to replace the full recipient list, or\n  \u0060DELETE /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}\u0060\n  to remove a recipient.\n- **Resources**: Use the share\u0027s resource subresource endpoints.\n\nUpdating is not immediate; an updated share object with a new status\nwill be returned.\n",
+        "summary": "Trigger a share update",
+        "description": "Updates the share\u0027s display name and tags. Omitting \u0060tags\u0060 leaves the\nexisting tags unchanged. Recipients and resources are managed via their\nsubresource endpoints.\n",
         "operationId": "ShareUpdate",
         "parameters": [
           {
@@ -200596,6 +200614,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -200608,6 +200628,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -200680,7 +200702,7 @@
           "Resource Sharing"
         ],
         "summary": "List share excluded recipients by share ID",
-        "description": "Lists the accounts excluded from an organization-targeted share. Only valid for shares with \u0060target_type=organization\u0060.",
+        "description": "Lists the accounts excluded from an organization-targeted share. Returns an empty list for account-targeted shares.",
         "operationId": "ShareExcludedRecipientsList",
         "parameters": [
           {
@@ -200689,6 +200711,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -200701,6 +200725,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -200777,6 +200803,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -200789,6 +200817,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -200880,6 +200910,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -200892,6 +200924,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -200948,7 +200982,8 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "resource-sharing.excluded-recipients",
-        "x-fern-sdk-method-name": "update"
+        "x-fern-sdk-method-name": "update",
+        "x-forge-require-confirmation": "Accounts omitted from the list are no longer excluded and will receive the share."
       }
     },
     "/accounts/{accountId}/shares/{shareId}/excluded-recipients/{excludedRecipientId}": {
@@ -200966,6 +201001,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -200978,6 +201015,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -200990,6 +201029,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share Excluded Recipient identifier tag.",
               "example": "4ae96b85c43850f2c0a7b9101a0eeb18",
@@ -201044,7 +201085,8 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "resource-sharing.excluded-recipients",
-        "x-fern-sdk-method-name": "delete"
+        "x-fern-sdk-method-name": "delete",
+        "x-forge-require-confirmation": "Removing the exclusion makes the share apply to this account."
       },
       "get": {
         "tags": [
@@ -201060,6 +201102,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201072,6 +201116,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201084,6 +201130,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share Excluded Recipient identifier tag.",
               "example": "4ae96b85c43850f2c0a7b9101a0eeb18",
@@ -201156,6 +201204,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201168,6 +201218,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201247,6 +201299,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201259,6 +201313,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201270,7 +201326,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ResourceSharingCreateShareRecipientRequest"
+                "$ref": "#/components/schemas/ResourceSharingShareRecipientMutationRequest"
               }
             }
           },
@@ -201341,7 +201397,7 @@
           "Resource Sharing"
         ],
         "summary": "Trigger recipient reconciliation on a share",
-        "description": "Replaces the full recipient list for an account-targeted share. The\nserver computes the diff between the current and desired recipients:\nnew accounts are added, accounts no longer in the list are marked for\ndisassociation, and unchanged accounts are left as-is.\n\nReturns an error if the share targets an organization\n(\u0060target_type=organization\u0060); org-targeted shares derive their\nrecipients dynamically from org membership and cannot be modified\nthrough this endpoint.\n",
+        "description": "Replaces the full recipient list for an account-targeted share. The\nserver computes the diff between the current and desired recipients:\nnew accounts are added, accounts no longer in the list are marked for\ndisassociation, and unchanged accounts are left as-is.\n\nReturns an error if the share targets an organization\n(\u0060target_type=organization\u0060) and the list is non-empty; org-targeted\nshares derive their recipients dynamically from org membership and\ncannot be modified through this endpoint.\n",
         "operationId": "ShareRecipientsUpdate",
         "parameters": [
           {
@@ -201350,6 +201406,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201362,6 +201420,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201418,7 +201478,8 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "resource-sharing.recipients",
-        "x-fern-sdk-method-name": "update"
+        "x-fern-sdk-method-name": "update",
+        "x-forge-require-confirmation": "Accounts omitted from the list are disassociated from the share."
       }
     },
     "/accounts/{accountId}/shares/{shareId}/recipients/{recipientId}": {
@@ -201436,6 +201497,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201448,6 +201511,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201460,6 +201525,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share Recipient identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201531,6 +201598,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201543,6 +201612,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201555,6 +201626,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share Recipient identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201630,6 +201703,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201642,6 +201717,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201724,6 +201801,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201736,6 +201815,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201829,6 +201910,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201841,6 +201924,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201853,6 +201938,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share Resource identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201924,6 +202011,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -201936,6 +202025,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -201948,6 +202039,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share Resource identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -202009,7 +202102,7 @@
           "Resource Sharing"
         ],
         "summary": "Trigger a resource metadata update in a share",
-        "description": "Update is not immediate, an updated share resource object with a new status will be returned.",
+        "description": "Updates the resource\u0027s \u0060meta\u0060. Only resources with \u0060status=active\u0060 can be updated.",
         "operationId": "ShareResourceUpdate",
         "parameters": [
           {
@@ -202018,6 +202111,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Account identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -202030,6 +202125,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share identifier tag.",
               "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -202042,6 +202139,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Share Resource identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -240521,6 +240620,8 @@
             "required": true,
             "schema": {
               "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[0-9a-fA-F]{32}$",
               "type": "string",
               "description": "Organization identifier.",
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -240529,15 +240630,6 @@
           },
           {
             "$ref": "#/components/parameters/resource-sharing_status"
-          },
-          {
-            "$ref": "#/components/parameters/resource-sharing_kind"
-          },
-          {
-            "$ref": "#/components/parameters/resource-sharing_target_type"
-          },
-          {
-            "$ref": "#/components/parameters/resource-sharing_resource_types"
           },
           {
             "$ref": "#/components/parameters/resource-sharing_order"
@@ -240597,7 +240689,7 @@
           "pro": false
         },
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.share",
+        "x-fern-sdk-group-name": "organizations.shares",
         "x-fern-sdk-method-name": "list"
       }
     },
@@ -309517,8 +309609,8 @@
         "tags": [
           "Tiered Caching"
         ],
-        "summary": "Get Tiered Caching setting",
-        "description": "Tiered Cache works by dividing Cloudflare\u0027s data centers into a hierarchy of lower-tiers and upper-tiers. If content is not cached in lower-tier data centers (generally the ones closest to a visitor), the lower-tier must ask an upper-tier to see if it has the content. If the upper-tier does not have the content, only the upper-tier can ask the origin for content. This practice improves bandwidth efficiency by limiting the number of data centers that can ask the origin for content, which reduces origin load and makes websites more cost-effective to operate. Additionally, Tiered Cache concentrates connections to origin servers so they come from a small number of data centers rather than the full set of network locations. This results in fewer open connections using server resources.",
+        "summary": "Get Tiered Cache",
+        "description": "Retrieves whether Tiered Cache is enabled for a zone. Tiered Cache reduces origin traffic by serving lower-tier cache misses from upper-tier data centers before requesting content from your origin.",
         "operationId": "TieredCachingGetTieredCachingSetting",
         "parameters": [
           {
@@ -309580,8 +309672,8 @@
         "tags": [
           "Tiered Caching"
         ],
-        "summary": "Patch Tiered Caching setting",
-        "description": "Tiered Cache works by dividing Cloudflare\u0027s data centers into a hierarchy of lower-tiers and upper-tiers. If content is not cached in lower-tier data centers (generally the ones closest to a visitor), the lower-tier must ask an upper-tier to see if it has the content. If the upper-tier does not have the content, only the upper-tier can ask the origin for content. This practice improves bandwidth efficiency by limiting the number of data centers that can ask the origin for content, which reduces origin load and makes websites more cost-effective to operate. Additionally, Tiered Cache concentrates connections to origin servers so they come from a small number of data centers rather than the full set of network locations. This results in fewer open connections using server resources.",
+        "summary": "Update Tiered Cache",
+        "description": "Enables or disables Tiered Cache for a zone. Tiered Cache reduces origin traffic by serving lower-tier cache misses from upper-tier data centers before requesting content from your origin.",
         "operationId": "TieredCachingPatchTieredCachingSetting",
         "parameters": [
           {
@@ -311472,7 +311564,7 @@
           "free": true,
           "pro": true
         },
-        "x-fern-availability": "generally-available",
+        "x-fern-availability": "deprecated",
         "x-fern-sdk-group-name": "origin-post-quantum-encryption",
         "x-fern-sdk-method-name": "get"
       },
@@ -311561,7 +311653,7 @@
           "free": true,
           "pro": true
         },
-        "x-fern-availability": "generally-available",
+        "x-fern-availability": "deprecated",
         "x-fern-sdk-group-name": "origin-post-quantum-encryption",
         "x-fern-sdk-method-name": "update"
       }
@@ -387288,7 +387380,7 @@
             "$ref": "#/components/schemas/CacheSettingsValue"
           }
         },
-        "description": "Update enablement of Tiered Caching."
+        "description": "Updates whether Tiered Cache is enabled for a zone."
       },
       "CacheSettingsRegionalTieredCacheValue": {
         "enum": [
@@ -387374,7 +387466,7 @@
           "off"
         ],
         "type": "string",
-        "description": "Enables Tiered Caching.",
+        "description": "Enables or disables Tiered Cache.",
         "example": "on",
         "x-auditable": true,
         "x-ms-enum": {
@@ -460923,6 +461015,8 @@
         "properties": {
           "account_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Account identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -460935,6 +461029,8 @@
         "properties": {
           "account_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Account identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -460947,6 +461043,8 @@
           },
           "organization_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Organization identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -460954,6 +461052,8 @@
           },
           "recipient_account_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Account identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -460964,12 +461064,18 @@
       },
       "ResourceSharingCreateShareRequest": {
         "required": [
-          "name",
-          "resources",
-          "recipients"
+          "name"
         ],
         "type": "object",
         "properties": {
+          "excluded_recipients": {
+            "maxItems": 1000,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceSharingCreateShareExcludedRecipientRequest"
+            },
+            "description": "Accounts to exclude from an organization-targeted share. Only allowed when \u0060recipients\u0060 contains no account entries. The share owner cannot be excluded. Duplicate entries are ignored."
+          },
           "name": {
             "type": "string",
             "description": "The name of the share.",
@@ -460977,16 +461083,21 @@
             "x-auditable": true
           },
           "recipients": {
+            "maxItems": 100,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ResourceSharingCreateShareRecipientRequest"
             }
           },
           "resources": {
+            "maxItems": 1,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ResourceSharingCreateShareResourceRequest"
             }
+          },
+          "tags": {
+            "$ref": "#/components/schemas/ResourceSharingCreateShareRequestTags"
           }
         }
       },
@@ -461004,16 +461115,17 @@
           },
           "resource_account_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Account identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
             "x-auditable": true
           },
           "resource_id": {
-            "maxLength": 32,
             "type": "string",
-            "description": "Share Resource identifier.",
-            "example": "023e105f4ecef8ad9ca31a8372d0c353",
+            "description": "Identifier assigned by the service that owns the shared resource.",
+            "example": "0a679032-bbb2-4b7e-9acc-dd5c5cb27a17",
             "x-auditable": true
           },
           "resource_type": {
@@ -461053,6 +461165,19 @@
             }
           ]
         }
+      },
+      "ResourceSharingRecipientResourceErrorTerminal": {
+        "type": "boolean",
+        "description": "Whether the error is terminal or will be continually retried.",
+        "nullable": true,
+        "example": true,
+        "x-auditable": true
+      },
+      "ResourceSharingRecipientResourceVersion": {
+        "type": "integer",
+        "description": "Resource version applied to the recipient, if reconciliation has occurred.",
+        "nullable": true,
+        "x-auditable": true
       },
       "ResourceSharingResourceStatus": {
         "enum": [
@@ -461134,27 +461259,27 @@
         "type": "object",
         "properties": {
           "count": {
-            "type": "number",
-            "description": "Total number of results for the requested service.",
+            "type": "integer",
+            "description": "Number of results on the current page.",
             "example": 1
           },
           "page": {
-            "type": "number",
+            "type": "integer",
             "description": "Current page within paginated list of results.",
             "example": 1
           },
           "per_page": {
-            "type": "number",
+            "type": "integer",
             "description": "Number of results per page of results.",
             "example": 20
           },
           "total_count": {
-            "type": "number",
-            "description": "Total results available without any search parameters.",
+            "type": "integer",
+            "description": "Total number of results matching the current filters before pagination.",
             "example": 2000
           },
           "total_pages": {
-            "type": "number",
+            "type": "integer",
             "description": "Total number of pages using the given per page.",
             "example": 50
           }
@@ -461171,6 +461296,8 @@
         "properties": {
           "account_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Account identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -461178,13 +461305,15 @@
           },
           "created": {
             "type": "string",
-            "description": "When the share was created.",
+            "description": "When the object was created.",
             "format": "date-time",
             "example": "2023-09-21T18:56:32.624632Z",
             "x-auditable": true
           },
           "id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Share Excluded Recipient identifier tag.",
             "example": "4ae96b85c43850f2c0a7b9101a0eeb18",
@@ -461192,7 +461321,7 @@
           },
           "modified": {
             "type": "string",
-            "description": "When the share was modified.",
+            "description": "When the object was last modified.",
             "format": "date-time",
             "example": "2023-09-21T18:56:32.624632Z",
             "x-auditable": true
@@ -461291,6 +461420,8 @@
         "properties": {
           "account_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Account identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -461305,16 +461436,18 @@
           "associated_recipient_count": {
             "type": "integer",
             "description": "The number of recipients in the \u0027associated\u0027 state. This field is only included when requested via the \u0027include_recipient_counts\u0027 parameter.",
-            "example": 10
+            "example": 10,
+            "x-auditable": true
           },
           "associating_recipient_count": {
             "type": "integer",
             "description": "The number of recipients in the \u0027associating\u0027 state. This field is only included when requested via the \u0027include_recipient_counts\u0027 parameter.",
-            "example": 1
+            "example": 1,
+            "x-auditable": true
           },
           "created": {
             "type": "string",
-            "description": "When the share was created.",
+            "description": "When the object was created.",
             "format": "date-time",
             "example": "2023-09-21T18:56:32.624632Z",
             "x-auditable": true
@@ -461322,15 +461455,19 @@
           "disassociated_recipient_count": {
             "type": "integer",
             "description": "The number of recipients in the \u0027disassociated\u0027 state. This field is only included when requested via the \u0027include_recipient_counts\u0027 parameter.",
-            "example": 0
+            "example": 0,
+            "x-auditable": true
           },
           "disassociating_recipient_count": {
             "type": "integer",
             "description": "The number of recipients in the \u0027disassociating\u0027 state. This field is only included when requested via the \u0027include_recipient_counts\u0027 parameter.",
-            "example": 0
+            "example": 0,
+            "x-auditable": true
           },
           "id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Share identifier tag.",
             "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -461341,7 +461478,7 @@
           },
           "modified": {
             "type": "string",
-            "description": "When the share was modified.",
+            "description": "When the object was last modified.",
             "format": "date-time",
             "example": "2023-09-21T18:56:32.624632Z",
             "x-auditable": true
@@ -461354,6 +461491,8 @@
           },
           "organization_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Organization identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -461369,10 +461508,43 @@
           "status": {
             "$ref": "#/components/schemas/ResourceSharingShareStatus"
           },
+          "tags": {
+            "$ref": "#/components/schemas/ResourceSharingShareObjectTags"
+          },
           "target_type": {
             "$ref": "#/components/schemas/ResourceSharingShareTargetType"
           }
         }
+      },
+      "ResourceSharingShareRecipientMutationRequest": {
+        "minProperties": 1,
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
+            "type": "string",
+            "description": "Account identifier.",
+            "example": "023e105f4ecef8ad9ca31a8372d0c353",
+            "deprecated": true,
+            "x-auditable": true,
+            "x-stainless-deprecation-message": "This field has been renamed to \u0060recipient_account_id\u0060. Both names are accepted during the deprecation period.",
+            "x-stainless-skip": [
+              "terraform"
+            ]
+          },
+          "recipient_account_id": {
+            "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
+            "type": "string",
+            "description": "Account identifier.",
+            "example": "023e105f4ecef8ad9ca31a8372d0c353",
+            "x-auditable": true
+          }
+        },
+        "description": "Specify the account receiving the share using \u0060recipient_account_id\u0060.\nThe legacy field \u0060account_id\u0060 is accepted as a synonym during the deprecation period (see \u0060x-sunset\u0060 on that field).\n"
       },
       "ResourceSharingShareRecipientObject": {
         "required": [
@@ -461386,6 +461558,8 @@
         "properties": {
           "account_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Account identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -461396,13 +461570,15 @@
           },
           "created": {
             "type": "string",
-            "description": "When the share was created.",
+            "description": "When the object was created.",
             "format": "date-time",
             "example": "2023-09-21T18:56:32.624632Z",
             "x-auditable": true
           },
           "id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Share Recipient identifier tag.",
             "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -461410,7 +461586,7 @@
           },
           "modified": {
             "type": "string",
-            "description": "When the share was modified.",
+            "description": "When the object was last modified.",
             "format": "date-time",
             "example": "2023-09-21T18:56:32.624632Z",
             "x-auditable": true
@@ -461435,27 +461611,21 @@
         "properties": {
           "error": {
             "type": "string",
-            "description": "Share Recipient error message.",
+            "description": "Error from the most recent attempt to apply the resource to the recipient. Empty string when no error has been recorded.",
             "example": "Recipient is missing necessary entitlement",
             "x-auditable": true
           },
           "resource_id": {
-            "maxLength": 32,
             "type": "string",
-            "description": "Share Resource identifier.",
-            "example": "023e105f4ecef8ad9ca31a8372d0c353",
+            "description": "Identifier assigned by the service that owns the shared resource.",
+            "example": "0a679032-bbb2-4b7e-9acc-dd5c5cb27a17",
             "x-auditable": true
           },
           "resource_version": {
-            "type": "integer",
-            "description": "Resource Version.",
-            "x-auditable": true
+            "$ref": "#/components/schemas/ResourceSharingRecipientResourceVersion"
           },
           "terminal": {
-            "type": "boolean",
-            "description": "Whether the error is terminal or will be continually retried.",
-            "example": true,
-            "x-auditable": true
+            "$ref": "#/components/schemas/ResourceSharingRecipientResourceErrorTerminal"
           }
         }
       },
@@ -461529,13 +461699,15 @@
         "properties": {
           "created": {
             "type": "string",
-            "description": "When the share was created.",
+            "description": "When the object was created.",
             "format": "date-time",
             "example": "2023-09-21T18:56:32.624632Z",
             "x-auditable": true
           },
           "id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Share Resource identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -461546,23 +461718,24 @@
           },
           "modified": {
             "type": "string",
-            "description": "When the share was modified.",
+            "description": "When the object was last modified.",
             "format": "date-time",
             "example": "2023-09-21T18:56:32.624632Z",
             "x-auditable": true
           },
           "resource_account_id": {
             "maxLength": 32,
+            "minLength": 32,
+            "pattern": "^[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Account identifier.",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
             "x-auditable": true
           },
           "resource_id": {
-            "maxLength": 32,
             "type": "string",
-            "description": "Share Resource identifier.",
-            "example": "023e105f4ecef8ad9ca31a8372d0c353",
+            "description": "Identifier assigned by the service that owns the shared resource.",
+            "example": "0a679032-bbb2-4b7e-9acc-dd5c5cb27a17",
             "x-auditable": true
           },
           "resource_type": {
@@ -461746,6 +461919,9 @@
             "description": "The name of the share.",
             "example": "My Shared WAF Managed Rule",
             "x-auditable": true
+          },
+          "tags": {
+            "$ref": "#/components/schemas/ResourceSharingUpdateShareRequestTags"
           }
         },
         "description": "Request body for \u0060PUT /accounts/{account_id}/shares/{share_id}\u0060. The\nshare\u0027s display \u0060name\u0060 and \u0060tags\u0060 can be updated via this endpoint. To\nmodify recipients, use the\n\u0060/accounts/{account_id}/shares/{share_id}/recipients\u0060 subresource\nendpoints (POST, PUT, DELETE).\n"
@@ -461769,7 +461945,6 @@
         "type": "object",
         "properties": {
           "code": {
-            "minimum": 1000,
             "type": "integer"
           },
           "message": {
@@ -518342,7 +518517,7 @@
         ]
       },
       "ResourceSharingApiResponseCommonFailureErrors": {
-        "minLength": 1,
+        "minItems": 1,
         "allOf": [
           {
             "type": "array",
@@ -518352,6 +518527,13 @@
             "example": []
           }
         ]
+      },
+      "ResourceSharingShareObjectTags": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Tags associated with the share. Included in create and update responses when tags are supplied, and in read responses when the \u0060include_tags_from\u0060 parameter is set."
       },
       "ResourceTaggingApiResponseCommonFailureErrors": {
         "minLength": 1,
@@ -610902,22 +611084,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/SharesList4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -610933,22 +611105,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/SharesList5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -610964,22 +611126,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareCreate4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -610995,22 +611147,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareCreate5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611026,22 +611168,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareDelete4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611057,22 +611189,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareDelete5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611088,22 +611210,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/SharesGetById4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611119,22 +611231,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/SharesGetById5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611150,22 +611252,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareUpdate4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611181,22 +611273,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareUpdate5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611212,22 +611294,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientsList4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611243,22 +611315,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientsList5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611274,22 +611336,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientCreate4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611305,22 +611357,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientCreate5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611336,22 +611378,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientsUpdate4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611367,22 +611399,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientsUpdate5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611398,22 +611420,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientDelete4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611429,22 +611441,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientDelete5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611460,22 +611462,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientsGetById4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611491,22 +611483,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareExcludedRecipientsGetById5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611522,22 +611504,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientsList4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611553,22 +611525,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientsList5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611584,22 +611546,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientCreate4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611615,22 +611567,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientCreate5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611646,22 +611588,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientsUpdate4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611677,22 +611609,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientsUpdate5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611708,22 +611630,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientDelete4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611739,22 +611651,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientDelete5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611770,22 +611672,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientsGetById4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611801,22 +611693,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareRecipientsGetById5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611832,22 +611714,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourcesList4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611863,22 +611735,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourcesList5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611894,22 +611756,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourceCreate4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611925,22 +611777,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourceCreate5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611956,22 +611798,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourceDelete4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -611987,22 +611819,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourceDelete5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -612018,22 +611840,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourcesGetById4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -612049,22 +611861,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourcesGetById5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -612080,22 +611882,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourceUpdate4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -612111,22 +611903,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/ShareResourceUpdate5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -630772,22 +630554,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/OrganizationSharesList4XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -630803,22 +630575,12 @@
             "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
           },
           "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/OrganizationSharesList5XxResponseResult"
           },
           "success": {
             "type": "boolean",
             "description": "Whether the API call was successful.",
-            "example": false,
-            "x-auditable": true
+            "example": false
           }
         }
       },
@@ -659778,15 +659540,17 @@
         ]
       },
       "ShareExcludedRecipientsUpdateRequest": {
+        "maxItems": 1000,
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ResourceSharingCreateShareExcludedRecipientRequest"
         }
       },
       "ShareRecipientsUpdateRequest": {
+        "maxItems": 100,
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ResourceSharingCreateShareRecipientRequest"
+          "$ref": "#/components/schemas/ResourceSharingShareRecipientMutationRequest"
         }
       },
       "WorkersKvNamespaceDeleteMultipleKeyValuePairsDeprecatedRequest": {
@@ -727193,6 +726957,13 @@
         "type": "object",
         "nullable": true
       },
+      "ResourceSharingCreateShareRequestTags": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Tags associated with the share."
+      },
       "ResourceSharingCreateShareResourceRequestMeta": {
         "type": "object",
         "description": "Resource Metadata."
@@ -727200,6 +726971,13 @@
       "ResourceSharingShareResourceObjectMeta": {
         "type": "object",
         "description": "Resource Metadata."
+      },
+      "ResourceSharingUpdateShareRequestTags": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Tags associated with the share."
       },
       "ResourceSharingUpdateShareResourceRequestMeta": {
         "type": "object",
@@ -772259,6 +772037,166 @@
       "GetSecurityCenterInsightContext200ResponseResult": {
         "type": "object"
       },
+      "SharesList4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "SharesList5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareCreate4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareCreate5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareDelete4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareDelete5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "SharesGetById4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "SharesGetById5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareUpdate4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareUpdate5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientsList4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientsList5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientCreate4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientCreate5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientsUpdate4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientsUpdate5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientDelete4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientDelete5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientsGetById4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareExcludedRecipientsGetById5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientsList4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientsList5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientCreate4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientCreate5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientsUpdate4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientsUpdate5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientDelete4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientDelete5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientsGetById4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareRecipientsGetById5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourcesList4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourcesList5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourceCreate4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourceCreate5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourceDelete4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourceDelete5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourcesGetById4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourcesGetById5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourceUpdate4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "ShareResourceUpdate5XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
       "SlurperCreateJob201ResponseResult": {
         "type": "object",
         "properties": {
@@ -783507,6 +783445,14 @@
       },
       "MembersBatchCreate200ResponseErrorsItem": {
         "type": "object"
+      },
+      "OrganizationSharesList4XxResponseResult": {
+        "type": "object",
+        "nullable": true
+      },
+      "OrganizationSharesList5XxResponseResult": {
+        "type": "object",
+        "nullable": true
       },
       "RadarGetAgentReadinessSummary200ResponseResult": {
         "required": [
@@ -1003308,6 +1003254,27 @@
           ]
         }
       },
+      "ResourceSharingIncludeTagsFrom": {
+        "enum": [
+          "api",
+          "mirror"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ResourceSharingIncludeTagsFrom",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "api",
+              "name": "Api"
+            },
+            {
+              "value": "mirror",
+              "name": "Mirror"
+            }
+          ]
+        }
+      },
       "ResourceSharingOrder": {
         "enum": [
           "name",
@@ -1120424,6 +1120391,14 @@
           "example": true
         }
       },
+      "resource-sharing_include_tags_from": {
+        "name": "include_tags_from",
+        "in": "query",
+        "description": "Include share tags in the response. \u0060api\u0060 reads tags from the tag service; \u0060mirror\u0060 reads a local, eventually consistent replica. If the tag lookup fails, the response omits \u0060tags\u0060.",
+        "schema": {
+          "$ref": "#/components/schemas/ResourceSharingIncludeTagsFrom"
+        }
+      },
       "resource-sharing_kind": {
         "name": "kind",
         "in": "query",
@@ -1120443,7 +1120418,7 @@
       "resource-sharing_page": {
         "name": "page",
         "in": "query",
-        "description": "Page number. Defaults to \u00601\u0060 when \u0060per_page\u0060 is supplied without\n\u0060page\u0060. May be omitted entirely along with \u0060per_page\u0060 to receive a\nnon-paginated response.",
+        "description": "Page number. Defaults to \u00601\u0060 when omitted.",
         "schema": {
           "multipleOf": 1,
           "minimum": 1,
@@ -1120455,7 +1120430,7 @@
       "resource-sharing_per_page": {
         "name": "per_page",
         "in": "query",
-        "description": "Number of objects to return per page. Defaults to \u006020\u0060 when \u0060page\u0060 is supplied without \u0060per_page\u0060. May be omitted entirely along with \u0060page\u0060 to receive a non-paginated response.",
+        "description": "Number of objects to return per page. Defaults to \u006020\u0060 when omitted.",
         "schema": {
           "multipleOf": 1,
           "maximum": 100,
@@ -1124843,7 +1124818,7 @@
           "description": "View and update the public profile information for an organization"
         },
         "shares": {
-          "description": "Shares operations"
+          "description": "Shares across the organization"
         }
       }
     },
@@ -1125137,13 +1125112,16 @@
       }
     },
     "resource-sharing": {
-      "description": "Share Cloudflare resources (zones, accounts) across organizations with granular access controls",
+      "description": "Share account-level resources (WAF custom rulesets, Gateway policies and settings, Access IdP federation grants) with other accounts in the same organization",
       "groups": {
+        "excluded-recipients": {
+          "description": "Accounts excluded from an organization-targeted share"
+        },
         "recipients": {
-          "description": "Update share recipients"
+          "description": "Accounts that receive a share"
         },
         "resources": {
-          "description": "Individual resources (zones, configs) that have been shared with recipients"
+          "description": "Resources attached to a share"
         }
       }
     },
@@ -1151620,6 +1151598,8 @@
     },
     "ResourceSharingAccountId": {
       "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
       "type": "string",
       "description": "Account identifier.",
       "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -1151696,34 +1151676,26 @@
           "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureErrors"
         },
         "result": {
-          "type": "object",
-          "additionalProperties": false,
-          "nullable": true,
-          "x-client-original-enum": [
-            null
-          ],
-          "x-client-untyped-value": true,
-          "not": {
-            "type": "object"
-          }
+          "$ref": "#/components/schemas/ResourceSharingApiResponseCommonFailureResultProperty"
         },
         "success": {
           "type": "boolean",
           "description": "Whether the API call was successful.",
-          "example": false,
-          "x-auditable": true
+          "example": false
         }
       }
     },
     "ResourceSharingCreated": {
       "type": "string",
-      "description": "When the share was created.",
+      "description": "When the object was created.",
       "format": "date-time",
       "example": "2023-09-21T18:56:32.624632Z",
       "x-auditable": true
     },
     "ResourceSharingExcludedRecipientId": {
       "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
       "type": "string",
       "description": "Share Excluded Recipient identifier tag.",
       "example": "4ae96b85c43850f2c0a7b9101a0eeb18",
@@ -1151731,13 +1151703,15 @@
     },
     "ResourceSharingModified": {
       "type": "string",
-      "description": "When the share was modified.",
+      "description": "When the object was last modified.",
       "format": "date-time",
       "example": "2023-09-21T18:56:32.624632Z",
       "x-auditable": true
     },
     "ResourceSharingOrganizationId": {
       "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
       "type": "string",
       "description": "Organization identifier.",
       "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -1151745,6 +1151719,8 @@
     },
     "ResourceSharingRecipientId": {
       "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
       "type": "string",
       "description": "Share Recipient identifier tag.",
       "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -1151752,18 +1151728,14 @@
     },
     "ResourceSharingRecipientResourceError": {
       "type": "string",
-      "description": "Share Recipient error message.",
+      "description": "Error from the most recent attempt to apply the resource to the recipient. Empty string when no error has been recorded.",
       "example": "Recipient is missing necessary entitlement",
-      "x-auditable": true
-    },
-    "ResourceSharingRecipientResourceErrorTerminal": {
-      "type": "boolean",
-      "description": "Whether the error is terminal or will be continually retried.",
-      "example": true,
       "x-auditable": true
     },
     "ResourceSharingResourceId": {
       "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
       "type": "string",
       "description": "Share Resource identifier.",
       "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -1151774,10 +1151746,9 @@
       "description": "Resource Metadata."
     },
     "ResourceSharingResourceResourceId": {
-      "maxLength": 32,
       "type": "string",
-      "description": "Share Resource identifier.",
-      "example": "023e105f4ecef8ad9ca31a8372d0c353",
+      "description": "Identifier assigned by the service that owns the shared resource.",
+      "example": "0a679032-bbb2-4b7e-9acc-dd5c5cb27a17",
       "x-auditable": true
     },
     "ResourceSharingResourceVersion": {
@@ -1151806,6 +1151777,8 @@
     },
     "ResourceSharingShareId": {
       "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
       "type": "string",
       "description": "Share identifier tag.",
       "example": "3fd85f74b32742f1bff64a85009dda07",
@@ -1151874,16 +1151847,25 @@
         }
       }
     },
+    "ResourceSharingShareTags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Tags associated with the share."
+    },
     "ResourceSharingUpdateShareExcludedRecipientsRequest": {
+      "maxItems": 1000,
       "type": "array",
       "items": {
         "$ref": "#/components/schemas/ResourceSharingCreateShareExcludedRecipientRequest"
       }
     },
     "ResourceSharingUpdateShareRecipientsRequest": {
+      "maxItems": 100,
       "type": "array",
       "items": {
-        "$ref": "#/components/schemas/ResourceSharingCreateShareRecipientRequest"
+        "$ref": "#/components/schemas/ResourceSharingShareRecipientMutationRequest"
       }
     },
     "ResourceSharingV4Errors": {
@@ -1181525,6 +1181507,8 @@
     },
     "ResourceSharingCreateShareExcludedRecipientRequestAccountId": {
       "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
       "type": "string",
       "description": "Account identifier.",
       "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -1181532,6 +1181516,8 @@
     },
     "ResourceSharingCreateShareRecipientRequestAccountId": {
       "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
       "type": "string",
       "description": "Account identifier.",
       "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -1181544,6 +1181530,40 @@
     },
     "ResourceSharingCreateShareRecipientRequestRecipientAccountId": {
       "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
+      "type": "string",
+      "description": "Account identifier.",
+      "example": "023e105f4ecef8ad9ca31a8372d0c353",
+      "x-auditable": true
+    },
+    "ResourceSharingCreateShareResourceRequestResourceAccountId": {
+      "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
+      "type": "string",
+      "description": "Account identifier.",
+      "example": "023e105f4ecef8ad9ca31a8372d0c353",
+      "x-auditable": true
+    },
+    "ResourceSharingShareRecipientMutationRequestAccountId": {
+      "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
+      "type": "string",
+      "description": "Account identifier.",
+      "example": "023e105f4ecef8ad9ca31a8372d0c353",
+      "deprecated": true,
+      "x-auditable": true,
+      "x-stainless-deprecation-message": "This field has been renamed to \u0060recipient_account_id\u0060. Both names are accepted during the deprecation period.",
+      "x-stainless-skip": [
+        "terraform"
+      ]
+    },
+    "ResourceSharingShareRecipientMutationRequestRecipientAccountId": {
+      "maxLength": 32,
+      "minLength": 32,
+      "pattern": "^[0-9a-fA-F]{32}$",
       "type": "string",
       "description": "Account identifier.",
       "example": "023e105f4ecef8ad9ca31a8372d0c353",
@@ -1192606,6 +1192626,10 @@
       "nullable": true
     },
     "ReportsPolicyErrorResponseResult": {
+      "type": "object",
+      "nullable": true
+    },
+    "ResourceSharingApiResponseCommonFailureResult": {
       "type": "object",
       "nullable": true
     },
@@ -1204985,6 +1205009,10 @@
     },
     "RealtimekitPagingResponseDataItemProperty": {
       "type": "object"
+    },
+    "ResourceSharingApiResponseCommonFailureResultProperty": {
+      "type": "object",
+      "nullable": true
     },
     "ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBaseTags": {
       "type": "object",

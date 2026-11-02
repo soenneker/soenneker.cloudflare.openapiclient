@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ResourceAccountId { get => _explicitNullValueResourceAccountId; set { _explicitNullValueResourceAccountId = value; AdditionalData?.Remove("resource_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_account_id"); else _explicitNullProperties?.Remove("resource_account_id"); } }
         private string _explicitNullValueResourceAccountId = default!;
 #endif
-        /// <summary>Share Resource identifier.</summary>
+        /// <summary>Identifier assigned by the service that owns the shared resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resource_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_id"); else _explicitNullProperties?.Remove("resource_id"); } }

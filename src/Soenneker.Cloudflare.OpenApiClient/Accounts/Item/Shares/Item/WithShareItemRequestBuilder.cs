@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithShareItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares/{shareId}{?include_recipient_counts*,include_resources*}", pathParameters)
+        public WithShareItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares/{shareId}{?include_recipient_counts*,include_resources*,include_tags_from*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithShareItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares/{shareId}{?include_recipient_counts*,include_resources*}", rawUrl)
+        public WithShareItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares/{shareId}{?include_recipient_counts*,include_resources*,include_tags_from*}", rawUrl)
         {
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the share&apos;s display name and tags. This endpoint does **not**modify recipients or resources — those are managed via dedicatedsubresource endpoints:- **Recipients**: Use `POST /accounts/{account_id}/shares/{share_id}/recipients`  to add a single recipient, `PUT /accounts/{account_id}/shares/{share_id}/recipients`  to replace the full recipient list, or  `DELETE /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`  to remove a recipient.- **Resources**: Use the share&apos;s resource subresource endpoints.Updating is not immediate; an updated share object with a new statuswill be returned.
+        /// Updates the share&apos;s display name and tags. Omitting `tags` leaves theexisting tags unchanged. Recipients and resources are managed via theirsubresource endpoints.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseSingle"/></returns>
         /// <param name="body">Request body for `PUT /accounts/{account_id}/shares/{share_id}`. Theshare&apos;s display `name` and `tags` can be updated via this endpoint. Tomodify recipients, use the`/accounts/{account_id}/shares/{share_id}/recipients` subresourceendpoints (POST, PUT, DELETE).</param>
@@ -167,7 +167,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates the share&apos;s display name and tags. This endpoint does **not**modify recipients or resources — those are managed via dedicatedsubresource endpoints:- **Recipients**: Use `POST /accounts/{account_id}/shares/{share_id}/recipients`  to add a single recipient, `PUT /accounts/{account_id}/shares/{share_id}/recipients`  to replace the full recipient list, or  `DELETE /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`  to remove a recipient.- **Resources**: Use the share&apos;s resource subresource endpoints.Updating is not immediate; an updated share object with a new statuswill be returned.
+        /// Updates the share&apos;s display name and tags. Omitting `tags` leaves theexisting tags unchanged. Recipients and resources are managed via theirsubresource endpoints.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body for `PUT /accounts/{account_id}/shares/{share_id}`. Theshare&apos;s display `name` and `tags` can be updated via this endpoint. Tomodify recipients, use the`/accounts/{account_id}/shares/{share_id}/recipients` subresourceendpoints (POST, PUT, DELETE).</param>
@@ -209,6 +209,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item
             /// <summary>Include resources in the response.</summary>
             [QueryParameter("include_resources")]
             public bool? IncludeResources { get; set; }
+            /// <summary>Include share tags in the response. `api` reads tags from the tag service; `mirror` reads a local, eventually consistent replica. If the tag lookup fails, the response omits `tags`.</summary>
+            [QueryParameter("include_tags_from")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingIncludeTagsFrom? IncludeTagsFrom { get; set; }
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/shares{?direction*,kind*,order*,page*,per_page*,resource_types*,status*,target_type*}", pathParameters)
+        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/shares{?direction*,order*,page*,per_page*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/shares{?direction*,kind*,order*,page*,per_page*,resource_types*,status*,target_type*}", rawUrl)
+        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/shares{?direction*,order*,page*,per_page*,status*}", rawUrl)
         {
         }
         /// <summary>
@@ -95,34 +95,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
             /// <summary>Direction to sort objects.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingDirection? Direction { get; set; }
-            /// <summary>Filter shares by kind.</summary>
-            [QueryParameter("kind")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareKind? Kind { get; set; }
             /// <summary>Order shares by values in the given field.</summary>
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingOrder? Order { get; set; }
-            /// <summary>Page number. Defaults to `1` when `per_page` is supplied without`page`. May be omitted entirely along with `per_page` to receive anon-paginated response.</summary>
+            /// <summary>Page number. Defaults to `1` when omitted.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response.</summary>
+            /// <summary>Number of objects to return per page. Defaults to `20` when omitted.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Filter share resources by resource_types.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("resource_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingResourceType[]? ResourceTypes { get; set; }
-#nullable restore
-#else
-            [QueryParameter("resource_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingResourceType[] ResourceTypes { get; set; }
-#endif
             /// <summary>Filter shares by status.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareStatus? Status { get; set; }
-            /// <summary>Filter shares by target_type.</summary>
-            [QueryParameter("target_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareTargetType? TargetType { get; set; }
         }
     }
 }

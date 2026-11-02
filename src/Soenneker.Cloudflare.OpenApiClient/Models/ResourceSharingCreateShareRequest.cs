@@ -17,16 +17,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("excluded_recipients") is null) { _explicitNullValueExcludedRecipients = default!; _explicitNullProperties?.Remove("excluded_recipients"); }
+            else if (parseNode.GetChildNode("excluded_recipients") is { } nullNodeExcludedRecipients && nullNodeExcludedRecipients.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedRecipients = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("recipients") is null) { _explicitNullValueRecipients = default!; _explicitNullProperties?.Remove("recipients"); }
             else if (parseNode.GetChildNode("recipients") is { } nullNodeRecipients && nullNodeRecipients.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recipients = null;
             if (parseNode.GetChildNode("resources") is null) { _explicitNullValueResources = default!; _explicitNullProperties?.Remove("resources"); }
             else if (parseNode.GetChildNode("resources") is { } nullNodeResources && nullNodeResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resources = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Accounts to exclude from an organization-targeted share. Only allowed when `recipients` contains no account entries. The share owner cannot be excluded. Duplicate entries are ignored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareExcludedRecipientRequest>? ExcludedRecipients { get => _explicitNullValueExcludedRecipients; set { _explicitNullValueExcludedRecipients = value; AdditionalData?.Remove("excluded_recipients"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_recipients"); else _explicitNullProperties?.Remove("excluded_recipients"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareExcludedRecipientRequest>? _explicitNullValueExcludedRecipients = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareExcludedRecipientRequest> ExcludedRecipients { get => _explicitNullValueExcludedRecipients; set { _explicitNullValueExcludedRecipients = value; AdditionalData?.Remove("excluded_recipients"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_recipients"); else _explicitNullProperties?.Remove("excluded_recipients"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareExcludedRecipientRequest> _explicitNullValueExcludedRecipients = default!;
+#endif
         /// <summary>The name of the share.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +71,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest> Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest> _explicitNullValueResources = default!;
 #endif
+        /// <summary>Tags associated with the share.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRequestTags? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRequestTags? _explicitNullValueTags = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRequestTags Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRequestTags _explicitNullValueTags = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRequest"/> and sets the default values.
         /// </summary>
@@ -82,9 +106,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "excluded_recipients", n => { ExcludedRecipients = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareExcludedRecipientRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareExcludedRecipientRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRequestTags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRequestTags.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,9 +120,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareExcludedRecipientRequest>("excluded_recipients", ExcludedRecipients);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest>("recipients", Recipients);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest>("resources", Resources);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRequestTags>("tags", Tags);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

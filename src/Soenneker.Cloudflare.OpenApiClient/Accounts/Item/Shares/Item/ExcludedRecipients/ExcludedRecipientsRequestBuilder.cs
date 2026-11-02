@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.ExcludedR
         {
         }
         /// <summary>
-        /// Lists the accounts excluded from an organization-targeted share. Only valid for shares with `target_type=organization`.
+        /// Lists the accounts excluded from an organization-targeted share. Returns an empty list for account-targeted shares.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareExcludedRecipientResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -125,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.ExcludedR
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the accounts excluded from an organization-targeted share. Only valid for shares with `target_type=organization`.
+        /// Lists the accounts excluded from an organization-targeted share. Returns an empty list for account-targeted shares.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,15 +197,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.ExcludedR
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.ExcludedRecipients.ExcludedRecipientsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the accounts excluded from an organization-targeted share. Only valid for shares with `target_type=organization`.
+        /// Lists the accounts excluded from an organization-targeted share. Returns an empty list for account-targeted shares.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExcludedRecipientsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Page number. Defaults to `1` when `per_page` is supplied without`page`. May be omitted entirely along with `per_page` to receive anon-paginated response.</summary>
+            /// <summary>Page number. Defaults to `1` when omitted.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response.</summary>
+            /// <summary>Number of objects to return per page. Defaults to `20` when omitted.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

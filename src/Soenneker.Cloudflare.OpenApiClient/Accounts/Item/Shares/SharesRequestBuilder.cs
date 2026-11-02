@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares{?direction*,include_recipient_counts*,include_resources*,kind*,order*,page*,per_page*,resource_types*,status*,tag*,target_type*}", pathParameters)
+        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares{?direction*,include_recipient_counts*,include_resources*,include_tags_from*,kind*,order*,page*,per_page*,resource_types*,status*,tag*,target_type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares{?direction*,include_recipient_counts*,include_resources*,kind*,order*,page*,per_page*,resource_types*,status*,tag*,target_type*}", rawUrl)
+        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares{?direction*,include_recipient_counts*,include_resources*,include_tags_from*,kind*,order*,page*,per_page*,resource_types*,status*,tag*,target_type*}", rawUrl)
         {
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new resource share for sharing Cloudflare resources with other accounts or organizations.
+        /// Creates a share that makes a resource available to specific accounts in the caller&apos;s organization, or to the whole organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseSingle"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new resource share for sharing Cloudflare resources with other accounts or organizations.
+        /// Creates a share that makes a resource available to specific accounts in the caller&apos;s organization, or to the whole organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -163,16 +163,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             /// <summary>Include resources in the response.</summary>
             [QueryParameter("include_resources")]
             public bool? IncludeResources { get; set; }
+            /// <summary>Include share tags in the response. `api` reads tags from the tag service; `mirror` reads a local, eventually consistent replica. If the tag lookup fails, the response omits `tags`.</summary>
+            [QueryParameter("include_tags_from")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingIncludeTagsFrom? IncludeTagsFrom { get; set; }
             /// <summary>Filter shares by kind.</summary>
             [QueryParameter("kind")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareKind? Kind { get; set; }
             /// <summary>Order shares by values in the given field.</summary>
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingOrder? Order { get; set; }
-            /// <summary>Page number. Defaults to `1` when `per_page` is supplied without`page`. May be omitted entirely along with `per_page` to receive anon-paginated response.</summary>
+            /// <summary>Page number. Defaults to `1` when omitted.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response.</summary>
+            /// <summary>Number of objects to return per page. Defaults to `20` when omitted.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Filter share resources by resource_types.</summary>

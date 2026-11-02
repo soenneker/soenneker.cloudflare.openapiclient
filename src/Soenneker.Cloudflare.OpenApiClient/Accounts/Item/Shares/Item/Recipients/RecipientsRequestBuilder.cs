@@ -75,18 +75,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Recipient
         /// Adds a single recipient to an account-targeted resource share, grantingthem access to the shared resources. The recipient account must belongto the same organization as the share owner.To replace the entire recipient list in one call, use`PUT /accounts/{account_id}/shares/{share_id}/recipients` instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseSingle"/></returns>
-        /// <param name="body">Optionally specify `recipient_account_id` to target a specific account, or `organization_id` to target the caller&apos;s whole organization. If neither is provided, the caller&apos;s organization is used.The legacy field `account_id` is accepted as a synonym for `recipient_account_id` during the deprecation period (see `x-sunset` on that field).</param>
+        /// <param name="body">Specify the account receiving the share using `recipient_account_id`.The legacy field `account_id` is accepted as a synonym during the deprecation period (see `x-sunset` on that field).</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareRecipientCreate4XxResponse">When receiving a 4XX status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareRecipientCreate5XxResponse">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientMutationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientMutationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Recipient
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replaces the full recipient list for an account-targeted share. Theserver computes the diff between the current and desired recipients:new accounts are added, accounts no longer in the list are marked fordisassociation, and unchanged accounts are left as-is.Returns an error if the share targets an organization(`target_type=organization`); org-targeted shares derive theirrecipients dynamically from org membership and cannot be modifiedthrough this endpoint.
+        /// Replaces the full recipient list for an account-targeted share. Theserver computes the diff between the current and desired recipients:new accounts are added, accounts no longer in the list are marked fordisassociation, and unchanged accounts are left as-is.Returns an error if the share targets an organization(`target_type=organization`) and the list is non-empty; org-targetedshares derive their recipients dynamically from org membership andcannot be modified through this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,11 +108,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Recipient
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareRecipientsUpdate5XxResponse">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientMutationRequest> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientMutationRequest> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -147,15 +147,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Recipient
         /// Adds a single recipient to an account-targeted resource share, grantingthem access to the shared resources. The recipient account must belongto the same organization as the share owner.To replace the entire recipient list in one call, use`PUT /accounts/{account_id}/shares/{share_id}/recipients` instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Optionally specify `recipient_account_id` to target a specific account, or `organization_id` to target the caller&apos;s whole organization. If neither is provided, the caller&apos;s organization is used.The legacy field `account_id` is accepted as a synonym for `recipient_account_id` during the deprecation period (see `x-sunset` on that field).</param>
+        /// <param name="body">Specify the account receiving the share using `recipient_account_id`.The legacy field `account_id` is accepted as a synonym during the deprecation period (see `x-sunset` on that field).</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientMutationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientMutationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -166,18 +166,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Recipient
             return requestInfo;
         }
         /// <summary>
-        /// Replaces the full recipient list for an account-targeted share. Theserver computes the diff between the current and desired recipients:new accounts are added, accounts no longer in the list are marked fordisassociation, and unchanged accounts are left as-is.Returns an error if the share targets an organization(`target_type=organization`); org-targeted shares derive theirrecipients dynamically from org membership and cannot be modifiedthrough this endpoint.
+        /// Replaces the full recipient list for an account-targeted share. Theserver computes the diff between the current and desired recipients:new accounts are added, accounts no longer in the list are marked fordisassociation, and unchanged accounts are left as-is.Returns an error if the share targets an organization(`target_type=organization`) and the list is non-empty; org-targetedshares derive their recipients dynamically from org membership andcannot be modified through this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientMutationRequest> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientMutationRequest> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -205,10 +205,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Recipient
             /// <summary>Include resources in the response.</summary>
             [QueryParameter("include_resources")]
             public bool? IncludeResources { get; set; }
-            /// <summary>Page number. Defaults to `1` when `per_page` is supplied without`page`. May be omitted entirely along with `per_page` to receive anon-paginated response.</summary>
+            /// <summary>Page number. Defaults to `1` when omitted.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response.</summary>
+            /// <summary>Number of objects to return per page. Defaults to `20` when omitted.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

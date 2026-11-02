@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The current state of the recipient relative to the share. The`desired_association_status` (not exposed in the response) tracks thetarget state set by the API; the background reconciliation workflowdrives `current_association_status` toward it.- `associating` — The recipient was recently added; the workflow is  pushing shared resources into the recipient account.- `associated` — Shared resources have been successfully applied to  the recipient account.- `disassociating` — The recipient was removed (via DELETE or PUT  replacement); the workflow is removing shared resources from the  recipient account.- `disassociated` — Shared resources have been removed from the  recipient account. The recipient record remains in the database.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingRecipientAssociationStatus? AssociationStatus { get => _explicitNullValueAssociationStatus; set { _explicitNullValueAssociationStatus = value; AdditionalData?.Remove("association_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("association_status"); else _explicitNullProperties?.Remove("association_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingRecipientAssociationStatus? _explicitNullValueAssociationStatus = default!;
-        /// <summary>When the share was created.</summary>
+        /// <summary>When the object was created.</summary>
         public DateTimeOffset? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
         private DateTimeOffset? _explicitNullValueCreated = default!;
         /// <summary>Share Recipient identifier tag.</summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>When the share was modified.</summary>
+        /// <summary>When the object was last modified.</summary>
         public DateTimeOffset? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private DateTimeOffset? _explicitNullValueModified = default!;
         /// <summary>The resources property</summary>
