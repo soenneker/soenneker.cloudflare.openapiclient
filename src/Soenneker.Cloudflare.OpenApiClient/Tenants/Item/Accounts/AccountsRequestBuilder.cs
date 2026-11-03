@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts
         {
         }
         /// <summary>
-        /// Lists the Cloudflare accounts associated with this tenant using the legacy Account responseshape. Use `GET /organizations/{organization_id}/accounts` for the modern Account response.Use `page_token` and `page_size` for cursor pagination, or provide `page` and `per_page`together for legacy offset pagination. Cursor pagination takes precedence when requested.
+        /// Lists all Cloudflare accounts across this tenant&apos;s hierarchy using the legacy Accountresponse shape. Use `GET /organizations/{organization_id}/accounts` to list only accountsimmediately attached to a specific Organization using the modern Account response shape.Use `page_token` and `page_size` for cursor pagination, or provide `page` and `per_page`together for legacy offset pagination. Cursor pagination takes precedence when requested.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TenantsListAccounts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the Cloudflare accounts associated with this tenant using the legacy Account responseshape. Use `GET /organizations/{organization_id}/accounts` for the modern Account response.Use `page_token` and `page_size` for cursor pagination, or provide `page` and `per_page`together for legacy offset pagination. Cursor pagination takes precedence when requested.
+        /// Lists all Cloudflare accounts across this tenant&apos;s hierarchy using the legacy Accountresponse shape. Use `GET /organizations/{organization_id}/accounts` to list only accountsimmediately attached to a specific Organization using the modern Account response shape.Use `page_token` and `page_size` for cursor pagination, or provide `page` and `per_page`together for legacy offset pagination. Cursor pagination takes precedence when requested.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts
             return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts.AccountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the Cloudflare accounts associated with this tenant using the legacy Account responseshape. Use `GET /organizations/{organization_id}/accounts` for the modern Account response.Use `page_token` and `page_size` for cursor pagination, or provide `page` and `per_page`together for legacy offset pagination. Cursor pagination takes precedence when requested.
+        /// Lists all Cloudflare accounts across this tenant&apos;s hierarchy using the legacy Accountresponse shape. Use `GET /organizations/{organization_id}/accounts` to list only accountsimmediately attached to a specific Organization using the modern Account response shape.Use `page_token` and `page_size` for cursor pagination, or provide `page` and `per_page`together for legacy offset pagination. Cursor pagination takes precedence when requested.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AccountsRequestBuilderGetQueryParameters 
@@ -140,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts
             /// <summary>Whether to calculate and return the exact `result_info.total_size` for cursorpagination. Defaults to true. When false, `total_size` is omitted. Legacy`page`/`per_page` requests always calculate `total_count`.</summary>
             [QueryParameter("include_total")]
             public bool? IncludeTotal { get; set; }
-            /// <summary>(case-sensitive) Filter the list of accounts to where the name is equal to aparticular string.</summary>
+            /// <summary>(case-sensitive) Filter the list of accounts to where the name is equal to aparticular string. At most one of `name`, `name.startsWith`, `name.endsWith`,or `name.contains` may be supplied per request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]

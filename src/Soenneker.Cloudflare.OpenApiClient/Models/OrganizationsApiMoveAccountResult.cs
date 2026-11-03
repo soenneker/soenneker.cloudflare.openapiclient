@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string DestinationOrganizationId { get => _explicitNullValueDestinationOrganizationId; set { _explicitNullValueDestinationOrganizationId = value; AdditionalData?.Remove("destination_organization_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_organization_id"); else _explicitNullProperties?.Remove("destination_organization_id"); } }
         private string _explicitNullValueDestinationOrganizationId = default!;
 #endif
-        /// <summary>The source_organization_id property</summary>
+        /// <summary>Empty string when the account did not belong to an organization before the move.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceOrganizationId { get => _explicitNullValueSourceOrganizationId; set { _explicitNullValueSourceOrganizationId = value; AdditionalData?.Remove("source_organization_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_organization_id"); else _explicitNullProperties?.Remove("source_organization_id"); } }

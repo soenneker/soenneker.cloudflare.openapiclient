@@ -118,6 +118,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -130,8 +133,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -187,6 +189,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -199,8 +204,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}": {
@@ -246,6 +250,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -267,7 +274,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -317,6 +323,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -365,8 +374,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "put": {
         "tags": [
@@ -425,6 +433,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -445,8 +456,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/abuse-reports": {
@@ -561,6 +571,15 @@
               "$ref": "#/components/schemas/AbuseReportsMitigationStatus"
             },
             "example": "active"
+          },
+          {
+            "name": "pending_notice",
+            "in": "query",
+            "description": "Also include reports in an open Notice and Takedown notice period. Combined with mitigation_status using OR, e.g. ?mitigation_status=active\u0026pending_notice=true.",
+            "schema": {
+              "type": "boolean"
+            },
+            "example": true
           }
         ],
         "responses": {
@@ -130578,8 +130597,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.permission-groups",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/accounts/{accountId}/iam/permission_groups/{permissionGroupId}": {
@@ -130695,8 +130713,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.permission-groups",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{accountId}/iam/resource_groups": {
@@ -130794,8 +130811,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.resource-groups",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -130878,8 +130894,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.resource-groups",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/iam/resource_groups/{resourceGroupId}": {
@@ -130969,7 +130984,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.resource-groups",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -131058,8 +131072,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.resource-groups",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "put": {
         "tags": [
@@ -131156,8 +131169,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.resource-groups",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/iam/user_groups": {
@@ -131268,6 +131280,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           },
@@ -131294,8 +131309,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -131354,6 +131368,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -131375,8 +131392,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/iam/user_groups/{userGroupId}": {
@@ -131441,6 +131457,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -131463,7 +131482,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -131527,6 +131545,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -131549,8 +131570,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "put": {
         "tags": [
@@ -131623,6 +131643,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -131644,8 +131667,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/iam/user_groups/{userGroupId}/members": {
@@ -131747,6 +131769,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -131769,8 +131794,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups.members",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -131843,6 +131867,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -131864,8 +131891,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups.members",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       },
       "put": {
         "tags": [
@@ -131938,6 +131964,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -131954,8 +131983,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups.members",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/iam/user_groups/{userGroupId}/members/{memberId}": {
@@ -132034,6 +132062,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -132056,7 +132087,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups.members",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -132134,6 +132164,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -132156,8 +132189,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.user-groups.members",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{accountId}/images/v1": {
@@ -159098,6 +159130,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -159120,8 +159155,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.members",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -159180,6 +159214,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -159201,8 +159238,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.members",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/members/{memberId}": {
@@ -159266,6 +159302,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -159288,7 +159327,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.members",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure you want to remove this user from the account?"
       },
       "get": {
@@ -159351,6 +159389,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -159373,8 +159414,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.members",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "put": {
         "tags": [
@@ -159446,6 +159486,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -159467,8 +159510,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.members",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/mnm/config": {
@@ -161964,8 +162006,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.oauth-clients",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -162047,8 +162088,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.oauth-clients",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/oauth_clients/{oAuthClientId}": {
@@ -162135,7 +162175,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.oauth-clients",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -162220,8 +162259,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.oauth-clients",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -162315,8 +162353,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.oauth-clients",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/oauth_clients/{oAuthClientId}/rotate_secret": {
@@ -162403,7 +162440,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.oauth-clients",
         "x-fern-sdk-method-name": "delete-rotated-secret",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "post": {
@@ -162488,8 +162524,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.oauth-clients",
-        "x-fern-sdk-method-name": "rotate-secret",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "rotate-secret"
       }
     },
     "/accounts/{accountId}/observability/usage/limit": {
@@ -190835,6 +190870,9 @@
         "deprecated": true,
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -190852,7 +190890,6 @@
         "x-fern-availability": "deprecated",
         "x-fern-sdk-group-name": "accounts.roles",
         "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true,
         "x-stainless-deprecation-message": "Use /accounts/{account_id}/iam/permission_groups instead."
       }
     },
@@ -190917,6 +190954,9 @@
         "deprecated": true,
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -190934,7 +190974,6 @@
         "x-fern-availability": "deprecated",
         "x-fern-sdk-group-name": "accounts.roles",
         "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true,
         "x-stainless-deprecation-message": "Use /accounts/{account_id}/iam/permission_groups/{permission_group_id} instead."
       }
     },
@@ -194420,8 +194459,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.groups",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -194511,8 +194549,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.groups",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/scim/v2/Groups/{groupId}": {
@@ -194588,7 +194625,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.groups",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -194670,8 +194706,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.groups",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -194833,8 +194868,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.groups",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       },
       "put": {
         "tags": [
@@ -194924,8 +194958,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.groups",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/scim/v2/ResourceTypes": {
@@ -194997,8 +195030,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.resource-types",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/accounts/{accountId}/scim/v2/ResourceTypes/{resourceTypeId}": {
@@ -195078,8 +195110,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.resource-types",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{accountId}/scim/v2/Schemas": {
@@ -195151,8 +195182,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.schemas",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/accounts/{accountId}/scim/v2/Schemas/{schemaId}": {
@@ -195234,8 +195264,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.schemas",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{accountId}/scim/v2/ServiceProviderConfig": {
@@ -195307,8 +195336,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.service-provider-config",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{accountId}/scim/v2/Users": {
@@ -195408,8 +195436,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.users",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -195499,8 +195526,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.users",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/scim/v2/Users/{userId}": {
@@ -195576,7 +195602,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.users",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure you want to remove this user from the account?"
       },
       "get": {
@@ -195658,8 +195683,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.users",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -195782,8 +195806,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.users",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       },
       "put": {
         "tags": [
@@ -195873,8 +195896,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "scim.users",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/secondary_dns/acls": {
@@ -203060,8 +203082,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.sso",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -203133,8 +203154,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.sso",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/sso_connectors/{ssoConnectorId}": {
@@ -203214,7 +203234,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.sso",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -203292,8 +203311,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.sso",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -203379,8 +203397,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.sso",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/sso_connectors/{ssoConnectorId}/begin_verification": {
@@ -203459,8 +203476,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.sso",
-        "x-fern-sdk-method-name": "begin-verification",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "begin-verification"
       }
     },
     "/accounts/{accountId}/storage/kv/namespaces": {
@@ -211093,17 +211109,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "network.virtual-networks",
-        "x-fern-sdk-method-name": "get",
-        "x-client-original-request-body": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TunnelVirtualNetworkGetRequest"
-              }
-            }
-          },
-          "required": true
-        }
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -211292,8 +211298,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.tokens",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -211371,8 +211376,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.tokens",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/tokens/permission_groups": {
@@ -211461,8 +211465,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.tokens.permission-groups",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/accounts/{accountId}/tokens/verify": {
@@ -211524,8 +211527,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.tokens",
-        "x-fern-sdk-method-name": "verify",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "verify"
       }
     },
     "/accounts/{accountId}/tokens/{tokenId}": {
@@ -211609,7 +211611,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.tokens",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -211692,8 +211693,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.tokens",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "put": {
         "tags": [
@@ -211784,8 +211784,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.tokens",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/tokens/{tokenId}/value": {
@@ -211869,7 +211868,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "accounts.tokens",
         "x-fern-sdk-method-name": "roll",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Rolling this token will invalidate the current secret and generate a new one. Any integrations using the current secret will stop working."
       }
     },
@@ -238365,6 +238363,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -238375,8 +238376,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.memberships",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/memberships/{membershipId}": {
@@ -238426,6 +238426,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -238436,7 +238439,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.memberships",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -238485,6 +238487,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -238494,9 +238499,9 @@
           "Memberships Read"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "user.memberships",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get-legacy"
       },
       "put": {
         "tags": [
@@ -238554,6 +238559,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -238563,8 +238571,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.memberships",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/oauth/scopes": {
@@ -238614,8 +238621,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "iam.oauth-scopes",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/organizations": {
@@ -238733,7 +238739,7 @@
           "User Details Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization",
+        "x-fern-sdk-group-name": "organizations",
         "x-fern-sdk-method-name": "list"
       },
       "post": {
@@ -238798,7 +238804,7 @@
           "User Details Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization",
+        "x-fern-sdk-group-name": "organizations",
         "x-fern-sdk-method-name": "create"
       }
     },
@@ -238864,7 +238870,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization",
+        "x-fern-sdk-group-name": "organizations",
         "x-fern-sdk-method-name": "delete",
         "x-forge-require-confirmation": "Delete this empty organization? This action cannot be undone."
       },
@@ -238929,7 +238935,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization",
+        "x-fern-sdk-group-name": "organizations",
         "x-fern-sdk-method-name": "get"
       },
       "put": {
@@ -239004,7 +239010,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization",
+        "x-fern-sdk-group-name": "organizations",
         "x-fern-sdk-method-name": "update"
       }
     },
@@ -239081,7 +239087,7 @@
           {
             "name": "name",
             "in": "query",
-            "description": "(case-sensitive) Filter the list of accounts to where the name is equal to a\nparticular string.",
+            "description": "(case-sensitive) Filter the list of accounts to where the name is equal to a\nparticular string. At most one of \u0060name\u0060, \u0060name.startsWith\u0060, \u0060name.endsWith\u0060,\nor \u0060name.contains\u0060 may be supplied per request.",
             "explode": false,
             "schema": {
               "type": "string"
@@ -239212,7 +239218,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.account",
+        "x-fern-sdk-group-name": "organizations.accounts",
         "x-fern-sdk-method-name": "list"
       }
     },
@@ -239372,7 +239378,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.invite",
+        "x-fern-sdk-group-name": "organizations.invites",
         "x-fern-sdk-method-name": "update"
       }
     },
@@ -240078,7 +240084,7 @@
           {
             "name": "status",
             "in": "query",
-            "description": "Filter the list of memberships by membership status.",
+            "description": "Filter the list of memberships by membership status. Defaults to \u0060active\u0060, \u0060pending\u0060, and \u0060rejected\u0060; pass \u0060canceled\u0060 explicitly to include canceled memberships.",
             "schema": {
               "type": "array",
               "items": {
@@ -240168,7 +240174,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.member",
+        "x-fern-sdk-group-name": "organizations.members",
         "x-fern-sdk-method-name": "list"
       },
       "post": {
@@ -240241,7 +240247,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.member",
+        "x-fern-sdk-group-name": "organizations.members",
         "x-fern-sdk-method-name": "create"
       }
     },
@@ -240318,7 +240324,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.member",
+        "x-fern-sdk-group-name": "organizations.members",
         "x-fern-sdk-method-name": "delete",
         "x-forge-require-confirmation": "Delete this organization membership? The member will lose access to this organization and its sub-organizations."
       },
@@ -240394,7 +240400,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.member",
+        "x-fern-sdk-group-name": "organizations.members",
         "x-fern-sdk-method-name": "get"
       }
     },
@@ -240469,7 +240475,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.member.batch",
+        "x-fern-sdk-group-name": "organizations.members.batch",
         "x-fern-sdk-method-name": "create"
       }
     },
@@ -240535,7 +240541,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.profile",
+        "x-fern-sdk-group-name": "organizations.profile",
         "x-fern-sdk-method-name": "get"
       },
       "put": {
@@ -240601,7 +240607,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "organization.profile",
+        "x-fern-sdk-group-name": "organizations.profile",
         "x-fern-sdk-method-name": "update"
       }
     },
@@ -295769,7 +295775,7 @@
           "Tenants"
         ],
         "summary": "List tenant accounts",
-        "description": "Lists the Cloudflare accounts associated with this tenant using the legacy Account response\nshape. Use \u0060GET /organizations/{organization_id}/accounts\u0060 for the modern Account response.\nUse \u0060page_token\u0060 and \u0060page_size\u0060 for cursor pagination, or provide \u0060page\u0060 and \u0060per_page\u0060\ntogether for legacy offset pagination. Cursor pagination takes precedence when requested.",
+        "description": "Lists all Cloudflare accounts across this tenant\u0027s hierarchy using the legacy Account\nresponse shape. Use \u0060GET /organizations/{organization_id}/accounts\u0060 to list only accounts\nimmediately attached to a specific Organization using the modern Account response shape.\nUse \u0060page_token\u0060 and \u0060page_size\u0060 for cursor pagination, or provide \u0060page\u0060 and \u0060per_page\u0060\ntogether for legacy offset pagination. Cursor pagination takes precedence when requested.",
         "operationId": "TenantsListAccounts",
         "parameters": [
           {
@@ -295824,7 +295830,7 @@
           {
             "name": "name",
             "in": "query",
-            "description": "(case-sensitive) Filter the list of accounts to where the name is equal to a\nparticular string.",
+            "description": "(case-sensitive) Filter the list of accounts to where the name is equal to a\nparticular string. At most one of \u0060name\u0060, \u0060name.startsWith\u0060, \u0060name.endsWith\u0060,\nor \u0060name.contains\u0060 may be supplied per request.",
             "explode": false,
             "schema": {
               "type": "string"
@@ -295946,8 +295952,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-ignore": true,
-        "x-fern-sdk-group-name": "tenant.account",
+        "x-fern-sdk-group-name": "tenants.accounts",
         "x-fern-sdk-method-name": "list"
       }
     },
@@ -296195,6 +296200,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -296216,8 +296224,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -296283,8 +296290,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/user/analytics/dashboard": {
@@ -297782,6 +297788,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -297798,8 +297807,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.invites",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/user/invites/{inviteId}": {
@@ -297849,6 +297857,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -297865,8 +297876,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.invites",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -297924,6 +297934,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -297939,8 +297952,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.invites",
-        "x-fern-sdk-method-name": "respond",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "respond"
       }
     },
     "/user/load_balancers/monitors": {
@@ -299280,6 +299292,9 @@
         },
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -299399,6 +299414,9 @@
         "deprecated": true,
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -299421,8 +299439,7 @@
         },
         "x-fern-availability": "deprecated",
         "x-fern-sdk-group-name": "user.organizations",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/user/organizations/{organizationId}": {
@@ -299473,6 +299490,9 @@
         "deprecated": true,
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -299492,7 +299512,6 @@
         "x-fern-availability": "deprecated",
         "x-fern-sdk-group-name": "user.organizations",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -299542,6 +299561,9 @@
         "deprecated": true,
         "security": [
           {
+            "api_token": []
+          },
+          {
             "api_email": [],
             "api_key": []
           }
@@ -299560,8 +299582,7 @@
         },
         "x-fern-availability": "deprecated",
         "x-fern-sdk-group-name": "user.organizations",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/user/spectrum_analytics/zones/report": {
@@ -299913,7 +299934,7 @@
           "User"
         ],
         "summary": "List user tenants",
-        "description": "Retrieves the legacy Tenants associated with the authenticated user. Use \u0060GET /organizations\u0060\nto list modern Organizations the user has access to.",
+        "description": "Lists the Cloudflare tenants in which the authenticated user has direct membership using the\nlegacy Tenant response shape. Use \u0060GET /organizations\u0060 to list Organizations the user can\naccess, including through hierarchy, using the modern Organization response shape.",
         "operationId": "UserListUserTenants",
         "responses": {
           "200": {
@@ -299958,8 +299979,7 @@
           "User Details Read"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-ignore": true,
-        "x-fern-sdk-group-name": "user.tenant",
+        "x-fern-sdk-group-name": "user.tenants",
         "x-fern-sdk-method-name": "list"
       }
     },
@@ -300048,8 +300068,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.tokens",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -300111,8 +300130,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.tokens",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/user/tokens/permission_groups": {
@@ -300187,8 +300205,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.tokens.permission-groups",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/user/tokens/verify": {
@@ -300234,8 +300251,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.tokens",
-        "x-fern-sdk-method-name": "verify",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "verify"
       }
     },
     "/user/tokens/{tokenId}": {
@@ -300305,7 +300321,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.tokens",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Are you sure? This action cannot be undone."
       },
       "get": {
@@ -300374,8 +300389,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.tokens",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "put": {
         "tags": [
@@ -300452,8 +300466,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.tokens",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/user/tokens/{tokenId}/value": {
@@ -300523,7 +300536,6 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "user.tokens",
         "x-fern-sdk-method-name": "roll",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "Rolling this token will invalidate the current secret and generate a new one. Any integrations using the current secret will stop working."
       }
     },
@@ -361755,6 +361767,10 @@
             "type": "string",
             "description": "Domain that relates to the report."
           },
+          "has_pending_notice": {
+            "type": "boolean",
+            "description": "Whether the report is in an open Notice and Takedown notice period: no mitigation is placed yet, but one will take effect when the period ends."
+          },
           "id": {
             "type": "string",
             "description": "Public facing ID of abuse report, aka abuse_rand."
@@ -420941,6 +420957,9 @@
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
             "x-auditable": true
           },
+          "legacy_flags": {
+            "$ref": "#/components/schemas/IamAccountLegacyFlags"
+          },
           "managed_by": {
             "$ref": "#/components/schemas/IamAccountManagedBy"
           },
@@ -420994,7 +421013,7 @@
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421030,14 +421049,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421057,14 +421076,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421095,14 +421114,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421132,14 +421151,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421169,14 +421188,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421206,14 +421225,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421243,14 +421262,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421279,14 +421298,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421316,14 +421335,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421371,14 +421390,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421408,14 +421427,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -421456,6 +421475,9 @@
             "description": "Identifier",
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
             "x-auditable": true
+          },
+          "legacy_flags": {
+            "$ref": "#/components/schemas/IamAccountLegacyFlags"
           },
           "managed_by": {
             "$ref": "#/components/schemas/IamAccountManagedBy"
@@ -421523,7 +421545,8 @@
           "required": [
             "unit",
             "standalone"
-          ]
+          ],
+          "type": "object"
         },
         "properties": {
           "name": {
@@ -421534,7 +421557,7 @@
             "$ref": "#/components/schemas/IamCreateAccountStandalone"
           },
           "type": {
-            "$ref": "#/components/schemas/IamAccountType"
+            "$ref": "#/components/schemas/IamCreateAccountType"
           },
           "unit": {
             "$ref": "#/components/schemas/IamCreateAccountUnit"
@@ -421598,27 +421621,6 @@
             "$ref": "#/components/schemas/IamMemberInvitationStatus"
           }
         }
-      },
-      "IamCreateScope": {
-        "required": [
-          "key",
-          "objects"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "description": "This is a combination of pre-defined resource name and identifier (like Account ID etc.)",
-            "example": "com.cloudflare.api.account.eb78d65290b24279ba6f44721b3ea3c4"
-          },
-          "objects": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IamCreateResourceGroupScopeScopeObject"
-            },
-            "description": "A list of scope objects for additional context. The number of Scope objects should not be zero."
-          }
-        },
-        "description": "A scope is a combination of scope objects which provides additional context."
       },
       "IamCreateMemberPolicy": {
         "title": "create_member_policy",
@@ -422325,14 +422327,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -422799,14 +422801,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -422962,7 +422964,7 @@
             "example": "NewResourceGroup"
           },
           "scope": {
-            "$ref": "#/components/schemas/IamCreateScope"
+            "$ref": "#/components/schemas/IamRequestCreateResourceGroupScope"
           }
         }
       },
@@ -423020,7 +423022,7 @@
             "example": "UpdatedResourceGroup"
           },
           "scope": {
-            "$ref": "#/components/schemas/IamCreateScope"
+            "$ref": "#/components/schemas/IamRequestUpdateResourceGroupScope"
           }
         }
       },
@@ -423049,7 +423051,7 @@
             "x-auditable": true
           },
           "scope": {
-            "$ref": "#/components/schemas/IamScope"
+            "$ref": "#/components/schemas/IamResourceGroupScope"
           }
         },
         "description": "A group of scoped resources."
@@ -423081,14 +423083,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -423118,14 +423120,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -423148,14 +423150,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -423258,6 +423260,9 @@
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
             "x-auditable": true
           },
+          "legacy_flags": {
+            "$ref": "#/components/schemas/IamAccountLegacyFlags"
+          },
           "managed_by": {
             "$ref": "#/components/schemas/IamAccountManagedBy"
           },
@@ -423287,14 +423292,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -423824,10 +423829,7 @@
             "x-auditable": true
           },
           "value": {
-            "description": "The value(s) for the operation. For \u0060replace\u0060 without a path, this should be an object of attribute name/value pairs. For member path operations, this should be an array of member value objects.\n",
-            "example": {
-              "active": false
-            }
+            "$ref": "#/components/schemas/IamScimPatchOperationValue"
           }
         },
         "description": "A single PATCH operation (RFC 7644 Section 3.5.2)."
@@ -424484,29 +424486,6 @@
         },
         "description": "Request body for replacing a SCIM User (PUT). Only \u0060schemas\u0060 and \u0060userName\u0060 are required; other fields are optional.\n"
       },
-      "IamScope": {
-        "required": [
-          "key",
-          "objects"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "description": "This is a combination of pre-defined resource name and identifier (like Account ID etc.)",
-            "readOnly": true,
-            "example": "com.cloudflare.api.account.eb78d65290b24279ba6f44721b3ea3c4",
-            "x-auditable": true
-          },
-          "objects": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IamScopeObject"
-            },
-            "description": "A list of scope objects for additional context."
-          }
-        },
-        "description": "A scope is a combination of scope objects which provides additional context."
-      },
       "IamScopeObject": {
         "required": [
           "key"
@@ -424533,14 +424512,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424564,14 +424543,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424595,14 +424574,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424626,14 +424605,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424657,14 +424636,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424687,14 +424666,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424718,14 +424697,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424748,14 +424727,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424779,14 +424758,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424810,14 +424789,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424840,14 +424819,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424915,14 +424894,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -424952,14 +424931,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -425247,14 +425226,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -425466,6 +425445,7 @@
             "minLength": 32,
             "type": "string",
             "description": "Identifier",
+            "readOnly": true,
             "example": "023e105f4ecef8ad9ca31a8372d0c353",
             "x-auditable": true
           },
@@ -447524,6 +447504,7 @@
           },
           "source_organization_id": {
             "type": "string",
+            "description": "Empty string when the account did not belong to an organization before the move.",
             "x-auditable": true
           }
         }
@@ -454326,7 +454307,7 @@
             "maxLength": 4096,
             "type": "string",
             "description": "Rego expression body for the policy. \u0060package cloudflare.casb.custom\u0060 and \u0060import rego.v1\u0060 are added automatically. Do not include package or import declarations. This field cannot be changed after creation. Maximum 4096 characters.",
-            "example": "result := \u0022pass\u0022"
+            "example": "default result := \u0022pass\u0022\n\nresult := \u0022fail\u0022 if input.asset.publicLinkDisabled == false\n"
           },
           "integration_ids": {
             "uniqueItems": true,
@@ -502678,7 +502659,7 @@
           }
         }
       },
-      "IamMessages2Item": {
+      "IamMessagesItem": {
         "uniqueItems": true,
         "required": [
           "code",
@@ -502697,7 +502678,7 @@
             "type": "string"
           },
           "source": {
-            "$ref": "#/components/schemas/IamMessages2ItemSource"
+            "$ref": "#/components/schemas/IamMessagesItemSource"
           }
         }
       },
@@ -513287,11 +513268,37 @@
           {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           }
         ]
+      },
+      "IamCreateAccountType": {
+        "enum": [
+          "standard",
+          "enterprise"
+        ],
+        "type": "string",
+        "description": "the type of account being created. For self-serve customers, use standard. for enterprise customers, use enterprise.",
+        "example": "standard",
+        "deprecated": true,
+        "x-stainless-deprecation-message": "The \u0027type\u0027 field should no longer be set through the API.",
+        "x-stainless-terraform-configurability": "computed_optional",
+        "x-ms-enum": {
+          "name": "IamCreateAccountType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "standard",
+              "name": "Standard"
+            },
+            {
+              "value": "enterprise",
+              "name": "Enterprise"
+            }
+          ]
+        }
       },
       "IamMembershipPermissions": {
         "type": "object",
@@ -513379,6 +513386,71 @@
         "description": "All access permissions for the user at the account.",
         "readOnly": true
       },
+      "IamRequestCreateResourceGroupScope": {
+        "required": [
+          "key",
+          "objects"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "This is a combination of pre-defined resource name and identifier (like Account ID etc.)",
+            "example": "com.cloudflare.api.account.eb78d65290b24279ba6f44721b3ea3c4"
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IamCreateResourceGroupScopeScopeObject"
+            },
+            "description": "A list of scope objects for additional context. The number of Scope objects should not be zero."
+          }
+        },
+        "description": "The scope associated to the resource group"
+      },
+      "IamRequestUpdateResourceGroupScope": {
+        "required": [
+          "key",
+          "objects"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "This is a combination of pre-defined resource name and identifier (like Account ID etc.)",
+            "example": "com.cloudflare.api.account.eb78d65290b24279ba6f44721b3ea3c4"
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IamCreateResourceGroupScopeScopeObject"
+            },
+            "description": "A list of scope objects for additional context. The number of Scope objects should not be zero."
+          }
+        },
+        "description": "The scope associated to the resource group"
+      },
+      "IamResourceGroupScope": {
+        "required": [
+          "key",
+          "objects"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "This is a combination of pre-defined resource name and identifier (like Account ID etc.)",
+            "readOnly": true,
+            "example": "com.cloudflare.api.account.eb78d65290b24279ba6f44721b3ea3c4",
+            "x-auditable": true
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IamScopeObject"
+            },
+            "description": "A list of scope objects for additional context."
+          }
+        },
+        "description": "The scope associated to the resource group"
+      },
       "IamRolePermissions": {
         "type": "object",
         "properties": {
@@ -513434,6 +513506,29 @@
           }
         ],
         "description": "The value(s) for the operation. For member add/replace operations, an array of member value objects. For \u0060displayName\u0060 or \u0060externalId\u0060 updates, a string value.\n"
+      },
+      "IamScimPatchOperationValue": {
+        "oneOf": [
+          {
+            "type": "object"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "string"
+          }
+        ],
+        "description": "The value(s) for the operation. For \u0060replace\u0060 without a path, this should be an object of attribute name/value pairs. For member path operations, this should be an array of member value objects. For \u0060replace\u0060 with a path, this is the new value of the targeted attribute.\n",
+        "example": {
+          "active": false
+        }
       },
       "IamUpdateUserGroupBodyPoliciesItem": {
         "required": [
@@ -531965,6 +532060,16 @@
         },
         "additionalProperties": false
       },
+      "IamAccountLegacyFlags": {
+        "type": "object",
+        "properties": {
+          "enterprise_zone_quota": {
+            "$ref": "#/components/schemas/IamAccountLegacyFlagsEnterpriseZoneQuota"
+          }
+        },
+        "description": "Legacy account flags.",
+        "readOnly": true
+      },
       "IamAccountManagedBy": {
         "type": "object",
         "properties": {
@@ -538715,7 +538820,7 @@
           }
         }
       },
-      "IamMessages2ItemSource": {
+      "IamMessagesItemSource": {
         "type": "object",
         "properties": {
           "pointer": {
@@ -544064,6 +544169,27 @@
             "$ref": "#/components/schemas/FlagshipFlagDefinitionsFlagsAdditionalPropertiesVariationsProperty"
           }
         }
+      },
+      "IamAccountLegacyFlagsEnterpriseZoneQuota": {
+        "type": "object",
+        "properties": {
+          "available": {
+            "type": "integer",
+            "description": "Number of additional Enterprise zones available. Returns 0 if the quota is not allocated or is exhausted.",
+            "example": 168
+          },
+          "current": {
+            "type": "integer",
+            "description": "Current number of Enterprise zones.",
+            "example": 82
+          },
+          "maximum": {
+            "type": "integer",
+            "description": "Maximum number of Enterprise zones allowed.",
+            "example": 250
+          }
+        },
+        "description": "Enterprise zone quota for standard and enterprise accounts. Accounts without a quota have a maximum of 0."
       },
       "IntelDomainHistoryCategorizationsItemCategoriesItem": {
         "type": "object",
@@ -600033,14 +600159,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600066,14 +600192,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600096,14 +600222,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600126,14 +600252,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600156,14 +600282,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600194,14 +600320,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600224,14 +600350,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600254,14 +600380,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600285,14 +600411,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600321,14 +600447,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600354,14 +600480,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600387,14 +600513,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -600417,14 +600543,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -630128,14 +630254,14 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
           "messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IamMessages2Item"
+              "$ref": "#/components/schemas/IamMessagesItem"
             },
             "example": []
           },
@@ -1124802,19 +1124928,19 @@
     "organizations": {
       "description": "Multi-user organizations that group accounts, members, and shared settings under a single entity",
       "groups": {
-        "account-organizations": {
-          "description": "List organizations associated with a specific account"
-        },
         "accounts": {
-          "description": "Accounts operations"
+          "description": "Accounts that belong to an organization"
+        },
+        "invites": {
+          "description": "Invitations to join an organization"
         },
         "members": {
-          "description": "Members operations"
+          "description": "Members of an organization"
         },
-        "members-batch-create": {
-          "description": "Members Batch Create operations"
+        "members.batch": {
+          "description": "Add members to an organization in bulk"
         },
-        "organization-profile": {
+        "profile": {
           "description": "View and update the public profile information for an organization"
         },
         "shares": {
@@ -1125287,19 +1125413,10 @@
       }
     },
     "tenants": {
-      "description": "Multi-tenant account management \u2014 manage tenant accounts, entitlements, and memberships",
+      "description": "Multi-tenant account management",
       "groups": {
-        "account-types": {
-          "description": "Account Types operations"
-        },
         "accounts": {
-          "description": "Accounts operations"
-        },
-        "entitlements": {
-          "description": "Entitlements operations"
-        },
-        "memberships": {
-          "description": "Memberships operations"
+          "description": "Accounts that belong to a tenant"
         }
       }
     },
@@ -1125374,7 +1125491,7 @@
           "description": "View and manage zone-level plan subscriptions owned by your user"
         },
         "tenants": {
-          "description": "Tenants operations"
+          "description": "Tenants the user belongs to"
         },
         "tokens": {
           "description": "Create and manage personal API tokens scoped to your user for programmatic API access"
@@ -1143371,14 +1143488,14 @@
         "errors": {
           "type": "array",
           "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
+            "$ref": "#/components/schemas/IamMessagesItem"
           },
           "example": []
         },
         "messages": {
           "type": "array",
           "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
+            "$ref": "#/components/schemas/IamMessagesItem"
           },
           "example": []
         },
@@ -1143401,14 +1143518,14 @@
         "errors": {
           "type": "array",
           "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
+            "$ref": "#/components/schemas/IamMessagesItem"
           },
           "example": []
         },
         "messages": {
           "type": "array",
           "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
+            "$ref": "#/components/schemas/IamMessagesItem"
           },
           "example": []
         },
@@ -1143431,13 +1143548,6 @@
         "2400:cb00::/32"
       ]
     },
-    "IamCode": {
-      "maxLength": 64,
-      "type": "string",
-      "description": "The unique activation code for the account membership.",
-      "readOnly": true,
-      "example": "05dd05cce12bbed97c0d87cd78e89bc2fd41a6cee72f27f6fc84af2e45c0fac0"
-    },
     "IamCommonComponentsSchemasIdentifier": {
       "maxLength": 32,
       "minLength": 32,
@@ -1143445,6 +1143555,27 @@
       "description": "Identifier",
       "example": "023e105f4ecef8ad9ca31a8372d0c353",
       "x-auditable": true
+    },
+    "IamCreateScope": {
+      "required": [
+        "key",
+        "objects"
+      ],
+      "type": "object",
+      "properties": {
+        "key": {
+          "description": "This is a combination of pre-defined resource name and identifier (like Account ID etc.)",
+          "example": "com.cloudflare.api.account.eb78d65290b24279ba6f44721b3ea3c4"
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/IamCreateResourceGroupScopeScopeObject"
+          },
+          "description": "A list of scope objects for additional context. The number of Scope objects should not be zero."
+        }
+      },
+      "description": "A scope is a combination of scope objects which provides additional context."
     },
     "IamCreateResourceGroupScopeScopeKey": {
       "description": "This is a combination of pre-defined resource name and identifier (like Account ID etc.)",
@@ -1143561,13 +1143692,6 @@
       "type": "array",
       "items": {
         "$ref": "#/components/schemas/IamMessagesItem"
-      },
-      "example": []
-    },
-    "IamMessages2": {
-      "type": "array",
-      "items": {
-        "$ref": "#/components/schemas/IamMessages2Item"
       },
       "example": []
     },
@@ -1143908,102 +1144032,6 @@
       },
       "description": "Map of simple string resource permissions"
     },
-    "IamResponseCollection": {
-      "required": [
-        "success",
-        "errors",
-        "messages"
-      ],
-      "type": "object",
-      "properties": {
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
-          },
-          "example": []
-        },
-        "messages": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
-          },
-          "example": []
-        },
-        "success": {
-          "$ref": "#/components/schemas/IamApiResponseCollectionSuccess"
-        },
-        "result_info": {
-          "$ref": "#/components/schemas/IamResultInfo"
-        },
-        "result": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamResponseCollectionResultItem"
-          }
-        }
-      }
-    },
-    "IamResponseCreate": {
-      "required": [
-        "success",
-        "errors",
-        "messages"
-      ],
-      "type": "object",
-      "properties": {
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
-          },
-          "example": []
-        },
-        "messages": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
-          },
-          "example": []
-        },
-        "success": {
-          "$ref": "#/components/schemas/IamApiResponseCollectionSuccess"
-        },
-        "result": {
-          "$ref": "#/components/schemas/IamResponseCreateAllOf2Result"
-        }
-      }
-    },
-    "IamResponseSingle": {
-      "required": [
-        "success",
-        "errors",
-        "messages"
-      ],
-      "type": "object",
-      "properties": {
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
-          },
-          "example": []
-        },
-        "messages": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
-          },
-          "example": []
-        },
-        "success": {
-          "$ref": "#/components/schemas/IamApiResponseCollectionSuccess"
-        },
-        "result": {
-          "$ref": "#/components/schemas/IamResponseSingleResult"
-        }
-      }
-    },
     "IamRoleComponentsSchemasIdentifier": {
       "maxLength": 32,
       "type": "string",
@@ -1144060,6 +1144088,29 @@
       "description": "The user tag identifying a SCIM User resource (account member).",
       "example": "023e105f4ecef8ad9ca31a8372d0c353"
     },
+    "IamScope": {
+      "required": [
+        "key",
+        "objects"
+      ],
+      "type": "object",
+      "properties": {
+        "key": {
+          "description": "This is a combination of pre-defined resource name and identifier (like Account ID etc.)",
+          "readOnly": true,
+          "example": "com.cloudflare.api.account.eb78d65290b24279ba6f44721b3ea3c4",
+          "x-auditable": true
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/IamScopeObject"
+          },
+          "description": "A list of scope objects for additional context."
+        }
+      },
+      "description": "A scope is a combination of scope objects which provides additional context."
+    },
     "IamScopeKey": {
       "description": "This is a combination of pre-defined resource name and identifier (like Account ID etc.)",
       "readOnly": true,
@@ -1144071,37 +1144122,6 @@
       "readOnly": true,
       "example": "com.cloudflare.api.account.zone.23f8d65290b24279ba6f44721b3eaad5",
       "x-auditable": true
-    },
-    "IamSingleMembershipResponse": {
-      "title": "response_with_roles",
-      "required": [
-        "success",
-        "errors",
-        "messages"
-      ],
-      "type": "object",
-      "properties": {
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
-          },
-          "example": []
-        },
-        "messages": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamMessages2Item"
-          },
-          "example": []
-        },
-        "success": {
-          "$ref": "#/components/schemas/IamApiResponseCollectionSuccess"
-        },
-        "result": {
-          "$ref": "#/components/schemas/IamMembership"
-        }
-      }
     },
     "IamSsoConnectorIdentifier": {
       "title": "SSO Connector Identifier",
@@ -1144154,13 +1144174,6 @@
       "description": "Indicates whether two-factor authentication is required by one of the accounts that the user is a member of.",
       "default": false,
       "readOnly": true
-    },
-    "IamUnitIdentifier": {
-      "type": "string",
-      "description": "Tenant unit identifier.",
-      "readOnly": true,
-      "example": "f267e341f3dd4697bd3b9f71dd96247f",
-      "x-auditable": true
     },
     "IamUseFedrampLanguage": {
       "type": "boolean",
@@ -1169935,23 +1169948,6 @@
     "SqlApiQueryPostPlainRequest": {
       "type": "string"
     },
-    "IamMessagesItem": {
-      "uniqueItems": true,
-      "required": [
-        "code",
-        "message"
-      ],
-      "type": "object",
-      "properties": {
-        "code": {
-          "minimum": 1000,
-          "type": "integer"
-        },
-        "message": {
-          "type": "string"
-        }
-      }
-    },
     "ZoneAnalyticsApiDatacentersItem": {
       "type": "object",
       "properties": {
@@ -1177582,7 +1177578,7 @@
     "IamApiResponseCommonFailureMessages": {
       "type": "array",
       "items": {
-        "$ref": "#/components/schemas/IamMessages2Item"
+        "$ref": "#/components/schemas/IamMessagesItem"
       },
       "example": []
     },
@@ -1177878,17 +1177874,6 @@
         }
       }
     },
-    "IamResponseCollectionAllOf2": {
-      "type": "object",
-      "properties": {
-        "result": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IamResponseCollectionResultItem"
-          }
-        }
-      }
-    },
     "IamResponseCollectionAccountsAllOf2": {
       "type": "object",
       "properties": {
@@ -1177897,22 +1177882,6 @@
           "items": {
             "$ref": "#/components/schemas/IamAccount"
           }
-        }
-      }
-    },
-    "IamResponseCreateAllOf2": {
-      "type": "object",
-      "properties": {
-        "result": {
-          "$ref": "#/components/schemas/IamResponseCreateAllOf2Result"
-        }
-      }
-    },
-    "IamResponseSingleAllOf2": {
-      "type": "object",
-      "properties": {
-        "result": {
-          "$ref": "#/components/schemas/IamResponseSingleAllOf2ResultProperty"
         }
       }
     },
@@ -1177962,14 +1177931,6 @@
       "properties": {
         "result": {
           "$ref": "#/components/schemas/IamMemberWithPolicies"
-        }
-      }
-    },
-    "IamSingleMembershipResponseAllOf2": {
-      "type": "object",
-      "properties": {
-        "result": {
-          "$ref": "#/components/schemas/IamMembership"
         }
       }
     },
@@ -1178085,6 +1178046,16 @@
           "x-sensitive": true
         }
       }
+    },
+    "IamUserGroupId": {
+      "title": "User Group Identifier",
+      "maxLength": 32,
+      "minLength": 32,
+      "type": "string",
+      "description": "Identifier",
+      "readOnly": true,
+      "example": "023e105f4ecef8ad9ca31a8372d0c353",
+      "x-auditable": true
     },
     "ImagesApiResponseCollectionV2AllOf2": {
       "type": "object",
@@ -1189799,20 +1189770,6 @@
       "example": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
       "x-auditable": true
     },
-    "IamResponseCreateAllOf2Result": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "maxLength": 80,
-          "minLength": 40,
-          "type": "string",
-          "description": "The token value.",
-          "readOnly": true,
-          "example": "8M7wS6hCpXVc-DoRnPPY_UCWPgy8aea4Wy6kCe5T",
-          "x-sensitive": true
-        }
-      }
-    },
     "IamUpdateUserGroupBodyPoliciesItemAllOf1": {
       "required": [
         "id"
@@ -1190886,20 +1190843,6 @@
             "$ref": "#/components/schemas/ClientSideSecurityVersion"
           },
           "nullable": true
-        }
-      }
-    },
-    "IamResponseCreateAllOf2ResultAllOf2": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "maxLength": 80,
-          "minLength": 40,
-          "type": "string",
-          "description": "The token value.",
-          "readOnly": true,
-          "example": "8M7wS6hCpXVc-DoRnPPY_UCWPgy8aea4Wy6kCe5T",
-          "x-sensitive": true
         }
       }
     },
@@ -1194009,12 +1193952,6 @@
     "HyperdriveHyperdriveConfigCreateWithOriginAllOf2Integration": {
       "type": "object",
       "nullable": true
-    },
-    "IamResponseCollectionAllOf2ResultItem": {
-      "type": "object"
-    },
-    "IamResponseSingleAllOf2Result": {
-      "type": "object"
     },
     "IamSingleOrganizationResponseAllOf2Result": {
       "type": "object"
@@ -1197183,33 +1197120,6 @@
     "StreamVideosRetreieveEmbedCodeHtml200HtmlResponse": {
       "type": "string",
       "example": "\u003Cstream id=\u0022ea95132c15732412d22c1476fa83f27a\u0022\u003E\u003C/stream\u003E\u003Cscript data-cfasync=\u0022false\u0022 defer type=\u0022text/javascript\u0022 src=\u0022https://embed.cloudflarestream.com/embed/we4g.fla9.latest.js\u0022\u003E\u003C/script\u003E"
-    },
-    "TunnelVirtualNetworkGetRequest": {
-      "type": "object",
-      "properties": {
-        "comment": {
-          "maxLength": 256,
-          "type": "string",
-          "description": "Optional remark describing the virtual network.",
-          "default": "",
-          "example": "Staging VPC for data science",
-          "x-auditable": true
-        },
-        "is_default_network": {
-          "type": "boolean",
-          "description": "If \u0060true\u0060, this virtual network is the default for the account.",
-          "example": true,
-          "x-auditable": true,
-          "x-stainless-terraform-configurability": "computed_optional"
-        },
-        "name": {
-          "maxLength": 256,
-          "type": "string",
-          "description": "A user-friendly name for the virtual network.",
-          "example": "us-east-1-vpc",
-          "x-auditable": true
-        }
-      }
     },
     "WorAddScriptTriggersRequest": {
       "maxItems": 100,
@@ -1204581,12 +1204491,6 @@
       },
       "description": "Nested permission object"
     },
-    "IamResponseCollectionResultItem": {
-      "type": "object"
-    },
-    "IamResponseSingleResult": {
-      "type": "object"
-    },
     "LoadBalancingLoadBalancerEditableCountryPools": {
       "type": "object",
       "additionalProperties": {
@@ -1205312,9 +1205216,6 @@
       "type": "object"
     },
     "HealthchecksApiResponseCollectionAllOf2ResultItemProperty": {
-      "type": "object"
-    },
-    "IamResponseSingleAllOf2ResultProperty": {
       "type": "object"
     },
     "IamSingleOrganizationResponseAllOf2ResultProperty": {

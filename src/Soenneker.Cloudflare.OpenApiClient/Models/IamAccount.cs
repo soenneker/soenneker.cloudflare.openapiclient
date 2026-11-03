@@ -43,6 +43,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
+        /// <summary>Legacy account flags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountLegacyFlags? LegacyFlags { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountLegacyFlags LegacyFlags { get; private set; }
+#endif
         /// <summary>Parent container details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "legacy_flags", n => { LegacyFlags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountLegacyFlags>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountLegacyFlags.CreateFromDiscriminatorValue); } },
                 { "managed_by", n => { ManagedBy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountManagedBy>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountManagedBy.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountSettings.CreateFromDiscriminatorValue); } },

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tenants
         {
         }
         /// <summary>
-        /// Retrieves the legacy Tenants associated with the authenticated user. Use `GET /organizations`to list modern Organizations the user has access to.
+        /// Lists the Cloudflare tenants in which the authenticated user has direct membership using thelegacy Tenant response shape. Use `GET /organizations` to list Organizations the user canaccess, including through hierarchy, using the modern Organization response shape.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UserListUserTenants200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tenants
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UserListUserTenants200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UserListUserTenants200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the legacy Tenants associated with the authenticated user. Use `GET /organizations`to list modern Organizations the user has access to.
+        /// Lists the Cloudflare tenants in which the authenticated user has direct membership using thelegacy Tenant response shape. Use `GET /organizations` to list Organizations the user canaccess, including through hierarchy, using the modern Organization response shape.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

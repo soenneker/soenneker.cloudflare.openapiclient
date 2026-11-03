@@ -21,6 +21,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("cdate") is { } nullNodeCdate && nullNodeCdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cdate = null;
             if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
             else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("has_pending_notice") is null) { _explicitNullValueHasPendingNotice = default!; _explicitNullProperties?.Remove("has_pending_notice"); }
+            else if (parseNode.GetChildNode("has_pending_notice") is { } nullNodeHasPendingNotice && nullNodeHasPendingNotice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPendingNotice = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("justification") is null) { _explicitNullValueJustification = default!; _explicitNullProperties?.Remove("justification"); }
@@ -61,6 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
+        /// <summary>Whether the report is in an open Notice and Takedown notice period: no mitigation is placed yet, but one will take effect when the period ends.</summary>
+        public bool? HasPendingNotice { get => _explicitNullValueHasPendingNotice; set { _explicitNullValueHasPendingNotice = value; AdditionalData?.Remove("has_pending_notice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_pending_notice"); else _explicitNullProperties?.Remove("has_pending_notice"); } }
+        private bool? _explicitNullValueHasPendingNotice = default!;
         /// <summary>Public facing ID of abuse report, aka abuse_rand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,6 +159,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "cdate", n => { Cdate = n.GetStringValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
+                { "has_pending_notice", n => { HasPendingNotice = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "mitigation_summary", n => { MitigationSummary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary.CreateFromDiscriminatorValue); } },
@@ -173,6 +179,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cdate", Cdate);
             writer.WriteStringValue("domain", Domain);
+            writer.WriteBoolValue("has_pending_notice", HasPendingNotice);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("justification", Justification);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationSummary>("mitigation_summary", MitigationSummary);

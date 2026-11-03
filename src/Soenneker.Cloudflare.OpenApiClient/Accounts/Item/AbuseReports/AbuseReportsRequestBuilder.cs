@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbuseReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,search*,sort*,status*,type*}", pathParameters)
+        public AbuseReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,pending_notice*,per_page*,search*,sort*,status*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbuseReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,search*,sort*,status*,type*}", rawUrl)
+        public AbuseReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,pending_notice*,per_page*,search*,sort*,status*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -151,6 +151,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
             /// <summary>Where in pagination to start listing abuse reports</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
+            /// <summary>Also include reports in an open Notice and Takedown notice period. Combined with mitigation_status using OR, e.g. ?mitigation_status=active&amp;pending_notice=true.</summary>
+            [QueryParameter("pending_notice")]
+            public bool? PendingNotice { get; set; }
             /// <summary>How many abuse reports per page to list</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }

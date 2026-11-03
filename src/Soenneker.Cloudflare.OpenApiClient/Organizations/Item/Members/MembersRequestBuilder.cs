@@ -163,7 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Members
             [QueryParameter("page_token")]
             public string PageToken { get; set; }
 #endif
-            /// <summary>Filter the list of memberships by membership status.</summary>
+            /// <summary>Filter the list of memberships by membership status. Defaults to `active`, `pending`, and `rejected`; pass `canceled` explicitly to include canceled memberships.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

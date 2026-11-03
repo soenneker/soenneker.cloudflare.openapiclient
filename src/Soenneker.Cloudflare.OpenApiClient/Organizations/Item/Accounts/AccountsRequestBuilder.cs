@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             /// <summary>Whether to calculate and return the exact result_info.total_size for cursorpagination. Defaults to true. When false, total_size is omitted. page_size andinclude_total may change between pages; next_page_token remains the authoritativecontinuation signal.Legacy page/per_page requests always calculate total_count.</summary>
             [QueryParameter("include_total")]
             public bool? IncludeTotal { get; set; }
-            /// <summary>(case-sensitive) Filter the list of accounts to where the name is equal to aparticular string.</summary>
+            /// <summary>(case-sensitive) Filter the list of accounts to where the name is equal to aparticular string. At most one of `name`, `name.startsWith`, `name.endsWith`,or `name.contains` may be supplied per request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
