@@ -102146,13 +102146,16 @@
       "get": {
         "operationId": "spend-policies-activity",
         "summary": "List Spend Policy Activity",
-        "description": "Returns configuration history from immutable policy revisions for the account, including deleted policies. Entries contain before/after values and verified actor attribution. Pages use descending revision IDs, not event or commit order; refresh the first page for new entries. This cursor is not an incremental consumer checkpoint.",
+        "description": "Returns configuration history from immutable policy revisions for the account, including deleted policies. Entries contain before/after values and verified actor attribution. Pages use descending revision IDs, not event or commit order; refresh the first page for new entries. This cursor is not an incremental consumer checkpoint. Defaults to `period=current_billing_cycle`: each revision's timestamp must be within its product's current subscription cycle (inclusive start, exclusive end). Each product's cycle is resolved independently from canonical aggregates, including for disabled or deleted policies. Set `period=all` for history across cycles. Filtering happens before pagination. No current cycles returns an empty page; unavailable or disabled cycle resolution returns `503` with code `1013`. Cursors pin resolved cycle bounds across pages and must be used with the same period selection. Cursors obtained before this filter was introduced must be refreshed.",
         "parameters": [
           {
             "$ref": "#/components/parameters/billing-spend-policies_account_id"
           },
           {
             "$ref": "#/components/parameters/billing-spend-policies_audit_limit"
+          },
+          {
+            "$ref": "#/components/parameters/billing-spend-policies_history_period"
           },
           {
             "name": "cursor",
@@ -102176,7 +102179,7 @@
             }
           },
           "400": {
-            "description": "Invalid limit or pagination cursor (error code 1006 or 1011).",
+            "description": "Invalid limit, pagination cursor, or period (error code 1006, 1011, or 1012).",
             "content": {
               "application/json": {
                 "schema": {
@@ -102198,7 +102201,7 @@
             "$ref": "#/components/responses/billing-spend-policies_internal_error"
           },
           "503": {
-            "$ref": "#/components/responses/billing-spend-policies_authentication_unavailable"
+            "$ref": "#/components/responses/billing-spend-policies_history_unavailable"
           }
         },
         "security": [
@@ -102443,7 +102446,7 @@
       "get": {
         "operationId": "spend-policies-list-audit",
         "summary": "List Spend Policy Audit Entries",
-        "description": "Returns the policy's evaluation history, newest first. At most one entry is recorded per trigger (`approaching_limit` or `limit_reached`), policy version and billing period, so a policy update can record a new entry without any change in balance. Disabled policies still return their history; deleted policies return `404`. There is no pagination: use `limit` to set how many entries come back.",
+        "description": "Returns the policy's evaluation history, newest first. At most one threshold-crossing entry (`limit_reached`) is recorded per policy version and billing period, so a policy update can record a new entry without any change in balance. Disabled policies still return their history; deleted policies return `404`. There is no pagination: use `limit` to set how many entries come back. Defaults to `period=current_billing_cycle`, resolved from the product's canonical aggregates, not calendar months. Crossings match their recorded billing-period bounds, even if recorded late. Set `period=all` for history across cycles. Filtering happens before LIMIT. No current cycle returns an empty array; unavailable or disabled cycle resolution returns `503` with code `1013`, never an empty success.",
         "parameters": [
           {
             "$ref": "#/components/parameters/billing-spend-policies_account_id"
@@ -102453,6 +102456,9 @@
           },
           {
             "$ref": "#/components/parameters/billing-spend-policies_audit_limit"
+          },
+          {
+            "$ref": "#/components/parameters/billing-spend-policies_history_period"
           }
         ],
         "responses": {
@@ -102467,7 +102473,7 @@
             }
           },
           "400": {
-            "$ref": "#/components/responses/billing-spend-policies_invalid_limit"
+            "$ref": "#/components/responses/billing-spend-policies_invalid_history_request"
           },
           "401": {
             "$ref": "#/components/responses/billing-spend-policies_unauthenticated"
@@ -102482,7 +102488,7 @@
             "$ref": "#/components/responses/billing-spend-policies_internal_error"
           },
           "503": {
-            "$ref": "#/components/responses/billing-spend-policies_authentication_unavailable"
+            "$ref": "#/components/responses/billing-spend-policies_history_unavailable"
           }
         },
         "security": [
@@ -105025,6 +105031,9 @@
           },
           "500": {
             "$ref": "#/components/responses/brand-protection-api_DEFAULT_ERROR"
+          },
+          "503": {
+            "$ref": "#/components/responses/brand-protection-api_SAVED_QUERY_DELETE_UNAVAILABLE"
           }
         },
         "security": [
@@ -192234,6 +192243,16 @@
                   "dump_options": {
                     "type": "object",
                     "properties": {
+                      "compatibility": {
+                        "description": "Dump format. `d1` (the default) gives a dump that D1 can import. `sqlite3_cli_only` matches the output of the `sqlite3 .dump` command, including virtual tables such as FTS5 or R*Tree tables, but cannot be imported back into D1.",
+                        "type": "string",
+                        "default": "d1",
+                        "enum": [
+                          "d1",
+                          "sqlite3_cli_only"
+                        ],
+                        "x-auditable": true
+                      },
                       "no_data": {
                         "description": "Export only the table definitions, not their contents",
                         "type": "boolean",
@@ -216414,7 +216433,6 @@
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "dns-firewall.analytics.reports",
         "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true,
         "x-stainless-deprecation-message": "This endpoint is deprecated. See [the API deprecation notice](https://developers.cloudflare.com/fundamentals/api/reference/deprecations/#2025-12-09)."
       }
     },
@@ -216566,7 +216584,6 @@
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "dns-firewall.analytics.reports.bytimes",
         "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true,
         "x-stainless-deprecation-message": "This endpoint is deprecated. See [the API deprecation notice](https://developers.cloudflare.com/fundamentals/api/reference/deprecations/#2025-12-09)."
       }
     },
@@ -290688,6 +290705,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -290776,6 +290797,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -290865,6 +290890,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -291004,6 +291033,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -291143,6 +291176,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -291270,6 +291307,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -291386,6 +291427,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -291543,6 +291588,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -291655,6 +291704,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -291807,6 +291860,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -291929,6 +291986,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292004,6 +292065,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292053,6 +292118,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292105,6 +292174,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292172,6 +292245,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292215,6 +292292,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292297,6 +292378,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292411,6 +292496,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292447,6 +292536,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292522,6 +292615,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292573,6 +292670,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292628,6 +292729,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292682,6 +292787,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292736,6 +292845,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -292885,6 +292998,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293091,6 +293208,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293158,6 +293279,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293220,6 +293345,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293274,6 +293403,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293327,6 +293460,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293403,6 +293540,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293458,6 +293599,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293534,6 +293679,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293605,6 +293754,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293667,6 +293820,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293716,6 +293873,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293774,6 +293935,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293831,6 +293996,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293890,6 +294059,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -293949,6 +294122,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294038,6 +294215,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294087,6 +294268,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294145,6 +294330,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294223,6 +294412,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294281,6 +294474,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294361,6 +294558,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294451,6 +294652,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294534,6 +294739,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294601,6 +294810,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294659,6 +294872,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294794,6 +295011,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294902,6 +295123,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -294979,6 +295204,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295036,6 +295265,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295115,6 +295348,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295188,6 +295425,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295252,6 +295493,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295345,6 +295590,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295400,6 +295649,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295495,6 +295748,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295590,6 +295847,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295717,6 +295978,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -295850,6 +296115,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "tags": [
@@ -337380,10 +337649,10 @@
         "description": "Returns all credential sets for the account.",
         "parameters": [
           {
-            "$ref": "#/components/parameters/vuln_scanner_page"
+            "$ref": "#/components/parameters/vuln-scanner_page"
           },
           {
-            "$ref": "#/components/parameters/vuln_scanner_per_page"
+            "$ref": "#/components/parameters/vuln-scanner_per_page"
           }
         ],
         "responses": {
@@ -337394,14 +337663,14 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-collection"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-collection"
                     },
                     {
                       "properties": {
                         "result": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/vuln_scanner_credential-set"
+                            "$ref": "#/components/schemas/vuln-scanner_credential-set"
                           }
                         }
                       },
@@ -337413,7 +337682,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337430,12 +337699,11 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/vuln_scanner_account_id"
+          "$ref": "#/components/parameters/vuln-scanner_account_id"
         }
       ],
       "post": {
@@ -337447,7 +337715,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_create-credential-set-request"
+                "$ref": "#/components/schemas/vuln-scanner_create-credential-set-request"
               }
             }
           }
@@ -337460,12 +337728,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_credential-set"
+                          "$ref": "#/components/schemas/vuln-scanner_credential-set"
                         },
                         "result_info": {
                           "type": "object",
@@ -337480,7 +337748,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337497,8 +337765,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}": {
@@ -337512,13 +337779,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/vuln_scanner_empty-response"
+                  "$ref": "#/components/schemas/vuln-scanner_empty-response"
                 }
               }
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337536,7 +337803,6 @@
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "This operation permanently deletes the credential set and every credential it contains."
       },
       "get": {
@@ -337551,12 +337817,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_credential-set"
+                          "$ref": "#/components/schemas/vuln-scanner_credential-set"
                         },
                         "result_info": {
                           "type": "object",
@@ -337571,7 +337837,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337588,15 +337854,14 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/vuln_scanner_account_id"
+          "$ref": "#/components/parameters/vuln-scanner_account_id"
         },
         {
-          "$ref": "#/components/parameters/vuln_scanner_credential_set_id"
+          "$ref": "#/components/parameters/vuln-scanner_credential_set_id"
         }
       ],
       "patch": {
@@ -337608,7 +337873,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_patch-credential-set-request"
+                "$ref": "#/components/schemas/vuln-scanner_patch-credential-set-request"
               }
             }
           }
@@ -337621,12 +337886,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_credential-set"
+                          "$ref": "#/components/schemas/vuln-scanner_credential-set"
                         },
                         "result_info": {
                           "type": "object",
@@ -337641,7 +337906,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337658,8 +337923,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       },
       "put": {
         "operationId": "update-credential-set",
@@ -337670,7 +337934,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_update-credential-set-request"
+                "$ref": "#/components/schemas/vuln-scanner_update-credential-set-request"
               }
             }
           }
@@ -337683,12 +337947,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_credential-set"
+                          "$ref": "#/components/schemas/vuln-scanner_credential-set"
                         },
                         "result_info": {
                           "type": "object",
@@ -337703,7 +337967,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337720,8 +337984,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials": {
@@ -337731,10 +337994,10 @@
         "description": "Returns all credentials within a credential set.",
         "parameters": [
           {
-            "$ref": "#/components/parameters/vuln_scanner_page"
+            "$ref": "#/components/parameters/vuln-scanner_page"
           },
           {
-            "$ref": "#/components/parameters/vuln_scanner_per_page"
+            "$ref": "#/components/parameters/vuln-scanner_per_page"
           }
         ],
         "responses": {
@@ -337745,14 +338008,14 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-collection"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-collection"
                     },
                     {
                       "properties": {
                         "result": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/vuln_scanner_credential"
+                            "$ref": "#/components/schemas/vuln-scanner_credential"
                           }
                         }
                       },
@@ -337764,7 +338027,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337781,15 +338044,14 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/vuln_scanner_account_id"
+          "$ref": "#/components/parameters/vuln-scanner_account_id"
         },
         {
-          "$ref": "#/components/parameters/vuln_scanner_credential_set_id"
+          "$ref": "#/components/parameters/vuln-scanner_credential_set_id"
         }
       ],
       "post": {
@@ -337801,7 +338063,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_create-credential-request"
+                "$ref": "#/components/schemas/vuln-scanner_create-credential-request"
               }
             }
           }
@@ -337814,12 +338076,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_credential"
+                          "$ref": "#/components/schemas/vuln-scanner_credential"
                         },
                         "result_info": {
                           "type": "object",
@@ -337834,7 +338096,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337851,8 +338113,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}": {
@@ -337866,13 +338127,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/vuln_scanner_empty-response"
+                  "$ref": "#/components/schemas/vuln-scanner_empty-response"
                 }
               }
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337890,7 +338151,6 @@
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "This operation permanently deletes the credential from the credential set."
       },
       "get": {
@@ -337905,12 +338165,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_credential"
+                          "$ref": "#/components/schemas/vuln-scanner_credential"
                         },
                         "result_info": {
                           "type": "object",
@@ -337925,7 +338185,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -337942,18 +338202,17 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/vuln_scanner_account_id"
+          "$ref": "#/components/parameters/vuln-scanner_account_id"
         },
         {
-          "$ref": "#/components/parameters/vuln_scanner_credential_set_id"
+          "$ref": "#/components/parameters/vuln-scanner_credential_set_id"
         },
         {
-          "$ref": "#/components/parameters/vuln_scanner_credential_id"
+          "$ref": "#/components/parameters/vuln-scanner_credential_id"
         }
       ],
       "patch": {
@@ -337965,7 +338224,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_patch-credential-request"
+                "$ref": "#/components/schemas/vuln-scanner_patch-credential-request"
               }
             }
           }
@@ -337978,12 +338237,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_credential"
+                          "$ref": "#/components/schemas/vuln-scanner_credential"
                         },
                         "result_info": {
                           "type": "object",
@@ -337998,7 +338257,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338015,8 +338274,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       },
       "put": {
         "operationId": "update-credential",
@@ -338027,7 +338285,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_update-credential-request"
+                "$ref": "#/components/schemas/vuln-scanner_update-credential-request"
               }
             }
           }
@@ -338040,12 +338298,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_credential"
+                          "$ref": "#/components/schemas/vuln-scanner_credential"
                         },
                         "result_info": {
                           "type": "object",
@@ -338060,7 +338318,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338077,8 +338335,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{account_id}/vuln_scanner/scans": {
@@ -338088,10 +338345,10 @@
         "description": "Returns all scans for the account.",
         "parameters": [
           {
-            "$ref": "#/components/parameters/vuln_scanner_page"
+            "$ref": "#/components/parameters/vuln-scanner_page"
           },
           {
-            "$ref": "#/components/parameters/vuln_scanner_per_page"
+            "$ref": "#/components/parameters/vuln-scanner_per_page"
           }
         ],
         "responses": {
@@ -338102,14 +338359,14 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-collection"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-collection"
                     },
                     {
                       "properties": {
                         "result": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/vuln_scanner_scan"
+                            "$ref": "#/components/schemas/vuln-scanner_scan"
                           }
                         }
                       },
@@ -338121,7 +338378,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338138,12 +338395,11 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.scans",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/vuln_scanner_account_id"
+          "$ref": "#/components/parameters/vuln-scanner_account_id"
         }
       ],
       "post": {
@@ -338155,7 +338411,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_create-scan-request"
+                "$ref": "#/components/schemas/vuln-scanner_create-scan-request"
               }
             }
           }
@@ -338168,12 +338424,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_scan"
+                          "$ref": "#/components/schemas/vuln-scanner_scan"
                         },
                         "result_info": {
                           "type": "object",
@@ -338188,7 +338444,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338205,8 +338461,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.scans",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/vuln_scanner/scans/{scan_id}": {
@@ -338222,12 +338477,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_delete-scan-response"
+                          "$ref": "#/components/schemas/vuln-scanner_delete-scan-response"
                         },
                         "result_info": {
                           "type": "object",
@@ -338242,7 +338497,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338260,7 +338515,6 @@
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.scans",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "This operation permanently deletes the completed or failed scan and all associated scan data."
       },
       "get": {
@@ -338275,12 +338529,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_scan"
+                          "$ref": "#/components/schemas/vuln-scanner_scan"
                         },
                         "result_info": {
                           "type": "object",
@@ -338295,7 +338549,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338312,15 +338566,14 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.scans",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/vuln_scanner_account_id"
+          "$ref": "#/components/parameters/vuln-scanner_account_id"
         },
         {
-          "$ref": "#/components/parameters/vuln_scanner_scan_id"
+          "$ref": "#/components/parameters/vuln-scanner_scan_id"
         }
       ]
     },
@@ -338331,10 +338584,10 @@
         "description": "Returns all target environments for the account.",
         "parameters": [
           {
-            "$ref": "#/components/parameters/vuln_scanner_page"
+            "$ref": "#/components/parameters/vuln-scanner_page"
           },
           {
-            "$ref": "#/components/parameters/vuln_scanner_per_page"
+            "$ref": "#/components/parameters/vuln-scanner_per_page"
           }
         ],
         "responses": {
@@ -338345,14 +338598,14 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-collection"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-collection"
                     },
                     {
                       "properties": {
                         "result": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/vuln_scanner_target-environment"
+                            "$ref": "#/components/schemas/vuln-scanner_target-environment"
                           }
                         }
                       },
@@ -338364,7 +338617,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338381,12 +338634,11 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/vuln_scanner_account_id"
+          "$ref": "#/components/parameters/vuln-scanner_account_id"
         }
       ],
       "post": {
@@ -338398,7 +338650,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_create-target-environment-request"
+                "$ref": "#/components/schemas/vuln-scanner_create-target-environment-request"
               }
             }
           }
@@ -338411,12 +338663,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_target-environment"
+                          "$ref": "#/components/schemas/vuln-scanner_target-environment"
                         },
                         "result_info": {
                           "type": "object",
@@ -338431,7 +338683,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338448,8 +338700,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}": {
@@ -338463,13 +338714,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/vuln_scanner_empty-response"
+                  "$ref": "#/components/schemas/vuln-scanner_empty-response"
                 }
               }
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338487,7 +338738,6 @@
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "This operation permanently deletes the target environment from Vulnerability Scanner."
       },
       "get": {
@@ -338502,12 +338752,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_target-environment"
+                          "$ref": "#/components/schemas/vuln-scanner_target-environment"
                         },
                         "result_info": {
                           "type": "object",
@@ -338522,7 +338772,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338539,15 +338789,14 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/vuln_scanner_account_id"
+          "$ref": "#/components/parameters/vuln-scanner_account_id"
         },
         {
-          "$ref": "#/components/parameters/vuln_scanner_target_environment_id"
+          "$ref": "#/components/parameters/vuln-scanner_target_environment_id"
         }
       ],
       "patch": {
@@ -338559,7 +338808,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_patch-target-environment-request"
+                "$ref": "#/components/schemas/vuln-scanner_patch-target-environment-request"
               }
             }
           }
@@ -338572,12 +338821,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_target-environment"
+                          "$ref": "#/components/schemas/vuln-scanner_target-environment"
                         },
                         "result_info": {
                           "type": "object",
@@ -338592,7 +338841,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338609,8 +338858,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       },
       "put": {
         "operationId": "update-target-environment",
@@ -338621,7 +338869,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/vuln_scanner_update-target-environment-request"
+                "$ref": "#/components/schemas/vuln-scanner_update-target-environment-request"
               }
             }
           }
@@ -338634,12 +338882,12 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+                      "$ref": "#/components/schemas/vuln-scanner_api-response-common"
                     },
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/vuln_scanner_target-environment"
+                          "$ref": "#/components/schemas/vuln-scanner_target-environment"
                         },
                         "result_info": {
                           "type": "object",
@@ -338654,7 +338902,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -338671,8 +338919,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{account_id}/waiting_rooms": {
@@ -340793,8 +341040,8 @@
       },
       "put": {
         "operationId": "namespace-worker-script-upload-worker-module",
-        "summary": "Upload Workers for Platforms Script Module",
-        "description": "Upload a Workers for Platforms script module to a dispatch namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.",
+        "summary": "Upload Workers for Platforms Script",
+        "description": "Upload Worker code and configuration to a Workers for Platforms dispatch\nnamespace. For ES module and other module-based Workers, use\n`multipart/form-data` with a JSON `metadata` part whose `main_module`\nfield names the entrypoint file. Upload each module as a separate file\npart; JavaScript ES module parts use the `application/javascript+module`\ncontent type.\n\nRaw `application/javascript` and `text/javascript` request bodies accept\nonly legacy service-worker syntax using `addEventListener`. They do not\naccept ES module syntax such as `export default`. To upload a module\nWorker, use the multipart request format instead.\n\nLearn more about multipart metadata in the [documentation](https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/).\n",
         "parameters": [
           {
             "name": "account_id",
@@ -360676,8 +360923,8 @@
       },
       "put": {
         "operationId": "worker-script-upload-worker-module",
-        "summary": "Upload Worker Module",
-        "description": "Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.",
+        "summary": "Upload Worker",
+        "description": "Upload Worker code and configuration. For ES module and other module-based\nWorkers, use `multipart/form-data` with a JSON `metadata` part whose\n`main_module` field names the entrypoint file. Upload each module as a\nseparate file part; JavaScript ES module parts use the\n`application/javascript+module` content type.\n\nRaw `application/javascript` and `text/javascript` request bodies accept\nonly legacy service-worker syntax using `addEventListener`. They do not\naccept ES module syntax such as `export default`. To upload a module\nWorker, use the multipart request format instead.\n\nLearn more about multipart metadata in the [documentation](https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/).\n",
         "parameters": [
           {
             "name": "account_id",
@@ -360712,7 +360959,7 @@
         },
         "responses": {
           "200": {
-            "description": "Upload Worker Module response.",
+            "description": "Upload Worker response.",
             "content": {
               "application/json": {
                 "schema": {
@@ -360755,7 +361002,7 @@
             }
           },
           "4XX": {
-            "description": "Upload Worker Module response failure. When the upload uses the\ndeclarative `exports` field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n`errors[].meta.details`.\n",
+            "description": "Upload Worker response failure. When the upload uses the\ndeclarative `exports` field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n`errors[].meta.details`.\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -361363,6 +361610,7 @@
           {
             "name": "deployment_id",
             "in": "path",
+            "description": "Identifier of the Worker Deployment.",
             "required": true,
             "schema": {
               "type": "string",
@@ -361439,6 +361687,7 @@
           {
             "name": "deployment_id",
             "in": "path",
+            "description": "Identifier of the Worker Deployment.",
             "required": true,
             "schema": {
               "type": "string",
@@ -544237,24 +544486,23 @@
             "description": "Bad request — invalid zone identifier or object type.",
             "content": {
               "application/json": {
-                "examples": {
-                  "invalid_object_type": {
-                    "summary": "Invalid object type",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2005,
-                          "message": "failed to fetch entitlements: invalid object type"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
-                },
                 "schema": {
-                  "$ref": "#/components/schemas/entitlements_api_response_failure"
+                  "example": {
+                    "errors": [
+                      {
+                        "code": 2005,
+                        "message": "failed to fetch entitlements: invalid object type"
+                      }
+                    ],
+                    "messages": [],
+                    "result": null,
+                    "success": false
+                  },
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/entitlements_api_response_failure"
+                    }
+                  ]
                 }
               }
             }
@@ -544283,24 +544531,23 @@
             "description": "Zone not found or unknown route.",
             "content": {
               "application/json": {
-                "examples": {
-                  "not_found": {
-                    "summary": "Unknown route",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2004,
-                          "message": "failed to fetch entitlements: unknown route"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
-                },
                 "schema": {
-                  "$ref": "#/components/schemas/entitlements_api_response_failure"
+                  "example": {
+                    "errors": [
+                      {
+                        "code": 2004,
+                        "message": "failed to fetch entitlements: unknown route"
+                      }
+                    ],
+                    "messages": [],
+                    "result": null,
+                    "success": false
+                  },
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/entitlements_api_response_failure"
+                    }
+                  ]
                 }
               }
             }
@@ -544309,24 +544556,23 @@
             "description": "HTTP method not allowed.",
             "content": {
               "application/json": {
-                "examples": {
-                  "method_not_allowed": {
-                    "summary": "Method not allowed",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2001,
-                          "message": "failed to fetch entitlements: method not allowed"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
-                },
                 "schema": {
-                  "$ref": "#/components/schemas/entitlements_api_response_failure"
+                  "example": {
+                    "errors": [
+                      {
+                        "code": 2001,
+                        "message": "failed to fetch entitlements: method not allowed"
+                      }
+                    ],
+                    "messages": [],
+                    "result": null,
+                    "success": false
+                  },
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/entitlements_api_response_failure"
+                    }
+                  ]
                 }
               }
             }
@@ -544335,24 +544581,23 @@
             "description": "Internal server error.",
             "content": {
               "application/json": {
-                "examples": {
-                  "internal_error": {
-                    "summary": "Internal server error",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2000,
-                          "message": "failed to fetch entitlements: internal server error"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
-                },
                 "schema": {
-                  "$ref": "#/components/schemas/entitlements_api_response_failure"
+                  "example": {
+                    "errors": [
+                      {
+                        "code": 2000,
+                        "message": "failed to fetch entitlements: internal server error"
+                      }
+                    ],
+                    "messages": [],
+                    "result": null,
+                    "success": false
+                  },
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/entitlements_api_response_failure"
+                    }
+                  ]
                 }
               }
             }
@@ -544361,24 +544606,23 @@
             "description": "Upstream entitlements service unavailable or timed out.",
             "content": {
               "application/json": {
-                "examples": {
-                  "timeout": {
-                    "summary": "Upstream timeout",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2003,
-                          "message": "failed to fetch entitlements: timeout occurred"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
-                },
                 "schema": {
-                  "$ref": "#/components/schemas/entitlements_api_response_failure"
+                  "example": {
+                    "errors": [
+                      {
+                        "code": 2003,
+                        "message": "failed to fetch entitlements: timeout occurred"
+                      }
+                    ],
+                    "messages": [],
+                    "result": null,
+                    "success": false
+                  },
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/entitlements_api_response_failure"
+                    }
+                  ]
                 }
               }
             }
@@ -574088,9 +574332,11 @@
           }
         ],
         "requestBody": {
+          "description": "Send the workflow name as plain text (`realtime` or `preview`), without JSON quotes.",
           "required": true,
           "content": {
-            "application/json": {
+            "text/plain": {
+              "example": "realtime",
               "schema": {
                 "$ref": "#/components/schemas/zaraz_zaraz-workflow"
               }
@@ -584694,6 +584940,19 @@
           "minimum": 1
         }
       },
+      "billing-spend-policies_history_period": {
+        "description": "Select current subscription billing-cycle history or history across all cycles.",
+        "in": "query",
+        "name": "period",
+        "schema": {
+          "type": "string",
+          "default": "current_billing_cycle",
+          "enum": [
+            "current_billing_cycle",
+            "all"
+          ]
+        }
+      },
       "billing-spend-policies_if_match": {
         "description": "The policy `version` the change is based on, as returned in `ETag`. Quoted (`\"3\"`) and bare (`3`) values are both accepted. Weak ETags (`W/\"3\"`) and `*` are not.",
         "in": "header",
@@ -587039,16 +587298,16 @@
           "$ref": "#/components/schemas/usage-analytics_identifier"
         }
       },
-      "vuln_scanner_account_id": {
+      "vuln-scanner_account_id": {
         "description": "Account identifier.",
         "in": "path",
         "name": "account_id",
         "required": true,
         "schema": {
-          "$ref": "#/components/schemas/vuln_scanner_identifier"
+          "$ref": "#/components/schemas/vuln-scanner_identifier"
         }
       },
-      "vuln_scanner_credential_id": {
+      "vuln-scanner_credential_id": {
         "description": "Credential identifier.",
         "in": "path",
         "name": "credential_id",
@@ -587058,7 +587317,7 @@
           "format": "uuid"
         }
       },
-      "vuln_scanner_credential_set_id": {
+      "vuln-scanner_credential_set_id": {
         "description": "Credential set identifier.",
         "in": "path",
         "name": "credential_set_id",
@@ -587068,7 +587327,7 @@
           "format": "uuid"
         }
       },
-      "vuln_scanner_page": {
+      "vuln-scanner_page": {
         "description": "Page number of paginated results.",
         "in": "query",
         "name": "page",
@@ -587078,7 +587337,7 @@
           "minimum": 1
         }
       },
-      "vuln_scanner_per_page": {
+      "vuln-scanner_per_page": {
         "description": "Number of results per page.",
         "in": "query",
         "name": "per_page",
@@ -587089,7 +587348,7 @@
           "minimum": 5
         }
       },
-      "vuln_scanner_scan_id": {
+      "vuln-scanner_scan_id": {
         "description": "Scan identifier.",
         "in": "path",
         "name": "scan_id",
@@ -587099,7 +587358,7 @@
           "format": "uuid"
         }
       },
-      "vuln_scanner_target_environment_id": {
+      "vuln-scanner_target_environment_id": {
         "description": "Target environment identifier.",
         "in": "path",
         "name": "target_environment_id",
@@ -587714,7 +587973,7 @@
           }
         }
       },
-      "aaa_audit-logs-response-collection": {
+      "aaa_audit-logs-success-response-collection": {
         "type": "object",
         "properties": {
           "errors": {
@@ -588026,7 +588285,7 @@
       "aaa_audit-logs-v2-org-response-collection": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/aaa_audit-logs-response-collection"
+            "$ref": "#/components/schemas/aaa_audit-logs-success-response-collection"
           },
           {
             "properties": {
@@ -588105,7 +588364,7 @@
       "aaa_audit-logs-v2-response-collection": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/aaa_audit-logs-response-collection"
+            "$ref": "#/components/schemas/aaa_audit-logs-success-response-collection"
           },
           {
             "properties": {
@@ -615860,13 +616119,9 @@
             "example": 100
           },
           "trigger": {
-            "description": "The state the balance moved into. `approaching_limit` means the balance is at least 80% of the threshold (rounded up to a whole cent), but below the threshold. `limit_reached` means the balance reached or exceeded the threshold.",
+            "description": "The trigger recorded at evaluation time. New evaluations record `limit_reached` when the balance reaches or exceeds the configured threshold. Earlier entries retain their recorded trigger.",
             "type": "string",
-            "example": "limit_reached",
-            "enum": [
-              "approaching_limit",
-              "limit_reached"
-            ]
+            "example": "limit_reached"
           }
         },
         "required": [
@@ -615980,7 +616235,6 @@
               "no_current_period",
               "unavailable",
               "below_limit",
-              "approaching_limit",
               "limit_reached"
             ]
           }
@@ -617150,6 +617404,66 @@
             "type": "integer"
           }
         }
+      },
+      "brand-protection-api_SavedQueryDeleteUnavailable": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "code": {
+                  "type": "integer"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "message"
+              ],
+              "type": "object"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "code": {
+                  "type": "integer"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "message"
+              ],
+              "type": "object"
+            }
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "maxItems": 0
+          },
+          "success": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ]
       },
       "brand-protection-api_URLInfo": {
         "type": "object",
@@ -642528,6 +642842,7 @@
       "dlp_RiskLevel": {
         "type": "string",
         "enum": [
+          "info",
           "low",
           "medium",
           "high"
@@ -739559,11 +739874,11 @@
           "id"
         ]
       },
-      "vuln_scanner_api-response-collection": {
+      "vuln-scanner_api-response-collection": {
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+            "$ref": "#/components/schemas/vuln-scanner_api-response-common"
           },
           {
             "properties": {
@@ -739602,14 +739917,14 @@
           }
         ]
       },
-      "vuln_scanner_api-response-common": {
+      "vuln-scanner_api-response-common": {
         "type": "object",
         "properties": {
           "errors": {
-            "$ref": "#/components/schemas/vuln_scanner_messages"
+            "$ref": "#/components/schemas/vuln-scanner_messages"
           },
           "messages": {
-            "$ref": "#/components/schemas/vuln_scanner_messages"
+            "$ref": "#/components/schemas/vuln-scanner_messages"
           },
           "success": {
             "description": "Whether the API call was successful.",
@@ -739626,7 +739941,7 @@
           "messages"
         ]
       },
-      "vuln_scanner_api-response-common-failure": {
+      "vuln-scanner_api-response-common-failure": {
         "type": "object",
         "properties": {
           "errors": {
@@ -739638,7 +739953,7 @@
             ],
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_messages"
+                "$ref": "#/components/schemas/vuln-scanner_messages"
               }
             ],
             "minLength": 1
@@ -739647,7 +739962,7 @@
             "example": [],
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_messages"
+                "$ref": "#/components/schemas/vuln-scanner_messages"
               }
             ]
           },
@@ -739674,14 +739989,14 @@
           "result"
         ]
       },
-      "vuln_scanner_bola-assertion-kind": {
+      "vuln-scanner_bola-assertion-kind": {
         "description": "The kind of assertion to make.",
         "oneOf": [
           {
             "description": "Assert that an HTTP status code is within a range, e.g. to assert success for the 2xx range, or expected failure for the 4xx/5xx range.",
             "properties": {
               "parameters": {
-                "$ref": "#/components/schemas/vuln_scanner_bola-http-status-range"
+                "$ref": "#/components/schemas/vuln-scanner_bola-http-status-range"
               },
               "type": {
                 "type": "string",
@@ -739698,33 +740013,33 @@
           }
         ]
       },
-      "vuln_scanner_bola-body-response": {
+      "vuln-scanner_bola-body-response": {
         "description": "HTTP response body preview.",
         "discriminator": {
           "mapping": {
-            "bytes": "#/components/schemas/vuln_scanner_bola-body-response-bytes",
-            "json": "#/components/schemas/vuln_scanner_bola-body-response-json",
-            "not_found": "#/components/schemas/vuln_scanner_bola-body-response-not-found",
-            "text": "#/components/schemas/vuln_scanner_bola-body-response-text"
+            "bytes": "#/components/schemas/vuln-scanner_bola-body-response-bytes",
+            "json": "#/components/schemas/vuln-scanner_bola-body-response-json",
+            "not_found": "#/components/schemas/vuln-scanner_bola-body-response-not-found",
+            "text": "#/components/schemas/vuln-scanner_bola-body-response-text"
           },
           "propertyName": "kind"
         },
         "oneOf": [
           {
-            "$ref": "#/components/schemas/vuln_scanner_bola-body-response-not-found"
+            "$ref": "#/components/schemas/vuln-scanner_bola-body-response-not-found"
           },
           {
-            "$ref": "#/components/schemas/vuln_scanner_bola-body-response-bytes"
+            "$ref": "#/components/schemas/vuln-scanner_bola-body-response-bytes"
           },
           {
-            "$ref": "#/components/schemas/vuln_scanner_bola-body-response-text"
+            "$ref": "#/components/schemas/vuln-scanner_bola-body-response-text"
           },
           {
-            "$ref": "#/components/schemas/vuln_scanner_bola-body-response-json"
+            "$ref": "#/components/schemas/vuln-scanner_bola-body-response-json"
           }
         ]
       },
-      "vuln_scanner_bola-body-response-bytes": {
+      "vuln-scanner_bola-body-response-bytes": {
         "description": "Body received but unable to read as UTF-8. Raw bytes, base64-encoded.",
         "type": "object",
         "properties": {
@@ -739747,7 +740062,7 @@
           "truncated"
         ]
       },
-      "vuln_scanner_bola-body-response-json": {
+      "vuln-scanner_bola-body-response-json": {
         "description": "Body received as valid JSON.",
         "type": "object",
         "properties": {
@@ -739770,7 +740085,7 @@
           "truncated"
         ]
       },
-      "vuln_scanner_bola-body-response-not-found": {
+      "vuln-scanner_bola-body-response-not-found": {
         "description": "No body was received.",
         "type": "object",
         "properties": {
@@ -739785,7 +740100,7 @@
           "kind"
         ]
       },
-      "vuln_scanner_bola-body-response-text": {
+      "vuln-scanner_bola-body-response-text": {
         "description": "Body received as valid UTF-8 text but not valid JSON.",
         "type": "object",
         "properties": {
@@ -739808,7 +740123,7 @@
           "truncated"
         ]
       },
-      "vuln_scanner_bola-credential-role": {
+      "vuln-scanner_bola-credential-role": {
         "description": "Identifies the role a request was made with. The credential set governs this role. `owner` is the resource owner, `attacker` attempts to access resources.",
         "type": "string",
         "enum": [
@@ -739816,7 +740131,7 @@
           "attacker"
         ]
       },
-      "vuln_scanner_bola-credential-sets": {
+      "vuln-scanner_bola-credential-sets": {
         "description": "Credential set references for a BOLA scan. The scanner uses the\n`owner` credentials for legitimate requests and the `attacker`\ncredentials to attempt unauthorized access.\n",
         "type": "object",
         "properties": {
@@ -739836,7 +740151,7 @@
           "attacker"
         ]
       },
-      "vuln_scanner_bola-http-status-range": {
+      "vuln-scanner_bola-http-status-range": {
         "description": "Range of HTTP status codes.",
         "type": "object",
         "properties": {
@@ -739858,7 +740173,7 @@
           "max"
         ]
       },
-      "vuln_scanner_bola-method": {
+      "vuln-scanner_bola-method": {
         "description": "HTTP method.",
         "type": "string",
         "enum": [
@@ -739869,7 +740184,7 @@
           "PUT"
         ]
       },
-      "vuln_scanner_bola-outcome": {
+      "vuln-scanner_bola-outcome": {
         "description": "Outcome of an assertion. `ok` means the assertion passed, `fail` means the assertion failed, `inconclusive` means the scanner could not evaluate the assertion.",
         "type": "string",
         "enum": [
@@ -739878,14 +740193,14 @@
           "inconclusive"
         ]
       },
-      "vuln_scanner_bola-report": {
+      "vuln-scanner_bola-report": {
         "description": "A BOLA vulnerability scan report, versioned for future evolution.",
         "type": "object",
         "properties": {
           "report": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-report-v1"
+                "$ref": "#/components/schemas/vuln-scanner_bola-report-v1"
               }
             ]
           },
@@ -739902,7 +740217,7 @@
           "report"
         ]
       },
-      "vuln_scanner_bola-report-summary": {
+      "vuln-scanner_bola-report-summary": {
         "description": "Overall report summary.",
         "type": "object",
         "properties": {
@@ -739910,7 +740225,7 @@
             "description": "Overall verdict of the vulnerability scan.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-verdict"
+                "$ref": "#/components/schemas/vuln-scanner_bola-verdict"
               }
             ]
           }
@@ -739919,7 +740234,7 @@
           "verdict"
         ]
       },
-      "vuln_scanner_bola-report-v1": {
+      "vuln-scanner_bola-report-v1": {
         "description": "Version 1 of the BOLA vulnerability scan report.",
         "type": "object",
         "properties": {
@@ -739927,7 +740242,7 @@
             "description": "Summary of all steps and findings.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-report-summary"
+                "$ref": "#/components/schemas/vuln-scanner_bola-report-summary"
               }
             ]
           },
@@ -739935,7 +740250,7 @@
             "description": "List of tests that were run.",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/vuln_scanner_bola-test"
+              "$ref": "#/components/schemas/vuln-scanner_bola-test"
             }
           }
         },
@@ -739944,7 +740259,7 @@
           "tests"
         ]
       },
-      "vuln_scanner_bola-test": {
+      "vuln-scanner_bola-test": {
         "description": "Result of a single test.",
         "type": "object",
         "properties": {
@@ -739952,21 +740267,21 @@
             "description": "Errors that prevented step execution.",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/vuln_scanner_bola-test-error"
+              "$ref": "#/components/schemas/vuln-scanner_bola-test-error"
             }
           },
           "steps": {
             "description": "Steps that were executed.",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/vuln_scanner_bola-test-step"
+              "$ref": "#/components/schemas/vuln-scanner_bola-test-step"
             }
           },
           "verdict": {
             "description": "Verdict of this single test.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-verdict"
+                "$ref": "#/components/schemas/vuln-scanner_bola-verdict"
               }
             ]
           }
@@ -739976,7 +740291,7 @@
           "steps"
         ]
       },
-      "vuln_scanner_bola-test-assertion": {
+      "vuln-scanner_bola-test-assertion": {
         "description": "Assertion that was made against the received response.",
         "type": "object",
         "properties": {
@@ -739988,7 +740303,7 @@
             "description": "Kind of assertion.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-assertion-kind"
+                "$ref": "#/components/schemas/vuln-scanner_bola-assertion-kind"
               }
             ]
           },
@@ -740001,7 +740316,7 @@
             "description": "Outcome of the assertion.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-outcome"
+                "$ref": "#/components/schemas/vuln-scanner_bola-outcome"
               }
             ]
           }
@@ -740013,7 +740328,7 @@
           "outcome"
         ]
       },
-      "vuln_scanner_bola-test-credential-set": {
+      "vuln-scanner_bola-test-credential-set": {
         "description": "Credential set that was used.",
         "type": "object",
         "properties": {
@@ -740026,7 +740341,7 @@
             "description": "Role of the credential set.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-credential-role"
+                "$ref": "#/components/schemas/vuln-scanner_bola-credential-role"
               }
             ]
           }
@@ -740036,7 +740351,7 @@
           "role"
         ]
       },
-      "vuln_scanner_bola-test-error": {
+      "vuln-scanner_bola-test-error": {
         "description": "Error that occurred during a test.",
         "type": "object",
         "properties": {
@@ -740056,7 +740371,7 @@
           "description"
         ]
       },
-      "vuln_scanner_bola-test-request": {
+      "vuln-scanner_bola-test-request": {
         "description": "HTTP request that was made.",
         "type": "object",
         "properties": {
@@ -740069,7 +740384,7 @@
             "description": "Credential set that was used.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-test-credential-set"
+                "$ref": "#/components/schemas/vuln-scanner_bola-test-credential-set"
               }
             ]
           },
@@ -740084,7 +740399,7 @@
             "description": "HTTP method.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-method"
+                "$ref": "#/components/schemas/vuln-scanner_bola-method"
               }
             ]
           },
@@ -740097,7 +740412,7 @@
             "description": "Variable captures requested for this step.",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/vuln_scanner_bola-variable-capture"
+              "$ref": "#/components/schemas/vuln-scanner_bola-variable-capture"
             }
           }
         },
@@ -740109,7 +740424,7 @@
           "variable_captures"
         ]
       },
-      "vuln_scanner_bola-test-response": {
+      "vuln-scanner_bola-test-response": {
         "description": "HTTP response that was received.",
         "type": "object",
         "properties": {
@@ -740117,7 +740432,7 @@
             "description": "HTTP response body.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-body-response"
+                "$ref": "#/components/schemas/vuln-scanner_bola-body-response"
               }
             ]
           },
@@ -740146,7 +740461,7 @@
           "body"
         ]
       },
-      "vuln_scanner_bola-test-step": {
+      "vuln-scanner_bola-test-step": {
         "description": "A single step in a test.",
         "type": "object",
         "properties": {
@@ -740154,14 +740469,14 @@
             "description": "Assertions that were made against the received response.",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/vuln_scanner_bola-test-assertion"
+              "$ref": "#/components/schemas/vuln-scanner_bola-test-assertion"
             }
           },
           "errors": {
             "description": "Errors the step encountered that may explain absent or incomplete fields.",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/vuln_scanner_bola-test-error"
+              "$ref": "#/components/schemas/vuln-scanner_bola-test-error"
             }
           },
           "request": {
@@ -740169,7 +740484,7 @@
             "type": "object",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-test-request"
+                "$ref": "#/components/schemas/vuln-scanner_bola-test-request"
               }
             ],
             "nullable": true
@@ -740179,7 +740494,7 @@
             "type": "object",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-test-response"
+                "$ref": "#/components/schemas/vuln-scanner_bola-test-response"
               }
             ],
             "nullable": true
@@ -740189,7 +740504,7 @@
           "assertions"
         ]
       },
-      "vuln_scanner_bola-variable-capture": {
+      "vuln-scanner_bola-variable-capture": {
         "description": "A variable to capture from the response body.",
         "type": "object",
         "properties": {
@@ -740207,7 +740522,7 @@
           "json_path"
         ]
       },
-      "vuln_scanner_bola-verdict": {
+      "vuln-scanner_bola-verdict": {
         "description": "A verdict. `ok` means the scan passed, `warning` means the scan detected issues, `inconclusive` means errors prevented the scanner from reaching an accurate verdict.",
         "type": "string",
         "enum": [
@@ -740216,11 +740531,11 @@
           "inconclusive"
         ]
       },
-      "vuln_scanner_create-bola-scan-request": {
+      "vuln-scanner_create-bola-scan-request": {
         "type": "object",
         "properties": {
           "credential_sets": {
-            "$ref": "#/components/schemas/vuln_scanner_bola-credential-sets"
+            "$ref": "#/components/schemas/vuln-scanner_bola-credential-sets"
           },
           "open_api": {
             "description": "OpenAPI schema definition for the API under test. The scanner\nuses this to discover endpoints and construct requests.\n",
@@ -740245,11 +740560,11 @@
           "credential_sets"
         ]
       },
-      "vuln_scanner_create-credential-request": {
+      "vuln-scanner_create-credential-request": {
         "type": "object",
         "properties": {
           "location": {
-            "$ref": "#/components/schemas/vuln_scanner_credential-location"
+            "$ref": "#/components/schemas/vuln-scanner_credential-location"
           },
           "location_name": {
             "description": "Name of the header or cookie where the credential is attached.\n",
@@ -740276,7 +740591,7 @@
           "value"
         ]
       },
-      "vuln_scanner_create-credential-set-request": {
+      "vuln-scanner_create-credential-set-request": {
         "type": "object",
         "properties": {
           "name": {
@@ -740289,21 +740604,21 @@
           "name"
         ]
       },
-      "vuln_scanner_create-scan-request": {
+      "vuln-scanner_create-scan-request": {
         "description": "Create a new vulnerability scan. The `scan_type` discriminator\nselects the scan variant and its required context fields.\n",
         "discriminator": {
           "mapping": {
-            "bola": "#/components/schemas/vuln_scanner_create-bola-scan-request"
+            "bola": "#/components/schemas/vuln-scanner_create-bola-scan-request"
           },
           "propertyName": "scan_type"
         },
         "oneOf": [
           {
-            "$ref": "#/components/schemas/vuln_scanner_create-bola-scan-request"
+            "$ref": "#/components/schemas/vuln-scanner_create-bola-scan-request"
           }
         ]
       },
-      "vuln_scanner_create-target-environment-request": {
+      "vuln-scanner_create-target-environment-request": {
         "type": "object",
         "properties": {
           "description": {
@@ -740318,7 +740633,7 @@
             "example": "Production Zone"
           },
           "target": {
-            "$ref": "#/components/schemas/vuln_scanner_target-type"
+            "$ref": "#/components/schemas/vuln-scanner_target-type"
           }
         },
         "required": [
@@ -740326,7 +740641,7 @@
           "target"
         ]
       },
-      "vuln_scanner_credential": {
+      "vuln-scanner_credential": {
         "description": "A credential attached to API requests during scanning. The\ncredential `value` is write-only and never returned in responses.\n",
         "type": "object",
         "properties": {
@@ -740343,7 +740658,7 @@
             "x-auditable": true
           },
           "location": {
-            "$ref": "#/components/schemas/vuln_scanner_credential-location"
+            "$ref": "#/components/schemas/vuln-scanner_credential-location"
           },
           "location_name": {
             "description": "Name of the header or cookie where the credential is attached.\n",
@@ -740366,7 +740681,7 @@
           "location_name"
         ]
       },
-      "vuln_scanner_credential-location": {
+      "vuln-scanner_credential-location": {
         "description": "Where the credential is attached in outgoing requests.",
         "type": "string",
         "enum": [
@@ -740375,7 +740690,7 @@
         ],
         "x-auditable": true
       },
-      "vuln_scanner_credential-set": {
+      "vuln-scanner_credential-set": {
         "type": "object",
         "properties": {
           "id": {
@@ -740396,7 +740711,7 @@
           "name"
         ]
       },
-      "vuln_scanner_delete-scan-response": {
+      "vuln-scanner_delete-scan-response": {
         "description": "Successful scan deletion result.",
         "type": "object",
         "properties": {
@@ -740411,11 +740726,11 @@
           "id"
         ]
       },
-      "vuln_scanner_empty-response": {
+      "vuln-scanner_empty-response": {
         "description": "Standard response envelope with a `null` result. Operations\nthat produce no result body return this response.\n",
         "allOf": [
           {
-            "$ref": "#/components/schemas/vuln_scanner_api-response-common"
+            "$ref": "#/components/schemas/vuln-scanner_api-response-common"
           },
           {
             "properties": {
@@ -740432,14 +740747,14 @@
           }
         ]
       },
-      "vuln_scanner_identifier": {
+      "vuln-scanner_identifier": {
         "description": "Identifier.",
         "type": "string",
         "example": "023e105f4ecef8ad9ca31a8372d0c353",
         "maxLength": 32,
         "x-auditable": true
       },
-      "vuln_scanner_messages": {
+      "vuln-scanner_messages": {
         "type": "array",
         "items": {
           "properties": {
@@ -740471,12 +740786,12 @@
         },
         "example": []
       },
-      "vuln_scanner_patch-credential-request": {
+      "vuln-scanner_patch-credential-request": {
         "description": "Applies a partial update. Only the provided fields change; omitted fields remain unchanged.",
         "type": "object",
         "properties": {
           "location": {
-            "$ref": "#/components/schemas/vuln_scanner_credential-location"
+            "$ref": "#/components/schemas/vuln-scanner_credential-location"
           },
           "location_name": {
             "description": "Name of the header or cookie where the credential is attached.\n",
@@ -740497,7 +740812,7 @@
           }
         }
       },
-      "vuln_scanner_patch-credential-set-request": {
+      "vuln-scanner_patch-credential-set-request": {
         "description": "Applies a partial update. Only the provided fields change; omitted fields remain unchanged.",
         "type": "object",
         "properties": {
@@ -740508,7 +740823,7 @@
           }
         }
       },
-      "vuln_scanner_patch-target-environment-request": {
+      "vuln-scanner_patch-target-environment-request": {
         "description": "Applies a partial update. Only the provided fields change; omitted fields remain unchanged.\n\nThe `description` field supports three states:\n- **omitted**: leave unchanged\n- **`null`**: clear the description\n- **`\"value\"`**: set to the given string\n",
         "type": "object",
         "properties": {
@@ -740524,11 +740839,11 @@
             "example": "Production Zone"
           },
           "target": {
-            "$ref": "#/components/schemas/vuln_scanner_target-type"
+            "$ref": "#/components/schemas/vuln-scanner_target-type"
           }
         }
       },
-      "vuln_scanner_scan": {
+      "vuln-scanner_scan": {
         "type": "object",
         "properties": {
           "id": {
@@ -740542,7 +740857,7 @@
             "type": "object",
             "allOf": [
               {
-                "$ref": "#/components/schemas/vuln_scanner_bola-report"
+                "$ref": "#/components/schemas/vuln-scanner_bola-report"
               }
             ],
             "nullable": true
@@ -740582,7 +740897,7 @@
           "status"
         ]
       },
-      "vuln_scanner_target-environment": {
+      "vuln-scanner_target-environment": {
         "type": "object",
         "properties": {
           "description": {
@@ -740604,7 +740919,7 @@
             "x-auditable": true
           },
           "target": {
-            "$ref": "#/components/schemas/vuln_scanner_target-type"
+            "$ref": "#/components/schemas/vuln-scanner_target-type"
           }
         },
         "required": [
@@ -740613,27 +740928,27 @@
           "target"
         ]
       },
-      "vuln_scanner_target-type": {
+      "vuln-scanner_target-type": {
         "description": "Identifies the Cloudflare asset to scan. Uses a `type` discriminator.\nCurrently the service supports only `zone` targets.\n",
         "discriminator": {
           "mapping": {
-            "zone": "#/components/schemas/vuln_scanner_zone-target"
+            "zone": "#/components/schemas/vuln-scanner_zone-target"
           },
           "propertyName": "type"
         },
         "oneOf": [
           {
-            "$ref": "#/components/schemas/vuln_scanner_zone-target"
+            "$ref": "#/components/schemas/vuln-scanner_zone-target"
           }
         ],
         "x-auditable": true
       },
-      "vuln_scanner_update-credential-request": {
+      "vuln-scanner_update-credential-request": {
         "description": "Full replacement. Provide all fields.",
         "type": "object",
         "properties": {
           "location": {
-            "$ref": "#/components/schemas/vuln_scanner_credential-location"
+            "$ref": "#/components/schemas/vuln-scanner_credential-location"
           },
           "location_name": {
             "description": "Name of the header or cookie where the credential is attached.\n",
@@ -740660,7 +740975,7 @@
           "value"
         ]
       },
-      "vuln_scanner_update-credential-set-request": {
+      "vuln-scanner_update-credential-set-request": {
         "description": "Full replacement. Provide all fields.",
         "type": "object",
         "properties": {
@@ -740674,7 +740989,7 @@
           "name"
         ]
       },
-      "vuln_scanner_update-target-environment-request": {
+      "vuln-scanner_update-target-environment-request": {
         "description": "Full replacement.",
         "type": "object",
         "properties": {
@@ -740690,7 +741005,7 @@
             "example": "Production Zone"
           },
           "target": {
-            "$ref": "#/components/schemas/vuln_scanner_target-type"
+            "$ref": "#/components/schemas/vuln-scanner_target-type"
           }
         },
         "required": [
@@ -740698,7 +741013,7 @@
           "target"
         ]
       },
-      "vuln_scanner_zone-target": {
+      "vuln-scanner_zone-target": {
         "type": "object",
         "properties": {
           "type": {
@@ -750170,6 +750485,7 @@
         "type": "object",
         "properties": {
           "annotations": {
+            "description": "Metadata attached to the deployment.",
             "type": "object",
             "properties": {
               "workers/message": {
@@ -750229,6 +750545,7 @@
             "x-auditable": true
           },
           "strategy": {
+            "description": "Strategy for routing traffic across the listed versions. `percentage` splits traffic according to each version's `percentage`.",
             "type": "string",
             "enum": [
               "percentage"
@@ -768822,7 +769139,7 @@
         "content": {
           "application/javascript": {
             "schema": {
-              "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+              "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n`addEventListener`. ES module syntax such as `export default` is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use `multipart/form-data` with\n`metadata.main_module` identifying the entrypoint file.\n",
               "type": "string",
               "example": "addEventListener('fetch', (event) => event.respondWith(new Response('OK')))"
             }
@@ -768842,7 +769159,7 @@
           },
           "text/javascript": {
             "schema": {
-              "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+              "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n`addEventListener`. ES module syntax such as `export default` is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use `multipart/form-data` with\n`metadata.main_module` identifying the entrypoint file.\n",
               "type": "string",
               "example": "addEventListener('fetch', (event) => event.respondWith(new Response('OK')))"
             }
@@ -768854,7 +769171,7 @@
         "content": {
           "application/javascript": {
             "schema": {
-              "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+              "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n`addEventListener`. ES module syntax such as `export default` is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use `multipart/form-data` with\n`metadata.main_module` identifying the entrypoint file.\n",
               "type": "string",
               "example": "addEventListener('fetch', (event) => event.respondWith(new Response('OK')))"
             }
@@ -768906,7 +769223,7 @@
           },
           "text/javascript": {
             "schema": {
-              "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+              "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n`addEventListener`. ES module syntax such as `export default` is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use `multipart/form-data` with\n`metadata.main_module` identifying the entrypoint file.\n",
               "type": "string",
               "example": "addEventListener('fetch', (event) => event.respondWith(new Response('OK')))"
             }
@@ -770435,6 +770752,16 @@
           }
         }
       },
+      "billing-spend-policies_history_unavailable": {
+        "description": "Code `1001`: authentication verification is unavailable. Code `1013`: current billing-cycle resolution is unavailable or disabled. Retry or request period=all, which does not require aggregate reads.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/billing-spend-policies_api-response-common-failure"
+            }
+          }
+        }
+      },
       "billing-spend-policies_if_match_required": {
         "description": "Code `1007`. The `If-Match` header is missing or does not hold a positive integer version.",
         "content": {
@@ -770465,8 +770792,8 @@
           }
         }
       },
-      "billing-spend-policies_invalid_limit": {
-        "description": "The request was malformed. Code `1004`: the account ID is invalid. Code `1006`: `limit` is not a positive integer.",
+      "billing-spend-policies_invalid_history_request": {
+        "description": "The request was malformed. Code `1004`: invalid account ID. Code `1006`: invalid limit. Code `1012`: period must be current_billing_cycle or all.",
         "content": {
           "application/json": {
             "schema": {
@@ -770531,6 +770858,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/brand-protection-api_Error"
+            }
+          }
+        }
+      },
+      "brand-protection-api_SAVED_QUERY_DELETE_UNAVAILABLE": {
+        "description": "Saved query deletion could not be confirmed.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/brand-protection-api_SavedQueryDeleteUnavailable"
             }
           }
         }
@@ -772581,18 +772918,18 @@
           }
         }
       },
-      "vuln_scanner_4XX": {
+      "vuln-scanner_4XX": {
         "description": "Client error.",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/vuln_scanner_api-response-common-failure"
+              "$ref": "#/components/schemas/vuln-scanner_api-response-common-failure"
             }
           }
         }
       },
       "workers_200": {
-        "description": "Upload Worker Module response.",
+        "description": "Upload Worker response.",
         "content": {
           "application/json": {
             "schema": {
@@ -772635,7 +772972,7 @@
         }
       },
       "workers_4XX": {
-        "description": "Upload Worker Module response failure. When the upload uses the\ndeclarative `exports` field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n`errors[].meta.details`.\n",
+        "description": "Upload Worker response failure. When the upload uses the\ndeclarative `exports` field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n`errors[].meta.details`.\n",
         "content": {
           "application/json": {
             "schema": {
@@ -773182,6 +773519,19 @@
         },
         "traceroutes": {
           "description": "Run traceroutes from Cloudflare data centers to diagnose network path issues"
+        }
+      }
+    },
+    "durable-objects": {
+      "description": "Stateful serverless objects with transactional storage, ideal for coordination, sessions, and real-time collaboration",
+      "groups": {
+        "namespaces": {
+          "description": "List Durable Object namespaces and inspect individual object instances within them",
+          "groups": {
+            "objects": {
+              "description": "List Durable Object instances in a namespace"
+            }
+          }
         }
       }
     },
@@ -774123,6 +774473,76 @@
         },
         "statuses": {
           "description": "Real-time queue status showing active users, queued users, and estimated wait times"
+        }
+      }
+    },
+    "workers": {
+      "description": "Deploy and manage serverless JavaScript/WASM applications on Cloudflare's global network",
+      "groups": {
+        "account-settings": {
+          "description": "Account-wide Workers settings such as default usage model and green compute"
+        },
+        "applications": {
+          "description": "Public worker application listing"
+        },
+        "assets": {
+          "description": "Upload static assets that are served alongside a Worker"
+        },
+        "deployments": {
+          "description": "Manage Worker deployments and traffic versions"
+        },
+        "domains": {
+          "description": "Attach or detach custom domains that route directly to a Worker without a DNS record"
+        },
+        "legacy": {
+          "description": "Legacy Workers APIs with newer Workers API equivalents",
+          "groups": {
+            "scripts": {
+              "description": "Legacy script lifecycle and version operations"
+            }
+          }
+        },
+        "placement": {
+          "description": "Discover regions available for Worker placement",
+          "groups": {
+            "regions": {
+              "description": "List cloud provider regions that can be used for Smart Placement"
+            }
+          }
+        },
+        "routes": {
+          "description": "Map URL patterns to Workers so incoming requests are dispatched to the correct script"
+        },
+        "scripts": {
+          "description": "Worker script operations including usage model, settings, content, tags, schedules, subdomains, and queue consumers"
+        },
+        "secrets": {
+          "description": "Manage secrets bound to Worker scripts"
+        },
+        "services": {
+          "description": "Services operations"
+        },
+        "subdomains": {
+          "description": "Configure the workers.dev subdomain used to reach Workers without a custom domain"
+        },
+        "tail": {
+          "description": "Manage Worker tail sessions"
+        },
+        "versions": {
+          "description": "Create, list, inspect, and manage Worker versions"
+        }
+      }
+    },
+    "workers-for-platforms": {
+      "description": "Workers for Platforms uses dispatch namespaces to isolate and route requests to many individual user Workers, letting platforms run untrusted customer or AI-generated code at scale with per-tenant bindings, limits, and observability",
+      "groups": {
+        "dispatch-namespaces": {
+          "description": "Isolate and route requests to many individual user Workers",
+          "groups": {
+            "scripts": {
+              "description": "Operations around customer Workers deployed inside a dispatch namespace"
+            }
+          }
         }
       }
     },

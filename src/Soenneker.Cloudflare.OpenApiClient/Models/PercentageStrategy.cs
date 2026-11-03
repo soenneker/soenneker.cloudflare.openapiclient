@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>Strategy for routing traffic across the listed versions. `percentage` splits traffic according to each version&apos;s `percentage`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PercentageStrategy
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "percentage")]
         #pragma warning disable CS1591

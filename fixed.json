@@ -38689,7 +38689,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AaaAuditLogsResponseCollection2"
+                  "$ref": "#/components/schemas/AaaAuditLogsResponseCollection"
                 }
               }
             }
@@ -43151,7 +43151,7 @@
           "Spend Policies"
         ],
         "summary": "List Spend Policy Activity",
-        "description": "Returns configuration history from immutable policy revisions for the account, including deleted policies. Entries contain before/after values and verified actor attribution. Pages use descending revision IDs, not event or commit order; refresh the first page for new entries. This cursor is not an incremental consumer checkpoint.",
+        "description": "Returns configuration history from immutable policy revisions for the account, including deleted policies. Entries contain before/after values and verified actor attribution. Pages use descending revision IDs, not event or commit order; refresh the first page for new entries. This cursor is not an incremental consumer checkpoint. Defaults to \u0060period=current_billing_cycle\u0060: each revision\u0027s timestamp must be within its product\u0027s current subscription cycle (inclusive start, exclusive end). Each product\u0027s cycle is resolved independently from canonical aggregates, including for disabled or deleted policies. Set \u0060period=all\u0060 for history across cycles. Filtering happens before pagination. No current cycles returns an empty page; unavailable or disabled cycle resolution returns \u0060503\u0060 with code \u00601013\u0060. Cursors pin resolved cycle bounds across pages and must be used with the same period selection. Cursors obtained before this filter was introduced must be refreshed.",
         "operationId": "SpendPoliciesActivity",
         "parameters": [
           {
@@ -43169,6 +43169,9 @@
           },
           {
             "$ref": "#/components/parameters/billing-spend-policies_audit_limit"
+          },
+          {
+            "$ref": "#/components/parameters/billing-spend-policies_history_period"
           },
           {
             "name": "cursor",
@@ -43192,7 +43195,7 @@
             }
           },
           "400": {
-            "description": "Invalid limit or pagination cursor (error code 1006 or 1011).",
+            "description": "Invalid limit, pagination cursor, or period (error code 1006, 1011, or 1012).",
             "content": {
               "application/json": {
                 "schema": {
@@ -43214,7 +43217,7 @@
             "$ref": "#/components/responses/billing-spend-policies_internal_error"
           },
           "503": {
-            "$ref": "#/components/responses/billing-spend-policies_authentication_unavailable"
+            "$ref": "#/components/responses/billing-spend-policies_history_unavailable"
           }
         },
         "security": [
@@ -43515,7 +43518,7 @@
           "Spend Policies"
         ],
         "summary": "List Spend Policy Audit Entries",
-        "description": "Returns the policy\u0027s evaluation history, newest first. At most one entry is recorded per trigger (\u0060approaching_limit\u0060 or \u0060limit_reached\u0060), policy version and billing period, so a policy update can record a new entry without any change in balance. Disabled policies still return their history; deleted policies return \u0060404\u0060. There is no pagination: use \u0060limit\u0060 to set how many entries come back.",
+        "description": "Returns the policy\u0027s evaluation history, newest first. At most one threshold-crossing entry (\u0060limit_reached\u0060) is recorded per policy version and billing period, so a policy update can record a new entry without any change in balance. Disabled policies still return their history; deleted policies return \u0060404\u0060. There is no pagination: use \u0060limit\u0060 to set how many entries come back. Defaults to \u0060period=current_billing_cycle\u0060, resolved from the product\u0027s canonical aggregates, not calendar months. Crossings match their recorded billing-period bounds, even if recorded late. Set \u0060period=all\u0060 for history across cycles. Filtering happens before LIMIT. No current cycle returns an empty array; unavailable or disabled cycle resolution returns \u0060503\u0060 with code \u00601013\u0060, never an empty success.",
         "operationId": "SpendPoliciesListAudit",
         "parameters": [
           {
@@ -43545,6 +43548,9 @@
           },
           {
             "$ref": "#/components/parameters/billing-spend-policies_audit_limit"
+          },
+          {
+            "$ref": "#/components/parameters/billing-spend-policies_history_period"
           }
         ],
         "responses": {
@@ -43559,7 +43565,7 @@
             }
           },
           "400": {
-            "$ref": "#/components/responses/billing-spend-policies_invalid_limit"
+            "$ref": "#/components/responses/billing-spend-policies_invalid_history_request"
           },
           "401": {
             "$ref": "#/components/responses/billing-spend-policies_unauthenticated"
@@ -43574,7 +43580,7 @@
             "$ref": "#/components/responses/billing-spend-policies_internal_error"
           },
           "503": {
-            "$ref": "#/components/responses/billing-spend-policies_authentication_unavailable"
+            "$ref": "#/components/responses/billing-spend-policies_history_unavailable"
           }
         },
         "security": [
@@ -46063,6 +46069,9 @@
           },
           "500": {
             "$ref": "#/components/responses/brand-protection-api_DEFAULT_ERROR"
+          },
+          "503": {
+            "$ref": "#/components/responses/brand-protection-api_SAVED_QUERY_DELETE_UNAVAILABLE"
           }
         },
         "security": [
@@ -111895,7 +111904,6 @@
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "dns-firewall.analytics.reports",
         "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true,
         "x-stainless-deprecation-message": "This endpoint is deprecated. See [the API deprecation notice](https://developers.cloudflare.com/fundamentals/api/reference/deprecations/#2025-12-09)."
       }
     },
@@ -112046,7 +112054,6 @@
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "dns-firewall.analytics.reports.bytimes",
         "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true,
         "x-stainless-deprecation-message": "This endpoint is deprecated. See [the API deprecation notice](https://developers.cloudflare.com/fundamentals/api/reference/deprecations/#2025-12-09)."
       }
     },
@@ -178509,6 +178516,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -178561,6 +178572,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -178648,6 +178663,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -178743,6 +178762,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -178811,6 +178834,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -178914,6 +178941,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179014,6 +179045,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179141,6 +179176,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179253,6 +179292,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179380,6 +179423,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179484,6 +179531,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179561,6 +179612,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179627,6 +179682,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179679,6 +179738,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179725,6 +179788,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179768,6 +179835,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179873,6 +179944,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -179967,6 +180042,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180044,6 +180123,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180145,6 +180228,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180208,6 +180295,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180275,6 +180366,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180341,6 +180436,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180418,6 +180517,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180528,6 +180631,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180672,6 +180779,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180780,6 +180891,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180859,6 +180974,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180913,6 +181032,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -180966,6 +181089,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181021,6 +181148,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181076,6 +181207,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181193,6 +181328,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181270,6 +181409,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181338,6 +181481,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181404,6 +181551,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181468,6 +181619,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181531,6 +181686,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181596,6 +181755,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181661,6 +181824,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181756,6 +181923,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181811,6 +181982,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181875,6 +182050,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -181939,6 +182118,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182003,6 +182186,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182076,6 +182263,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182172,6 +182363,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182253,6 +182448,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182326,6 +182525,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182390,6 +182593,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182504,6 +182711,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182613,6 +182824,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182696,6 +182911,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182759,6 +182978,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182827,6 +183050,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182899,6 +183126,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -182973,6 +183204,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -183087,6 +183322,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -183148,6 +183387,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -183253,6 +183496,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -183358,6 +183605,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -183495,6 +183746,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -183638,6 +183893,10 @@
         "security": [
           {
             "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
           }
         ],
         "x-api-token-group": [
@@ -215958,10 +216217,10 @@
         "operationId": "ListCredentialSets",
         "parameters": [
           {
-            "$ref": "#/components/parameters/vuln_scanner_page"
+            "$ref": "#/components/parameters/vuln-scanner_page"
           },
           {
-            "$ref": "#/components/parameters/vuln_scanner_per_page"
+            "$ref": "#/components/parameters/vuln-scanner_per_page"
           }
         ],
         "responses": {
@@ -215976,7 +216235,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -215990,8 +216249,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -216022,7 +216280,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216036,8 +216294,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       },
       "parameters": [
         {
@@ -216075,7 +216332,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216090,7 +216347,6 @@
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "This operation permanently deletes the credential set and every credential it contains."
       },
       "get": {
@@ -216112,7 +216368,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216126,8 +216382,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -216158,7 +216413,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216172,8 +216427,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       },
       "put": {
         "tags": [
@@ -216204,7 +216458,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216218,8 +216472,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       },
       "parameters": [
         {
@@ -216257,10 +216510,10 @@
         "operationId": "ListCredentials",
         "parameters": [
           {
-            "$ref": "#/components/parameters/vuln_scanner_page"
+            "$ref": "#/components/parameters/vuln-scanner_page"
           },
           {
-            "$ref": "#/components/parameters/vuln_scanner_per_page"
+            "$ref": "#/components/parameters/vuln-scanner_per_page"
           }
         ],
         "responses": {
@@ -216275,7 +216528,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216289,8 +216542,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -216321,7 +216573,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216335,8 +216587,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       },
       "parameters": [
         {
@@ -216384,7 +216635,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216399,7 +216650,6 @@
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "This operation permanently deletes the credential from the credential set."
       },
       "get": {
@@ -216421,7 +216671,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216435,8 +216685,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -216467,7 +216716,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216481,8 +216730,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       },
       "put": {
         "tags": [
@@ -216513,7 +216761,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216527,8 +216775,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.credential-sets.credentials",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       },
       "parameters": [
         {
@@ -216576,10 +216823,10 @@
         "operationId": "ListScans",
         "parameters": [
           {
-            "$ref": "#/components/parameters/vuln_scanner_page"
+            "$ref": "#/components/parameters/vuln-scanner_page"
           },
           {
-            "$ref": "#/components/parameters/vuln_scanner_per_page"
+            "$ref": "#/components/parameters/vuln-scanner_per_page"
           }
         ],
         "responses": {
@@ -216594,7 +216841,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216608,8 +216855,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.scans",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -216640,7 +216886,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216654,8 +216900,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.scans",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       },
       "parameters": [
         {
@@ -216693,7 +216938,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216708,7 +216953,6 @@
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.scans",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "This operation permanently deletes the completed or failed scan and all associated scan data."
       },
       "get": {
@@ -216730,7 +216974,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216744,8 +216988,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.scans",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -216783,10 +217026,10 @@
         "operationId": "ListTargetEnvironments",
         "parameters": [
           {
-            "$ref": "#/components/parameters/vuln_scanner_page"
+            "$ref": "#/components/parameters/vuln-scanner_page"
           },
           {
-            "$ref": "#/components/parameters/vuln_scanner_per_page"
+            "$ref": "#/components/parameters/vuln-scanner_per_page"
           }
         ],
         "responses": {
@@ -216801,7 +217044,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216815,8 +217058,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "post": {
         "tags": [
@@ -216847,7 +217089,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216861,8 +217103,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       },
       "parameters": [
         {
@@ -216900,7 +217141,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216915,7 +217156,6 @@
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
         "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true,
         "x-forge-require-confirmation": "This operation permanently deletes the target environment from Vulnerability Scanner."
       },
       "get": {
@@ -216937,7 +217177,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216951,8 +217191,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "patch": {
         "tags": [
@@ -216983,7 +217222,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -216997,8 +217236,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       },
       "put": {
         "tags": [
@@ -217029,7 +217267,7 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/vuln_scanner_4XX"
+            "$ref": "#/components/responses/vuln-scanner_4XX"
           }
         },
         "security": [
@@ -217043,8 +217281,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "api-security.vulnerability-scanner.target-environments",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       },
       "parameters": [
         {
@@ -219241,8 +219478,8 @@
         "tags": [
           "Workers for Platforms"
         ],
-        "summary": "Upload Workers for Platforms Script Module",
-        "description": "Upload a Workers for Platforms script module to a dispatch namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.",
+        "summary": "Upload Workers for Platforms Script",
+        "description": "Upload Worker code and configuration to a Workers for Platforms dispatch\nnamespace. For ES module and other module-based Workers, use\n\u0060multipart/form-data\u0060 with a JSON \u0060metadata\u0060 part whose \u0060main_module\u0060\nfield names the entrypoint file. Upload each module as a separate file\npart; JavaScript ES module parts use the \u0060application/javascript\u002Bmodule\u0060\ncontent type.\n\nRaw \u0060application/javascript\u0060 and \u0060text/javascript\u0060 request bodies accept\nonly legacy service-worker syntax using \u0060addEventListener\u0060. They do not\naccept ES module syntax such as \u0060export default\u0060. To upload a module\nWorker, use the multipart request format instead.\n\nLearn more about multipart metadata in the [documentation](https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/).\n",
         "operationId": "NamespaceWorkerScriptUploadWorkerModule",
         "parameters": [
           {
@@ -219298,7 +219535,7 @@
             "$ref": "#/components/responses/workers_200"
           },
           "4XX": {
-            "description": "Upload Worker Module response failure. When the upload uses the\ndeclarative \u0060exports\u0060 field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n\u0060errors[].meta.details\u0060.\n",
+            "description": "Upload Worker response failure. When the upload uses the\ndeclarative \u0060exports\u0060 field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n\u0060errors[].meta.details\u0060.\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -225875,8 +226112,8 @@
         "tags": [
           "Worker Script"
         ],
-        "summary": "Upload Worker Module",
-        "description": "Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.",
+        "summary": "Upload Worker",
+        "description": "Upload Worker code and configuration. For ES module and other module-based\nWorkers, use \u0060multipart/form-data\u0060 with a JSON \u0060metadata\u0060 part whose\n\u0060main_module\u0060 field names the entrypoint file. Upload each module as a\nseparate file part; JavaScript ES module parts use the\n\u0060application/javascript\u002Bmodule\u0060 content type.\n\nRaw \u0060application/javascript\u0060 and \u0060text/javascript\u0060 request bodies accept\nonly legacy service-worker syntax using \u0060addEventListener\u0060. They do not\naccept ES module syntax such as \u0060export default\u0060. To upload a module\nWorker, use the multipart request format instead.\n\nLearn more about multipart metadata in the [documentation](https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/).\n",
         "operationId": "WorkerScriptUploadWorkerModule",
         "parameters": [
           {
@@ -225917,7 +226154,7 @@
         },
         "responses": {
           "200": {
-            "description": "Upload Worker Module response.",
+            "description": "Upload Worker response.",
             "content": {
               "application/json": {
                 "schema": {
@@ -225927,7 +226164,7 @@
             }
           },
           "4XX": {
-            "description": "Upload Worker Module response failure. When the upload uses the\ndeclarative \u0060exports\u0060 field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n\u0060errors[].meta.details\u0060.\n",
+            "description": "Upload Worker response failure. When the upload uses the\ndeclarative \u0060exports\u0060 field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n\u0060errors[].meta.details\u0060.\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -226497,6 +226734,7 @@
           {
             "name": "deploymentId",
             "in": "path",
+            "description": "Identifier of the Worker Deployment.",
             "required": true,
             "schema": {
               "type": "string",
@@ -226581,6 +226819,7 @@
           {
             "name": "deploymentId",
             "in": "path",
+            "description": "Identifier of the Worker Deployment.",
             "required": true,
             "schema": {
               "type": "string",
@@ -296657,7 +296896,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AaaAuditLogsResponseCollection2"
+                  "$ref": "#/components/schemas/AaaAuditLogsResponseCollection"
                 }
               }
             }
@@ -322032,23 +322271,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EntitlementsApiResponseFailure"
-                },
-                "examples": {
-                  "invalid_object_type": {
-                    "summary": "Invalid object type",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2005,
-                          "message": "failed to fetch entitlements: invalid object type"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
+                  "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements400Response"
                 }
               }
             }
@@ -322078,23 +322301,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EntitlementsApiResponseFailure"
-                },
-                "examples": {
-                  "not_found": {
-                    "summary": "Unknown route",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2004,
-                          "message": "failed to fetch entitlements: unknown route"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
+                  "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements404Response"
                 }
               }
             }
@@ -322104,23 +322311,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EntitlementsApiResponseFailure"
-                },
-                "examples": {
-                  "method_not_allowed": {
-                    "summary": "Method not allowed",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2001,
-                          "message": "failed to fetch entitlements: method not allowed"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
+                  "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements405Response"
                 }
               }
             }
@@ -322130,23 +322321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EntitlementsApiResponseFailure"
-                },
-                "examples": {
-                  "internal_error": {
-                    "summary": "Internal server error",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2000,
-                          "message": "failed to fetch entitlements: internal server error"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
+                  "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements500Response"
                 }
               }
             }
@@ -322156,23 +322331,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EntitlementsApiResponseFailure"
-                },
-                "examples": {
-                  "timeout": {
-                    "summary": "Upstream timeout",
-                    "value": {
-                      "errors": [
-                        {
-                          "code": 2003,
-                          "message": "failed to fetch entitlements: timeout occurred"
-                        }
-                      ],
-                      "messages": [],
-                      "result": null,
-                      "success": false
-                    }
-                  }
+                  "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements503Response"
                 }
               }
             }
@@ -349098,11 +349257,13 @@
           }
         ],
         "requestBody": {
+          "description": "Send the workflow name as plain text (\u0060realtime\u0060 or \u0060preview\u0060), without JSON quotes.",
           "content": {
-            "application/json": {
+            "text/plain": {
               "schema": {
                 "$ref": "#/components/schemas/ZarazZarazWorkflow"
-              }
+              },
+              "example": "realtime"
             }
           },
           "required": true
@@ -360229,7 +360390,7 @@
             "$ref": "#/components/schemas/AaaResultInfo"
           },
           "success": {
-            "$ref": "#/components/schemas/AaaAuditLogsResponseCollectionSuccess"
+            "$ref": "#/components/schemas/AaaAuditLogsSuccessResponseCollectionSuccess"
           },
           "result": {
             "type": "array",
@@ -360313,7 +360474,7 @@
             "$ref": "#/components/schemas/AaaResultInfo"
           },
           "success": {
-            "$ref": "#/components/schemas/AaaAuditLogsResponseCollectionSuccess"
+            "$ref": "#/components/schemas/AaaAuditLogsSuccessResponseCollectionSuccess"
           },
           "result": {
             "type": "array",
@@ -360323,10 +360484,10 @@
           }
         }
       },
-      "AaaAuditLogsResponseCollection2": {
+      "AaaAuditLogsResponseCollection": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/AaaAuditLogsResponseCollection2OneOf1"
+            "$ref": "#/components/schemas/AaaAuditLogsResponseCollectionOneOf1"
           },
           {
             "$ref": "#/components/schemas/AaaApiResponseCommon"
@@ -383242,7 +383403,9 @@
             "example": 100
           },
           "trigger": {
-            "$ref": "#/components/schemas/BillingSpendPoliciesPolicyAuditEntryTrigger"
+            "type": "string",
+            "description": "The trigger recorded at evaluation time. New evaluations record \u0060limit_reached\u0060 when the balance reaches or exceeds the configured threshold. Earlier entries retain their recorded trigger.",
+            "example": "limit_reached"
           }
         },
         "description": "A state transition recorded when the policy was evaluated against the account\u0027s balance."
@@ -384533,6 +384696,43 @@
           },
           "total": {
             "type": "integer"
+          }
+        }
+      },
+      "BrandProtectionApiSavedQueryDeleteUnavailable": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BrandProtectionApiSavedQueryDeleteUnavailableErrorsItem"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BrandProtectionApiSavedQueryDeleteUnavailableMessagesItem"
+            }
+          },
+          "result": {
+            "maxItems": 0,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BrandProtectionApiSavedQueryDeleteUnavailableResultItemProperty"
+            }
+          },
+          "success": {
+            "$ref": "#/components/schemas/BrandProtectionApiSavedQueryDeleteUnavailableSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         }
       },
@@ -403729,6 +403929,7 @@
       },
       "DlpRiskLevel": {
         "enum": [
+          "info",
           "low",
           "medium",
           "high"
@@ -403738,6 +403939,10 @@
           "name": "DlpRiskLevel",
           "modelAsString": false,
           "values": [
+            {
+              "value": "info",
+              "name": "Info"
+            },
             {
               "value": "low",
               "name": "Low"
@@ -507640,7 +507845,7 @@
           }
         }
       },
-      "AaaAuditLogsResponseCollection2OneOf1": {
+      "AaaAuditLogsResponseCollectionOneOf1": {
         "type": "object",
         "properties": {
           "errors": {
@@ -511093,6 +511298,7 @@
       },
       "DlpRiskEventsRiskLevel": {
         "enum": [
+          "info",
           "low",
           "medium",
           "high"
@@ -511102,6 +511308,10 @@
           "name": "DlpRiskEventsRiskLevel",
           "modelAsString": false,
           "values": [
+            {
+              "value": "info",
+              "name": "Info"
+            },
             {
               "value": "low",
               "name": "Low"
@@ -529690,6 +529900,36 @@
           }
         }
       },
+      "BrandProtectionApiSavedQueryDeleteUnavailableErrorsItem": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "BrandProtectionApiSavedQueryDeleteUnavailableMessagesItem": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
       "BuildsBuildResponseDeployHook": {
         "type": "object",
         "properties": {
@@ -537078,7 +537318,8 @@
             "readOnly": true,
             "example": "deployment"
           }
-        }
+        },
+        "description": "Metadata attached to the deployment."
       },
       "WorkersDeploymentVersionsItem": {
         "required": [
@@ -648682,6 +648923,236 @@
           }
         }
       },
+      "EntitlementsGetZoneEntitlements400Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiError"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiMessage"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements400ResponseResult"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Always false for error responses.",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "example": {
+          "errors": [
+            {
+              "code": 2005,
+              "message": "failed to fetch entitlements: invalid object type"
+            }
+          ],
+          "messages": [],
+          "result": null,
+          "success": false
+        }
+      },
+      "EntitlementsGetZoneEntitlements404Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiError"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiMessage"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements404ResponseResult"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Always false for error responses.",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "example": {
+          "errors": [
+            {
+              "code": 2004,
+              "message": "failed to fetch entitlements: unknown route"
+            }
+          ],
+          "messages": [],
+          "result": null,
+          "success": false
+        }
+      },
+      "EntitlementsGetZoneEntitlements405Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiError"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiMessage"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements405ResponseResult"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Always false for error responses.",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "example": {
+          "errors": [
+            {
+              "code": 2001,
+              "message": "failed to fetch entitlements: method not allowed"
+            }
+          ],
+          "messages": [],
+          "result": null,
+          "success": false
+        }
+      },
+      "EntitlementsGetZoneEntitlements500Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiError"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiMessage"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements500ResponseResult"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Always false for error responses.",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "example": {
+          "errors": [
+            {
+              "code": 2000,
+              "message": "failed to fetch entitlements: internal server error"
+            }
+          ],
+          "messages": [],
+          "result": null,
+          "success": false
+        }
+      },
+      "EntitlementsGetZoneEntitlements503Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiError"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementsApiMessage"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/EntitlementsGetZoneEntitlements503ResponseResult"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Always false for error responses.",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "example": {
+          "errors": [
+            {
+              "code": 2003,
+              "message": "failed to fetch entitlements: timeout occurred"
+            }
+          ],
+          "messages": [],
+          "result": null,
+          "success": false
+        }
+      },
       "ZoneEnvironmentInvalidateRequest": {
         "anyOf": [
           {
@@ -660246,22 +660717,22 @@
       },
       "WorkersNamespaceUploadRequestJavascriptContent2": {
         "type": "string",
-        "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+        "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n\u0060addEventListener\u0060. ES module syntax such as \u0060export default\u0060 is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use \u0060multipart/form-data\u0060 with\n\u0060metadata.main_module\u0060 identifying the entrypoint file.\n",
         "example": "addEventListener(\u0027fetch\u0027, (event) =\u003E event.respondWith(new Response(\u0027OK\u0027)))"
       },
       "WorkersNamespaceUploadRequestJavascriptContent3": {
         "type": "string",
-        "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+        "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n\u0060addEventListener\u0060. ES module syntax such as \u0060export default\u0060 is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use \u0060multipart/form-data\u0060 with\n\u0060metadata.main_module\u0060 identifying the entrypoint file.\n",
         "example": "addEventListener(\u0027fetch\u0027, (event) =\u003E event.respondWith(new Response(\u0027OK\u0027)))"
       },
       "WorkersScriptUploadRequestJavascriptContent2": {
         "type": "string",
-        "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+        "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n\u0060addEventListener\u0060. ES module syntax such as \u0060export default\u0060 is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use \u0060multipart/form-data\u0060 with\n\u0060metadata.main_module\u0060 identifying the entrypoint file.\n",
         "example": "addEventListener(\u0027fetch\u0027, (event) =\u003E event.respondWith(new Response(\u0027OK\u0027)))"
       },
       "WorkersScriptUploadRequestJavascriptContent3": {
         "type": "string",
-        "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+        "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n\u0060addEventListener\u0060. ES module syntax such as \u0060export default\u0060 is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use \u0060multipart/form-data\u0060 with\n\u0060metadata.main_module\u0060 identifying the entrypoint file.\n",
         "example": "addEventListener(\u0027fetch\u0027, (event) =\u003E event.respondWith(new Response(\u0027OK\u0027)))"
       },
       "AnalyticsEngineBadRequestResponsePlainContent": {
@@ -725825,6 +726296,9 @@
           "$ref": "#/components/schemas/BrandProtectionApiQueryMatchMatchesItemPropertyAdditionalProperties"
         }
       },
+      "BrandProtectionApiSavedQueryDeleteUnavailableResultItemProperty": {
+        "type": "object"
+      },
       "BrandProtectionApiUrlInfoResultItemProperty": {
         "type": "object",
         "additionalProperties": {
@@ -767290,6 +767764,9 @@
       "D1ExportDatabaseRequestDumpOptions": {
         "type": "object",
         "properties": {
+          "compatibility": {
+            "$ref": "#/components/schemas/D1ExportDatabaseRequestDumpOptionsCompatibility"
+          },
           "no_data": {
             "type": "boolean",
             "description": "Export only the table definitions, not their contents",
@@ -791443,6 +791920,31 @@
             "default": []
           }
         }
+      },
+      "EntitlementsGetZoneEntitlements400ResponseResult": {
+        "type": "object",
+        "description": "Always null for error responses.",
+        "nullable": true
+      },
+      "EntitlementsGetZoneEntitlements404ResponseResult": {
+        "type": "object",
+        "description": "Always null for error responses.",
+        "nullable": true
+      },
+      "EntitlementsGetZoneEntitlements405ResponseResult": {
+        "type": "object",
+        "description": "Always null for error responses.",
+        "nullable": true
+      },
+      "EntitlementsGetZoneEntitlements500ResponseResult": {
+        "type": "object",
+        "description": "Always null for error responses.",
+        "nullable": true
+      },
+      "EntitlementsGetZoneEntitlements503ResponseResult": {
+        "type": "object",
+        "description": "Always null for error responses.",
+        "nullable": true
       },
       "ZoneLockdownDeleteAZoneLockdownRule200ResponseResult": {
         "type": "object",
@@ -875319,7 +875821,7 @@
           ]
         }
       },
-      "AaaAuditLogsResponseCollectionSuccess": {
+      "AaaAuditLogsSuccessResponseCollectionSuccess": {
         "enum": [
           true
         ],
@@ -878551,36 +879053,12 @@
           ]
         }
       },
-      "BillingSpendPoliciesPolicyAuditEntryTrigger": {
-        "enum": [
-          "approaching_limit",
-          "limit_reached"
-        ],
-        "type": "string",
-        "description": "The state the balance moved into. \u0060approaching_limit\u0060 means the balance is at least 80% of the threshold (rounded up to a whole cent), but below the threshold. \u0060limit_reached\u0060 means the balance reached or exceeded the threshold.",
-        "example": "limit_reached",
-        "x-ms-enum": {
-          "name": "BillingSpendPoliciesPolicyAuditEntryTrigger",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "approaching_limit",
-              "name": "ApproachingLimit"
-            },
-            {
-              "value": "limit_reached",
-              "name": "LimitReached"
-            }
-          ]
-        }
-      },
       "BillingSpendPoliciesPolicyCurrentStateStatus": {
         "enum": [
           "disabled",
           "no_current_period",
           "unavailable",
           "below_limit",
-          "approaching_limit",
           "limit_reached"
         ],
         "type": "string",
@@ -878604,10 +879082,6 @@
             {
               "value": "below_limit",
               "name": "BelowLimit"
-            },
-            {
-              "value": "approaching_limit",
-              "name": "ApproachingLimit"
             },
             {
               "value": "limit_reached",
@@ -878647,6 +879121,12 @@
         "type": "boolean",
         "description": "Whether the API call was successful.",
         "example": false
+      },
+      "BrandProtectionApiSavedQueryDeleteUnavailableSuccess": {
+        "enum": [
+          false
+        ],
+        "type": "boolean"
       },
       "BrexConfigResponseSuccess": {
         "enum": [
@@ -894983,6 +895463,7 @@
           "percentage"
         ],
         "type": "string",
+        "description": "Strategy for routing traffic across the listed versions. \u0060percentage\u0060 splits traffic according to each version\u0027s \u0060percentage\u0060.",
         "x-auditable": true,
         "x-ms-enum": {
           "name": "PercentageStrategy",
@@ -930776,6 +931257,29 @@
             {
               "value": "custom",
               "name": "Custom"
+            }
+          ]
+        }
+      },
+      "D1ExportDatabaseRequestDumpOptionsCompatibility": {
+        "enum": [
+          "d1",
+          "sqlite3_cli_only"
+        ],
+        "type": "string",
+        "description": "Dump format. \u0060d1\u0060 (the default) gives a dump that D1 can import. \u0060sqlite3_cli_only\u0060 matches the output of the \u0060sqlite3 .dump\u0060 command, including virtual tables such as FTS5 or R*Tree tables, but cannot be imported back into D1.",
+        "x-auditable": true,
+        "x-ms-enum": {
+          "name": "D1ExportDatabaseRequestDumpOptionsCompatibility",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "d1",
+              "name": "D1"
+            },
+            {
+              "value": "sqlite3_cli_only",
+              "name": "Sqlite3CliOnly"
             }
           ]
         }
@@ -1002898,6 +1003402,27 @@
             {
               "value": "mapped_resources.operations",
               "name": "MappedResourcesOperations"
+            }
+          ]
+        }
+      },
+      "BillingSpendPoliciesHistoryPeriod": {
+        "enum": [
+          "current_billing_cycle",
+          "all"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "BillingSpendPoliciesHistoryPeriod",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "current_billing_cycle",
+              "name": "CurrentBillingCycle"
+            },
+            {
+              "value": "all",
+              "name": "All"
             }
           ]
         }
@@ -1117422,6 +1117947,16 @@
           }
         }
       },
+      "billing-spend-policies_history_unavailable": {
+        "description": "Code \u00601001\u0060: authentication verification is unavailable. Code \u00601013\u0060: current billing-cycle resolution is unavailable or disabled. Retry or request period=all, which does not require aggregate reads.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/BillingSpendPoliciesApiResponseCommonFailure"
+            }
+          }
+        }
+      },
       "billing-spend-policies_if_match_required": {
         "description": "Code \u00601007\u0060. The \u0060If-Match\u0060 header is missing or does not hold a positive integer version.",
         "content": {
@@ -1117452,8 +1117987,8 @@
           }
         }
       },
-      "billing-spend-policies_invalid_limit": {
-        "description": "The request was malformed. Code \u00601004\u0060: the account ID is invalid. Code \u00601006\u0060: \u0060limit\u0060 is not a positive integer.",
+      "billing-spend-policies_invalid_history_request": {
+        "description": "The request was malformed. Code \u00601004\u0060: invalid account ID. Code \u00601006\u0060: invalid limit. Code \u00601012\u0060: period must be current_billing_cycle or all.",
         "content": {
           "application/json": {
             "schema": {
@@ -1117518,6 +1118053,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/BrandProtectionApiError"
+            }
+          }
+        }
+      },
+      "brand-protection-api_SAVED_QUERY_DELETE_UNAVAILABLE": {
+        "description": "Saved query deletion could not be confirmed.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/BrandProtectionApiSavedQueryDeleteUnavailable"
             }
           }
         }
@@ -1118434,7 +1118979,7 @@
           }
         }
       },
-      "vuln_scanner_4XX": {
+      "vuln-scanner_4XX": {
         "description": "Client error.",
         "content": {
           "application/json": {
@@ -1118445,7 +1118990,7 @@
         }
       },
       "workers_200": {
-        "description": "Upload Worker Module response.",
+        "description": "Upload Worker response.",
         "content": {
           "application/json": {
             "schema": {
@@ -1118455,7 +1119000,7 @@
         }
       },
       "workers_4XX": {
-        "description": "Upload Worker Module response failure. When the upload uses the\ndeclarative \u0060exports\u0060 field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n\u0060errors[].meta.details\u0060.\n",
+        "description": "Upload Worker response failure. When the upload uses the\ndeclarative \u0060exports\u0060 field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n\u0060errors[].meta.details\u0060.\n",
         "content": {
           "application/json": {
             "schema": {
@@ -1119026,6 +1119571,14 @@
           "type": "integer",
           "default": 50,
           "example": 50
+        }
+      },
+      "billing-spend-policies_history_period": {
+        "name": "period",
+        "in": "query",
+        "description": "Select current subscription billing-cycle history or history across all cycles.",
+        "schema": {
+          "$ref": "#/components/schemas/BillingSpendPoliciesHistoryPeriod"
         }
       },
       "billing-spend-policies_if_match": {
@@ -1121296,7 +1121849,7 @@
           "example": "023e105f4ecef8ad9ca31a8372d0c353"
         }
       },
-      "vuln_scanner_account_id": {
+      "vuln-scanner_account_id": {
         "name": "account_id",
         "in": "path",
         "description": "Account identifier.",
@@ -1121309,7 +1121862,7 @@
           "x-auditable": true
         }
       },
-      "vuln_scanner_credential_id": {
+      "vuln-scanner_credential_id": {
         "name": "credential_id",
         "in": "path",
         "description": "Credential identifier.",
@@ -1121319,7 +1121872,7 @@
           "format": "uuid"
         }
       },
-      "vuln_scanner_credential_set_id": {
+      "vuln-scanner_credential_set_id": {
         "name": "credential_set_id",
         "in": "path",
         "description": "Credential set identifier.",
@@ -1121329,7 +1121882,7 @@
           "format": "uuid"
         }
       },
-      "vuln_scanner_page": {
+      "vuln-scanner_page": {
         "name": "page",
         "in": "query",
         "description": "Page number of paginated results.",
@@ -1121339,7 +1121892,7 @@
           "default": 1
         }
       },
-      "vuln_scanner_per_page": {
+      "vuln-scanner_per_page": {
         "name": "per_page",
         "in": "query",
         "description": "Number of results per page.",
@@ -1121350,7 +1121903,7 @@
           "default": 20
         }
       },
-      "vuln_scanner_scan_id": {
+      "vuln-scanner_scan_id": {
         "name": "scan_id",
         "in": "path",
         "description": "Scan identifier.",
@@ -1121360,7 +1121913,7 @@
           "format": "uuid"
         }
       },
-      "vuln_scanner_target_environment_id": {
+      "vuln-scanner_target_environment_id": {
         "name": "target_environment_id",
         "in": "path",
         "description": "Target environment identifier.",
@@ -1124594,6 +1125147,19 @@
         }
       }
     },
+    "durable-objects": {
+      "description": "Stateful serverless objects with transactional storage, ideal for coordination, sessions, and real-time collaboration",
+      "groups": {
+        "namespaces": {
+          "description": "List Durable Object namespaces and inspect individual object instances within them",
+          "groups": {
+            "objects": {
+              "description": "List Durable Object instances in a namespace"
+            }
+          }
+        }
+      }
+    },
     "email-routing": {
       "description": "Route incoming email to verified destination addresses or Workers with routing rules, catch-all behavior, and managed DNS records",
       "groups": {
@@ -1125535,6 +1126101,76 @@
         }
       }
     },
+    "workers": {
+      "description": "Deploy and manage serverless JavaScript/WASM applications on Cloudflare\u0027s global network",
+      "groups": {
+        "account-settings": {
+          "description": "Account-wide Workers settings such as default usage model and green compute"
+        },
+        "applications": {
+          "description": "Public worker application listing"
+        },
+        "assets": {
+          "description": "Upload static assets that are served alongside a Worker"
+        },
+        "deployments": {
+          "description": "Manage Worker deployments and traffic versions"
+        },
+        "domains": {
+          "description": "Attach or detach custom domains that route directly to a Worker without a DNS record"
+        },
+        "legacy": {
+          "description": "Legacy Workers APIs with newer Workers API equivalents",
+          "groups": {
+            "scripts": {
+              "description": "Legacy script lifecycle and version operations"
+            }
+          }
+        },
+        "placement": {
+          "description": "Discover regions available for Worker placement",
+          "groups": {
+            "regions": {
+              "description": "List cloud provider regions that can be used for Smart Placement"
+            }
+          }
+        },
+        "routes": {
+          "description": "Map URL patterns to Workers so incoming requests are dispatched to the correct script"
+        },
+        "scripts": {
+          "description": "Worker script operations including usage model, settings, content, tags, schedules, subdomains, and queue consumers"
+        },
+        "secrets": {
+          "description": "Manage secrets bound to Worker scripts"
+        },
+        "services": {
+          "description": "Services operations"
+        },
+        "subdomains": {
+          "description": "Configure the workers.dev subdomain used to reach Workers without a custom domain"
+        },
+        "tail": {
+          "description": "Manage Worker tail sessions"
+        },
+        "versions": {
+          "description": "Create, list, inspect, and manage Worker versions"
+        }
+      }
+    },
+    "workers-for-platforms": {
+      "description": "Workers for Platforms uses dispatch namespaces to isolate and route requests to many individual user Workers, letting platforms run untrusted customer or AI-generated code at scale with per-tenant bindings, limits, and observability",
+      "groups": {
+        "dispatch-namespaces": {
+          "description": "Isolate and route requests to many individual user Workers",
+          "groups": {
+            "scripts": {
+              "description": "Operations around customer Workers deployed inside a dispatch namespace"
+            }
+          }
+        }
+      }
+    },
     "workflows": {
       "description": "Durable, multi-step workflows that run on Workers with automatic retries and state persistence",
       "groups": {
@@ -1125791,7 +1126427,7 @@
       },
       "description": "Provides details about the actor who performed the action."
     },
-    "AaaAuditLogsResponseCollection": {
+    "AaaAuditLogsSuccessResponseCollection": {
       "type": "object",
       "properties": {
         "errors": {
@@ -1125805,7 +1126441,7 @@
           "$ref": "#/components/schemas/AaaResultInfo"
         },
         "success": {
-          "$ref": "#/components/schemas/AaaAuditLogsResponseCollectionSuccess"
+          "$ref": "#/components/schemas/AaaAuditLogsSuccessResponseCollectionSuccess"
         }
       }
     },
@@ -1170002,22 +1170638,22 @@
     },
     "WorkersNamespaceUploadRequestJavascript": {
       "type": "string",
-      "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+      "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n\u0060addEventListener\u0060. ES module syntax such as \u0060export default\u0060 is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use \u0060multipart/form-data\u0060 with\n\u0060metadata.main_module\u0060 identifying the entrypoint file.\n",
       "example": "addEventListener(\u0027fetch\u0027, (event) =\u003E event.respondWith(new Response(\u0027OK\u0027)))"
     },
     "WorkersNamespaceUploadRequestJavascriptContent": {
       "type": "string",
-      "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+      "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n\u0060addEventListener\u0060. ES module syntax such as \u0060export default\u0060 is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use \u0060multipart/form-data\u0060 with\n\u0060metadata.main_module\u0060 identifying the entrypoint file.\n",
       "example": "addEventListener(\u0027fetch\u0027, (event) =\u003E event.respondWith(new Response(\u0027OK\u0027)))"
     },
     "WorkersScriptUploadRequestJavascript": {
       "type": "string",
-      "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+      "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n\u0060addEventListener\u0060. ES module syntax such as \u0060export default\u0060 is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use \u0060multipart/form-data\u0060 with\n\u0060metadata.main_module\u0060 identifying the entrypoint file.\n",
       "example": "addEventListener(\u0027fetch\u0027, (event) =\u003E event.respondWith(new Response(\u0027OK\u0027)))"
     },
     "WorkersScriptUploadRequestJavascriptContent": {
       "type": "string",
-      "description": "Raw javascript content comprising a Worker. Must be in service worker syntax.",
+      "description": "Raw JavaScript for a legacy service-worker syntax Worker using\n\u0060addEventListener\u0060. ES module syntax such as \u0060export default\u0060 is\nnot supported in this request format. For ES module and other\nmodule-based Workers, use \u0060multipart/form-data\u0060 with\n\u0060metadata.main_module\u0060 identifying the entrypoint file.\n",
       "example": "addEventListener(\u0027fetch\u0027, (event) =\u003E event.respondWith(new Response(\u0027OK\u0027)))"
     },
     "AnalyticsEngineBadRequestResponsePlain": {
@@ -1191351,6 +1191987,9 @@
       "additionalProperties": {
         "$ref": "#/components/schemas/BrandProtectionApiQueryMatchMatchesItemAdditionalPropertiesProperty"
       }
+    },
+    "BrandProtectionApiSavedQueryDeleteUnavailableResultItem": {
+      "type": "object"
     },
     "BrandProtectionApiUrlInfoResultItem": {
       "type": "object",

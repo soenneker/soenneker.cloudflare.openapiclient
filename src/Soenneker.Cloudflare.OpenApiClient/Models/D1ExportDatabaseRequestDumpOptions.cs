@@ -17,6 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("compatibility") is null) { _explicitNullValueCompatibility = default!; _explicitNullProperties?.Remove("compatibility"); }
+            else if (parseNode.GetChildNode("compatibility") is { } nullNodeCompatibility && nullNodeCompatibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compatibility = null;
             if (parseNode.GetChildNode("no_data") is null) { _explicitNullValueNoData = default!; _explicitNullProperties?.Remove("no_data"); }
             else if (parseNode.GetChildNode("no_data") is { } nullNodeNoData && nullNodeNoData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoData = null;
             if (parseNode.GetChildNode("no_schema") is null) { _explicitNullValueNoSchema = default!; _explicitNullProperties?.Remove("no_schema"); }
@@ -27,6 +29,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Dump format. `d1` (the default) gives a dump that D1 can import. `sqlite3_cli_only` matches the output of the `sqlite3 .dump` command, including virtual tables such as FTS5 or R*Tree tables, but cannot be imported back into D1.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptionsCompatibility? Compatibility { get => _explicitNullValueCompatibility; set { _explicitNullValueCompatibility = value; AdditionalData?.Remove("compatibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compatibility"); else _explicitNullProperties?.Remove("compatibility"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptionsCompatibility? _explicitNullValueCompatibility = default!;
         /// <summary>Export only the table definitions, not their contents</summary>
         public bool? NoData { get => _explicitNullValueNoData; set { _explicitNullValueNoData = value; AdditionalData?.Remove("no_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_data"); else _explicitNullProperties?.Remove("no_data"); } }
         private bool? _explicitNullValueNoData = default!;
@@ -68,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "compatibility", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptionsCompatibility>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCompatibility = default; _explicitNullProperties?.Remove("compatibility"); AdditionalData["compatibility"] = unknown; } else { Compatibility = parsed; AdditionalData.Remove("compatibility"); } } },
                 { "no_data", n => { NoData = n.GetBoolValue(); } },
                 { "no_schema", n => { NoSchema = n.GetBoolValue(); } },
                 { "tables", n => { Tables = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -80,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ExportDatabaseRequestDumpOptionsCompatibility>("compatibility", Compatibility);
             writer.WriteBoolValue("no_data", NoData);
             writer.WriteBoolValue("no_schema", NoSchema);
             writer.WriteCollectionOfPrimitiveValues<string>("tables", Tables);

@@ -154,7 +154,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
+        /// Upload Worker code and configuration. For ES module and other module-basedWorkers, use `multipart/form-data` with a JSON `metadata` part whose`main_module` field names the entrypoint file. Upload each module as aseparate file part; JavaScript ES module parts use the`application/javascript+module` content type.Raw `application/javascript` and `text/javascript` request bodies acceptonly legacy service-worker syntax using `addEventListener`. They do notaccept ES module syntax such as `export default`. To upload a moduleWorker, use the multipart request format instead.Learn more about multipart metadata in the [documentation](https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerScriptUploadWorkerModule200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -218,7 +218,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item
             return requestInfo;
         }
         /// <summary>
-        /// Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
+        /// Upload Worker code and configuration. For ES module and other module-basedWorkers, use `multipart/form-data` with a JSON `metadata` part whose`main_module` field names the entrypoint file. Upload each module as aseparate file part; JavaScript ES module parts use the`application/javascript+module` content type.Raw `application/javascript` and `text/javascript` request bodies acceptonly legacy service-worker syntax using `addEventListener`. They do notaccept ES module syntax such as `export default`. To upload a moduleWorker, use the multipart request format instead.Learn more about multipart metadata in the [documentation](https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -259,7 +259,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item
             public bool? Force { get; set; }
         }
         /// <summary>
-        /// Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
+        /// Upload Worker code and configuration. For ES module and other module-basedWorkers, use `multipart/form-data` with a JSON `metadata` part whose`main_module` field names the entrypoint file. Upload each module as aseparate file part; JavaScript ES module parts use the`application/javascript+module` content type.Raw `application/javascript` and `text/javascript` request bodies acceptonly legacy service-worker syntax using `addEventListener`. They do notaccept ES module syntax such as `export default`. To upload a moduleWorker, use the multipart request format instead.Learn more about multipart metadata in the [documentation](https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithScriptNameItemRequestBuilderPutQueryParameters 

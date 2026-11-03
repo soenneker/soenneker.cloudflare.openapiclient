@@ -23,10 +23,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         BelowLimit,
         #pragma warning restore CS1591
-        [EnumMember(Value = "approaching_limit")]
-        #pragma warning disable CS1591
-        ApproachingLimit,
-        #pragma warning restore CS1591
         [EnumMember(Value = "limit_reached")]
         #pragma warning disable CS1591
         LimitReached,

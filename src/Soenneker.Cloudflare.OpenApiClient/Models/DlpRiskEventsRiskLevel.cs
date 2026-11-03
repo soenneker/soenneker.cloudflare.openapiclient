@@ -8,6 +8,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public enum DlpRiskEventsRiskLevel
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "info")]
+        #pragma warning disable CS1591
+        Info,
+        #pragma warning restore CS1591
         [EnumMember(Value = "low")]
         #pragma warning disable CS1591
         Low,

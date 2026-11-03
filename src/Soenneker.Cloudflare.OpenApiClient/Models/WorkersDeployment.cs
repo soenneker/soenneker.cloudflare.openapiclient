@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The annotations property</summary>
+        /// <summary>Metadata attached to the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations? Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; AdditionalData?.Remove("annotations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Source { get; private set; }
 #endif
-        /// <summary>The strategy property</summary>
+        /// <summary>Strategy for routing traffic across the listed versions. `percentage` splits traffic according to each version&apos;s `percentage`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PercentageStrategy? Strategy { get => _explicitNullValueStrategy; set { _explicitNullValueStrategy = value; AdditionalData?.Remove("strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strategy"); else _explicitNullProperties?.Remove("strategy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PercentageStrategy? _explicitNullValueStrategy = default!;
         /// <summary>Worker versions included in this deployment. Each object must contain a `version_id` UUID and a `percentage`; percentages across all objects must total 100. In the `cf` CLI, pass the entire array as one JSON value to `--versions`, either inline, for example `--versions &apos;[{&quot;version_id&quot;:&quot;023e105f-2a42-4f8b-a1c1-73f6a2a30c0f&quot;,&quot;percentage&quot;:100}]&apos;`, or from a JSON file with `--versions @versions.json`.</summary>

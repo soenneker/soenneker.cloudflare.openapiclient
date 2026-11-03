@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Workflow
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromEnum(RequestAdapter, "application/json", body);
+            requestInfo.SetContentFromEnum(RequestAdapter, "text/plain", body);
             return requestInfo;
         }
         /// <summary>

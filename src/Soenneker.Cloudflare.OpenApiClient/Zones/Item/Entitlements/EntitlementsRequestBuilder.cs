@@ -39,13 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Entitlements
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsEntitlementsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure">When receiving a 405 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements405Response">When receiving a 405 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements500Response">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements503Response">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsEntitlementsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,13 +58,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Entitlements
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements400Response.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure.CreateFromDiscriminatorValue },
-                { "405", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsApiResponseFailure.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements404Response.CreateFromDiscriminatorValue },
+                { "405", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements405Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements500Response.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsGetZoneEntitlements503Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };

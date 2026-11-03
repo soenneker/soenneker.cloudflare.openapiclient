@@ -76,9 +76,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The policy threshold at evaluation time, in US cents.</summary>
         public long? ThresholdCents { get => _explicitNullValueThresholdCents; set { _explicitNullValueThresholdCents = value; AdditionalData?.Remove("threshold_cents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold_cents"); else _explicitNullProperties?.Remove("threshold_cents"); } }
         private long? _explicitNullValueThresholdCents = default!;
-        /// <summary>The state the balance moved into. `approaching_limit` means the balance is at least 80% of the threshold (rounded up to a whole cent), but below the threshold. `limit_reached` means the balance reached or exceeded the threshold.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillingSpendPoliciesPolicyAuditEntryTrigger? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillingSpendPoliciesPolicyAuditEntryTrigger? _explicitNullValueTrigger = default!;
+        /// <summary>The trigger recorded at evaluation time. New evaluations record `limit_reached` when the balance reaches or exceeds the configured threshold. Earlier entries retain their recorded trigger.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        private string? _explicitNullValueTrigger = default!;
+#nullable restore
+#else
+        public string Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        private string _explicitNullValueTrigger = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillingSpendPoliciesPolicyAuditEntry"/> and sets the default values.
         /// </summary>
@@ -113,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillingSpendPoliciesPolicyAuditEntrySource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
                 { "threshold_cents", n => { ThresholdCents = n.GetLongValue(); } },
-                { "trigger", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillingSpendPoliciesPolicyAuditEntryTrigger>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTrigger = default; _explicitNullProperties?.Remove("trigger"); AdditionalData["trigger"] = unknown; } else { Trigger = parsed; AdditionalData.Remove("trigger"); } } },
+                { "trigger", n => { Trigger = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -132,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("reason", Reason);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillingSpendPoliciesPolicyAuditEntrySource>("source", Source);
             writer.WriteLongValue("threshold_cents", ThresholdCents);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillingSpendPoliciesPolicyAuditEntryTrigger>("trigger", Trigger);
+            writer.WriteStringValue("trigger", Trigger);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
