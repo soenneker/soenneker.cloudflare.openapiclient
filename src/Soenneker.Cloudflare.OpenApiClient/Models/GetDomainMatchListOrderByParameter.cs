@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Column to sort by. Options: &apos;domain&apos;, &apos;first_seen&apos;, or &apos;registrar&apos;</summary>
+    /// <summary>Field to sort by: `domain`, `first_seen`, or `registrar`. Defaults to `first_seen`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetDomainMatchListOrderByParameter
     {

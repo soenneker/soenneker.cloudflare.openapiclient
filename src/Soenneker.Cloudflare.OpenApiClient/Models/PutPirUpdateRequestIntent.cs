@@ -19,6 +19,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("clauses") is null) { _explicitNullValueClauses = default!; _explicitNullProperties?.Remove("clauses"); }
             else if (parseNode.GetChildNode("clauses") is { } nullNodeClauses && nullNodeClauses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clauses = null;
+            if (parseNode.GetChildNode("exclusions") is null) { _explicitNullValueExclusions = default!; _explicitNullProperties?.Remove("exclusions"); }
+            else if (parseNode.GetChildNode("exclusions") is { } nullNodeExclusions && nullNodeExclusions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclusions = null;
             if (parseNode.GetChildNode("indicators") is null) { _explicitNullValueIndicators = default!; _explicitNullProperties?.Remove("indicators"); }
             else if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
             if (parseNode.GetChildNode("unsupported_terms") is null) { _explicitNullValueUnsupportedTerms = default!; _explicitNullProperties?.Remove("unsupported_terms"); }
@@ -34,6 +36,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentClausesItem> Clauses { get => _explicitNullValueClauses; set { _explicitNullValueClauses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clauses"); else _explicitNullProperties?.Remove("clauses"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentClausesItem> _explicitNullValueClauses = default!;
+#endif
+        /// <summary>The exclusions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentExclusions? Exclusions { get => _explicitNullValueExclusions; set { _explicitNullValueExclusions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclusions"); else _explicitNullProperties?.Remove("exclusions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentExclusions? _explicitNullValueExclusions = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentExclusions Exclusions { get => _explicitNullValueExclusions; set { _explicitNullValueExclusions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclusions"); else _explicitNullProperties?.Remove("exclusions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentExclusions _explicitNullValueExclusions = default!;
 #endif
         /// <summary>The indicators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "clauses", n => { Clauses = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentClausesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentClausesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "exclusions", n => { Exclusions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentExclusions>(global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentExclusions.CreateFromDiscriminatorValue); } },
                 { "indicators", n => { Indicators = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "unsupported_terms", n => { UnsupportedTerms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -88,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentClausesItem>("clauses", Clauses);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntentExclusions>("exclusions", Exclusions);
             writer.WriteCollectionOfPrimitiveValues<string>("indicators", Indicators);
             writer.WriteCollectionOfPrimitiveValues<string>("unsupported_terms", UnsupportedTerms);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

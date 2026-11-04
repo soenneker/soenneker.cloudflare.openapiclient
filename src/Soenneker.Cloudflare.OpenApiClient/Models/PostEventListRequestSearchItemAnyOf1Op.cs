@@ -52,5 +52,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Find,
         #pragma warning restore CS1591
+        [EnumMember(Value = "notContains")]
+        #pragma warning disable CS1591
+        NotContains,
+        #pragma warning restore CS1591
     }
 }

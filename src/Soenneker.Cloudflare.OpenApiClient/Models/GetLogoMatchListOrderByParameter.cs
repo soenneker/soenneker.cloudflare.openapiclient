@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Column to sort by. Options: &apos;matchedAt&apos;, &apos;domain&apos;, &apos;similarityScore&apos;, or &apos;registrar&apos;</summary>
+    /// <summary>Field to sort by: `matchedAt`, `domain`, `similarityScore`, or `registrar`. Defaults to `matchedAt`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetLogoMatchListOrderByParameter
     {

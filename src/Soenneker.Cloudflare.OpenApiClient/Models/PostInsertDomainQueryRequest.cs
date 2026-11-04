@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The max_time property</summary>
+        /// <summary>Not currently used. Accepted and ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaxTime { get => _explicitNullValueMaxTime; set { _explicitNullValueMaxTime = value; AdditionalData?.Remove("max_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_time"); else _explicitNullProperties?.Remove("max_time"); } }
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string MaxTime { get => _explicitNullValueMaxTime; set { _explicitNullValueMaxTime = value; AdditionalData?.Remove("max_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_time"); else _explicitNullProperties?.Remove("max_time"); } }
         private string _explicitNullValueMaxTime = default!;
 #endif
-        /// <summary>The min_time property</summary>
+        /// <summary>Not currently used. Accepted and ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MinTime { get => _explicitNullValueMinTime; set { _explicitNullValueMinTime = value; AdditionalData?.Remove("min_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_time"); else _explicitNullProperties?.Remove("min_time"); } }
@@ -55,16 +55,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string MinTime { get => _explicitNullValueMinTime; set { _explicitNullValueMinTime = value; AdditionalData?.Remove("min_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_time"); else _explicitNullProperties?.Remove("min_time"); } }
         private string _explicitNullValueMinTime = default!;
 #endif
-        /// <summary>The scan property</summary>
+        /// <summary>Alias for `scan_matches`. If both are set, `scan_matches` takes precedence.</summary>
         public bool? Scan { get => _explicitNullValueScan; set { _explicitNullValueScan = value; AdditionalData?.Remove("scan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan"); else _explicitNullProperties?.Remove("scan"); } }
         private bool? _explicitNullValueScan = default!;
         /// <summary>The scan_matches property</summary>
         public bool? ScanMatches { get => _explicitNullValueScanMatches; set { _explicitNullValueScanMatches = value; AdditionalData?.Remove("scan_matches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_matches"); else _explicitNullProperties?.Remove("scan_matches"); } }
         private bool? _explicitNullValueScanMatches = default!;
-        /// <summary>If true, search recent domain lookback entries for matches</summary>
+        /// <summary>On create, also search domains observed in the last 7 days for matches. Defaults to `true`. Ignored on update.</summary>
         public bool? SearchLookback { get => _explicitNullValueSearchLookback; set { _explicitNullValueSearchLookback = value; AdditionalData?.Remove("search_lookback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_lookback"); else _explicitNullProperties?.Remove("search_lookback"); } }
         private bool? _explicitNullValueSearchLookback = default!;
-        /// <summary>The string_matches property</summary>
+        /// <summary>Patterns to match against domain names, 1 to 100 per query. Each `pattern` is a brand name or keyword of up to 200 characters. Matching also catches close variants such as typos and look-alike characters; patterns are not regular expressions. On update, this list replaces the query&apos;s existing patterns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostInsertDomainQueryRequestStringMatchesItem>? StringMatches { get => _explicitNullValueStringMatches; set { _explicitNullValueStringMatches = value; AdditionalData?.Remove("string_matches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_matches"); else _explicitNullProperties?.Remove("string_matches"); } }
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostInsertDomainQueryRequestStringMatchesItem> StringMatches { get => _explicitNullValueStringMatches; set { _explicitNullValueStringMatches = value; AdditionalData?.Remove("string_matches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_matches"); else _explicitNullProperties?.Remove("string_matches"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostInsertDomainQueryRequestStringMatchesItem> _explicitNullValueStringMatches = default!;
 #endif
-        /// <summary>The tag property</summary>
+        /// <summary>Name of the query. Must be unique among the account&apos;s domain queries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; AdditionalData?.Remove("tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag"); else _explicitNullProperties?.Remove("tag"); } }

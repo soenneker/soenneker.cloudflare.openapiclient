@@ -36,6 +36,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("networks") is null) { _explicitNullValueNetworks = default!; _explicitNullProperties?.Remove("networks"); }
             else if (parseNode.GetChildNode("networks") is { } nullNodeNetworks && nullNodeNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Networks = null;
+            if (parseNode.GetChildNode("pool_sets") is null) { _explicitNullValuePoolSets = default!; _explicitNullProperties?.Remove("pool_sets"); }
+            else if (parseNode.GetChildNode("pool_sets") is { } nullNodePoolSets && nullNodePoolSets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoolSets = null;
             if (parseNode.GetChildNode("pop_pools") is null) { _explicitNullValuePopPools = default!; _explicitNullProperties?.Remove("pop_pools"); }
             else if (parseNode.GetChildNode("pop_pools") is { } nullNodePopPools && nullNodePopPools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PopPools = null;
             if (parseNode.GetChildNode("proxied") is null) { _explicitNullValueProxied = default!; _explicitNullProperties?.Remove("proxied"); }
@@ -143,6 +145,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; AdditionalData?.Remove("networks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
         private List<string> _explicitNullValueNetworks = default!;
 #endif
+        /// <summary>An optional list of pool sets, evaluated in array order with first match wins. Pool sets are independent from the standard steering fields (`region_pools` / `country_pools` / `pop_pools` / `default_pools` / `steering_policy` / `random_steering` / `fallback_pool` / `rules`). On a PATCH, an empty array (`pool_sets: []`) clears all pool sets, while omitting the field leaves existing pool sets unchanged.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet>? PoolSets { get => _explicitNullValuePoolSets; set { _explicitNullValuePoolSets = value; AdditionalData?.Remove("pool_sets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_sets"); else _explicitNullProperties?.Remove("pool_sets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet>? _explicitNullValuePoolSets = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet> PoolSets { get => _explicitNullValuePoolSets; set { _explicitNullValuePoolSets = value; AdditionalData?.Remove("pool_sets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_sets"); else _explicitNullProperties?.Remove("pool_sets"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet> _explicitNullValuePoolSets = default!;
+#endif
         /// <summary>Enterprise only: A mapping of Cloudflare PoP identifiers to a list of pool IDs (ordered by their failover priority) for the PoP (datacenter). Any PoPs not explicitly defined will fall back to using the corresponding country_pool, then region_pool mapping if it exists else to default_pools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -244,6 +256,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "location_strategy", n => { LocationStrategy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "networks", n => { Networks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "pool_sets", n => { PoolSets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pop_pools", n => { PopPools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancersUpdateLoadBalancerRequestPopPools>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancersUpdateLoadBalancerRequestPopPools.CreateFromDiscriminatorValue); } },
                 { "proxied", n => { Proxied = n.GetBoolValue(); } },
                 { "random_steering", n => { RandomSteering = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering.CreateFromDiscriminatorValue); } },
@@ -272,6 +285,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy>("location_strategy", LocationStrategy);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("networks", Networks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet>("pool_sets", PoolSets);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancersUpdateLoadBalancerRequestPopPools>("pop_pools", PopPools);
             writer.WriteBoolValue("proxied", Proxied);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering>("random_steering", RandomSteering);

@@ -115,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Timeseries
             [QueryParameter("bot")]
             public string[] Bot { get; set; }
 #endif
-            /// <summary>Filters results by bot category.</summary>
+            /// <summary>Filters results by bot category. `ACCESSIBILITY`, `AGGREGATOR`, `AI_SEARCH`, `ARCHIVER`, `SOCIAL_MEDIA_MARKETING` and `WEBHOOKS` are deprecated legacy categories that match only that exact category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("botCategory")]

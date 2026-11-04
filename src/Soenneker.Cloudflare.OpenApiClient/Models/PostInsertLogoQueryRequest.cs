@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Base64 encoded image data. Can include data URI prefix (e.g., &apos;data:image/png;base64,...&apos;) or just the base64 string.</summary>
+        /// <summary>Base64 encoded image data. Can include data URI prefix (e.g., &apos;data:image/png;base64,...&apos;) or just the base64 string. Supported formats: PNG, JPEG, GIF, WebP, BMP, and SVG. ICO is also accepted when the data includes a `data:image/x-icon;base64,` prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImageData { get => _explicitNullValueImageData; set { _explicitNullValueImageData = value; AdditionalData?.Remove("image_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_data"); else _explicitNullProperties?.Remove("image_data"); } }
@@ -39,13 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ImageData { get => _explicitNullValueImageData; set { _explicitNullValueImageData = value; AdditionalData?.Remove("image_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_data"); else _explicitNullProperties?.Remove("image_data"); } }
         private string _explicitNullValueImageData = default!;
 #endif
-        /// <summary>If true, search historic scanned images for matches above the similarity threshold</summary>
+        /// <summary>If true, also search previously scanned images for matches above the similarity threshold. Defaults to `true`.</summary>
         public bool? SearchLookback { get => _explicitNullValueSearchLookback; set { _explicitNullValueSearchLookback = value; AdditionalData?.Remove("search_lookback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_lookback"); else _explicitNullProperties?.Remove("search_lookback"); } }
         private bool? _explicitNullValueSearchLookback = default!;
         /// <summary>Minimum similarity score (0-1) required for visual matches</summary>
         public double? SimilarityThreshold { get => _explicitNullValueSimilarityThreshold; set { _explicitNullValueSimilarityThreshold = value; AdditionalData?.Remove("similarity_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarity_threshold"); else _explicitNullProperties?.Remove("similarity_threshold"); } }
         private double? _explicitNullValueSimilarityThreshold = default!;
-        /// <summary>Unique identifier for the logo query</summary>
+        /// <summary>Name of the logo query. Must be unique among the account&apos;s logo queries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; AdditionalData?.Remove("tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag"); else _explicitNullProperties?.Remove("tag"); } }

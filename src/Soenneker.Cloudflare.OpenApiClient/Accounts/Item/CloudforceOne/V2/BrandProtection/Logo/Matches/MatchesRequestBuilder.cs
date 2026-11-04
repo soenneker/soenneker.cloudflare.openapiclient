@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
         {
         }
         /// <summary>
-        /// Get paginated list of logo matches for a specific brand protection logo query
+        /// Lists images that matched a saved logo query, most recently matched first by default. Set `download=true` to include each matched image as base64 data.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetLogoMatchList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetLogoMatchList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetLogoMatchList200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get paginated list of logo matches for a specific brand protection logo query
+        /// Lists images that matched a saved logo query, most recently matched first by default. Set `download=true` to include each matched image as base64 data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,49 +80,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.Logo.Matches.MatchesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get paginated list of logo matches for a specific brand protection logo query
+        /// Lists images that matched a saved logo query, most recently matched first by default. Set `download=true` to include each matched image as base64 data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MatchesRequestBuilderGetQueryParameters 
         {
+            /// <summary>Set to `true` to include each matched image as base64 data in `image_data`, with its MIME type in `content_type`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("download")]
             public string? Download { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("download")]
             public string Download { get; set; }
-            #pragma warning restore CS1591
 #endif
+            /// <summary>Maximum number of matches to return. Defaults to 50.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public string? Limit { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public string Limit { get; set; }
-            #pragma warning restore CS1591
 #endif
+            /// <summary>Number of matches to skip, for pagination. Defaults to 0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public string? Offset { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public string Offset { get; set; }
-            #pragma warning restore CS1591
 #endif
             #pragma warning disable CS1591
             [QueryParameter("order")]
@@ -132,18 +123,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
             [QueryParameter("orderBy")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.GetLogoMatchListOrderByParameter? OrderBy { get; set; }
             #pragma warning restore CS1591
+            /// <summary>ID of the logo query whose matches to list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("query_id")]
             public string? QueryId { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("query_id")]
             public string QueryId { get; set; }
-            #pragma warning restore CS1591
 #endif
         }
     }

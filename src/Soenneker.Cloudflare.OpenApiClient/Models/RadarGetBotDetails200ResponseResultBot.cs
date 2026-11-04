@@ -17,10 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("accessLevel") is null) { _explicitNullValueAccessLevel = default!; _explicitNullProperties?.Remove("accessLevel"); }
+            else if (parseNode.GetChildNode("accessLevel") is { } nullNodeAccessLevel && nullNodeAccessLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessLevel = null;
+            if (parseNode.GetChildNode("categories") is null) { _explicitNullValueCategories = default!; _explicitNullProperties?.Remove("categories"); }
+            else if (parseNode.GetChildNode("categories") is { } nullNodeCategories && nullNodeCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories = null;
             if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
             else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("contentUse") is null) { _explicitNullValueContentUse = default!; _explicitNullProperties?.Remove("contentUse"); }
+            else if (parseNode.GetChildNode("contentUse") is { } nullNodeContentUse && nullNodeContentUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentUse = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("documentationUrl") is null) { _explicitNullValueDocumentationUrl = default!; _explicitNullProperties?.Remove("documentationUrl"); }
+            else if (parseNode.GetChildNode("documentationUrl") is { } nullNodeDocumentationUrl && nullNodeDocumentationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentationUrl = null;
             if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
             else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
@@ -29,6 +37,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
             if (parseNode.GetChildNode("operatorUrl") is null) { _explicitNullValueOperatorUrl = default!; _explicitNullProperties?.Remove("operatorUrl"); }
             else if (parseNode.GetChildNode("operatorUrl") is { } nullNodeOperatorUrl && nullNodeOperatorUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorUrl = null;
+            if (parseNode.GetChildNode("operatorWebsiteUrl") is null) { _explicitNullValueOperatorWebsiteUrl = default!; _explicitNullProperties?.Remove("operatorWebsiteUrl"); }
+            else if (parseNode.GetChildNode("operatorWebsiteUrl") is { } nullNodeOperatorWebsiteUrl && nullNodeOperatorWebsiteUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorWebsiteUrl = null;
             if (parseNode.GetChildNode("signatureAgentUrl") is null) { _explicitNullValueSignatureAgentUrl = default!; _explicitNullProperties?.Remove("signatureAgentUrl"); }
             else if (parseNode.GetChildNode("signatureAgentUrl") is { } nullNodeSignatureAgentUrl && nullNodeSignatureAgentUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignatureAgentUrl = null;
             if (parseNode.GetChildNode("slug") is null) { _explicitNullValueSlug = default!; _explicitNullProperties?.Remove("slug"); }
@@ -39,9 +49,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("userAgents") is { } nullNodeUserAgents && nullNodeUserAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgents = null;
         }
 
+        /// <summary>Who can operate the bot: DIRECT bots reach origins under their own identity, while INTERMEDIARY bots forward requests on behalf of another agent or a person.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccessLevel { get => _explicitNullValueAccessLevel; set { _explicitNullValueAccessLevel = value; AdditionalData?.Remove("accessLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessLevel"); else _explicitNullProperties?.Remove("accessLevel"); } }
+        private string? _explicitNullValueAccessLevel = default!;
+#nullable restore
+#else
+        public string AccessLevel { get => _explicitNullValueAccessLevel; set { _explicitNullValueAccessLevel = value; AdditionalData?.Remove("accessLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessLevel"); else _explicitNullProperties?.Remove("accessLevel"); } }
+        private string _explicitNullValueAccessLevel = default!;
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category of the bot.</summary>
+        /// <summary>The categories of the bot.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<string>? _explicitNullValueCategories = default!;
+#nullable restore
+#else
+        public List<string> Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<string> _explicitNullValueCategories = default!;
+#endif
+        /// <summary>The category of the bot. Deprecated: use `categories`.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
@@ -50,6 +81,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private string _explicitNullValueCategory = default!;
+#endif
+        /// <summary>How the bot uses the content it fetches (e.g., immediate, reference or full).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContentUse { get => _explicitNullValueContentUse; set { _explicitNullValueContentUse = value; AdditionalData?.Remove("contentUse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentUse"); else _explicitNullProperties?.Remove("contentUse"); } }
+        private string? _explicitNullValueContentUse = default!;
+#nullable restore
+#else
+        public string ContentUse { get => _explicitNullValueContentUse; set { _explicitNullValueContentUse = value; AdditionalData?.Remove("contentUse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentUse"); else _explicitNullProperties?.Remove("contentUse"); } }
+        private string _explicitNullValueContentUse = default!;
 #endif
         /// <summary>A summary for the bot (e.g., purpose).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,6 +101,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
+#endif
+        /// <summary>The link to the bot documentation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentationUrl { get => _explicitNullValueDocumentationUrl; set { _explicitNullValueDocumentationUrl = value; AdditionalData?.Remove("documentationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentationUrl"); else _explicitNullProperties?.Remove("documentationUrl"); } }
+        private string? _explicitNullValueDocumentationUrl = default!;
+#nullable restore
+#else
+        public string DocumentationUrl { get => _explicitNullValueDocumentationUrl; set { _explicitNullValueDocumentationUrl = value; AdditionalData?.Remove("documentationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentationUrl"); else _explicitNullProperties?.Remove("documentationUrl"); } }
+        private string _explicitNullValueDocumentationUrl = default!;
 #endif
         /// <summary>The kind of the bot.</summary>
         [Obsolete("")]
@@ -92,7 +143,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; AdditionalData?.Remove("operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
         private string _explicitNullValueOperator = default!;
 #endif
-        /// <summary>The link to the bot documentation.</summary>
+        /// <summary>The link to the bot documentation. Deprecated: use `documentationUrl`.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatorUrl { get => _explicitNullValueOperatorUrl; set { _explicitNullValueOperatorUrl = value; AdditionalData?.Remove("operatorUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operatorUrl"); else _explicitNullProperties?.Remove("operatorUrl"); } }
@@ -101,6 +153,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OperatorUrl { get => _explicitNullValueOperatorUrl; set { _explicitNullValueOperatorUrl = value; AdditionalData?.Remove("operatorUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operatorUrl"); else _explicitNullProperties?.Remove("operatorUrl"); } }
         private string _explicitNullValueOperatorUrl = default!;
+#endif
+        /// <summary>The link to the operator&apos;s website.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OperatorWebsiteUrl { get => _explicitNullValueOperatorWebsiteUrl; set { _explicitNullValueOperatorWebsiteUrl = value; AdditionalData?.Remove("operatorWebsiteUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operatorWebsiteUrl"); else _explicitNullProperties?.Remove("operatorWebsiteUrl"); } }
+        private string? _explicitNullValueOperatorWebsiteUrl = default!;
+#nullable restore
+#else
+        public string OperatorWebsiteUrl { get => _explicitNullValueOperatorWebsiteUrl; set { _explicitNullValueOperatorWebsiteUrl = value; AdditionalData?.Remove("operatorWebsiteUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operatorWebsiteUrl"); else _explicitNullProperties?.Remove("operatorWebsiteUrl"); } }
+        private string _explicitNullValueOperatorWebsiteUrl = default!;
 #endif
         /// <summary>The URL of the agent&apos;s [Web Bot Auth](https://blog.cloudflare.com/web-bot-auth/) resource. Null for bots not verified via request signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,12 +229,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "accessLevel", n => { AccessLevel = n.GetStringValue(); } },
+                { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
+                { "contentUse", n => { ContentUse = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "documentationUrl", n => { DocumentationUrl = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetStringValue(); } },
                 { "operatorUrl", n => { OperatorUrl = n.GetStringValue(); } },
+                { "operatorWebsiteUrl", n => { OperatorWebsiteUrl = n.GetStringValue(); } },
                 { "signatureAgentUrl", n => { SignatureAgentUrl = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "userAgentPatterns", n => { UserAgentPatterns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -186,12 +253,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("accessLevel", AccessLevel);
+            writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteStringValue("category", Category);
+            writer.WriteStringValue("contentUse", ContentUse);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("documentationUrl", DocumentationUrl);
             writer.WriteStringValue("kind", Kind);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("operator", Operator);
             writer.WriteStringValue("operatorUrl", OperatorUrl);
+            writer.WriteStringValue("operatorWebsiteUrl", OperatorWebsiteUrl);
             writer.WriteStringValue("signatureAgentUrl", SignatureAgentUrl);
             writer.WriteStringValue("slug", Slug);
             writer.WriteCollectionOfPrimitiveValues<string>("userAgentPatterns", UserAgentPatterns);

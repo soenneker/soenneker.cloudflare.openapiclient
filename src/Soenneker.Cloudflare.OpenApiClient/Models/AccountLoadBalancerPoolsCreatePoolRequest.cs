@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("check_regions") is null) { _explicitNullValueCheckRegions = default!; _explicitNullProperties?.Remove("check_regions"); }
+            else if (parseNode.GetChildNode("check_regions") is { } nullNodeCheckRegions && nullNodeCheckRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckRegions = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
             if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
             else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("health_sources") is null) { _explicitNullValueHealthSources = default!; _explicitNullProperties?.Remove("health_sources"); }
+            else if (parseNode.GetChildNode("health_sources") is { } nullNodeHealthSources && nullNodeHealthSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthSources = null;
             if (parseNode.GetChildNode("latitude") is null) { _explicitNullValueLatitude = default!; _explicitNullProperties?.Remove("latitude"); }
             else if (parseNode.GetChildNode("latitude") is { } nullNodeLatitude && nullNodeLatitude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Latitude = null;
             if (parseNode.GetChildNode("load_shedding") is null) { _explicitNullValueLoadShedding = default!; _explicitNullProperties?.Remove("load_shedding"); }
@@ -35,6 +39,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("monitor_group") is { } nullNodeMonitorGroup && nullNodeMonitorGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitorGroup = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("networks") is null) { _explicitNullValueNetworks = default!; _explicitNullProperties?.Remove("networks"); }
+            else if (parseNode.GetChildNode("networks") is { } nullNodeNetworks && nullNodeNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Networks = null;
             if (parseNode.GetChildNode("notification_email") is null) { _explicitNullValueNotificationEmail = default!; _explicitNullProperties?.Remove("notification_email"); }
             else if (parseNode.GetChildNode("notification_email") is { } nullNodeNotificationEmail && nullNodeNotificationEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationEmail = null;
             if (parseNode.GetChildNode("notification_filter") is null) { _explicitNullValueNotificationFilter = default!; _explicitNullProperties?.Remove("notification_filter"); }
@@ -47,6 +53,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A list of regions from which to run health checks. Null means every Cloudflare data center.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem?>? CheckRegions { get => _explicitNullValueCheckRegions; set { _explicitNullValueCheckRegions = value; AdditionalData?.Remove("check_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_regions"); else _explicitNullProperties?.Remove("check_regions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem?>? _explicitNullValueCheckRegions = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem?> CheckRegions { get => _explicitNullValueCheckRegions; set { _explicitNullValueCheckRegions = value; AdditionalData?.Remove("check_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_regions"); else _explicitNullProperties?.Remove("check_regions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem?> _explicitNullValueCheckRegions = default!;
+#endif
         /// <summary>A human-readable description of the pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +76,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
+        /// <summary>A list of health sources, ordered from highest to lowest priority, used to evaluate individual origin health and overall pool health. The load balancer uses the first source that has data and falls back to the next. Currently accepted values are null or the exact array [&quot;regional&quot;, &quot;global&quot;]; any other combination is rejected. Null (the default) behaves like [&quot;local&quot;, &quot;global&quot;]. [&quot;regional&quot;, &quot;global&quot;] makes each region steer on its own health, falling back to the global decision when a region has no fresh data. Setting regional requires at least one region in check_regions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem?>? HealthSources { get => _explicitNullValueHealthSources; set { _explicitNullValueHealthSources = value; AdditionalData?.Remove("health_sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_sources"); else _explicitNullProperties?.Remove("health_sources"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem?>? _explicitNullValueHealthSources = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem?> HealthSources { get => _explicitNullValueHealthSources; set { _explicitNullValueHealthSources = value; AdditionalData?.Remove("health_sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_sources"); else _explicitNullProperties?.Remove("health_sources"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem?> _explicitNullValueHealthSources = default!;
+#endif
         /// <summary>The latitude of the data center containing the origins used in this pool in decimal degrees. If this is set, longitude must also be set.</summary>
         public double? Latitude { get => _explicitNullValueLatitude; set { _explicitNullValueLatitude = value; AdditionalData?.Remove("latitude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latitude"); else _explicitNullProperties?.Remove("latitude"); } }
         private double? _explicitNullValueLatitude = default!;
@@ -108,6 +134,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
+#endif
+        /// <summary>List of networks where Load Balancer or Pool is enabled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; AdditionalData?.Remove("networks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
+        private List<string>? _explicitNullValueNetworks = default!;
+#nullable restore
+#else
+        public List<string> Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; AdditionalData?.Remove("networks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
+        private List<string> _explicitNullValueNetworks = default!;
 #endif
         /// <summary>This field is now deprecated. It has been moved to Cloudflare&apos;s Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -176,8 +212,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "check_regions", n => { CheckRegions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "health_sources", n => { HealthSources = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem>()?.AsList(); } },
                 { "latitude", n => { Latitude = n.GetDoubleValue(); } },
                 { "load_shedding", n => { LoadShedding = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding.CreateFromDiscriminatorValue); } },
                 { "longitude", n => { Longitude = n.GetDoubleValue(); } },
@@ -185,6 +223,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "monitor", n => { Monitor = n.GetStringValue(); } },
                 { "monitor_group", n => { MonitorGroup = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "networks", n => { Networks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "notification_email", n => { NotificationEmail = n.GetStringValue(); } },
                 { "notification_filter", n => { NotificationFilter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingNotificationFilter>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingNotificationFilter.CreateFromDiscriminatorValue); } },
                 { "origin_steering", n => { OriginSteering = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteering>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteering.CreateFromDiscriminatorValue); } },
@@ -198,8 +237,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem>("check_regions", CheckRegions);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem>("health_sources", HealthSources);
             writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding>("load_shedding", LoadShedding);
             writer.WriteDoubleValue("longitude", Longitude);
@@ -207,6 +248,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("monitor", Monitor);
             writer.WriteStringValue("monitor_group", MonitorGroup);
             writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfPrimitiveValues<string>("networks", Networks);
             writer.WriteStringValue("notification_email", NotificationEmail);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingNotificationFilter>("notification_filter", NotificationFilter);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOrigin>("origins", Origins);

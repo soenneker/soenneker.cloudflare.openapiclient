@@ -39,6 +39,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("monitor_group") is { } nullNodeMonitorGroup && nullNodeMonitorGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitorGroup = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("networks") is null) { _explicitNullValueNetworks = default!; _explicitNullProperties?.Remove("networks"); }
+            else if (parseNode.GetChildNode("networks") is { } nullNodeNetworks && nullNodeNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Networks = null;
             if (parseNode.GetChildNode("notification_email") is null) { _explicitNullValueNotificationEmail = default!; _explicitNullProperties?.Remove("notification_email"); }
             else if (parseNode.GetChildNode("notification_email") is { } nullNodeNotificationEmail && nullNodeNotificationEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationEmail = null;
             if (parseNode.GetChildNode("notification_filter") is null) { _explicitNullValueNotificationFilter = default!; _explicitNullProperties?.Remove("notification_filter"); }
@@ -135,6 +137,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
+        /// <summary>List of networks where Load Balancer or Pool is enabled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; AdditionalData?.Remove("networks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
+        private List<string>? _explicitNullValueNetworks = default!;
+#nullable restore
+#else
+        public List<string> Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; AdditionalData?.Remove("networks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
+        private List<string> _explicitNullValueNetworks = default!;
+#endif
         /// <summary>This field is now deprecated. It has been moved to Cloudflare&apos;s Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -214,6 +226,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "monitor", n => { Monitor = n.GetStringValue(); } },
                 { "monitor_group", n => { MonitorGroup = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "networks", n => { Networks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "notification_email", n => { NotificationEmail = n.GetStringValue(); } },
                 { "notification_filter", n => { NotificationFilter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingNotificationFilter>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingNotificationFilter.CreateFromDiscriminatorValue); } },
                 { "origin_steering", n => { OriginSteering = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteering>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteering.CreateFromDiscriminatorValue); } },
@@ -238,6 +251,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("monitor", Monitor);
             writer.WriteStringValue("monitor_group", MonitorGroup);
             writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfPrimitiveValues<string>("networks", Networks);
             writer.WriteStringValue("notification_email", NotificationEmail);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingNotificationFilter>("notification_filter", NotificationFilter);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOrigin>("origins", Origins);

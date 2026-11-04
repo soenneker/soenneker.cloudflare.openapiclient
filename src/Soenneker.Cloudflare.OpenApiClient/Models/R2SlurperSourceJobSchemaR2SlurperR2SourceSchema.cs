@@ -41,8 +41,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private string _explicitNullValueBucket = default!;
 #endif
         /// <summary>The jurisdiction property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJurisdiction? Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJurisdiction? _explicitNullValueJurisdiction = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperR2SourceSchemaJurisdiction? Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperR2SourceSchemaJurisdiction? _explicitNullValueJurisdiction = default!;
         /// <summary>The keys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
-                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJurisdiction>(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperR2SourceSchemaJurisdiction>(); } },
                 { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pathPrefix", n => { PathPrefix = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperS3LikeCredsSchema>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperS3LikeCredsSchema.CreateFromDiscriminatorValue); } },
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("bucket", Bucket);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJurisdiction>("jurisdiction", Jurisdiction);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperR2SourceSchemaJurisdiction>("jurisdiction", Jurisdiction);
             writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
             writer.WriteStringValue("pathPrefix", PathPrefix);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperS3LikeCredsSchema>("secret", Secret);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

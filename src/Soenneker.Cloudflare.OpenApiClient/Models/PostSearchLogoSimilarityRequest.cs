@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Minimum similarity score threshold for matches (0-1, default: 0)</summary>
         public double? ScoreThreshold { get => _explicitNullValueScoreThreshold; set { _explicitNullValueScoreThreshold = value; AdditionalData?.Remove("score_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_threshold"); else _explicitNullProperties?.Remove("score_threshold"); } }
         private double? _explicitNullValueScoreThreshold = default!;
-        /// <summary>Number of closest matches to return (1-100, default: 10)</summary>
+        /// <summary>Number of closest matches to return. Defaults to 10. Accepts 1 to 100, but values above 50 are treated as 50.</summary>
         public int? TopK { get => _explicitNullValueTopK; set { _explicitNullValueTopK = value; AdditionalData?.Remove("top_k"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_k"); else _explicitNullProperties?.Remove("top_k"); } }
         private int? _explicitNullValueTopK = default!;
         /// <summary>

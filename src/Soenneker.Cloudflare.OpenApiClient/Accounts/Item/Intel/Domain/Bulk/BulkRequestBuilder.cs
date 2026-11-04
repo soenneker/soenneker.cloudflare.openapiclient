@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BulkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/intel/domain/bulk{?domain*,include_ranking*,skip_ranking*}", pathParameters)
+        public BulkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/intel/domain/bulk{?domain*,include_ranking*,skip_dns*,skip_ranking*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BulkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/intel/domain/bulk{?domain*,include_ranking*,skip_ranking*}", rawUrl)
+        public BulkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/intel/domain/bulk{?domain*,include_ranking*,skip_dns*,skip_ranking*}", rawUrl)
         {
         }
         /// <summary>
@@ -104,6 +104,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk
             /// <summary>Whether to include domain ranking data in the response. Defaults to`false` — ranking lookups are expensive at bulk scale and mostcallers do not need them. Set to `true` to opt in. This parameterreplaces the deprecated `skip_ranking` (see below).</summary>
             [QueryParameter("include_ranking")]
             public bool? IncludeRanking { get; set; }
+            /// <summary>Skip the DNS resolution-history lookup for faster responses. Defaultsto `false`. Set to `true` if you only need categorization data; noDNS resolution history is returned for any domain. Matches the`skip_dns` parameter on `/intel/domain`.</summary>
+            [QueryParameter("skip_dns")]
+            public bool? SkipDns { get; set; }
             /// <summary>**Deprecated.** Previously controlled whether the ranking lookupwas skipped (defaulted to `false`, meaning ranking ran). Theendpoint&apos;s default behavior is being flipped — ranking is nowopt-in via `include_ranking=true` — and this parameter will besilently ignored. Remove it from your callers and use`include_ranking` instead.</summary>
             [Obsolete("")]
             [QueryParameter("skip_ranking")]

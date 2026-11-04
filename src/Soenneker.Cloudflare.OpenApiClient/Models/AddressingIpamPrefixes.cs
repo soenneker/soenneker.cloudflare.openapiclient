@@ -27,6 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("approved") is { } nullNodeApproved && nullNodeApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approved = null;
             if (parseNode.GetChildNode("asn") is null) { _explicitNullValueAsn = default!; _explicitNullProperties?.Remove("asn"); }
             else if (parseNode.GetChildNode("asn") is { } nullNodeAsn && nullNodeAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn = null;
+            if (parseNode.GetChildNode("asn_ownership_validation_state") is null) { _explicitNullValueAsnOwnershipValidationState = default!; _explicitNullProperties?.Remove("asn_ownership_validation_state"); }
+            else if (parseNode.GetChildNode("asn_ownership_validation_state") is { } nullNodeAsnOwnershipValidationState && nullNodeAsnOwnershipValidationState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnOwnershipValidationState = null;
+            if (parseNode.GetChildNode("aspa_validation_state") is null) { _explicitNullValueAspaValidationState = default!; _explicitNullProperties?.Remove("aspa_validation_state"); }
+            else if (parseNode.GetChildNode("aspa_validation_state") is { } nullNodeAspaValidationState && nullNodeAspaValidationState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspaValidationState = null;
             if (parseNode.GetChildNode("cidr") is null) { _explicitNullValueCidr = default!; _explicitNullProperties?.Remove("cidr"); }
             else if (parseNode.GetChildNode("cidr") is { } nullNodeCidr && nullNodeCidr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidr = null;
             if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
@@ -75,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [Obsolete("")]
         public DateTimeOffset? AdvertisedModifiedAt { get => _explicitNullValueAdvertisedModifiedAt; set { _explicitNullValueAdvertisedModifiedAt = value; AdditionalData?.Remove("advertised_modified_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertised_modified_at"); else _explicitNullProperties?.Remove("advertised_modified_at"); } }
         private DateTimeOffset? _explicitNullValueAdvertisedModifiedAt = default!;
-        /// <summary>Approval state of the prefix (P = pending, V = active).</summary>
+        /// <summary>Approval state of the prefix (P = pending, V = approved). Approval does not advertise the prefix or activate traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Approved { get => _explicitNullValueApproved; set { _explicitNullValueApproved = value; AdditionalData?.Remove("approved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved"); else _explicitNullProperties?.Remove("approved"); } }
@@ -85,9 +89,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Approved { get => _explicitNullValueApproved; set { _explicitNullValueApproved = value; AdditionalData?.Remove("approved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved"); else _explicitNullProperties?.Remove("approved"); } }
         private string _explicitNullValueApproved = default!;
 #endif
-        /// <summary>Autonomous System Number (ASN) the prefix will be advertised under.</summary>
+        /// <summary>Autonomous System Number (ASN) the prefix will be advertised under. Use 13335 for Cloudflare&apos;s ASN, or your own ASN as an integer without the AS prefix. The IRR route and RPKI ROA must authorize this ASN.</summary>
         public int? Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; AdditionalData?.Remove("asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
         private int? _explicitNullValueAsn = default!;
+        /// <summary>State of ASN ownership validation for a customer-owned Autonomous System Number (ASN). Returned when an ASN ownership validation result exists. Omitted when validation does not apply, such as for Cloudflare-owned ASNs. Verification is reused for prefixes with the same account and ASN. Refer to [ASN ownership validation states](https://developers.cloudflare.com/byoip/troubleshooting/prefix-validation/#asn-ownership-validation) for state meanings and resolutions.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingAsnOwnershipValidationState? AsnOwnershipValidationState { get => _explicitNullValueAsnOwnershipValidationState; set { _explicitNullValueAsnOwnershipValidationState = value; AdditionalData?.Remove("asn_ownership_validation_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn_ownership_validation_state"); else _explicitNullProperties?.Remove("asn_ownership_validation_state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingAsnOwnershipValidationState? _explicitNullValueAsnOwnershipValidationState = default!;
+        /// <summary>State of Autonomous System Provider Authorization (ASPA) validation for a customer-owned ASN. Returned when an ASPA validation result exists. Publishing an ASPA is optional. A published ASPA must authorize AS13335 as a provider. An invalid result blocks approval. If omitted, no ASPA validation result is available. Omission does not indicate successful validation or confirm that no ASPA exists. Refer to [ASPA validation states](https://developers.cloudflare.com/byoip/troubleshooting/prefix-validation/#aspa-validation) for state meanings and resolutions, and [ASPA authorization](https://developers.cloudflare.com/byoip/concepts/route-filtering-rpki/#aspa-authorization) for publication guidance.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingAspaValidationState? AspaValidationState { get => _explicitNullValueAspaValidationState; set { _explicitNullValueAspaValidationState = value; AdditionalData?.Remove("aspa_validation_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspa_validation_state"); else _explicitNullProperties?.Remove("aspa_validation_state"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingAspaValidationState? _explicitNullValueAspaValidationState = default!;
         /// <summary>IP Prefix in Classless Inter-Domain Routing format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,7 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string OwnershipValidationState { get => _explicitNullValueOwnershipValidationState; set { _explicitNullValueOwnershipValidationState = value; AdditionalData?.Remove("ownership_validation_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_validation_state"); else _explicitNullProperties?.Remove("ownership_validation_state"); } }
         private string _explicitNullValueOwnershipValidationState = default!;
 #endif
-        /// <summary>Token provided to demonstrate ownership of the prefix.</summary>
+        /// <summary>Token used to verify ownership of the prefix and, when applicable, its ASN. Use the same token for both checks. Refer to the [BYOIP onboarding guide](https://developers.cloudflare.com/byoip/get-started/) for verification instructions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnershipValidationToken { get => _explicitNullValueOwnershipValidationToken; set { _explicitNullValueOwnershipValidationToken = value; AdditionalData?.Remove("ownership_validation_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_validation_token"); else _explicitNullProperties?.Remove("ownership_validation_token"); } }
@@ -216,6 +226,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "approved", n => { Approved = n.GetStringValue(); } },
                 { "asn", n => { Asn = n.GetIntValue(); } },
+                { "asn_ownership_validation_state", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingAsnOwnershipValidationState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAsnOwnershipValidationState = default; _explicitNullProperties?.Remove("asn_ownership_validation_state"); AdditionalData["asn_ownership_validation_state"] = unknown; } else { AsnOwnershipValidationState = parsed; AdditionalData.Remove("asn_ownership_validation_state"); } } },
+                { "aspa_validation_state", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingAspaValidationState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAspaValidationState = default; _explicitNullProperties?.Remove("aspa_validation_state"); AdditionalData["aspa_validation_state"] = unknown; } else { AspaValidationState = parsed; AdditionalData.Remove("aspa_validation_state"); } } },
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "delegate_loa_creation", n => { DelegateLoaCreation = n.GetBoolValue(); } },
@@ -243,6 +255,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("advertised_modified_at", AdvertisedModifiedAt);
             writer.WriteStringValue("approved", Approved);
             writer.WriteIntValue("asn", Asn);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingAsnOwnershipValidationState>("asn_ownership_validation_state", AsnOwnershipValidationState);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingAspaValidationState>("aspa_validation_state", AspaValidationState);
             writer.WriteStringValue("cidr", Cidr);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("delegate_loa_creation", DelegateLoaCreation);

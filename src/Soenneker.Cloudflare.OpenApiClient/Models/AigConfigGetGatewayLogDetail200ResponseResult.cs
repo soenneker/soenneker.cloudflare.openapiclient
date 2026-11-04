@@ -19,6 +19,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("cached") is null) { _explicitNullValueCached = default!; _explicitNullProperties?.Remove("cached"); }
             else if (parseNode.GetChildNode("cached") is { } nullNodeCached && nullNodeCached.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cached = null;
+            if (parseNode.GetChildNode("collect_log_payload") is null) { _explicitNullValueCollectLogPayload = default!; _explicitNullProperties?.Remove("collect_log_payload"); }
+            else if (parseNode.GetChildNode("collect_log_payload") is { } nullNodeCollectLogPayload && nullNodeCollectLogPayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectLogPayload = null;
             if (parseNode.GetChildNode("cost") is null) { _explicitNullValueCost = default!; _explicitNullProperties?.Remove("cost"); }
             else if (parseNode.GetChildNode("cost") is { } nullNodeCost && nullNodeCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cost = null;
             if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
@@ -74,6 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cached property</summary>
         public bool? Cached { get => _explicitNullValueCached; set { _explicitNullValueCached = value; AdditionalData?.Remove("cached"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cached"); else _explicitNullProperties?.Remove("cached"); } }
         private bool? _explicitNullValueCached = default!;
+        /// <summary>Whether the request and response bodies were eligible to be stored. False when the request sent `cf-aig-collect-log-payload: false`, logging was off, or the gateway does not store bodies for the request. Null for logs written before this field existed.</summary>
+        public bool? CollectLogPayload { get => _explicitNullValueCollectLogPayload; set { _explicitNullValueCollectLogPayload = value; AdditionalData?.Remove("collect_log_payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collect_log_payload"); else _explicitNullProperties?.Remove("collect_log_payload"); } }
+        private bool? _explicitNullValueCollectLogPayload = default!;
         /// <summary>The cost property</summary>
         public double? Cost { get => _explicitNullValueCost; set { _explicitNullValueCost = value; AdditionalData?.Remove("cost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost"); else _explicitNullProperties?.Remove("cost"); } }
         private double? _explicitNullValueCost = default!;
@@ -249,6 +254,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cached", n => { Cached = n.GetBoolValue(); } },
+                { "collect_log_payload", n => { CollectLogPayload = n.GetBoolValue(); } },
                 { "cost", n => { Cost = n.GetDoubleValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_cost", n => { CustomCost = n.GetBoolValue(); } },
@@ -283,6 +289,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("cached", Cached);
+            writer.WriteBoolValue("collect_log_payload", CollectLogPayload);
             writer.WriteDoubleValue("cost", Cost);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("custom_cost", CustomCost);

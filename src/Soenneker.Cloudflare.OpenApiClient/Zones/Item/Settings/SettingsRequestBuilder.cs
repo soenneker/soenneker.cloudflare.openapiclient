@@ -15,6 +15,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.H2_prioritization;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Image_resizing;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Item;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Nel;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.OhttpGateway;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_tls_compliance_modes;
@@ -87,6 +88,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Nel.NelRequestBuilder Nel
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Nel.NelRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The ohttpGateway property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.OhttpGateway.OhttpGatewayRequestBuilder OhttpGateway
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.OhttpGateway.OhttpGatewayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_h2_max_streams property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder Origin_h2_max_streams

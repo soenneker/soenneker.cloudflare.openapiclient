@@ -20,6 +20,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Bots,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BOT_OPERATORS")]
+        #pragma warning disable CS1591
+        BotOperators,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CERTIFICATE_AUTHORITIES")]
         #pragma warning disable CS1591
         CertificateAuthorities,

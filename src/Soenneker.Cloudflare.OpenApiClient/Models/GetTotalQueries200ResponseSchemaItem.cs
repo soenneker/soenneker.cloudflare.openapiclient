@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The total_queries property</summary>
+        /// <summary>Number of saved domain and logo queries in the account.</summary>
         public int? TotalQueries { get => _explicitNullValueTotalQueries; set { _explicitNullValueTotalQueries = value; AdditionalData?.Remove("total_queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_queries"); else _explicitNullProperties?.Remove("total_queries"); } }
         private int? _explicitNullValueTotalQueries = default!;
         /// <summary>

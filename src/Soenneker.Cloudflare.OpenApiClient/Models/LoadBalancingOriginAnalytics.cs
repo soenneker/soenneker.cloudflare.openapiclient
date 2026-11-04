@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; AdditionalData?.Remove("failure_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
         private string _explicitNullValueFailureReason = default!;
 #endif
-        /// <summary>Whether the origin is reported as healthy.</summary>
+        /// <summary>If true, filter events where the origin status is healthy. If false, filter events where the origin status is unhealthy.</summary>
         public bool? Healthy { get => _explicitNullValueHealthy; set { _explicitNullValueHealthy = value; AdditionalData?.Remove("healthy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthy"); else _explicitNullProperties?.Remove("healthy"); } }
         private bool? _explicitNullValueHealthy = default!;
         /// <summary>The IP address (IPv4 or IPv6) of the origin.</summary>
@@ -91,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Enabled = true;
+            Healthy = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The pageSize property</summary>
         public double? PageSize { get => _explicitNullValuePageSize; set { _explicitNullValuePageSize = value; AdditionalData?.Remove("pageSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageSize"); else _explicitNullProperties?.Remove("pageSize"); } }
         private double? _explicitNullValuePageSize = default!;
-        /// <summary>Structured search as a JSON array of {field, op, value} objects. Use the &apos;in&apos; operator with an array value to bulk-check up to 100 values. Multiple conditions are AND&apos;d together. Max 10 conditions per request.</summary>
+        /// <summary>Structured search as a JSON array of {field, op, value} objects, AND&apos;d together. Max 10 conditions per request. `in` and `notIn` take an array of up to 100 values. Exclusions: `not` drops events without a value for the field; `notIn` and `notContains` keep them. On intelligence datasets, a `notIn` list containing `&quot;unknown&quot;` also drops them; analytics datasets treat `&quot;unknown&quot;` as a literal value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItem>? Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; AdditionalData?.Remove("search"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }

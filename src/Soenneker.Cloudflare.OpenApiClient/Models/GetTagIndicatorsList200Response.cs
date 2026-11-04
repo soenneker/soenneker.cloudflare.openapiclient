@@ -17,14 +17,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("failedShardCount") is null) { _explicitNullValueFailedShardCount = default!; _explicitNullProperties?.Remove("failedShardCount"); }
+            else if (parseNode.GetChildNode("failedShardCount") is { } nullNodeFailedShardCount && nullNodeFailedShardCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedShardCount = null;
             if (parseNode.GetChildNode("indicators") is null) { _explicitNullValueIndicators = default!; _explicitNullProperties?.Remove("indicators"); }
             else if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
             if (parseNode.GetChildNode("pagination") is null) { _explicitNullValuePagination = default!; _explicitNullProperties?.Remove("pagination"); }
             else if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
+            if (parseNode.GetChildNode("partialResults") is null) { _explicitNullValuePartialResults = default!; _explicitNullProperties?.Remove("partialResults"); }
+            else if (parseNode.GetChildNode("partialResults") is { } nullNodePartialResults && nullNodePartialResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartialResults = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Number of shards that failed or timed out. Present only with partialResults.</summary>
+        public double? FailedShardCount { get => _explicitNullValueFailedShardCount; set { _explicitNullValueFailedShardCount = value; AdditionalData?.Remove("failedShardCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedShardCount"); else _explicitNullProperties?.Remove("failedShardCount"); } }
+        private double? _explicitNullValueFailedShardCount = default!;
         /// <summary>The indicators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +52,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagIndicatorsList200ResponsePagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagIndicatorsList200ResponsePagination _explicitNullValuePagination = default!;
 #endif
+        /// <summary>Present and true when one or more shards failed or timed out. Indicators from those shards may be missing from this page and from totalCount.</summary>
+        public bool? PartialResults { get => _explicitNullValuePartialResults; set { _explicitNullValuePartialResults = value; AdditionalData?.Remove("partialResults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partialResults"); else _explicitNullProperties?.Remove("partialResults"); } }
+        private bool? _explicitNullValuePartialResults = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagIndicatorsList200Response"/> and sets the default values.
         /// </summary>
@@ -70,8 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "failedShardCount", n => { FailedShardCount = n.GetDoubleValue(); } },
                 { "indicators", n => { Indicators = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagIndicatorsList200ResponseIndicatorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagIndicatorsList200ResponseIndicatorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagIndicatorsList200ResponsePagination>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagIndicatorsList200ResponsePagination.CreateFromDiscriminatorValue); } },
+                { "partialResults", n => { PartialResults = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -81,8 +93,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("failedShardCount", FailedShardCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagIndicatorsList200ResponseIndicatorsItem>("indicators", Indicators);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagIndicatorsList200ResponsePagination>("pagination", Pagination);
+            writer.WriteBoolValue("partialResults", PartialResults);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

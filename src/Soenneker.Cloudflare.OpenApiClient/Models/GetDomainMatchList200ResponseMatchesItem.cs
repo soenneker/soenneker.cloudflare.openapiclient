@@ -21,6 +21,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("dismissed") is { } nullNodeDismissed && nullNodeDismissed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismissed = null;
             if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
             else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("domain_id") is null) { _explicitNullValueDomainId = default!; _explicitNullProperties?.Remove("domain_id"); }
+            else if (parseNode.GetChildNode("domain_id") is { } nullNodeDomainId && nullNodeDomainId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainId = null;
             if (parseNode.GetChildNode("first_seen") is null) { _explicitNullValueFirstSeen = default!; _explicitNullProperties?.Remove("first_seen"); }
             else if (parseNode.GetChildNode("first_seen") is { } nullNodeFirstSeen && nullNodeFirstSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstSeen = null;
             if (parseNode.GetChildNode("match_details") is null) { _explicitNullValueMatchDetails = default!; _explicitNullProperties?.Remove("match_details"); }
@@ -42,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether the match is dismissed. Only present for single-query requests. For multi-query requests, use the dismissed field in each match_details entry.</summary>
         public bool? Dismissed { get => _explicitNullValueDismissed; set { _explicitNullValueDismissed = value; AdditionalData?.Remove("dismissed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed"); else _explicitNullProperties?.Remove("dismissed"); } }
         private bool? _explicitNullValueDismissed = default!;
-        /// <summary>The domain property</summary>
+        /// <summary>The matched domain name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
@@ -52,7 +54,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
-        /// <summary>The first_seen property</summary>
+        /// <summary>ID of the matched domain. Present only when `include_domain_id=true`. Use it with `query_id` to dismiss or undismiss the match.</summary>
+        public int? DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; AdditionalData?.Remove("domain_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
+        private int? _explicitNullValueDomainId = default!;
+        /// <summary>When the domain was matched. For multi-query requests, the most recent match time across the requested queries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; AdditionalData?.Remove("first_seen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_seen"); else _explicitNullProperties?.Remove("first_seen"); } }
@@ -82,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans PublicScans { get => _explicitNullValuePublicScans; set { _explicitNullValuePublicScans = value; AdditionalData?.Remove("public_scans"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_scans"); else _explicitNullProperties?.Remove("public_scans"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans _explicitNullValuePublicScans = default!;
 #endif
-        /// <summary>The registrar property</summary>
+        /// <summary>Registrar of the matched domain, if known.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Registrar { get => _explicitNullValueRegistrar; set { _explicitNullValueRegistrar = value; AdditionalData?.Remove("registrar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrar"); else _explicitNullProperties?.Remove("registrar"); } }
@@ -142,6 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dismissed", n => { Dismissed = n.GetBoolValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
+                { "domain_id", n => { DomainId = n.GetIntValue(); } },
                 { "first_seen", n => { FirstSeen = n.GetStringValue(); } },
                 { "match_details", n => { MatchDetails = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "public_scans", n => { PublicScans = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans.CreateFromDiscriminatorValue); } },
@@ -160,6 +166,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("dismissed", Dismissed);
             writer.WriteStringValue("domain", Domain);
+            writer.WriteIntValue("domain_id", DomainId);
             writer.WriteStringValue("first_seen", FirstSeen);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem>("match_details", MatchDetails);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans>("public_scans", PublicScans);

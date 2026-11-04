@@ -119,14 +119,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             public string IndicatorType { get; set; }
             #pragma warning restore CS1591
 #endif
-            #pragma warning disable CS1591
+            /// <summary>Page number (default 1). page × pageSize may not exceed 10000.</summary>
             [QueryParameter("page")]
             public double? Page { get; set; }
-            #pragma warning restore CS1591
-            #pragma warning disable CS1591
+            /// <summary>Results per page (default 100, maximum 1000; larger values are clamped).</summary>
             [QueryParameter("pageSize")]
             public double? PageSize { get; set; }
-            #pragma warning restore CS1591
             /// <summary>Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

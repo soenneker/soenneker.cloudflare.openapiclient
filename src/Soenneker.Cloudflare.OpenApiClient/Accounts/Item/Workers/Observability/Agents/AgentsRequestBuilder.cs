@@ -2,7 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.Sessions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.Traces;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The sessions property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.Sessions.SessionsRequestBuilder Sessions
+        /// <summary>The traces property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.Traces.TracesRequestBuilder Traces
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.Traces.TracesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.AgentsRequestBuilder"/> and sets the default values.

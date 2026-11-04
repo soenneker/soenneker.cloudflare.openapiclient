@@ -32,6 +32,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         BranchLimit,
         #pragma warning restore CS1591
+        [EnumMember(Value = "filter_limit")]
+        #pragma warning disable CS1591
+        FilterLimit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "indicators_not_supported")]
         #pragma warning disable CS1591
         IndicatorsNotSupported,

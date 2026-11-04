@@ -32,10 +32,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Individual dismissed state for this specific match.</summary>
         public bool? Dismissed { get => _explicitNullValueDismissed; set { _explicitNullValueDismissed = value; AdditionalData?.Remove("dismissed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed"); else _explicitNullProperties?.Remove("dismissed"); } }
         private bool? _explicitNullValueDismissed = default!;
-        /// <summary>The match_id property</summary>
+        /// <summary>ID of the match. Accepted by the legacy `match_ids` format.</summary>
         public int? MatchId { get => _explicitNullValueMatchId; set { _explicitNullValueMatchId = value; AdditionalData?.Remove("match_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_id"); else _explicitNullProperties?.Remove("match_id"); } }
         private int? _explicitNullValueMatchId = default!;
-        /// <summary>The query_id property</summary>
+        /// <summary>ID of the domain query that produced this match.</summary>
         public int? QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; AdditionalData?.Remove("query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
         private int? _explicitNullValueQueryId = default!;
         /// <summary>Tag associated with the query, if one exists.</summary>

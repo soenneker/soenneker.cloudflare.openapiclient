@@ -129,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BotsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filters results by bot category.</summary>
+            /// <summary>Filters results by bot category. `ACCESSIBILITY`, `AGGREGATOR`, `AI_SEARCH`, `ARCHIVER`, `SOCIAL_MEDIA_MARKETING` and `WEBHOOKS` are deprecated legacy categories that match only that exact category.</summary>
             [QueryParameter("botCategory")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBotsBotCategoryParameter? BotCategory { get; set; }
             /// <summary>Filters results by bot operator.</summary>
