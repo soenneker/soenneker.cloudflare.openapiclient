@@ -89,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 "vpc_network" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItemWorkersBindingKindVpcNetwork(),
                 "vpc_service" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItemWorkersBindingKindVpcService(),
                 "wasm_module" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItemWorkersBindingKindWasmModule(),
+                "worker_loader" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItemWorkersBindingKindWorkerLoader(),
                 "workflow" => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItemWorkersBindingKindWorkflow(),
                 _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem(),
             };

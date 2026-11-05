@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applications;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.ImagePreparations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Usage;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -31,6 +32,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries.RegistriesRequestBuilder Registries
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries.RegistriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The usage property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Usage.UsageRequestBuilder Usage
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.ContainersRequestBuilder"/> and sets the default values.

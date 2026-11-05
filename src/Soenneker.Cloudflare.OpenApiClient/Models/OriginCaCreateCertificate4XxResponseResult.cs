@@ -73,19 +73,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>The number of days for which the certificate should be valid.</summary>
+        /// <summary>A permitted certificate validity period, in days.</summary>
         public double? RequestedValidity { get => _explicitNullValueRequestedValidity; set { _explicitNullValueRequestedValidity = value; AdditionalData?.Remove("requested_validity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_validity"); else _explicitNullProperties?.Remove("requested_validity"); } }
         private double? _explicitNullValueRequestedValidity = default!;
         /// <summary>Signature type desired on certificate (&quot;origin-rsa&quot; (rsa), &quot;origin-ecc&quot; (ecdsa), or &quot;keyless-certificate&quot; (for Keyless SSL servers).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType? RequestType { get => _explicitNullValueRequestType; set { _explicitNullValueRequestType = value; AdditionalData?.Remove("request_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_type"); else _explicitNullProperties?.Remove("request_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType? _explicitNullValueRequestType = default!;
+        /// <summary>When the certificate was revoked.</summary>
+        public DateTimeOffset? RevokedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCaCreateCertificate4XxResponseResult"/> and sets the default values.
         /// </summary>
         public OriginCaCreateCertificate4XxResponseResult()
         {
             AdditionalData = new Dictionary<string, object>();
-            RequestedValidity = 5475;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -112,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "request_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRequestType = default; _explicitNullProperties?.Remove("request_type"); AdditionalData["request_type"] = unknown; } else { RequestType = parsed; AdditionalData.Remove("request_type"); } } },
                 { "requested_validity", n => { RequestedValidity = n.GetDoubleValue(); } },
+                { "revoked_at", n => { RevokedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

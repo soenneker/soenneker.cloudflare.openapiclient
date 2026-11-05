@@ -17,16 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account") is null) { _explicitNullValueAccount = default!; _explicitNullProperties?.Remove("account"); }
-            else if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
             if (parseNode.GetChildNode("ccr_device_name") is null) { _explicitNullValueCcrDeviceName = default!; _explicitNullProperties?.Remove("ccr_device_name"); }
             else if (parseNode.GetChildNode("ccr_device_name") is { } nullNodeCcrDeviceName && nullNodeCcrDeviceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CcrDeviceName = null;
             if (parseNode.GetChildNode("facility") is null) { _explicitNullValueFacility = default!; _explicitNullProperties?.Remove("facility"); }
             else if (parseNode.GetChildNode("facility") is { } nullNodeFacility && nullNodeFacility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facility = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
-            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
             if (parseNode.GetChildNode("site") is null) { _explicitNullValueSite = default!; _explicitNullProperties?.Remove("site"); }
             else if (parseNode.GetChildNode("site") is { } nullNodeSite && nullNodeSite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Site = null;
             if (parseNode.GetChildNode("slot_id") is null) { _explicitNullValueSlotId = default!; _explicitNullProperties?.Remove("slot_id"); }
@@ -39,16 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("virtual_port_reservation_id") is { } nullNodeVirtualPortReservationId && nullNodeVirtualPortReservationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualPortReservationId = null;
         }
 
-        /// <summary>The account property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
-        private string? _explicitNullValueAccount = default!;
-#nullable restore
-#else
-        public string Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
-        private string _explicitNullValueAccount = default!;
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ccr_device_name property</summary>
@@ -80,16 +66,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
-#endif
-        /// <summary>The owner property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
-        private string? _explicitNullValueOwner = default!;
-#nullable restore
-#else
-        public string Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
-        private string _explicitNullValueOwner = default!;
 #endif
         /// <summary>A Cloudflare site name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,11 +128,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account", n => { Account = n.GetStringValue(); } },
                 { "ccr_device_name", n => { CcrDeviceName = n.GetStringValue(); } },
                 { "facility", n => { Facility = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscFacilityInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.NscFacilityInfo.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetStringValue(); } },
                 { "site", n => { Site = n.GetStringValue(); } },
                 { "slot_id", n => { SlotId = n.GetGuidValue(); } },
                 { "speed", n => { Speed = n.GetStringValue(); } },
@@ -171,11 +145,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("account", Account);
             writer.WriteStringValue("ccr_device_name", CcrDeviceName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscFacilityInfo>("facility", Facility);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("site", Site);
             writer.WriteGuidValue("slot_id", SlotId);
             writer.WriteStringValue("speed", Speed);

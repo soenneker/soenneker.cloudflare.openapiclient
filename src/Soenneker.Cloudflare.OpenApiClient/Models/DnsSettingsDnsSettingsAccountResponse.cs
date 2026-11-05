@@ -20,8 +20,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("flatten_all_cnames") is null) { _explicitNullValueFlattenAllCnames = default!; _explicitNullProperties?.Remove("flatten_all_cnames"); }
             else if (parseNode.GetChildNode("flatten_all_cnames") is { } nullNodeFlattenAllCnames && nullNodeFlattenAllCnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlattenAllCnames = null;
-            if (parseNode.GetChildNode("foundation_dns") is null) { _explicitNullValueFoundationDns = default!; _explicitNullProperties?.Remove("foundation_dns"); }
-            else if (parseNode.GetChildNode("foundation_dns") is { } nullNodeFoundationDns && nullNodeFoundationDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FoundationDns = null;
             if (parseNode.GetChildNode("internal_dns") is null) { _explicitNullValueInternalDns = default!; _explicitNullProperties?.Remove("internal_dns"); }
             else if (parseNode.GetChildNode("internal_dns") is { } nullNodeInternalDns && nullNodeInternalDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalDns = null;
             if (parseNode.GetChildNode("multi_provider") is null) { _explicitNullValueMultiProvider = default!; _explicitNullProperties?.Remove("multi_provider"); }
@@ -43,10 +41,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.</summary>
         public bool? FlattenAllCnames { get => _explicitNullValueFlattenAllCnames; set { _explicitNullValueFlattenAllCnames = value; AdditionalData?.Remove("flatten_all_cnames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flatten_all_cnames"); else _explicitNullProperties?.Remove("flatten_all_cnames"); } }
         private bool? _explicitNullValueFlattenAllCnames = default!;
-        /// <summary>Deprecated. Use nameservers.type to configure Advanced Nameservers.</summary>
-        [Obsolete("")]
-        public bool? FoundationDns { get => _explicitNullValueFoundationDns; set { _explicitNullValueFoundationDns = value; AdditionalData?.Remove("foundation_dns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foundation_dns"); else _explicitNullProperties?.Remove("foundation_dns"); } }
-        private bool? _explicitNullValueFoundationDns = default!;
         /// <summary>The internal_dns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,7 +109,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "flatten_all_cnames", n => { FlattenAllCnames = n.GetBoolValue(); } },
-                { "foundation_dns", n => { FoundationDns = n.GetBoolValue(); } },
                 { "internal_dns", n => { InternalDns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns.CreateFromDiscriminatorValue); } },
                 { "multi_provider", n => { MultiProvider = n.GetBoolValue(); } },
                 { "nameservers", n => { Nameservers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountResponseAllOf2Nameservers>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountResponseAllOf2Nameservers.CreateFromDiscriminatorValue); } },
@@ -133,7 +126,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("flatten_all_cnames", FlattenAllCnames);
-            writer.WriteBoolValue("foundation_dns", FoundationDns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns>("internal_dns", InternalDns);
             writer.WriteBoolValue("multi_provider", MultiProvider);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountResponseAllOf2Nameservers>("nameservers", Nameservers);

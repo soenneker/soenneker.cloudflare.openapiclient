@@ -25,6 +25,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("requested_validity") is { } nullNodeRequestedValidity && nullNodeRequestedValidity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedValidity = null;
             if (parseNode.GetChildNode("request_type") is null) { _explicitNullValueRequestType = default!; _explicitNullProperties?.Remove("request_type"); }
             else if (parseNode.GetChildNode("request_type") is { } nullNodeRequestType && nullNodeRequestType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestType = null;
+            if (parseNode.GetChildNode("zone_id") is null) { _explicitNullValueZoneId = default!; _explicitNullProperties?.Remove("zone_id"); }
+            else if (parseNode.GetChildNode("zone_id") is { } nullNodeZoneId && nullNodeZoneId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,12 +51,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; AdditionalData?.Remove("hostnames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
         private List<string> _explicitNullValueHostnames = default!;
 #endif
-        /// <summary>The number of days for which the certificate should be valid.</summary>
+        /// <summary>A permitted certificate validity period, in days.</summary>
         public double? RequestedValidity { get => _explicitNullValueRequestedValidity; set { _explicitNullValueRequestedValidity = value; AdditionalData?.Remove("requested_validity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_validity"); else _explicitNullProperties?.Remove("requested_validity"); } }
         private double? _explicitNullValueRequestedValidity = default!;
         /// <summary>Signature type desired on certificate (&quot;origin-rsa&quot; (rsa), &quot;origin-ecc&quot; (ecdsa), or &quot;keyless-certificate&quot; (for Keyless SSL servers).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType? RequestType { get => _explicitNullValueRequestType; set { _explicitNullValueRequestType = value; AdditionalData?.Remove("request_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_type"); else _explicitNullProperties?.Remove("request_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType? _explicitNullValueRequestType = default!;
+        /// <summary>Identifier of the zone whose keyless servers the certificate is for. Required when `request_type` is `keyless-certificate`; ignored otherwise.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZoneId { get => _explicitNullValueZoneId; set { _explicitNullValueZoneId = value; AdditionalData?.Remove("zone_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_id"); else _explicitNullProperties?.Remove("zone_id"); } }
+        private string? _explicitNullValueZoneId = default!;
+#nullable restore
+#else
+        public string ZoneId { get => _explicitNullValueZoneId; set { _explicitNullValueZoneId = value; AdditionalData?.Remove("zone_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_id"); else _explicitNullProperties?.Remove("zone_id"); } }
+        private string _explicitNullValueZoneId = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCaCreateCertificateRequest"/> and sets the default values.
         /// </summary>
@@ -85,6 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "hostnames", n => { Hostnames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "request_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRequestType = default; _explicitNullProperties?.Remove("request_type"); AdditionalData["request_type"] = unknown; } else { RequestType = parsed; AdditionalData.Remove("request_type"); } } },
                 { "requested_validity", n => { RequestedValidity = n.GetDoubleValue(); } },
+                { "zone_id", n => { ZoneId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -98,6 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
             writer.WriteDoubleValue("requested_validity", RequestedValidity);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType>("request_type", RequestType);
+            writer.WriteStringValue("zone_id", ZoneId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

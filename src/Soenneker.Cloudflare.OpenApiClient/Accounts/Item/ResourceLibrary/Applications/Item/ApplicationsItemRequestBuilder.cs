@@ -39,7 +39,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaDeleteApplicationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaDeleteApplicationConflictResponse">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 4XX status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 502 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +56,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaDeleteApplicationConflictResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "502", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -67,6 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
@@ -92,6 +98,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
         /// <param name="body">Update the network matchers for the application. The service preserves omittedmatcher lists; send an empty array to clear a list. The resulting application mustcontain at least one hostname or IP subnet. Support domains and port/protocol pairsdo not satisfy this requirement.A NUL character (U+0000) in any string value returns `400`.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +114,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };

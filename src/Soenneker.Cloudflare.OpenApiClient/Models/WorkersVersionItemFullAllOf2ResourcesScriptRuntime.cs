@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CompatibilityDate { get; private set; }
 #endif
-        /// <summary>Flags that enable or disable certain features in the Workers runtime.</summary>
+        /// <summary>Lists the flags this version sets explicitly to enable or disableWorkers runtime features. Excludes behavior that `compatibility_date`enables. Responses omit the field when the list is empty, so a missingfield means the version sets zero flags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CompatibilityFlags { get; private set; }

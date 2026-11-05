@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.User_populatio
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessResponseCollection3>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessResponseCollection3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a user population in an account.
+        /// Creates a user population in an account. Requires permission to update the account&apos;s Access organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSingleResponse5"/></returns>
         /// <param name="body">The request body</param>
@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.User_populatio
             return requestInfo;
         }
         /// <summary>
-        /// Creates a user population in an account.
+        /// Creates a user population in an account. Requires permission to update the account&apos;s Access organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

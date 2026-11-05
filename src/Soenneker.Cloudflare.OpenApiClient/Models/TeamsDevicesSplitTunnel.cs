@@ -65,6 +65,10 @@ if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj
 { result &= (fields.ContainsKey("address")); if (result == false) return false; }
 { result &= (!fields.ContainsKey("address") ? (bool?)true : MatchSchema2(fields["address"], depth + 1)); if (result == false) return false; }
 { result &= (!fields.ContainsKey("description") ? (bool?)true : MatchSchema3(fields["description"], depth + 1)); if (result == false) return false; }
+foreach (var field in fields) {
+if (field.Key == "address" || field.Key == "description") continue;
+{ result &= ((bool?)false); if (result == false) return false; }
+}
 }
 return result;
 }
@@ -76,6 +80,10 @@ if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj
 { result &= (fields.ContainsKey("host")); if (result == false) return false; }
 { result &= (!fields.ContainsKey("description") ? (bool?)true : MatchSchema4(fields["description"], depth + 1)); if (result == false) return false; }
 { result &= (!fields.ContainsKey("host") ? (bool?)true : MatchSchema5(fields["host"], depth + 1)); if (result == false) return false; }
+foreach (var field in fields) {
+if (field.Key == "description" || field.Key == "host") continue;
+{ result &= ((bool?)false); if (result == false) return false; }
+}
 }
 return result;
 }

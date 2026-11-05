@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LatestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews/{previewId}/deployments/latest{?ignore_defaults*}", pathParameters)
+        public LatestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews/{previewId}/deployments/latest", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LatestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews/{previewId}/deployments/latest{?ignore_defaults*}", rawUrl)
+        public LatestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews/{previewId}/deployments/latest", rawUrl)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewsDeploymentsPatchLatest4XxResponseError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewsDeploymentsPatchLatest200Response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Latest.LatestRequestBuilder.LatestRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewsDeploymentsPatchLatest200Response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewsDeploymentsPatchLatest200Response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Latest.LatestRequestBuilder.LatestRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewsDeploymentsPatchLatest200Response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -67,11 +67,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Latest.LatestRequestBuilder.LatestRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Latest.LatestRequestBuilder.LatestRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -89,17 +89,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Latest.LatestRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Latest.LatestRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Only `/deployments/latest` is supported. Creates a new preview deployment by applying a JSON Merge Patch (RFC 7396) to the latest deployment. Patching a specific deployment ID is not supported. Omitted fields are inherited from the latest deployment. Preview base config is used for the first deployment.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class LatestRequestBuilderPatchQueryParameters 
-        {
-            #pragma warning disable CS1591
-            [QueryParameter("ignore_defaults")]
-            public bool? IgnoreDefaults { get; set; }
-            #pragma warning restore CS1591
         }
     }
 }

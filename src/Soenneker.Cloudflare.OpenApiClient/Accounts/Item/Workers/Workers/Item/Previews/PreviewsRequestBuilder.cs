@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews{?ignore_base_config*,ignore_defaults*,name*,order*,order_by*,page*,per_page*,slug*}", pathParameters)
+        public PreviewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews{?ignore_base_config*,name*,order*,order_by*,page*,per_page*,slug*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews{?ignore_base_config*,ignore_defaults*,name*,order*,order_by*,page*,per_page*,slug*}", rawUrl)
+        public PreviewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews{?ignore_base_config*,name*,order*,order_by*,page*,per_page*,slug*}", rawUrl)
         {
         }
         /// <summary>
@@ -194,10 +194,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
             #pragma warning disable CS1591
             [QueryParameter("ignore_base_config")]
             public bool? IgnoreBaseConfig { get; set; }
-            #pragma warning restore CS1591
-            #pragma warning disable CS1591
-            [QueryParameter("ignore_defaults")]
-            public bool? IgnoreDefaults { get; set; }
             #pragma warning restore CS1591
         }
     }

@@ -89,6 +89,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
         /// <param name="body">Defines a custom application. At least one hostname or IP subnet is required.Support domains and port/protocol pairs do not satisfy this requirement.A NUL character (U+0000) in any string value returns `400`.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +105,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
@@ -210,7 +214,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
             /// <summary>Number of results to skip. Defaults to 0; negative values are clamped to 0. Ignored when `cursor` is provided.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Order results using field:direction format. Supported fields are name, id, human_id,category_id, application_type, application_confidence_score, and gen_ai_score.Supported directions are asc and desc. Ignored when search is provided; results areranked by relevance instead. Also ignored when lookup is provided.</summary>
+            /// <summary>Order results using field:direction format. Supported fields are name, id, human_id,category_id, application_type, application_confidence_score, and gen_ai_score.Supported directions are asc and desc. name and application_type ignore the case ofthe letters A to Z, and ties sort by id. Ignored when search is provided; results areranked by relevance instead. Also ignored when lookup is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]

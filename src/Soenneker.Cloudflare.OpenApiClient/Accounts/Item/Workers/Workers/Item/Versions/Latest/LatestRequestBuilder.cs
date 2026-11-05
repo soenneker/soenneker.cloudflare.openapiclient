@@ -141,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         {
             #pragma warning disable CS1591
             [QueryParameter("include")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ModulesInclude? Include { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetLatestWorkerVersionIncludeParameter? Include { get; set; }
             #pragma warning restore CS1591
         }
         /// <summary>

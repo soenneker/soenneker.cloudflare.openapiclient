@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Categ
         {
         }
         /// <summary>
-        /// List the categories available for classifying applications, ordered by name.Results are paginated by `offset` or `cursor`.
+        /// List the categories available for classifying applications, ordered by name, ignoring the case of the letters A to Z.Results are paginated by `offset` or `cursor`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetCategoriesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Categ
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetCategoriesResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetCategoriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the categories available for classifying applications, ordered by name.Results are paginated by `offset` or `cursor`.
+        /// List the categories available for classifying applications, ordered by name, ignoring the case of the letters A to Z.Results are paginated by `offset` or `cursor`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Categ
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Categories.CategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the categories available for classifying applications, ordered by name.Results are paginated by `offset` or `cursor`.
+        /// List the categories available for classifying applications, ordered by name, ignoring the case of the letters A to Z.Results are paginated by `offset` or `cursor`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CategoriesRequestBuilderGetQueryParameters 

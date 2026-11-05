@@ -27,6 +27,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
             if (parseNode.GetChildNode("executionModel") is null) { _explicitNullValueExecutionModel = default!; _explicitNullProperties?.Remove("executionModel"); }
             else if (parseNode.GetChildNode("executionModel") is { } nullNodeExecutionModel && nullNodeExecutionModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionModel = null;
+            if (parseNode.GetChildNode("gateway") is null) { _explicitNullValueGateway = default!; _explicitNullProperties?.Remove("gateway"); }
+            else if (parseNode.GetChildNode("gateway") is { } nullNodeGateway && nullNodeGateway.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gateway = null;
             if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
             else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
             if (parseNode.GetChildNode("preview") is null) { _explicitNullValuePreview = default!; _explicitNullProperties?.Remove("preview"); }
@@ -83,6 +85,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The executionModel property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModel? ExecutionModel { get => _explicitNullValueExecutionModel; set { _explicitNullValueExecutionModel = value; AdditionalData?.Remove("executionModel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionModel"); else _explicitNullProperties?.Remove("executionModel"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModel? _explicitNullValueExecutionModel = default!;
+        /// <summary>The gateway property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Gateway? Gateway { get => _explicitNullValueGateway; set { _explicitNullValueGateway = value; AdditionalData?.Remove("gateway"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway"); else _explicitNullProperties?.Remove("gateway"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Gateway? _explicitNullValueGateway = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Gateway Gateway { get => _explicitNullValueGateway; set { _explicitNullValueGateway = value; AdditionalData?.Remove("gateway"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway"); else _explicitNullProperties?.Remove("gateway"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Gateway _explicitNullValueGateway = default!;
+#endif
         /// <summary>The outcome property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -186,6 +198,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "event", n => { Event = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1EventProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1EventProperty.CreateFromDiscriminatorValue); } },
                 { "eventType", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1EventType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("eventType"); AdditionalData["eventType"] = unknown; } else { EventType = parsed; AdditionalData.Remove("eventType"); } } },
                 { "executionModel", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExecutionModel = default; _explicitNullProperties?.Remove("executionModel"); AdditionalData["executionModel"] = unknown; } else { ExecutionModel = parsed; AdditionalData.Remove("executionModel"); } } },
+                { "gateway", n => { Gateway = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Gateway>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Gateway.CreateFromDiscriminatorValue); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
                 { "preview", n => { Preview = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Preview>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Preview.CreateFromDiscriminatorValue); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
@@ -208,6 +221,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1EventProperty>("event", Event);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1EventType>("eventType", EventType);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModel>("executionModel", ExecutionModel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Gateway>("gateway", Gateway);
             writer.WriteStringValue("outcome", Outcome);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1Preview>("preview", Preview);
             writer.WriteStringValue("requestId", RequestId);

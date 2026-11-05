@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The Certificate Authority that Total TLS certificates will be issued through.</summary>
+    /// <summary>The Certificate Authority that Total TLS certificates will be issued through. Not returned in responses when Total TLS is disabled.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TlsCertificatesAndHostnamesCertificateAuthority3
     {

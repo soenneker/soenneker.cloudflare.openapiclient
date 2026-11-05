@@ -27,13 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Certificate Authority that Total TLS certificates will be issued through.</summary>
+        /// <summary>The Certificate Authority that Total TLS certificates will be issued through. Not returned in responses when Total TLS is disabled.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority3? CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; AdditionalData?.Remove("certificate_authority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority"); else _explicitNullProperties?.Remove("certificate_authority"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority3? _explicitNullValueCertificateAuthority = default!;
         /// <summary>If enabled, Total TLS will order a hostname specific TLS certificate for any proxied A, AAAA, or CNAME record in your zone.</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The validity period in days for the certificates ordered via Total TLS.</summary>
+        /// <summary>The validity period in days for the certificates ordered via Total TLS. Not returned when Total TLS is disabled.</summary>
         public int? ValidityPeriod { get => _explicitNullValueValidityPeriod; set { _explicitNullValueValidityPeriod = value; AdditionalData?.Remove("validity_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_period"); else _explicitNullProperties?.Remove("validity_period"); } }
         private int? _explicitNullValueValidityPeriod = default!;
         /// <summary>

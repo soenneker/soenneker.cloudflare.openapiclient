@@ -8,10 +8,10 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// A certificate pack with all its properties.
+    /// A newly ordered certificate pack. Certificates are not included until they are issued; get the certificate pack to retrieve them.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponse_result : IAdditionalDataHolder, IParsable
+    public partial class TlsCertificatesAndHostnamesCertificatePackOrder : IAdditionalDataHolder, IParsable
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -20,24 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("certificate_authority") is null) { _explicitNullValueCertificateAuthority = default!; _explicitNullProperties?.Remove("certificate_authority"); }
             else if (parseNode.GetChildNode("certificate_authority") is { } nullNodeCertificateAuthority && nullNodeCertificateAuthority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthority = null;
-            if (parseNode.GetChildNode("certificates") is null) { _explicitNullValueCertificates = default!; _explicitNullProperties?.Remove("certificates"); }
-            else if (parseNode.GetChildNode("certificates") is { } nullNodeCertificates && nullNodeCertificates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Certificates = null;
-            if (parseNode.GetChildNode("cloudflare_branding") is null) { _explicitNullValueCloudflareBranding = default!; _explicitNullProperties?.Remove("cloudflare_branding"); }
-            else if (parseNode.GetChildNode("cloudflare_branding") is { } nullNodeCloudflareBranding && nullNodeCloudflareBranding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareBranding = null;
             if (parseNode.GetChildNode("hosts") is null) { _explicitNullValueHosts = default!; _explicitNullProperties?.Remove("hosts"); }
             else if (parseNode.GetChildNode("hosts") is { } nullNodeHosts && nullNodeHosts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hosts = null;
-            if (parseNode.GetChildNode("primary_certificate") is null) { _explicitNullValuePrimaryCertificate = default!; _explicitNullProperties?.Remove("primary_certificate"); }
-            else if (parseNode.GetChildNode("primary_certificate") is { } nullNodePrimaryCertificate && nullNodePrimaryCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryCertificate = null;
             if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
             if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
             else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("validation_errors") is null) { _explicitNullValueValidationErrors = default!; _explicitNullProperties?.Remove("validation_errors"); }
-            else if (parseNode.GetChildNode("validation_errors") is { } nullNodeValidationErrors && nullNodeValidationErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationErrors = null;
             if (parseNode.GetChildNode("validation_method") is null) { _explicitNullValueValidationMethod = default!; _explicitNullProperties?.Remove("validation_method"); }
             else if (parseNode.GetChildNode("validation_method") is { } nullNodeValidationMethod && nullNodeValidationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationMethod = null;
-            if (parseNode.GetChildNode("validation_records") is null) { _explicitNullValueValidationRecords = default!; _explicitNullProperties?.Remove("validation_records"); }
-            else if (parseNode.GetChildNode("validation_records") is { } nullNodeValidationRecords && nullNodeValidationRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationRecords = null;
             if (parseNode.GetChildNode("validity_days") is null) { _explicitNullValueValidityDays = default!; _explicitNullProperties?.Remove("validity_days"); }
             else if (parseNode.GetChildNode("validity_days") is { } nullNodeValidityDays && nullNodeValidityDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidityDays = null;
         }
@@ -47,27 +37,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Certificate Authority selected for the order.  For information on any certificate authority specific details or restrictions [see this page for more details](https://developers.cloudflare.com/ssl/reference/certificate-authorities).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority2? CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; AdditionalData?.Remove("certificate_authority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority"); else _explicitNullProperties?.Remove("certificate_authority"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority2? _explicitNullValueCertificateAuthority = default!;
-        /// <summary>Array of certificates in this pack.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackCertificate>? Certificates { get => _explicitNullValueCertificates; set { _explicitNullValueCertificates = value; AdditionalData?.Remove("certificates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificates"); else _explicitNullProperties?.Remove("certificates"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackCertificate>? _explicitNullValueCertificates = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackCertificate> Certificates { get => _explicitNullValueCertificates; set { _explicitNullValueCertificates = value; AdditionalData?.Remove("certificates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificates"); else _explicitNullProperties?.Remove("certificates"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackCertificate> _explicitNullValueCertificates = default!;
-#endif
-        /// <summary>Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.</summary>
-        public bool? CloudflareBranding { get => _explicitNullValueCloudflareBranding; set { _explicitNullValueCloudflareBranding = value; AdditionalData?.Remove("cloudflare_branding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_branding"); else _explicitNullProperties?.Remove("cloudflare_branding"); } }
-        private bool? _explicitNullValueCloudflareBranding = default!;
-        /// <summary>DCV Delegation records for domain validation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord>? DcvDelegationRecords { get; private set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord> DcvDelegationRecords { get; private set; }
-#endif
         /// <summary>Comma separated list of valid host names for the certificate packs. Must contain the zone apex, may not contain more than 50 hosts, and may not be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,64 +55,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>Identifier of the primary certificate in a pack.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PrimaryCertificate { get => _explicitNullValuePrimaryCertificate; set { _explicitNullValuePrimaryCertificate = value; AdditionalData?.Remove("primary_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_certificate"); else _explicitNullProperties?.Remove("primary_certificate"); } }
-        private string? _explicitNullValuePrimaryCertificate = default!;
-#nullable restore
-#else
-        public string PrimaryCertificate { get => _explicitNullValuePrimaryCertificate; set { _explicitNullValuePrimaryCertificate = value; AdditionalData?.Remove("primary_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_certificate"); else _explicitNullProperties?.Remove("primary_certificate"); } }
-        private string _explicitNullValuePrimaryCertificate = default!;
-#endif
         /// <summary>Status of certificate pack.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus5? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus5? _explicitNullValueStatus = default!;
         /// <summary>Type of certificate pack.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesType2? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesType2? _explicitNullValueType = default!;
-        /// <summary>Domain validation errors that have been received by the certificate authority (CA).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackValidationErrorsItem>? ValidationErrors { get => _explicitNullValueValidationErrors; set { _explicitNullValueValidationErrors = value; AdditionalData?.Remove("validation_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_errors"); else _explicitNullProperties?.Remove("validation_errors"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackValidationErrorsItem>? _explicitNullValueValidationErrors = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackValidationErrorsItem> ValidationErrors { get => _explicitNullValueValidationErrors; set { _explicitNullValueValidationErrors = value; AdditionalData?.Remove("validation_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_errors"); else _explicitNullProperties?.Remove("validation_errors"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackValidationErrorsItem> _explicitNullValueValidationErrors = default!;
-#endif
         /// <summary>Validation Method selected for the order.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethod? ValidationMethod { get => _explicitNullValueValidationMethod; set { _explicitNullValueValidationMethod = value; AdditionalData?.Remove("validation_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_method"); else _explicitNullProperties?.Remove("validation_method"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethod? _explicitNullValueValidationMethod = default!;
-        /// <summary>Certificates&apos; validation records.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord>? ValidationRecords { get => _explicitNullValueValidationRecords; set { _explicitNullValueValidationRecords = value; AdditionalData?.Remove("validation_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_records"); else _explicitNullProperties?.Remove("validation_records"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord>? _explicitNullValueValidationRecords = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord> ValidationRecords { get => _explicitNullValueValidationRecords; set { _explicitNullValueValidationRecords = value; AdditionalData?.Remove("validation_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_records"); else _explicitNullProperties?.Remove("validation_records"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord> _explicitNullValueValidationRecords = default!;
-#endif
         /// <summary>Validity Days selected for the order.</summary>
         public int? ValidityDays { get => _explicitNullValueValidityDays; set { _explicitNullValueValidityDays = value; AdditionalData?.Remove("validity_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_days"); else _explicitNullProperties?.Remove("validity_days"); } }
         private int? _explicitNullValueValidityDays = default!;
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponse_result"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackOrder"/> and sets the default values.
         /// </summary>
-        public CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponse_result()
+        public TlsCertificatesAndHostnamesCertificatePackOrder()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponse_result"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackOrder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponse_result CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackOrder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponse_result(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackOrder(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,17 +93,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "certificate_authority", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority2>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCertificateAuthority = default; _explicitNullProperties?.Remove("certificate_authority"); AdditionalData["certificate_authority"] = unknown; } else { CertificateAuthority = parsed; AdditionalData.Remove("certificate_authority"); } } },
-                { "certificates", n => { Certificates = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackCertificate>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackCertificate.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "cloudflare_branding", n => { CloudflareBranding = n.GetBoolValue(); } },
-                { "dcv_delegation_records", n => { DcvDelegationRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hosts", n => { Hosts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "primary_certificate", n => { PrimaryCertificate = n.GetStringValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus5>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesType2>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
-                { "validation_errors", n => { ValidationErrors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackValidationErrorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackValidationErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "validation_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueValidationMethod = default; _explicitNullProperties?.Remove("validation_method"); AdditionalData["validation_method"] = unknown; } else { ValidationMethod = parsed; AdditionalData.Remove("validation_method"); } } },
-                { "validation_records", n => { ValidationRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "validity_days", n => { ValidityDays = n.GetIntValue(); } },
             };
         }
@@ -176,15 +109,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority2>("certificate_authority", CertificateAuthority);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackCertificate>("certificates", Certificates);
-            writer.WriteBoolValue("cloudflare_branding", CloudflareBranding);
             writer.WriteCollectionOfPrimitiveValues<string>("hosts", Hosts);
-            writer.WriteStringValue("primary_certificate", PrimaryCertificate);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus5>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesType2>("type", Type);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackValidationErrorsItem>("validation_errors", ValidationErrors);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethod>("validation_method", ValidationMethod);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationRecord>("validation_records", ValidationRecords);
             writer.WriteIntValue("validity_days", ValidityDays);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

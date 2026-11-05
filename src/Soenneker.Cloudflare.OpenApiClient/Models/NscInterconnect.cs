@@ -63,22 +63,19 @@ bool? result = true;
 if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
 { result &= (fields.ContainsKey("type")); if (result == false) return false; }
 { result &= (fields.ContainsKey("name")); if (result == false) return false; }
-{ result &= (fields.ContainsKey("account")); if (result == false) return false; }
 { result &= (fields.ContainsKey("virtual_port_reservation_id")); if (result == false) return false; }
 { result &= (fields.ContainsKey("slot_id")); if (result == false) return false; }
 { result &= (fields.ContainsKey("site")); if (result == false) return false; }
 { result &= (fields.ContainsKey("speed")); if (result == false) return false; }
 { result &= (fields.ContainsKey("facility")); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("account") ? (bool?)true : MatchSchema2(fields["account"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("name") ? (bool?)true : MatchSchema3(fields["name"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("owner") ? (bool?)true : MatchSchema4(fields["owner"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("type") ? (bool?)true : MatchSchema5(fields["type"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("ccr_device_name") ? (bool?)true : MatchSchema6(fields["ccr_device_name"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("facility") ? (bool?)true : MatchSchema7(fields["facility"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("site") ? (bool?)true : MatchSchema8(fields["site"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("slot_id") ? (bool?)true : MatchSchema9(fields["slot_id"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("speed") ? (bool?)true : MatchSchema10(fields["speed"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("virtual_port_reservation_id") ? (bool?)true : MatchSchema11(fields["virtual_port_reservation_id"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("name") ? (bool?)true : MatchSchema2(fields["name"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("type") ? (bool?)true : MatchSchema3(fields["type"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("ccr_device_name") ? (bool?)true : MatchSchema4(fields["ccr_device_name"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("facility") ? (bool?)true : MatchSchema5(fields["facility"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("site") ? (bool?)true : MatchSchema6(fields["site"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("slot_id") ? (bool?)true : MatchSchema7(fields["slot_id"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("speed") ? (bool?)true : MatchSchema8(fields["speed"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("virtual_port_reservation_id") ? (bool?)true : MatchSchema9(fields["virtual_port_reservation_id"], depth + 1)); if (result == false) return false; }
 }
 return result;
 }
@@ -89,16 +86,13 @@ bool? result = true;
 if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
 { result &= (fields.ContainsKey("type")); if (result == false) return false; }
 { result &= (fields.ContainsKey("name")); if (result == false) return false; }
-{ result &= (fields.ContainsKey("account")); if (result == false) return false; }
 { result &= (fields.ContainsKey("virtual_port_reservation_id")); if (result == false) return false; }
 { result &= (fields.ContainsKey("region")); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("account") ? (bool?)true : MatchSchema12(fields["account"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("name") ? (bool?)true : MatchSchema13(fields["name"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("owner") ? (bool?)true : MatchSchema14(fields["owner"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("type") ? (bool?)true : MatchSchema15(fields["type"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("region") ? (bool?)true : MatchSchema16(fields["region"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("speed") ? (bool?)true : MatchSchema17(fields["speed"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("virtual_port_reservation_id") ? (bool?)true : MatchSchema18(fields["virtual_port_reservation_id"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("name") ? (bool?)true : MatchSchema10(fields["name"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("type") ? (bool?)true : MatchSchema11(fields["type"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("region") ? (bool?)true : MatchSchema12(fields["region"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("speed") ? (bool?)true : MatchSchema13(fields["speed"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("virtual_port_reservation_id") ? (bool?)true : MatchSchema14(fields["virtual_port_reservation_id"], depth + 1)); if (result == false) return false; }
 }
 return result;
 }
@@ -117,32 +111,32 @@ return result;
 bool? MatchSchema4(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
+if (node == null || node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return true;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
 return result;
 }
 bool? MatchSchema5(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
-{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("name")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("address")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("address") ? (bool?)true : MatchSchema15(fields["address"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("name") ? (bool?)true : MatchSchema16(fields["name"], depth + 1)); if (result == false) return false; }
+}
 return result;
 }
 bool? MatchSchema6(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
-if (node == null || node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return true;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
 return result;
 }
 bool? MatchSchema7(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
-{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
-if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
-{ result &= (fields.ContainsKey("name")); if (result == false) return false; }
-{ result &= (fields.ContainsKey("address")); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("address") ? (bool?)true : MatchSchema19(fields["address"], depth + 1)); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("name") ? (bool?)true : MatchSchema20(fields["name"], depth + 1)); if (result == false) return false; }
-}
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
 return result;
 }
 bool? MatchSchema8(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
@@ -179,30 +173,6 @@ bool? MatchSchema13(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNo
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
-return result;
-}
-bool? MatchSchema14(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
-return result;
-}
-bool? MatchSchema15(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
-return result;
-}
-bool? MatchSchema16(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
-return result;
-}
-bool? MatchSchema17(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
 bool? enumMatch = false;
 { enumMatch |= ((node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "50M".Equals(text.GetValue(), global::System.StringComparison.Ordinal))); }
 { enumMatch |= ((node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "100M".Equals(text.GetValue(), global::System.StringComparison.Ordinal))); }
@@ -219,28 +189,28 @@ bool? enumMatch = false;
 { result &= (enumMatch); if (result == false) return false; }
 return result;
 }
-bool? MatchSchema18(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+bool? MatchSchema14(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
 return result;
 }
-bool? MatchSchema19(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+bool? MatchSchema15(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray); if (result == false) return false; }
 if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray itemsArray) foreach (var item in itemsArray.GetValue()) {
-{ result &= (MatchSchema21(item, depth + 1)); if (result == false) return false; }
+{ result &= (MatchSchema17(item, depth + 1)); if (result == false) return false; }
 }
 return result;
 }
-bool? MatchSchema20(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+bool? MatchSchema16(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
 return result;
 }
-bool? MatchSchema21(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+bool? MatchSchema17(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }

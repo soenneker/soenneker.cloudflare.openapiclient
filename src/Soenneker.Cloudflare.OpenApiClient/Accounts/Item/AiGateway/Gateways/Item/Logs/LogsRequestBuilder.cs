@@ -305,7 +305,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("page")]
-            public int? Page { get; set; }
+            public long? Page { get; set; }
             #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("per_page")]

@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
         {
         }
         /// <summary>
-        /// Lists all network interconnects configured for the account, including physical and virtualconnections.
+        /// Lists network interconnects of a single type configured for the account. The `type` queryparameter selects the type to list; when omitted, only `direct` interconnects are returned.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnectList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnect>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnect.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all network interconnects configured for the account, including physical and virtualconnections.
+        /// Lists network interconnects of a single type configured for the account. The `type` queryparameter selects the type to list; when omitted, only `direct` interconnects are returned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects.InterconnectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all network interconnects configured for the account, including physical and virtualconnections.
+        /// Lists network interconnects of a single type configured for the account. The `type` queryparameter selects the type to list; when omitted, only `direct` interconnects are returned.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InterconnectsRequestBuilderGetQueryParameters 
@@ -158,7 +158,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
             [QueryParameter("site")]
             public string Site { get; set; }
 #endif
-            /// <summary>If specified, only show interconnects of the given type</summary>
+            /// <summary>Type of interconnect to list, such as `direct` or `gcp_partner`. Defaults to `direct`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]

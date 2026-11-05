@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Whether to include the `modules` property of the deployment in the response, which contains code and sourcemap content and may add several megabytes to the response size.</summary>
+    /// <summary>The kind of resource that the binding provides.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum ModulesInclude
+    public enum WorkerLoaderType
     {
-        [EnumMember(Value = "modules")]
+        [EnumMember(Value = "worker_loader")]
         #pragma warning disable CS1591
-        Modules,
+        WorkerLoader,
         #pragma warning restore CS1591
     }
 }

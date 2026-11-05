@@ -172,7 +172,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentConfigMigrations Migrations { get => _explicitNullValueMigrations; set { _explicitNullValueMigrations = value; AdditionalData?.Remove("migrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrations"); else _explicitNullProperties?.Remove("migrations"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentConfigMigrations _explicitNullValueMigrations = default!;
 #endif
-        /// <summary>Code, sourcemaps, and other content used at runtime.</summary>
+        /// <summary>Code, sourcemaps, and other content used at runtime.Source maps use content type `application/source-map`. Responses include them only when requested with`include=modules,sourcemaps`. Workers stores the source map fields used to remap stack traces, so areturned source map is equivalent to the uploaded file but not byte-identical.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentRequestAllOf2ModulesItem>? Modules { get => _explicitNullValueModules; set { _explicitNullValueModules = value; AdditionalData?.Remove("modules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modules"); else _explicitNullProperties?.Remove("modules"); } }

@@ -10784,9 +10784,9 @@
           "Zero Trust: Seats Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.seats",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{accountId}/access/service_tokens": {
@@ -11766,7 +11766,7 @@
           "Access user populations"
         ],
         "summary": "Create a user population",
-        "description": "Creates a user population in an account.",
+        "description": "Creates a user population in an account. Requires permission to update the account\u0027s Access organization.\n",
         "operationId": "AccessUserPopulationsCreateUserPopulation",
         "parameters": [
           {
@@ -19250,9 +19250,11 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "maximum": 9007199254740991,
               "minimum": 1,
               "type": "integer",
-              "default": 1
+              "default": 1,
+              "format": "int64"
             }
           },
           {
@@ -19454,9 +19456,11 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "maximum": 9007199254740991,
               "minimum": 1,
               "type": "integer",
-              "default": 1
+              "default": 1,
+              "format": "int64"
             }
           },
           {
@@ -20186,9 +20190,11 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "maximum": 9007199254740991,
               "minimum": 1,
               "type": "integer",
-              "default": 1
+              "default": 1,
+              "format": "int64"
             }
           },
           {
@@ -20290,9 +20296,11 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "maximum": 9007199254740991,
               "minimum": 1,
               "type": "integer",
-              "default": 1
+              "default": 1,
+              "format": "int64"
             }
           },
           {
@@ -20477,9 +20485,11 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "maximum": 9007199254740991,
               "minimum": 1,
               "type": "integer",
-              "default": 1
+              "default": 1,
+              "format": "int64"
             }
           },
           {
@@ -20879,9 +20889,11 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "maximum": 9007199254740991,
               "minimum": 1,
               "type": "integer",
-              "default": 1
+              "default": 1,
+              "format": "int64"
             }
           },
           {
@@ -21388,9 +21400,11 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "maximum": 9007199254740991,
               "minimum": 1,
               "type": "integer",
-              "default": 1
+              "default": 1,
+              "format": "int64"
             }
           },
           {
@@ -21943,9 +21957,11 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "maximum": 9007199254740991,
               "minimum": 1,
               "type": "integer",
-              "default": 1
+              "default": 1,
+              "format": "int64"
             }
           },
           {
@@ -22658,9 +22674,11 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "maximum": 9007199254740991,
               "minimum": 1,
               "type": "integer",
-              "default": 1
+              "default": 1,
+              "format": "int64"
             }
           },
           {
@@ -80270,7 +80288,7 @@
           "Interconnects"
         ],
         "summary": "List existing interconnects",
-        "description": "Lists all network interconnects configured for the account, including physical and virtual\nconnections.",
+        "description": "Lists network interconnects of a single type configured for the account. The \u0060type\u0060 query\nparameter selects the type to list; when omitted, only \u0060direct\u0060 interconnects are returned.",
         "operationId": "ListInterconnects",
         "parameters": [
           {
@@ -80285,7 +80303,7 @@
           {
             "name": "type",
             "in": "query",
-            "description": "If specified, only show interconnects of the given type",
+            "description": "Type of interconnect to list, such as \u0060direct\u0060 or \u0060gcp_partner\u0060. Defaults to \u0060direct\u0060.",
             "schema": {
               "type": "string",
               "nullable": true
@@ -83142,6 +83160,82 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "containers.registries.credentials",
         "x-fern-sdk-method-name": "generate"
+      },
+      "parameters": [
+        {
+          "name": "accountId",
+          "in": "path",
+          "description": "Account identifier.",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "account-123"
+          }
+        }
+      ]
+    },
+    "/accounts/{accountId}/containers/usage": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "Get live account usage",
+        "description": "Get current live resource usage and maximum account limits for the authenticated Cloudchamber account. Usage includes active and assigned instances.",
+        "operationId": "GetUsage",
+        "responses": {
+          "200": {
+            "description": "Returns live account usage and maximum limits.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUsage200Response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CcV4BaseErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The account does not have the required capability for this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CcV4BaseErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An internal error has occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CcV4BaseErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "containers",
+        "x-fern-sdk-method-name": "usage"
       },
       "parameters": [
         {
@@ -190367,7 +190461,7 @@
           {
             "name": "order_by",
             "in": "query",
-            "description": "Order results using field:direction format. Supported fields are name, id, human_id,\ncategory_id, application_type, application_confidence_score, and gen_ai_score.\nSupported directions are asc and desc. Ignored when search is provided; results are\nranked by relevance instead. Also ignored when lookup is provided.\n",
+            "description": "Order results using field:direction format. Supported fields are name, id, human_id,\ncategory_id, application_type, application_confidence_score, and gen_ai_score.\nSupported directions are asc and desc. name and application_type ignore the case of\nthe letters A to Z, and ties sort by id. Ignored when search is provided; results are\nranked by relevance instead. Also ignored when lookup is provided.\n",
             "schema": {
               "type": "string"
             },
@@ -190515,6 +190609,19 @@
                 }
               }
             }
+          },
+          "403": {
+            "description": "The authenticated principal does not have access to the requested account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlexandriaApiResponseCommonFailure"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/alexandria_application_write_busy"
           },
           "4XX": {
             "description": "Create application response failure.",
@@ -190730,6 +190837,16 @@
               }
             }
           },
+          "403": {
+            "description": "The authenticated principal does not have access to the requested account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlexandriaApiResponseCommonFailure"
+                }
+              }
+            }
+          },
           "409": {
             "description": "The application is referenced by other resources and cannot be deleted.",
             "content": {
@@ -190739,6 +190856,9 @@
                 }
               }
             }
+          },
+          "429": {
+            "$ref": "#/components/responses/alexandria_application_write_busy"
           },
           "502": {
             "description": "Application deletion could not be safely completed because a required validation was unavailable.",
@@ -190819,6 +190939,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AlexandriaGetApplicationResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The authenticated principal does not have access to the requested account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlexandriaApiResponseCommonFailure"
                 }
               }
             }
@@ -190907,6 +191037,19 @@
               }
             }
           },
+          "403": {
+            "description": "The authenticated principal does not have access to the requested account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlexandriaApiResponseCommonFailure"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/alexandria_application_write_busy"
+          },
           "4XX": {
             "description": "Update application response failure.",
             "content": {
@@ -190942,7 +191085,7 @@
           "Category"
         ],
         "summary": "List application categories",
-        "description": "List the categories available for classifying applications, ordered by name.\nResults are paginated by \u0060offset\u0060 or \u0060cursor\u0060.\n",
+        "description": "List the categories available for classifying applications, ordered by name, ignoring the case of the letters A to Z.\nResults are paginated by \u0060offset\u0060 or \u0060cursor\u0060.\n",
         "operationId": "GetResourceLibraryCategories",
         "parameters": [
           {
@@ -197417,7 +197560,7 @@
           "Secrets Store"
         ],
         "summary": "List account stores",
-        "description": "Lists all the stores in an account.",
+        "description": "Lists account stores from an eventually consistent projection. Returns retryable HTTP 503 until initial backfill completes; empty accounts are ready immediately.",
         "operationId": "SecretsStoreList",
         "parameters": [
           {
@@ -197451,6 +197594,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SecretsStoreStoresResponseCollection"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service temporarily unavailable, including while initial store listing backfill is incomplete. Returns a generic error with a reference; retry the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecretsStoreList503Response"
                 }
               }
             }
@@ -230402,14 +230555,6 @@
             }
           },
           {
-            "name": "ignore_defaults",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "description": "If true, preview defaults/base config from the parent Worker is ignored."
-            }
-          },
-          {
             "name": "ignore_base_config",
             "in": "query",
             "schema": {
@@ -230772,14 +230917,6 @@
             }
           },
           {
-            "name": "ignore_defaults",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "description": "If true, preview defaults/base config from the parent Worker is ignored."
-            }
-          },
-          {
             "name": "ignore_base_config",
             "in": "query",
             "schema": {
@@ -230982,14 +231119,6 @@
               "type": "string",
               "description": "Identifier for the Preview, which can be ID, slug, or URL-encoded name."
             }
-          },
-          {
-            "name": "ignore_defaults",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "description": "If true, preview defaults from the parent Worker are ignored."
-            }
           }
         ],
         "requestBody": {
@@ -231092,14 +231221,6 @@
             "schema": {
               "type": "string",
               "description": "Identifier for the Preview, which can be ID, slug, or URL-encoded name."
-            }
-          },
-          {
-            "name": "ignore_defaults",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "description": "If true, preview defaults from the parent Worker are ignored."
             }
           }
         ],
@@ -231299,7 +231420,7 @@
             "name": "include",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/ModulesInclude"
+              "$ref": "#/components/schemas/WorkersPreviewsDeploymentsGetIncludeParameter"
             }
           }
         ],
@@ -231576,7 +231697,7 @@
             "name": "include",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/ModulesInclude"
+              "$ref": "#/components/schemas/GetLatestWorkerVersionIncludeParameter"
             }
           }
         ],
@@ -231844,7 +231965,7 @@
             "name": "include",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/ModulesInclude"
+              "$ref": "#/components/schemas/GetWorkerVersionIncludeParameter"
             }
           }
         ],
@@ -237496,7 +237617,7 @@
           "Origin CA"
         ],
         "summary": "List Certificates",
-        "description": "List all existing Origin CA certificates for a given zone. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).",
+        "description": "List all existing Origin CA certificates for a given zone. Revoked certificates are not included. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).",
         "operationId": "OriginCaListCertificates",
         "parameters": [
           {
@@ -237531,24 +237652,6 @@
               "description": "Number of records per page.",
               "default": 20
             }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "description": "Limit to the number of records returned.",
-              "example": 10
-            }
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "description": "Offset the results.",
-              "example": 10
-            }
           }
         ],
         "responses": {
@@ -237568,6 +237671,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OriginCaListCertificates4XxResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "List Certificates response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OriginCaListCertificates5XxResponse"
                 }
               }
             }
@@ -237596,7 +237709,7 @@
           "Origin CA"
         ],
         "summary": "Create Certificate",
-        "description": "Create an Origin CA certificate. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).",
+        "description": "Create an Origin CA certificate. For \u0060keyless-certificate\u0060 requests, \u0060zone_id\u0060 is required and the response contains only \u0060id\u0060, \u0060certificate\u0060, and \u0060expires_on\u0060. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).",
         "operationId": "OriginCaCreateCertificate",
         "requestBody": {
           "content": {
@@ -237625,6 +237738,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OriginCaCreateCertificate4XxResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Create Certificate response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OriginCaCreateCertificate5XxResponse"
                 }
               }
             }
@@ -237691,6 +237814,16 @@
                 }
               }
             }
+          },
+          "5XX": {
+            "description": "Revoke Certificate response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OriginCaRevokeCertificate5XxResponse"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -237749,6 +237882,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OriginCaGetCertificate4XxResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Get Certificate response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OriginCaGetCertificate5XxResponse"
                 }
               }
             }
@@ -353814,7 +353957,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TlsCertificatesAndHostnamesAdvancedCertificatePackResponseSingle"
+                  "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatePackOrderResponseSingle"
                 }
               }
             }
@@ -364477,7 +364620,7 @@
         }
       },
       "AccessAzureAd2": {
-        "title": "Azure AD",
+        "title": "Zone-Level Azure AD",
         "required": [
           "name",
           "type",
@@ -364668,7 +364811,7 @@
         }
       },
       "AccessCentrify2": {
-        "title": "Centrify",
+        "title": "Zone-Level Centrify",
         "required": [
           "name",
           "type",
@@ -364940,7 +365083,7 @@
         }
       },
       "AccessCloudflare2": {
-        "title": "Cloudflare",
+        "title": "Zone-Level Cloudflare",
         "required": [
           "name",
           "type",
@@ -365008,7 +365151,7 @@
         "description": "The rules that define how users may connect to targets secured by your application."
       },
       "AccessConnectionRulesInfra": {
-        "title": "Connection Rules",
+        "title": "Infrastructure Connection Rules",
         "type": "object",
         "properties": {
           "ssh": {
@@ -365639,7 +365782,7 @@
         }
       },
       "AccessDuo2": {
-        "title": "Duo",
+        "title": "Zone-Level Duo",
         "required": [
           "name",
           "type",
@@ -365915,7 +366058,7 @@
         }
       },
       "AccessFacebook2": {
-        "title": "Facebook",
+        "title": "Zone-Level Facebook",
         "required": [
           "name",
           "type",
@@ -366102,7 +366245,7 @@
         }
       },
       "AccessGithub2": {
-        "title": "GitHub",
+        "title": "Zone-Level GitHub",
         "required": [
           "name",
           "type",
@@ -366194,7 +366337,7 @@
         }
       },
       "AccessGoogle2": {
-        "title": "Google",
+        "title": "Zone-Level Google",
         "required": [
           "name",
           "type",
@@ -366273,7 +366416,7 @@
         }
       },
       "AccessGoogleApps2": {
-        "title": "Google Workspace",
+        "title": "Zone-Level Google Workspace",
         "required": [
           "name",
           "type",
@@ -367445,7 +367588,7 @@
         }
       },
       "AccessLinkedin2": {
-        "title": "LinkedIn",
+        "title": "Zone-Level LinkedIn",
         "required": [
           "name",
           "type",
@@ -367701,7 +367844,7 @@
         }
       },
       "AccessOidc2": {
-        "title": "Generic OAuth",
+        "title": "Zone-Level Generic OAuth",
         "required": [
           "name",
           "type",
@@ -367850,7 +367993,7 @@
         }
       },
       "AccessOidcSaasApp2": {
-        "title": "OIDC SaaS App",
+        "title": "Zone-Level OIDC SaaS App",
         "type": "object",
         "properties": {
           "access_token_lifetime": {
@@ -367999,7 +368142,7 @@
         }
       },
       "AccessOkta2": {
-        "title": "Okta",
+        "title": "Zone-Level Okta",
         "required": [
           "name",
           "type",
@@ -368091,7 +368234,7 @@
         }
       },
       "AccessOnelogin2": {
-        "title": "OneLogin",
+        "title": "Zone-Level OneLogin",
         "required": [
           "name",
           "type",
@@ -368170,7 +368313,7 @@
         }
       },
       "AccessOnetimepin2": {
-        "title": "One Time Pin",
+        "title": "Zone-Level One Time Pin",
         "required": [
           "name",
           "type",
@@ -368533,7 +368676,7 @@
         }
       },
       "AccessPingone2": {
-        "title": "PingOne",
+        "title": "Zone-Level PingOne",
         "required": [
           "name",
           "type",
@@ -370309,7 +370452,7 @@
         }
       },
       "AccessSaml2": {
-        "title": "Generic SAML",
+        "title": "Zone-Level Generic SAML",
         "required": [
           "name",
           "type",
@@ -370527,7 +370670,7 @@
         }
       },
       "AccessSamlSaasApp2": {
-        "title": "SAML SaaS App",
+        "title": "Zone-Level SAML SaaS App",
         "type": "object",
         "properties": {
           "auth_type": {
@@ -370751,7 +370894,7 @@
         "description": "Attributes for configuring OAuth 2 authentication scheme for SCIM provisioning to an application."
       },
       "AccessScimConfigAuthenticationOAuthBearerToken2": {
-        "title": "OAuth Bearer Token",
+        "title": "Zone-Level OAuth Bearer Token",
         "required": [
           "scheme",
           "token"
@@ -371574,7 +371717,7 @@
         "additionalProperties": false
       },
       "AccessSettings2": {
-        "title": "Hostname Settings",
+        "title": "Zone-Level Hostname Settings",
         "required": [
           "hostname",
           "china_network",
@@ -372985,7 +373128,7 @@
         }
       },
       "AccessYandex2": {
-        "title": "Yandex",
+        "title": "Zone-Level Yandex",
         "required": [
           "name",
           "type",
@@ -389123,6 +389266,96 @@
             "x-auditable": true
           }
         }
+      },
+      "CcAccountUsageMaximum": {
+        "required": [
+          "vcpus",
+          "memory_mib",
+          "disk_mb"
+        ],
+        "type": "object",
+        "properties": {
+          "disk_mb": {
+            "type": "integer",
+            "description": "Maximum disk in MB for the account."
+          },
+          "memory_mib": {
+            "type": "integer",
+            "description": "Maximum memory in MiB for the account."
+          },
+          "vcpus": {
+            "type": "number",
+            "description": "Maximum vCPU for the account.",
+            "format": "float"
+          }
+        },
+        "description": "Lists account limits for the resources reported in usage."
+      },
+      "CcAccountUsageResources": {
+        "required": [
+          "vcpus",
+          "memory_mib",
+          "disk_mb",
+          "instances"
+        ],
+        "type": "object",
+        "properties": {
+          "disk_mb": {
+            "type": "integer"
+          },
+          "instances": {
+            "type": "integer"
+          },
+          "memory_mib": {
+            "type": "integer"
+          },
+          "vcpus": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "description": "Lists current resource consumption for active and assigned instances."
+      },
+      "CcAccountUsageResponse": {
+        "required": [
+          "usage",
+          "maximum",
+          "utilization"
+        ],
+        "type": "object",
+        "properties": {
+          "maximum": {
+            "$ref": "#/components/schemas/CcAccountUsageMaximum"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/CcAccountUsageResources"
+          },
+          "utilization": {
+            "$ref": "#/components/schemas/CcAccountUsageUtilization"
+          }
+        },
+        "description": "Current live usage, maximum limits, and utilization percentages for a Cloudchamber account. Usage includes active and assigned instances and is a current snapshot, not a historical or billable metric."
+      },
+      "CcAccountUsageUtilization": {
+        "type": "object",
+        "properties": {
+          "disk_mb": {
+            "type": "number",
+            "description": "Live disk usage as a percentage of maximum disk.",
+            "format": "float"
+          },
+          "memory_mib": {
+            "type": "number",
+            "description": "Live memory usage as a percentage of maximum memory.",
+            "format": "float"
+          },
+          "vcpus": {
+            "type": "number",
+            "description": "Live vCPU usage as a percentage of maximum vCPU.",
+            "format": "float"
+          }
+        },
+        "description": "Live resource utilization percentages. A value of 100 represents full utilization. Values can exceed 100 when usage exceeds quota. The API omits fields whose corresponding maximum is zero."
       },
       "CcApplicationConstraints": {
         "type": "object",
@@ -408936,14 +409169,6 @@
             "example": false,
             "x-auditable": true
           },
-          "foundation_dns": {
-            "type": "boolean",
-            "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-            "example": false,
-            "deprecated": true,
-            "x-auditable": true,
-            "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
-          },
           "internal_dns": {
             "$ref": "#/components/schemas/DnsSettingsInternalDnsBase"
           },
@@ -408980,7 +409205,6 @@
         "required": [
           "nameservers",
           "flatten_all_cnames",
-          "foundation_dns",
           "multi_provider",
           "secondary_overrides",
           "soa",
@@ -408998,14 +409222,6 @@
             "description": "Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.",
             "example": false,
             "x-auditable": true
-          },
-          "foundation_dns": {
-            "type": "boolean",
-            "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-            "example": false,
-            "deprecated": true,
-            "x-auditable": true,
-            "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
           },
           "internal_dns": {
             "$ref": "#/components/schemas/DnsSettingsDnsSettingsResponseInternalDns"
@@ -409048,14 +409264,6 @@
             "example": false,
             "x-auditable": true
           },
-          "foundation_dns": {
-            "type": "boolean",
-            "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-            "example": false,
-            "deprecated": true,
-            "x-auditable": true,
-            "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
-          },
           "internal_dns": {
             "$ref": "#/components/schemas/DnsSettingsInternalDnsBase"
           },
@@ -409093,7 +409301,6 @@
       "DnsSettingsDnsSettingsZoneResponse": {
         "required": [
           "flatten_all_cnames",
-          "foundation_dns",
           "multi_provider",
           "secondary_overrides",
           "soa",
@@ -409109,14 +409316,6 @@
             "description": "Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.",
             "example": false,
             "x-auditable": true
-          },
-          "foundation_dns": {
-            "type": "boolean",
-            "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-            "example": false,
-            "deprecated": true,
-            "x-auditable": true,
-            "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
           },
           "internal_dns": {
             "$ref": "#/components/schemas/DnsSettingsDnsSettingsResponseInternalDns"
@@ -445721,7 +445920,7 @@
         }
       },
       "NscInterconnectCreateGcpPartnerBody": {
-        "title": "GcpPartner",
+        "title": "InterconnectCreate_GcpPartner_Body",
         "required": [
           "type",
           "account",
@@ -445746,7 +445945,7 @@
         }
       },
       "NscInterconnectCreatePhysicalBody": {
-        "title": "Physical",
+        "title": "InterconnectCreate_Physical_Body",
         "required": [
           "type",
           "account",
@@ -445790,23 +445989,16 @@
         }
       },
       "NscInterconnectGcpPartnerBody": {
-        "title": "GcpPartner",
+        "title": "Interconnect_GcpPartner_Body",
         "required": [
           "type",
           "name",
-          "account",
           "virtual_port_reservation_id",
           "region"
         ],
         "type": "object",
         "properties": {
-          "account": {
-            "type": "string"
-          },
           "name": {
-            "type": "string"
-          },
-          "owner": {
             "type": "string"
           },
           "type": {
@@ -445825,11 +446017,10 @@
         }
       },
       "NscInterconnectPhysicalBody": {
-        "title": "Physical",
+        "title": "Interconnect_Physical_Body",
         "required": [
           "type",
           "name",
-          "account",
           "virtual_port_reservation_id",
           "slot_id",
           "site",
@@ -445838,13 +446029,7 @@
         ],
         "type": "object",
         "properties": {
-          "account": {
-            "type": "string"
-          },
           "name": {
-            "type": "string"
-          },
-          "owner": {
             "type": "string"
           },
           "type": {
@@ -475002,7 +475187,8 @@
             "x-auditable": true,
             "x-stainless-terraform-configurability": "computed_optional"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "TeamsDevicesExcludeSplitTunnelWithHost": {
         "required": [
@@ -475025,7 +475211,8 @@
             "x-auditable": true,
             "x-stainless-terraform-configurability": "computed_optional"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "TeamsDevicesExtendedKeyUsageEnum": {
         "enum": [
@@ -475234,6 +475421,7 @@
             ]
           }
         },
+        "additionalProperties": false,
         "description": "Global Acceleration settings for China. When configured, WARP clients connect to the Global Accelerator addresses instead of the default ones. Please contact your account representative to enable this feature on your account. See https://developers.cloudflare.com/china-network/concepts/global-acceleration/.",
         "nullable": true
       },
@@ -475341,7 +475529,8 @@
             "x-auditable": true,
             "x-stainless-terraform-configurability": "computed_optional"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "TeamsDevicesIncludeSplitTunnelWithHost": {
         "required": [
@@ -475364,7 +475553,8 @@
             "x-auditable": true,
             "x-stainless-terraform-configurability": "computed_optional"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "TeamsDevicesInput": {
         "oneOf": [
@@ -477199,6 +477389,7 @@
             "x-auditable": true
           }
         },
+        "additionalProperties": false,
         "description": "Virtual network access settings for the device.",
         "nullable": true
       },
@@ -477286,55 +477477,64 @@
           "disable_for_time": {
             "type": "number",
             "description": "Sets the time limit, in seconds, that a user can use an override code to bypass WARP.",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_enabled": {
             "type": "boolean",
             "description": "Controls whether the external emergency disconnect feature is enabled.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_fingerprint": {
             "type": "string",
             "description": "The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the external_emergency_signal_url. If provided, the WARP client will use this value to verify the server\u0027s identity. The device will ignore any response if the server\u0027s certificate fingerprint does not exactly match this value.",
             "example": "abcd1234567890abcd1234567890abcd1234567890abcd1234567890abcd1234",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_interval": {
             "type": "string",
             "description": "The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (e.g., \u00225m\u0022, \u00222m30s\u0022, \u00221h\u0022). Minimum 30 seconds.",
             "example": "5m",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_url": {
             "type": "string",
             "description": "The HTTPS URL from which to fetch the emergency disconnect signal. Must use HTTPS and have an IPv4 or IPv6 address as the host.",
             "example": "https://192.0.2.1/signal",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "gateway_proxy_enabled": {
             "type": "boolean",
             "description": "Enable gateway proxy filtering on TCP.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "gateway_udp_proxy_enabled": {
             "type": "boolean",
             "description": "Enable gateway proxy filtering on UDP.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "root_certificate_installation_enabled": {
             "type": "boolean",
             "description": "Enable installation of cloudflare managed root certificate.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "use_zt_virtual_ip": {
             "type": "boolean",
             "description": "Enable using CGNAT virtual IPv4.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           }
         }
       },
@@ -477768,7 +477968,7 @@
           "ssl_com"
         ],
         "type": "string",
-        "description": "The Certificate Authority that Total TLS certificates will be issued through.",
+        "description": "The Certificate Authority that Total TLS certificates will be issued through. Not returned in responses when Total TLS is disabled.",
         "example": "google",
         "x-auditable": true,
         "x-ms-enum": {
@@ -477985,6 +478185,85 @@
           }
         },
         "description": "An individual certificate within a certificate pack."
+      },
+      "TlsCertificatesAndHostnamesCertificatePackOrder": {
+        "required": [
+          "id",
+          "type",
+          "hosts",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "certificate_authority": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificateAuthority2"
+          },
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "description": "Comma separated list of valid host names for the certificate packs. Must contain the zone apex, may not contain more than 50 hosts, and may not be empty.",
+            "example": [
+              "example.com",
+              "*.example.com",
+              "www.example.com"
+            ],
+            "x-stainless-collection-type": "set",
+            "x-stainless-terraform-configurability": "computed_optional"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for a certificate_pack.",
+            "readOnly": true,
+            "example": "3822ff90-ea29-44df-9e55-21300bb9419b",
+            "x-auditable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesStatus5"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesType2"
+          },
+          "validation_method": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesValidationMethod"
+          },
+          "validity_days": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesValidityDays"
+          }
+        },
+        "description": "A newly ordered certificate pack. Certificates are not included until they are issued; get the certificate pack to retrieve them."
+      },
+      "TlsCertificatesAndHostnamesCertificatePackOrderResponseSingle": {
+        "required": [
+          "success",
+          "errors",
+          "messages"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          "success": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCollectionSuccess"
+          },
+          "result": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatePackOrder"
+          }
+        }
       },
       "TlsCertificatesAndHostnamesCertificatePackQuotaResponse": {
         "required": [
@@ -478530,12 +478809,6 @@
         }
       },
       "TlsCertificatesAndHostnamesCertificates": {
-        "required": [
-          "hostnames",
-          "csr",
-          "requested_validity",
-          "request_type"
-        ],
         "type": "object",
         "properties": {
           "certificate": {
@@ -478583,7 +478856,15 @@
             "$ref": "#/components/schemas/TlsCertificatesAndHostnamesRequestType"
           },
           "requested_validity": {
-            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesRequestedValidity"
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatesRequestedValidity"
+          },
+          "revoked_at": {
+            "type": "string",
+            "description": "When the certificate was revoked.",
+            "format": "date-time",
+            "readOnly": true,
+            "example": "2024-09-06T18:43:47.928893Z",
+            "x-auditable": true
           }
         }
       },
@@ -478818,7 +479099,7 @@
               "type": "string",
               "x-client-original-format": "email"
             },
-            "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma.\n",
+            "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma. Omitted from responses when no addresses are configured.\n",
             "example": [
               "security@example.com",
               "admin@example.com"
@@ -479016,8 +479297,7 @@
           "signature",
           "certificate",
           "expires_on",
-          "uploaded_on",
-          "updated_at"
+          "uploaded_on"
         ],
         "type": "object",
         "properties": {
@@ -479061,7 +479341,7 @@
           },
           "updated_at": {
             "type": "string",
-            "description": "When the certificate was last modified.",
+            "description": "When the certificate was last modified. Only returned when uploading a certificate.",
             "format": "date-time",
             "readOnly": true,
             "example": "2014-01-01T05:20:00Z",
@@ -480320,7 +480600,9 @@
               "type": "string",
               "example": "api.example.com",
               "x-auditable": true
-            }
+            },
+            "description": "Unordered set of hostnames. Hostnames are stored as lowercase punycode.",
+            "x-stainless-collection-type": "set"
           },
           "mtls_certificate_id": {
             "maxLength": 36,
@@ -480854,7 +481136,7 @@
           5475
         ],
         "type": "number",
-        "description": "The number of days for which the certificate should be valid.",
+        "description": "A permitted certificate validity period, in days.",
         "default": 5475,
         "example": 5475,
         "x-auditable": true
@@ -481890,7 +482172,7 @@
           90
         ],
         "type": "integer",
-        "description": "The validity period in days for the certificates ordered via Total TLS.",
+        "description": "The validity period in days for the certificates ordered via Total TLS. Not returned when Total TLS is disabled.",
         "x-auditable": true
       },
       "TlsCertificatesAndHostnamesValue": {
@@ -490012,7 +490294,7 @@
             "items": {
               "$ref": "#/components/schemas/WorkersPreviewDeploymentRequestAllOf2ModulesItem"
             },
-            "description": "Code, sourcemaps, and other content used at runtime.",
+            "description": "Code, sourcemaps, and other content used at runtime.\n\nSource maps use content type \u0060application/source-map\u0060. Responses include them only when requested with\n\u0060include=modules,sourcemaps\u0060. Workers stores the source map fields used to remap stack traces, so a\nreturned source map is equivalent to the uploaded file but not byte-identical.\n",
             "x-stainless-collection-type": "set"
           }
         }
@@ -490193,7 +490475,7 @@
             "items": {
               "$ref": "#/components/schemas/WorkersPreviewDeploymentRequestAllOf2ModulesItem"
             },
-            "description": "Code, sourcemaps, and other content used at runtime.",
+            "description": "Code, sourcemaps, and other content used at runtime.\n\nSource maps use content type \u0060application/source-map\u0060. Responses include them only when requested with\n\u0060include=modules,sourcemaps\u0060. Workers stores the source map fields used to remap stack traces, so a\nreturned source map is equivalent to the uploaded file but not byte-identical.\n",
             "x-stainless-collection-type": "set"
           }
         },
@@ -490323,7 +490605,7 @@
             "items": {
               "$ref": "#/components/schemas/WorkersVersionModulesItem"
             },
-            "description": "Code, sourcemaps, and other content used at runtime.\n\nThis includes [\u0060_headers\u0060](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and\n[\u0060_redirects\u0060](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure\n[Static Assets](https://developers.cloudflare.com/workers/static-assets/). \u0060_headers\u0060 and \u0060_redirects\u0060 files should be\nincluded as modules named \u0060_headers\u0060 and \u0060_redirects\u0060 with content type \u0060text/plain\u0060.\n",
+            "description": "Code, sourcemaps, and other content used at runtime.\n\nSource maps use content type \u0060application/source-map\u0060. Responses include them only when requested with\n\u0060include=modules,sourcemaps\u0060. Workers stores the source map fields used to remap stack traces, so a returned\nsource map is equivalent to the uploaded file but not byte-identical.\n\nThis includes [\u0060_headers\u0060](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and\n[\u0060_redirects\u0060](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure\n[Static Assets](https://developers.cloudflare.com/workers/static-assets/). \u0060_headers\u0060 and \u0060_redirects\u0060 files should be\nincluded as modules named \u0060_headers\u0060 and \u0060_redirects\u0060 with content type \u0060text/plain\u0060.\n",
             "x-stainless-collection-type": "set"
           },
           "number": {
@@ -490658,6 +490940,7 @@
             "vpc_network": "#/components/schemas/WorkersBindingKindVpcNetwork",
             "vpc_service": "#/components/schemas/WorkersBindingKindVpcService",
             "wasm_module": "#/components/schemas/WorkersBindingKindWasmModule",
+            "worker_loader": "#/components/schemas/WorkersBindingKindWorkerLoader",
             "workflow": "#/components/schemas/WorkersBindingKindWorkflow"
           }
         },
@@ -490701,7 +490984,8 @@
             "workflow": "#/components/schemas/WorkersBindingItemWorkersBindingKindWorkflow",
             "wasm_module": "#/components/schemas/WorkersBindingItemWorkersBindingKindWasmModule",
             "vpc_service": "#/components/schemas/WorkersBindingItemWorkersBindingKindVpcService",
-            "vpc_network": "#/components/schemas/WorkersBindingItemWorkersBindingKindVpcNetwork"
+            "vpc_network": "#/components/schemas/WorkersBindingItemWorkersBindingKindVpcNetwork",
+            "worker_loader": "#/components/schemas/WorkersBindingItemWorkersBindingKindWorkerLoader"
           }
         },
         "x-client-original-tagged-union": {
@@ -490819,6 +491103,9 @@
             },
             {
               "$ref": "#/components/schemas/WorkersBindingKindVpcNetwork"
+            },
+            {
+              "$ref": "#/components/schemas/WorkersBindingKindWorkerLoader"
             }
           ],
           "description": "A binding to allow the Worker to communicate with resources.",
@@ -490862,6 +491149,7 @@
               "vpc_network": "#/components/schemas/WorkersBindingKindVpcNetwork",
               "vpc_service": "#/components/schemas/WorkersBindingKindVpcService",
               "wasm_module": "#/components/schemas/WorkersBindingKindWasmModule",
+              "worker_loader": "#/components/schemas/WorkersBindingKindWorkerLoader",
               "workflow": "#/components/schemas/WorkersBindingKindWorkflow"
             }
           },
@@ -490905,7 +491193,8 @@
               "workflow": "#/components/schemas/WorkersBindingKindWorkflow",
               "wasm_module": "#/components/schemas/WorkersBindingKindWasmModule",
               "vpc_service": "#/components/schemas/WorkersBindingKindVpcService",
-              "vpc_network": "#/components/schemas/WorkersBindingKindVpcNetwork"
+              "vpc_network": "#/components/schemas/WorkersBindingKindVpcNetwork",
+              "worker_loader": "#/components/schemas/WorkersBindingKindWorkerLoader"
             }
           }
         },
@@ -495382,7 +495671,7 @@
         },
         "description": "Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.",
         "nullable": true,
-        "x-stainless-terraform-configurability": "optional"
+        "x-stainless-terraform-configurability": "computed_optional"
       },
       "ZeroTrustGatewayIpv6Endpoint": {
         "type": "object",
@@ -495568,7 +495857,7 @@
             "default": false,
             "example": false,
             "x-auditable": true,
-            "x-stainless-terraform-configurability": "optional"
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "dns_destination_ips_id": {
             "type": "string",
@@ -495670,7 +495959,7 @@
           "mode": "inherit"
         },
         "nullable": true,
-        "x-stainless-terraform-configurability": "optional"
+        "x-stainless-terraform-configurability": "computed_optional"
       },
       "ZeroTrustGatewayMaxTtlSecs": {
         "maximum": 36000,
@@ -502548,7 +502837,7 @@
             "items": {
               "$ref": "#/components/schemas/WorkersVersionModulesItem"
             },
-            "description": "Code, sourcemaps, and other content used at runtime.\n\nThis includes [\u0060_headers\u0060](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and\n[\u0060_redirects\u0060](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure\n[Static Assets](https://developers.cloudflare.com/workers/static-assets/). \u0060_headers\u0060 and \u0060_redirects\u0060 files should be\nincluded as modules named \u0060_headers\u0060 and \u0060_redirects\u0060 with content type \u0060text/plain\u0060.\n",
+            "description": "Code, sourcemaps, and other content used at runtime.\n\nSource maps use content type \u0060application/source-map\u0060. Responses include them only when requested with\n\u0060include=modules,sourcemaps\u0060. Workers stores the source map fields used to remap stack traces, so a returned\nsource map is equivalent to the uploaded file but not byte-identical.\n\nThis includes [\u0060_headers\u0060](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and\n[\u0060_redirects\u0060](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure\n[Static Assets](https://developers.cloudflare.com/workers/static-assets/). \u0060_headers\u0060 and \u0060_redirects\u0060 files should be\nincluded as modules named \u0060_headers\u0060 and \u0060_redirects\u0060 with content type \u0060text/plain\u0060.\n",
             "x-stainless-collection-type": "set"
           },
           "number": {
@@ -502723,7 +503012,7 @@
             "items": {
               "$ref": "#/components/schemas/WorkersVersionModulesItem"
             },
-            "description": "Code, sourcemaps, and other content used at runtime.\n\nThis includes [\u0060_headers\u0060](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and\n[\u0060_redirects\u0060](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure\n[Static Assets](https://developers.cloudflare.com/workers/static-assets/). \u0060_headers\u0060 and \u0060_redirects\u0060 files should be\nincluded as modules named \u0060_headers\u0060 and \u0060_redirects\u0060 with content type \u0060text/plain\u0060.\n",
+            "description": "Code, sourcemaps, and other content used at runtime.\n\nSource maps use content type \u0060application/source-map\u0060. Responses include them only when requested with\n\u0060include=modules,sourcemaps\u0060. Workers stores the source map fields used to remap stack traces, so a returned\nsource map is equivalent to the uploaded file but not byte-identical.\n\nThis includes [\u0060_headers\u0060](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and\n[\u0060_redirects\u0060](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure\n[Static Assets](https://developers.cloudflare.com/workers/static-assets/). \u0060_headers\u0060 and \u0060_redirects\u0060 files should be\nincluded as modules named \u0060_headers\u0060 and \u0060_redirects\u0060 with content type \u0060text/plain\u0060.\n",
             "x-stainless-collection-type": "set"
           },
           "number": {
@@ -509548,7 +509837,22 @@
           },
           {
             "type": "array",
-            "items": {}
+            "items": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
           },
           {
             "type": "object"
@@ -520664,6 +520968,21 @@
           }
         ]
       },
+      "TlsCertificatesAndHostnamesCertificatesRequestedValidity": {
+        "enum": [
+          7,
+          30,
+          90,
+          365,
+          730,
+          1095,
+          5475
+        ],
+        "type": "number",
+        "description": "A permitted certificate validity period, in days.",
+        "example": 5475,
+        "x-auditable": true
+      },
       "TlsCertificatesAndHostnamesCustomHostnameApiResponseFailureErrors": {
         "allOf": [
           {
@@ -526744,7 +527063,7 @@
               "type": "string",
               "x-client-original-format": "email"
             },
-            "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma.\n",
+            "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma. Omitted from responses when no addresses are configured.\n",
             "example": [
               "security@example.com",
               "admin@example.com"
@@ -527098,6 +527417,9 @@
           "executionModel": {
             "$ref": "#/components/schemas/WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModel"
           },
+          "gateway": {
+            "$ref": "#/components/schemas/WorkersObservabilityTelemetryEventWorkersAnyOf1Gateway"
+          },
           "outcome": {
             "type": "string"
           },
@@ -527160,6 +527482,9 @@
           },
           "executionModel": {
             "$ref": "#/components/schemas/WorkersObservabilityTelemetryEventWorkersAnyOf2ExecutionModel"
+          },
+          "gateway": {
+            "$ref": "#/components/schemas/WorkersObservabilityTelemetryEventWorkersAnyOf2Gateway"
           },
           "outcome": {
             "type": "string"
@@ -544172,7 +544497,10 @@
               "type": "string",
               "example": "api.example.com",
               "x-auditable": true
-            }
+            },
+            "description": "Hostnames are returned in lowercase punycode, in no particular order. Null when there are no associations.",
+            "nullable": true,
+            "x-stainless-collection-type": "set"
           }
         }
       },
@@ -544859,6 +545187,20 @@
           }
         }
       },
+      "WorkersObservabilityTelemetryEventWorkersAnyOf1Gateway": {
+        "required": [
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": {
+          "nullable": true
+        }
+      },
       "WorkersObservabilityTelemetryEventWorkersAnyOf1Preview": {
         "type": "object",
         "properties": {
@@ -544904,6 +545246,20 @@
           "timestamp": {
             "type": "number"
           }
+        }
+      },
+      "WorkersObservabilityTelemetryEventWorkersAnyOf2Gateway": {
+        "required": [
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": {
+          "nullable": true
         }
       },
       "WorkersObservabilityTelemetryEventWorkersAnyOf2Preview": {
@@ -547915,7 +548271,8 @@
               "readOnly": true,
               "example": "x"
             },
-            "description": "Flags that enable or disable certain features in the Workers runtime.",
+            "description": "Lists the flags this version sets explicitly to enable or disable\nWorkers runtime features. Excludes behavior that \u0060compatibility_date\u0060\nenables. Responses omit the field when the list is empty, so a missing\nfield means the version sets zero flags.\n",
+            "default": [],
             "readOnly": true,
             "x-stainless-collection-type": "set"
           },
@@ -587168,6 +587525,39 @@
           }
         }
       },
+      "GetUsage200Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CcMessagesItem"
+            },
+            "example": []
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CcMessagesItem"
+            },
+            "example": []
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Whether the API call was successful.",
+            "example": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/CcAccountUsageResponse"
+          }
+        }
+      },
       "CustomCsrsForAnAccountListCustomCsrs4XxResponse": {
         "required": [
           "success",
@@ -600257,7 +600647,7 @@
             "default": false,
             "example": false,
             "x-auditable": true,
-            "x-stainless-terraform-configurability": "optional"
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "dns_destination_ips_id": {
             "type": "string",
@@ -600378,7 +600768,7 @@
             "default": false,
             "example": false,
             "x-auditable": true,
-            "x-stainless-terraform-configurability": "optional"
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "dns_destination_ips_id": {
             "type": "string",
@@ -611548,6 +611938,46 @@
         }
       },
       "SecretsStoreQuota4XxResponse": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "$ref": "#/components/schemas/SecretsStoreApiResponseCommonFailureErrors"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SecretsStoreMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true,
+            "x-client-original-enum": [
+              null
+            ],
+            "x-client-untyped-value": true,
+            "not": {
+              "type": "object"
+            }
+          },
+          "success": {
+            "$ref": "#/components/schemas/SecretsStoreApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "SecretsStoreList503Response": {
         "required": [
           "success",
           "errors",
@@ -631670,6 +632100,32 @@
           }
         }
       },
+      "OriginCaListCertificates5XxResponse": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "$ref": "#/components/schemas/OriginCaListCertificates5XxResponseErrors"
+          },
+          "messages": {
+            "$ref": "#/components/schemas/OriginCaListCertificates5XxResponseMessages"
+          },
+          "success": {
+            "$ref": "#/components/schemas/OriginCaListCertificates5XxResponseSuccess"
+          },
+          "result_info": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCollectionAllOf2ResultInfo"
+          },
+          "result": {
+            "$ref": "#/components/schemas/OriginCaListCertificates5XxResponseResult"
+          }
+        }
+      },
       "OriginCaCreateCertificateRequest": {
         "required": [
           "hostnames",
@@ -631704,6 +632160,13 @@
           },
           "requested_validity": {
             "$ref": "#/components/schemas/TlsCertificatesAndHostnamesRequestedValidity"
+          },
+          "zone_id": {
+            "maxLength": 32,
+            "type": "string",
+            "description": "Identifier of the zone whose keyless servers the certificate is for. Required when \u0060request_type\u0060 is \u0060keyless-certificate\u0060; ignored otherwise.",
+            "example": "023e105f4ecef8ad9ca31a8372d0c353",
+            "x-auditable": true
           }
         }
       },
@@ -631730,6 +632193,29 @@
           }
         }
       },
+      "OriginCaCreateCertificate5XxResponse": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "$ref": "#/components/schemas/OriginCaCreateCertificate5XxResponseErrors"
+          },
+          "messages": {
+            "$ref": "#/components/schemas/OriginCaCreateCertificate5XxResponseMessages"
+          },
+          "success": {
+            "$ref": "#/components/schemas/OriginCaCreateCertificate5XxResponseSuccess"
+          },
+          "result": {
+            "$ref": "#/components/schemas/OriginCaCreateCertificate5XxResponseResult"
+          }
+        }
+      },
       "OriginCaRevokeCertificate4XxResponse": {
         "required": [
           "success",
@@ -631741,6 +632227,37 @@
         "properties": {
           "result": {
             "$ref": "#/components/schemas/OriginCaRevokeCertificate4XxResponseResult"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureErrors"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          "success": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "OriginCaRevokeCertificate5XxResponse": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "result": {
+            "$ref": "#/components/schemas/OriginCaRevokeCertificate5XxResponseResult"
           },
           "errors": {
             "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureErrors"
@@ -631781,6 +632298,29 @@
           },
           "result": {
             "$ref": "#/components/schemas/OriginCaGetCertificate4XxResponseResult"
+          }
+        }
+      },
+      "OriginCaGetCertificate5XxResponse": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "$ref": "#/components/schemas/OriginCaGetCertificate5XxResponseErrors"
+          },
+          "messages": {
+            "$ref": "#/components/schemas/OriginCaGetCertificate5XxResponseMessages"
+          },
+          "success": {
+            "$ref": "#/components/schemas/OriginCaGetCertificate5XxResponseSuccess"
+          },
+          "result": {
+            "$ref": "#/components/schemas/OriginCaGetCertificate5XxResponseResult"
           }
         }
       },
@@ -645352,36 +645892,18 @@
         "type": "object",
         "properties": {
           "errors": {
-            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureErrors"
+            "$ref": "#/components/schemas/CustomOriginTrustStoreDelete4XxResponseErrors"
           },
           "messages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
-            },
-            "example": []
-          },
-          "result": {
-            "type": "object",
-            "additionalProperties": false,
-            "nullable": true,
-            "x-client-original-enum": [
-              null
-            ],
-            "x-client-untyped-value": true,
-            "not": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/CustomOriginTrustStoreDelete4XxResponseMessages"
           },
           "success": {
-            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureSuccess"
+            "$ref": "#/components/schemas/CustomOriginTrustStoreDelete4XxResponseSuccess"
           },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
+          "result": {
+            "$ref": "#/components/schemas/CustomOriginTrustStoreDelete4XxResponseResult"
           }
-        },
-        "not": {}
+        }
       },
       "CustomOriginTrustStoreDetails4XxResponse": {
         "required": [
@@ -657694,127 +658216,16 @@
         "type": "object",
         "properties": {
           "errors": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureErrors"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
-                },
-                "example": []
-              }
-            ]
+            "$ref": "#/components/schemas/CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponseErrors"
           },
           "messages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
-            },
-            "example": []
-          },
-          "result": {
-            "required": [
-              "id",
-              "type",
-              "hosts",
-              "certificates",
-              "status"
-            ],
-            "type": "object",
-            "properties": {
-              "certificate_authority": {
-                "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificateAuthority2"
-              },
-              "certificates": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatePackCertificate"
-                },
-                "description": "Array of certificates in this pack."
-              },
-              "cloudflare_branding": {
-                "type": "boolean",
-                "description": "Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.",
-                "example": false,
-                "x-auditable": true
-              },
-              "dcv_delegation_records": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TlsCertificatesAndHostnamesValidationRecord"
-                },
-                "description": "DCV Delegation records for domain validation.",
-                "readOnly": true
-              },
-              "hosts": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "x-auditable": true
-                },
-                "description": "Comma separated list of valid host names for the certificate packs. Must contain the zone apex, may not contain more than 50 hosts, and may not be empty.",
-                "example": [
-                  "example.com",
-                  "*.example.com",
-                  "www.example.com"
-                ],
-                "x-stainless-collection-type": "set",
-                "x-stainless-terraform-configurability": "computed_optional"
-              },
-              "id": {
-                "type": "string",
-                "description": "The unique identifier for a certificate_pack.",
-                "readOnly": true,
-                "example": "3822ff90-ea29-44df-9e55-21300bb9419b",
-                "x-auditable": true
-              },
-              "primary_certificate": {
-                "type": "string",
-                "description": "Identifier of the primary certificate in a pack.",
-                "example": "7e7b8deba8538af625850b7b2530034c",
-                "x-auditable": true
-              },
-              "status": {
-                "$ref": "#/components/schemas/TlsCertificatesAndHostnamesStatus5"
-              },
-              "type": {
-                "$ref": "#/components/schemas/TlsCertificatesAndHostnamesType2"
-              },
-              "validation_errors": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatePackValidationErrorsItem"
-                },
-                "description": "Domain validation errors that have been received by the certificate authority (CA)."
-              },
-              "validation_method": {
-                "$ref": "#/components/schemas/TlsCertificatesAndHostnamesValidationMethod"
-              },
-              "validation_records": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TlsCertificatesAndHostnamesValidationRecord"
-                },
-                "description": "Certificates\u0027 validation records."
-              },
-              "validity_days": {
-                "$ref": "#/components/schemas/TlsCertificatesAndHostnamesValidityDays"
-              }
-            },
-            "description": "A certificate pack with all its properties.",
-            "not": {}
+            "$ref": "#/components/schemas/CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponseMessages"
           },
           "success": {
-            "type": "boolean",
-            "description": "Whether the API call was successful.",
-            "example": false,
-            "not": {}
+            "$ref": "#/components/schemas/CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponseSuccess"
           },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
+          "result": {
+            "$ref": "#/components/schemas/CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponseResult"
           }
         }
       },
@@ -667713,7 +668124,7 @@
           },
           "token_url": {
             "type": "string",
-            "description": "The token_endpoint URL of your IdP",
+            "description": "The token_endpoint URL of your IdP. Updates that change its origin (scheme, host, or port) require client_secret in the request. Path-only changes do not require client_secret.",
             "example": "https://accounts.google.com/o/oauth2/token"
           }
         },
@@ -667769,7 +668180,7 @@
           },
           "token_url": {
             "type": "string",
-            "description": "The token_endpoint URL of your IdP",
+            "description": "The token_endpoint URL of your IdP. Updates that change its origin (scheme, host, or port) require client_secret in the request. Path-only changes do not require client_secret.",
             "example": "https://accounts.google.com/o/oauth2/token"
           }
         },
@@ -675458,55 +675869,64 @@
           "disable_for_time": {
             "type": "number",
             "description": "Sets the time limit, in seconds, that a user can use an override code to bypass WARP.",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_enabled": {
             "type": "boolean",
             "description": "Controls whether the external emergency disconnect feature is enabled.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_fingerprint": {
             "type": "string",
             "description": "The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the external_emergency_signal_url. If provided, the WARP client will use this value to verify the server\u0027s identity. The device will ignore any response if the server\u0027s certificate fingerprint does not exactly match this value.",
             "example": "abcd1234567890abcd1234567890abcd1234567890abcd1234567890abcd1234",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_interval": {
             "type": "string",
             "description": "The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (e.g., \u00225m\u0022, \u00222m30s\u0022, \u00221h\u0022). Minimum 30 seconds.",
             "example": "5m",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_url": {
             "type": "string",
             "description": "The HTTPS URL from which to fetch the emergency disconnect signal. Must use HTTPS and have an IPv4 or IPv6 address as the host.",
             "example": "https://192.0.2.1/signal",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "gateway_proxy_enabled": {
             "type": "boolean",
             "description": "Enable gateway proxy filtering on TCP.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "gateway_udp_proxy_enabled": {
             "type": "boolean",
             "description": "Enable gateway proxy filtering on UDP.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "root_certificate_installation_enabled": {
             "type": "boolean",
             "description": "Enable installation of cloudflare managed root certificate.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "use_zt_virtual_ip": {
             "type": "boolean",
             "description": "Enable using CGNAT virtual IPv4.",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           }
         }
       },
@@ -694563,7 +694983,7 @@
             "default": false,
             "example": false,
             "x-auditable": true,
-            "x-stainless-terraform-configurability": "optional"
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "dns_destination_ips_id": {
             "type": "string",
@@ -694740,7 +695160,7 @@
             "default": false,
             "example": false,
             "x-auditable": true,
-            "x-stainless-terraform-configurability": "optional"
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "dns_destination_ips_id": {
             "type": "string",
@@ -694873,7 +695293,7 @@
             "default": false,
             "example": false,
             "x-auditable": true,
-            "x-stainless-terraform-configurability": "optional"
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "dns_destination_ips_id": {
             "type": "string",
@@ -706362,6 +706782,51 @@
         },
         "not": {}
       },
+      "OriginCaListCertificates5XxResponseErrors": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureErrors"
+          }
+        ]
+      },
+      "OriginCaListCertificates5XxResponseMessages": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          }
+        ]
+      },
+      "OriginCaListCertificates5XxResponseSuccess": {
+        "type": "boolean",
+        "description": "Whether the API call was successful.",
+        "example": true,
+        "not": {}
+      },
+      "OriginCaListCertificates5XxResponseResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificates"
+        },
+        "not": {}
+      },
       "OriginCaCreateCertificate4XxResponseErrors": {
         "allOf": [
           {
@@ -706401,12 +706866,6 @@
         "not": {}
       },
       "OriginCaCreateCertificate4XxResponseResult": {
-        "required": [
-          "hostnames",
-          "csr",
-          "requested_validity",
-          "request_type"
-        ],
         "type": "object",
         "properties": {
           "certificate": {
@@ -706454,12 +706913,140 @@
             "$ref": "#/components/schemas/TlsCertificatesAndHostnamesRequestType"
           },
           "requested_validity": {
-            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesRequestedValidity"
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatesRequestedValidity"
+          },
+          "revoked_at": {
+            "type": "string",
+            "description": "When the certificate was revoked.",
+            "format": "date-time",
+            "readOnly": true,
+            "example": "2024-09-06T18:43:47.928893Z",
+            "x-auditable": true
+          }
+        },
+        "not": {}
+      },
+      "OriginCaCreateCertificate5XxResponseErrors": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureErrors"
+          }
+        ]
+      },
+      "OriginCaCreateCertificate5XxResponseMessages": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          }
+        ]
+      },
+      "OriginCaCreateCertificate5XxResponseSuccess": {
+        "type": "boolean",
+        "description": "Whether the API call was successful.",
+        "example": true,
+        "not": {}
+      },
+      "OriginCaCreateCertificate5XxResponseResult": {
+        "type": "object",
+        "properties": {
+          "certificate": {
+            "type": "string",
+            "description": "The Origin CA certificate. Will be newline-encoded.",
+            "readOnly": true,
+            "example": "-----BEGIN CERTIFICATE-----\nMIICvDCCAaQCAQAwdzELMAkGA1UEBhMCVVMxDTALBgNVBAgMBFV0YWgxDzANBgNV\nBAcMBkxpbmRvbjEWMBQGA1UECgwNRGlnaUNlcnQgSW5jLjERMA8GA1UECwwIRGln\naUNlcnQxHTAbBgNVBAMMFGV4YW1wbGUuZGlnaWNlcnQuY29tMIIBIjANBgkqhkiG\n9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8\u002BTo7d\u002B2kPWeBv/orU3LVbJwDrSQbeKamCmo\nwp5bqDxIwV20zqRb7APUOKYoVEFFOEQs6T6gImnIolhbiH6m4zgZ/CPvWBOkZc\u002Bc\n1Po2EmvBz\u002BAD5sBdT5kzGQA6NbWyZGldxRthNLOs1efOhdnWFuhI162qmcflgpiI\nWDuwq4C9f\u002BYkeJhNn9dF5\u002Bowm8cOQmDrV8NNdiTqin8q3qYAHHJRW28glJUCZkTZ\nwIaSR6crBQ8TbYNE0dc\u002BCaa3DOIkz1EOsHWzTx\u002Bn0zKfqcbgXi4DJx\u002BC1bjptYPR\nBPZL8DAeWuA8ebudVT44yEp82G96/Ggcf7F33xMxe0yc\u002BXa6owIDAQABoAAwDQYJ\nKoZIhvcNAQEFBQADggEBAB0kcrFccSmFDmxox0Ne01UIqSsDqHgL\u002BXmHTXJwre6D\nhJSZwbvEtOK0G3\u002Bdr4Fs11WuUNt5qcLsx5a8uk4G6AKHMzuhLsJ7XZjgmQXGECpY\nQ4mC3yT3ZoCGpIXbw\u002BiP3lmEEXgaQL0Tx5LFl/okKbKYwIqNiyKWOMj7ZR/wxWg/\nZDGRs55xuoeLDJ/ZRFf9bI\u002BIaCUd1YrfYcHIl3G87Av\u002Br49YVwqRDT0VDV7uLgqn\n29XI1PpVUNCPQGn9p/eX6Qo7vpDaPybRtA2R7XLKjQaF9oXWeCUqy1hvJac9QFO2\n97Ob1alpHPoZ7mWiEuJwjBPii6a9M9G30nUo39lBi1w=\n-----END CERTIFICATE-----"
+          },
+          "csr": {
+            "type": "string",
+            "description": "The Certificate Signing Request (CSR). Must be newline-encoded.",
+            "example": "-----BEGIN CERTIFICATE REQUEST-----\nMIICxzCCAa8CAQAwSDELMAkGA1UEBhMCVVMxFjAUBgNVBAgTDVNhbiBGcmFuY2lz\nY28xCzAJBgNVBAcTAkNBMRQwEgYDVQQDEwtleGFtcGxlLm5ldDCCASIwDQYJKoZI\nhvcNAQEBBQADggEPADCCAQoCggEBALxejtu4b\u002BjPdFeFi6OUsye8TYJQBm3WfCvL\nHu5EvijMO/4Z2TImwASbwUF7Ir8OLgH\u002BmGlQZeqyNvGoSOMEaZVXcYfpR1hlVak8\n4GGVr\u002B04IGfOCqaBokaBFIwzclGZbzKmLGwIQioNxGfqFm6RGYGA3be2Je2iseBc\nN8GV1wYmvYE0RR\u002ByWweJCTJ157exyRzu7sVxaEW9F87zBQLyOnwXc64rflXslRqi\ng7F7w5IaQYOl8yvmk/jEPCAha7fkiUfEpj4N12\u002BoPRiMvleJF98chxjD4MH39c5I\nuOslULhrWunfh7GB1jwWNA9y44H0snrf\u002Bxvoy2TcHmxvma9Eln8CAwEAAaA6MDgG\nCSqGSIb3DQEJDjErMCkwJwYDVR0RBCAwHoILZXhhbXBsZS5uZXSCD3d3dy5leGFt\ncGxlLm5ldDANBgkqhkiG9w0BAQsFAAOCAQEAcBaX6dOnI8ncARrI9ZSF2AJX\u002B8mx\npTHY2\u002BY2C0VvrVDGMtbBRH8R9yMbqWtlxeeNGf//LeMkSKSFa4kbpdx226lfui8/\nauRDBTJGx2R1ccUxmLZXx4my0W5iIMxunu\u002Bkez\u002BBDlu7bTT2io0uXMRHue4i6quH\nyc5ibxvbJMjR7dqbcanVE10/34oprzXQsJ/VmSuZNXtjbtSKDlmcpw6To/eeAJ\u002BJ\nhXykcUihvHyG4A1m2R6qpANBjnA0pHexfwM/SgfzvpbvUg0T1ubmer8BgTwCKIWs\ndcWYTthM51JIqRBfNqy4QcBnX\u002BGY05yltEEswQI55wdiS3CjTTA67sdbcQ==\n-----END CERTIFICATE REQUEST-----"
+          },
+          "expires_on": {
+            "type": "string",
+            "description": "When the certificate will expire.",
+            "readOnly": true,
+            "example": "2014-01-01 05:20:00 \u002B0000 UTC",
+            "x-auditable": true
+          },
+          "hostnames": {
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "minLength": 1,
+              "type": "string",
+              "x-auditable": true
+            },
+            "description": "Array of hostnames or wildcard names bound to the certificate.\nHostnames must be fully qualified domain names (FQDNs) belonging to zones on your account (e.g., \u0060example.com\u0060 or \u0060sub.example.com\u0060). Wildcards are supported only as a \u0060*.\u0060 prefix for a single level (e.g., \u0060*.example.com\u0060). Double wildcards (\u0060*.*.example.com\u0060) and interior wildcards (\u0060foo.*.example.com\u0060) are not allowed. The wildcard suffix must be a multi-label domain (\u0060*.example.com\u0060 is valid, but \u0060*.com\u0060 is not). Unicode/IDN hostnames are accepted and automatically converted to punycode.",
+            "example": [
+              "example.com",
+              "*.example.com",
+              "sub.example.com"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "description": "The x509 serial number of the Origin CA certificate.",
+            "readOnly": true,
+            "example": "328578533902268680212849205732770752308931942346",
+            "x-auditable": true
+          },
+          "request_type": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesRequestType"
+          },
+          "requested_validity": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatesRequestedValidity"
+          },
+          "revoked_at": {
+            "type": "string",
+            "description": "When the certificate was revoked.",
+            "format": "date-time",
+            "readOnly": true,
+            "example": "2024-09-06T18:43:47.928893Z",
+            "x-auditable": true
           }
         },
         "not": {}
       },
       "OriginCaRevokeCertificate4XxResponseResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The x509 serial number of the Origin CA certificate.",
+            "readOnly": true,
+            "example": "328578533902268680212849205732770752308931942346",
+            "x-auditable": true
+          },
+          "revoked_at": {
+            "type": "string",
+            "description": "When the certificate was revoked.",
+            "format": "date-time",
+            "readOnly": true,
+            "example": "2024-09-06T18:43:47.928893Z",
+            "x-auditable": true
+          }
+        },
+        "not": {}
+      },
+      "OriginCaRevokeCertificate5XxResponseResult": {
         "type": "object",
         "properties": {
           "id": {
@@ -706519,12 +707106,6 @@
         "not": {}
       },
       "OriginCaGetCertificate4XxResponseResult": {
-        "required": [
-          "hostnames",
-          "csr",
-          "requested_validity",
-          "request_type"
-        ],
         "type": "object",
         "properties": {
           "certificate": {
@@ -706572,7 +707153,114 @@
             "$ref": "#/components/schemas/TlsCertificatesAndHostnamesRequestType"
           },
           "requested_validity": {
-            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesRequestedValidity"
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatesRequestedValidity"
+          },
+          "revoked_at": {
+            "type": "string",
+            "description": "When the certificate was revoked.",
+            "format": "date-time",
+            "readOnly": true,
+            "example": "2024-09-06T18:43:47.928893Z",
+            "x-auditable": true
+          }
+        },
+        "not": {}
+      },
+      "OriginCaGetCertificate5XxResponseErrors": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureErrors"
+          }
+        ]
+      },
+      "OriginCaGetCertificate5XxResponseMessages": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          }
+        ]
+      },
+      "OriginCaGetCertificate5XxResponseSuccess": {
+        "type": "boolean",
+        "description": "Whether the API call was successful.",
+        "example": true,
+        "not": {}
+      },
+      "OriginCaGetCertificate5XxResponseResult": {
+        "type": "object",
+        "properties": {
+          "certificate": {
+            "type": "string",
+            "description": "The Origin CA certificate. Will be newline-encoded.",
+            "readOnly": true,
+            "example": "-----BEGIN CERTIFICATE-----\nMIICvDCCAaQCAQAwdzELMAkGA1UEBhMCVVMxDTALBgNVBAgMBFV0YWgxDzANBgNV\nBAcMBkxpbmRvbjEWMBQGA1UECgwNRGlnaUNlcnQgSW5jLjERMA8GA1UECwwIRGln\naUNlcnQxHTAbBgNVBAMMFGV4YW1wbGUuZGlnaWNlcnQuY29tMIIBIjANBgkqhkiG\n9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8\u002BTo7d\u002B2kPWeBv/orU3LVbJwDrSQbeKamCmo\nwp5bqDxIwV20zqRb7APUOKYoVEFFOEQs6T6gImnIolhbiH6m4zgZ/CPvWBOkZc\u002Bc\n1Po2EmvBz\u002BAD5sBdT5kzGQA6NbWyZGldxRthNLOs1efOhdnWFuhI162qmcflgpiI\nWDuwq4C9f\u002BYkeJhNn9dF5\u002Bowm8cOQmDrV8NNdiTqin8q3qYAHHJRW28glJUCZkTZ\nwIaSR6crBQ8TbYNE0dc\u002BCaa3DOIkz1EOsHWzTx\u002Bn0zKfqcbgXi4DJx\u002BC1bjptYPR\nBPZL8DAeWuA8ebudVT44yEp82G96/Ggcf7F33xMxe0yc\u002BXa6owIDAQABoAAwDQYJ\nKoZIhvcNAQEFBQADggEBAB0kcrFccSmFDmxox0Ne01UIqSsDqHgL\u002BXmHTXJwre6D\nhJSZwbvEtOK0G3\u002Bdr4Fs11WuUNt5qcLsx5a8uk4G6AKHMzuhLsJ7XZjgmQXGECpY\nQ4mC3yT3ZoCGpIXbw\u002BiP3lmEEXgaQL0Tx5LFl/okKbKYwIqNiyKWOMj7ZR/wxWg/\nZDGRs55xuoeLDJ/ZRFf9bI\u002BIaCUd1YrfYcHIl3G87Av\u002Br49YVwqRDT0VDV7uLgqn\n29XI1PpVUNCPQGn9p/eX6Qo7vpDaPybRtA2R7XLKjQaF9oXWeCUqy1hvJac9QFO2\n97Ob1alpHPoZ7mWiEuJwjBPii6a9M9G30nUo39lBi1w=\n-----END CERTIFICATE-----"
+          },
+          "csr": {
+            "type": "string",
+            "description": "The Certificate Signing Request (CSR). Must be newline-encoded.",
+            "example": "-----BEGIN CERTIFICATE REQUEST-----\nMIICxzCCAa8CAQAwSDELMAkGA1UEBhMCVVMxFjAUBgNVBAgTDVNhbiBGcmFuY2lz\nY28xCzAJBgNVBAcTAkNBMRQwEgYDVQQDEwtleGFtcGxlLm5ldDCCASIwDQYJKoZI\nhvcNAQEBBQADggEPADCCAQoCggEBALxejtu4b\u002BjPdFeFi6OUsye8TYJQBm3WfCvL\nHu5EvijMO/4Z2TImwASbwUF7Ir8OLgH\u002BmGlQZeqyNvGoSOMEaZVXcYfpR1hlVak8\n4GGVr\u002B04IGfOCqaBokaBFIwzclGZbzKmLGwIQioNxGfqFm6RGYGA3be2Je2iseBc\nN8GV1wYmvYE0RR\u002ByWweJCTJ157exyRzu7sVxaEW9F87zBQLyOnwXc64rflXslRqi\ng7F7w5IaQYOl8yvmk/jEPCAha7fkiUfEpj4N12\u002BoPRiMvleJF98chxjD4MH39c5I\nuOslULhrWunfh7GB1jwWNA9y44H0snrf\u002Bxvoy2TcHmxvma9Eln8CAwEAAaA6MDgG\nCSqGSIb3DQEJDjErMCkwJwYDVR0RBCAwHoILZXhhbXBsZS5uZXSCD3d3dy5leGFt\ncGxlLm5ldDANBgkqhkiG9w0BAQsFAAOCAQEAcBaX6dOnI8ncARrI9ZSF2AJX\u002B8mx\npTHY2\u002BY2C0VvrVDGMtbBRH8R9yMbqWtlxeeNGf//LeMkSKSFa4kbpdx226lfui8/\nauRDBTJGx2R1ccUxmLZXx4my0W5iIMxunu\u002Bkez\u002BBDlu7bTT2io0uXMRHue4i6quH\nyc5ibxvbJMjR7dqbcanVE10/34oprzXQsJ/VmSuZNXtjbtSKDlmcpw6To/eeAJ\u002BJ\nhXykcUihvHyG4A1m2R6qpANBjnA0pHexfwM/SgfzvpbvUg0T1ubmer8BgTwCKIWs\ndcWYTthM51JIqRBfNqy4QcBnX\u002BGY05yltEEswQI55wdiS3CjTTA67sdbcQ==\n-----END CERTIFICATE REQUEST-----"
+          },
+          "expires_on": {
+            "type": "string",
+            "description": "When the certificate will expire.",
+            "readOnly": true,
+            "example": "2014-01-01 05:20:00 \u002B0000 UTC",
+            "x-auditable": true
+          },
+          "hostnames": {
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "minLength": 1,
+              "type": "string",
+              "x-auditable": true
+            },
+            "description": "Array of hostnames or wildcard names bound to the certificate.\nHostnames must be fully qualified domain names (FQDNs) belonging to zones on your account (e.g., \u0060example.com\u0060 or \u0060sub.example.com\u0060). Wildcards are supported only as a \u0060*.\u0060 prefix for a single level (e.g., \u0060*.example.com\u0060). Double wildcards (\u0060*.*.example.com\u0060) and interior wildcards (\u0060foo.*.example.com\u0060) are not allowed. The wildcard suffix must be a multi-label domain (\u0060*.example.com\u0060 is valid, but \u0060*.com\u0060 is not). Unicode/IDN hostnames are accepted and automatically converted to punycode.",
+            "example": [
+              "example.com",
+              "*.example.com",
+              "sub.example.com"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "description": "The x509 serial number of the Origin CA certificate.",
+            "readOnly": true,
+            "example": "328578533902268680212849205732770752308931942346",
+            "x-auditable": true
+          },
+          "request_type": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesRequestType"
+          },
+          "requested_validity": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatesRequestedValidity"
+          },
+          "revoked_at": {
+            "type": "string",
+            "description": "When the certificate was revoked.",
+            "format": "date-time",
+            "readOnly": true,
+            "example": "2024-09-06T18:43:47.928893Z",
+            "x-auditable": true
           }
         },
         "not": {}
@@ -706999,8 +707687,7 @@
           "signature",
           "certificate",
           "expires_on",
-          "uploaded_on",
-          "updated_at"
+          "uploaded_on"
         ],
         "type": "object",
         "properties": {
@@ -707044,7 +707731,7 @@
           },
           "updated_at": {
             "type": "string",
-            "description": "When the certificate was last modified.",
+            "description": "When the certificate was last modified. Only returned when uploading a certificate.",
             "format": "date-time",
             "readOnly": true,
             "example": "2014-01-01T05:20:00Z",
@@ -707056,6 +707743,58 @@
             "format": "date-time",
             "readOnly": true,
             "example": "2014-01-01T05:20:00Z",
+            "x-auditable": true
+          }
+        },
+        "not": {}
+      },
+      "CustomOriginTrustStoreDelete4XxResponseErrors": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureErrors"
+          }
+        ]
+      },
+      "CustomOriginTrustStoreDelete4XxResponseMessages": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          }
+        ]
+      },
+      "CustomOriginTrustStoreDelete4XxResponseSuccess": {
+        "type": "boolean",
+        "description": "Whether the API call was successful.",
+        "example": true,
+        "not": {}
+      },
+      "CustomOriginTrustStoreDelete4XxResponseResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 36,
+            "type": "string",
+            "description": "Certificate identifier tag.",
+            "readOnly": true,
+            "example": "2458ce5a-0c35-4c7f-82c7-8e9487d3ff60",
             "x-auditable": true
           }
         },
@@ -707107,8 +707846,7 @@
           "signature",
           "certificate",
           "expires_on",
-          "uploaded_on",
-          "updated_at"
+          "uploaded_on"
         ],
         "type": "object",
         "properties": {
@@ -707152,7 +707890,7 @@
           },
           "updated_at": {
             "type": "string",
-            "description": "When the certificate was last modified.",
+            "description": "When the certificate was last modified. Only returned when uploading a certificate.",
             "format": "date-time",
             "readOnly": true,
             "example": "2014-01-01T05:20:00Z",
@@ -709424,7 +710162,7 @@
               "type": "string",
               "x-client-original-format": "email"
             },
-            "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma.\n",
+            "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma. Omitted from responses when no addresses are configured.\n",
             "example": [
               "security@example.com",
               "admin@example.com"
@@ -709490,7 +710228,7 @@
               "type": "string",
               "x-client-original-format": "email"
             },
-            "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma.\n",
+            "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma. Omitted from responses when no addresses are configured.\n",
             "example": [
               "security@example.com",
               "admin@example.com"
@@ -711441,7 +712179,6 @@
       "DnsSettingsForAZoneListDnsSettings4XxResponseResult": {
         "required": [
           "flatten_all_cnames",
-          "foundation_dns",
           "multi_provider",
           "secondary_overrides",
           "soa",
@@ -711457,14 +712194,6 @@
             "description": "Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.",
             "example": false,
             "x-auditable": true
-          },
-          "foundation_dns": {
-            "type": "boolean",
-            "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-            "example": false,
-            "deprecated": true,
-            "x-auditable": true,
-            "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
           },
           "internal_dns": {
             "$ref": "#/components/schemas/DnsSettingsDnsSettingsResponseInternalDns"
@@ -711542,7 +712271,6 @@
       "DnsSettingsForAZoneUpdateDnsSettings4XxResponseResult": {
         "required": [
           "flatten_all_cnames",
-          "foundation_dns",
           "multi_provider",
           "secondary_overrides",
           "soa",
@@ -711558,14 +712286,6 @@
             "description": "Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.",
             "example": false,
             "x-auditable": true
-          },
-          "foundation_dns": {
-            "type": "boolean",
-            "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-            "example": false,
-            "deprecated": true,
-            "x-auditable": true,
-            "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
           },
           "internal_dns": {
             "$ref": "#/components/schemas/DnsSettingsDnsSettingsResponseInternalDns"
@@ -716075,6 +716795,94 @@
         "items": {
           "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatePack"
         },
+        "not": {}
+      },
+      "CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponseErrors": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesApiResponseCommonFailureErrors"
+          }
+        ]
+      },
+      "CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponseMessages": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TlsCertificatesAndHostnamesMessagesItem"
+            },
+            "example": []
+          }
+        ]
+      },
+      "CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponseSuccess": {
+        "type": "boolean",
+        "description": "Whether the API call was successful.",
+        "example": true,
+        "not": {}
+      },
+      "CertificatePacksOrderAdvancedCertificateManagerCertificatePack4XxResponseResult": {
+        "required": [
+          "id",
+          "type",
+          "hosts",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "certificate_authority": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificateAuthority2"
+          },
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "description": "Comma separated list of valid host names for the certificate packs. Must contain the zone apex, may not contain more than 50 hosts, and may not be empty.",
+            "example": [
+              "example.com",
+              "*.example.com",
+              "www.example.com"
+            ],
+            "x-stainless-collection-type": "set",
+            "x-stainless-terraform-configurability": "computed_optional"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for a certificate_pack.",
+            "readOnly": true,
+            "example": "3822ff90-ea29-44df-9e55-21300bb9419b",
+            "x-auditable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesStatus5"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesType2"
+          },
+          "validation_method": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesValidationMethod"
+          },
+          "validity_days": {
+            "$ref": "#/components/schemas/TlsCertificatesAndHostnamesValidityDays"
+          }
+        },
+        "description": "A newly ordered certificate pack. Certificates are not included until they are issued; get the certificate pack to retrieve them.",
         "not": {}
       },
       "CertificatePacksGetCertificatePackQuotas4XxResponseErrors": {
@@ -896259,6 +897067,24 @@
           ]
         }
       },
+      "WorkerLoaderType": {
+        "enum": [
+          "worker_loader"
+        ],
+        "type": "string",
+        "description": "The kind of resource that the binding provides.",
+        "x-auditable": true,
+        "x-ms-enum": {
+          "name": "WorkerLoaderType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "worker_loader",
+              "name": "WorkerLoader"
+            }
+          ]
+        }
+      },
       "WorkflowType": {
         "enum": [
           "workflow"
@@ -1015863,19 +1016689,68 @@
           ]
         }
       },
-      "ModulesInclude": {
+      "WorkersPreviewsDeploymentsGetIncludeParameter": {
         "enum": [
-          "modules"
+          "modules",
+          "modules,sourcemaps"
         ],
         "type": "string",
-        "description": "Whether to include the \u0060modules\u0060 property of the deployment in the response, which contains code and sourcemap content and may add several megabytes to the response size.",
+        "description": "Optional properties to include in the response. \u0060modules\u0060 includes the \u0060modules\u0060 property, which contains code and may add several megabytes to the response size. \u0060modules,sourcemaps\u0060 also includes the deployment\u0027s source maps in \u0060modules\u0060.",
         "x-ms-enum": {
-          "name": "ModulesInclude",
+          "name": "WorkersPreviewsDeploymentsGetIncludeParameter",
           "modelAsString": false,
           "values": [
             {
               "value": "modules",
               "name": "Modules"
+            },
+            {
+              "value": "modules,sourcemaps",
+              "name": "ModulesCommaSourcemaps"
+            }
+          ]
+        }
+      },
+      "GetLatestWorkerVersionIncludeParameter": {
+        "enum": [
+          "modules",
+          "modules,sourcemaps"
+        ],
+        "type": "string",
+        "description": "Optional properties to include in the response. \u0060modules\u0060 includes the \u0060modules\u0060 property, which contains code and may add several megabytes to the response size. \u0060modules,sourcemaps\u0060 also includes the version\u0027s source maps in \u0060modules\u0060.",
+        "x-ms-enum": {
+          "name": "GetLatestWorkerVersionIncludeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "modules",
+              "name": "Modules"
+            },
+            {
+              "value": "modules,sourcemaps",
+              "name": "ModulesCommaSourcemaps"
+            }
+          ]
+        }
+      },
+      "GetWorkerVersionIncludeParameter": {
+        "enum": [
+          "modules",
+          "modules,sourcemaps"
+        ],
+        "type": "string",
+        "description": "Optional properties to include in the response. \u0060modules\u0060 includes the \u0060modules\u0060 property, which contains code and may add several megabytes to the response size. \u0060modules,sourcemaps\u0060 also includes the version\u0027s source maps in \u0060modules\u0060.",
+        "x-ms-enum": {
+          "name": "GetWorkerVersionIncludeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "modules",
+              "name": "Modules"
+            },
+            {
+              "value": "modules,sourcemaps",
+              "name": "ModulesCommaSourcemaps"
             }
           ]
         }
@@ -1111006,7 +1111881,8 @@
                 "description": "Optional environment if the Worker utilizes one.",
                 "default": "production",
                 "example": "production",
-                "x-auditable": true
+                "x-auditable": true,
+                "x-stainless-terraform-configurability": "computed_optional"
               },
               "name": {
                 "type": "string",
@@ -1111385,6 +1112261,31 @@
               },
               "type": {
                 "$ref": "#/components/schemas/VpcNetworkType"
+              }
+            }
+          }
+        ]
+      },
+      "WorkersBindingItemWorkersBindingKindWorkerLoader": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/WorkersBindingItem"
+          },
+          {
+            "required": [
+              "name",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "A JavaScript variable name for the binding.",
+                "example": "myBinding",
+                "x-auditable": true
+              },
+              "type": {
+                "$ref": "#/components/schemas/WorkerLoaderType"
               }
             }
           }
@@ -1118746,6 +1119647,26 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/AccessApiResponseCommonFailure"
+            }
+          }
+        }
+      },
+      "alexandria_application_write_busy": {
+        "description": "Too many concurrent application writes for this account. This request made no\nchanges. Wait for the delay in Retry-After before retrying.\n",
+        "headers": {
+          "Retry-After": {
+            "description": "Minimum number of seconds to wait before retrying the request.",
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "example": 1
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AlexandriaApiResponseCommonFailure"
             }
           }
         }
@@ -1132389,7 +1133310,7 @@
       }
     },
     "AccessSaasProps2": {
-      "title": "SaaS Application",
+      "title": "Zone-Level SaaS Application",
       "type": "object",
       "properties": {
         "allowed_idps": {
@@ -1132805,7 +1133726,7 @@
       }
     },
     "AccessSelfHostedProps2": {
-      "title": "Self Hosted Application",
+      "title": "Zone-Level Self Hosted Application",
       "required": [
         "type",
         "domain"
@@ -1142802,14 +1143723,6 @@
           "example": false,
           "x-auditable": true
         },
-        "foundation_dns": {
-          "type": "boolean",
-          "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-          "example": false,
-          "deprecated": true,
-          "x-auditable": true,
-          "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
-        },
         "internal_dns": {
           "$ref": "#/components/schemas/DnsSettingsInternalDnsBase"
         },
@@ -1142850,14 +1143763,6 @@
           "example": false,
           "x-auditable": true
         },
-        "foundation_dns": {
-          "type": "boolean",
-          "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-          "example": false,
-          "deprecated": true,
-          "x-auditable": true,
-          "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
-        },
         "internal_dns": {
           "$ref": "#/components/schemas/DnsSettingsInternalDnsBase"
         },
@@ -1142892,7 +1143797,6 @@
     "DnsSettingsDnsSettingsResponse": {
       "required": [
         "flatten_all_cnames",
-        "foundation_dns",
         "multi_provider",
         "secondary_overrides",
         "soa",
@@ -1142907,14 +1143811,6 @@
           "description": "Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.",
           "example": false,
           "x-auditable": true
-        },
-        "foundation_dns": {
-          "type": "boolean",
-          "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-          "example": false,
-          "deprecated": true,
-          "x-auditable": true,
-          "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
         },
         "internal_dns": {
           "$ref": "#/components/schemas/DnsSettingsDnsSettingsResponseInternalDns"
@@ -1143000,14 +1143896,6 @@
       "description": "Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.",
       "example": false,
       "x-auditable": true
-    },
-    "DnsSettingsFoundationDns": {
-      "type": "boolean",
-      "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-      "example": false,
-      "deprecated": true,
-      "x-auditable": true,
-      "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
     },
     "DnsSettingsIdentifier": {
       "maxLength": 32,
@@ -1163488,6 +1164376,11 @@
       "description": "The uploaded root CA certificate.",
       "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
     },
+    "TlsCertificatesAndHostnamesClientCertificateHostname": {
+      "type": "string",
+      "example": "api.example.com",
+      "x-auditable": true
+    },
     "TlsCertificatesAndHostnamesClientCertificateIdentifier": {
       "maxLength": 36,
       "minLength": 36,
@@ -1163570,7 +1164463,7 @@
         "type": "string",
         "x-client-original-format": "email"
       },
-      "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma.\n",
+      "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma. Omitted from responses when no addresses are configured.\n",
       "example": [
         "security@example.com",
         "admin@example.com"
@@ -1163595,7 +1164488,7 @@
             "type": "string",
             "x-client-original-format": "email"
           },
-          "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma.\n",
+          "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma. Omitted from responses when no addresses are configured.\n",
           "example": [
             "security@example.com",
             "admin@example.com"
@@ -1163945,7 +1164838,9 @@
         "type": "string",
         "example": "api.example.com",
         "x-auditable": true
-      }
+      },
+      "description": "Unordered set of hostnames. Hostnames are stored as lowercase punycode.",
+      "x-stainless-collection-type": "set"
     },
     "TlsCertificatesAndHostnamesHosts": {
       "type": "array",
@@ -1164156,6 +1165051,21 @@
       "example": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDEXDkcICRU3XBv\n9hiiPnBWIjgTQyowmVFxDr11mONgZB/cMYjE/OvQjvnpwNcOaSK16MOpAjNbELKR\nx2lZiVJaLRDCccqCxXwP/CrdRChcqGzo7mbNksMlcidrErb0LlEBKLFC2QjRmRKq\nB\u002BYOs4TD8WsZu2S667A2fZmjRlaqOxFi1h62ee0P\u002BTLU628UC/nl41JifSt5Evt7\nhMDHakemdwZblNYr2p6T3NQjdhjYXTtP4UmOGJBhJ7i7Kicg3d3CIgdTMbggSeGW\nqjndr4ldVnD96FN3cVT5uDFsn2CJXTFgdeBWoUnMS4VnUZzPWGf4vSBXC8qV7Ls\u002B\nw46yT7T1AgMBAAECggEAQZnp/oqCeNPOR6l5S2L\u002B1tfx0gWjZ78hJVteUpZ0iHSK\n7F6kKeOxyOird7vUXV0kmo\u002BcJq\u002B0hp0Ke4eam640FCpwKfYoSQ4/R3vgujGWJnai\nhCN5tv5sMet0XeJPuz5qE7ALoKCvwI6aXLHs20aAeZIDTQJ9QbGSGnJVzOWn\u002BJDT\nidIgZpN57RpXfSAwnJPTQK/PN8i5z108hsaDOdEgGmxYZ7kYqMqzX20KXmth58LD\nfPixs5JGtS60iiKC/wOcGzkB2/AdTSojR76oEU77cANP/3zO25NG//whUdYlW0t0\nd7PgXxIeJe\u002BxgYnamDQJx3qonVyt4H77ha0ObRAj9QKBgQDicZr\u002BVTwFMnELP3a\u002B\nFXGnjehRiuS1i7MXGKxNweCD\u002BdFlML0FplSQS8Ro2n\u002Bd8lu8BBXGx0qm6VXu8Rhn\n7TAUL6q\u002BPCgfarzxfIhacb/TZCqfieIHsMlVBfhV5HCXnk\u002Bkis0tuC/PRArcWTwD\nHJUJXkBhvkUsNswvQzavDPI7KwKBgQDd/WgLkj7A3X5fgIHZH/GbDSBiXwzKb\u002BrF\n4ZCT2XFgG/OAW7vapfcX/w\u002Bv\u002B5lBLyrocmOAS3PGGAhM5T3HLnUCQfnK4qgps1Lq\nibkc9Tmnsn60LanUjuUMsYv/zSw70tozbzhJ0pioEpWfRxRZBztO2Rr8Ntm7h6Fk\n701EXGNAXwKBgQCD1xsjy2J3sCerIdcz0u5qXLAPkeuZW\u002B34m4/ucdwTWwc0gEz9\nlhsULFj9p4G351zLuiEnq\u002B7mAWLcDJlmIO3mQt6JhiLiL9Y0T4pgBmxmWqKKYtAs\nJB0EmMY\u002B1BNN44mBRqMxZFTJu1cLdhT/xstrOeoIPqytknYNanfTMZlzIwKBgHrL\nXe5oq0XMP8dcMneEcAUwsaU4pr6kQd3L9EmUkl5zl7J9C\u002BDaxWAEuwzBw/iGutlx\nzRB\u002BrD/7szu14wJ29EqXbDGKRzMp\u002Bse5/yfBjm7xEZ1hVPw7PwBShfqt57X/4Ktq\n7lwHnmH6RcGhc\u002BP7WBc5iO/S94YAdIp8xOT3pf9JAoGAE0QkqJUY\u002B5Mgr\u002BfBO0VN\nV72ZoPveGpW\u002BDe59uhKAOnu1zljQCUtk59m6\u002BDXfm0tNYKtawa5n8iN71Zh\u002Bs62x\nXSt3pYi1Y5CCCmv8Y4BhwIcPwXKk3zEvLgSHVTpC0bayA9aSO4bbZgVXa5w\u002BZ0w/\nvvfp9DWo1IS3EnQRrz6WMYA=\n-----END PRIVATE KEY-----",
       "x-sensitive": true
     },
+    "TlsCertificatesAndHostnamesRequestedValidityDays": {
+      "enum": [
+        7,
+        30,
+        90,
+        365,
+        730,
+        1095,
+        5475
+      ],
+      "type": "number",
+      "description": "A permitted certificate validity period, in days.",
+      "example": 5475,
+      "x-auditable": true
+    },
     "TlsCertificatesAndHostnamesRevokedAt": {
       "type": "string",
       "description": "When the certificate was revoked.",
@@ -1164313,7 +1165223,7 @@
     },
     "TlsCertificatesAndHostnamesUpdatedAt2": {
       "type": "string",
-      "description": "When the certificate was last modified.",
+      "description": "When the certificate was last modified. Only returned when uploading a certificate.",
       "format": "date-time",
       "readOnly": true,
       "example": "2014-01-01T05:20:00Z",
@@ -1168780,7 +1169690,8 @@
           "description": "Optional environment if the Worker utilizes one.",
           "default": "production",
           "example": "production",
-          "x-auditable": true
+          "x-auditable": true,
+          "x-stainless-terraform-configurability": "computed_optional"
         },
         "name": {
           "type": "string",
@@ -1168947,6 +1169858,24 @@
         },
         "type": {
           "$ref": "#/components/schemas/WasmModuleType"
+        }
+      }
+    },
+    "WorkersBindingKindWorkerLoader": {
+      "required": [
+        "name",
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A JavaScript variable name for the binding.",
+          "example": "myBinding",
+          "x-auditable": true
+        },
+        "type": {
+          "$ref": "#/components/schemas/WorkerLoaderType"
         }
       }
     },
@@ -1170305,7 +1171234,7 @@
       "default": false,
       "example": false,
       "x-auditable": true,
-      "x-stainless-terraform-configurability": "optional"
+      "x-stainless-terraform-configurability": "computed_optional"
     },
     "ZeroTrustGatewayEcsSupport": {
       "type": "boolean",
@@ -1178618,7 +1179547,6 @@
     "DnsSettingsDnsSettingsResponseAllOf2": {
       "required": [
         "flatten_all_cnames",
-        "foundation_dns",
         "multi_provider",
         "secondary_overrides",
         "soa",
@@ -1182856,18 +1183784,11 @@
     "NscInterconnectGcpPartnerBodyAllOf1": {
       "required": [
         "type",
-        "name",
-        "account"
+        "name"
       ],
       "type": "object",
       "properties": {
-        "account": {
-          "type": "string"
-        },
         "name": {
-          "type": "string"
-        },
-        "owner": {
           "type": "string"
         },
         "type": {
@@ -1182897,18 +1183818,11 @@
     "NscInterconnectPhysicalBodyAllOf1": {
       "required": [
         "type",
-        "name",
-        "account"
+        "name"
       ],
       "type": "object",
       "properties": {
-        "account": {
-          "type": "string"
-        },
         "name": {
-          "type": "string"
-        },
-        "owner": {
           "type": "string"
         },
         "type": {
@@ -1186432,6 +1187346,14 @@
         }
       }
     },
+    "TlsCertificatesAndHostnamesCertificatePackOrderResponseSingleAllOf2": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/components/schemas/TlsCertificatesAndHostnamesCertificatePackOrder"
+        }
+      }
+    },
     "TlsCertificatesAndHostnamesCertificatePackQuotaResponseAllOf2": {
       "type": "object",
       "properties": {
@@ -1187920,7 +1188842,7 @@
           "items": {
             "$ref": "#/components/schemas/WorkersPreviewDeploymentRequestAllOf2ModulesItem"
           },
-          "description": "Code, sourcemaps, and other content used at runtime.",
+          "description": "Code, sourcemaps, and other content used at runtime.\n\nSource maps use content type \u0060application/source-map\u0060. Responses include them only when requested with\n\u0060include=modules,sourcemaps\u0060. Workers stores the source map fields used to remap stack traces, so a\nreturned source map is equivalent to the uploaded file but not byte-identical.\n",
           "x-stainless-collection-type": "set"
         }
       }
@@ -1187942,6 +1188864,21 @@
         }
       ],
       "default": false
+    },
+    "WorkersVersionCompatibilityFlags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Flag that enables or disables a specific feature in the Workers runtime.",
+        "example": "nodejs_compat",
+        "x-auditable": true
+      },
+      "description": "Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a \u0060compatibility_date\u0060.",
+      "default": [],
+      "example": [
+        "nodejs_compat"
+      ],
+      "x-stainless-collection-type": "set"
     },
     "WorkersApiResponseCollectionAllOf2": {
       "type": "object",
@@ -1191297,7 +1192234,7 @@
         },
         "token_url": {
           "type": "string",
-          "description": "The token_endpoint URL of your IdP",
+          "description": "The token_endpoint URL of your IdP. Updates that change its origin (scheme, host, or port) require client_secret in the request. Path-only changes do not require client_secret.",
           "example": "https://accounts.google.com/o/oauth2/token"
         }
       }
@@ -1191352,7 +1192289,7 @@
         },
         "token_url": {
           "type": "string",
-          "description": "The token_endpoint URL of your IdP",
+          "description": "The token_endpoint URL of your IdP. Updates that change its origin (scheme, host, or port) require client_secret in the request. Path-only changes do not require client_secret.",
           "example": "https://accounts.google.com/o/oauth2/token"
         }
       }
@@ -1193063,7 +1194000,7 @@
         },
         "token_url": {
           "type": "string",
-          "description": "The token_endpoint URL of your IdP",
+          "description": "The token_endpoint URL of your IdP. Updates that change its origin (scheme, host, or port) require client_secret in the request. Path-only changes do not require client_secret.",
           "example": "https://accounts.google.com/o/oauth2/token"
         }
       }
@@ -1193106,7 +1194043,7 @@
         },
         "token_url": {
           "type": "string",
-          "description": "The token_endpoint URL of your IdP",
+          "description": "The token_endpoint URL of your IdP. Updates that change its origin (scheme, host, or port) require client_secret in the request. Path-only changes do not require client_secret.",
           "example": "https://accounts.google.com/o/oauth2/token"
         }
       }

@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Status of the zone&apos;s custom SSL.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus7? Status { get; private set; }
-        /// <summary>When the certificate was last modified.</summary>
+        /// <summary>When the certificate was last modified. Only returned when uploading a certificate.</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>When the certificate was uploaded to Cloudflare.</summary>
         public DateTimeOffset? UploadedOn { get; private set; }

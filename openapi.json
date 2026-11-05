@@ -15289,9 +15289,9 @@
           "Zero Trust: Seats Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.seats",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{account_id}/access/service_tokens": {
@@ -16210,7 +16210,7 @@
       "post": {
         "operationId": "access-user-populations-create-user-population",
         "summary": "Create a user population",
-        "description": "Creates a user population in an account.",
+        "description": "Creates a user population in an account. Requires permission to update the account's Access organization.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/access_account_id"
@@ -26846,6 +26846,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 9007199254740991,
               "minimum": 1
             }
           },
@@ -27313,6 +27314,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 9007199254740991,
               "minimum": 1
             }
           },
@@ -29141,6 +29143,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 9007199254740991,
               "minimum": 1
             }
           },
@@ -29355,6 +29358,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 9007199254740991,
               "minimum": 1
             }
           },
@@ -31742,6 +31746,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 9007199254740991,
               "minimum": 1
             }
           },
@@ -32553,6 +32558,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 9007199254740991,
               "minimum": 1
             }
           },
@@ -33964,6 +33970,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 9007199254740991,
               "minimum": 1
             }
           },
@@ -35638,6 +35645,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 9007199254740991,
               "minimum": 1
             }
           },
@@ -36859,6 +36867,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 9007199254740991,
               "minimum": 1
             }
           },
@@ -182379,7 +182388,7 @@
       "get": {
         "operationId": "list_interconnects",
         "summary": "List existing interconnects",
-        "description": "Lists all network interconnects configured for the account, including physical and virtual\nconnections.",
+        "description": "Lists network interconnects of a single type configured for the account. The `type` query\nparameter selects the type to list; when omitted, only `direct` interconnects are returned.",
         "parameters": [
           {
             "name": "site",
@@ -182393,7 +182402,7 @@
           {
             "name": "type",
             "in": "query",
-            "description": "If specified, only show interconnects of the given type",
+            "description": "Type of interconnect to list, such as `direct` or `gcp_partner`. Defaults to `direct`.",
             "schema": {
               "type": "string",
               "nullable": true
@@ -185400,6 +185409,90 @@
         "x-fern-sdk-group-name": "containers.registries.credentials",
         "x-fern-sdk-method-name": "generate"
       }
+    },
+    "/accounts/{account_id}/containers/usage": {
+      "get": {
+        "operationId": "getUsage",
+        "summary": "Get live account usage",
+        "description": "Get current live resource usage and maximum account limits for the authenticated Cloudchamber account. Usage includes active and assigned instances.",
+        "responses": {
+          "200": {
+            "description": "Returns live account usage and maximum limits.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/cc_V4BaseResponse"
+                    },
+                    {
+                      "properties": {
+                        "result": {
+                          "$ref": "#/components/schemas/cc_AccountUsageResponse"
+                        }
+                      },
+                      "required": [
+                        "result"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cc_V4BaseErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The account does not have the required capability for this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cc_V4BaseErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An internal error has occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cc_V4BaseErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Account"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "containers",
+        "x-fern-sdk-method-name": "usage"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/cc_AccountId"
+        }
+      ]
     },
     "/accounts/{account_id}/custom_csrs": {
       "get": {
@@ -199619,16 +199712,12 @@
                     "$ref": "#/components/schemas/teams-devices_default"
                   },
                   "description": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/teams-devices_schemas-description"
-                      },
-                      {
-                        "default": "",
-                        "type": "string",
-                        "x-auditable": true
-                      }
-                    ]
+                    "description": "A description of the policy.",
+                    "type": "string",
+                    "example": "Policy for test teams.",
+                    "default": "",
+                    "maxLength": 500,
+                    "x-auditable": true
                   },
                   "disable_auto_fallback": {
                     "$ref": "#/components/schemas/teams-devices_disable_auto_fallback"
@@ -302969,7 +303058,7 @@
           {
             "name": "order_by",
             "in": "query",
-            "description": "Order results using field:direction format. Supported fields are name, id, human_id,\ncategory_id, application_type, application_confidence_score, and gen_ai_score.\nSupported directions are asc and desc. Ignored when search is provided; results are\nranked by relevance instead. Also ignored when lookup is provided.\n",
+            "description": "Order results using field:direction format. Supported fields are name, id, human_id,\ncategory_id, application_type, application_confidence_score, and gen_ai_score.\nSupported directions are asc and desc. name and application_type ignore the case of\nthe letters A to Z, and ties sort by id. Ignored when search is provided; results are\nranked by relevance instead. Also ignored when lookup is provided.\n",
             "schema": {
               "type": "string"
             },
@@ -303117,6 +303206,19 @@
                 }
               }
             }
+          },
+          "403": {
+            "description": "The authenticated principal does not have access to the requested account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/alexandria_application_write_busy"
           },
           "4XX": {
             "description": "Create application response failure.",
@@ -303316,6 +303418,16 @@
               }
             }
           },
+          "403": {
+            "description": "The authenticated principal does not have access to the requested account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          },
           "409": {
             "description": "The application is referenced by other resources and cannot be deleted.",
             "content": {
@@ -303325,6 +303437,9 @@
                 }
               }
             }
+          },
+          "429": {
+            "$ref": "#/components/responses/alexandria_application_write_busy"
           },
           "502": {
             "description": "Application deletion could not be safely completed because a required validation was unavailable.",
@@ -303400,6 +303515,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/alexandria_get_application_response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The authenticated principal does not have access to the requested account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
                 }
               }
             }
@@ -303483,6 +303608,19 @@
               }
             }
           },
+          "403": {
+            "description": "The authenticated principal does not have access to the requested account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/alexandria_application_write_busy"
+          },
           "4XX": {
             "description": "Update application response failure.",
             "content": {
@@ -303519,7 +303657,7 @@
       "get": {
         "operationId": "getResourceLibraryCategories",
         "summary": "List application categories",
-        "description": "List the categories available for classifying applications, ordered by name.\nResults are paginated by `offset` or `cursor`.\n",
+        "description": "List the categories available for classifying applications, ordered by name, ignoring the case of the letters A to Z.\nResults are paginated by `offset` or `cursor`.\n",
         "parameters": [
           {
             "name": "account_id",
@@ -309572,7 +309710,7 @@
       "get": {
         "operationId": "secrets-store-list",
         "summary": "List account stores",
-        "description": "Lists all the stores in an account.",
+        "description": "Lists account stores from an eventually consistent projection. Returns retryable HTTP 503 until initial backfill completes; empty accounts are ready immediately.",
         "parameters": [
           {
             "$ref": "#/components/parameters/secrets-store_account_id"
@@ -309597,6 +309735,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/secrets-store_stores_response_collection"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service temporarily unavailable, including while initial store listing backfill is incomplete. Returns a generic error with a reference; retry the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/secrets-store_api-response-common-failure"
+                    }
+                  ]
                 }
               }
             }
@@ -366644,14 +366796,6 @@
             }
           },
           {
-            "name": "ignore_defaults",
-            "in": "query",
-            "schema": {
-              "description": "If true, preview defaults/base config from the parent Worker is ignored.",
-              "type": "boolean"
-            }
-          },
-          {
             "name": "ignore_base_config",
             "in": "query",
             "schema": {
@@ -367067,14 +367211,6 @@
             }
           },
           {
-            "name": "ignore_defaults",
-            "in": "query",
-            "schema": {
-              "description": "If true, preview defaults/base config from the parent Worker is ignored.",
-              "type": "boolean"
-            }
-          },
-          {
             "name": "ignore_base_config",
             "in": "query",
             "schema": {
@@ -367312,14 +367448,6 @@
               "description": "Identifier for the Preview, which can be ID, slug, or URL-encoded name.",
               "type": "string"
             }
-          },
-          {
-            "name": "ignore_defaults",
-            "in": "query",
-            "schema": {
-              "description": "If true, preview defaults from the parent Worker are ignored.",
-              "type": "boolean"
-            }
           }
         ],
         "requestBody": {
@@ -367457,14 +367585,6 @@
             "schema": {
               "description": "Identifier for the Preview, which can be ID, slug, or URL-encoded name.",
               "type": "string"
-            }
-          },
-          {
-            "name": "ignore_defaults",
-            "in": "query",
-            "schema": {
-              "description": "If true, preview defaults from the parent Worker are ignored.",
-              "type": "boolean"
             }
           }
         ],
@@ -367678,10 +367798,11 @@
             "name": "include",
             "in": "query",
             "schema": {
-              "description": "Whether to include the `modules` property of the deployment in the response, which contains code and sourcemap content and may add several megabytes to the response size.",
+              "description": "Optional properties to include in the response. `modules` includes the `modules` property, which contains code and may add several megabytes to the response size. `modules,sourcemaps` also includes the deployment's source maps in `modules`.",
               "type": "string",
               "enum": [
-                "modules"
+                "modules",
+                "modules,sourcemaps"
               ]
             }
           }
@@ -368002,10 +368123,11 @@
             "name": "include",
             "in": "query",
             "schema": {
-              "description": "Whether to include the `modules` property of the version in the response, which contains code and sourcemap content and may add several megabytes to the response size.",
+              "description": "Optional properties to include in the response. `modules` includes the `modules` property, which contains code and may add several megabytes to the response size. `modules,sourcemaps` also includes the version's source maps in `modules`.",
               "type": "string",
               "enum": [
-                "modules"
+                "modules",
+                "modules,sourcemaps"
               ]
             }
           }
@@ -368313,10 +368435,11 @@
             "name": "include",
             "in": "query",
             "schema": {
-              "description": "Whether to include the `modules` property of the version in the response, which contains code and sourcemap content and may add several megabytes to the response size.",
+              "description": "Optional properties to include in the response. `modules` includes the `modules` property, which contains code and may add several megabytes to the response size. `modules,sourcemaps` also includes the version's source maps in `modules`.",
               "type": "string",
               "enum": [
-                "modules"
+                "modules",
+                "modules,sourcemaps"
               ]
             }
           }
@@ -381407,7 +381530,7 @@
       "get": {
         "operationId": "origin-ca-list-certificates",
         "summary": "List Certificates",
-        "description": "List all existing Origin CA certificates for a given zone. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).",
+        "description": "List all existing Origin CA certificates for a given zone. Revoked certificates are not included. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).",
         "parameters": [
           {
             "name": "zone_id",
@@ -381437,24 +381560,6 @@
               "maximum": 50,
               "minimum": 5
             }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "schema": {
-              "description": "Limit to the number of records returned.",
-              "type": "integer",
-              "example": 10
-            }
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "schema": {
-              "description": "Offset the results.",
-              "type": "integer",
-              "example": 10
-            }
           }
         ],
         "responses": {
@@ -381469,6 +381574,23 @@
             }
           },
           "4XX": {
+            "description": "List Certificates response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_certificate_response_collection-2"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_api-response-common-failure"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
             "description": "List Certificates response failure.",
             "content": {
               "application/json": {
@@ -381510,7 +381632,7 @@
       "post": {
         "operationId": "origin-ca-create-certificate",
         "summary": "Create Certificate",
-        "description": "Create an Origin CA certificate. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).",
+        "description": "Create an Origin CA certificate. For `keyless-certificate` requests, `zone_id` is required and the response contains only `id`, `certificate`, and `expires_on`. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).",
         "requestBody": {
           "required": true,
           "content": {
@@ -381529,6 +381651,13 @@
                   },
                   "requested_validity": {
                     "$ref": "#/components/schemas/tls-certificates-and-hostnames_requested_validity"
+                  },
+                  "zone_id": {
+                    "description": "Identifier of the zone whose keyless servers the certificate is for. Required when `request_type` is `keyless-certificate`; ignored otherwise.",
+                    "type": "string",
+                    "example": "023e105f4ecef8ad9ca31a8372d0c353",
+                    "maxLength": 32,
+                    "x-auditable": true
                   }
                 },
                 "required": [
@@ -381552,6 +381681,23 @@
             }
           },
           "4XX": {
+            "description": "Create Certificate response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_certificate_response_single-2"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_api-response-common-failure"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
             "description": "Create Certificate response failure.",
             "content": {
               "application/json": {
@@ -381633,6 +381779,23 @@
                 }
               }
             }
+          },
+          "5XX": {
+            "description": "Revoke Certificate response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_certificate_revoke_response"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_api-response-common-failure"
+                    }
+                  ]
+                }
+              }
+            }
           }
         },
         "security": [
@@ -381682,6 +381845,23 @@
             }
           },
           "4XX": {
+            "description": "Get Certificate response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_certificate_response_single-2"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_api-response-common-failure"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
             "description": "Get Certificate response failure.",
             "content": {
               "application/json": {
@@ -527570,7 +527750,7 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_custom_trust_store_identifier"
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_custom_trust_store_response_id_only"
                     },
                     {
                       "$ref": "#/components/schemas/tls-certificates-and-hostnames_api-response-common-failure"
@@ -579550,7 +579730,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tls-certificates-and-hostnames_advanced_certificate_pack_response_single"
+                  "$ref": "#/components/schemas/tls-certificates-and-hostnames_certificate_pack_order_response_single"
                 }
               }
             }
@@ -579562,7 +579742,7 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_advanced_certificate_pack_response_single"
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_certificate_pack_order_response_single"
                     },
                     {
                       "$ref": "#/components/schemas/tls-certificates-and-hostnames_api-response-common-failure"
@@ -594581,7 +594761,7 @@
             "type": "object"
           }
         ],
-        "title": "Azure AD"
+        "title": "Zone-Level Azure AD"
       },
       "access_azure_group_rule": {
         "description": "Matches an Azure group.\nRequires an Azure identity provider.",
@@ -594980,7 +595160,7 @@
             "type": "object"
           }
         ],
-        "title": "Centrify"
+        "title": "Zone-Level Centrify"
       },
       "access_certificate_rule": {
         "description": "Matches any valid client certificate.",
@@ -595217,7 +595397,7 @@
             "type": "object"
           }
         ],
-        "title": "Cloudflare"
+        "title": "Zone-Level Cloudflare"
       },
       "access_cloudflare_account_member_rule": {
         "description": "Matches users who are members of a specific Cloudflare account.\nRequires a Cloudflare identity provider.",
@@ -595283,7 +595463,7 @@
             "$ref": "#/components/schemas/access_connection_rules_ssh"
           }
         },
-        "title": "Connection Rules"
+        "title": "Infrastructure Connection Rules"
       },
       "access_connection_rules_rdp": {
         "description": "The RDP-specific rules that define clipboard behavior for RDP connections.",
@@ -596199,7 +596379,7 @@
             "type": "object"
           }
         ],
-        "title": "Duo"
+        "title": "Zone-Level Duo"
       },
       "access_duration": {
         "description": "The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`, or the special value `forever` for non-expiring tokens. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).",
@@ -596642,7 +596822,7 @@
             "type": "object"
           }
         ],
-        "title": "Facebook"
+        "title": "Zone-Level Facebook"
       },
       "access_failed_login_response": {
         "type": "object",
@@ -596934,7 +597114,7 @@
             "type": "object"
           }
         ],
-        "title": "GitHub"
+        "title": "Zone-Level GitHub"
       },
       "access_github_organization_rule": {
         "description": "Matches a Github organization.\nRequires a Github identity provider.",
@@ -597009,7 +597189,7 @@
             "type": "object"
           }
         ],
-        "title": "Google"
+        "title": "Zone-Level Google"
       },
       "access_google-apps": {
         "type": "object",
@@ -597106,7 +597286,7 @@
             "type": "object"
           }
         ],
-        "title": "Google Workspace"
+        "title": "Zone-Level Google Workspace"
       },
       "access_grant_trust_to_all_accounts_in_org": {
         "description": "Whether all accounts in the organization are trusted to use this account's cross-account Access resources.",
@@ -598548,7 +598728,7 @@
             "type": "object"
           }
         ],
-        "title": "LinkedIn"
+        "title": "Zone-Level LinkedIn"
       },
       "access_login_design": {
         "type": "object",
@@ -599150,7 +599330,7 @@
                         ]
                       },
                       "token_url": {
-                        "description": "The token_endpoint URL of your IdP",
+                        "description": "The token_endpoint URL of your IdP. Updates that change its origin (scheme, host, or port) require client_secret in the request. Path-only changes do not require client_secret.",
                         "type": "string",
                         "example": "https://accounts.google.com/o/oauth2/token"
                       }
@@ -599214,7 +599394,7 @@
                         ]
                       },
                       "token_url": {
-                        "description": "The token_endpoint URL of your IdP",
+                        "description": "The token_endpoint URL of your IdP. Updates that change its origin (scheme, host, or port) require client_secret in the request. Path-only changes do not require client_secret.",
                         "type": "string",
                         "example": "https://accounts.google.com/o/oauth2/token"
                       }
@@ -599227,7 +599407,7 @@
             "type": "object"
           }
         ],
-        "title": "Generic OAuth"
+        "title": "Zone-Level Generic OAuth"
       },
       "access_oidc_claim_rule": {
         "description": "Matches an OIDC claim.\nRequires an OIDC identity provider.",
@@ -599622,7 +599802,7 @@
             "$ref": "#/components/schemas/access_timestamp"
           }
         },
-        "title": "OIDC SaaS App"
+        "title": "Zone-Level OIDC SaaS App"
       },
       "access_okta": {
         "type": "object",
@@ -599693,7 +599873,7 @@
             "type": "object"
           }
         ],
-        "title": "Okta"
+        "title": "Zone-Level Okta"
       },
       "access_okta_group_rule": {
         "description": "Matches an Okta group.\nRequires an Okta identity provider.",
@@ -599788,7 +599968,7 @@
             "type": "object"
           }
         ],
-        "title": "OneLogin"
+        "title": "Zone-Level OneLogin"
       },
       "access_onetimepin": {
         "type": "object",
@@ -599846,7 +600026,7 @@
             "type": "object"
           }
         ],
-        "title": "One Time Pin"
+        "title": "Zone-Level One Time Pin"
       },
       "access_options_preflight_bypass": {
         "description": "Allows options preflight requests to bypass Access authentication and go directly to the origin. Cannot turn on if cors_headers is set.",
@@ -600138,7 +600318,7 @@
             "type": "object"
           }
         ],
-        "title": "PingOne"
+        "title": "Zone-Level PingOne"
       },
       "access_policies": {
         "type": "object",
@@ -601762,7 +601942,7 @@
             "example": "saas"
           }
         },
-        "title": "SaaS Application"
+        "title": "Zone-Level SaaS Application"
       },
       "access_same_site_cookie_attribute": {
         "description": "Sets the SameSite cookie setting, which provides increased security against CSRF attacks.",
@@ -601951,7 +602131,7 @@
             "type": "object"
           }
         ],
-        "title": "Generic SAML"
+        "title": "Zone-Level Generic SAML"
       },
       "access_saml_certificate": {
         "description": "A single SAML encryption certificate with metadata",
@@ -602401,7 +602581,7 @@
             "$ref": "#/components/schemas/access_timestamp"
           }
         },
-        "title": "SAML SaaS App"
+        "title": "Zone-Level SAML SaaS App"
       },
       "access_scim_config": {
         "description": "Configuration for provisioning to this application via SCIM. This is currently in closed beta.",
@@ -602633,7 +602813,7 @@
           "scheme",
           "token"
         ],
-        "title": "OAuth Bearer Token"
+        "title": "Zone-Level OAuth Bearer Token"
       },
       "access_scim_config_mapping": {
         "description": "Transformations and filters applied to resources before they are provisioned in the remote SCIM service.",
@@ -602859,7 +603039,22 @@
                       "type": "boolean"
                     },
                     {
-                      "items": {},
+                      "items": {
+                        "oneOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "object"
+                          }
+                        ]
+                      },
                       "type": "array"
                     },
                     {
@@ -603306,7 +603501,7 @@
           "type",
           "domain"
         ],
-        "title": "Self Hosted Application"
+        "title": "Zone-Level Self Hosted Application"
       },
       "access_service-tokens": {
         "type": "object",
@@ -603586,7 +603781,7 @@
           "china_network",
           "client_certificate_forwarding"
         ],
-        "title": "Hostname Settings"
+        "title": "Zone-Level Hostname Settings"
       },
       "access_since": {
         "description": "the timestamp of the earliest update log.",
@@ -605010,7 +605205,7 @@
             "type": "object"
           }
         ],
-        "title": "Yandex"
+        "title": "Zone-Level Yandex"
       },
       "addressing_account_identifier": {
         "description": "Identifier of a Cloudflare account.",
@@ -623871,6 +624066,96 @@
       "cc_AccountID": {
         "description": "A unique identifier for the user's account.",
         "type": "string"
+      },
+      "cc_AccountUsageMaximum": {
+        "description": "Lists account limits for the resources reported in usage.",
+        "type": "object",
+        "properties": {
+          "disk_mb": {
+            "description": "Maximum disk in MB for the account.",
+            "type": "integer"
+          },
+          "memory_mib": {
+            "description": "Maximum memory in MiB for the account.",
+            "type": "integer"
+          },
+          "vcpus": {
+            "description": "Maximum vCPU for the account.",
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "required": [
+          "vcpus",
+          "memory_mib",
+          "disk_mb"
+        ]
+      },
+      "cc_AccountUsageResources": {
+        "description": "Lists current resource consumption for active and assigned instances.",
+        "type": "object",
+        "properties": {
+          "disk_mb": {
+            "type": "integer"
+          },
+          "instances": {
+            "type": "integer"
+          },
+          "memory_mib": {
+            "type": "integer"
+          },
+          "vcpus": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "required": [
+          "vcpus",
+          "memory_mib",
+          "disk_mb",
+          "instances"
+        ]
+      },
+      "cc_AccountUsageResponse": {
+        "description": "Current live usage, maximum limits, and utilization percentages for a Cloudchamber account. Usage includes active and assigned instances and is a current snapshot, not a historical or billable metric.",
+        "type": "object",
+        "properties": {
+          "maximum": {
+            "$ref": "#/components/schemas/cc_AccountUsageMaximum"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/cc_AccountUsageResources"
+          },
+          "utilization": {
+            "$ref": "#/components/schemas/cc_AccountUsageUtilization"
+          }
+        },
+        "required": [
+          "usage",
+          "maximum",
+          "utilization"
+        ]
+      },
+      "cc_AccountUsageUtilization": {
+        "description": "Live resource utilization percentages. A value of 100 represents full utilization. Values can exceed 100 when usage exceeds quota. The API omits fields whose corresponding maximum is zero.",
+        "type": "object",
+        "properties": {
+          "disk_mb": {
+            "description": "Live disk usage as a percentage of maximum disk.",
+            "type": "number",
+            "format": "float"
+          },
+          "memory_mib": {
+            "description": "Live memory usage as a percentage of maximum memory.",
+            "type": "number",
+            "format": "float"
+          },
+          "vcpus": {
+            "description": "Live vCPU usage as a percentage of maximum vCPU.",
+            "type": "number",
+            "format": "float"
+          }
+        }
       },
       "cc_Application": {
         "description": "Describes an application and the parameters that govern how it places its instances.",
@@ -649422,9 +649707,6 @@
           "flatten_all_cnames": {
             "$ref": "#/components/schemas/dns-settings_flatten_all_cnames"
           },
-          "foundation_dns": {
-            "$ref": "#/components/schemas/dns-settings_foundation_dns"
-          },
           "internal_dns": {
             "$ref": "#/components/schemas/dns-settings_internal_dns_base"
           },
@@ -649470,7 +649752,6 @@
             },
             "required": [
               "flatten_all_cnames",
-              "foundation_dns",
               "multi_provider",
               "secondary_overrides",
               "soa",
@@ -649669,14 +649950,6 @@
         "type": "boolean",
         "example": false,
         "x-auditable": true
-      },
-      "dns-settings_foundation_dns": {
-        "description": "Deprecated. Use nameservers.type to configure Advanced Nameservers.",
-        "type": "boolean",
-        "example": false,
-        "deprecated": true,
-        "x-auditable": true,
-        "x-stainless-deprecation-message": "foundation_dns is deprecated. Use nameservers.type: cloudflare.advanced to turn on Advanced Nameservers and cloudflare.standard to turn it off. This field will be removed in a future API version.\n"
       },
       "dns-settings_identifier": {
         "description": "Identifier.",
@@ -688383,7 +688656,7 @@
             "type": "object"
           }
         ],
-        "title": "GcpPartner"
+        "title": "InterconnectCreate_GcpPartner_Body"
       },
       "nsc_InterconnectCreate_Physical_Body": {
         "type": "object",
@@ -688420,7 +688693,7 @@
             "type": "object"
           }
         ],
-        "title": "Physical"
+        "title": "InterconnectCreate_Physical_Body"
       },
       "nsc_InterconnectList": {
         "type": "object",
@@ -688446,13 +688719,7 @@
         "allOf": [
           {
             "properties": {
-              "account": {
-                "type": "string"
-              },
               "name": {
-                "type": "string"
-              },
-              "owner": {
                 "type": "string"
               },
               "type": {
@@ -688461,8 +688728,7 @@
             },
             "required": [
               "type",
-              "name",
-              "account"
+              "name"
             ],
             "type": "object"
           },
@@ -688486,20 +688752,14 @@
             "type": "object"
           }
         ],
-        "title": "GcpPartner"
+        "title": "Interconnect_GcpPartner_Body"
       },
       "nsc_Interconnect_Physical_Body": {
         "type": "object",
         "allOf": [
           {
             "properties": {
-              "account": {
-                "type": "string"
-              },
               "name": {
-                "type": "string"
-              },
-              "owner": {
                 "type": "string"
               },
               "type": {
@@ -688508,8 +688768,7 @@
             },
             "required": [
               "type",
-              "name",
-              "account"
+              "name"
             ],
             "type": "object"
           },
@@ -688547,7 +688806,7 @@
             "type": "object"
           }
         ],
-        "title": "Physical"
+        "title": "Interconnect_Physical_Body"
       },
       "nsc_MagicSettings": {
         "type": "object",
@@ -731205,6 +731464,7 @@
             "$ref": "#/components/schemas/teams-devices_split_tunnel_description"
           }
         },
+        "additionalProperties": false,
         "required": [
           "address"
         ]
@@ -731219,6 +731479,7 @@
             "$ref": "#/components/schemas/teams-devices_split_tunnel_host"
           }
         },
+        "additionalProperties": false,
         "required": [
           "host"
         ]
@@ -731471,6 +731732,7 @@
             "maxItems": 5
           }
         },
+        "additionalProperties": false,
         "nullable": true,
         "required": [
           "enabled",
@@ -731592,6 +731854,7 @@
             "$ref": "#/components/schemas/teams-devices_include_split_tunnel_description"
           }
         },
+        "additionalProperties": false,
         "required": [
           "address"
         ]
@@ -731606,6 +731869,7 @@
             "$ref": "#/components/schemas/teams-devices_include_split_tunnel_host"
           }
         },
+        "additionalProperties": false,
         "required": [
           "host"
         ]
@@ -733608,6 +733872,7 @@
             "x-auditable": true
           }
         },
+        "additionalProperties": false,
         "nullable": true,
         "required": [
           "allowed",
@@ -733706,55 +733971,64 @@
           "disable_for_time": {
             "description": "Sets the time limit, in seconds, that a user can use an override code to bypass WARP.",
             "type": "number",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_enabled": {
             "description": "Controls whether the external emergency disconnect feature is enabled.",
             "type": "boolean",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_fingerprint": {
             "description": "The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the external_emergency_signal_url. If provided, the WARP client will use this value to verify the server's identity. The device will ignore any response if the server's certificate fingerprint does not exactly match this value.",
             "type": "string",
             "example": "abcd1234567890abcd1234567890abcd1234567890abcd1234567890abcd1234",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_interval": {
             "description": "The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (e.g., \"5m\", \"2m30s\", \"1h\"). Minimum 30 seconds.",
             "type": "string",
             "example": "5m",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "external_emergency_signal_url": {
             "description": "The HTTPS URL from which to fetch the emergency disconnect signal. Must use HTTPS and have an IPv4 or IPv6 address as the host.",
             "type": "string",
             "example": "https://192.0.2.1/signal",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "gateway_proxy_enabled": {
             "description": "Enable gateway proxy filtering on TCP.",
             "type": "boolean",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "gateway_udp_proxy_enabled": {
             "description": "Enable gateway proxy filtering on UDP.",
             "type": "boolean",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "root_certificate_installation_enabled": {
             "description": "Enable installation of cloudflare managed root certificate.",
             "type": "boolean",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "use_zt_virtual_ip": {
             "description": "Enable using CGNAT virtual IPv4.",
             "type": "boolean",
             "example": true,
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           }
         }
       },
@@ -734263,7 +734537,7 @@
         "x-auditable": true
       },
       "tls-certificates-and-hostnames_certificate_authority-3": {
-        "description": "The Certificate Authority that Total TLS certificates will be issued through.",
+        "description": "The Certificate Authority that Total TLS certificates will be issued through. Not returned in responses when Total TLS is disabled.",
         "type": "string",
         "example": "google",
         "enum": [
@@ -734470,6 +734744,54 @@
         "example": "3822ff90-ea29-44df-9e55-21300bb9419b",
         "readOnly": true,
         "x-auditable": true
+      },
+      "tls-certificates-and-hostnames_certificate_pack_order": {
+        "description": "A newly ordered certificate pack. Certificates are not included until they are issued; get the certificate pack to retrieve them.",
+        "type": "object",
+        "properties": {
+          "certificate_authority": {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_certificate_authority-2"
+          },
+          "hosts": {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_hosts-2"
+          },
+          "id": {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_certificate_pack_identifier"
+          },
+          "status": {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_status-5"
+          },
+          "type": {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_type-2"
+          },
+          "validation_method": {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_validation_method"
+          },
+          "validity_days": {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_validity_days"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "hosts",
+          "status"
+        ]
+      },
+      "tls-certificates-and-hostnames_certificate_pack_order_response_single": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_api-response-single"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/tls-certificates-and-hostnames_certificate_pack_order"
+              }
+            },
+            "type": "object"
+          }
+        ]
       },
       "tls-certificates-and-hostnames_certificate_pack_quota_response": {
         "allOf": [
@@ -734822,15 +735144,17 @@
             "$ref": "#/components/schemas/tls-certificates-and-hostnames_request_type"
           },
           "requested_validity": {
-            "$ref": "#/components/schemas/tls-certificates-and-hostnames_requested_validity"
+            "description": "The number of days for which the certificate was requested to be valid. Only returned in the Create Certificate response, where it echoes the requested value. Not returned when getting or listing certificates.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/tls-certificates-and-hostnames_requested_validity_days"
+              }
+            ]
+          },
+          "revoked_at": {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_revoked_at"
           }
-        },
-        "required": [
-          "hostnames",
-          "csr",
-          "requested_validity",
-          "request_type"
-        ]
+        }
       },
       "tls-certificates-and-hostnames_certificates-2": {
         "description": "The uploaded root CA certificate.",
@@ -734895,6 +735219,11 @@
             "$ref": "#/components/schemas/tls-certificates-and-hostnames_validity_days-2"
           }
         }
+      },
+      "tls-certificates-and-hostnames_client_certificate_hostname": {
+        "type": "string",
+        "example": "api.example.com",
+        "x-auditable": true
       },
       "tls-certificates-and-hostnames_client_certificate_identifier": {
         "description": "Client Certificate Tag",
@@ -735005,7 +735334,7 @@
         "x-auditable": true
       },
       "tls-certificates-and-hostnames_ct_alerting_emails": {
-        "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma.\n",
+        "description": "Email addresses that receive CT alert notifications for the zone. A maximum of 100 addresses may be configured. Each address must be a valid RFC 5322 email address and must not contain a comma. Omitted from responses when no addresses are configured.\n",
         "type": "array",
         "items": {
           "format": "email",
@@ -735186,8 +735515,7 @@
           "signature",
           "certificate",
           "expires_on",
-          "uploaded_on",
-          "updated_at"
+          "uploaded_on"
         ]
       },
       "tls-certificates-and-hostnames_custom_cert_and_key": {
@@ -736394,7 +736722,13 @@
                 "type": "object",
                 "properties": {
                   "hostnames": {
-                    "$ref": "#/components/schemas/tls-certificates-and-hostnames_hostnames-2"
+                    "description": "Hostnames are returned in lowercase punycode, in no particular order. Null when there are no associations.",
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/tls-certificates-and-hostnames_client_certificate_hostname"
+                    },
+                    "nullable": true,
+                    "x-stainless-collection-type": "set"
                   }
                 }
               }
@@ -736488,12 +736822,12 @@
         "minItems": 1
       },
       "tls-certificates-and-hostnames_hostnames-2": {
+        "description": "Unordered set of hostnames. Hostnames are stored as lowercase punycode.",
         "type": "array",
         "items": {
-          "example": "api.example.com",
-          "type": "string",
-          "x-auditable": true
-        }
+          "$ref": "#/components/schemas/tls-certificates-and-hostnames_client_certificate_hostname"
+        },
+        "x-stainless-collection-type": "set"
       },
       "tls-certificates-and-hostnames_hosts": {
         "type": "array",
@@ -736997,9 +737331,17 @@
       },
       "tls-certificates-and-hostnames_requested_validity": {
         "description": "The number of days for which the certificate should be valid.",
+        "default": 5475,
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/tls-certificates-and-hostnames_requested_validity_days"
+          }
+        ]
+      },
+      "tls-certificates-and-hostnames_requested_validity_days": {
+        "description": "A permitted certificate validity period, in days.",
         "type": "number",
         "example": 5475,
-        "default": 5475,
         "enum": [
           7,
           30,
@@ -737792,7 +738134,7 @@
         "x-auditable": true
       },
       "tls-certificates-and-hostnames_updated_at-2": {
-        "description": "When the certificate was last modified.",
+        "description": "When the certificate was last modified. Only returned when uploading a certificate.",
         "type": "string",
         "format": "date-time",
         "example": "2014-01-01T05:20:00Z",
@@ -737986,7 +738328,7 @@
         "x-auditable": true
       },
       "tls-certificates-and-hostnames_validity_period": {
-        "description": "The validity period in days for the certificates ordered via Total TLS.",
+        "description": "The validity period in days for the certificates ordered via Total TLS. Not returned when Total TLS is disabled.",
         "type": "integer",
         "enum": [
           90
@@ -748142,6 +748484,20 @@
                       "stateless"
                     ]
                   },
+                  "gateway": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "nullable": true
+                    },
+                    "properties": {
+                      "requestId": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "requestId"
+                    ]
+                  },
                   "outcome": {
                     "type": "string"
                   },
@@ -748257,6 +748613,20 @@
                     "enum": [
                       "durableObject",
                       "stateless"
+                    ]
+                  },
+                  "gateway": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "nullable": true
+                    },
+                    "properties": {
+                      "requestId": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "requestId"
                     ]
                   },
                   "outcome": {
@@ -749382,7 +749752,7 @@
           {
             "properties": {
               "modules": {
-                "description": "Code, sourcemaps, and other content used at runtime.",
+                "description": "Code, sourcemaps, and other content used at runtime.\n\nSource maps use content type `application/source-map`. Responses include them only when requested with\n`include=modules,sourcemaps`. Workers stores the source map fields used to remap stack traces, so a\nreturned source map is equivalent to the uploaded file but not byte-identical.\n",
                 "type": "array",
                 "items": {
                   "properties": {
@@ -749611,7 +749981,12 @@
             "$ref": "#/components/schemas/workers_compatibility_date"
           },
           "compatibility_flags": {
-            "$ref": "#/components/schemas/workers_compatibility_flags"
+            "description": "Enables or disables specific Workers runtime features, such as upcoming features or changes outside the `compatibility_date`.\n\nResponses list only the flags this version sets explicitly and exclude behavior that `compatibility_date` enables. Responses omit the field when the list is empty, so a missing field means the version sets zero flags.\n",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/workers_compatibility_flags"
+              }
+            ]
           },
           "containers": {
             "$ref": "#/components/schemas/workers_containers"
@@ -749687,7 +750062,7 @@
             ]
           },
           "modules": {
-            "description": "Code, sourcemaps, and other content used at runtime.\n\nThis includes [`_headers`](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and\n[`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure\n[Static Assets](https://developers.cloudflare.com/workers/static-assets/). `_headers` and `_redirects` files should be\nincluded as modules named `_headers` and `_redirects` with content type `text/plain`.\n",
+            "description": "Code, sourcemaps, and other content used at runtime.\n\nSource maps use content type `application/source-map`. Responses include them only when requested with\n`include=modules,sourcemaps`. Workers stores the source map fields used to remap stack traces, so a returned\nsource map is equivalent to the uploaded file but not byte-identical.\n\nThis includes [`_headers`](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and\n[`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure\n[Static Assets](https://developers.cloudflare.com/workers/static-assets/). `_headers` and `_redirects` files should be\nincluded as modules named `_headers` and `_redirects` with content type `text/plain`.\n",
             "type": "array",
             "items": {
               "properties": {
@@ -750582,6 +750957,7 @@
             "vpc_network": "#/components/schemas/workers_binding_kind_vpc_network",
             "vpc_service": "#/components/schemas/workers_binding_kind_vpc_service",
             "wasm_module": "#/components/schemas/workers_binding_kind_wasm_module",
+            "worker_loader": "#/components/schemas/workers_binding_kind_worker_loader",
             "workflow": "#/components/schemas/workers_binding_kind_workflow"
           },
           "propertyName": "type"
@@ -750700,6 +751076,9 @@
           },
           {
             "$ref": "#/components/schemas/workers_binding_kind_vpc_network"
+          },
+          {
+            "$ref": "#/components/schemas/workers_binding_kind_worker_loader"
           }
         ]
       },
@@ -751716,7 +752095,8 @@
             "type": "string",
             "example": "production",
             "default": "production",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "name": {
             "$ref": "#/components/schemas/workers_binding_name"
@@ -751910,6 +752290,26 @@
           "name",
           "type",
           "part"
+        ]
+      },
+      "workers_binding_kind_worker_loader": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/workers_binding_name"
+          },
+          "type": {
+            "description": "The kind of resource that the binding provides.",
+            "type": "string",
+            "enum": [
+              "worker_loader"
+            ],
+            "x-auditable": true
+          }
+        },
+        "required": [
+          "name",
+          "type"
         ]
       },
       "workers_binding_kind_workflow": {
@@ -755580,13 +755980,14 @@
                         "x-auditable": true
                       },
                       "compatibility_flags": {
-                        "description": "Flags that enable or disable certain features in the Workers runtime.",
+                        "description": "Lists the flags this version sets explicitly to enable or disable\nWorkers runtime features. Excludes behavior that `compatibility_date`\nenables. Responses omit the field when the list is empty, so a missing\nfield means the version sets zero flags.\n",
                         "type": "array",
                         "items": {
                           "example": "x",
                           "readOnly": true,
                           "type": "string"
                         },
+                        "default": [],
                         "readOnly": true,
                         "x-stainless-collection-type": "set"
                       },
@@ -758119,7 +758520,7 @@
         "example": false,
         "default": false,
         "x-auditable": true,
-        "x-stainless-terraform-configurability": "optional"
+        "x-stainless-terraform-configurability": "computed_optional"
       },
       "zero-trust-gateway_dns_destination_ip_pair": {
         "type": "object",
@@ -758852,7 +759253,7 @@
           "$ref": "#/components/schemas/zero-trust-gateway_ipv4_network"
         },
         "nullable": true,
-        "x-stainless-terraform-configurability": "optional"
+        "x-stainless-terraform-configurability": "computed_optional"
       },
       "zero-trust-gateway_ipv6_endpoint": {
         "type": "object",
@@ -759117,7 +759518,7 @@
         "required": [
           "mode"
         ],
-        "x-stainless-terraform-configurability": "optional"
+        "x-stainless-terraform-configurability": "computed_optional"
       },
       "zero-trust-gateway_max-ttl-secs": {
         "description": "Account-level cap on DNS response TTLs, in seconds. Gateway rewrites DNS responses so returned record TTLs do not exceed this value. Null means no cap. Each DNS location can inherit, override, or disable it through the location `max_ttl` setting.",
@@ -771139,6 +771540,26 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/access_api-response-common-failure"
+            }
+          }
+        }
+      },
+      "alexandria_application_write_busy": {
+        "description": "Too many concurrent application writes for this account. This request made no\nchanges. Wait for the delay in Retry-After before retrying.\n",
+        "headers": {
+          "Retry-After": {
+            "description": "Minimum number of seconds to wait before retrying the request.",
+            "example": 1,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/alexandria_api_response_common_failure"
             }
           }
         }

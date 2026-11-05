@@ -20,8 +20,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("errors") is null) { _explicitNullValueErrors = default!; _explicitNullProperties?.Remove("errors"); }
             else if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
-            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessageEscaped = default!; _explicitNullProperties?.Remove("message"); }
-            else if (parseNode.GetChildNode("message") is { } nullNodeMessageEscaped && nullNodeMessageEscaped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageEscaped = null;
             if (parseNode.GetChildNode("messages") is null) { _explicitNullValueMessages = default!; _explicitNullProperties?.Remove("messages"); }
             else if (parseNode.GetChildNode("messages") is { } nullNodeMessages && nullNodeMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messages = null;
             if (parseNode.GetChildNode("result") is null) { _explicitNullValueResult = default!; _explicitNullProperties?.Remove("result"); }
@@ -35,44 +33,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem>? _explicitNullValueErrors = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseErrors? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseErrors? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem> _explicitNullValueErrors = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseErrors Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseErrors _explicitNullValueErrors = default!;
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>The primary error message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageEscaped { get => _explicitNullValueMessageEscaped; set { _explicitNullValueMessageEscaped = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
-        private string? _explicitNullValueMessageEscaped = default!;
-#nullable restore
-#else
-        public string MessageEscaped { get => _explicitNullValueMessageEscaped; set { _explicitNullValueMessageEscaped = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
-        private string _explicitNullValueMessageEscaped = default!;
-#endif
+        public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem>? Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; AdditionalData?.Remove("messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem>? _explicitNullValueMessages = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseMessages? Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; AdditionalData?.Remove("messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseMessages? _explicitNullValueMessages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem> Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; AdditionalData?.Remove("messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem> _explicitNullValueMessages = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseMessages Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; AdditionalData?.Remove("messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseMessages _explicitNullValueMessages = default!;
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueResult = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseResult? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueResult = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseResult Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseResult _explicitNullValueResult = default!;
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; AdditionalData?.Remove("success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
@@ -102,10 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseErrors>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseErrors.CreateFromDiscriminatorValue); } },
+                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseMessages>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseMessages.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseResult.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -116,10 +103,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem>("errors", Errors);
-            writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseErrors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseMessages>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomOriginTrustStoreDelete4XxResponseResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
