@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Value of the zone setting.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class ZoneCacheSettingsChangeVariantsSetting200ResponseResult_value : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;

@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Organization&apos;s display name, limited to 65 UTF-8 bytes. An omitted, empty, or unchanged value is a no-op.</summary>
+        /// <summary>The Organization name, limited to 65 UTF-8 bytes. An omitted, empty, or unchanged value is a no-op.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }

@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,include_tags,include_total,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page,page_size,page_token,per_page,status}", pathParameters)
+        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,include_tags,include_total,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token,status}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,include_tags,include_total,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page,page_size,page_token,per_page,status}", rawUrl)
+        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,include_tags,include_total,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token,status}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve the accounts immediately attached to a specific organization. Accountsattached to sub-organizations are not included. Use `page_token` and `page_size` for cursorpagination, or provide `page` and `per_page` together for legacy offset pagination. Cursorpagination takes precedence when requested. The default response uses Account fields;`Accept: application/json; legacy=true` requests the LegacyAccount representation.
+        /// Retrieve the accounts immediately attached to a specific organization. Accountsattached to sub-organizations are not included. Use `page_token` and `page_size` for cursorpagination. The default response uses Account fields;`Accept: application/json; legacy=true` requests the LegacyAccount representation.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the accounts immediately attached to a specific organization. Accountsattached to sub-organizations are not included. Use `page_token` and `page_size` for cursorpagination, or provide `page` and `per_page` together for legacy offset pagination. Cursorpagination takes precedence when requested. The default response uses Account fields;`Accept: application/json; legacy=true` requests the LegacyAccount representation.
+        /// Retrieve the accounts immediately attached to a specific organization. Accountsattached to sub-organizations are not included. Use `page_token` and `page_size` for cursorpagination. The default response uses Account fields;`Accept: application/json; legacy=true` requests the LegacyAccount representation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             return new global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.AccountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the accounts immediately attached to a specific organization. Accountsattached to sub-organizations are not included. Use `page_token` and `page_size` for cursorpagination, or provide `page` and `per_page` together for legacy offset pagination. Cursorpagination takes precedence when requested. The default response uses Account fields;`Accept: application/json; legacy=true` requests the LegacyAccount representation.
+        /// Retrieve the accounts immediately attached to a specific organization. Accountsattached to sub-organizations are not included. Use `page_token` and `page_size` for cursorpagination. The default response uses Account fields;`Accept: application/json; legacy=true` requests the LegacyAccount representation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AccountsRequestBuilderGetQueryParameters 
@@ -140,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             /// <summary>Include Account tags from the resource tag mirror. Omit this parameter to preserve the existing Account response shape.</summary>
             [QueryParameter("include_tags")]
             public bool? IncludeTags { get; set; }
-            /// <summary>Whether to calculate and return the exact result_info.total_size for cursorpagination. Defaults to true. When false, total_size is omitted. page_size andinclude_total may change between pages; next_page_token remains the authoritativecontinuation signal.Legacy page/per_page requests always calculate total_count.</summary>
+            /// <summary>Whether to calculate and return the exact result_info.total_size for cursorpagination. Defaults to true. When false, total_size is omitted. page_size andinclude_total may change between pages; next_page_token remains the authoritativecontinuation signal.</summary>
             [QueryParameter("include_total")]
             public bool? IncludeTotal { get; set; }
             /// <summary>(case-sensitive) Filter the list of accounts to where the name is equal to aparticular string. At most one of `name`, `name.startsWith`, `name.endsWith`,or `name.contains` may be supplied per request.</summary>
@@ -186,9 +186,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             /// <summary>Field to order results by. Currently supported values: `account_name`.</summary>
             [QueryParameter("order_by")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountNameOrderBy? OrderBy { get; set; }
-            /// <summary>Legacy offset page number. Must be provided with `per_page`. Values below 1 are treated as1. Cursor pagination takes precedence when requested.</summary>
-            [QueryParameter("page")]
-            public int? Page { get; set; }
             /// <summary>The amount of items to return. Defaults to 10.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
@@ -202,9 +199,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             [QueryParameter("page_token")]
             public string PageToken { get; set; }
 #endif
-            /// <summary>Legacy offset page size. Must be provided with `page`. Values are clamped to the range1-100. Cursor pagination takes precedence when requested.</summary>
-            [QueryParameter("per_page")]
-            public int? PerPage { get; set; }
             /// <summary>Filter accounts by lifecycle status. Defaults to `active`.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccountsStatusParameter? Status { get; set; }

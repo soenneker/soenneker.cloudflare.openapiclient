@@ -8,6 +8,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandPro
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.Queries;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.TakedownNotices;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.TotalQueries;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.Url;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -49,6 +50,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.TotalQueries.TotalQueriesRequestBuilder TotalQueries
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.TotalQueries.TotalQueriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The url property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.Url.UrlRequestBuilder Url
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.Url.UrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.BrandProtectionRequestBuilder"/> and sets the default values.

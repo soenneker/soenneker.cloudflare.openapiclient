@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Datasets.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Datasets.Populate;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Datasets.Preferences;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -20,6 +21,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Datasets.Populate.PopulateRequestBuilder Populate
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Datasets.Populate.PopulateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The preferences property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Datasets.Preferences.PreferencesRequestBuilder Preferences
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Datasets.Preferences.PreferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.events.datasets.item collection</summary>
         /// <param name="position">Dataset UUID.</param>

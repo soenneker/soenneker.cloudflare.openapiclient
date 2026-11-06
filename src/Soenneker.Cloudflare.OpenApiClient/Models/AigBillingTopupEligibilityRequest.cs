@@ -17,13 +17,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("contract_version") is null) { _explicitNullValueContractVersion = default!; _explicitNullProperties?.Remove("contract_version"); }
+            else if (parseNode.GetChildNode("contract_version") is { } nullNodeContractVersion && nullNodeContractVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContractVersion = null;
+            if (parseNode.GetChildNode("payment_method_id") is null) { _explicitNullValuePaymentMethodId = default!; _explicitNullProperties?.Remove("payment_method_id"); }
+            else if (parseNode.GetChildNode("payment_method_id") is { } nullNodePaymentMethodId && nullNodePaymentMethodId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodId = null;
             if (parseNode.GetChildNode("payment_methods") is null) { _explicitNullValuePaymentMethods = default!; _explicitNullProperties?.Remove("payment_methods"); }
             else if (parseNode.GetChildNode("payment_methods") is { } nullNodePaymentMethods && nullNodePaymentMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethods = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Account-level payment methods, forwarded by the dashboard.</summary>
+        /// <summary>The contract_version property</summary>
+        public double? ContractVersion { get => _explicitNullValueContractVersion; set { _explicitNullValueContractVersion = value; AdditionalData?.Remove("contract_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contract_version"); else _explicitNullProperties?.Remove("contract_version"); } }
+        private double? _explicitNullValueContractVersion = default!;
+        /// <summary>The payment_method_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentMethodId { get => _explicitNullValuePaymentMethodId; set { _explicitNullValuePaymentMethodId = value; AdditionalData?.Remove("payment_method_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method_id"); else _explicitNullProperties?.Remove("payment_method_id"); } }
+        private string? _explicitNullValuePaymentMethodId = default!;
+#nullable restore
+#else
+        public string PaymentMethodId { get => _explicitNullValuePaymentMethodId; set { _explicitNullValuePaymentMethodId = value; AdditionalData?.Remove("payment_method_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method_id"); else _explicitNullProperties?.Remove("payment_method_id"); } }
+        private string _explicitNullValuePaymentMethodId = default!;
+#endif
+        /// <summary>Account-level payment methods, forwarded by the dashboard for legacy eligibility only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupEligibilityRequestPaymentMethodsItem>? PaymentMethods { get => _explicitNullValuePaymentMethods; set { _explicitNullValuePaymentMethods = value; AdditionalData?.Remove("payment_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_methods"); else _explicitNullProperties?.Remove("payment_methods"); } }
@@ -58,6 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "contract_version", n => { ContractVersion = n.GetDoubleValue(); } },
+                { "payment_method_id", n => { PaymentMethodId = n.GetStringValue(); } },
                 { "payment_methods", n => { PaymentMethods = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupEligibilityRequestPaymentMethodsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupEligibilityRequestPaymentMethodsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -68,6 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("contract_version", ContractVersion);
+            writer.WriteStringValue("payment_method_id", PaymentMethodId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupEligibilityRequestPaymentMethodsItem>("payment_methods", PaymentMethods);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

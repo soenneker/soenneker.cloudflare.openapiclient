@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AccessIdResponse5AllOf2Result : IAdditionalDataHolder, IParsable
+    public partial class PostBrandProtectionUrlSubmit201ResponseMessagesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -17,34 +17,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
+            else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the CA.</summary>
+        /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse5AllOf2Result"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostBrandProtectionUrlSubmit201ResponseMessagesItem"/> and sets the default values.
         /// </summary>
-        public AccessIdResponse5AllOf2Result()
+        public PostBrandProtectionUrlSubmit201ResponseMessagesItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse5AllOf2Result"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostBrandProtectionUrlSubmit201ResponseMessagesItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse5AllOf2Result CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostBrandProtectionUrlSubmit201ResponseMessagesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse5AllOf2Result(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostBrandProtectionUrlSubmit201ResponseMessagesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,6 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("message", Message);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

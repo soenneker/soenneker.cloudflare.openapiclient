@@ -64,12 +64,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountListResultInfo? ResultInfo { get => _explicitNullValueResultInfo; set { _explicitNullValueResultInfo = value; AdditionalData?.Remove("result_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_info"); else _explicitNullProperties?.Remove("result_info"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountListResultInfo? _explicitNullValueResultInfo = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiPageTokenResultInfo? ResultInfo { get => _explicitNullValueResultInfo; set { _explicitNullValueResultInfo = value; AdditionalData?.Remove("result_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_info"); else _explicitNullProperties?.Remove("result_info"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiPageTokenResultInfo? _explicitNullValueResultInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountListResultInfo ResultInfo { get => _explicitNullValueResultInfo; set { _explicitNullValueResultInfo = value; AdditionalData?.Remove("result_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_info"); else _explicitNullProperties?.Remove("result_info"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountListResultInfo _explicitNullValueResultInfo = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiPageTokenResultInfo ResultInfo { get => _explicitNullValueResultInfo; set { _explicitNullValueResultInfo = value; AdditionalData?.Remove("result_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_info"); else _explicitNullProperties?.Remove("result_info"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiPageTokenResultInfo _explicitNullValueResultInfo = default!;
 #endif
         /// <summary>The success property</summary>
         public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; AdditionalData?.Remove("success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200ResponseErrorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200ResponseErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4Message>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4Message.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200ResponseResultItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200ResponseResultItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountListResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountListResultInfo.CreateFromDiscriminatorValue); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiPageTokenResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiPageTokenResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200ResponseErrorsItem>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4Message>("messages", Messages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200ResponseResultItem>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountListResultInfo>("result_info", ResultInfo);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiPageTokenResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

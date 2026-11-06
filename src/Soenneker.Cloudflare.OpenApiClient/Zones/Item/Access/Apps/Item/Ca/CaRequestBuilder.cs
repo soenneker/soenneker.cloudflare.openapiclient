@@ -36,17 +36,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps.Item.Ca
         /// <summary>
         /// Deletes a short-lived certificate CA.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse5"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse5?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse2?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse5> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse2> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps.Item.Ca
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse5>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse5.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse2>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdResponse2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches a short-lived certificate CA and its public key.

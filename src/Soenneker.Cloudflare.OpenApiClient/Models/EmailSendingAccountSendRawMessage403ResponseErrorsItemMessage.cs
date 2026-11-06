@@ -20,5 +20,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         EmailSendingErrorEmailAccountSuspended,
         #pragma warning restore CS1591
+        [EnumMember(Value = "email.sending.error.email.recipient_plan_restricted")]
+        #pragma warning disable CS1591
+        EmailSendingErrorEmailRecipientPlanRestricted,
+        #pragma warning restore CS1591
     }
 }

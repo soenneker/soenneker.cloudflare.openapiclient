@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeAegisSetting200ResponseResult_modified_on ModifiedOn { get => _explicitNullValueModifiedOn; set { _explicitNullValueModifiedOn = value; AdditionalData?.Remove("modified_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_on"); else _explicitNullProperties?.Remove("modified_on"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeAegisSetting200ResponseResult_modified_on _explicitNullValueModifiedOn = default!;
 #endif
-        /// <summary>Value of the zone setting.</summary>
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeAegisSetting200ResponseResult_value? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }

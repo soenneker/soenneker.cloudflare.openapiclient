@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
         private string _explicitNullValueCity = default!;
 #endif
-        /// <summary>Any additional comments about the infringement not exceeding 2000 characters. Comments are kept internal to Cloudflare and not shared with the host or customer as part of regular processing. For delegated reports, comments may be shared in full.</summary>
+        /// <summary>Any additional comments about the infringement not exceeding 2000 characters. With the exception of delegated reports, comments are kept internal to Cloudflare and not shared with the host or customer as part of regular processing. For the limited circumstances where we delegate reports to customers with established abuse-handling programs, comments may be shared in full.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }

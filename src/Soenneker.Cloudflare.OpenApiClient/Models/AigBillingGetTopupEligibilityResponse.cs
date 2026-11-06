@@ -54,12 +54,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult? _explicitNullValueResult = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResult? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult _explicitNullValueResult = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResult Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResult _explicitNullValueResult = default!;
 #endif
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseErrorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResult.CreateFromDiscriminatorValue); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -115,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseErrorsItem>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResult>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponseResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

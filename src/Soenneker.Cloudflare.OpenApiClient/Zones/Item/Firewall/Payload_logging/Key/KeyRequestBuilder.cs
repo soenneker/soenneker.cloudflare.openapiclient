@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Payload_logging
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallPayloadLoggingKeyResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallPayloadLoggingKeyResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches the public key that payload logging uses to encrypt matched payloads for the zone.
+        /// Fetches the public key that payload logging uses to encrypt matched payloads for the zone
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallPayloadLoggingKeyResponseSingle"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Payload_logging
             return requestInfo;
         }
         /// <summary>
-        /// Fetches the public key that payload logging uses to encrypt matched payloads for the zone.
+        /// Fetches the public key that payload logging uses to encrypt matched payloads for the zone
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

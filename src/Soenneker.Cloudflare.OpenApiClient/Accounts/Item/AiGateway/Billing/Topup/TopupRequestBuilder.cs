@@ -68,6 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -85,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
                 { "402", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };

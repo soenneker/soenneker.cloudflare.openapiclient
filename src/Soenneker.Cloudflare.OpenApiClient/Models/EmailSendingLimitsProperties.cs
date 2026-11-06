@@ -29,6 +29,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesQuota Quota { get; private set; }
 #endif
+        /// <summary>Which recipients the account can send to, derived from the account&apos;s Email Sending entitlement. arbitrary: any recipient. verified_only: only the account&apos;s verified destination addresses.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesRecipientMode? RecipientMode { get; private set; }
         /// <summary>The account&apos;s current daily sending usage. Null when there is no resolved quota or usage is temporarily unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "quota", n => { Quota = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesQuota>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesQuota.CreateFromDiscriminatorValue); } },
+                { "recipient_mode", n => { RecipientMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesRecipientMode>(); } },
                 { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesUsage>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesUsage.CreateFromDiscriminatorValue); } },
             };
         }
