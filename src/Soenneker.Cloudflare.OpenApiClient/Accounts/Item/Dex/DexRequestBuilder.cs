@@ -7,6 +7,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Notifications;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults;
@@ -48,6 +49,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.HttpTestsRequestBuilder HttpTests
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.HttpTestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The notifications property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Notifications.NotificationsRequestBuilder Notifications
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Rules.RulesRequestBuilder Rules
