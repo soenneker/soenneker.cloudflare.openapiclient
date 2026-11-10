@@ -27,6 +27,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("can_change_participant_permissions") is { } nullNodeCanChangeParticipantPermissions && nullNodeCanChangeParticipantPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanChangeParticipantPermissions = null;
             if (parseNode.GetChildNode("can_edit_display_name") is null) { _explicitNullValueCanEditDisplayName = default!; _explicitNullProperties?.Remove("can_edit_display_name"); }
             else if (parseNode.GetChildNode("can_edit_display_name") is { } nullNodeCanEditDisplayName && nullNodeCanEditDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanEditDisplayName = null;
+            if (parseNode.GetChildNode("can_edit_meeting_title") is null) { _explicitNullValueCanEditMeetingTitle = default!; _explicitNullProperties?.Remove("can_edit_meeting_title"); }
+            else if (parseNode.GetChildNode("can_edit_meeting_title") is { } nullNodeCanEditMeetingTitle && nullNodeCanEditMeetingTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanEditMeetingTitle = null;
             if (parseNode.GetChildNode("can_livestream") is null) { _explicitNullValueCanLivestream = default!; _explicitNullProperties?.Remove("can_livestream"); }
             else if (parseNode.GetChildNode("can_livestream") is { } nullNodeCanLivestream && nullNodeCanLivestream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanLivestream = null;
             if (parseNode.GetChildNode("can_record") is null) { _explicitNullValueCanRecord = default!; _explicitNullProperties?.Remove("can_record"); }
@@ -88,6 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The can_edit_display_name property</summary>
         public bool? CanEditDisplayName { get => _explicitNullValueCanEditDisplayName; set { _explicitNullValueCanEditDisplayName = value; AdditionalData?.Remove("can_edit_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_edit_display_name"); else _explicitNullProperties?.Remove("can_edit_display_name"); } }
         private bool? _explicitNullValueCanEditDisplayName = default!;
+        /// <summary>Allows renaming the meeting for the current session</summary>
+        public bool? CanEditMeetingTitle { get => _explicitNullValueCanEditMeetingTitle; set { _explicitNullValueCanEditMeetingTitle = value; AdditionalData?.Remove("can_edit_meeting_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_edit_meeting_title"); else _explicitNullProperties?.Remove("can_edit_meeting_title"); } }
+        private bool? _explicitNullValueCanEditMeetingTitle = default!;
         /// <summary>The can_livestream property</summary>
         public bool? CanLivestream { get => _explicitNullValueCanLivestream; set { _explicitNullValueCanLivestream = value; AdditionalData?.Remove("can_livestream"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_livestream"); else _explicitNullProperties?.Remove("can_livestream"); } }
         private bool? _explicitNullValueCanLivestream = default!;
@@ -216,6 +221,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "can_accept_production_requests", n => { CanAcceptProductionRequests = n.GetBoolValue(); } },
                 { "can_change_participant_permissions", n => { CanChangeParticipantPermissions = n.GetBoolValue(); } },
                 { "can_edit_display_name", n => { CanEditDisplayName = n.GetBoolValue(); } },
+                { "can_edit_meeting_title", n => { CanEditMeetingTitle = n.GetBoolValue(); } },
                 { "can_livestream", n => { CanLivestream = n.GetBoolValue(); } },
                 { "can_record", n => { CanRecord = n.GetBoolValue(); } },
                 { "can_spotlight", n => { CanSpotlight = n.GetBoolValue(); } },
@@ -251,6 +257,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("can_accept_production_requests", CanAcceptProductionRequests);
             writer.WriteBoolValue("can_change_participant_permissions", CanChangeParticipantPermissions);
             writer.WriteBoolValue("can_edit_display_name", CanEditDisplayName);
+            writer.WriteBoolValue("can_edit_meeting_title", CanEditMeetingTitle);
             writer.WriteBoolValue("can_livestream", CanLivestream);
             writer.WriteBoolValue("can_record", CanRecord);
             writer.WriteBoolValue("can_spotlight", CanSpotlight);

@@ -7,6 +7,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Build
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Deploy_hooks;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Migrate_to_previews;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Previews;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Purge_build_cache;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Triggers;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -41,6 +42,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Previews.PreviewsRequestBuilder Previews
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Previews.PreviewsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The purge_build_cache property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Purge_build_cache.Purge_build_cacheRequestBuilder Purge_build_cache
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Purge_build_cache.Purge_build_cacheRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The triggers property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Triggers.TriggersRequestBuilder Triggers

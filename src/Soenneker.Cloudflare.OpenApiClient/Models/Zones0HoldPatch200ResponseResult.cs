@@ -41,15 +41,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private string _explicitNullValueHoldAfter = default!;
 #endif
         /// <summary>The include_subdomains property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; AdditionalData?.Remove("include_subdomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_subdomains"); else _explicitNullProperties?.Remove("include_subdomains"); } }
-        private string? _explicitNullValueIncludeSubdomains = default!;
-#nullable restore
-#else
-        public string IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; AdditionalData?.Remove("include_subdomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_subdomains"); else _explicitNullProperties?.Remove("include_subdomains"); } }
-        private string _explicitNullValueIncludeSubdomains = default!;
-#endif
+        public bool? IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; AdditionalData?.Remove("include_subdomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_subdomains"); else _explicitNullProperties?.Remove("include_subdomains"); } }
+        private bool? _explicitNullValueIncludeSubdomains = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -77,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "hold", n => { Hold = n.GetBoolValue(); } },
                 { "hold_after", n => { HoldAfter = n.GetStringValue(); } },
-                { "include_subdomains", n => { IncludeSubdomains = n.GetStringValue(); } },
+                { "include_subdomains", n => { IncludeSubdomains = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -89,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("hold", Hold);
             writer.WriteStringValue("hold_after", HoldAfter);
-            writer.WriteStringValue("include_subdomains", IncludeSubdomains);
+            writer.WriteBoolValue("include_subdomains", IncludeSubdomains);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

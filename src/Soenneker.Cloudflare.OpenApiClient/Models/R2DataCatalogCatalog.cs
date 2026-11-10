@@ -20,6 +20,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("bucket") is null) { _explicitNullValueBucket = default!; _explicitNullProperties?.Remove("bucket"); }
             else if (parseNode.GetChildNode("bucket") is { } nullNodeBucket && nullNodeBucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bucket = null;
+            if (parseNode.GetChildNode("catalog_uri") is null) { _explicitNullValueCatalogUri = default!; _explicitNullProperties?.Remove("catalog_uri"); }
+            else if (parseNode.GetChildNode("catalog_uri") is { } nullNodeCatalogUri && nullNodeCatalogUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CatalogUri = null;
             if (parseNode.GetChildNode("credential_status") is null) { _explicitNullValueCredentialStatus = default!; _explicitNullProperties?.Remove("credential_status"); }
             else if (parseNode.GetChildNode("credential_status") is { } nullNodeCredentialStatus && nullNodeCredentialStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialStatus = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
@@ -45,6 +47,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Bucket { get => _explicitNullValueBucket; set { _explicitNullValueBucket = value; AdditionalData?.Remove("bucket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucket"); else _explicitNullProperties?.Remove("bucket"); } }
         private string _explicitNullValueBucket = default!;
+#endif
+        /// <summary>Specifies the Iceberg REST catalog URI that clients use to connect to the catalog.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CatalogUri { get => _explicitNullValueCatalogUri; set { _explicitNullValueCatalogUri = value; AdditionalData?.Remove("catalog_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("catalog_uri"); else _explicitNullProperties?.Remove("catalog_uri"); } }
+        private string? _explicitNullValueCatalogUri = default!;
+#nullable restore
+#else
+        public string CatalogUri { get => _explicitNullValueCatalogUri; set { _explicitNullValueCatalogUri = value; AdditionalData?.Remove("catalog_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("catalog_uri"); else _explicitNullProperties?.Remove("catalog_uri"); } }
+        private string _explicitNullValueCatalogUri = default!;
 #endif
         /// <summary>Shows the credential configuration status.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCredentialStatus? CredentialStatus { get => _explicitNullValueCredentialStatus; set { _explicitNullValueCredentialStatus = value; AdditionalData?.Remove("credential_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_status"); else _explicitNullProperties?.Remove("credential_status"); } }
@@ -111,6 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
+                { "catalog_uri", n => { CatalogUri = n.GetStringValue(); } },
                 { "credential_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCredentialStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCredentialStatus = default; _explicitNullProperties?.Remove("credential_status"); AdditionalData["credential_status"] = unknown; } else { CredentialStatus = parsed; AdditionalData.Remove("credential_status"); } } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "jurisdiction", n => { Jurisdiction = n.GetStringValue(); } },
@@ -127,6 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket", Bucket);
+            writer.WriteStringValue("catalog_uri", CatalogUri);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCredentialStatus>("credential_status", CredentialStatus);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("jurisdiction", Jurisdiction);

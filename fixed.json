@@ -23230,6 +23230,126 @@
         "x-fern-sdk-method-name": "update"
       }
     },
+    "/accounts/{accountId}/ai-gateway/gateways/{gatewayId}/provider_configs/{id}/test": {
+      "post": {
+        "tags": [
+          "AI Gateway Provider Configs"
+        ],
+        "summary": "Check stored provider credentials",
+        "description": "Checks whether stored credentials can list models through the provider implementation in AI Gateway. Requires AI Gateway content update permission. Does not run inference, check credits or inference permissions, or return provider response bodies. HTTP 401 from the model-list request is classified as invalid, as is AWS Bedrock HTTP 403 with an UnrecognizedClientException error type. Other failures are inconclusive, including other HTTP 400 or 403 responses; a 403 alone does not distinguish rejected credentials from insufficient permissions. Unsupported providers or credential formats also return an inconclusive result.",
+        "operationId": "AigConfigTestProviders",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "3ebbcb006d4d46d7bb6a8c7f14676cb0"
+            }
+          },
+          {
+            "name": "gatewayId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-z0-9_]\u002B(?:-[a-z0-9_]\u002B)*$",
+              "type": "string",
+              "description": "Unique identifier of the AI Gateway within the account.",
+              "example": "my-gateway",
+              "x-auditable": true
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AigConfigTestProvidersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Credential probe outcome; error means validity is unknown",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigConfigTestProviders200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Input Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigConfigTestProviders400Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigConfigTestProviders404Response"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Provider key testing is not available in this environment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigConfigTestProviders501Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-api-token-group": [
+          "Secrets Store Write"
+        ],
+        "x-cfPermissionsRequired": {
+          "enum": [
+            "com.cloudflare.api.account.aig"
+          ]
+        },
+        "x-cfPlanAvailability": {
+          "business": true,
+          "enterprise": true,
+          "free": true,
+          "pro": true
+        },
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "ai-gateway.gateways.providers",
+        "x-fern-sdk-method-name": "test"
+      }
+    },
     "/accounts/{accountId}/ai-gateway/gateways/{gatewayId}/routes": {
       "get": {
         "tags": [
@@ -39659,6 +39779,7 @@
                     "warehouses": [
                       {
                         "bucket": "analytics-bucket",
+                        "catalog_uri": "https://catalog.cloudflarestorage.com/account123/analytics-bucket",
                         "id": "550e8400-e29b-41d4-a716-446655440000",
                         "jurisdiction": "default",
                         "maintenance_config": {
@@ -39807,6 +39928,7 @@
                   "messages": [],
                   "result": {
                     "bucket": "analytics-bucket",
+                    "catalog_uri": "https://catalog.cloudflarestorage.com/account123/analytics-bucket",
                     "credential_status": "present",
                     "id": "550e8400-e29b-41d4-a716-446655440000",
                     "jurisdiction": "default",
@@ -40423,6 +40545,7 @@
                   "errors": [],
                   "messages": [],
                   "result": {
+                    "catalog_uri": "https://catalog.cloudflarestorage.com/account123/my-bucket",
                     "id": "550e8400-e29b-41d4-a716-446655440000",
                     "name": "account123_my-bucket"
                   },
@@ -51358,9 +51481,9 @@
               }
             },
             "x-client-original-non-json-content": {
-              "image/jpg": {
+              "image/jpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/BrapiPostScreenshot200JpgResponseSchema"
+                  "$ref": "#/components/schemas/BrapiPostScreenshot200JpegResponseSchema"
                 }
               },
               "image/png": {
@@ -51770,7 +51893,7 @@
             "schema": {
               "type": "string",
               "description": "Comma-separated list of system-generated worker script tags (max 20).",
-              "example": "dd7160bb9cef458093557736f4b9e75b,42fb14fe81df47139d3be684e4c637a6,ff7cf9a7582f4c0d90a4b95cb17d659e"
+              "example": "0123456789abcdef0123456789abcdef"
             }
           }
         ],
@@ -51830,6 +51953,7 @@
           {
             "name": "buildUuid",
             "in": "path",
+            "description": "UUID of the build, as returned by builds list.",
             "required": true,
             "schema": {
               "type": "string",
@@ -51896,6 +52020,7 @@
           {
             "name": "buildUuid",
             "in": "path",
+            "description": "UUID of the build, as returned by builds list.",
             "required": true,
             "schema": {
               "type": "string",
@@ -51961,6 +52086,7 @@
           {
             "name": "buildUuid",
             "in": "path",
+            "description": "UUID of the build, as returned by builds list.",
             "required": true,
             "schema": {
               "type": "string",
@@ -52010,8 +52136,8 @@
           "Workers CI Read"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "builds.logs",
-        "x-fern-sdk-method-name": "get"
+        "x-fern-sdk-group-name": "builds",
+        "x-fern-sdk-method-name": "logs"
       }
     },
     "/accounts/{accountId}/builds/repos/connections": {
@@ -52131,7 +52257,8 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.repos.connections",
-        "x-fern-sdk-method-name": "delete"
+        "x-fern-sdk-method-name": "delete",
+        "x-forge-require-confirmation": "This operation deletes the repository connection."
       }
     },
     "/accounts/{accountId}/builds/repos/{providerType}/{providerAccountId}/{repoId}/config_autofill": {
@@ -52409,7 +52536,8 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.tokens",
-        "x-fern-sdk-method-name": "delete"
+        "x-fern-sdk-method-name": "delete",
+        "x-forge-require-confirmation": "This operation deletes the build token. Builds that use it will fail to deploy."
       }
     },
     "/accounts/{accountId}/builds/triggers": {
@@ -52469,6 +52597,9 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers",
         "x-fern-sdk-method-name": "create"
@@ -52526,6 +52657,9 @@
         ],
         "x-api-token-group": [
           "Workers CI Write"
+        ],
+        "x-fern-audiences": [
+          "sdk"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers",
@@ -52601,6 +52735,9 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers",
         "x-fern-sdk-method-name": "update"
@@ -52673,9 +52810,12 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "builds",
-        "x-fern-sdk-method-name": "create"
+        "x-fern-sdk-group-name": "builds.triggers",
+        "x-fern-sdk-method-name": "create-build"
       }
     },
     "/accounts/{accountId}/builds/triggers/{triggerUuid}/environment_variables": {
@@ -52735,6 +52875,9 @@
         "x-api-token-group": [
           "Workers CI Write",
           "Workers CI Read"
+        ],
+        "x-fern-audiences": [
+          "sdk"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers.environment-variables",
@@ -52809,6 +52952,9 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers.environment-variables",
         "x-fern-sdk-method-name": "upsert"
@@ -52877,6 +53023,9 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers.environment-variables",
         "x-fern-sdk-method-name": "delete"
@@ -52934,6 +53083,9 @@
         ],
         "x-api-token-group": [
           "Workers CI Write"
+        ],
+        "x-fern-audiences": [
+          "sdk"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers.cache",
@@ -53060,7 +53212,13 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.workers",
-        "x-fern-sdk-method-name": "create"
+        "x-fern-sdk-method-name": "create",
+        "x-forge-params": {
+          "script_tag": {
+            "description": "Script tag of the Worker.",
+            "positional": true
+          }
+        }
       }
     },
     "/accounts/{accountId}/builds/workers/{externalScriptId}/builds": {
@@ -53069,7 +53227,7 @@
           "Workers"
         ],
         "summary": "List builds for a Worker",
-        "description": "List paginated build records associated with a Worker tag.",
+        "description": "List paginated build records associated with a Worker.",
         "operationId": "ListBuildsByScript",
         "parameters": [
           {
@@ -53085,12 +53243,13 @@
           {
             "name": "externalScriptId",
             "in": "path",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "$ref": "#/components/parameters/builds_Page"
@@ -53130,6 +53289,83 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds",
         "x-fern-sdk-method-name": "list"
+      },
+      "post": {
+        "tags": [
+          "Workers"
+        ],
+        "summary": "Start a Worker build",
+        "description": "Start a production build for a branch or commit.",
+        "operationId": "CreateBuildByScript",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Account identifier.",
+              "example": "account-123"
+            }
+          },
+          {
+            "name": "externalScriptId",
+            "in": "path",
+            "description": "Script tag of the Worker.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuildsCreateBuildRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Build created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateBuildByScript200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/builds_BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/builds_Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/builds_NotFound"
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-api-token-group": [
+          "Workers CI Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "builds",
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/builds/workers/{externalScriptId}/triggers": {
@@ -53158,7 +53394,7 @@
             "schema": {
               "type": "string",
               "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
+              "example": "0123456789abcdef0123456789abcdef"
             }
           }
         ],
@@ -53190,6 +53426,9 @@
           "Workers CI Write",
           "Workers CI Read"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers",
         "x-fern-sdk-method-name": "list"
@@ -53217,13 +53456,13 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "Human-readable name of the worker.",
+            "description": "Name or script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "Human-readable name of the Worker.",
               "example": "my-worker"
-            }
+            },
+            "x-fern-parameter-name": "worker"
           }
         ],
         "responses": {
@@ -53279,13 +53518,13 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "Human-readable name of the worker.",
+            "description": "Name or script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "Human-readable name of the Worker.",
               "example": "my-worker"
-            }
+            },
+            "x-fern-parameter-name": "worker"
           }
         ],
         "requestBody": {
@@ -53361,18 +53600,18 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "Human-readable name of the worker.",
+            "description": "Name or script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "Human-readable name of the Worker.",
               "example": "my-worker"
-            }
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "name": "deployHookUuid",
             "in": "path",
-            "description": "Deploy hook UUID",
+            "description": "UUID of the deploy hook, as returned by deploy-hooks list.",
             "required": true,
             "schema": {
               "type": "string",
@@ -53413,7 +53652,8 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.deploy-hooks",
-        "x-fern-sdk-method-name": "delete"
+        "x-fern-sdk-method-name": "delete",
+        "x-forge-require-confirmation": "This operation deletes the deploy hook. Requests to its URL will no longer start builds."
       },
       "get": {
         "tags": [
@@ -53436,18 +53676,18 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "Human-readable name of the worker.",
+            "description": "Name or script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "Human-readable name of the Worker.",
               "example": "my-worker"
-            }
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "name": "deployHookUuid",
             "in": "path",
-            "description": "Deploy hook UUID",
+            "description": "UUID of the deploy hook, as returned by deploy-hooks list.",
             "required": true,
             "schema": {
               "type": "string",
@@ -53512,18 +53752,18 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "Human-readable name of the worker.",
+            "description": "Name or script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "Human-readable name of the Worker.",
               "example": "my-worker"
-            }
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "name": "deployHookUuid",
             "in": "path",
-            "description": "Deploy hook UUID",
+            "description": "UUID of the deploy hook, as returned by deploy-hooks list.",
             "required": true,
             "schema": {
               "type": "string",
@@ -53605,13 +53845,13 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "The Worker script tag (external script ID)",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           }
         ],
         "responses": {
@@ -53670,13 +53910,13 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "The Worker script tag (external script ID)",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           }
         ],
         "responses": {
@@ -53735,13 +53975,13 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "The Worker script tag (external script ID)",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "name": "patch_existing_previews",
@@ -53806,6 +54046,86 @@
         "x-fern-sdk-method-name": "update"
       }
     },
+    "/accounts/{accountId}/builds/workers/{externalScriptId}/builds/{buildUuid}/retry": {
+      "post": {
+        "tags": [
+          "Workers"
+        ],
+        "summary": "Retry a Worker build",
+        "description": "Start a new build from the branch and commit of a stopped build.",
+        "operationId": "RetryWorkerBuild",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Account identifier.",
+              "example": "account-123"
+            }
+          },
+          {
+            "name": "externalScriptId",
+            "in": "path",
+            "description": "Script tag of the Worker.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
+          },
+          {
+            "name": "buildUuid",
+            "in": "path",
+            "description": "UUID of the build, as returned by builds list.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Build UUID.",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Build created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetryWorkerBuild200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/builds_BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/builds_Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/builds_NotFound"
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-api-token-group": [
+          "Workers CI Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "builds",
+        "x-fern-sdk-method-name": "retry"
+      }
+    },
     "/accounts/{accountId}/builds/workers/{externalScriptId}/migrate_to_previews": {
       "post": {
         "tags": [
@@ -53828,13 +54148,13 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "The Worker script tag (external script ID)",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           }
         ],
         "requestBody": {
@@ -53881,8 +54201,9 @@
           "Workers CI Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers",
-        "x-fern-sdk-method-name": "migrate-to-previews"
+        "x-fern-sdk-group-name": "builds.workers",
+        "x-fern-sdk-method-name": "migrate-to-previews",
+        "x-forge-require-confirmation": "This operation switches the Worker to Previews and removes its legacy non-production trigger. It cannot be reversed."
       }
     },
     "/accounts/{accountId}/builds/workers/{externalScriptId}/previews": {
@@ -53907,13 +54228,13 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "The Worker script tag (external script ID)",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "$ref": "#/components/parameters/builds_Page"
@@ -53951,7 +54272,7 @@
           "Workers CI Read"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
+        "x-fern-sdk-group-name": "builds.previews",
         "x-fern-sdk-method-name": "list"
       }
     },
@@ -53977,24 +54298,24 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "The Worker script tag (external script ID)",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "name": "previewId",
             "in": "path",
-            "description": "The script tag of the Preview, which is a Worker in its own right",
+            "description": "ID of the Preview.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "preview"
           }
         ],
         "responses": {
@@ -54029,7 +54350,7 @@
           "Workers CI Read"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
+        "x-fern-sdk-group-name": "builds.previews",
         "x-fern-sdk-method-name": "get"
       },
       "patch": {
@@ -54053,24 +54374,24 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "The Worker script tag (external script ID)",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "name": "previewId",
             "in": "path",
-            "description": "The script tag of the Preview, which is a Worker in its own right",
+            "description": "ID of the Preview.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "preview"
           }
         ],
         "requestBody": {
@@ -54126,8 +54447,8 @@
           "Workers CI Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
-        "x-fern-sdk-method-name": "edit"
+        "x-fern-sdk-group-name": "builds.previews",
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/builds/workers/{externalScriptId}/previews/{previewId}/builds": {
@@ -54152,24 +54473,24 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "The Worker script tag (external script ID)",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "name": "previewId",
             "in": "path",
-            "description": "The script tag of the Preview, which is a Worker in its own right",
+            "description": "ID of the Preview.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "preview"
           },
           {
             "$ref": "#/components/parameters/builds_Page"
@@ -54210,7 +54531,7 @@
           "Workers CI Read"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
+        "x-fern-sdk-group-name": "builds.previews",
         "x-fern-sdk-method-name": "list-builds"
       },
       "post": {
@@ -54234,24 +54555,24 @@
           {
             "name": "externalScriptId",
             "in": "path",
-            "description": "The Worker script tag (external script ID)",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "name": "previewId",
             "in": "path",
-            "description": "The script tag of the Preview, which is a Worker in its own right",
+            "description": "ID of the Preview.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "System-generated tag of the Worker. This is not the Worker name.",
-              "example": "dd7160bb9cef458093557736f4b9e75b"
-            }
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "preview"
           }
         ],
         "requestBody": {
@@ -54298,8 +54619,68 @@
           "Workers CI Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
+        "x-fern-sdk-group-name": "builds.previews",
         "x-fern-sdk-method-name": "create-build"
+      }
+    },
+    "/accounts/{accountId}/builds/workers/{externalScriptId}/purge_build_cache": {
+      "post": {
+        "tags": [
+          "Workers"
+        ],
+        "summary": "Purge a Worker\u0027s build cache",
+        "description": "Delete cached dependencies and build artifacts for a Worker\u0027s production and Preview builds.",
+        "operationId": "PurgeWorkerBuildCache",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Account identifier.",
+              "example": "account-123"
+            }
+          },
+          {
+            "name": "externalScriptId",
+            "in": "path",
+            "description": "Script tag of the Worker.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/builds_SuccessEmpty"
+          },
+          "401": {
+            "$ref": "#/components/responses/builds_Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/builds_NotFound"
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-api-token-group": [
+          "Workers CI Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "builds.workers",
+        "x-fern-sdk-method-name": "purge-cache",
+        "x-forge-require-confirmation": "This operation purges the build cache for the Worker."
       }
     },
     "/accounts/{accountId}/bulk/subscriptions": {
@@ -83675,7 +84056,7 @@
           "Account"
         ],
         "summary": "Get live account usage",
-        "description": "Get current live resource usage and maximum account limits for the authenticated Cloudchamber account. Usage includes active and assigned instances.",
+        "description": "Get current live resource usage and maximum limits for your account. Usage includes active and assigned instances.",
         "operationId": "GetUsage",
         "responses": {
           "200": {
@@ -91603,8 +91984,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.asset-schemas",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/accounts/{accountId}/data-security/posture/asset_schemas/{assetClass}": {
@@ -91693,8 +92073,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.asset-schemas",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{accountId}/data-security/posture/content": {
@@ -92273,8 +92652,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.finding-types",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/data-security/posture/finding_types/validate": {
@@ -92372,8 +92750,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.finding-types",
-        "x-fern-sdk-method-name": "validate",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "validate"
       }
     },
     "/accounts/{accountId}/data-security/posture/finding_types/{findingTypeId}": {
@@ -92474,8 +92851,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.finding-types",
-        "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "delete"
       },
       "get": {
         "tags": [
@@ -92674,8 +93050,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.finding-types",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{accountId}/data-security/posture/finding_types/{findingTypeId}/remediation_types": {
@@ -96969,6 +97344,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "list"
       }
@@ -97022,6 +97398,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.default",
         "x-fern-sdk-method-name": "get"
       },
@@ -97086,6 +97463,7 @@
           "Zero Trust Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.default",
         "x-fern-sdk-method-name": "update"
       },
@@ -97150,6 +97528,7 @@
           "Zero Trust Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "create"
       }
@@ -97706,6 +98085,7 @@
           "Zero Trust Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "delete"
       },
@@ -97768,6 +98148,7 @@
           }
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "get"
       },
@@ -97843,6 +98224,7 @@
           "Zero Trust Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "update"
       }
@@ -118110,7 +118492,6 @@
           "in": "path",
           "required": true,
           "schema": {
-            "title": "identifier",
             "type": "string",
             "description": "Impersonation registry entry identifier.",
             "format": "uuid",
@@ -118476,7 +118857,6 @@
           "in": "path",
           "required": true,
           "schema": {
-            "title": "identifier",
             "type": "string",
             "description": "Sending domain restriction identifier.",
             "format": "uuid",
@@ -119260,7 +119640,6 @@
           "in": "path",
           "required": true,
           "schema": {
-            "title": "identifier",
             "type": "string",
             "description": "URL ignore pattern identifier.",
             "format": "uuid",
@@ -123738,7 +124117,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "queues.subscriptions",
-        "x-fern-sdk-method-name": "update",
+        "x-fern-sdk-method-name": "edit",
         "x-forge-params": {
           "enabled": {
             "default": null
@@ -163614,9 +163993,9 @@
           {
             "name": "environment",
             "in": "query",
-            "description": "Filter by supported environment (standard, fedramp).",
+            "description": "Environment to request (standard, fedramp). The result follows the account\u0027s FedRAMP entitlement: FedRAMP-enabled accounts always receive FedRAMP applications and other accounts receive standard applications. Any other non-empty value returns 400.",
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/ListApplicationsV2EnvironmentParameter"
             }
           },
           {
@@ -163758,6 +164137,14 @@
             "schema": {
               "$ref": "#/components/schemas/GetApplicationV2ApplicationIdParameter"
             }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "Environment to request (standard, fedramp). The result follows the account\u0027s FedRAMP entitlement: FedRAMP-enabled accounts always receive FedRAMP applications and other accounts receive standard applications. Any other non-empty value returns 400.",
+            "schema": {
+              "$ref": "#/components/schemas/GetApplicationV2EnvironmentParameter"
+            }
           }
         ],
         "responses": {
@@ -163834,6 +164221,9 @@
               }
             }
           },
+          "400": {
+            "description": "Invalid environment."
+          },
           "404": {
             "description": "Application not found."
           }
@@ -163879,6 +164269,14 @@
             "required": true,
             "schema": {
               "$ref": "#/components/schemas/GetApplicationAuthMethodsV2ApplicationIdParameter"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "Environment to request (standard, fedramp). The result follows the account\u0027s FedRAMP entitlement: FedRAMP-enabled accounts always receive FedRAMP applications and other accounts receive standard applications. Any other non-empty value returns 400.",
+            "schema": {
+              "$ref": "#/components/schemas/GetApplicationAuthMethodsV2EnvironmentParameter"
             }
           },
           {
@@ -163953,6 +164351,9 @@
               }
             }
           },
+          "400": {
+            "description": "Invalid environment."
+          },
           "404": {
             "description": "Application not found."
           }
@@ -164011,7 +164412,7 @@
           {
             "name": "environment",
             "in": "query",
-            "description": "Filter by environment.",
+            "description": "Environment to request (standard, fedramp). The result follows the account\u0027s FedRAMP entitlement: FedRAMP-enabled accounts always receive FedRAMP applications and other accounts receive standard applications. Any other non-empty value returns 400.",
             "schema": {
               "$ref": "#/components/schemas/GetApplicationSetupFlowsV2EnvironmentParameter"
             }
@@ -164099,6 +164500,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid environment."
           },
           "404": {
             "description": "Application not found or no flows available."
@@ -173786,6 +174190,7 @@
                     "warehouses": [
                       {
                         "bucket": "analytics-bucket",
+                        "catalog_uri": "https://catalog.cloudflarestorage.com/account123/analytics-bucket",
                         "id": "550e8400-e29b-41d4-a716-446655440000",
                         "jurisdiction": "default",
                         "maintenance_config": {
@@ -173936,6 +174341,7 @@
                   "messages": [],
                   "result": {
                     "bucket": "analytics-bucket",
+                    "catalog_uri": "https://catalog.cloudflarestorage.com/account123/analytics-bucket",
                     "credential_status": "present",
                     "id": "550e8400-e29b-41d4-a716-446655440000",
                     "jurisdiction": "default",
@@ -174562,6 +174968,7 @@
                   "errors": [],
                   "messages": [],
                   "result": {
+                    "catalog_uri": "https://catalog.cloudflarestorage.com/account123/my-bucket",
                     "id": "550e8400-e29b-41d4-a716-446655440000",
                     "name": "account123_my-bucket"
                   },
@@ -302215,7 +302622,7 @@
           {
             "name": "deployHookUuid",
             "in": "path",
-            "description": "Deploy hook UUID",
+            "description": "UUID of the deploy hook, as returned by deploy-hooks list.",
             "required": true,
             "schema": {
               "type": "string",
@@ -302247,6 +302654,9 @@
             "api_token": []
           },
           {}
+        ],
+        "x-fern-audiences": [
+          "sdk"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.deploy-hooks",
@@ -363799,7 +364209,7 @@
           },
           {
             "type": "string",
-            "description": "Please provide a more detailed description of the infringement between 1 and 5000 characters"
+            "description": "Justification must be at least 20 characters for phishing reports and cannot exceed 5000 characters"
           },
           {
             "type": "string",
@@ -363904,6 +364314,7 @@
           "url_pattern",
           "account",
           "zone",
+          "domain",
           "custom_expression"
         ],
         "type": "string",
@@ -363923,6 +364334,10 @@
             {
               "value": "zone",
               "name": "Zone"
+            },
+            {
+              "value": "domain",
+              "name": "Domain"
             },
             {
               "value": "custom_expression",
@@ -387849,7 +388264,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "path_excludes": {
             "type": "array",
@@ -388038,7 +388453,7 @@
           "script_tag": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           }
         },
         "description": "Request body for creating a Worker build configuration."
@@ -388070,7 +388485,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "latest_build": {
             "$ref": "#/components/schemas/BuildsDetailedDeployHookResponseLatestBuild"
@@ -388160,7 +388575,7 @@
           "preview_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           }
         },
         "description": "A single Preview of a Worker, without its build settings."
@@ -388254,7 +388669,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "modified_on": {
             "type": "string",
@@ -390254,7 +390669,7 @@
         "required": [
           "uid",
           "name",
-          "key",
+          "secret",
           "created",
           "modified"
         ],
@@ -390265,14 +390680,6 @@
             "description": "The date and time the item was created.",
             "format": "date-time",
             "example": "2014-01-02T02:20:00Z"
-          },
-          "key": {
-            "maxLength": 64,
-            "minLength": 64,
-            "type": "string",
-            "description": "Bearer token",
-            "example": "66bcf64aa8907b9f9d90ac17746a77ce394c393b92b3916633dc02846e608ad4",
-            "x-sensitive": true
           },
           "modified": {
             "type": "string",
@@ -390286,6 +390693,19 @@
             "default": "",
             "example": "my-turn-key",
             "x-auditable": true
+          },
+          "secret": {
+            "maxLength": 64,
+            "minLength": 64,
+            "type": "string",
+            "description": "Bearer token",
+            "example": "66bcf64aa8907b9f9d90ac17746a77ce394c393b92b3916633dc02846e608ad4",
+            "x-sensitive": true,
+            "x-stainless-naming": {
+              "terraform": {
+                "property_name": "key"
+              }
+            }
           },
           "uid": {
             "maxLength": 32,
@@ -390364,7 +390784,7 @@
             "$ref": "#/components/schemas/CcAccountUsageUtilization"
           }
         },
-        "description": "Current live usage, maximum limits, and utilization percentages for a Cloudchamber account. Usage includes active and assigned instances and is a current snapshot, not a historical or billable metric."
+        "description": "Current live usage, maximum limits, and utilization percentages for your account. Usage includes active and assigned instances and is a current snapshot, not a historical or billable metric."
       },
       "CcAccountUsageUtilization": {
         "type": "object",
@@ -413807,7 +414227,6 @@
             "x-stainless-deprecation-message": "This field is deprecated."
           },
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Impersonation registry entry identifier.",
             "format": "uuid",
@@ -413889,7 +414308,6 @@
             "x-auditable": true
           },
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Sending domain restriction identifier.",
             "format": "uuid",
@@ -414157,7 +414575,6 @@
         "type": "object",
         "properties": {
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Impersonation registry entry identifier.",
             "format": "uuid",
@@ -414173,7 +414590,6 @@
         "type": "object",
         "properties": {
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Sending domain restriction identifier.",
             "format": "uuid",
@@ -414204,7 +414620,6 @@
         "type": "object",
         "properties": {
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "URL ignore pattern identifier.",
             "format": "uuid",
@@ -414610,7 +415025,6 @@
             "x-stainless-deprecation-message": "This field is deprecated."
           },
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Impersonation registry entry identifier.",
             "format": "uuid",
@@ -415566,7 +415980,6 @@
             "x-auditable": true
           },
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Sending domain restriction identifier.",
             "format": "uuid",
@@ -416285,7 +416698,6 @@
             "x-stainless-deprecation-message": "This field is deprecated."
           },
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Impersonation registry entry identifier.",
             "format": "uuid",
@@ -416364,7 +416776,6 @@
             "x-auditable": true
           },
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Sending domain restriction identifier.",
             "format": "uuid",
@@ -416510,7 +416921,6 @@
             "x-auditable": true
           },
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "URL ignore pattern identifier.",
             "format": "uuid",
@@ -457570,6 +457980,12 @@
             "description": "Specifies the associated R2 bucket name.",
             "example": "my-data-bucket"
           },
+          "catalog_uri": {
+            "type": "string",
+            "description": "Specifies the Iceberg REST catalog URI that clients use to connect to the catalog.",
+            "example": "https://catalog.cloudflarestorage.com/account123/my-data-bucket",
+            "x-client-original-format": "uri"
+          },
           "credential_status": {
             "$ref": "#/components/schemas/R2DataCatalogCatalogCredentialStatus"
           },
@@ -457614,6 +458030,12 @@
         ],
         "type": "object",
         "properties": {
+          "catalog_uri": {
+            "type": "string",
+            "description": "Specifies the Iceberg REST catalog URI that clients use to connect to the catalog.",
+            "example": "https://catalog.cloudflarestorage.com/account123/my-bucket",
+            "x-client-original-format": "uri"
+          },
           "id": {
             "type": "string",
             "description": "Use this to uniquely identify the activated catalog.",
@@ -460072,6 +460494,9 @@
             "description": "Time in seconds, for which a session remains active, after the last participant has left the meeting.",
             "default": 60
           },
+          "sip": {
+            "$ref": "#/components/schemas/RealtimekitMeetingSip"
+          },
           "status": {
             "$ref": "#/components/schemas/RealtimekitMeetingStatus"
           },
@@ -460094,6 +460519,33 @@
             "readOnly": true
           }
         }
+      },
+      "RealtimekitMeetingSip": {
+        "required": [
+          "sip_uri",
+          "username",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string",
+            "description": "Password for SIP digest authentication. Keep it secret.",
+            "readOnly": true
+          },
+          "sip_uri": {
+            "type": "string",
+            "description": "SIP URI to dial. Configure it in your SIP provider or PBX.",
+            "readOnly": true
+          },
+          "username": {
+            "type": "string",
+            "description": "Username for SIP digest authentication.",
+            "readOnly": true
+          }
+        },
+        "description": "SIP dial-in details. \u0060null\u0060 if SIP is not enabled for the meeting.",
+        "nullable": true
       },
       "RealtimekitPacketLossCumulative": {
         "type": "object",
@@ -472947,7 +473399,7 @@
             "x-auditable": true
           },
           "watermark": {
-            "$ref": "#/components/schemas/StreamWatermarkAtUpload2"
+            "$ref": "#/components/schemas/StreamWatermarkAtUpload"
           }
         }
       },
@@ -474538,18 +474990,6 @@
           }
         }
       },
-      "StreamWatermarkAtUpload2": {
-        "type": "object",
-        "properties": {
-          "uid": {
-            "maxLength": 32,
-            "type": "string",
-            "description": "The unique identifier for the watermark profile.",
-            "example": "ea95132c15732412d22c1476fa83f27a",
-            "x-auditable": true
-          }
-        }
-      },
       "StreamWatermarkBasicUpload": {
         "required": [
           "file"
@@ -475730,6 +476170,13 @@
           "enable_device_credential_authentication": {
             "type": "boolean",
             "description": "Determines whether the WARP client can silently reauthenticate the user with device credentials (Microsoft Entra) instead of prompting for browser-based reauthentication.",
+            "default": false,
+            "example": false,
+            "x-auditable": true
+          },
+          "enable_netbt": {
+            "type": "boolean",
+            "description": "Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.",
             "default": false,
             "example": false,
             "x-auditable": true
@@ -478965,7 +479412,7 @@
           },
           "certificates": {
             "type": "string",
-            "description": "The uploaded root CA certificate.",
+            "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
             "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
           },
           "expires_on": {
@@ -496499,7 +496946,7 @@
         },
         "description": "Defines the expiration time stamp and default duration of a DNS policy. Takes precedence over the policy\u0027s \u0060schedule\u0060 configuration, if any. This  does not apply to HTTP or network policies. Settable only for \u0060dns\u0060 rules.",
         "nullable": true,
-        "x-stainless-terraform-configurability": "computed_optional"
+        "x-stainless-terraform-configurability": "optional"
       },
       "ZeroTrustGatewayExtendedEmailMatching": {
         "type": "object",
@@ -497943,7 +498390,7 @@
           }
         },
         "description": "Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.",
-        "x-stainless-terraform-configurability": "computed_optional"
+        "x-stainless-terraform-configurability": "optional"
       },
       "ZeroTrustGatewayRules": {
         "required": [
@@ -497971,6 +498418,7 @@
           "description": {
             "type": "string",
             "description": "Specify the rule description.",
+            "default": "",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -498140,6 +498588,7 @@
           "time_zone": {
             "type": "string",
             "description": "Specify the time zone for rule evaluation. When a [valid time zone city name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) is provided, Gateway always uses the current time for that time zone. When this parameter is omitted, Gateway uses the time zone determined from the user\u0027s IP address. Colo time zone is used when the user\u0027s IP address does not resolve to a location.",
+            "default": "",
             "example": "America/New York",
             "x-auditable": true
           },
@@ -498158,7 +498607,7 @@
         },
         "description": "Defines the schedule for activating DNS policies. Settable only for \u0060dns\u0060 and \u0060dns_resolver\u0060 rules.",
         "nullable": true,
-        "x-stainless-terraform-configurability": "computed_optional"
+        "x-stainless-terraform-configurability": "optional"
       },
       "ZeroTrustGatewaySettings": {
         "type": "object",
@@ -498977,7 +499426,7 @@
             "$ref": "#/components/schemas/Zones0RttValueComposed"
           }
         },
-        "description": "0-RTT session resumption enabled for this zone."
+        "description": "0-RTT session resumption enabled for this zone.\nChanging this setting does not enable or disable TLS 1.3. Writing the \u0060tls_1_3\u0060 setting also changes 0-RTT: \u0060zrt\u0060 enables it, and \u0060on\u0060 or \u0060off\u0060 disables it."
       },
       "Zones0RttValue": {
         "enum": [
@@ -501236,7 +501685,7 @@
             "$ref": "#/components/schemas/ZonesProxyReadTimeoutValueComposed"
           }
         },
-        "description": "Maximum time between two read operations from origin."
+        "description": "Maximum time in seconds between two read operations from origin."
       },
       "ZonesPseudoIpv4": {
         "title": "Pseudo IPv4 Value",
@@ -502265,7 +502714,7 @@
           },
           {
             "type": "number",
-            "description": "Value of the zone setting.\nNotes: Value must be between 1 and 6000",
+            "description": "Value of the zone setting, in seconds.\nNotes: Value must be between 1 and 6000",
             "default": 125
           },
           {
@@ -502638,7 +503087,7 @@
             "$ref": "#/components/schemas/ZonesTls13ValueComposed"
           }
         },
-        "description": "Enables Crypto TLS 1.3 feature for a zone."
+        "description": "Enables Crypto TLS 1.3 feature for a zone.\nThis setting also controls 0-RTT. \u0060zrt\u0060 enables TLS 1.3 and 0-RTT, \u0060on\u0060 enables TLS 1.3 and disables 0-RTT, and \u0060off\u0060 disables both.\nReads return \u0060zrt\u0060 when TLS 1.3 and 0-RTT are both enabled, so setting \u0060on\u0060 while 0-RTT is enabled turns 0-RTT off."
       },
       "ZonesTls13Value": {
         "enum": [
@@ -507293,6 +507742,11 @@
           "ai_config": {
             "$ref": "#/components/schemas/RealtimekitAiConfig"
           },
+          "enable_sip": {
+            "type": "boolean",
+            "description": "Lets phones and SIP systems dial in to the meeting. The response includes the SIP URI and credentials in \u0060sip\u0060. Ignored when replacing a meeting with \u0060PUT\u0060.",
+            "default": false
+          },
           "live_stream_on_start": {
             "type": "boolean",
             "description": "Specifies if the meeting should start getting livestreamed on start.",
@@ -507584,6 +508038,10 @@
         "properties": {
           "ai_config": {
             "$ref": "#/components/schemas/RealtimekitAiConfig"
+          },
+          "enable_sip": {
+            "type": "boolean",
+            "description": "Turns SIP dial-in on or off. Turning it off deletes the SIP URI and credentials; calls already in progress continue. Turning it on again creates a new SIP URI and credentials."
           },
           "live_stream_on_start": {
             "type": "boolean",
@@ -528141,7 +528599,7 @@
           },
           "certificates": {
             "type": "string",
-            "description": "The uploaded root CA certificate.",
+            "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
             "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
           },
           "expires_on": {
@@ -528210,7 +528668,7 @@
           },
           "certificates": {
             "type": "string",
-            "description": "The uploaded root CA certificate.",
+            "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
             "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
           },
           "expires_on": {
@@ -532825,7 +533283,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "modified_on": {
             "type": "string",
@@ -537583,6 +538041,10 @@
           "can_edit_display_name": {
             "type": "boolean"
           },
+          "can_edit_meeting_title": {
+            "type": "boolean",
+            "description": "Allows renaming the meeting for the current session"
+          },
           "can_livestream": {
             "type": "boolean"
           },
@@ -537718,6 +538180,10 @@
           },
           "can_edit_display_name": {
             "type": "boolean"
+          },
+          "can_edit_meeting_title": {
+            "type": "boolean",
+            "description": "Allows renaming the meeting for the current session"
           },
           "can_livestream": {
             "type": "boolean"
@@ -545730,6 +546196,7 @@
             "type": "string",
             "description": "The URL where webhooks will be sent.",
             "example": "https://example.com",
+            "x-fern-ignore": true,
             "x-stainless-skip": true,
             "x-client-original-format": "uri"
           },
@@ -551216,8 +551683,7 @@
             "items": {
               "$ref": "#/components/schemas/McpPortalsApiCreatePortalsRequestServersItem"
             },
-            "description": "MCP servers attached to the portal and their portal-specific settings.",
-            "x-stainless-collection-type": "set"
+            "description": "MCP servers attached to the portal and their portal-specific settings."
           }
         }
       },
@@ -551374,8 +551840,7 @@
             "items": {
               "$ref": "#/components/schemas/McpPortalsApiUpdatePortalsRequestServersItem"
             },
-            "description": "MCP servers attached to the portal and their portal-specific settings.",
-            "x-stainless-collection-type": "set"
+            "description": "MCP servers attached to the portal and their portal-specific settings."
           }
         }
       },
@@ -557431,6 +557896,91 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AigConfigUpdateProviders404ResponseErrorsItem"
+            }
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "AigConfigTestProvidersRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "AigConfigTestProviders200Response": {
+        "required": [
+          "success",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "result": {
+            "$ref": "#/components/schemas/AigConfigTestProviders200ResponseResult"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AigConfigTestProviders400Response": {
+        "required": [
+          "success",
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AigConfigTestProviders400ResponseErrorsItem"
+            }
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "AigConfigTestProviders404Response": {
+        "required": [
+          "success",
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AigConfigTestProviders404ResponseErrorsItem"
+            }
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        }
+      },
+      "AigConfigTestProviders501Response": {
+        "required": [
+          "success",
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AigConfigTestProviders501ResponseErrorsItem"
             }
           },
           "success": {
@@ -573067,6 +573617,39 @@
           }
         }
       },
+      "CreateBuildByScript200Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuildsApiError"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/CreateBuildByScript200ResponseResult"
+          },
+          "result_info": {
+            "$ref": "#/components/schemas/BuildsPaginationInfo"
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
       "ListTriggersByScript200Response": {
         "required": [
           "success",
@@ -573354,6 +573937,39 @@
           },
           "result": {
             "$ref": "#/components/schemas/UpdateWorkerBuild200ResponseResult"
+          },
+          "result_info": {
+            "$ref": "#/components/schemas/BuildsPaginationInfo"
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "RetryWorkerBuild200Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuildsApiError"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/RetryWorkerBuild200ResponseResult"
           },
           "result_info": {
             "$ref": "#/components/schemas/BuildsPaginationInfo"
@@ -591420,6 +592036,13 @@
             "example": false,
             "x-auditable": true
           },
+          "enable_netbt": {
+            "type": "boolean",
+            "description": "Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.",
+            "default": false,
+            "example": false,
+            "x-auditable": true
+          },
           "exclude": {
             "type": "array",
             "items": {
@@ -591585,6 +592208,13 @@
           "enable_device_credential_authentication": {
             "type": "boolean",
             "description": "Determines whether the WARP client can silently reauthenticate the user with device credentials (Microsoft Entra) instead of prompting for browser-based reauthentication.",
+            "default": false,
+            "example": false,
+            "x-auditable": true
+          },
+          "enable_netbt": {
+            "type": "boolean",
+            "description": "Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.",
             "default": false,
             "example": false,
             "x-auditable": true
@@ -591780,6 +592410,13 @@
           "enable_device_credential_authentication": {
             "type": "boolean",
             "description": "Determines whether the WARP client can silently reauthenticate the user with device credentials (Microsoft Entra) instead of prompting for browser-based reauthentication.",
+            "default": false,
+            "example": false,
+            "x-auditable": true
+          },
+          "enable_netbt": {
+            "type": "boolean",
+            "description": "Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.",
             "default": false,
             "example": false,
             "x-auditable": true
@@ -603341,6 +603978,7 @@
           "description": {
             "type": "string",
             "description": "Specify the rule description.",
+            "default": "",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -603510,7 +604148,7 @@
         "properties": {
           "description": {
             "type": "string",
-            "description": "Specify the rule description.",
+            "description": "Update the rule description. If omitted, the description is unchanged. Set to an empty string to clear the description.",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -603571,6 +604209,7 @@
           "description": {
             "type": "string",
             "description": "Specify the rule description.",
+            "default": "",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -608864,7 +609503,7 @@
           },
           "certificates": {
             "type": "string",
-            "description": "The uploaded root CA certificate.",
+            "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
             "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
           },
           "name": {
@@ -677613,6 +678252,13 @@
             "example": false,
             "x-auditable": true
           },
+          "enable_netbt": {
+            "type": "boolean",
+            "description": "Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.",
+            "default": false,
+            "example": false,
+            "x-auditable": true
+          },
           "enabled": {
             "type": "boolean",
             "description": "Whether the policy will be applied to matching devices.",
@@ -677750,6 +678396,18 @@
               "$ref": "#/components/schemas/TeamsDevicesSplitTunnelInclude"
             },
             "description": "List of routes included in the WARP client\u0027s tunnel."
+          },
+          "lan_allow_minutes": {
+            "type": "number",
+            "description": "The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset.",
+            "example": 30,
+            "x-auditable": true
+          },
+          "lan_allow_subnet_size": {
+            "type": "number",
+            "description": "The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.",
+            "example": 24,
+            "x-auditable": true
           },
           "policy_id": {
             "maxLength": 36,
@@ -677991,6 +678649,13 @@
           "enable_device_credential_authentication": {
             "type": "boolean",
             "description": "Determines whether the WARP client can silently reauthenticate the user with device credentials (Microsoft Entra) instead of prompting for browser-based reauthentication.",
+            "default": false,
+            "example": false,
+            "x-auditable": true
+          },
+          "enable_netbt": {
+            "type": "boolean",
+            "description": "Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.",
             "default": false,
             "example": false,
             "x-auditable": true
@@ -680803,7 +681468,7 @@
       },
       "ZonesProxyReadTimeoutValueComposed": {
         "type": "number",
-        "description": "Value of the zone setting.\nNotes: Value must be between 1 and 6000",
+        "description": "Value of the zone setting, in seconds.\nNotes: Value must be between 1 and 6000",
         "default": 125
       },
       "ZonesPseudoIpv4ValueComposed": {
@@ -681805,6 +682470,9 @@
             "type": "number",
             "description": "Time in seconds, for which a session remains active, after the last participant has left the meeting.",
             "default": 60
+          },
+          "sip": {
+            "$ref": "#/components/schemas/RealtimekitMeetingSip"
           },
           "status": {
             "$ref": "#/components/schemas/RealtimekitMeetingStatus"
@@ -691877,6 +692545,9 @@
             "nullable": true,
             "example": "my-worker"
           },
+          "deploy_tool": {
+            "$ref": "#/components/schemas/BuildsConfigAutofillResponseDeployTool"
+          },
           "env_worker_names": {
             "$ref": "#/components/schemas/BuildsConfigAutofillResponseEnvWorkerNamesProperty"
           },
@@ -691972,7 +692643,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "modified_on": {
             "type": "string",
@@ -692077,7 +692748,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "modified_on": {
             "type": "string",
@@ -692237,7 +692908,7 @@
           "script_tag": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           }
         }
       },
@@ -692245,6 +692916,61 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BuildsBuildResponse"
+        }
+      },
+      "CreateBuildByScript200ResponseResult": {
+        "type": "object",
+        "properties": {
+          "build_outcome": {
+            "$ref": "#/components/schemas/BuildsBuildResponseBuildOutcome"
+          },
+          "build_trigger_metadata": {
+            "$ref": "#/components/schemas/BuildsBuildTriggerMetadataResponse"
+          },
+          "build_uuid": {
+            "type": "string",
+            "description": "Build UUID.",
+            "format": "uuid"
+          },
+          "created_on": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deploy_hook": {
+            "$ref": "#/components/schemas/BuildsBuildResponseDeployHook"
+          },
+          "initializing_on": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modified_on": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "preview_url": {
+            "type": "string",
+            "description": "URL serving the Worker version this build deployed. Only returned by Get build by UUID, and only once the build has produced a preview artifact.",
+            "example": "https://abc123-my-worker.my-subdomain.workers.dev",
+            "x-client-original-format": "uri"
+          },
+          "pull_request": {
+            "$ref": "#/components/schemas/BuildsBuildResponsePullRequest"
+          },
+          "running_on": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/BuildsBuildStatus"
+          },
+          "stopped_on": {
+            "$ref": "#/components/schemas/BuildsStoppedOn"
+          },
+          "trigger": {
+            "$ref": "#/components/schemas/BuildsBuildResponseTrigger"
+          }
         }
       },
       "ListTriggersByScript200ResponseResult": {
@@ -692286,7 +693012,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "modified_on": {
             "type": "string",
@@ -692321,7 +693047,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "modified_on": {
             "type": "string",
@@ -692356,7 +693082,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "modified_on": {
             "type": "string",
@@ -692391,7 +693117,7 @@
           "external_script_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "modified_on": {
             "type": "string",
@@ -692422,7 +693148,7 @@
           "script_tag": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           }
         }
       },
@@ -692446,7 +693172,62 @@
           "script_tag": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
+          }
+        }
+      },
+      "RetryWorkerBuild200ResponseResult": {
+        "type": "object",
+        "properties": {
+          "build_outcome": {
+            "$ref": "#/components/schemas/BuildsBuildResponseBuildOutcome"
+          },
+          "build_trigger_metadata": {
+            "$ref": "#/components/schemas/BuildsBuildTriggerMetadataResponse"
+          },
+          "build_uuid": {
+            "type": "string",
+            "description": "Build UUID.",
+            "format": "uuid"
+          },
+          "created_on": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deploy_hook": {
+            "$ref": "#/components/schemas/BuildsBuildResponseDeployHook"
+          },
+          "initializing_on": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modified_on": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "preview_url": {
+            "type": "string",
+            "description": "URL serving the Worker version this build deployed. Only returned by Get build by UUID, and only once the build has produced a preview artifact.",
+            "example": "https://abc123-my-worker.my-subdomain.workers.dev",
+            "x-client-original-format": "uri"
+          },
+          "pull_request": {
+            "$ref": "#/components/schemas/BuildsBuildResponsePullRequest"
+          },
+          "running_on": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/BuildsBuildStatus"
+          },
+          "stopped_on": {
+            "$ref": "#/components/schemas/BuildsStoppedOn"
+          },
+          "trigger": {
+            "$ref": "#/components/schemas/BuildsBuildResponseTrigger"
           }
         }
       },
@@ -692470,7 +693251,7 @@
           "script_tag": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           }
         }
       },
@@ -692501,7 +693282,7 @@
           "preview_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "settings": {
             "$ref": "#/components/schemas/BuildsWorkerBuildSettings"
@@ -692529,7 +693310,7 @@
           "preview_id": {
             "type": "string",
             "description": "System-generated tag of the Worker. This is not the Worker name.",
-            "example": "dd7160bb9cef458093557736f4b9e75b"
+            "example": "0123456789abcdef0123456789abcdef"
           },
           "settings": {
             "$ref": "#/components/schemas/BuildsWorkerBuildSettings"
@@ -695272,7 +696053,6 @@
         ],
         "properties": {
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "URL ignore pattern identifier.",
             "format": "uuid",
@@ -695293,7 +696073,6 @@
         ],
         "properties": {
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "URL ignore pattern identifier.",
             "format": "uuid",
@@ -698849,6 +699628,7 @@
           "description": {
             "type": "string",
             "description": "Specify the rule description.",
+            "default": "",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -699106,6 +699886,7 @@
           "description": {
             "type": "string",
             "description": "Specify the rule description.",
+            "default": "",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -699280,6 +700061,7 @@
           "description": {
             "type": "string",
             "description": "Specify the rule description.",
+            "default": "",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -699454,6 +700236,7 @@
           "description": {
             "type": "string",
             "description": "Specify the rule description.",
+            "default": "",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -699628,6 +700411,7 @@
           "description": {
             "type": "string",
             "description": "Specify the rule description.",
+            "default": "",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -702177,7 +702961,7 @@
           },
           "certificates": {
             "type": "string",
-            "description": "The uploaded root CA certificate.",
+            "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
             "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
           },
           "expires_on": {
@@ -702292,7 +703076,7 @@
           },
           "certificates": {
             "type": "string",
-            "description": "The uploaded root CA certificate.",
+            "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
             "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
           },
           "expires_on": {
@@ -702400,7 +703184,7 @@
           },
           "certificates": {
             "type": "string",
-            "description": "The uploaded root CA certificate.",
+            "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
             "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
           },
           "expires_on": {
@@ -715072,7 +715856,7 @@
             "type": "string"
           },
           "include_subdomains": {
-            "type": "string",
+            "type": "boolean",
             "example": false
           }
         }
@@ -715089,7 +715873,7 @@
             "example": "2023-01-31T15:56:36Z"
           },
           "include_subdomains": {
-            "type": "string",
+            "type": "boolean",
             "example": false
           }
         }
@@ -715105,7 +715889,7 @@
             "type": "string"
           },
           "include_subdomains": {
-            "type": "string",
+            "type": "boolean",
             "example": false
           }
         }
@@ -715122,7 +715906,7 @@
             "example": "2023-01-31T15:56:36Z"
           },
           "include_subdomains": {
-            "type": "string",
+            "type": "boolean",
             "example": true
           }
         }
@@ -733930,8 +734714,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/McpPortalsApiListPortals200ResponseResultItemServersItem"
-            },
-            "x-stainless-collection-type": "set"
+            }
           }
         }
       },
@@ -734059,8 +734842,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/McpPortalsApiCreatePortals201ResponseResultServersItem"
-            },
-            "x-stainless-collection-type": "set"
+            }
           }
         }
       },
@@ -734247,8 +735029,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/McpPortalsApiFetchGateways200ResponseResultServersItem"
-            },
-            "x-stainless-collection-type": "set"
+            }
           }
         }
       },
@@ -734379,8 +735160,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/McpPortalsApiUpdatePortals200ResponseResultServersItem"
-            },
-            "x-stainless-collection-type": "set"
+            }
           }
         }
       },
@@ -740661,6 +741441,88 @@
           "message": {
             "type": "string",
             "example": "Not Found"
+          }
+        }
+      },
+      "AigConfigTestProviders200ResponseResult": {
+        "required": [
+          "status",
+          "providerSlug",
+          "httpStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "httpStatus": {
+            "type": "number",
+            "nullable": true
+          },
+          "providerSlug": {
+            "type": "string"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/AigConfigTestProviders200ResponseResultReason"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AigConfigTestProviders200ResponseResultStatus"
+          }
+        }
+      },
+      "AigConfigTestProviders400ResponseErrorsItem": {
+        "required": [
+          "code",
+          "message",
+          "path"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number",
+            "example": 7001
+          },
+          "message": {
+            "type": "string",
+            "example": "Input Validation Error"
+          },
+          "path": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "body"
+            }
+          }
+        }
+      },
+      "AigConfigTestProviders404ResponseErrorsItem": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number",
+            "example": 7002
+          },
+          "message": {
+            "type": "string",
+            "example": "Not Found"
+          }
+        }
+      },
+      "AigConfigTestProviders501ResponseErrorsItem": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number",
+            "example": 7022
+          },
+          "message": {
+            "type": "string",
+            "example": "Provider key testing is not available in this environment."
           }
         }
       },
@@ -772881,7 +773743,6 @@
         "type": "object",
         "properties": {
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Sending domain restriction identifier.",
             "format": "uuid",
@@ -773026,7 +773887,6 @@
         "type": "object",
         "properties": {
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "URL ignore pattern identifier.",
             "format": "uuid",
@@ -776414,10 +777274,6 @@
       "UpdateApp200ResponseData": {
         "type": "object",
         "properties": {
-          "cf_account_tag": {
-            "type": "string",
-            "nullable": true
-          },
           "created_at": {
             "type": "string",
             "format": "date-time"
@@ -776425,9 +777281,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "is_org_on_kv": {
-            "type": "boolean"
           },
           "name": {
             "type": "string",
@@ -798978,7 +799831,7 @@
         "properties": {
           "description": {
             "type": "string",
-            "description": "Specify the rule description.",
+            "description": "Update the rule description. If omitted, the description is unchanged. Set to an empty string to clear the description.",
             "example": "Block bad websites based on their host name.",
             "x-auditable": true
           },
@@ -807269,7 +808122,7 @@
             "maximum": 1,
             "minimum": 0,
             "type": "number",
-            "default": 0.4
+            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4."
           },
           "model": {
             "type": "string"
@@ -807447,7 +808300,7 @@
             "maximum": 1,
             "minimum": 0,
             "type": "number",
-            "default": 0.4
+            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4."
           },
           "model": {
             "type": "string"
@@ -808936,7 +809789,7 @@
             "maximum": 1,
             "minimum": 0,
             "type": "number",
-            "default": 0.4
+            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4."
           },
           "model": {
             "type": "string"
@@ -809226,7 +810079,7 @@
             "maximum": 1,
             "minimum": 0,
             "type": "number",
-            "default": 0.4
+            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4."
           },
           "model": {
             "type": "string"
@@ -809595,7 +810448,7 @@
             "maximum": 1,
             "minimum": 0,
             "type": "number",
-            "default": 0.4
+            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4."
           },
           "model": {
             "type": "string"
@@ -809773,7 +810626,7 @@
             "maximum": 1,
             "minimum": 0,
             "type": "number",
-            "default": 0.4
+            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4."
           },
           "model": {
             "type": "string"
@@ -815681,7 +816534,6 @@
         "type": "object",
         "properties": {
           "id": {
-            "title": "identifier",
             "type": "string",
             "description": "Sending domain restriction identifier.",
             "format": "uuid",
@@ -884044,6 +884896,38 @@
           ]
         }
       },
+      "BuildsConfigAutofillResponseDeployTool": {
+        "description": "Deployment CLI detected in the selected root directory. A Wrangler config takes precedence. \u0060cf\u0060 requires \u0060cloudflare.config.ts\u0060 and a \u0060cf\u0060 dependency or dev dependency in \u0060package.json\u0060.",
+        "example": "cf",
+        "anyOf": [
+          {
+            "enum": [
+              "cf",
+              "wrangler"
+            ],
+            "type": "string",
+            "description": "Deployment CLI detected in the selected root directory. A Wrangler config takes precedence. \u0060cf\u0060 requires \u0060cloudflare.config.ts\u0060 and a \u0060cf\u0060 dependency or dev dependency in \u0060package.json\u0060.",
+            "example": "cf",
+            "x-ms-enum": {
+              "name": "BuildsConfigAutofillResponseDeployTool",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "cf",
+                  "name": "Cf"
+                },
+                {
+                  "value": "wrangler",
+                  "name": "Wrangler"
+                }
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/schemas/OpenApiNullValue"
+          }
+        ]
+      },
       "BuildsCreateWorkerGitRepositoryFunfettiInputProviderType": {
         "enum": [
           "github",
@@ -929356,6 +930240,68 @@
             {
               "value": "gt",
               "name": "Gt"
+            }
+          ]
+        }
+      },
+      "AigConfigTestProviders200ResponseResultReason": {
+        "enum": [
+          "unsupported_provider",
+          "missing_secret",
+          "provider_error",
+          "permission_denied",
+          "request_failed"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AigConfigTestProviders200ResponseResultReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unsupported_provider",
+              "name": "UnsupportedProvider"
+            },
+            {
+              "value": "missing_secret",
+              "name": "MissingSecret"
+            },
+            {
+              "value": "provider_error",
+              "name": "ProviderError"
+            },
+            {
+              "value": "permission_denied",
+              "name": "PermissionDenied"
+            },
+            {
+              "value": "request_failed",
+              "name": "RequestFailed"
+            }
+          ]
+        }
+      },
+      "AigConfigTestProviders200ResponseResultStatus": {
+        "enum": [
+          "valid",
+          "invalid",
+          "error"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AigConfigTestProviders200ResponseResultStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "valid",
+              "name": "Valid"
+            },
+            {
+              "value": "invalid",
+              "name": "Invalid"
+            },
+            {
+              "value": "error",
+              "name": "Error"
             }
           ]
         }
@@ -1018851,6 +1019797,27 @@
           ]
         }
       },
+      "ListApplicationsV2EnvironmentParameter": {
+        "enum": [
+          "fedramp",
+          "standard"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ListApplicationsV2EnvironmentParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "fedramp",
+              "name": "Fedramp"
+            },
+            {
+              "value": "standard",
+              "name": "Standard"
+            }
+          ]
+        }
+      },
       "GetApplicationV2ApplicationIdParameter": {
         "enum": [
           "ANTHROPIC",
@@ -1018942,6 +1019909,27 @@
           ]
         }
       },
+      "GetApplicationV2EnvironmentParameter": {
+        "enum": [
+          "fedramp",
+          "standard"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "GetApplicationV2EnvironmentParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "fedramp",
+              "name": "Fedramp"
+            },
+            {
+              "value": "standard",
+              "name": "Standard"
+            }
+          ]
+        }
+      },
       "GetApplicationAuthMethodsV2ApplicationIdParameter": {
         "enum": [
           "ANTHROPIC",
@@ -1019029,6 +1020017,27 @@
             {
               "value": "ZOOM",
               "name": "Zoom"
+            }
+          ]
+        }
+      },
+      "GetApplicationAuthMethodsV2EnvironmentParameter": {
+        "enum": [
+          "fedramp",
+          "standard"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "GetApplicationAuthMethodsV2EnvironmentParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "fedramp",
+              "name": "Fedramp"
+            },
+            {
+              "value": "standard",
+              "name": "Standard"
             }
           ]
         }
@@ -1089451,7 +1090460,7 @@
             "x-client-original-format": "uri"
           },
           "watermark": {
-            "$ref": "#/components/schemas/StreamWatermarkAtUpload2"
+            "$ref": "#/components/schemas/StreamWatermarkAtUpload"
           }
         }
       },
@@ -1089523,7 +1090532,7 @@
             "x-client-original-format": "uri"
           },
           "watermark": {
-            "$ref": "#/components/schemas/StreamWatermarkAtUpload2"
+            "$ref": "#/components/schemas/StreamWatermarkAtUpload"
           }
         }
       },
@@ -1089545,6 +1090554,8 @@
             "description": "The URL where webhooks will be sent.",
             "example": "https://example.com",
             "x-auditable": true,
+            "x-fern-ignore": true,
+            "x-stainless-skip": true,
             "x-client-original-format": "uri"
           }
         }
@@ -1089567,6 +1090578,8 @@
             "description": "The URL where webhooks will be sent.",
             "example": "https://example.com",
             "x-auditable": true,
+            "x-fern-ignore": true,
+            "x-stainless-skip": true,
             "x-client-original-format": "uri"
           }
         }
@@ -1125963,6 +1126976,7 @@
       "builds_BuildUuid": {
         "name": "build_uuid",
         "in": "path",
+        "description": "UUID of the build, as returned by builds list.",
         "required": true,
         "schema": {
           "type": "string",
@@ -1125973,7 +1126987,7 @@
       "builds_DeployHookUuid": {
         "name": "deploy_hook_uuid",
         "in": "path",
-        "description": "Deploy hook UUID",
+        "description": "UUID of the deploy hook, as returned by deploy-hooks list.",
         "required": true,
         "schema": {
           "type": "string",
@@ -1126005,13 +1127019,13 @@
       "builds_PreviewId": {
         "name": "preview_id",
         "in": "path",
-        "description": "The script tag of the Preview, which is a Worker in its own right",
+        "description": "ID of the Preview.",
         "required": true,
         "schema": {
           "type": "string",
-          "description": "System-generated tag of the Worker. This is not the Worker name.",
-          "example": "dd7160bb9cef458093557736f4b9e75b"
-        }
+          "example": "0123456789abcdef0123456789abcdef"
+        },
+        "x-fern-parameter-name": "preview"
       },
       "builds_RepoConnectionUuid": {
         "name": "repo_connection_uuid",
@@ -1126026,24 +1127040,24 @@
       "builds_ScriptName": {
         "name": "script_name",
         "in": "path",
-        "description": "Human-readable name of the worker.",
+        "description": "Name or script tag of the Worker.",
         "required": true,
         "schema": {
           "type": "string",
-          "description": "Human-readable name of the Worker.",
           "example": "my-worker"
-        }
+        },
+        "x-fern-parameter-name": "worker"
       },
       "builds_ScriptTag": {
         "name": "script_tag",
         "in": "path",
-        "description": "The Worker script tag (external script ID)",
+        "description": "Script tag of the Worker.",
         "required": true,
         "schema": {
           "type": "string",
-          "description": "System-generated tag of the Worker. This is not the Worker name.",
-          "example": "dd7160bb9cef458093557736f4b9e75b"
-        }
+          "example": "0123456789abcdef0123456789abcdef"
+        },
+        "x-fern-parameter-name": "worker"
       },
       "builds_TriggerUuid": {
         "name": "trigger_uuid",
@@ -1131295,17 +1132309,14 @@
         "limits": {
           "description": "View build-minute availability and refresh information."
         },
-        "logs": {
-          "description": "Retrieve build logs."
+        "previews": {
+          "description": "Manage the Previews that Workers Builds creates for non-production branches."
         },
         "repos": {
           "description": "Manage source repository connections for Workers Builds."
         },
         "tokens": {
           "description": "Manage credentials used by Workers Builds to deploy Workers."
-        },
-        "triggers": {
-          "description": "Configure how repository changes build and deploy Workers."
         },
         "versions": {
           "description": "Find builds associated with Worker versions."
@@ -1133092,7 +1134103,7 @@
     },
     "AbuseReportsBadJustError": {
       "type": "string",
-      "description": "Please provide a more detailed description of the infringement between 1 and 5000 characters"
+      "description": "Justification must be at least 20 characters for phishing reports and cannot exceed 5000 characters"
     },
     "AbuseReportsBadNameError": {
       "type": "string",
@@ -1141620,6 +1142631,9 @@
           "nullable": true,
           "example": "my-worker"
         },
+        "deploy_tool": {
+          "$ref": "#/components/schemas/BuildsConfigAutofillResponseDeployTool"
+        },
         "env_worker_names": {
           "$ref": "#/components/schemas/BuildsConfigAutofillResponseEnvWorkerNamesProperty"
         },
@@ -1141775,7 +1142789,7 @@
         "external_script_id": {
           "type": "string",
           "description": "System-generated tag of the Worker. This is not the Worker name.",
-          "example": "dd7160bb9cef458093557736f4b9e75b"
+          "example": "0123456789abcdef0123456789abcdef"
         },
         "modified_on": {
           "type": "string",
@@ -1141931,7 +1142945,7 @@
         "preview_id": {
           "type": "string",
           "description": "System-generated tag of the Worker. This is not the Worker name.",
-          "example": "dd7160bb9cef458093557736f4b9e75b"
+          "example": "0123456789abcdef0123456789abcdef"
         },
         "settings": {
           "$ref": "#/components/schemas/BuildsWorkerBuildSettings"
@@ -1141981,7 +1142995,7 @@
         "script_tag": {
           "type": "string",
           "description": "System-generated tag of the Worker. This is not the Worker name.",
-          "example": "dd7160bb9cef458093557736f4b9e75b"
+          "example": "0123456789abcdef0123456789abcdef"
         }
       },
       "description": "Worker build configuration including git repository linkage, production settings, and Preview settings"
@@ -1142082,12 +1143096,12 @@
     "BuildsExternalScriptId": {
       "type": "string",
       "description": "System-generated tag of the Worker. This is not the Worker name.",
-      "example": "dd7160bb9cef458093557736f4b9e75b"
+      "example": "0123456789abcdef0123456789abcdef"
     },
     "BuildsExternalScriptIds": {
       "type": "string",
       "description": "Comma-separated list of system-generated worker script tags (max 20).",
-      "example": "dd7160bb9cef458093557736f4b9e75b,42fb14fe81df47139d3be684e4c637a6,ff7cf9a7582f4c0d90a4b95cb17d659e"
+      "example": "0123456789abcdef0123456789abcdef"
     },
     "BuildsIsSecret": {
       "type": "boolean",
@@ -1142164,11 +1143178,6 @@
       "type": "string",
       "description": "Repository directory in which build and deploy commands run.",
       "example": "/"
-    },
-    "BuildsScriptName": {
-      "type": "string",
-      "description": "Human-readable name of the Worker.",
-      "example": "my-worker"
     },
     "BuildsTriggerName": {
       "type": "string",
@@ -1142939,7 +1143948,12 @@
       "type": "string",
       "description": "Bearer token",
       "example": "66bcf64aa8907b9f9d90ac17746a77ce394c393b92b3916633dc02846e608ad4",
-      "x-sensitive": true
+      "x-sensitive": true,
+      "x-stainless-naming": {
+        "terraform": {
+          "property_name": "key"
+        }
+      }
     },
     "CallsTurnKeyName": {
       "type": "string",
@@ -1148644,7 +1149658,6 @@
       "nullable": true
     },
     "EmailSecurityImpersonationRegistryId": {
-      "title": "identifier",
       "type": "string",
       "description": "Impersonation registry entry identifier.",
       "format": "uuid",
@@ -1148751,7 +1149764,6 @@
       ]
     },
     "EmailSecuritySendingDomainRestrictionId": {
-      "title": "identifier",
       "type": "string",
       "description": "Sending domain restriction identifier.",
       "format": "uuid",
@@ -1148778,7 +1149790,6 @@
       }
     },
     "EmailSecurityUrlIgnorePatternId": {
-      "title": "identifier",
       "type": "string",
       "description": "URL ignore pattern identifier.",
       "format": "uuid",
@@ -1167197,6 +1168208,13 @@
           "example": false,
           "x-auditable": true
         },
+        "enable_netbt": {
+          "type": "boolean",
+          "description": "Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.",
+          "default": false,
+          "example": false,
+          "x-auditable": true
+        },
         "enabled": {
           "type": "boolean",
           "description": "Whether the policy will be applied to matching devices.",
@@ -1167334,6 +1168352,18 @@
             "$ref": "#/components/schemas/TeamsDevicesSplitTunnelInclude"
           },
           "description": "List of routes included in the WARP client\u0027s tunnel."
+        },
+        "lan_allow_minutes": {
+          "type": "number",
+          "description": "The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset.",
+          "example": 30,
+          "x-auditable": true
+        },
+        "lan_allow_subnet_size": {
+          "type": "number",
+          "description": "The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.",
+          "example": 24,
+          "x-auditable": true
         },
         "policy_id": {
           "maxLength": 36,
@@ -1167583,6 +1168613,13 @@
     "TeamsDevicesEnableDeviceCredentialAuthentication": {
       "type": "boolean",
       "description": "Determines whether the WARP client can silently reauthenticate the user with device credentials (Microsoft Entra) instead of prompting for browser-based reauthentication.",
+      "default": false,
+      "example": false,
+      "x-auditable": true
+    },
+    "TeamsDevicesEnableNetbt": {
+      "type": "boolean",
+      "description": "Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.",
       "default": false,
       "example": false,
       "x-auditable": true
@@ -1168468,7 +1169505,7 @@
         },
         "certificates": {
           "type": "string",
-          "description": "The uploaded root CA certificate.",
+          "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
           "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
         },
         "expires_on": {
@@ -1168542,7 +1169579,7 @@
     },
     "TlsCertificatesAndHostnamesCertificates2": {
       "type": "string",
-      "description": "The uploaded root CA certificate.",
+      "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
       "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI\u002BcFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO\u002BenA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL\u002BeXjUmJ9\nK3kS\u002B3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF\u002Bc3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF\u002Bc3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc\u002BBe7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep\u002BxG\n\u002BiFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe\u002BbRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y\u002BW\u002BLvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
     },
     "TlsCertificatesAndHostnamesClientCertificateHostname": {
@@ -1175353,6 +1176390,7 @@
     "ZeroTrustGatewayDescription2": {
       "type": "string",
       "description": "Specify the rule description.",
+      "default": "",
       "example": "Block bad websites based on their host name.",
       "x-auditable": true
     },
@@ -1175562,6 +1176600,12 @@
     "ZeroTrustGatewayOperationData": {
       "type": "object",
       "description": "Provide metadata describing the resource the operation acts on. The fields present depend on the \u0060operation_type\u0060."
+    },
+    "ZeroTrustGatewayPatchDescription": {
+      "type": "string",
+      "description": "Update the rule description. If omitted, the description is unchanged. Set to an empty string to clear the description.",
+      "example": "Block bad websites based on their host name.",
+      "x-auditable": true
     },
     "ZeroTrustGatewayPrecedence": {
       "type": "integer",
@@ -1176834,7 +1177878,7 @@
     },
     "ZonesProxyReadTimeoutValue": {
       "type": "number",
-      "description": "Value of the zone setting.\nNotes: Value must be between 1 and 6000",
+      "description": "Value of the zone setting, in seconds.\nNotes: Value must be between 1 and 6000",
       "default": 125
     },
     "ZonesResolveOverride": {
@@ -1184169,7 +1185213,6 @@
       "x-auditable": true
     },
     "EmailSecurityImpersonationRegistryIdComposed": {
-      "title": "identifier",
       "type": "string",
       "description": "Impersonation registry entry identifier.",
       "format": "uuid",
@@ -1184239,7 +1185282,6 @@
       "x-auditable": true
     },
     "EmailSecuritySendingDomainRestrictionIdComposed": {
-      "title": "identifier",
       "type": "string",
       "description": "Sending domain restriction identifier.",
       "format": "uuid",
@@ -1184315,7 +1185357,6 @@
       ]
     },
     "EmailSecurityUrlIgnorePatternIdComposed": {
-      "title": "identifier",
       "type": "string",
       "description": "URL ignore pattern identifier.",
       "format": "uuid",
@@ -1194739,7 +1195780,7 @@
         },
         "value": {
           "type": "number",
-          "description": "Value of the zone setting.\nNotes: Value must be between 1 and 6000",
+          "description": "Value of the zone setting, in seconds.\nNotes: Value must be between 1 and 6000",
           "default": 125
         }
       }
@@ -1204053,7 +1205094,7 @@
         "$ref": "#/components/schemas/BrapiGetRecordingNetwork200ResponseAdditionalProperties"
       }
     },
-    "BrapiPostScreenshot200JpgResponse": {
+    "BrapiPostScreenshot200JpegResponse": {
       "type": "string",
       "description": "JPEG binary."
     },
@@ -1204067,7 +1205108,7 @@
     },
     "BrapiPostScreenshot200PlainResponse": {
       "type": "string",
-      "description": "Base64 encoded."
+      "description": "Data URL of the base64-encoded screenshot, such as \u0060data:image/png;base64,...\u0060."
     },
     "GetEventListGet200Response": {
       "type": "array",
@@ -1205239,7 +1206280,7 @@
     "ArtifactsReposRawGet200PlainResponseSchema": {
       "type": "string"
     },
-    "BrapiPostScreenshot200JpgResponseSchema": {
+    "BrapiPostScreenshot200JpegResponseSchema": {
       "type": "string",
       "description": "JPEG binary."
     },
@@ -1205253,7 +1206294,7 @@
     },
     "BrapiPostScreenshot200PlainResponseSchema": {
       "type": "string",
-      "description": "Base64 encoded."
+      "description": "Data URL of the base64-encoded screenshot, such as \u0060data:image/png;base64,...\u0060."
     },
     "PostLetterGenerate200PdfResponseSchema": {
       "type": "string",
@@ -1210897,7 +1211938,7 @@
           "type": "string"
         },
         "include_subdomains": {
-          "type": "string",
+          "type": "boolean",
           "example": false
         }
       }
@@ -1210914,7 +1211955,7 @@
           "example": "2023-01-31T15:56:36Z"
         },
         "include_subdomains": {
-          "type": "string",
+          "type": "boolean",
           "example": false
         }
       }
@@ -1210930,7 +1211971,7 @@
           "type": "string"
         },
         "include_subdomains": {
-          "type": "string",
+          "type": "boolean",
           "example": false
         }
       }
@@ -1210947,7 +1211988,7 @@
           "example": "2023-01-31T15:56:36Z"
         },
         "include_subdomains": {
-          "type": "string",
+          "type": "boolean",
           "example": true
         }
       }
@@ -1214478,7 +1215519,7 @@
       "properties": {
         "description": {
           "type": "string",
-          "description": "Specify the rule description.",
+          "description": "Update the rule description. If omitted, the description is unchanged. Set to an empty string to clear the description.",
           "example": "Block bad websites based on their host name.",
           "x-auditable": true
         },

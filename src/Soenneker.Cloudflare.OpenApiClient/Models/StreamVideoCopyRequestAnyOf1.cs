@@ -113,12 +113,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The watermark property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2? Watermark { get => _explicitNullValueWatermark; set { _explicitNullValueWatermark = value; AdditionalData?.Remove("watermark"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watermark"); else _explicitNullProperties?.Remove("watermark"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2? _explicitNullValueWatermark = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload? Watermark { get => _explicitNullValueWatermark; set { _explicitNullValueWatermark = value; AdditionalData?.Remove("watermark"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watermark"); else _explicitNullProperties?.Remove("watermark"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload? _explicitNullValueWatermark = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2 Watermark { get => _explicitNullValueWatermark; set { _explicitNullValueWatermark = value; AdditionalData?.Remove("watermark"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watermark"); else _explicitNullProperties?.Remove("watermark"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2 _explicitNullValueWatermark = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload Watermark { get => _explicitNullValueWatermark; set { _explicitNullValueWatermark = value; AdditionalData?.Remove("watermark"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watermark"); else _explicitNullProperties?.Remove("watermark"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload _explicitNullValueWatermark = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoCopyRequestAnyOf1"/> and sets the default values.
@@ -156,7 +156,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "scheduledDeletion", n => { ScheduledDeletion = n.GetDateTimeOffsetValue(); } },
                 { "thumbnailTimestampPct", n => { ThumbnailTimestampPct = n.GetDoubleValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
-                { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2.CreateFromDiscriminatorValue); } },
+                { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -175,7 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("scheduledDeletion", ScheduledDeletion);
             writer.WriteDoubleValue("thumbnailTimestampPct", ThumbnailTimestampPct);
             writer.WriteStringValue("url", Url);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2>("watermark", Watermark);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload>("watermark", Watermark);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

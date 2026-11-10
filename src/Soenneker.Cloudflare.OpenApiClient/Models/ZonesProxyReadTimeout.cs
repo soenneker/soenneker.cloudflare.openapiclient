@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Maximum time between two read operations from origin.
+    /// Maximum time in seconds between two read operations from origin.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZonesProxyReadTimeout : IAdditionalDataHolder, IParsable
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ProxyReadTimeoutId? _explicitNullValueId = default!;
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
-        /// <summary>Value of the zone setting.Notes: Value must be between 1 and 6000</summary>
+        /// <summary>Value of the zone setting, in seconds.Notes: Value must be between 1 and 6000</summary>
         public double? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private double? _explicitNullValueValue = default!;
         /// <summary>

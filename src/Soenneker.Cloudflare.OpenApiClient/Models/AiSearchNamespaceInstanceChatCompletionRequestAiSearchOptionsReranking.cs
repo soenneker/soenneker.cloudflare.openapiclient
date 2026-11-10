@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The enabled property</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The match_threshold property</summary>
+        /// <summary>Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4.</summary>
         public double? MatchThreshold { get => _explicitNullValueMatchThreshold; set { _explicitNullValueMatchThreshold = value; AdditionalData?.Remove("match_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_threshold"); else _explicitNullProperties?.Remove("match_threshold"); } }
         private double? _explicitNullValueMatchThreshold = default!;
         /// <summary>The model property</summary>
@@ -49,7 +49,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AiSearchNamespaceInstanceChatCompletionRequestAiSearchOptionsReranking()
         {
             AdditionalData = new Dictionary<string, object>();
-            MatchThreshold = 0.4;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

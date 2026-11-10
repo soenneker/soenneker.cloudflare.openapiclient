@@ -19,6 +19,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("ai_config") is null) { _explicitNullValueAiConfig = default!; _explicitNullProperties?.Remove("ai_config"); }
             else if (parseNode.GetChildNode("ai_config") is { } nullNodeAiConfig && nullNodeAiConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfig = null;
+            if (parseNode.GetChildNode("enable_sip") is null) { _explicitNullValueEnableSip = default!; _explicitNullProperties?.Remove("enable_sip"); }
+            else if (parseNode.GetChildNode("enable_sip") is { } nullNodeEnableSip && nullNodeEnableSip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableSip = null;
             if (parseNode.GetChildNode("live_stream_on_start") is null) { _explicitNullValueLiveStreamOnStart = default!; _explicitNullProperties?.Remove("live_stream_on_start"); }
             else if (parseNode.GetChildNode("live_stream_on_start") is { } nullNodeLiveStreamOnStart && nullNodeLiveStreamOnStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveStreamOnStart = null;
             if (parseNode.GetChildNode("persist_chat") is null) { _explicitNullValuePersistChat = default!; _explicitNullProperties?.Remove("persist_chat"); }
@@ -51,6 +53,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig AiConfig { get => _explicitNullValueAiConfig; set { _explicitNullValueAiConfig = value; AdditionalData?.Remove("ai_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_config"); else _explicitNullProperties?.Remove("ai_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig _explicitNullValueAiConfig = default!;
 #endif
+        /// <summary>Turns SIP dial-in on or off. Turning it off deletes the SIP URI and credentials; calls already in progress continue. Turning it on again creates a new SIP URI and credentials.</summary>
+        public bool? EnableSip { get => _explicitNullValueEnableSip; set { _explicitNullValueEnableSip = value; AdditionalData?.Remove("enable_sip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_sip"); else _explicitNullProperties?.Remove("enable_sip"); } }
+        private bool? _explicitNullValueEnableSip = default!;
         /// <summary>Specifies if the meeting should start getting livestreamed on start.</summary>
         public bool? LiveStreamOnStart { get => _explicitNullValueLiveStreamOnStart; set { _explicitNullValueLiveStreamOnStart = value; AdditionalData?.Remove("live_stream_on_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_stream_on_start"); else _explicitNullProperties?.Remove("live_stream_on_start"); } }
         private bool? _explicitNullValueLiveStreamOnStart = default!;
@@ -118,6 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ai_config", n => { AiConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig.CreateFromDiscriminatorValue); } },
+                { "enable_sip", n => { EnableSip = n.GetBoolValue(); } },
                 { "live_stream_on_start", n => { LiveStreamOnStart = n.GetBoolValue(); } },
                 { "persist_chat", n => { PersistChat = n.GetBoolValue(); } },
                 { "record_on_start", n => { RecordOnStart = n.GetBoolValue(); } },
@@ -137,6 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig>("ai_config", AiConfig);
+            writer.WriteBoolValue("enable_sip", EnableSip);
             writer.WriteBoolValue("live_stream_on_start", LiveStreamOnStart);
             writer.WriteBoolValue("persist_chat", PersistChat);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig>("recording_config", RecordingConfig);

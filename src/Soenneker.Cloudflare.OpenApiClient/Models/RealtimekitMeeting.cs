@@ -27,6 +27,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("record_on_start") is { } nullNodeRecordOnStart && nullNodeRecordOnStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordOnStart = null;
             if (parseNode.GetChildNode("session_keep_alive_time_in_secs") is null) { _explicitNullValueSessionKeepAliveTimeInSecs = default!; _explicitNullProperties?.Remove("session_keep_alive_time_in_secs"); }
             else if (parseNode.GetChildNode("session_keep_alive_time_in_secs") is { } nullNodeSessionKeepAliveTimeInSecs && nullNodeSessionKeepAliveTimeInSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionKeepAliveTimeInSecs = null;
+            if (parseNode.GetChildNode("sip") is null) { _explicitNullValueSip = default!; _explicitNullProperties?.Remove("sip"); }
+            else if (parseNode.GetChildNode("sip") is { } nullNodeSip && nullNodeSip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sip = null;
             if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
             if (parseNode.GetChildNode("summarize_on_end") is null) { _explicitNullValueSummarizeOnEnd = default!; _explicitNullProperties?.Remove("summarize_on_end"); }
@@ -65,6 +67,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Time in seconds, for which a session remains active, after the last participant has left the meeting.</summary>
         public double? SessionKeepAliveTimeInSecs { get => _explicitNullValueSessionKeepAliveTimeInSecs; set { _explicitNullValueSessionKeepAliveTimeInSecs = value; AdditionalData?.Remove("session_keep_alive_time_in_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_keep_alive_time_in_secs"); else _explicitNullProperties?.Remove("session_keep_alive_time_in_secs"); } }
         private double? _explicitNullValueSessionKeepAliveTimeInSecs = default!;
+        /// <summary>SIP dial-in details. `null` if SIP is not enabled for the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingSip? Sip { get => _explicitNullValueSip; set { _explicitNullValueSip = value; AdditionalData?.Remove("sip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sip"); else _explicitNullProperties?.Remove("sip"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingSip? _explicitNullValueSip = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingSip Sip { get => _explicitNullValueSip; set { _explicitNullValueSip = value; AdditionalData?.Remove("sip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sip"); else _explicitNullProperties?.Remove("sip"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingSip _explicitNullValueSip = default!;
+#endif
         /// <summary>Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingStatus? _explicitNullValueStatus = default!;
@@ -119,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "record_on_start", n => { RecordOnStart = n.GetBoolValue(); } },
                 { "recording_config", n => { RecordingConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig.CreateFromDiscriminatorValue); } },
                 { "session_keep_alive_time_in_secs", n => { SessionKeepAliveTimeInSecs = n.GetDoubleValue(); } },
+                { "sip", n => { Sip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingSip>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingSip.CreateFromDiscriminatorValue); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "summarize_on_end", n => { SummarizeOnEnd = n.GetBoolValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -138,6 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig>("recording_config", RecordingConfig);
             writer.WriteBoolValue("record_on_start", RecordOnStart);
             writer.WriteDoubleValue("session_keep_alive_time_in_secs", SessionKeepAliveTimeInSecs);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingSip>("sip", Sip);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingStatus>("status", Status);
             writer.WriteBoolValue("summarize_on_end", SummarizeOnEnd);
             writer.WriteStringValue("title", Title);

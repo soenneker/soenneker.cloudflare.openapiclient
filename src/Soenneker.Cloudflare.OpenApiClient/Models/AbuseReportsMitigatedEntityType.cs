@@ -19,6 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Zone,
         #pragma warning restore CS1591
+        [EnumMember(Value = "domain")]
+        #pragma warning disable CS1591
+        Domain,
+        #pragma warning restore CS1591
         [EnumMember(Value = "custom_expression")]
         #pragma warning disable CS1591
         CustomExpression,

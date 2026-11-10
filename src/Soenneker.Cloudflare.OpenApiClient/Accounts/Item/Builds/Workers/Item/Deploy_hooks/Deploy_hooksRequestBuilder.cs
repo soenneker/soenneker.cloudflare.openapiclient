@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
     public partial class Deploy_hooksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.workers.item.deploy_hooks.item collection</summary>
-        /// <param name="position">Deploy hook UUID</param>
+        /// <param name="position">UUID of the deploy hook, as returned by deploy-hooks list.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Deploy_hooks.Item.WithDeployHookUuItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Deploy_hooks.Item.WithDeployHookUuItemRequestBuilder this[Guid position]
         {

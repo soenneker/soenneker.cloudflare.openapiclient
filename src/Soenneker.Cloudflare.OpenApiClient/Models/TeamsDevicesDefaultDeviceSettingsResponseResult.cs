@@ -37,6 +37,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
             if (parseNode.GetChildNode("enable_device_credential_authentication") is null) { _explicitNullValueEnableDeviceCredentialAuthentication = default!; _explicitNullProperties?.Remove("enable_device_credential_authentication"); }
             else if (parseNode.GetChildNode("enable_device_credential_authentication") is { } nullNodeEnableDeviceCredentialAuthentication && nullNodeEnableDeviceCredentialAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableDeviceCredentialAuthentication = null;
+            if (parseNode.GetChildNode("enable_netbt") is null) { _explicitNullValueEnableNetbt = default!; _explicitNullProperties?.Remove("enable_netbt"); }
+            else if (parseNode.GetChildNode("enable_netbt") is { } nullNodeEnableNetbt && nullNodeEnableNetbt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableNetbt = null;
             if (parseNode.GetChildNode("exclude") is null) { _explicitNullValueExclude = default!; _explicitNullProperties?.Remove("exclude"); }
             else if (parseNode.GetChildNode("exclude") is { } nullNodeExclude && nullNodeExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclude = null;
             if (parseNode.GetChildNode("exclude_office_ips") is null) { _explicitNullValueExcludeOfficeIps = default!; _explicitNullProperties?.Remove("exclude_office_ips"); }
@@ -49,6 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("global_acceleration") is { } nullNodeGlobalAcceleration && nullNodeGlobalAcceleration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalAcceleration = null;
             if (parseNode.GetChildNode("include") is null) { _explicitNullValueInclude = default!; _explicitNullProperties?.Remove("include"); }
             else if (parseNode.GetChildNode("include") is { } nullNodeInclude && nullNodeInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Include = null;
+            if (parseNode.GetChildNode("lan_allow_minutes") is null) { _explicitNullValueLanAllowMinutes = default!; _explicitNullProperties?.Remove("lan_allow_minutes"); }
+            else if (parseNode.GetChildNode("lan_allow_minutes") is { } nullNodeLanAllowMinutes && nullNodeLanAllowMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanAllowMinutes = null;
+            if (parseNode.GetChildNode("lan_allow_subnet_size") is null) { _explicitNullValueLanAllowSubnetSize = default!; _explicitNullProperties?.Remove("lan_allow_subnet_size"); }
+            else if (parseNode.GetChildNode("lan_allow_subnet_size") is { } nullNodeLanAllowSubnetSize && nullNodeLanAllowSubnetSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanAllowSubnetSize = null;
             if (parseNode.GetChildNode("policy_id") is null) { _explicitNullValuePolicyId = default!; _explicitNullProperties?.Remove("policy_id"); }
             else if (parseNode.GetChildNode("policy_id") is { } nullNodePolicyId && nullNodePolicyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyId = null;
             if (parseNode.GetChildNode("profile_type") is null) { _explicitNullValueProfileType = default!; _explicitNullProperties?.Remove("profile_type"); }
@@ -110,6 +116,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Determines whether the WARP client can silently reauthenticate the user with device credentials (Microsoft Entra) instead of prompting for browser-based reauthentication.</summary>
         public bool? EnableDeviceCredentialAuthentication { get => _explicitNullValueEnableDeviceCredentialAuthentication; set { _explicitNullValueEnableDeviceCredentialAuthentication = value; AdditionalData?.Remove("enable_device_credential_authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_device_credential_authentication"); else _explicitNullProperties?.Remove("enable_device_credential_authentication"); } }
         private bool? _explicitNullValueEnableDeviceCredentialAuthentication = default!;
+        /// <summary>Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.</summary>
+        public bool? EnableNetbt { get => _explicitNullValueEnableNetbt; set { _explicitNullValueEnableNetbt = value; AdditionalData?.Remove("enable_netbt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_netbt"); else _explicitNullProperties?.Remove("enable_netbt"); } }
+        private bool? _explicitNullValueEnableNetbt = default!;
         /// <summary>List of routes excluded in the WARP client&apos;s tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,6 +172,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude> _explicitNullValueInclude = default!;
 #endif
+        /// <summary>The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset.</summary>
+        public double? LanAllowMinutes { get => _explicitNullValueLanAllowMinutes; set { _explicitNullValueLanAllowMinutes = value; AdditionalData?.Remove("lan_allow_minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_allow_minutes"); else _explicitNullProperties?.Remove("lan_allow_minutes"); } }
+        private double? _explicitNullValueLanAllowMinutes = default!;
+        /// <summary>The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.</summary>
+        public double? LanAllowSubnetSize { get => _explicitNullValueLanAllowSubnetSize; set { _explicitNullValueLanAllowSubnetSize = value; AdditionalData?.Remove("lan_allow_subnet_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_allow_subnet_size"); else _explicitNullProperties?.Remove("lan_allow_subnet_size"); } }
+        private double? _explicitNullValueLanAllowSubnetSize = default!;
         /// <summary>The policy_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -242,6 +257,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             DisableAutoFallback = false;
             Enabled = true;
             EnableDeviceCredentialAuthentication = false;
+            EnableNetbt = false;
             ExcludeOfficeIps = false;
             RegisterInterfaceIpWithDns = true;
             SccmVpnBoundarySupport = false;
@@ -275,6 +291,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "disable_auto_fallback", n => { DisableAutoFallback = n.GetBoolValue(); } },
                 { "dns_search_suffixes", n => { DnsSearchSuffixes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDnsSearchSuffix>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDnsSearchSuffix.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enable_device_credential_authentication", n => { EnableDeviceCredentialAuthentication = n.GetBoolValue(); } },
+                { "enable_netbt", n => { EnableNetbt = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exclude_office_ips", n => { ExcludeOfficeIps = n.GetBoolValue(); } },
@@ -282,6 +299,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "gateway_unique_id", n => { GatewayUniqueId = n.GetStringValue(); } },
                 { "global_acceleration", n => { GlobalAcceleration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration.CreateFromDiscriminatorValue); } },
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "lan_allow_minutes", n => { LanAllowMinutes = n.GetDoubleValue(); } },
+                { "lan_allow_subnet_size", n => { LanAllowSubnetSize = n.GetDoubleValue(); } },
                 { "policy_id", n => { PolicyId = n.GetStringValue(); } },
                 { "profile_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesProfileType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProfileType = default; _explicitNullProperties?.Remove("profile_type"); AdditionalData["profile_type"] = unknown; } else { ProfileType = parsed; AdditionalData.Remove("profile_type"); } } },
                 { "register_interface_ip_with_dns", n => { RegisterInterfaceIpWithDns = n.GetBoolValue(); } },
@@ -311,12 +330,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDnsSearchSuffix>("dns_search_suffixes", DnsSearchSuffixes);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("enable_device_credential_authentication", EnableDeviceCredentialAuthentication);
+            writer.WriteBoolValue("enable_netbt", EnableNetbt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel>("exclude", Exclude);
             writer.WriteBoolValue("exclude_office_ips", ExcludeOfficeIps);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFallbackDomain>("fallback_domains", FallbackDomains);
             writer.WriteStringValue("gateway_unique_id", GatewayUniqueId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration>("global_acceleration", GlobalAcceleration);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude>("include", Include);
+            writer.WriteDoubleValue("lan_allow_minutes", LanAllowMinutes);
+            writer.WriteDoubleValue("lan_allow_subnet_size", LanAllowSubnetSize);
             writer.WriteStringValue("policy_id", PolicyId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesProfileType>("profile_type", ProfileType);
             writer.WriteBoolValue("register_interface_ip_with_dns", RegisterInterfaceIpWithDns);

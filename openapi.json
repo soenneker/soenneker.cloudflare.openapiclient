@@ -3172,7 +3172,6 @@
                                   "description": "Current sync state of the server",
                                   "type": "string",
                                   "example": "ready",
-                                  "default": "waiting",
                                   "enum": [
                                     "waiting",
                                     "ready",
@@ -3267,8 +3266,7 @@
                                 "server_id"
                               ],
                               "type": "object"
-                            },
-                            "x-stainless-collection-type": "set"
+                            }
                           }
                         },
                         "required": [
@@ -3521,8 +3519,7 @@
                       ],
                       "type": "object"
                     },
-                    "maxItems": 120,
-                    "x-stainless-collection-type": "set"
+                    "maxItems": 120
                   }
                 },
                 "required": [
@@ -3829,7 +3826,6 @@
                                 "description": "Current sync state of the server",
                                 "type": "string",
                                 "example": "ready",
-                                "default": "waiting",
                                 "enum": [
                                   "waiting",
                                   "ready",
@@ -3924,8 +3920,7 @@
                               "server_id"
                             ],
                             "type": "object"
-                          },
-                          "x-stainless-collection-type": "set"
+                          }
                         }
                       },
                       "required": [
@@ -4552,7 +4547,6 @@
                                 "description": "Current sync state of the server",
                                 "type": "string",
                                 "example": "ready",
-                                "default": "waiting",
                                 "enum": [
                                   "waiting",
                                   "ready",
@@ -4647,8 +4641,7 @@
                               "server_id"
                             ],
                             "type": "object"
-                          },
-                          "x-stainless-collection-type": "set"
+                          }
                         }
                       },
                       "required": [
@@ -4908,8 +4901,7 @@
                       ],
                       "type": "object"
                     },
-                    "maxItems": 120,
-                    "x-stainless-collection-type": "set"
+                    "maxItems": 120
                   }
                 }
               }
@@ -5211,7 +5203,6 @@
                                 "description": "Current sync state of the server",
                                 "type": "string",
                                 "example": "ready",
-                                "default": "waiting",
                                 "enum": [
                                   "waiting",
                                   "ready",
@@ -5306,8 +5297,7 @@
                               "server_id"
                             ],
                             "type": "object"
-                          },
-                          "x-stainless-collection-type": "set"
+                          }
                         }
                       },
                       "required": [
@@ -5872,7 +5862,6 @@
                             "description": "Current sync state of the server",
                             "type": "string",
                             "example": "ready",
-                            "default": "waiting",
                             "enum": [
                               "waiting",
                               "ready",
@@ -6409,7 +6398,6 @@
                           "description": "Current sync state of the server",
                           "type": "string",
                           "example": "ready",
-                          "default": "waiting",
                           "enum": [
                             "waiting",
                             "ready",
@@ -6831,7 +6819,6 @@
                           "description": "Current sync state of the server",
                           "type": "string",
                           "example": "ready",
-                          "default": "waiting",
                           "enum": [
                             "waiting",
                             "ready",
@@ -7244,7 +7231,6 @@
                           "description": "Current sync state of the server",
                           "type": "string",
                           "example": "ready",
-                          "default": "waiting",
                           "enum": [
                             "waiting",
                             "ready",
@@ -7766,7 +7752,6 @@
                           "description": "Current sync state of the server",
                           "type": "string",
                           "example": "ready",
-                          "default": "waiting",
                           "enum": [
                             "waiting",
                             "ready",
@@ -38080,6 +38065,266 @@
         "x-fern-sdk-method-name": "update"
       }
     },
+    "/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs/{id}/test": {
+      "post": {
+        "operationId": "aig-config-test-providers",
+        "summary": "Check stored provider credentials",
+        "description": "Checks whether stored credentials can list models through the provider implementation in AI Gateway. Requires AI Gateway content update permission. Does not run inference, check credits or inference permissions, or return provider response bodies. HTTP 401 from the model-list request is classified as invalid, as is AWS Bedrock HTTP 403 with an UnrecognizedClientException error type. Other failures are inconclusive, including other HTTP 400 or 403 responses; a 403 alone does not distinguish rejected credentials from insufficient permissions. Unsupported providers or credential formats also return an inconclusive result.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "3ebbcb006d4d46d7bb6a8c7f14676cb0"
+            }
+          },
+          {
+            "name": "gateway_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "description": "Unique identifier of the AI Gateway within the account.",
+              "type": "string",
+              "example": "my-gateway",
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-z0-9_]+(?:-[a-z0-9_]+)*$",
+              "x-auditable": true
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Credential probe outcome; error means validity is unknown",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "httpStatus": {
+                          "type": "number",
+                          "nullable": true
+                        },
+                        "providerSlug": {
+                          "type": "string"
+                        },
+                        "reason": {
+                          "type": "string",
+                          "enum": [
+                            "unsupported_provider",
+                            "missing_secret",
+                            "provider_error",
+                            "permission_denied",
+                            "request_failed"
+                          ]
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "valid",
+                            "invalid",
+                            "error"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "status",
+                        "providerSlug",
+                        "httpStatus"
+                      ]
+                    },
+                    "success": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "result"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Input Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "type": "number",
+                            "example": 7001
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "Input Validation Error"
+                          },
+                          "path": {
+                            "type": "array",
+                            "items": {
+                              "example": "body",
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "message",
+                          "path"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "errors"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "type": "number",
+                            "example": 7002
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "Not Found"
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "message"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "errors"
+                  ]
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Provider key testing is not available in this environment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "type": "number",
+                            "example": 7022
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "Provider key testing is not available in this environment."
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "message"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "errors"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "AI Gateway Provider Configs"
+        ],
+        "x-api-token-group": [
+          "Secrets Store Write"
+        ],
+        "x-cfPermissionsRequired": {
+          "enum": [
+            "com.cloudflare.api.account.aig"
+          ]
+        },
+        "x-cfPlanAvailability": {
+          "business": true,
+          "enterprise": true,
+          "free": true,
+          "pro": true
+        },
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "ai-gateway.gateways.providers",
+        "x-fern-sdk-method-name": "test"
+      }
+    },
     "/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes": {
       "get": {
         "operationId": "aig-config-list-gateway-dynamic-routes",
@@ -53669,8 +53914,8 @@
                             "type": "boolean"
                           },
                           "match_threshold": {
+                            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4.",
                             "type": "number",
-                            "default": 0.4,
                             "maximum": 1,
                             "minimum": 0
                           },
@@ -55950,8 +56195,8 @@
                             "type": "boolean"
                           },
                           "match_threshold": {
+                            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4.",
                             "type": "number",
-                            "default": 0.4,
                             "maximum": 1,
                             "minimum": 0
                           },
@@ -64278,8 +64523,8 @@
                             "type": "boolean"
                           },
                           "match_threshold": {
+                            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4.",
                             "type": "number",
-                            "default": 0.4,
                             "maximum": 1,
                             "minimum": 0
                           },
@@ -70667,8 +70912,8 @@
                             "type": "boolean"
                           },
                           "match_threshold": {
+                            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4.",
                             "type": "number",
-                            "default": 0.4,
                             "maximum": 1,
                             "minimum": 0
                           },
@@ -72587,8 +72832,8 @@
                             "type": "boolean"
                           },
                           "match_threshold": {
+                            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4.",
                             "type": "number",
-                            "default": 0.4,
                             "maximum": 1,
                             "minimum": 0
                           },
@@ -73527,8 +73772,8 @@
                             "type": "boolean"
                           },
                           "match_threshold": {
+                            "description": "Minimum reranker relevance score a chunk must reach to be returned. When omitted, falls back to the instance-level score_threshold, then to 0.4.",
                             "type": "number",
-                            "default": 0.4,
                             "maximum": 1,
                             "minimum": 0
                           },
@@ -98796,6 +99041,7 @@
                     "warehouses": [
                       {
                         "bucket": "analytics-bucket",
+                        "catalog_uri": "https://catalog.cloudflarestorage.com/account123/analytics-bucket",
                         "id": "550e8400-e29b-41d4-a716-446655440000",
                         "jurisdiction": "default",
                         "maintenance_config": {
@@ -98948,6 +99194,7 @@
                   "messages": [],
                   "result": {
                     "bucket": "analytics-bucket",
+                    "catalog_uri": "https://catalog.cloudflarestorage.com/account123/analytics-bucket",
                     "credential_status": "present",
                     "id": "550e8400-e29b-41d4-a716-446655440000",
                     "jurisdiction": "default",
@@ -99569,6 +99816,7 @@
                   "errors": [],
                   "messages": [],
                   "result": {
+                    "catalog_uri": "https://catalog.cloudflarestorage.com/account123/my-bucket",
                     "id": "550e8400-e29b-41d4-a716-446655440000",
                     "name": "account123_my-bucket"
                   },
@@ -120436,7 +120684,7 @@
                   ]
                 }
               },
-              "image/jpg": {
+              "image/jpeg": {
                 "schema": {
                   "description": "JPEG binary.",
                   "type": "string"
@@ -120456,7 +120704,7 @@
               },
               "text/plain": {
                 "schema": {
-                  "description": "Base64 encoded.",
+                  "description": "Data URL of the base64-encoded screenshot, such as `data:image/png;base64,...`.",
                   "type": "string"
                 }
               }
@@ -122179,8 +122427,8 @@
           "Workers CI Read"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "builds.logs",
-        "x-fern-sdk-method-name": "get"
+        "x-fern-sdk-group-name": "builds",
+        "x-fern-sdk-method-name": "logs"
       }
     },
     "/accounts/{account_id}/builds/repos/connections": {
@@ -122291,7 +122539,8 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.repos.connections",
-        "x-fern-sdk-method-name": "delete"
+        "x-fern-sdk-method-name": "delete",
+        "x-forge-require-confirmation": "This operation deletes the repository connection."
       }
     },
     "/accounts/{account_id}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill": {
@@ -122573,7 +122822,8 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.tokens",
-        "x-fern-sdk-method-name": "delete"
+        "x-fern-sdk-method-name": "delete",
+        "x-forge-require-confirmation": "This operation deletes the build token. Builds that use it will fail to deploy."
       }
     },
     "/accounts/{account_id}/builds/triggers": {
@@ -122638,6 +122888,9 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers",
         "x-fern-sdk-method-name": "create"
@@ -122681,6 +122934,9 @@
         ],
         "x-api-token-group": [
           "Workers CI Write"
+        ],
+        "x-fern-audiences": [
+          "sdk"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers",
@@ -122754,6 +123010,9 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers",
         "x-fern-sdk-method-name": "update"
@@ -122824,9 +123083,12 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "builds",
-        "x-fern-sdk-method-name": "create"
+        "x-fern-sdk-group-name": "builds.triggers",
+        "x-fern-sdk-method-name": "create-build"
       }
     },
     "/accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables": {
@@ -122884,6 +123146,9 @@
         "x-api-token-group": [
           "Workers CI Write",
           "Workers CI Read"
+        ],
+        "x-fern-audiences": [
+          "sdk"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers.environment-variables",
@@ -122956,6 +123221,9 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers.environment-variables",
         "x-fern-sdk-method-name": "upsert"
@@ -123008,6 +123276,9 @@
         "x-api-token-group": [
           "Workers CI Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers.environment-variables",
         "x-fern-sdk-method-name": "delete"
@@ -123051,6 +123322,9 @@
         ],
         "x-api-token-group": [
           "Workers CI Write"
+        ],
+        "x-fern-audiences": [
+          "sdk"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers.cache",
@@ -123171,14 +123445,20 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.workers",
-        "x-fern-sdk-method-name": "create"
+        "x-fern-sdk-method-name": "create",
+        "x-forge-params": {
+          "script_tag": {
+            "description": "Script tag of the Worker.",
+            "positional": true
+          }
+        }
       }
     },
     "/accounts/{account_id}/builds/workers/{external_script_id}/builds": {
       "get": {
         "operationId": "listBuildsByScript",
         "summary": "List builds for a Worker",
-        "description": "List paginated build records associated with a Worker tag.",
+        "description": "List paginated build records associated with a Worker.",
         "parameters": [
           {
             "$ref": "#/components/parameters/builds_AccountId"
@@ -123186,10 +123466,13 @@
           {
             "name": "external_script_id",
             "in": "path",
+            "description": "Script tag of the Worker.",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/builds_external_script_id"
-            }
+              "type": "string",
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
           },
           {
             "$ref": "#/components/parameters/builds_Page"
@@ -123250,6 +123533,88 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds",
         "x-fern-sdk-method-name": "list"
+      },
+      "post": {
+        "operationId": "createBuildByScript",
+        "summary": "Start a Worker build",
+        "description": "Start a production build for a branch or commit.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/builds_AccountId"
+          },
+          {
+            "name": "external_script_id",
+            "in": "path",
+            "description": "Script tag of the Worker.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "0123456789abcdef0123456789abcdef"
+            },
+            "x-fern-parameter-name": "worker"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/builds_CreateBuildRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Build created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/builds_APIResponse"
+                    },
+                    {
+                      "properties": {
+                        "result": {
+                          "$ref": "#/components/schemas/builds_BuildResponse"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/builds_BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/builds_Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/builds_NotFound"
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Workers"
+        ],
+        "x-api-token-group": [
+          "Workers CI Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "builds",
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/builds/workers/{external_script_id}/triggers": {
@@ -123315,6 +123680,9 @@
         "x-api-token-group": [
           "Workers CI Write",
           "Workers CI Read"
+        ],
+        "x-fern-audiences": [
+          "sdk"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers",
@@ -123525,7 +123893,8 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.deploy-hooks",
-        "x-fern-sdk-method-name": "delete"
+        "x-fern-sdk-method-name": "delete",
+        "x-forge-require-confirmation": "This operation deletes the deploy hook. Requests to its URL will no longer start builds."
       },
       "get": {
         "operationId": "getDeployHook",
@@ -123893,6 +124262,75 @@
         "x-fern-sdk-method-name": "update"
       }
     },
+    "/accounts/{account_id}/builds/workers/{script_tag}/builds/{build_uuid}/retry": {
+      "post": {
+        "operationId": "retryWorkerBuild",
+        "summary": "Retry a Worker build",
+        "description": "Start a new build from the branch and commit of a stopped build.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/builds_AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/builds_ScriptTag"
+          },
+          {
+            "$ref": "#/components/parameters/builds_BuildUuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Build created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/builds_APIResponse"
+                    },
+                    {
+                      "properties": {
+                        "result": {
+                          "$ref": "#/components/schemas/builds_BuildResponse"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/builds_BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/builds_Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/builds_NotFound"
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Workers"
+        ],
+        "x-api-token-group": [
+          "Workers CI Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "builds",
+        "x-fern-sdk-method-name": "retry"
+      }
+    },
     "/accounts/{account_id}/builds/workers/{script_tag}/migrate_to_previews": {
       "post": {
         "operationId": "migrateWorkerToPreviews",
@@ -123966,8 +124404,9 @@
           "Workers CI Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers",
-        "x-fern-sdk-method-name": "migrate-to-previews"
+        "x-fern-sdk-group-name": "builds.workers",
+        "x-fern-sdk-method-name": "migrate-to-previews",
+        "x-forge-require-confirmation": "This operation switches the Worker to Previews and removes its legacy non-production trigger. It cannot be reversed."
       }
     },
     "/accounts/{account_id}/builds/workers/{script_tag}/previews": {
@@ -124039,7 +124478,7 @@
           "Workers CI Read"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
+        "x-fern-sdk-group-name": "builds.previews",
         "x-fern-sdk-method-name": "list"
       }
     },
@@ -124106,7 +124545,7 @@
           "Workers CI Read"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
+        "x-fern-sdk-group-name": "builds.previews",
         "x-fern-sdk-method-name": "get"
       },
       "patch": {
@@ -124192,8 +124631,8 @@
           "Workers CI Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
-        "x-fern-sdk-method-name": "edit"
+        "x-fern-sdk-group-name": "builds.previews",
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{account_id}/builds/workers/{script_tag}/previews/{preview_id}/builds": {
@@ -124271,7 +124710,7 @@
           "Workers CI Read"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
+        "x-fern-sdk-group-name": "builds.previews",
         "x-fern-sdk-method-name": "list-builds"
       },
       "post": {
@@ -124348,8 +124787,53 @@
           "Workers CI Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "workers-builds.workers.previews",
+        "x-fern-sdk-group-name": "builds.previews",
         "x-fern-sdk-method-name": "create-build"
+      }
+    },
+    "/accounts/{account_id}/builds/workers/{script_tag}/purge_build_cache": {
+      "post": {
+        "operationId": "purgeWorkerBuildCache",
+        "summary": "Purge a Worker's build cache",
+        "description": "Delete cached dependencies and build artifacts for a Worker's production and Preview builds.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/builds_AccountId"
+          },
+          {
+            "$ref": "#/components/parameters/builds_ScriptTag"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/builds_SuccessEmpty"
+          },
+          "401": {
+            "$ref": "#/components/responses/builds_Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/builds_NotFound"
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Workers"
+        ],
+        "x-api-token-group": [
+          "Workers CI Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "builds.workers",
+        "x-fern-sdk-method-name": "purge-cache",
+        "x-forge-require-confirmation": "This operation purges the build cache for the Worker."
       }
     },
     "/accounts/{account_id}/bulk/subscriptions": {
@@ -186756,7 +187240,7 @@
       "get": {
         "operationId": "getUsage",
         "summary": "Get live account usage",
-        "description": "Get current live resource usage and maximum account limits for the authenticated Cloudchamber account. Usage includes active and assigned instances.",
+        "description": "Get current live resource usage and maximum limits for your account. Usage includes active and assigned instances.",
         "responses": {
           "200": {
             "description": "Returns live account usage and maximum limits.",
@@ -195165,8 +195649,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.asset-schemas",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       }
     },
     "/accounts/{account_id}/data-security/posture/asset_schemas/{asset_class}": {
@@ -195248,8 +195731,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.asset-schemas",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{account_id}/data-security/posture/content": {
@@ -195798,8 +196280,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.finding-types",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/data-security/posture/finding_types/validate": {
@@ -195890,8 +196371,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.finding-types",
-        "x-fern-sdk-method-name": "validate",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "validate"
       }
     },
     "/accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}": {
@@ -195978,8 +196458,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.finding-types",
-        "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "delete"
       },
       "get": {
         "operationId": "GetFindingType",
@@ -196150,8 +196629,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "zero-trust.casb.finding-types",
-        "x-fern-sdk-method-name": "update",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}/remediation_types": {
@@ -200825,6 +201303,7 @@
           "Devices"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "list"
       }
@@ -200877,6 +201356,7 @@
           "Devices"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.default",
         "x-fern-sdk-method-name": "get"
       },
@@ -200924,6 +201404,9 @@
                   },
                   "enable_device_credential_authentication": {
                     "$ref": "#/components/schemas/teams-devices_enable_device_credential_authentication"
+                  },
+                  "enable_netbt": {
+                    "$ref": "#/components/schemas/teams-devices_enable_netbt"
                   },
                   "exclude": {
                     "$ref": "#/components/schemas/teams-devices_exclude_request"
@@ -201008,6 +201491,7 @@
           "Zero Trust Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.default",
         "x-fern-sdk-method-name": "update"
       },
@@ -201069,6 +201553,9 @@
                   },
                   "enable_device_credential_authentication": {
                     "$ref": "#/components/schemas/teams-devices_enable_device_credential_authentication"
+                  },
+                  "enable_netbt": {
+                    "$ref": "#/components/schemas/teams-devices_enable_netbt"
                   },
                   "enabled": {
                     "description": "Whether the policy will be applied to matching devices.",
@@ -201179,6 +201666,7 @@
           "Zero Trust Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "create"
       }
@@ -201732,6 +202220,7 @@
           "Zero Trust Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "delete"
       },
@@ -201790,6 +202279,7 @@
           "Devices"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "get"
       },
@@ -201854,6 +202344,9 @@
                   },
                   "enable_device_credential_authentication": {
                     "$ref": "#/components/schemas/teams-devices_enable_device_credential_authentication"
+                  },
+                  "enable_netbt": {
+                    "$ref": "#/components/schemas/teams-devices_enable_netbt"
                   },
                   "enabled": {
                     "description": "Whether the policy will be applied to matching devices.",
@@ -201957,6 +202450,7 @@
           "Zero Trust Write"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.devices.profiles.custom",
         "x-fern-sdk-method-name": "update"
       }
@@ -233514,7 +234008,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "queues.subscriptions",
-        "x-fern-sdk-method-name": "update",
+        "x-fern-sdk-method-name": "edit",
         "x-forge-params": {
           "enabled": {
             "default": null
@@ -241287,7 +241781,7 @@
                 "items": {
                   "properties": {
                     "description": {
-                      "$ref": "#/components/schemas/zero-trust-gateway_description-2"
+                      "$ref": "#/components/schemas/zero-trust-gateway_patch-description"
                     },
                     "enabled": {
                       "$ref": "#/components/schemas/zero-trust-gateway_enabled"
@@ -241698,7 +242192,7 @@
                 "type": "object",
                 "properties": {
                   "description": {
-                    "$ref": "#/components/schemas/zero-trust-gateway_description-2"
+                    "$ref": "#/components/schemas/zero-trust-gateway_patch-description"
                   },
                   "enabled": {
                     "$ref": "#/components/schemas/zero-trust-gateway_enabled"
@@ -273981,9 +274475,13 @@
           {
             "name": "environment",
             "in": "query",
-            "description": "Filter by supported environment (standard, fedramp).",
+            "description": "Environment to request (standard, fedramp). The result follows the account's FedRAMP entitlement: FedRAMP-enabled accounts always receive FedRAMP applications and other accounts receive standard applications. Any other non-empty value returns 400.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "fedramp",
+                "standard"
+              ]
             }
           },
           {
@@ -274143,6 +274641,18 @@
                 "ZOOM"
               ]
             }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "Environment to request (standard, fedramp). The result follows the account's FedRAMP entitlement: FedRAMP-enabled accounts always receive FedRAMP applications and other accounts receive standard applications. Any other non-empty value returns 400.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "fedramp",
+                "standard"
+              ]
+            }
           }
         ],
         "responses": {
@@ -274219,6 +274729,9 @@
               }
             }
           },
+          "400": {
+            "description": "Invalid environment."
+          },
           "404": {
             "description": "Application not found."
           }
@@ -274281,6 +274794,18 @@
                 "SERVICENOW",
                 "SLACK",
                 "ZOOM"
+              ]
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "Environment to request (standard, fedramp). The result follows the account's FedRAMP entitlement: FedRAMP-enabled accounts always receive FedRAMP applications and other accounts receive standard applications. Any other non-empty value returns 400.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "fedramp",
+                "standard"
               ]
             }
           },
@@ -274355,6 +274880,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid environment."
           },
           "404": {
             "description": "Application not found."
@@ -274432,7 +274960,7 @@
           {
             "name": "environment",
             "in": "query",
-            "description": "Filter by environment.",
+            "description": "Environment to request (standard, fedramp). The result follows the account's FedRAMP entitlement: FedRAMP-enabled accounts always receive FedRAMP applications and other accounts receive standard applications. Any other non-empty value returns 400.",
             "schema": {
               "type": "string",
               "enum": [
@@ -274524,6 +275052,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid environment."
           },
           "404": {
             "description": "Application not found or no flows available."
@@ -286860,6 +287391,7 @@
                     "warehouses": [
                       {
                         "bucket": "analytics-bucket",
+                        "catalog_uri": "https://catalog.cloudflarestorage.com/account123/analytics-bucket",
                         "id": "550e8400-e29b-41d4-a716-446655440000",
                         "jurisdiction": "default",
                         "maintenance_config": {
@@ -287014,6 +287546,7 @@
                   "messages": [],
                   "result": {
                     "bucket": "analytics-bucket",
+                    "catalog_uri": "https://catalog.cloudflarestorage.com/account123/analytics-bucket",
                     "credential_status": "present",
                     "id": "550e8400-e29b-41d4-a716-446655440000",
                     "jurisdiction": "default",
@@ -287645,6 +288178,7 @@
                   "errors": [],
                   "messages": [],
                   "result": {
+                    "catalog_uri": "https://catalog.cloudflarestorage.com/account123/my-bucket",
                     "id": "550e8400-e29b-41d4-a716-446655440000",
                     "name": "account123_my-bucket"
                   },
@@ -293213,10 +293747,6 @@
                     "data": {
                       "type": "object",
                       "properties": {
-                        "cf_account_tag": {
-                          "type": "string",
-                          "nullable": true
-                        },
                         "created_at": {
                           "type": "string",
                           "format": "date-time"
@@ -293224,9 +293754,6 @@
                         "id": {
                           "type": "string",
                           "format": "uuid"
-                        },
-                        "is_org_on_kv": {
-                          "type": "boolean"
                         },
                         "name": {
                           "type": "string",
@@ -525320,6 +525847,9 @@
         "tags": [
           "Deploy Hooks"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.deploy-hooks",
         "x-fern-sdk-method-name": "trigger"
@@ -553560,7 +554090,7 @@
                               "type": "string"
                             },
                             "include_subdomains": {
-                              "type": "string",
+                              "type": "boolean",
                               "example": false
                             }
                           }
@@ -553646,7 +554176,7 @@
                               "example": "2023-01-31T15:56:36Z"
                             },
                             "include_subdomains": {
-                              "type": "string",
+                              "type": "boolean",
                               "example": false
                             }
                           }
@@ -553794,7 +554324,7 @@
                               "type": "string"
                             },
                             "include_subdomains": {
-                              "type": "string",
+                              "type": "boolean",
                               "example": false
                             }
                           }
@@ -553897,7 +554427,7 @@
                               "example": "2023-01-31T15:56:36Z"
                             },
                             "include_subdomains": {
-                              "type": "string",
+                              "type": "boolean",
                               "example": true
                             }
                           }
@@ -588229,6 +588759,7 @@
         }
       },
       "builds_BuildUuid": {
+        "description": "UUID of the build, as returned by builds list.",
         "in": "path",
         "name": "build_uuid",
         "required": true,
@@ -588237,7 +588768,7 @@
         }
       },
       "builds_DeployHookUuid": {
-        "description": "Deploy hook UUID",
+        "description": "UUID of the deploy hook, as returned by deploy-hooks list.",
         "in": "path",
         "name": "deploy_hook_uuid",
         "required": true,
@@ -588267,13 +588798,15 @@
         }
       },
       "builds_PreviewId": {
-        "description": "The script tag of the Preview, which is a Worker in its own right",
+        "description": "ID of the Preview.",
         "in": "path",
         "name": "preview_id",
         "required": true,
         "schema": {
-          "$ref": "#/components/schemas/builds_external_script_id"
-        }
+          "type": "string",
+          "example": "0123456789abcdef0123456789abcdef"
+        },
+        "x-fern-parameter-name": "preview"
       },
       "builds_RepoConnectionUuid": {
         "in": "path",
@@ -588284,22 +588817,26 @@
         }
       },
       "builds_ScriptName": {
-        "description": "Human-readable name of the worker.",
+        "description": "Name or script tag of the Worker.",
         "in": "path",
         "name": "script_name",
         "required": true,
         "schema": {
-          "$ref": "#/components/schemas/builds_script_name"
-        }
+          "type": "string",
+          "example": "my-worker"
+        },
+        "x-fern-parameter-name": "worker"
       },
       "builds_ScriptTag": {
-        "description": "The Worker script tag (external script ID)",
+        "description": "Script tag of the Worker.",
         "in": "path",
         "name": "script_tag",
         "required": true,
         "schema": {
-          "$ref": "#/components/schemas/builds_external_script_id"
-        }
+          "type": "string",
+          "example": "0123456789abcdef0123456789abcdef"
+        },
+        "x-fern-parameter-name": "worker"
       },
       "builds_TriggerUuid": {
         "in": "path",
@@ -593163,7 +593700,7 @@
         "type": "string"
       },
       "abuse-reports_BadJustError": {
-        "description": "Please provide a more detailed description of the infringement between 1 and 5000 characters",
+        "description": "Justification must be at least 20 characters for phishing reports and cannot exceed 5000 characters",
         "type": "string"
       },
       "abuse-reports_BadNameError": {
@@ -593821,6 +594358,7 @@
           "url_pattern",
           "account",
           "zone",
+          "domain",
           "custom_expression"
         ]
       },
@@ -622627,6 +623165,17 @@
             "example": "my-worker",
             "nullable": true
           },
+          "deploy_tool": {
+            "description": "Deployment CLI detected in the selected root directory. A Wrangler config takes precedence. `cf` requires `cloudflare.config.ts` and a `cf` dependency or dev dependency in `package.json`.",
+            "type": "string",
+            "example": "cf",
+            "enum": [
+              "cf",
+              "wrangler",
+              null
+            ],
+            "nullable": true
+          },
           "env_worker_names": {
             "type": "object",
             "example": {
@@ -623750,12 +624299,12 @@
       "builds_external_script_id": {
         "description": "System-generated tag of the Worker. This is not the Worker name.",
         "type": "string",
-        "example": "dd7160bb9cef458093557736f4b9e75b"
+        "example": "0123456789abcdef0123456789abcdef"
       },
       "builds_external_script_ids": {
         "description": "Comma-separated list of system-generated worker script tags (max 20).",
         "type": "string",
-        "example": "dd7160bb9cef458093557736f4b9e75b,42fb14fe81df47139d3be684e4c637a6,ff7cf9a7582f4c0d90a4b95cb17d659e"
+        "example": "0123456789abcdef0123456789abcdef"
       },
       "builds_is_secret": {
         "description": "Whether to hide the value after it is saved. Secret values remain available to builds but appear as `null` when you list variables; non-secret values remain visible.",
@@ -623832,11 +624381,6 @@
         "description": "Repository directory in which build and deploy commands run.",
         "type": "string",
         "example": "/"
-      },
-      "builds_script_name": {
-        "description": "Human-readable name of the Worker.",
-        "type": "string",
-        "example": "my-worker"
       },
       "builds_stopped_on": {
         "type": "string",
@@ -626117,7 +626661,12 @@
         "example": "66bcf64aa8907b9f9d90ac17746a77ce394c393b92b3916633dc02846e608ad4",
         "maxLength": 64,
         "minLength": 64,
-        "x-sensitive": true
+        "x-sensitive": true,
+        "x-stainless-naming": {
+          "terraform": {
+            "property_name": "key"
+          }
+        }
       },
       "calls_turn_key_collection": {
         "allOf": [
@@ -626211,14 +626760,14 @@
           "created": {
             "$ref": "#/components/schemas/calls_created"
           },
-          "key": {
-            "$ref": "#/components/schemas/calls_turn_key"
-          },
           "modified": {
             "$ref": "#/components/schemas/calls_modified"
           },
           "name": {
             "$ref": "#/components/schemas/calls_turn_key_name"
+          },
+          "secret": {
+            "$ref": "#/components/schemas/calls_turn_key"
           },
           "uid": {
             "$ref": "#/components/schemas/calls_identifier"
@@ -626227,7 +626776,7 @@
         "required": [
           "uid",
           "name",
-          "key",
+          "secret",
           "created",
           "modified"
         ]
@@ -626286,7 +626835,7 @@
         ]
       },
       "cc_AccountUsageResponse": {
-        "description": "Current live usage, maximum limits, and utilization percentages for a Cloudchamber account. Usage includes active and assigned instances and is a current snapshot, not a historical or billable metric.",
+        "description": "Current live usage, maximum limits, and utilization percentages for your account. Usage includes active and assigned instances and is a current snapshot, not a historical or billable metric.",
         "type": "object",
         "properties": {
           "maximum": {
@@ -655835,7 +656384,6 @@
         "type": "string",
         "format": "uuid",
         "example": "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
-        "title": "identifier",
         "x-auditable": true
       },
       "email-security_ImpersonationRegistryList": {
@@ -656913,7 +657461,6 @@
         "type": "string",
         "format": "uuid",
         "example": "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
-        "title": "identifier",
         "x-auditable": true
       },
       "email-security_SendingDomainRestrictionList": {
@@ -657409,7 +657956,6 @@
         "type": "string",
         "format": "uuid",
         "example": "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
-        "title": "identifier",
         "x-auditable": true
       },
       "email-security_Validation": {
@@ -703349,6 +703895,12 @@
             "type": "string",
             "example": "my-data-bucket"
           },
+          "catalog_uri": {
+            "description": "Specifies the Iceberg REST catalog URI that clients use to connect to the catalog.",
+            "type": "string",
+            "format": "uri",
+            "example": "https://catalog.cloudflarestorage.com/account123/my-data-bucket"
+          },
           "credential_status": {
             "description": "Shows the credential configuration status.",
             "type": "string",
@@ -703409,6 +703961,12 @@
         "description": "Contains response from activating an R2 bucket as a catalog.",
         "type": "object",
         "properties": {
+          "catalog_uri": {
+            "description": "Specifies the Iceberg REST catalog URI that clients use to connect to the catalog.",
+            "type": "string",
+            "format": "uri",
+            "example": "https://catalog.cloudflarestorage.com/account123/my-bucket"
+          },
           "id": {
             "description": "Use this to uniquely identify the activated catalog.",
             "type": "string",
@@ -707425,6 +707983,9 @@
             "maximum": 600,
             "minimum": 60
           },
+          "sip": {
+            "$ref": "#/components/schemas/realtimekit_MeetingSip"
+          },
           "status": {
             "description": "Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.",
             "type": "string",
@@ -707456,6 +708017,33 @@
           "id",
           "created_at",
           "updated_at"
+        ]
+      },
+      "realtimekit_MeetingSip": {
+        "description": "SIP dial-in details. `null` if SIP is not enabled for the meeting.",
+        "type": "object",
+        "properties": {
+          "password": {
+            "description": "Password for SIP digest authentication. Keep it secret.",
+            "type": "string",
+            "readOnly": true
+          },
+          "sip_uri": {
+            "description": "SIP URI to dial. Configure it in your SIP provider or PBX.",
+            "type": "string",
+            "readOnly": true
+          },
+          "username": {
+            "description": "Username for SIP digest authentication.",
+            "type": "string",
+            "readOnly": true
+          }
+        },
+        "nullable": true,
+        "required": [
+          "sip_uri",
+          "username",
+          "password"
         ]
       },
       "realtimekit_PacketLossCumulative": {
@@ -708411,6 +708999,10 @@
                 "type": "boolean"
               },
               "can_edit_display_name": {
+                "type": "boolean"
+              },
+              "can_edit_meeting_title": {
+                "description": "Allows renaming the meeting for the current session",
                 "type": "boolean"
               },
               "can_livestream": {
@@ -709485,6 +710077,10 @@
                 "type": "boolean"
               },
               "can_edit_display_name": {
+                "type": "boolean"
+              },
+              "can_edit_meeting_title": {
+                "description": "Allows renaming the meeting for the current session",
                 "type": "boolean"
               },
               "can_livestream": {
@@ -731658,7 +732254,7 @@
             "example": "https://example.com/myvideo.mp4"
           },
           "watermark": {
-            "$ref": "#/components/schemas/stream_watermarkAtUpload"
+            "$ref": "#/components/schemas/stream_watermark_at_upload"
           }
         },
         "required": [
@@ -731944,18 +732540,6 @@
           }
         }
       },
-      "stream_watermarkAtUpload": {
-        "type": "object",
-        "properties": {
-          "uid": {
-            "description": "The unique identifier for the watermark profile.",
-            "type": "string",
-            "example": "ea95132c15732412d22c1476fa83f27a",
-            "maxLength": 32,
-            "x-auditable": true
-          }
-        }
-      },
       "stream_watermark_at_upload": {
         "type": "object",
         "properties": {
@@ -732099,7 +732683,9 @@
             "type": "string",
             "format": "uri",
             "example": "https://example.com",
-            "x-auditable": true
+            "x-auditable": true,
+            "x-fern-ignore": true,
+            "x-stainless-skip": true
           }
         },
         "anyOf": [
@@ -732149,6 +732735,7 @@
                     "type": "string",
                     "format": "uri",
                     "example": "https://example.com",
+                    "x-fern-ignore": true,
                     "x-stainless-skip": true
                   },
                   "secret": {
@@ -732993,6 +733580,9 @@
           "enable_device_credential_authentication": {
             "$ref": "#/components/schemas/teams-devices_enable_device_credential_authentication"
           },
+          "enable_netbt": {
+            "$ref": "#/components/schemas/teams-devices_enable_netbt"
+          },
           "enabled": {
             "description": "Whether the policy will be applied to matching devices.",
             "type": "boolean",
@@ -733017,6 +733607,12 @@
           },
           "include": {
             "$ref": "#/components/schemas/teams-devices_include"
+          },
+          "lan_allow_minutes": {
+            "$ref": "#/components/schemas/teams-devices_lan_allow_minutes"
+          },
+          "lan_allow_subnet_size": {
+            "$ref": "#/components/schemas/teams-devices_lan_allow_subnet_size"
           },
           "policy_id": {
             "$ref": "#/components/schemas/teams-devices_schemas-uuid"
@@ -733387,6 +733983,9 @@
           "enable_device_credential_authentication": {
             "$ref": "#/components/schemas/teams-devices_enable_device_credential_authentication"
           },
+          "enable_netbt": {
+            "$ref": "#/components/schemas/teams-devices_enable_netbt"
+          },
           "enabled": {
             "description": "Whether the policy will be applied to matching devices.",
             "type": "boolean",
@@ -733742,6 +734341,13 @@
       },
       "teams-devices_enable_device_credential_authentication": {
         "description": "Determines whether the WARP client can silently reauthenticate the user with device credentials (Microsoft Entra) instead of prompting for browser-based reauthentication.",
+        "type": "boolean",
+        "example": false,
+        "default": false,
+        "x-auditable": true
+      },
+      "teams-devices_enable_netbt": {
+        "description": "Determines whether NetBIOS over TCP/IP (NetBT) is enabled on the WARP tunnel interface. (Windows only). NetBT is disabled by default for security reasons.",
         "type": "boolean",
         "example": false,
         "default": false,
@@ -737525,7 +738131,7 @@
         }
       },
       "tls-certificates-and-hostnames_certificates-2": {
-        "description": "The uploaded root CA certificate.",
+        "description": "The uploaded root CA certificate. Responses return the certificates as Cloudflare stores them, re-encoded as PEM, not byte for byte as uploaded. Each certificate block ends with a newline, base64 lines are wrapped at 64 characters, text between blocks is dropped, and a chain may be reordered. Compare certificates by their decoded content rather than as strings.",
         "type": "string",
         "example": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoCgAwIBAgIUKTOAZNjcXVZRj4oQt0SHsl1c1vMwDQYJKoZIhvcNAQEL\nBQAwUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgMDVNhbiBGcmFuY2lzY28xEzARBgNV\nBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4YW1wbGUgSW5jLjAgFw0yMjExMjIx\nNjU5NDdaGA8yMTIyMTAyOTE2NTk0N1owUTELMAkGA1UEBhMCVVMxFjAUBgNVBAgM\nDVNhbiBGcmFuY2lzY28xEzARBgNVBAcMCkNhbGlmb3JuaWExFTATBgNVBAoMDEV4\nYW1wbGUgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRcORwg\nJFTdcG/2GKI+cFYiOBNDKjCZUXEOvXWY42BkH9wxiMT869CO+enA1w5pIrXow6kC\nM1sQspHHaVmJUlotEMJxyoLFfA/8Kt1EKFyobOjuZs2SwyVyJ2sStvQuUQEosULZ\nCNGZEqoH5g6zhMPxaxm7ZLrrsDZ9maNGVqo7EWLWHrZ57Q/5MtTrbxQL+eXjUmJ9\nK3kS+3uEwMdqR6Z3BluU1ivanpPc1CN2GNhdO0/hSY4YkGEnuLsqJyDd3cIiB1Mx\nuCBJ4ZaqOd2viV1WcP3oU3dxVPm4MWyfYIldMWB14FahScxLhWdRnM9YZ/i9IFcL\nypXsuz7DjrJPtPUCAwEAAaNmMGQwHQYDVR0OBBYEFP5JzLUawNF+c3AXsYTEWHh7\nz2czMB8GA1UdIwQYMBaAFP5JzLUawNF+c3AXsYTEWHh7z2czMA4GA1UdDwEB/wQE\nAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMA0GCSqGSIb3DQEBCwUAA4IBAQBc+Be7\nNDhpE09y7hLPZGRPl1cSKBw4RI0XIv6rlbSTFs5EebpTGjhx/whNxwEZhB9HZ711\n1Oa1YlT8xkI9DshB78mjAHCKBAJ76moK8tkG0aqdYpJ4ZcJTVBB7l98Rvgc7zfTi\ni7WemTy72deBbSeiEtXavm4EF0mWjHhQ5Nxpnp00Bqn5g1x8CyTDypgmugnep+xG\n+iFzNmTdsz7WI9T/7kDMXqB7M/FPWBORyS98OJqNDswCLF8bIZYwUBEe+bRHFomo\nShMzaC3tvim7WCb16noDkSTMlfKO4pnvKhpcVdSgwcruATV7y+W+Lvmz2OT/Gui4\nJhqeoTewsxndhDDE\n-----END CERTIFICATE-----"
       },
@@ -760829,6 +761435,7 @@
         "description": "Specify the rule description.",
         "type": "string",
         "example": "Block bad websites based on their host name.",
+        "default": "",
         "x-auditable": true
       },
       "zero-trust-gateway_description-3": {
@@ -761137,7 +761744,7 @@
         "required": [
           "expires_at"
         ],
-        "x-stainless-terraform-configurability": "computed_optional"
+        "x-stainless-terraform-configurability": "optional"
       },
       "zero-trust-gateway_extended-email-matching": {
         "description": "Configures user email settings for firewall policies. When you enable this, the system standardizes email addresses in the identity portion of the rule to match extended email variants in firewall policies. When you disable this setting, the system matches email addresses exactly as you provide them. Enable this setting if your email uses `.` or `+` modifiers.",
@@ -762057,6 +762664,12 @@
             "$ref": "#/components/schemas/zero-trust-gateway_url"
           }
         }
+      },
+      "zero-trust-gateway_patch-description": {
+        "description": "Update the rule description. If omitted, the description is unchanged. Set to an empty string to clear the description.",
+        "type": "string",
+        "example": "Block bad websites based on their host name.",
+        "x-auditable": true
       },
       "zero-trust-gateway_precedence": {
         "description": "Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.",
@@ -763035,7 +763648,7 @@
             "x-stainless-terraform-configurability": "optional"
           }
         },
-        "x-stainless-terraform-configurability": "computed_optional"
+        "x-stainless-terraform-configurability": "optional"
       },
       "zero-trust-gateway_rules": {
         "type": "object",
@@ -763175,6 +763788,7 @@
             "description": "Specify the time zone for rule evaluation. When a [valid time zone city name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) is provided, Gateway always uses the current time for that time zone. When this parameter is omitted, Gateway uses the time zone determined from the user's IP address. Colo time zone is used when the user's IP address does not resolve to a location.",
             "type": "string",
             "example": "America/New York",
+            "default": "",
             "x-auditable": true
           },
           "tue": {
@@ -763191,7 +763805,7 @@
           }
         },
         "nullable": true,
-        "x-stainless-terraform-configurability": "computed_optional"
+        "x-stainless-terraform-configurability": "optional"
       },
       "zero-trust-gateway_settings": {
         "type": "object",
@@ -764397,7 +765011,7 @@
         }
       },
       "zones_0rtt": {
-        "description": "0-RTT session resumption enabled for this zone.",
+        "description": "0-RTT session resumption enabled for this zone.\nChanging this setting does not enable or disable TLS 1.3. Writing the `tls_1_3` setting also changes 0-RTT: `zrt` enables it, and `on` or `off` disables it.",
         "allOf": [
           {
             "$ref": "#/components/schemas/zones_base"
@@ -767625,7 +768239,7 @@
         "x-stainless-deprecation-message": "Privacy Pass v1 was deprecated in 2023. (Announcement - https://blog.cloudflare.com/privacy-pass-standard/) and (API deprecation details - https://developers.cloudflare.com/fundamentals/api/reference/deprecations/#2024-03-31)"
       },
       "zones_proxy_read_timeout": {
-        "description": "Maximum time between two read operations from origin.",
+        "description": "Maximum time in seconds between two read operations from origin.",
         "allOf": [
           {
             "$ref": "#/components/schemas/zones_base"
@@ -767650,7 +768264,7 @@
         "title": "Proxy Read Timeout"
       },
       "zones_proxy_read_timeout_value": {
-        "description": "Value of the zone setting.\nNotes: Value must be between 1 and 6000",
+        "description": "Value of the zone setting, in seconds.\nNotes: Value must be between 1 and 6000",
         "type": "number",
         "default": 125
       },
@@ -769201,7 +769815,7 @@
         ]
       },
       "zones_tls_1_3": {
-        "description": "Enables Crypto TLS 1.3 feature for a zone.",
+        "description": "Enables Crypto TLS 1.3 feature for a zone.\nThis setting also controls 0-RTT. `zrt` enables TLS 1.3 and 0-RTT, `on` enables TLS 1.3 and disables 0-RTT, and `off` disables both.\nReads return `zrt` when TLS 1.3 and 0-RTT are both enabled, so setting `on` while 0-RTT is enabled turns 0-RTT off.",
         "allOf": [
           {
             "$ref": "#/components/schemas/zones_base"
@@ -772851,6 +773465,11 @@
                 "ai_config": {
                   "$ref": "#/components/schemas/realtimekit_AIConfig"
                 },
+                "enable_sip": {
+                  "description": "Lets phones and SIP systems dial in to the meeting. The response includes the SIP URI and credentials in `sip`. Ignored when replacing a meeting with `PUT`.",
+                  "type": "boolean",
+                  "default": false
+                },
                 "live_stream_on_start": {
                   "description": "Specifies if the meeting should start getting livestreamed on start.",
                   "type": "boolean",
@@ -773294,6 +773913,10 @@
               "properties": {
                 "ai_config": {
                   "$ref": "#/components/schemas/realtimekit_AIConfig"
+                },
+                "enable_sip": {
+                  "description": "Turns SIP dial-in on or off. Turning it off deletes the SIP URI and credentials; calls already in progress continue. Turning it on again creates a new SIP URI and credentials.",
+                  "type": "boolean"
                 },
                 "live_stream_on_start": {
                   "description": "Specifies if the meeting should start getting livestreamed on start.",
@@ -777858,17 +778481,14 @@
         "limits": {
           "description": "View build-minute availability and refresh information."
         },
-        "logs": {
-          "description": "Retrieve build logs."
+        "previews": {
+          "description": "Manage the Previews that Workers Builds creates for non-production branches."
         },
         "repos": {
           "description": "Manage source repository connections for Workers Builds."
         },
         "tokens": {
           "description": "Manage credentials used by Workers Builds to deploy Workers."
-        },
-        "triggers": {
-          "description": "Configure how repository changes build and deploy Workers."
         },
         "versions": {
           "description": "Find builds associated with Worker versions."

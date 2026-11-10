@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers
     public partial class WorkersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.workers.item collection</summary>
-        /// <param name="position">The Worker script tag (external script ID)</param>
+        /// <param name="position">Script tag of the Worker.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.WithExternalScriptItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.WithExternalScriptItemRequestBuilder this[string position]
         {

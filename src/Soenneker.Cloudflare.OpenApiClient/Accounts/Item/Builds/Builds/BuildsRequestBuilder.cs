@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds.Latest.LatestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.builds.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">UUID of the build, as returned by builds list.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds.Item.WithBuildUuItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds.Item.WithBuildUuItemRequestBuilder this[Guid position]
         {

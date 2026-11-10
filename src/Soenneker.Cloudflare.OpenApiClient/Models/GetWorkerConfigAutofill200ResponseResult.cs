@@ -21,6 +21,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("config_file") is { } nullNodeConfigFile && nullNodeConfigFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigFile = null;
             if (parseNode.GetChildNode("default_worker_name") is null) { _explicitNullValueDefaultWorkerName = default!; _explicitNullProperties?.Remove("default_worker_name"); }
             else if (parseNode.GetChildNode("default_worker_name") is { } nullNodeDefaultWorkerName && nullNodeDefaultWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultWorkerName = null;
+            if (parseNode.GetChildNode("deploy_tool") is null) { _explicitNullValueDeployTool = default!; _explicitNullProperties?.Remove("deploy_tool"); }
+            else if (parseNode.GetChildNode("deploy_tool") is { } nullNodeDeployTool && nullNodeDeployTool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployTool = null;
             if (parseNode.GetChildNode("env_worker_names") is null) { _explicitNullValueEnvWorkerNames = default!; _explicitNullProperties?.Remove("env_worker_names"); }
             else if (parseNode.GetChildNode("env_worker_names") is { } nullNodeEnvWorkerNames && nullNodeEnvWorkerNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvWorkerNames = null;
             if (parseNode.GetChildNode("package_manager") is null) { _explicitNullValuePackageManager = default!; _explicitNullProperties?.Remove("package_manager"); }
@@ -50,6 +52,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DefaultWorkerName { get => _explicitNullValueDefaultWorkerName; set { _explicitNullValueDefaultWorkerName = value; AdditionalData?.Remove("default_worker_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_worker_name"); else _explicitNullProperties?.Remove("default_worker_name"); } }
         private string _explicitNullValueDefaultWorkerName = default!;
+#endif
+        /// <summary>Deployment CLI detected in the selected root directory. A Wrangler config takes precedence. `cf` requires `cloudflare.config.ts` and a `cf` dependency or dev dependency in `package.json`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseDeployTool? DeployTool { get => _explicitNullValueDeployTool; set { _explicitNullValueDeployTool = value; AdditionalData?.Remove("deploy_tool"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_tool"); else _explicitNullProperties?.Remove("deploy_tool"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseDeployTool? _explicitNullValueDeployTool = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseDeployTool DeployTool { get => _explicitNullValueDeployTool; set { _explicitNullValueDeployTool = value; AdditionalData?.Remove("deploy_tool"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_tool"); else _explicitNullProperties?.Remove("deploy_tool"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseDeployTool _explicitNullValueDeployTool = default!;
 #endif
         /// <summary>The env_worker_names property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "config_file", n => { ConfigFile = n.GetStringValue(); } },
                 { "default_worker_name", n => { DefaultWorkerName = n.GetStringValue(); } },
+                { "deploy_tool", n => { DeployTool = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseDeployTool>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseDeployTool.CreateFromDiscriminatorValue); } },
                 { "env_worker_names", n => { EnvWorkerNames = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty.CreateFromDiscriminatorValue); } },
                 { "package_manager", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePackageManager = default; _explicitNullProperties?.Remove("package_manager"); AdditionalData["package_manager"] = unknown; } else { PackageManager = parsed; AdditionalData.Remove("package_manager"); } } },
                 { "scripts", n => { Scripts = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty.CreateFromDiscriminatorValue); } },
@@ -115,6 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("config_file", ConfigFile);
             writer.WriteStringValue("default_worker_name", DefaultWorkerName);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseDeployTool>("deploy_tool", DeployTool);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty>("env_worker_names", EnvWorkerNames);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager>("package_manager", PackageManager);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty>("scripts", Scripts);

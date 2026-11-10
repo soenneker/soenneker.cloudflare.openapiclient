@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.P
     public partial class PreviewsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.workers.item.previews.item collection</summary>
-        /// <param name="position">The script tag of the Preview, which is a Worker in its own right</param>
+        /// <param name="position">ID of the Preview.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Previews.Item.WithPreviewItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Previews.Item.WithPreviewItemRequestBuilder this[string position]
         {
