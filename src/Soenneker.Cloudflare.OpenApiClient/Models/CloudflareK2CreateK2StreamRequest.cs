@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Sets the record retention period from 1 hour (3600 seconds) to 30 days (2592000 seconds), inclusive.</summary>
         public int? RetentionSeconds { get => _explicitNullValueRetentionSeconds; set { _explicitNullValueRetentionSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention_seconds"); else _explicitNullProperties?.Remove("retention_seconds"); } }
         private int? _explicitNullValueRetentionSeconds = default!;
-        /// <summary>The worker_binding property</summary>
+        /// <summary>Configures whether Workers bindings can produce records to the stream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2CreateK2StreamRequestWorkerBinding? WorkerBinding { get => _explicitNullValueWorkerBinding; set { _explicitNullValueWorkerBinding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_binding"); else _explicitNullProperties?.Remove("worker_binding"); } }

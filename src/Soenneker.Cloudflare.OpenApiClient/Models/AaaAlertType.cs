@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.</summary>
+    /// <summary>Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values. This enum lists every alert type, not the ones a given account can create, since some types depend on entitlements or account type. To get the alert types an account can create, call `GET /accounts/{account_id}/alerting/v3/available_alerts`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AaaAlertType
     {
@@ -27,9 +27,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         AdvancedHttpAlertError,
         #pragma warning restore CS1591
+        [EnumMember(Value = "attack_lifecycle")]
+        #pragma warning disable CS1591
+        AttackLifecycle,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bgp_advertisement_change")]
+        #pragma warning disable CS1591
+        BgpAdvertisementChange,
+        #pragma warning restore CS1591
         [EnumMember(Value = "bgp_hijack_notification")]
         #pragma warning disable CS1591
         BgpHijackNotification,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "billing_budget_alert")]
+        #pragma warning disable CS1591
+        BillingBudgetAlert,
         #pragma warning restore CS1591
         [EnumMember(Value = "billing_usage_alert")]
         #pragma warning disable CS1591
@@ -59,6 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         BrandProtectionDigest,
         #pragma warning restore CS1591
+        [EnumMember(Value = "casb_weekly_digest")]
+        #pragma warning disable CS1591
+        CasbWeeklyDigest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "clickhouse_alert_fw_anomaly")]
         #pragma warning disable CS1591
         ClickhouseAlertFwAnomaly,
@@ -67,13 +83,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         ClickhouseAlertFwEntAnomaly,
         #pragma warning restore CS1591
+        [EnumMember(Value = "closed_port_scan_alert")]
+        #pragma warning disable CS1591
+        ClosedPortScanAlert,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cloudforce_one_request_notification")]
         #pragma warning disable CS1591
         CloudforceOneRequestNotification,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cmd_managed_defense_notification")]
+        #pragma warning disable CS1591
+        CmdManagedDefenseNotification,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cni_maintenance_notification")]
         #pragma warning disable CS1591
         CniMaintenanceNotification,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "containers_security_alert")]
+        #pragma warning disable CS1591
+        ContainersSecurityAlert,
         #pragma warning restore CS1591
         [EnumMember(Value = "custom_analytics")]
         #pragma warning disable CS1591
@@ -95,6 +123,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         DeviceConnectivityAnomalyAlert,
         #pragma warning restore CS1591
+        [EnumMember(Value = "dex_device_connectivity_alert")]
+        #pragma warning disable CS1591
+        DexDeviceConnectivityAlert,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dex_synthetic_test_availability_alert")]
+        #pragma warning disable CS1591
+        DexSyntheticTestAvailabilityAlert,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dex_synthetic_test_latency_alert")]
+        #pragma warning disable CS1591
+        DexSyntheticTestLatencyAlert,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dos_attack_l4")]
         #pragma warning disable CS1591
         DosAttackL4,
@@ -102,6 +142,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "dos_attack_l7")]
         #pragma warning disable CS1591
         DosAttackL7,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "executive_communications")]
+        #pragma warning disable CS1591
+        ExecutiveCommunications,
         #pragma warning restore CS1591
         [EnumMember(Value = "expiring_service_token_alert")]
         #pragma warning disable CS1591
@@ -151,6 +195,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         IncidentAlert,
         #pragma warning restore CS1591
+        [EnumMember(Value = "leaked_service_token_alert")]
+        #pragma warning disable CS1591
+        LeakedServiceTokenAlert,
+        #pragma warning restore CS1591
         [EnumMember(Value = "load_balancing_health_alert")]
         #pragma warning disable CS1591
         LoadBalancingHealthAlert,
@@ -159,9 +207,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         LoadBalancingPoolEnablementAlert,
         #pragma warning restore CS1591
+        [EnumMember(Value = "log_explorer_ingest_rate_limit")]
+        #pragma warning disable CS1591
+        LogExplorerIngestRateLimit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "log_explorer_scheduled_query_results_alert")]
+        #pragma warning disable CS1591
+        LogExplorerScheduledQueryResultsAlert,
+        #pragma warning restore CS1591
         [EnumMember(Value = "logo_match_alert")]
         #pragma warning disable CS1591
         LogoMatchAlert,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "magic_endpoint_healthcheck_alert")]
+        #pragma warning disable CS1591
+        MagicEndpointHealthcheckAlert,
         #pragma warning restore CS1591
         [EnumMember(Value = "magic_tunnel_health_check_event")]
         #pragma warning disable CS1591
@@ -178,6 +238,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "mtls_certificate_store_certificate_expiration_type")]
         #pragma warning disable CS1591
         MtlsCertificateStoreCertificateExpirationType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "open_port_scan_alert")]
+        #pragma warning disable CS1591
+        OpenPortScanAlert,
         #pragma warning restore CS1591
         [EnumMember(Value = "pages_event_alert")]
         #pragma warning disable CS1591
@@ -247,6 +311,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         SentinelAlert,
         #pragma warning restore CS1591
+        [EnumMember(Value = "stakeout_credential_leak_alert")]
+        #pragma warning disable CS1591
+        StakeoutCredentialLeakAlert,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "stakeout_saved_query_daily_digest_alert")]
+        #pragma warning disable CS1591
+        StakeoutSavedQueryDailyDigestAlert,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "stakeout_saved_query_immediate_alert")]
+        #pragma warning disable CS1591
+        StakeoutSavedQueryImmediateAlert,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stream_live_notifications")]
         #pragma warning disable CS1591
         StreamLiveNotifications,
@@ -278,6 +354,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "web_analytics_metrics_update")]
         #pragma warning disable CS1591
         WebAnalyticsMetricsUpdate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workers_for_platforms_security_alert")]
+        #pragma warning disable CS1591
+        WorkersForPlatformsSecurityAlert,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workers_observability_alert")]
+        #pragma warning disable CS1591
+        WorkersObservabilityAlert,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workers_observability_real_time_issue")]
+        #pragma warning disable CS1591
+        WorkersObservabilityRealTimeIssue,
         #pragma warning restore CS1591
         [EnumMember(Value = "zone_aop_custom_certificate_expiration_type")]
         #pragma warning disable CS1591

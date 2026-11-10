@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the configuration of an AI Gateway, such as its caching, rate limiting, logging, and authentication settings.
+        /// Updates the configuration of an AI Gateway, such as its caching, rate limiting, spend limits, logging, and authentication settings.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGateway200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -197,7 +197,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             return requestInfo;
         }
         /// <summary>
-        /// Updates the configuration of an AI Gateway, such as its caching, rate limiting, logging, and authentication settings.
+        /// Updates the configuration of an AI Gateway, such as its caching, rate limiting, spend limits, logging, and authentication settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

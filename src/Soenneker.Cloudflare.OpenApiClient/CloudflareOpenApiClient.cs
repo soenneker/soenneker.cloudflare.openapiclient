@@ -11,7 +11,6 @@ using Soenneker.Cloudflare.OpenApiClient.Analytics;
 using Soenneker.Cloudflare.OpenApiClient.Billing;
 using Soenneker.Cloudflare.OpenApiClient.Certificates;
 using Soenneker.Cloudflare.OpenApiClient.Cws;
-using Soenneker.Cloudflare.OpenApiClient.Heartbeat;
 using Soenneker.Cloudflare.OpenApiClient.Internal;
 using Soenneker.Cloudflare.OpenApiClient.Ips;
 using Soenneker.Cloudflare.OpenApiClient.Live;
@@ -66,11 +65,6 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.Cws.CwsRequestBuilder Cws
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Cws.CwsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The heartbeat property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Heartbeat.HeartbeatRequestBuilder Heartbeat
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Heartbeat.HeartbeatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The internal property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Internal.InternalRequestBuilder Internal

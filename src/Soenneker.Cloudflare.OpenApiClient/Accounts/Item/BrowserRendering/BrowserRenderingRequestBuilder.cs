@@ -13,6 +13,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Pdf;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Recording;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Screenshot;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Script;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Snapshot;
 using System.Collections.Generic;
 using System.IO;
@@ -80,6 +81,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Screenshot.ScreenshotRequestBuilder Screenshot
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Screenshot.ScreenshotRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The script property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Script.ScriptRequestBuilder Script
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Script.ScriptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The snapshot property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Snapshot.SnapshotRequestBuilder Snapshot

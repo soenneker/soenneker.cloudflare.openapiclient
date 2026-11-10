@@ -32,6 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("alert_trigger_preferences") is { } nullNodeAlertTriggerPreferences && nullNodeAlertTriggerPreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertTriggerPreferences = null;
             if (parseNode.GetChildNode("alert_trigger_preferences_value") is null) { _explicitNullValueAlertTriggerPreferencesValue = default!; _explicitNullProperties?.Remove("alert_trigger_preferences_value"); }
             else if (parseNode.GetChildNode("alert_trigger_preferences_value") is { } nullNodeAlertTriggerPreferencesValue && nullNodeAlertTriggerPreferencesValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertTriggerPreferencesValue = null;
+            if (parseNode.GetChildNode("check_id") is null) { _explicitNullValueCheckId = default!; _explicitNullProperties?.Remove("check_id"); }
+            else if (parseNode.GetChildNode("check_id") is { } nullNodeCheckId && nullNodeCheckId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckId = null;
             if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
             else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
             if (parseNode.GetChildNode("environment") is null) { _explicitNullValueEnvironment = default!; _explicitNullProperties?.Remove("environment"); }
@@ -74,6 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("protocol") is null) { _explicitNullValueProtocol = default!; _explicitNullProperties?.Remove("protocol"); }
             else if (parseNode.GetChildNode("protocol") is { } nullNodeProtocol && nullNodeProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocol = null;
+            if (parseNode.GetChildNode("query_id") is null) { _explicitNullValueQueryId = default!; _explicitNullProperties?.Remove("query_id"); }
+            else if (parseNode.GetChildNode("query_id") is { } nullNodeQueryId && nullNodeQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryId = null;
             if (parseNode.GetChildNode("query_tag") is null) { _explicitNullValueQueryTag = default!; _explicitNullProperties?.Remove("query_tag"); }
             else if (parseNode.GetChildNode("query_tag") is { } nullNodeQueryTag && nullNodeQueryTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryTag = null;
             if (parseNode.GetChildNode("requests_per_second") is null) { _explicitNullValueRequestsPerSecond = default!; _explicitNullProperties?.Remove("requests_per_second"); }
@@ -94,6 +98,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("target_zone_name") is { } nullNodeTargetZoneName && nullNodeTargetZoneName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetZoneName = null;
             if (parseNode.GetChildNode("token_id") is null) { _explicitNullValueTokenId = default!; _explicitNullProperties?.Remove("token_id"); }
             else if (parseNode.GetChildNode("token_id") is { } nullNodeTokenId && nullNodeTokenId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenId = null;
+            if (parseNode.GetChildNode("total_spend_dollars") is null) { _explicitNullValueTotalSpendDollars = default!; _explicitNullProperties?.Remove("total_spend_dollars"); }
+            else if (parseNode.GetChildNode("total_spend_dollars") is { } nullNodeTotalSpendDollars && nullNodeTotalSpendDollars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSpendDollars = null;
             if (parseNode.GetChildNode("traffic_exclusions") is null) { _explicitNullValueTrafficExclusions = default!; _explicitNullProperties?.Remove("traffic_exclusions"); }
             else if (parseNode.GetChildNode("traffic_exclusions") is { } nullNodeTrafficExclusions && nullNodeTrafficExclusions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficExclusions = null;
             if (parseNode.GetChildNode("tunnel_id") is null) { _explicitNullValueTunnelId = default!; _explicitNullProperties?.Remove("tunnel_id"); }
@@ -179,6 +185,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> AlertTriggerPreferencesValue { get => _explicitNullValueAlertTriggerPreferencesValue; set { _explicitNullValueAlertTriggerPreferencesValue = value; AdditionalData?.Remove("alert_trigger_preferences_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences_value"); else _explicitNullProperties?.Remove("alert_trigger_preferences_value"); } }
         private List<string> _explicitNullValueAlertTriggerPreferencesValue = default!;
+#endif
+        /// <summary>Used for configuring magic_endpoint_healthcheck_alert. Takes one or more health check IDs, each a UUID. That alert type requires check_id together with alert_trigger_preferences set to slo, a numeric alert_trigger_preferences_value, and selectors set to failures.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? CheckId { get => _explicitNullValueCheckId; set { _explicitNullValueCheckId = value; AdditionalData?.Remove("check_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_id"); else _explicitNullProperties?.Remove("check_id"); } }
+        private List<Guid?>? _explicitNullValueCheckId = default!;
+#nullable restore
+#else
+        public List<Guid?> CheckId { get => _explicitNullValueCheckId; set { _explicitNullValueCheckId = value; AdditionalData?.Remove("check_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_id"); else _explicitNullProperties?.Remove("check_id"); } }
+        private List<Guid?> _explicitNullValueCheckId = default!;
 #endif
         /// <summary>Used for configuring load_balancing_pool_enablement_alert</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -390,6 +406,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; AdditionalData?.Remove("protocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
         private List<string> _explicitNullValueProtocol = default!;
 #endif
+        /// <summary>Used for configuring stakeout_saved_query_daily_digest_alert and stakeout_saved_query_immediate_alert, which require it. Takes exactly one value, the saved query ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; AdditionalData?.Remove("query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
+        private List<string>? _explicitNullValueQueryId = default!;
+#nullable restore
+#else
+        public List<string> QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; AdditionalData?.Remove("query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
+        private List<string> _explicitNullValueQueryId = default!;
+#endif
         /// <summary>Usage depends on specific alert type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -490,6 +516,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> TokenId { get => _explicitNullValueTokenId; set { _explicitNullValueTokenId = value; AdditionalData?.Remove("token_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_id"); else _explicitNullProperties?.Remove("token_id"); } }
         private List<string> _explicitNullValueTokenId = default!;
 #endif
+        /// <summary>Used for configuring billing_budget_alert. Takes exactly one value, the budget threshold in US dollars, as a string greater than zero.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TotalSpendDollars { get => _explicitNullValueTotalSpendDollars; set { _explicitNullValueTotalSpendDollars = value; AdditionalData?.Remove("total_spend_dollars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_spend_dollars"); else _explicitNullProperties?.Remove("total_spend_dollars"); } }
+        private List<string>? _explicitNullValueTotalSpendDollars = default!;
+#nullable restore
+#else
+        public List<string> TotalSpendDollars { get => _explicitNullValueTotalSpendDollars; set { _explicitNullValueTotalSpendDollars = value; AdditionalData?.Remove("total_spend_dollars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_spend_dollars"); else _explicitNullProperties?.Remove("total_spend_dollars"); } }
+        private List<string> _explicitNullValueTotalSpendDollars = default!;
+#endif
         /// <summary>Used for configuring traffic_anomalies_alert</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -582,6 +618,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "airport_code", n => { AirportCode = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "alert_trigger_preferences", n => { AlertTriggerPreferences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "alert_trigger_preferences_value", n => { AlertTriggerPreferencesValue = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "check_id", n => { CheckId = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "environment", n => { Environment = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "event", n => { Event = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -603,6 +640,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "product", n => { Product = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "project_id", n => { ProjectId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "protocol", n => { Protocol = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "query_id", n => { QueryId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "query_tag", n => { QueryTag = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "requests_per_second", n => { RequestsPerSecond = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "selectors", n => { Selectors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -613,6 +651,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "target_ip", n => { TargetIp = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "target_zone_name", n => { TargetZoneName = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "token_id", n => { TokenId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "total_spend_dollars", n => { TotalSpendDollars = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "traffic_exclusions", n => { TrafficExclusions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityEventsItem>()?.AsList(); } },
                 { "tunnel_id", n => { TunnelId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tunnel_name", n => { TunnelName = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -635,6 +674,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("airport_code", AirportCode);
             writer.WriteCollectionOfPrimitiveValues<string>("alert_trigger_preferences", AlertTriggerPreferences);
             writer.WriteCollectionOfPrimitiveValues<string>("alert_trigger_preferences_value", AlertTriggerPreferencesValue);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("check_id", CheckId);
             writer.WriteCollectionOfPrimitiveValues<string>("enabled", Enabled);
             writer.WriteCollectionOfPrimitiveValues<string>("environment", Environment);
             writer.WriteCollectionOfPrimitiveValues<string>("event", Event);
@@ -656,6 +696,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("product", Product);
             writer.WriteCollectionOfPrimitiveValues<string>("project_id", ProjectId);
             writer.WriteCollectionOfPrimitiveValues<string>("protocol", Protocol);
+            writer.WriteCollectionOfPrimitiveValues<string>("query_id", QueryId);
             writer.WriteCollectionOfPrimitiveValues<string>("query_tag", QueryTag);
             writer.WriteCollectionOfPrimitiveValues<string>("requests_per_second", RequestsPerSecond);
             writer.WriteCollectionOfPrimitiveValues<string>("selectors", Selectors);
@@ -666,6 +707,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("target_ip", TargetIp);
             writer.WriteCollectionOfPrimitiveValues<string>("target_zone_name", TargetZoneName);
             writer.WriteCollectionOfPrimitiveValues<string>("token_id", TokenId);
+            writer.WriteCollectionOfPrimitiveValues<string>("total_spend_dollars", TotalSpendDollars);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityEventsItem>("traffic_exclusions", TrafficExclusions);
             writer.WriteCollectionOfPrimitiveValues<string>("tunnel_id", TunnelId);
             writer.WriteCollectionOfPrimitiveValues<string>("tunnel_name", TunnelName);

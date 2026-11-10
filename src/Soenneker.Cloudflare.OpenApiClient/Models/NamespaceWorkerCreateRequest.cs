@@ -19,6 +19,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("trusted_workers") is null) { _explicitNullValueTrustedWorkers = default!; _explicitNullProperties?.Remove("trusted_workers"); }
+            else if (parseNode.GetChildNode("trusted_workers") is { } nullNodeTrustedWorkers && nullNodeTrustedWorkers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustedWorkers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,12 +35,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
+        /// <summary>Whether the Workers in the namespace are executed in a &quot;trusted&quot; manner. When a Worker is trusted, it has access to the shared caches for the zone in the Cache API, and has access to the `request.cf` object on incoming Requests. When a Worker is untrusted, caches are not shared across the zone, and `request.cf` is undefined. By default, Workers in a namespace are &quot;untrusted&quot;.</summary>
+        public bool? TrustedWorkers { get => _explicitNullValueTrustedWorkers; set { _explicitNullValueTrustedWorkers = value; AdditionalData?.Remove("trusted_workers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trusted_workers"); else _explicitNullProperties?.Remove("trusted_workers"); } }
+        private bool? _explicitNullValueTrustedWorkers = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerCreateRequest"/> and sets the default values.
         /// </summary>
         public NamespaceWorkerCreateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            TrustedWorkers = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,6 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "trusted_workers", n => { TrustedWorkers = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("trusted_workers", TrustedWorkers);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

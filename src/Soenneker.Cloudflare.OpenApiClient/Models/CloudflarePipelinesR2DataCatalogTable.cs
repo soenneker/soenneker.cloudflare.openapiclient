@@ -65,12 +65,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Rolling policy for file sinks (when &amp; why to close a file and open a new one).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy? RollingPolicy { get => _explicitNullValueRollingPolicy; set { _explicitNullValueRollingPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolling_policy"); else _explicitNullProperties?.Remove("rolling_policy"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy? _explicitNullValueRollingPolicy = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkRollingPolicy? RollingPolicy { get => _explicitNullValueRollingPolicy; set { _explicitNullValueRollingPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolling_policy"); else _explicitNullProperties?.Remove("rolling_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkRollingPolicy? _explicitNullValueRollingPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy RollingPolicy { get => _explicitNullValueRollingPolicy; set { _explicitNullValueRollingPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolling_policy"); else _explicitNullProperties?.Remove("rolling_policy"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy _explicitNullValueRollingPolicy = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkRollingPolicy RollingPolicy { get => _explicitNullValueRollingPolicy; set { _explicitNullValueRollingPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolling_policy"); else _explicitNullProperties?.Remove("rolling_policy"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkRollingPolicy _explicitNullValueRollingPolicy = default!;
 #endif
         /// <summary>Table name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
-                { "rolling_policy", n => { RollingPolicy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy.CreateFromDiscriminatorValue); } },
+                { "rolling_policy", n => { RollingPolicy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkRollingPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkRollingPolicy.CreateFromDiscriminatorValue); } },
                 { "table_name", n => { TableName = n.GetStringValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
             };
@@ -128,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteStringValue("bucket", Bucket);
             writer.WriteStringValue("namespace", Namespace);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2DataCatalogTableRollingPolicy>("rolling_policy", RollingPolicy);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkRollingPolicy>("rolling_policy", RollingPolicy);
             writer.WriteStringValue("table_name", TableName);
             writer.WriteStringValue("token", Token);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

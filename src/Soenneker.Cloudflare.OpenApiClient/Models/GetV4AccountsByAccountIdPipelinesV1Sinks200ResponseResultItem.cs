@@ -40,12 +40,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the configuration of the R2 Sink.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultItemConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultItemConfig? _explicitNullValueConfig = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultItemConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultItemConfig _explicitNullValueConfig = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultItemConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultItemConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkConfig.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "format", n => { Format = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkFormat>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkFormat.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -138,7 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultItemConfig>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkFormat>("format", Format);
             writer.WriteStringValue("id", Id);

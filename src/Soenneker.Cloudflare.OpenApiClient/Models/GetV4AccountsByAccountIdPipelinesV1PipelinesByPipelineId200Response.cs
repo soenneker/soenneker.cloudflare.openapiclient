@@ -28,12 +28,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId200ResponseResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId200ResponseResult? _explicitNullValueResult = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineExtended? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineExtended? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId200ResponseResult Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId200ResponseResult _explicitNullValueResult = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineExtended Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineExtended _explicitNullValueResult = default!;
 #endif
         /// <summary>Indicates whether the API call was successful.</summary>
         public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; AdditionalData?.Remove("success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId200ResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId200ResponseResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineExtended>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineExtended.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId200ResponseResult>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineExtended>("result", Result);
             writer.WriteBoolValue("success", Success);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

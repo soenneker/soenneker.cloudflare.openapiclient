@@ -18,6 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("agents") is null) { _explicitNullValueAgents = default!; _explicitNullProperties?.Remove("agents"); }
+            else if (parseNode.GetChildNode("agents") is { } nullNodeAgents && nullNodeAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agents = null;
             if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
             else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
             if (parseNode.GetChildNode("head_sampling_rate") is null) { _explicitNullValueHeadSamplingRate = default!; _explicitNullProperties?.Remove("head_sampling_rate"); }
@@ -34,6 +36,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Agents observability settings for the Worker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityAgents? Agents { get => _explicitNullValueAgents; set { _explicitNullValueAgents = value; AdditionalData?.Remove("agents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agents"); else _explicitNullProperties?.Remove("agents"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityAgents? _explicitNullValueAgents = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityAgents Agents { get => _explicitNullValueAgents; set { _explicitNullValueAgents = value; AdditionalData?.Remove("agents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agents"); else _explicitNullProperties?.Remove("agents"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityAgents _explicitNullValueAgents = default!;
+#endif
         /// <summary>Whether observability is enabled for the Worker.</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
@@ -101,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "agents", n => { Agents = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityAgents>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityAgents.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "head_sampling_rate", n => { HeadSamplingRate = n.GetDoubleValue(); } },
                 { "issues", n => { Issues = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityIssues>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityIssues.CreateFromDiscriminatorValue); } },
@@ -116,6 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityAgents>("agents", Agents);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("head_sampling_rate", HeadSamplingRate);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityIssues>("issues", Issues);

@@ -70,6 +70,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Sinks.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1SinksBySinkId200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccountIdPipelinesV1SinksBySinkId200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Update a Sink&apos;s credentials or rolling policy, creating a new version of the Sink. Only `credentials` and `rolling_policy` (R2) or `token` and `rolling_policy` (Basin Catalog, including Sinks created with the legacy `r2_data_catalog` type) can be changed; omitted fields keep their current values. Secrets are never returned in responses. Pipelines that use the Sink keep their current version until they are moved to the latest one with Update Pipeline Tables.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1SinksBySinkId200Response"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1SinksBySinkId200Response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1SinksBySinkIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1SinksBySinkId200Response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1SinksBySinkIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1SinksBySinkId200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1SinksBySinkId200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Delete Sink in Account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -105,6 +125,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Sinks.It
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Update a Sink&apos;s credentials or rolling policy, creating a new version of the Sink. Only `credentials` and `rolling_policy` (R2) or `token` and `rolling_policy` (Basin Catalog, including Sinks created with the legacy `r2_data_catalog` type) can be changed; omitted fields keep their current values. Secrets are never returned in responses. Pipelines that use the Sink keep their current version until they are moved to the latest one with Update Pipeline Tables.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1SinksBySinkIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1SinksBySinkIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

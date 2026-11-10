@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Export;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Query;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objec
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NamespacesItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The export property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Export.ExportRequestBuilder Export
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The objects property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder Objects
         {

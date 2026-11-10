@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Pipelines.Item.Update_tables;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Pipeline
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPipelineItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The update_tables property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Pipelines.Item.Update_tables.Update_tablesRequestBuilder Update_tables
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Pipelines.Item.Update_tables.Update_tablesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Pipelines.Item.WithPipelineItemRequestBuilder"/> and sets the default values.
         /// </summary>

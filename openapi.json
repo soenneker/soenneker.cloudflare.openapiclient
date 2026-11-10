@@ -16,38 +16,6 @@
     }
   ],
   "paths": {
-    "/_heartbeat": {
-      "get": {
-        "operationId": "getHeartbeat",
-        "summary": "Heartbeat response",
-        "description": "Used by Kubernetes readiness and liveness probes, and CI builder by executing test/staging.sh.",
-        "responses": {
-          "200": {
-            "description": "Ok.",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Service Unavailable."
-          }
-        },
-        "security": [
-          {
-            "APIToken": []
-          }
-        ],
-        "tags": [
-          "health"
-        ],
-        "x-fern-sdk-group-name": "dns.domainconnect",
-        "x-fern-sdk-method-name": "getHeartbeat"
-      }
-    },
     "/accounts": {
       "get": {
         "operationId": "accounts-list-accounts",
@@ -45709,7 +45677,7 @@
       "put": {
         "operationId": "aig-config-update-gateway",
         "summary": "Update a gateway",
-        "description": "Updates the configuration of an AI Gateway, such as its caching, rate limiting, logging, and authentication settings.",
+        "description": "Updates the configuration of an AI Gateway, such as its caching, rate limiting, spend limits, logging, and authentication settings.",
         "parameters": [
           {
             "name": "account_id",
@@ -47632,6 +47600,7 @@
               "type": "integer",
               "example": 1,
               "default": 1,
+              "maximum": 10000,
               "minimum": 1
             }
           },
@@ -54749,6 +54718,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 10000,
               "minimum": 1
             }
           },
@@ -55852,6 +55822,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 10000,
               "minimum": 1
             }
           },
@@ -57051,6 +57022,7 @@
               "type": "integer",
               "example": 1,
               "default": 1,
+              "maximum": 10000,
               "minimum": 1
             }
           },
@@ -57857,6 +57829,7 @@
               "type": "integer",
               "example": 1,
               "default": 1,
+              "maximum": 10000,
               "minimum": 1
             }
           },
@@ -65379,6 +65352,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 10000,
               "minimum": 1
             }
           },
@@ -69159,6 +69133,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 10000,
               "minimum": 1
             }
           },
@@ -70355,6 +70330,7 @@
             "schema": {
               "type": "integer",
               "default": 1,
+              "maximum": 10000,
               "minimum": 1
             }
           },
@@ -103539,8 +103515,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.alerts",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -103623,8 +103598,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.alerts",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{account_id}/brand-protection/alerts/clear": {
@@ -103709,8 +103683,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.alerts",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{account_id}/brand-protection/alerts/refute": {
@@ -103795,8 +103768,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.alerts",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{account_id}/brand-protection/alerts/verify": {
@@ -103881,8 +103853,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.alerts",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{account_id}/brand-protection/brands": {
@@ -103956,8 +103927,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.brands",
-        "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "delete"
       },
       "get": {
         "operationId": "getAccountsAccountIdBrandProtectionBrands",
@@ -104030,8 +104000,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.brands",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -104114,8 +104083,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.brands",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/brand-protection/brands/patterns": {
@@ -104189,8 +104157,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.brands",
-        "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "delete"
       },
       "get": {
         "operationId": "getAccountsAccountIdBrandProtectionBrandsPatterns",
@@ -104263,8 +104230,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.brands",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -104347,8 +104313,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.brands",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/brand-protection/clear": {
@@ -104433,8 +104398,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.clear",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{account_id}/brand-protection/domain-info": {
@@ -104509,8 +104473,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.domain-info",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -104634,8 +104597,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.logo-matches",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -104759,8 +104721,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.logo-matches",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -104846,8 +104807,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.logos",
-        "x-fern-sdk-method-name": "list",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "list"
       },
       "parameters": [
         {
@@ -104973,8 +104933,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.logos",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/brand-protection/logos/{logo_id}": {
@@ -105048,8 +105007,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.logos",
-        "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "delete"
       },
       "get": {
         "operationId": "getAccountsAccountIdBrandProtectionLogosLogoId",
@@ -105122,8 +105080,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.logos",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -105265,8 +105222,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.matches",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -105399,8 +105355,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.matches",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -105514,8 +105469,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.queries",
-        "x-fern-sdk-method-name": "delete",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "delete"
       },
       "get": {
         "operationId": "getAccountsAccountIdBrandProtectionQueries",
@@ -105588,8 +105542,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.queries",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -105716,8 +105669,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.queries",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       },
       "post": {
         "operationId": "postAccountsAccountIdBrandProtectionQueries",
@@ -105825,8 +105777,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.queries",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/brand-protection/queries/bulk": {
@@ -105924,8 +105875,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.queries",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss": {
@@ -106031,8 +105981,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.queries",
-        "x-fern-sdk-method-name": "dismiss",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "dismiss"
       }
     },
     "/accounts/{account_id}/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss": {
@@ -106138,8 +106087,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.queries",
-        "x-fern-sdk-method-name": "undismiss",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "undismiss"
       }
     },
     "/accounts/{account_id}/brand-protection/recent-submissions": {
@@ -106214,8 +106162,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.recent-submissions",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -106311,8 +106258,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.refute",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{account_id}/brand-protection/scan-logo": {
@@ -106397,8 +106343,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.scan-logo",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/brand-protection/scan-page": {
@@ -106483,8 +106428,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.scan-page",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/brand-protection/search": {
@@ -106569,8 +106513,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.search",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/brand-protection/submission-info": {
@@ -106645,8 +106588,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.submission-info",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -106749,8 +106691,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.submit",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/brand-protection/total-queries": {
@@ -106825,8 +106766,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.total-queries",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -106912,8 +106852,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.tracked-domains",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -107006,8 +106945,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.url-info",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       },
       "parameters": [
         {
@@ -107103,8 +107041,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "brand-protection.verify",
-        "x-fern-sdk-method-name": "edit",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{account_id}/browser-extension/config": {
@@ -120915,6 +120852,1100 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "browser-run.quick-action",
         "x-fern-sdk-method-name": "screenshot"
+      }
+    },
+    "/accounts/{account_id}/browser-rendering/script": {
+      "post": {
+        "operationId": "brapi-post_Script",
+        "summary": "Dynamic Script - execute code and return browser session details.",
+        "description": "Acquires a browser session and runs the provided code in it. The session stays open for reuse; close it with `DELETE /devtools/browser/:sessionId` or `browser.close()`, otherwise it ends at the idle timeout.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Account ID.",
+            "required": true,
+            "schema": {
+              "description": "Account ID.",
+              "type": "string"
+            }
+          },
+          {
+            "name": "keep_alive",
+            "in": "query",
+            "description": "Keep-alive time in milliseconds",
+            "schema": {
+              "description": "Keep-alive time in milliseconds",
+              "type": "number",
+              "default": 60000,
+              "maximum": 1200000,
+              "minimum": 10000
+            }
+          },
+          {
+            "name": "lab",
+            "in": "query",
+            "description": "Use experimental browser.",
+            "schema": {
+              "description": "Use experimental browser.",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "recording",
+            "in": "query",
+            "description": "Record the browser session. Retrieve it with `GET /recording/:session_id`.",
+            "schema": {
+              "description": "Record the browser session. Retrieve it with `GET /recording/:session_id`.",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "browser",
+            "in": "query",
+            "description": "Rendering backend for this script. Set to `kitesurf` to run it on Kitesurf (beta), which supports CDP only and rejects `keep_alive`, `lab` and `recording`.",
+            "schema": {
+              "description": "Rendering backend for this script. Set to `kitesurf` to run it on Kitesurf (beta), which supports CDP only and rejects `keep_alive`, `lab` and `recording`.",
+              "type": "string",
+              "enum": [
+                "kitesurf"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "description": "Function body executed against the selected library's runner.",
+                    "type": "string"
+                  },
+                  "library": {
+                    "description": "Library the script runs with. Defaults to raw CDP when omitted.",
+                    "type": "string",
+                    "enum": [
+                      "playwright",
+                      "puppeteer"
+                    ]
+                  },
+                  "timeout": {
+                    "description": "Maximum script run time in milliseconds.",
+                    "type": "integer",
+                    "default": 60000,
+                    "maximum": 120000,
+                    "minimum": 1
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "code"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the script result as `{ success: true, result }`. Non-JSON output is returned as is. The `cf-browser-session-id` and `cf-browser-target-id` headers identify the session.",
+            "headers": {
+              "cf-browser-session-id": {
+                "description": "Browser session the script ran in.",
+                "schema": {
+                  "description": "Browser session the script ran in.",
+                  "type": "string"
+                }
+              },
+              "cf-browser-target-id": {
+                "description": "Page target the script ran in.",
+                "schema": {
+                  "description": "Page target the script ran in.",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "description": "The script's return value, or null when it returned nothing. Arrays nested inside arrays are also returned, but this schema does not describe them.",
+                      "anyOf": [
+                        {
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        {
+                          "nullable": true,
+                          "type": "number"
+                        },
+                        {
+                          "nullable": true,
+                          "type": "boolean"
+                        },
+                        {
+                          "additionalProperties": true,
+                          "nullable": true,
+                          "type": "object"
+                        },
+                        {
+                          "items": {
+                            "anyOf": [
+                              {
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              {
+                                "nullable": true,
+                                "type": "number"
+                              },
+                              {
+                                "nullable": true,
+                                "type": "boolean"
+                              },
+                              {
+                                "additionalProperties": true,
+                                "nullable": true,
+                                "type": "object"
+                              }
+                            ]
+                          },
+                          "nullable": true,
+                          "type": "array"
+                        }
+                      ]
+                    },
+                    "success": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ]
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "result"
+                  ]
+                }
+              },
+              "application/octet-stream": {
+                "schema": {
+                  "description": "Binary script output. A `Response` returned by the script keeps its own content type.",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request contains errors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The new browser session has no open page to run the script in.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "The script exceeded its timeout. The session stays open; its headers identify it for a retry or close.",
+            "headers": {
+              "cf-browser-session-id": {
+                "description": "Browser session the script ran in.",
+                "schema": {
+                  "description": "Browser session the script ran in.",
+                  "type": "string"
+                }
+              },
+              "cf-browser-target-id": {
+                "description": "Page target the script ran in.",
+                "schema": {
+                  "description": "Page target the script ran in.",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "The script request body exceeds the 10 MiB limit.",
+            "headers": {
+              "cf-browser-session-id": {
+                "description": "Browser session the script ran in.",
+                "schema": {
+                  "description": "Browser session the script ran in.",
+                  "type": "string"
+                }
+              },
+              "cf-browser-target-id": {
+                "description": "Page target the script ran in.",
+                "schema": {
+                  "description": "Page target the script ran in.",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The script threw or failed to compile. The session stays open; its headers identify it for a retry or close.",
+            "headers": {
+              "cf-browser-session-id": {
+                "description": "Browser session the script ran in.",
+                "schema": {
+                  "description": "Browser session the script ran in.",
+                  "type": "string"
+                }
+              },
+              "cf-browser-target-id": {
+                "description": "Page target the script ran in.",
+                "schema": {
+                  "description": "Page target the script ran in.",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "detail": {
+                            "description": "Where the script failed, such as `Script location: line 2, column 4`.",
+                            "type": "string"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Request failed due to rate limiting. The Retry-After header indicates when the client should retry the request.",
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying the request.",
+                "required": true,
+                "schema": {
+                  "description": "Number of seconds to wait before retrying the request.",
+                  "type": "number",
+                  "example": 60
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "code": 2001,
+                      "message": "Rate limit exceeded"
+                    }
+                  ],
+                  "success": false
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "The kitesurf browser failed to run the script (`browser=kitesurf` only).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "No browser is available to run the script.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": [],
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "brapi"
+        ],
+        "x-api-token-group": [
+          "Browser Rendering Write"
+        ],
+        "x-cfPermissionsRequired": {
+          "enum": [
+            "com.cloudflare.api.account.brapi.read"
+          ],
+          "type": "string"
+        },
+        "x-cfPlanAvailability": {
+          "business": true,
+          "enterprise": true,
+          "free": true,
+          "pro": true
+        },
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "browser-run.script",
+        "x-fern-sdk-method-name": "create"
+      }
+    },
+    "/accounts/{account_id}/browser-rendering/script/{session_id}": {
+      "post": {
+        "operationId": "brapi-post_ScriptSessionExecute",
+        "summary": "Dynamic Script - execute code in an existing browser session.",
+        "description": "Runs the provided code in an existing browser session. The session stays open; close it with `DELETE /devtools/browser/:sessionId` or `browser.close()`, otherwise it ends at the idle timeout.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Account ID.",
+            "required": true,
+            "schema": {
+              "description": "Account ID.",
+              "type": "string"
+            }
+          },
+          {
+            "name": "session_id",
+            "in": "path",
+            "description": "Browser session ID",
+            "required": true,
+            "schema": {
+              "description": "Browser session ID",
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "description": "Function body executed against the selected library's runner.",
+                    "type": "string"
+                  },
+                  "library": {
+                    "description": "Library the script runs with. Defaults to raw CDP when omitted.",
+                    "type": "string",
+                    "enum": [
+                      "playwright",
+                      "puppeteer"
+                    ]
+                  },
+                  "targetId": {
+                    "description": "Page target the script attaches to. Defaults to the session's first page.",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]+$"
+                  },
+                  "timeout": {
+                    "description": "Maximum script run time in milliseconds.",
+                    "type": "integer",
+                    "default": 60000,
+                    "maximum": 120000,
+                    "minimum": 1
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "code"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the script result as `{ success: true, result }`. Non-JSON output is returned as is.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "description": "The script's return value, or null when it returned nothing. Arrays nested inside arrays are also returned, but this schema does not describe them.",
+                      "anyOf": [
+                        {
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        {
+                          "nullable": true,
+                          "type": "number"
+                        },
+                        {
+                          "nullable": true,
+                          "type": "boolean"
+                        },
+                        {
+                          "additionalProperties": true,
+                          "nullable": true,
+                          "type": "object"
+                        },
+                        {
+                          "items": {
+                            "anyOf": [
+                              {
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              {
+                                "nullable": true,
+                                "type": "number"
+                              },
+                              {
+                                "nullable": true,
+                                "type": "boolean"
+                              },
+                              {
+                                "additionalProperties": true,
+                                "nullable": true,
+                                "type": "object"
+                              }
+                            ]
+                          },
+                          "nullable": true,
+                          "type": "array"
+                        }
+                      ]
+                    },
+                    "success": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ]
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "result"
+                  ]
+                }
+              },
+              "application/octet-stream": {
+                "schema": {
+                  "description": "Binary script output. A `Response` returned by the script keeps its own content type.",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request contains errors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The browser session does not exist, or the requested targetId is not an open page in it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "The script exceeded its timeout.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The browser session has already been closed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "The script request body exceeds the 10 MiB limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The script threw or failed to compile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "detail": {
+                            "description": "Where the script failed, such as `Script location: line 2, column 4`.",
+                            "type": "string"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "description": "Error code.",
+                            "type": "number"
+                          },
+                          "message": {
+                            "description": "Error message.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "code"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "success": {
+                      "description": "Response status.",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": [],
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "brapi"
+        ],
+        "x-api-token-group": [
+          "Browser Rendering Write"
+        ],
+        "x-cfPermissionsRequired": {
+          "enum": [
+            "com.cloudflare.api.account.brapi.read"
+          ],
+          "type": "string"
+        },
+        "x-cfPlanAvailability": {
+          "business": true,
+          "enterprise": true,
+          "free": true,
+          "pro": true
+        },
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "browser-run.script",
+        "x-fern-sdk-method-name": "execute"
       }
     },
     "/accounts/{account_id}/browser-rendering/snapshot": {
@@ -195550,6 +196581,332 @@
         "x-fern-sdk-method-name": "undelete",
         "x-forge-epilogue": "This command acts on remote D1 Databases.",
         "x-forge-require-confirmation": "After undeleting, Time Travel cannot restore the D1 database to a point in time at or before the undeletion."
+      }
+    },
+    "/accounts/{account_id}/d1/insights/databases": {
+      "get": {
+        "operationId": "d1-list-insights-databases",
+        "summary": "List D1 Databases by Usage",
+        "description": "List the databases in your account with the highest usage in a time window, sorted by `order_by`\nfrom highest to lowest.\n\nTotals are computed from the same data as D1 billing and the GraphQL Analytics API. They include\nevery batch in the window: queries, imports and exports, successful and failed. Totals from other\ninsights endpoints that read per-statement data can be lower than these numbers.\n\nDeleted databases are included if they had usage in the window. Databases with no usage in the\nwindow are not included.\n\nUsage is available a few minutes after a batch completes.\n\nFor more complex filtering, or other metrics, groupings or time windows, run your own SQL on the\n`events.d1Queries` dataset with `cf sql query`. For examples, see https://developers.cloudflare.com/d1/observability/find-expensive-queries/\n",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/d1_account-identifier"
+            }
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "schema": {
+              "description": "The usage metric to sort by, from highest to lowest.",
+              "type": "string",
+              "default": "rows_read",
+              "enum": [
+                "rows_read",
+                "rows_written",
+                "queries"
+              ]
+            }
+          },
+          {
+            "name": "database_name",
+            "in": "query",
+            "schema": {
+              "description": "Only count usage from databases whose name contains this value, case-insensitive. Usage recorded before 2026-10-30 has no database name and is not matched.",
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "exact",
+            "in": "query",
+            "schema": {
+              "description": "If true, `database_name` must match the full database name, case-sensitive.",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "schema": {
+              "description": "Start of the window (inclusive), in RFC 3339 format. Defaults to 24 hours before `until`. Must be before `until`, and at most 90 days ago. The window from `since` to `until` must be at most 31 days.",
+              "type": "string",
+              "format": "date-time",
+              "example": "2026-10-01T00:00:00Z"
+            }
+          },
+          {
+            "name": "until",
+            "in": "query",
+            "schema": {
+              "description": "End of the window (exclusive), in RFC 3339 format. Defaults to the current time.",
+              "type": "string",
+              "format": "date-time",
+              "example": "2026-10-02T00:00:00Z"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "description": "Maximum number of databases to return. Results are not paginated, so only the top `limit` databases are returned.",
+              "type": "integer",
+              "default": 20,
+              "maximum": 1000,
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List D1 databases by usage response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/d1_api-response-common"
+                    },
+                    {
+                      "properties": {
+                        "result": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/d1_insights-database-usage"
+                          }
+                        },
+                        "result_info": {
+                          "type": "object",
+                          "properties": {
+                            "count": {
+                              "description": "Number of databases in `result`.",
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "order_by": {
+                              "description": "The usage metric the results are sorted by.",
+                              "type": "string",
+                              "enum": [
+                                "rows_read",
+                                "rows_written",
+                                "queries"
+                              ]
+                            },
+                            "query_window": {
+                              "description": "The resolved window, in UTC. `from` is inclusive, `to` is exclusive.",
+                              "type": "object",
+                              "properties": {
+                                "from": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "example": "2026-10-01T00:00:00Z"
+                                },
+                                "to": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "example": "2026-10-02T00:00:00Z"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "List D1 databases by usage response failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/d1_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "D1"
+        ],
+        "x-fern-availability": "beta",
+        "x-fern-sdk-group-name": "d1.insights",
+        "x-fern-sdk-method-name": "databases",
+        "x-forge-epilogue": "This command acts on remote D1 Databases."
+      }
+    },
+    "/accounts/{account_id}/d1/insights/queries": {
+      "get": {
+        "operationId": "d1-list-insights-queries",
+        "summary": "List Top D1 Queries",
+        "description": "List the SQL statements with the highest usage in a time window, across all databases in your\naccount or for one database, sorted by `order_by` from highest to lowest.\n\nEach item is one query text in one database. The same text run in two databases is two items.\n\nValues are estimates computed from sampled per-statement data. They include statements that\nfailed with a SQL error, and deleted databases. They do not include imports and exports, so they\ncan be lower than the totals from `GET /accounts/{account_id}/d1/insights/databases`, billing, and\nthe GraphQL Analytics API.\n\nUsage is available a few minutes after a query completes.\n\nFor more complex filtering, or other metrics, groupings or time windows, run your own SQL on the\n`events.d1Queries` dataset with `cf sql query`. For examples, see https://developers.cloudflare.com/d1/observability/find-expensive-queries/\n",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/d1_account-identifier"
+            }
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "schema": {
+              "description": "The usage metric to sort by, from highest to lowest. `duration` sorts by `total_duration_ms`.",
+              "type": "string",
+              "default": "rows_read",
+              "enum": [
+                "rows_read",
+                "duration",
+                "executions"
+              ]
+            }
+          },
+          {
+            "name": "database_id",
+            "in": "query",
+            "description": "Only return queries for this database. Defaults to all databases in the account. A database with no usage in the window, or that is not in the account, returns an empty list.",
+            "schema": {
+              "$ref": "#/components/schemas/d1_database-identifier"
+            }
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "schema": {
+              "description": "Start of the window (inclusive), in RFC 3339 format. Defaults to 24 hours before `until`. Must be before `until`, and at most 90 days ago. The window from `since` to `until` must be at most 7 days.",
+              "type": "string",
+              "format": "date-time",
+              "example": "2026-10-01T00:00:00Z"
+            }
+          },
+          {
+            "name": "until",
+            "in": "query",
+            "schema": {
+              "description": "End of the window (exclusive), in RFC 3339 format. Defaults to the current time.",
+              "type": "string",
+              "format": "date-time",
+              "example": "2026-10-02T00:00:00Z"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "description": "Maximum number of queries to return. Results are not paginated, so only the top `limit` queries are returned.",
+              "type": "integer",
+              "default": 20,
+              "maximum": 1000,
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List top D1 queries response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/d1_api-response-common"
+                    },
+                    {
+                      "properties": {
+                        "result": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/d1_insights-query-usage"
+                          }
+                        },
+                        "result_info": {
+                          "type": "object",
+                          "properties": {
+                            "count": {
+                              "description": "Number of queries in `result`.",
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "order_by": {
+                              "description": "The usage metric the results are sorted by.",
+                              "type": "string",
+                              "enum": [
+                                "rows_read",
+                                "duration",
+                                "executions"
+                              ]
+                            },
+                            "query_window": {
+                              "description": "The resolved window, in UTC. `from` is inclusive, `to` is exclusive.",
+                              "type": "object",
+                              "properties": {
+                                "from": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "example": "2026-10-01T00:00:00Z"
+                                },
+                                "to": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "example": "2026-10-02T00:00:00Z"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "List top D1 queries response failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/d1_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "D1"
+        ],
+        "x-fern-availability": "beta",
+        "x-fern-sdk-group-name": "d1.insights",
+        "x-fern-sdk-method-name": "queries",
+        "x-forge-epilogue": "This command acts on remote D1 Databases."
       }
     },
     "/accounts/{account_id}/data-security/posture/asset_schemas": {
@@ -282460,96 +283817,7 @@
                   "type": "object",
                   "properties": {
                     "result": {
-                      "type": "object",
-                      "properties": {
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "failure_reason": {
-                          "description": "Indicates the reason for the failure of the Pipeline.",
-                          "type": "string"
-                        },
-                        "id": {
-                          "description": "Indicates a unique identifier for this pipeline.",
-                          "type": "string",
-                          "example": "01234567890123457689012345678901"
-                        },
-                        "modified_at": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "description": "Indicates the name of the Pipeline.",
-                          "type": "string",
-                          "example": "my_pipeline",
-                          "maxLength": 128,
-                          "minLength": 1
-                        },
-                        "sql": {
-                          "description": "Specifies SQL for the Pipeline processing flow.",
-                          "type": "string",
-                          "example": "insert into sink select * from source;"
-                        },
-                        "status": {
-                          "description": "Indicates the current status of the Pipeline.",
-                          "type": "string"
-                        },
-                        "tables": {
-                          "description": "List of streams and sinks used by this pipeline.",
-                          "type": "array",
-                          "items": {
-                            "properties": {
-                              "id": {
-                                "description": "Unique identifier for the connection (stream or sink).",
-                                "type": "string",
-                                "example": "1c9200d5872c018bb34e93e2cd8a438e"
-                              },
-                              "latest": {
-                                "description": "Latest available version of the connection.",
-                                "type": "integer",
-                                "example": 5
-                              },
-                              "name": {
-                                "description": "Name of the connection.",
-                                "type": "string",
-                                "example": "my_table",
-                                "maxLength": 128,
-                                "minLength": 1
-                              },
-                              "type": {
-                                "description": "Type of the connection.",
-                                "type": "string",
-                                "example": "stream",
-                                "enum": [
-                                  "stream",
-                                  "sink"
-                                ]
-                              },
-                              "version": {
-                                "description": "Current version of the connection used by this pipeline.",
-                                "type": "integer",
-                                "example": 4
-                              }
-                            },
-                            "required": [
-                              "id",
-                              "version",
-                              "latest",
-                              "type",
-                              "name"
-                            ],
-                            "type": "object"
-                          }
-                        }
-                      },
-                      "required": [
-                        "id",
-                        "name",
-                        "created_at",
-                        "modified_at",
-                        "sql",
-                        "status",
-                        "tables"
-                      ]
+                      "$ref": "#/components/schemas/cloudflare-pipelines_PipelineExtended"
                     },
                     "success": {
                       "$ref": "#/components/schemas/cloudflare-pipelines_worker-pipelines-common-success"
@@ -282592,6 +283860,82 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "pipelines",
         "x-fern-sdk-method-name": "get"
+      }
+    },
+    "/accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}/update_tables": {
+      "post": {
+        "operationId": "postV4AccountsByAccount_idPipelinesV1PipelinesByPipeline_idUpdateTables",
+        "summary": "Update Pipeline Tables",
+        "description": "Move a Pipeline to the latest version of every stream and sink it uses, such as after updating a Sink. A running Pipeline restarts on the latest versions from a final checkpoint; a paused or stopped Pipeline uses them once it starts.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/cloudflare-pipelines_workers-pipelines-account-id"
+            }
+          },
+          {
+            "name": "pipeline_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/cloudflare-pipelines_workers-pipelines-pipeline-id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Indicates that the Pipeline was moved to the latest table versions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/components/schemas/cloudflare-pipelines_PipelineExtended"
+                    },
+                    "success": {
+                      "$ref": "#/components/schemas/cloudflare-pipelines_worker-pipelines-common-success"
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "result"
+                  ]
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Indicates an error in updating the Pipeline's tables. Returns 400 when the Pipeline ID is malformed, 404 when the Pipeline does not exist, 409 when its tables changed during the update, and 422 when its SQL does not plan against the latest table versions."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "workers_pipelines_other"
+        ],
+        "x-api-token-group": [
+          "Pipelines Write"
+        ],
+        "x-cfPlanAvailability": {
+          "business": true,
+          "enterprise": true,
+          "free": false,
+          "pro": true
+        },
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "pipelines",
+        "x-fern-sdk-method-name": "update-tables"
       }
     },
     "/accounts/{account_id}/pipelines/v1/sinks": {
@@ -283085,63 +284429,7 @@
                   "type": "object",
                   "properties": {
                     "result": {
-                      "type": "object",
-                      "properties": {
-                        "config": {
-                          "description": "Defines the configuration of the R2 Sink.",
-                          "oneOf": [
-                            {
-                              "$ref": "#/components/schemas/cloudflare-pipelines_r2TablePublic"
-                            },
-                            {
-                              "$ref": "#/components/schemas/cloudflare-pipelines_r2_data_catalogTablePublic"
-                            }
-                          ]
-                        },
-                        "created_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        },
-                        "format": {
-                          "$ref": "#/components/schemas/cloudflare-pipelines_SinkFormat"
-                        },
-                        "id": {
-                          "description": "Indicates a unique identifier for this sink.",
-                          "type": "string",
-                          "example": "01234567890123457689012345678901"
-                        },
-                        "modified_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        },
-                        "name": {
-                          "description": "Defines the name of the Sink.",
-                          "type": "string",
-                          "example": "my_sink",
-                          "maxLength": 128,
-                          "minLength": 1
-                        },
-                        "schema": {
-                          "$ref": "#/components/schemas/cloudflare-pipelines_ConnectionSchema"
-                        },
-                        "type": {
-                          "description": "Specifies the type of sink.",
-                          "type": "string",
-                          "example": "r2",
-                          "enum": [
-                            "r2",
-                            "r2_data_catalog",
-                            "basin_catalog"
-                          ]
-                        }
-                      },
-                      "required": [
-                        "id",
-                        "name",
-                        "created_at",
-                        "modified_at",
-                        "type"
-                      ]
+                      "$ref": "#/components/schemas/cloudflare-pipelines_Sink"
                     },
                     "success": {
                       "$ref": "#/components/schemas/cloudflare-pipelines_worker-pipelines-common-success"
@@ -283184,6 +284472,106 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "pipelines.sinks",
         "x-fern-sdk-method-name": "get"
+      },
+      "patch": {
+        "operationId": "patchV4AccountsByAccount_idPipelinesV1SinksBySink_id",
+        "summary": "Update Sink",
+        "description": "Update a Sink's credentials or rolling policy, creating a new version of the Sink. Only `credentials` and `rolling_policy` (R2) or `token` and `rolling_policy` (Basin Catalog, including Sinks created with the legacy `r2_data_catalog` type) can be changed; omitted fields keep their current values. Secrets are never returned in responses. Pipelines that use the Sink keep their current version until they are moved to the latest one with Update Pipeline Tables.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/cloudflare-pipelines_workers-pipelines-account-id"
+            }
+          },
+          {
+            "name": "sink_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/cloudflare-pipelines_workers-pipelines-sink-id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "config": {
+                    "description": "Defines the Sink configuration fields to change. At least one field is required; omitted fields keep their current values.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/cloudflare-pipelines_r2TableUpdate"
+                      },
+                      {
+                        "$ref": "#/components/schemas/cloudflare-pipelines_basin_catalogTableUpdate"
+                      }
+                    ],
+                    "minProperties": 1,
+                    "x-fern-property-name": "sink-config"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "config"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Indicates a successfully updated Sink.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/components/schemas/cloudflare-pipelines_Sink"
+                    },
+                    "success": {
+                      "$ref": "#/components/schemas/cloudflare-pipelines_worker-pipelines-common-success"
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "result"
+                  ]
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Indicates an error in updating a Sink. Returns 400 when the request body is malformed, has unknown fields, or has an empty `config`; 404 when the Sink does not exist; 409 when the Sink was updated concurrently; and 422 when the configuration is invalid or changes an immutable field."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "workers_pipelines_other"
+        ],
+        "x-cfPlanAvailability": {
+          "business": true,
+          "enterprise": true,
+          "free": false,
+          "pro": true
+        },
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "pipelines.sinks",
+        "x-fern-sdk-method-name": "update"
       }
     },
     "/accounts/{account_id}/pipelines/v1/streams": {
@@ -290415,6 +291803,9 @@
         "x-api-token-group": [
           "Workers R2 Storage Write"
         ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "r2.buckets",
         "x-fern-sdk-method-name": "create-by-name"
@@ -293051,7 +294442,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "r2.buckets.sippy",
-        "x-fern-sdk-method-name": "delete",
+        "x-fern-sdk-method-name": "disable",
         "x-forge-require-confirmation": "This disables Sippy on-demand migration for the R2 bucket. Objects already copied to R2 remain in the bucket."
       },
       "get": {
@@ -293227,7 +294618,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "r2.buckets.sippy",
-        "x-fern-sdk-method-name": "update"
+        "x-fern-sdk-method-name": "enable"
       }
     },
     "/accounts/{account_id}/r2/metrics": {
@@ -341931,7 +343322,7 @@
                   "ha": {
                     "description": "Indicates that the tunnel will be created to be highly available. If omitted, defaults to false.",
                     "type": "boolean",
-                    "default": false
+                    "x-stainless-terraform-configurability": "computed_optional"
                   },
                   "name": {
                     "$ref": "#/components/schemas/tunnel_tunnel_name"
@@ -343102,6 +344493,9 @@
                     "type": "string",
                     "example": "my-dispatch-namespace",
                     "x-auditable": true
+                  },
+                  "trusted_workers": {
+                    "$ref": "#/components/schemas/workers_trusted_workers"
                   }
                 }
               }
@@ -345975,6 +347369,117 @@
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "durable-objects.namespaces",
         "x-fern-sdk-method-name": "list"
+      }
+    },
+    "/accounts/{account_id}/workers/durable_objects/namespaces/{id}/export": {
+      "get": {
+        "operationId": "durable-objects-namespace-export",
+        "summary": "Export a Durable Object's SQLite database",
+        "description": "Downloads a SQLite-backed Durable Object's database as a zip of main.sqlite and main.sqlite-wal, as of its last write to durable storage. If the export could not read all of the object's history, it holds the last state it could read and an INCOMPLETE.txt. Select the object by ID, or by name and jurisdiction.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/workers_identifier"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/workers_schemas-id"
+            }
+          },
+          {
+            "name": "durable_object_id",
+            "in": "query",
+            "description": "The Durable Object's ID. Required unless durable_object_name is given.",
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          {
+            "name": "durable_object_name",
+            "in": "query",
+            "description": "The name the Durable Object's ID was derived from.",
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          {
+            "name": "jurisdiction",
+            "in": "query",
+            "description": "The jurisdiction of a Durable Object selected by name.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "fedramp",
+                "eu",
+                "none"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A zip of the Durable Object's SQLite database and WAL.",
+            "content": {
+              "application/zip": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Too many exports in progress; retry later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/workers_api-response-common-failure"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Export failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/workers_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Durable Objects Namespace"
+        ],
+        "x-api-token-group": [
+          "Workers Scripts Write",
+          "Workers Scripts Read"
+        ],
+        "x-fern-audiences": [
+          "sdk"
+        ],
+        "x-fern-availability": "beta",
+        "x-fern-sdk-group-name": "durable-objects.namespaces",
+        "x-fern-sdk-method-name": "export"
       }
     },
     "/accounts/{account_id}/workers/durable_objects/namespaces/{id}/objects": {
@@ -382487,9 +383992,6 @@
                   },
                   "name": {
                     "$ref": "#/components/schemas/tunnel_subnet_name"
-                  },
-                  "network": {
-                    "$ref": "#/components/schemas/tunnel_subnet_ip_network"
                   }
                 }
               }
@@ -384930,9 +386432,9 @@
           "brand_protection"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "internal.submit",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/ips": {
@@ -385093,9 +386595,9 @@
           "brand_protection"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "live",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/memberships": {
@@ -519698,9 +521200,9 @@
           "brand_protection"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "ready",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/signed-url": {
@@ -519769,9 +521271,9 @@
           "logo_match"
         ],
         "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "signed-url",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/subscriptions": {
@@ -525547,7 +527049,14 @@
         },
         "responses": {
           "200": {
-            "description": "Ok."
+            "description": "Ok.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/domain-connect_httpStatus"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request."
@@ -525567,15 +527076,16 @@
         },
         "security": [
           {
-            "APIToken": []
+            "api_token": []
           }
         ],
         "tags": [
           "api"
         ],
         "x-api-token-group": [],
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "dns.domainconnect",
-        "x-fern-sdk-method-name": "postVerify"
+        "x-fern-sdk-method-name": "post-verify"
       }
     },
     "/v2/domainTemplates/providers/{provider}/services/{service}": {
@@ -525636,15 +527146,16 @@
         },
         "security": [
           {
-            "APIToken": []
+            "api_token": []
           }
         ],
         "tags": [
           "api"
         ],
         "x-api-token-group": [],
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "dns.domainconnect",
-        "x-fern-sdk-method-name": "getProviderTemplate"
+        "x-fern-sdk-method-name": "get-provider-template"
       }
     },
     "/v2/provconf/{provider}/{service}/{account}": {
@@ -525725,15 +527236,16 @@
         },
         "security": [
           {
-            "APIToken": []
+            "api_token": []
           }
         ],
         "tags": [
           "api"
         ],
         "x-api-token-group": [],
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "dns.domainconnect",
-        "x-fern-sdk-method-name": "getProviderConfiguration"
+        "x-fern-sdk-method-name": "get-provider-configuration"
       }
     },
     "/v2/{domain}/settings": {
@@ -525787,15 +527299,16 @@
         },
         "security": [
           {
-            "APIToken": []
+            "api_token": []
           }
         ],
         "tags": [
           "api"
         ],
         "x-api-token-group": [],
+        "x-fern-ignore": true,
         "x-fern-sdk-group-name": "dns.domainconnect",
-        "x-fern-sdk-method-name": "getDomainSettings"
+        "x-fern-sdk-method-name": "get-domain-settings"
       }
     },
     "/workers/builds/deploy_hooks/{deploy_hook_uuid}": {
@@ -590823,7 +592336,7 @@
             "environment:production",
             "fleet:warehouse"
           ],
-          "maxItems": 10
+          "maxItems": 25
         }
       },
       "teams-devices_devices_list_registrations_param_cursor": {
@@ -591203,7 +592716,7 @@
         "x-auditable": true
       },
       "aaa_alert_type": {
-        "description": "Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.",
+        "description": "Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values. This enum lists every alert type, not the ones a given account can create, since some types depend on entitlements or account type. To get the alert types an account can create, call `GET /accounts/{account_id}/alerting/v3/available_alerts`.",
         "type": "string",
         "example": "universal_ssl_event_type",
         "enum": [
@@ -591212,7 +592725,10 @@
           "advanced_ddos_attack_l4_alert",
           "advanced_ddos_attack_l7_alert",
           "advanced_http_alert_error",
+          "attack_lifecycle",
+          "bgp_advertisement_change",
           "bgp_hijack_notification",
+          "billing_budget_alert",
           "billing_usage_alert",
           "block_notification_block_removed",
           "block_notification_new_block",
@@ -591220,17 +592736,25 @@
           "bot_traffic_basic_alert",
           "brand_protection_alert",
           "brand_protection_digest",
+          "casb_weekly_digest",
           "clickhouse_alert_fw_anomaly",
           "clickhouse_alert_fw_ent_anomaly",
+          "closed_port_scan_alert",
           "cloudforce_one_request_notification",
+          "cmd_managed_defense_notification",
           "cni_maintenance_notification",
+          "containers_security_alert",
           "custom_analytics",
           "custom_bot_detection_alert",
           "custom_ssl_certificate_event_type",
           "dedicated_ssl_certificate_event_type",
           "device_connectivity_anomaly_alert",
+          "dex_device_connectivity_alert",
+          "dex_synthetic_test_availability_alert",
+          "dex_synthetic_test_latency_alert",
           "dos_attack_l4",
           "dos_attack_l7",
+          "executive_communications",
           "expiring_service_token_alert",
           "failing_logpush_job_disabled_alert",
           "fbm_auto_advertisement",
@@ -591243,13 +592767,18 @@
           "image_notification",
           "image_resizing_notification",
           "incident_alert",
+          "leaked_service_token_alert",
           "load_balancing_health_alert",
           "load_balancing_pool_enablement_alert",
+          "log_explorer_ingest_rate_limit",
+          "log_explorer_scheduled_query_results_alert",
           "logo_match_alert",
+          "magic_endpoint_healthcheck_alert",
           "magic_tunnel_health_check_event",
           "magic_wan_tunnel_health",
           "maintenance_event_notification",
           "mtls_certificate_store_certificate_expiration_type",
+          "open_port_scan_alert",
           "pages_event_alert",
           "radar_notification",
           "real_origin_monitoring",
@@ -591267,6 +592796,9 @@
           "secondary_dns_zone_validation_warning",
           "security_insights_alert",
           "sentinel_alert",
+          "stakeout_credential_leak_alert",
+          "stakeout_saved_query_daily_digest_alert",
+          "stakeout_saved_query_immediate_alert",
           "stream_live_notifications",
           "synthetic_test_latency_alert",
           "synthetic_test_low_availability_alert",
@@ -591275,6 +592807,9 @@
           "tunnel_update_event",
           "universal_ssl_event_type",
           "web_analytics_metrics_update",
+          "workers_for_platforms_security_alert",
+          "workers_observability_alert",
+          "workers_observability_real_time_issue",
           "zone_aop_custom_certificate_expiration_type"
         ],
         "x-auditable": true
@@ -592361,6 +593896,19 @@
               "x-auditable": true
             }
           },
+          "check_id": {
+            "description": "Used for configuring magic_endpoint_healthcheck_alert. Takes one or more health check IDs, each a UUID. That alert type requires check_id together with alert_trigger_preferences set to slo, a numeric alert_trigger_preferences_value, and selectors set to failures.",
+            "type": "array",
+            "items": {
+              "format": "uuid",
+              "type": "string",
+              "x-auditable": true
+            },
+            "example": [
+              "699d9864-2c56-4d2e-855e-9661899b7252"
+            ],
+            "minItems": 1
+          },
           "enabled": {
             "description": "Used for configuring load_balancing_pool_enablement_alert",
             "type": "array",
@@ -592541,6 +594089,16 @@
               "x-auditable": true
             }
           },
+          "query_id": {
+            "description": "Used for configuring stakeout_saved_query_daily_digest_alert and stakeout_saved_query_immediate_alert, which require it. Takes exactly one value, the saved query ID.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "maxItems": 1,
+            "minItems": 1
+          },
           "query_tag": {
             "description": "Usage depends on specific alert type",
             "type": "array",
@@ -592626,6 +594184,19 @@
             },
             "minItems": 1,
             "uniqueItems": true
+          },
+          "total_spend_dollars": {
+            "description": "Used for configuring billing_budget_alert. Takes exactly one value, the budget threshold in US dollars, as a string greater than zero.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "example": [
+              "100"
+            ],
+            "maxItems": 1,
+            "minItems": 1
           },
           "traffic_exclusions": {
             "description": "Used for configuring traffic_anomalies_alert",
@@ -630385,6 +631956,7 @@
         ]
       },
       "cloudflare-k2_K2StreamWorkerBindingInput": {
+        "description": "Configures whether Workers bindings can produce records to the stream.",
         "type": "object",
         "properties": {
           "enabled": {
@@ -631016,6 +632588,104 @@
           "edge_type"
         ]
       },
+      "cloudflare-pipelines_PipelineExtended": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "failure_reason": {
+            "description": "Indicates the reason for the failure of the Pipeline.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Indicates a unique identifier for this pipeline.",
+            "type": "string",
+            "example": "01234567890123457689012345678901"
+          },
+          "modified_at": {
+            "type": "string"
+          },
+          "name": {
+            "description": "Indicates the name of the Pipeline.",
+            "type": "string",
+            "example": "my_pipeline",
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "outdated": {
+            "description": "Indicates that a stream or sink has a newer version than the one this pipeline uses. Update Pipeline Tables moves the pipeline to the latest versions.",
+            "type": "boolean",
+            "example": false
+          },
+          "sql": {
+            "description": "Specifies SQL for the Pipeline processing flow.",
+            "type": "string",
+            "example": "insert into sink select * from source;"
+          },
+          "status": {
+            "description": "Indicates the current status of the Pipeline.",
+            "type": "string"
+          },
+          "tables": {
+            "description": "List of streams and sinks used by this pipeline.",
+            "type": "array",
+            "items": {
+              "properties": {
+                "id": {
+                  "description": "Unique identifier for the connection (stream or sink).",
+                  "type": "string",
+                  "example": "1c9200d5872c018bb34e93e2cd8a438e"
+                },
+                "latest": {
+                  "description": "Latest available version of the connection.",
+                  "type": "integer",
+                  "example": 5
+                },
+                "name": {
+                  "description": "Name of the connection.",
+                  "type": "string",
+                  "example": "my_table",
+                  "maxLength": 128,
+                  "minLength": 1
+                },
+                "type": {
+                  "description": "Type of the connection.",
+                  "type": "string",
+                  "example": "stream",
+                  "enum": [
+                    "stream",
+                    "sink"
+                  ]
+                },
+                "version": {
+                  "description": "Current version of the connection used by this pipeline.",
+                  "type": "integer",
+                  "example": 4
+                }
+              },
+              "required": [
+                "id",
+                "version",
+                "latest",
+                "type",
+                "name"
+              ],
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "modified_at",
+          "sql",
+          "status",
+          "tables",
+          "outdated"
+        ]
+      },
       "cloudflare-pipelines_PipelineGraph": {
         "description": "Indicates the processing flow to implement the SQL.",
         "type": "object",
@@ -631063,6 +632733,109 @@
           "operator",
           "description",
           "parallelism"
+        ]
+      },
+      "cloudflare-pipelines_Sink": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "description": "Defines the configuration of the R2 Sink.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/cloudflare-pipelines_r2TablePublic"
+              },
+              {
+                "$ref": "#/components/schemas/cloudflare-pipelines_r2_data_catalogTablePublic"
+              }
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "format": {
+            "$ref": "#/components/schemas/cloudflare-pipelines_SinkFormat"
+          },
+          "id": {
+            "description": "Indicates a unique identifier for this sink.",
+            "type": "string",
+            "example": "01234567890123457689012345678901"
+          },
+          "latest": {
+            "description": "Indicates the latest version of this sink.",
+            "type": "integer",
+            "example": 2
+          },
+          "modified_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "description": "Defines the name of the Sink.",
+            "type": "string",
+            "example": "my_sink",
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "schema": {
+            "$ref": "#/components/schemas/cloudflare-pipelines_ConnectionSchema"
+          },
+          "type": {
+            "description": "Specifies the type of sink.",
+            "type": "string",
+            "example": "r2",
+            "enum": [
+              "r2",
+              "r2_data_catalog",
+              "basin_catalog"
+            ]
+          },
+          "used_by": {
+            "description": "Lists the pipelines that use this sink. Omitted when no pipeline uses it.",
+            "type": "array",
+            "items": {
+              "properties": {
+                "href": {
+                  "description": "Indicates the API URL of the pipeline.",
+                  "type": "string",
+                  "format": "uri"
+                },
+                "id": {
+                  "description": "Indicates the unique identifier of the pipeline.",
+                  "type": "string",
+                  "example": "01234567890123457689012345678901"
+                },
+                "type": {
+                  "description": "Indicates the type of resource using this sink.",
+                  "type": "string",
+                  "example": "pipeline",
+                  "enum": [
+                    "pipeline"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "id",
+                "href"
+              ],
+              "type": "object"
+            }
+          },
+          "version": {
+            "description": "Indicates the version of this sink.",
+            "type": "integer",
+            "example": 2
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "version",
+          "latest",
+          "created_at",
+          "modified_at",
+          "type"
         ]
       },
       "cloudflare-pipelines_SinkFormat": {
@@ -631129,6 +632902,35 @@
           }
         ],
         "title": "Parquet"
+      },
+      "cloudflare-pipelines_SinkRollingPolicy": {
+        "description": "Rolling policy for file sinks (when & why to close a file and open a new one).",
+        "type": "object",
+        "properties": {
+          "file_size_bytes": {
+            "description": "Files will be rolled after reaching this number of bytes",
+            "type": "integer",
+            "format": "uint64",
+            "minimum": 0,
+            "title": "File Size"
+          },
+          "inactivity_seconds": {
+            "description": "Number of seconds of inactivity to wait before rolling over to a new file",
+            "type": "integer",
+            "format": "uint64",
+            "minimum": 1,
+            "title": "Inactivity Seconds"
+          },
+          "interval_seconds": {
+            "description": "Number of seconds to wait before rolling over to a new file",
+            "type": "integer",
+            "format": "uint64",
+            "minimum": 1,
+            "title": "Interval Seconds"
+          }
+        },
+        "additionalProperties": false,
+        "title": "File Rolling Policy"
       },
       "cloudflare-pipelines_SourceField": {
         "allOf": [
@@ -631199,6 +633001,24 @@
           "microsecond",
           "nanosecond"
         ]
+      },
+      "cloudflare-pipelines_basin_catalogTableUpdate": {
+        "description": "Mutable configuration of a Basin Catalog Sink, including Sinks created with the legacy `r2_data_catalog` type. Omitted fields keep their current values.",
+        "type": "object",
+        "properties": {
+          "rolling_policy": {
+            "$ref": "#/components/schemas/cloudflare-pipelines_SinkRollingPolicy"
+          },
+          "token": {
+            "description": "Authentication token",
+            "type": "string",
+            "format": "var-str",
+            "example": "\"asdfkj2h34kjhkj\"",
+            "x-sensitive": true
+          }
+        },
+        "additionalProperties": false,
+        "title": "BasinCatalogSinkTableUpdate"
       },
       "cloudflare-pipelines_r2Table": {
         "type": "object",
@@ -631291,33 +633111,7 @@
             "title": "Path"
           },
           "rolling_policy": {
-            "description": "Rolling policy for file sinks (when & why to close a file and open a new one).",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "file_size_bytes": {
-                "description": "Files will be rolled after reaching this number of bytes",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 0,
-                "title": "File Size"
-              },
-              "inactivity_seconds": {
-                "description": "Number of seconds of inactivity to wait before rolling over to a new file",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 1,
-                "title": "Inactivity Seconds"
-              },
-              "interval_seconds": {
-                "description": "Number of seconds to wait before rolling over to a new file",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 1,
-                "title": "Interval Seconds"
-              }
-            },
-            "title": "File Rolling Policy"
+            "$ref": "#/components/schemas/cloudflare-pipelines_SinkRollingPolicy"
           }
         },
         "additionalProperties": false,
@@ -631396,33 +633190,7 @@
             "title": "Path"
           },
           "rolling_policy": {
-            "description": "Rolling policy for file sinks (when & why to close a file and open a new one).",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "file_size_bytes": {
-                "description": "Files will be rolled after reaching this number of bytes",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 0,
-                "title": "File Size"
-              },
-              "inactivity_seconds": {
-                "description": "Number of seconds of inactivity to wait before rolling over to a new file",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 1,
-                "title": "Inactivity Seconds"
-              },
-              "interval_seconds": {
-                "description": "Number of seconds to wait before rolling over to a new file",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 1,
-                "title": "Interval Seconds"
-              }
-            },
-            "title": "File Rolling Policy"
+            "$ref": "#/components/schemas/cloudflare-pipelines_SinkRollingPolicy"
           }
         },
         "additionalProperties": false,
@@ -631431,6 +633199,38 @@
           "bucket"
         ],
         "title": "R2 Sink Public"
+      },
+      "cloudflare-pipelines_r2TableUpdate": {
+        "description": "Mutable configuration of an R2 Sink. Omitted fields keep their current values.",
+        "type": "object",
+        "properties": {
+          "credentials": {
+            "description": "R2 credentials to change. Omitted fields keep their current values.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "access_key_id": {
+                "description": "R2 Access Key ID",
+                "type": "string",
+                "format": "var-str",
+                "title": "Access Key ID"
+              },
+              "secret_access_key": {
+                "description": "R2 Secret Access Key",
+                "type": "string",
+                "format": "var-str",
+                "title": "Secret Access Key",
+                "x-sensitive": true
+              }
+            },
+            "title": "R2 Credentials Update"
+          },
+          "rolling_policy": {
+            "$ref": "#/components/schemas/cloudflare-pipelines_SinkRollingPolicy"
+          }
+        },
+        "additionalProperties": false,
+        "title": "R2 Sink Update"
       },
       "cloudflare-pipelines_r2_data_catalogTable": {
         "description": "R2 Data Catalog Sink",
@@ -631453,33 +633253,7 @@
             "title": "Namespace"
           },
           "rolling_policy": {
-            "description": "Rolling policy for file sinks (when & why to close a file and open a new one).",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "file_size_bytes": {
-                "description": "Files will be rolled after reaching this number of bytes",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 0,
-                "title": "File Size"
-              },
-              "inactivity_seconds": {
-                "description": "Number of seconds of inactivity to wait before rolling over to a new file",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 1,
-                "title": "Inactivity Seconds"
-              },
-              "interval_seconds": {
-                "description": "Number of seconds to wait before rolling over to a new file",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 1,
-                "title": "Interval Seconds"
-              }
-            },
-            "title": "File Rolling Policy"
+            "$ref": "#/components/schemas/cloudflare-pipelines_SinkRollingPolicy"
           },
           "table_name": {
             "description": "Table name",
@@ -631524,33 +633298,7 @@
             "title": "Namespace"
           },
           "rolling_policy": {
-            "description": "Rolling policy for file sinks (when & why to close a file and open a new one).",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "file_size_bytes": {
-                "description": "Files will be rolled after reaching this number of bytes",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 0,
-                "title": "File Size"
-              },
-              "inactivity_seconds": {
-                "description": "Number of seconds of inactivity to wait before rolling over to a new file",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 1,
-                "title": "Inactivity Seconds"
-              },
-              "interval_seconds": {
-                "description": "Number of seconds to wait before rolling over to a new file",
-                "type": "integer",
-                "format": "uint64",
-                "minimum": 1,
-                "title": "Interval Seconds"
-              }
-            },
-            "title": "File Rolling Policy"
+            "$ref": "#/components/schemas/cloudflare-pipelines_SinkRollingPolicy"
           },
           "table_name": {
             "description": "Table name",
@@ -632225,32 +633973,37 @@
         ]
       },
       "cloudforce-one-requests_api-response-common-failure": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/cloudforce-one-requests_api-response-common"
-          },
-          {
-            "properties": {
-              "errors": {
-                "type": "object",
-                "properties": {
-                  "code": {
-                    "type": "integer",
-                    "example": 10433
-                  },
-                  "message": {
-                    "type": "string",
-                    "example": "request error"
-                  }
-                }
-              },
-              "success": {
-                "type": "boolean",
-                "example": false
+        "type": "object",
+        "properties": {
+          "errors": {
+            "example": [
+              {
+                "code": 10433,
+                "message": "request error"
               }
-            },
-            "type": "object"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/cloudforce-one-requests_messages"
+              }
+            ]
+          },
+          "messages": {
+            "$ref": "#/components/schemas/cloudforce-one-requests_messages"
+          },
+          "success": {
+            "description": "Whether the API call was successful.",
+            "type": "boolean",
+            "example": false,
+            "enum": [
+              false
+            ]
           }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages"
         ]
       },
       "cloudforce-one-requests_asset-content": {
@@ -640637,6 +642390,78 @@
         "type": "number",
         "example": 12,
         "x-auditable": true
+      },
+      "d1_insights-database-usage": {
+        "type": "object",
+        "properties": {
+          "database_id": {
+            "$ref": "#/components/schemas/d1_database-identifier"
+          },
+          "database_name": {
+            "description": "The database name recorded with its usage in the window. Null when no usage in the window recorded a name, for example usage before 2026-10-30.",
+            "type": "string",
+            "example": "my-database",
+            "nullable": true
+          },
+          "queries": {
+            "description": "Number of queries (read and write) in the window.",
+            "type": "integer",
+            "example": 3000
+          },
+          "rows_read": {
+            "description": "Number of rows read in the window.",
+            "type": "integer",
+            "example": 1500000
+          },
+          "rows_written": {
+            "description": "Number of rows written in the window.",
+            "type": "integer",
+            "example": 20000
+          }
+        }
+      },
+      "d1_insights-query-usage": {
+        "type": "object",
+        "properties": {
+          "avg_duration_ms": {
+            "description": "Average execution time, in milliseconds: `total_duration_ms` / `executions`.",
+            "type": "number",
+            "example": 1.5
+          },
+          "database_id": {
+            "$ref": "#/components/schemas/d1_database-identifier"
+          },
+          "executions": {
+            "description": "Estimated number of times the statement ran in the window.",
+            "type": "integer",
+            "example": 3000
+          },
+          "query": {
+            "description": "The SQL statement text, as sent to the database (at most 4096 characters).",
+            "example": "SELECT * FROM users WHERE email = ?",
+            "type": "string"
+          },
+          "rows_read": {
+            "description": "Estimated number of rows read in the window.",
+            "type": "integer",
+            "example": 1500000
+          },
+          "rows_returned": {
+            "description": "Estimated number of rows returned in the window.",
+            "type": "integer",
+            "example": 3000
+          },
+          "rows_written": {
+            "description": "Estimated number of rows written in the window.",
+            "type": "integer",
+            "example": 0
+          },
+          "total_duration_ms": {
+            "description": "Estimated total execution time in the window, in milliseconds.",
+            "type": "number",
+            "example": 4500.5
+          }
+        }
       },
       "d1_jurisdiction": {
         "description": "Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.",
@@ -654068,7 +655893,7 @@
         "properties": {
           "status": {
             "type": "string",
-            "example": "Success"
+            "example": "verified"
           }
         }
       },
@@ -666318,7 +668143,7 @@
             }
           },
           "name": {
-            "description": "Account name",
+            "description": "Account name. When creating or updating an account, the name is limited to 65 UTF-8 bytes.",
             "type": "string",
             "example": "Demo Account",
             "x-auditable": true
@@ -666691,15 +668516,6 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/iam_account"
-          },
-          {
-            "properties": {
-              "name": {
-                "description": "Account name, limited to 65 UTF-8 bytes.",
-                "type": "string"
-              }
-            },
-            "type": "object"
           }
         ]
       },
@@ -735707,7 +737523,7 @@
               "maxLength": 1024,
               "type": "string"
             },
-            "maxProperties": 10,
+            "maxProperties": 25,
             "x-auditable": true
           }
         },
@@ -741977,6 +743793,7 @@
         "description": "An optional description of the hostname route.",
         "type": "string",
         "example": "example comment",
+        "default": "",
         "x-auditable": true
       },
       "tunnel_hostname_query_comment": {
@@ -742068,7 +743885,8 @@
         "description": "A flag to enable the ICMP proxy for the account network.",
         "type": "boolean",
         "example": true,
-        "x-auditable": true
+        "x-auditable": true,
+        "x-stainless-terraform-configurability": "computed_optional"
       },
       "tunnel_identifier": {
         "description": "Identifier.",
@@ -742365,7 +744183,8 @@
         "description": "A flag to enable WARP to WARP traffic.",
         "type": "boolean",
         "example": true,
-        "x-auditable": true
+        "x-auditable": true,
+        "x-stainless-terraform-configurability": "computed_optional"
       },
       "tunnel_originRequest": {
         "description": "Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.",
@@ -752277,6 +754096,41 @@
             "description": "Observability settings for the Preview.",
             "type": "object",
             "properties": {
+              "agents": {
+                "description": "Agents observability settings for the Preview.",
+                "type": "object",
+                "nullable": true,
+                "properties": {
+                  "destinations": {
+                    "description": "A list of destinations where Agents observability data will be exported to.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "default": [],
+                    "x-auditable": true
+                  },
+                  "enabled": {
+                    "description": "Whether Agents observability is enabled for the Preview.",
+                    "type": "boolean",
+                    "default": false,
+                    "x-auditable": true
+                  },
+                  "head_sampling_rate": {
+                    "description": "The sampling rate for Agents observability. From 0 to 1 (1 = 100%, 0.1 = 10%).",
+                    "type": "number",
+                    "example": 1,
+                    "default": 1,
+                    "x-auditable": true
+                  },
+                  "persist": {
+                    "description": "Whether Agents observability data is persisted for the Preview.",
+                    "type": "boolean",
+                    "default": true,
+                    "x-auditable": true
+                  }
+                }
+              },
               "enabled": {
                 "description": "Whether observability is enabled for the Preview.",
                 "type": "boolean",
@@ -753183,6 +755037,41 @@
             "description": "Observability settings for the Worker.",
             "type": "object",
             "properties": {
+              "agents": {
+                "description": "Agents observability settings for the Worker.",
+                "type": "object",
+                "nullable": true,
+                "properties": {
+                  "destinations": {
+                    "description": "A list of destinations where Agents observability data will be exported to.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "default": [],
+                    "x-auditable": true
+                  },
+                  "enabled": {
+                    "description": "Whether Agents observability is enabled for the Worker.",
+                    "type": "boolean",
+                    "default": false,
+                    "x-auditable": true
+                  },
+                  "head_sampling_rate": {
+                    "description": "The sampling rate for Agents observability. From 0 to 1 (1 = 100%, 0.1 = 10%).",
+                    "type": "number",
+                    "example": 1,
+                    "default": 1,
+                    "x-auditable": true
+                  },
+                  "persist": {
+                    "description": "Whether Agents observability data is persisted for the Worker.",
+                    "type": "boolean",
+                    "default": true,
+                    "x-auditable": true
+                  }
+                }
+              },
               "enabled": {
                 "description": "Whether observability is enabled for the Worker.",
                 "type": "boolean",
@@ -757007,6 +758896,41 @@
         "description": "Observability settings for the Worker.",
         "type": "object",
         "properties": {
+          "agents": {
+            "description": "Agents observability settings for the Worker.",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "destinations": {
+                "description": "A list of destinations where Agents observability data will be exported to.",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "default": [],
+                "x-auditable": true
+              },
+              "enabled": {
+                "description": "Whether Agents observability is enabled for the Worker.",
+                "type": "boolean",
+                "default": false,
+                "x-auditable": true
+              },
+              "head_sampling_rate": {
+                "description": "The sampling rate for Agents observability. From 0 to 1 (1 = 100%, 0.1 = 10%).",
+                "type": "number",
+                "example": 1,
+                "default": 1,
+                "x-auditable": true
+              },
+              "persist": {
+                "description": "Whether Agents observability data is persisted for the Worker.",
+                "type": "boolean",
+                "default": true,
+                "x-auditable": true
+              }
+            }
+          },
           "enabled": {
             "description": "Whether observability is enabled for the Worker.",
             "type": "boolean",
@@ -757130,6 +759054,44 @@
         "description": "Observability settings for the Worker.",
         "type": "object",
         "properties": {
+          "agents": {
+            "description": "Agents observability settings for the Worker.",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "destinations": {
+                "description": "A list of destinations where Agents observability data will be exported to.",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "example": [
+                  "cloudflare"
+                ],
+                "x-auditable": true
+              },
+              "enabled": {
+                "description": "Whether Agents observability is enabled for the Worker.",
+                "type": "boolean",
+                "example": true,
+                "x-auditable": true
+              },
+              "head_sampling_rate": {
+                "description": "The sampling rate for Agents observability. From 0 to 1 (1 = 100%, 0.1 = 10%). Defaults to the root head_sampling_rate.",
+                "type": "number",
+                "example": 0.1,
+                "nullable": true,
+                "x-auditable": true
+              },
+              "persist": {
+                "description": "Whether Agents observability data is persisted for the Worker.",
+                "type": "boolean",
+                "example": true,
+                "default": true,
+                "x-auditable": true
+              }
+            }
+          },
           "enabled": {
             "description": "Whether observability is enabled for the Worker.",
             "type": "boolean",
@@ -778231,7 +780193,7 @@
           }
         },
         "content": {
-          "application/vnd.google.protobuf": {
+          "application/protobuf": {
             "schema": {
               "type": "string",
               "format": "binary"
@@ -778643,6 +780605,9 @@
     "d1": {
       "description": "D1 is Cloudflare's managed, serverless database with SQLite's SQL semantics, built-in disaster recovery, and Worker and HTTP API access.",
       "groups": {
+        "insights": {
+          "description": "show usage insights for the D1 databases in your account"
+        },
         "time-travel": {
           "description": "use specific point-in-time backups of your D1 database",
           "x-forge-epilogue": "For more information about Time Travel, see https://developers.cloudflare.com/d1/reference/time-travel"

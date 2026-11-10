@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountManagedBy ManagedBy { get => _explicitNullValueManagedBy; set { _explicitNullValueManagedBy = value; AdditionalData?.Remove("managed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_by"); else _explicitNullProperties?.Remove("managed_by"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountManagedBy _explicitNullValueManagedBy = default!;
 #endif
-        /// <summary>Account name</summary>
+        /// <summary>Account name. When creating or updating an account, the name is limited to 65 UTF-8 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }

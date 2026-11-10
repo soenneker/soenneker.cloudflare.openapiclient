@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.DatabaseRequestBuilder Database
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.DatabaseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The insights property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.InsightsRequestBuilder Insights
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.D1RequestBuilder"/> and sets the default values.

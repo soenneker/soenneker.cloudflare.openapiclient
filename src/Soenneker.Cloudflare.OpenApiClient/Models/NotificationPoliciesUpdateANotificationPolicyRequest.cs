@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string AlertInterval { get => _explicitNullValueAlertInterval; set { _explicitNullValueAlertInterval = value; AdditionalData?.Remove("alert_interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_interval"); else _explicitNullProperties?.Remove("alert_interval"); } }
         private string _explicitNullValueAlertInterval = default!;
 #endif
-        /// <summary>Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.</summary>
+        /// <summary>Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values. This enum lists every alert type, not the ones a given account can create, since some types depend on entitlements or account type. To get the alert types an account can create, call `GET /accounts/{account_id}/alerting/v3/available_alerts`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAlertType? AlertType { get => _explicitNullValueAlertType; set { _explicitNullValueAlertType = value; AdditionalData?.Remove("alert_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_type"); else _explicitNullProperties?.Remove("alert_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAlertType? _explicitNullValueAlertType = default!;
         /// <summary>Optional description for the Notification policy.</summary>
