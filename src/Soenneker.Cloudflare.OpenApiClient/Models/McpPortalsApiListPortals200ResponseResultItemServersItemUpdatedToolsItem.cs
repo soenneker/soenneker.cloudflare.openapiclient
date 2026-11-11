@@ -25,15 +25,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("portal_alias") is { } nullNodePortalAlias && nullNodePortalAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalAlias = null;
             if (parseNode.GetChildNode("portal_description") is null) { _explicitNullValuePortalDescription = default!; _explicitNullProperties?.Remove("portal_description"); }
             else if (parseNode.GetChildNode("portal_description") is { } nullNodePortalDescription && nullNodePortalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalDescription = null;
+            if (parseNode.GetChildNode("portal_enabled") is null) { _explicitNullValuePortalEnabled = default!; _explicitNullProperties?.Remove("portal_enabled"); }
+            else if (parseNode.GetChildNode("portal_enabled") is { } nullNodePortalEnabled && nullNodePortalEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalEnabled = null;
             if (parseNode.GetChildNode("server_alias") is null) { _explicitNullValueServerAlias = default!; _explicitNullProperties?.Remove("server_alias"); }
             else if (parseNode.GetChildNode("server_alias") is { } nullNodeServerAlias && nullNodeServerAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerAlias = null;
             if (parseNode.GetChildNode("server_description") is null) { _explicitNullValueServerDescription = default!; _explicitNullProperties?.Remove("server_description"); }
             else if (parseNode.GetChildNode("server_description") is { } nullNodeServerDescription && nullNodeServerDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerDescription = null;
+            if (parseNode.GetChildNode("server_enabled") is null) { _explicitNullValueServerEnabled = default!; _explicitNullProperties?.Remove("server_enabled"); }
+            else if (parseNode.GetChildNode("server_enabled") is { } nullNodeServerEnabled && nullNodeServerEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
+        /// <summary>Effective availability of the capability: the portal-level value when set, otherwise the server-level value.</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The name property</summary>
@@ -66,6 +70,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string PortalDescription { get => _explicitNullValuePortalDescription; set { _explicitNullValuePortalDescription = value; AdditionalData?.Remove("portal_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_description"); else _explicitNullProperties?.Remove("portal_description"); } }
         private string _explicitNullValuePortalDescription = default!;
 #endif
+        /// <summary>Availability set on this portal. Absent when the portal does not set it.</summary>
+        public bool? PortalEnabled { get => _explicitNullValuePortalEnabled; set { _explicitNullValuePortalEnabled = value; AdditionalData?.Remove("portal_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_enabled"); else _explicitNullProperties?.Remove("portal_enabled"); } }
+        private bool? _explicitNullValuePortalEnabled = default!;
         /// <summary>The server_alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ServerDescription { get => _explicitNullValueServerDescription; set { _explicitNullValueServerDescription = value; AdditionalData?.Remove("server_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_description"); else _explicitNullProperties?.Remove("server_description"); } }
         private string _explicitNullValueServerDescription = default!;
 #endif
+        /// <summary>Availability set on the MCP server. Absent when the server does not set it.</summary>
+        public bool? ServerEnabled { get => _explicitNullValueServerEnabled; set { _explicitNullValueServerEnabled = value; AdditionalData?.Remove("server_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_enabled"); else _explicitNullProperties?.Remove("server_enabled"); } }
+        private bool? _explicitNullValueServerEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListPortals200ResponseResultItemServersItemUpdatedToolsItem"/> and sets the default values.
         /// </summary>
@@ -115,8 +125,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "portal_alias", n => { PortalAlias = n.GetStringValue(); } },
                 { "portal_description", n => { PortalDescription = n.GetStringValue(); } },
+                { "portal_enabled", n => { PortalEnabled = n.GetBoolValue(); } },
                 { "server_alias", n => { ServerAlias = n.GetStringValue(); } },
                 { "server_description", n => { ServerDescription = n.GetStringValue(); } },
+                { "server_enabled", n => { ServerEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -130,8 +142,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("portal_alias", PortalAlias);
             writer.WriteStringValue("portal_description", PortalDescription);
+            writer.WriteBoolValue("portal_enabled", PortalEnabled);
             writer.WriteStringValue("server_alias", ServerAlias);
             writer.WriteStringValue("server_description", ServerDescription);
+            writer.WriteBoolValue("server_enabled", ServerEnabled);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

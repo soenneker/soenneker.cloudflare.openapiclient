@@ -20,6 +20,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("datasetIds") is null) { _explicitNullValueDatasetIds = default!; _explicitNullProperties?.Remove("datasetIds"); }
             else if (parseNode.GetChildNode("datasetIds") is { } nullNodeDatasetIds && nullNodeDatasetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetIds = null;
+            if (parseNode.GetChildNode("mixesDatasetKinds") is null) { _explicitNullValueMixesDatasetKinds = default!; _explicitNullProperties?.Remove("mixesDatasetKinds"); }
+            else if (parseNode.GetChildNode("mixesDatasetKinds") is { } nullNodeMixesDatasetKinds && nullNodeMixesDatasetKinds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MixesDatasetKinds = null;
             if (parseNode.GetChildNode("unresolvableDatasetIds") is null) { _explicitNullValueUnresolvableDatasetIds = default!; _explicitNullProperties?.Remove("unresolvableDatasetIds"); }
             else if (parseNode.GetChildNode("unresolvableDatasetIds") is { } nullNodeUnresolvableDatasetIds && nullNodeUnresolvableDatasetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnresolvableDatasetIds = null;
             if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
@@ -40,6 +42,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<Guid?> DatasetIds { get => _explicitNullValueDatasetIds; set { _explicitNullValueDatasetIds = value; AdditionalData?.Remove("datasetIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetIds"); else _explicitNullProperties?.Remove("datasetIds"); } }
         private List<Guid?> _explicitNullValueDatasetIds = default!;
 #endif
+        /// <summary>True when the saved datasets mix analytics and intelligence datasets, for example after a dataset&apos;s analytics setting changed. Such a preference is skipped.</summary>
+        public bool? MixesDatasetKinds { get => _explicitNullValueMixesDatasetKinds; set { _explicitNullValueMixesDatasetKinds = value; AdditionalData?.Remove("mixesDatasetKinds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mixesDatasetKinds"); else _explicitNullProperties?.Remove("mixesDatasetKinds"); } }
+        private bool? _explicitNullValueMixesDatasetKinds = default!;
         /// <summary>Saved datasets that you can no longer read or that were deleted. While this list is not empty, the preference is skipped.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "datasetIds", n => { DatasetIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "mixesDatasetKinds", n => { MixesDatasetKinds = n.GetBoolValue(); } },
                 { "unresolvableDatasetIds", n => { UnresolvableDatasetIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
@@ -104,6 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("datasetIds", DatasetIds);
+            writer.WriteBoolValue("mixesDatasetKinds", MixesDatasetKinds);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("unresolvableDatasetIds", UnresolvableDatasetIds);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);

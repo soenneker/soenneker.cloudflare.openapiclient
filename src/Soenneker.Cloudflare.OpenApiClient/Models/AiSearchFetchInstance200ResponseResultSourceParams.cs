@@ -17,6 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("d1") is null) { _explicitNullValueD1 = default!; _explicitNullProperties?.Remove("d1"); }
+            else if (parseNode.GetChildNode("d1") is { } nullNodeD1 && nullNodeD1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) D1 = null;
             if (parseNode.GetChildNode("exclude_items") is null) { _explicitNullValueExcludeItems = default!; _explicitNullProperties?.Remove("exclude_items"); }
             else if (parseNode.GetChildNode("exclude_items") is { } nullNodeExcludeItems && nullNodeExcludeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeItems = null;
             if (parseNode.GetChildNode("include_items") is null) { _explicitNullValueIncludeItems = default!; _explicitNullProperties?.Remove("include_items"); }
@@ -31,6 +33,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>D1 source configuration. Required when creating a d1 instance and ignored for other types. For d1, include_items and exclude_items match each row&apos;s item key, `&lt;id&gt;.md`; a submitted source_params replaces both lists (an omitted list is cleared), so omit source_params to keep them.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultSourceParamsD1? D1 { get => _explicitNullValueD1; set { _explicitNullValueD1 = value; AdditionalData?.Remove("d1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("d1"); else _explicitNullProperties?.Remove("d1"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultSourceParamsD1? _explicitNullValueD1 = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultSourceParamsD1 D1 { get => _explicitNullValueD1; set { _explicitNullValueD1 = value; AdditionalData?.Remove("d1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("d1"); else _explicitNullProperties?.Remove("d1"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultSourceParamsD1 _explicitNullValueD1 = default!;
+#endif
         /// <summary>List of path patterns to exclude. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /admin/** matches /admin/users and /admin/settings/advanced). Most accounts have a limit of 10 rules; contact support to raise it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "d1", n => { D1 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultSourceParamsD1>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultSourceParamsD1.CreateFromDiscriminatorValue); } },
                 { "exclude_items", n => { ExcludeItems = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "include_items", n => { IncludeItems = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "prefix", n => { Prefix = n.GetStringValue(); } },
@@ -123,6 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultSourceParamsD1>("d1", D1);
             writer.WriteCollectionOfPrimitiveValues<string>("exclude_items", ExcludeItems);
             writer.WriteCollectionOfPrimitiveValues<string>("include_items", IncludeItems);
             writer.WriteStringValue("prefix", Prefix);

@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("based_on") is null) { _explicitNullValueBasedOn = default!; _explicitNullProperties?.Remove("based_on"); }
+            else if (parseNode.GetChildNode("based_on") is { } nullNodeBasedOn && nullNodeBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasedOn = null;
             if (parseNode.GetChildNode("confirm_query") is null) { _explicitNullValueConfirmQuery = default!; _explicitNullProperties?.Remove("confirm_query"); }
             else if (parseNode.GetChildNode("confirm_query") is { } nullNodeConfirmQuery && nullNodeConfirmQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfirmQuery = null;
             if (parseNode.GetChildNode("dataset_scope") is null) { _explicitNullValueDatasetScope = default!; _explicitNullProperties?.Remove("dataset_scope"); }
             else if (parseNode.GetChildNode("dataset_scope") is { } nullNodeDatasetScope && nullNodeDatasetScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetScope = null;
+            if (parseNode.GetChildNode("definition") is null) { _explicitNullValueDefinition = default!; _explicitNullProperties?.Remove("definition"); }
+            else if (parseNode.GetChildNode("definition") is { } nullNodeDefinition && nullNodeDefinition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Definition = null;
             if (parseNode.GetChildNode("digest_interval_hours") is null) { _explicitNullValueDigestIntervalHours = default!; _explicitNullProperties?.Remove("digest_interval_hours"); }
             else if (parseNode.GetChildNode("digest_interval_hours") is { } nullNodeDigestIntervalHours && nullNodeDigestIntervalHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DigestIntervalHours = null;
             if (parseNode.GetChildNode("intent") is null) { _explicitNullValueIntent = default!; _explicitNullProperties?.Remove("intent"); }
@@ -39,6 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("query_source") is { } nullNodeQuerySource && nullNodeQuerySource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuerySource = null;
             if (parseNode.GetChildNode("requirement") is null) { _explicitNullValueRequirement = default!; _explicitNullProperties?.Remove("requirement"); }
             else if (parseNode.GetChildNode("requirement") is { } nullNodeRequirement && nullNodeRequirement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requirement = null;
+            if (parseNode.GetChildNode("revision") is null) { _explicitNullValueRevision = default!; _explicitNullProperties?.Remove("revision"); }
+            else if (parseNode.GetChildNode("revision") is { } nullNodeRevision && nullNodeRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revision = null;
             if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
             if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
@@ -49,6 +55,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>`resolved.based_on` from the resolution the user reviewed. Required with `definition`; if the organization profile or topic has changed since, the save fails with 409 and must be resolved again.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestBasedOn? BasedOn { get => _explicitNullValueBasedOn; set { _explicitNullValueBasedOn = value; AdditionalData?.Remove("based_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("based_on"); else _explicitNullProperties?.Remove("based_on"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestBasedOn? _explicitNullValueBasedOn = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestBasedOn BasedOn { get => _explicitNullValueBasedOn; set { _explicitNullValueBasedOn = value; AdditionalData?.Remove("based_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("based_on"); else _explicitNullProperties?.Remove("based_on"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestBasedOn _explicitNullValueBasedOn = default!;
+#endif
         /// <summary>Write-only. `true` confirms the query still fits the requirement, clearing `query_stale` without changing the query or its version. Requires a query.</summary>
         public bool? ConfirmQuery { get => _explicitNullValueConfirmQuery; set { _explicitNullValueConfirmQuery = value; AdditionalData?.Remove("confirm_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirm_query"); else _explicitNullProperties?.Remove("confirm_query"); } }
         private bool? _explicitNullValueConfirmQuery = default!;
@@ -61,6 +77,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope DatasetScope { get => _explicitNullValueDatasetScope; set { _explicitNullValueDatasetScope = value; AdditionalData?.Remove("dataset_scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_scope"); else _explicitNullProperties?.Remove("dataset_scope"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope _explicitNullValueDatasetScope = default!;
+#endif
+        /// <summary>Replaces a structured PIR&apos;s definition. Free-form PIRs cannot be converted yet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDefinition? Definition { get => _explicitNullValueDefinition; set { _explicitNullValueDefinition = value; AdditionalData?.Remove("definition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("definition"); else _explicitNullProperties?.Remove("definition"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDefinition? _explicitNullValueDefinition = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDefinition Definition { get => _explicitNullValueDefinition; set { _explicitNullValueDefinition = value; AdditionalData?.Remove("definition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("definition"); else _explicitNullProperties?.Remove("definition"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDefinition _explicitNullValueDefinition = default!;
 #endif
         /// <summary>Hours between digests: 6, 12, or 24. Used only when `notification_mode` is `digest`.</summary>
         public int? DigestIntervalHours { get => _explicitNullValueDigestIntervalHours; set { _explicitNullValueDigestIntervalHours = value; AdditionalData?.Remove("digest_interval_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digest_interval_hours"); else _explicitNullProperties?.Remove("digest_interval_hours"); } }
@@ -124,6 +150,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Requirement { get => _explicitNullValueRequirement; set { _explicitNullValueRequirement = value; AdditionalData?.Remove("requirement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement"); else _explicitNullProperties?.Remove("requirement"); } }
         private string _explicitNullValueRequirement = default!;
 #endif
+        /// <summary>The `revision` the change is based on. Required for structured PIRs; a different stored revision returns 409.</summary>
+        public int? Revision { get => _explicitNullValueRevision; set { _explicitNullValueRevision = value; AdditionalData?.Remove("revision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revision"); else _explicitNullProperties?.Remove("revision"); } }
+        private int? _explicitNullValueRevision = default!;
         /// <summary>`draft`: not monitored. `active`: monitored, unless `pause_reason` is set. Setting `active` on a PIR with a `pause_reason` resumes it. Moving a PIR back to `draft` and activating it again starts matching afresh with a 30-day backfill.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestStatus? _explicitNullValueStatus = default!;
@@ -172,8 +201,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "based_on", n => { BasedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestBasedOn>(global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestBasedOn.CreateFromDiscriminatorValue); } },
                 { "confirm_query", n => { ConfirmQuery = n.GetBoolValue(); } },
                 { "dataset_scope", n => { DatasetScope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope>(global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope.CreateFromDiscriminatorValue); } },
+                { "definition", n => { Definition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDefinition>(global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDefinition.CreateFromDiscriminatorValue); } },
                 { "digest_interval_hours", n => { DigestIntervalHours = n.GetIntValue(); } },
                 { "intent", n => { Intent = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntent>(global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntent.CreateFromDiscriminatorValue); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -183,6 +214,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "query", n => { Query = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestQuery>(global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestQuery.CreateFromDiscriminatorValue); } },
                 { "query_source", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestQuerySource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueQuerySource = default; _explicitNullProperties?.Remove("query_source"); AdditionalData["query_source"] = unknown; } else { QuerySource = parsed; AdditionalData.Remove("query_source"); } } },
                 { "requirement", n => { Requirement = n.GetStringValue(); } },
+                { "revision", n => { Revision = n.GetIntValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "tlp", n => { Tlp = n.GetStringValue(); } },
@@ -195,8 +227,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestBasedOn>("based_on", BasedOn);
             writer.WriteBoolValue("confirm_query", ConfirmQuery);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope>("dataset_scope", DatasetScope);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDefinition>("definition", Definition);
             writer.WriteIntValue("digest_interval_hours", DigestIntervalHours);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestIntent>("intent", Intent);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
@@ -206,6 +240,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestQuery>("query", Query);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestQuerySource>("query_source", QuerySource);
             writer.WriteStringValue("requirement", Requirement);
+            writer.WriteIntValue("revision", Revision);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestStatus>("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("tlp", Tlp);

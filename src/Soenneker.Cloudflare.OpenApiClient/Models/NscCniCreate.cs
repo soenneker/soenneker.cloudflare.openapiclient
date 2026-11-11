@@ -39,15 +39,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bgp property</summary>
+        /// <summary>BGP Control settings. For GCP CNIs, omitting this field or setting it to null enables BGP with the Google ASN and AdvertiseOnly mode by default. For other CNI types, omission or null leaves BGP disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? _explicitNullValueBgp = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreateBgp? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreateBgp? _explicitNullValueBgp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl _explicitNullValueBgp = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreateBgp Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreateBgp _explicitNullValueBgp = default!;
 #endif
         /// <summary>The interconnect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetStringValue(); } },
-                { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl>(global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl.CreateFromDiscriminatorValue); } },
+                { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreateBgp>(global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreateBgp.CreateFromDiscriminatorValue); } },
                 { "interconnect", n => { Interconnect = n.GetStringValue(); } },
                 { "magic", n => { Magic = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings.CreateFromDiscriminatorValue); } },
             };
@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl>("bgp", Bgp);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniCreateBgp>("bgp", Bgp);
             writer.WriteStringValue("interconnect", Interconnect);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscMagicSettings>("magic", Magic);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

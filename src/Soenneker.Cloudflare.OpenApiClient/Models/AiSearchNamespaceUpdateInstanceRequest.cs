@@ -231,7 +231,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Minimum similarity score a chunk must reach to be returned. Defaults to 0.4.</summary>
         public double? ScoreThreshold { get => _explicitNullValueScoreThreshold; set { _explicitNullValueScoreThreshold = value; AdditionalData?.Remove("score_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_threshold"); else _explicitNullProperties?.Remove("score_threshold"); } }
         private double? _explicitNullValueScoreThreshold = default!;
-        /// <summary>The source property</summary>
+        /// <summary>The R2 bucket name for r2, the website URL for web-crawler, or the D1 database ID (UUID) for d1. A d1 instance also requires token_id, and the token needs D1 Read permission. The d1 database cannot be changed after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }

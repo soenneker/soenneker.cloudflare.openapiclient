@@ -67,6 +67,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string DestinationConf { get => _explicitNullValueDestinationConf; set { _explicitNullValueDestinationConf = value; AdditionalData?.Remove("destination_conf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_conf"); else _explicitNullProperties?.Remove("destination_conf"); } }
         private string _explicitNullValueDestinationConf = default!;
 #endif
+        /// <summary>Sanitized destination descriptor with credentials removed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DestinationName { get; private set; }
+#nullable restore
+#else
+        public string DestinationName { get; private set; }
+#endif
         /// <summary>Flag that indicates if the job is enabled.</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
@@ -191,6 +199,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dataset", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushDataset>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDataset = default; _explicitNullProperties?.Remove("dataset"); AdditionalData["dataset"] = unknown; } else { Dataset = parsed; AdditionalData.Remove("dataset"); } } },
                 { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
+                { "destination_name", n => { DestinationName = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
                 { "filter_attack_traffic", n => { FilterAttackTraffic = n.GetBoolValue(); } },

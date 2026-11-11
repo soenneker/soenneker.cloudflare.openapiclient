@@ -85,9 +85,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> ConversationIds { get => _explicitNullValueConversationIds; set { _explicitNullValueConversationIds = value; AdditionalData?.Remove("conversationIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversationIds"); else _explicitNullProperties?.Remove("conversationIds"); } }
         private List<string> _explicitNullValueConversationIds = default!;
 #endif
-        /// <summary>Recorded spans with a nonempty error or ERROR status. Counts spans, not distinct messages or incidents.</summary>
-        public int? ErrorCount { get => _explicitNullValueErrorCount; set { _explicitNullValueErrorCount = value; AdditionalData?.Remove("errorCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCount"); else _explicitNullProperties?.Remove("errorCount"); } }
-        private int? _explicitNullValueErrorCount = default!;
+        /// <summary>The errorCount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityAgentTraceSummaryErrorCount? ErrorCount { get => _explicitNullValueErrorCount; set { _explicitNullValueErrorCount = value; AdditionalData?.Remove("errorCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCount"); else _explicitNullProperties?.Remove("errorCount"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityAgentTraceSummaryErrorCount? _explicitNullValueErrorCount = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityAgentTraceSummaryErrorCount ErrorCount { get => _explicitNullValueErrorCount; set { _explicitNullValueErrorCount = value; AdditionalData?.Remove("errorCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCount"); else _explicitNullProperties?.Remove("errorCount"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityAgentTraceSummaryErrorCount _explicitNullValueErrorCount = default!;
+#endif
         /// <summary>Error messages encountered during the trace, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -221,7 +228,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "agents", n => { Agents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "conversationIds", n => { ConversationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "errorCount", n => { ErrorCount = n.GetIntValue(); } },
+                { "errorCount", n => { ErrorCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityAgentTraceSummaryErrorCount>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityAgentTraceSummaryErrorCount.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "inputTokens", n => { InputTokens = n.GetDoubleValue(); } },
                 { "lastActivityMs", n => { LastActivityMs = n.GetIntValue(); } },
@@ -252,7 +259,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("agents", Agents);
             writer.WriteCollectionOfPrimitiveValues<string>("conversationIds", ConversationIds);
-            writer.WriteIntValue("errorCount", ErrorCount);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityAgentTraceSummaryErrorCount>("errorCount", ErrorCount);
             writer.WriteCollectionOfPrimitiveValues<string>("errors", Errors);
             writer.WriteDoubleValue("inputTokens", InputTokens);
             writer.WriteIntValue("lastActivityMs", LastActivityMs);

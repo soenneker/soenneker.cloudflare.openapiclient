@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Connectivity_settings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Region;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Regions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets;
 using System.Collections.Generic;
@@ -21,6 +23,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Connectivity_settings.Connectivity_settingsRequestBuilder Connectivity_settings
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Connectivity_settings.Connectivity_settingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The region property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Region.RegionRequestBuilder Region
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Region.RegionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The regions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Regions.RegionsRequestBuilder Regions
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Regions.RegionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The routes property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.RoutesRequestBuilder Routes

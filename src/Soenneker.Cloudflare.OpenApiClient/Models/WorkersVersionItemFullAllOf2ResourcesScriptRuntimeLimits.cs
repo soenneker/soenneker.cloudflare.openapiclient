@@ -24,6 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of CPU time this Worker can use in milliseconds.</summary>
         public int? CpuMs { get; private set; }
+        /// <summary>The number of subrequests this Worker can make per request.</summary>
+        public int? Subrequests { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesScriptRuntimeLimits"/> and sets the default values.
         /// </summary>
@@ -50,6 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cpu_ms", n => { CpuMs = n.GetIntValue(); } },
+                { "subrequests", n => { Subrequests = n.GetIntValue(); } },
             };
         }
         /// <summary>

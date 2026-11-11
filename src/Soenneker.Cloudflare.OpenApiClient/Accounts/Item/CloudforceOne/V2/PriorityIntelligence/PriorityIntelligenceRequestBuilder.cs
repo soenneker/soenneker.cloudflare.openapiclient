@@ -10,6 +10,8 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Priority
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Matches;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Profile;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Quota;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Resolve;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Topics;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -53,6 +55,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Quota.QuotaRequestBuilder Quota
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Quota.QuotaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The resolve property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Resolve.ResolveRequestBuilder Resolve
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Resolve.ResolveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The topics property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Topics.TopicsRequestBuilder Topics
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Topics.TopicsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.v2.priorityIntelligence.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -101,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new PIR for the account. The cfone.priority_intelligence_requirement_limit entitlement sets how many PIRs can be active; drafts do not count, but the account can hold at most five times that many PIRs in total. An active PIR requires a query.
+        /// Creates a new PIR for the account. The cfone.priority_intelligence_requirement_limit entitlement sets how many PIRs can be active; drafts do not count, but the account can hold at most five times that many PIRs in total. A free-form PIR has a `requirement`, and an active one requires a query. A structured PIR has a `definition` instead; its requirement and event query are generated, and the response includes them in `resolved`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -139,7 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new PIR for the account. The cfone.priority_intelligence_requirement_limit entitlement sets how many PIRs can be active; drafts do not count, but the account can hold at most five times that many PIRs in total. An active PIR requires a query.
+        /// Creates a new PIR for the account. The cfone.priority_intelligence_requirement_limit entitlement sets how many PIRs can be active; drafts do not count, but the account can hold at most five times that many PIRs in total. A free-form PIR has a `requirement`, and an active one requires a query. A structured PIR has a `definition` instead; its requirement and event query are generated, and the response includes them in `resolved`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

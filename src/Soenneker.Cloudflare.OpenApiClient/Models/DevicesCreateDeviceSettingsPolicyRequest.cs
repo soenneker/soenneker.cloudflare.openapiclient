@@ -47,6 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("exclude") is { } nullNodeExclude && nullNodeExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclude = null;
             if (parseNode.GetChildNode("exclude_office_ips") is null) { _explicitNullValueExcludeOfficeIps = default!; _explicitNullProperties?.Remove("exclude_office_ips"); }
             else if (parseNode.GetChildNode("exclude_office_ips") is { } nullNodeExcludeOfficeIps && nullNodeExcludeOfficeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeOfficeIps = null;
+            if (parseNode.GetChildNode("fallback_domains") is null) { _explicitNullValueFallbackDomains = default!; _explicitNullProperties?.Remove("fallback_domains"); }
+            else if (parseNode.GetChildNode("fallback_domains") is { } nullNodeFallbackDomains && nullNodeFallbackDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackDomains = null;
             if (parseNode.GetChildNode("global_acceleration") is null) { _explicitNullValueGlobalAcceleration = default!; _explicitNullProperties?.Remove("global_acceleration"); }
             else if (parseNode.GetChildNode("global_acceleration") is { } nullNodeGlobalAcceleration && nullNodeGlobalAcceleration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalAcceleration = null;
             if (parseNode.GetChildNode("include") is null) { _explicitNullValueInclude = default!; _explicitNullProperties?.Remove("include"); }
@@ -146,16 +148,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of routes excluded in the WARP client&apos;s tunnel. Both &apos;exclude&apos; and &apos;include&apos; cannot be set in the same request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel>? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel>? _explicitNullValueExclude = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelRequest>? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelRequest>? _explicitNullValueExclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel> _explicitNullValueExclude = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelRequest> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelRequest> _explicitNullValueExclude = default!;
 #endif
         /// <summary>Whether to add Microsoft IPs to Split Tunnel exclusions.</summary>
         public bool? ExcludeOfficeIps { get => _explicitNullValueExcludeOfficeIps; set { _explicitNullValueExcludeOfficeIps = value; AdditionalData?.Remove("exclude_office_ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_office_ips"); else _explicitNullProperties?.Remove("exclude_office_ips"); } }
         private bool? _explicitNullValueExcludeOfficeIps = default!;
+        /// <summary>The fallback_domains property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFallbackDomain>? FallbackDomains { get => _explicitNullValueFallbackDomains; set { _explicitNullValueFallbackDomains = value; AdditionalData?.Remove("fallback_domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_domains"); else _explicitNullProperties?.Remove("fallback_domains"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFallbackDomain>? _explicitNullValueFallbackDomains = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFallbackDomain> FallbackDomains { get => _explicitNullValueFallbackDomains; set { _explicitNullValueFallbackDomains = value; AdditionalData?.Remove("fallback_domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_domains"); else _explicitNullProperties?.Remove("fallback_domains"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFallbackDomain> _explicitNullValueFallbackDomains = default!;
+#endif
         /// <summary>Global Acceleration settings for China. When configured, WARP clients connect to the Global Accelerator addresses instead of the default ones. Please contact your account representative to enable this feature on your account. See https://developers.cloudflare.com/china-network/concepts/global-acceleration/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,17 +181,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of routes included in the WARP client&apos;s tunnel. Both &apos;exclude&apos; and &apos;include&apos; cannot be set in the same request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude>? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude>? _explicitNullValueInclude = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelIncludeRequest>? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelIncludeRequest>? _explicitNullValueInclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude> _explicitNullValueInclude = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelIncludeRequest> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelIncludeRequest> _explicitNullValueInclude = default!;
 #endif
-        /// <summary>The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset.</summary>
+        /// <summary>The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Set to null to unset.</summary>
         public double? LanAllowMinutes { get => _explicitNullValueLanAllowMinutes; set { _explicitNullValueLanAllowMinutes = value; AdditionalData?.Remove("lan_allow_minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_allow_minutes"); else _explicitNullProperties?.Remove("lan_allow_minutes"); } }
         private double? _explicitNullValueLanAllowMinutes = default!;
-        /// <summary>The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.</summary>
+        /// <summary>The size of the subnet for the local access network. Set to null to unset.</summary>
         public double? LanAllowSubnetSize { get => _explicitNullValueLanAllowSubnetSize; set { _explicitNullValueLanAllowSubnetSize = value; AdditionalData?.Remove("lan_allow_subnet_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_allow_subnet_size"); else _explicitNullProperties?.Remove("lan_allow_subnet_size"); } }
         private double? _explicitNullValueLanAllowSubnetSize = default!;
         /// <summary>The wirefilter expression to match devices. Available values: &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.service_token_uuid&quot;, &quot;identity.saml_attributes&quot;, &quot;network&quot;, &quot;os.name&quot;, &quot;os.version&quot;, &quot;device.tags&quot;.</summary>
@@ -313,10 +325,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enable_device_credential_authentication", n => { EnableDeviceCredentialAuthentication = n.GetBoolValue(); } },
                 { "enable_netbt", n => { EnableNetbt = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exclude_office_ips", n => { ExcludeOfficeIps = n.GetBoolValue(); } },
+                { "fallback_domains", n => { FallbackDomains = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFallbackDomain>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFallbackDomain.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "global_acceleration", n => { GlobalAcceleration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration.CreateFromDiscriminatorValue); } },
-                { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelIncludeRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelIncludeRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lan_allow_minutes", n => { LanAllowMinutes = n.GetDoubleValue(); } },
                 { "lan_allow_subnet_size", n => { LanAllowSubnetSize = n.GetDoubleValue(); } },
                 { "match", n => { Match = n.GetStringValue(); } },
@@ -353,10 +366,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("enable_device_credential_authentication", EnableDeviceCredentialAuthentication);
             writer.WriteBoolValue("enable_netbt", EnableNetbt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel>("exclude", Exclude);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelRequest>("exclude", Exclude);
             writer.WriteBoolValue("exclude_office_ips", ExcludeOfficeIps);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFallbackDomain>("fallback_domains", FallbackDomains);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesGlobalAcceleration>("global_acceleration", GlobalAcceleration);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelInclude>("include", Include);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelIncludeRequest>("include", Include);
             writer.WriteDoubleValue("lan_allow_minutes", LanAllowMinutes);
             writer.WriteDoubleValue("lan_allow_subnet_size", LanAllowSubnetSize);
             writer.WriteStringValue("match", Match);

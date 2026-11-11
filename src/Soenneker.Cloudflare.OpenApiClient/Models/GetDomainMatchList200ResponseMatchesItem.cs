@@ -17,18 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("ai_verdict") is null) { _explicitNullValueAiVerdict = default!; _explicitNullProperties?.Remove("ai_verdict"); }
+            else if (parseNode.GetChildNode("ai_verdict") is { } nullNodeAiVerdict && nullNodeAiVerdict.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiVerdict = null;
             if (parseNode.GetChildNode("dismissed") is null) { _explicitNullValueDismissed = default!; _explicitNullProperties?.Remove("dismissed"); }
             else if (parseNode.GetChildNode("dismissed") is { } nullNodeDismissed && nullNodeDismissed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismissed = null;
             if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
             else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
             if (parseNode.GetChildNode("domain_id") is null) { _explicitNullValueDomainId = default!; _explicitNullProperties?.Remove("domain_id"); }
             else if (parseNode.GetChildNode("domain_id") is { } nullNodeDomainId && nullNodeDomainId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainId = null;
+            if (parseNode.GetChildNode("edit_distance") is null) { _explicitNullValueEditDistance = default!; _explicitNullProperties?.Remove("edit_distance"); }
+            else if (parseNode.GetChildNode("edit_distance") is { } nullNodeEditDistance && nullNodeEditDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditDistance = null;
             if (parseNode.GetChildNode("first_seen") is null) { _explicitNullValueFirstSeen = default!; _explicitNullProperties?.Remove("first_seen"); }
             else if (parseNode.GetChildNode("first_seen") is { } nullNodeFirstSeen && nullNodeFirstSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstSeen = null;
+            if (parseNode.GetChildNode("match_category") is null) { _explicitNullValueMatchCategory = default!; _explicitNullProperties?.Remove("match_category"); }
+            else if (parseNode.GetChildNode("match_category") is { } nullNodeMatchCategory && nullNodeMatchCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchCategory = null;
             if (parseNode.GetChildNode("match_details") is null) { _explicitNullValueMatchDetails = default!; _explicitNullProperties?.Remove("match_details"); }
             else if (parseNode.GetChildNode("match_details") is { } nullNodeMatchDetails && nullNodeMatchDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchDetails = null;
             if (parseNode.GetChildNode("public_scans") is null) { _explicitNullValuePublicScans = default!; _explicitNullProperties?.Remove("public_scans"); }
             else if (parseNode.GetChildNode("public_scans") is { } nullNodePublicScans && nullNodePublicScans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicScans = null;
+            if (parseNode.GetChildNode("quality") is null) { _explicitNullValueQuality = default!; _explicitNullProperties?.Remove("quality"); }
+            else if (parseNode.GetChildNode("quality") is { } nullNodeQuality && nullNodeQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quality = null;
             if (parseNode.GetChildNode("registrar") is null) { _explicitNullValueRegistrar = default!; _explicitNullProperties?.Remove("registrar"); }
             else if (parseNode.GetChildNode("registrar") is { } nullNodeRegistrar && nullNodeRegistrar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registrar = null;
             if (parseNode.GetChildNode("scan_status") is null) { _explicitNullValueScanStatus = default!; _explicitNullProperties?.Remove("scan_status"); }
@@ -41,6 +49,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ai_verdict property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemAiVerdict? AiVerdict { get => _explicitNullValueAiVerdict; set { _explicitNullValueAiVerdict = value; AdditionalData?.Remove("ai_verdict"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_verdict"); else _explicitNullProperties?.Remove("ai_verdict"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemAiVerdict? _explicitNullValueAiVerdict = default!;
         /// <summary>Whether the match is dismissed. Only present for single-query requests. For multi-query requests, use the dismissed field in each match_details entry.</summary>
         public bool? Dismissed { get => _explicitNullValueDismissed; set { _explicitNullValueDismissed = value; AdditionalData?.Remove("dismissed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed"); else _explicitNullProperties?.Remove("dismissed"); } }
         private bool? _explicitNullValueDismissed = default!;
@@ -57,6 +68,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>ID of the matched domain. Present only when `include_domain_id=true`. Use it with `query_id` to dismiss or undismiss the match.</summary>
         public int? DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; AdditionalData?.Remove("domain_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
         private int? _explicitNullValueDomainId = default!;
+        /// <summary>The edit_distance property</summary>
+        public int? EditDistance { get => _explicitNullValueEditDistance; set { _explicitNullValueEditDistance = value; AdditionalData?.Remove("edit_distance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit_distance"); else _explicitNullProperties?.Remove("edit_distance"); } }
+        private int? _explicitNullValueEditDistance = default!;
         /// <summary>When the domain was matched. For multi-query requests, the most recent match time across the requested queries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +80,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; AdditionalData?.Remove("first_seen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_seen"); else _explicitNullProperties?.Remove("first_seen"); } }
         private string _explicitNullValueFirstSeen = default!;
+#endif
+        /// <summary>The match_category property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MatchCategory { get => _explicitNullValueMatchCategory; set { _explicitNullValueMatchCategory = value; AdditionalData?.Remove("match_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_category"); else _explicitNullProperties?.Remove("match_category"); } }
+        private string? _explicitNullValueMatchCategory = default!;
+#nullable restore
+#else
+        public string MatchCategory { get => _explicitNullValueMatchCategory; set { _explicitNullValueMatchCategory = value; AdditionalData?.Remove("match_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_category"); else _explicitNullProperties?.Remove("match_category"); } }
+        private string _explicitNullValueMatchCategory = default!;
 #endif
         /// <summary>Per-match detail objects with query metadata and individual dismissed state. Only present when multiple query_ids are requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,6 +111,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans PublicScans { get => _explicitNullValuePublicScans; set { _explicitNullValuePublicScans = value; AdditionalData?.Remove("public_scans"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_scans"); else _explicitNullProperties?.Remove("public_scans"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans _explicitNullValuePublicScans = default!;
 #endif
+        /// <summary>The quality property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemQuality? Quality { get => _explicitNullValueQuality; set { _explicitNullValueQuality = value; AdditionalData?.Remove("quality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality"); else _explicitNullProperties?.Remove("quality"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemQuality? _explicitNullValueQuality = default!;
         /// <summary>Registrar of the matched domain, if known.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,12 +172,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ai_verdict", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemAiVerdict>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAiVerdict = default; _explicitNullProperties?.Remove("ai_verdict"); AdditionalData["ai_verdict"] = unknown; } else { AiVerdict = parsed; AdditionalData.Remove("ai_verdict"); } } },
                 { "dismissed", n => { Dismissed = n.GetBoolValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "domain_id", n => { DomainId = n.GetIntValue(); } },
+                { "edit_distance", n => { EditDistance = n.GetIntValue(); } },
                 { "first_seen", n => { FirstSeen = n.GetStringValue(); } },
+                { "match_category", n => { MatchCategory = n.GetStringValue(); } },
                 { "match_details", n => { MatchDetails = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "public_scans", n => { PublicScans = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans.CreateFromDiscriminatorValue); } },
+                { "quality", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemQuality>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueQuality = default; _explicitNullProperties?.Remove("quality"); AdditionalData["quality"] = unknown; } else { Quality = parsed; AdditionalData.Remove("quality"); } } },
                 { "registrar", n => { Registrar = n.GetStringValue(); } },
                 { "scan_status", n => { ScanStatus = n.GetStringValue(); } },
                 { "scan_submission_id", n => { ScanSubmissionId = n.GetIntValue(); } },
@@ -164,12 +195,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemAiVerdict>("ai_verdict", AiVerdict);
             writer.WriteBoolValue("dismissed", Dismissed);
             writer.WriteStringValue("domain", Domain);
             writer.WriteIntValue("domain_id", DomainId);
+            writer.WriteIntValue("edit_distance", EditDistance);
             writer.WriteStringValue("first_seen", FirstSeen);
+            writer.WriteStringValue("match_category", MatchCategory);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemMatchDetailsItem>("match_details", MatchDetails);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemPublicScans>("public_scans", PublicScans);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemQuality>("quality", Quality);
             writer.WriteStringValue("registrar", Registrar);
             writer.WriteStringValue("scan_status", ScanStatus);
             writer.WriteIntValue("scan_submission_id", ScanSubmissionId);

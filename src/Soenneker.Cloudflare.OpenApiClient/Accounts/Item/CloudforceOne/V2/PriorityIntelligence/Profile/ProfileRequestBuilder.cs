@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates or replaces the account&apos;s organization profile: who the organization is, such as its name, brands, domains, sector, regions, key systems and suppliers. All of the account&apos;s Priority Intelligence Requirements share it. An account has at most one profile, and it does not count against the PIR quota.
+        /// Creates or replaces the account&apos;s organization profile: who the organization is, such as its name, brands, domains, sector, regions, key systems and suppliers. All of the account&apos;s Priority Intelligence Requirements share it. An account has at most one profile, and it does not count against the PIR quota. Send structured `organization` facts, which structured PIRs inherit and from which the profile text is generated, or free `profile` text. `revision` must match the stored profile&apos;s, or 0 when there is none; it is required with `organization`. Free `profile` text cannot replace structured facts; delete the profile first to switch back.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
             return requestInfo;
         }
         /// <summary>
-        /// Creates or replaces the account&apos;s organization profile: who the organization is, such as its name, brands, domains, sector, regions, key systems and suppliers. All of the account&apos;s Priority Intelligence Requirements share it. An account has at most one profile, and it does not count against the PIR quota.
+        /// Creates or replaces the account&apos;s organization profile: who the organization is, such as its name, brands, domains, sector, regions, key systems and suppliers. All of the account&apos;s Priority Intelligence Requirements share it. An account has at most one profile, and it does not count against the PIR quota. Send structured `organization` facts, which structured PIRs inherit and from which the profile text is generated, or free `profile` text. `revision` must match the stored profile&apos;s, or 0 when there is none; it is required with `organization`. Free `profile` text cannot replace structured facts; delete the profile first to switch back.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

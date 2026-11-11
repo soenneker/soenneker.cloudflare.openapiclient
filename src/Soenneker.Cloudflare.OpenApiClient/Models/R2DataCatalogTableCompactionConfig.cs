@@ -28,6 +28,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Earliest time when the scheduler can claim this operation. Null when disabled.</summary>
         public DateTimeOffset? NextEligibleAt { get; private set; }
+        /// <summary>Why the operation is not eligible to run before next_eligible_at. Returned by the per-table GET only, and absent from the update response. `held_after_user_error` means a customer-caused failure holds the lease until it expires.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNextEligibleReason? NextEligibleReason { get; private set; }
         /// <summary>Specifies the state of maintenance operations.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState? _explicitNullValueState = default!;
@@ -60,6 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "next_eligible_at", n => { NextEligibleAt = n.GetDateTimeOffsetValue(); } },
+                { "next_eligible_reason", n => { NextEligibleReason = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogNextEligibleReason>(); } },
                 { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "target_size_mb", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogTargetFileSize>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTargetSizeMb = default; _explicitNullProperties?.Remove("target_size_mb"); AdditionalData["target_size_mb"] = unknown; } else { TargetSizeMb = parsed; AdditionalData.Remove("target_size_mb"); } } },
             };

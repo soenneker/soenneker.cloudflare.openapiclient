@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDatasetPreferencesRead200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetDatasetPreferencesRead200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets the datasets to use when a request omits `datasetId`, for you (`scope` `user`) or for the account (`scope` `account`). Your own default datasets take precedence over the account&apos;s. Every dataset must exist and be readable by the account.
+        /// Sets the datasets to use when a request omits `datasetId`, for you (`scope` `user`) or for the account (`scope` `account`). Your own default datasets take precedence over the account&apos;s. Every dataset must exist and be readable by the account, and the list cannot mix analytics and intelligence datasets.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutDatasetPreferencesUpdate200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -161,7 +161,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return requestInfo;
         }
         /// <summary>
-        /// Sets the datasets to use when a request omits `datasetId`, for you (`scope` `user`) or for the account (`scope` `account`). Your own default datasets take precedence over the account&apos;s. Every dataset must exist and be readable by the account.
+        /// Sets the datasets to use when a request omits `datasetId`, for you (`scope` `user`) or for the account (`scope` `account`). Your own default datasets take precedence over the account&apos;s. Every dataset must exist and be readable by the account, and the list cannot mix analytics and intelligence datasets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

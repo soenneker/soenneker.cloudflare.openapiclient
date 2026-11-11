@@ -3,7 +3,7 @@
 namespace Soenneker.OpenApi.Generated;
 internal static class OpenApiServiceRoutes
 {
-    private static readonly global::System.Collections.Generic.HashSet<string> KnownServers = new(global::System.StringComparer.OrdinalIgnoreCase) { "https://053e105f4ecef8ad9ca31a8372d0c353.k2.cloudflarestorage.com", "https://api.cloudflare.com", "https://api.cloudflare.com/client/v4" };
+    private static readonly global::System.Collections.Generic.HashSet<string> KnownServers = new(global::System.StringComparer.OrdinalIgnoreCase) { "https://053e105f4ecef8ad9ca31a8372d0c353.k2.cloudflarestorage.com", "https://api.cloudflare.com", "https://api.cloudflare.com/client/v4", "https://api.staging.cloudflare.com", "https://api.staging.cloudflare.com/client/v4" };
     internal static string Resolve(string template, string? configuredBaseUrl, string server, string path, bool rawUrl)
     {
         int query = template.IndexOf('?');

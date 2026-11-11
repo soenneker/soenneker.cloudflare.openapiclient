@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/brand-protection/domain/matches{?domain_search*,include_dismissed*,include_domain_id*,limit*,offset*,order*,orderBy*,query_id*}", pathParameters)
+        public MatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/brand-protection/domain/matches{?domain_search*,include_dismissed*,include_domain_id*,limit*,offset*,order*,orderBy*,quality*,query_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MatchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/brand-protection/domain/matches{?domain_search*,include_dismissed*,include_domain_id*,limit*,offset*,order*,orderBy*,query_id*}", rawUrl)
+        public MatchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/brand-protection/domain/matches{?domain_search*,include_dismissed*,include_domain_id*,limit*,offset*,order*,orderBy*,quality*,query_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -151,6 +151,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
             #pragma warning disable CS1591
             [QueryParameter("orderBy")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchListOrderByParameter? OrderBy { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("quality")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchListQualityParameter? Quality { get; set; }
             #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

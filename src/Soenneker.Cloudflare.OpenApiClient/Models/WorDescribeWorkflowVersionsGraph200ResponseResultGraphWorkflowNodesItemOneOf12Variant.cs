@@ -18,30 +18,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
             base.CaptureExplicitNulls(parseNode);
-            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
-            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("resolves") is null) { _explicitNullValueResolves = default!; _explicitNullProperties?.Remove("resolves"); }
-            else if (parseNode.GetChildNode("resolves") is { } nullNodeResolves && nullNodeResolves.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resolves = null;
-            if (parseNode.GetChildNode("starts") is null) { _explicitNullValueStarts = default!; _explicitNullProperties?.Remove("starts"); }
-            else if (parseNode.GetChildNode("starts") is { } nullNodeStarts && nullNodeStarts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Starts = null;
+            if (parseNode.GetChildNode("branches") is null) { _explicitNullValueBranches = default!; _explicitNullProperties?.Remove("branches"); }
+            else if (parseNode.GetChildNode("branches") is { } nullNodeBranches && nullNodeBranches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branches = null;
+            if (parseNode.GetChildNode("discriminant") is null) { _explicitNullValueDiscriminant = default!; _explicitNullProperties?.Remove("discriminant"); }
+            else if (parseNode.GetChildNode("discriminant") is { } nullNodeDiscriminant && nullNodeDiscriminant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discriminant = null;
         }
 
-        /// <summary>The name property</summary>
+        /// <summary>The branches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
-        private string? _explicitNullValueName = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12BranchesItem>? Branches { get => _explicitNullValueBranches; set { _explicitNullValueBranches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branches"); else _explicitNullProperties?.Remove("branches"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12BranchesItem>? _explicitNullValueBranches = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
-        private string _explicitNullValueName = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12BranchesItem> Branches { get => _explicitNullValueBranches; set { _explicitNullValueBranches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branches"); else _explicitNullProperties?.Remove("branches"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12BranchesItem> _explicitNullValueBranches = default!;
 #endif
-        /// <summary>The resolves property</summary>
-        public double? Resolves { get => _explicitNullValueResolves; set { _explicitNullValueResolves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolves"); else _explicitNullProperties?.Remove("resolves"); } }
-        private double? _explicitNullValueResolves = default!;
-        /// <summary>The starts property</summary>
-        public double? Starts { get => _explicitNullValueStarts; set { _explicitNullValueStarts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starts"); else _explicitNullProperties?.Remove("starts"); } }
-        private double? _explicitNullValueStarts = default!;
+        /// <summary>The discriminant property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Discriminant { get => _explicitNullValueDiscriminant; set { _explicitNullValueDiscriminant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discriminant"); else _explicitNullProperties?.Remove("discriminant"); } }
+        private string? _explicitNullValueDiscriminant = default!;
+#nullable restore
+#else
+        public string Discriminant { get => _explicitNullValueDiscriminant; set { _explicitNullValueDiscriminant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discriminant"); else _explicitNullProperties?.Remove("discriminant"); } }
+        private string _explicitNullValueDiscriminant = default!;
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,9 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "resolves", n => { Resolves = n.GetDoubleValue(); } },
-                { "starts", n => { Starts = n.GetDoubleValue(); } },
+                { "branches", n => { Branches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12BranchesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12BranchesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "discriminant", n => { Discriminant = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,9 +74,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("name", Name);
-            writer.WriteDoubleValue("resolves", Resolves);
-            writer.WriteDoubleValue("starts", Starts);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12BranchesItem>("branches", Branches);
+            writer.WriteStringValue("discriminant", Discriminant);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

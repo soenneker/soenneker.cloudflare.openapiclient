@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationConstraints Constraints { get => _explicitNullValueConstraints; set { _explicitNullValueConstraints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraints"); else _explicitNullProperties?.Remove("constraints"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationConstraints _explicitNullValueConstraints = default!;
 #endif
-        /// <summary>Optionally associates this scheduler-backed application with a Durable Object namespace.</summary>
+        /// <summary>Associates this scheduler-backed application with a Durable Object namespace. Requiredfor default scheduling on private-network-only accounts unless the account has atemporary standalone-application exception.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestDurableObjects? DurableObjects { get => _explicitNullValueDurableObjects; set { _explicitNullValueDurableObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_objects"); else _explicitNullProperties?.Remove("durable_objects"); } }

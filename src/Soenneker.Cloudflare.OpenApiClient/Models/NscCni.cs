@@ -47,19 +47,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bgp property</summary>
+        /// <summary>BGP Control settings. For non-GCP CNIs, null disables BGP Control. GCP CNIs require BGP configuration, so explicit null is rejected; omission preserves stored settings or repairs missing settings with the Google defaults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl? _explicitNullValueBgp = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgp? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgp? _explicitNullValueBgp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl _explicitNullValueBgp = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgp Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgp _explicitNullValueBgp = default!;
 #endif
         /// <summary>The BGP mode for a CNI.One of the following:* `dynamic_route_exchange`* `advertise_only`</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode? BgpMode { get => _explicitNullValueBgpMode; set { _explicitNullValueBgpMode = value; AdditionalData?.Remove("bgp_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp_mode"); else _explicitNullProperties?.Remove("bgp_mode"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode? _explicitNullValueBgpMode = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgpMode? BgpMode { get => _explicitNullValueBgpMode; set { _explicitNullValueBgpMode = value; AdditionalData?.Remove("bgp_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp_mode"); else _explicitNullProperties?.Remove("bgp_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgpMode? _explicitNullValueBgpMode = default!;
         /// <summary>Customer end of the point-to-point linkThis should always be inside the same prefix as `p2p_ip`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,8 +129,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetStringValue(); } },
-                { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl>(global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl.CreateFromDiscriminatorValue); } },
-                { "bgp_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBgpMode = default; _explicitNullProperties?.Remove("bgp_mode"); AdditionalData["bgp_mode"] = unknown; } else { BgpMode = parsed; AdditionalData.Remove("bgp_mode"); } } },
+                { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgp>(global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgp.CreateFromDiscriminatorValue); } },
+                { "bgp_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgpMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBgpMode = default; _explicitNullProperties?.Remove("bgp_mode"); AdditionalData["bgp_mode"] = unknown; } else { BgpMode = parsed; AdditionalData.Remove("bgp_mode"); } } },
                 { "cust_ip", n => { CustIp = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "interconnect", n => { Interconnect = n.GetStringValue(); } },
@@ -146,8 +146,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl>("bgp", Bgp);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode>("bgp_mode", BgpMode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgp>("bgp", Bgp);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniBgpMode>("bgp_mode", BgpMode);
             writer.WriteStringValue("cust_ip", CustIp);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("interconnect", Interconnect);
