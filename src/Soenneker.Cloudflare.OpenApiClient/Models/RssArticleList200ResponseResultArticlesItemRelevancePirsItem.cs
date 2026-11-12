@@ -21,6 +21,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("band") is { } nullNodeBand && nullNodeBand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Band = null;
             if (parseNode.GetChildNode("pir_id") is null) { _explicitNullValuePirId = default!; _explicitNullProperties?.Remove("pir_id"); }
             else if (parseNode.GetChildNode("pir_id") is { } nullNodePirId && nullNodePirId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PirId = null;
+            if (parseNode.GetChildNode("requirement_basis") is null) { _explicitNullValueRequirementBasis = default!; _explicitNullProperties?.Remove("requirement_basis"); }
+            else if (parseNode.GetChildNode("requirement_basis") is { } nullNodeRequirementBasis && nullNodeRequirementBasis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequirementBasis = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,6 +33,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The pir_id property</summary>
         public Guid? PirId { get => _explicitNullValuePirId; set { _explicitNullValuePirId = value; AdditionalData?.Remove("pir_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pir_id"); else _explicitNullProperties?.Remove("pir_id"); } }
         private Guid? _explicitNullValuePirId = default!;
+        /// <summary>Beta. current: scored against the PIR&apos;s current requirement. saved: the PIR&apos;s structured definition no longer generates a valid requirement, for example because its topic was retired, so the requirement from its last save was scored instead.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemRequirementBasis? RequirementBasis { get => _explicitNullValueRequirementBasis; set { _explicitNullValueRequirementBasis = value; AdditionalData?.Remove("requirement_basis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement_basis"); else _explicitNullProperties?.Remove("requirement_basis"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemRequirementBasis? _explicitNullValueRequirementBasis = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem"/> and sets the default values.
         /// </summary>
@@ -58,6 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "band", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemBand>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBand = default; _explicitNullProperties?.Remove("band"); AdditionalData["band"] = unknown; } else { Band = parsed; AdditionalData.Remove("band"); } } },
                 { "pir_id", n => { PirId = n.GetGuidValue(); } },
+                { "requirement_basis", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemRequirementBasis>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRequirementBasis = default; _explicitNullProperties?.Remove("requirement_basis"); AdditionalData["requirement_basis"] = unknown; } else { RequirementBasis = parsed; AdditionalData.Remove("requirement_basis"); } } },
             };
         }
         /// <summary>
@@ -69,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemBand>("band", Band);
             writer.WriteGuidValue("pir_id", PirId);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemRequirementBasis>("requirement_basis", RequirementBasis);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Partne
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enables or disables the selected partner integration for the account. Enabling the integration for the first time also schedules an account scan for that partner.
+        /// Enables or disables the selected partner integration for the account.Enabling the integration for the first time also schedules an account scan for that partner.Disabling the integration will purge all partner integration-related data, including partner insights, shadow zones, and shadow hosts.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterPartnerSettingsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Partne
             return requestInfo;
         }
         /// <summary>
-        /// Enables or disables the selected partner integration for the account. Enabling the integration for the first time also schedules an account scan for that partner.
+        /// Enables or disables the selected partner integration for the account.Enabling the integration for the first time also schedules an account scan for that partner.Disabling the integration will purge all partner integration-related data, including partner insights, shadow zones, and shadow hosts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

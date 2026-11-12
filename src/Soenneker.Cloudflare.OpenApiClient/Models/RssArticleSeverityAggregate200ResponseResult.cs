@@ -21,6 +21,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("articles") is { } nullNodeArticles && nullNodeArticles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Articles = null;
             if (parseNode.GetChildNode("priorities") is null) { _explicitNullValuePriorities = default!; _explicitNullProperties?.Remove("priorities"); }
             else if (parseNode.GetChildNode("priorities") is { } nullNodePriorities && nullNodePriorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priorities = null;
+            if (parseNode.GetChildNode("stale_articles") is null) { _explicitNullValueStaleArticles = default!; _explicitNullProperties?.Remove("stale_articles"); }
+            else if (parseNode.GetChildNode("stale_articles") is { } nullNodeStaleArticles && nullNodeStaleArticles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaleArticles = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,6 +47,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem> Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; AdditionalData?.Remove("priorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem> _explicitNullValuePriorities = default!;
 #endif
+        /// <summary>Beta. How many of the articles counted in articles have stale scores, from before a change to the account&apos;s Priority Intelligence Requirements, organization profile, or the article&apos;s content. They are counted by those scores; see the article list&apos;s relevance_coverage.</summary>
+        public int? StaleArticles { get => _explicitNullValueStaleArticles; set { _explicitNullValueStaleArticles = value; AdditionalData?.Remove("stale_articles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale_articles"); else _explicitNullProperties?.Remove("stale_articles"); } }
+        private int? _explicitNullValueStaleArticles = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -72,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "articles", n => { Articles = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles.CreateFromDiscriminatorValue); } },
                 { "priorities", n => { Priorities = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "stale_articles", n => { StaleArticles = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles>("articles", Articles);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem>("priorities", Priorities);
+            writer.WriteIntValue("stale_articles", StaleArticles);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

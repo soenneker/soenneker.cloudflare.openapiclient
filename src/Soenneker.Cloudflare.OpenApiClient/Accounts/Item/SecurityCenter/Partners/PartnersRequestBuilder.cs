@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Partne
     public partial class PartnersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.securityCenter.partners.item collection</summary>
-        /// <param name="position">The partner integration identifier.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Partners.Item.WithPartnerItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Partners.Item.WithPartnerItemRequestBuilder this[string position]
         {

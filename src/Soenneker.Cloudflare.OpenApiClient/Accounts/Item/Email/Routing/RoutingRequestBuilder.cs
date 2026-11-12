@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Rules;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Suppression;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -26,12 +25,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Rules.RulesRequestBuilder Rules
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The suppression property</summary>
-        [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Suppression.SuppressionRequestBuilder Suppression
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Suppression.SuppressionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.RoutingRequestBuilder"/> and sets the default values.

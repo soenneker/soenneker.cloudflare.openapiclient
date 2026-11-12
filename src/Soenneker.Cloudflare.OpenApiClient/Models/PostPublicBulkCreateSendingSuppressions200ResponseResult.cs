@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Number of items successfully created or promoted.</summary>
         public int? Processed { get => _explicitNullValueProcessed; set { _explicitNullValueProcessed = value; AdditionalData?.Remove("processed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processed"); else _explicitNullProperties?.Remove("processed"); } }
         private int? _explicitNullValueProcessed = default!;
-        /// <summary>Number of items skipped because the existing suppression is not customer-managed (for example, a read-only policy suppression).</summary>
+        /// <summary>Number of items skipped because the existing suppression is not customer-managed.</summary>
         public int? Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; AdditionalData?.Remove("skipped"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
         private int? _explicitNullValueSkipped = default!;
         /// <summary>Total number of items in the request body, including duplicates.</summary>

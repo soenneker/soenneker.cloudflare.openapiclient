@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Configuration of the zone security.txt file
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class SecurityCenterSecurityTxt : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -37,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("preferred_languages") is { } nullNodePreferredLanguages && nullNodePreferredLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredLanguages = null;
         }
 
-        /// <summary>The acknowledgments property</summary>
+        /// <summary>Link(s) to a page where security researchers are recognised for their reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Acknowledgments { get => _explicitNullValueAcknowledgments; set { _explicitNullValueAcknowledgments = value; AdditionalData?.Remove("acknowledgments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acknowledgments"); else _explicitNullProperties?.Remove("acknowledgments"); } }
@@ -49,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The canonical property</summary>
+        /// <summary>Canonical URI where the security.txt file is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Canonical { get => _explicitNullValueCanonical; set { _explicitNullValueCanonical = value; AdditionalData?.Remove("canonical"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonical"); else _explicitNullProperties?.Remove("canonical"); } }
@@ -59,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Canonical { get => _explicitNullValueCanonical; set { _explicitNullValueCanonical = value; AdditionalData?.Remove("canonical"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonical"); else _explicitNullProperties?.Remove("canonical"); } }
         private List<string> _explicitNullValueCanonical = default!;
 #endif
-        /// <summary>The contact property</summary>
+        /// <summary>Methods that researchers should use for reporting vulnerabilities. Can be a URI for an email address, phone number, or URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Contact { get => _explicitNullValueContact; set { _explicitNullValueContact = value; AdditionalData?.Remove("contact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact"); else _explicitNullProperties?.Remove("contact"); } }
@@ -69,10 +70,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Contact { get => _explicitNullValueContact; set { _explicitNullValueContact = value; AdditionalData?.Remove("contact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact"); else _explicitNullProperties?.Remove("contact"); } }
         private List<string> _explicitNullValueContact = default!;
 #endif
-        /// <summary>The enabled property</summary>
+        /// <summary>Whether or not to serve the security.txt file in this zone. If false, security.txt requests will pass through to the origin server.</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The encryption property</summary>
+        /// <summary>URI(s) pointing to a location where an encryption key that researchers should use for encrypted communications can be retrieved. The key itself must not appear in this field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Encryption { get => _explicitNullValueEncryption; set { _explicitNullValueEncryption = value; AdditionalData?.Remove("encryption"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryption"); else _explicitNullProperties?.Remove("encryption"); } }
@@ -82,10 +83,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Encryption { get => _explicitNullValueEncryption; set { _explicitNullValueEncryption = value; AdditionalData?.Remove("encryption"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryption"); else _explicitNullProperties?.Remove("encryption"); } }
         private List<string> _explicitNullValueEncryption = default!;
 #endif
-        /// <summary>The expires property</summary>
+        /// <summary>RFC3339-formatted date and time string indicating the time that, after which, the contents of the security.txt file should be considered stale. It is recommended that this value is less than a year into the future.</summary>
         public DateTimeOffset? Expires { get => _explicitNullValueExpires; set { _explicitNullValueExpires = value; AdditionalData?.Remove("expires"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires"); else _explicitNullProperties?.Remove("expires"); } }
         private DateTimeOffset? _explicitNullValueExpires = default!;
-        /// <summary>The hiring property</summary>
+        /// <summary>Link(s) to any security-related job positions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Hiring { get => _explicitNullValueHiring; set { _explicitNullValueHiring = value; AdditionalData?.Remove("hiring"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hiring"); else _explicitNullProperties?.Remove("hiring"); } }
@@ -95,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Hiring { get => _explicitNullValueHiring; set { _explicitNullValueHiring = value; AdditionalData?.Remove("hiring"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hiring"); else _explicitNullProperties?.Remove("hiring"); } }
         private List<string> _explicitNullValueHiring = default!;
 #endif
-        /// <summary>The policy property</summary>
+        /// <summary>Link(s) to where a vulnerability disclosure policy is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
@@ -105,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
         private List<string> _explicitNullValuePolicy = default!;
 #endif
-        /// <summary>The preferred_languages property</summary>
+        /// <summary>Comma-separated list of natural languages that are preferred when submitting security reports. Language codes should be as defined in RFC5646.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferredLanguages { get => _explicitNullValuePreferredLanguages; set { _explicitNullValuePreferredLanguages = value; AdditionalData?.Remove("preferred_languages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_languages"); else _explicitNullProperties?.Remove("preferred_languages"); } }
@@ -121,6 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public SecurityCenterSecurityTxt()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

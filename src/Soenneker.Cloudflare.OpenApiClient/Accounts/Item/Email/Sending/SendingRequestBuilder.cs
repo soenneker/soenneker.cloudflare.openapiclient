@@ -7,7 +7,6 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Messages;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Reputation;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send_raw;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppressions;
 using System.Collections.Generic;
 using System.IO;
@@ -45,12 +44,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send_raw.Send_rawRequestBuilder Send_raw
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send_raw.Send_rawRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The suppression property</summary>
-        [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder Suppression
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The suppressions property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppressions.SuppressionsRequestBuilder Suppressions

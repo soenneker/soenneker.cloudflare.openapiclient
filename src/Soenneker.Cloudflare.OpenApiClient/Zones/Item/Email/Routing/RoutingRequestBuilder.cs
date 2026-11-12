@@ -8,7 +8,6 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Suppression;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Unlock;
 using System.Collections.Generic;
 using System.IO;
@@ -44,12 +43,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules.RulesRequestBuilder Rules
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The suppression property</summary>
-        [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Suppression.SuppressionRequestBuilder Suppression
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Suppression.SuppressionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unlock property</summary>
         [Obsolete("")]

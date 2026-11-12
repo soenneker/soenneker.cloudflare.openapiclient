@@ -19,6 +19,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("audit_log_id") is null) { _explicitNullValueAuditLogId = default!; _explicitNullProperties?.Remove("audit_log_id"); }
             else if (parseNode.GetChildNode("audit_log_id") is { } nullNodeAuditLogId && nullNodeAuditLogId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditLogId = null;
+            if (parseNode.GetChildNode("base_rule") is null) { _explicitNullValueBaseRule = default!; _explicitNullProperties?.Remove("base_rule"); }
+            else if (parseNode.GetChildNode("base_rule") is { } nullNodeBaseRule && nullNodeBaseRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseRule = null;
             if (parseNode.GetChildNode("cancelled_at") is null) { _explicitNullValueCancelledAt = default!; _explicitNullProperties?.Remove("cancelled_at"); }
             else if (parseNode.GetChildNode("cancelled_at") is { } nullNodeCancelledAt && nullNodeCancelledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelledAt = null;
             if (parseNode.GetChildNode("cancelled_by") is null) { _explicitNullValueCancelledBy = default!; _explicitNullProperties?.Remove("cancelled_by"); }
@@ -68,6 +70,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The audit_log_id property</summary>
         public double? AuditLogId { get => _explicitNullValueAuditLogId; set { _explicitNullValueAuditLogId = value; AdditionalData?.Remove("audit_log_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_log_id"); else _explicitNullProperties?.Remove("audit_log_id"); } }
         private double? _explicitNullValueAuditLogId = default!;
+        /// <summary>Rule state captured when the approval was requested. Null for creates, when no prior state was recorded, or when the stored snapshot cannot be parsed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview? BaseRule { get => _explicitNullValueBaseRule; set { _explicitNullValueBaseRule = value; AdditionalData?.Remove("base_rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_rule"); else _explicitNullProperties?.Remove("base_rule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview? _explicitNullValueBaseRule = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview BaseRule { get => _explicitNullValueBaseRule; set { _explicitNullValueBaseRule = value; AdditionalData?.Remove("base_rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_rule"); else _explicitNullProperties?.Remove("base_rule"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview _explicitNullValueBaseRule = default!;
+#endif
         /// <summary>Time at which the requester cancelled the approval.</summary>
         public double? CancelledAt { get => _explicitNullValueCancelledAt; set { _explicitNullValueCancelledAt = value; AdditionalData?.Remove("cancelled_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelled_at"); else _explicitNullProperties?.Remove("cancelled_at"); } }
         private double? _explicitNullValueCancelledAt = default!;
@@ -220,6 +232,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audit_log_id", n => { AuditLogId = n.GetDoubleValue(); } },
+                { "base_rule", n => { BaseRule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview.CreateFromDiscriminatorValue); } },
                 { "can_review", n => { CanReview = n.GetBoolValue(); } },
                 { "cancelled_at", n => { CancelledAt = n.GetDoubleValue(); } },
                 { "cancelled_by", n => { CancelledBy = n.GetStringValue(); } },
@@ -251,6 +264,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("audit_log_id", AuditLogId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulePreview>("base_rule", BaseRule);
             writer.WriteDoubleValue("cancelled_at", CancelledAt);
             writer.WriteStringValue("cancelled_by", CancelledBy);
             writer.WriteBoolValue("can_review", CanReview);
