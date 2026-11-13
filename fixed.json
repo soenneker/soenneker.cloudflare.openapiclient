@@ -23352,8 +23352,10 @@
             "in": "query",
             "description": "Page number",
             "schema": {
+              "minimum": 1,
               "type": "integer",
               "description": "Page number",
+              "default": 1,
               "example": 1
             }
           },
@@ -23362,8 +23364,11 @@
             "in": "query",
             "description": "Number of routes per page",
             "schema": {
+              "maximum": 100,
+              "minimum": 1,
               "type": "integer",
               "description": "Number of routes per page",
+              "default": 20,
               "example": 20
             }
           }
@@ -23812,8 +23817,10 @@
             "in": "query",
             "description": "Page number",
             "schema": {
+              "minimum": 1,
               "type": "integer",
               "description": "Page number",
+              "default": 1,
               "example": 1
             }
           },
@@ -23822,8 +23829,11 @@
             "in": "query",
             "description": "Number of deployments per page",
             "schema": {
+              "maximum": 100,
+              "minimum": 1,
               "type": "integer",
               "description": "Number of deployments per page",
+              "default": 20,
               "example": 20
             }
           }
@@ -24014,8 +24024,10 @@
             "in": "query",
             "description": "Page number",
             "schema": {
+              "minimum": 1,
               "type": "integer",
               "description": "Page number",
+              "default": 1,
               "example": 1
             }
           },
@@ -24024,8 +24036,11 @@
             "in": "query",
             "description": "Number of versions per page",
             "schema": {
+              "maximum": 100,
+              "minimum": 1,
               "type": "integer",
               "description": "Number of versions per page",
+              "default": 20,
               "example": 20
             }
           }
@@ -52623,7 +52638,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.repos.connections",
-        "x-fern-sdk-method-name": "upsert"
+        "x-fern-sdk-method-name": "replace"
       }
     },
     "/accounts/{accountId}/builds/repos/connections/{repoConnectionUuid}": {
@@ -53164,7 +53179,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers",
-        "x-fern-sdk-method-name": "update"
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{accountId}/builds/triggers/{triggerUuid}/builds": {
@@ -53381,7 +53396,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.triggers.environment-variables",
-        "x-fern-sdk-method-name": "upsert"
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{accountId}/builds/triggers/{triggerUuid}/environment_variables/{environmentVariableKey}": {
@@ -54467,7 +54482,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "builds.workers",
-        "x-fern-sdk-method-name": "update"
+        "x-fern-sdk-method-name": "edit"
       }
     },
     "/accounts/{accountId}/builds/workers/{externalScriptId}/builds/{buildUuid}/retry": {
@@ -72665,7 +72680,7 @@
           "Brand Protection"
         ],
         "summary": "Update domain query",
-        "description": "Replaces a saved domain query\u0027s tag and patterns. \u0060tag\u0060 and \u0060string_matches\u0060 are required, and the patterns you send replace the existing ones, so include every pattern you want to keep. Changing the patterns starts a new set of matches for the query: matches listed before the change are no longer returned, and only newly observed domains that match the new patterns are listed. Sending the same patterns in any order (for example, to change only \u0060tag\u0060) keeps the existing matches. If the new patterns are identical to a set already used in this account, such as the query\u0027s earlier patterns, matches already found for that set are listed as well. Omitting both \u0060scan_matches\u0060 and its alias \u0060scan\u0060 resets scanning to \u0060false\u0060. If both are supplied, \u0060scan_matches\u0060 takes precedence. \u0060search_lookback\u0060, \u0060min_time\u0060, and \u0060max_time\u0060 are ignored on update, so changing patterns does not search previously observed domains. If the query does not exist in this account, the request fails with error code 404.",
+        "description": "Replaces a saved domain query\u0027s tag and patterns. \u0060tag\u0060 and \u0060string_matches\u0060 are required, and the patterns you send replace the existing ones, so include every pattern you want to keep. Changing the patterns starts a new set of matches for the query: matches listed before the change are no longer returned, and newly observed domains that match the new patterns are listed. Sending the same patterns in any order (for example, to change only \u0060tag\u0060) keeps the existing matches. If the new patterns are identical to a set already used in this account, such as the query\u0027s earlier patterns, matches already found for that set are listed as well. Omitting both \u0060scan_matches\u0060 and its alias \u0060scan\u0060 resets scanning to \u0060false\u0060. If both are supplied, \u0060scan_matches\u0060 takes precedence. When edit-triggered lookback is enabled for the account and the patterns change, the match list usually refreshes within seconds (if that refresh fails, the scheduled query sync updates it later) and, unless \u0060search_lookback\u0060 is \u0060false\u0060, domains observed in the last 7 days are also searched for the new patterns. New matches from that search can take several minutes or longer to appear. Edit-triggered lookback is being rolled out gradually. \u0060min_time\u0060 and \u0060max_time\u0060 are ignored on update. If the query does not exist in this account, the request fails with error code 404.",
         "operationId": "PatchUpdateDomainQuery",
         "parameters": [
           {
@@ -76945,7 +76960,7 @@
           "Priority Intelligence Requirements"
         ],
         "summary": "Resolve structured PIR answers without saving",
-        "description": "Returns the requirement and event query that saving \u0060definition\u0060 would generate, using the account\u0027s current organization profile and topic. \u0060resolved.issues\u0060 lists problems that would block saving, and \u0060resolved.notices\u0060 inputs that would be ignored. Search events with \u0060resolved.event_plan.branches\u0060. Send \u0060resolved.based_on\u0060 with the save so it fails with 409 if the profile or topic changes in between. Nothing is saved, and no model is called.",
+        "description": "Returns the requirement and event query that saving \u0060definition\u0060 would generate, using the account\u0027s current organization profile and topic. \u0060resolved.issues\u0060 lists problems that would block saving, and \u0060resolved.notices\u0060 inputs that would be ignored. Search events with \u0060resolved.event_plan.branches\u0060: a beta value for running searches, not a stable contract, which changes whenever a topic\u0027s event rules change. Show \u0060resolved.event_plan.rules[].explanation\u0060 to explain matches. Send \u0060resolved.based_on\u0060 with the save so it fails with 409 if the profile or topic changes in between. Nothing is saved, and no model is called.",
         "operationId": "PostPirResolve",
         "parameters": [
           {
@@ -76995,7 +77010,7 @@
           "Priority Intelligence Requirements"
         ],
         "summary": "List managed PIR topics",
-        "description": "Returns the managed topics a structured PIR can follow, with their default question, relevance criteria, suggested actors and event rules. Suggested actors the account cannot see are left out. Topics change centrally; PIRs follow a topic\u0027s defaults wherever the customer has not changed them.",
+        "description": "Returns the managed topics a structured PIR can follow, with their default question, relevance criteria, suggested actors and event rules. Suggested actors the account cannot see are left out. Topics change centrally; PIRs follow a topic\u0027s defaults wherever the customer has not changed them. Also returns \u0060organization_types\u0060 for the organization profile form.",
         "operationId": "GetPirTopicList",
         "parameters": [
           {
@@ -77010,7 +77025,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Managed topics"
+            "description": "Managed topics and organization types",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPirTopicList200Response"
+                }
+              }
+            }
           },
           "4XX": {
             "$ref": "#/components/responses/cloudforce-one-events_ApiV4ClientError"
@@ -136887,7 +136909,7 @@
         "x-fern-availability": "deprecated",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "zero-trust.access.targets",
-        "x-fern-sdk-method-name": "bulk-delete"
+        "x-fern-sdk-method-name": "bulk-delete-deprecated"
       },
       "put": {
         "tags": [
@@ -136950,8 +136972,8 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "zero-trust.access.targets.bulk",
-        "x-fern-sdk-method-name": "update",
+        "x-fern-sdk-group-name": "zero-trust.access.targets",
+        "x-fern-sdk-method-name": "bulk-create",
         "x-stainless-skip": [
           "terraform"
         ]
@@ -137012,8 +137034,8 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "zero-trust.access.targets.bulk",
-        "x-fern-sdk-method-name": "delete"
+        "x-fern-sdk-group-name": "zero-trust.access.targets",
+        "x-fern-sdk-method-name": "bulk-delete"
       }
     },
     "/accounts/{accountId}/infrastructure/targets/batch_tags": {
@@ -137078,8 +137100,8 @@
           }
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "zero-trust.access.targets.bulk",
-        "x-fern-sdk-method-name": "replace-tags",
+        "x-fern-sdk-group-name": "zero-trust.access.targets",
+        "x-fern-sdk-method-name": "bulk-replace-tags",
         "x-stainless-skip": [
           "terraform"
         ]
@@ -147055,7 +147077,8 @@
             "schema": {
               "maxLength": 4096,
               "type": "string"
-            }
+            },
+            "x-auditable": false
           }
         ],
         "responses": {
@@ -147092,7 +147115,6 @@
           "Logs Write",
           "Logs Read"
         ],
-        "x-auditable": false,
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "logs",
         "x-fern-sdk-method-name": "query-get"
@@ -147159,7 +147181,6 @@
           "Logs Write",
           "Logs Read"
         ],
-        "x-auditable": false,
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "logs",
         "x-fern-sdk-method-name": "query",
@@ -164740,6 +164761,13 @@
                           "auth_config": {
                             "authorization_url": "https://login.microsoftonline.com/common/adminconsent",
                             "client_id": "abc123-def456",
+                            "feature_overrides": [
+                              {
+                                "authorization_url": "https://login.microsoftonline.com/common/adminconsent?client_id=ghi789-jkl012",
+                                "client_id": "ghi789-jkl012",
+                                "feature": "auto_remediation"
+                              }
+                            ],
                             "requires_pkce": false,
                             "scopes": [
                               "https://graph.microsoft.com/.default"
@@ -164928,6 +164956,7 @@
                             "display_name": "Google Domain-Wide Delegation Service Account",
                             "id": "google_domain_wide_delegation_service_account"
                           },
+                          "config": {},
                           "created": "2025-01-15T10:00:00Z",
                           "id": "019d2e6a-d995-7185-afbd-4feead9e42ec",
                           "is_paused": false,
@@ -164977,7 +165006,7 @@
           "Integrations"
         ],
         "summary": "Create integration",
-        "description": "Creates a new integration for the specified application. Integration creation with OAuth is not supported by API at the moment. For other auth methods, use \u0060GET /v2/applications/{application_id}/credential-guide\u0060 to see the required credential structure and example payloads for each vendor.",
+        "description": "Creates a new integration for the specified application. For other auth methods, use \u0060GET /v2/applications/{application_id}/credential-guide\u0060 to see the required credential structure and example payloads for each vendor.",
         "operationId": "CreateIntegrationV2",
         "parameters": [
           {
@@ -165060,6 +165089,7 @@
                           },
                           "link": "https://example.cloudflare.com/authorize"
                         },
+                        "config": {},
                         "created": "2025-01-01T00:00:00Z",
                         "credentials_expiry": "2026-01-01T00:00:00Z",
                         "dlp_profiles": [
@@ -165156,6 +165186,7 @@
                           },
                           "link": "https://example.cloudflare.com/authorize"
                         },
+                        "config": {},
                         "created": "2025-01-01T00:00:00Z",
                         "credentials_expiry": "2026-01-01T00:00:00Z",
                         "dlp_profiles": [
@@ -165346,6 +165377,7 @@
                           },
                           "link": "https://example.cloudflare.com/authorize"
                         },
+                        "config": {},
                         "created": "2025-01-01T00:00:00Z",
                         "credentials_expiry": "2026-01-01T00:00:00Z",
                         "dlp_profiles": [
@@ -165432,7 +165464,7 @@
           "Integrations"
         ],
         "summary": "Update integration",
-        "description": "Updates an integration\u0027s name, permissions, DLP profiles, use cases, or credentials.",
+        "description": "Updates an integration\u0027s name, permissions, DLP profiles, use cases, credentials, or GitLab resources.",
         "operationId": "UpdateIntegrationV2",
         "parameters": [
           {
@@ -165474,6 +165506,16 @@
                 "UpdateFields": {
                   "summary": "Example update integration request",
                   "value": {
+                    "config": {
+                      "gitlab": {
+                        "group_ids": [
+                          "11"
+                        ],
+                        "project_ids": [
+                          "22"
+                        ]
+                      }
+                    },
                     "credentials": {
                       "admin_email": "admin@corp.com"
                     },
@@ -165530,6 +165572,7 @@
                           },
                           "link": "https://example.cloudflare.com/authorize"
                         },
+                        "config": {},
                         "created": "2025-01-01T00:00:00Z",
                         "credentials_expiry": "2026-01-01T00:00:00Z",
                         "dlp_profiles": [
@@ -165672,6 +165715,7 @@
                           },
                           "link": "https://example.cloudflare.com/authorize"
                         },
+                        "config": {},
                         "created": "2025-01-01T00:00:00Z",
                         "credentials_expiry": "2026-01-01T00:00:00Z",
                         "dlp_profiles": [
@@ -165814,6 +165858,7 @@
                           },
                           "link": "https://example.cloudflare.com/authorize"
                         },
+                        "config": {},
                         "created": "2025-01-01T00:00:00Z",
                         "credentials_expiry": "2026-01-01T00:00:00Z",
                         "dlp_profiles": [
@@ -172642,6 +172687,27 @@
               "readOnly": true,
               "example": "023e105f4ecef8ad9ca31a8372d0c353",
               "x-auditable": true
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number of queues, starting at 1.",
+            "schema": {
+              "minimum": 1,
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Number of queues per page. Takes precedence over the legacy perPage query parameter.",
+            "schema": {
+              "maximum": 500,
+              "minimum": 1,
+              "type": "integer",
+              "default": 100
             }
           }
         ],
@@ -334762,7 +334828,8 @@
             "schema": {
               "maxLength": 4096,
               "type": "string"
-            }
+            },
+            "x-auditable": false
           }
         ],
         "responses": {
@@ -334799,7 +334866,6 @@
           "Logs Write",
           "Logs Read"
         ],
-        "x-auditable": false,
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "logs.zone",
         "x-fern-sdk-method-name": "query-get"
@@ -334866,7 +334932,6 @@
           "Logs Write",
           "Logs Read"
         ],
-        "x-auditable": false,
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "logs.zone",
         "x-fern-sdk-method-name": "query",
@@ -385616,7 +385681,8 @@
           "Name",
           "ProductFamily",
           "ProductCategory",
-          "DimensionKeys"
+          "DimensionKeys",
+          "TagKeys"
         ],
         "type": "object",
         "properties": {
@@ -385624,7 +385690,12 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "Dimension keys defined for this billable metric. Use them as\n\u0060Key\u0060 in a \u0060DIMENSION\u0060 \u0060GroupBy\u0060 on the account usage endpoint.\nThey do not depend on the requested period, and a key can\nbe listed even when no usage in the period carries it. Empty when\nthe metric defines no dimensions.\n",
+            "example": [
+              "ZONE_ID",
+              "REGION"
+            ]
           },
           "Id": {
             "type": "string",
@@ -385645,6 +385716,17 @@
             "items": {
               "$ref": "#/components/schemas/BillableUsageApiV2ProductFamily"
             }
+          },
+          "TagKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Resource-tag keys observed on this metric\u0027s usage within the\nrequested period, sorted and deduplicated. Use them as \u0060Key\u0060 in a\n\u0060TAG\u0060 \u0060GroupBy\u0060 or in \u0060FilterBy.Tags\u0060 on the account usage\nendpoint. Because the list reflects recorded usage, it changes with\n\u0060from\u0060 and \u0060to\u0060, and is empty when no tagged usage exists in the\nperiod or tag-key discovery is not available.\n",
+            "example": [
+              "environment",
+              "team"
+            ]
           }
         }
       },
@@ -395388,6 +395470,39 @@
         },
         "additionalProperties": false
       },
+      "CloudforceOneEventsPirOrganizationType": {
+        "required": [
+          "id",
+          "label",
+          "description",
+          "sectors",
+          "suggested_protected_targets"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "sectors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirOrganizationTypeSectorsItem"
+            }
+          },
+          "suggested_protected_targets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirOrganizationTypeSuggestedProtectedTargetsItem"
+            }
+          }
+        }
+      },
       "CloudforceOneEventsPirRelevanceCriterion": {
         "required": [
           "id",
@@ -395493,6 +395608,96 @@
           }
         },
         "additionalProperties": false
+      },
+      "CloudforceOneEventsPirTopic": {
+        "required": [
+          "topic_id",
+          "title",
+          "question_template",
+          "intent_revision",
+          "filter_revision",
+          "presentation_revision",
+          "relevance_criteria",
+          "suggested_actors",
+          "actor_types",
+          "motivations",
+          "profile_context",
+          "event_rules",
+          "recommended_sectors",
+          "coverage_notes"
+        ],
+        "type": "object",
+        "properties": {
+          "actor_types": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirTopicActorTypesItem"
+            }
+          },
+          "coverage_notes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirTopicCoverageNotesItem"
+            }
+          },
+          "event_rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirTopicEventRulesItem"
+            }
+          },
+          "filter_revision": {
+            "type": "integer"
+          },
+          "intent_revision": {
+            "type": "integer"
+          },
+          "motivations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirTopicMotivationsItem"
+            }
+          },
+          "presentation_revision": {
+            "type": "integer"
+          },
+          "profile_context": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirTopicProfileContextItem"
+            },
+            "description": "Inherited facts this topic emphasizes: listed as Highly relevant and available to its event rules. Every PIR inherits every fact."
+          },
+          "question_template": {
+            "type": "string",
+            "description": "English question; only \u0060{targets}\u0060 and \u0060{regions}\u0060 are substituted."
+          },
+          "recommended_sectors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirTopicRecommendedSectorsItem"
+            }
+          },
+          "relevance_criteria": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirTopicRelevanceCriteriaItem"
+            }
+          },
+          "suggested_actors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirTopicSuggestedActorsItem"
+            },
+            "description": "Suggestions the account can see; others are left out."
+          },
+          "title": {
+            "type": "string"
+          },
+          "topic_id": {
+            "type": "string"
+          }
+        }
       },
       "CloudforceOneEventsRelationshipEdge": {
         "required": [
@@ -432822,6 +433027,9 @@
           "result": {
             "$ref": "#/components/schemas/LexErrorResponseResultProperty"
           },
+          "result_info": {
+            "$ref": "#/components/schemas/LexQueryResultInfo"
+          },
           "success": {
             "$ref": "#/components/schemas/LexErrorResponseSuccess"
           },
@@ -432886,6 +433094,7 @@
       },
       "LexQueryResponse": {
         "required": [
+          "result_info",
           "success",
           "errors",
           "messages"
@@ -432911,10 +433120,28 @@
             },
             "nullable": true
           },
+          "result_info": {
+            "$ref": "#/components/schemas/LexQueryResultInfo"
+          },
           "success": {
-            "type": "boolean"
+            "type": "boolean",
+            "x-auditable": true
           }
         }
+      },
+      "LexQueryResultInfo": {
+        "required": [
+          "dataset"
+        ],
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "description": "Dataset type name queried (e.g. \u0060http_requests\u0060).",
+            "x-auditable": true
+          }
+        },
+        "description": "Metadata about the query execution."
       },
       "LexUpdateDatasetRequest": {
         "required": [
@@ -432966,10 +433193,12 @@
         "properties": {
           "code": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "x-auditable": true
           },
           "message": {
-            "type": "string"
+            "type": "string",
+            "x-auditable": false
           }
         }
       },
@@ -450058,6 +450287,31 @@
         },
         "description": "Dynamic content for instruction/form_input steps."
       },
+      "OneFeatureAuthOverride": {
+        "required": [
+          "authorization_url",
+          "client_id",
+          "feature"
+        ],
+        "type": "object",
+        "properties": {
+          "authorization_url": {
+            "type": "string",
+            "description": "Full OAuth authorization URL with query parameters.",
+            "nullable": true
+          },
+          "client_id": {
+            "type": "string",
+            "description": "OAuth client ID to authorize with.",
+            "nullable": true
+          },
+          "feature": {
+            "type": "string",
+            "description": "Feature identifier that triggers this override."
+          }
+        },
+        "description": "Authorization settings to use instead of the defaults when a feature is selected."
+      },
       "OneFeatureScope": {
         "required": [
           "description",
@@ -450373,6 +450627,7 @@
         "required": [
           "application",
           "auth_method",
+          "config",
           "created",
           "id",
           "is_paused",
@@ -450388,6 +450643,9 @@
           },
           "auth_method": {
             "$ref": "#/components/schemas/OneIntegrationV2ListItemAuthMethod"
+          },
+          "config": {
+            "$ref": "#/components/schemas/OneIntegrationV2ListItemConfig"
           },
           "created": {
             "type": "string",
@@ -450603,6 +450861,9 @@
       "OnePatchedUpdateIntegrationV2Request": {
         "type": "object",
         "properties": {
+          "config": {
+            "$ref": "#/components/schemas/OnePatchedUpdateIntegrationV2RequestConfig"
+          },
           "credentials": {
             "$ref": "#/components/schemas/OnePatchedUpdateIntegrationV2RequestCredentialsProperty"
           },
@@ -450660,6 +450921,29 @@
           }
         },
         "description": "Permission/scope with severity for display."
+      },
+      "OneSelectedGitLabResource": {
+        "required": [
+          "display_name",
+          "id",
+          "path"
+        ],
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "description": "Human-readable GitLab resource name."
+          },
+          "id": {
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "description": "GitLab resource ID as a string-encoded positive integer."
+          },
+          "path": {
+            "type": "string",
+            "description": "Full GitLab resource path."
+          }
+        }
       },
       "OneSetupFlow": {
         "required": [
@@ -465796,6 +466080,7 @@
           "ai_search_namespace",
           "alerting_policy",
           "alerting_webhook",
+          "app_library_application",
           "cloudflared_tunnel",
           "cws_deployment",
           "cws_policy",
@@ -465869,6 +466154,10 @@
             {
               "value": "alerting_webhook",
               "name": "AlertingWebhook"
+            },
+            {
+              "value": "app_library_application",
+              "name": "AppLibraryApplication"
             },
             {
               "value": "cloudflared_tunnel",
@@ -465985,6 +466274,7 @@
           "ai_search_namespace",
           "alerting_policy",
           "alerting_webhook",
+          "app_library_application",
           "cloudflared_tunnel",
           "cws_deployment",
           "cws_policy",
@@ -466057,6 +466347,10 @@
             {
               "value": "alerting_webhook",
               "name": "AlertingWebhook"
+            },
+            {
+              "value": "app_library_application",
+              "name": "AppLibraryApplication"
             },
             {
               "value": "cloudflared_tunnel",
@@ -466270,6 +466564,7 @@
           "alerting_policy",
           "alerting_webhook",
           "api_gateway_operation",
+          "app_library_application",
           "cloudflared_tunnel",
           "custom_certificate",
           "custom_hostname",
@@ -466360,6 +466655,10 @@
             {
               "value": "api_gateway_operation",
               "name": "ApiGatewayOperation"
+            },
+            {
+              "value": "app_library_application",
+              "name": "AppLibraryApplication"
             },
             {
               "value": "cloudflared_tunnel",
@@ -466515,6 +466814,7 @@
             "ai_search_namespace": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
             "alerting_policy": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
             "alerting_webhook": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
+            "app_library_application": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
             "cloudflared_tunnel": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
             "cws_deployment": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
             "cws_policy": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
@@ -466556,6 +466856,7 @@
             "ai_search_namespace": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBaseVariant",
             "alerting_policy": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBaseVariant",
             "alerting_webhook": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBaseVariant",
+            "app_library_application": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBaseVariant",
             "cloudflared_tunnel": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBaseVariant",
             "cws_deployment": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBaseVariant",
             "cws_policy": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBaseVariant",
@@ -466605,6 +466906,7 @@
               "ai_search_namespace": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "alerting_policy": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "alerting_webhook": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
+              "app_library_application": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "cloudflared_tunnel": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "cws_deployment": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "cws_policy": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
@@ -466646,6 +466948,7 @@
               "ai_search_namespace": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "alerting_policy": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "alerting_webhook": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
+              "app_library_application": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "cloudflared_tunnel": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "cws_deployment": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
               "cws_policy": "#/components/schemas/ResourceTaggingSetTagsRequestAccountLevelBase",
@@ -466946,6 +467249,7 @@
             "alerting_policy": "#/components/schemas/ResourceTaggingTaggedResourceObjectAlertingPolicy",
             "alerting_webhook": "#/components/schemas/ResourceTaggingTaggedResourceObjectAlertingWebhook",
             "api_gateway_operation": "#/components/schemas/ResourceTaggingTaggedResourceObjectApiGatewayOperation",
+            "app_library_application": "#/components/schemas/ResourceTaggingTaggedResourceObjectAppLibraryApplication",
             "cloudflared_tunnel": "#/components/schemas/ResourceTaggingTaggedResourceObjectCloudflaredTunnel",
             "custom_certificate": "#/components/schemas/ResourceTaggingTaggedResourceObjectCustomCertificate",
             "custom_hostname": "#/components/schemas/ResourceTaggingTaggedResourceObjectCustomHostname",
@@ -466997,6 +467301,7 @@
             "alerting_policy": "#/components/schemas/ResourceTaggingTaggedResourceObjectAlertingPolicyVariant",
             "alerting_webhook": "#/components/schemas/ResourceTaggingTaggedResourceObjectAlertingWebhookVariant",
             "api_gateway_operation": "#/components/schemas/ResourceTaggingTaggedResourceObjectApiGatewayOperationVariant",
+            "app_library_application": "#/components/schemas/ResourceTaggingTaggedResourceObjectAppLibraryApplicationVariant",
             "cloudflared_tunnel": "#/components/schemas/ResourceTaggingTaggedResourceObjectCloudflaredTunnelVariant",
             "custom_certificate": "#/components/schemas/ResourceTaggingTaggedResourceObjectCustomCertificateVariant",
             "custom_hostname": "#/components/schemas/ResourceTaggingTaggedResourceObjectCustomHostnameVariant",
@@ -467070,6 +467375,9 @@
             },
             {
               "$ref": "#/components/schemas/ResourceTaggingTaggedResourceObjectApiGatewayOperation"
+            },
+            {
+              "$ref": "#/components/schemas/ResourceTaggingTaggedResourceObjectAppLibraryApplication"
             },
             {
               "$ref": "#/components/schemas/ResourceTaggingTaggedResourceObjectCloudflaredTunnel"
@@ -467189,6 +467497,7 @@
               "alerting_policy": "#/components/schemas/ResourceTaggingTaggedResourceObjectAlertingPolicy",
               "alerting_webhook": "#/components/schemas/ResourceTaggingTaggedResourceObjectAlertingWebhook",
               "api_gateway_operation": "#/components/schemas/ResourceTaggingTaggedResourceObjectApiGatewayOperation",
+              "app_library_application": "#/components/schemas/ResourceTaggingTaggedResourceObjectAppLibraryApplication",
               "cloudflared_tunnel": "#/components/schemas/ResourceTaggingTaggedResourceObjectCloudflaredTunnel",
               "custom_certificate": "#/components/schemas/ResourceTaggingTaggedResourceObjectCustomCertificate",
               "custom_hostname": "#/components/schemas/ResourceTaggingTaggedResourceObjectCustomHostname",
@@ -467240,6 +467549,7 @@
               "alerting_policy": "#/components/schemas/ResourceTaggingTaggedResourceObjectAlertingPolicy",
               "alerting_webhook": "#/components/schemas/ResourceTaggingTaggedResourceObjectAlertingWebhook",
               "api_gateway_operation": "#/components/schemas/ResourceTaggingTaggedResourceObjectApiGatewayOperation",
+              "app_library_application": "#/components/schemas/ResourceTaggingTaggedResourceObjectAppLibraryApplication",
               "cloudflared_tunnel": "#/components/schemas/ResourceTaggingTaggedResourceObjectCloudflaredTunnel",
               "custom_certificate": "#/components/schemas/ResourceTaggingTaggedResourceObjectCustomCertificate",
               "custom_hostname": "#/components/schemas/ResourceTaggingTaggedResourceObjectCustomHostname",
@@ -518659,11 +518969,36 @@
         },
         "description": "Step-by-step instructions for obtaining credentials."
       },
+      "OneIntegrationConfigGitlab": {
+        "required": [
+          "groups",
+          "projects"
+        ],
+        "type": "object",
+        "properties": {
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OneSelectedGitLabResource"
+            },
+            "description": "Selected top-level GitLab groups."
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OneSelectedGitLabResource"
+            },
+            "description": "Selected GitLab projects."
+          }
+        },
+        "description": "GitLab-specific configuration. Present only for GitLab integrations."
+      },
       "OneIntegrationCreateResponseResult": {
         "required": [
           "application",
           "auth_method",
           "authorization_link",
+          "config",
           "created",
           "credentials_expiry",
           "dlp_profiles",
@@ -518686,6 +519021,9 @@
           },
           "authorization_link": {
             "$ref": "#/components/schemas/OneIntegrationV2DetailAuthorizationLink"
+          },
+          "config": {
+            "$ref": "#/components/schemas/OneIntegrationV2DetailConfig"
           },
           "created": {
             "type": "string",
@@ -518764,6 +519102,7 @@
           "application",
           "auth_method",
           "authorization_link",
+          "config",
           "created",
           "credentials_expiry",
           "dlp_profiles",
@@ -518786,6 +519125,9 @@
           },
           "authorization_link": {
             "$ref": "#/components/schemas/OneIntegrationV2DetailAuthorizationLink"
+          },
+          "config": {
+            "$ref": "#/components/schemas/OneIntegrationV2DetailConfig"
           },
           "created": {
             "type": "string",
@@ -518864,6 +519206,7 @@
           "application",
           "auth_method",
           "authorization_link",
+          "config",
           "created",
           "credentials_expiry",
           "dlp_profiles",
@@ -518886,6 +519229,9 @@
           },
           "authorization_link": {
             "$ref": "#/components/schemas/OneIntegrationV2DetailAuthorizationLink"
+          },
+          "config": {
+            "$ref": "#/components/schemas/OneIntegrationV2DetailConfig"
           },
           "created": {
             "type": "string",
@@ -518964,6 +519310,7 @@
           "application",
           "auth_method",
           "authorization_link",
+          "config",
           "created",
           "credentials_expiry",
           "dlp_profiles",
@@ -518986,6 +519333,9 @@
           },
           "authorization_link": {
             "$ref": "#/components/schemas/OneIntegrationV2DetailAuthorizationLink"
+          },
+          "config": {
+            "$ref": "#/components/schemas/OneIntegrationV2DetailConfig"
           },
           "created": {
             "type": "string",
@@ -519064,6 +519414,7 @@
           "application",
           "auth_method",
           "authorization_link",
+          "config",
           "created",
           "credentials_expiry",
           "dlp_profiles",
@@ -519086,6 +519437,9 @@
           },
           "authorization_link": {
             "$ref": "#/components/schemas/OneIntegrationV2DetailAuthorizationLink"
+          },
+          "config": {
+            "$ref": "#/components/schemas/OneIntegrationV2DetailConfig"
           },
           "created": {
             "type": "string",
@@ -519159,10 +519513,41 @@
         },
         "description": "The requested item."
       },
+      "OneIntegrationV2DetailConfig": {
+        "type": "object",
+        "properties": {
+          "gitlab": {
+            "$ref": "#/components/schemas/OneIntegrationConfigGitlab"
+          }
+        },
+        "description": "Vendor-specific integration configuration.",
+        "readOnly": true
+      },
+      "OneIntegrationV2ListItemConfig": {
+        "type": "object",
+        "properties": {
+          "gitlab": {
+            "$ref": "#/components/schemas/OneIntegrationConfigGitlab"
+          }
+        },
+        "description": "Vendor-specific integration configuration.",
+        "readOnly": true
+      },
+      "OnePatchedUpdateIntegrationV2RequestConfig": {
+        "type": "object",
+        "properties": {
+          "gitlab": {
+            "$ref": "#/components/schemas/OneUpdateIntegrationConfigRequestGitlab"
+          }
+        },
+        "description": "Vendor-specific integration configuration.",
+        "x-fern-property-name": "integration_config"
+      },
       "OneSetupFlowAuthConfig": {
         "required": [
           "authorization_url",
           "client_id",
+          "feature_overrides",
           "requires_pkce",
           "scopes",
           "url_placeholders"
@@ -519178,6 +519563,13 @@
             "type": "string",
             "description": "OAuth client ID.",
             "nullable": true
+          },
+          "feature_overrides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OneFeatureAuthOverride"
+            },
+            "description": "Per-feature authorization overrides. When a listed feature is selected, authorize with the override\u0027s client ID and URL instead of the defaults above."
           },
           "requires_pkce": {
             "type": "boolean",
@@ -519199,6 +519591,34 @@
           }
         },
         "description": "OAuth configuration (present for OAuth-based flows)."
+      },
+      "OneUpdateIntegrationConfigRequestGitlab": {
+        "type": "object",
+        "properties": {
+          "group_ids": {
+            "maxItems": 10000,
+            "type": "array",
+            "items": {
+              "maxLength": 255,
+              "minLength": 1,
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string"
+            },
+            "description": "Selected top-level GitLab group IDs as string-encoded positive integers."
+          },
+          "project_ids": {
+            "maxItems": 10000,
+            "type": "array",
+            "items": {
+              "maxLength": 255,
+              "minLength": 1,
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string"
+            },
+            "description": "Selected GitLab project IDs as string-encoded positive integers."
+          }
+        },
+        "description": "GitLab-specific configuration. Accepted only for GitLab integrations."
       },
       "OrganizationsApiOrganizationMetaTenantFlags": {
         "required": [
@@ -535808,6 +536228,83 @@
         "default": {
           "add": [],
           "remove": []
+        }
+      },
+      "CloudforceOneEventsPirTopicCoverageNotesItem": {
+        "required": [
+          "source",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/components/schemas/CloudforceOneEventsPirTopicCoverageNotesItemSource"
+          }
+        }
+      },
+      "CloudforceOneEventsPirTopicEventRulesItem": {
+        "required": [
+          "id",
+          "explanation"
+        ],
+        "type": "object",
+        "properties": {
+          "explanation": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "CloudforceOneEventsPirTopicRelevanceCriteriaItem": {
+        "required": [
+          "id",
+          "band",
+          "text",
+          "default_selected"
+        ],
+        "type": "object",
+        "properties": {
+          "band": {
+            "$ref": "#/components/schemas/CloudforceOneEventsPirTopicRelevanceCriteriaItemBand"
+          },
+          "default_selected": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      },
+      "CloudforceOneEventsPirTopicSuggestedActorsItem": {
+        "required": [
+          "id",
+          "name",
+          "alias",
+          "default_selected"
+        ],
+        "type": "object",
+        "properties": {
+          "alias": {
+            "type": "string",
+            "nullable": true
+          },
+          "default_selected": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
         }
       },
       "CloudforceOneCompilerWarningFootersItem": {
@@ -587576,7 +588073,7 @@
           },
           "search_lookback": {
             "type": "boolean",
-            "description": "On create, also search domains observed in the last 7 days for matches. Defaults to \u0060true\u0060. Ignored on update.",
+            "description": "Search domains observed in the last 7 days for matches. On create, applies when \u0060true\u0060. On update, when edit-triggered lookback is enabled for the account, applies only when the patterns change and only to the lookback itself; the match list still refreshes independently. Edit-triggered lookback is being rolled out gradually. Defaults to \u0060true\u0060.",
             "default": true
           },
           "string_matches": {
@@ -587653,7 +588150,7 @@
           },
           "search_lookback": {
             "type": "boolean",
-            "description": "On create, also search domains observed in the last 7 days for matches. Defaults to \u0060true\u0060. Ignored on update.",
+            "description": "Search domains observed in the last 7 days for matches. On create, applies when \u0060true\u0060. On update, when edit-triggered lookback is enabled for the account, applies only when the patterns change and only to the lookback itself; the match list still refreshes independently. Edit-triggered lookback is being rolled out gradually. Defaults to \u0060true\u0060.",
             "default": true
           },
           "string_matches": {
@@ -589467,6 +589964,35 @@
           }
         },
         "additionalProperties": false
+      },
+      "GetPirTopicList200Response": {
+        "required": [
+          "result",
+          "success",
+          "errors",
+          "messages"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetPirTopicList200ResponseErrorsItem"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetPirTopicList200ResponseMessagesItem"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/GetPirTopicList200ResponseResult"
+          },
+          "success": {
+            "$ref": "#/components/schemas/GetPirTopicList200ResponseSuccess"
+          }
+        }
       },
       "PutPirUpdateRequest": {
         "type": "object",
@@ -666154,7 +666680,8 @@
       "AccountsLogsExplorerQueryPostPlainRequestRequestBody": {
         "type": "string",
         "description": "SQL query to execute.",
-        "format": "binary"
+        "format": "binary",
+        "x-auditable": false
       },
       "BulkCreatePrefixesRequestRequestBody": {
         "type": "array",
@@ -666975,7 +667502,8 @@
       "ZonesLogsExplorerQueryPostPlainRequestRequestBody": {
         "type": "string",
         "description": "SQL query to execute.",
-        "format": "binary"
+        "format": "binary",
+        "x-auditable": false
       },
       "OriginCloudRegionsV2BatchDeleteRequestRequestBody": {
         "maxItems": 100,
@@ -673810,7 +674338,7 @@
             "items": {
               "type": "string"
             },
-            "description": "X509 certificate to verify the signature in the SAML authentication response"
+            "description": "X509 certificate to verify the signature in the SAML authentication response. Mutually exclusive with \u0060metadata_url\u0060."
           },
           "issuer_url": {
             "type": "string",
@@ -673825,6 +674353,13 @@
             "description": "The maximum URL length the IdP accepts for the SSO redirect URL.\nWhen the constructed SSO URL would exceed this length, the RelayState\nis stored server-side and a short nonce is passed to the IdP instead.\nSet this if your IdP enforces a URL length limit.\n",
             "example": 8192,
             "x-auditable": true
+          },
+          "metadata_url": {
+            "type": "string",
+            "description": "HTTPS URL of the IdP\u0027s SAML metadata document from which Access reads the signing certificates used to verify SAML authentication responses. Mutually exclusive with \u0060idp_public_certs\u0060.",
+            "example": "https://idp.example.com/FederationMetadata/2007-06/FederationMetadata.xml",
+            "x-auditable": true,
+            "x-client-original-format": "uri"
           },
           "sign_request": {
             "type": "boolean",
@@ -673881,7 +674416,7 @@
             "items": {
               "type": "string"
             },
-            "description": "X509 certificate to verify the signature in the SAML authentication response"
+            "description": "X509 certificate to verify the signature in the SAML authentication response. Mutually exclusive with \u0060metadata_url\u0060."
           },
           "issuer_url": {
             "type": "string",
@@ -673896,6 +674431,13 @@
             "description": "The maximum URL length the IdP accepts for the SSO redirect URL.\nWhen the constructed SSO URL would exceed this length, the RelayState\nis stored server-side and a short nonce is passed to the IdP instead.\nSet this if your IdP enforces a URL length limit.\n",
             "example": 8192,
             "x-auditable": true
+          },
+          "metadata_url": {
+            "type": "string",
+            "description": "HTTPS URL of the IdP\u0027s SAML metadata document from which Access reads the signing certificates used to verify SAML authentication responses. Mutually exclusive with \u0060idp_public_certs\u0060.",
+            "example": "https://idp.example.com/FederationMetadata/2007-06/FederationMetadata.xml",
+            "x-auditable": true,
+            "x-client-original-format": "uri"
           },
           "sign_request": {
             "type": "boolean",
@@ -734483,6 +735025,19 @@
         },
         "x-auditable": true
       },
+      "ResourceTaggingTaggedResourceObjectAppLibraryApplicationTags": {
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 1024,
+          "type": "string"
+        },
+        "description": "Contains key-value pairs of tags. Keys may contain at most 256 characters. Values may contain at most 1024 characters and may be empty for key-only tags.",
+        "example": {
+          "environment": "production",
+          "team": "engineering"
+        },
+        "x-auditable": true
+      },
       "ResourceTaggingTaggedResourceObjectCloudflaredTunnelTags": {
         "type": "object",
         "additionalProperties": {
@@ -741681,6 +742236,12 @@
             "type": "string",
             "format": "date-time"
           },
+          "multiprovider_enabled": {
+            "type": "boolean",
+            "description": "Lets requests to a model use every provider that serves it. When off, a model uses only the providers it launched with, so a provider added later receives none of its traffic. A request that names providers (the cf-aig-allowed-providers header or routing.allowedProviders) can still use any of them. Model aliases (custom/) are not restricted.",
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
+          },
           "otel": {
             "maxItems": 5,
             "type": "array",
@@ -741950,6 +742511,12 @@
           "modified_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "multiprovider_enabled": {
+            "type": "boolean",
+            "description": "Lets requests to a model use every provider that serves it. When off, a model uses only the providers it launched with, so a provider added later receives none of its traffic. A request that names providers (the cf-aig-allowed-providers header or routing.allowedProviders) can still use any of them. Model aliases (custom/) are not restricted.",
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "otel": {
             "maxItems": 5,
@@ -744557,6 +745124,12 @@
             "type": "string",
             "format": "date-time"
           },
+          "multiprovider_enabled": {
+            "type": "boolean",
+            "description": "Lets requests to a model use every provider that serves it. When off, a model uses only the providers it launched with, so a provider added later receives none of its traffic. A request that names providers (the cf-aig-allowed-providers header or routing.allowedProviders) can still use any of them. Model aliases (custom/) are not restricted.",
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
+          },
           "otel": {
             "maxItems": 5,
             "type": "array",
@@ -744763,6 +745336,12 @@
           "modified_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "multiprovider_enabled": {
+            "type": "boolean",
+            "description": "Lets requests to a model use every provider that serves it. When off, a model uses only the providers it launched with, so a provider added later receives none of its traffic. A request that names providers (the cf-aig-allowed-providers header or routing.allowedProviders) can still use any of them. Model aliases (custom/) are not restricted.",
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "otel": {
             "maxItems": 5,
@@ -745050,6 +745629,12 @@
           "modified_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "multiprovider_enabled": {
+            "type": "boolean",
+            "description": "Lets requests to a model use every provider that serves it. When off, a model uses only the providers it launched with, so a provider added later receives none of its traffic. A request that names providers (the cf-aig-allowed-providers header or routing.allowedProviders) can still use any of them. Model aliases (custom/) are not restricted.",
+            "x-auditable": true,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "otel": {
             "maxItems": 5,
@@ -771811,6 +772396,50 @@
           "title": {
             "type": "string",
             "nullable": true
+          }
+        }
+      },
+      "GetPirTopicList200ResponseErrorsItem": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "GetPirTopicList200ResponseMessagesItem": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "GetPirTopicList200ResponseResult": {
+        "required": [
+          "topics",
+          "organization_types"
+        ],
+        "type": "object",
+        "properties": {
+          "organization_types": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirOrganizationType"
+            },
+            "description": "Shortcuts for the organization profile form, each suggesting \u0060sectors\u0060 and \u0060suggested_protected_targets\u0060 for the customer to confirm. A type is never saved; topics are recommended by the profile\u0027s confirmed sectors, matched against each topic\u0027s \u0060recommended_sectors\u0060."
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CloudforceOneEventsPirTopic"
+            }
           }
         }
       },
@@ -888525,6 +889154,213 @@
         ],
         "type": "number"
       },
+      "CloudforceOneEventsPirOrganizationTypeSectorsItem": {
+        "enum": [
+          "aerospace",
+          "agriculture",
+          "automotive",
+          "chemical",
+          "commercial",
+          "communications",
+          "construction",
+          "defense",
+          "education",
+          "energy",
+          "entertainment",
+          "financial-services",
+          "government-local",
+          "government-national",
+          "government-public-services",
+          "government-regional",
+          "healthcare",
+          "hospitality-leisure",
+          "infrastructure",
+          "insurance",
+          "manufacturing",
+          "mining",
+          "non-profit",
+          "pharmaceuticals",
+          "professional-services",
+          "retail",
+          "technology",
+          "telecommunications",
+          "transportation",
+          "utilities"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "CloudforceOneEventsPirOrganizationTypeSectorsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "aerospace",
+              "name": "Aerospace"
+            },
+            {
+              "value": "agriculture",
+              "name": "Agriculture"
+            },
+            {
+              "value": "automotive",
+              "name": "Automotive"
+            },
+            {
+              "value": "chemical",
+              "name": "Chemical"
+            },
+            {
+              "value": "commercial",
+              "name": "Commercial"
+            },
+            {
+              "value": "communications",
+              "name": "Communications"
+            },
+            {
+              "value": "construction",
+              "name": "Construction"
+            },
+            {
+              "value": "defense",
+              "name": "Defense"
+            },
+            {
+              "value": "education",
+              "name": "Education"
+            },
+            {
+              "value": "energy",
+              "name": "Energy"
+            },
+            {
+              "value": "entertainment",
+              "name": "Entertainment"
+            },
+            {
+              "value": "financial-services",
+              "name": "FinancialServices"
+            },
+            {
+              "value": "government-local",
+              "name": "GovernmentLocal"
+            },
+            {
+              "value": "government-national",
+              "name": "GovernmentNational"
+            },
+            {
+              "value": "government-public-services",
+              "name": "GovernmentPublicServices"
+            },
+            {
+              "value": "government-regional",
+              "name": "GovernmentRegional"
+            },
+            {
+              "value": "healthcare",
+              "name": "Healthcare"
+            },
+            {
+              "value": "hospitality-leisure",
+              "name": "HospitalityLeisure"
+            },
+            {
+              "value": "infrastructure",
+              "name": "Infrastructure"
+            },
+            {
+              "value": "insurance",
+              "name": "Insurance"
+            },
+            {
+              "value": "manufacturing",
+              "name": "Manufacturing"
+            },
+            {
+              "value": "mining",
+              "name": "Mining"
+            },
+            {
+              "value": "non-profit",
+              "name": "NonProfit"
+            },
+            {
+              "value": "pharmaceuticals",
+              "name": "Pharmaceuticals"
+            },
+            {
+              "value": "professional-services",
+              "name": "ProfessionalServices"
+            },
+            {
+              "value": "retail",
+              "name": "Retail"
+            },
+            {
+              "value": "technology",
+              "name": "Technology"
+            },
+            {
+              "value": "telecommunications",
+              "name": "Telecommunications"
+            },
+            {
+              "value": "transportation",
+              "name": "Transportation"
+            },
+            {
+              "value": "utilities",
+              "name": "Utilities"
+            }
+          ]
+        }
+      },
+      "CloudforceOneEventsPirOrganizationTypeSuggestedProtectedTargetsItem": {
+        "enum": [
+          "organization",
+          "customers",
+          "employees",
+          "executives",
+          "partners",
+          "events",
+          "products-infrastructure"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "CloudforceOneEventsPirOrganizationTypeSuggestedProtectedTargetsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "organization",
+              "name": "Organization"
+            },
+            {
+              "value": "customers",
+              "name": "Customers"
+            },
+            {
+              "value": "employees",
+              "name": "Employees"
+            },
+            {
+              "value": "executives",
+              "name": "Executives"
+            },
+            {
+              "value": "partners",
+              "name": "Partners"
+            },
+            {
+              "value": "events",
+              "name": "Events"
+            },
+            {
+              "value": "products-infrastructure",
+              "name": "ProductsInfrastructure"
+            }
+          ]
+        }
+      },
       "CloudforceOneEventsPirRelevanceCriterionBand": {
         "enum": [
           "highly",
@@ -888547,6 +889383,300 @@
             {
               "value": "not",
               "name": "Not"
+            }
+          ]
+        }
+      },
+      "CloudforceOneEventsPirTopicActorTypesItem": {
+        "enum": [
+          "nation-state",
+          "crime-syndicate",
+          "criminal",
+          "activist",
+          "hacker",
+          "insider-disgruntled",
+          "insider-accidental",
+          "spy",
+          "terrorist",
+          "competitor",
+          "sensationalist"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "CloudforceOneEventsPirTopicActorTypesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "nation-state",
+              "name": "NationState"
+            },
+            {
+              "value": "crime-syndicate",
+              "name": "CrimeSyndicate"
+            },
+            {
+              "value": "criminal",
+              "name": "Criminal"
+            },
+            {
+              "value": "activist",
+              "name": "Activist"
+            },
+            {
+              "value": "hacker",
+              "name": "Hacker"
+            },
+            {
+              "value": "insider-disgruntled",
+              "name": "InsiderDisgruntled"
+            },
+            {
+              "value": "insider-accidental",
+              "name": "InsiderAccidental"
+            },
+            {
+              "value": "spy",
+              "name": "Spy"
+            },
+            {
+              "value": "terrorist",
+              "name": "Terrorist"
+            },
+            {
+              "value": "competitor",
+              "name": "Competitor"
+            },
+            {
+              "value": "sensationalist",
+              "name": "Sensationalist"
+            }
+          ]
+        }
+      },
+      "CloudforceOneEventsPirTopicMotivationsItem": {
+        "enum": [
+          "personal-gain",
+          "organizational-gain",
+          "ideology",
+          "dominance",
+          "notoriety",
+          "coercion",
+          "revenge"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "CloudforceOneEventsPirTopicMotivationsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "personal-gain",
+              "name": "PersonalGain"
+            },
+            {
+              "value": "organizational-gain",
+              "name": "OrganizationalGain"
+            },
+            {
+              "value": "ideology",
+              "name": "Ideology"
+            },
+            {
+              "value": "dominance",
+              "name": "Dominance"
+            },
+            {
+              "value": "notoriety",
+              "name": "Notoriety"
+            },
+            {
+              "value": "coercion",
+              "name": "Coercion"
+            },
+            {
+              "value": "revenge",
+              "name": "Revenge"
+            }
+          ]
+        }
+      },
+      "CloudforceOneEventsPirTopicProfileContextItem": {
+        "enum": [
+          "technologies",
+          "key_suppliers"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "CloudforceOneEventsPirTopicProfileContextItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "technologies",
+              "name": "Technologies"
+            },
+            {
+              "value": "key_suppliers",
+              "name": "KeySuppliers"
+            }
+          ]
+        }
+      },
+      "CloudforceOneEventsPirTopicRecommendedSectorsItem": {
+        "enum": [
+          "aerospace",
+          "agriculture",
+          "automotive",
+          "chemical",
+          "commercial",
+          "communications",
+          "construction",
+          "defense",
+          "education",
+          "energy",
+          "entertainment",
+          "financial-services",
+          "government-local",
+          "government-national",
+          "government-public-services",
+          "government-regional",
+          "healthcare",
+          "hospitality-leisure",
+          "infrastructure",
+          "insurance",
+          "manufacturing",
+          "mining",
+          "non-profit",
+          "pharmaceuticals",
+          "professional-services",
+          "retail",
+          "technology",
+          "telecommunications",
+          "transportation",
+          "utilities"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "CloudforceOneEventsPirTopicRecommendedSectorsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "aerospace",
+              "name": "Aerospace"
+            },
+            {
+              "value": "agriculture",
+              "name": "Agriculture"
+            },
+            {
+              "value": "automotive",
+              "name": "Automotive"
+            },
+            {
+              "value": "chemical",
+              "name": "Chemical"
+            },
+            {
+              "value": "commercial",
+              "name": "Commercial"
+            },
+            {
+              "value": "communications",
+              "name": "Communications"
+            },
+            {
+              "value": "construction",
+              "name": "Construction"
+            },
+            {
+              "value": "defense",
+              "name": "Defense"
+            },
+            {
+              "value": "education",
+              "name": "Education"
+            },
+            {
+              "value": "energy",
+              "name": "Energy"
+            },
+            {
+              "value": "entertainment",
+              "name": "Entertainment"
+            },
+            {
+              "value": "financial-services",
+              "name": "FinancialServices"
+            },
+            {
+              "value": "government-local",
+              "name": "GovernmentLocal"
+            },
+            {
+              "value": "government-national",
+              "name": "GovernmentNational"
+            },
+            {
+              "value": "government-public-services",
+              "name": "GovernmentPublicServices"
+            },
+            {
+              "value": "government-regional",
+              "name": "GovernmentRegional"
+            },
+            {
+              "value": "healthcare",
+              "name": "Healthcare"
+            },
+            {
+              "value": "hospitality-leisure",
+              "name": "HospitalityLeisure"
+            },
+            {
+              "value": "infrastructure",
+              "name": "Infrastructure"
+            },
+            {
+              "value": "insurance",
+              "name": "Insurance"
+            },
+            {
+              "value": "manufacturing",
+              "name": "Manufacturing"
+            },
+            {
+              "value": "mining",
+              "name": "Mining"
+            },
+            {
+              "value": "non-profit",
+              "name": "NonProfit"
+            },
+            {
+              "value": "pharmaceuticals",
+              "name": "Pharmaceuticals"
+            },
+            {
+              "value": "professional-services",
+              "name": "ProfessionalServices"
+            },
+            {
+              "value": "retail",
+              "name": "Retail"
+            },
+            {
+              "value": "technology",
+              "name": "Technology"
+            },
+            {
+              "value": "telecommunications",
+              "name": "Telecommunications"
+            },
+            {
+              "value": "transportation",
+              "name": "Transportation"
+            },
+            {
+              "value": "utilities",
+              "name": "Utilities"
             }
           ]
         }
@@ -893536,7 +894666,8 @@
         "enum": [
           false
         ],
-        "type": "boolean"
+        "type": "boolean",
+        "x-auditable": true
       },
       "LexErrorResponse2Success": {
         "enum": [
@@ -899628,6 +900759,22 @@
             {
               "value": "api_gateway_operation",
               "name": "ApiGatewayOperation"
+            }
+          ]
+        }
+      },
+      "AppLibraryApplicationType": {
+        "enum": [
+          "app_library_application"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AppLibraryApplicationType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "app_library_application",
+              "name": "AppLibraryApplication"
             }
           ]
         }
@@ -910029,6 +911176,53 @@
           ]
         }
       },
+      "CloudforceOneEventsPirTopicCoverageNotesItemSource": {
+        "enum": [
+          "articles",
+          "events"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "CloudforceOneEventsPirTopicCoverageNotesItemSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "articles",
+              "name": "Articles"
+            },
+            {
+              "value": "events",
+              "name": "Events"
+            }
+          ]
+        }
+      },
+      "CloudforceOneEventsPirTopicRelevanceCriteriaItemBand": {
+        "enum": [
+          "highly",
+          "somewhat",
+          "not"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "CloudforceOneEventsPirTopicRelevanceCriteriaItemBand",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "highly",
+              "name": "Highly"
+            },
+            {
+              "value": "somewhat",
+              "name": "Somewhat"
+            },
+            {
+              "value": "not",
+              "name": "Not"
+            }
+          ]
+        }
+      },
       "CloudforceOneEmailRuleArrayConditionConditionsItemOperator": {
         "enum": [
           "==",
@@ -918264,6 +919458,12 @@
             }
           ]
         }
+      },
+      "GetPirTopicList200ResponseSuccess": {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
       },
       "PutPirUpdateRequestDigestIntervalHours": {
         "enum": [
@@ -1118041,6 +1119241,56 @@
           }
         ]
       },
+      "ResourceTaggingTaggedResourceObjectAppLibraryApplicationVariant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ResourceTaggingTaggedResourceObject"
+          },
+          {
+            "required": [
+              "type",
+              "id",
+              "tags",
+              "name",
+              "etag"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/AppLibraryApplicationType"
+              },
+              "etag": {
+                "type": "string",
+                "description": "ETag identifier for optimistic concurrency control. Formatted as \u0022v1:\u003Chash\u003E\u0022 where\nthe hash is the base64url-encoded SHA-256 (truncated to 128 bits) of the tags map\ncanonicalized using RFC 8785 (JSON Canonicalization Scheme). Clients should treat\nETags as opaque strings and pass them back via the If-Match header on write operations.\n",
+                "readOnly": true,
+                "example": "v1:RBNvo1WzZ4oRRq0W9-hkng"
+              },
+              "id": {
+                "type": "string",
+                "description": "Identifies the unique resource.",
+                "example": "023e105f4ecef8ad9ca31a8372d0c353",
+                "x-auditable": true
+              },
+              "name": {
+                "type": "string",
+                "description": "Human-readable name of the resource.",
+                "example": "my-worker-script"
+              },
+              "tags": {
+                "$ref": "#/components/schemas/ResourceTaggingTaggedResourceObjectAppLibraryApplicationTags"
+              },
+              "tags_updated_at": {
+                "type": "string",
+                "description": "Monotonic version of the resource\u0027s tags: the timestamp assigned when the\ntags were last written. Returned by read endpoints, by 2PC prepare (the\nversion that will be assigned on commit, unless a concurrent write lands\nfirst, in which case a newer version is assigned), and by 2PC commit (the\nauthoritative committed version). Omitted for untagged resources and\ndelete commits: a deleted resource has no current version, and deletions\nare ordered by event order rather than by version.\n",
+                "format": "date-time",
+                "readOnly": true,
+                "example": "2024-01-15T10:30:00Z"
+              }
+            },
+            "description": "Response for app_library_application resources"
+          }
+        ]
+      },
       "ResourceTaggingTaggedResourceObjectCloudflaredTunnelVariant": {
         "allOf": [
           {
@@ -1161838,6 +1163088,7 @@
       "required": [
         "authorization_url",
         "client_id",
+        "feature_overrides",
         "requires_pkce",
         "scopes",
         "url_placeholders"
@@ -1161853,6 +1163104,13 @@
           "type": "string",
           "description": "OAuth client ID.",
           "nullable": true
+        },
+        "feature_overrides": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/OneFeatureAuthOverride"
+          },
+          "description": "Per-feature authorization overrides. When a listed feature is selected, authorize with the override\u0027s client ID and URL instead of the defaults above."
         },
         "requires_pkce": {
           "type": "boolean",
@@ -1161875,6 +1163133,34 @@
       },
       "description": "OAuth configuration for setup flows that use OAuth."
     },
+    "OneGitLabIntegrationConfigurationRequest": {
+      "type": "object",
+      "properties": {
+        "group_ids": {
+          "maxItems": 10000,
+          "type": "array",
+          "items": {
+            "maxLength": 255,
+            "minLength": 1,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "description": "Selected top-level GitLab group IDs as string-encoded positive integers."
+        },
+        "project_ids": {
+          "maxItems": 10000,
+          "type": "array",
+          "items": {
+            "maxLength": 255,
+            "minLength": 1,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "description": "Selected GitLab project IDs as string-encoded positive integers."
+        }
+      },
+      "description": "Selected GitLab groups and projects."
+    },
     "OneInstructions": {
       "required": [
         "markdown"
@@ -1161888,11 +1163174,21 @@
       },
       "description": "Instructions for obtaining credentials."
     },
+    "OneIntegrationConfig": {
+      "type": "object",
+      "properties": {
+        "gitlab": {
+          "$ref": "#/components/schemas/OneIntegrationConfigGitlab"
+        }
+      },
+      "description": "Vendor-specific integration configuration returned by the API."
+    },
     "OneIntegrationV2Detail": {
       "required": [
         "application",
         "auth_method",
         "authorization_link",
+        "config",
         "created",
         "credentials_expiry",
         "dlp_profiles",
@@ -1161915,6 +1163211,9 @@
         },
         "authorization_link": {
           "$ref": "#/components/schemas/OneIntegrationV2DetailAuthorizationLink"
+        },
+        "config": {
+          "$ref": "#/components/schemas/OneIntegrationV2DetailConfig"
         },
         "created": {
           "type": "string",
@@ -1161987,6 +1163286,39 @@
         }
       },
       "description": "Serializer for v2 integration detail response with use cases."
+    },
+    "OneSelectedGitLabIntegrationConfiguration": {
+      "required": [
+        "groups",
+        "projects"
+      ],
+      "type": "object",
+      "properties": {
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/OneSelectedGitLabResource"
+          },
+          "description": "Selected top-level GitLab groups."
+        },
+        "projects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/OneSelectedGitLabResource"
+          },
+          "description": "Selected GitLab projects."
+        }
+      },
+      "description": "Selected GitLab groups and projects returned by the API."
+    },
+    "OneUpdateIntegrationConfigRequest": {
+      "type": "object",
+      "properties": {
+        "gitlab": {
+          "$ref": "#/components/schemas/OneUpdateIntegrationConfigRequestGitlab"
+        }
+      },
+      "description": "Vendor-specific integration configuration accepted during updates."
     },
     "OrganizationsApiAccountListResultInfo": {
       "$ref": "#/components/schemas/OrganizationsApiPageTokenResultInfo"
@@ -1165403,6 +1166735,49 @@
         }
       },
       "description": "Response for api_gateway_operation resources"
+    },
+    "ResourceTaggingTaggedResourceObjectAppLibraryApplication": {
+      "required": [
+        "type",
+        "id",
+        "tags",
+        "name",
+        "etag"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/AppLibraryApplicationType"
+        },
+        "etag": {
+          "type": "string",
+          "description": "ETag identifier for optimistic concurrency control. Formatted as \u0022v1:\u003Chash\u003E\u0022 where\nthe hash is the base64url-encoded SHA-256 (truncated to 128 bits) of the tags map\ncanonicalized using RFC 8785 (JSON Canonicalization Scheme). Clients should treat\nETags as opaque strings and pass them back via the If-Match header on write operations.\n",
+          "readOnly": true,
+          "example": "v1:RBNvo1WzZ4oRRq0W9-hkng"
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifies the unique resource.",
+          "example": "023e105f4ecef8ad9ca31a8372d0c353",
+          "x-auditable": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable name of the resource.",
+          "example": "my-worker-script"
+        },
+        "tags": {
+          "$ref": "#/components/schemas/ResourceTaggingTaggedResourceObjectAppLibraryApplicationTags"
+        },
+        "tags_updated_at": {
+          "type": "string",
+          "description": "Monotonic version of the resource\u0027s tags: the timestamp assigned when the\ntags were last written. Returned by read endpoints, by 2PC prepare (the\nversion that will be assigned on commit, unless a concurrent write lands\nfirst, in which case a newer version is assigned), and by 2PC commit (the\nauthoritative committed version). Omitted for untagged resources and\ndelete commits: a deleted resource has no current version, and deletions\nare ordered by event order rather than by version.\n",
+          "format": "date-time",
+          "readOnly": true,
+          "example": "2024-01-15T10:30:00Z"
+        }
+      },
+      "description": "Response for app_library_application resources"
     },
     "ResourceTaggingTaggedResourceObjectCloudflaredTunnel": {
       "required": [
@@ -1194676,6 +1196051,17 @@
         }
       }
     },
+    "ResourceTaggingTaggedResourceObjectAppLibraryApplicationAllOf1": {
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/AppLibraryApplicationType"
+        }
+      }
+    },
     "ResourceTaggingTaggedResourceObjectCloudflaredTunnelAllOf1": {
       "required": [
         "type"
@@ -1206447,7 +1207833,7 @@
           "items": {
             "type": "string"
           },
-          "description": "X509 certificate to verify the signature in the SAML authentication response"
+          "description": "X509 certificate to verify the signature in the SAML authentication response. Mutually exclusive with \u0060metadata_url\u0060."
         },
         "issuer_url": {
           "type": "string",
@@ -1206462,6 +1207848,13 @@
           "description": "The maximum URL length the IdP accepts for the SSO redirect URL.\nWhen the constructed SSO URL would exceed this length, the RelayState\nis stored server-side and a short nonce is passed to the IdP instead.\nSet this if your IdP enforces a URL length limit.\n",
           "example": 8192,
           "x-auditable": true
+        },
+        "metadata_url": {
+          "type": "string",
+          "description": "HTTPS URL of the IdP\u0027s SAML metadata document from which Access reads the signing certificates used to verify SAML authentication responses. Mutually exclusive with \u0060idp_public_certs\u0060.",
+          "example": "https://idp.example.com/FederationMetadata/2007-06/FederationMetadata.xml",
+          "x-auditable": true,
+          "x-client-original-format": "uri"
         },
         "sign_request": {
           "type": "boolean",
@@ -1206517,7 +1207910,7 @@
           "items": {
             "type": "string"
           },
-          "description": "X509 certificate to verify the signature in the SAML authentication response"
+          "description": "X509 certificate to verify the signature in the SAML authentication response. Mutually exclusive with \u0060metadata_url\u0060."
         },
         "issuer_url": {
           "type": "string",
@@ -1206532,6 +1207925,13 @@
           "description": "The maximum URL length the IdP accepts for the SSO redirect URL.\nWhen the constructed SSO URL would exceed this length, the RelayState\nis stored server-side and a short nonce is passed to the IdP instead.\nSet this if your IdP enforces a URL length limit.\n",
           "example": 8192,
           "x-auditable": true
+        },
+        "metadata_url": {
+          "type": "string",
+          "description": "HTTPS URL of the IdP\u0027s SAML metadata document from which Access reads the signing certificates used to verify SAML authentication responses. Mutually exclusive with \u0060idp_public_certs\u0060.",
+          "example": "https://idp.example.com/FederationMetadata/2007-06/FederationMetadata.xml",
+          "x-auditable": true,
+          "x-client-original-format": "uri"
         },
         "sign_request": {
           "type": "boolean",
@@ -1210135,7 +1211535,8 @@
     "AccountsLogsExplorerQueryPostPlainRequest": {
       "type": "string",
       "description": "SQL query to execute.",
-      "format": "binary"
+      "format": "binary",
+      "x-auditable": false
     },
     "BulkCreatePrefixesRequest": {
       "type": "array",
@@ -1210732,7 +1212133,8 @@
     "ZonesLogsExplorerQueryPostPlainRequest": {
       "type": "string",
       "description": "SQL query to execute.",
-      "format": "binary"
+      "format": "binary",
+      "x-auditable": false
     },
     "OriginCloudRegionsV2BatchDeleteRequest": {
       "maxItems": 100,

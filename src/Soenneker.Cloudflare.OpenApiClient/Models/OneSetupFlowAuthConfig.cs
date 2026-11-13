@@ -22,6 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("authorization_url") is { } nullNodeAuthorizationUrl && nullNodeAuthorizationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationUrl = null;
             if (parseNode.GetChildNode("client_id") is null) { _explicitNullValueClientId = default!; _explicitNullProperties?.Remove("client_id"); }
             else if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("feature_overrides") is null) { _explicitNullValueFeatureOverrides = default!; _explicitNullProperties?.Remove("feature_overrides"); }
+            else if (parseNode.GetChildNode("feature_overrides") is { } nullNodeFeatureOverrides && nullNodeFeatureOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureOverrides = null;
             if (parseNode.GetChildNode("requires_pkce") is null) { _explicitNullValueRequiresPkce = default!; _explicitNullProperties?.Remove("requires_pkce"); }
             else if (parseNode.GetChildNode("requires_pkce") is { } nullNodeRequiresPkce && nullNodeRequiresPkce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresPkce = null;
             if (parseNode.GetChildNode("scopes") is null) { _explicitNullValueScopes = default!; _explicitNullProperties?.Remove("scopes"); }
@@ -51,6 +53,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string _explicitNullValueClientId = default!;
+#endif
+        /// <summary>Per-feature authorization overrides. When a listed feature is selected, authorize with the override&apos;s client ID and URL instead of the defaults above.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFeatureAuthOverride>? FeatureOverrides { get => _explicitNullValueFeatureOverrides; set { _explicitNullValueFeatureOverrides = value; AdditionalData?.Remove("feature_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_overrides"); else _explicitNullProperties?.Remove("feature_overrides"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFeatureAuthOverride>? _explicitNullValueFeatureOverrides = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFeatureAuthOverride> FeatureOverrides { get => _explicitNullValueFeatureOverrides; set { _explicitNullValueFeatureOverrides = value; AdditionalData?.Remove("feature_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_overrides"); else _explicitNullProperties?.Remove("feature_overrides"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFeatureAuthOverride> _explicitNullValueFeatureOverrides = default!;
 #endif
         /// <summary>Whether PKCE is required.</summary>
         public bool? RequiresPkce { get => _explicitNullValueRequiresPkce; set { _explicitNullValueRequiresPkce = value; AdditionalData?.Remove("requires_pkce"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_pkce"); else _explicitNullProperties?.Remove("requires_pkce"); } }
@@ -102,6 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "authorization_url", n => { AuthorizationUrl = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "feature_overrides", n => { FeatureOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFeatureAuthOverride>(global::Soenneker.Cloudflare.OpenApiClient.Models.OneFeatureAuthOverride.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "requires_pkce", n => { RequiresPkce = n.GetBoolValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "url_placeholders", n => { UrlPlaceholders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -116,6 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authorization_url", AuthorizationUrl);
             writer.WriteStringValue("client_id", ClientId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OneFeatureAuthOverride>("feature_overrides", FeatureOverrides);
             writer.WriteBoolValue("requires_pkce", RequiresPkce);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteCollectionOfPrimitiveValues<string>("url_placeholders", UrlPlaceholders);

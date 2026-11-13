@@ -62,6 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 "ai_search_namespace" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelBaseVariant(),
                 "alerting_policy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelBaseVariant(),
                 "alerting_webhook" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelBaseVariant(),
+                "app_library_application" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelBaseVariant(),
                 "cloudflared_tunnel" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelBaseVariant(),
                 "cws_deployment" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelBaseVariant(),
                 "cws_policy" => new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelBaseVariant(),

@@ -48,6 +48,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2DetailAuthorizationLink AuthorizationLink { get; private set; }
 #endif
+        /// <summary>Vendor-specific integration configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2DetailConfig? Config { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2DetailConfig Config { get; private set; }
+#endif
         /// <summary>When the integration was created.</summary>
         public DateTimeOffset? Created { get; private set; }
         /// <summary>Credentials expiry time.</summary>
@@ -130,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "application", n => { Application = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationPauseResponseResultApplication>(global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationPauseResponseResultApplication.CreateFromDiscriminatorValue); } },
                 { "auth_method", n => { AuthMethod = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationPauseResponseResultAuthMethod>(global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationPauseResponseResultAuthMethod.CreateFromDiscriminatorValue); } },
                 { "authorization_link", n => { AuthorizationLink = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2DetailAuthorizationLink>(global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2DetailAuthorizationLink.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2DetailConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2DetailConfig.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "credentials_expiry", n => { CredentialsExpiry = n.GetDateTimeOffsetValue(); } },
                 { "dlp_profiles", n => { DlpProfiles = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },

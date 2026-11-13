@@ -40,6 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2ListItemAuthMethod AuthMethod { get; private set; }
 #endif
+        /// <summary>Vendor-specific integration configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2ListItemConfig? Config { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2ListItemConfig Config { get; private set; }
+#endif
         /// <summary>When the integration was created.</summary>
         public DateTimeOffset? Created { get; private set; }
         /// <summary>Integration ID.</summary>
@@ -101,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "application", n => { Application = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2ListItemApplicationProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2ListItemApplicationProperty.CreateFromDiscriminatorValue); } },
                 { "auth_method", n => { AuthMethod = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2ListItemAuthMethod>(global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2ListItemAuthMethod.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2ListItemConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2ListItemConfig.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_paused", n => { IsPaused = n.GetBoolValue(); } },

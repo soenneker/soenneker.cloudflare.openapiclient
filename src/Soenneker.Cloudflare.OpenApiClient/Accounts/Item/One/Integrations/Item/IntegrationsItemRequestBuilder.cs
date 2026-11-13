@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.One.Integrations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationDetailResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationDetailResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an integration&apos;s name, permissions, DLP profiles, use cases, or credentials.
+        /// Updates an integration&apos;s name, permissions, DLP profiles, use cases, credentials, or GitLab resources.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponse"/></returns>
         /// <param name="body">Serializer for v2 integration PATCH requests.</param>
@@ -139,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.One.Integrations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates an integration&apos;s name, permissions, DLP profiles, use cases, or credentials.
+        /// Updates an integration&apos;s name, permissions, DLP profiles, use cases, credentials, or GitLab resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Serializer for v2 integration PATCH requests.</param>

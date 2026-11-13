@@ -32,6 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("issuer_url") is { } nullNodeIssuerUrl && nullNodeIssuerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerUrl = null;
             if (parseNode.GetChildNode("max_sso_url_length") is null) { _explicitNullValueMaxSsoUrlLength = default!; _explicitNullProperties?.Remove("max_sso_url_length"); }
             else if (parseNode.GetChildNode("max_sso_url_length") is { } nullNodeMaxSsoUrlLength && nullNodeMaxSsoUrlLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSsoUrlLength = null;
+            if (parseNode.GetChildNode("metadata_url") is null) { _explicitNullValueMetadataUrl = default!; _explicitNullProperties?.Remove("metadata_url"); }
+            else if (parseNode.GetChildNode("metadata_url") is { } nullNodeMetadataUrl && nullNodeMetadataUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataUrl = null;
             if (parseNode.GetChildNode("sign_request") is null) { _explicitNullValueSignRequest = default!; _explicitNullProperties?.Remove("sign_request"); }
             else if (parseNode.GetChildNode("sign_request") is { } nullNodeSignRequest && nullNodeSignRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignRequest = null;
             if (parseNode.GetChildNode("sso_target_url") is null) { _explicitNullValueSsoTargetUrl = default!; _explicitNullProperties?.Remove("sso_target_url"); }
@@ -73,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaml2AllOf2ConfigHeaderAttributesItem> HeaderAttributes { get => _explicitNullValueHeaderAttributes; set { _explicitNullValueHeaderAttributes = value; AdditionalData?.Remove("header_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_attributes"); else _explicitNullProperties?.Remove("header_attributes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaml2AllOf2ConfigHeaderAttributesItem> _explicitNullValueHeaderAttributes = default!;
 #endif
-        /// <summary>X509 certificate to verify the signature in the SAML authentication response</summary>
+        /// <summary>X509 certificate to verify the signature in the SAML authentication response. Mutually exclusive with `metadata_url`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IdpPublicCerts { get => _explicitNullValueIdpPublicCerts; set { _explicitNullValueIdpPublicCerts = value; AdditionalData?.Remove("idp_public_certs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_public_certs"); else _explicitNullProperties?.Remove("idp_public_certs"); } }
@@ -96,6 +98,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The maximum URL length the IdP accepts for the SSO redirect URL.When the constructed SSO URL would exceed this length, the RelayStateis stored server-side and a short nonce is passed to the IdP instead.Set this if your IdP enforces a URL length limit.</summary>
         public int? MaxSsoUrlLength { get => _explicitNullValueMaxSsoUrlLength; set { _explicitNullValueMaxSsoUrlLength = value; AdditionalData?.Remove("max_sso_url_length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_sso_url_length"); else _explicitNullProperties?.Remove("max_sso_url_length"); } }
         private int? _explicitNullValueMaxSsoUrlLength = default!;
+        /// <summary>HTTPS URL of the IdP&apos;s SAML metadata document from which Access reads the signing certificates used to verify SAML authentication responses. Mutually exclusive with `idp_public_certs`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MetadataUrl { get => _explicitNullValueMetadataUrl; set { _explicitNullValueMetadataUrl = value; AdditionalData?.Remove("metadata_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata_url"); else _explicitNullProperties?.Remove("metadata_url"); } }
+        private string? _explicitNullValueMetadataUrl = default!;
+#nullable restore
+#else
+        public string MetadataUrl { get => _explicitNullValueMetadataUrl; set { _explicitNullValueMetadataUrl = value; AdditionalData?.Remove("metadata_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata_url"); else _explicitNullProperties?.Remove("metadata_url"); } }
+        private string _explicitNullValueMetadataUrl = default!;
+#endif
         /// <summary>Sign the SAML authentication request with Access credentials. To verify the signature, use the public key from the Access certs endpoints.</summary>
         public bool? SignRequest { get => _explicitNullValueSignRequest; set { _explicitNullValueSignRequest = value; AdditionalData?.Remove("sign_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_request"); else _explicitNullProperties?.Remove("sign_request"); } }
         private bool? _explicitNullValueSignRequest = default!;
@@ -142,6 +154,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "idp_public_certs", n => { IdpPublicCerts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "issuer_url", n => { IssuerUrl = n.GetStringValue(); } },
                 { "max_sso_url_length", n => { MaxSsoUrlLength = n.GetIntValue(); } },
+                { "metadata_url", n => { MetadataUrl = n.GetStringValue(); } },
                 { "sign_request", n => { SignRequest = n.GetBoolValue(); } },
                 { "sso_target_url", n => { SsoTargetUrl = n.GetStringValue(); } },
             };
@@ -160,6 +173,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("idp_public_certs", IdpPublicCerts);
             writer.WriteStringValue("issuer_url", IssuerUrl);
             writer.WriteIntValue("max_sso_url_length", MaxSsoUrlLength);
+            writer.WriteStringValue("metadata_url", MetadataUrl);
             writer.WriteBoolValue("sign_request", SignRequest);
             writer.WriteStringValue("sso_target_url", SsoTargetUrl);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

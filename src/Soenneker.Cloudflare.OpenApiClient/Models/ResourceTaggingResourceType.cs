@@ -55,6 +55,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         ApiGatewayOperation,
         #pragma warning restore CS1591
+        [EnumMember(Value = "app_library_application")]
+        #pragma warning disable CS1591
+        AppLibraryApplication,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cloudflared_tunnel")]
         #pragma warning disable CS1591
         CloudflaredTunnel,

@@ -27,11 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("ProductCategory") is { } nullNodeProductCategory && nullNodeProductCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductCategory = null;
             if (parseNode.GetChildNode("ProductFamily") is null) { _explicitNullValueProductFamily = default!; _explicitNullProperties?.Remove("ProductFamily"); }
             else if (parseNode.GetChildNode("ProductFamily") is { } nullNodeProductFamily && nullNodeProductFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductFamily = null;
+            if (parseNode.GetChildNode("TagKeys") is null) { _explicitNullValueTagKeys = default!; _explicitNullProperties?.Remove("TagKeys"); }
+            else if (parseNode.GetChildNode("TagKeys") is { } nullNodeTagKeys && nullNodeTagKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagKeys = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The DimensionKeys property</summary>
+        /// <summary>Dimension keys defined for this billable metric. Use them as`Key` in a `DIMENSION` `GroupBy` on the account usage endpoint.They do not depend on the requested period, and a key canbe listed even when no usage in the period carries it. Empty whenthe metric defines no dimensions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DimensionKeys { get => _explicitNullValueDimensionKeys; set { _explicitNullValueDimensionKeys = value; AdditionalData?.Remove("DimensionKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DimensionKeys"); else _explicitNullProperties?.Remove("DimensionKeys"); } }
@@ -81,6 +83,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily> ProductFamily { get => _explicitNullValueProductFamily; set { _explicitNullValueProductFamily = value; AdditionalData?.Remove("ProductFamily"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductFamily"); else _explicitNullProperties?.Remove("ProductFamily"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily> _explicitNullValueProductFamily = default!;
 #endif
+        /// <summary>Resource-tag keys observed on this metric&apos;s usage within therequested period, sorted and deduplicated. Use them as `Key` in a`TAG` `GroupBy` or in `FilterBy.Tags` on the account usageendpoint. Because the list reflects recorded usage, it changes with`from` and `to`, and is empty when no tagged usage exists in theperiod or tag-key discovery is not available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TagKeys { get => _explicitNullValueTagKeys; set { _explicitNullValueTagKeys = value; AdditionalData?.Remove("TagKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TagKeys"); else _explicitNullProperties?.Remove("TagKeys"); } }
+        private List<string>? _explicitNullValueTagKeys = default!;
+#nullable restore
+#else
+        public List<string> TagKeys { get => _explicitNullValueTagKeys; set { _explicitNullValueTagKeys = value; AdditionalData?.Remove("TagKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TagKeys"); else _explicitNullProperties?.Remove("TagKeys"); } }
+        private List<string> _explicitNullValueTagKeys = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2AccountBillableMetric"/> and sets the default values.
         /// </summary>
@@ -111,6 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "Name", n => { Name = n.GetStringValue(); } },
                 { "ProductCategory", n => { ProductCategory = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductCategory>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductCategory.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ProductFamily", n => { ProductFamily = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "TagKeys", n => { TagKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -125,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("Name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductCategory>("ProductCategory", ProductCategory);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily>("ProductFamily", ProductFamily);
+            writer.WriteCollectionOfPrimitiveValues<string>("TagKeys", TagKeys);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

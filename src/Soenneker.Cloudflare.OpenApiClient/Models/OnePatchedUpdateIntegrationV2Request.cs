@@ -18,6 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("config") is null) { _explicitNullValueConfig = default!; _explicitNullProperties?.Remove("config"); }
+            else if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
             if (parseNode.GetChildNode("credentials") is null) { _explicitNullValueCredentials = default!; _explicitNullProperties?.Remove("credentials"); }
             else if (parseNode.GetChildNode("credentials") is { } nullNodeCredentials && nullNodeCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credentials = null;
             if (parseNode.GetChildNode("dlp_profiles") is null) { _explicitNullValueDlpProfiles = default!; _explicitNullProperties?.Remove("dlp_profiles"); }
@@ -32,6 +34,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Vendor-specific integration configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestConfig? _explicitNullValueConfig = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestConfig _explicitNullValueConfig = default!;
+#endif
         /// <summary>Partial credential fields to merge with existing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestConfig.CreateFromDiscriminatorValue); } },
                 { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestCredentialsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestCredentialsProperty.CreateFromDiscriminatorValue); } },
                 { "dlp_profiles", n => { DlpProfiles = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -121,6 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestConfig>("config", Config);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OnePatchedUpdateIntegrationV2RequestCredentialsProperty>("credentials", Credentials);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("dlp_profiles", DlpProfiles);
             writer.WriteStringValue("name", Name);

@@ -53,6 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("logpush_public_key") is { } nullNodeLogpushPublicKey && nullNodeLogpushPublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogpushPublicKey = null;
             if (parseNode.GetChildNode("modified_at") is null) { _explicitNullValueModifiedAt = default!; _explicitNullProperties?.Remove("modified_at"); }
             else if (parseNode.GetChildNode("modified_at") is { } nullNodeModifiedAt && nullNodeModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedAt = null;
+            if (parseNode.GetChildNode("multiprovider_enabled") is null) { _explicitNullValueMultiproviderEnabled = default!; _explicitNullProperties?.Remove("multiprovider_enabled"); }
+            else if (parseNode.GetChildNode("multiprovider_enabled") is { } nullNodeMultiproviderEnabled && nullNodeMultiproviderEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiproviderEnabled = null;
             if (parseNode.GetChildNode("otel") is null) { _explicitNullValueOtel = default!; _explicitNullProperties?.Remove("otel"); }
             else if (parseNode.GetChildNode("otel") is { } nullNodeOtel && nullNodeOtel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Otel = null;
             if (parseNode.GetChildNode("rate_limiting_interval") is null) { _explicitNullValueRateLimitingInterval = default!; _explicitNullProperties?.Remove("rate_limiting_interval"); }
@@ -163,6 +165,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The modified_at property</summary>
         public DateTimeOffset? ModifiedAt { get => _explicitNullValueModifiedAt; set { _explicitNullValueModifiedAt = value; AdditionalData?.Remove("modified_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_at"); else _explicitNullProperties?.Remove("modified_at"); } }
         private DateTimeOffset? _explicitNullValueModifiedAt = default!;
+        /// <summary>Lets requests to a model use every provider that serves it. When off, a model uses only the providers it launched with, so a provider added later receives none of its traffic. A request that names providers (the cf-aig-allowed-providers header or routing.allowedProviders) can still use any of them. Model aliases (custom/) are not restricted.</summary>
+        public bool? MultiproviderEnabled { get => _explicitNullValueMultiproviderEnabled; set { _explicitNullValueMultiproviderEnabled = value; AdditionalData?.Remove("multiprovider_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiprovider_enabled"); else _explicitNullProperties?.Remove("multiprovider_enabled"); } }
+        private bool? _explicitNullValueMultiproviderEnabled = default!;
         /// <summary>The otel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,6 +275,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
                 { "logpush_public_key", n => { LogpushPublicKey = n.GetStringValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "multiprovider_enabled", n => { MultiproviderEnabled = n.GetBoolValue(); } },
                 { "otel", n => { Otel = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGateway200ResponseResultItemOtelItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGateway200ResponseResultItemOtelItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rate_limiting_interval", n => { RateLimitingInterval = n.GetIntValue(); } },
                 { "rate_limiting_limit", n => { RateLimitingLimit = n.GetIntValue(); } },
@@ -309,6 +315,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("logpush", Logpush);
             writer.WriteStringValue("logpush_public_key", LogpushPublicKey);
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
+            writer.WriteBoolValue("multiprovider_enabled", MultiproviderEnabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGateway200ResponseResultItemOtelItem>("otel", Otel);
             writer.WriteIntValue("rate_limiting_interval", RateLimitingInterval);
             writer.WriteIntValue("rate_limiting_limit", RateLimitingLimit);
