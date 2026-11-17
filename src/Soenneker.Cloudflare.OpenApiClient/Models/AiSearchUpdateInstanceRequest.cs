@@ -251,10 +251,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstanceRequestSourceParams SourceParams { get => _explicitNullValueSourceParams; set { _explicitNullValueSourceParams = value; AdditionalData?.Remove("source_params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_params"); else _explicitNullProperties?.Remove("source_params"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstanceRequestSourceParams _explicitNullValueSourceParams = default!;
 #endif
-        /// <summary>The summarization property</summary>
+        /// <summary>Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.</summary>
+        [Obsolete("")]
         public bool? Summarization { get => _explicitNullValueSummarization; set { _explicitNullValueSummarization = value; AdditionalData?.Remove("summarization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summarization"); else _explicitNullProperties?.Remove("summarization"); } }
         private bool? _explicitNullValueSummarization = default!;
-        /// <summary>The summarization_model property</summary>
+        /// <summary>Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SummarizationModel { get => _explicitNullValueSummarizationModel; set { _explicitNullValueSummarizationModel = value; AdditionalData?.Remove("summarization_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summarization_model"); else _explicitNullProperties?.Remove("summarization_model"); } }
@@ -277,7 +279,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SystemPromptAiSearch { get => _explicitNullValueSystemPromptAiSearch; set { _explicitNullValueSystemPromptAiSearch = value; AdditionalData?.Remove("system_prompt_ai_search"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_prompt_ai_search"); else _explicitNullProperties?.Remove("system_prompt_ai_search"); } }
         private string _explicitNullValueSystemPromptAiSearch = default!;
 #endif
-        /// <summary>The system_prompt_index_summarization property</summary>
+        /// <summary>Deprecated and has no effect. Use indexing_options.file_summary instead.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SystemPromptIndexSummarization { get => _explicitNullValueSystemPromptIndexSummarization; set { _explicitNullValueSystemPromptIndexSummarization = value; AdditionalData?.Remove("system_prompt_index_summarization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_prompt_index_summarization"); else _explicitNullProperties?.Remove("system_prompt_index_summarization"); } }

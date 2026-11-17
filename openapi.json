@@ -453,7 +453,8 @@
             "in": "query",
             "description": "How many abuse reports per page to list",
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           },
           {
@@ -978,7 +979,8 @@
             "in": "query",
             "description": "Number of emails per page (default 20, max 100).",
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           }
         ],
@@ -1226,7 +1228,8 @@
             "in": "query",
             "description": "Number of emails per page (default 20, max 100)",
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           }
         ],
@@ -1439,7 +1442,8 @@
             "in": "query",
             "description": "How many abuse reports per page to list",
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           },
           {
@@ -3349,7 +3353,7 @@
       "post": {
         "operationId": "mcp-portals-api-create-portals",
         "summary": "Create a new MCP Portal",
-        "description": "Creates a new MCP portal for managing AI tool access through Cloudflare Access.",
+        "description": "Creates a new MCP portal. Each account supports up to 50 portals, including disabled portals.",
         "parameters": [
           {
             "name": "account_id",
@@ -26432,6 +26436,14 @@
                         "maxLength": 100,
                         "minLength": 1
                       },
+                      "contract_version": {
+                        "description": "Set to 2 to pin auto top-up to this card instead of the default. Read when card setup starts; completion follows the setup.",
+                        "type": "number",
+                        "example": 2,
+                        "enum": [
+                          2
+                        ]
+                      },
                       "payment_method_id": {
                         "description": "Card to authenticate for future automatic top-ups.",
                         "type": "string",
@@ -26569,10 +26581,113 @@
       }
     },
     "/accounts/{account_id}/ai-gateway/billing/topup/eligibility": {
+      "get": {
+        "operationId": "aig-billing-get-topup-eligibility",
+        "summary": "Get top-up eligibility (version 2)",
+        "description": "Read-only top-up eligibility, contract version 2: the account's payment methods and whether each can pay for a top-up, whether a manual top-up is available and its limits, and the auto top-up state. Advisory: every top-up checks again. Answers 409 while version 2 is unavailable for the account.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eligibility read.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aig-billing_GetTopupEligibilityV2Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aig-billing_ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aig-billing_ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aig-billing_ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version 2 is unavailable for this account, including flag fallback.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aig-billing_ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error, including an auto top-up config that could not be read. The body carries only the generic message.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aig-billing_ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "AI Gateway"
+        ],
+        "x-api-token-group": [
+          "Billing Write",
+          "Billing Read"
+        ],
+        "x-cfPlanAvailability": {
+          "business": true,
+          "enterprise": true,
+          "free": true,
+          "pro": true
+        },
+        "x-fern-ignore": true,
+        "x-fern-sdk-group-name": "ai-gateway.billing.topup",
+        "x-fern-sdk-method-name": "get-eligibility"
+      },
       "post": {
         "operationId": "aig-billing-topup-eligibility",
         "summary": "Get top-up eligibility",
-        "description": "Determine top-up eligibility. Requests without contract_version retain the legacy forwarded-method contract. Explicit contract_version: 2 opts into the gated, read-only authoritative advisory API; forwarded method metadata is not authoritative. No response authorizes a charge.",
+        "description": "Returns legacy top-up eligibility from forwarded payment methods. Version 2 is read with GET; a body naming contract_version is rejected. No response authorizes a charge.",
         "parameters": [
           {
             "name": "account_id",
@@ -26591,14 +26706,8 @@
                 "type": "object",
                 "properties": {
                   "contract_version": {
-                    "type": "number",
-                    "enum": [
-                      2
-                    ]
-                  },
-                  "payment_method_id": {
-                    "type": "string",
-                    "maxLength": 255
+                    "description": "Not accepted: version 2 is read with GET. Any value answers 400.",
+                    "type": "integer"
                   },
                   "payment_methods": {
                     "description": "Account-level payment methods, forwarded by the dashboard for legacy eligibility only.",
@@ -26670,16 +26779,6 @@
                 }
               }
             }
-          },
-          "409": {
-            "description": "Explicit V2 is unavailable for this account, including flag fallback.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/aig-billing_ErrorResponse"
-                }
-              }
-            }
           }
         },
         "security": [
@@ -26695,13 +26794,9 @@
           "AI Gateway"
         ],
         "x-api-token-group": [
-          "AI Gateway Write"
+          "Billing Write",
+          "Billing Read"
         ],
-        "x-cfPermissionsRequired": {
-          "enum": [
-            "com.cloudflare.api.account.aig"
-          ]
-        },
         "x-cfPlanAvailability": {
           "business": true,
           "enterprise": true,
@@ -48033,6 +48128,10 @@
                             "additionalProperties": true,
                             "nullable": true,
                             "properties": {
+                              "file_summary": {
+                                "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                                "type": "boolean"
+                              },
                               "keyword_tokenizer": {
                                 "type": "string",
                                 "enum": [
@@ -48405,10 +48504,14 @@
                             "type": "string"
                           },
                           "summarization": {
-                            "type": "boolean"
+                            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
+                            "type": "boolean",
+                            "deprecated": true
                           },
                           "summarization_model": {
+                            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
                             "type": "string",
+                            "deprecated": true,
                             "nullable": true
                           },
                           "sync_interval": {
@@ -48468,7 +48571,9 @@
                             "nullable": true
                           },
                           "system_prompt_index_summarization": {
+                            "description": "Deprecated and has no effect. Use indexing_options.file_summary instead.",
                             "type": "string",
+                            "deprecated": true,
                             "nullable": true
                           },
                           "system_prompt_rewrite_query": {
@@ -48876,6 +48981,11 @@
                     "type": "object",
                     "nullable": true,
                     "properties": {
+                      "file_summary": {
+                        "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                        "type": "boolean",
+                        "default": false
+                      },
                       "keyword_tokenizer": {
                         "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                         "type": "string",
@@ -49643,6 +49753,11 @@
                           "type": "object",
                           "nullable": true,
                           "properties": {
+                            "file_summary": {
+                              "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                              "type": "boolean",
+                              "default": false
+                            },
                             "keyword_tokenizer": {
                               "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                               "type": "string",
@@ -50761,6 +50876,11 @@
                           "type": "object",
                           "nullable": true,
                           "properties": {
+                            "file_summary": {
+                              "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                              "type": "boolean",
+                              "default": false
+                            },
                             "keyword_tokenizer": {
                               "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                               "type": "string",
@@ -51710,6 +51830,11 @@
                           "type": "object",
                           "nullable": true,
                           "properties": {
+                            "file_summary": {
+                              "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                              "type": "boolean",
+                              "default": false
+                            },
                             "keyword_tokenizer": {
                               "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                               "type": "string",
@@ -52584,6 +52709,11 @@
                     "type": "object",
                     "nullable": true,
                     "properties": {
+                      "file_summary": {
+                        "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                        "type": "boolean",
+                        "default": false
+                      },
                       "keyword_tokenizer": {
                         "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                         "type": "string",
@@ -53048,12 +53178,16 @@
                     "x-stainless-terraform-configurability": "computed_optional"
                   },
                   "summarization": {
+                    "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
                     "type": "boolean",
                     "default": false,
+                    "deprecated": true,
                     "x-auditable": true
                   },
                   "summarization_model": {
+                    "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
                     "type": "string",
+                    "deprecated": true,
                     "nullable": true,
                     "x-auditable": true
                   },
@@ -53118,7 +53252,9 @@
                     "x-auditable": true
                   },
                   "system_prompt_index_summarization": {
+                    "description": "Deprecated and has no effect. Use indexing_options.file_summary instead.",
                     "type": "string",
+                    "deprecated": true,
                     "nullable": true,
                     "x-auditable": true
                   },
@@ -53361,6 +53497,11 @@
                           "type": "object",
                           "nullable": true,
                           "properties": {
+                            "file_summary": {
+                              "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                              "type": "boolean",
+                              "default": false
+                            },
                             "keyword_tokenizer": {
                               "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                               "type": "string",
@@ -58479,6 +58620,10 @@
                             "additionalProperties": true,
                             "nullable": true,
                             "properties": {
+                              "file_summary": {
+                                "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                                "type": "boolean"
+                              },
                               "keyword_tokenizer": {
                                 "type": "string",
                                 "enum": [
@@ -58851,10 +58996,14 @@
                             "type": "string"
                           },
                           "summarization": {
-                            "type": "boolean"
+                            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
+                            "type": "boolean",
+                            "deprecated": true
                           },
                           "summarization_model": {
+                            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
                             "type": "string",
+                            "deprecated": true,
                             "nullable": true
                           },
                           "sync_interval": {
@@ -58914,7 +59063,9 @@
                             "nullable": true
                           },
                           "system_prompt_index_summarization": {
+                            "description": "Deprecated and has no effect. Use indexing_options.file_summary instead.",
                             "type": "string",
+                            "deprecated": true,
                             "nullable": true
                           },
                           "system_prompt_rewrite_query": {
@@ -59338,6 +59489,11 @@
                     "type": "object",
                     "nullable": true,
                     "properties": {
+                      "file_summary": {
+                        "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                        "type": "boolean",
+                        "default": false
+                      },
                       "keyword_tokenizer": {
                         "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                         "type": "string",
@@ -60105,6 +60261,11 @@
                           "type": "object",
                           "nullable": true,
                           "properties": {
+                            "file_summary": {
+                              "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                              "type": "boolean",
+                              "default": false
+                            },
                             "keyword_tokenizer": {
                               "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                               "type": "string",
@@ -61253,6 +61414,11 @@
                           "type": "object",
                           "nullable": true,
                           "properties": {
+                            "file_summary": {
+                              "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                              "type": "boolean",
+                              "default": false
+                            },
                             "keyword_tokenizer": {
                               "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                               "type": "string",
@@ -62222,6 +62388,11 @@
                           "type": "object",
                           "nullable": true,
                           "properties": {
+                            "file_summary": {
+                              "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                              "type": "boolean",
+                              "default": false
+                            },
                             "keyword_tokenizer": {
                               "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                               "type": "string",
@@ -63398,6 +63569,11 @@
                     "type": "object",
                     "nullable": true,
                     "properties": {
+                      "file_summary": {
+                        "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                        "type": "boolean",
+                        "default": false
+                      },
                       "keyword_tokenizer": {
                         "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                         "type": "string",
@@ -63862,12 +64038,16 @@
                     "x-stainless-terraform-configurability": "computed_optional"
                   },
                   "summarization": {
+                    "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
                     "type": "boolean",
                     "default": false,
+                    "deprecated": true,
                     "x-auditable": true
                   },
                   "summarization_model": {
+                    "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
                     "type": "string",
+                    "deprecated": true,
                     "nullable": true,
                     "x-auditable": true
                   },
@@ -63932,7 +64112,9 @@
                     "x-auditable": true
                   },
                   "system_prompt_index_summarization": {
+                    "description": "Deprecated and has no effect. Use indexing_options.file_summary instead.",
                     "type": "string",
+                    "deprecated": true,
                     "nullable": true,
                     "x-auditable": true
                   },
@@ -64175,6 +64357,11 @@
                           "type": "object",
                           "nullable": true,
                           "properties": {
+                            "file_summary": {
+                              "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item's context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance's AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+                              "type": "boolean",
+                              "default": false
+                            },
                             "keyword_tokenizer": {
                               "description": "Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.",
                               "type": "string",
@@ -86427,6 +86614,7 @@
                   },
                   "name": {
                     "type": "string",
+                    "maxLength": 256,
                     "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$"
                   },
                   "read_only": {
@@ -90738,6 +90926,7 @@
                   },
                   "name": {
                     "type": "string",
+                    "maxLength": 256,
                     "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$"
                   },
                   "read_only": {
@@ -137141,7 +137330,7 @@
                 "type": "object",
                 "properties": {
                   "autoCreateType": {
-                    "description": "Global flag to automatically create indicator types if they don't exist. Individual indicators can override this with their own autoCreateType flag.",
+                    "description": "Global flag to automatically create indicator types if they don't exist. Individual indicators can override this with their own autoCreateType flag. When false, a non-analytics dataset still accepts pre-approved types (the same list event create accepts, such as BITCOIN or ERC-20) and registers them on first use. Analytics datasets do not check registered types.",
                     "type": "boolean"
                   },
                   "indicators": {
@@ -137149,7 +137338,7 @@
                     "items": {
                       "properties": {
                         "autoCreateType": {
-                          "description": "If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.",
+                          "description": "If true, automatically create the indicator type if it doesn't exist. If false (default), reject an indicator type the dataset has not registered, unless the type is pre-approved (the same list event create accepts, such as BITCOIN or ERC-20), in which case it is registered on first use. Direct create applies this check to analytics datasets too. Bulk create skips it for analytics datasets.",
                           "type": "boolean"
                         },
                         "indicatorType": {
@@ -137328,7 +137517,7 @@
                 "type": "object",
                 "properties": {
                   "autoCreateType": {
-                    "description": "If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.",
+                    "description": "If true, automatically create the indicator type if it doesn't exist. If false (default), reject an indicator type the dataset has not registered, unless the type is pre-approved (the same list event create accepts, such as BITCOIN or ERC-20), in which case it is registered on first use. Direct create applies this check to analytics datasets too. Bulk create skips it for analytics datasets.",
                     "type": "boolean"
                   },
                   "indicatorType": {
@@ -172336,7 +172525,7 @@
       "put": {
         "operationId": "put_PirUpdate",
         "summary": "Update a priority intelligence requirement",
-        "description": "Updates a Priority Intelligence Requirement for the authenticated account. Changing the query increments its version; editing the requirement without saving a query marks the query stale. Activating a draft needs a free slot in the active PIR quota; setting `active` on a PIR the matcher paused resumes it without one. Updates to a structured PIR must send its `revision` and change its answers through `definition`; its requirement, title and query are generated.",
+        "description": "Updates a Priority Intelligence Requirement for the authenticated account. Changing the query increments its version; editing the requirement without saving a query marks the query stale. Activating a draft needs a free slot in the active PIR quota; setting `active` on a PIR the matcher paused resumes it without one. Updates to a structured PIR must send its `revision` and change its answers through `definition`; its requirement, title and query are generated. Sending a `definition` and `revision` for a free-form PIR converts it in place: it keeps its ID, status, labels, priority, TLP and match history, and its query, dataset scope and notifications are removed, since structured PIRs are not matched by the PIR matcher and send no notifications. A conversion must not send a `dataset_scope`.",
         "parameters": [
           {
             "name": "account_id",
@@ -172433,12 +172622,10 @@
                     ]
                   },
                   "definition": {
+                    "description": "Replaces a structured PIR's definition, or converts a free-form PIR to a structured one in place. Requires `revision` and `based_on`.",
                     "allOf": [
                       {
                         "$ref": "#/components/schemas/cloudforce-one-events_PirDefinition"
-                      },
-                      {
-                        "description": "Replaces a structured PIR's definition. Free-form PIRs cannot be converted yet."
                       }
                     ]
                   },
@@ -173065,7 +173252,7 @@
                     "minLength": 1
                   },
                   "revision": {
-                    "description": "The `revision` the change is based on. Required for structured PIRs; a different stored revision returns 409.",
+                    "description": "The `revision` the change is based on. Required for structured PIRs and when sending a `definition`; a different stored revision returns 409.",
                     "type": "integer",
                     "minimum": 1
                   },
@@ -175232,7 +175419,7 @@
       "get": {
         "operationId": "get_RequestQuota",
         "summary": "Get request token quota",
-        "description": "Returns the account's token quota for the current anniversary quarter: total granted, used, remaining, and the quarter/anniversary boundaries.",
+        "description": "Returns the account's token quota for the current anniversary quarter: total granted, used, remaining, and the quarter/anniversary boundaries. Also returns the annual allocation, usage, and remaining tokens for the current anniversary year; quarterly remaining controls usage.",
         "parameters": [
           {
             "name": "account_id",
@@ -175272,7 +175459,78 @@
         ],
         "responses": {
           "200": {
-            "description": "Quota information"
+            "description": "Quota information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "anniversary_date": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "annual_allocation": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "annual_remaining": {
+                          "description": "Informational annual allocation remaining; quarterly remaining controls usage",
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "annual_used": {
+                          "description": "Tokens used during the current account anniversary year",
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "quarter_end": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "quarter_start": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "quota": {
+                          "description": "Quarterly token allocation",
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "remaining": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "used": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "annual_allocation",
+                        "annual_used",
+                        "annual_remaining",
+                        "quota",
+                        "used",
+                        "remaining",
+                        "quarter_start",
+                        "quarter_end",
+                        "anniversary_date"
+                      ]
+                    },
+                    "success": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "result"
+                  ]
+                }
+              }
+            }
           },
           "404": {
             "description": "Project type does not use token billing, or account not found"
@@ -225300,7 +225558,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.allow-policies",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected allow policies and restore normal security scanning and disposition actions for matching emails.",
         "x-stability": "beta"
       }
@@ -225884,7 +226142,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.block-senders",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected blocked sender patterns and stop automatically blocking matching emails based on those rules.",
         "x-stability": "beta"
       }
@@ -226464,7 +226722,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.content-policies",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected content policies and stop evaluating emails against their patterns.",
         "x-stability": "beta"
       }
@@ -227083,7 +227341,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.domains",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may permanently delete protection for the selected email domains. Emails for those domains will no longer be processed by Email Security.",
         "x-stability": "beta"
       }
@@ -227978,7 +228236,7 @@
         "x-fern-availability": "beta",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "email-security.sending-domain-restrictions",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-delete",
         "x-forge-require-confirmation": "This operation deletes the selected sending domain restrictions and removes TLS enforcement for the specified domains.",
         "x-stability": "beta"
       }
@@ -228499,7 +228757,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.trusted-domains",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected trusted domain patterns and restore normal recent domain and similarity checks for matching emails.",
         "x-stability": "beta"
       }
@@ -229058,7 +229316,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.url-ignore-patterns",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected URL rewrite ignore patterns and cause matching URLs to be rewritten again.",
         "x-stability": "beta"
       }
@@ -243321,7 +243579,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "hyperdrive",
-        "x-fern-sdk-method-name": "update",
+        "x-fern-sdk-method-name": "edit",
         "x-forge-params": {
           "mtls.sslmode": {
             "choices": [
@@ -258477,7 +258735,8 @@
             "schema": {
               "type": "string",
               "maxLength": 4096
-            }
+            },
+            "x-auditable": false
           }
         ],
         "responses": {
@@ -258517,7 +258776,6 @@
           "Logs Write",
           "Logs Read"
         ],
-        "x-auditable": false,
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "logs",
         "x-fern-sdk-method-name": "query-get"
@@ -378014,7 +378272,6 @@
                                 "required": [
                                   "name",
                                   "start",
-                                  "end",
                                   "finished",
                                   "type",
                                   "error"
@@ -559836,7 +560093,8 @@
             "schema": {
               "type": "string",
               "maxLength": 4096
-            }
+            },
+            "x-auditable": false
           }
         ],
         "responses": {
@@ -559876,7 +560134,6 @@
           "Logs Write",
           "Logs Read"
         ],
-        "x-auditable": false,
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "logs.zone",
         "x-fern-sdk-method-name": "query-get"
@@ -574793,7 +575050,7 @@
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/google-tag-gateway_google-tag-gateway-config"
+                          "$ref": "#/components/schemas/google-tag-gateway_google-tag-gateway-config-response"
                         }
                       },
                       "type": "object"
@@ -574883,7 +575140,7 @@
                     {
                       "properties": {
                         "result": {
-                          "$ref": "#/components/schemas/google-tag-gateway_google-tag-gateway-config"
+                          "$ref": "#/components/schemas/google-tag-gateway_google-tag-gateway-config-response"
                         }
                       },
                       "type": "object"
@@ -610866,204 +611123,6 @@
           "errors"
         ]
       },
-      "aig-billing_GetAuthoritativeTopupEligibilityResult": {
-        "type": "object",
-        "properties": {
-          "advisory": {
-            "type": "boolean",
-            "enum": [
-              true
-            ]
-          },
-          "auto_topup": {
-            "type": "object",
-            "properties": {
-              "default_payment_method_id": {
-                "type": "string",
-                "nullable": true
-              },
-              "eligible_payment_method_ids": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "reason": {
-                "type": "string",
-                "enum": [
-                  "ELIGIBLE",
-                  "NO_ACCOUNT_PAYMENT_METHOD",
-                  "UNSUPPORTED_ACCOUNT_PAYMENT_METHOD",
-                  "ACCOUNT_PAYMENT_METHOD_NOT_DEFAULT",
-                  "ACCOUNT_PAYMENT_METHOD_NOT_LINKED_TO_AIG",
-                  "CONTRACT_BILLING_NOT_SELF_SERVE",
-                  "ELIGIBILITY_UNAVAILABLE",
-                  "INVALID_PAYMENT_METHOD_SELECTION",
-                  "PAYMENT_METHOD_EXPIRED",
-                  "FIRST_TOPUP_REQUIRED",
-                  "AUTO_TOPUP_SETUP_REQUIRED",
-                  "AUTO_TOPUP_NOT_CONFIGURED",
-                  "ACCOUNT_PAYMENT_METHOD_DEFAULT_MISSING",
-                  "ACCOUNT_POLICY_UNAVAILABLE"
-                ]
-              },
-              "recommended_action": {
-                "type": "string",
-                "enum": [
-                  "NONE",
-                  "ADD_SUPPORTED_PAYMENT_METHOD",
-                  "USE_EXISTING_CARD",
-                  "SET_CARD_AS_DEFAULT",
-                  "CONTACT_SUPPORT",
-                  "RETRY",
-                  "SELECT_SUPPORTED_PAYMENT_METHOD",
-                  "COMPLETE_MANUAL_TOPUP",
-                  "AUTHENTICATE_CARD",
-                  "CONFIGURE_AUTO_TOPUP"
-                ]
-              },
-              "status": {
-                "type": "string",
-                "enum": [
-                  "eligible",
-                  "ineligible",
-                  "unavailable"
-                ]
-              }
-            },
-            "required": [
-              "status",
-              "reason",
-              "recommended_action",
-              "eligible_payment_method_ids",
-              "default_payment_method_id"
-            ]
-          },
-          "contract_version": {
-            "type": "number",
-            "enum": [
-              2
-            ]
-          },
-          "evaluated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "manual_topup": {
-            "type": "object",
-            "properties": {
-              "default_payment_method_id": {
-                "type": "string",
-                "nullable": true
-              },
-              "eligible_payment_method_ids": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "reason": {
-                "type": "string",
-                "enum": [
-                  "ELIGIBLE",
-                  "NO_ACCOUNT_PAYMENT_METHOD",
-                  "UNSUPPORTED_ACCOUNT_PAYMENT_METHOD",
-                  "ACCOUNT_PAYMENT_METHOD_NOT_DEFAULT",
-                  "ACCOUNT_PAYMENT_METHOD_NOT_LINKED_TO_AIG",
-                  "CONTRACT_BILLING_NOT_SELF_SERVE",
-                  "ELIGIBILITY_UNAVAILABLE",
-                  "INVALID_PAYMENT_METHOD_SELECTION",
-                  "PAYMENT_METHOD_EXPIRED",
-                  "FIRST_TOPUP_REQUIRED",
-                  "AUTO_TOPUP_SETUP_REQUIRED",
-                  "AUTO_TOPUP_NOT_CONFIGURED",
-                  "ACCOUNT_PAYMENT_METHOD_DEFAULT_MISSING",
-                  "ACCOUNT_POLICY_UNAVAILABLE"
-                ]
-              },
-              "recommended_action": {
-                "type": "string",
-                "enum": [
-                  "NONE",
-                  "ADD_SUPPORTED_PAYMENT_METHOD",
-                  "USE_EXISTING_CARD",
-                  "SET_CARD_AS_DEFAULT",
-                  "CONTACT_SUPPORT",
-                  "RETRY",
-                  "SELECT_SUPPORTED_PAYMENT_METHOD",
-                  "COMPLETE_MANUAL_TOPUP",
-                  "AUTHENTICATE_CARD",
-                  "CONFIGURE_AUTO_TOPUP"
-                ]
-              },
-              "status": {
-                "type": "string",
-                "enum": [
-                  "eligible",
-                  "ineligible",
-                  "unavailable"
-                ]
-              }
-            },
-            "required": [
-              "status",
-              "reason",
-              "recommended_action",
-              "eligible_payment_method_ids",
-              "default_payment_method_id"
-            ]
-          },
-          "payment_methods": {
-            "type": "array",
-            "items": {
-              "properties": {
-                "account_payment_method_id": {
-                  "type": "string"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "is_default": {
-                  "type": "boolean"
-                },
-                "kind": {
-                  "type": "string",
-                  "enum": [
-                    "card",
-                    "wallet",
-                    "unsupported"
-                  ]
-                },
-                "last4": {
-                  "type": "string"
-                },
-                "stripe_payment_method_id": {
-                  "type": "string",
-                  "nullable": true
-                },
-                "wallet_type": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "account_payment_method_id",
-                "stripe_payment_method_id",
-                "kind",
-                "is_default"
-              ],
-              "type": "object"
-            }
-          }
-        },
-        "required": [
-          "contract_version",
-          "evaluated_at",
-          "advisory",
-          "payment_methods",
-          "manual_topup",
-          "auto_topup"
-        ]
-      },
       "aig-billing_GetCreditBalanceResponse": {
         "type": "object",
         "properties": {
@@ -611845,14 +611904,7 @@
             }
           },
           "result": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/aig-billing_GetTopupEligibilityResult"
-              },
-              {
-                "$ref": "#/components/schemas/aig-billing_GetAuthoritativeTopupEligibilityResult"
-              }
-            ]
+            "$ref": "#/components/schemas/aig-billing_GetTopupEligibilityResult"
           },
           "result_info": {
             "type": "object",
@@ -611991,6 +612043,305 @@
           "aig_customer_state",
           "aig_default_payment_method_state",
           "display_payment_method"
+        ]
+      },
+      "aig-billing_GetTopupEligibilityV2Response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "code": {
+                  "type": "number"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "message"
+              ],
+              "type": "object"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "code": {
+                  "type": "number"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "message"
+              ],
+              "type": "object"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/aig-billing_GetTopupEligibilityV2Result"
+          },
+          "result_info": {
+            "type": "object",
+            "properties": {
+              "has_more": {
+                "type": "boolean"
+              },
+              "page": {
+                "type": "number"
+              },
+              "per_page": {
+                "type": "number"
+              },
+              "total_count": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "has_more",
+              "page",
+              "per_page",
+              "total_count"
+            ]
+          },
+          "success": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "result",
+          "errors",
+          "messages"
+        ]
+      },
+      "aig-billing_GetTopupEligibilityV2Result": {
+        "type": "object",
+        "properties": {
+          "auto_topup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "can_configure": {
+                "type": "boolean"
+              },
+              "config": {
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true,
+                "properties": {
+                  "amount_cents": {
+                    "type": "integer"
+                  },
+                  "threshold_cents": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "threshold_cents",
+                  "amount_cents"
+                ]
+              },
+              "limits": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "amount_max_cents": {
+                    "type": "integer"
+                  },
+                  "amount_min_cents": {
+                    "type": "integer"
+                  },
+                  "threshold_min_cents": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "threshold_min_cents",
+                  "amount_min_cents",
+                  "amount_max_cents"
+                ]
+              },
+              "payment_method_id": {
+                "type": "string",
+                "nullable": true
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "first_topup_required",
+                  "not_configured",
+                  "active",
+                  "needs_confirmation",
+                  "stopped"
+                ]
+              },
+              "stopped_reason": {
+                "type": "string",
+                "enum": [
+                  "payment_method_removed",
+                  "payment_method_changed",
+                  "expired_card",
+                  "payment_method_not_supported",
+                  "prepaid_card_not_supported",
+                  "payment_declined",
+                  "amount_out_of_range"
+                ]
+              }
+            },
+            "required": [
+              "state",
+              "can_configure",
+              "config",
+              "payment_method_id",
+              "limits"
+            ]
+          },
+          "contract_version": {
+            "type": "number",
+            "enum": [
+              2
+            ]
+          },
+          "evaluated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "manual_topup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "available": {
+                "type": "boolean"
+              },
+              "default_payment_method_id": {
+                "type": "string",
+                "nullable": true
+              },
+              "limits": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "currency": {
+                    "type": "string",
+                    "enum": [
+                      "USD"
+                    ]
+                  },
+                  "max_cents": {
+                    "type": "integer"
+                  },
+                  "min_cents": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "min_cents",
+                  "max_cents",
+                  "currency"
+                ]
+              }
+            },
+            "required": [
+              "available",
+              "default_payment_method_id",
+              "limits"
+            ]
+          },
+          "payment_methods": {
+            "type": "array",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "brand": {
+                  "type": "string"
+                },
+                "exp_month": {
+                  "type": "integer"
+                },
+                "exp_year": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "is_default": {
+                  "type": "boolean"
+                },
+                "last4": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "card",
+                    "apple_pay",
+                    "google_pay",
+                    "link",
+                    "paypal",
+                    "other"
+                  ]
+                },
+                "unusable_reason": {
+                  "type": "string",
+                  "enum": [
+                    "payment_method_not_supported",
+                    "expired_card",
+                    "prepaid_card_not_supported",
+                    "card_not_3ds_capable"
+                  ]
+                },
+                "usable": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "is_default",
+                "usable"
+              ],
+              "type": "object"
+            }
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "NONE",
+              "CONTRACT_BILLING",
+              "ACCOUNT_RESTRICTED",
+              "ELIGIBILITY_UNAVAILABLE",
+              "NO_ELIGIBLE_PAYMENT_METHOD",
+              "DAILY_LIMIT_REACHED"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "blocked",
+              "unavailable"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "contract_version",
+          "evaluated_at",
+          "status",
+          "reason",
+          "payment_methods",
+          "manual_topup",
+          "auto_topup"
         ]
       },
       "aig-billing_GetTopupLimitsResponse": {
@@ -628669,7 +629020,7 @@
         }
       },
       "cc_PlacementEvent": {
-        "description": "An event within a Placement or a Job.",
+        "description": "An event within a Placement.",
         "type": "object",
         "properties": {
           "details": {
@@ -665826,9 +666177,10 @@
             "x-auditable": true
           },
           "hideOriginalIp": {
-            "description": "Hides the original client IP address from Google when enabled.",
+            "description": "Deprecated. This value is stored but has no effect on traffic. Optional in requests: if omitted, the previously stored value is kept. Responses always include it.",
             "type": "boolean",
             "example": true,
+            "deprecated": true,
             "x-auditable": true
           },
           "measurementId": {
@@ -665848,10 +666200,22 @@
         "required": [
           "enabled",
           "endpoint",
-          "hideOriginalIp",
           "measurementId"
         ],
         "title": "Google Tag Gateway configuration"
+      },
+      "google-tag-gateway_google-tag-gateway-config-response": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/google-tag-gateway_google-tag-gateway-config"
+          },
+          {
+            "required": [
+              "hideOriginalIp"
+            ],
+            "type": "object"
+          }
+        ]
       },
       "google-tag-gateway_identifier": {
         "description": "Identifier.",
@@ -753965,15 +754329,6 @@
                 "type": "object",
                 "nullable": true,
                 "properties": {
-                  "destinations": {
-                    "description": "A list of destinations where Agents observability data will be exported to.",
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "default": [],
-                    "x-auditable": true
-                  },
                   "enabled": {
                     "description": "Whether Agents observability is enabled for the Preview.",
                     "type": "boolean",
@@ -754654,7 +755009,12 @@
             "x-auditable": true
           },
           "bindings": {
-            "$ref": "#/components/schemas/workers_bindings"
+            "description": "Bindings attached to the version, as an array of objects that\neach name themselves. A create or patch request can send\n`bindings` or `env`, and a read returns both. A request that\nsends both fails with error 10021.\n",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/workers_bindings"
+              }
+            ]
           },
           "cache_options": {
             "$ref": "#/components/schemas/workers_cache_options"
@@ -754679,6 +755039,17 @@
             "format": "date-time",
             "readOnly": true,
             "x-auditable": true
+          },
+          "env": {
+            "description": "Bindings attached to the version, as a map from binding name to\nbinding. Each value holds the same payload as the matching\n`bindings` entry, without `name`. Reads derive `env` from\n`bindings`, so the two fields always list the same bindings and\n`env` carries nothing extra. Reads omit secret values in both\nfields.\n\nA create or patch request can send `env` or `bindings`, and a\nrequest that sends both fails with error 10021. To copy a\nversion, drop `env` from the read before sending it back, and\nuse `inherit` bindings for secrets. In a patch, `env` entries\nmerge one binding at a time: set an entry to `null` to remove\nthat binding, while a `bindings` array replaces the whole set.\n",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/workers_env"
+              }
+            ],
+            "x-stainless-skip": [
+              "terraform"
+            ]
           },
           "exports": {
             "description": "Declarative exports for the version, including Durable Object\nclasses (with their `storage` backend) and named Worker\nentrypoints. On reads, tombstoned lifecycle entries are\nomitted, so only live exports (`created` and\n`expecting-transfer`) are returned. `exports` and `migrations`\nare mutually exclusive on upload.\n",
@@ -754906,15 +755277,6 @@
                 "type": "object",
                 "nullable": true,
                 "properties": {
-                  "destinations": {
-                    "description": "A list of destinations where Agents observability data will be exported to.",
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "default": [],
-                    "x-auditable": true
-                  },
                   "enabled": {
                     "description": "Whether Agents observability is enabled for the Worker.",
                     "type": "boolean",
@@ -758765,15 +759127,6 @@
             "type": "object",
             "nullable": true,
             "properties": {
-              "destinations": {
-                "description": "A list of destinations where Agents observability data will be exported to.",
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "default": [],
-                "x-auditable": true
-              },
               "enabled": {
                 "description": "Whether Agents observability is enabled for the Worker.",
                 "type": "boolean",
@@ -758923,17 +759276,6 @@
             "type": "object",
             "nullable": true,
             "properties": {
-              "destinations": {
-                "description": "A list of destinations where Agents observability data will be exported to.",
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "example": [
-                  "cloudflare"
-                ],
-                "x-auditable": true
-              },
               "enabled": {
                 "description": "Whether Agents observability is enabled for the Worker.",
                 "type": "boolean",
@@ -763831,6 +764173,9 @@
               "protocol_detection": {
                 "$ref": "#/components/schemas/zero-trust-gateway_protocol-detection"
               },
+              "regions": {
+                "$ref": "#/components/schemas/zero-trust-gateway_regions-settings"
+              },
               "sandbox": {
                 "$ref": "#/components/schemas/zero-trust-gateway_sandbox"
               },
@@ -763909,6 +764254,12 @@
       "zero-trust-gateway_generate-cert-request": {
         "type": "object",
         "properties": {
+          "region": {
+            "description": "Pin the generated certificate authority's key material to one of the account's selected Data Localization Suite regions. **Important**: This field is only settable during certificate creation. Certificates become immutable after creation - use the `/activate` and `/deactivate` endpoints to manage certificate lifecycle.",
+            "type": "string",
+            "example": "wnam",
+            "x-auditable": true
+          },
           "validity_period_days": {
             "description": "Sets the certificate validity period in days (range: 1-10,950 days / ~30 years). Defaults to 1,825 days (5 years). **Important**: This field is only settable during the certificate creation.  Certificates becomes immutable after creation - use the `/activate` and `/deactivate` endpoints to manage certificate lifecycle.",
             "type": "integer",
@@ -764691,11 +765042,45 @@
         "readOnly": true
       },
       "zero-trust-gateway_region": {
-        "description": "Indicate the read-only region the certificate authority's key material is pinned to. Omitted for certificates that were created without a region.",
+        "description": "Indicate the read-only Data Localization Suite region the certificate authority's key material is pinned to. This corresponds to one of the regions selected for the account via the account region setting (`GET`/`PUT /accounts/{account_id}/zerotrust/region`). Omitted for certificates that were created without a region.",
         "type": "string",
         "example": "wnam",
         "readOnly": true,
         "x-auditable": true
+      },
+      "zero-trust-gateway_region-setting": {
+        "description": "Specify the TLS interception and certificate settings Gateway applies to traffic routed through this region.",
+        "type": "object",
+        "properties": {
+          "certificate": {
+            "$ref": "#/components/schemas/zero-trust-gateway_certificate-settings"
+          },
+          "tls_decrypt": {
+            "$ref": "#/components/schemas/zero-trust-gateway_tls-settings"
+          }
+        },
+        "required": [
+          "tls_decrypt"
+        ]
+      },
+      "zero-trust-gateway_regions-settings": {
+        "description": "Specify per-region TLS interception and certificate settings for Gateway, keyed by Data Localization Suite region key. Relies on the Zero Trust account region setting  (`GET`/`PUT /accounts/{account_id}/zerotrust/region`) - the account must select a region before Gateway applies these settings for it.",
+        "type": "object",
+        "example": {
+          "wnam": {
+            "certificate": {
+              "id": "d1b364c5-1311-466e-a194-f0e943e0799f"
+            },
+            "tls_decrypt": {
+              "enabled": true
+            }
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/zero-trust-gateway_region-setting"
+        },
+        "nullable": true,
+        "x-stainless-terraform-configurability": "optional"
       },
       "zero-trust-gateway_response_collection": {
         "type": "object",

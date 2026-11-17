@@ -49,15 +49,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayMessagesItem> Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; AdditionalData?.Remove("messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayMessagesItem> _explicitNullValueMessages = default!;
 #endif
-        /// <summary>Google Tag Gateway configuration for a zone.</summary>
+        /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfig? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfig? _explicitNullValueResult = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfigResponse? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfigResponse? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfig Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfig _explicitNullValueResult = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfigResponse Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfigResponse _explicitNullValueResult = default!;
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; AdditionalData?.Remove("success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfig.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfigResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfigResponse.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayMessagesItem>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfig>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfigResponse>("result", Result);
             writer.WriteBoolValue("success", Success);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

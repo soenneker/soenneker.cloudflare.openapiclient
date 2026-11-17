@@ -31,6 +31,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("compatibility_flags") is { } nullNodeCompatibilityFlags && nullNodeCompatibilityFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompatibilityFlags = null;
             if (parseNode.GetChildNode("containers") is null) { _explicitNullValueContainers = default!; _explicitNullProperties?.Remove("containers"); }
             else if (parseNode.GetChildNode("containers") is { } nullNodeContainers && nullNodeContainers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Containers = null;
+            if (parseNode.GetChildNode("env") is null) { _explicitNullValueEnv = default!; _explicitNullProperties?.Remove("env"); }
+            else if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
             if (parseNode.GetChildNode("exports") is null) { _explicitNullValueExports = default!; _explicitNullProperties?.Remove("exports"); }
             else if (parseNode.GetChildNode("exports") is { } nullNodeExports && nullNodeExports.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exports = null;
             if (parseNode.GetChildNode("exports_reconciliation") is null) { _explicitNullValueExportsReconciliation = default!; _explicitNullProperties?.Remove("exports_reconciliation"); }
@@ -141,6 +143,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>When the version was created.</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
+        /// <summary>Bindings attached to the version, as a map from binding name tobinding. Each value holds the same payload as the matching`bindings` entry, without `name`. Reads derive `env` from`bindings`, so the two fields always list the same bindings and`env` carries nothing extra. Reads omit secret values in bothfields.A create or patch request can send `env` or `bindings`, and arequest that sends both fails with error 10021. To copy aversion, drop `env` from the read before sending it back, anduse `inherit` bindings for secrets. In a patch, `env` entriesmerge one binding at a time: set an entry to `null` to removethat binding, while a `bindings` array replaces the whole set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionEnv? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; AdditionalData?.Remove("env"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionEnv? _explicitNullValueEnv = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionEnv Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; AdditionalData?.Remove("env"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionEnv _explicitNullValueEnv = default!;
+#endif
         /// <summary>Declarative exports for the version, including Durable Objectclasses (with their `storage` backend) and named Workerentrypoints. On reads, tombstoned lifecycle entries areomitted, so only live exports (`created` and`expecting-transfer`) are returned. `exports` and `migrations`are mutually exclusive on upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -290,6 +302,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "containers", n => { Containers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersContainerItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersContainerItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionEnv>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionEnv.CreateFromDiscriminatorValue); } },
                 { "exports", n => { Exports = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionExports>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionExports.CreateFromDiscriminatorValue); } },
                 { "exports_reconciliation", n => { ExportsReconciliation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionExportsReconciliation>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionExportsReconciliation.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
@@ -321,6 +334,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("compatibility_date", CompatibilityDate);
             writer.WriteCollectionOfPrimitiveValues<string>("compatibility_flags", CompatibilityFlags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersContainerItem>("containers", Containers);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionEnv>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionExports>("exports", Exports);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionExportsReconciliation>("exports_reconciliation", ExportsReconciliation);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionLimits>("limits", Limits);

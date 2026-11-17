@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListPortals200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiListPortals200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new MCP portal for managing AI tool access through Cloudflare Access.
+        /// Creates a new MCP portal. Each account supports up to 50 portals, including disabled portals.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortals201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new MCP portal for managing AI tool access through Cloudflare Access.
+        /// Creates a new MCP portal. Each account supports up to 50 portals, including disabled portals.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

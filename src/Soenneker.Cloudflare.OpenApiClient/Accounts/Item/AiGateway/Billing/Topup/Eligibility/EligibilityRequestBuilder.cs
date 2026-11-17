@@ -34,7 +34,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         {
         }
         /// <summary>
-        /// Determine top-up eligibility. Requests without contract_version retain the legacy forwarded-method contract. Explicit contract_version: 2 opts into the gated, read-only authoritative advisory API; forwarded method metadata is not authoritative. No response authorizes a charge.
+        /// Read-only top-up eligibility, contract version 2: the account&apos;s payment methods and whether each can pay for a top-up, whether a manual top-up is available and its limits, and the auto top-up state. Advisory: every top-up checks again. Answers 409 while version 2 is unavailable for the account.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2Response"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 500 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Returns legacy top-up eligibility from forwarded payment methods. Version 2 is read with GET; a body naming contract_version is rejected. No response authorizes a charge.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -43,7 +76,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupEligibilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,14 +92,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
-                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Determine top-up eligibility. Requests without contract_version retain the legacy forwarded-method contract. Explicit contract_version: 2 opts into the gated, read-only authoritative advisory API; forwarded method metadata is not authoritative. No response authorizes a charge.
+        /// Read-only top-up eligibility, contract version 2: the account&apos;s payment methods and whether each can pay for a top-up, whether a manual top-up is available and its limits, and the auto top-up state. Advisory: every top-up checks again. Answers 409 while version 2 is unavailable for the account.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Returns legacy top-up eligibility from forwarded payment methods. Version 2 is read with GET; a body naming contract_version is rejected. No response authorizes a charge.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

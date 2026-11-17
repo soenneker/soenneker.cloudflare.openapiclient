@@ -462,6 +462,7 @@
             "in": "query",
             "description": "How many abuse reports per page to list",
             "schema": {
+              "minimum": 1,
               "type": "integer"
             }
           },
@@ -900,6 +901,7 @@
             "in": "query",
             "description": "Number of emails per page (default 20, max 100).",
             "schema": {
+              "minimum": 1,
               "type": "integer"
             }
           }
@@ -1097,6 +1099,7 @@
             "in": "query",
             "description": "Number of emails per page (default 20, max 100)",
             "schema": {
+              "minimum": 1,
               "type": "integer"
             }
           }
@@ -1209,6 +1212,7 @@
             "in": "query",
             "description": "How many abuse reports per page to list",
             "schema": {
+              "minimum": 1,
               "type": "integer"
             }
           },
@@ -2114,7 +2118,7 @@
           "MCP Portal"
         ],
         "summary": "Create a new MCP Portal",
-        "description": "Creates a new MCP portal for managing AI tool access through Cloudflare Access.",
+        "description": "Creates a new MCP portal. Each account supports up to 50 portals, including disabled portals.",
         "operationId": "McpPortalsApiCreatePortals",
         "parameters": [
           {
@@ -18892,12 +18896,115 @@
       }
     },
     "/accounts/{accountId}/ai-gateway/billing/topup/eligibility": {
+      "get": {
+        "tags": [
+          "AI Gateway"
+        ],
+        "summary": "Get top-up eligibility (version 2)",
+        "description": "Read-only top-up eligibility, contract version 2: the account\u0027s payment methods and whether each can pay for a top-up, whether a manual top-up is available and its limits, and the auto top-up state. Advisory: every top-up checks again. Answers 409 while version 2 is unavailable for the account.",
+        "operationId": "AigBillingGetTopupEligibility",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "description": "Cloudflare account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Eligibility read.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigBillingErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigBillingErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigBillingErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version 2 is unavailable for this account, including flag fallback.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigBillingErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error, including an auto top-up config that could not be read. The body carries only the generic message.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AigBillingErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-api-token-group": [
+          "Billing Write",
+          "Billing Read"
+        ],
+        "x-cfPlanAvailability": {
+          "business": true,
+          "enterprise": true,
+          "free": true,
+          "pro": true
+        },
+        "x-fern-ignore": true,
+        "x-fern-sdk-group-name": "ai-gateway.billing.topup",
+        "x-fern-sdk-method-name": "get-eligibility"
+      },
       "post": {
         "tags": [
           "AI Gateway"
         ],
         "summary": "Get top-up eligibility",
-        "description": "Determine top-up eligibility. Requests without contract_version retain the legacy forwarded-method contract. Explicit contract_version: 2 opts into the gated, read-only authoritative advisory API; forwarded method metadata is not authoritative. No response authorizes a charge.",
+        "description": "Returns legacy top-up eligibility from forwarded payment methods. Version 2 is read with GET; a body naming contract_version is rejected. No response authorizes a charge.",
         "operationId": "AigBillingTopupEligibility",
         "parameters": [
           {
@@ -18959,16 +19066,6 @@
                 }
               }
             }
-          },
-          "409": {
-            "description": "Explicit V2 is unavailable for this account, including flag fallback.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AigBillingErrorResponse"
-                }
-              }
-            }
           }
         },
         "security": [
@@ -18981,13 +19078,9 @@
           }
         ],
         "x-api-token-group": [
-          "AI Gateway Write"
+          "Billing Write",
+          "Billing Read"
         ],
-        "x-cfPermissionsRequired": {
-          "enum": [
-            "com.cloudflare.api.account.aig"
-          ]
-        },
         "x-cfPlanAvailability": {
           "business": true,
           "enterprise": true,
@@ -77156,7 +77249,7 @@
           "Priority Intelligence Requirements"
         ],
         "summary": "Update a priority intelligence requirement",
-        "description": "Updates a Priority Intelligence Requirement for the authenticated account. Changing the query increments its version; editing the requirement without saving a query marks the query stale. Activating a draft needs a free slot in the active PIR quota; setting \u0060active\u0060 on a PIR the matcher paused resumes it without one. Updates to a structured PIR must send its \u0060revision\u0060 and change its answers through \u0060definition\u0060; its requirement, title and query are generated.",
+        "description": "Updates a Priority Intelligence Requirement for the authenticated account. Changing the query increments its version; editing the requirement without saving a query marks the query stale. Activating a draft needs a free slot in the active PIR quota; setting \u0060active\u0060 on a PIR the matcher paused resumes it without one. Updates to a structured PIR must send its \u0060revision\u0060 and change its answers through \u0060definition\u0060; its requirement, title and query are generated. Sending a \u0060definition\u0060 and \u0060revision\u0060 for a free-form PIR converts it in place: it keeps its ID, status, labels, priority, TLP and match history, and its query, dataset scope and notifications are removed, since structured PIRs are not matched by the PIR matcher and send no notifications. A conversion must not send a \u0060dataset_scope\u0060.",
         "operationId": "PutPirUpdate",
         "parameters": [
           {
@@ -78043,7 +78136,7 @@
           "Requests - Dashboard"
         ],
         "summary": "Get request token quota",
-        "description": "Returns the account\u0027s token quota for the current anniversary quarter: total granted, used, remaining, and the quarter/anniversary boundaries.",
+        "description": "Returns the account\u0027s token quota for the current anniversary quarter: total granted, used, remaining, and the quarter/anniversary boundaries. Also returns the annual allocation, usage, and remaining tokens for the current anniversary year; quarterly remaining controls usage.",
         "operationId": "GetRequestQuota",
         "parameters": [
           {
@@ -78068,7 +78161,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Quota information"
+            "description": "Quota information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetRequestQuota200Response"
+                }
+              }
+            }
           },
           "404": {
             "description": "Project type does not use token billing, or account not found"
@@ -117428,7 +117528,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.allow-policies",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected allow policies and restore normal security scanning and disposition actions for matching emails.",
         "x-stability": "beta"
       },
@@ -117862,7 +117962,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.block-senders",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected blocked sender patterns and stop automatically blocking matching emails based on those rules.",
         "x-stability": "beta"
       },
@@ -118296,7 +118396,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.content-policies",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected content policies and stop evaluating emails against their patterns.",
         "x-stability": "beta"
       },
@@ -118756,7 +118856,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.domains",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may permanently delete protection for the selected email domains. Emails for those domains will no longer be processed by Email Security.",
         "x-stability": "beta"
       },
@@ -119540,7 +119640,7 @@
         "x-fern-availability": "beta",
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "email-security.sending-domain-restrictions",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-delete",
         "x-forge-require-confirmation": "This operation deletes the selected sending domain restrictions and removes TLS enforcement for the specified domains.",
         "x-stability": "beta"
       },
@@ -119927,7 +120027,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.trusted-domains",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected trusted domain patterns and restore normal recent domain and similarity checks for matching emails.",
         "x-stability": "beta"
       },
@@ -120323,7 +120423,7 @@
         ],
         "x-fern-availability": "beta",
         "x-fern-sdk-group-name": "email-security.url-ignore-patterns",
-        "x-fern-sdk-method-name": "batch",
+        "x-fern-sdk-method-name": "bulk-apply",
         "x-forge-require-confirmation": "This operation may delete the selected URL rewrite ignore patterns and cause matching URLs to be rewritten again.",
         "x-stability": "beta"
       },
@@ -130673,7 +130773,7 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "hyperdrive",
-        "x-fern-sdk-method-name": "update",
+        "x-fern-sdk-method-name": "edit",
         "x-forge-params": {
           "mtls.sslmode": {
             "choices": [
@@ -145921,7 +146021,8 @@
             "schema": {
               "maxLength": 4096,
               "type": "string"
-            }
+            },
+            "x-auditable": false
           }
         ],
         "responses": {
@@ -145958,7 +146059,6 @@
           "Logs Write",
           "Logs Read"
         ],
-        "x-auditable": false,
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "logs",
         "x-fern-sdk-method-name": "query-get"
@@ -333690,7 +333790,8 @@
             "schema": {
               "maxLength": 4096,
               "type": "string"
-            }
+            },
+            "x-auditable": false
           }
         ],
         "responses": {
@@ -333727,7 +333828,6 @@
           "Logs Write",
           "Logs Read"
         ],
-        "x-auditable": false,
         "x-fern-ignore": true,
         "x-fern-sdk-group-name": "logs.zone",
         "x-fern-sdk-method-name": "query-get"
@@ -376855,41 +376955,6 @@
           }
         }
       },
-      "AigBillingGetAuthoritativeTopupEligibilityResult": {
-        "required": [
-          "contract_version",
-          "evaluated_at",
-          "advisory",
-          "payment_methods",
-          "manual_topup",
-          "auto_topup"
-        ],
-        "type": "object",
-        "properties": {
-          "advisory": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultAdvisory"
-          },
-          "auto_topup": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultAutoTopup"
-          },
-          "contract_version": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultContractVersion"
-          },
-          "evaluated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "manual_topup": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultManualTopup"
-          },
-          "payment_methods": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultPaymentMethodsItem"
-            }
-          }
-        }
-      },
       "AigBillingGetCreditBalanceResponse": {
         "required": [
           "success",
@@ -377206,7 +377271,7 @@
             }
           },
           "result": {
-            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityResponseResult"
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityResult"
           },
           "result_info": {
             "$ref": "#/components/schemas/AigBillingGetTopupEligibilityResponseResultInfo"
@@ -377258,6 +377323,78 @@
             "example": true
           }
         }
+      },
+      "AigBillingGetTopupEligibilityV2Response": {
+        "required": [
+          "success",
+          "result",
+          "errors",
+          "messages"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResponseErrorsItem"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResponseMessagesItem"
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2Result"
+          },
+          "result_info": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResponseResultInfo"
+          },
+          "success": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResponseSuccess"
+          }
+        }
+      },
+      "AigBillingGetTopupEligibilityV2Result": {
+        "required": [
+          "contract_version",
+          "evaluated_at",
+          "status",
+          "reason",
+          "payment_methods",
+          "manual_topup",
+          "auto_topup"
+        ],
+        "type": "object",
+        "properties": {
+          "auto_topup": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultAutoTopup"
+          },
+          "contract_version": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultContractVersion"
+          },
+          "evaluated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "manual_topup": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultManualTopup"
+          },
+          "payment_methods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultPaymentMethodsItem"
+            }
+          },
+          "reason": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultReason"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultStatus"
+          }
+        },
+        "additionalProperties": false
       },
       "AigBillingGetTopupLimitsResponse": {
         "required": [
@@ -391498,7 +391635,7 @@
             "$ref": "#/components/schemas/CcEventType"
           }
         },
-        "description": "An event within a Placement or a Job."
+        "description": "An event within a Placement."
       },
       "CcPrepareContainerImageRequestBody": {
         "required": [
@@ -422095,7 +422232,6 @@
         "required": [
           "enabled",
           "endpoint",
-          "hideOriginalIp",
           "measurementId"
         ],
         "type": "object",
@@ -422114,8 +422250,9 @@
           },
           "hideOriginalIp": {
             "type": "boolean",
-            "description": "Hides the original client IP address from Google when enabled.",
+            "description": "Deprecated. This value is stored but has no effect on traffic. Optional in requests: if omitted, the previously stored value is kept. Responses always include it.",
             "example": true,
+            "deprecated": true,
             "x-auditable": true
           },
           "measurementId": {
@@ -422133,6 +422270,49 @@
           }
         },
         "description": "Google Tag Gateway configuration for a zone."
+      },
+      "GoogleTagGatewayGoogleTagGatewayConfigResponse": {
+        "required": [
+          "enabled",
+          "endpoint",
+          "measurementId",
+          "hideOriginalIp"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Enables or disables Google Tag Gateway for this zone.",
+            "example": true,
+            "x-auditable": true
+          },
+          "endpoint": {
+            "type": "string",
+            "description": "Specifies the endpoint path for proxying Google Tag Manager requests. Use an absolute path starting with \u0027/\u0027, with no nested paths and alphanumeric characters only (e.g. /metrics).",
+            "example": "/metrics",
+            "x-auditable": true
+          },
+          "hideOriginalIp": {
+            "type": "boolean",
+            "description": "Deprecated. This value is stored but has no effect on traffic. Optional in requests: if omitted, the previously stored value is kept. Responses always include it.",
+            "example": true,
+            "deprecated": true,
+            "x-auditable": true
+          },
+          "measurementId": {
+            "type": "string",
+            "description": "Specify the Google Tag Manager container or measurement ID (e.g. GTM-XXXXXXX or G-XXXXXXXXXX).",
+            "example": "GTM-P2F3N47Q",
+            "x-auditable": true
+          },
+          "setUpTag": {
+            "type": "boolean",
+            "description": "Set up the associated Google Tag on the zone automatically when enabled.",
+            "nullable": true,
+            "example": true,
+            "x-auditable": true
+          }
+        }
       },
       "HealthchecksApiResponseCommonFailure": {
         "required": [
@@ -492020,6 +492200,9 @@
             "readOnly": true,
             "x-auditable": true
           },
+          "env": {
+            "$ref": "#/components/schemas/WorkersVersionEnv"
+          },
           "exports": {
             "$ref": "#/components/schemas/WorkersVersionExports"
           },
@@ -496352,7 +496535,7 @@
           },
           "region": {
             "type": "string",
-            "description": "Indicate the read-only region the certificate authority\u0027s key material is pinned to. Omitted for certificates that were created without a region.",
+            "description": "Indicate the read-only Data Localization Suite region the certificate authority\u0027s key material is pinned to. This corresponds to one of the regions selected for the account via the account region setting (\u0060GET\u0060/\u0060PUT /accounts/{account_id}/zerotrust/region\u0060). Omitted for certificates that were created without a region.",
             "readOnly": true,
             "example": "wnam",
             "x-auditable": true
@@ -497035,6 +497218,12 @@
       "ZeroTrustGatewayGenerateCertRequest": {
         "type": "object",
         "properties": {
+          "region": {
+            "type": "string",
+            "description": "Pin the generated certificate authority\u0027s key material to one of the account\u0027s selected Data Localization Suite regions. **Important**: This field is only settable during certificate creation. Certificates become immutable after creation - use the \u0060/activate\u0060 and \u0060/deactivate\u0060 endpoints to manage certificate lifecycle.",
+            "example": "wnam",
+            "x-auditable": true
+          },
           "validity_period_days": {
             "type": "integer",
             "description": "Sets the certificate validity period in days (range: 1-10,950 days / ~30 years). Defaults to 1,825 days (5 years). **Important**: This field is only settable during the certificate creation.  Certificates becomes immutable after creation - use the \u0060/activate\u0060 and \u0060/deactivate\u0060 endpoints to manage certificate lifecycle.",
@@ -497707,6 +497896,21 @@
         "required": [
           "kind"
         ]
+      },
+      "ZeroTrustGatewayRegionSetting": {
+        "required": [
+          "tls_decrypt"
+        ],
+        "type": "object",
+        "properties": {
+          "certificate": {
+            "$ref": "#/components/schemas/ZeroTrustGatewayCertificateSettings"
+          },
+          "tls_decrypt": {
+            "$ref": "#/components/schemas/ZeroTrustGatewayTlsSettings"
+          }
+        },
+        "description": "Specify the TLS interception and certificate settings Gateway applies to traffic routed through this region."
       },
       "ZeroTrustGatewayResponseCollection": {
         "required": [
@@ -504257,6 +504461,9 @@
             "readOnly": true,
             "x-auditable": true
           },
+          "env": {
+            "$ref": "#/components/schemas/WorkersVersionEnv"
+          },
           "exports": {
             "$ref": "#/components/schemas/WorkersVersionExports"
           },
@@ -504431,6 +504638,9 @@
             "format": "date-time",
             "readOnly": true,
             "x-auditable": true
+          },
+          "env": {
+            "$ref": "#/components/schemas/WorkersVersionEnv"
           },
           "exports": {
             "$ref": "#/components/schemas/WorkersVersionExports"
@@ -511479,16 +511689,6 @@
               "$ref": "#/components/schemas/AdvancedDdosProtectionMessagesItem"
             },
             "example": []
-          }
-        ]
-      },
-      "AigBillingGetTopupEligibilityResponseResult": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityResult"
-          },
-          {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResult"
           }
         ]
       },
@@ -523911,6 +524111,22 @@
         ],
         "description": "Placement configuration used when creating new Previews."
       },
+      "WorkersVersionEnv": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/WorkersEnvBindingItem"
+        },
+        "description": "Bindings attached to the version, as a map from binding name to\nbinding. Each value holds the same payload as the matching\n\u0060bindings\u0060 entry, without \u0060name\u0060. Reads derive \u0060env\u0060 from\n\u0060bindings\u0060, so the two fields always list the same bindings and\n\u0060env\u0060 carries nothing extra. Reads omit secret values in both\nfields.\n\nA create or patch request can send \u0060env\u0060 or \u0060bindings\u0060, and a\nrequest that sends both fails with error 10021. To copy a\nversion, drop \u0060env\u0060 from the read before sending it back, and\nuse \u0060inherit\u0060 bindings for secrets. In a patch, \u0060env\u0060 entries\nmerge one binding at a time: set an entry to \u0060null\u0060 to remove\nthat binding, while a \u0060bindings\u0060 array replaces the whole set.\n",
+        "example": {
+          "MY_ENV_VAR": {
+            "text": "my_data",
+            "type": "plain_text"
+          }
+        },
+        "x-stainless-skip": [
+          "terraform"
+        ]
+      },
       "WorkersVersionExports": {
         "maxProperties": 100,
         "type": "object",
@@ -532202,101 +532418,6 @@
           }
         }
       },
-      "AigBillingGetAuthoritativeTopupEligibilityResultAutoTopup": {
-        "required": [
-          "status",
-          "reason",
-          "recommended_action",
-          "eligible_payment_method_ids",
-          "default_payment_method_id"
-        ],
-        "type": "object",
-        "properties": {
-          "default_payment_method_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "eligible_payment_method_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "reason": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupReason"
-          },
-          "recommended_action": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupRecommendedAction"
-          },
-          "status": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupStatus"
-          }
-        }
-      },
-      "AigBillingGetAuthoritativeTopupEligibilityResultManualTopup": {
-        "required": [
-          "status",
-          "reason",
-          "recommended_action",
-          "eligible_payment_method_ids",
-          "default_payment_method_id"
-        ],
-        "type": "object",
-        "properties": {
-          "default_payment_method_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "eligible_payment_method_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "reason": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultManualTopupReason"
-          },
-          "recommended_action": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultManualTopupRecommendedAction"
-          },
-          "status": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultManualTopupStatus"
-          }
-        }
-      },
-      "AigBillingGetAuthoritativeTopupEligibilityResultPaymentMethodsItem": {
-        "required": [
-          "account_payment_method_id",
-          "stripe_payment_method_id",
-          "kind",
-          "is_default"
-        ],
-        "type": "object",
-        "properties": {
-          "account_payment_method_id": {
-            "type": "string"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "is_default": {
-            "type": "boolean"
-          },
-          "kind": {
-            "$ref": "#/components/schemas/AigBillingGetAuthoritativeTopupEligibilityResultPaymentMethodsItemKind"
-          },
-          "last4": {
-            "type": "string"
-          },
-          "stripe_payment_method_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "wallet_type": {
-            "type": "string"
-          }
-        }
-      },
       "AigBillingGetCreditBalanceResponseErrorsItem": {
         "required": [
           "code",
@@ -532814,6 +532935,151 @@
         },
         "description": "Card to reference in the UI, e.g. \u0022use card ending 1234\u0022.",
         "nullable": true
+      },
+      "AigBillingGetTopupEligibilityV2ResponseErrorsItem": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "AigBillingGetTopupEligibilityV2ResponseMessagesItem": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "AigBillingGetTopupEligibilityV2ResponseResultInfo": {
+        "required": [
+          "has_more",
+          "page",
+          "per_page",
+          "total_count"
+        ],
+        "type": "object",
+        "properties": {
+          "has_more": {
+            "type": "boolean"
+          },
+          "page": {
+            "type": "number"
+          },
+          "per_page": {
+            "type": "number"
+          },
+          "total_count": {
+            "type": "number"
+          }
+        }
+      },
+      "AigBillingGetTopupEligibilityV2ResultAutoTopup": {
+        "required": [
+          "state",
+          "can_configure",
+          "config",
+          "payment_method_id",
+          "limits"
+        ],
+        "type": "object",
+        "properties": {
+          "can_configure": {
+            "type": "boolean"
+          },
+          "config": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultAutoTopupConfig"
+          },
+          "limits": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultAutoTopupLimits"
+          },
+          "payment_method_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultAutoTopupState"
+          },
+          "stopped_reason": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultAutoTopupStoppedReason"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AigBillingGetTopupEligibilityV2ResultManualTopup": {
+        "required": [
+          "available",
+          "default_payment_method_id",
+          "limits"
+        ],
+        "type": "object",
+        "properties": {
+          "available": {
+            "type": "boolean"
+          },
+          "default_payment_method_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "limits": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultManualTopupLimits"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AigBillingGetTopupEligibilityV2ResultPaymentMethodsItem": {
+        "required": [
+          "id",
+          "type",
+          "is_default",
+          "usable"
+        ],
+        "type": "object",
+        "properties": {
+          "brand": {
+            "type": "string"
+          },
+          "exp_month": {
+            "type": "integer"
+          },
+          "exp_year": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "is_default": {
+            "type": "boolean"
+          },
+          "last4": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemType"
+          },
+          "unusable_reason": {
+            "$ref": "#/components/schemas/AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemUnusableReason"
+          },
+          "usable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
       },
       "AigBillingGetTopupLimitsResponseErrorsItem": {
         "required": [
@@ -541280,15 +541546,6 @@
       "WorkersObservabilityAgents": {
         "type": "object",
         "properties": {
-          "destinations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of destinations where Agents observability data will be exported to.",
-            "default": [],
-            "x-auditable": true
-          },
           "enabled": {
             "type": "boolean",
             "description": "Whether Agents observability is enabled for the Worker.",
@@ -541405,17 +541662,6 @@
       "WorkersObservability2Agents": {
         "type": "object",
         "properties": {
-          "destinations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of destinations where Agents observability data will be exported to.",
-            "example": [
-              "cloudflare"
-            ],
-            "x-auditable": true
-          },
           "enabled": {
             "type": "boolean",
             "description": "Whether Agents observability is enabled for the Worker.",
@@ -542018,6 +542264,9 @@
           },
           "protocol_detection": {
             "$ref": "#/components/schemas/ZeroTrustGatewayProtocolDetection"
+          },
+          "regions": {
+            "$ref": "#/components/schemas/ZeroTrustGatewayGatewayAccountSettingsSettingsRegions"
           },
           "sandbox": {
             "$ref": "#/components/schemas/ZeroTrustGatewaySandbox"
@@ -547838,6 +548087,63 @@
           }
         }
       },
+      "AigBillingGetTopupEligibilityV2ResultAutoTopupConfig": {
+        "required": [
+          "threshold_cents",
+          "amount_cents"
+        ],
+        "type": "object",
+        "properties": {
+          "amount_cents": {
+            "type": "integer"
+          },
+          "threshold_cents": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false,
+        "nullable": true
+      },
+      "AigBillingGetTopupEligibilityV2ResultAutoTopupLimits": {
+        "required": [
+          "threshold_min_cents",
+          "amount_min_cents",
+          "amount_max_cents"
+        ],
+        "type": "object",
+        "properties": {
+          "amount_max_cents": {
+            "type": "integer"
+          },
+          "amount_min_cents": {
+            "type": "integer"
+          },
+          "threshold_min_cents": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AigBillingGetTopupEligibilityV2ResultManualTopupLimits": {
+        "required": [
+          "min_cents",
+          "max_cents",
+          "currency"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "$ref": "#/components/schemas/UsdCurrency"
+          },
+          "max_cents": {
+            "type": "integer"
+          },
+          "min_cents": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      },
       "AlexandriaDeleteApplicationConflictResponseErrorsItemMeta": {
         "required": [
           "references"
@@ -549477,15 +549783,6 @@
       "WorkersPreviewObservabilityAgents": {
         "type": "object",
         "properties": {
-          "destinations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of destinations where Agents observability data will be exported to.",
-            "default": [],
-            "x-auditable": true
-          },
           "enabled": {
             "type": "boolean",
             "description": "Whether Agents observability is enabled for the Preview.",
@@ -549623,15 +549920,6 @@
       "WorkersWorkerObservabilityAgents": {
         "type": "object",
         "properties": {
-          "destinations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of destinations where Agents observability data will be exported to.",
-            "default": [],
-            "x-auditable": true
-          },
           "enabled": {
             "type": "boolean",
             "description": "Whether Agents observability is enabled for the Worker.",
@@ -556516,11 +556804,8 @@
         "type": "object",
         "properties": {
           "contract_version": {
-            "$ref": "#/components/schemas/AigBillingTopupEligibilityRequestContractVersion"
-          },
-          "payment_method_id": {
-            "maxLength": 255,
-            "type": "string"
+            "type": "integer",
+            "description": "Not accepted: version 2 is read with GET. Any value answers 400."
           },
           "payment_methods": {
             "maxItems": 100,
@@ -560105,12 +560390,16 @@
           },
           "summarization": {
             "type": "boolean",
+            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
             "default": false,
+            "deprecated": true,
             "x-auditable": true
           },
           "summarization_model": {
             "type": "string",
+            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
             "nullable": true,
+            "deprecated": true,
             "x-auditable": true
           },
           "sync_interval": {
@@ -560123,7 +560412,9 @@
           },
           "system_prompt_index_summarization": {
             "type": "string",
+            "description": "Deprecated and has no effect. Use indexing_options.file_summary instead.",
             "nullable": true,
+            "deprecated": true,
             "x-auditable": true
           },
           "system_prompt_rewrite_query": {
@@ -561746,12 +562037,16 @@
           },
           "summarization": {
             "type": "boolean",
+            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
             "default": false,
+            "deprecated": true,
             "x-auditable": true
           },
           "summarization_model": {
             "type": "string",
+            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
             "nullable": true,
+            "deprecated": true,
             "x-auditable": true
           },
           "sync_interval": {
@@ -561764,7 +562059,9 @@
           },
           "system_prompt_index_summarization": {
             "type": "string",
+            "description": "Deprecated and has no effect. Use indexing_options.file_summary instead.",
             "nullable": true,
+            "deprecated": true,
             "x-auditable": true
           },
           "system_prompt_rewrite_query": {
@@ -566981,6 +567278,7 @@
             "type": "string"
           },
           "name": {
+            "maxLength": 256,
             "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$",
             "type": "string"
           },
@@ -568253,6 +568551,7 @@
             "type": "string"
           },
           "name": {
+            "maxLength": 256,
             "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$",
             "type": "string"
           },
@@ -578416,7 +578715,7 @@
         "properties": {
           "autoCreateType": {
             "type": "boolean",
-            "description": "Global flag to automatically create indicator types if they don\u0027t exist. Individual indicators can override this with their own autoCreateType flag."
+            "description": "Global flag to automatically create indicator types if they don\u0027t exist. Individual indicators can override this with their own autoCreateType flag. When false, a non-analytics dataset still accepts pre-approved types (the same list event create accepts, such as BITCOIN or ERC-20) and registers them on first use. Analytics datasets do not check registered types."
           },
           "indicators": {
             "type": "array",
@@ -578461,7 +578760,7 @@
         "properties": {
           "autoCreateType": {
             "type": "boolean",
-            "description": "If true, automatically create the indicator type if it doesn\u0027t exist. If false (default), throw an error when the indicator type doesn\u0027t exist."
+            "description": "If true, automatically create the indicator type if it doesn\u0027t exist. If false (default), reject an indicator type the dataset has not registered, unless the type is pre-approved (the same list event create accepts, such as BITCOIN or ERC-20), in which case it is registered on first use. Direct create applies this check to analytics datasets too. Bulk create skips it for analytics datasets."
           },
           "indicatorType": {
             "type": "string",
@@ -588210,7 +588509,7 @@
           "revision": {
             "minimum": 1,
             "type": "integer",
-            "description": "The \u0060revision\u0060 the change is based on. Required for structured PIRs; a different stored revision returns 409."
+            "description": "The \u0060revision\u0060 the change is based on. Required for structured PIRs and when sending a \u0060definition\u0060; a different stored revision returns 409."
           },
           "status": {
             "$ref": "#/components/schemas/PutPirUpdateRequestStatus"
@@ -588618,6 +588917,21 @@
             "items": {
               "$ref": "#/components/schemas/GetDashboardMetadataFieldList200ResponseDataItem"
             }
+          },
+          "success": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GetRequestQuota200Response": {
+        "required": [
+          "success",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "result": {
+            "$ref": "#/components/schemas/GetRequestQuota200ResponseResult"
           },
           "success": {
             "type": "boolean"
@@ -660347,7 +660661,7 @@
             "$ref": "#/components/schemas/GoogleTagGatewayApiResponseCommonSuccess"
           },
           "result": {
-            "$ref": "#/components/schemas/GoogleTagGatewayGoogleTagGatewayConfig"
+            "$ref": "#/components/schemas/GoogleTagGatewayGoogleTagGatewayConfigResponse"
           }
         }
       },
@@ -660377,7 +660691,7 @@
             "$ref": "#/components/schemas/GoogleTagGatewayApiResponseCommonSuccess"
           },
           "result": {
-            "$ref": "#/components/schemas/GoogleTagGatewayGoogleTagGatewayConfig"
+            "$ref": "#/components/schemas/GoogleTagGatewayGoogleTagGatewayConfigResponse"
           }
         }
       },
@@ -686434,6 +686748,9 @@
             "description": "Version of the off-session auto-top-up consent accepted by the user.",
             "example": "auto-topup-v1"
           },
+          "contract_version": {
+            "$ref": "#/components/schemas/AigBillingSetTopupConfigRequestAnyOf2ContractVersion"
+          },
           "payment_method_id": {
             "type": "string",
             "description": "Card to authenticate for future automatic top-ups.",
@@ -695517,7 +695834,7 @@
             "$ref": "#/components/schemas/CloudforceOneEventsPirDefinitionOneOf2"
           }
         ],
-        "description": "Replaces a structured PIR\u0027s definition. Free-form PIRs cannot be converted yet.",
+        "description": "Replaces a structured PIR\u0027s definition, or converts a free-form PIR to a structured one in place. Requires \u0060revision\u0060 and \u0060based_on\u0060.",
         "discriminator": {
           "propertyName": "mode",
           "mapping": {
@@ -697798,7 +698115,7 @@
           },
           "region": {
             "type": "string",
-            "description": "Indicate the read-only region the certificate authority\u0027s key material is pinned to. Omitted for certificates that were created without a region.",
+            "description": "Indicate the read-only Data Localization Suite region the certificate authority\u0027s key material is pinned to. This corresponds to one of the regions selected for the account via the account region setting (\u0060GET\u0060/\u0060PUT /accounts/{account_id}/zerotrust/region\u0060). Omitted for certificates that were created without a region.",
             "readOnly": true,
             "example": "wnam",
             "x-auditable": true
@@ -697913,7 +698230,7 @@
           },
           "region": {
             "type": "string",
-            "description": "Indicate the read-only region the certificate authority\u0027s key material is pinned to. Omitted for certificates that were created without a region.",
+            "description": "Indicate the read-only Data Localization Suite region the certificate authority\u0027s key material is pinned to. This corresponds to one of the regions selected for the account via the account region setting (\u0060GET\u0060/\u0060PUT /accounts/{account_id}/zerotrust/region\u0060). Omitted for certificates that were created without a region.",
             "readOnly": true,
             "example": "wnam",
             "x-auditable": true
@@ -698028,7 +698345,7 @@
           },
           "region": {
             "type": "string",
-            "description": "Indicate the read-only region the certificate authority\u0027s key material is pinned to. Omitted for certificates that were created without a region.",
+            "description": "Indicate the read-only Data Localization Suite region the certificate authority\u0027s key material is pinned to. This corresponds to one of the regions selected for the account via the account region setting (\u0060GET\u0060/\u0060PUT /accounts/{account_id}/zerotrust/region\u0060). Omitted for certificates that were created without a region.",
             "readOnly": true,
             "example": "wnam",
             "x-auditable": true
@@ -698143,7 +698460,7 @@
           },
           "region": {
             "type": "string",
-            "description": "Indicate the read-only region the certificate authority\u0027s key material is pinned to. Omitted for certificates that were created without a region.",
+            "description": "Indicate the read-only Data Localization Suite region the certificate authority\u0027s key material is pinned to. This corresponds to one of the regions selected for the account via the account region setting (\u0060GET\u0060/\u0060PUT /accounts/{account_id}/zerotrust/region\u0060). Omitted for certificates that were created without a region.",
             "readOnly": true,
             "example": "wnam",
             "x-auditable": true
@@ -698258,7 +698575,7 @@
           },
           "region": {
             "type": "string",
-            "description": "Indicate the read-only region the certificate authority\u0027s key material is pinned to. Omitted for certificates that were created without a region.",
+            "description": "Indicate the read-only Data Localization Suite region the certificate authority\u0027s key material is pinned to. This corresponds to one of the regions selected for the account via the account region setting (\u0060GET\u0060/\u0060PUT /accounts/{account_id}/zerotrust/region\u0060). Omitted for certificates that were created without a region.",
             "readOnly": true,
             "example": "wnam",
             "x-auditable": true
@@ -734916,6 +735233,25 @@
         },
         "description": "Object where keys are purpose alpha-numeric IDs."
       },
+      "ZeroTrustGatewayGatewayAccountSettingsSettingsRegions": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ZeroTrustGatewayRegionSetting"
+        },
+        "description": "Specify per-region TLS interception and certificate settings for Gateway, keyed by Data Localization Suite region key. Relies on the Zero Trust account region setting  (\u0060GET\u0060/\u0060PUT /accounts/{account_id}/zerotrust/region\u0060) - the account must select a region before Gateway applies these settings for it.",
+        "nullable": true,
+        "example": {
+          "wnam": {
+            "certificate": {
+              "id": "d1b364c5-1311-466e-a194-f0e943e0799f"
+            },
+            "tls_decrypt": {
+              "enabled": true
+            }
+          }
+        },
+        "x-stainless-terraform-configurability": "optional"
+      },
       "AccessCreateResponseAllOf2ResultTags": {
         "maxProperties": 5,
         "type": "object",
@@ -744036,11 +744372,15 @@
             "type": "string"
           },
           "summarization": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
+            "deprecated": true
           },
           "summarization_model": {
             "type": "string",
-            "nullable": true
+            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
+            "nullable": true,
+            "deprecated": true
           },
           "sync_interval": {
             "$ref": "#/components/schemas/AiSearchListInstances200ResponseResultItemSyncInterval"
@@ -744051,7 +744391,9 @@
           },
           "system_prompt_index_summarization": {
             "type": "string",
-            "nullable": true
+            "description": "Deprecated and has no effect. Use indexing_options.file_summary instead.",
+            "nullable": true,
+            "deprecated": true
           },
           "system_prompt_rewrite_query": {
             "type": "string",
@@ -744154,6 +744496,11 @@
       "AiSearchCreateInstanceRequestIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchCreateInstanceRequestIndexingOptionsKeywordTokenizer"
           },
@@ -745049,6 +745396,11 @@
       "AiSearchUpdateInstanceRequestIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchUpdateInstanceRequestIndexingOptionsKeywordTokenizer"
           },
@@ -746570,11 +746922,15 @@
             "type": "string"
           },
           "summarization": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
+            "deprecated": true
           },
           "summarization_model": {
             "type": "string",
-            "nullable": true
+            "description": "Deprecated and ignored during indexing and search; changing it still re-indexes existing files on the next sync. Use indexing_options.file_summary instead.",
+            "nullable": true,
+            "deprecated": true
           },
           "sync_interval": {
             "$ref": "#/components/schemas/AiSearchNamespaceListInstances200ResponseResultItemSyncInterval"
@@ -746585,7 +746941,9 @@
           },
           "system_prompt_index_summarization": {
             "type": "string",
-            "nullable": true
+            "description": "Deprecated and has no effect. Use indexing_options.file_summary instead.",
+            "nullable": true,
+            "deprecated": true
           },
           "system_prompt_rewrite_query": {
             "type": "string",
@@ -746688,6 +747046,11 @@
       "AiSearchNamespaceCreateInstanceRequestIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchNamespaceCreateInstanceRequestIndexingOptionsKeywordTokenizer"
           },
@@ -747617,6 +747980,11 @@
       "AiSearchNamespaceUpdateInstanceRequestIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchNamespaceUpdateInstanceRequestIndexingOptionsKeywordTokenizer"
           },
@@ -763974,7 +764342,7 @@
         "properties": {
           "autoCreateType": {
             "type": "boolean",
-            "description": "If true, automatically create the indicator type if it doesn\u0027t exist. If false (default), throw an error when the indicator type doesn\u0027t exist."
+            "description": "If true, automatically create the indicator type if it doesn\u0027t exist. If false (default), reject an indicator type the dataset has not registered, unless the type is pre-approved (the same list event create accepts, such as BITCOIN or ERC-20), in which case it is registered on first use. Direct create applies this check to analytics datasets too. Bulk create skips it for analytics datasets."
           },
           "indicatorType": {
             "type": "string",
@@ -770928,6 +771296,61 @@
           },
           "validation": {
             "$ref": "#/components/schemas/GetDashboardMetadataFieldList200ResponseDataItemValidation"
+          }
+        }
+      },
+      "GetRequestQuota200ResponseResult": {
+        "required": [
+          "annual_allocation",
+          "annual_used",
+          "annual_remaining",
+          "quota",
+          "used",
+          "remaining",
+          "quarter_start",
+          "quarter_end",
+          "anniversary_date"
+        ],
+        "type": "object",
+        "properties": {
+          "anniversary_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "annual_allocation": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "annual_remaining": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Informational annual allocation remaining; quarterly remaining controls usage"
+          },
+          "annual_used": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Tokens used during the current account anniversary year"
+          },
+          "quarter_end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "quarter_start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "quota": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Quarterly token allocation"
+          },
+          "remaining": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "used": {
+            "minimum": 0,
+            "type": "integer"
           }
         }
       },
@@ -807925,6 +808348,10 @@
       "AiSearchListInstances200ResponseResultItemIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false."
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchListInstances200ResponseResultItemIndexingOptionsKeywordTokenizer"
           },
@@ -808199,6 +808626,11 @@
       "AiSearchCreateInstance201ResponseResultIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchCreateInstance201ResponseResultIndexingOptionsKeywordTokenizer"
           },
@@ -808395,6 +808827,11 @@
       "AiSearchDeleteInstance200ResponseResultIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer"
           },
@@ -808591,6 +809028,11 @@
       "AiSearchFetchInstance200ResponseResultIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchFetchInstance200ResponseResultIndexingOptionsKeywordTokenizer"
           },
@@ -808905,6 +809347,11 @@
       "AiSearchUpdateInstance200ResponseResultIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchUpdateInstance200ResponseResultIndexingOptionsKeywordTokenizer"
           },
@@ -809640,6 +810087,10 @@
       "AiSearchNamespaceListInstances200ResponseResultItemIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false."
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchNamespaceListInstances200ResponseResultItemIndexingOptionsKeywordTokenizer"
           },
@@ -809914,6 +810365,11 @@
       "AiSearchNamespaceCreateInstance201ResponseResultIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchNamespaceCreateInstance201ResponseResultIndexingOptionsKeywordTokenizer"
           },
@@ -810110,6 +810566,11 @@
       "AiSearchNamespaceDeleteInstance200ResponseResultIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchNamespaceDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer"
           },
@@ -810306,6 +810767,11 @@
       "AiSearchNamespaceFetchInstance200ResponseResultIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchNamespaceFetchInstance200ResponseResultIndexingOptionsKeywordTokenizer"
           },
@@ -810620,6 +811086,11 @@
       "AiSearchNamespaceUpdateInstance200ResponseResultIndexingOptions": {
         "type": "object",
         "properties": {
+          "file_summary": {
+            "type": "boolean",
+            "description": "Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item\u0027s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance\u0027s AI Gateway. Changing this triggers a full re-index. Defaults to false.",
+            "default": false
+          },
           "keyword_tokenizer": {
             "$ref": "#/components/schemas/AiSearchNamespaceUpdateInstance200ResponseResultIndexingOptionsKeywordTokenizer"
           },
@@ -884750,18 +885221,6 @@
         ],
         "type": "boolean"
       },
-      "AigBillingGetAuthoritativeTopupEligibilityResultAdvisory": {
-        "enum": [
-          true
-        ],
-        "type": "boolean"
-      },
-      "AigBillingGetAuthoritativeTopupEligibilityResultContractVersion": {
-        "enum": [
-          2
-        ],
-        "type": "number"
-      },
       "AigBillingGetCreditBalanceResponseSuccess": {
         "enum": [
           true
@@ -885015,6 +885474,85 @@
             {
               "value": "RETRY",
               "name": "Retry"
+            }
+          ]
+        }
+      },
+      "AigBillingGetTopupEligibilityV2ResponseSuccess": {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      },
+      "AigBillingGetTopupEligibilityV2ResultContractVersion": {
+        "enum": [
+          2
+        ],
+        "type": "number"
+      },
+      "AigBillingGetTopupEligibilityV2ResultReason": {
+        "enum": [
+          "NONE",
+          "CONTRACT_BILLING",
+          "ACCOUNT_RESTRICTED",
+          "ELIGIBILITY_UNAVAILABLE",
+          "NO_ELIGIBLE_PAYMENT_METHOD",
+          "DAILY_LIMIT_REACHED"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AigBillingGetTopupEligibilityV2ResultReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "NONE",
+              "name": "None"
+            },
+            {
+              "value": "CONTRACT_BILLING",
+              "name": "ContractBilling"
+            },
+            {
+              "value": "ACCOUNT_RESTRICTED",
+              "name": "AccountRestricted"
+            },
+            {
+              "value": "ELIGIBILITY_UNAVAILABLE",
+              "name": "EligibilityUnavailable"
+            },
+            {
+              "value": "NO_ELIGIBLE_PAYMENT_METHOD",
+              "name": "NoEligiblePaymentMethod"
+            },
+            {
+              "value": "DAILY_LIMIT_REACHED",
+              "name": "DailyLimitReached"
+            }
+          ]
+        }
+      },
+      "AigBillingGetTopupEligibilityV2ResultStatus": {
+        "enum": [
+          "ready",
+          "blocked",
+          "unavailable"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AigBillingGetTopupEligibilityV2ResultStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ready",
+              "name": "Ready"
+            },
+            {
+              "value": "blocked",
+              "name": "Blocked"
+            },
+            {
+              "value": "unavailable",
+              "name": "Unavailable"
             }
           ]
         }
@@ -908056,351 +908594,100 @@
           ]
         }
       },
-      "AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupReason": {
+      "AigBillingGetTopupEligibilityV2ResultAutoTopupState": {
         "enum": [
-          "ELIGIBLE",
-          "NO_ACCOUNT_PAYMENT_METHOD",
-          "UNSUPPORTED_ACCOUNT_PAYMENT_METHOD",
-          "ACCOUNT_PAYMENT_METHOD_NOT_DEFAULT",
-          "ACCOUNT_PAYMENT_METHOD_NOT_LINKED_TO_AIG",
-          "CONTRACT_BILLING_NOT_SELF_SERVE",
-          "ELIGIBILITY_UNAVAILABLE",
-          "INVALID_PAYMENT_METHOD_SELECTION",
-          "PAYMENT_METHOD_EXPIRED",
-          "FIRST_TOPUP_REQUIRED",
-          "AUTO_TOPUP_SETUP_REQUIRED",
-          "AUTO_TOPUP_NOT_CONFIGURED",
-          "ACCOUNT_PAYMENT_METHOD_DEFAULT_MISSING",
-          "ACCOUNT_POLICY_UNAVAILABLE"
+          "first_topup_required",
+          "not_configured",
+          "active",
+          "needs_confirmation",
+          "stopped"
         ],
         "type": "string",
         "x-ms-enum": {
-          "name": "AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupReason",
+          "name": "AigBillingGetTopupEligibilityV2ResultAutoTopupState",
           "modelAsString": false,
           "values": [
             {
-              "value": "ELIGIBLE",
-              "name": "Eligible"
-            },
-            {
-              "value": "NO_ACCOUNT_PAYMENT_METHOD",
-              "name": "NoAccountPaymentMethod"
-            },
-            {
-              "value": "UNSUPPORTED_ACCOUNT_PAYMENT_METHOD",
-              "name": "UnsupportedAccountPaymentMethod"
-            },
-            {
-              "value": "ACCOUNT_PAYMENT_METHOD_NOT_DEFAULT",
-              "name": "AccountPaymentMethodNotDefault"
-            },
-            {
-              "value": "ACCOUNT_PAYMENT_METHOD_NOT_LINKED_TO_AIG",
-              "name": "AccountPaymentMethodNotLinkedToAig"
-            },
-            {
-              "value": "CONTRACT_BILLING_NOT_SELF_SERVE",
-              "name": "ContractBillingNotSelfServe"
-            },
-            {
-              "value": "ELIGIBILITY_UNAVAILABLE",
-              "name": "EligibilityUnavailable"
-            },
-            {
-              "value": "INVALID_PAYMENT_METHOD_SELECTION",
-              "name": "InvalidPaymentMethodSelection"
-            },
-            {
-              "value": "PAYMENT_METHOD_EXPIRED",
-              "name": "PaymentMethodExpired"
-            },
-            {
-              "value": "FIRST_TOPUP_REQUIRED",
+              "value": "first_topup_required",
               "name": "FirstTopupRequired"
             },
             {
-              "value": "AUTO_TOPUP_SETUP_REQUIRED",
-              "name": "AutoTopupSetupRequired"
+              "value": "not_configured",
+              "name": "NotConfigured"
             },
             {
-              "value": "AUTO_TOPUP_NOT_CONFIGURED",
-              "name": "AutoTopupNotConfigured"
+              "value": "active",
+              "name": "Active"
             },
             {
-              "value": "ACCOUNT_PAYMENT_METHOD_DEFAULT_MISSING",
-              "name": "AccountPaymentMethodDefaultMissing"
+              "value": "needs_confirmation",
+              "name": "NeedsConfirmation"
             },
             {
-              "value": "ACCOUNT_POLICY_UNAVAILABLE",
-              "name": "AccountPolicyUnavailable"
+              "value": "stopped",
+              "name": "Stopped"
             }
           ]
         }
       },
-      "AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupRecommendedAction": {
+      "AigBillingGetTopupEligibilityV2ResultAutoTopupStoppedReason": {
         "enum": [
-          "NONE",
-          "ADD_SUPPORTED_PAYMENT_METHOD",
-          "USE_EXISTING_CARD",
-          "SET_CARD_AS_DEFAULT",
-          "CONTACT_SUPPORT",
-          "RETRY",
-          "SELECT_SUPPORTED_PAYMENT_METHOD",
-          "COMPLETE_MANUAL_TOPUP",
-          "AUTHENTICATE_CARD",
-          "CONFIGURE_AUTO_TOPUP"
+          "payment_method_removed",
+          "payment_method_changed",
+          "expired_card",
+          "payment_method_not_supported",
+          "prepaid_card_not_supported",
+          "payment_declined",
+          "amount_out_of_range"
         ],
         "type": "string",
         "x-ms-enum": {
-          "name": "AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupRecommendedAction",
+          "name": "AigBillingGetTopupEligibilityV2ResultAutoTopupStoppedReason",
           "modelAsString": false,
           "values": [
             {
-              "value": "NONE",
-              "name": "None"
+              "value": "payment_method_removed",
+              "name": "PaymentMethodRemoved"
             },
             {
-              "value": "ADD_SUPPORTED_PAYMENT_METHOD",
-              "name": "AddSupportedPaymentMethod"
+              "value": "payment_method_changed",
+              "name": "PaymentMethodChanged"
             },
             {
-              "value": "USE_EXISTING_CARD",
-              "name": "UseExistingCard"
+              "value": "expired_card",
+              "name": "ExpiredCard"
             },
             {
-              "value": "SET_CARD_AS_DEFAULT",
-              "name": "SetCardAsDefault"
+              "value": "payment_method_not_supported",
+              "name": "PaymentMethodNotSupported"
             },
             {
-              "value": "CONTACT_SUPPORT",
-              "name": "ContactSupport"
+              "value": "prepaid_card_not_supported",
+              "name": "PrepaidCardNotSupported"
             },
             {
-              "value": "RETRY",
-              "name": "Retry"
+              "value": "payment_declined",
+              "name": "PaymentDeclined"
             },
             {
-              "value": "SELECT_SUPPORTED_PAYMENT_METHOD",
-              "name": "SelectSupportedPaymentMethod"
-            },
-            {
-              "value": "COMPLETE_MANUAL_TOPUP",
-              "name": "CompleteManualTopup"
-            },
-            {
-              "value": "AUTHENTICATE_CARD",
-              "name": "AuthenticateCard"
-            },
-            {
-              "value": "CONFIGURE_AUTO_TOPUP",
-              "name": "ConfigureAutoTopup"
+              "value": "amount_out_of_range",
+              "name": "AmountOutOfRange"
             }
           ]
         }
       },
-      "AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupStatus": {
-        "enum": [
-          "eligible",
-          "ineligible",
-          "unavailable"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "eligible",
-              "name": "Eligible"
-            },
-            {
-              "value": "ineligible",
-              "name": "Ineligible"
-            },
-            {
-              "value": "unavailable",
-              "name": "Unavailable"
-            }
-          ]
-        }
-      },
-      "AigBillingGetAuthoritativeTopupEligibilityResultManualTopupReason": {
-        "enum": [
-          "ELIGIBLE",
-          "NO_ACCOUNT_PAYMENT_METHOD",
-          "UNSUPPORTED_ACCOUNT_PAYMENT_METHOD",
-          "ACCOUNT_PAYMENT_METHOD_NOT_DEFAULT",
-          "ACCOUNT_PAYMENT_METHOD_NOT_LINKED_TO_AIG",
-          "CONTRACT_BILLING_NOT_SELF_SERVE",
-          "ELIGIBILITY_UNAVAILABLE",
-          "INVALID_PAYMENT_METHOD_SELECTION",
-          "PAYMENT_METHOD_EXPIRED",
-          "FIRST_TOPUP_REQUIRED",
-          "AUTO_TOPUP_SETUP_REQUIRED",
-          "AUTO_TOPUP_NOT_CONFIGURED",
-          "ACCOUNT_PAYMENT_METHOD_DEFAULT_MISSING",
-          "ACCOUNT_POLICY_UNAVAILABLE"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "AigBillingGetAuthoritativeTopupEligibilityResultManualTopupReason",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "ELIGIBLE",
-              "name": "Eligible"
-            },
-            {
-              "value": "NO_ACCOUNT_PAYMENT_METHOD",
-              "name": "NoAccountPaymentMethod"
-            },
-            {
-              "value": "UNSUPPORTED_ACCOUNT_PAYMENT_METHOD",
-              "name": "UnsupportedAccountPaymentMethod"
-            },
-            {
-              "value": "ACCOUNT_PAYMENT_METHOD_NOT_DEFAULT",
-              "name": "AccountPaymentMethodNotDefault"
-            },
-            {
-              "value": "ACCOUNT_PAYMENT_METHOD_NOT_LINKED_TO_AIG",
-              "name": "AccountPaymentMethodNotLinkedToAig"
-            },
-            {
-              "value": "CONTRACT_BILLING_NOT_SELF_SERVE",
-              "name": "ContractBillingNotSelfServe"
-            },
-            {
-              "value": "ELIGIBILITY_UNAVAILABLE",
-              "name": "EligibilityUnavailable"
-            },
-            {
-              "value": "INVALID_PAYMENT_METHOD_SELECTION",
-              "name": "InvalidPaymentMethodSelection"
-            },
-            {
-              "value": "PAYMENT_METHOD_EXPIRED",
-              "name": "PaymentMethodExpired"
-            },
-            {
-              "value": "FIRST_TOPUP_REQUIRED",
-              "name": "FirstTopupRequired"
-            },
-            {
-              "value": "AUTO_TOPUP_SETUP_REQUIRED",
-              "name": "AutoTopupSetupRequired"
-            },
-            {
-              "value": "AUTO_TOPUP_NOT_CONFIGURED",
-              "name": "AutoTopupNotConfigured"
-            },
-            {
-              "value": "ACCOUNT_PAYMENT_METHOD_DEFAULT_MISSING",
-              "name": "AccountPaymentMethodDefaultMissing"
-            },
-            {
-              "value": "ACCOUNT_POLICY_UNAVAILABLE",
-              "name": "AccountPolicyUnavailable"
-            }
-          ]
-        }
-      },
-      "AigBillingGetAuthoritativeTopupEligibilityResultManualTopupRecommendedAction": {
-        "enum": [
-          "NONE",
-          "ADD_SUPPORTED_PAYMENT_METHOD",
-          "USE_EXISTING_CARD",
-          "SET_CARD_AS_DEFAULT",
-          "CONTACT_SUPPORT",
-          "RETRY",
-          "SELECT_SUPPORTED_PAYMENT_METHOD",
-          "COMPLETE_MANUAL_TOPUP",
-          "AUTHENTICATE_CARD",
-          "CONFIGURE_AUTO_TOPUP"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "AigBillingGetAuthoritativeTopupEligibilityResultManualTopupRecommendedAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "NONE",
-              "name": "None"
-            },
-            {
-              "value": "ADD_SUPPORTED_PAYMENT_METHOD",
-              "name": "AddSupportedPaymentMethod"
-            },
-            {
-              "value": "USE_EXISTING_CARD",
-              "name": "UseExistingCard"
-            },
-            {
-              "value": "SET_CARD_AS_DEFAULT",
-              "name": "SetCardAsDefault"
-            },
-            {
-              "value": "CONTACT_SUPPORT",
-              "name": "ContactSupport"
-            },
-            {
-              "value": "RETRY",
-              "name": "Retry"
-            },
-            {
-              "value": "SELECT_SUPPORTED_PAYMENT_METHOD",
-              "name": "SelectSupportedPaymentMethod"
-            },
-            {
-              "value": "COMPLETE_MANUAL_TOPUP",
-              "name": "CompleteManualTopup"
-            },
-            {
-              "value": "AUTHENTICATE_CARD",
-              "name": "AuthenticateCard"
-            },
-            {
-              "value": "CONFIGURE_AUTO_TOPUP",
-              "name": "ConfigureAutoTopup"
-            }
-          ]
-        }
-      },
-      "AigBillingGetAuthoritativeTopupEligibilityResultManualTopupStatus": {
-        "enum": [
-          "eligible",
-          "ineligible",
-          "unavailable"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "AigBillingGetAuthoritativeTopupEligibilityResultManualTopupStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "eligible",
-              "name": "Eligible"
-            },
-            {
-              "value": "ineligible",
-              "name": "Ineligible"
-            },
-            {
-              "value": "unavailable",
-              "name": "Unavailable"
-            }
-          ]
-        }
-      },
-      "AigBillingGetAuthoritativeTopupEligibilityResultPaymentMethodsItemKind": {
+      "AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemType": {
         "enum": [
           "card",
-          "wallet",
-          "unsupported"
+          "apple_pay",
+          "google_pay",
+          "link",
+          "paypal",
+          "other"
         ],
         "type": "string",
         "x-ms-enum": {
-          "name": "AigBillingGetAuthoritativeTopupEligibilityResultPaymentMethodsItemKind",
+          "name": "AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemType",
           "modelAsString": false,
           "values": [
             {
@@ -908408,12 +908695,55 @@
               "name": "Card"
             },
             {
-              "value": "wallet",
-              "name": "Wallet"
+              "value": "apple_pay",
+              "name": "ApplePay"
             },
             {
-              "value": "unsupported",
-              "name": "Unsupported"
+              "value": "google_pay",
+              "name": "GooglePay"
+            },
+            {
+              "value": "link",
+              "name": "Link"
+            },
+            {
+              "value": "paypal",
+              "name": "Paypal"
+            },
+            {
+              "value": "other",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemUnusableReason": {
+        "enum": [
+          "payment_method_not_supported",
+          "expired_card",
+          "prepaid_card_not_supported",
+          "card_not_3ds_capable"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemUnusableReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "payment_method_not_supported",
+              "name": "PaymentMethodNotSupported"
+            },
+            {
+              "value": "expired_card",
+              "name": "ExpiredCard"
+            },
+            {
+              "value": "prepaid_card_not_supported",
+              "name": "PrepaidCardNotSupported"
+            },
+            {
+              "value": "card_not_3ds_capable",
+              "name": "CardNot3DsCapable"
             }
           ]
         }
@@ -911915,6 +912245,22 @@
           ]
         }
       },
+      "UsdCurrency": {
+        "enum": [
+          "USD"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "UsdCurrency",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "USD",
+              "name": "Usd"
+            }
+          ]
+        }
+      },
       "CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType": {
         "enum": [
           "none",
@@ -913264,12 +913610,6 @@
             }
           ]
         }
-      },
-      "AigBillingTopupEligibilityRequestContractVersion": {
-        "enum": [
-          2
-        ],
-        "type": "number"
       },
       "AigConfigCreateAccountProviderCostRequestModelRule": {
         "enum": [
@@ -923873,6 +924213,14 @@
           true
         ],
         "type": "boolean"
+      },
+      "AigBillingSetTopupConfigRequestAnyOf2ContractVersion": {
+        "enum": [
+          2
+        ],
+        "type": "number",
+        "description": "Set to 2 to pin auto top-up to this card instead of the default. Read when card setup starts; completion follows the setup.",
+        "example": 2
       },
       "WorkersAiAiGatewayWebSearch400ResponseAnyOf1Success": {
         "enum": [
@@ -1125479,7 +1125827,6 @@
             "required": [
               "name",
               "start",
-              "end",
               "finished",
               "type",
               "error"
@@ -1178801,10 +1179148,29 @@
     },
     "ZeroTrustGatewayRegion": {
       "type": "string",
-      "description": "Indicate the read-only region the certificate authority\u0027s key material is pinned to. Omitted for certificates that were created without a region.",
+      "description": "Indicate the read-only Data Localization Suite region the certificate authority\u0027s key material is pinned to. This corresponds to one of the regions selected for the account via the account region setting (\u0060GET\u0060/\u0060PUT /accounts/{account_id}/zerotrust/region\u0060). Omitted for certificates that were created without a region.",
       "readOnly": true,
       "example": "wnam",
       "x-auditable": true
+    },
+    "ZeroTrustGatewayRegionsSettings": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ZeroTrustGatewayRegionSetting"
+      },
+      "description": "Specify per-region TLS interception and certificate settings for Gateway, keyed by Data Localization Suite region key. Relies on the Zero Trust account region setting  (\u0060GET\u0060/\u0060PUT /accounts/{account_id}/zerotrust/region\u0060) - the account must select a region before Gateway applies these settings for it.",
+      "nullable": true,
+      "example": {
+        "wnam": {
+          "certificate": {
+            "id": "d1b364c5-1311-466e-a194-f0e943e0799f"
+          },
+          "tls_decrypt": {
+            "enabled": true
+          }
+        }
+      },
+      "x-stainless-terraform-configurability": "optional"
     },
     "ZeroTrustGatewaySharable": {
       "type": "boolean",
@@ -1196325,6 +1196691,20 @@
       ],
       "default": false
     },
+    "WorkersVersionBindings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WorkersBindingItem"
+      },
+      "description": "List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.",
+      "example": [
+        {
+          "name": "MY_ENV_VAR",
+          "text": "my_data",
+          "type": "plain_text"
+        }
+      ]
+    },
     "WorkersVersionCompatibilityFlags": {
       "type": "array",
       "items": {
@@ -1213838,7 +1214218,6 @@
       "required": [
         "name",
         "start",
-        "end",
         "finished",
         "type",
         "error"

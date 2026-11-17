@@ -21,6 +21,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
             if (parseNode.GetChildNode("consent_version") is null) { _explicitNullValueConsentVersion = default!; _explicitNullProperties?.Remove("consent_version"); }
             else if (parseNode.GetChildNode("consent_version") is { } nullNodeConsentVersion && nullNodeConsentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentVersion = null;
+            if (parseNode.GetChildNode("contract_version") is null) { _explicitNullValueContractVersion = default!; _explicitNullProperties?.Remove("contract_version"); }
+            else if (parseNode.GetChildNode("contract_version") is { } nullNodeContractVersion && nullNodeContractVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContractVersion = null;
             if (parseNode.GetChildNode("payment_method_id") is null) { _explicitNullValuePaymentMethodId = default!; _explicitNullProperties?.Remove("payment_method_id"); }
             else if (parseNode.GetChildNode("payment_method_id") is { } nullNodePaymentMethodId && nullNodePaymentMethodId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodId = null;
             if (parseNode.GetChildNode("setup_idempotency_key") is null) { _explicitNullValueSetupIdempotencyKey = default!; _explicitNullProperties?.Remove("setup_idempotency_key"); }
@@ -44,6 +46,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ConsentVersion { get => _explicitNullValueConsentVersion; set { _explicitNullValueConsentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_version"); else _explicitNullProperties?.Remove("consent_version"); } }
         private string _explicitNullValueConsentVersion = default!;
 #endif
+        /// <summary>Set to 2 to pin auto top-up to this card instead of the default. Read when card setup starts; completion follows the setup.</summary>
+        public double? ContractVersion { get => _explicitNullValueContractVersion; set { _explicitNullValueContractVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contract_version"); else _explicitNullProperties?.Remove("contract_version"); } }
+        private double? _explicitNullValueContractVersion = default!;
         /// <summary>Card to authenticate for future automatic top-ups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "amount", n => { Amount = n.GetIntValue(); } },
                 { "consent_version", n => { ConsentVersion = n.GetStringValue(); } },
+                { "contract_version", n => { ContractVersion = n.GetDoubleValue(); } },
                 { "payment_method_id", n => { PaymentMethodId = n.GetStringValue(); } },
                 { "setup_idempotency_key", n => { SetupIdempotencyKey = n.GetGuidValue(); } },
                 { "setup_intent_id", n => { SetupIntentId = n.GetStringValue(); } },
@@ -105,6 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("amount", Amount);
             writer.WriteStringValue("consent_version", ConsentVersion);
+            writer.WriteDoubleValue("contract_version", ContractVersion);
             writer.WriteStringValue("payment_method_id", PaymentMethodId);
             writer.WriteGuidValue("setup_idempotency_key", SetupIdempotencyKey);
             writer.WriteStringValue("setup_intent_id", SetupIntentId);

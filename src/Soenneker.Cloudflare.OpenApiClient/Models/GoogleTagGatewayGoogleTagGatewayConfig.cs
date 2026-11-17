@@ -45,7 +45,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; AdditionalData?.Remove("endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
         private string _explicitNullValueEndpoint = default!;
 #endif
-        /// <summary>Hides the original client IP address from Google when enabled.</summary>
+        /// <summary>Deprecated. This value is stored but has no effect on traffic. Optional in requests: if omitted, the previously stored value is kept. Responses always include it.</summary>
+        [Obsolete("")]
         public bool? HideOriginalIp { get => _explicitNullValueHideOriginalIp; set { _explicitNullValueHideOriginalIp = value; AdditionalData?.Remove("hideOriginalIp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideOriginalIp"); else _explicitNullProperties?.Remove("hideOriginalIp"); } }
         private bool? _explicitNullValueHideOriginalIp = default!;
         /// <summary>Specify the Google Tag Manager container or measurement ID (e.g. GTM-XXXXXXX or G-XXXXXXXXXX).</summary>

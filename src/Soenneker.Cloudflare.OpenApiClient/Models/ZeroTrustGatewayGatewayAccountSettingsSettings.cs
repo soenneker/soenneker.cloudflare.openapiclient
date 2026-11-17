@@ -44,6 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("max_ttl_secs") is { } nullNodeMaxTtlSecs && nullNodeMaxTtlSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTtlSecs = null;
             if (parseNode.GetChildNode("protocol_detection") is null) { _explicitNullValueProtocolDetection = default!; _explicitNullProperties?.Remove("protocol_detection"); }
             else if (parseNode.GetChildNode("protocol_detection") is { } nullNodeProtocolDetection && nullNodeProtocolDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtocolDetection = null;
+            if (parseNode.GetChildNode("regions") is null) { _explicitNullValueRegions = default!; _explicitNullProperties?.Remove("regions"); }
+            else if (parseNode.GetChildNode("regions") is { } nullNodeRegions && nullNodeRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regions = null;
             if (parseNode.GetChildNode("sandbox") is null) { _explicitNullValueSandbox = default!; _explicitNullProperties?.Remove("sandbox"); }
             else if (parseNode.GetChildNode("sandbox") is { } nullNodeSandbox && nullNodeSandbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sandbox = null;
             if (parseNode.GetChildNode("tls_decrypt") is null) { _explicitNullValueTlsDecrypt = default!; _explicitNullProperties?.Remove("tls_decrypt"); }
@@ -176,6 +178,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection ProtocolDetection { get => _explicitNullValueProtocolDetection; set { _explicitNullValueProtocolDetection = value; AdditionalData?.Remove("protocol_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol_detection"); else _explicitNullProperties?.Remove("protocol_detection"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection _explicitNullValueProtocolDetection = default!;
 #endif
+        /// <summary>Specify per-region TLS interception and certificate settings for Gateway, keyed by Data Localization Suite region key. Relies on the Zero Trust account region setting  (`GET`/`PUT /accounts/{account_id}/zerotrust/region`) - the account must select a region before Gateway applies these settings for it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountSettingsSettingsRegions? Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountSettingsSettingsRegions? _explicitNullValueRegions = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountSettingsSettingsRegions Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountSettingsSettingsRegions _explicitNullValueRegions = default!;
+#endif
         /// <summary>Specify whether to enable the sandbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -234,6 +246,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "inspection", n => { Inspection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayInspectionSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayInspectionSettings.CreateFromDiscriminatorValue); } },
                 { "max_ttl_secs", n => { MaxTtlSecs = n.GetIntValue(); } },
                 { "protocol_detection", n => { ProtocolDetection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection.CreateFromDiscriminatorValue); } },
+                { "regions", n => { Regions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountSettingsSettingsRegions>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountSettingsSettingsRegions.CreateFromDiscriminatorValue); } },
                 { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySandbox>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySandbox.CreateFromDiscriminatorValue); } },
                 { "tls_decrypt", n => { TlsDecrypt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayTlsSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayTlsSettings.CreateFromDiscriminatorValue); } },
             };
@@ -258,6 +271,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayInspectionSettings>("inspection", Inspection);
             writer.WriteIntValue("max_ttl_secs", MaxTtlSecs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection>("protocol_detection", ProtocolDetection);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountSettingsSettingsRegions>("regions", Regions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySandbox>("sandbox", Sandbox);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayTlsSettings>("tls_decrypt", TlsDecrypt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

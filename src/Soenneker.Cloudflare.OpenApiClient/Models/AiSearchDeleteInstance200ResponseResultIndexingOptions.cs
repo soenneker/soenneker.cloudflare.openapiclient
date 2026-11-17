@@ -17,6 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("file_summary") is null) { _explicitNullValueFileSummary = default!; _explicitNullProperties?.Remove("file_summary"); }
+            else if (parseNode.GetChildNode("file_summary") is { } nullNodeFileSummary && nullNodeFileSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileSummary = null;
             if (parseNode.GetChildNode("keyword_tokenizer") is null) { _explicitNullValueKeywordTokenizer = default!; _explicitNullProperties?.Remove("keyword_tokenizer"); }
             else if (parseNode.GetChildNode("keyword_tokenizer") is { } nullNodeKeywordTokenizer && nullNodeKeywordTokenizer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordTokenizer = null;
             if (parseNode.GetChildNode("use_ocr") is null) { _explicitNullValueUseOcr = default!; _explicitNullProperties?.Remove("use_ocr"); }
@@ -25,6 +27,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Generates a per-file summary, topics, and keywords during indexing for text files and media transcripts of at least three chunks. The summary and keywords are stored as the item&apos;s context metadata (a context you set is kept), and the topics are added to chunk context headers where they fit. Best effort: a file whose summary fails is indexed without one. The model calls are billed to your account through the instance&apos;s AI Gateway. Changing this triggers a full re-index. Defaults to false.</summary>
+        public bool? FileSummary { get => _explicitNullValueFileSummary; set { _explicitNullValueFileSummary = value; AdditionalData?.Remove("file_summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_summary"); else _explicitNullProperties?.Remove("file_summary"); } }
+        private bool? _explicitNullValueFileSummary = default!;
         /// <summary>Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer? KeywordTokenizer { get => _explicitNullValueKeywordTokenizer; set { _explicitNullValueKeywordTokenizer = value; AdditionalData?.Remove("keyword_tokenizer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword_tokenizer"); else _explicitNullProperties?.Remove("keyword_tokenizer"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer? _explicitNullValueKeywordTokenizer = default!;
@@ -37,6 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AiSearchDeleteInstance200ResponseResultIndexingOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            FileSummary = false;
             UseOcr = false;
         }
         /// <summary>
@@ -59,6 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "file_summary", n => { FileSummary = n.GetBoolValue(); } },
                 { "keyword_tokenizer", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKeywordTokenizer = default; _explicitNullProperties?.Remove("keyword_tokenizer"); AdditionalData["keyword_tokenizer"] = unknown; } else { KeywordTokenizer = parsed; AdditionalData.Remove("keyword_tokenizer"); } } },
                 { "use_ocr", n => { UseOcr = n.GetBoolValue(); } },
             };
@@ -70,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("file_summary", FileSummary);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchDeleteInstance200ResponseResultIndexingOptionsKeywordTokenizer>("keyword_tokenizer", KeywordTokenizer);
             writer.WriteBoolValue("use_ocr", UseOcr);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

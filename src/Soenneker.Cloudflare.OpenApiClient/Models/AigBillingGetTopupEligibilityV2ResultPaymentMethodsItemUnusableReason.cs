@@ -5,20 +5,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum AigBillingGetAuthoritativeTopupEligibilityResultPaymentMethodsItemKind
+    public enum AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemUnusableReason
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "card")]
+        [EnumMember(Value = "payment_method_not_supported")]
         #pragma warning disable CS1591
-        Card,
+        PaymentMethodNotSupported,
         #pragma warning restore CS1591
-        [EnumMember(Value = "wallet")]
+        [EnumMember(Value = "expired_card")]
         #pragma warning disable CS1591
-        Wallet,
+        ExpiredCard,
         #pragma warning restore CS1591
-        [EnumMember(Value = "unsupported")]
+        [EnumMember(Value = "prepaid_card_not_supported")]
         #pragma warning disable CS1591
-        Unsupported,
+        PrepaidCardNotSupported,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "card_not_3ds_capable")]
+        #pragma warning disable CS1591
+        CardNot3DsCapable,
         #pragma warning restore CS1591
     }
 }

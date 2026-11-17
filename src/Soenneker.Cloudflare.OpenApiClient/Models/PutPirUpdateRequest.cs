@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope DatasetScope { get => _explicitNullValueDatasetScope; set { _explicitNullValueDatasetScope = value; AdditionalData?.Remove("dataset_scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_scope"); else _explicitNullProperties?.Remove("dataset_scope"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope _explicitNullValueDatasetScope = default!;
 #endif
-        /// <summary>Replaces a structured PIR&apos;s definition. Free-form PIRs cannot be converted yet.</summary>
+        /// <summary>Replaces a structured PIR&apos;s definition, or converts a free-form PIR to a structured one in place. Requires `revision` and `based_on`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDefinition? Definition { get => _explicitNullValueDefinition; set { _explicitNullValueDefinition = value; AdditionalData?.Remove("definition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("definition"); else _explicitNullProperties?.Remove("definition"); } }
@@ -150,7 +150,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Requirement { get => _explicitNullValueRequirement; set { _explicitNullValueRequirement = value; AdditionalData?.Remove("requirement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement"); else _explicitNullProperties?.Remove("requirement"); } }
         private string _explicitNullValueRequirement = default!;
 #endif
-        /// <summary>The `revision` the change is based on. Required for structured PIRs; a different stored revision returns 409.</summary>
+        /// <summary>The `revision` the change is based on. Required for structured PIRs and when sending a `definition`; a different stored revision returns 409.</summary>
         public int? Revision { get => _explicitNullValueRevision; set { _explicitNullValueRevision = value; AdditionalData?.Remove("revision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revision"); else _explicitNullProperties?.Remove("revision"); } }
         private int? _explicitNullValueRevision = default!;
         /// <summary>`draft`: not monitored. `active`: monitored, unless `pause_reason` is set. Setting `active` on a PIR with a `pause_reason` resumes it. Moving a PIR back to `draft` and activating it again starts matching afresh with a 30-day backfill.</summary>

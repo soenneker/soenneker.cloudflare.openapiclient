@@ -5,16 +5,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum AigBillingGetAuthoritativeTopupEligibilityResultAutoTopupStatus
+    public enum AigBillingGetTopupEligibilityV2ResultStatus
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "eligible")]
+        [EnumMember(Value = "ready")]
         #pragma warning disable CS1591
-        Eligible,
+        Ready,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ineligible")]
+        [EnumMember(Value = "blocked")]
         #pragma warning disable CS1591
-        Ineligible,
+        Blocked,
         #pragma warning restore CS1591
         [EnumMember(Value = "unavailable")]
         #pragma warning disable CS1591
