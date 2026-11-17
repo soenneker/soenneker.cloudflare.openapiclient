@@ -20,6 +20,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("FilterBy") is null) { _explicitNullValueFilterBy = default!; _explicitNullProperties?.Remove("FilterBy"); }
             else if (parseNode.GetChildNode("FilterBy") is { } nullNodeFilterBy && nullNodeFilterBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterBy = null;
+            if (parseNode.GetChildNode("Granularity") is null) { _explicitNullValueGranularity = default!; _explicitNullProperties?.Remove("Granularity"); }
+            else if (parseNode.GetChildNode("Granularity") is { } nullNodeGranularity && nullNodeGranularity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Granularity = null;
             if (parseNode.GetChildNode("GroupBy") is null) { _explicitNullValueGroupBy = default!; _explicitNullProperties?.Remove("GroupBy"); }
             else if (parseNode.GetChildNode("GroupBy") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
             if (parseNode.GetChildNode("Metric") is null) { _explicitNullValueMetric = default!; _explicitNullProperties?.Remove("Metric"); }
@@ -38,6 +40,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy FilterBy { get => _explicitNullValueFilterBy; set { _explicitNullValueFilterBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FilterBy"); else _explicitNullProperties?.Remove("FilterBy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy _explicitNullValueFilterBy = default!;
 #endif
+        /// <summary>Optional time bucket to sum records over. `DAILY` returns one record per day. `PERIOD` returns one record for the whole time period. When set with `Metric` `cost`, cost is summed across pricing tiers into one record per billable metric per bucket. When omitted, records are not summed: `usage` returns daily records and `cost` returns one record per rated breakdown. Available only on `POST` account usage.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryGranularity? Granularity { get => _explicitNullValueGranularity; set { _explicitNullValueGranularity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Granularity"); else _explicitNullProperties?.Remove("Granularity"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryGranularity? _explicitNullValueGranularity = default!;
         /// <summary>Grouping definitions used to split result rows. At most two unique keys may be supplied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "FilterBy", n => { FilterBy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy.CreateFromDiscriminatorValue); } },
+                { "Granularity", n => { Granularity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryGranularity>(); } },
                 { "GroupBy", n => { GroupBy = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Metric", n => { Metric = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryMetric>(); } },
                 { "TimePeriod", n => { TimePeriod = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod.CreateFromDiscriminatorValue); } },
@@ -93,6 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2FilterBy>("FilterBy", FilterBy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryGranularity>("Granularity", Granularity);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2GroupBy>("GroupBy", GroupBy);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2UsageQueryMetric>("Metric", Metric);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2TimePeriod>("TimePeriod", TimePeriod);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

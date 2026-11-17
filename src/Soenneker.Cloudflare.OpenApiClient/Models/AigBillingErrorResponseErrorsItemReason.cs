@@ -64,6 +64,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         PrepaidCardNotSupported,
         #pragma warning restore CS1591
+        [EnumMember(Value = "payment_method_not_supported")]
+        #pragma warning disable CS1591
+        PaymentMethodNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "authentication_required")]
         #pragma warning disable CS1591
         AuthenticationRequired,

@@ -36,26 +36,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Regi
         /// <summary>
         /// Returns the current status of a domain update workflow.Use this endpoint to poll for completion when the PATCH responsereturned `202 Accepted`. The URL is provided in the `links.self`field of the workflow status response.Poll this endpoint until the workflow reaches a terminal state or astate that requires user attention.Use increasing backoff between polls. When the workflow remains blockedon a third party, use a longer polling interval and do not poll indefinitely.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the current status of a domain update workflow.Use this endpoint to poll for completion when the PATCH responsereturned `202 Accepted`. The URL is provided in the `links.self`field of the workflow status response.Poll this endpoint until the workflow reaches a terminal state or astate that requires user attention.Use increasing backoff between polls. When the workflow remains blockedon a third party, use a longer polling interval and do not poll indefinitely.

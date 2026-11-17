@@ -36,27 +36,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainSearc
         /// <summary>
         /// Searches for domain name suggestions based on a keyword, phrase, or partial domain name.Returns a list of potentially available domains with pricing information.**Important:** Results are non-authoritative and based on cached data. Always use the`/domain-check` endpoint to verify real-time availability before attempting registration.Suggestions are scoped to extensions supported for programmatic registrationvia this API (`POST /registrations`). Domains on unsupported extensions willnot appear in results, even if they are available at the registry level.### Use cases- Brand name discovery (e.g., &quot;acme corp&quot; → acmecorp.com, acmecorp.dev)- Keyword-based suggestions (e.g., &quot;coffee shop&quot; → coffeeshop.com, mycoffeeshop.net)- Alternative extension discovery (e.g., &quot;example.com&quot; → example.com, example.app, example.xyz)### Workflow1. Call this endpoint with a keyword or domain name.2. Present suggestions to the user.3. Call `/domain-check` with the user&apos;s chosen domains to confirm real-time availability and pricing.4. Proceed to `POST /registrations` only for supported non-premium domains   where the Check response returns `registrable: true`.**Note:** Searching with just a domain extension (e.g., &quot;com&quot; or &quot;.app&quot;) is not supported. Provide a keyword or domain name.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainSearchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarDomainSearchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiResponseCommonFailure">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainSearchResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainSearch.DomainSearchRequestBuilder.DomainSearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarDomainSearchResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainSearch.DomainSearchRequestBuilder.DomainSearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainSearchResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainSearch.DomainSearchRequestBuilder.DomainSearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarDomainSearchResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.DomainSearch.DomainSearchRequestBuilder.DomainSearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainSearchResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiDomainSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarDomainSearchResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarDomainSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Searches for domain name suggestions based on a keyword, phrase, or partial domain name.Returns a list of potentially available domains with pricing information.**Important:** Results are non-authoritative and based on cached data. Always use the`/domain-check` endpoint to verify real-time availability before attempting registration.Suggestions are scoped to extensions supported for programmatic registrationvia this API (`POST /registrations`). Domains on unsupported extensions willnot appear in results, even if they are available at the registry level.### Use cases- Brand name discovery (e.g., &quot;acme corp&quot; → acmecorp.com, acmecorp.dev)- Keyword-based suggestions (e.g., &quot;coffee shop&quot; → coffeeshop.com, mycoffeeshop.net)- Alternative extension discovery (e.g., &quot;example.com&quot; → example.com, example.app, example.xyz)### Workflow1. Call this endpoint with a keyword or domain name.2. Present suggestions to the user.3. Call `/domain-check` with the user&apos;s chosen domains to confirm real-time availability and pricing.4. Proceed to `POST /registrations` only for supported non-premium domains   where the Check response returns `registrable: true`.**Note:** Searching with just a domain extension (e.g., &quot;com&quot; or &quot;.app&quot;) is not supported. Provide a keyword or domain name.

@@ -48,52 +48,52 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Regi
         /// <summary>
         /// Returns the current state of a domain registration.This is the canonical read endpoint for a domain you own. It returnsthe full registration resource including current settings and expiration.When the registration resource is ready, both `created_at` and `expires_at`are present in the response.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationResponseSingle"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxRegistrationResponseSingle"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationResponseSingle?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxRegistrationResponseSingle?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationResponseSingle> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxRegistrationResponseSingle> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxRegistrationResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxRegistrationResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates an existing domain registration.By default, the server holds the connection for a bounded, server-definedamount of time while the update completes. Most updates finish within thiswindow and return `200 OK` with a completed workflow status.If the update is still processing after this synchronous wait window, theserver returns `202 Accepted`. Poll the URL in `links.self` to track progress.To skip the wait and receive an immediate `202`, send `Prefer: respond-async`.This endpoint currently supports updating `auto_renew` only.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle"/></returns>
         /// <param name="body">Request to update an existing domain registration.This endpoint currently supports updating `auto_renew` only.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxRegistrationUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxRegistrationUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the current state of a domain registration.This is the canonical read endpoint for a domain you own. It returnsthe full registration resource including current settings and expiration.When the registration resource is ready, both `created_at` and `expires_at`are present in the response.
@@ -122,11 +122,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Regi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxRegistrationUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxRegistrationUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

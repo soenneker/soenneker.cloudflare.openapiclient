@@ -36,28 +36,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.Registratio
         /// <summary>
         /// Starts a domain transfer-in workflow. This is typically a billableoperation — successful transfers charge the account&apos;s default paymentmethod, except for extensions with zero transfer pricing (e.g. UKextensions). All successful domain transfers are non-refundable.### How transfers workDomain transfers move a domain from another registrar to Cloudflare.Transfers typically take 1-10 days due to ICANN-mandated approval windows.### Prerequisites- The domain must already have a zone in the Cloudflare account (added  through the dashboard or zone API).- The zone must have DNSSec disabled.- For billable transfers (i.e. extensions with non-zero transfer pricing), the  account must have a billing profile with a valid default payment method.  Set this up at `https://dash.cloudflare.com/{account_id}/billing/payment-info`.- The domain must be unlocked at the current registrar.- An authorization/EPP code from the current registrar is required,  except for UK extensions — see Auth code below.### Auth codeAn authorization code (also called EPP code, transfer key, or auth-info code)is required for most extensions, with the exception of UK extensions. Obtainthis from your current registrar&apos;s control panel.The auth code in the request body must be base64-encoded per RFC 4648 §4 (standardalphabet, no line breaks).### Response behaviorSuccessful transfer initiation returns `202 Accepted`. Validation orinitiation failures return the documented `4XX` responses. Poll`GET /accounts/{account_id}/registrar/registrations/{domain_name}/transfer-in-status` to track progress.### Premium domainsPremium domain transfers are not currently supported by this API. Please usethe [dashboard](https://dash.cloudflare.com/) for now.### BillingThe account&apos;s default payment method is charged upon successful transfercompletion, unless the extension has zero transfer pricing (e.g. UKextensions). The transfer adds time to the domain&apos;s existing expirationdate (typically 1 year).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiWorkflowStatusResponseSingle"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarWorkflowStatusResponseSingle"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiWorkflowStatusResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarWorkflowStatusResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarTransferInCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiWorkflowStatusResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarWorkflowStatusResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarTransferInCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiWorkflowStatusResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiWorkflowStatusResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarWorkflowStatusResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarWorkflowStatusResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Starts a domain transfer-in workflow. This is typically a billableoperation — successful transfers charge the account&apos;s default paymentmethod, except for extensions with zero transfer pricing (e.g. UKextensions). All successful domain transfers are non-refundable.### How transfers workDomain transfers move a domain from another registrar to Cloudflare.Transfers typically take 1-10 days due to ICANN-mandated approval windows.### Prerequisites- The domain must already have a zone in the Cloudflare account (added  through the dashboard or zone API).- The zone must have DNSSec disabled.- For billable transfers (i.e. extensions with non-zero transfer pricing), the  account must have a billing profile with a valid default payment method.  Set this up at `https://dash.cloudflare.com/{account_id}/billing/payment-info`.- The domain must be unlocked at the current registrar.- An authorization/EPP code from the current registrar is required,  except for UK extensions — see Auth code below.### Auth codeAn authorization code (also called EPP code, transfer key, or auth-info code)is required for most extensions, with the exception of UK extensions. Obtainthis from your current registrar&apos;s control panel.The auth code in the request body must be base64-encoded per RFC 4648 §4 (standardalphabet, no line breaks).### Response behaviorSuccessful transfer initiation returns `202 Accepted`. Validation orinitiation failures return the documented `4XX` responses. Poll`GET /accounts/{account_id}/registrar/registrations/{domain_name}/transfer-in-status` to track progress.### Premium domainsPremium domain transfers are not currently supported by this API. Please usethe [dashboard](https://dash.cloudflare.com/) for now.### BillingThe account&apos;s default payment method is charged upon successful transfercompletion, unless the extension has zero transfer pricing (e.g. UKextensions). The transfer adds time to the domain&apos;s existing expirationdate (typically 1 year).
@@ -67,11 +67,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.Registratio
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarTransferInCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiTransferInCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarTransferInCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -36,12 +36,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Combined configuration value for Transformations. All fields are optional on PATCH;omitted fields are left unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigResponseValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigResponseValue? _explicitNullValueValue = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigResponseValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigResponseValue _explicitNullValueValue = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigResponse"/> and sets the default values.
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "editable", n => { Editable = n.GetBoolValue(); } },
                 { "id", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TransformationsConfigId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueId = default; _explicitNullProperties?.Remove("id"); AdditionalData["id"] = unknown; } else { Id = parsed; AdditionalData.Remove("id"); } } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigResponseValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigResponseValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TransformationsConfigId>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigResponseValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValue>("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -36,26 +36,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Regi
         /// <summary>
         /// Returns the current status of a domain registration workflow.Use this endpoint to poll for completion when the POST responsereturned `202 Accepted`. The URL is provided in the `links.self`field of the workflow status response.Poll this endpoint until the workflow reaches a terminal state or astate that requires user attention.**Terminal states:** `succeeded` and `failed` are terminal and alwayshave `completed: true`.**Non-terminal states:**- `action_required` has `completed: false` and will not resolve on its  own. The workflow is paused pending user intervention.- `blocked` has `completed: false` and indicates the workflow is waiting  on a third party such as the extension registry or losing registrar.  Continue polling while informing the user of the delay.Use increasing backoff between polls. When `state: blocked`, use alonger polling interval and do not poll indefinitely.A naive polling loop that only checks `completed` can run indefinitelywhen `state: action_required`. Break explicitly on `action_required`:```jslet status;do {  await new Promise(r =&gt; setTimeout(r, 2000));  status = await cloudflare.request({    method: &apos;GET&apos;,    path: reg.result.links.self,  });} while (  !status.result.completed &amp;&amp;  status.result.state !== &apos;action_required&apos;);if (status.result.state === &apos;action_required&apos;) {  // Surface context.action and context.confirmation_sent_to to the user.  // Do not re-submit the registration request.}```
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxWorkflowStatusResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxWorkflowStatusResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the current status of a domain registration workflow.Use this endpoint to poll for completion when the POST responsereturned `202 Accepted`. The URL is provided in the `links.self`field of the workflow status response.Poll this endpoint until the workflow reaches a terminal state or astate that requires user attention.**Terminal states:** `succeeded` and `failed` are terminal and alwayshave `completed: true`.**Non-terminal states:**- `action_required` has `completed: false` and will not resolve on its  own. The workflow is paused pending user intervention.- `blocked` has `completed: false` and indicates the workflow is waiting  on a third party such as the extension registry or losing registrar.  Continue polling while informing the user of the delay.Use increasing backoff between polls. When `state: blocked`, use alonger polling interval and do not poll indefinitely.A naive polling loop that only checks `completed` can run indefinitelywhen `state: action_required`. Break explicitly on `action_required`:```jslet status;do {  await new Promise(r =&gt; setTimeout(r, 2000));  status = await cloudflare.request({    method: &apos;GET&apos;,    path: reg.result.links.self,  });} while (  !status.result.completed &amp;&amp;  status.result.state !== &apos;action_required&apos;);if (status.result.state === &apos;action_required&apos;) {  // Surface context.action and context.confirmation_sent_to to the user.  // Do not re-submit the registration request.}```

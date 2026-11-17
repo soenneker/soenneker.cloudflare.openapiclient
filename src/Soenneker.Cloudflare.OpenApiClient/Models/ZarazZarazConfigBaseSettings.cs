@@ -20,6 +20,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("autoInjectScript") is null) { _explicitNullValueAutoInjectScript = default!; _explicitNullProperties?.Remove("autoInjectScript"); }
             else if (parseNode.GetChildNode("autoInjectScript") is { } nullNodeAutoInjectScript && nullNodeAutoInjectScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoInjectScript = null;
+            if (parseNode.GetChildNode("botScoreThreshold") is null) { _explicitNullValueBotScoreThreshold = default!; _explicitNullProperties?.Remove("botScoreThreshold"); }
+            else if (parseNode.GetChildNode("botScoreThreshold") is { } nullNodeBotScoreThreshold && nullNodeBotScoreThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotScoreThreshold = null;
             if (parseNode.GetChildNode("contextEnricher") is null) { _explicitNullValueContextEnricher = default!; _explicitNullProperties?.Remove("contextEnricher"); }
             else if (parseNode.GetChildNode("contextEnricher") is { } nullNodeContextEnricher && nullNodeContextEnricher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextEnricher = null;
             if (parseNode.GetChildNode("cookieDomain") is null) { _explicitNullValueCookieDomain = default!; _explicitNullProperties?.Remove("cookieDomain"); }
@@ -53,6 +55,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Automatic injection of Zaraz scripts enabled.</summary>
         public bool? AutoInjectScript { get => _explicitNullValueAutoInjectScript; set { _explicitNullValueAutoInjectScript = value; AdditionalData?.Remove("autoInjectScript"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoInjectScript"); else _explicitNullProperties?.Remove("autoInjectScript"); } }
         private bool? _explicitNullValueAutoInjectScript = default!;
+        /// <summary>Minimum bot score required to load Zaraz.</summary>
+        public long? BotScoreThreshold { get => _explicitNullValueBotScoreThreshold; set { _explicitNullValueBotScoreThreshold = value; AdditionalData?.Remove("botScoreThreshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botScoreThreshold"); else _explicitNullProperties?.Remove("botScoreThreshold"); } }
+        private long? _explicitNullValueBotScoreThreshold = default!;
         /// <summary>Details of the worker that receives and edits Zaraz Context object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -167,6 +172,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autoInjectScript", n => { AutoInjectScript = n.GetBoolValue(); } },
+                { "botScoreThreshold", n => { BotScoreThreshold = n.GetLongValue(); } },
                 { "contextEnricher", n => { ContextEnricher = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettingsContextEnricher>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettingsContextEnricher.CreateFromDiscriminatorValue); } },
                 { "cookieDomain", n => { CookieDomain = n.GetStringValue(); } },
                 { "ecommerce", n => { Ecommerce = n.GetBoolValue(); } },
@@ -190,6 +196,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("autoInjectScript", AutoInjectScript);
+            writer.WriteLongValue("botScoreThreshold", BotScoreThreshold);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettingsContextEnricher>("contextEnricher", ContextEnricher);
             writer.WriteStringValue("cookieDomain", CookieDomain);
             writer.WriteBoolValue("ecommerce", Ecommerce);

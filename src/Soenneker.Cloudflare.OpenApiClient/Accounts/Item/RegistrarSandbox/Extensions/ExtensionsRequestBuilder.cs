@@ -49,26 +49,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Exte
         /// <summary>
         /// Returns metadata and JSON Schema documents describing the expected inputstructure for registration and transfer operations on each supportedextension (TLD).This endpoint uses cursor-based pagination. Results are ordered byextension name by default. To fetch the next page, pass the `cursor`value from the `result_info` object in the response as the `cursor`query parameter in your next request. An empty `cursor` stringindicates there are no more pages.Supports HTTP conditional GET via `ETag`. Include the `ETag` valuefrom a previous response in an `If-None-Match` header to receive a`304 Not Modified` when the data has not changed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxExtensionResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxExtensionResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxExtensionResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Extensions.ExtensionsRequestBuilder.ExtensionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxExtensionResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Extensions.ExtensionsRequestBuilder.ExtensionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxExtensionResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Extensions.ExtensionsRequestBuilder.ExtensionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxExtensionResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Extensions.ExtensionsRequestBuilder.ExtensionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxExtensionResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxExtensionResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxExtensionResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxExtensionResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns metadata and JSON Schema documents describing the expected inputstructure for registration and transfer operations on each supportedextension (TLD).This endpoint uses cursor-based pagination. Results are ordered byextension name by default. To fetch the next page, pass the `cursor`value from the `result_info` object in the response as the `cursor`query parameter in your next request. An empty `cursor` stringindicates there are no more pages.Supports HTTP conditional GET via `ETag`. Include the `ETag` valuefrom a previous response in an `If-None-Match` header to receive a`304 Not Modified` when the data has not changed.
@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RegistrarSandbox.Exte
 #endif
             /// <summary>Sort direction for results. Defaults to ascending order.</summary>
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxCursorPaginationDirection? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarSandboxCursorPaginationDirection? Direction { get; set; }
             /// <summary>Filter extensions by exact name match.For example, `name=com` returns only the `com` extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

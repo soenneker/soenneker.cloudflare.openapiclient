@@ -23,15 +23,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Configuration for Automatic Platform Optimization (APO) for WordPress.Set to &quot;off&quot; to disable, or provide an object to configure APO settings.</summary>
+        /// <summary>Configuration for Automatic Platform Optimization (APO) for WordPress.Set to &quot;off&quot; to disable, or provide an object to configure APO settings.When an APO configuration already exists, fields omitted from the object keep their current value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValue? _explicitNullValueValue = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationPatchValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationPatchValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValue _explicitNullValueValue = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationPatchValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationPatchValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneSettingsChangeAutomaticPlatformOptimizationSettingRequest"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationPatchValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationPatchValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationPatchValue>("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
