@@ -144,7 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "event_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventEventName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventName = default; _explicitNullProperties?.Remove("event_name"); AdditionalData["event_name"] = unknown; } else { EventName = parsed; AdditionalData.Remove("event_name"); } } },

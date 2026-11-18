@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "aggregateBy", n => { AggregateBy = n.GetStringValue(); } },
                 { "aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorAggregate200ResponseAggregationsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorAggregate200ResponseAggregationsItem.CreateFromDiscriminatorValue)?.AsList(); } },

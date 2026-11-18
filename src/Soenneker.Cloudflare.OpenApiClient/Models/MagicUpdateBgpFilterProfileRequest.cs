@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "match_action", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpFilterMatchAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMatchAction = default; _explicitNullProperties?.Remove("match_action"); AdditionalData["match_action"] = unknown; } else { MatchAction = parsed; AdditionalData.Remove("match_action"); } } },

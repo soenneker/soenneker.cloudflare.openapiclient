@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "article_id", n => { ArticleId = n.GetGuidValue(); } },
                 { "custom_output", n => { CustomOutput = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutput>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutput.CreateFromDiscriminatorValue); } },

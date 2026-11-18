@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "aggInterval", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaAggInterval>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAggInterval = default; _explicitNullProperties?.Remove("aggInterval"); AdditionalData["aggInterval"] = unknown; } else { AggInterval = parsed; AdditionalData.Remove("aggInterval"); } } },
                 { "confidenceInfo", n => { ConfidenceInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaConfidenceInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTimeseries200ResponseResultMetaConfidenceInfo.CreateFromDiscriminatorValue); } },

@@ -164,7 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "a2aAgentCard", n => { A2aAgentCard = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryA2AAgentCard>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryA2AAgentCard.CreateFromDiscriminatorValue); } },
                 { "agentSkills", n => { AgentSkills = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAgentSkills>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoveryAgentSkills.CreateFromDiscriminatorValue); } },

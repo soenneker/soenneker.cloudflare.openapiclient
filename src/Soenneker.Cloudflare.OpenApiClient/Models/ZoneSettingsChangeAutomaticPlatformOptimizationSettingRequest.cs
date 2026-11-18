@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Configuration for Automatic Platform Optimization (APO) for WordPress.Set to &quot;off&quot; to disable, or provide an object to configure APO settings.When an APO configuration already exists, fields omitted from the object keep their current value.</summary>
+        /// <summary>Configuration for Automatic Platform Optimization (APO) for WordPress.Set to &quot;off&quot; to disable, or provide an object to configure APO settings.When an APO configuration already exists, fields omitted from the object keep their current value, and &quot;off&quot; disables APO without erasing the detected zone/site/plugin facts.On the first write for a zone (no existing configuration) an object must include `enabled`, `cf`, `wordpress` and `wp_plugin`; otherwise the request fails with error 1023 and no configuration is created. Setting &quot;off&quot; when no configuration exists is a no-op.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationPatchValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }

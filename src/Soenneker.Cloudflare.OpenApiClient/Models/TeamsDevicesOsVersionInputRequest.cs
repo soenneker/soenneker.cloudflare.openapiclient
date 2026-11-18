@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "operating_system", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WindowsOperatingSystem>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOperatingSystem = default; _explicitNullProperties?.Remove("operating_system"); AdditionalData["operating_system"] = unknown; } else { OperatingSystem = parsed; AdditionalData.Remove("operating_system"); } } },
                 { "operator", n => { Operator = n.GetStringValue(); } },

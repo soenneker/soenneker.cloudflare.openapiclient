@@ -205,7 +205,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "appleStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthorityAppleStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAppleStatus = default; _explicitNullProperties?.Remove("appleStatus"); AdditionalData["appleStatus"] = unknown; } else { AppleStatus = parsed; AdditionalData.Remove("appleStatus"); } } },
                 { "authorityKeyIdentifier", n => { AuthorityKeyIdentifier = n.GetStringValue(); } },

@@ -112,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "border_radius", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensBorderRadius>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBorderRadius = default; _explicitNullProperties?.Remove("border_radius"); AdditionalData["border_radius"] = unknown; } else { BorderRadius = parsed; AdditionalData.Remove("border_radius"); } } },
                 { "border_width", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokensBorderWidth>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBorderWidth = default; _explicitNullProperties?.Remove("border_width"); AdditionalData["border_width"] = unknown; } else { BorderWidth = parsed; AdditionalData.Remove("border_width"); } } },

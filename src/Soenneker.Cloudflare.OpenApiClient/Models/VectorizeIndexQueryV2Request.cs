@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestFilterProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestFilterProperty.CreateFromDiscriminatorValue); } },
                 { "returnMetadata", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestReturnMetadata>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReturnMetadata = default; _explicitNullProperties?.Remove("returnMetadata"); AdditionalData["returnMetadata"] = unknown; } else { ReturnMetadata = parsed; AdditionalData.Remove("returnMetadata"); } } },

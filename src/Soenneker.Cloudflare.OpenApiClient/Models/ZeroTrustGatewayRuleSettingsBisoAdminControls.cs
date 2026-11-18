@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "copy", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCopy = default; _explicitNullProperties?.Remove("copy"); AdditionalData["copy"] = unknown; } else { Copy = parsed; AdditionalData.Remove("copy"); } } },
                 { "dcp", n => { Dcp = n.GetBoolValue(); } },

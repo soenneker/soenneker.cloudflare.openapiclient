@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "health_check_rate", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWansAddSingleRequestHealthCheckRate>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHealthCheckRate = default; _explicitNullProperties?.Remove("health_check_rate"); AdditionalData["health_check_rate"] = unknown; } else { HealthCheckRate = parsed; AdditionalData.Remove("health_check_rate"); } } },
                 { "load_balance_inner_flows", n => { LoadBalanceInnerFlows = n.GetBoolValue(); } },

@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "availability", n => { Availability = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlDatasetAvailability>(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlDatasetAvailability.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "events", n => { Events = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents>(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionDatasetKindEvents.CreateFromDiscriminatorValue); } },

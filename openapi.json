@@ -7521,7 +7521,7 @@
                     "default": false
                   },
                   "updated_prompts": {
-                    "description": "Server-wide prompt capability overrides.",
+                    "description": "Prompt overrides. Omit to preserve, send [] to clear, or null to reset the field to absence.",
                     "type": "array",
                     "items": {
                       "properties": {
@@ -7549,10 +7549,11 @@
                         "name"
                       ],
                       "type": "object"
-                    }
+                    },
+                    "nullable": true
                   },
                   "updated_tools": {
-                    "description": "Server-wide tool capability overrides.",
+                    "description": "Tool overrides. Omit to preserve, send [] to clear, or null to reset the field to absence.",
                     "type": "array",
                     "items": {
                       "properties": {
@@ -7580,7 +7581,8 @@
                         "name"
                       ],
                       "type": "object"
-                    }
+                    },
+                    "nullable": true
                   }
                 }
               }
@@ -35975,6 +35977,7 @@
             "name": "page",
             "in": "query",
             "schema": {
+              "description": "Page number, from 1. A high page reads every page before it again. To read further back in a listing sorted by created_at, ask for page 1 again with a created_at lt filter set to the created_at of the last log returned. Logs in the same millisecond as that log can be left out: to include them, set the filter 1 ms later and drop the logs already returned.",
               "type": "integer",
               "default": 1,
               "maximum": 9007199254740991,
@@ -36433,6 +36436,10 @@
                         },
                         "total_count": {
                           "type": "number"
+                        },
+                        "truncated": {
+                          "description": "Present when the listing has a metadata filter or a search, sorted by created_at newest first. Such a listing searches at most the newest 10,000,000 logs in its date range, newest first, so add a created_at lt filter to search older logs. True when part of that window was not searched yet, because the page filled, time ran out, or the log store failed partway: total_count then counts only the matches in the logs searched, plus one when the page is full, so the next page is requested. False when the whole window was searched.",
+                          "type": "boolean"
                         }
                       }
                     },
@@ -127904,7 +127911,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+              "$ref": "#/components/schemas/tunnel_tunnel_id-3"
             }
           }
         ],
@@ -127996,7 +128003,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+              "$ref": "#/components/schemas/tunnel_tunnel_id-3"
             }
           }
         ],
@@ -128067,7 +128074,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+              "$ref": "#/components/schemas/tunnel_tunnel_id-3"
             }
           }
         ],
@@ -231440,7 +231447,7 @@
       "get": {
         "operationId": "get_publicListSendingSuppressions",
         "summary": "List account Email Sending suppressions",
-        "description": "Lists every active Email Sending suppression owned by the account: sending-domain suppressions and account-wide suppressions (including legacy rows with internal zone memberships). Each scope is listed newest first. The order between sending-domain and account-wide suppressions is not fixed; use `scope_type` to list one scope.",
+        "description": "Lists every active Email Sending suppression owned by the account: sending-domain suppressions and account-wide suppressions. Each scope is listed newest first. The order between sending-domain and account-wide suppressions is not fixed; use `scope_type` to list one scope.",
         "parameters": [
           {
             "name": "account_id",
@@ -231470,7 +231477,7 @@
             "schema": {
               "description": "Opaque pagination cursor returned as `result_info.next_cursor`. It carries the filters that produced it.",
               "type": "string",
-              "example": "eyJ0Ijo0LCJwaCI6ImRvbWFpbiIsInAiOjEyMywiYyI6ImMzZGM1ZjBiMzRhMTRmZjhlMWIzZWMwNDg5NWUxYjIyIn0",
+              "example": "eyJ0Ijo1LCJrIjoiZXlKcFpDSTZNVEl6ZlEiLCJjIjoiYzNkYzVmMGIzNGExNGZmOGUxYjNlYzA0ODk1ZTFiMjIifQ",
               "maxLength": 2048
             }
           },
@@ -231677,7 +231684,7 @@
                         "next_cursor": {
                           "description": "Opaque cursor for the next page. Pass it back as the `cursor` query parameter and continue until it is `null`. A bounded large-account scan may return a short intermediate page. Each scope is listed newest first; the order between the two scopes is not fixed.",
                           "type": "string",
-                          "example": "eyJ0Ijo0LCJwaCI6ImRvbWFpbiIsInAiOjEyMywiYyI6ImMzZGM1ZjBiMzRhMTRmZjhlMWIzZWMwNDg5NWUxYjIyIn0",
+                          "example": "eyJ0Ijo1LCJrIjoiZXlKcFpDSTZNVEl6ZlEiLCJjIjoiYzNkYzVmMGIzNGExNGZmOGUxYjNlYzA0ODk1ZTFiMjIifQ",
                           "nullable": true
                         },
                         "per_page": {
@@ -231784,7 +231791,7 @@
       "post": {
         "operationId": "post_publicCreateSendingSuppression",
         "summary": "Create account Email Sending suppression",
-        "description": "Creates a suppression for every sending domain of the account (default) or for one sending domain (`scope.type = sending_domain`). Creating an existing active suppression returns its identifier. If a legacy zone-linked account row already exists, it is promoted without changing its identifier.",
+        "description": "Creates a suppression for every sending domain of the account (default) or for one sending domain (`scope.type = sending_domain`). Creating an existing active suppression returns its identifier.",
         "parameters": [
           {
             "name": "account_id",
@@ -232396,7 +232403,7 @@
                                 "example": "Invalid email"
                               },
                               "id": {
-                                "description": "The created or promoted suppression's identifier. Present when `status` is `processed`.",
+                                "description": "The created or updated suppression's identifier. Present when `status` is `processed`.",
                                 "type": "string",
                                 "format": "uuid",
                                 "example": "396a5436-d4b0-42a6-b3fc-48e8fa522321"
@@ -232474,7 +232481,7 @@
                           }
                         },
                         "processed": {
-                          "description": "Number of items successfully created or promoted.",
+                          "description": "Number of items successfully created or updated.",
                           "type": "integer",
                           "example": 2
                         },
@@ -232592,7 +232599,7 @@
       "delete": {
         "operationId": "delete_publicDeleteSendingSuppression",
         "summary": "Delete account Email Sending suppression",
-        "description": "Deletes the suppression, its note, and every legacy internal zone membership, allowing future delivery attempts to the address.",
+        "description": "Deletes the suppression and its note, allowing future delivery attempts to the address.",
         "parameters": [
           {
             "name": "account_id",
@@ -233195,7 +233202,7 @@
       "patch": {
         "operationId": "patch_publicUpdateSendingSuppression",
         "summary": "Update account Email Sending suppression",
-        "description": "Updates expiry or advisory note fields without changing legacy internal zone memberships. Scope cannot be changed.",
+        "description": "Updates expiry or advisory note fields. Scope cannot be changed.",
         "parameters": [
           {
             "name": "account_id",
@@ -282375,8 +282382,9 @@
             "in": "query",
             "schema": {
               "description": "Specifies the number of pipelines per page.",
-              "type": "string",
-              "default": "25"
+              "type": "number",
+              "default": 25,
+              "minimum": 1
             }
           }
         ],
@@ -282832,7 +282840,8 @@
             "name": "per_page",
             "in": "query",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "minimum": 1
             }
           },
           {
@@ -283394,7 +283403,8 @@
             "name": "per_page",
             "in": "query",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "minimum": 1
             }
           }
         ],
@@ -284030,7 +284040,8 @@
             "name": "per_page",
             "in": "query",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "minimum": 1
             }
           }
         ],
@@ -328229,6 +328240,467 @@
         "x-fern-sdk-method-name": "list"
       }
     },
+    "/accounts/{account_id}/tunnels/{tunnel_id}/hostnames": {
+      "get": {
+        "operationId": "cloudflare-tunnel-hostname-list",
+        "summary": "List tunnel hostnames",
+        "description": "Lists and filters the hostnames assigned to a tunnel.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_account_id"
+            }
+          },
+          {
+            "name": "tunnel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+            }
+          },
+          {
+            "name": "hostname",
+            "in": "query",
+            "description": "If set, only list tunnel hostnames that contain this value. The filter is case-insensitive.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "canonical",
+            "in": "query",
+            "description": "If set, only list tunnel hostnames with the specified canonical status.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "is_deleted",
+            "in": "query",
+            "description": "If `true`, only return deleted tunnel hostnames. If `false` or omitted, exclude deleted tunnel hostnames.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Number of results to display, up to 1000. The server caps larger values at 1000.",
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_per_page"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number to return.",
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_page_number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List tunnel hostnames response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_collection"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "List tunnel hostnames response failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_collection"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tunnel_api-response-common-failure"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": []
+          },
+          {
+            "api_token": []
+          },
+          {
+            "user_service_key": []
+          }
+        ],
+        "tags": [
+          "Cloudflare Tunnel Hostname"
+        ],
+        "x-api-token-group": [
+          "Cloudflare One Connectors Write",
+          "Cloudflare One Connectors Read",
+          "Cloudflare One Connector: cloudflared Write",
+          "Cloudflare One Connector: cloudflared Read",
+          "Cloudflare Tunnel Write",
+          "Cloudflare Tunnel Read"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "tunnels.hostnames",
+        "x-fern-sdk-method-name": "list"
+      },
+      "post": {
+        "operationId": "cloudflare-tunnel-hostname-create",
+        "summary": "Create a tunnel hostname",
+        "description": "Assigns a hostname to a tunnel. If the tunnel has no active hostnames, the new hostname is always canonical.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_account_id"
+            }
+          },
+          {
+            "name": "tunnel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tunnel_post_tunnel_hostname_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Create tunnel hostname response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Create tunnel hostname response failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tunnel_api-response-common-failure"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": []
+          },
+          {
+            "api_token": []
+          },
+          {
+            "user_service_key": []
+          }
+        ],
+        "tags": [
+          "Cloudflare Tunnel Hostname"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "tunnels.hostnames",
+        "x-fern-sdk-method-name": "create"
+      }
+    },
+    "/accounts/{account_id}/tunnels/{tunnel_id}/hostnames/{hostname_id}": {
+      "delete": {
+        "operationId": "cloudflare-tunnel-hostname-delete",
+        "summary": "Delete a tunnel hostname",
+        "description": "Deletes a hostname assigned to a tunnel.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_account_id"
+            }
+          },
+          {
+            "name": "tunnel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+            }
+          },
+          {
+            "name": "hostname_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_tunnel_hostname_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete tunnel hostname response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Delete tunnel hostname response failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tunnel_api-response-common-failure"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": []
+          },
+          {
+            "api_token": []
+          },
+          {
+            "user_service_key": []
+          }
+        ],
+        "tags": [
+          "Cloudflare Tunnel Hostname"
+        ],
+        "x-api-token-group": [
+          "Cloudflare One Connectors Write",
+          "Cloudflare One Connector: cloudflared Write",
+          "Cloudflare Tunnel Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "tunnels.hostnames",
+        "x-fern-sdk-method-name": "delete",
+        "x-forge-require-confirmation": "This operation permanently deletes a tunnel hostname."
+      },
+      "get": {
+        "operationId": "cloudflare-tunnel-hostname-get",
+        "summary": "Get a tunnel hostname",
+        "description": "Fetches a hostname assigned to a tunnel.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_account_id"
+            }
+          },
+          {
+            "name": "tunnel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+            }
+          },
+          {
+            "name": "hostname_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_tunnel_hostname_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get tunnel hostname response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Get tunnel hostname response failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tunnel_api-response-common-failure"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": []
+          },
+          {
+            "api_token": []
+          },
+          {
+            "user_service_key": []
+          }
+        ],
+        "tags": [
+          "Cloudflare Tunnel Hostname"
+        ],
+        "x-api-token-group": [
+          "Cloudflare One Connectors Write",
+          "Cloudflare One Connectors Read",
+          "Cloudflare One Connector: cloudflared Write",
+          "Cloudflare One Connector: cloudflared Read",
+          "Cloudflare Tunnel Write",
+          "Cloudflare Tunnel Read"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "tunnels.hostnames",
+        "x-fern-sdk-method-name": "get"
+      },
+      "patch": {
+        "operationId": "cloudflare-tunnel-hostname-update",
+        "summary": "Update a tunnel hostname",
+        "description": "Updates the hostname value or makes it canonical. To unset a canonical hostname, make a different hostname canonical instead.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_account_id"
+            }
+          },
+          {
+            "name": "tunnel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+            }
+          },
+          {
+            "name": "hostname_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/tunnel_tunnel_hostname_id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tunnel_patch_tunnel_hostname_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update tunnel hostname response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Update tunnel hostname response failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tunnel_api-response-common-failure"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": []
+          },
+          {
+            "api_token": []
+          },
+          {
+            "user_service_key": []
+          }
+        ],
+        "tags": [
+          "Cloudflare Tunnel Hostname"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "tunnels.hostnames",
+        "x-fern-sdk-method-name": "edit"
+      }
+    },
     "/accounts/{account_id}/urlscanner/response/{response_id}": {
       "get": {
         "operationId": "urlscanner-get-response-text",
@@ -329287,6 +329759,17 @@
           },
           "429": {
             "description": "Scan request denied: rate limited.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds until the account can scan again: until the next token refills when rate limited, or until the next calendar month (UTC) when the monthly scan quota is exhausted.",
+                "schema": {
+                  "description": "Seconds until the account can scan again: until the next token refills when rate limited, or until the next calendar month (UTC) when the monthly scan quota is exhausted.",
+                  "type": "integer",
+                  "example": 10,
+                  "minimum": 1
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -338476,6 +338959,17 @@
           },
           "429": {
             "description": "Scan request denied: rate limited.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds until the account can scan again: until the next token refills when rate limited, or until the next calendar month (UTC) when the monthly scan quota is exhausted.",
+                "schema": {
+                  "description": "Seconds until the account can scan again: until the next token refills when rate limited, or until the next calendar month (UTC) when the monthly scan quota is exhausted.",
+                  "type": "integer",
+                  "example": 10,
+                  "minimum": 1
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -343101,7 +343595,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+              "$ref": "#/components/schemas/tunnel_tunnel_id-3"
             }
           }
         ],
@@ -343170,7 +343664,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+              "$ref": "#/components/schemas/tunnel_tunnel_id-3"
             }
           }
         ],
@@ -346047,16 +346541,14 @@
                     {
                       "$ref": "#/components/schemas/workers_typed_tag_key"
                     }
-                  ],
-                  "x-version-after": "2026-10-01T00:00:00Z"
+                  ]
                 },
                 {
                   "allOf": [
                     {
                       "$ref": "#/components/schemas/workers_tag"
                     }
-                  ],
-                  "x-version-before": "2026-10-01T00:00:00Z"
+                  ]
                 }
               ]
             }
@@ -346086,16 +346578,14 @@
                         {
                           "$ref": "#/components/schemas/workers_tags-kv-response"
                         }
-                      ],
-                      "x-version-after": "2026-10-01T00:00:00Z"
+                      ]
                     },
                     {
                       "allOf": [
                         {
                           "$ref": "#/components/schemas/workers_api-response-null-result"
                         }
-                      ],
-                      "x-version-before": "2026-10-01T00:00:00Z"
+                      ]
                     }
                   ]
                 }
@@ -382692,7 +383182,7 @@
             "in": "query",
             "description": "If set, only list hostname routes that point to a specific tunnel.",
             "schema": {
-              "$ref": "#/components/schemas/tunnel_tunnel_id-3"
+              "$ref": "#/components/schemas/tunnel_tunnel_id-2"
             }
           },
           {
@@ -382816,7 +383306,7 @@
                     "$ref": "#/components/schemas/tunnel_hostname"
                   },
                   "tunnel_id": {
-                    "$ref": "#/components/schemas/tunnel_tunnel_id-3"
+                    "$ref": "#/components/schemas/tunnel_tunnel_id-2"
                   }
                 }
               }
@@ -383064,7 +383554,7 @@
                     "$ref": "#/components/schemas/tunnel_hostname"
                   },
                   "tunnel_id": {
-                    "$ref": "#/components/schemas/tunnel_tunnel_id-3"
+                    "$ref": "#/components/schemas/tunnel_tunnel_id-2"
                   }
                 }
               }
@@ -383620,7 +384110,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "network.subnets.initial-resolved-ip",
-        "x-fern-sdk-method-name": "edit"
+        "x-fern-sdk-method-name": "replace"
       }
     },
     "/accounts/{account_id}/zerotrust/subnets/warp": {
@@ -421807,6 +422297,7 @@
               "description": "Specifies the attribute by which to group the results.",
               "type": "string",
               "enum": [
+                "AS_CATEGORY",
                 "HTTP_METHOD",
                 "HTTP_VERSION",
                 "IP_VERSION",
@@ -421910,6 +422401,25 @@
                 "type": "string"
               },
               "example": "EU,NA"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -422464,6 +422974,25 @@
                 "PERCENTAGE_CHANGE",
                 "MIN0_MAX"
               ]
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -426969,6 +427498,7 @@
               "description": "Specifies the attribute by which to group the results.",
               "type": "string",
               "enum": [
+                "AS_CATEGORY",
                 "HTTP_METHOD",
                 "HTTP_VERSION",
                 "IP_VERSION",
@@ -427088,6 +427618,25 @@
                 "type": "string"
               },
               "example": "EU,NA"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -427778,6 +428327,25 @@
                 ],
                 "type": "string"
               }
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -429297,6 +429865,25 @@
                 ],
                 "type": "string"
               }
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -448763,6 +449350,7 @@
               "type": "string",
               "enum": [
                 "AS",
+                "AS_CATEGORY",
                 "CACHE_HIT",
                 "DNSSEC",
                 "DNSSEC_AWARE",
@@ -449120,6 +449708,25 @@
               "items": {
                 "type": "boolean"
               }
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -449837,6 +450444,25 @@
               "items": {
                 "type": "boolean"
               }
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -456523,6 +457149,7 @@
               "type": "string",
               "enum": [
                 "AS",
+                "AS_CATEGORY",
                 "CACHE_HIT",
                 "DNSSEC",
                 "DNSSEC_AWARE",
@@ -456896,6 +457523,25 @@
               "items": {
                 "type": "boolean"
               }
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -457680,6 +458326,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "ipVersion",
             "in": "query",
             "description": "Filters results by IP version (Ipv4 vs. IPv6).",
@@ -458380,6 +459045,25 @@
               "items": {
                 "type": "boolean"
               }
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -477185,6 +477869,18 @@
                                 "type": "integer",
                                 "example": 714
                               },
+                              "category": {
+                                "description": "Inferred network type of the AS: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs) or `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers). `null` when the AS is not classified.",
+                                "type": "string",
+                                "example": "ACCESS_ISP",
+                                "enum": [
+                                  "ACCESS_ISP",
+                                  "HOSTING_CLOUD_CONTENT",
+                                  "ORGANIZATION",
+                                  null
+                                ],
+                                "nullable": true
+                              },
                               "country": {
                                 "type": "string",
                                 "example": "GB"
@@ -477220,6 +477916,7 @@
                               "asn",
                               "country",
                               "countryName",
+                              "category",
                               "estimatedUsers"
                             ],
                             "type": "object"
@@ -477638,6 +478335,18 @@
                               "type": "integer",
                               "example": 714
                             },
+                            "category": {
+                              "description": "Inferred network type of the AS: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs) or `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers). `null` when the AS is not classified.",
+                              "type": "string",
+                              "example": "ACCESS_ISP",
+                              "enum": [
+                                "ACCESS_ISP",
+                                "HOSTING_CLOUD_CONTENT",
+                                "ORGANIZATION",
+                                null
+                              ],
+                              "nullable": true
+                            },
                             "country": {
                               "type": "string",
                               "example": "GB"
@@ -477701,6 +478410,18 @@
                                   "asn": {
                                     "type": "integer"
                                   },
+                                  "category": {
+                                    "description": "Inferred network type of the AS: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs) or `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers). `null` when the AS is not classified.",
+                                    "type": "string",
+                                    "example": "ACCESS_ISP",
+                                    "enum": [
+                                      "ACCESS_ISP",
+                                      "HOSTING_CLOUD_CONTENT",
+                                      "ORGANIZATION",
+                                      null
+                                    ],
+                                    "nullable": true
+                                  },
                                   "estimatedUsers": {
                                     "description": "Total estimated users.",
                                     "type": "integer",
@@ -477712,7 +478433,8 @@
                                 },
                                 "required": [
                                   "name",
-                                  "asn"
+                                  "asn",
+                                  "category"
                                 ],
                                 "type": "object"
                               }
@@ -477735,6 +478457,7 @@
                             "asn",
                             "website",
                             "orgName",
+                            "category",
                             "source",
                             "estimatedUsers"
                           ]
@@ -477855,6 +478578,18 @@
                               "type": "integer",
                               "example": 714
                             },
+                            "category": {
+                              "description": "Inferred network type of the AS: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs) or `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers). `null` when the AS is not classified.",
+                              "type": "string",
+                              "example": "ACCESS_ISP",
+                              "enum": [
+                                "ACCESS_ISP",
+                                "HOSTING_CLOUD_CONTENT",
+                                "ORGANIZATION",
+                                null
+                              ],
+                              "nullable": true
+                            },
                             "confidenceLevel": {
                               "type": "integer",
                               "example": 5
@@ -477923,6 +478658,18 @@
                                     "type": "integer",
                                     "example": 174
                                   },
+                                  "category": {
+                                    "description": "Inferred network type of the AS: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs) or `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers). `null` when the AS is not classified.",
+                                    "type": "string",
+                                    "example": "ACCESS_ISP",
+                                    "enum": [
+                                      "ACCESS_ISP",
+                                      "HOSTING_CLOUD_CONTENT",
+                                      "ORGANIZATION",
+                                      null
+                                    ],
+                                    "nullable": true
+                                  },
                                   "estimatedUsers": {
                                     "description": "Total estimated users.",
                                     "type": "integer",
@@ -477935,7 +478682,8 @@
                                 },
                                 "required": [
                                   "name",
-                                  "asn"
+                                  "asn",
+                                  "category"
                                 ],
                                 "type": "object"
                               }
@@ -477960,6 +478708,7 @@
                             "asn",
                             "website",
                             "orgName",
+                            "category",
                             "estimatedUsers"
                           ]
                         }
@@ -484039,6 +484788,7 @@
                 "ADM1",
                 "API_TRAFFIC",
                 "AS",
+                "AS_CATEGORY",
                 "BOT_CLASS",
                 "BROWSER",
                 "BROWSER_FAMILY",
@@ -484177,6 +484927,25 @@
                 "type": "string"
               },
               "example": "API"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -484803,6 +485572,25 @@
                 "type": "string"
               },
               "example": "API"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -491376,6 +492164,7 @@
                 "ADM1",
                 "API_TRAFFIC",
                 "AS",
+                "AS_CATEGORY",
                 "BOT_CLASS",
                 "BROWSER",
                 "BROWSER_FAMILY",
@@ -491530,6 +492319,25 @@
                 "type": "string"
               },
               "example": "API"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -492174,6 +492982,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -492758,6 +493585,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "deviceType",
             "in": "query",
             "description": "Filters results by device type.",
@@ -493327,6 +494173,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -493893,6 +494758,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -494456,6 +495340,25 @@
                 "type": "string"
               },
               "example": "2267056,360689"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -495027,6 +495930,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -495590,6 +496512,25 @@
                 "type": "string"
               },
               "example": "2267056,360689"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -496165,6 +497106,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -496727,6 +497687,25 @@
                 "type": "string"
               },
               "example": "2267056,360689"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -498391,6 +499370,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -498975,6 +499973,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "deviceType",
             "in": "query",
             "description": "Filters results by device type.",
@@ -499544,6 +500561,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -500110,6 +501146,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -500673,6 +501728,25 @@
                 "type": "string"
               },
               "example": "2267056,360689"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -501244,6 +502318,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -501807,6 +502900,25 @@
                 "type": "string"
               },
               "example": "2267056,360689"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -502382,6 +503494,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "botClass",
             "in": "query",
             "description": "Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).",
@@ -502944,6 +504075,25 @@
                 "type": "string"
               },
               "example": "2267056,360689"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -506450,6 +507600,7 @@
               "enum": [
                 "ADM1",
                 "AS",
+                "AS_CATEGORY",
                 "LOCATION",
                 "PRODUCT"
               ]
@@ -506561,6 +507712,25 @@
                 "type": "string"
               },
               "example": "2267056,360689"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -506962,6 +508132,25 @@
                 "type": "string"
               },
               "example": "2023-09-01T11:41:33.782Z"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -507387,6 +508576,7 @@
               "enum": [
                 "ADM1",
                 "AS",
+                "AS_CATEGORY",
                 "LOCATION",
                 "PRODUCT"
               ]
@@ -507540,6 +508730,25 @@
                 "MIN0_MAX",
                 "PERCENTAGE_CHANGE"
               ]
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -508020,6 +509229,25 @@
             }
           },
           {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
+            }
+          },
+          {
             "name": "format",
             "in": "query",
             "description": "Format in which results will be returned.",
@@ -508439,6 +509667,25 @@
                 "type": "string"
               },
               "example": "2267056,360689"
+            }
+          },
+          {
+            "name": "asCategory",
+            "in": "query",
+            "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+            "schema": {
+              "description": "Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn't classified, or the traffic couldn't be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "ACCESS_ISP",
+                  "HOSTING_CLOUD_CONTENT",
+                  "ORGANIZATION",
+                  "UNCLASSIFIED"
+                ],
+                "type": "string"
+              },
+              "example": "ACCESS_ISP"
             }
           },
           {
@@ -516992,7 +518239,7 @@
       "get": {
         "operationId": "radar-get-search-global",
         "summary": "Search for locations, ASes, reports, and more",
-        "description": "Searches for locations, autonomous systems, reports, bots, bot operators, certificate logs, certificate authorities, industries and verticals. Location names can be localized by sending an `Accept-Language` HTTP header with a BCP 47 language tag (e.g., `Accept-Language: pt-PT`). The full quality-value chain is supported (e.g., `pt-PT,pt;q=0.9,en;q=0.8`).",
+        "description": "Searches for locations, autonomous systems, reports, bots, bot operators, certificate logs, certificate authorities, industries and verticals. Location names can be localized by sending an `Accept-Language` HTTP header with a BCP 47 language tag (e.g., `Accept-Language: pt-PT`). The full quality-value chain is supported (e.g., `pt-PT,pt;q=0.9,en;q=0.8`). ASN, ADM1 and ADM2 results include an `entity` with details about the matched entity.",
         "parameters": [
           {
             "name": "limit",
@@ -517114,6 +518361,107 @@
                               "code": {
                                 "type": "string",
                                 "example": "13335"
+                              },
+                              "entity": {
+                                "description": "Matched entity: an AS for `asn` results, a geolocation for `adm1` and `adm2`. Null for other types.",
+                                "anyOf": [
+                                  {
+                                    "nullable": true,
+                                    "properties": {
+                                      "aka": {
+                                        "description": "Alternative name of the AS.",
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "asn": {
+                                        "description": "AS number.",
+                                        "type": "integer",
+                                        "example": 714
+                                      },
+                                      "category": {
+                                        "description": "Inferred network type of the AS: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs) or `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers). `null` when the AS is not classified.",
+                                        "type": "string",
+                                        "example": "ACCESS_ISP",
+                                        "enum": [
+                                          "ACCESS_ISP",
+                                          "HOSTING_CLOUD_CONTENT",
+                                          "ORGANIZATION",
+                                          null
+                                        ],
+                                        "nullable": true
+                                      },
+                                      "country": {
+                                        "description": "Alpha-2 code of the country or territory where the AS is registered.",
+                                        "type": "string",
+                                        "example": "GB",
+                                        "nullable": true
+                                      },
+                                      "name": {
+                                        "description": "AS name.",
+                                        "type": "string",
+                                        "example": "Apple Inc.",
+                                        "nullable": true
+                                      }
+                                    },
+                                    "required": [
+                                      "category",
+                                      "asn",
+                                      "name",
+                                      "aka",
+                                      "country"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "nullable": true,
+                                    "properties": {
+                                      "geoId": {
+                                        "description": "GeoNames ID of the geolocation.",
+                                        "type": "string",
+                                        "example": "2267056"
+                                      },
+                                      "name": {
+                                        "description": "Localized name of the geolocation.",
+                                        "type": "string",
+                                        "example": "Lisbon"
+                                      },
+                                      "parent": {
+                                        "description": "Parent geolocation (country for `adm1`, `adm1` for `adm2`).",
+                                        "type": "object",
+                                        "nullable": true,
+                                        "properties": {
+                                          "code": {
+                                            "description": "Code of the parent: alpha-2 code for a country, subdivision code for an `adm1`.",
+                                            "type": "string",
+                                            "example": "PT",
+                                            "nullable": true
+                                          },
+                                          "name": {
+                                            "description": "Localized name of the parent geolocation.",
+                                            "type": "string",
+                                            "example": "Portugal"
+                                          },
+                                          "type": {
+                                            "description": "Type of the parent geolocation, such as `COUNTRY` or `ADM1`.",
+                                            "type": "string",
+                                            "example": "COUNTRY"
+                                          }
+                                        },
+                                        "required": [
+                                          "code",
+                                          "name",
+                                          "type"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "geoId",
+                                      "name",
+                                      "parent"
+                                    ],
+                                    "type": "object"
+                                  }
+                                ]
                               },
                               "name": {
                                 "type": "string",
@@ -524774,8 +526122,8 @@
           "Load Balancing: Monitors and Pools Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "user.load-balancers.pools.edit.pools",
-        "x-fern-sdk-method-name": "pools"
+        "x-fern-sdk-group-name": "user.load-balancers.pools",
+        "x-fern-sdk-method-name": "bulk-edit"
       },
       "post": {
         "operationId": "load-balancer-pools-create-pool",
@@ -525106,8 +526454,8 @@
           "Load Balancing: Monitors and Pools Write"
         ],
         "x-fern-availability": "generally-available",
-        "x-fern-sdk-group-name": "user.load-balancers.pools.edit.pools",
-        "x-fern-sdk-method-name": "pool"
+        "x-fern-sdk-group-name": "user.load-balancers.pools",
+        "x-fern-sdk-method-name": "edit"
       },
       "put": {
         "operationId": "load-balancer-pools-update-pool",
@@ -544387,253 +545735,91 @@
             }
           },
           {
-            "name": "name",
-            "in": "query",
-            "schema": {
-              "description": "Exact value of the DNS record name. This is a convenience alias for `name.exact`.\n",
-              "type": "string",
-              "example": "www.example.com"
-            }
+            "$ref": "#/components/parameters/dns-records_name"
           },
           {
-            "name": "name.exact",
-            "in": "query",
-            "schema": {
-              "description": "Exact value of the DNS record name. Name filters are case-insensitive.\n",
-              "type": "string",
-              "example": "www.example.com"
-            }
+            "$ref": "#/components/parameters/dns-records_name_exact"
           },
           {
-            "name": "name.contains",
-            "in": "query",
-            "schema": {
-              "description": "Substring of the DNS record name. Name filters are case-insensitive.\n",
-              "type": "string",
-              "example": "w.example."
-            }
+            "$ref": "#/components/parameters/dns-records_name_contains"
           },
           {
-            "name": "name.startswith",
-            "in": "query",
-            "schema": {
-              "description": "Prefix of the DNS record name. Name filters are case-insensitive.\n",
-              "type": "string",
-              "example": "www.example"
-            }
+            "$ref": "#/components/parameters/dns-records_name_startswith"
           },
           {
-            "name": "name.endswith",
-            "in": "query",
-            "schema": {
-              "description": "Suffix of the DNS record name. Name filters are case-insensitive.\n",
-              "type": "string",
-              "example": ".example.com"
-            }
+            "$ref": "#/components/parameters/dns-records_name_endswith"
           },
           {
-            "name": "type",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/dns-records_type"
-            }
+            "$ref": "#/components/parameters/dns-records_type"
           },
           {
-            "name": "content",
-            "in": "query",
-            "schema": {
-              "description": "Exact value of the DNS record content. This is a convenience alias for `content.exact`.\n",
-              "type": "string",
-              "example": "127.0.0.1"
-            }
+            "$ref": "#/components/parameters/dns-records_content"
           },
           {
-            "name": "content.exact",
-            "in": "query",
-            "schema": {
-              "description": "Exact value of the DNS record content. Content filters are case-insensitive.\n",
-              "type": "string",
-              "example": "127.0.0.1"
-            }
+            "$ref": "#/components/parameters/dns-records_content_exact"
           },
           {
-            "name": "content.contains",
-            "in": "query",
-            "schema": {
-              "description": "Substring of the DNS record content. Content filters are case-insensitive.\n",
-              "type": "string",
-              "example": "7.0.0."
-            }
+            "$ref": "#/components/parameters/dns-records_content_contains"
           },
           {
-            "name": "content.startswith",
-            "in": "query",
-            "schema": {
-              "description": "Prefix of the DNS record content. Content filters are case-insensitive.\n",
-              "type": "string",
-              "example": "127.0."
-            }
+            "$ref": "#/components/parameters/dns-records_content_startswith"
           },
           {
-            "name": "content.endswith",
-            "in": "query",
-            "schema": {
-              "description": "Suffix of the DNS record content. Content filters are case-insensitive.\n",
-              "type": "string",
-              "example": ".0.1"
-            }
+            "$ref": "#/components/parameters/dns-records_content_endswith"
           },
           {
-            "name": "proxied",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/dns-records_proxied"
-            }
+            "$ref": "#/components/parameters/dns-records_proxied"
           },
           {
-            "name": "match",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/dns-records_match"
-            }
+            "$ref": "#/components/parameters/dns-records_match"
           },
           {
-            "name": "comment",
-            "in": "query",
-            "schema": {
-              "description": "Exact value of the DNS record comment. This is a convenience alias for `comment.exact`.\n",
-              "type": "string",
-              "example": "Hello, world"
-            }
+            "$ref": "#/components/parameters/dns-records_comment"
           },
           {
-            "name": "comment.present",
-            "in": "query",
-            "schema": {
-              "description": "If this parameter is present, only records *with* a comment are returned.\n",
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/dns-records_comment_present"
           },
           {
-            "name": "comment.absent",
-            "in": "query",
-            "schema": {
-              "description": "If this parameter is present, only records *without* a comment are returned.\n",
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/dns-records_comment_absent"
           },
           {
-            "name": "comment.exact",
-            "in": "query",
-            "schema": {
-              "description": "Exact value of the DNS record comment. Comment filters are case-insensitive.\n",
-              "type": "string",
-              "example": "Hello, world"
-            }
+            "$ref": "#/components/parameters/dns-records_comment_exact"
           },
           {
-            "name": "comment.contains",
-            "in": "query",
-            "schema": {
-              "description": "Substring of the DNS record comment. Comment filters are case-insensitive.\n",
-              "type": "string",
-              "example": "ello, worl"
-            }
+            "$ref": "#/components/parameters/dns-records_comment_contains"
           },
           {
-            "name": "comment.startswith",
-            "in": "query",
-            "schema": {
-              "description": "Prefix of the DNS record comment. Comment filters are case-insensitive.\n",
-              "type": "string",
-              "example": "Hello, w"
-            }
+            "$ref": "#/components/parameters/dns-records_comment_startswith"
           },
           {
-            "name": "comment.endswith",
-            "in": "query",
-            "schema": {
-              "description": "Suffix of the DNS record comment. Comment filters are case-insensitive.\n",
-              "type": "string",
-              "example": "o, world"
-            }
+            "$ref": "#/components/parameters/dns-records_comment_endswith"
           },
           {
-            "name": "tag",
-            "in": "query",
-            "schema": {
-              "description": "Condition on the DNS record tag.\n\nParameter values can be of the form `<tag-name>:<tag-value>` to search for an exact `name:value` pair, or just `<tag-name>` to search for records with a specific tag name regardless of its value.\n\nThis is a convenience shorthand for the more powerful `tag.<predicate>` parameters.\nExamples:\n- `tag=important` is equivalent to `tag.present=important`\n- `tag=team:DNS` is equivalent to `tag.exact=team:DNS`\n",
-              "type": "string",
-              "example": "team:DNS"
-            }
+            "$ref": "#/components/parameters/dns-records_tag"
           },
           {
-            "name": "tag.present",
-            "in": "query",
-            "schema": {
-              "description": "Name of a tag which must be present on the DNS record. Tag filters are case-insensitive.\n",
-              "type": "string",
-              "example": "important"
-            }
+            "$ref": "#/components/parameters/dns-records_tag_present"
           },
           {
-            "name": "tag.absent",
-            "in": "query",
-            "schema": {
-              "description": "Name of a tag which must *not* be present on the DNS record. Tag filters are case-insensitive.\n",
-              "type": "string",
-              "example": "important"
-            }
+            "$ref": "#/components/parameters/dns-records_tag_absent"
           },
           {
-            "name": "tag.exact",
-            "in": "query",
-            "schema": {
-              "description": "A tag and value, of the form `<tag-name>:<tag-value>`. The API will only return DNS records that have a tag named `<tag-name>` whose value is `<tag-value>`. Tag filters are case-insensitive.\n",
-              "type": "string",
-              "example": "greeting:Hello, world"
-            }
+            "$ref": "#/components/parameters/dns-records_tag_exact"
           },
           {
-            "name": "tag.contains",
-            "in": "query",
-            "schema": {
-              "description": "A tag and value, of the form `<tag-name>:<tag-value>`. The API will only return DNS records that have a tag named `<tag-name>` whose value contains `<tag-value>`. Tag filters are case-insensitive.\n",
-              "type": "string",
-              "example": "greeting:ello, worl"
-            }
+            "$ref": "#/components/parameters/dns-records_tag_contains"
           },
           {
-            "name": "tag.startswith",
-            "in": "query",
-            "schema": {
-              "description": "A tag and value, of the form `<tag-name>:<tag-value>`. The API will only return DNS records that have a tag named `<tag-name>` whose value starts with `<tag-value>`. Tag filters are case-insensitive.\n",
-              "type": "string",
-              "example": "greeting:Hello, w"
-            }
+            "$ref": "#/components/parameters/dns-records_tag_startswith"
           },
           {
-            "name": "tag.endswith",
-            "in": "query",
-            "schema": {
-              "description": "A tag and value, of the form `<tag-name>:<tag-value>`. The API will only return DNS records that have a tag named `<tag-name>` whose value ends with `<tag-value>`. Tag filters are case-insensitive.\n",
-              "type": "string",
-              "example": "greeting:o, world"
-            }
+            "$ref": "#/components/parameters/dns-records_tag_endswith"
           },
           {
-            "name": "search",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/dns-records_search"
-            }
+            "$ref": "#/components/parameters/dns-records_search"
           },
           {
-            "name": "tag_match",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/dns-records_tag_match"
-            }
+            "$ref": "#/components/parameters/dns-records_tag_match"
           },
           {
             "name": "page",
@@ -544667,22 +545853,10 @@
             "$ref": "#/components/parameters/dns-records_include_shadow_metadata"
           },
           {
-            "name": "shadowed_by_name",
-            "in": "query",
-            "schema": {
-              "description": "Filters the response to records at or below the specified NS delegation name. NS, DS, and NSEC records at the delegation name are excluded because they are not shadowed by that delegation. Those record types are included only when they exist below the delegation. The value must be a non-apex subdomain of the zone. Requires `include_shadow_metadata=true`. See [Shadowed records](https://developers.cloudflare.com/dns/manage-dns-records/reference/shadowed-records).\n",
-              "type": "string",
-              "example": "sub.example.com"
-            }
+            "$ref": "#/components/parameters/dns-records_shadowed_by_name"
           },
           {
-            "name": "shadowing_name",
-            "in": "query",
-            "schema": {
-              "description": "Returns NS records that shadow the given name, searching at the name itself and each of its ancestor names within the zone, excluding the zone apex. The value must be a subdomain of the zone; the zone apex is not accepted. See [Shadowed records](https://developers.cloudflare.com/dns/manage-dns-records/reference/shadowed-records).\n",
-              "type": "string",
-              "example": "www.sub.example.com"
-            }
+            "$ref": "#/components/parameters/dns-records_shadowing_name"
           }
         ],
         "responses": {
@@ -544906,14 +546080,14 @@
         },
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "dns.records",
-        "x-fern-sdk-method-name": "batch"
+        "x-fern-sdk-method-name": "bulk-apply"
       }
     },
     "/zones/{zone_id}/dns_records/export": {
       "get": {
         "operationId": "dns-records-for-a-zone-export-dns-records",
         "summary": "Export DNS Records",
-        "description": "You can export your [BIND config](https://en.wikipedia.org/wiki/Zone_file \"Zone file\") through this endpoint.\n\nSee [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ \"Import and export records\") for more information.",
+        "description": "Export your [BIND config](https://en.wikipedia.org/wiki/Zone_file \"Zone file\") through this endpoint. Use the same record filters as the List DNS Records endpoint to export only matching stored records.\n\nBy default, the SOA record (stored or generated) and assigned apex NS records, where applicable, are included regardless of filters. Secondary zones must have a stored SOA record to export in this mode. Set `include_generated_records=false` to export only matching stored records, without adding the SOA/nameserver section or requiring secondary zones to have an SOA record. Matching stored SOA and NS records are still exported. This may produce a partial zone rather than a complete zone. Workers-managed records are never exported.\n\nThe export returns at most 5,000,000 matching stored records, in addition to any automatically included SOA and assigned apex NS records. It is not paginated and does not support `page`, `per_page`, `order`, `direction`, `cursor`, or `prev_cursor`.\n\n`include_shadow_metadata=true` is required when using `shadowed_by_name`; it does not add shadow metadata to the BIND output.\n\nSee [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ \"Import and export records\") for more information.\n",
         "parameters": [
           {
             "name": "zone_id",
@@ -544922,6 +546096,119 @@
             "schema": {
               "$ref": "#/components/schemas/dns-records_identifier"
             }
+          },
+          {
+            "name": "include_generated_records",
+            "in": "query",
+            "schema": {
+              "description": "Whether to add the SOA and assigned apex NS records independently of the record filters. Set to `false` to export only matching stored records. Matching stored SOA and NS records are still exported.\n",
+              "type": "boolean",
+              "example": false,
+              "default": true
+            }
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_name"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_name_exact"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_name_contains"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_name_startswith"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_name_endswith"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_type"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_content"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_content_exact"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_content_contains"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_content_startswith"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_content_endswith"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_proxied"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_match"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_comment"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_comment_present"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_comment_absent"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_comment_exact"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_comment_contains"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_comment_startswith"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_comment_endswith"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_tag"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_tag_present"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_tag_absent"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_tag_exact"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_tag_contains"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_tag_startswith"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_tag_endswith"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_search"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_tag_match"
+          },
+          {
+            "name": "include_shadow_metadata",
+            "in": "query",
+            "schema": {
+              "description": "Set to `true` to enable the `shadowed_by_name` filter. This does not add shadow metadata to the BIND output.\n",
+              "type": "boolean",
+              "example": true,
+              "default": false
+            }
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_shadowed_by_name"
+          },
+          {
+            "$ref": "#/components/parameters/dns-records_shadowing_name"
           }
         ],
         "responses": {
@@ -574382,7 +575669,7 @@
       "patch": {
         "operationId": "zone-settings-change-automatic-platform-optimization-setting",
         "summary": "Change Automatic Platform Optimization setting",
-        "description": "Automatic Platform Optimization (APO) for WordPress is a performance feature that serves your\nWordPress site from Cloudflare's edge network, reducing load times for visitors.\nRefer to the APO documentation for more information.\nWhen an APO configuration already exists, fields omitted from an object `value` keep their current value, except `recheck`, which is false unless the request sends it.\n",
+        "description": "Automatic Platform Optimization (APO) for WordPress is a performance feature that serves your\nWordPress site from Cloudflare's edge network, reducing load times for visitors.\nRefer to the APO documentation for more information.\nWhen an APO configuration already exists, fields omitted from an object `value` keep their current value, except `recheck`, which is false unless the request sends it. Setting `value` to `\"off\"` disables APO but keeps the detected zone/site/plugin facts.\nOn the first write for a zone (no existing configuration) an object `value` must include `enabled`, `cf`, `wordpress` and `wp_plugin`; otherwise the request fails with error 1023. `\"off\"` is a no-op when no configuration exists.\n",
         "parameters": [
           {
             "name": "zone_id",
@@ -589380,6 +590667,112 @@
           "$ref": "#/components/schemas/dls_identifier"
         }
       },
+      "dns-records_comment": {
+        "in": "query",
+        "name": "comment",
+        "schema": {
+          "description": "Exact value of the DNS record comment. This is a convenience alias for `comment.exact`.\n",
+          "type": "string",
+          "example": "Hello, world"
+        }
+      },
+      "dns-records_comment_absent": {
+        "in": "query",
+        "name": "comment.absent",
+        "schema": {
+          "description": "If this parameter is present, only records *without* a comment are returned.\n",
+          "type": "string"
+        }
+      },
+      "dns-records_comment_contains": {
+        "in": "query",
+        "name": "comment.contains",
+        "schema": {
+          "description": "Substring of the DNS record comment. Comment filters are case-insensitive.\n",
+          "type": "string",
+          "example": "ello, worl"
+        }
+      },
+      "dns-records_comment_endswith": {
+        "in": "query",
+        "name": "comment.endswith",
+        "schema": {
+          "description": "Suffix of the DNS record comment. Comment filters are case-insensitive.\n",
+          "type": "string",
+          "example": "o, world"
+        }
+      },
+      "dns-records_comment_exact": {
+        "in": "query",
+        "name": "comment.exact",
+        "schema": {
+          "description": "Exact value of the DNS record comment. Comment filters are case-insensitive.\n",
+          "type": "string",
+          "example": "Hello, world"
+        }
+      },
+      "dns-records_comment_present": {
+        "in": "query",
+        "name": "comment.present",
+        "schema": {
+          "description": "If this parameter is present, only records *with* a comment are returned.\n",
+          "type": "string"
+        }
+      },
+      "dns-records_comment_startswith": {
+        "in": "query",
+        "name": "comment.startswith",
+        "schema": {
+          "description": "Prefix of the DNS record comment. Comment filters are case-insensitive.\n",
+          "type": "string",
+          "example": "Hello, w"
+        }
+      },
+      "dns-records_content": {
+        "in": "query",
+        "name": "content",
+        "schema": {
+          "description": "Exact value of the DNS record content. This is a convenience alias for `content.exact`.\n",
+          "type": "string",
+          "example": "127.0.0.1"
+        }
+      },
+      "dns-records_content_contains": {
+        "in": "query",
+        "name": "content.contains",
+        "schema": {
+          "description": "Substring of the DNS record content. Content filters are case-insensitive.\n",
+          "type": "string",
+          "example": "7.0.0."
+        }
+      },
+      "dns-records_content_endswith": {
+        "in": "query",
+        "name": "content.endswith",
+        "schema": {
+          "description": "Suffix of the DNS record content. Content filters are case-insensitive.\n",
+          "type": "string",
+          "example": ".0.1"
+        }
+      },
+      "dns-records_content_exact": {
+        "in": "query",
+        "name": "content.exact",
+        "schema": {
+          "description": "Exact value of the DNS record content. Content filters are case-insensitive.\n",
+          "type": "string",
+          "example": "127.0.0.1"
+        }
+      },
+      "dns-records_content_startswith": {
+        "in": "query",
+        "name": "content.startswith",
+        "schema": {
+          "description": "Prefix of the DNS record content. Content filters are case-insensitive.\n",
+          "type": "string",
+          "example": "127.0."
+        }
+      },
       "dns-records_include_shadow_metadata": {
         "in": "query",
         "name": "include_shadow_metadata",
@@ -589388,6 +590781,167 @@
           "type": "boolean",
           "example": true,
           "default": false
+        }
+      },
+      "dns-records_match": {
+        "in": "query",
+        "name": "match",
+        "schema": {
+          "$ref": "#/components/schemas/dns-records_match"
+        }
+      },
+      "dns-records_name": {
+        "in": "query",
+        "name": "name",
+        "schema": {
+          "description": "Exact value of the DNS record name. This is a convenience alias for `name.exact`.\n",
+          "type": "string",
+          "example": "www.example.com"
+        }
+      },
+      "dns-records_name_contains": {
+        "in": "query",
+        "name": "name.contains",
+        "schema": {
+          "description": "Substring of the DNS record name. Name filters are case-insensitive.\n",
+          "type": "string",
+          "example": "w.example."
+        }
+      },
+      "dns-records_name_endswith": {
+        "in": "query",
+        "name": "name.endswith",
+        "schema": {
+          "description": "Suffix of the DNS record name. Name filters are case-insensitive.\n",
+          "type": "string",
+          "example": ".example.com"
+        }
+      },
+      "dns-records_name_exact": {
+        "in": "query",
+        "name": "name.exact",
+        "schema": {
+          "description": "Exact value of the DNS record name. Name filters are case-insensitive.\n",
+          "type": "string",
+          "example": "www.example.com"
+        }
+      },
+      "dns-records_name_startswith": {
+        "in": "query",
+        "name": "name.startswith",
+        "schema": {
+          "description": "Prefix of the DNS record name. Name filters are case-insensitive.\n",
+          "type": "string",
+          "example": "www.example"
+        }
+      },
+      "dns-records_proxied": {
+        "in": "query",
+        "name": "proxied",
+        "schema": {
+          "$ref": "#/components/schemas/dns-records_proxied"
+        }
+      },
+      "dns-records_search": {
+        "in": "query",
+        "name": "search",
+        "schema": {
+          "$ref": "#/components/schemas/dns-records_search"
+        }
+      },
+      "dns-records_shadowed_by_name": {
+        "in": "query",
+        "name": "shadowed_by_name",
+        "schema": {
+          "description": "Filters the response to records at or below the specified NS delegation name. NS, DS, and NSEC records at the delegation name are excluded because they are not shadowed by that delegation. Those record types are included only when they exist below the delegation. The value must be a non-apex subdomain of the zone. Requires `include_shadow_metadata=true`. See [Shadowed records](https://developers.cloudflare.com/dns/manage-dns-records/reference/shadowed-records).\n",
+          "type": "string",
+          "example": "sub.example.com"
+        }
+      },
+      "dns-records_shadowing_name": {
+        "in": "query",
+        "name": "shadowing_name",
+        "schema": {
+          "description": "Returns NS records that shadow the given name, searching at the name itself and each of its ancestor names within the zone, excluding the zone apex. The value must be a subdomain of the zone; the zone apex is not accepted. See [Shadowed records](https://developers.cloudflare.com/dns/manage-dns-records/reference/shadowed-records).\n",
+          "type": "string",
+          "example": "www.sub.example.com"
+        }
+      },
+      "dns-records_tag": {
+        "in": "query",
+        "name": "tag",
+        "schema": {
+          "description": "Condition on the DNS record tag.\n\nParameter values can be of the form `<tag-name>:<tag-value>` to search for an exact `name:value` pair, or just `<tag-name>` to search for records with a specific tag name regardless of its value.\n\nThis is a convenience shorthand for the more powerful `tag.<predicate>` parameters.\nExamples:\n- `tag=important` is equivalent to `tag.present=important`\n- `tag=team:DNS` is equivalent to `tag.exact=team:DNS`\n",
+          "type": "string",
+          "example": "team:DNS"
+        }
+      },
+      "dns-records_tag_absent": {
+        "in": "query",
+        "name": "tag.absent",
+        "schema": {
+          "description": "Name of a tag which must *not* be present on the DNS record. Tag filters are case-insensitive.\n",
+          "type": "string",
+          "example": "important"
+        }
+      },
+      "dns-records_tag_contains": {
+        "in": "query",
+        "name": "tag.contains",
+        "schema": {
+          "description": "A tag and value, of the form `<tag-name>:<tag-value>`. The API will only return DNS records that have a tag named `<tag-name>` whose value contains `<tag-value>`. Tag filters are case-insensitive.\n",
+          "type": "string",
+          "example": "greeting:ello, worl"
+        }
+      },
+      "dns-records_tag_endswith": {
+        "in": "query",
+        "name": "tag.endswith",
+        "schema": {
+          "description": "A tag and value, of the form `<tag-name>:<tag-value>`. The API will only return DNS records that have a tag named `<tag-name>` whose value ends with `<tag-value>`. Tag filters are case-insensitive.\n",
+          "type": "string",
+          "example": "greeting:o, world"
+        }
+      },
+      "dns-records_tag_exact": {
+        "in": "query",
+        "name": "tag.exact",
+        "schema": {
+          "description": "A tag and value, of the form `<tag-name>:<tag-value>`. The API will only return DNS records that have a tag named `<tag-name>` whose value is `<tag-value>`. Tag filters are case-insensitive.\n",
+          "type": "string",
+          "example": "greeting:Hello, world"
+        }
+      },
+      "dns-records_tag_match": {
+        "in": "query",
+        "name": "tag_match",
+        "schema": {
+          "$ref": "#/components/schemas/dns-records_tag_match"
+        }
+      },
+      "dns-records_tag_present": {
+        "in": "query",
+        "name": "tag.present",
+        "schema": {
+          "description": "Name of a tag which must be present on the DNS record. Tag filters are case-insensitive.\n",
+          "type": "string",
+          "example": "important"
+        }
+      },
+      "dns-records_tag_startswith": {
+        "in": "query",
+        "name": "tag.startswith",
+        "schema": {
+          "description": "A tag and value, of the form `<tag-name>:<tag-value>`. The API will only return DNS records that have a tag named `<tag-name>` whose value starts with `<tag-value>`. Tag filters are case-insensitive.\n",
+          "type": "string",
+          "example": "greeting:Hello, w"
+        }
+      },
+      "dns-records_type": {
+        "in": "query",
+        "name": "type",
+        "schema": {
+          "$ref": "#/components/schemas/dns-records_type"
         }
       },
       "email-auth_record_id": {
@@ -590276,7 +591830,8 @@
         "in": "query",
         "name": "per_page",
         "schema": {
-          "type": "integer"
+          "type": "integer",
+          "minimum": 1
         }
       },
       "posture-api_PolicyId": {
@@ -654510,7 +656065,7 @@
         }
       },
       "dns-records_tag_match": {
-        "description": "Whether to match all tag search requirements or at least one (any). If set to `all`, acts like a logical AND between tag filters. If set to `any`, acts like a logical OR instead. Note that the regular `match` parameter is still used to combine the resulting condition with other filters that aren't related to tags.\n",
+        "description": "Whether to match all tag search requirements or at least one (any). If set to `all`, acts like a logical AND between tag filters. If set to `any`, acts like a logical OR instead. Note that the regular `match` parameter is still used to combine the resulting condition with other filters that aren't related to tags. The legacy `tag-match` parameter is an alias for this parameter.\n",
         "type": "string",
         "example": "any",
         "default": "all",
@@ -689561,6 +691116,12 @@
             "description": "Platform identifier",
             "type": "string"
           },
+          "qdiscs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/mconn-telemetry_snapshot_qdisc"
+            }
+          },
           "routes": {
             "type": "array",
             "items": {
@@ -690241,6 +691802,326 @@
           "sent_colls",
           "sent_carrier",
           "sent_compressed"
+        ]
+      },
+      "mconn-telemetry_snapshot_qdisc": {
+        "description": "Snapshot Qdisc",
+        "type": "object",
+        "properties": {
+          "backlog": {
+            "description": "Bytes currently queued",
+            "type": "number"
+          },
+          "bytes": {
+            "description": "Total bytes sent",
+            "type": "number"
+          },
+          "cake_stats": {
+            "$ref": "#/components/schemas/mconn-telemetry_snapshot_qdisc_cake"
+          },
+          "dev": {
+            "description": "Interface the qdisc is attached to",
+            "type": "string"
+          },
+          "drops": {
+            "description": "Total packets dropped",
+            "type": "number"
+          },
+          "handle": {
+            "description": "Qdisc handle",
+            "type": "string"
+          },
+          "kind": {
+            "description": "Kind of qdisc",
+            "type": "string"
+          },
+          "overlimits": {
+            "description": "Total times the qdisc was over its limit",
+            "type": "number"
+          },
+          "packets": {
+            "description": "Total packets sent",
+            "type": "number"
+          },
+          "parent": {
+            "description": "Parent class handle (absent when root)",
+            "type": "string"
+          },
+          "qlen": {
+            "description": "Packets currently queued",
+            "type": "number"
+          },
+          "requeues": {
+            "description": "Total packets requeued",
+            "type": "number"
+          },
+          "root": {
+            "description": "Set when attached at the root of the interface",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "dev",
+          "kind",
+          "handle",
+          "bytes",
+          "packets",
+          "drops",
+          "overlimits",
+          "requeues",
+          "backlog",
+          "qlen"
+        ]
+      },
+      "mconn-telemetry_snapshot_qdisc_cake": {
+        "description": "Snapshot Qdisc CAKE",
+        "type": "object",
+        "properties": {
+          "avg_hdr_offset": {
+            "description": "Average offset of the network header within packets (bytes)",
+            "type": "number"
+          },
+          "capacity_estimate": {
+            "description": "Estimated link capacity (bytes per second)",
+            "type": "number"
+          },
+          "max_adj_size": {
+            "description": "Largest overhead-adjusted packet seen (bytes)",
+            "type": "number"
+          },
+          "max_network_size": {
+            "description": "Largest network-layer packet seen (bytes)",
+            "type": "number"
+          },
+          "memory_limit": {
+            "description": "Memory limit for queued packets (bytes)",
+            "type": "number"
+          },
+          "memory_used": {
+            "description": "Peak memory used by queued packets (bytes)",
+            "type": "number"
+          },
+          "min_adj_size": {
+            "description": "Smallest overhead-adjusted packet seen (bytes, 65535 until the first packet after creation or an overhead change)",
+            "type": "number"
+          },
+          "min_network_size": {
+            "description": "Smallest network-layer packet seen (bytes, 65535 until the first packet after creation or an overhead change)",
+            "type": "number"
+          },
+          "options": {
+            "$ref": "#/components/schemas/mconn-telemetry_snapshot_qdisc_cake_options"
+          },
+          "tins": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/mconn-telemetry_snapshot_qdisc_cake_tin"
+            }
+          }
+        },
+        "required": [
+          "options",
+          "memory_used",
+          "memory_limit",
+          "capacity_estimate",
+          "min_network_size",
+          "max_network_size",
+          "min_adj_size",
+          "max_adj_size",
+          "avg_hdr_offset",
+          "tins"
+        ]
+      },
+      "mconn-telemetry_snapshot_qdisc_cake_options": {
+        "description": "Snapshot Qdisc CAKE Options",
+        "type": "object",
+        "properties": {
+          "ack_filter": {
+            "description": "ACK filter mode",
+            "type": "string"
+          },
+          "atm": {
+            "description": "ATM cell compensation mode (absent when raw without ATM or PTM compensation)",
+            "type": "string"
+          },
+          "autorate": {
+            "description": "Automatic rate estimation mode (absent when disabled)",
+            "type": "string"
+          },
+          "bandwidth": {
+            "description": "Shaped rate (bytes per second, 0 when unlimited)",
+            "type": "number"
+          },
+          "diffserv": {
+            "description": "Diffserv mode",
+            "type": "string"
+          },
+          "flowmode": {
+            "description": "Flow isolation mode",
+            "type": "string"
+          },
+          "fwmark": {
+            "description": "Firewall mark mask used to select a tin",
+            "type": "string"
+          },
+          "ingress": {
+            "description": "Set when shaping in ingress mode",
+            "type": "boolean"
+          },
+          "memlimit": {
+            "description": "Configured memory limit for queued packets (bytes, absent when unset)",
+            "type": "number"
+          },
+          "mpu": {
+            "description": "Minimum packet size (bytes, absent when unset)",
+            "type": "number"
+          },
+          "nat": {
+            "description": "Set when flow isolation uses post-NAT addresses",
+            "type": "boolean"
+          },
+          "overhead": {
+            "description": "Per-packet overhead compensation (bytes)",
+            "type": "number"
+          },
+          "raw": {
+            "description": "Set when no overhead compensation is applied",
+            "type": "boolean"
+          },
+          "rtt": {
+            "description": "Expected round-trip time (microseconds)",
+            "type": "number"
+          },
+          "split_gso": {
+            "description": "Set when GSO super-packets are split",
+            "type": "boolean"
+          },
+          "wash": {
+            "description": "Set when DSCP markings are cleared on egress",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "bandwidth",
+          "diffserv",
+          "flowmode",
+          "nat",
+          "wash",
+          "ingress",
+          "ack_filter",
+          "split_gso",
+          "rtt",
+          "raw",
+          "overhead",
+          "fwmark"
+        ]
+      },
+      "mconn-telemetry_snapshot_qdisc_cake_tin": {
+        "description": "Snapshot Qdisc CAKE Tin",
+        "type": "object",
+        "properties": {
+          "ack_drops": {
+            "description": "Total ACKs dropped by the ACK filter",
+            "type": "number"
+          },
+          "avg_delay_us": {
+            "description": "Average queueing delay (microseconds)",
+            "type": "number"
+          },
+          "backlog_bytes": {
+            "description": "Bytes currently queued",
+            "type": "number"
+          },
+          "base_delay_us": {
+            "description": "Minimum queueing delay (microseconds)",
+            "type": "number"
+          },
+          "bulk_flows": {
+            "description": "Current number of bulk flows",
+            "type": "number"
+          },
+          "drops": {
+            "description": "Total packets dropped",
+            "type": "number"
+          },
+          "ecn_mark": {
+            "description": "Total packets marked with ECN Congestion Experienced",
+            "type": "number"
+          },
+          "flow_quantum": {
+            "description": "Bytes each flow may send per scheduling round",
+            "type": "number"
+          },
+          "interval_us": {
+            "description": "AQM interval (microseconds)",
+            "type": "number"
+          },
+          "max_pkt_len": {
+            "description": "Largest packet seen (bytes)",
+            "type": "number"
+          },
+          "peak_delay_us": {
+            "description": "Peak queueing delay (microseconds)",
+            "type": "number"
+          },
+          "sent_bytes": {
+            "description": "Total bytes sent",
+            "type": "number"
+          },
+          "sent_packets": {
+            "description": "Total packets sent",
+            "type": "number"
+          },
+          "sparse_flows": {
+            "description": "Current number of sparse flows",
+            "type": "number"
+          },
+          "target_us": {
+            "description": "Target queueing delay (microseconds)",
+            "type": "number"
+          },
+          "threshold_rate": {
+            "description": "Rate above which the tin yields to lower-priority tins (bytes per second)",
+            "type": "number"
+          },
+          "unresponsive_flows": {
+            "description": "Current number of unresponsive flows",
+            "type": "number"
+          },
+          "way_collisions": {
+            "description": "Total flow hash collisions",
+            "type": "number"
+          },
+          "way_indirect_hits": {
+            "description": "Total flow hash lookups resolved by set-associative probing",
+            "type": "number"
+          },
+          "way_misses": {
+            "description": "Total flow hash lookups that allocated a new queue",
+            "type": "number"
+          }
+        },
+        "required": [
+          "threshold_rate",
+          "sent_bytes",
+          "sent_packets",
+          "drops",
+          "ecn_mark",
+          "ack_drops",
+          "backlog_bytes",
+          "target_us",
+          "interval_us",
+          "peak_delay_us",
+          "avg_delay_us",
+          "base_delay_us",
+          "sparse_flows",
+          "bulk_flows",
+          "unresponsive_flows",
+          "way_indirect_hits",
+          "way_misses",
+          "way_collisions",
+          "max_pkt_len",
+          "flow_quantum"
         ]
       },
       "mconn-telemetry_snapshot_route": {
@@ -701024,14 +702905,45 @@
             "type": "string",
             "example": "AnthropicApiKey"
           },
+          "content_schema": {
+            "$ref": "#/components/schemas/posture-api_AssetTypeContentSchema"
+          },
+          "display_name": {
+            "description": "Human-readable name. Present for `cloudflare` and `custom` asset types.",
+            "type": "string",
+            "example": "Custom file"
+          },
+          "id": {
+            "description": "Unique identifier. Present for `cloudflare` and `custom` asset types.",
+            "type": "string",
+            "format": "uuid",
+            "example": "3f1c2d6e-8b4a-4f7e-9c1d-2a5b6c7d8e9f"
+          },
+          "origin": {
+            "description": "Who defines the asset class: `system` for built-in asset classes, `cloudflare` for asset types provided by Cloudflare, and `custom` for the account's own asset types.",
+            "type": "string",
+            "example": "system",
+            "enum": [
+              "system",
+              "cloudflare",
+              "custom"
+            ]
+          },
           "schema": {
             "description": "Fields and related attributes a custom finding type may reference for this asset\nclass, as a JSON Schema. Top-level properties are `asset` and, when related\nresources exist, `associated`.",
             "type": "object",
             "additionalProperties": true
+          },
+          "version": {
+            "description": "Current version. Present for `cloudflare` and `custom` asset types.",
+            "type": "integer",
+            "format": "int64",
+            "example": 3
           }
         },
         "required": [
           "asset_class",
+          "origin",
           "schema"
         ]
       },
@@ -701044,13 +702956,16 @@
             {
               "asset_classes": [
                 {
-                  "asset_class": "AnthropicApiKey"
+                  "asset_class": "AnthropicApiKey",
+                  "origin": "system"
                 },
                 {
-                  "asset_class": "AnthropicUser"
+                  "asset_class": "AnthropicUser",
+                  "origin": "system"
                 },
                 {
-                  "asset_class": "AnthropicWorkspace"
+                  "asset_class": "AnthropicWorkspace",
+                  "origin": "system"
                 }
               ],
               "vendor": "ANTHROPIC"
@@ -701058,13 +702973,16 @@
             {
               "asset_classes": [
                 {
-                  "asset_class": "GitHubOrganization"
+                  "asset_class": "GitHubOrganization",
+                  "origin": "system"
                 },
                 {
-                  "asset_class": "GitHubRepository"
+                  "asset_class": "GitHubRepository",
+                  "origin": "system"
                 },
                 {
-                  "asset_class": "GitHubUser"
+                  "asset_class": "GitHubUser",
+                  "origin": "system"
                 }
               ],
               "vendor": "GITHUB"
@@ -701097,6 +703015,7 @@
           "messages": [],
           "result": {
             "asset_class": "AnthropicApiKey",
+            "origin": "system",
             "schema": {
               "type": "object",
               "properties": {
@@ -701284,10 +703203,38 @@
             "description": "Asset class identifier (PascalCase), e.g. AnthropicUser.",
             "type": "string",
             "example": "AnthropicUser"
+          },
+          "display_name": {
+            "description": "Human-readable name. Present for `cloudflare` and `custom` asset types.",
+            "type": "string",
+            "example": "Custom file"
+          },
+          "id": {
+            "description": "Unique identifier. Present for `cloudflare` and `custom` asset types.",
+            "type": "string",
+            "format": "uuid",
+            "example": "3f1c2d6e-8b4a-4f7e-9c1d-2a5b6c7d8e9f"
+          },
+          "origin": {
+            "description": "Who defines the asset class: `system` for built-in asset classes, `cloudflare` for asset types provided by Cloudflare, and `custom` for the account's own asset types.",
+            "type": "string",
+            "example": "system",
+            "enum": [
+              "system",
+              "cloudflare",
+              "custom"
+            ]
+          },
+          "version": {
+            "description": "Current version. Present for `cloudflare` and `custom` asset types.",
+            "type": "integer",
+            "format": "int64",
+            "example": 3
           }
         },
         "required": [
-          "asset_class"
+          "asset_class",
+          "origin"
         ]
       },
       "posture-api_AssetSchemaVendorGroup": {
@@ -701310,6 +703257,33 @@
           "vendor",
           "asset_classes"
         ]
+      },
+      "posture-api_AssetTypeContentSchema": {
+        "description": "JSON Schema subset describing the content of each asset of this type. The top level is an `object` with `properties` and an optional `required` list. Property names must be 1 to 32 letters, digits or underscores. A property may be nullable by listing `null` alongside its type.",
+        "type": "object",
+        "example": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "owner_email": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "email"
+            },
+            "public": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "public"
+          ],
+          "type": "object"
+        },
+        "additionalProperties": true
       },
       "posture-api_BaseFindingType": {
         "description": "Basic finding type information.",
@@ -731155,6 +733129,7 @@
                     "items": {
                       "$ref": "#/components/schemas/spectrum-config_paygo_app_config"
                     },
+                    "minItems": 1,
                     "type": "array"
                   }
                 ]
@@ -731469,7 +733444,7 @@
         "minimum": 1
       },
       "spectrum-config_origin_worker_id": {
-        "description": "Optional Worker script tag (worker ID) to use as the application's origin. Only supported for TCP applications with traffic_type \"worker\"; mutually exclusive with origin_direct, origin_dns, origin_port, proxy_protocol, and argo_smart_routing. tls may only be \"off\" or \"flexible\".",
+        "description": "Optional Worker script tag (worker ID) to use as the application's origin. Requires traffic_type \"worker\"; mutually exclusive with origin_direct, origin_dns, origin_port, proxy_protocol, and argo_smart_routing. For TCP applications, tls may be \"off\" or \"flexible\"; UDP applications require tls \"off\".",
         "type": "string",
         "example": "277b7815c871434b960b60729659000a",
         "pattern": "^[0-9a-f]{32}$"
@@ -731502,8 +733477,35 @@
               "origin_direct": {
                 "$ref": "#/components/schemas/spectrum-config_origin_direct"
               },
+              "origin_worker_id": {
+                "$ref": "#/components/schemas/spectrum-config_origin_worker_id"
+              },
+              "origin_worker_name": {
+                "$ref": "#/components/schemas/spectrum-config_origin_worker_name"
+              },
+              "origin_worker_status": {
+                "$ref": "#/components/schemas/spectrum-config_origin_worker_status"
+              },
               "protocol": {
                 "$ref": "#/components/schemas/spectrum-config_protocol"
+              },
+              "traffic_type": {
+                "description": "Determines how traffic is sent to the origin. If absent or empty, defaults to \"direct\". Direct mode uses origin_direct. Worker mode requires origin_worker_id, TCP or UDP with a single port, and CNAME DNS; origin_worker_id and origin_direct are mutually exclusive. A PAYG zone may have at most one Worker application per transport (one TCP and one UDP); creating another for the same transport, or converting another application to Worker while that quota is full, is rejected with error code 11034 and HTTP status 400.",
+                "type": "string",
+                "default": "direct",
+                "anyOf": [
+                  {
+                    "enum": [
+                      "direct",
+                      "worker"
+                    ],
+                    "type": "string"
+                  },
+                  {
+                    "maxLength": 0,
+                    "type": "string"
+                  }
+                ]
               }
             },
             "required": [
@@ -731671,10 +733673,10 @@
         ]
       },
       "speed_automatic_platform_optimization_patch_value": {
-        "description": "Configuration for Automatic Platform Optimization (APO) for WordPress.\nSet to \"off\" to disable, or provide an object to configure APO settings.\nWhen an APO configuration already exists, fields omitted from the object keep their current value.\n",
+        "description": "Configuration for Automatic Platform Optimization (APO) for WordPress.\nSet to \"off\" to disable, or provide an object to configure APO settings.\nWhen an APO configuration already exists, fields omitted from the object keep their current value, and \"off\" disables APO without erasing the detected zone/site/plugin facts.\nOn the first write for a zone (no existing configuration) an object must include `enabled`, `cf`, `wordpress` and `wp_plugin`; otherwise the request fails with error 1023 and no configuration is created. Setting \"off\" when no configuration exists is a no-op.\n",
         "oneOf": [
           {
-            "description": "Disable Automatic Platform Optimization.",
+            "description": "Disable Automatic Platform Optimization. On a zone with no APO configuration this is a no-op.",
             "enum": [
               "off"
             ],
@@ -743832,7 +745834,7 @@
             "$ref": "#/components/schemas/tunnel_config_src-2"
           },
           "tunnel_id": {
-            "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+            "$ref": "#/components/schemas/tunnel_tunnel_id-3"
           },
           "version": {
             "$ref": "#/components/schemas/tunnel_config_version-2"
@@ -743999,7 +746001,7 @@
             ]
           },
           "tunnel_id": {
-            "$ref": "#/components/schemas/tunnel_tunnel_id-3"
+            "$ref": "#/components/schemas/tunnel_tunnel_id-2"
           },
           "tunnel_name": {
             "$ref": "#/components/schemas/tunnel_tunnel_name-2"
@@ -744203,7 +746205,7 @@
             "$ref": "#/components/schemas/tunnel_mesh_ha_mode"
           },
           "tunnel_id": {
-            "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+            "$ref": "#/components/schemas/tunnel_tunnel_id-3"
           },
           "updated_at": {
             "$ref": "#/components/schemas/tunnel_updated_at"
@@ -744458,11 +746460,41 @@
         "default": 1,
         "minimum": 1
       },
+      "tunnel_patch_tunnel_hostname_body": {
+        "type": "object",
+        "properties": {
+          "canonical": {
+            "description": "Makes this hostname canonical. `false` is not accepted; make a different hostname canonical to unset this one.",
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
+          "hostname": {
+            "$ref": "#/components/schemas/tunnel_tunnel_hostname_value"
+          }
+        }
+      },
       "tunnel_per_page": {
         "description": "Number of results to display.",
         "type": "number",
         "maximum": 1000,
         "minimum": 1
+      },
+      "tunnel_post_tunnel_hostname_body": {
+        "type": "object",
+        "properties": {
+          "canonical": {
+            "description": "Set to `true` to make the new hostname canonical, replacing any existing canonical hostname.\nIf `false` or omitted, the new hostname is canonical only if the tunnel has no active hostnames.\n",
+            "type": "boolean"
+          },
+          "hostname": {
+            "$ref": "#/components/schemas/tunnel_tunnel_hostname_value"
+          }
+        },
+        "required": [
+          "hostname"
+        ]
       },
       "tunnel_put_account_region_body": {
         "type": "object",
@@ -745002,6 +747034,102 @@
           }
         ]
       },
+      "tunnel_tunnel_hostname": {
+        "type": "object",
+        "properties": {
+          "canonical": {
+            "$ref": "#/components/schemas/tunnel_tunnel_hostname_canonical"
+          },
+          "created_at": {
+            "$ref": "#/components/schemas/tunnel_created_at"
+          },
+          "hostname": {
+            "$ref": "#/components/schemas/tunnel_tunnel_hostname_value"
+          },
+          "id": {
+            "$ref": "#/components/schemas/tunnel_tunnel_hostname_id"
+          },
+          "tunnel_id": {
+            "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+          }
+        },
+        "required": [
+          "id",
+          "tunnel_id",
+          "hostname",
+          "canonical",
+          "created_at"
+        ]
+      },
+      "tunnel_tunnel_hostname_canonical": {
+        "description": "Whether this is the canonical hostname for the tunnel.",
+        "type": "boolean",
+        "example": true,
+        "x-auditable": true
+      },
+      "tunnel_tunnel_hostname_id": {
+        "description": "UUID of the tunnel hostname.",
+        "type": "string",
+        "format": "uuid",
+        "example": "6b9e2c54-7b1a-4d2d-91ac-53ec83f8b6c8",
+        "x-auditable": true
+      },
+      "tunnel_tunnel_hostname_response_collection": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/tunnel_api-response-common"
+          },
+          {
+            "properties": {
+              "result": {
+                "description": "Tunnel hostnames on the requested page.",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/tunnel_tunnel_hostname"
+                }
+              },
+              "result_info": {
+                "description": "Pagination metadata for the requested page of tunnel hostnames.",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/tunnel_result_info"
+                  }
+                ]
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "tunnel_tunnel_hostname_response_single": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/tunnel_api-response-common"
+          },
+          {
+            "properties": {
+              "result": {
+                "description": "The tunnel hostname created, retrieved, updated, or deleted by the operation.",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/tunnel_tunnel_hostname"
+                  }
+                ]
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "tunnel_tunnel_hostname_value": {
+        "description": "A single DNS label assigned to the tunnel. The value is normalized to lowercase and may contain only letters, digits, and internal hyphens.",
+        "type": "string",
+        "example": "branch-office-1",
+        "maxLength": 63,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?$",
+        "x-auditable": true
+      },
       "tunnel_tunnel_id": {
         "description": "UUID of the tunnel.",
         "type": "string",
@@ -745017,7 +747145,7 @@
         "format": "uuid",
         "example": "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
         "maxLength": 36,
-        "readOnly": true
+        "x-auditable": true
       },
       "tunnel_tunnel_id-3": {
         "description": "UUID of the tunnel.",
@@ -745025,7 +747153,7 @@
         "format": "uuid",
         "example": "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
         "maxLength": 36,
-        "x-auditable": true
+        "readOnly": true
       },
       "tunnel_tunnel_name": {
         "description": "A user-friendly name for a tunnel.",
@@ -745056,6 +747184,7 @@
         "description": "Sets the password required to run a locally-managed tunnel. Must be at least 32 bytes and encoded as a base64 string.",
         "type": "string",
         "example": "AQIDBAUGBwgBAgMEBQYHCAECAwQFBgcIAQIDBAUGBwg=",
+        "x-auditable": false,
         "x-sensitive": true
       },
       "tunnel_tunnel_token": {
@@ -745063,6 +747192,7 @@
         "type": "string",
         "example": "eyJhIjoiNWFiNGU5Z...",
         "readOnly": true,
+        "x-auditable": false,
         "x-sensitive": true
       },
       "tunnel_tunnel_type": {
@@ -760465,21 +762595,7 @@
             "required": [
               "result"
             ],
-            "type": "object",
-            "x-cfLinkErrors": {
-              "10001": "Unsupported or unexpected Content Type",
-              "10002": "Unexpected internal server error",
-              "10003": "Missing required URL parameter",
-              "10004": "Malformed URL parameter",
-              "10006": "Unparseable script body",
-              "10007": "Resource not found (similar to HTTP 404)",
-              "10015": "The current account is not authorized to use workers",
-              "10018": "Attempted to update a script where the e-tag does not match",
-              "10021": "Script content failed validation checks, but was otherwise parseable",
-              "10023": "Unauthorized access attempt",
-              "10027": "Script body was too large",
-              "10075": "Requires a Workers Paid plan"
-            }
+            "type": "object"
           }
         ]
       },
@@ -760524,21 +762640,7 @@
             "required": [
               "result"
             ],
-            "type": "object",
-            "x-cfLinkErrors": {
-              "10001": "Unsupported or unexpected Content Type",
-              "10002": "Unexpected internal server error",
-              "10003": "Missing required URL parameter",
-              "10004": "Malformed URL parameter",
-              "10006": "Unparseable script body",
-              "10007": "Resource not found (similar to HTTP 404)",
-              "10015": "The current account is not authorized to use workers",
-              "10018": "Attempted to update a script where the e-tag does not match",
-              "10021": "Script content failed validation checks, but was otherwise parseable",
-              "10023": "Unauthorized access attempt",
-              "10027": "Script body was too large",
-              "10075": "Requires a Workers Paid plan"
-            }
+            "type": "object"
           }
         ]
       },

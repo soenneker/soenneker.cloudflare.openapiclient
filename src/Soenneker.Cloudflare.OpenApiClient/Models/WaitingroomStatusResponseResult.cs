@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "estimated_queued_users", n => { EstimatedQueuedUsers = n.GetIntValue(); } },
                 { "estimated_total_active_users", n => { EstimatedTotalActiveUsers = n.GetIntValue(); } },

@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "applied_by", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleTagAdd201ResponseResultAppliedBy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAppliedBy = default; _explicitNullProperties?.Remove("applied_by"); AdditionalData["applied_by"] = unknown; } else { AppliedBy = parsed; AdditionalData.Remove("applied_by"); } } },
                 { "categoryId", n => { CategoryId = n.GetGuidValue(); } },

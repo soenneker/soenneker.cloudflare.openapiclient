@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "configuration_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogMaintenanceRunRecordConfigurationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConfigurationType = default; _explicitNullProperties?.Remove("configuration_type"); AdditionalData["configuration_type"] = unknown; } else { ConfigurationType = parsed; AdditionalData.Remove("configuration_type"); } } },

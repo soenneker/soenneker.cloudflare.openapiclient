@@ -144,7 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "build_outcome", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseBuildOutcome>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBuildOutcome = default; _explicitNullProperties?.Remove("build_outcome"); AdditionalData["build_outcome"] = unknown; } else { BuildOutcome = parsed; AdditionalData.Remove("build_outcome"); } } },
                 { "build_trigger_metadata", n => { BuildTriggerMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse.CreateFromDiscriminatorValue); } },

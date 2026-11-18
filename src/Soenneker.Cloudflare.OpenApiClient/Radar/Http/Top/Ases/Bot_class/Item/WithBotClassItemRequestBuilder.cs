@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithBotClassItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/top/ases/bot_class/{botClass}{?asn*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limit*,location*,name*,os*,tlsVersion*}", pathParameters)
+        public WithBotClassItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/top/ases/bot_class/{botClass}{?asCategory*,asn*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limit*,location*,name*,os*,tlsVersion*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithBotClassItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/top/ases/bot_class/{botClass}{?asn*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limit*,location*,name*,os*,tlsVersion*}", rawUrl)
+        public WithBotClassItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/top/ases/bot_class/{botClass}{?asCategory*,asn*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limit*,location*,name*,os*,tlsVersion*}", rawUrl)
         {
         }
         /// <summary>
@@ -92,6 +92,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithBotClassItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filters results by the inferred network type of the Autonomous System: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs), `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers), or `UNCLASSIFIED` (the AS isn&apos;t classified, or the traffic couldn&apos;t be mapped to an AS). In HTTP, only supported for date ranges starting on or after 2023-05-01.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("asCategory")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopAsesByBotClassAsCategoryParameterItem[]? AsCategory { get; set; }
+#nullable restore
+#else
+            [QueryParameter("asCategory")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopAsesByBotClassAsCategoryParameterItem[] AsCategory { get; set; }
+#endif
             /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -225,7 +225,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "audio_devices_updates", n => { AudioDevicesUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "browser_metadata", n => { BrowserMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataBrowserMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataBrowserMetadata.CreateFromDiscriminatorValue); } },

@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.</summary>
         public bool? SecureWebGateway { get => _explicitNullValueSecureWebGateway; set { _explicitNullValueSecureWebGateway = value; AdditionalData?.Remove("secure_web_gateway"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secure_web_gateway"); else _explicitNullProperties?.Remove("secure_web_gateway"); } }
         private bool? _explicitNullValueSecureWebGateway = default!;
-        /// <summary>Server-wide prompt capability overrides.</summary>
+        /// <summary>Prompt overrides. Omit to preserve, send [] to clear, or null to reset the field to absence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiUpdateServersRequestUpdatedPromptsItem>? UpdatedPrompts { get => _explicitNullValueUpdatedPrompts; set { _explicitNullValueUpdatedPrompts = value; AdditionalData?.Remove("updated_prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_prompts"); else _explicitNullProperties?.Remove("updated_prompts"); } }
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiUpdateServersRequestUpdatedPromptsItem> UpdatedPrompts { get => _explicitNullValueUpdatedPrompts; set { _explicitNullValueUpdatedPrompts = value; AdditionalData?.Remove("updated_prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_prompts"); else _explicitNullProperties?.Remove("updated_prompts"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiUpdateServersRequestUpdatedPromptsItem> _explicitNullValueUpdatedPrompts = default!;
 #endif
-        /// <summary>Server-wide tool capability overrides.</summary>
+        /// <summary>Tool overrides. Omit to preserve, send [] to clear, or null to reset the field to absence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiUpdateServersRequestUpdatedToolsItem>? UpdatedTools { get => _explicitNullValueUpdatedTools; set { _explicitNullValueUpdatedTools = value; AdditionalData?.Remove("updated_tools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_tools"); else _explicitNullProperties?.Remove("updated_tools"); } }
@@ -128,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "auth_credentials", n => { AuthCredentials = n.GetStringValue(); } },
                 { "client_secret", n => { ClientSecret = n.GetStringValue(); } },

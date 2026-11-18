@@ -162,7 +162,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "allowedValues", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionAnnotations>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionAnnotations.CreateFromDiscriminatorValue); } },

@@ -208,7 +208,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "access_token_lifetime", n => { AccessTokenLifetime = n.GetStringValue(); } },
                 { "allow_pkce_without_client_secret", n => { AllowPkceWithoutClientSecret = n.GetBoolValue(); } },

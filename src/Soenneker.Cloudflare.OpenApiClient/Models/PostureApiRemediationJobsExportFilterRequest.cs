@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "integration_id", n => { IntegrationId = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "max_updated_at", n => { MaxUpdatedAt = n.GetDateTimeOffsetValue(); } },

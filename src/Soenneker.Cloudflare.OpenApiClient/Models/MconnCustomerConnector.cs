@@ -179,7 +179,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "activated", n => { Activated = n.GetBoolValue(); } },
                 { "device", n => { Device = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerDevice>(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerDevice.CreateFromDiscriminatorValue); } },

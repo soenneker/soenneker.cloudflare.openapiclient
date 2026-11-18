@@ -142,7 +142,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "bimi_records", n => { BimiRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cname_dkim_records", n => { CnameDkimRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -170,7 +170,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "ai_verdict", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDomainMatchList200ResponseMatchesItemAiVerdict>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAiVerdict = default; _explicitNullProperties?.Remove("ai_verdict"); AdditionalData["ai_verdict"] = unknown; } else { AiVerdict = parsed; AdditionalData.Remove("ai_verdict"); } } },
                 { "dismissed", n => { Dismissed = n.GetBoolValue(); } },

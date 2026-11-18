@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "as_of", n => { AsOf = n.GetDateTimeOffsetValue(); } },
                 { "backtest_days", n => { BacktestDays = n.GetIntValue(); } },

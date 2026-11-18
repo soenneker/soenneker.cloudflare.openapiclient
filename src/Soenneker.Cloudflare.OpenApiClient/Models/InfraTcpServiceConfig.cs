@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "app_protocol", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfigAppProtocol>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAppProtocol = default; _explicitNullProperties?.Remove("app_protocol"); AdditionalData["app_protocol"] = unknown; } else { AppProtocol = parsed; AdditionalData.Remove("app_protocol"); } } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },

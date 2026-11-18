@@ -133,7 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "connection_rules", n => { ConnectionRules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesInfra>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesInfra.CreateFromDiscriminatorValue); } },
                 { "decision", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDecision = default; _explicitNullProperties?.Remove("decision"); AdditionalData["decision"] = unknown; } else { Decision = parsed; AdditionalData.Remove("decision"); } } },

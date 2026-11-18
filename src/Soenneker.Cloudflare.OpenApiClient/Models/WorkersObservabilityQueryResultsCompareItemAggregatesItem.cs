@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "count", n => { Count = n.GetDoubleValue(); } },
                 { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItemAggregatesItemGroupsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItemAggregatesItemGroupsItem.CreateFromDiscriminatorValue)?.AsList(); } },

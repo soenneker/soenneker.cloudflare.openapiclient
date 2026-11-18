@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "confidenceInfo", n => { ConfidenceInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopInternetServices200ResponseResultMetaConfidenceInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopInternetServices200ResponseResultMetaConfidenceInfo.CreateFromDiscriminatorValue); } },
                 { "dateRange", n => { DateRange = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopInternetServices200ResponseResultMetaDateRangeItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopInternetServices200ResponseResultMetaDateRangeItem.CreateFromDiscriminatorValue)?.AsList(); } },

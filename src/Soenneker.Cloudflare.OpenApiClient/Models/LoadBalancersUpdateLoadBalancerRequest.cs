@@ -245,7 +245,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(20)
             {
                 { "adaptive_routing", n => { AdaptiveRouting = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting.CreateFromDiscriminatorValue); } },
                 { "country_pools", n => { CountryPools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancersUpdateLoadBalancerRequestCountryPools>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancersUpdateLoadBalancerRequestCountryPools.CreateFromDiscriminatorValue); } },

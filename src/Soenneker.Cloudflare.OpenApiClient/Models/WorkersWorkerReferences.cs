@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "dispatch_namespace_outbounds", n => { DispatchNamespaceOutbounds = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "domains", n => { Domains = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem.CreateFromDiscriminatorValue)?.AsList(); } },

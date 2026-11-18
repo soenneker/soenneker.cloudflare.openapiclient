@@ -141,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "calculations", n => { Calculations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "datasets", n => { Datasets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

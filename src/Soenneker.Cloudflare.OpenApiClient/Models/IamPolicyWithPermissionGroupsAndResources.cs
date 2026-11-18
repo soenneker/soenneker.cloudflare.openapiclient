@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "effect", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamEffect>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEffect = default; _explicitNullProperties?.Remove("effect"); AdditionalData["effect"] = unknown; } else { Effect = parsed; AdditionalData.Remove("effect"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },

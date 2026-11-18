@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "block", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBlock = default; _explicitNullProperties?.Remove("block"); AdditionalData["block"] = unknown; } else { Block = parsed; AdditionalData.Remove("block"); } } },
                 { "challenge", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallWafRewriteAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueChallenge = default; _explicitNullProperties?.Remove("challenge"); AdditionalData["challenge"] = unknown; } else { Challenge = parsed; AdditionalData.Remove("challenge"); } } },

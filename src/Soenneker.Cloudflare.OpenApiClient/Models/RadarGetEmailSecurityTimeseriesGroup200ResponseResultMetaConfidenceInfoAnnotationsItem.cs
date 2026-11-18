@@ -106,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "dataSource", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200ResponseResultMetaConfidenceInfoAnnotationsItemDataSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDataSource = default; _explicitNullProperties?.Remove("dataSource"); AdditionalData["dataSource"] = unknown; } else { DataSource = parsed; AdditionalData.Remove("dataSource"); } } },
                 { "description", n => { Description = n.GetStringValue(); } },

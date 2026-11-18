@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "accountId", n => { AccountId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesAccountId>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesAccountId.CreateFromDiscriminatorValue); } },
                 { "datasets", n => { Datasets = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesDatasets>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostDatasetPopulate200ResponsePropertiesDatasets.CreateFromDiscriminatorValue); } },

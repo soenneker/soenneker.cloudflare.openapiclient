@@ -112,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "context", n => { Context = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1OneOf3CustomOutputEnrichmentsItemContext>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1OneOf3CustomOutputEnrichmentsItemContext.CreateFromDiscriminatorValue); } },
                 { "infrastructure_assessment", n => { InfrastructureAssessment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1OneOf3CustomOutputEnrichmentsItemInfrastructureAssessment>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1OneOf3CustomOutputEnrichmentsItemInfrastructureAssessment.CreateFromDiscriminatorValue); } },

@@ -21,6 +21,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("aka") is { } nullNodeAka && nullNodeAka.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aka = null;
             if (parseNode.GetChildNode("asn") is null) { _explicitNullValueAsn = default!; _explicitNullProperties?.Remove("asn"); }
             else if (parseNode.GetChildNode("asn") is { } nullNodeAsn && nullNodeAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
             if (parseNode.GetChildNode("confidenceLevel") is null) { _explicitNullValueConfidenceLevel = default!; _explicitNullProperties?.Remove("confidenceLevel"); }
             else if (parseNode.GetChildNode("confidenceLevel") is { } nullNodeConfidenceLevel && nullNodeConfidenceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceLevel = null;
             if (parseNode.GetChildNode("country") is null) { _explicitNullValueCountry = default!; _explicitNullProperties?.Remove("country"); }
@@ -56,6 +58,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The asn property</summary>
         public int? Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; AdditionalData?.Remove("asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
         private int? _explicitNullValueAsn = default!;
+        /// <summary>Inferred network type of the AS: `ACCESS_ISP` (networks connecting end users, plus transit), `HOSTING_CLOUD_CONTENT` (hosting providers, clouds and CDNs) or `ORGANIZATION` (enterprises, universities, governments, banks and IXP route servers). `null` when the AS is not classified.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnById200ResponseResultAsnCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnById200ResponseResultAsnCategory? _explicitNullValueCategory = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnById200ResponseResultAsnCategory Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnById200ResponseResultAsnCategory _explicitNullValueCategory = default!;
+#endif
         /// <summary>The confidenceLevel property</summary>
         public int? ConfidenceLevel { get => _explicitNullValueConfidenceLevel; set { _explicitNullValueConfidenceLevel = value; AdditionalData?.Remove("confidenceLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidenceLevel"); else _explicitNullProperties?.Remove("confidenceLevel"); } }
         private int? _explicitNullValueConfidenceLevel = default!;
@@ -162,10 +174,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "aka", n => { Aka = n.GetStringValue(); } },
                 { "asn", n => { Asn = n.GetIntValue(); } },
+                { "category", n => { Category = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnById200ResponseResultAsnCategory>(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnById200ResponseResultAsnCategory.CreateFromDiscriminatorValue); } },
                 { "confidenceLevel", n => { ConfidenceLevel = n.GetIntValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "countryName", n => { CountryName = n.GetStringValue(); } },
@@ -186,6 +199,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("aka", Aka);
             writer.WriteIntValue("asn", Asn);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnById200ResponseResultAsnCategory>("category", Category);
             writer.WriteIntValue("confidenceLevel", ConfidenceLevel);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("countryName", CountryName);

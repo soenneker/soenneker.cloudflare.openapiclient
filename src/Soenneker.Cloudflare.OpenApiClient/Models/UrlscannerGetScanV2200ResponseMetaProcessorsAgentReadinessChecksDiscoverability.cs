@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "dnsAid", n => { DnsAid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoverabilityDnsAid>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoverabilityDnsAid.CreateFromDiscriminatorValue); } },
                 { "linkHeaders", n => { LinkHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoverabilityLinkHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksDiscoverabilityLinkHeaders.CreateFromDiscriminatorValue); } },

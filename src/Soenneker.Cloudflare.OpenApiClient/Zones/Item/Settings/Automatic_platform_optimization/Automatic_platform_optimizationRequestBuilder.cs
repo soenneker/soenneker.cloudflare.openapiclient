@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Automatic_platf
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneSettingsGetAutomaticPlatformOptimizationSetting200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneSettingsGetAutomaticPlatformOptimizationSetting200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Automatic Platform Optimization (APO) for WordPress is a performance feature that serves yourWordPress site from Cloudflare&apos;s edge network, reducing load times for visitors.Refer to the APO documentation for more information.When an APO configuration already exists, fields omitted from an object `value` keep their current value, except `recheck`, which is false unless the request sends it.
+        /// Automatic Platform Optimization (APO) for WordPress is a performance feature that serves yourWordPress site from Cloudflare&apos;s edge network, reducing load times for visitors.Refer to the APO documentation for more information.When an APO configuration already exists, fields omitted from an object `value` keep their current value, except `recheck`, which is false unless the request sends it. Setting `value` to `&quot;off&quot;` disables APO but keeps the detected zone/site/plugin facts.On the first write for a zone (no existing configuration) an object `value` must include `enabled`, `cf`, `wordpress` and `wp_plugin`; otherwise the request fails with error 1023. `&quot;off&quot;` is a no-op when no configuration exists.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneSettingsChangeAutomaticPlatformOptimizationSetting200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Automatic_platf
             return requestInfo;
         }
         /// <summary>
-        /// Automatic Platform Optimization (APO) for WordPress is a performance feature that serves yourWordPress site from Cloudflare&apos;s edge network, reducing load times for visitors.Refer to the APO documentation for more information.When an APO configuration already exists, fields omitted from an object `value` keep their current value, except `recheck`, which is false unless the request sends it.
+        /// Automatic Platform Optimization (APO) for WordPress is a performance feature that serves yourWordPress site from Cloudflare&apos;s edge network, reducing load times for visitors.Refer to the APO documentation for more information.When an APO configuration already exists, fields omitted from an object `value` keep their current value, except `recheck`, which is false unless the request sends it. Setting `value` to `&quot;off&quot;` disables APO but keeps the detected zone/site/plugin facts.On the first write for a zone (no existing configuration) an object `value` must include `enabled`, `cf`, `wordpress` and `wp_plugin`; otherwise the request fails with error 1023. `&quot;off&quot;` is a no-op when no configuration exists.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

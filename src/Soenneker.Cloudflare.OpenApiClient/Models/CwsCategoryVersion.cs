@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "bundle", n => { Bundle = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCategoryBundle>(global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCategoryBundle.CreateFromDiscriminatorValue); } },
                 { "bundle_format", n => { BundleFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.V1BundleFormat>(); } },

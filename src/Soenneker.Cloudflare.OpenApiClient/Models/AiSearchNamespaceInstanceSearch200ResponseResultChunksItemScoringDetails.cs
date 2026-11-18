@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "fusion_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearch200ResponseResultChunksItemScoringDetailsFusionMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFusionMethod = default; _explicitNullProperties?.Remove("fusion_method"); AdditionalData["fusion_method"] = unknown; } else { FusionMethod = parsed; AdditionalData.Remove("fusion_method"); } } },
                 { "keyword_rank", n => { KeywordRank = n.GetDoubleValue(); } },

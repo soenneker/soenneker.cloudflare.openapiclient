@@ -152,7 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "action_params", n => { ActionParams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobActionParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobActionParams.CreateFromDiscriminatorValue); } },
                 { "action_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkJobDetailActionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActionType = default; _explicitNullProperties?.Remove("action_type"); AdditionalData["action_type"] = unknown; } else { ActionType = parsed; AdditionalData.Remove("action_type"); } } },

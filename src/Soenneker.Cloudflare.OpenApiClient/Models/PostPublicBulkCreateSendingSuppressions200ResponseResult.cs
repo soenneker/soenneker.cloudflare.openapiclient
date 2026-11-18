@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicBulkCreateSendingSuppressions200ResponseResultItemsItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicBulkCreateSendingSuppressions200ResponseResultItemsItem> _explicitNullValueItems = default!;
 #endif
-        /// <summary>Number of items successfully created or promoted.</summary>
+        /// <summary>Number of items successfully created or updated.</summary>
         public int? Processed { get => _explicitNullValueProcessed; set { _explicitNullValueProcessed = value; AdditionalData?.Remove("processed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processed"); else _explicitNullProperties?.Remove("processed"); } }
         private int? _explicitNullValueProcessed = default!;
         /// <summary>Number of items skipped because the existing suppression is not customer-managed.</summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "deduplicated", n => { Deduplicated = n.GetIntValue(); } },
                 { "errors", n => { Errors = n.GetIntValue(); } },

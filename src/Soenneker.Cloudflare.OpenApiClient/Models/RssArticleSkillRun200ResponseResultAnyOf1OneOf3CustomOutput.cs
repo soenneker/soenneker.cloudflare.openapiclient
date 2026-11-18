@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "enrichments", n => { Enrichments = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1OneOf3CustomOutputEnrichmentsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf1OneOf3CustomOutputEnrichmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "generated_at", n => { GeneratedAt = n.GetStringValue(); } },

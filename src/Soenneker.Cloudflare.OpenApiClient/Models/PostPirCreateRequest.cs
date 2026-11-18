@@ -192,7 +192,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "based_on", n => { BasedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestBasedOn>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestBasedOn.CreateFromDiscriminatorValue); } },
                 { "dataset_scope", n => { DatasetScope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestDatasetScope>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirCreateRequestDatasetScope.CreateFromDiscriminatorValue); } },

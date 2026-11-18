@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriority>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriority.CreateFromDiscriminatorValue); } },
                 { "priority_token_surcharge", n => { PriorityTokenSurcharge = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriorityTokenSurcharge>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriorityTokenSurcharge.CreateFromDiscriminatorValue); } },

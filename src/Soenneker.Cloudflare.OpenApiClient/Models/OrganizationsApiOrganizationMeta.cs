@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "are_child_accounts_accessible_by_org_members", n => { AreChildAccountsAccessibleByOrgMembers = n.GetBoolValue(); } },
                 { "hierarchy_tags", n => { HierarchyTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

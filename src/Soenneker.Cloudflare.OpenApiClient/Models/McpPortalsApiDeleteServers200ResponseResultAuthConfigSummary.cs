@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "auth_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiDeleteServers200ResponseResultAuthConfigSummaryAuthMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthMode = default; _explicitNullProperties?.Remove("auth_mode"); AdditionalData["auth_mode"] = unknown; } else { AuthMode = parsed; AdditionalData.Remove("auth_mode"); } } },
                 { "client_secret_version", n => { ClientSecretVersion = n.GetDoubleValue(); } },

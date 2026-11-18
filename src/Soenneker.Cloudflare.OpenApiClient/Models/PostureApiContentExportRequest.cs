@@ -127,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "dlp_profile_id", n => { DlpProfileId = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "dlp_profile_information", n => { DlpProfileInformation = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpProfile>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpProfile.CreateFromDiscriminatorValue)?.AsList(); } },

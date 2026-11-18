@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "exports_reconciliation", n => { ExportsReconciliation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },

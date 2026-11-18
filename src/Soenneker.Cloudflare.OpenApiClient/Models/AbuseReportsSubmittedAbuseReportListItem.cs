@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "cdate", n => { Cdate = n.GetDateTimeOffsetValue(); } },
                 { "denial_reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmittedAbuseReportListItemDenialReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDenialReason = default; _explicitNullProperties?.Remove("denial_reason"); AdditionalData["denial_reason"] = unknown; } else { DenialReason = parsed; AdditionalData.Remove("denial_reason"); } } },

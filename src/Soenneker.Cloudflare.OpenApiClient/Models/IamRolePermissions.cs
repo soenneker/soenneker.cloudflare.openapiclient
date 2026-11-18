@@ -188,7 +188,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "analytics", n => { Analytics = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants.CreateFromDiscriminatorValue); } },
                 { "billing", n => { Billing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamGrants.CreateFromDiscriminatorValue); } },

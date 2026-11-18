@@ -153,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "agents", n => { Agents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "calculations", n => { Calculations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "active", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigGetGatewayDynamicRouteVersion200ResponseResultActive>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActive = default; _explicitNullProperties?.Remove("active"); AdditionalData["active"] = unknown; } else { Active = parsed; AdditionalData.Remove("active"); } } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },

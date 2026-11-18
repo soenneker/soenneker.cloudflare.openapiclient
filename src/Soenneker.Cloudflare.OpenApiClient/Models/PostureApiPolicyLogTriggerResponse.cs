@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "date_detected", n => { DateDetected = n.GetStringValue(); } },
                 { "fields_of_interest", n => { FieldsOfInterest = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponseFieldsOfInterestProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogTriggerResponseFieldsOfInterestProperty.CreateFromDiscriminatorValue); } },

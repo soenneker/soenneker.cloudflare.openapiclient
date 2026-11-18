@@ -182,7 +182,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(24)
             {
                 { "automatic_https_rewrites", n => { AutomaticHttpsRewrites = n.GetBoolValue(); } },
                 { "autominify", n => { Autominify = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify.CreateFromDiscriminatorValue); } },

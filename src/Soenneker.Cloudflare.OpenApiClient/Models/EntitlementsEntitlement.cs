@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "allocation", n => { Allocation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation>(global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation.CreateFromDiscriminatorValue); } },
                 { "created_date", n => { CreatedDate = n.GetStringValue(); } },

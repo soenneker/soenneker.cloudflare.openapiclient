@@ -182,7 +182,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "dataset", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushDataset>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDataset = default; _explicitNullProperties?.Remove("dataset"); AdditionalData["dataset"] = unknown; } else { Dataset = parsed; AdditionalData.Remove("dataset"); } } },
                 { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },

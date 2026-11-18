@@ -242,7 +242,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(23)
             {
                 { "cache_options", n => { CacheOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions.CreateFromDiscriminatorValue); } },
                 { "compatibility_date", n => { CompatibilityDate = n.GetStringValue(); } },

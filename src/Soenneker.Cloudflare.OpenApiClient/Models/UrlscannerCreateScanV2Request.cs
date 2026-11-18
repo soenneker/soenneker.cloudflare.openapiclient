@@ -119,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "agentReadiness", n => { AgentReadiness = n.GetBoolValue(); } },
                 { "country", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanV2RequestCountry>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCountry = default; _explicitNullProperties?.Remove("country"); AdditionalData["country"] = unknown; } else { Country = parsed; AdditionalData.Remove("country"); } } },

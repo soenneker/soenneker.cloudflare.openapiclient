@@ -188,7 +188,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "build_config", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig.CreateFromDiscriminatorValue); } },
                 { "build_image_auto_upgrade", n => { BuildImageAutoUpgrade = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectBuildImageAutoUpgrade>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectBuildImageAutoUpgrade.CreateFromDiscriminatorValue); } },

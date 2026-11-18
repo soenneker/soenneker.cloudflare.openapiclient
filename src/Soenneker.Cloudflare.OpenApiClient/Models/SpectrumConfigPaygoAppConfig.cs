@@ -27,8 +27,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
             if (parseNode.GetChildNode("origin_direct") is null) { _explicitNullValueOriginDirect = default!; _explicitNullProperties?.Remove("origin_direct"); }
             else if (parseNode.GetChildNode("origin_direct") is { } nullNodeOriginDirect && nullNodeOriginDirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginDirect = null;
+            if (parseNode.GetChildNode("origin_worker_id") is null) { _explicitNullValueOriginWorkerId = default!; _explicitNullProperties?.Remove("origin_worker_id"); }
+            else if (parseNode.GetChildNode("origin_worker_id") is { } nullNodeOriginWorkerId && nullNodeOriginWorkerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginWorkerId = null;
+            if (parseNode.GetChildNode("origin_worker_name") is null) { _explicitNullValueOriginWorkerName = default!; _explicitNullProperties?.Remove("origin_worker_name"); }
+            else if (parseNode.GetChildNode("origin_worker_name") is { } nullNodeOriginWorkerName && nullNodeOriginWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginWorkerName = null;
+            if (parseNode.GetChildNode("origin_worker_status") is null) { _explicitNullValueOriginWorkerStatus = default!; _explicitNullProperties?.Remove("origin_worker_status"); }
+            else if (parseNode.GetChildNode("origin_worker_status") is { } nullNodeOriginWorkerStatus && nullNodeOriginWorkerStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginWorkerStatus = null;
             if (parseNode.GetChildNode("protocol") is null) { _explicitNullValueProtocol = default!; _explicitNullProperties?.Remove("protocol"); }
             else if (parseNode.GetChildNode("protocol") is { } nullNodeProtocol && nullNodeProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocol = null;
+            if (parseNode.GetChildNode("traffic_type") is null) { _explicitNullValueTrafficType = default!; _explicitNullProperties?.Remove("traffic_type"); }
+            else if (parseNode.GetChildNode("traffic_type") is { } nullNodeTrafficType && nullNodeTrafficType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficType = null;
         }
 
         // Restore fields omitted by the generator's model-depth limit.
@@ -43,8 +51,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueDns = default!;
         public global::System.Collections.Generic.List<string>? OriginDirect { get => _explicitNullValueOriginDirect; set { _explicitNullValueOriginDirect = value; AdditionalData?.Remove("origin_direct"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_direct"); else _explicitNullProperties?.Remove("origin_direct"); } }
         private global::System.Collections.Generic.List<string>? _explicitNullValueOriginDirect = default!;
+        public string? OriginWorkerId { get => _explicitNullValueOriginWorkerId; set { _explicitNullValueOriginWorkerId = value; AdditionalData?.Remove("origin_worker_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_worker_id"); else _explicitNullProperties?.Remove("origin_worker_id"); } }
+        private string? _explicitNullValueOriginWorkerId = default!;
+        public string? OriginWorkerName { get => _explicitNullValueOriginWorkerName; set { _explicitNullValueOriginWorkerName = value; AdditionalData?.Remove("origin_worker_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_worker_name"); else _explicitNullProperties?.Remove("origin_worker_name"); } }
+        private string? _explicitNullValueOriginWorkerName = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigOriginWorkerStatus? OriginWorkerStatus { get => _explicitNullValueOriginWorkerStatus; set { _explicitNullValueOriginWorkerStatus = value; AdditionalData?.Remove("origin_worker_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_worker_status"); else _explicitNullProperties?.Remove("origin_worker_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigOriginWorkerStatus? _explicitNullValueOriginWorkerStatus = default!;
         public string? Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; AdditionalData?.Remove("protocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
         private string? _explicitNullValueProtocol = default!;
+        public string? TrafficType { get => _explicitNullValueTrafficType; set { _explicitNullValueTrafficType = value; AdditionalData?.Remove("traffic_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_type"); else _explicitNullProperties?.Remove("traffic_type"); } }
+        private string? _explicitNullValueTrafficType = default!;
 #nullable restore
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -79,7 +95,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "dns", n => { Dns = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "origin_direct", n => { OriginDirect = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "origin_worker_id", n => { OriginWorkerId = n.GetStringValue(); } },
+                { "origin_worker_name", n => { OriginWorkerName = n.GetStringValue(); } },
+                { "origin_worker_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigOriginWorkerStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOriginWorkerStatus = default; _explicitNullProperties?.Remove("origin_worker_status"); AdditionalData["origin_worker_status"] = unknown; } else { OriginWorkerStatus = parsed; AdditionalData.Remove("origin_worker_status"); } } },
                 { "protocol", n => { Protocol = n.GetStringValue(); } },
+                { "traffic_type", n => { TrafficType = n.GetStringValue(); } },
 
             };
         }
@@ -95,7 +115,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("dns", Dns);
             writer.WriteCollectionOfPrimitiveValues<string>("origin_direct", OriginDirect);
+            writer.WriteStringValue("origin_worker_id", OriginWorkerId);
+            writer.WriteStringValue("origin_worker_name", OriginWorkerName);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigOriginWorkerStatus>("origin_worker_status", OriginWorkerStatus);
             writer.WriteStringValue("protocol", Protocol);
+            writer.WriteStringValue("traffic_type", TrafficType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

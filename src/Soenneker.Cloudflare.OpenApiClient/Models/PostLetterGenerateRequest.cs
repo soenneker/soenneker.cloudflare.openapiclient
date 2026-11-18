@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "createNotice", n => { CreateNotice = n.GetBoolValue(); } },
                 { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostLetterGenerateRequestFields>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostLetterGenerateRequestFields.CreateFromDiscriminatorValue); } },

@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "cache_reserve", n => { CacheReserve = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseCacheReserve>(global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseCacheReserve.CreateFromDiscriminatorValue); } },
                 { "regional_tiered_cache", n => { RegionalTieredCache = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseRegionalTieredCache>(global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseRegionalTieredCache.CreateFromDiscriminatorValue); } },

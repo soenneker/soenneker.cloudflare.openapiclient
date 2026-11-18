@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "account_payment_method_state", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAccountPaymentMethodState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccountPaymentMethodState = default; _explicitNullProperties?.Remove("account_payment_method_state"); AdditionalData["account_payment_method_state"] = unknown; } else { AccountPaymentMethodState = parsed; AdditionalData.Remove("account_payment_method_state"); } } },
                 { "aig_customer_state", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResultAigCustomerState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAigCustomerState = default; _explicitNullProperties?.Remove("aig_customer_state"); AdditionalData["aig_customer_state"] = unknown; } else { AigCustomerState = parsed; AdditionalData.Remove("aig_customer_state"); } } },

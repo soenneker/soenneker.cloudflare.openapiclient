@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Disable Automatic Platform Optimization.</summary>
+    /// <summary>Disable Automatic Platform Optimization. On a zone with no APO configuration this is a no-op.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SpeedAutomaticPlatformOptimizationPatchValueOneOf1
     {

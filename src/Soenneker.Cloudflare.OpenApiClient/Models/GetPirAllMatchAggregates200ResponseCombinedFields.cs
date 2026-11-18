@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "attacker", n => { Attacker = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombinedFieldsAttacker>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombinedFieldsAttacker.CreateFromDiscriminatorValue); } },
                 { "attacker_country", n => { AttackerCountry = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombinedFieldsAttackerCountry>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombinedFieldsAttackerCountry.CreateFromDiscriminatorValue); } },

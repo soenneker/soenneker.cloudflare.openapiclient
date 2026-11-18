@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private string _explicitNullValueError = default!;
 #endif
-        /// <summary>The created or promoted suppression&apos;s identifier. Present when `status` is `processed`.</summary>
+        /// <summary>The created or updated suppression&apos;s identifier. Present when `status` is `processed`.</summary>
         public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>Zero-based index of this item in the request body.</summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },

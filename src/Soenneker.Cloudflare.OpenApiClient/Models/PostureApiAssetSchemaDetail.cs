@@ -19,8 +19,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("asset_class") is null) { _explicitNullValueAssetClass = default!; _explicitNullProperties?.Remove("asset_class"); }
             else if (parseNode.GetChildNode("asset_class") is { } nullNodeAssetClass && nullNodeAssetClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetClass = null;
+            if (parseNode.GetChildNode("content_schema") is null) { _explicitNullValueContentSchema = default!; _explicitNullProperties?.Remove("content_schema"); }
+            else if (parseNode.GetChildNode("content_schema") is { } nullNodeContentSchema && nullNodeContentSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentSchema = null;
+            if (parseNode.GetChildNode("display_name") is null) { _explicitNullValueDisplayName = default!; _explicitNullProperties?.Remove("display_name"); }
+            else if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("origin") is null) { _explicitNullValueOrigin = default!; _explicitNullProperties?.Remove("origin"); }
+            else if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
             if (parseNode.GetChildNode("schema") is null) { _explicitNullValueSchema = default!; _explicitNullProperties?.Remove("schema"); }
             else if (parseNode.GetChildNode("schema") is { } nullNodeSchema && nullNodeSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schema = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,6 +45,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string AssetClass { get => _explicitNullValueAssetClass; set { _explicitNullValueAssetClass = value; AdditionalData?.Remove("asset_class"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_class"); else _explicitNullProperties?.Remove("asset_class"); } }
         private string _explicitNullValueAssetClass = default!;
 #endif
+        /// <summary>JSON Schema subset describing the content of each asset of this type. The top level is an `object` with `properties` and an optional `required` list. Property names must be 1 to 32 letters, digits or underscores. A property may be nullable by listing `null` alongside its type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailContentSchema? ContentSchema { get => _explicitNullValueContentSchema; set { _explicitNullValueContentSchema = value; AdditionalData?.Remove("content_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_schema"); else _explicitNullProperties?.Remove("content_schema"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailContentSchema? _explicitNullValueContentSchema = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailContentSchema ContentSchema { get => _explicitNullValueContentSchema; set { _explicitNullValueContentSchema = value; AdditionalData?.Remove("content_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_schema"); else _explicitNullProperties?.Remove("content_schema"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailContentSchema _explicitNullValueContentSchema = default!;
+#endif
+        /// <summary>Human-readable name. Present for `cloudflare` and `custom` asset types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string? _explicitNullValueDisplayName = default!;
+#nullable restore
+#else
+        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string _explicitNullValueDisplayName = default!;
+#endif
+        /// <summary>Unique identifier. Present for `cloudflare` and `custom` asset types.</summary>
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
+        /// <summary>Who defines the asset class: `system` for built-in asset classes, `cloudflare` for asset types provided by Cloudflare, and `custom` for the account&apos;s own asset types.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailOrigin? _explicitNullValueOrigin = default!;
         /// <summary>Fields and related attributes a custom finding type may reference for this assetclass, as a JSON Schema. Top-level properties are `asset` and, when relatedresources exist, `associated`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +81,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailSchemaProperty Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; AdditionalData?.Remove("schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailSchemaProperty _explicitNullValueSchema = default!;
 #endif
+        /// <summary>Current version. Present for `cloudflare` and `custom` asset types.</summary>
+        public long? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private long? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetail"/> and sets the default values.
         /// </summary>
@@ -68,10 +107,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "asset_class", n => { AssetClass = n.GetStringValue(); } },
+                { "content_schema", n => { ContentSchema = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailContentSchema>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailContentSchema.CreateFromDiscriminatorValue); } },
+                { "display_name", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "origin", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailOrigin>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrigin = default; _explicitNullProperties?.Remove("origin"); AdditionalData["origin"] = unknown; } else { Origin = parsed; AdditionalData.Remove("origin"); } } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailSchemaProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailSchemaProperty.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -82,7 +126,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("asset_class", AssetClass);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailContentSchema>("content_schema", ContentSchema);
+            writer.WriteStringValue("display_name", DisplayName);
+            writer.WriteGuidValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailOrigin>("origin", Origin);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaDetailSchemaProperty>("schema", Schema);
+            writer.WriteLongValue("version", Version);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

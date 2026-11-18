@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "destination", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMailboxDestination>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDestination = default; _explicitNullProperties?.Remove("destination"); AdditionalData["destination"] = unknown; } else { Destination = parsed; AdditionalData.Remove("destination"); } } },
                 { "expected_disposition", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPostBulkMoveRequestExpectedDisposition>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExpectedDisposition = default; _explicitNullProperties?.Remove("expected_disposition"); AdditionalData["expected_disposition"] = unknown; } else { ExpectedDisposition = parsed; AdditionalData.Remove("expected_disposition"); } } },

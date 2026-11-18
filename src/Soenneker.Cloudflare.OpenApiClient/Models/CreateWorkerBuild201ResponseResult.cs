@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "git_repository", n => { GitRepository = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerGitRepository>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerGitRepository.CreateFromDiscriminatorValue); } },
                 { "previews_base_config", n => { PreviewsBaseConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings.CreateFromDiscriminatorValue); } },

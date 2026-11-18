@@ -111,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "current_price", n => { CurrentPrice = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice.CreateFromDiscriminatorValue); } },
                 { "default_price_usd_microcents", n => { DefaultPriceUsdMicrocents = n.GetIntValue(); } },

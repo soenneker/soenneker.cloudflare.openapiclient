@@ -119,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "P1", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptP1>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueP1 = default; _explicitNullProperties?.Remove("P1"); AdditionalData["P1"] = unknown; } else { P1 = parsed; AdditionalData.Remove("P1"); } } },
                 { "S1", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigFetchGateway200ResponseResultGuardrailsPromptS1>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueS1 = default; _explicitNullProperties?.Remove("S1"); AdditionalData["S1"] = unknown; } else { S1 = parsed; AdditionalData.Remove("S1"); } } },

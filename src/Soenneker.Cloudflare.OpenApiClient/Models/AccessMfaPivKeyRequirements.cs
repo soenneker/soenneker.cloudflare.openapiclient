@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "pin_policy", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsPinPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePinPolicy = default; _explicitNullProperties?.Remove("pin_policy"); AdditionalData["pin_policy"] = unknown; } else { PinPolicy = parsed; AdditionalData.Remove("pin_policy"); } } },
                 { "require_fips_device", n => { RequireFipsDevice = n.GetBoolValue(); } },

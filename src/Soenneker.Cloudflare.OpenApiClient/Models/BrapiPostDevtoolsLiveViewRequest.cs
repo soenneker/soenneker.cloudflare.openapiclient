@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "expiresInMs", n => { ExpiresInMs = n.GetDoubleValue(); } },
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveViewRequestGuardrails>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsLiveViewRequestGuardrails.CreateFromDiscriminatorValue); } },

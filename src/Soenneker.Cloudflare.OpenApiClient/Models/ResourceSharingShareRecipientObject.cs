@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "association_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingRecipientAssociationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAssociationStatus = default; _explicitNullProperties?.Remove("association_status"); AdditionalData["association_status"] = unknown; } else { AssociationStatus = parsed; AdditionalData.Remove("association_status"); } } },

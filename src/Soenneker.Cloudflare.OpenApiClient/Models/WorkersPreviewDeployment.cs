@@ -278,7 +278,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(25)
             {
                 { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentConfigAnnotations>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewDeploymentConfigAnnotations.CreateFromDiscriminatorValue); } },
                 { "assets", n => { Assets = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAssets.CreateFromDiscriminatorValue); } },

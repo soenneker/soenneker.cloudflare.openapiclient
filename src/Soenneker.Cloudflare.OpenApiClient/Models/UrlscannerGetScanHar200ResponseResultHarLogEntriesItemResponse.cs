@@ -124,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "bodySize", n => { BodySize = n.GetDoubleValue(); } },
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseContent>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHar200ResponseResultHarLogEntriesItemResponseContent.CreateFromDiscriminatorValue); } },

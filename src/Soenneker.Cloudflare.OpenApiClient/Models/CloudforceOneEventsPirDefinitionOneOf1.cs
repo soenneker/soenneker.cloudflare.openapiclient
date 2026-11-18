@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "additional_criteria", n => { AdditionalCriteria = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirRelevanceCriterion>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirRelevanceCriterion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "criterion_selections", n => { CriterionSelections = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirDefinitionOneOf1CriterionSelections>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirDefinitionOneOf1CriterionSelections.CreateFromDiscriminatorValue); } },

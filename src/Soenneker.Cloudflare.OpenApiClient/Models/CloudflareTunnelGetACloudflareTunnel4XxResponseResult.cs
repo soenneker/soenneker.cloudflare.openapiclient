@@ -126,7 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "account_tag", n => { AccountTag = n.GetStringValue(); } },
                 { "config_src", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelConfigSrc>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConfigSrc = default; _explicitNullProperties?.Remove("config_src"); AdditionalData["config_src"] = unknown; } else { ConfigSrc = parsed; AdditionalData.Remove("config_src"); } } },

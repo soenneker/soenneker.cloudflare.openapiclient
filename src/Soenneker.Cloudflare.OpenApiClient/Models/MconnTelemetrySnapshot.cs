@@ -222,6 +222,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("netdevs") is { } nullNodeNetdevs && nullNodeNetdevs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Netdevs = null;
             if (parseNode.GetChildNode("platform") is null) { _explicitNullValuePlatform = default!; _explicitNullProperties?.Remove("platform"); }
             else if (parseNode.GetChildNode("platform") is { } nullNodePlatform && nullNodePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Platform = null;
+            if (parseNode.GetChildNode("qdiscs") is null) { _explicitNullValueQdiscs = default!; _explicitNullProperties?.Remove("qdiscs"); }
+            else if (parseNode.GetChildNode("qdiscs") is { } nullNodeQdiscs && nullNodeQdiscs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Qdiscs = null;
             if (parseNode.GetChildNode("routes") is null) { _explicitNullValueRoutes = default!; _explicitNullProperties?.Remove("routes"); }
             else if (parseNode.GetChildNode("routes") is { } nullNodeRoutes && nullNodeRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Routes = null;
             if (parseNode.GetChildNode("site_id") is null) { _explicitNullValueSiteId = default!; _explicitNullProperties?.Remove("site_id"); }
@@ -734,6 +736,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
         private string _explicitNullValuePlatform = default!;
 #endif
+        /// <summary>The qdiscs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotQdisc>? Qdiscs { get => _explicitNullValueQdiscs; set { _explicitNullValueQdiscs = value; AdditionalData?.Remove("qdiscs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qdiscs"); else _explicitNullProperties?.Remove("qdiscs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotQdisc>? _explicitNullValueQdiscs = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotQdisc> Qdiscs { get => _explicitNullValueQdiscs; set { _explicitNullValueQdiscs = value; AdditionalData?.Remove("qdiscs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qdiscs"); else _explicitNullProperties?.Remove("qdiscs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotQdisc> _explicitNullValueQdiscs = default!;
+#endif
         /// <summary>The routes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1011,7 +1023,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(176)
             {
                 { "bonds", n => { Bonds = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotBond>(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotBond.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "count_reclaim_failures", n => { CountReclaimFailures = n.GetDoubleValue(); } },
@@ -1115,6 +1127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "mounts", n => { Mounts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount>(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "netdevs", n => { Netdevs = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev>(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
+                { "qdiscs", n => { Qdiscs = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotQdisc>(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotQdisc.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "routes", n => { Routes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotRoute>(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotRoute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "site_id", n => { SiteId = n.GetStringValue(); } },
                 { "snmp_icmp_in_addr_mask_reps", n => { SnmpIcmpInAddrMaskReps = n.GetDoubleValue(); } },
@@ -1299,6 +1312,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount>("mounts", Mounts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotNetdev>("netdevs", Netdevs);
             writer.WriteStringValue("platform", Platform);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotQdisc>("qdiscs", Qdiscs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotRoute>("routes", Routes);
             writer.WriteStringValue("site_id", SiteId);
             writer.WriteDoubleValue("snmp_icmp_in_addr_mask_reps", SnmpIcmpInAddrMaskReps);

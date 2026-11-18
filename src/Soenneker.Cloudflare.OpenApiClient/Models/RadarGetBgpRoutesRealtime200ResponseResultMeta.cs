@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "asn_info", n => { AsnInfo = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesRealtime200ResponseResultMetaAsnInfoItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesRealtime200ResponseResultMetaAsnInfoItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "collectors", n => { Collectors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesRealtime200ResponseResultMetaCollectorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesRealtime200ResponseResultMetaCollectorsItem.CreateFromDiscriminatorValue)?.AsList(); } },

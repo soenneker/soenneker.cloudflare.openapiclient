@@ -297,7 +297,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(21)
             {
                 { "battery_cycles", n => { BatteryCycles = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotInt.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "battery_pct", n => { BatteryPct = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimeslotFloat.CreateFromDiscriminatorValue)?.AsList(); } },

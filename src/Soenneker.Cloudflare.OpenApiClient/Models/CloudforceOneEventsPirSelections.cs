@@ -215,7 +215,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "actor_notes", n => { ActorNotes = n.GetStringValue(); } },
                 { "actor_types", n => { ActorTypes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirSelectionsActorTypes>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirSelectionsActorTypes.CreateFromDiscriminatorValue); } },

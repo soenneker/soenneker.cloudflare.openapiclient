@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "authentication_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiEvaluateNewWebhookRequestAuthenticationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthenticationType = default; _explicitNullProperties?.Remove("authentication_type"); AdditionalData["authentication_type"] = unknown; } else { AuthenticationType = parsed; AdditionalData.Remove("authentication_type"); } } },
                 { "destination_url", n => { DestinationUrl = n.GetStringValue(); } },

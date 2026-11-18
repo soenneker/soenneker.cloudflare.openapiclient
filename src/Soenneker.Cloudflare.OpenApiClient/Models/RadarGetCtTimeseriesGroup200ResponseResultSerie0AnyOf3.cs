@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "gt_121d", n => { Gt121d = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "gt_16d_lte_31d", n => { Gt16dLte31d = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

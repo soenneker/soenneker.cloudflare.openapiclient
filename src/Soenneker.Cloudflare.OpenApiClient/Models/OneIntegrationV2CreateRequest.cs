@@ -122,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "application", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationV2CreateRequestApplication>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApplication = default; _explicitNullProperties?.Remove("application"); AdditionalData["application"] = unknown; } else { Application = parsed; AdditionalData.Remove("application"); } } },
                 { "auth_method", n => { AuthMethod = n.GetStringValue(); } },

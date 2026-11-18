@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "destinationStorageClass", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClassMigrationJobStorageClassMigrationDestinationStorageClass>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDestinationStorageClass = default; _explicitNullProperties?.Remove("destinationStorageClass"); AdditionalData["destinationStorageClass"] = unknown; } else { DestinationStorageClass = parsed; AdditionalData.Remove("destinationStorageClass"); } } },
                 { "failedBytes", n => { FailedBytes = n.GetIntValue(); } },

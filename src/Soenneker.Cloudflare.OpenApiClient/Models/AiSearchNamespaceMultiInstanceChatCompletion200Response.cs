@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "choices", n => { Choices = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200ResponseChoicesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200ResponseChoicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "chunks", n => { Chunks = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200ResponseChunksItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200ResponseChunksItem.CreateFromDiscriminatorValue)?.AsList(); } },

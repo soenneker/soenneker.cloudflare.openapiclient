@@ -308,7 +308,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(23)
             {
                 { "activeDuration", n => { ActiveDuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActiveDuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActiveDuration.CreateFromDiscriminatorValue); } },
                 { "actorCategory", n => { ActorCategory = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActorCategory>(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestActorCategory.CreateFromDiscriminatorValue); } },

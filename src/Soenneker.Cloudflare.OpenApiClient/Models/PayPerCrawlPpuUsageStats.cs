@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "buyers", n => { Buyers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsBuyer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsDataPoint>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsDataPoint.CreateFromDiscriminatorValue)?.AsList(); } },

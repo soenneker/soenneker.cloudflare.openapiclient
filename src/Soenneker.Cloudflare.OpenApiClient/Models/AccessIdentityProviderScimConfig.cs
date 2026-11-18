@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "identity_update_behavior", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfigIdentityUpdateBehavior>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIdentityUpdateBehavior = default; _explicitNullProperties?.Remove("identity_update_behavior"); AdditionalData["identity_update_behavior"] = unknown; } else { IdentityUpdateBehavior = parsed; AdditionalData.Remove("identity_update_behavior"); } } },

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
         {
         }
         /// <summary>
-        /// Deletes the suppression, its note, and every legacy internal zone membership, allowing future delivery attempts to the address.
+        /// Deletes the suppression and its note, allowing future delivery attempts to the address.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DeletePublicDeleteSendingSuppression200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicGetSendingSuppression200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicGetSendingSuppression200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates expiry or advisory note fields without changing legacy internal zone memberships. Scope cannot be changed.
+        /// Updates expiry or advisory note fields. Scope cannot be changed.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPublicUpdateSendingSuppression200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPublicUpdateSendingSuppression200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PatchPublicUpdateSendingSuppression200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the suppression, its note, and every legacy internal zone membership, allowing future delivery attempts to the address.
+        /// Deletes the suppression and its note, allowing future delivery attempts to the address.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
             return requestInfo;
         }
         /// <summary>
-        /// Updates expiry or advisory note fields without changing legacy internal zone memberships. Scope cannot be changed.
+        /// Updates expiry or advisory note fields. Scope cannot be changed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

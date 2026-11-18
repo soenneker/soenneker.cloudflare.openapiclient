@@ -133,7 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "context", n => { Context = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceContext>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceContext.CreateFromDiscriminatorValue); } },
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceError>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceError.CreateFromDiscriminatorValue); } },

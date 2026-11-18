@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "date", n => { Date = n.GetDateValue(); } },
                 { "domainCategories", n => { DomainCategories = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaDomainCategoriesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAgentReadinessSummary200ResponseResultMetaDomainCategoriesItem.CreateFromDiscriminatorValue)?.AsList(); } },

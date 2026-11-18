@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "algorithm", n => { Algorithm = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty.CreateFromDiscriminatorValue); } },
                 { "format", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFormat = default; _explicitNullProperties?.Remove("format"); AdditionalData["format"] = unknown; } else { Format = parsed; AdditionalData.Remove("format"); } } },

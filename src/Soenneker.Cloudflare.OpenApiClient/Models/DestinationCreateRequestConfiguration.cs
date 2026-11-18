@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationHeaders.CreateFromDiscriminatorValue); } },
                 { "logpushDataset", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationLogpushDataset>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLogpushDataset = default; _explicitNullProperties?.Remove("logpushDataset"); AdditionalData["logpushDataset"] = unknown; } else { LogpushDataset = parsed; AdditionalData.Remove("logpushDataset"); } } },

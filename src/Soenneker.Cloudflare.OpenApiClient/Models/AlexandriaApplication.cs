@@ -232,7 +232,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "application_confidence_score", n => { ApplicationConfidenceScore = n.GetFloatValue(); } },
                 { "application_score_composition", n => { ApplicationScoreComposition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition>(global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition.CreateFromDiscriminatorValue); } },

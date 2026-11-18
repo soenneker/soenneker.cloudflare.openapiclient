@@ -45,6 +45,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("per_page") is { } nullNodePerPage && nullNodePerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerPage = null;
             if (parseNode.GetChildNode("total_count") is null) { _explicitNullValueTotalCount = default!; _explicitNullProperties?.Remove("total_count"); }
             else if (parseNode.GetChildNode("total_count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+            if (parseNode.GetChildNode("truncated") is null) { _explicitNullValueTruncated = default!; _explicitNullProperties?.Remove("truncated"); }
+            else if (parseNode.GetChildNode("truncated") is { } nullNodeTruncated && nullNodeTruncated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Truncated = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -91,6 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The total_count property</summary>
         public double? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("total_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
         private double? _explicitNullValueTotalCount = default!;
+        /// <summary>Present when the listing has a metadata filter or a search, sorted by created_at newest first. Such a listing searches at most the newest 10,000,000 logs in its date range, newest first, so add a created_at lt filter to search older logs. True when part of that window was not searched yet, because the page filled, time ran out, or the log store failed partway: total_count then counts only the matches in the logs searched, plus one when the page is full, so the next page is requested. False when the whole window was searched.</summary>
+        public bool? Truncated { get => _explicitNullValueTruncated; set { _explicitNullValueTruncated = value; AdditionalData?.Remove("truncated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("truncated"); else _explicitNullProperties?.Remove("truncated"); } }
+        private bool? _explicitNullValueTruncated = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200ResponseResultInfo"/> and sets the default values.
         /// </summary>
@@ -114,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "count", n => { Count = n.GetDoubleValue(); } },
                 { "max_cost", n => { MaxCost = n.GetDoubleValue(); } },
@@ -130,6 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "page", n => { Page = n.GetDoubleValue(); } },
                 { "per_page", n => { PerPage = n.GetDoubleValue(); } },
                 { "total_count", n => { TotalCount = n.GetDoubleValue(); } },
+                { "truncated", n => { Truncated = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -153,6 +159,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("page", Page);
             writer.WriteDoubleValue("per_page", PerPage);
             writer.WriteDoubleValue("total_count", TotalCount);
+            writer.WriteBoolValue("truncated", Truncated);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

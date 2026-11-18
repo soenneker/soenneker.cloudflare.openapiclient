@@ -153,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "allowed_idps", n => { AllowedIdps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "auto_redirect_to_identity", n => { AutoRedirectToIdentity = n.GetBoolValue(); } },

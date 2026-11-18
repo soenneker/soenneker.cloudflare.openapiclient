@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "ciphers", n => { Ciphers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "early_hints", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsEarlyHints>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEarlyHints = default; _explicitNullProperties?.Remove("early_hints"); AdditionalData["early_hints"] = unknown; } else { EarlyHints = parsed; AdditionalData.Remove("early_hints"); } } },

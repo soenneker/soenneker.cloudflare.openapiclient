@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "bundle_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesBundleMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBundleMethod = default; _explicitNullProperties?.Remove("bundle_method"); AdditionalData["bundle_method"] = unknown; } else { BundleMethod = parsed; AdditionalData.Remove("bundle_method"); } } },
                 { "certificate", n => { Certificate = n.GetStringValue(); } },

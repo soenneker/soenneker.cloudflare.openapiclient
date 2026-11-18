@@ -153,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "authenticationSchemes", n => { AuthenticationSchemes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimAuthenticationScheme>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimAuthenticationScheme.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bulk", n => { Bulk = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimBulkFeature>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimBulkFeature.CreateFromDiscriminatorValue); } },

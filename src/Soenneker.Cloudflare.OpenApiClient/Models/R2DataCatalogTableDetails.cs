@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "identifier", n => { Identifier = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableIdentifier.CreateFromDiscriminatorValue); } },

@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRouteDeployments200ResponseDataDeploymentsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayDynamicRouteDeployments200ResponseDataDeploymentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "order_by", n => { OrderBy = n.GetStringValue(); } },

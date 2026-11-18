@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTemplateViolation>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTemplateViolation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "page_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessType2>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePageType = default; _explicitNullProperties?.Remove("page_type"); AdditionalData["page_type"] = unknown; } else { PageType = parsed; AdditionalData.Remove("page_type"); } } },

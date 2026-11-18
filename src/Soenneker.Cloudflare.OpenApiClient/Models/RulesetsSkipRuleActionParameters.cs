@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "phase", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhase>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePhase = default; _explicitNullProperties?.Remove("phase"); AdditionalData["phase"] = unknown; } else { Phase = parsed; AdditionalData.Remove("phase"); } } },
                 { "phases", n => { Phases = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhasesItem>()?.AsList(); } },

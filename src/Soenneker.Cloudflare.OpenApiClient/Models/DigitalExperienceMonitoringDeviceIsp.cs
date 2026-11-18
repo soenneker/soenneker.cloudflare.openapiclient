@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpInfo.CreateFromDiscriminatorValue); } },
                 { "test_id", n => { TestId = n.GetStringValue(); } },

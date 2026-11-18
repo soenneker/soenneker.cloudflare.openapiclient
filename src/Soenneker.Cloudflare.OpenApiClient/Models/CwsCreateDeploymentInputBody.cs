@@ -122,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "basic_auth_credential_ids", n => { BasicAuthCredentialIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "default_mode", n => { DefaultMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsCreateDeploymentInputBodyDefaultMode>(); } },

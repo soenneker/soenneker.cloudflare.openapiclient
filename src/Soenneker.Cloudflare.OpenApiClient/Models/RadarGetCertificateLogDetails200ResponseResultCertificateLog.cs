@@ -175,7 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "api", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogApi>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApi = default; _explicitNullProperties?.Remove("api"); AdditionalData["api"] = unknown; } else { Api = parsed; AdditionalData.Remove("api"); } } },
                 { "avgThroughput", n => { AvgThroughput = n.GetDoubleValue(); } },

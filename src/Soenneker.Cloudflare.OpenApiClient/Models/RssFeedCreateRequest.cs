@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "category_id", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedCreateRequestCategoryId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCategoryId = default; _explicitNullProperties?.Remove("category_id"); AdditionalData["category_id"] = unknown; } else { CategoryId = parsed; AdditionalData.Remove("category_id"); } } },
                 { "curated_feed_id", n => { CuratedFeedId = n.GetGuidValue(); } },
