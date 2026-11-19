@@ -23,6 +23,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("coverage_notes") is { } nullNodeCoverageNotes && nullNodeCoverageNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverageNotes = null;
             if (parseNode.GetChildNode("event_rules") is null) { _explicitNullValueEventRules = default!; _explicitNullProperties?.Remove("event_rules"); }
             else if (parseNode.GetChildNode("event_rules") is { } nullNodeEventRules && nullNodeEventRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventRules = null;
+            if (parseNode.GetChildNode("family") is null) { _explicitNullValueFamily = default!; _explicitNullProperties?.Remove("family"); }
+            else if (parseNode.GetChildNode("family") is { } nullNodeFamily && nullNodeFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Family = null;
             if (parseNode.GetChildNode("filter_revision") is null) { _explicitNullValueFilterRevision = default!; _explicitNullProperties?.Remove("filter_revision"); }
             else if (parseNode.GetChildNode("filter_revision") is { } nullNodeFilterRevision && nullNodeFilterRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterRevision = null;
             if (parseNode.GetChildNode("intent_revision") is null) { _explicitNullValueIntentRevision = default!; _explicitNullProperties?.Remove("intent_revision"); }
@@ -78,6 +80,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicEventRulesItem> EventRules { get => _explicitNullValueEventRules; set { _explicitNullValueEventRules = value; AdditionalData?.Remove("event_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_rules"); else _explicitNullProperties?.Remove("event_rules"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicEventRulesItem> _explicitNullValueEventRules = default!;
+#endif
+        /// <summary>The `topic_families` entry this topic is listed under. New families can be added, so treat an unknown value as ungrouped.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Family { get => _explicitNullValueFamily; set { _explicitNullValueFamily = value; AdditionalData?.Remove("family"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("family"); else _explicitNullProperties?.Remove("family"); } }
+        private string? _explicitNullValueFamily = default!;
+#nullable restore
+#else
+        public string Family { get => _explicitNullValueFamily; set { _explicitNullValueFamily = value; AdditionalData?.Remove("family"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("family"); else _explicitNullProperties?.Remove("family"); } }
+        private string _explicitNullValueFamily = default!;
 #endif
         /// <summary>The filter_revision property</summary>
         public int? FilterRevision { get => _explicitNullValueFilterRevision; set { _explicitNullValueFilterRevision = value; AdditionalData?.Remove("filter_revision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_revision"); else _explicitNullProperties?.Remove("filter_revision"); } }
@@ -191,11 +203,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(14)
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "actor_types", n => { ActorTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicActorTypesItem>()?.AsList(); } },
                 { "coverage_notes", n => { CoverageNotes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicCoverageNotesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicCoverageNotesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "event_rules", n => { EventRules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicEventRulesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicEventRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "family", n => { Family = n.GetStringValue(); } },
                 { "filter_revision", n => { FilterRevision = n.GetIntValue(); } },
                 { "intent_revision", n => { IntentRevision = n.GetIntValue(); } },
                 { "motivations", n => { Motivations = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicMotivationsItem>()?.AsList(); } },
@@ -219,6 +232,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicActorTypesItem>("actor_types", ActorTypes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicCoverageNotesItem>("coverage_notes", CoverageNotes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicEventRulesItem>("event_rules", EventRules);
+            writer.WriteStringValue("family", Family);
             writer.WriteIntValue("filter_revision", FilterRevision);
             writer.WriteIntValue("intent_revision", IntentRevision);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicMotivationsItem>("motivations", Motivations);

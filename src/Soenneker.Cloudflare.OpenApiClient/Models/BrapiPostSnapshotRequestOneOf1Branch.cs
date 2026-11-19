@@ -33,20 +33,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("bestAttempt") is { } nullNodeBestAttempt && nullNodeBestAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BestAttempt = null;
             if (parseNode.GetChildNode("cookies") is null) { _explicitNullValueCookies = default!; _explicitNullProperties?.Remove("cookies"); }
             else if (parseNode.GetChildNode("cookies") is { } nullNodeCookies && nullNodeCookies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cookies = null;
+            if (parseNode.GetChildNode("custom_ai") is null) { _explicitNullValueCustomAi = default!; _explicitNullProperties?.Remove("custom_ai"); }
+            else if (parseNode.GetChildNode("custom_ai") is { } nullNodeCustomAi && nullNodeCustomAi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomAi = null;
+            if (parseNode.GetChildNode("elements") is null) { _explicitNullValueElements = default!; _explicitNullProperties?.Remove("elements"); }
+            else if (parseNode.GetChildNode("elements") is { } nullNodeElements && nullNodeElements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Elements = null;
             if (parseNode.GetChildNode("emulateMediaType") is null) { _explicitNullValueEmulateMediaType = default!; _explicitNullProperties?.Remove("emulateMediaType"); }
             else if (parseNode.GetChildNode("emulateMediaType") is { } nullNodeEmulateMediaType && nullNodeEmulateMediaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmulateMediaType = null;
+            if (parseNode.GetChildNode("excludeExternalLinks") is null) { _explicitNullValueExcludeExternalLinks = default!; _explicitNullProperties?.Remove("excludeExternalLinks"); }
+            else if (parseNode.GetChildNode("excludeExternalLinks") is { } nullNodeExcludeExternalLinks && nullNodeExcludeExternalLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeExternalLinks = null;
             if (parseNode.GetChildNode("formats") is null) { _explicitNullValueFormats = default!; _explicitNullProperties?.Remove("formats"); }
             else if (parseNode.GetChildNode("formats") is { } nullNodeFormats && nullNodeFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formats = null;
             if (parseNode.GetChildNode("gotoOptions") is null) { _explicitNullValueGotoOptions = default!; _explicitNullProperties?.Remove("gotoOptions"); }
             else if (parseNode.GetChildNode("gotoOptions") is { } nullNodeGotoOptions && nullNodeGotoOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GotoOptions = null;
             if (parseNode.GetChildNode("html") is null) { _explicitNullValueHtml = default!; _explicitNullProperties?.Remove("html"); }
             else if (parseNode.GetChildNode("html") is { } nullNodeHtml && nullNodeHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Html = null;
+            if (parseNode.GetChildNode("interestingOnly") is null) { _explicitNullValueInterestingOnly = default!; _explicitNullProperties?.Remove("interestingOnly"); }
+            else if (parseNode.GetChildNode("interestingOnly") is { } nullNodeInterestingOnly && nullNodeInterestingOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterestingOnly = null;
+            if (parseNode.GetChildNode("pdfOptions") is null) { _explicitNullValuePdfOptions = default!; _explicitNullProperties?.Remove("pdfOptions"); }
+            else if (parseNode.GetChildNode("pdfOptions") is { } nullNodePdfOptions && nullNodePdfOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PdfOptions = null;
+            if (parseNode.GetChildNode("prompt") is null) { _explicitNullValuePrompt = default!; _explicitNullProperties?.Remove("prompt"); }
+            else if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
             if (parseNode.GetChildNode("rejectRequestPattern") is null) { _explicitNullValueRejectRequestPattern = default!; _explicitNullProperties?.Remove("rejectRequestPattern"); }
             else if (parseNode.GetChildNode("rejectRequestPattern") is { } nullNodeRejectRequestPattern && nullNodeRejectRequestPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectRequestPattern = null;
             if (parseNode.GetChildNode("rejectResourceTypes") is null) { _explicitNullValueRejectResourceTypes = default!; _explicitNullProperties?.Remove("rejectResourceTypes"); }
             else if (parseNode.GetChildNode("rejectResourceTypes") is { } nullNodeRejectResourceTypes && nullNodeRejectResourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectResourceTypes = null;
+            if (parseNode.GetChildNode("response_format") is null) { _explicitNullValueResponseFormat = default!; _explicitNullProperties?.Remove("response_format"); }
+            else if (parseNode.GetChildNode("response_format") is { } nullNodeResponseFormat && nullNodeResponseFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFormat = null;
+            if (parseNode.GetChildNode("root") is null) { _explicitNullValueRoot = default!; _explicitNullProperties?.Remove("root"); }
+            else if (parseNode.GetChildNode("root") is { } nullNodeRoot && nullNodeRoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Root = null;
             if (parseNode.GetChildNode("screenshotOptions") is null) { _explicitNullValueScreenshotOptions = default!; _explicitNullProperties?.Remove("screenshotOptions"); }
             else if (parseNode.GetChildNode("screenshotOptions") is { } nullNodeScreenshotOptions && nullNodeScreenshotOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshotOptions = null;
+            if (parseNode.GetChildNode("scrollPage") is null) { _explicitNullValueScrollPage = default!; _explicitNullProperties?.Remove("scrollPage"); }
+            else if (parseNode.GetChildNode("scrollPage") is { } nullNodeScrollPage && nullNodeScrollPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrollPage = null;
+            if (parseNode.GetChildNode("selector") is null) { _explicitNullValueSelector = default!; _explicitNullProperties?.Remove("selector"); }
+            else if (parseNode.GetChildNode("selector") is { } nullNodeSelector && nullNodeSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Selector = null;
             if (parseNode.GetChildNode("setExtraHTTPHeaders") is null) { _explicitNullValueSetExtraHTTPHeaders = default!; _explicitNullProperties?.Remove("setExtraHTTPHeaders"); }
             else if (parseNode.GetChildNode("setExtraHTTPHeaders") is { } nullNodeSetExtraHTTPHeaders && nullNodeSetExtraHTTPHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetExtraHTTPHeaders = null;
             if (parseNode.GetChildNode("setJavaScriptEnabled") is null) { _explicitNullValueSetJavaScriptEnabled = default!; _explicitNullProperties?.Remove("setJavaScriptEnabled"); }
@@ -57,6 +77,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("userAgent") is { } nullNodeUserAgent && nullNodeUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgent = null;
             if (parseNode.GetChildNode("viewport") is null) { _explicitNullValueViewport = default!; _explicitNullProperties?.Remove("viewport"); }
             else if (parseNode.GetChildNode("viewport") is { } nullNodeViewport && nullNodeViewport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Viewport = null;
+            if (parseNode.GetChildNode("visibleLinksOnly") is null) { _explicitNullValueVisibleLinksOnly = default!; _explicitNullProperties?.Remove("visibleLinksOnly"); }
+            else if (parseNode.GetChildNode("visibleLinksOnly") is { } nullNodeVisibleLinksOnly && nullNodeVisibleLinksOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisibleLinksOnly = null;
             if (parseNode.GetChildNode("waitForSelector") is null) { _explicitNullValueWaitForSelector = default!; _explicitNullProperties?.Remove("waitForSelector"); }
             else if (parseNode.GetChildNode("waitForSelector") is { } nullNodeWaitForSelector && nullNodeWaitForSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitForSelector = null;
             if (parseNode.GetChildNode("waitForTimeout") is null) { _explicitNullValueWaitForTimeout = default!; _explicitNullProperties?.Remove("waitForTimeout"); }
@@ -129,6 +151,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCookiesItem> Cookies { get => _explicitNullValueCookies; set { _explicitNullValueCookies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookies"); else _explicitNullProperties?.Remove("cookies"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCookiesItem> _explicitNullValueCookies = default!;
 #endif
+        /// <summary>Optional list of custom AI models to use for the request. The models will be tried in the order provided, and in case a model returns an error, the next one will be used as fallback.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCustomAiItem>? CustomAi { get => _explicitNullValueCustomAi; set { _explicitNullValueCustomAi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_ai"); else _explicitNullProperties?.Remove("custom_ai"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCustomAiItem>? _explicitNullValueCustomAi = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCustomAiItem> CustomAi { get => _explicitNullValueCustomAi; set { _explicitNullValueCustomAi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_ai"); else _explicitNullProperties?.Remove("custom_ai"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCustomAiItem> _explicitNullValueCustomAi = default!;
+#endif
+        /// <summary>The elements property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestElementsItem>? Elements { get => _explicitNullValueElements; set { _explicitNullValueElements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elements"); else _explicitNullProperties?.Remove("elements"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestElementsItem>? _explicitNullValueElements = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestElementsItem> Elements { get => _explicitNullValueElements; set { _explicitNullValueElements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elements"); else _explicitNullProperties?.Remove("elements"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestElementsItem> _explicitNullValueElements = default!;
+#endif
         /// <summary>The emulateMediaType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,6 +181,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string EmulateMediaType { get => _explicitNullValueEmulateMediaType; set { _explicitNullValueEmulateMediaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emulateMediaType"); else _explicitNullProperties?.Remove("emulateMediaType"); } }
         private string _explicitNullValueEmulateMediaType = default!;
 #endif
+        /// <summary>The excludeExternalLinks property</summary>
+        public bool? ExcludeExternalLinks { get => _explicitNullValueExcludeExternalLinks; set { _explicitNullValueExcludeExternalLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeExternalLinks"); else _explicitNullProperties?.Remove("excludeExternalLinks"); } }
+        private bool? _explicitNullValueExcludeExternalLinks = default!;
         /// <summary>The formats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +214,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Html { get => _explicitNullValueHtml; set { _explicitNullValueHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html"); else _explicitNullProperties?.Remove("html"); } }
         private string _explicitNullValueHtml = default!;
 #endif
+        /// <summary>The interestingOnly property</summary>
+        public bool? InterestingOnly { get => _explicitNullValueInterestingOnly; set { _explicitNullValueInterestingOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interestingOnly"); else _explicitNullProperties?.Remove("interestingOnly"); } }
+        private bool? _explicitNullValueInterestingOnly = default!;
+        /// <summary>Check [options](https://pptr.dev/api/puppeteer.pdfoptions).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestPdfOptions? PdfOptions { get => _explicitNullValuePdfOptions; set { _explicitNullValuePdfOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdfOptions"); else _explicitNullProperties?.Remove("pdfOptions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestPdfOptions? _explicitNullValuePdfOptions = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestPdfOptions PdfOptions { get => _explicitNullValuePdfOptions; set { _explicitNullValuePdfOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdfOptions"); else _explicitNullProperties?.Remove("pdfOptions"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestPdfOptions _explicitNullValuePdfOptions = default!;
+#endif
+        /// <summary>The prompt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
+#nullable restore
+#else
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
+#endif
         /// <summary>Block undesired requests that match the provided regex patterns, eg. &apos;/^.*\.(css)&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -189,6 +257,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestRejectResourceTypesItem?> RejectResourceTypes { get => _explicitNullValueRejectResourceTypes; set { _explicitNullValueRejectResourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejectResourceTypes"); else _explicitNullProperties?.Remove("rejectResourceTypes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestRejectResourceTypesItem?> _explicitNullValueRejectResourceTypes = default!;
 #endif
+        /// <summary>The response_format property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestResponseFormat? ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestResponseFormat? _explicitNullValueResponseFormat = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestResponseFormat ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestResponseFormat _explicitNullValueResponseFormat = default!;
+#endif
+        /// <summary>The root property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Root { get => _explicitNullValueRoot; set { _explicitNullValueRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root"); else _explicitNullProperties?.Remove("root"); } }
+        private string? _explicitNullValueRoot = default!;
+#nullable restore
+#else
+        public string Root { get => _explicitNullValueRoot; set { _explicitNullValueRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root"); else _explicitNullProperties?.Remove("root"); } }
+        private string _explicitNullValueRoot = default!;
+#endif
         /// <summary>The screenshotOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,6 +286,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestScreenshotOptions ScreenshotOptions { get => _explicitNullValueScreenshotOptions; set { _explicitNullValueScreenshotOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshotOptions"); else _explicitNullProperties?.Remove("screenshotOptions"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestScreenshotOptions _explicitNullValueScreenshotOptions = default!;
+#endif
+        /// <summary>The scrollPage property</summary>
+        public bool? ScrollPage { get => _explicitNullValueScrollPage; set { _explicitNullValueScrollPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrollPage"); else _explicitNullProperties?.Remove("scrollPage"); } }
+        private bool? _explicitNullValueScrollPage = default!;
+        /// <summary>The selector property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Selector { get => _explicitNullValueSelector; set { _explicitNullValueSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selector"); else _explicitNullProperties?.Remove("selector"); } }
+        private string? _explicitNullValueSelector = default!;
+#nullable restore
+#else
+        public string Selector { get => _explicitNullValueSelector; set { _explicitNullValueSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selector"); else _explicitNullProperties?.Remove("selector"); } }
+        private string _explicitNullValueSelector = default!;
 #endif
         /// <summary>The setExtraHTTPHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -242,6 +343,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestViewport Viewport { get => _explicitNullValueViewport; set { _explicitNullValueViewport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewport"); else _explicitNullProperties?.Remove("viewport"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestViewport _explicitNullValueViewport = default!;
 #endif
+        /// <summary>The visibleLinksOnly property</summary>
+        public bool? VisibleLinksOnly { get => _explicitNullValueVisibleLinksOnly; set { _explicitNullValueVisibleLinksOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibleLinksOnly"); else _explicitNullProperties?.Remove("visibleLinksOnly"); } }
+        private bool? _explicitNullValueVisibleLinksOnly = default!;
         /// <summary>Wait for the selector to appear in page. Check [options](https://pptr.dev/api/puppeteer.page.waitforselector).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -260,7 +364,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// </summary>
         public BrapiPostSnapshotRequestOneOf1Branch()
         {
+            ExcludeExternalLinks = false;
             UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36";
+            VisibleLinksOnly = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -278,7 +384,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(22)
+            return new Dictionary<string, Action<IParseNode>>(33)
             {
                 { "actionTimeout", n => { ActionTimeout = n.GetDoubleValue(); } },
                 { "addScriptTag", n => { AddScriptTag = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestAddScriptTagItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestAddScriptTagItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -288,18 +394,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "authenticate", n => { Authenticate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestAuthenticate>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestAuthenticate.CreateFromDiscriminatorValue); } },
                 { "bestAttempt", n => { BestAttempt = n.GetBoolValue(); } },
                 { "cookies", n => { Cookies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCookiesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCookiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "custom_ai", n => { CustomAi = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCustomAiItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCustomAiItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestElementsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "emulateMediaType", n => { EmulateMediaType = n.GetStringValue(); } },
+                { "excludeExternalLinks", n => { ExcludeExternalLinks = n.GetBoolValue(); } },
                 { "formats", n => { Formats = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestFormatsItem>()?.AsList(); } },
                 { "gotoOptions", n => { GotoOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestGotoOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestGotoOptions.CreateFromDiscriminatorValue); } },
                 { "html", n => { Html = n.GetStringValue(); } },
+                { "interestingOnly", n => { InterestingOnly = n.GetBoolValue(); } },
+                { "pdfOptions", n => { PdfOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestPdfOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestPdfOptions.CreateFromDiscriminatorValue); } },
+                { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "rejectRequestPattern", n => { RejectRequestPattern = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "rejectResourceTypes", n => { RejectResourceTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestRejectResourceTypesItem>()?.AsList(); } },
+                { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestResponseFormat>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestResponseFormat.CreateFromDiscriminatorValue); } },
+                { "root", n => { Root = n.GetStringValue(); } },
                 { "screenshotOptions", n => { ScreenshotOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestScreenshotOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestScreenshotOptions.CreateFromDiscriminatorValue); } },
+                { "scrollPage", n => { ScrollPage = n.GetBoolValue(); } },
+                { "selector", n => { Selector = n.GetStringValue(); } },
                 { "setExtraHTTPHeaders", n => { SetExtraHTTPHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestSetExtraHttpHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestSetExtraHttpHeaders.CreateFromDiscriminatorValue); } },
                 { "setJavaScriptEnabled", n => { SetJavaScriptEnabled = n.GetBoolValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
                 { "viewport", n => { Viewport = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestViewport>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestViewport.CreateFromDiscriminatorValue); } },
+                { "visibleLinksOnly", n => { VisibleLinksOnly = n.GetBoolValue(); } },
                 { "waitForSelector", n => { WaitForSelector = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestWaitForSelector>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestWaitForSelector.CreateFromDiscriminatorValue); } },
                 { "waitForTimeout", n => { WaitForTimeout = n.GetDoubleValue(); } },
             };
@@ -319,18 +436,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestAuthenticate>("authenticate", Authenticate);
             writer.WriteBoolValue("bestAttempt", BestAttempt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCookiesItem>("cookies", Cookies);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestCustomAiItem>("custom_ai", CustomAi);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestElementsItem>("elements", Elements);
             writer.WriteStringValue("emulateMediaType", EmulateMediaType);
+            writer.WriteBoolValue("excludeExternalLinks", ExcludeExternalLinks);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestFormatsItem>("formats", Formats);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestGotoOptions>("gotoOptions", GotoOptions);
             writer.WriteStringValue("html", Html);
+            writer.WriteBoolValue("interestingOnly", InterestingOnly);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestPdfOptions>("pdfOptions", PdfOptions);
+            writer.WriteStringValue("prompt", Prompt);
             writer.WriteCollectionOfPrimitiveValues<string>("rejectRequestPattern", RejectRequestPattern);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestRejectResourceTypesItem>("rejectResourceTypes", RejectResourceTypes);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestResponseFormat>("response_format", ResponseFormat);
+            writer.WriteStringValue("root", Root);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestScreenshotOptions>("screenshotOptions", ScreenshotOptions);
+            writer.WriteBoolValue("scrollPage", ScrollPage);
+            writer.WriteStringValue("selector", Selector);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestSetExtraHttpHeaders>("setExtraHTTPHeaders", SetExtraHTTPHeaders);
             writer.WriteBoolValue("setJavaScriptEnabled", SetJavaScriptEnabled);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestViewport>("viewport", Viewport);
+            writer.WriteBoolValue("visibleLinksOnly", VisibleLinksOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshotRequestWaitForSelector>("waitForSelector", WaitForSelector);
             writer.WriteDoubleValue("waitForTimeout", WaitForTimeout);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

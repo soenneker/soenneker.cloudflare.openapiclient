@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Configured threshold and amount. Null unless `state` is `active` or `needs_confirmation`.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AigBillingGetTopupEligibilityV2ResultAutoTopupConfig : IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -23,10 +24,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("threshold_cents") is { } nullNodeThresholdCents && nullNodeThresholdCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThresholdCents = null;
         }
 
-        /// <summary>The amount_cents property</summary>
+        /// <summary>Amount in cents that each auto top-up adds.</summary>
         public int? AmountCents { get => _explicitNullValueAmountCents; set { _explicitNullValueAmountCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_cents"); else _explicitNullProperties?.Remove("amount_cents"); } }
         private int? _explicitNullValueAmountCents = default!;
-        /// <summary>The threshold_cents property</summary>
+        /// <summary>Balance threshold in cents that triggers an auto top-up.</summary>
         public int? ThresholdCents { get => _explicitNullValueThresholdCents; set { _explicitNullValueThresholdCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold_cents"); else _explicitNullProperties?.Remove("threshold_cents"); } }
         private int? _explicitNullValueThresholdCents = default!;
         /// <summary>

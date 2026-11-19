@@ -32,6 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Eligibility.EligibilityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The limits property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Limits.LimitsRequestBuilder Limits
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Limits.LimitsRequestBuilder(PathParameters, RequestAdapter);

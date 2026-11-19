@@ -41,6 +41,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
             if (parseNode.GetChildNode("subscribed_at") is null) { _explicitNullValueSubscribedAt = default!; _explicitNullProperties?.Remove("subscribed_at"); }
             else if (parseNode.GetChildNode("subscribed_at") is { } nullNodeSubscribedAt && nullNodeSubscribedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscribedAt = null;
+            if (parseNode.GetChildNode("tagging_enabled") is null) { _explicitNullValueTaggingEnabled = default!; _explicitNullProperties?.Remove("tagging_enabled"); }
+            else if (parseNode.GetChildNode("tagging_enabled") is { } nullNodeTaggingEnabled && nullNodeTaggingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaggingEnabled = null;
             if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
             else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
             if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
@@ -150,6 +152,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SubscribedAt { get => _explicitNullValueSubscribedAt; set { _explicitNullValueSubscribedAt = value; AdditionalData?.Remove("subscribed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscribed_at"); else _explicitNullProperties?.Remove("subscribed_at"); } }
         private string _explicitNullValueSubscribedAt = default!;
 #endif
+        /// <summary>When enabled, new articles from this feed are tagged automatically by AI. Changes apply to articles processed afterwards.</summary>
+        public bool? TaggingEnabled { get => _explicitNullValueTaggingEnabled; set { _explicitNullValueTaggingEnabled = value; AdditionalData?.Remove("tagging_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tagging_enabled"); else _explicitNullProperties?.Remove("tagging_enabled"); } }
+        private bool? _explicitNullValueTaggingEnabled = default!;
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,7 +208,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(15)
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "category_id", n => { CategoryId = n.GetStringValue(); } },
                 { "category_name", n => { CategoryName = n.GetStringValue(); } },
@@ -217,6 +222,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "source_type", n => { SourceType = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "subscribed_at", n => { SubscribedAt = n.GetStringValue(); } },
+                { "tagging_enabled", n => { TaggingEnabled = n.GetBoolValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -241,6 +247,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("source_type", SourceType);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("subscribed_at", SubscribedAt);
+            writer.WriteBoolValue("tagging_enabled", TaggingEnabled);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);

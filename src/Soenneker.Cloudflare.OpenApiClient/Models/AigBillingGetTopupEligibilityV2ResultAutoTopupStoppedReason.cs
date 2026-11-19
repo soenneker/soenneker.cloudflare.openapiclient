@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>Why auto top-up stopped. Present only when `state` is `stopped` and the reason is known.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AigBillingGetTopupEligibilityV2ResultAutoTopupStoppedReason
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "payment_method_removed")]
         #pragma warning disable CS1591

@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The payment_intent_id property</summary>
+        /// <summary>Top-up identifier from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentIntentId { get => _explicitNullValuePaymentIntentId; set { _explicitNullValuePaymentIntentId = value; AdditionalData?.Remove("payment_intent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_intent_id"); else _explicitNullProperties?.Remove("payment_intent_id"); } }
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string PaymentIntentId { get => _explicitNullValuePaymentIntentId; set { _explicitNullValuePaymentIntentId = value; AdditionalData?.Remove("payment_intent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_intent_id"); else _explicitNullProperties?.Remove("payment_intent_id"); } }
         private string _explicitNullValuePaymentIntentId = default!;
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>`completed` once the top-up payment is processed and its credits are added to the balance, `pending` until then.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResultStatus? _explicitNullValueStatus = default!;
         /// <summary>

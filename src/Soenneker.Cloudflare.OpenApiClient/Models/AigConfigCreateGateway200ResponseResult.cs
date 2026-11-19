@@ -39,6 +39,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("guardrails") is { } nullNodeGuardrails && nullNodeGuardrails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guardrails = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("internal_id") is null) { _explicitNullValueInternalId = default!; _explicitNullProperties?.Remove("internal_id"); }
+            else if (parseNode.GetChildNode("internal_id") is { } nullNodeInternalId && nullNodeInternalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalId = null;
             if (parseNode.GetChildNode("is_default") is null) { _explicitNullValueIsDefault = default!; _explicitNullProperties?.Remove("is_default"); }
             else if (parseNode.GetChildNode("is_default") is { } nullNodeIsDefault && nullNodeIsDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefault = null;
             if (parseNode.GetChildNode("log_classification") is null) { _explicitNullValueLogClassification = default!; _explicitNullProperties?.Remove("log_classification"); }
@@ -137,6 +139,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
+        /// <summary>Identifier of the AI Gateway that never changes and is never reused, even after the gateway is deleted. Accepted in place of the gateway ID in any gateway path.</summary>
+        public Guid? InternalId { get => _explicitNullValueInternalId; set { _explicitNullValueInternalId = value; AdditionalData?.Remove("internal_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_id"); else _explicitNullProperties?.Remove("internal_id"); } }
+        private Guid? _explicitNullValueInternalId = default!;
         /// <summary>The is_default property</summary>
         public bool? IsDefault { get => _explicitNullValueIsDefault; set { _explicitNullValueIsDefault = value; AdditionalData?.Remove("is_default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_default"); else _explicitNullProperties?.Remove("is_default"); } }
         private bool? _explicitNullValueIsDefault = default!;
@@ -255,7 +260,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(31)
+            return new Dictionary<string, Action<IParseNode>>(32)
             {
                 { "authentication", n => { Authentication = n.GetBoolValue(); } },
                 { "byok_only", n => { ByokOnly = n.GetBoolValue(); } },
@@ -268,6 +273,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "fedramp_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateGateway200ResponseResultFedrampMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFedrampMode = default; _explicitNullProperties?.Remove("fedramp_mode"); AdditionalData["fedramp_mode"] = unknown; } else { FedrampMode = parsed; AdditionalData.Remove("fedramp_mode"); } } },
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateGateway200ResponseResultGuardrails>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateGateway200ResponseResultGuardrails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "internal_id", n => { InternalId = n.GetGuidValue(); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "log_classification", n => { LogClassification = n.GetBoolValue(); } },
                 { "log_management", n => { LogManagement = n.GetIntValue(); } },
@@ -308,6 +314,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateGateway200ResponseResultFedrampMode>("fedramp_mode", FedrampMode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigCreateGateway200ResponseResultGuardrails>("guardrails", Guardrails);
             writer.WriteStringValue("id", Id);
+            writer.WriteGuidValue("internal_id", InternalId);
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteBoolValue("log_classification", LogClassification);
             writer.WriteIntValue("log_management", LogManagement);

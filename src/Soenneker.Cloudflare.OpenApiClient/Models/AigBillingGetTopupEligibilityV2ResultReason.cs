@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>What prevents a manual top-up, or `NONE`. `CONTRACT_BILLING`: the account is billed by contract. `ACCOUNT_RESTRICTED`: the account is restricted. `ELIGIBILITY_UNAVAILABLE`: eligibility could not be determined. `NO_ELIGIBLE_PAYMENT_METHOD`: no payment method can pay for a top-up. `DAILY_LIMIT_REACHED`: the account reached its daily top-up limit.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AigBillingGetTopupEligibilityV2ResultReason
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "NONE")]
         #pragma warning disable CS1591

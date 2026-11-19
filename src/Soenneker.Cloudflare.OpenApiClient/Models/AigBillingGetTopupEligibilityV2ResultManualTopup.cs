@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Manual top-up availability.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AigBillingGetTopupEligibilityV2ResultManualTopup : IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -25,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("limits") is { } nullNodeLimits && nullNodeLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limits = null;
         }
 
-        /// <summary>The available property</summary>
+        /// <summary>Whether a manual top-up can be made now. True only when `status` is `ready`.</summary>
         public bool? Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
         private bool? _explicitNullValueAvailable = default!;
-        /// <summary>The default_payment_method_id property</summary>
+        /// <summary>Payment method to preselect: the default when it can pay, otherwise the first that can. Null when none can.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultPaymentMethodId { get => _explicitNullValueDefaultPaymentMethodId; set { _explicitNullValueDefaultPaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_payment_method_id"); else _explicitNullProperties?.Remove("default_payment_method_id"); } }
@@ -38,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string DefaultPaymentMethodId { get => _explicitNullValueDefaultPaymentMethodId; set { _explicitNullValueDefaultPaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_payment_method_id"); else _explicitNullProperties?.Remove("default_payment_method_id"); } }
         private string _explicitNullValueDefaultPaymentMethodId = default!;
 #endif
-        /// <summary>The limits property</summary>
+        /// <summary>Allowed manual top-up amounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultManualTopupLimits? Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }

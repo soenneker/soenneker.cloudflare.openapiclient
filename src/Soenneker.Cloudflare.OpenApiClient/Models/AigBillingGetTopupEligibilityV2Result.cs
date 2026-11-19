@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
-        /// <summary>The auto_topup property</summary>
+        /// <summary>Auto top-up state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopup? AutoTopup { get => _explicitNullValueAutoTopup; set { _explicitNullValueAutoTopup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_topup"); else _explicitNullProperties?.Remove("auto_topup"); } }
@@ -43,13 +43,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopup AutoTopup { get => _explicitNullValueAutoTopup; set { _explicitNullValueAutoTopup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_topup"); else _explicitNullProperties?.Remove("auto_topup"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopup _explicitNullValueAutoTopup = default!;
 #endif
-        /// <summary>The contract_version property</summary>
+        /// <summary>Response contract version. Always `2`.</summary>
         public double? ContractVersion { get => _explicitNullValueContractVersion; set { _explicitNullValueContractVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contract_version"); else _explicitNullProperties?.Remove("contract_version"); } }
         private double? _explicitNullValueContractVersion = default!;
-        /// <summary>The evaluated_at property</summary>
+        /// <summary>When eligibility was evaluated, as an ISO 8601 timestamp.</summary>
         public DateTimeOffset? EvaluatedAt { get => _explicitNullValueEvaluatedAt; set { _explicitNullValueEvaluatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluated_at"); else _explicitNullProperties?.Remove("evaluated_at"); } }
         private DateTimeOffset? _explicitNullValueEvaluatedAt = default!;
-        /// <summary>The manual_topup property</summary>
+        /// <summary>Manual top-up availability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultManualTopup? ManualTopup { get => _explicitNullValueManualTopup; set { _explicitNullValueManualTopup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manual_topup"); else _explicitNullProperties?.Remove("manual_topup"); } }
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultManualTopup ManualTopup { get => _explicitNullValueManualTopup; set { _explicitNullValueManualTopup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manual_topup"); else _explicitNullProperties?.Remove("manual_topup"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultManualTopup _explicitNullValueManualTopup = default!;
 #endif
-        /// <summary>The payment_methods property</summary>
+        /// <summary>The account&apos;s payment methods, and whether each can pay for a top-up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultPaymentMethodsItem>? PaymentMethods { get => _explicitNullValuePaymentMethods; set { _explicitNullValuePaymentMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_methods"); else _explicitNullProperties?.Remove("payment_methods"); } }
@@ -69,10 +69,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultPaymentMethodsItem> PaymentMethods { get => _explicitNullValuePaymentMethods; set { _explicitNullValuePaymentMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_methods"); else _explicitNullProperties?.Remove("payment_methods"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultPaymentMethodsItem> _explicitNullValuePaymentMethods = default!;
 #endif
-        /// <summary>The reason property</summary>
+        /// <summary>What prevents a manual top-up, or `NONE`. `CONTRACT_BILLING`: the account is billed by contract. `ACCOUNT_RESTRICTED`: the account is restricted. `ELIGIBILITY_UNAVAILABLE`: eligibility could not be determined. `NO_ELIGIBLE_PAYMENT_METHOD`: no payment method can pay for a top-up. `DAILY_LIMIT_REACHED`: the account reached its daily top-up limit.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultReason? _explicitNullValueReason = default!;
-        /// <summary>The status property</summary>
+        /// <summary>`ready` when a manual top-up is available, `blocked` when `reason` prevents one, or `unavailable` when eligibility could not be determined and the request can be retried.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultStatus? _explicitNullValueStatus = default!;
         /// <summary>

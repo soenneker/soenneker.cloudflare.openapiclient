@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>`ready` when a manual top-up is available, `blocked` when `reason` prevents one, or `unavailable` when eligibility could not be determined and the request can be retried.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AigBillingGetTopupEligibilityV2ResultStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ready")]
         #pragma warning disable CS1591

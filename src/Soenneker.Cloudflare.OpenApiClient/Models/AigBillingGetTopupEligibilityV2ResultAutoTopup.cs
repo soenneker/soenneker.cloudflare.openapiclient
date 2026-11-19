@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Auto top-up state.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AigBillingGetTopupEligibilityV2ResultAutoTopup : IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -31,10 +32,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("stopped_reason") is { } nullNodeStoppedReason && nullNodeStoppedReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoppedReason = null;
         }
 
-        /// <summary>The can_configure property</summary>
+        /// <summary>Whether auto top-up can be set up or changed now.</summary>
         public bool? CanConfigure { get => _explicitNullValueCanConfigure; set { _explicitNullValueCanConfigure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_configure"); else _explicitNullProperties?.Remove("can_configure"); } }
         private bool? _explicitNullValueCanConfigure = default!;
-        /// <summary>The config property</summary>
+        /// <summary>Configured threshold and amount. Null unless `state` is `active` or `needs_confirmation`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
@@ -44,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupConfig _explicitNullValueConfig = default!;
 #endif
-        /// <summary>The limits property</summary>
+        /// <summary>Allowed auto top-up values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupLimits? Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
@@ -54,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupLimits Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupLimits _explicitNullValueLimits = default!;
 #endif
-        /// <summary>The payment_method_id property</summary>
+        /// <summary>Payment method auto top-up charges or, once stopped, the one it stopped on. Null when there is none to name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentMethodId { get => _explicitNullValuePaymentMethodId; set { _explicitNullValuePaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method_id"); else _explicitNullProperties?.Remove("payment_method_id"); } }
@@ -64,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string PaymentMethodId { get => _explicitNullValuePaymentMethodId; set { _explicitNullValuePaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method_id"); else _explicitNullProperties?.Remove("payment_method_id"); } }
         private string _explicitNullValuePaymentMethodId = default!;
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>`first_topup_required`: auto top-up can be set up after the first manual top-up. `not_configured`: auto top-up is off. `active`: auto top-up is on. `needs_confirmation`: auto top-up is on, but its card has to be confirmed or replaced. `stopped`: auto top-up was turned off; `stopped_reason` says why, when known.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupState? _explicitNullValueState = default!;
-        /// <summary>The stopped_reason property</summary>
+        /// <summary>Why auto top-up stopped. Present only when `state` is `stopped` and the reason is known.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupStoppedReason? StoppedReason { get => _explicitNullValueStoppedReason; set { _explicitNullValueStoppedReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopped_reason"); else _explicitNullProperties?.Remove("stopped_reason"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultAutoTopupStoppedReason? _explicitNullValueStoppedReason = default!;
         /// <summary>

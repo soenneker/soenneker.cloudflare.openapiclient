@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
-        /// <summary>The max_cents property</summary>
+        /// <summary>Maximum allowed top-up amount in cents.</summary>
         public int? MaxCents { get => _explicitNullValueMaxCents; set { _explicitNullValueMaxCents = value; AdditionalData?.Remove("max_cents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_cents"); else _explicitNullProperties?.Remove("max_cents"); } }
         private int? _explicitNullValueMaxCents = default!;
         /// <summary>Minimum allowed top-up amount in cents.</summary>

@@ -21,8 +21,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("accessibilityTree") is { } nullNodeAccessibilityTree && nullNodeAccessibilityTree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessibilityTree = null;
             if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
             else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("json") is null) { _explicitNullValueJson = default!; _explicitNullProperties?.Remove("json"); }
+            else if (parseNode.GetChildNode("json") is { } nullNodeJson && nullNodeJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Json = null;
+            if (parseNode.GetChildNode("links") is null) { _explicitNullValueLinks = default!; _explicitNullProperties?.Remove("links"); }
+            else if (parseNode.GetChildNode("links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
             if (parseNode.GetChildNode("markdown") is null) { _explicitNullValueMarkdown = default!; _explicitNullProperties?.Remove("markdown"); }
             else if (parseNode.GetChildNode("markdown") is { } nullNodeMarkdown && nullNodeMarkdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Markdown = null;
+            if (parseNode.GetChildNode("pdf") is null) { _explicitNullValuePdf = default!; _explicitNullProperties?.Remove("pdf"); }
+            else if (parseNode.GetChildNode("pdf") is { } nullNodePdf && nullNodePdf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pdf = null;
+            if (parseNode.GetChildNode("scrape") is null) { _explicitNullValueScrape = default!; _explicitNullProperties?.Remove("scrape"); }
+            else if (parseNode.GetChildNode("scrape") is { } nullNodeScrape && nullNodeScrape.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scrape = null;
             if (parseNode.GetChildNode("screenshot") is null) { _explicitNullValueScreenshot = default!; _explicitNullProperties?.Remove("screenshot"); }
             else if (parseNode.GetChildNode("screenshot") is { } nullNodeScreenshot && nullNodeScreenshot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screenshot = null;
         }
@@ -49,6 +57,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string _explicitNullValueContent = default!;
 #endif
+        /// <summary>Data extracted from the page HTML by the requested prompt.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snapshot>? Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; AdditionalData?.Remove("json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snapshot>? _explicitNullValueJson = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snapshot> Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; AdditionalData?.Remove("json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snapshot> _explicitNullValueJson = default!;
+#endif
+        /// <summary>Links found on the page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        private List<string>? _explicitNullValueLinks = default!;
+#nullable restore
+#else
+        public List<string> Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        private List<string> _explicitNullValueLinks = default!;
+#endif
         /// <summary>Markdown content. Prefixed with YAML frontmatter (e.g. `title`) when the page provides that metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +86,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Markdown { get => _explicitNullValueMarkdown; set { _explicitNullValueMarkdown = value; AdditionalData?.Remove("markdown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdown"); else _explicitNullProperties?.Remove("markdown"); } }
         private string _explicitNullValueMarkdown = default!;
+#endif
+        /// <summary>Base64 encoded PDF.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Pdf { get => _explicitNullValuePdf; set { _explicitNullValuePdf = value; AdditionalData?.Remove("pdf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdf"); else _explicitNullProperties?.Remove("pdf"); } }
+        private string? _explicitNullValuePdf = default!;
+#nullable restore
+#else
+        public string Pdf { get => _explicitNullValuePdf; set { _explicitNullValuePdf = value; AdditionalData?.Remove("pdf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdf"); else _explicitNullProperties?.Remove("pdf"); } }
+        private string _explicitNullValuePdf = default!;
+#endif
+        /// <summary>Elements matched by the requested selectors.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshot200ResponseResultScrapeItem>? Scrape { get => _explicitNullValueScrape; set { _explicitNullValueScrape = value; AdditionalData?.Remove("scrape"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrape"); else _explicitNullProperties?.Remove("scrape"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshot200ResponseResultScrapeItem>? _explicitNullValueScrape = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshot200ResponseResultScrapeItem> Scrape { get => _explicitNullValueScrape; set { _explicitNullValueScrape = value; AdditionalData?.Remove("scrape"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrape"); else _explicitNullProperties?.Remove("scrape"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshot200ResponseResultScrapeItem> _explicitNullValueScrape = default!;
 #endif
         /// <summary>Base64 encoded image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,11 +140,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(4)
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "accessibilityTree", n => { AccessibilityTree = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiSerializedAxNode>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiSerializedAxNode.CreateFromDiscriminatorValue); } },
                 { "content", n => { Content = n.GetStringValue(); } },
+                { "json", n => { Json = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Snapshot>(global::Soenneker.Cloudflare.OpenApiClient.Models.Snapshot.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "links", n => { Links = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
+                { "pdf", n => { Pdf = n.GetStringValue(); } },
+                { "scrape", n => { Scrape = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshot200ResponseResultScrapeItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshot200ResponseResultScrapeItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "screenshot", n => { Screenshot = n.GetStringValue(); } },
             };
         }
@@ -109,7 +161,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiSerializedAxNode>("accessibilityTree", AccessibilityTree);
             writer.WriteStringValue("content", Content);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Snapshot>("json", Json);
+            writer.WriteCollectionOfPrimitiveValues<string>("links", Links);
             writer.WriteStringValue("markdown", Markdown);
+            writer.WriteStringValue("pdf", Pdf);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostSnapshot200ResponseResultScrapeItem>("scrape", Scrape);
             writer.WriteStringValue("screenshot", Screenshot);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

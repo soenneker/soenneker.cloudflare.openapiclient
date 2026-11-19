@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>`first_topup_required`: auto top-up can be set up after the first manual top-up. `not_configured`: auto top-up is off. `active`: auto top-up is on. `needs_confirmation`: auto top-up is on, but its card has to be confirmed or replaced. `stopped`: auto top-up was turned off; `stopped_reason` says why, when known.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AigBillingGetTopupEligibilityV2ResultAutoTopupState
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "first_topup_required")]
         #pragma warning disable CS1591

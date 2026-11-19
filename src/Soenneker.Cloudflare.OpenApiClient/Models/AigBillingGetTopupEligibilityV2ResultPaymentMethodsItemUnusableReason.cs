@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>Why this payment method can&apos;t pay for a top-up. Present only when `usable` is false.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemUnusableReason
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "payment_method_not_supported")]
         #pragma warning disable CS1591

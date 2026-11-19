@@ -5,12 +5,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum PostEventListRequestSearchItemAnyOf5ValueAnyOf7
+    public enum PostEventListRequestSearchItemAnyOf7Op
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "0")]
+        [EnumMember(Value = "in")]
         #pragma warning disable CS1591
-        Value0,
+        InValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "notIn")]
+        #pragma warning disable CS1591
+        NotIn,
         #pragma warning restore CS1591
     }
 }

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         {
         }
         /// <summary>
-        /// Read-only top-up eligibility, contract version 2: the account&apos;s payment methods and whether each can pay for a top-up, whether a manual top-up is available and its limits, and the auto top-up state. Advisory: every top-up checks again. Answers 409 while version 2 is unavailable for the account.
+        /// Reports whether the account can top up: its payment methods and whether each can pay for a top-up, whether a manual top-up is available and its limits, and the auto top-up state. Advisory only: every top-up checks again. Answers 409 while this endpoint isn&apos;t available for the account yet.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns legacy top-up eligibility from forwarded payment methods. Version 2 is read with GET; a body naming contract_version is rejected. No response authorizes a charge.
+        /// Deprecated: use GET /topup/eligibility, which reads the account&apos;s payment methods itself. This endpoint keeps working while that one answers 409 for the account. Reports whether the account can make a manual top-up, given the payment methods in the request body. Advisory only: every top-up checks again.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -76,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupEligibilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only top-up eligibility, contract version 2: the account&apos;s payment methods and whether each can pay for a top-up, whether a manual top-up is available and its limits, and the auto top-up state. Advisory: every top-up checks again. Answers 409 while version 2 is unavailable for the account.
+        /// Reports whether the account can top up: its payment methods and whether each can pay for a top-up, whether a manual top-up is available and its limits, and the auto top-up state. Advisory only: every top-up checks again. Answers 409 while this endpoint isn&apos;t available for the account yet.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,11 +118,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
             return requestInfo;
         }
         /// <summary>
-        /// Returns legacy top-up eligibility from forwarded payment methods. Version 2 is read with GET; a body naming contract_version is rejected. No response authorizes a charge.
+        /// Deprecated: use GET /topup/eligibility, which reads the account&apos;s payment methods itself. This endpoint keeps working while that one answers 409 for the account. Reports whether the account can make a manual top-up, given the payment methods in the request body. Advisory only: every top-up checks again.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupEligibilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)

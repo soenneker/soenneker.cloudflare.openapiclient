@@ -49,28 +49,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount_due property</summary>
+        /// <summary>Amount due, in US cents.</summary>
         public double? AmountDue { get => _explicitNullValueAmountDue; set { _explicitNullValueAmountDue = value; AdditionalData?.Remove("amount_due"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_due"); else _explicitNullProperties?.Remove("amount_due"); } }
         private double? _explicitNullValueAmountDue = default!;
-        /// <summary>The amount_paid property</summary>
+        /// <summary>Amount paid, in US cents.</summary>
         public double? AmountPaid { get => _explicitNullValueAmountPaid; set { _explicitNullValueAmountPaid = value; AdditionalData?.Remove("amount_paid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_paid"); else _explicitNullProperties?.Remove("amount_paid"); } }
         private double? _explicitNullValueAmountPaid = default!;
-        /// <summary>The amount_remaining property</summary>
+        /// <summary>Amount still owed, in US cents.</summary>
         public double? AmountRemaining { get => _explicitNullValueAmountRemaining; set { _explicitNullValueAmountRemaining = value; AdditionalData?.Remove("amount_remaining"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_remaining"); else _explicitNullProperties?.Remove("amount_remaining"); } }
         private double? _explicitNullValueAmountRemaining = default!;
-        /// <summary>The attempt_count property</summary>
+        /// <summary>Number of payment attempts.</summary>
         public double? AttemptCount { get => _explicitNullValueAttemptCount; set { _explicitNullValueAttemptCount = value; AdditionalData?.Remove("attempt_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt_count"); else _explicitNullProperties?.Remove("attempt_count"); } }
         private double? _explicitNullValueAttemptCount = default!;
-        /// <summary>The attempted property</summary>
+        /// <summary>Whether payment was attempted.</summary>
         public bool? Attempted { get => _explicitNullValueAttempted; set { _explicitNullValueAttempted = value; AdditionalData?.Remove("attempted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempted"); else _explicitNullProperties?.Remove("attempted"); } }
         private bool? _explicitNullValueAttempted = default!;
-        /// <summary>The auto_advance property</summary>
+        /// <summary>Whether the invoice is finalized and collected without an explicit action. False for top-up invoices, which are charged when the top-up is made.</summary>
         public bool? AutoAdvance { get => _explicitNullValueAutoAdvance; set { _explicitNullValueAutoAdvance = value; AdditionalData?.Remove("auto_advance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_advance"); else _explicitNullProperties?.Remove("auto_advance"); } }
         private bool? _explicitNullValueAutoAdvance = default!;
-        /// <summary>The created property</summary>
+        /// <summary>When the invoice was created, as a Unix timestamp in seconds.</summary>
         public double? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
         private double? _explicitNullValueCreated = default!;
-        /// <summary>The created_by property</summary>
+        /// <summary>What created the invoice. Always `AI_GATEWAY`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private string _explicitNullValueCreatedBy = default!;
 #endif
-        /// <summary>The currency property</summary>
+        /// <summary>Lowercase ISO 4217 currency code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Invoice description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Invoice number, as printed on the invoice, rather than an identifier. Null until the invoice is finalized.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The invoice_origin property</summary>
+        /// <summary>How the top-up was made: `auto` or `manual`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceOrigin { get => _explicitNullValueInvoiceOrigin; set { _explicitNullValueInvoiceOrigin = value; AdditionalData?.Remove("invoice_origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_origin"); else _explicitNullProperties?.Remove("invoice_origin"); } }
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string InvoiceOrigin { get => _explicitNullValueInvoiceOrigin; set { _explicitNullValueInvoiceOrigin = value; AdditionalData?.Remove("invoice_origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_origin"); else _explicitNullProperties?.Remove("invoice_origin"); } }
         private string _explicitNullValueInvoiceOrigin = default!;
 #endif
-        /// <summary>The invoice_pdf property</summary>
+        /// <summary>URL of the invoice PDF. Null until the invoice is finalized.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoicePdf { get => _explicitNullValueInvoicePdf; set { _explicitNullValueInvoicePdf = value; AdditionalData?.Remove("invoice_pdf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_pdf"); else _explicitNullProperties?.Remove("invoice_pdf"); } }
@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string InvoicePdf { get => _explicitNullValueInvoicePdf; set { _explicitNullValueInvoicePdf = value; AdditionalData?.Remove("invoice_pdf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_pdf"); else _explicitNullProperties?.Remove("invoice_pdf"); } }
         private string _explicitNullValueInvoicePdf = default!;
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Invoice status: `draft`, `open`, `paid`, `uncollectible`, or `void`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }

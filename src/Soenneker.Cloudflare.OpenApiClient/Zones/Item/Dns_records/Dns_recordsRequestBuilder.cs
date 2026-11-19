@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_recordsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,direction*,include_shadow_metadata*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,proxied*,search*,shadowed_by_name*,shadowing_name*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", pathParameters)
+        public Dns_recordsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,cursor*,direction*,include_shadow_metadata*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,prev_cursor*,proxied*,search*,shadowed_by_name*,shadowing_name*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -74,23 +74,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_recordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,direction*,include_shadow_metadata*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,proxied*,search*,shadowed_by_name*,shadowing_name*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", rawUrl)
+        public Dns_recordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneId}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,cursor*,direction*,include_shadow_metadata*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,prev_cursor*,proxied*,search*,shadowed_by_name*,shadowing_name*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", rawUrl)
         {
         }
         /// <summary>
-        /// List, search, sort, and filter a zones&apos; DNS records.
+        /// List, search, sort, and filter a zone&apos;s DNS records. Requests with `cursor` or `prev_cursor` use cursor pagination. Otherwise, the endpoint uses offset pagination. To start cursor pagination, set `cursor` to an empty value, then pass `result_info.cursor` from the previous response to request the next page. Cursor-paginated responses do not include `page`, `total_count`, or `total_pages`. Cursor tokens are opaque and can vary in length. Pass them back unchanged and do not assume a fixed length.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseList> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new DNS record for a zone.Notes:- A/AAAA records cannot exist on the same name as CNAME records.- NS records cannot exist on the same name as any other record type.- Domain names are always represented in Punycode, even if Unicode  characters were used when creating the record.
@@ -128,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List, search, sort, and filter a zones&apos; DNS records.
+        /// List, search, sort, and filter a zone&apos;s DNS records. Requests with `cursor` or `prev_cursor` use cursor pagination. Otherwise, the endpoint uses offset pagination. To start cursor pagination, set `cursor` to an empty value, then pass `result_info.cursor` from the previous response to request the next page. Cursor-paginated responses do not include `page`, `total_count`, or `total_pages`. Cursor tokens are opaque and can vary in length. Pass them back unchanged and do not assume a fixed length.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +178,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List, search, sort, and filter a zones&apos; DNS records.
+        /// List, search, sort, and filter a zone&apos;s DNS records. Requests with `cursor` or `prev_cursor` use cursor pagination. Otherwise, the endpoint uses offset pagination. To start cursor pagination, set `cursor` to an empty value, then pass `result_info.cursor` from the previous response to request the next page. Cursor-paginated responses do not include `page`, `total_count`, or `total_pages`. Cursor tokens are opaque and can vary in length. Pass them back unchanged and do not assume a fixed length.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Dns_recordsRequestBuilderGetQueryParameters 
@@ -339,6 +339,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             public string ContentStartswith { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+            #pragma warning restore CS1591
+#endif
             #pragma warning disable CS1591
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDirection? Direction { get; set; }
@@ -428,6 +441,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
             #pragma warning restore CS1591
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("prev_cursor")]
+            public string? PrevCursor { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("prev_cursor")]
+            public string PrevCursor { get; set; }
+            #pragma warning restore CS1591
+#endif
             #pragma warning disable CS1591
             [QueryParameter("proxied")]
             public bool? Proxied { get; set; }

@@ -32,10 +32,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>AI Gateway usage cost in the window, in US dollars.</summary>
         public double? AggregatedValue { get => _explicitNullValueAggregatedValue; set { _explicitNullValueAggregatedValue = value; AdditionalData?.Remove("aggregated_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregated_value"); else _explicitNullProperties?.Remove("aggregated_value"); } }
         private double? _explicitNullValueAggregatedValue = default!;
-        /// <summary>The end_time property</summary>
+        /// <summary>End of the window (exclusive), as a Unix timestamp in seconds.</summary>
         public double? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; AdditionalData?.Remove("end_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
         private double? _explicitNullValueEndTime = default!;
-        /// <summary>The id property</summary>
+        /// <summary>Usage summary identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The start_time property</summary>
+        /// <summary>Start of the window, as a Unix timestamp in seconds.</summary>
         public double? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
         private double? _explicitNullValueStartTime = default!;
         /// <summary>

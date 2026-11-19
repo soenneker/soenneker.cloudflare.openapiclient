@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>The card must be authenticated with `client_secret` before auto top-up is saved. Then send the request again with `setup_intent_id`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum RequiresActionStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "requires_action")]
         #pragma warning disable CS1591

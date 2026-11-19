@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Not accepted: version 2 is read with GET. Any value answers 400.</summary>
+        /// <summary>Not accepted: any value answers 400. Read the current eligibility with GET /topup/eligibility.</summary>
         public int? ContractVersion { get => _explicitNullValueContractVersion; set { _explicitNullValueContractVersion = value; AdditionalData?.Remove("contract_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contract_version"); else _explicitNullProperties?.Remove("contract_version"); } }
         private int? _explicitNullValueContractVersion = default!;
-        /// <summary>Account-level payment methods, forwarded by the dashboard for legacy eligibility only.</summary>
+        /// <summary>The account&apos;s payment methods. Omit it, or send an empty list, when there are none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupEligibilityRequestPaymentMethodsItem>? PaymentMethods { get => _explicitNullValuePaymentMethods; set { _explicitNullValuePaymentMethods = value; AdditionalData?.Remove("payment_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_methods"); else _explicitNullProperties?.Remove("payment_methods"); } }

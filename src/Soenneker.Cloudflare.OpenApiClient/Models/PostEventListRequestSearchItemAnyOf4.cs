@@ -34,12 +34,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueValue = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchBranchesItemItemAnyOf4Value? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchBranchesItemItemAnyOf4Value? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueValue = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchBranchesItemItemAnyOf4Value Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchBranchesItemItemAnyOf4Value _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "field", n => { Field = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.KillChainField>(); } },
                 { "op", n => { Op = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4Op>(); } },
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchBranchesItemItemAnyOf4Value>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchBranchesItemItemAnyOf4Value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.KillChainField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4Op>("op", Op);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchBranchesItemItemAnyOf4Value>("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

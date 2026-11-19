@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Allowed manual top-up amounts.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AigBillingGetTopupEligibilityV2ResultManualTopupLimits : IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -25,13 +26,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("min_cents") is { } nullNodeMinCents && nullNodeMinCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinCents = null;
         }
 
-        /// <summary>The currency property</summary>
+        /// <summary>Currency of the amounts. Always `USD`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.UsdCurrency? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UsdCurrency? _explicitNullValueCurrency = default!;
-        /// <summary>The max_cents property</summary>
+        /// <summary>Maximum top-up amount in cents.</summary>
         public int? MaxCents { get => _explicitNullValueMaxCents; set { _explicitNullValueMaxCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_cents"); else _explicitNullProperties?.Remove("max_cents"); } }
         private int? _explicitNullValueMaxCents = default!;
-        /// <summary>The min_cents property</summary>
+        /// <summary>Minimum top-up amount in cents.</summary>
         public int? MinCents { get => _explicitNullValueMinCents; set { _explicitNullValueMinCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_cents"); else _explicitNullProperties?.Remove("min_cents"); } }
         private int? _explicitNullValueMinCents = default!;
         /// <summary>

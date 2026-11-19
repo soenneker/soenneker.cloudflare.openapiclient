@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnById200ResponseResultAsnCategory Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnById200ResponseResultAsnCategory _explicitNullValueCategory = default!;
 #endif
-        /// <summary>The confidenceLevel property</summary>
+        /// <summary>Omitted when `includeConfidenceLevel` is `false`.</summary>
         public int? ConfidenceLevel { get => _explicitNullValueConfidenceLevel; set { _explicitNullValueConfidenceLevel = value; AdditionalData?.Remove("confidenceLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidenceLevel"); else _explicitNullProperties?.Remove("confidenceLevel"); } }
         private int? _explicitNullValueConfidenceLevel = default!;
         /// <summary>The country property</summary>

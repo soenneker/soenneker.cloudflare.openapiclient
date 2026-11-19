@@ -26,20 +26,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         }
 
         /// <summary>The field property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HasChildrenField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.HasChildrenField? _explicitNullValueField = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.KillChainField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.KillChainField? _explicitNullValueField = default!;
         /// <summary>The op property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Op? Op { get => _explicitNullValueOp; set { _explicitNullValueOp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("op"); else _explicitNullProperties?.Remove("op"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Op? _explicitNullValueOp = default!;
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Value? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Value? _explicitNullValueValue = default!;
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Value Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Value _explicitNullValueValue = default!;
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,9 +59,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "field", n => { Field = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HasChildrenField>(); } },
+                { "field", n => { Field = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.KillChainField>(); } },
                 { "op", n => { Op = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Op>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Value>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -71,9 +71,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HasChildrenField>("field", Field);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.KillChainField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Op>("op", Op);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5Value>("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

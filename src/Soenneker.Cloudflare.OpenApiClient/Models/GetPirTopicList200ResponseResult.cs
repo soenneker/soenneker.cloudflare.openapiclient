@@ -19,6 +19,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("organization_types") is null) { _explicitNullValueOrganizationTypes = default!; _explicitNullProperties?.Remove("organization_types"); }
             else if (parseNode.GetChildNode("organization_types") is { } nullNodeOrganizationTypes && nullNodeOrganizationTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationTypes = null;
+            if (parseNode.GetChildNode("topic_families") is null) { _explicitNullValueTopicFamilies = default!; _explicitNullProperties?.Remove("topic_families"); }
+            else if (parseNode.GetChildNode("topic_families") is { } nullNodeTopicFamilies && nullNodeTopicFamilies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopicFamilies = null;
             if (parseNode.GetChildNode("topics") is null) { _explicitNullValueTopics = default!; _explicitNullProperties?.Remove("topics"); }
             else if (parseNode.GetChildNode("topics") is { } nullNodeTopics && nullNodeTopics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Topics = null;
         }
@@ -34,6 +36,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirOrganizationType> OrganizationTypes { get => _explicitNullValueOrganizationTypes; set { _explicitNullValueOrganizationTypes = value; AdditionalData?.Remove("organization_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_types"); else _explicitNullProperties?.Remove("organization_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirOrganizationType> _explicitNullValueOrganizationTypes = default!;
+#endif
+        /// <summary>Groups for `topics`, in display order. Each topic names one in `family`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicFamily>? TopicFamilies { get => _explicitNullValueTopicFamilies; set { _explicitNullValueTopicFamilies = value; AdditionalData?.Remove("topic_families"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic_families"); else _explicitNullProperties?.Remove("topic_families"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicFamily>? _explicitNullValueTopicFamilies = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicFamily> TopicFamilies { get => _explicitNullValueTopicFamilies; set { _explicitNullValueTopicFamilies = value; AdditionalData?.Remove("topic_families"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic_families"); else _explicitNullProperties?.Remove("topic_families"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicFamily> _explicitNullValueTopicFamilies = default!;
 #endif
         /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "organization_types", n => { OrganizationTypes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirOrganizationType>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirOrganizationType.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "topic_families", n => { TopicFamilies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicFamily>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicFamily.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "topics", n => { Topics = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopic>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopic.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -82,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirOrganizationType>("organization_types", OrganizationTypes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopicFamily>("topic_families", TopicFamilies);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsPirTopic>("topics", Topics);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

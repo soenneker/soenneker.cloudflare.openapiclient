@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf6"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf7"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostEventListRequestSearchItem : IComposedTypeWrapper, IParsable
@@ -66,6 +66,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf6 PostEventListRequestSearchItemAnyOf6 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf7? PostEventListRequestSearchItemAnyOf7 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf7 PostEventListRequestSearchItemAnyOf7 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,14 +90,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             
             
             
+            
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema86933(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema86969(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema86996(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87009(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87019(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87052(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87173(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87209(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87236(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87257(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87270(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87280(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema87313(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
             bool? matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![2] : (bool?)false;
             bool? matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![3] : (bool?)false;
             bool? matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![4] : (bool?)false;
             bool? matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![5] : (bool?)false;
+            bool? matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![6] : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
@@ -97,14 +107,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if (matchesUnionBranch3 != false) matchingUnionBranches++;
             if (matchesUnionBranch4 != false) matchingUnionBranches++;
             if (matchesUnionBranch5 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.PostEventListRequestSearchItemAnyOf1 == null && result.PostEventListRequestSearchItemAnyOf2 == null && result.PostEventListRequestSearchItemAnyOf3 == null && result.PostEventListRequestSearchItemAnyOf4 == null && result.PostEventListRequestSearchItemAnyOf5 == null && result.PostEventListRequestSearchItemAnyOf6 == null;
+            if (matchesUnionBranch6 != false) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.PostEventListRequestSearchItemAnyOf1 == null && result.PostEventListRequestSearchItemAnyOf2 == null && result.PostEventListRequestSearchItemAnyOf3 == null && result.PostEventListRequestSearchItemAnyOf4 == null && result.PostEventListRequestSearchItemAnyOf5 == null && result.PostEventListRequestSearchItemAnyOf6 == null && result.PostEventListRequestSearchItemAnyOf7 == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.PostEventListRequestSearchItemAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.PostEventListRequestSearchItemAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf2(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch2 == true && matchingUnionBranches == 1) result.PostEventListRequestSearchItemAnyOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf3(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch3 == true && matchingUnionBranches == 1) result.PostEventListRequestSearchItemAnyOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch4 == true && matchingUnionBranches == 1) result.PostEventListRequestSearchItemAnyOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch5 == true && matchingUnionBranches == 1) result.PostEventListRequestSearchItemAnyOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf6(), parseNode);
-            if (result.PostEventListRequestSearchItemAnyOf1 == null && result.PostEventListRequestSearchItemAnyOf2 == null && result.PostEventListRequestSearchItemAnyOf3 == null && result.PostEventListRequestSearchItemAnyOf4 == null && result.PostEventListRequestSearchItemAnyOf5 == null && result.PostEventListRequestSearchItemAnyOf6 == null) result.UnrecognizedValue = unionPayload;
+            if (noSelectedUnionBranch && matchesUnionBranch6 == true && matchingUnionBranches == 1) result.PostEventListRequestSearchItemAnyOf7 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf7(), parseNode);
+            if (result.PostEventListRequestSearchItemAnyOf1 == null && result.PostEventListRequestSearchItemAnyOf2 == null && result.PostEventListRequestSearchItemAnyOf3 == null && result.PostEventListRequestSearchItemAnyOf4 == null && result.PostEventListRequestSearchItemAnyOf5 == null && result.PostEventListRequestSearchItemAnyOf6 == null && result.PostEventListRequestSearchItemAnyOf7 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -115,9 +127,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(PostEventListRequestSearchItemAnyOf1 != null || PostEventListRequestSearchItemAnyOf2 != null || PostEventListRequestSearchItemAnyOf3 != null || PostEventListRequestSearchItemAnyOf4 != null || PostEventListRequestSearchItemAnyOf5 != null || PostEventListRequestSearchItemAnyOf6 != null)
+            if(PostEventListRequestSearchItemAnyOf1 != null || PostEventListRequestSearchItemAnyOf2 != null || PostEventListRequestSearchItemAnyOf3 != null || PostEventListRequestSearchItemAnyOf4 != null || PostEventListRequestSearchItemAnyOf5 != null || PostEventListRequestSearchItemAnyOf6 != null || PostEventListRequestSearchItemAnyOf7 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostEventListRequestSearchItemAnyOf1, PostEventListRequestSearchItemAnyOf2, PostEventListRequestSearchItemAnyOf3, PostEventListRequestSearchItemAnyOf4, PostEventListRequestSearchItemAnyOf5, PostEventListRequestSearchItemAnyOf6);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostEventListRequestSearchItemAnyOf1, PostEventListRequestSearchItemAnyOf2, PostEventListRequestSearchItemAnyOf3, PostEventListRequestSearchItemAnyOf4, PostEventListRequestSearchItemAnyOf5, PostEventListRequestSearchItemAnyOf6, PostEventListRequestSearchItemAnyOf7);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -128,7 +140,7 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (PostEventListRequestSearchItemAnyOf1 == null && PostEventListRequestSearchItemAnyOf2 == null && PostEventListRequestSearchItemAnyOf3 == null && PostEventListRequestSearchItemAnyOf4 == null && PostEventListRequestSearchItemAnyOf5 == null && PostEventListRequestSearchItemAnyOf6 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (PostEventListRequestSearchItemAnyOf1 == null && PostEventListRequestSearchItemAnyOf2 == null && PostEventListRequestSearchItemAnyOf3 == null && PostEventListRequestSearchItemAnyOf4 == null && PostEventListRequestSearchItemAnyOf5 == null && PostEventListRequestSearchItemAnyOf6 == null && PostEventListRequestSearchItemAnyOf7 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (PostEventListRequestSearchItemAnyOf1 != null) selectedUnionBranches++;
             if (PostEventListRequestSearchItemAnyOf2 != null) selectedUnionBranches++;
@@ -136,15 +148,17 @@ return result;
             if (PostEventListRequestSearchItemAnyOf4 != null) selectedUnionBranches++;
             if (PostEventListRequestSearchItemAnyOf5 != null) selectedUnionBranches++;
             if (PostEventListRequestSearchItemAnyOf6 != null) selectedUnionBranches++;
+            if (PostEventListRequestSearchItemAnyOf7 != null) selectedUnionBranches++;
             if (PostEventListRequestSearchItemAnyOf1 != null && selectedUnionBranches == 1) { if (PostEventListRequestSearchItemAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostEventListRequestSearchItemAnyOf1); return; }
             if (PostEventListRequestSearchItemAnyOf2 != null && selectedUnionBranches == 1) { if (PostEventListRequestSearchItemAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostEventListRequestSearchItemAnyOf2); return; }
             if (PostEventListRequestSearchItemAnyOf3 != null && selectedUnionBranches == 1) { if (PostEventListRequestSearchItemAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostEventListRequestSearchItemAnyOf3); return; }
             if (PostEventListRequestSearchItemAnyOf4 != null && selectedUnionBranches == 1) { if (PostEventListRequestSearchItemAnyOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostEventListRequestSearchItemAnyOf4); return; }
             if (PostEventListRequestSearchItemAnyOf5 != null && selectedUnionBranches == 1) { if (PostEventListRequestSearchItemAnyOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostEventListRequestSearchItemAnyOf5); return; }
             if (PostEventListRequestSearchItemAnyOf6 != null && selectedUnionBranches == 1) { if (PostEventListRequestSearchItemAnyOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostEventListRequestSearchItemAnyOf6); return; }
+            if (PostEventListRequestSearchItemAnyOf7 != null && selectedUnionBranches == 1) { if (PostEventListRequestSearchItemAnyOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostEventListRequestSearchItemAnyOf7); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1>(null, PostEventListRequestSearchItemAnyOf1, PostEventListRequestSearchItemAnyOf2, PostEventListRequestSearchItemAnyOf3, PostEventListRequestSearchItemAnyOf4, PostEventListRequestSearchItemAnyOf5, PostEventListRequestSearchItemAnyOf6);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1>(null, PostEventListRequestSearchItemAnyOf1, PostEventListRequestSearchItemAnyOf2, PostEventListRequestSearchItemAnyOf3, PostEventListRequestSearchItemAnyOf4, PostEventListRequestSearchItemAnyOf5, PostEventListRequestSearchItemAnyOf6, PostEventListRequestSearchItemAnyOf7);
         }
     }
 }

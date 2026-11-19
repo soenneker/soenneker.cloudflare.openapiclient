@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("usable") is { } nullNodeUsable && nullNodeUsable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usable = null;
         }
 
-        /// <summary>The brand property</summary>
+        /// <summary>Card brand. Present for cards.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
@@ -47,13 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
         private string _explicitNullValueBrand = default!;
 #endif
-        /// <summary>The exp_month property</summary>
+        /// <summary>Expiration month, 1 to 12. Present for cards.</summary>
         public int? ExpMonth { get => _explicitNullValueExpMonth; set { _explicitNullValueExpMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exp_month"); else _explicitNullProperties?.Remove("exp_month"); } }
         private int? _explicitNullValueExpMonth = default!;
-        /// <summary>The exp_year property</summary>
+        /// <summary>Four-digit expiration year. Present for cards.</summary>
         public int? ExpYear { get => _explicitNullValueExpYear; set { _explicitNullValueExpYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exp_year"); else _explicitNullProperties?.Remove("exp_year"); } }
         private int? _explicitNullValueExpYear = default!;
-        /// <summary>The id property</summary>
+        /// <summary>Payment method identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -63,10 +63,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The is_default property</summary>
+        /// <summary>Whether this is the account&apos;s default payment method.</summary>
         public bool? IsDefault { get => _explicitNullValueIsDefault; set { _explicitNullValueIsDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_default"); else _explicitNullProperties?.Remove("is_default"); } }
         private bool? _explicitNullValueIsDefault = default!;
-        /// <summary>The last4 property</summary>
+        /// <summary>Last 4 digits. Present for cards.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
@@ -76,13 +76,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
         private string _explicitNullValueLast4 = default!;
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Payment method type.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemType? _explicitNullValueType = default!;
-        /// <summary>The unusable_reason property</summary>
+        /// <summary>Why this payment method can&apos;t pay for a top-up. Present only when `usable` is false.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemUnusableReason? UnusableReason { get => _explicitNullValueUnusableReason; set { _explicitNullValueUnusableReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unusable_reason"); else _explicitNullProperties?.Remove("unusable_reason"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemUnusableReason? _explicitNullValueUnusableReason = default!;
-        /// <summary>The usable property</summary>
+        /// <summary>Whether this payment method can pay for a top-up.</summary>
         public bool? Usable { get => _explicitNullValueUsable; set { _explicitNullValueUsable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usable"); else _explicitNullProperties?.Remove("usable"); } }
         private bool? _explicitNullValueUsable = default!;
         /// <summary>

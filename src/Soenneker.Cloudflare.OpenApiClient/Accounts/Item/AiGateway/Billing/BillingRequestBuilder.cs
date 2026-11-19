@@ -36,6 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.InvoicePreview.InvoicePreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spendingLimit property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.SpendingLimit.SpendingLimitRequestBuilder SpendingLimit
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.SpendingLimit.SpendingLimitRequestBuilder(PathParameters, RequestAdapter);

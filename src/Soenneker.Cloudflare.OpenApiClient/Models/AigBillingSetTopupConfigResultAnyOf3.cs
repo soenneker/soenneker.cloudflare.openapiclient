@@ -29,10 +29,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
         }
 
-        /// <summary>The amount property</summary>
+        /// <summary>Auto top-up amount in cents from the request.</summary>
         public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private double? _explicitNullValueAmount = default!;
-        /// <summary>The client_secret property</summary>
+        /// <summary>Client secret used to complete card authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
         private string _explicitNullValueClientSecret = default!;
 #endif
-        /// <summary>The setup_intent_id property</summary>
+        /// <summary>Card setup identifier to send back as `setup_intent_id` once authenticated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SetupIntentId { get => _explicitNullValueSetupIntentId; set { _explicitNullValueSetupIntentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setup_intent_id"); else _explicitNullProperties?.Remove("setup_intent_id"); } }
@@ -52,10 +52,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SetupIntentId { get => _explicitNullValueSetupIntentId; set { _explicitNullValueSetupIntentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setup_intent_id"); else _explicitNullProperties?.Remove("setup_intent_id"); } }
         private string _explicitNullValueSetupIntentId = default!;
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The card must be authenticated with `client_secret` before auto top-up is saved. Then send the request again with `setup_intent_id`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RequiresActionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RequiresActionStatus? _explicitNullValueStatus = default!;
-        /// <summary>The threshold property</summary>
+        /// <summary>Balance threshold in cents from the request.</summary>
         public double? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
         private double? _explicitNullValueThreshold = default!;
         /// <summary>

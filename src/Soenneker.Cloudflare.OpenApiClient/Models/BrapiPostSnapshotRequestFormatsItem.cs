@@ -24,5 +24,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         AccessibilityTree,
         #pragma warning restore CS1591
+        [EnumMember(Value = "pdf")]
+        #pragma warning disable CS1591
+        Pdf,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "links")]
+        #pragma warning disable CS1591
+        Links,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "scrape")]
+        #pragma warning disable CS1591
+        Scrape,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "json")]
+        #pragma warning disable CS1591
+        Json,
+        #pragma warning restore CS1591
     }
 }
