@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.TempAccessCredenti
         {
         }
         /// <summary>
-        /// Creates temporary access credentials on a bucket that can be optionally scoped to prefixes or objects.
+        /// Creates temporary access credentials on a bucket that can be optionally scoped to prefixes or objects. The credentials grant either a permission level or an explicit list of S3 actions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateTempAccessCredentials200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.TempAccessCredenti
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateTempAccessCredentials200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateTempAccessCredentials200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates temporary access credentials on a bucket that can be optionally scoped to prefixes or objects.
+        /// Creates temporary access credentials on a bucket that can be optionally scoped to prefixes or objects. The credentials grant either a permission level or an explicit list of S3 actions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

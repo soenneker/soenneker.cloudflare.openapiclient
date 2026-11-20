@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Cors;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Custom_domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Jobs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lifecycle;
@@ -29,6 +30,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Cors.CorsRequestBuilder Cors
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Cors.CorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The custom_domains property</summary>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Custom_domains.Custom_domainsRequestBuilder Custom_domains
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Custom_domains.Custom_domainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The domains property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.DomainsRequestBuilder Domains

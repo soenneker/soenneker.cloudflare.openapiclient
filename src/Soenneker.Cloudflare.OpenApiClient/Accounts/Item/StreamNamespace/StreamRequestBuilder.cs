@@ -58,6 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StorageUsage.StorageUsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The usage property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Usage.UsageRequestBuilder Usage
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);

@@ -32,8 +32,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
-        /// <summary>When the proposing publisher zone was classified for local-only, non-billable settlement. Null for billable zones.</summary>
-        public DateTimeOffset? NonBillableSince { get; private set; }
         /// <summary>Use this value to accept or reject this specific pending proposal.</summary>
         public long? PriceId { get => _explicitNullValuePriceId; set { _explicitNullValuePriceId = value; AdditionalData?.Remove("price_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_id"); else _explicitNullProperties?.Remove("price_id"); } }
         private long? _explicitNullValuePriceId = default!;
@@ -73,10 +71,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "non_billable_since", n => { NonBillableSince = n.GetDateTimeOffsetValue(); } },
                 { "price_id", n => { PriceId = n.GetLongValue(); } },
                 { "price_usd_microcents", n => { PriceUsdMicrocents = n.GetIntValue(); } },
                 { "zone_name", n => { ZoneName = n.GetStringValue(); } },

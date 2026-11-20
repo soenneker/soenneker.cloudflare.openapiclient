@@ -11,8 +11,10 @@ using Soenneker.Cloudflare.OpenApiClient.Analytics;
 using Soenneker.Cloudflare.OpenApiClient.Billing;
 using Soenneker.Cloudflare.OpenApiClient.Certificates;
 using Soenneker.Cloudflare.OpenApiClient.Cws;
+using Soenneker.Cloudflare.OpenApiClient.Feedback;
 using Soenneker.Cloudflare.OpenApiClient.Internal;
 using Soenneker.Cloudflare.OpenApiClient.Ips;
+using Soenneker.Cloudflare.OpenApiClient.Item;
 using Soenneker.Cloudflare.OpenApiClient.Live;
 using Soenneker.Cloudflare.OpenApiClient.Memberships;
 using Soenneker.Cloudflare.OpenApiClient.Oauth;
@@ -65,6 +67,11 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.Cws.CwsRequestBuilder Cws
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Cws.CwsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The feedback property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Feedback.FeedbackRequestBuilder Feedback
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Feedback.FeedbackRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The internal property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Internal.InternalRequestBuilder Internal
@@ -155,6 +162,18 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder Zones
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.item collection</summary>
+        /// <param name="position">Whether ${account_or_zone} is an account ID (`accounts`) or a zone ID (`zones`).</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Item.WithAccountOrZoneItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Item.WithAccountOrZoneItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("accountOrZone", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Item.WithAccountOrZoneItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.CloudflareOpenApiClient"/> and sets the default values.

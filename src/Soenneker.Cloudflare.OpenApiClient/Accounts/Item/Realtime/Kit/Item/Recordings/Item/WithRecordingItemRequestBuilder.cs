@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Pause/Resume/Stop a given recording ID.
+        /// Pause/Resume/Stop a given recording ID.**Note:** A recording can stay paused for a maximum of 12 hours. After that, it automatically resumes and finishes.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
             return requestInfo;
         }
         /// <summary>
-        /// Pause/Resume/Stop a given recording ID.
+        /// Pause/Resume/Stop a given recording ID.**Note:** A recording can stay paused for a maximum of 12 hours. After that, it automatically resumes and finishes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

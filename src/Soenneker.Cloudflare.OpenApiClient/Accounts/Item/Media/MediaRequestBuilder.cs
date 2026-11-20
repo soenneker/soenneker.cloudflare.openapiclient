@@ -16,6 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Media
     public partial class MediaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The usage property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Media.Usage.UsageRequestBuilder Usage
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Media.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);

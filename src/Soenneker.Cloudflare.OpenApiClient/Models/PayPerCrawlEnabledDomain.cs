@@ -23,8 +23,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("license_expires_at") is { } nullNodeLicenseExpiresAt && nullNodeLicenseExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LicenseExpiresAt = null;
             if (parseNode.GetChildNode("license_status") is null) { _explicitNullValueLicenseStatus = default!; _explicitNullProperties?.Remove("license_status"); }
             else if (parseNode.GetChildNode("license_status") is { } nullNodeLicenseStatus && nullNodeLicenseStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LicenseStatus = null;
-            if (parseNode.GetChildNode("non_billable_since") is null) { _explicitNullValueNonBillableSince = default!; _explicitNullProperties?.Remove("non_billable_since"); }
-            else if (parseNode.GetChildNode("non_billable_since") is { } nullNodeNonBillableSince && nullNodeNonBillableSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonBillableSince = null;
             if (parseNode.GetChildNode("price_usd_microcents") is null) { _explicitNullValuePriceUsdMicrocents = default!; _explicitNullProperties?.Remove("price_usd_microcents"); }
             else if (parseNode.GetChildNode("price_usd_microcents") is { } nullNodePriceUsdMicrocents && nullNodePriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriceUsdMicrocents = null;
         }
@@ -47,9 +45,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether the selected accepted price agreement is currently active or retained after expiration</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainLicenseStatus? LicenseStatus { get => _explicitNullValueLicenseStatus; set { _explicitNullValueLicenseStatus = value; AdditionalData?.Remove("license_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("license_status"); else _explicitNullProperties?.Remove("license_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainLicenseStatus? _explicitNullValueLicenseStatus = default!;
-        /// <summary>When the publisher zone was classified for local-only, non-billable settlement. Null for billable zones.</summary>
-        public DateTimeOffset? NonBillableSince { get => _explicitNullValueNonBillableSince; set { _explicitNullValueNonBillableSince = value; AdditionalData?.Remove("non_billable_since"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("non_billable_since"); else _explicitNullProperties?.Remove("non_billable_since"); } }
-        private DateTimeOffset? _explicitNullValueNonBillableSince = default!;
         /// <summary>Price of the selected accepted agreement in microcents. For an active license this is the price currently in effect; for an expired license it is the last accepted price.</summary>
         public long? PriceUsdMicrocents { get => _explicitNullValuePriceUsdMicrocents; set { _explicitNullValuePriceUsdMicrocents = value; AdditionalData?.Remove("price_usd_microcents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_usd_microcents"); else _explicitNullProperties?.Remove("price_usd_microcents"); } }
         private long? _explicitNullValuePriceUsdMicrocents = default!;
@@ -76,12 +71,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "license_expires_at", n => { LicenseExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "license_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainLicenseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLicenseStatus = default; _explicitNullProperties?.Remove("license_status"); AdditionalData["license_status"] = unknown; } else { LicenseStatus = parsed; AdditionalData.Remove("license_status"); } } },
-                { "non_billable_since", n => { NonBillableSince = n.GetDateTimeOffsetValue(); } },
                 { "price_usd_microcents", n => { PriceUsdMicrocents = n.GetLongValue(); } },
             };
         }
@@ -95,7 +89,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("domain", Domain);
             writer.WriteDateTimeOffsetValue("license_expires_at", LicenseExpiresAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainLicenseStatus>("license_status", LicenseStatus);
-            writer.WriteDateTimeOffsetValue("non_billable_since", NonBillableSince);
             writer.WriteLongValue("price_usd_microcents", PriceUsdMicrocents);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

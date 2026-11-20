@@ -17,6 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("actions") is null) { _explicitNullValueActions = default!; _explicitNullProperties?.Remove("actions"); }
+            else if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
             if (parseNode.GetChildNode("bucket") is null) { _explicitNullValueBucket = default!; _explicitNullProperties?.Remove("bucket"); }
             else if (parseNode.GetChildNode("bucket") is { } nullNodeBucket && nullNodeBucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bucket = null;
             if (parseNode.GetChildNode("objects") is null) { _explicitNullValueObjects = default!; _explicitNullProperties?.Remove("objects"); }
@@ -31,6 +33,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("ttlSeconds") is { } nullNodeTtlSeconds && nullNodeTtlSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtlSeconds = null;
         }
 
+        /// <summary>S3 actions allowed on the credentials; requests for any other action are denied. For example, `[&quot;GetObject&quot;, &quot;HeadObject&quot;]` allows reading objects without listing them. Exactly one of `permission` or `actions` must be provided. The parent token must have Object Read &amp; Write permission if any action writes, and Object Read otherwise.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestActionsItem?>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestActionsItem?>? _explicitNullValueActions = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestActionsItem?> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestActionsItem?> _explicitNullValueActions = default!;
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the R2 bucket.</summary>
@@ -63,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ParentAccessKeyId { get => _explicitNullValueParentAccessKeyId; set { _explicitNullValueParentAccessKeyId = value; AdditionalData?.Remove("parentAccessKeyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentAccessKeyId"); else _explicitNullProperties?.Remove("parentAccessKeyId"); } }
         private string _explicitNullValueParentAccessKeyId = default!;
 #endif
-        /// <summary>Permissions allowed on the credentials.</summary>
+        /// <summary>Permissions allowed on the credentials. Exactly one of `permission` or `actions` must be provided.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestPermission? Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; AdditionalData?.Remove("permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestPermission? _explicitNullValuePermission = default!;
         /// <summary>Optional prefix paths to scope the credentials to.</summary>
@@ -103,8 +115,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(6)
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
+                { "actions", n => { Actions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestActionsItem>()?.AsList(); } },
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
                 { "objects", n => { Objects = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "parentAccessKeyId", n => { ParentAccessKeyId = n.GetStringValue(); } },
@@ -120,6 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestActionsItem>("actions", Actions);
             writer.WriteStringValue("bucket", Bucket);
             writer.WriteCollectionOfPrimitiveValues<string>("objects", Objects);
             writer.WriteStringValue("parentAccessKeyId", ParentAccessKeyId);

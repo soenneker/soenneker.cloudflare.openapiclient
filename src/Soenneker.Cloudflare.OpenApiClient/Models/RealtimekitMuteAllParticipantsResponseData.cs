@@ -24,18 +24,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         }
 
         /// <summary>The action property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
-        private string? _explicitNullValueAction = default!;
-#nullable restore
-#else
-        public string Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
-        private string _explicitNullValueAction = default!;
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MuteAllAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.MuteAllAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The muted_participants_count property</summary>
+        /// <summary>Number of connections (peers) whose microphone was unmuted and has been muted by this request.</summary>
         public double? MutedParticipantsCount { get => _explicitNullValueMutedParticipantsCount; set { _explicitNullValueMutedParticipantsCount = value; AdditionalData?.Remove("muted_participants_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("muted_participants_count"); else _explicitNullProperties?.Remove("muted_participants_count"); } }
         private double? _explicitNullValueMutedParticipantsCount = default!;
         /// <summary>
@@ -63,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetStringValue(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MuteAllAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "muted_participants_count", n => { MutedParticipantsCount = n.GetDoubleValue(); } },
             };
         }
@@ -74,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MuteAllAction>("action", Action);
             writer.WriteDoubleValue("muted_participants_count", MutedParticipantsCount);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

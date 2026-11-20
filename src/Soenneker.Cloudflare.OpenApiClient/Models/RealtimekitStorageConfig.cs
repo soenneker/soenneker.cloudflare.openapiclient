@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf4Branch"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitStorageConfig : IComposedTypeWrapper, IParsable
@@ -42,6 +42,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch RealtimekitStorageConfigOneOf3Branch { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf4Branch"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf4Branch? RealtimekitStorageConfigOneOf4Branch { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf4Branch RealtimekitStorageConfigOneOf4Branch { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,21 +68,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 
             }
+            else if("RealtimekitStorageConfigOneOf3Branch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema133204(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema133220(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema133242(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema134808(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema134824(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema134846(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema134867(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
             bool? matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![2] : (bool?)false;
+            bool? matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![3] : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
             if (matchesUnionBranch2 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.RealtimekitStorageConfigOneOf1Branch == null && result.RealtimekitStorageConfigOneOf2Branch == null && result.RealtimekitStorageConfigOneOf3Branch == null;
+            if (matchesUnionBranch3 != false) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.RealtimekitStorageConfigOneOf1Branch == null && result.RealtimekitStorageConfigOneOf2Branch == null && result.RealtimekitStorageConfigOneOf3Branch == null && result.RealtimekitStorageConfigOneOf4Branch == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.RealtimekitStorageConfigOneOf1Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1Branch(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.RealtimekitStorageConfigOneOf2Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2Branch(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch2 == true && matchingUnionBranches == 1) result.RealtimekitStorageConfigOneOf3Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch(), parseNode);
-            if (result.RealtimekitStorageConfigOneOf1Branch == null && result.RealtimekitStorageConfigOneOf2Branch == null && result.RealtimekitStorageConfigOneOf3Branch == null) result.UnrecognizedValue = unionPayload;
+            if (noSelectedUnionBranch && matchesUnionBranch3 == true && matchingUnionBranches == 1) result.RealtimekitStorageConfigOneOf4Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf4Branch(), parseNode);
+            if (result.RealtimekitStorageConfigOneOf1Branch == null && result.RealtimekitStorageConfigOneOf2Branch == null && result.RealtimekitStorageConfigOneOf3Branch == null && result.RealtimekitStorageConfigOneOf4Branch == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -97,6 +112,10 @@ return result;
             {
                 return RealtimekitStorageConfigOneOf3Branch.GetFieldDeserializers();
             }
+            else if(RealtimekitStorageConfigOneOf4Branch != null)
+            {
+                return RealtimekitStorageConfigOneOf4Branch.GetFieldDeserializers();
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -106,13 +125,15 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (RealtimekitStorageConfigOneOf1Branch == null && RealtimekitStorageConfigOneOf2Branch == null && RealtimekitStorageConfigOneOf3Branch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (RealtimekitStorageConfigOneOf1Branch == null && RealtimekitStorageConfigOneOf2Branch == null && RealtimekitStorageConfigOneOf3Branch == null && RealtimekitStorageConfigOneOf4Branch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (RealtimekitStorageConfigOneOf1Branch != null) selectedUnionBranches++;
             if (RealtimekitStorageConfigOneOf2Branch != null) selectedUnionBranches++;
             if (RealtimekitStorageConfigOneOf3Branch != null) selectedUnionBranches++;
+            if (RealtimekitStorageConfigOneOf4Branch != null) selectedUnionBranches++;
             if (RealtimekitStorageConfigOneOf1Branch != null && selectedUnionBranches == 1) { if (RealtimekitStorageConfigOneOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RealtimekitStorageConfigOneOf1Branch); return; }
             if (RealtimekitStorageConfigOneOf2Branch != null && selectedUnionBranches == 1) { if (RealtimekitStorageConfigOneOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RealtimekitStorageConfigOneOf2Branch); return; }
+            if (RealtimekitStorageConfigOneOf3Branch != null && selectedUnionBranches == 1) { if (RealtimekitStorageConfigOneOf3Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RealtimekitStorageConfigOneOf3Branch); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(RealtimekitStorageConfigOneOf1Branch != null)
@@ -129,6 +150,11 @@ return result;
             {
                 if (RealtimekitStorageConfigOneOf3Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Branch>(null, RealtimekitStorageConfigOneOf3Branch);
+            }
+            else if(RealtimekitStorageConfigOneOf4Branch != null)
+            {
+                if (RealtimekitStorageConfigOneOf4Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf4Branch>(null, RealtimekitStorageConfigOneOf4Branch);
             }
         }
     }

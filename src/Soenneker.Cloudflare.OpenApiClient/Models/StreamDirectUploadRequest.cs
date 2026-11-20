@@ -21,6 +21,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("allowedOrigins") is { } nullNodeAllowedOrigins && nullNodeAllowedOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedOrigins = null;
             if (parseNode.GetChildNode("creator") is null) { _explicitNullValueCreator = default!; _explicitNullProperties?.Remove("creator"); }
             else if (parseNode.GetChildNode("creator") is { } nullNodeCreator && nullNodeCreator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creator = null;
+            if (parseNode.GetChildNode("encodingMode") is null) { _explicitNullValueEncodingMode = default!; _explicitNullProperties?.Remove("encodingMode"); }
+            else if (parseNode.GetChildNode("encodingMode") is { } nullNodeEncodingMode && nullNodeEncodingMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodingMode = null;
             if (parseNode.GetChildNode("expiry") is null) { _explicitNullValueExpiry = default!; _explicitNullProperties?.Remove("expiry"); }
             else if (parseNode.GetChildNode("expiry") is { } nullNodeExpiry && nullNodeExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expiry = null;
             if (parseNode.GetChildNode("maxDurationSeconds") is null) { _explicitNullValueMaxDurationSeconds = default!; _explicitNullProperties?.Remove("maxDurationSeconds"); }
@@ -59,6 +61,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Creator { get => _explicitNullValueCreator; set { _explicitNullValueCreator = value; AdditionalData?.Remove("creator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator"); else _explicitNullProperties?.Remove("creator"); } }
         private string _explicitNullValueCreator = default!;
 #endif
+        /// <summary>Specifies whether to generate a preview rendition before the standard encoding ladder. `default` generates only the standard encoding ladder. `previewFirst` generates a preview rendition first.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamEncodingMode? EncodingMode { get => _explicitNullValueEncodingMode; set { _explicitNullValueEncodingMode = value; AdditionalData?.Remove("encodingMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encodingMode"); else _explicitNullProperties?.Remove("encodingMode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamEncodingMode? _explicitNullValueEncodingMode = default!;
         /// <summary>The date and time after upload when videos will not be accepted.</summary>
         public DateTimeOffset? Expiry { get => _explicitNullValueExpiry; set { _explicitNullValueExpiry = value; AdditionalData?.Remove("expiry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry"); else _explicitNullProperties?.Remove("expiry"); } }
         private DateTimeOffset? _explicitNullValueExpiry = default!;
@@ -119,10 +124,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(9)
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "creator", n => { Creator = n.GetStringValue(); } },
+                { "encodingMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamEncodingMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEncodingMode = default; _explicitNullProperties?.Remove("encodingMode"); AdditionalData["encodingMode"] = unknown; } else { EncodingMode = parsed; AdditionalData.Remove("encodingMode"); } } },
                 { "expiry", n => { Expiry = n.GetDateTimeOffsetValue(); } },
                 { "maxDurationSeconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequestMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequestMeta.CreateFromDiscriminatorValue); } },
@@ -141,6 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedOrigins", AllowedOrigins);
             writer.WriteStringValue("creator", Creator);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamEncodingMode>("encodingMode", EncodingMode);
             writer.WriteDateTimeOffsetValue("expiry", Expiry);
             writer.WriteIntValue("maxDurationSeconds", MaxDurationSeconds);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequestMeta>("meta", Meta);

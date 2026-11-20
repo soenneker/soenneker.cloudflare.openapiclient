@@ -45,12 +45,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The subscriptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; AdditionalData?.Remove("subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2>? _explicitNullValueSubscriptions = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsSubscriptionV2>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; AdditionalData?.Remove("subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsSubscriptionV2>? _explicitNullValueSubscriptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; AdditionalData?.Remove("subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2> _explicitNullValueSubscriptions = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsSubscriptionV2> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; AdditionalData?.Remove("subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsSubscriptionV2> _explicitNullValueSubscriptions = default!;
 #endif
         /// <summary>The user_is_on_session property</summary>
         public bool? UserIsOnSession { get => _explicitNullValueUserIsOnSession; set { _explicitNullValueUserIsOnSession = value; AdditionalData?.Remove("user_is_on_session"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_is_on_session"); else _explicitNullProperties?.Remove("user_is_on_session"); } }
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "coupon_code", n => { CouponCode = n.GetStringValue(); } },
                 { "payment_hold_id", n => { PaymentHoldId = n.GetLongValue(); } },
-                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsSubscriptionV2>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsSubscriptionV2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user_is_on_session", n => { UserIsOnSession = n.GetBoolValue(); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("coupon_code", CouponCode);
             writer.WriteLongValue("payment_hold_id", PaymentHoldId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2>("subscriptions", Subscriptions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsSubscriptionV2>("subscriptions", Subscriptions);
             writer.WriteBoolValue("user_is_on_session", UserIsOnSession);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

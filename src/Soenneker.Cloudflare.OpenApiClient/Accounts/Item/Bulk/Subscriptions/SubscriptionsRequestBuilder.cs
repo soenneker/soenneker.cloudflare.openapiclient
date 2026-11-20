@@ -36,28 +36,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Bulk.Subscriptions
         /// <summary>
         /// Creates multiple subscriptions for an account in a single request.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBulkAccountSubscriptionResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsBulkAccountSubscriptionResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBulkAccountSubscriptionResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountSubscriptionsBulkCreateSubscriptionRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Bulk.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsBulkAccountSubscriptionResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountSubscriptionsBulkCreateSubscriptionRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Bulk.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBulkAccountSubscriptionResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountSubscriptionsBulkCreateSubscriptionRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Bulk.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsBulkAccountSubscriptionResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountSubscriptionsBulkCreateSubscriptionRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Bulk.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBulkAccountSubscriptionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiBulkAccountSubscriptionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsBulkAccountSubscriptionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsBulkAccountSubscriptionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates multiple subscriptions for an account in a single request.

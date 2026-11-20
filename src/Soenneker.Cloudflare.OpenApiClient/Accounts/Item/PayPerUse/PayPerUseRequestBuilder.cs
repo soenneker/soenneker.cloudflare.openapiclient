@@ -2,7 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.Agreements;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.EnabledDomains;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.EnabledPublishers;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.Operator;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.Proposals;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.UsageReports;
@@ -20,10 +22,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayPerUseRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agreements property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.Agreements.AgreementsRequestBuilder Agreements
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.Agreements.AgreementsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The enabledDomains property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.EnabledDomains.EnabledDomainsRequestBuilder EnabledDomains
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.EnabledDomains.EnabledDomainsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The enabledPublishers property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.EnabledPublishers.EnabledPublishersRequestBuilder EnabledPublishers
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.EnabledPublishers.EnabledPublishersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The operator property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerUse.Operator.OperatorRequestBuilder Operator

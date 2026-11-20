@@ -16,6 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.StreamNamespace
     public partial class StreamRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The usage property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.StreamNamespace.Usage.UsageRequestBuilder Usage
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.StreamNamespace.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);

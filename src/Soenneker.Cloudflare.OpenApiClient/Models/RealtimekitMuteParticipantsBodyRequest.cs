@@ -17,25 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_participant_ids") is null) { _explicitNullValueCustomParticipantIds = default!; _explicitNullProperties?.Remove("custom_participant_ids"); }
-            else if (parseNode.GetChildNode("custom_participant_ids") is { } nullNodeCustomParticipantIds && nullNodeCustomParticipantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomParticipantIds = null;
             if (parseNode.GetChildNode("participant_ids") is null) { _explicitNullValueParticipantIds = default!; _explicitNullProperties?.Remove("participant_ids"); }
             else if (parseNode.GetChildNode("participant_ids") is { } nullNodeParticipantIds && nullNodeParticipantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParticipantIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The custom_participant_ids property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? CustomParticipantIds { get => _explicitNullValueCustomParticipantIds; set { _explicitNullValueCustomParticipantIds = value; AdditionalData?.Remove("custom_participant_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_participant_ids"); else _explicitNullProperties?.Remove("custom_participant_ids"); } }
-        private List<string>? _explicitNullValueCustomParticipantIds = default!;
-#nullable restore
-#else
-        public List<string> CustomParticipantIds { get => _explicitNullValueCustomParticipantIds; set { _explicitNullValueCustomParticipantIds = value; AdditionalData?.Remove("custom_participant_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_participant_ids"); else _explicitNullProperties?.Remove("custom_participant_ids"); } }
-        private List<string> _explicitNullValueCustomParticipantIds = default!;
-#endif
-        /// <summary>The participant_ids property</summary>
+        /// <summary>IDs of the participants to mute, as returned when the participants were added to the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ParticipantIds { get => _explicitNullValueParticipantIds; set { _explicitNullValueParticipantIds = value; AdditionalData?.Remove("participant_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_ids"); else _explicitNullProperties?.Remove("participant_ids"); } }
@@ -70,7 +58,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_participant_ids", n => { CustomParticipantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "participant_ids", n => { ParticipantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -81,7 +68,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("custom_participant_ids", CustomParticipantIds);
             writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

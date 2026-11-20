@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Pages.Assets;
+using Soenneker.Cloudflare.OpenApiClient.Pages.Webhooks;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Pages
         public global::Soenneker.Cloudflare.OpenApiClient.Pages.Assets.AssetsRequestBuilder Assets
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Pages.Assets.AssetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The webhooks property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Pages.Webhooks.WebhooksRequestBuilder Webhooks
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Pages.Webhooks.WebhooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Pages.PagesRequestBuilder"/> and sets the default values.

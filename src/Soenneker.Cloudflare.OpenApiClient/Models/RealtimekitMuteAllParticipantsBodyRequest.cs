@@ -23,7 +23,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>if false, participants won&apos;t be able to unmute themselves after they are muted</summary>
+        /// <summary>This field is ignored. Muted participants can unmute themselves if their preset allows them to produce audio.</summary>
+        [Obsolete("")]
         public bool? AllowUnmute { get => _explicitNullValueAllowUnmute; set { _explicitNullValueAllowUnmute = value; AdditionalData?.Remove("allow_unmute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_unmute"); else _explicitNullProperties?.Remove("allow_unmute"); } }
         private bool? _explicitNullValueAllowUnmute = default!;
         /// <summary>

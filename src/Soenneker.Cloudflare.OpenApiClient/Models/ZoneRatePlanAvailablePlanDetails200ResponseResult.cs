@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? ExternallyManaged { get => _explicitNullValueExternallyManaged; set { _explicitNullValueExternallyManaged = value; AdditionalData?.Remove("externally_managed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externally_managed"); else _explicitNullProperties?.Remove("externally_managed"); } }
         private bool? _explicitNullValueExternallyManaged = default!;
         /// <summary>The frequency at which you will be billed for this plan.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSchemasFrequency? Frequency { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsSchemasFrequency? Frequency { get; private set; }
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "can_subscribe", n => { CanSubscribe = n.GetBoolValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "externally_managed", n => { ExternallyManaged = n.GetBoolValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSchemasFrequency>(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsSchemasFrequency>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_subscribed", n => { IsSubscribed = n.GetBoolValue(); } },
                 { "legacy_id", n => { LegacyId = n.GetStringValue(); } },

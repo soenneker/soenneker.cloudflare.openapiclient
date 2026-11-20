@@ -31,8 +31,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("offlabel") is null) { _explicitNullValueOfflabel = default!; _explicitNullProperties?.Remove("offlabel"); }
             else if (parseNode.GetChildNode("offlabel") is { } nullNodeOfflabel && nullNodeOfflabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offlabel = null;
-            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
-            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -72,9 +70,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Do not show any Cloudflare branding on the widget (ENT only).</summary>
         public bool? Offlabel { get => _explicitNullValueOfflabel; set { _explicitNullValueOfflabel = value; AdditionalData?.Remove("offlabel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offlabel"); else _explicitNullProperties?.Remove("offlabel"); } }
         private bool? _explicitNullValueOfflabel = default!;
-        /// <summary>Region where this widget can be used. This cannot be changed after creation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion? _explicitNullValueRegion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequest"/> and sets the default values.
         /// </summary>
@@ -98,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(8)
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "bot_fight_mode", n => { BotFightMode = n.GetBoolValue(); } },
                 { "clearance_level", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueClearanceLevel = default; _explicitNullProperties?.Remove("clearance_level"); AdditionalData["clearance_level"] = unknown; } else { ClearanceLevel = parsed; AdditionalData.Remove("clearance_level"); } } },
@@ -107,7 +102,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "offlabel", n => { Offlabel = n.GetBoolValue(); } },
-                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
             };
         }
         /// <summary>
@@ -124,7 +118,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode>("mode", Mode);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("offlabel", Offlabel);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion>("region", Region);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

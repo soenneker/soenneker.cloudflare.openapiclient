@@ -56,8 +56,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>When this operator was classified for local-only, non-billable settlement. Null for billable operators. Always matches the requesting zone&apos;s classification.</summary>
-        public DateTimeOffset? NonBillableSince { get; private set; }
         /// <summary>Stable pay-per-use operator identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,12 +109,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(7)
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "current_price", n => { CurrentPrice = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice.CreateFromDiscriminatorValue); } },
                 { "default_price_usd_microcents", n => { DefaultPriceUsdMicrocents = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "non_billable_since", n => { NonBillableSince = n.GetDateTimeOffsetValue(); } },
                 { "operator_id", n => { OperatorId = n.GetStringValue(); } },
                 { "proposed_price", n => { ProposedPrice = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceProposedPrice>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceProposedPrice.CreateFromDiscriminatorValue); } },
                 { "scheduled_price", n => { ScheduledPrice = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceScheduledPrice>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceScheduledPrice.CreateFromDiscriminatorValue); } },

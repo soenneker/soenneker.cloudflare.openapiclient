@@ -52,6 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.UnpaidInvoice.UnpaidInvoiceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The usage property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.UsageRequestBuilder Usage
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
