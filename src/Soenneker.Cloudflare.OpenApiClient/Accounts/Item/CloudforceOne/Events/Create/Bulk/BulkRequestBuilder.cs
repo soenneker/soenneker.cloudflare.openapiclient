@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create.Bulk.Relationships;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,12 +17,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BulkRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The relationships property</summary>
-        [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create.Bulk.Relationships.RelationshipsRequestBuilder Relationships
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create.Bulk.Relationships.RelationshipsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create.Bulk.BulkRequestBuilder"/> and sets the default values.
         /// </summary>

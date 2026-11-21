@@ -65432,82 +65432,6 @@
         ]
       }
     },
-    "/accounts/{accountId}/cloudforce-one/events/create/bulk/relationships": {
-      "post": {
-        "tags": [
-          "Event"
-        ],
-        "summary": "Create events with relationships in bulk (legacy)",
-        "description": "Legacy. Use \u0060threat-intel events bulk-create\u0060 (\u0060POST /events/create/bulk\u0060) and \u0060threat-intel events relationships create\u0060 (\u0060POST /events/relationships/create\u0060) instead.",
-        "operationId": "PostDosEventCreateBulkWithRelationships",
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "path",
-            "description": "Account ID.",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "Account ID."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationshipsRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Returns the number of created bulk events with relationships.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationships200Response"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationships400Response"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": true,
-        "security": [
-          {
-            "api_token": []
-          }
-        ],
-        "x-api-token-group": [
-          "Cloudforce One Write",
-          "Cloudforce One Read"
-        ],
-        "x-fern-availability": "deprecated",
-        "x-fern-sdk-group-name": "cloudforce-one.threat-intel.events.legacy",
-        "x-fern-sdk-method-name": "bulk-create-with-relationships",
-        "x-forge-availability": "deprecated",
-        "x-forge-group-name": "cloudforce-one.threat-intel.events.legacy",
-        "x-forge-method-name": "bulk-create-with-relationships",
-        "x-forge-oauth-scopes": [
-          "cloudforce-one.read",
-          "cloudforce-one.write"
-        ],
-        "x-forge-sunset": {
-          "date": "2030-01-01T00:00:00Z"
-        }
-      }
-    },
     "/accounts/{accountId}/cloudforce-one/events/dataset": {
       "get": {
         "tags": [
@@ -624449,86 +624373,6 @@
           }
         }
       },
-      "PostDosEventCreateBulkWithRelationshipsRequest": {
-        "required": [
-          "data",
-          "datasetId"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationshipsRequestDataItem"
-            }
-          },
-          "datasetId": {
-            "type": "string",
-            "example": "durableObjectName"
-          }
-        }
-      },
-      "PostDosEventCreateBulkWithRelationships200Response": {
-        "required": [
-          "createdEventsCount",
-          "createdIndicatorsCount",
-          "createdRelationshipsCount",
-          "errorCount"
-        ],
-        "type": "object",
-        "properties": {
-          "createdEventsCount": {
-            "type": "number",
-            "description": "Number of events created"
-          },
-          "createdIndicatorsCount": {
-            "type": "number",
-            "description": "Number of indicators created"
-          },
-          "createdRelationshipsCount": {
-            "type": "number",
-            "description": "Number of relationships created"
-          },
-          "errorCount": {
-            "type": "number",
-            "description": "Number of errors encountered"
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationships200ResponseErrorsItem"
-            },
-            "description": "Array of error details"
-          }
-        },
-        "description": "Result of bulk relationship creation operation"
-      },
-      "PostDosEventCreateBulkWithRelationships400Response": {
-        "required": [
-          "result",
-          "success",
-          "errors"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationships400ResponseErrorsItem"
-            }
-          },
-          "result": {
-            "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationships400ResponseResult"
-          },
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "description": "The primary error message."
-          }
-        }
-      },
       "GetDatasetList400Response": {
         "required": [
           "result",
@@ -811934,121 +811778,6 @@
       "PostEventCreateBulk400ResponseResult": {
         "type": "object"
       },
-      "PostDosEventCreateBulkWithRelationshipsRequestDataItem": {
-        "required": [
-          "date",
-          "category",
-          "event",
-          "tlp",
-          "raw"
-        ],
-        "type": "object",
-        "properties": {
-          "accountId": {
-            "type": "number",
-            "example": 123456
-          },
-          "attacker": {
-            "type": "string",
-            "nullable": true,
-            "example": "Flying Yeti"
-          },
-          "attackerCountry": {
-            "type": "string",
-            "example": "CN"
-          },
-          "category": {
-            "type": "string",
-            "example": "Domain Resolution"
-          },
-          "datasetId": {
-            "type": "string",
-            "example": "durableObjectName"
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2022-04-01T00:00:00Z"
-          },
-          "event": {
-            "type": "string",
-            "example": "An attacker registered the domain domain.com"
-          },
-          "indicator": {
-            "type": "string",
-            "example": "domain.com"
-          },
-          "indicatorType": {
-            "type": "string",
-            "example": "domain"
-          },
-          "indicators": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationshipsRequestDataItemIndicatorsItem"
-            },
-            "description": "Array of indicators for this event. Supports multiple indicators per event for complex scenarios."
-          },
-          "insight": {
-            "type": "string",
-            "example": "This domain was likely registered for phishing purposes"
-          },
-          "raw": {
-            "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationshipsRequestDataItemRaw"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "example": "malware"
-            }
-          },
-          "targetCountry": {
-            "type": "string",
-            "example": "US"
-          },
-          "targetIndustry": {
-            "type": "string",
-            "example": "Agriculture"
-          },
-          "tlp": {
-            "type": "string",
-            "example": "amber"
-          }
-        }
-      },
-      "PostDosEventCreateBulkWithRelationships200ResponseErrorsItem": {
-        "required": [
-          "eventIndex",
-          "error"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "string",
-            "description": "Error message"
-          },
-          "eventIndex": {
-            "type": "number",
-            "description": "Index of the event that caused the error"
-          }
-        }
-      },
-      "PostDosEventCreateBulkWithRelationships400ResponseErrorsItem": {
-        "required": [
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "example": "An error occurred."
-          }
-        }
-      },
-      "PostDosEventCreateBulkWithRelationships400ResponseResult": {
-        "type": "object"
-      },
       "GetDatasetList400ResponseErrorsItem": {
         "required": [
           "message"
@@ -863803,44 +863532,6 @@
           }
         }
       },
-      "PostDosEventCreateBulkWithRelationshipsRequestDataItemIndicatorsItem": {
-        "required": [
-          "value",
-          "indicatorType"
-        ],
-        "type": "object",
-        "properties": {
-          "indicatorType": {
-            "type": "string",
-            "description": "The type of indicator (e.g., DOMAIN, IP, JA3, HASH)",
-            "example": "domain"
-          },
-          "value": {
-            "type": "string",
-            "description": "The indicator value (e.g., domain name, IP address, hash)",
-            "example": "malicious.com"
-          }
-        }
-      },
-      "PostDosEventCreateBulkWithRelationshipsRequestDataItemRaw": {
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/PostDosEventCreateBulkWithRelationshipsRequestDataItemRawData"
-          },
-          "source": {
-            "type": "string",
-            "example": "example.com"
-          },
-          "tlp": {
-            "type": "string",
-            "example": "amber"
-          }
-        }
-      },
       "PostIndicatorTypeCreate400ResponseContentApplicationJson": {
         "required": [
           "schema"
@@ -894437,10 +894128,6 @@
         }
       },
       "PostEventCreateBulkRequestDataItemRawData": {
-        "type": "object",
-        "nullable": true
-      },
-      "PostDosEventCreateBulkWithRelationshipsRequestDataItemRawData": {
         "type": "object",
         "nullable": true
       },
