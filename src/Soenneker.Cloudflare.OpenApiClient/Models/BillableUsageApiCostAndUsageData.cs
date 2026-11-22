@@ -279,7 +279,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiCostAndUsageDataTagsProperty Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("Tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Tags"); else _explicitNullProperties?.Remove("Tags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiCostAndUsageDataTagsProperty _explicitNullValueTags = default!;
 #endif
-        /// <summary>The unique identifier for the billable metric in the Cloudflare catalog. Cloudflare extension; replaces FOCUS SkuId.</summary>
+        /// <summary>The unique identifier for the billable metric in the Cloudflare catalog. For cost billed under a since-archived billable metric this is the metric&apos;s catalog public id (a UUID) rather than its usage metric name, so it stays separate from the live metric that replaced it. Cloudflare extension; replaces FOCUS SkuId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? XBillableMetricId { get => _explicitNullValueXBillableMetricId; set { _explicitNullValueXBillableMetricId = value; AdditionalData?.Remove("x_BillableMetricId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_BillableMetricId"); else _explicitNullProperties?.Remove("x_BillableMetricId"); } }
