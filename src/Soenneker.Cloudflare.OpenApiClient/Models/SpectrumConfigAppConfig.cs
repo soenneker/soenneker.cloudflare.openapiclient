@@ -27,6 +27,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("argo_smart_routing") is { } nullNodeArgoSmartRouting && nullNodeArgoSmartRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArgoSmartRouting = null;
             if (parseNode.GetChildNode("dns") is null) { _explicitNullValueDns = default!; _explicitNullProperties?.Remove("dns"); }
             else if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
+            if (parseNode.GetChildNode("edge_alpn_protocols") is null) { _explicitNullValueEdgeAlpnProtocols = default!; _explicitNullProperties?.Remove("edge_alpn_protocols"); }
+            else if (parseNode.GetChildNode("edge_alpn_protocols") is { } nullNodeEdgeAlpnProtocols && nullNodeEdgeAlpnProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeAlpnProtocols = null;
             if (parseNode.GetChildNode("edge_ips") is null) { _explicitNullValueEdgeIps = default!; _explicitNullProperties?.Remove("edge_ips"); }
             else if (parseNode.GetChildNode("edge_ips") is { } nullNodeEdgeIps && nullNodeEdgeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeIps = null;
             if (parseNode.GetChildNode("ip_firewall") is null) { _explicitNullValueIpFirewall = default!; _explicitNullProperties?.Remove("ip_firewall"); }
@@ -67,6 +69,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private bool? _explicitNullValueArgoSmartRouting = default!;
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; AdditionalData?.Remove("dns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
         private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueDns = default!;
+        public global::System.Collections.Generic.List<string>? EdgeAlpnProtocols { get => _explicitNullValueEdgeAlpnProtocols; set { _explicitNullValueEdgeAlpnProtocols = value; AdditionalData?.Remove("edge_alpn_protocols"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_alpn_protocols"); else _explicitNullProperties?.Remove("edge_alpn_protocols"); } }
+        private global::System.Collections.Generic.List<string>? _explicitNullValueEdgeAlpnProtocols = default!;
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? EdgeIps { get => _explicitNullValueEdgeIps; set { _explicitNullValueEdgeIps = value; AdditionalData?.Remove("edge_ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_ips"); else _explicitNullProperties?.Remove("edge_ips"); } }
         private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueEdgeIps = default!;
         public bool? IpFirewall { get => _explicitNullValueIpFirewall; set { _explicitNullValueIpFirewall = value; AdditionalData?.Remove("ip_firewall"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_firewall"); else _explicitNullProperties?.Remove("ip_firewall"); } }
@@ -127,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "argo_smart_routing", n => { ArgoSmartRouting = n.GetBoolValue(); } },
                 { "dns", n => { Dns = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
+                { "edge_alpn_protocols", n => { EdgeAlpnProtocols = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "edge_ips", n => { EdgeIps = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "ip_firewall", n => { IpFirewall = n.GetBoolValue(); } },
                 { "origin_direct", n => { OriginDirect = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -155,6 +160,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteBoolValue("argo_smart_routing", ArgoSmartRouting);
             writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("dns", Dns);
+            writer.WriteCollectionOfPrimitiveValues<string>("edge_alpn_protocols", EdgeAlpnProtocols);
             writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("edge_ips", EdgeIps);
             writer.WriteBoolValue("ip_firewall", IpFirewall);
             writer.WriteCollectionOfPrimitiveValues<string>("origin_direct", OriginDirect);

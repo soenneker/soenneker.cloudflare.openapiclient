@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyAccount"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccount"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsLegacyAccount"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationsGetAccounts200ResponseResultItem : IComposedTypeWrapper, IParsable
@@ -18,21 +18,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccount"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount? OrganizationsApiAccount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccount? OrganizationsAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount OrganizationsApiAccount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccount OrganizationsAccount { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyAccount"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsLegacyAccount"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyAccount? OrganizationsApiLegacyAccount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsLegacyAccount? OrganizationsLegacyAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyAccount OrganizationsApiLegacyAccount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsLegacyAccount OrganizationsLegacyAccount { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,16 +47,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema82805(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema82872(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema82962(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema83085(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.OrganizationsApiAccount == null && result.OrganizationsApiLegacyAccount == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.OrganizationsApiAccount = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.OrganizationsApiLegacyAccount = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyAccount(), parseNode);
-            if (result.OrganizationsApiAccount == null && result.OrganizationsApiLegacyAccount == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.OrganizationsAccount == null && result.OrganizationsLegacyAccount == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.OrganizationsAccount = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccount(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.OrganizationsLegacyAccount = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsLegacyAccount(), parseNode);
+            if (result.OrganizationsAccount == null && result.OrganizationsLegacyAccount == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -67,9 +67,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(OrganizationsApiAccount != null || OrganizationsApiLegacyAccount != null)
+            if(OrganizationsAccount != null || OrganizationsLegacyAccount != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(OrganizationsApiAccount, OrganizationsApiLegacyAccount);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(OrganizationsAccount, OrganizationsLegacyAccount);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -80,15 +80,15 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (OrganizationsApiAccount == null && OrganizationsApiLegacyAccount == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (OrganizationsAccount == null && OrganizationsLegacyAccount == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (OrganizationsApiAccount != null) selectedUnionBranches++;
-            if (OrganizationsApiLegacyAccount != null) selectedUnionBranches++;
-            if (OrganizationsApiAccount != null && selectedUnionBranches == 1) { if (OrganizationsApiAccount is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OrganizationsApiAccount); return; }
-            if (OrganizationsApiLegacyAccount != null && selectedUnionBranches == 1) { if (OrganizationsApiLegacyAccount is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OrganizationsApiLegacyAccount); return; }
+            if (OrganizationsAccount != null) selectedUnionBranches++;
+            if (OrganizationsLegacyAccount != null) selectedUnionBranches++;
+            if (OrganizationsAccount != null && selectedUnionBranches == 1) { if (OrganizationsAccount is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OrganizationsAccount); return; }
+            if (OrganizationsLegacyAccount != null && selectedUnionBranches == 1) { if (OrganizationsLegacyAccount is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OrganizationsLegacyAccount); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount>(null, OrganizationsApiAccount, OrganizationsApiLegacyAccount);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccount>(null, OrganizationsAccount, OrganizationsLegacyAccount);
         }
     }
 }

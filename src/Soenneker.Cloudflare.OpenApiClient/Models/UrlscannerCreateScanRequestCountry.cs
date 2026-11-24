@@ -91,10 +91,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Ca,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CD")]
-        #pragma warning disable CS1591
-        Cd,
-        #pragma warning restore CS1591
         [EnumMember(Value = "CH")]
         #pragma warning disable CS1591
         Ch,
@@ -118,10 +114,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "CR")]
         #pragma warning disable CS1591
         Cr,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CW")]
-        #pragma warning disable CS1591
-        Cw,
         #pragma warning restore CS1591
         [EnumMember(Value = "CY")]
         #pragma warning disable CS1591
@@ -187,10 +179,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Gb,
         #pragma warning restore CS1591
-        [EnumMember(Value = "GD")]
-        #pragma warning disable CS1591
-        Gd,
-        #pragma warning restore CS1591
         [EnumMember(Value = "GE")]
         #pragma warning disable CS1591
         Ge,
@@ -207,10 +195,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Gt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "GU")]
-        #pragma warning disable CS1591
-        Gu,
-        #pragma warning restore CS1591
         [EnumMember(Value = "GY")]
         #pragma warning disable CS1591
         Gy,
@@ -226,10 +210,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "HR")]
         #pragma warning disable CS1591
         Hr,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "HT")]
-        #pragma warning disable CS1591
-        Ht,
         #pragma warning restore CS1591
         [EnumMember(Value = "HU")]
         #pragma warning disable CS1591
@@ -311,10 +291,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Lk,
         #pragma warning restore CS1591
-        [EnumMember(Value = "LR")]
-        #pragma warning disable CS1591
-        Lr,
-        #pragma warning restore CS1591
         [EnumMember(Value = "LT")]
         #pragma warning disable CS1591
         Lt,
@@ -327,10 +303,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Lv,
         #pragma warning restore CS1591
-        [EnumMember(Value = "MA")]
-        #pragma warning disable CS1591
-        Ma,
-        #pragma warning restore CS1591
         [EnumMember(Value = "MD")]
         #pragma warning disable CS1591
         Md,
@@ -342,10 +314,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "MK")]
         #pragma warning disable CS1591
         Mk,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MM")]
-        #pragma warning disable CS1591
-        Mm,
         #pragma warning restore CS1591
         [EnumMember(Value = "MN")]
         #pragma warning disable CS1591
@@ -366,10 +334,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "MV")]
         #pragma warning disable CS1591
         Mv,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MW")]
-        #pragma warning disable CS1591
-        Mw,
         #pragma warning restore CS1591
         [EnumMember(Value = "MX")]
         #pragma warning disable CS1591
@@ -511,10 +475,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Th,
         #pragma warning restore CS1591
-        [EnumMember(Value = "TJ")]
-        #pragma warning disable CS1591
-        Tj,
-        #pragma warning restore CS1591
         [EnumMember(Value = "TN")]
         #pragma warning disable CS1591
         Tn,
@@ -546,10 +506,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "US")]
         #pragma warning disable CS1591
         Us,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "UZ")]
-        #pragma warning disable CS1591
-        Uz,
         #pragma warning restore CS1591
         [EnumMember(Value = "VN")]
         #pragma warning disable CS1591

@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
-        /// <summary>Weighted delivery outcome counts derived from sampled delivery events.</summary>
+        /// <summary>Exact delivery outcome counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringClientNotificationOutcomeCounts? OutcomeCounts { get => _explicitNullValueOutcomeCounts; set { _explicitNullValueOutcomeCounts = value; AdditionalData?.Remove("outcome_counts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_counts"); else _explicitNullProperties?.Remove("outcome_counts"); } }

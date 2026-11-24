@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Definitions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Evaluate;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Flags;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Ofrep;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +35,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Flags.FlagsRequestBuilder Flags
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Flags.FlagsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The ofrep property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Ofrep.OfrepRequestBuilder Ofrep
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Ofrep.OfrepRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.WithAppItemRequestBuilder"/> and sets the default values.

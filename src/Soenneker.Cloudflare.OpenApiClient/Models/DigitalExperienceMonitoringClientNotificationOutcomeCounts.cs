@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Weighted delivery outcome counts derived from sampled delivery events.
+    /// Exact delivery outcome counts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DigitalExperienceMonitoringClientNotificationOutcomeCounts : IAdditionalDataHolder, IParsable
@@ -20,8 +20,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("delivered") is null) { _explicitNullValueDelivered = default!; _explicitNullProperties?.Remove("delivered"); }
             else if (parseNode.GetChildNode("delivered") is { } nullNodeDelivered && nullNodeDelivered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delivered = null;
-            if (parseNode.GetChildNode("estimated") is null) { _explicitNullValueEstimated = default!; _explicitNullProperties?.Remove("estimated"); }
-            else if (parseNode.GetChildNode("estimated") is { } nullNodeEstimated && nullNodeEstimated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Estimated = null;
             if (parseNode.GetChildNode("expired") is null) { _explicitNullValueExpired = default!; _explicitNullProperties?.Remove("expired"); }
             else if (parseNode.GetChildNode("expired") is { } nullNodeExpired && nullNodeExpired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expired = null;
             if (parseNode.GetChildNode("failed") is null) { _explicitNullValueFailed = default!; _explicitNullProperties?.Remove("failed"); }
@@ -33,9 +31,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Number of delivered outcomes.</summary>
         public long? Delivered { get => _explicitNullValueDelivered; set { _explicitNullValueDelivered = value; AdditionalData?.Remove("delivered"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered"); else _explicitNullProperties?.Remove("delivered"); } }
         private long? _explicitNullValueDelivered = default!;
-        /// <summary>Whether these weighted counts may be affected by equitable sampling before full-resolution storage.</summary>
-        public bool? Estimated { get => _explicitNullValueEstimated; set { _explicitNullValueEstimated = value; AdditionalData?.Remove("estimated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated"); else _explicitNullProperties?.Remove("estimated"); } }
-        private bool? _explicitNullValueEstimated = default!;
         /// <summary>Number of expired outcomes.</summary>
         public long? Expired { get => _explicitNullValueExpired; set { _explicitNullValueExpired = value; AdditionalData?.Remove("expired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expired"); else _explicitNullProperties?.Remove("expired"); } }
         private long? _explicitNullValueExpired = default!;
@@ -65,10 +60,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(4)
+            return new Dictionary<string, Action<IParseNode>>
             {
                 { "delivered", n => { Delivered = n.GetLongValue(); } },
-                { "estimated", n => { Estimated = n.GetBoolValue(); } },
                 { "expired", n => { Expired = n.GetLongValue(); } },
                 { "failed", n => { Failed = n.GetLongValue(); } },
             };
@@ -81,7 +75,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("delivered", Delivered);
-            writer.WriteBoolValue("estimated", Estimated);
             writer.WriteLongValue("expired", Expired);
             writer.WriteLongValue("failed", Failed);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

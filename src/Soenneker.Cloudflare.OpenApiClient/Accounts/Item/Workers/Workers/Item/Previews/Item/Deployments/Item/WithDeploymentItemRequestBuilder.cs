@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Item.Profile;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithDeploymentItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The profile property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Item.Profile.ProfileRequestBuilder Profile
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Item.Profile.ProfileRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews.Item.Deployments.Item.WithDeploymentItemRequestBuilder"/> and sets the default values.
         /// </summary>

@@ -42,6 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Item.Item.Logs.Explorer.Query.Sql
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 507 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,6 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Item.Item.Logs.Explorer.Query.Sql
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "507", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -75,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Item.Item.Logs.Explorer.Query.Sql
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 507 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Item.Item.Logs.Explorer.Query.Sql
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "507", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

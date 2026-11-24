@@ -21,8 +21,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("duration_ms") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
             if (parseNode.GetChildNode("registration_id") is null) { _explicitNullValueRegistrationId = default!; _explicitNullProperties?.Remove("registration_id"); }
             else if (parseNode.GetChildNode("registration_id") is { } nullNodeRegistrationId && nullNodeRegistrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationId = null;
-            if (parseNode.GetChildNode("sample_interval") is null) { _explicitNullValueSampleInterval = default!; _explicitNullProperties?.Remove("sample_interval"); }
-            else if (parseNode.GetChildNode("sample_interval") is { } nullNodeSampleInterval && nullNodeSampleInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleInterval = null;
             if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
             if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
@@ -44,9 +42,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string RegistrationId { get => _explicitNullValueRegistrationId; set { _explicitNullValueRegistrationId = value; AdditionalData?.Remove("registration_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_id"); else _explicitNullProperties?.Remove("registration_id"); } }
         private string _explicitNullValueRegistrationId = default!;
 #endif
-        /// <summary>Sampling interval for this event. Values above one indicate a sampled result.</summary>
-        public long? SampleInterval { get => _explicitNullValueSampleInterval; set { _explicitNullValueSampleInterval = value; AdditionalData?.Remove("sample_interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_interval"); else _explicitNullProperties?.Remove("sample_interval"); } }
-        private long? _explicitNullValueSampleInterval = default!;
         /// <summary>Observed notification delivery status.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringNotificationOutcomeStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringNotificationOutcomeStatus? _explicitNullValueStatus = default!;
@@ -76,11 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "duration_ms", n => { DurationMs = n.GetLongValue(); } },
                 { "registration_id", n => { RegistrationId = n.GetStringValue(); } },
-                { "sample_interval", n => { SampleInterval = n.GetLongValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringNotificationOutcomeStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
@@ -94,7 +88,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("duration_ms", DurationMs);
             writer.WriteStringValue("registration_id", RegistrationId);
-            writer.WriteLongValue("sample_interval", SampleInterval);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringNotificationOutcomeStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

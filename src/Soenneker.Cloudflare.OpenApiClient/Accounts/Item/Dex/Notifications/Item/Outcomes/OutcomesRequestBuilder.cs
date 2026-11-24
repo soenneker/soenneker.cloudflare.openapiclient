@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Notifications.Ite
         {
         }
         /// <summary>
-        /// Lists observed device outcomes for a notification sendout. Sampling may omit outcomes; each result includes its sampling interval.
+        /// Lists observed device outcomes for a notification sendout.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListDexNotificationOutcomes200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Notifications.Ite
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListDexNotificationOutcomes200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListDexNotificationOutcomes200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists observed device outcomes for a notification sendout. Sampling may omit outcomes; each result includes its sampling interval.
+        /// Lists observed device outcomes for a notification sendout.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Notifications.Ite
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Notifications.Item.Outcomes.OutcomesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists observed device outcomes for a notification sendout. Sampling may omit outcomes; each result includes its sampling interval.
+        /// Lists observed device outcomes for a notification sendout.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OutcomesRequestBuilderGetQueryParameters 

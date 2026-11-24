@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Config;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Direct_upload;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Keys;
@@ -22,6 +23,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The config property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Config.ConfigRequestBuilder Config
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Config.ConfigRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The direct_upload property</summary>
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Direct_upload.Direct_uploadRequestBuilder Direct_upload

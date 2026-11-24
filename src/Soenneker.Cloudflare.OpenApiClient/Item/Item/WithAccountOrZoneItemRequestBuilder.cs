@@ -9,17 +9,21 @@ using Soenneker.Cloudflare.OpenApiClient.Item.Item.Custom_pages;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Dns_records;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Dns_settings;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Email;
+using Soenneker.Cloudflare.OpenApiClient.Item.Item.Entitlements;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Firewall;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Intel;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Load_balancers;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Logpush;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Logs;
+using Soenneker.Cloudflare.OpenApiClient.Item.Item.Media;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Monetization;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.PayPerUse;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Rulesets;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.SecurityCenter;
+using Soenneker.Cloudflare.OpenApiClient.Item.Item.StreamNamespace;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Subscriptions;
 using Soenneker.Cloudflare.OpenApiClient.Item.Item.Tags;
+using Soenneker.Cloudflare.OpenApiClient.Item.Item.Waiting_rooms;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -67,6 +71,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Item.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The entitlements property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Entitlements.EntitlementsRequestBuilder Entitlements
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Entitlements.EntitlementsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The firewall property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Firewall.FirewallRequestBuilder Firewall
         {
@@ -92,6 +101,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Item.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The media property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Media.MediaRequestBuilder Media
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Media.MediaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The monetization property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Monetization.MonetizationRequestBuilder Monetization
         {
@@ -112,6 +126,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Item.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Item.Item.SecurityCenter.SecurityCenterRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The stream property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Item.Item.StreamNamespace.StreamRequestBuilder Stream
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Item.Item.StreamNamespace.StreamRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The subscriptions property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
@@ -121,6 +140,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Item.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Tags.TagsRequestBuilder Tags
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The waiting_rooms property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Waiting_rooms.Waiting_roomsRequestBuilder Waiting_rooms
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Item.Item.Waiting_rooms.Waiting_roomsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Item.Item.WithAccountOrZoneItemRequestBuilder"/> and sets the default values.
